@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canada Quiz — History, Culture, Geography &amp; Famous Canadians</title>
+<meta name="description" content="Free Canada quiz for everyone! Test your knowledge of Canadian history (1700s, 1800s, 1900s), culture, geography, food, and famous Canadians. Fun and educational, no signup.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=2">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="start" class="panel center">
+    <div style="font-size:46px">🍁</div>
+    <h1>Canada Quiz — All Topics</h1>
+    <p class="muted" style="max-width:620px;margin:0 auto 8px">How well do you know Canada? Pick a topic — history through the centuries, culture, geography, and famous Canadians. Fun for students, newcomers, and every Canadian family. Every answer has a short explanation.</p>
+    <div class="grid" id="cat-grid" style="margin-top:20px"></div>
+  </section>
+
+  <section id="quiz" class="panel" style="display:none">
+    <div class="quiz-meta">
+      <span class="pill" id="counter">Question 1</span>
+      <span class="pill" id="score-pill">Score: 0</span>
+    </div>
+    <div class="progress"><span id="bar"></span></div>
+    <h2 id="qtext"></h2>
+    <div class="options" id="opts"></div>
+    <div id="explain-box" class="explain" style="display:none"></div>
+    <div class="center" style="margin-top:18px">
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQ()">Next →</button>
+    </div>
+  </section>
+
+  <section id="result" class="panel center" style="display:none">
+    <div class="result-big">🍁</div>
+    <h2 id="r-title"></h2>
+    <p class="score" id="r-score"></p>
+    <p class="muted" id="r-msg"></p>
+    <div style="margin:18px 0">
+      <button class="btn btn-lg" onclick="location.reload()">Pick Another Topic</button>
+      <a class="btn btn-ghost btn-lg" href="quizzes.html">All Quizzes</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free quizzes &amp; family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+const BANK = {
+  "History: 1700s": { emoji:"⚜️", q:[
+    {q:"In the 1700s, the French colony in Canada was called what?",o:["New France","Upper Canada","British Columbia","New England"],a:0,e:"The French colony was called New France, centred along the St. Lawrence River."},
+    {q:"Which two European countries fought for control of Canada in the 1700s?",o:["Spain and Portugal","Britain and France","Germany and Italy","Russia and Sweden"],a:1,e:"Britain and France fought for control of Canada in the 1700s."},
+    {q:"The 1759 Battle of the Plains of Abraham was fought near which city?",o:["Montreal","Toronto","Quebec City","Halifax"],a:2,e:"The Battle of the Plains of Abraham (1759) was fought near Quebec City; Britain won."},
+    {q:"Which animal's fur was most important in the 1700s fur trade?",o:["Fox","Beaver","Bear","Deer"],a:1,e:"Beaver fur was the most valuable, used to make hats in Europe."},
+    {q:"The 1763 Treaty of Paris gave control of Canada to which country?",o:["France","Spain","Britain","The Netherlands"],a:2,e:"The 1763 Treaty of Paris gave Canada to Britain after the Seven Years' War."},
+    {q:"Which company, founded in 1670, ran the fur trade in the 1700s?",o:["Hudson's Bay Company","Canadian Tire","The North West Mounted Police","Bank of Canada"],a:0,e:"The Hudson's Bay Company was a giant fur-trading company."}
+  ]},
+  "History: 1800s": { emoji:"🚂", q:[
+    {q:"In the War of 1812, Canada (British) fought against which country?",o:["France","The United States","Spain","Russia"],a:1,e:"The United States invaded, but the invasion was defeated — this shaped today's border."},
+    {q:"In what year did Canada become a country (Confederation)?",o:["1776","1812","1867","1901"],a:2,e:"Canada became a country on July 1, 1867 — now celebrated as Canada Day."},
+    {q:"How many provinces first joined Confederation in 1867?",o:["Four","Six","Eight","Ten"],a:0,e:"Four provinces joined first: Ontario, Quebec, Nova Scotia, and New Brunswick."},
+    {q:"Who was Canada's first Prime Minister?",o:["Wilfrid Laurier","John A. Macdonald","Louis Riel","Lester Pearson"],a:1,e:"Sir John A. Macdonald became Canada's first Prime Minister in 1867."},
+    {q:"The Canadian Pacific Railway was finished in 1885. What did it connect?",o:["Canada east to west","Canada to Mexico","Two cities in Ontario","Canada to Europe"],a:0,e:"The railway connected Canada from east to west, helping build the nation."},
+    {q:"Who was the Métis leader in the Red River and North-West resistances?",o:["Louis Riel","Terry Fox","Tecumseh","Samuel de Champlain"],a:0,e:"Louis Riel led the Métis and is a key figure in Canadian history."}
+  ]},
+  "History: 1900s": { emoji:"🎖️", q:[
+    {q:"Canadian troops famously captured which ridge in 1917 during World War I?",o:["Vimy Ridge","Juno Beach","Normandy","Gallipoli"],a:0,e:"The capture of Vimy Ridge in 1917 is seen as a proud Canadian moment."},
+    {q:"In what year was the current red-and-white maple leaf flag first raised?",o:["1867","1931","1965","1982"],a:2,e:"The maple leaf flag was first raised on February 15, 1965."},
+    {q:"Terry Fox's 'Marathon of Hope' to fight cancer took place in which year?",o:["1965","1980","1995","2005"],a:1,e:"Terry Fox ran his Marathon of Hope in 1980 and became a national hero."},
+    {q:"The Canadian Charter of Rights and Freedoms became law in which year?",o:["1949","1967","1982","2001"],a:2,e:"The Charter of Rights and Freedoms became part of the Constitution in 1982."},
+    {q:"Around World War I (1918), Canadian women gained the right to do what federally?",o:["Vote","Drive","Own land","Become doctors"],a:0,e:"Most Canadian women gained the right to vote in federal elections in 1918."},
+    {q:"Newfoundland became Canada's newest province in which year?",o:["1905","1949","1967","1999"],a:1,e:"Newfoundland (and Labrador) joined Canada in 1949."}
+  ]},
+  "Culture & Food": { emoji:"🍁", q:[
+    {q:"Which famous dish of fries, cheese curds, and gravy comes from Quebec?",o:["Poutine","Nachos","Pierogi","Chili"],a:0,e:"Poutine started in Quebec and is loved across Canada."},
+    {q:"What sweet syrup is Canada world-famous for making?",o:["Corn syrup","Maple syrup","Honey","Agave"],a:1,e:"Canada makes most of the world's maple syrup, mostly in Quebec."},
+    {q:"What is Canada's national winter sport?",o:["Curling","Ice hockey","Skiing","Skating"],a:1,e:"Ice hockey is the national winter sport; lacrosse is the summer sport."},
+    {q:"A fried-dough treat named after an animal's tail is called a...?",o:["BeaverTail","Bear Claw","Fox Bite","Moose Munch"],a:0,e:"BeaverTails are a popular fried-dough Canadian treat."},
+    {q:"Canadian Thanksgiving is celebrated in which month?",o:["November","October","September","December"],a:1,e:"Canadian Thanksgiving is the second Monday of October."},
+    {q:"What is the title of Canada's national anthem?",o:["God Save the King","The Maple Leaf Forever","O Canada","True North"],a:2,e:"'O Canada' is the national anthem."}
+  ]},
+  "Geography": { emoji:"🗺️", q:[
+    {q:"What is the capital city of Canada?",o:["Toronto","Ottawa","Vancouver","Montreal"],a:1,e:"Ottawa, in Ontario, is the capital of Canada."},
+    {q:"How many provinces and territories does Canada have?",o:["10 provinces, 3 territories","12 provinces, 2 territories","8 provinces, 3 territories","10 provinces, 5 territories"],a:0,e:"Canada has 10 provinces and 3 territories."},
+    {q:"Canada is the ____ largest country in the world by area.",o:["First","Second","Fifth","Tenth"],a:1,e:"Canada is the second largest country in the world, after Russia."},
+    {q:"The famous Niagara Falls are located in which province?",o:["Quebec","Ontario","Alberta","Manitoba"],a:1,e:"Niagara Falls is in Ontario, on the border with the United States."},
+    {q:"Which three oceans border Canada?",o:["Atlantic, Pacific, Arctic","Atlantic, Pacific, Indian","Pacific, Arctic, Southern","Atlantic, Indian, Arctic"],a:0,e:"Canada is bordered by the Atlantic, Pacific, and Arctic Oceans."},
+    {q:"The Rocky Mountains are found mostly in Alberta and which other province?",o:["Ontario","Quebec","British Columbia","Nova Scotia"],a:2,e:"The Rocky Mountains run through Alberta and British Columbia."}
+  ]},
+  "Famous Canadians": { emoji:"⭐", q:[
+    {q:"Which hockey legend is nicknamed 'The Great One'?",o:["Sidney Crosby","Wayne Gretzky","Bobby Orr","Mario Lemieux"],a:1,e:"Wayne Gretzky, 'The Great One', is one of hockey's greatest players."},
+    {q:"Terry Fox is famous for running across Canada to raise money for what?",o:["Schools","Cancer research","Hospitals for animals","The Olympics"],a:1,e:"Terry Fox ran the Marathon of Hope to raise money for cancer research."},
+    {q:"Which Canadian scientist helped discover insulin to treat diabetes?",o:["Alexander Graham Bell","Frederick Banting","Isaac Newton","Louis Pasteur"],a:1,e:"Frederick Banting, a Canadian, helped discover insulin in the 1920s."},
+    {q:"The sport of basketball was invented by James Naismith, who was born in which country?",o:["USA","Canada","England","Australia"],a:1,e:"James Naismith, who invented basketball, was born in Canada."},
+    {q:"Which inventor, who lived in Canada, is credited with the telephone?",o:["Thomas Edison","Alexander Graham Bell","Nikola Tesla","Guglielmo Marconi"],a:1,e:"Alexander Graham Bell, who lived in Canada, is credited with inventing the telephone."},
+    {q:"Céline Dion, a world-famous singer, comes from which province?",o:["Ontario","Quebec","Alberta","Manitoba"],a:1,e:"Céline Dion is from Quebec."}
+  ]}
+};
+
+let qs=[], cur=0, score=0, answered=false, catName='';
+function buildCats(){
+  const grid=document.getElementById('cat-grid'); grid.innerHTML='';
+  Object.keys(BANK).forEach(name=>{
+    const c=BANK[name];
+    const card=document.createElement('div'); card.className='card';
+    card.innerHTML='<div class="emoji">'+c.emoji+'</div><h3>'+name+'</h3><p class="muted">'+c.q.length+' questions</p>';
+    const b=document.createElement('button'); b.className='btn'; b.textContent='Play';
+    b.onclick=()=>startCat(name); card.appendChild(b); grid.appendChild(card);
+  });
+}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function startCat(name){
+  catName=name; qs=shuffle(BANK[name].q); cur=0; score=0; answered=false;
+  document.getElementById('start').style.display='none';
+  document.getElementById('result').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  showQ(); window.scrollTo(0,0);
+}
+function showQ(){
+  answered=false; const it=qs[cur];
+  document.getElementById('counter').textContent='Question '+(cur+1)+' of '+qs.length;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  document.getElementById('bar').style.width=(cur/qs.length*100)+'%';
+  document.getElementById('qtext').textContent=it.q;
+  const box=document.getElementById('opts'); box.innerHTML='';
+  it.o.forEach((opt,i)=>{ const b=document.createElement('button'); b.className='option'; b.textContent=opt; b.onclick=()=>pick(i,b); box.appendChild(b); });
+  document.getElementById('explain-box').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+function pick(i,btn){
+  if(answered) return; answered=true; const it=qs[cur];
+  document.querySelectorAll('#opts .option').forEach((b,idx)=>{ b.classList.add('disabled'); if(idx===it.a)b.classList.add('correct'); if(idx===i&&i!==it.a)b.classList.add('wrong'); });
+  if(i===it.a) score++;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  const ex=document.getElementById('explain-box');
+  ex.innerHTML='<strong>'+(i===it.a?'✅ Correct! ':'❌ The answer is '+it.o[it.a]+'. ')+'</strong>'+it.e; ex.style.display='block';
+  document.getElementById('bar').style.width=((cur+1)/qs.length*100)+'%';
+  const nb=document.getElementById('next-btn'); nb.textContent=(cur+1<qs.length)?'Next →':'See my score →'; nb.style.display='inline-block';
+}
+function nextQ(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0); } else finish(); }
+function finish(){
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('result').style.display='block';
+  document.getElementById('r-score').textContent='You scored '+score+' / '+qs.length+' in '+catName;
+  const pct=score/qs.length; let t,m;
+  if(pct===1){t='Perfect! 🍁';m='Full marks — you really know Canada!';}
+  else if(pct>=0.7){t='Great job! 🎉';m='You know your Canadian facts!';}
+  else if(pct>=0.4){t='Nice try! 👍';m='Play again to learn more about Canada.';}
+  else {t='Keep learning! 😊';m='Every quiz teaches you more about Canada — try again!';}
+  document.getElementById('r-title').textContent=t; document.getElementById('r-msg').textContent=m; window.scrollTo(0,0);
+}
+buildCats();
+</script>
+</body>
+</html>

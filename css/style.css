@@ -93,7 +93,10 @@ img{max-width:100%}
 .btn:active{transform:translateY(2px);box-shadow:none}
 .btn-green{background:var(--green)}
 .btn-green:hover{background:var(--green-dark)}
-.btn-blue{background:var(--blue)}
+.btn-blue{background:#4895ef}
+.btn-purple{background:#8e7dbe}
+.btn-orange{background:#f4845f}
+.btn-yellow{background:#ffb703;color:#3d3000}
 .btn-ghost{background:#fff;color:var(--red);border:2px solid var(--red);box-shadow:none}
 .btn-ghost:hover{background:#fff5f6;color:var(--red-dark)}
 .btn-lg{font-size:18px;padding:15px 30px;min-height:52px}
