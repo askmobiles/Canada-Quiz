@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Canada Word Search — Free Puzzle | Family Games</title>
+<meta name="description" content="Free Canada word search puzzle. Find hidden Canadian words about animals, symbols, and places. Fun for kids and adults, plays on phone and computer.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+<style>
+  .ws-wrap{max-width:460px;margin:0 auto}
+  .ws-grid{display:grid;gap:2px;margin:10px auto;touch-action:none;user-select:none;-webkit-user-select:none}
+  .ws-cell{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);border-radius:6px;font-weight:800;font-size:clamp(13px,4.4vw,20px);color:var(--ink);cursor:pointer}
+  .ws-cell.sel{background:#ffe08a}
+  .ws-cell.found{background:#bfe8df;border-color:var(--green);color:var(--green-dark)}
+  .ws-words{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+  .ws-word{background:#fff0f1;color:var(--red-dark);border-radius:999px;padding:6px 14px;font-weight:700;font-size:14px}
+  .ws-word.done{background:#e6f7f4;color:var(--green-dark);text-decoration:line-through;opacity:.7}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔎 Canada Word Search</h1>
+    <p>Find all the hidden Canadian words!</p>
+  </section>
+
+  <details class="howto"><summary></summary><p>Find the words in the list hidden in the grid. Words can go across, down, or diagonally — forwards or backwards. Press on the first letter and drag to the last letter to select a word. When you find one, it turns green and gets crossed off the list. Find them all to win!</p></details>
+
+  <div class="panel">
+    <div class="ws-wrap">
+      <div class="center" style="margin-bottom:6px">
+        <label class="muted">Theme:
+          <select id="theme" class="text-in" style="width:auto;padding:8px 10px" onchange="newPuzzle()">
+            <option value="Animals">Canadian Animals</option>
+            <option value="Symbols">Canada Symbols</option>
+            <option value="Places">Canadian Places</option>
+          </select>
+        </label>
+      </div>
+      <div class="ws-grid" id="grid"></div>
+      <div class="ws-words" id="words"></div>
+      <p class="center" id="msg" style="font-weight:700;min-height:22px"></p>
+      <div class="center">
+        <button class="btn" onclick="newPuzzle()">New Puzzle</button>
+        <a class="btn btn-ghost" href="games.html">All Games</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const THEMES={
+  Animals:["BEAVER","MOOSE","CARIBOU","LOON","OTTER","BISON","WOLF","ORCA"],
+  Symbols:["MAPLE","FLAG","HOCKEY","BEAVER","LOONIE","ANTHEM","TOQUE"],
+  Places:["OTTAWA","TORONTO","QUEBEC","BANFF","YUKON","NIAGARA","REGINA"]
+};
+const N=11;
+const DIRS=[[0,1],[1,0],[1,1],[-1,1],[0,-1],[-1,0],[-1,-1],[1,-1]];
+let grid=[], words=[], found=new Set();
+let selecting=false, startRC=null;
+
+function rnd(n){return Math.floor(Math.random()*n);}
+function newPuzzle(){
+  const theme=document.getElementById('theme').value;
+  const pool=THEMES[theme].filter(w=>w.length<=N);
+  words=pool.slice(); found=new Set();
+  grid=Array.from({length:N},()=>Array(N).fill(''));
+  for(const w of words) placeWord(w);
+  // fill blanks
+  for(let r=0;r<N;r++)for(let c=0;c<N;c++) if(!grid[r][c]) grid[r][c]=String.fromCharCode(65+rnd(26));
+  render();
+  document.getElementById('msg').textContent='';
+}
+function placeWord(w){
+  for(let tries=0;tries<300;tries++){
+    const d=DIRS[rnd(DIRS.length)];
+    const r0=rnd(N), c0=rnd(N);
+    const r1=r0+d[0]*(w.length-1), c1=c0+d[1]*(w.length-1);
+    if(r1<0||r1>=N||c1<0||c1>=N) continue;
+    let ok=true;
+    for(let i=0;i<w.length;i++){ const rr=r0+d[0]*i, cc=c0+d[1]*i; const cur=grid[rr][cc]; if(cur && cur!==w[i]){ok=false;break;} }
+    if(!ok) continue;
+    for(let i=0;i<w.length;i++){ grid[r0+d[0]*i][c0+d[1]*i]=w[i]; }
+    return true;
+  }
+  return false;
+}
+function render(){
+  const g=document.getElementById('grid');
+  g.style.gridTemplateColumns='repeat('+N+',1fr)';
+  g.innerHTML='';
+  for(let r=0;r<N;r++)for(let c=0;c<N;c++){
+    const d=document.createElement('div');
+    d.className='ws-cell'; d.textContent=grid[r][c];
+    d.dataset.r=r; d.dataset.c=c;
+    g.appendChild(d);
+  }
+  const wl=document.getElementById('words'); wl.innerHTML='';
+  words.forEach(w=>{ const s=document.createElement('span'); s.className='ws-word'+(found.has(w)?' done':''); s.textContent=w; s.dataset.w=w; wl.appendChild(s); });
+}
+function lineCells(r0,c0,r1,c1){
+  const dr=Math.sign(r1-r0), dc=Math.sign(c1-c0);
+  const len=Math.max(Math.abs(r1-r0),Math.abs(c1-c0))+1;
+  // must be straight: horizontal, vertical, or 45deg diagonal
+  if(!( (r0===r1)||(c0===c1)||(Math.abs(r1-r0)===Math.abs(c1-c0)) )) return null;
+  const cells=[];
+  for(let i=0;i<len;i++) cells.push([r0+dr*i, c0+dc*i]);
+  return cells;
+}
+function clearSel(){ document.querySelectorAll('.ws-cell.sel').forEach(e=>e.classList.remove('sel')); }
+function highlight(cells){ clearSel(); if(!cells) return; cells.forEach(([r,c])=>{ const el=cellEl(r,c); if(el&&!el.classList.contains('found')) el.classList.add('sel'); }); }
+function cellEl(r,c){ return document.querySelector('.ws-cell[data-r="'+r+'"][data-c="'+c+'"]'); }
+function cellFromPoint(x,y){ const el=document.elementFromPoint(x,y); return (el&&el.classList.contains('ws-cell'))?el:null; }
+
+function trySelect(r0,c0,r1,c1){
+  const cells=lineCells(r0,c0,r1,c1); if(!cells) return false;
+  const str=cells.map(([r,c])=>grid[r][c]).join('');
+  const rev=str.split('').reverse().join('');
+  for(const w of words){
+    if(found.has(w)) continue;
+    if(str===w||rev===w){
+      found.add(w);
+      cells.forEach(([r,c])=>{ const el=cellEl(r,c); if(el){el.classList.remove('sel');el.classList.add('found');} });
+      document.querySelector('.ws-word[data-w="'+w+'"]').classList.add('done');
+      if(found.size===words.length) document.getElementById('msg').textContent='🎉 You found them all! Great job!';
+      return true;
+    }
+  }
+  return false;
+}
+
+const gridEl=document.getElementById('grid');
+gridEl.addEventListener('pointerdown',e=>{ const t=e.target.closest('.ws-cell'); if(!t)return; e.preventDefault(); selecting=true; startRC=[+t.dataset.r,+t.dataset.c]; highlight([startRC]); });
+gridEl.addEventListener('pointermove',e=>{ if(!selecting)return; const t=cellFromPoint(e.clientX,e.clientY); if(!t)return; const cells=lineCells(startRC[0],startRC[1],+t.dataset.r,+t.dataset.c); if(cells) highlight(cells); });
+document.addEventListener('pointerup',e=>{ if(!selecting)return; selecting=false; const t=cellFromPoint(e.clientX,e.clientY); if(t){ trySelect(startRC[0],startRC[1],+t.dataset.r,+t.dataset.c); } clearSel(); startRC=null; });
+
+newPuzzle();
+</script>
+</body>
+</html>
