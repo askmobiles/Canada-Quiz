@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Knowledge Quiz — World, Science, Animals, History &amp; More</title>
+<meta name="description" content="Free general knowledge quiz for the whole family: world geography, science, animals, history, and sports. Fun and educational. No signup.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="gk-quiz.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="start" class="panel center">
+    <div style="font-size:46px">🌍</div>
+    <h1>General Knowledge Quiz</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto 8px">Fun and educational quizzes for the whole family — pick a topic! Every answer shows a short explanation, so you learn as you play.</p>
+    <div class="grid" id="cat-grid" style="margin-top:20px"></div>
+  </section>
+
+  <section id="quiz" class="panel" style="display:none">
+    <div class="quiz-meta">
+      <span class="pill" id="counter">Question 1</span>
+      <span class="pill" id="score-pill">Score: 0</span>
+    </div>
+    <div class="progress"><span id="bar"></span></div>
+    <h2 id="qtext"></h2>
+    <div class="options" id="opts"></div>
+    <div id="explain-box" class="explain" style="display:none"></div>
+    <div class="center" style="margin-top:18px">
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQ()">Next →</button>
+    </div>
+  </section>
+
+  <section id="result" class="panel center" style="display:none">
+    <div class="result-big">🌟</div>
+    <h2 id="r-title"></h2>
+    <p class="score" id="r-score"></p>
+    <p class="muted" id="r-msg"></p>
+    <div style="margin:18px 0">
+      <button class="btn btn-lg" onclick="location.reload()">Pick Another Topic</button>
+      <a class="btn btn-ghost btn-lg" href="games.html">Family Games</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free quizzes &amp; family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+const BANK = {
+  "World & Geography": { emoji:"🗺️", q:[
+    {q:"What is the capital city of France?",o:["London","Paris","Rome","Madrid"],a:1,e:"Paris is the capital of France."},
+    {q:"Which is the largest ocean on Earth?",o:["Atlantic","Indian","Pacific","Arctic"],a:2,e:"The Pacific Ocean is the largest and deepest ocean."},
+    {q:"How many continents are there in the world?",o:["5","6","7","8"],a:2,e:"There are 7 continents: Asia, Africa, North America, South America, Antarctica, Europe, and Australia."},
+    {q:"What is the largest hot desert in the world?",o:["Sahara","Gobi","Arabian","Kalahari"],a:0,e:"The Sahara Desert in Africa is the largest hot desert."},
+    {q:"Which continent is the largest by area?",o:["Africa","Asia","Europe","North America"],a:1,e:"Asia is the largest continent by both area and population."},
+    {q:"The Great Pyramids are found in which country?",o:["Mexico","Greece","Egypt","India"],a:2,e:"The famous Great Pyramids are in Egypt."},
+    {q:"What is the capital city of Japan?",o:["Beijing","Seoul","Bangkok","Tokyo"],a:3,e:"Tokyo is the capital of Japan."},
+    {q:"Which is the tallest mountain in the world?",o:["Mount Everest","K2","Kilimanjaro","Mont Blanc"],a:0,e:"Mount Everest is the highest mountain above sea level."}
+  ]},
+  "Science & Nature": { emoji:"🔬", q:[
+    {q:"Which planet is known as the Red Planet?",o:["Venus","Mars","Jupiter","Saturn"],a:1,e:"Mars looks red because of iron (rust) on its surface."},
+    {q:"What gas do plants take in from the air to make food?",o:["Oxygen","Carbon dioxide","Nitrogen","Helium"],a:1,e:"Plants take in carbon dioxide and give out oxygen."},
+    {q:"What is the chemical formula for water?",o:["CO2","O2","H2O","NaCl"],a:2,e:"Water is H2O — two hydrogen atoms and one oxygen atom."},
+    {q:"What is the closest star to Earth?",o:["The Moon","The Sun","Polaris","Mars"],a:1,e:"The Sun is the closest star to Earth."},
+    {q:"How many bones are in the adult human body?",o:["106","206","306","406"],a:1,e:"An adult human body has 206 bones."},
+    {q:"What force pulls objects down toward the ground?",o:["Magnetism","Gravity","Friction","Electricity"],a:1,e:"Gravity pulls objects toward the Earth."},
+    {q:"What is the largest planet in our solar system?",o:["Earth","Saturn","Jupiter","Neptune"],a:2,e:"Jupiter is the largest planet in our solar system."},
+    {q:"How many legs does an insect have?",o:["4","6","8","10"],a:1,e:"All insects have 6 legs."}
+  ]},
+  "Animals": { emoji:"🦁", q:[
+    {q:"What is the largest animal on Earth?",o:["Elephant","Blue whale","Giraffe","Shark"],a:1,e:"The blue whale is the largest animal that has ever lived."},
+    {q:"Which is the fastest land animal?",o:["Lion","Horse","Cheetah","Kangaroo"],a:2,e:"The cheetah can run up to about 120 km/h."},
+    {q:"How many hearts does an octopus have?",o:["1","2","3","4"],a:2,e:"An octopus has three hearts!"},
+    {q:"Which bird cannot fly?",o:["Eagle","Penguin","Parrot","Owl"],a:1,e:"Penguins cannot fly, but they are excellent swimmers."},
+    {q:"What is the tallest animal in the world?",o:["Elephant","Giraffe","Horse","Camel"],a:1,e:"The giraffe is the tallest animal, thanks to its long neck and legs."},
+    {q:"What do you call a baby dog?",o:["Kitten","Cub","Puppy","Calf"],a:2,e:"A baby dog is called a puppy."},
+    {q:"Which animal is known as the 'King of the Jungle'?",o:["Tiger","Lion","Bear","Wolf"],a:1,e:"The lion is often called the King of the Jungle."},
+    {q:"How many legs does a spider have?",o:["6","8","10","12"],a:1,e:"Spiders have 8 legs (they are not insects)."}
+  ]},
+  "History": { emoji:"🏛️", q:[
+    {q:"Who was the first person to walk on the Moon?",o:["Buzz Aldrin","Yuri Gagarin","Neil Armstrong","John Glenn"],a:2,e:"Neil Armstrong was the first person to walk on the Moon in 1969."},
+    {q:"Who painted the famous 'Mona Lisa'?",o:["Picasso","Van Gogh","Leonardo da Vinci","Michelangelo"],a:2,e:"Leonardo da Vinci painted the Mona Lisa."},
+    {q:"Which famous ship sank in 1912?",o:["Titanic","Mayflower","Santa Maria","Endeavour"],a:0,e:"The Titanic sank in 1912 after hitting an iceberg."},
+    {q:"The Great Wall is located in which country?",o:["Japan","India","China","Korea"],a:2,e:"The Great Wall of China is one of the largest structures ever built."},
+    {q:"In which country did the Olympic Games first begin?",o:["Italy","Greece","Egypt","England"],a:1,e:"The ancient Olympic Games began in Greece."},
+    {q:"Who wrote the famous play 'Romeo and Juliet'?",o:["Charles Dickens","William Shakespeare","Mark Twain","Homer"],a:1,e:"William Shakespeare wrote Romeo and Juliet."},
+    {q:"Ancient Romans mainly spoke which language?",o:["Greek","Latin","Spanish","French"],a:1,e:"The ancient Romans spoke Latin."},
+    {q:"The Statue of Liberty was a gift to the USA from which country?",o:["England","France","Spain","Italy"],a:1,e:"France gave the Statue of Liberty to the United States."}
+  ]},
+  "Sports": { emoji:"⚽", q:[
+    {q:"How many players from one team are on a soccer field at once?",o:["9","10","11","12"],a:2,e:"A soccer team has 11 players on the field, including the goalkeeper."},
+    {q:"How many rings are on the Olympic flag?",o:["3","4","5","6"],a:2,e:"The Olympic flag has 5 interlocking rings."},
+    {q:"Which sport uses a racket and a shuttlecock?",o:["Tennis","Badminton","Squash","Cricket"],a:1,e:"Badminton is played with a racket and a shuttlecock (birdie)."},
+    {q:"In which sport can you score a 'strike' or a 'spare'?",o:["Bowling","Golf","Boxing","Darts"],a:0,e:"Strikes and spares are scored in bowling."},
+    {q:"How many points is a single free throw worth in basketball?",o:["1","2","3","4"],a:0,e:"A free throw is worth 1 point in basketball."},
+    {q:"In which sport would you perform a 'slam dunk'?",o:["Volleyball","Basketball","Tennis","Hockey"],a:1,e:"A slam dunk is a move in basketball."},
+    {q:"How many players are on a basketball team on the court?",o:["4","5","6","7"],a:1,e:"Each basketball team has 5 players on the court."},
+    {q:"What is Canada's national winter sport?",o:["Curling","Ice hockey","Skiing","Skating"],a:1,e:"Ice hockey is Canada's national winter sport."}
+  ]},
+  "Fun Facts & Math": { emoji:"🎈", q:[
+    {q:"How many colours are in a rainbow?",o:["5","6","7","8"],a:2,e:"A rainbow has 7 colours: red, orange, yellow, green, blue, indigo, violet."},
+    {q:"How many days are in a leap year?",o:["364","365","366","367"],a:2,e:"A leap year has 366 days (February has 29 days)."},
+    {q:"How many sides does a triangle have?",o:["2","3","4","5"],a:1,e:"A triangle has 3 sides."},
+    {q:"What colour do you get by mixing blue and yellow?",o:["Purple","Green","Orange","Brown"],a:1,e:"Blue and yellow make green."},
+    {q:"How many minutes are in one hour?",o:["30","45","60","90"],a:2,e:"There are 60 minutes in an hour."},
+    {q:"How many letters are in the English alphabet?",o:["24","25","26","27"],a:2,e:"The English alphabet has 26 letters."},
+    {q:"What is 7 × 8?",o:["54","56","58","64"],a:1,e:"7 × 8 = 56."},
+    {q:"How many sides does a hexagon have?",o:["5","6","7","8"],a:1,e:"A hexagon has 6 sides."}
+  ]}
+};
+
+let qs=[], cur=0, score=0, answered=false, catName='';
+
+function buildCats(){
+  const grid=document.getElementById('cat-grid'); grid.innerHTML='';
+  Object.keys(BANK).forEach(name=>{
+    const c=BANK[name];
+    const card=document.createElement('div');
+    card.className='card';
+    card.innerHTML='<div class="emoji">'+c.emoji+'</div><h3>'+name+'</h3><p class="muted">'+c.q.length+' questions</p>';
+    const b=document.createElement('button'); b.className='btn'; b.textContent='Play';
+    b.onclick=()=>startCat(name); card.appendChild(b);
+    grid.appendChild(card);
+  });
+}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function startCat(name){
+  catName=name;
+  qs=shuffle(BANK[name].q);
+  cur=0; score=0; answered=false;
+  document.getElementById('start').style.display='none';
+  document.getElementById('result').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  showQ(); window.scrollTo(0,0);
+}
+function showQ(){
+  answered=false; const it=qs[cur];
+  document.getElementById('counter').textContent='Question '+(cur+1)+' of '+qs.length;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  document.getElementById('bar').style.width=(cur/qs.length*100)+'%';
+  document.getElementById('qtext').textContent=it.q;
+  const box=document.getElementById('opts'); box.innerHTML='';
+  it.o.forEach((opt,i)=>{
+    const b=document.createElement('button'); b.className='option'; b.textContent=opt;
+    b.onclick=()=>pick(i,b); box.appendChild(b);
+  });
+  document.getElementById('explain-box').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+function pick(i,btn){
+  if(answered) return; answered=true; const it=qs[cur];
+  document.querySelectorAll('#opts .option').forEach((b,idx)=>{
+    b.classList.add('disabled');
+    if(idx===it.a) b.classList.add('correct');
+    if(idx===i && i!==it.a) b.classList.add('wrong');
+  });
+  if(i===it.a) score++;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  const ex=document.getElementById('explain-box');
+  ex.innerHTML='<strong>'+(i===it.a?'✅ Correct! ':'❌ The answer is '+it.o[it.a]+'. ')+'</strong>'+it.e;
+  ex.style.display='block';
+  document.getElementById('bar').style.width=((cur+1)/qs.length*100)+'%';
+  const nb=document.getElementById('next-btn');
+  nb.textContent=(cur+1<qs.length)?'Next →':'See my score →';
+  nb.style.display='inline-block';
+}
+function nextQ(){
+  cur++;
+  if(cur<qs.length){ showQ(); window.scrollTo(0,0); } else finish();
+}
+function finish(){
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('result').style.display='block';
+  document.getElementById('r-score').textContent='You scored '+score+' / '+qs.length+' in '+catName;
+  const pct=score/qs.length; let t,m;
+  if(pct===1){t='Perfect! 🌟';m='Amazing — full marks!';}
+  else if(pct>=0.7){t='Great job! 🎉';m='You know your stuff!';}
+  else if(pct>=0.4){t='Nice try! 👍';m='Play again to learn even more.';}
+  else {t='Keep learning! 😊';m='Every quiz makes you smarter — try again!';}
+  document.getElementById('r-title').textContent=t;
+  document.getElementById('r-msg').textContent=m;
+  window.scrollTo(0,0);
+}
+buildCats();
+</script>
+</body>
+</html>

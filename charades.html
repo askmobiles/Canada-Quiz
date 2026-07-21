@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Charades Party 🎭 — Family Games</title>
+<meta name="description" content="Free Charades Party game for the whole family. 2 teams, timer, 1,100+ words in 10 categories. Play on phone, tablet, or computer.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+<style>
+  .game-stage{position:relative}
+  .screen{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;padding:26px 16px;min-height:66vh}
+  .screen.active{display:flex}
+  .screen h1{font-size:clamp(2rem,7vw,3.4rem);color:var(--ink);margin:0}
+  .subtitle{font-size:clamp(1rem,3vw,1.3rem);color:var(--muted);max-width:600px}
+  .gbtn{border:none;border-radius:14px;padding:16px 32px;font-size:clamp(1.1rem,3.5vw,1.5rem);font-weight:800;cursor:pointer;color:#fff;background:var(--red);box-shadow:0 4px 0 rgba(0,0,0,.08);transition:transform .08s;touch-action:manipulation}
+  .gbtn:active{transform:translateY(2px);box-shadow:none}
+  .gbtn.green{background:var(--green)}
+  .gbtn.yellow{background:var(--yellow);color:#3d3000}
+  .gbtn.blue{background:var(--blue)}
+  .gbtn.big{width:100%;max-width:500px;padding:22px 40px}
+  .cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;width:100%;max-width:620px}
+  .cat-btn{border:2px solid var(--line);background:#fff;border-radius:14px;padding:16px 10px;font-size:clamp(1rem,3.5vw,1.2rem);font-weight:700;color:var(--ink);cursor:pointer;transition:all .15s}
+  .cat-btn.selected{border-color:var(--red);background:#fff0f1}
+  .cat-btn .emoji{display:block;font-size:1.9rem;margin-bottom:6px}
+  #word-display{font-size:clamp(2.6rem,12vw,7rem);font-weight:900;line-height:1.1;word-break:break-word;color:var(--red);text-shadow:0 3px 20px rgba(230,57,70,.22);animation:pop .3s ease}
+  @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+  #timer{font-size:clamp(3.2rem,12vw,6rem);font-weight:900;font-variant-numeric:tabular-nums;color:var(--ink)}
+  #timer.warning{color:#e67e22}
+  #timer.danger{color:var(--red);animation:pulse .5s infinite alternate}
+  @keyframes pulse{from{transform:scale(1)}to{transform:scale(1.1)}}
+  .team-banner{font-size:clamp(1.3rem,5vw,2rem);font-weight:800;padding:8px 26px;border-radius:999px;color:#fff}
+  .team-a-bg{background:var(--red)}
+  .team-b-bg{background:var(--blue)}
+  .action-row{display:flex;gap:14px;width:100%;max-width:560px}
+  .action-row .gbtn{flex:1;padding:20px 10px}
+  .scoreboard{display:flex;gap:16px;width:100%;max-width:560px;justify-content:center}
+  .score-card{flex:1;border-radius:18px;padding:20px 12px;background:#fff;border:2px solid var(--line);color:var(--ink)}
+  .score-card.team-a-bg{background:var(--red);color:#fff;border-color:transparent}
+  .score-card.team-b-bg{background:var(--blue);color:#fff;border-color:transparent}
+  .score-card.leader{border-color:var(--yellow);border-width:3px}
+  .score-card .name{font-size:clamp(1rem,3.5vw,1.3rem);font-weight:800}
+  .score-card .pts{font-size:clamp(2.4rem,9vw,4rem);font-weight:900}
+  .hint{color:var(--muted);font-size:clamp(.9rem,2.8vw,1.05rem);max-width:500px}
+  .category-tag{background:#fff0f1;color:var(--red-dark);border-radius:999px;padding:7px 20px;font-size:clamp(.9rem,3vw,1.15rem);letter-spacing:1px;font-weight:700}
+  #round-info{font-size:clamp(1rem,3vw,1.25rem);color:var(--muted)}
+  .game-stage select{font-size:1.1rem;padding:10px 16px;border-radius:12px;border:2px solid var(--line);background:#fff;color:var(--ink);font-weight:700}
+  .trophy{font-size:clamp(3.5rem,14vw,7rem)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="gk-quiz.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+<div class="game-stage">
+
+<!-- HOME -->
+<div class="screen active" id="screen-home">
+  <h1>🎭 Charades Party</h1>
+  <p class="subtitle">4+ players, 2 teams. One player looks at the screen and acts out the word — teammates guess. No talking!</p>
+  <div>
+    <p style="margin-bottom:10px; font-weight:700; font-size:1.15rem;">Pick categories:</p>
+    <div class="cat-grid" id="cat-grid"></div>
+  </div>
+  <div>
+    <label style="font-weight:700; margin-right:10px;">⏱️ Round time:</label>
+    <select id="time-select">
+      <option value="60" selected>60 seconds</option>
+      <option value="90">90 seconds</option>
+      <option value="120">2 minutes</option>
+      <option value="45">45 seconds</option>
+    </select>
+  </div>
+  <button class="gbtn big" onclick="startGame()">▶️ Start Game</button>
+</div>
+
+<!-- HANDOFF -->
+<div class="screen" id="screen-handoff">
+  <div class="team-banner" id="handoff-team">Team Red</div>
+  <div id="round-info"></div>
+  <h1>📱 Pass the screen!</h1>
+  <p class="subtitle" id="handoff-msg">Actor: come look at the screen. Everyone else — no peeking! 🙈</p>
+  <button class="gbtn big green" onclick="showWord()">👀 I'm the actor — Show me the word</button>
+</div>
+
+<!-- WORD REVEAL -->
+<div class="screen" id="screen-word">
+  <div class="category-tag" id="word-category"></div>
+  <div id="word-display"></div>
+  <p class="hint">Memorize it! When you tap Start, the word hides and the timer begins. Act it out — no talking, no pointing at objects!</p>
+  <button class="gbtn big yellow" onclick="startActing()">🎬 Got it — Start acting!</button>
+  <button class="gbtn blue" style="font-size:1.1rem; padding:14px 28px;" onclick="newWord()">🔄 Too hard — give me another word</button>
+</div>
+
+<!-- ACTING -->
+<div class="screen" id="screen-acting">
+  <div class="team-banner" id="acting-team">Team Red</div>
+  <div id="timer">60</div>
+  <p class="hint">Team is guessing... When someone says the right word, tap ✅</p>
+  <div class="action-row">
+    <button class="gbtn green" onclick="guessedIt()">✅ They got it!<br><span style="font-size:.8em; font-weight:400;">+1 point → next word</span></button>
+    <button class="gbtn" onclick="skipWord()">⏭️ Skip<br><span style="font-size:.8em; font-weight:400;">new word</span></button>
+  </div>
+  <button class="gbtn blue" style="font-size:1rem; padding:12px 24px;" onclick="peekWord()" id="peek-btn">👁️ Peek at word</button>
+  <div id="peek-word" style="display:none; font-size:clamp(1.5rem,6vw,3rem); font-weight:900; color:var(--red);"></div>
+</div>
+
+<!-- ROUND OVER -->
+<div class="screen" id="screen-roundover">
+  <h1>⏰ Time's up!</h1>
+  <div class="scoreboard">
+    <div class="score-card team-a-bg" id="card-a"><div class="name">🔴 Team Red</div><div class="pts" id="score-a">0</div></div>
+    <div class="score-card team-b-bg" id="card-b"><div class="name">🔵 Team Blue</div><div class="pts" id="score-b">0</div></div>
+  </div>
+  <p class="subtitle" id="roundover-msg"></p>
+  <button class="gbtn big" onclick="nextRound()" id="next-round-btn">➡️ Next Team's Turn</button>
+  <button class="gbtn blue" onclick="endGame()">🏁 End Game — Final Score</button>
+</div>
+
+<!-- GAME OVER -->
+<div class="screen" id="screen-gameover">
+  <div class="trophy">🏆</div>
+  <h1 id="winner-text">Team Red Wins!</h1>
+  <div class="scoreboard">
+    <div class="score-card team-a-bg"><div class="name">🔴 Team Red</div><div class="pts" id="final-a">0</div></div>
+    <div class="score-card team-b-bg"><div class="name">🔵 Team Blue</div><div class="pts" id="final-b">0</div></div>
+  </div>
+  <button class="gbtn big green" onclick="location.reload()">🔄 Play Again</button>
+</div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+  </div>
+</footer>
+
+<script>
+const WORDS = {
+  "Animals": ["Elephant","Giraffe","Penguin","Kangaroo","Monkey","Snake","Butterfly","Crab","Rooster","Gorilla","Cat","Dog","Frog","Shark","Eagle","Turtle","Rabbit","Spider","Bee","Horse","Lion","Octopus","Bat","Flamingo","Squirrel","Tiger","Bear","Wolf","Fox","Deer","Moose","Owl","Parrot","Peacock","Swan","Duck","Chicken","Turkey","Pig","Cow","Sheep","Goat","Donkey","Camel","Zebra","Hippo","Rhino","Crocodile","Alligator","Lizard","Chameleon","Iguana","Dolphin","Whale","Seal","Walrus","Otter","Beaver","Raccoon","Skunk","Porcupine","Hedgehog","Mole","Mouse","Rat","Hamster","Guinea pig","Ferret","Sloth","Koala","Panda","Polar bear","Cheetah","Leopard","Jaguar","Hyena","Meerkat","Lemur","Chimpanzee","Orangutan","Baboon","Ostrich","Emu","Pelican","Seagull","Woodpecker","Hummingbird","Vulture","Hawk","Falcon","Crow","Pigeon","Jellyfish","Starfish","Seahorse","Lobster","Shrimp","Snail","Worm","Ant","Grasshopper","Ladybug","Dragonfly","Mosquito","Firefly","Scorpion","Goldfish","Bull","Puppy","Kitten"],
+  "Movies": ["Titanic","Spider-Man","Frozen","The Lion King","Jurassic Park","Harry Potter","Jaws","Superman","Avatar","Toy Story","Batman","Finding Nemo","King Kong","Rocky","Star Wars","Shrek","Aladdin","The Karate Kid","Ghostbusters","Home Alone","E.T.","The Matrix","Forrest Gump","Pirates of the Caribbean","Indiana Jones","Back to the Future","The Wizard of Oz","Mary Poppins","The Terminator","Godzilla","Transformers","The Avengers","Iron Man","Captain America","Thor","Black Panther","Wonder Woman","The Hulk","Moana","Coco","Up","Wall-E","Ratatouille","The Incredibles","Monsters Inc","Cars","Brave","Tangled","Beauty and the Beast","Cinderella","Snow White","Sleeping Beauty","The Little Mermaid","Peter Pan","Pinocchio","Dumbo","Bambi","The Jungle Book","101 Dalmatians","Lady and the Tramp","Mulan","Pocahontas","Hercules","Tarzan","Lilo & Stitch","Kung Fu Panda","Madagascar","Ice Age","Despicable Me","Minions","The Secret Life of Pets","Zootopia","Sing","Trolls","How to Train Your Dragon","The Lego Movie","Sonic the Hedgehog","Free Willy","Twister","The Mask","Jumanji","Night at the Museum","The Mummy","Fast and Furious","Mission Impossible","James Bond","Men in Black","The Hunger Games","Twilight","The Chronicles of Narnia","The Hobbit","The Lord of the Rings","Charlie and the Chocolate Factory","Matilda","The Grinch","Elf","The Polar Express","The Nightmare Before Christmas","Casper","Hotel Transylvania","The Addams Family","Scooby-Doo","Alvin and the Chipmunks","Paddington","Big Hero 6","Inside Out","Encanto","Turning Red","Luca","Rambo","The Godfather","Grease"],
+  "Actions": ["Swimming","Dancing","Brushing teeth","Driving a car","Fishing","Cooking","Sleeping","Taking a selfie","Playing guitar","Riding a horse","Skiing","Boxing","Yoga","Painting","Typing","Ironing clothes","Juggling","Climbing a mountain","Playing basketball","Washing dishes","Sneezing","Karate","Rowing a boat","Making pizza","Texting","Running","Jumping rope","Push-ups","Shoveling snow","Mowing the lawn","Walking a dog","Feeding a baby","Changing a diaper","Blowing up a balloon","Blowing out candles","Opening a gift","Wrapping a present","Building a sandcastle","Flying a kite","Riding a bike","Rollerblading","Ice skating","Playing chess","Playing cards","Doing a puzzle","Knitting","Hammering a nail","Sawing wood","Digging a hole","Planting flowers","Watering plants","Raking leaves","Picking apples","Milking a cow","Riding a rollercoaster","Bungee jumping","Skydiving","Scuba diving","Snorkeling","Kayaking","Hitchhiking","Camping","Making a fire","Roasting marshmallows","Taking a shower","Shaving","Combing hair","Putting on makeup","Tying shoelaces","Getting dressed","Folding laundry","Sweeping the floor","Mopping","Making the bed","Eating spaghetti","Eating corn on the cob","Peeling a banana","Cracking an egg","Flipping pancakes","Stirring soup","Cutting vegetables","Grilling burgers","Eating ice cream","Drinking coffee","Blowing your nose","Yawning","Snoring","Hiccuping","Coughing","Laughing","Crying","Whistling","Clapping","Waving goodbye","Shaking hands","High five","Tickling","Hugging","Marching","Tiptoeing","Limping","Crawling","Stretching","Meditating","Jogging","Doing a cartwheel","Doing a handstand","Hula hooping","Playing hide and seek","Playing piano","Playing violin","Conducting an orchestra","Singing opera","Beatboxing","Rapping","Ballet dancing","Breakdancing","Moonwalking","Directing traffic","Delivering mail","Walking on a tightrope"],
+  "Jobs": ["Doctor","Teacher","Chef","Police officer","Firefighter","Barber","Dentist","Pilot","Farmer","Photographer","Waiter","Mechanic","Magician","DJ","Astronaut","Lifeguard","Delivery driver","Tailor","Referee","Surgeon","Nurse","Lawyer","Judge","Accountant","Banker","Cashier","Salesperson","Real estate agent","Architect","Engineer","Programmer","Scientist","Chemist","Veterinarian","Pharmacist","Optometrist","Psychologist","Paramedic","Soldier","Sailor","Fisherman","Butcher","Baker","Florist","Gardener","Plumber","Electrician","Carpenter","Painter","Welder","Miner","Construction worker","Crane operator","Truck driver","Taxi driver","Bus driver","Train conductor","Flight attendant","Air traffic controller","Travel agent","Hotel manager","Housekeeper","Janitor","Security guard","Detective","Spy","Zookeeper","Animal trainer","Dog groomer","Actor","Singer","Dancer","Musician","Comedian","Clown","Puppeteer","Ventriloquist","News anchor","Journalist","Author","Poet","Librarian","Translator","Tour guide","Artist","Sculptor","Tattoo artist","Fashion designer","Model","Makeup artist","Hairdresser","Massage therapist","Personal trainer","Yoga instructor","Coach","Race car driver","Jockey","Boxer","Wrestler","Weatherman","Politician","Mayor","President","King","Queen","Knight","Pirate","Ninja","Cowboy","Barista","Bartender","Butler","Nanny","Principal","Professor","Bodyguard"],
+  "Objects": ["Umbrella","Toothbrush","Scissors","Vacuum cleaner","Cell phone","Laptop","Guitar","Hammer","Mirror","Balloon","Camera","Backpack","Blender","Skateboard","Fan","Ladder","Fridge","Headphones","Remote control","Microwave","Toaster","Kettle","Frying pan","Spatula","Rolling pin","Can opener","Wine glass","Coffee mug","Straw","Fork","Spoon","Chopsticks","Apron","Oven mitt","Washing machine","Iron","Sewing machine","Needle and thread","Button","Zipper","Belt","Wallet","Purse","Sunglasses","Watch","Ring","Necklace","Earrings","Hat","Scarf","Gloves","Boots","High heels","Sneakers","Pajamas","Pillow","Blanket","Alarm clock","Lamp","Candle","Flashlight","Light bulb","Fireplace","Broom","Mop","Bucket","Sponge","Soap","Shampoo","Towel","Hairbrush","Hair dryer","Razor","Toothpaste","Dental floss","Toilet paper","Plunger","Bandage","Thermometer","Stethoscope","Wheelchair","Crutches","Glasses","Binoculars","Telescope","Microscope","Magnifying glass","Compass","Map","Globe","Suitcase","Passport","Envelope","Stamp","Pencil","Eraser","Ruler","Stapler","Paper clip","Tape","Glue","Calculator","Keyboard","Computer mouse","Printer","Television","Radio","Speaker","Microphone","Drone","Robot","Piggy bank","Dice","Kite","Yo-yo","Teddy bear","Doll","Trampoline","Swing","Slide","Tent","Sleeping bag","Fishing rod","Life jacket","Anchor","Surfboard","Sled","Helmet","Bicycle","Stroller","Lawn mower","Chainsaw","Drill","Screwdriver","Wrench","Saw","Axe","Shovel","Rake","Wheelbarrow","Garden hose","Mailbox","Doorbell","Key","Lock","Rope","Magnet","Steering wheel","Traffic light","Stop sign","Fire extinguisher"],
+  "Sports": ["Soccer","Basketball","Tennis","Golf","Bowling","Hockey","Volleyball","Baseball","Cricket","Ping pong","Archery","Surfing","Weightlifting","Gymnastics","Figure skating","Wrestling","Badminton","Darts","Cycling","Swimming race","Football","Rugby","Lacrosse","Field hockey","Softball","Handball","Squash","Water polo","Diving","Synchronized swimming","Rowing","Canoeing","Sailing","Windsurfing","Kitesurfing","Skateboarding","Snowboarding","Skiing","Ski jumping","Bobsled","Luge","Curling","Speed skating","Marathon","Sprinting","Hurdles","Long jump","High jump","Pole vault","Shot put","Javelin throw","Discus throw","Triathlon","Fencing","Judo","Taekwondo","Karate","Kickboxing","Sumo wrestling","Arm wrestling","Rock climbing","Bouldering","Mountaineering","Hiking","Parkour","Trampoline","Cheerleading","Horse racing","Polo","Rodeo","Bull riding","Skeet shooting","Paintball","Laser tag","Dodgeball","Kickball","Tetherball","Tug of war","Sack race","Frisbee","Ultimate frisbee","Disc golf","Mini golf","Billiards","Snooker","Beach volleyball","Netball","Croquet","Horseshoes","Bocce ball","Shuffleboard","Skydiving","Bungee jumping","Hang gliding","Paragliding","Hot air ballooning","BMX","Motocross","Formula 1","NASCAR","Go-karting","Roller derby","Zumba","Aerobics","Pilates","CrossFit","Powerlifting","Bodybuilding","Tai chi","Boxing"],
+  "Video Games": ["Super Mario","Luigi","Zelda","Minecraft","Fortnite","Roblox","Pac-Man","Tetris","Sonic the Hedgehog","Pokémon","Pikachu","Call of Duty","Grand Theft Auto","FIFA","Madden NFL","NBA 2K","Rocket League","Among Us","Fall Guys","Candy Crush","Angry Birds","Fruit Ninja","Temple Run","Subway Surfers","Clash of Clans","Clash Royale","Brawl Stars","Donkey Kong","Kirby","Yoshi","Bowser","Princess Peach","Mario Kart","Super Smash Bros","Animal Crossing","Splatoon","Metroid","Mega Man","Street Fighter","Mortal Kombat","Tekken","Halo","Doom","Half-Life","Portal","Overwatch","Valorant","Counter-Strike","League of Legends","World of Warcraft","Skyrim","The Witcher","Dark Souls","Elden Ring","God of War","The Last of Us","Uncharted","Horizon Zero Dawn","Red Dead Redemption","Assassin's Creed","Far Cry","Watch Dogs","Cyberpunk 2077","Fallout","BioShock","Resident Evil","Silent Hill","Five Nights at Freddy's","Cuphead","Hollow Knight","Celeste","Stardew Valley","Terraria","The Sims","SimCity","RollerCoaster Tycoon","Age of Empires","Civilization","StarCraft","Diablo","Hearthstone","Pong","Space Invaders","Asteroids","Galaga","Frogger","Crash Bandicoot","Spyro the Dragon","Ratchet & Clank","Kingdom Hearts","Final Fantasy","Dragon Quest","Genshin Impact","PUBG","Apex Legends","Destiny","Borderlands","Gears of War","Wii Sports","Just Dance","Guitar Hero","Rock Band","Duck Hunt","Plants vs Zombies","Bejeweled","Solitaire","Worms","Sea of Thieves","No Man's Sky","Lego Star Wars","Minecraft Dungeons"],
+  "TV Shows": ["Friends","The Simpsons","SpongeBob SquarePants","Game of Thrones","Breaking Bad","Stranger Things","The Office","Seinfeld","Cheers","Frasier","How I Met Your Mother","The Big Bang Theory","Two and a Half Men","Modern Family","Full House","The Fresh Prince of Bel-Air","Family Matters","The Brady Bunch","I Love Lucy","Star Trek","Doctor Who","The X-Files","Lost","Grey's Anatomy","House","ER","Scrubs","The Good Doctor","CSI","NCIS","Law & Order","Criminal Minds","Dexter","Sherlock","True Detective","Narcos","Money Heist","Squid Game","The Crown","Downton Abbey","Bridgerton","The Mandalorian","The Witcher","Wednesday","The Walking Dead","Supernatural","Buffy the Vampire Slayer","Smallville","Arrow","The Flash","Gotham","Daredevil","Loki","WandaVision","The Boys","The Umbrella Academy","Black Mirror","Westworld","Better Call Saul","The Sopranos","The Wire","Mad Men","Peaky Blinders","Ted Lasso","Succession","The Bear","Brooklyn Nine-Nine","Parks and Recreation","30 Rock","Community","Arrested Development","Curb Your Enthusiasm","Schitt's Creek","The Good Place","New Girl","Gilmore Girls","Gossip Girl","One Tree Hill","Pretty Little Liars","Riverdale","Euphoria","Baywatch","MacGyver","Knight Rider","The A-Team","Miami Vice","Magnum P.I.","Columbo","Murder She Wrote","The Twilight Zone","Survivor","Big Brother","American Idol","The Voice","America's Got Talent","Dancing with the Stars","The Bachelor","Jeopardy","Wheel of Fortune","The Price is Right","Family Feud","Shark Tank","MasterChef","Hell's Kitchen","The Great British Bake Off","Top Gear","Mythbusters","Planet Earth","Saturday Night Live","Mr. Bean","The Muppet Show","Sesame Street"],
+  "Cartoon Characters": ["Mickey Mouse","Minnie Mouse","Donald Duck","Daffy Duck","Goofy","Pluto","Bugs Bunny","Elmer Fudd","Tweety Bird","Sylvester the Cat","Road Runner","Wile E. Coyote","Porky Pig","Tasmanian Devil","Tom","Jerry","Scooby-Doo","Shaggy","Popeye","Betty Boop","Woody Woodpecker","Pink Panther","Fred Flintstone","Barney Rubble","George Jetson","Yogi Bear","Homer Simpson","Bart Simpson","Marge Simpson","Lisa Simpson","Peter Griffin","Stewie Griffin","SpongeBob","Patrick Star","Squidward","Mr. Krabs","Plankton","Dora the Explorer","Peppa Pig","Bluey","Caillou","Arthur","Charlie Brown","Snoopy","Garfield","Odie","Winnie the Pooh","Tigger","Piglet","Eeyore","Pinocchio","Dumbo","Bambi","Simba","Timon","Pumbaa","Mufasa","Scar","Aladdin","Genie","Jasmine","Ariel","Sebastian","Ursula","Belle","The Beast","Cinderella","Snow White","Elsa","Anna","Olaf","Moana","Maui","Rapunzel","Mulan","Pocahontas","Hercules","Tarzan","Stitch","Buzz Lightyear","Woody","Jessie","Mr. Potato Head","Nemo","Dory","Lightning McQueen","Mater","Shrek","Donkey","Princess Fiona","Puss in Boots","Kung Fu Panda","Gru","Minion","Optimus Prime","Pikachu","Ash Ketchum","Charizard","Goku","Naruto","Sailor Moon","Hello Kitty","Doraemon","Ben 10","Johnny Bravo","Dexter","Powerpuff Girls","Courage the Cowardly Dog","Samurai Jack","Kim Possible","Phineas","Ferb","Perry the Platypus","Finn","Jake the Dog","Rick","Morty","Bender","Teenage Mutant Ninja Turtles","He-Man"],
+  "Musical Instruments": ["Piano","Guitar","Electric guitar","Bass guitar","Acoustic guitar","Violin","Viola","Cello","Double bass","Harp","Flute","Piccolo","Clarinet","Oboe","Bassoon","Saxophone","Trumpet","Trombone","French horn","Tuba","Cornet","Bugle","Harmonica","Accordion","Bagpipes","Recorder","Pan flute","Ocarina","Kazoo","Whistle","Drums","Drum kit","Snare drum","Bass drum","Bongo drums","Conga drums","Djembe","Tabla","Timpani","Xylophone","Marimba","Vibraphone","Glockenspiel","Triangle","Tambourine","Maracas","Castanets","Cowbell","Cymbals","Gong","Wind chimes","Church bells","Handbells","Steel drums","Ukulele","Banjo","Mandolin","Sitar","Lute","Lyre","Zither","Dulcimer","Balalaika","Bouzouki","Koto","Shamisen","Erhu","Didgeridoo","Kalimba","Berimbau","Cajon","Organ","Pipe organ","Keyboard","Synthesizer","Electric piano","Harpsichord","Melodica","Theremin","Turntables","Drum machine","Beatboxing","Alphorn","Shofar","Conch shell","Rain stick","Washboard","Playing spoons","Jaw harp","Musical saw","Hang drum","Claves","Guiro","Vuvuzela","Slide whistle","Train whistle","Harmonium","Bandoneon","Concertina","Fiddle","Autoharp","Lap steel guitar","Twelve-string guitar","Electric drum pad","Bell tree"],
+};
+const CAT_EMOJI = { "Animals":"🐘","Movies":"🎬","Actions":"🏃","Jobs":"👨‍🍳","Objects":"📱","Sports":"⚽","Video Games":"🎮","TV Shows":"📺","Cartoon Characters":"🐭","Musical Instruments":"🎸" };
+
+let selectedCats = new Set(Object.keys(WORDS));
+let pool = [];
+let scores = { A: 0, B: 0 };
+let currentTeam = 'A';
+let roundNum = 1;
+let roundTime = 60;
+let timeLeft = 60;
+let timerInterval = null;
+let currentWord = '';
+let currentCat = '';
+
+// Build category grid
+const grid = document.getElementById('cat-grid');
+Object.keys(WORDS).forEach(cat => {
+  const b = document.createElement('button');
+  b.className = 'cat-btn selected';
+  b.innerHTML = `<span class="emoji">${CAT_EMOJI[cat]}</span>${cat}`;
+  b.onclick = () => {
+    if (selectedCats.has(cat)) {
+      if (selectedCats.size === 1) return; // keep at least one
+      selectedCats.delete(cat);
+      b.classList.remove('selected');
+    } else {
+      selectedCats.add(cat);
+      b.classList.add('selected');
+    }
+  };
+  grid.appendChild(b);
+});
+
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function teamName(t) { return t === 'A' ? '🔴 Team Red' : '🔵 Team Blue'; }
+function teamClass(t) { return t === 'A' ? 'team-a-bg' : 'team-b-bg'; }
+
+function buildPool() {
+  pool = [];
+  selectedCats.forEach(cat => {
+    WORDS[cat].forEach(w => pool.push({ word: w, cat: cat }));
+  });
+  // shuffle
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+}
+
+function drawWord() {
+  if (pool.length === 0) buildPool();
+  const item = pool.pop();
+  currentWord = item.word;
+  currentCat = item.cat;
+}
+
+function startGame() {
+  roundTime = parseInt(document.getElementById('time-select').value);
+  buildPool();
+  scores = { A: 0, B: 0 };
+  currentTeam = 'A';
+  roundNum = 1;
+  showHandoff();
+}
+
+function showHandoff() {
+  const banner = document.getElementById('handoff-team');
+  banner.textContent = teamName(currentTeam);
+  banner.className = 'team-banner ' + teamClass(currentTeam);
+  document.getElementById('round-info').textContent = 'Round ' + roundNum;
+  show('screen-handoff');
+}
+
+function showWord() {
+  drawWord();
+  displayWord();
+  show('screen-word');
+}
+
+function newWord() {
+  drawWord();
+  displayWord();
+}
+
+function displayWord() {
+  document.getElementById('word-display').textContent = currentWord;
+  document.getElementById('word-category').textContent = CAT_EMOJI[currentCat] + ' ' + currentCat;
+}
+
+function startActing() {
+  timeLeft = roundTime;
+  const banner = document.getElementById('acting-team');
+  banner.textContent = teamName(currentTeam);
+  banner.className = 'team-banner ' + teamClass(currentTeam);
+  updateTimer();
+  document.getElementById('peek-word').style.display = 'none';
+  document.getElementById('peek-btn').style.display = '';
+  show('screen-acting');
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimer();
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      roundOver();
+    }
+  }, 1000);
+}
+
+function updateTimer() {
+  const t = document.getElementById('timer');
+  t.textContent = timeLeft;
+  t.className = timeLeft <= 10 ? 'danger' : (timeLeft <= 20 ? 'warning' : '');
+}
+
+function peekWord() {
+  const pw = document.getElementById('peek-word');
+  pw.textContent = currentWord;
+  pw.style.display = 'block';
+  document.getElementById('peek-btn').style.display = 'none';
+  setTimeout(() => {
+    pw.style.display = 'none';
+    document.getElementById('peek-btn').style.display = '';
+  }, 2500);
+}
+
+function guessedIt() {
+  scores[currentTeam]++;
+  drawWord();
+  showQuickWord();
+}
+
+function skipWord() {
+  drawWord();
+  showQuickWord();
+}
+
+// Show new word to actor mid-round (word flashes big, then they keep acting)
+function showQuickWord() {
+  const pw = document.getElementById('peek-word');
+  pw.textContent = currentWord;
+  pw.style.display = 'block';
+  document.getElementById('peek-btn').style.display = 'none';
+  setTimeout(() => {
+    pw.style.display = 'none';
+    document.getElementById('peek-btn').style.display = '';
+  }, 3000);
+}
+
+function roundOver() {
+  document.getElementById('score-a').textContent = scores.A;
+  document.getElementById('score-b').textContent = scores.B;
+  document.getElementById('card-a').classList.toggle('leader', scores.A > scores.B);
+  document.getElementById('card-b').classList.toggle('leader', scores.B > scores.A);
+  const nextTeam = currentTeam === 'A' ? 'B' : 'A';
+  document.getElementById('roundover-msg').textContent = 'Next up: ' + teamName(nextTeam);
+  show('screen-roundover');
+  // little beep-free celebration
+}
+
+function nextRound() {
+  currentTeam = currentTeam === 'A' ? 'B' : 'A';
+  if (currentTeam === 'A') roundNum++;
+  showHandoff();
+}
+
+function endGame() {
+  document.getElementById('final-a').textContent = scores.A;
+  document.getElementById('final-b').textContent = scores.B;
+  const w = document.getElementById('winner-text');
+  if (scores.A > scores.B) w.textContent = '🔴 Team Red Wins!';
+  else if (scores.B > scores.A) w.textContent = '🔵 Team Blue Wins!';
+  else w.textContent = "🤝 It's a Tie!";
+  show('screen-gameover');
+}
+</script>
+</body>
+</html>

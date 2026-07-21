@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" role="img" aria-label="Canada landscape with mountains, lake and a maple leaf">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d6ecff"/>
+      <stop offset="1" stop-color="#fdfbf7"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfeaf7"/>
+      <stop offset="1" stop-color="#a9d8ee"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1000" height="400" fill="url(#sky)"/>
+
+  <!-- sun -->
+  <circle cx="840" cy="92" r="66" fill="#ffe6a6" opacity=".55"/>
+  <circle cx="840" cy="92" r="44" fill="#ffd166"/>
+
+  <!-- back mountains -->
+  <path d="M-20 250 L150 120 L300 230 L430 130 L560 235 L720 120 L900 240 L1020 160 L1020 400 L-20 400 Z" fill="#b6c1e2"/>
+  <!-- snow caps back -->
+  <path d="M150 120 L120 158 L182 158 Z" fill="#fff"/>
+  <path d="M430 130 L402 168 L460 168 Z" fill="#fff"/>
+  <path d="M720 120 L692 160 L750 160 Z" fill="#fff"/>
+
+  <!-- front mountains -->
+  <path d="M-20 320 L120 200 L260 300 L410 190 L560 300 L740 205 L900 310 L1020 250 L1020 400 L-20 400 Z" fill="#8a9acb"/>
+  <path d="M120 200 L92 240 L150 240 Z" fill="#fff"/>
+  <path d="M410 190 L380 234 L442 234 Z" fill="#fff"/>
+  <path d="M740 205 L712 245 L770 245 Z" fill="#fff"/>
+
+  <!-- ground -->
+  <path d="M-20 330 Q250 300 500 322 T1020 320 L1020 400 L-20 400 Z" fill="#83c98a"/>
+
+  <!-- lake -->
+  <ellipse cx="500" cy="368" rx="360" ry="30" fill="url(#lake)"/>
+  <line x1="360" y1="366" x2="440" y2="366" stroke="#ffffff" stroke-width="3" opacity=".6" stroke-linecap="round"/>
+  <line x1="540" y1="374" x2="640" y2="374" stroke="#ffffff" stroke-width="3" opacity=".5" stroke-linecap="round"/>
+
+  <!-- pine trees -->
+  <g>
+    <rect x="176" y="316" width="8" height="18" fill="#7a5230"/>
+    <polygon points="180,270 158,318 202,318" fill="#3f9d5a"/>
+    <polygon points="180,286 162,322 198,322" fill="#358a4e"/>
+  </g>
+  <g>
+    <rect x="806" y="312" width="8" height="18" fill="#7a5230"/>
+    <polygon points="810,264 785,318 835,318" fill="#3f9d5a"/>
+    <polygon points="810,282 790,322 830,322" fill="#358a4e"/>
+  </g>
+  <g>
+    <rect x="712" y="322" width="6" height="14" fill="#7a5230"/>
+    <polygon points="715,288 697,326 733,326" fill="#3f9d5a"/>
+  </g>
+
+  <!-- red canoe on the lake -->
+  <path d="M455 372 q45 26 90 0 q-45 10 -90 0 Z" fill="#e63946"/>
+
+  <!-- big maple leaf (focal) -->
+  <g transform="translate(80,54) scale(1.5)">
+    <line x1="50" y1="80" x2="50" y2="96" stroke="#c1121f" stroke-width="4"/>
+    <polygon fill="#e63946" stroke="#c1121f" stroke-width="1.5" points="50,8 56,26 72,20 66,34 88,34 74,46 84,54 66,54 72,72 58,60 56,80 44,80 42,60 28,72 34,54 16,54 26,46 12,34 34,34 28,20 44,26"/>
+  </g>
+</svg>
