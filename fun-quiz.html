@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun Canada Quiz — How Canadian Are You?</title>
+<meta name="description" content="A fun, free Canada quiz for the whole family. Maple syrup, hockey, poutine, animals and more. No signup.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="citizenship.html">Citizenship Test</a>
+      <a href="fun-quiz.html">Fun Quiz</a>
+      <a href="games.html">Family Games</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section id="start-screen" class="panel center">
+    <div style="font-size:46px">🏒🍁</div>
+    <h1>Fun Canada Quiz</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto">
+      How Canadian are you? A light and fun quiz for the whole family — hockey, maple syrup,
+      poutine, animals and more. No timer, no pressure. Just fun!
+    </p>
+    <p style="margin-top:18px">
+      <button class="btn btn-lg" onclick="startQuiz()">Start the Fun Quiz</button>
+    </p>
+  </section>
+
+  <section id="quiz-screen" class="panel" style="display:none">
+    <div class="quiz-meta">
+      <span class="pill" id="q-counter">Question 1</span>
+      <span class="pill" id="score-pill">Score: 0</span>
+    </div>
+    <div class="progress"><span id="progress-bar"></span></div>
+    <h2 id="question-text"></h2>
+    <div class="options" id="options"></div>
+    <div id="explain-box" class="explain" style="display:none"></div>
+    <div class="center" style="margin-top:18px">
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Next →</button>
+    </div>
+  </section>
+
+  <section id="result-screen" class="panel center" style="display:none">
+    <div class="result-big">🍁</div>
+    <h2 id="result-title"></h2>
+    <p class="score" id="result-score"></p>
+    <p class="muted" id="result-msg"></p>
+    <div style="margin:18px 0">
+      <button class="btn btn-lg" onclick="startQuiz()">Play Again</button>
+      <a class="btn btn-ghost btn-lg" href="games.html">Family Games</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+  </div>
+</footer>
+
+<script src="js/fun-questions.js"></script>
+<script>
+let qs=[], cur=0, score=0, answered=false;
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function startQuiz(){
+  qs = shuffle(FUN_QUESTIONS).slice(0, 10);
+  cur=0; score=0; answered=false;
+  document.getElementById('start-screen').style.display='none';
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='block';
+  showQ(); window.scrollTo(0,0);
+}
+function showQ(){
+  answered=false;
+  const q=qs[cur];
+  document.getElementById('q-counter').textContent='Question '+(cur+1)+' of '+qs.length;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  document.getElementById('progress-bar').style.width=(cur/qs.length*100)+'%';
+  document.getElementById('question-text').textContent=q.q;
+  const box=document.getElementById('options'); box.innerHTML='';
+  q.options.forEach((opt,i)=>{
+    const b=document.createElement('button');
+    b.className='option'; b.textContent=opt;
+    b.onclick=()=>pick(i,b); box.appendChild(b);
+  });
+  document.getElementById('explain-box').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+function pick(i,btn){
+  if(answered) return; answered=true;
+  const q=qs[cur];
+  document.querySelectorAll('#options .option').forEach((b,idx)=>{
+    b.classList.add('disabled');
+    if(idx===q.answer) b.classList.add('correct');
+    if(idx===i && i!==q.answer) b.classList.add('wrong');
+  });
+  if(i===q.answer) score++;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  const ex=document.getElementById('explain-box');
+  ex.innerHTML='<strong>'+(i===q.answer?'✅ Yes! ':'❌ Oops! The answer is '+q.options[q.answer]+'. ')+'</strong>'+q.explain;
+  ex.style.display='block';
+  document.getElementById('progress-bar').style.width=((cur+1)/qs.length*100)+'%';
+  const nb=document.getElementById('next-btn');
+  nb.textContent=(cur+1<qs.length)?'Next →':'See my score →';
+  nb.style.display='inline-block';
+}
+function nextQuestion(){
+  cur++;
+  if(cur<qs.length){ showQ(); window.scrollTo(0,0); }
+  else finish();
+}
+function finish(){
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('result-screen').style.display='block';
+  document.getElementById('result-score').textContent='You scored '+score+' / '+qs.length;
+  let title, msg;
+  const pct=score/qs.length;
+  if(pct===1){title='True Canadian! 🍁🇨🇦';msg='Perfect score! You know your Canada.';}
+  else if(pct>=0.7){title='Great job, eh! 🏒';msg='You know a lot about Canada!';}
+  else if(pct>=0.4){title='Nice try! 🍁';msg='Play again to learn even more fun Canada facts.';}
+  else {title='Keep learning! 😊';msg='Canada has lots of fun facts — give it another go!';}
+  document.getElementById('result-title').textContent=title;
+  document.getElementById('result-msg').textContent=msg;
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>

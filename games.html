@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Games — Canada Quiz &amp; Family Fun Games</title>
+<meta name="description" content="Free family games: Tic-Tac-Toe and Canada Word Scramble. No signup, works on phone and tablet.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="citizenship.html">Citizenship Test</a>
+      <a href="fun-quiz.html">Fun Quiz</a>
+      <a href="games.html">Family Games</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding-top:30px">
+    <h1>🎲 Family Games</h1>
+    <p>Take a break and play together. More games coming soon!</p>
+  </section>
+
+  <!-- Tic Tac Toe -->
+  <section class="panel">
+    <h2 class="center">❌⭕ Tic-Tac-Toe</h2>
+    <p class="center muted" id="ttt-status">Player ❌, your turn</p>
+    <div class="board" id="ttt-board"></div>
+    <div class="center">
+      <button class="btn" onclick="resetTTT()">New Game</button>
+    </div>
+  </section>
+
+  <!-- Word Scramble -->
+  <section class="panel">
+    <h2 class="center">🔤 Canada Word Scramble</h2>
+    <p class="center muted">Unscramble the Canadian word!</p>
+    <div class="scramble-word" id="scr-word">-----</div>
+    <p class="center muted" id="scr-hint"></p>
+    <div class="center">
+      <input class="text-in" id="scr-input" placeholder="Type your answer" onkeydown="if(event.key==='Enter')checkScramble()">
+    </div>
+    <div class="center" style="margin-top:14px">
+      <button class="btn" onclick="checkScramble()">Check</button>
+      <button class="btn btn-ghost" onclick="newScramble()">New Word</button>
+    </div>
+    <p class="center" id="scr-result" style="font-weight:700;min-height:24px"></p>
+    <p class="center muted" id="scr-score">Solved: 0</p>
+  </section>
+
+  <div class="panel center">
+    <h3>More games on the way! 🎉</h3>
+    <p class="muted">Memory match, trivia, and charades are coming soon. Check back!</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+  </div>
+</footer>
+
+<script>
+/* ---------- Tic-Tac-Toe ---------- */
+let tttBoard, tttTurn, tttOver;
+function resetTTT(){
+  tttBoard = ['','','','','','','','',''];
+  tttTurn = '❌'; tttOver = false;
+  document.getElementById('ttt-status').textContent = 'Player ❌, your turn';
+  renderTTT();
+}
+function renderTTT(){
+  const b = document.getElementById('ttt-board');
+  b.innerHTML='';
+  tttBoard.forEach((v,i)=>{
+    const c=document.createElement('button');
+    c.className='cell'; c.textContent=v;
+    c.onclick=()=>tttMove(i);
+    b.appendChild(c);
+  });
+}
+function tttMove(i){
+  if(tttOver || tttBoard[i]!=='') return;
+  tttBoard[i]=tttTurn;
+  renderTTT();
+  const w=tttWinner();
+  if(w){
+    document.getElementById('ttt-status').textContent = (w==='tie')?"It's a tie! 🤝":('Player '+w+' wins! 🎉');
+    tttOver=true; return;
+  }
+  tttTurn = (tttTurn==='❌')?'⭕':'❌';
+  document.getElementById('ttt-status').textContent = 'Player '+tttTurn+', your turn';
+}
+function tttWinner(){
+  const L=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  for(const [a,b,c] of L){
+    if(tttBoard[a] && tttBoard[a]===tttBoard[b] && tttBoard[a]===tttBoard[c]) return tttBoard[a];
+  }
+  return tttBoard.every(x=>x!=='') ? 'tie' : null;
+}
+
+/* ---------- Word Scramble ---------- */
+const SCRAMBLE_WORDS = [
+  {word:"MAPLE", hint:"A famous Canadian tree and syrup"},
+  {word:"HOCKEY", hint:"Canada's national winter sport"},
+  {word:"BEAVER", hint:"A national animal on the nickel"},
+  {word:"CANADA", hint:"The name of our country"},
+  {word:"POUTINE", hint:"Fries, cheese curds, and gravy"},
+  {word:"OTTAWA", hint:"The capital city"},
+  {word:"MOOSE", hint:"A big animal with antlers"},
+  {word:"TORONTO", hint:"City with the CN Tower"},
+  {word:"WINTER", hint:"The snowy season"},
+  {word:"LOONIE", hint:"Nickname for the one-dollar coin"}
+];
+let scrCurrent, scrSolved=0;
+function scramble(w){
+  let a=w.split('');
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  const s=a.join('');
+  return (s===w) ? scramble(w) : s;
+}
+function newScramble(){
+  scrCurrent = SCRAMBLE_WORDS[Math.floor(Math.random()*SCRAMBLE_WORDS.length)];
+  document.getElementById('scr-word').textContent = scramble(scrCurrent.word);
+  document.getElementById('scr-hint').textContent = 'Hint: ' + scrCurrent.hint;
+  document.getElementById('scr-input').value='';
+  document.getElementById('scr-result').textContent='';
+  document.getElementById('scr-input').focus();
+}
+function checkScramble(){
+  const val=(document.getElementById('scr-input').value||'').trim().toUpperCase();
+  const res=document.getElementById('scr-result');
+  if(val===scrCurrent.word){
+    res.style.color='#0f9d58';
+    res.textContent='✅ Correct! It was '+scrCurrent.word;
+    scrSolved++;
+    document.getElementById('scr-score').textContent='Solved: '+scrSolved;
+    setTimeout(newScramble, 1200);
+  } else {
+    res.style.color='#d80621';
+    res.textContent='❌ Try again!';
+  }
+}
+
+/* init */
+resetTTT();
+newScramble();
+</script>
+</body>
+</html>
