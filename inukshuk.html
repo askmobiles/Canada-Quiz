@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Inukshuk Builder — Stack the Stones | Family Games</title>
+<meta name="description" content="Inukshuk Builder — a free, original Canadian stacking game. Tap to stack the stones and build the tallest Inukshuk you can. Fun for kids and adults, plays on phone and computer.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+<style>
+  .game-wrap{max-width:400px;margin:0 auto;text-align:center}
+  canvas{width:100%;height:auto;border-radius:16px;box-shadow:var(--shadow);cursor:pointer;touch-action:manipulation;background:#0b1030}
+  .stat-row{display:flex;gap:10px;justify-content:center;margin:10px 0}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🗿 Inukshuk Builder</h1>
+    <p>Stack the stones and build the tallest Inukshuk you can!</p>
+  </section>
+
+  <details class="howto"><summary></summary><p>A stone slides back and forth at the top. Tap the picture, click, or press the Space bar to drop it onto the stack. The part that lines up stays — the part hanging over is chipped away, so each stone can get smaller. It speeds up as you climb. Miss the stack completely and the game ends. How tall can you build it?</p></details>
+
+  <div class="panel">
+    <div class="game-wrap">
+      <div class="stat-row">
+        <span class="pill" id="score">Height: 0</span>
+        <span class="pill" id="best">Best: 0</span>
+      </div>
+      <canvas id="c" width="360" height="560" aria-label="Inukshuk stacking game"></canvas>
+      <p class="muted" id="msg" style="min-height:22px">Tap the picture or press Space to drop the stone</p>
+      <button class="btn btn-lg" id="dropBtn">Drop Stone</button>
+      <button class="btn btn-ghost" onclick="reset()">New Game</button>
+      <a class="btn btn-ghost" href="games.html">All Games</a>
+      <p class="muted" style="font-size:13px;margin-top:14px">An <strong>Inukshuk</strong> is a stone landmark built by the Inuit in northern Canada. People used them to point the way, mark good places to hunt or fish, and show that someone had been there.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const cv=document.getElementById('c'), ctx=cv.getContext('2d');
+const W=cv.width, H=cv.height, BH=30, GROUND=44;
+let tower, moving, speed, score, best=0, running, camY, camTarget, debris, stars, last;
+
+function initStars(){ stars=[]; for(let i=0;i<40;i++) stars.push({x:Math.random()*W, y:Math.random()*H*0.6, r:Math.random()*1.5+0.4, a:Math.random()*0.6+0.2}); }
+function reset(){
+  const baseW=170, baseX=(W-baseW)/2;
+  tower=[{x:baseX,w:baseW}];
+  speed=2.0; score=0; running=true; camY=0; camTarget=0; debris=[];
+  if(!stars) initStars();
+  document.getElementById('score').textContent='Height: 0';
+  document.getElementById('best').textContent='Best: '+best;
+  document.getElementById('msg').textContent='Tap the picture or press Space to drop the stone';
+  spawn();
+  last=performance.now();
+  requestAnimationFrame(loop);
+}
+function spawn(){
+  const top=tower[tower.length-1];
+  const fromLeft = tower.length%2===0;
+  moving={x: fromLeft?0:(W-top.w), w:top.w, dir: fromLeft?1:-1};
+}
+function drop(){
+  if(!running||!moving) return;
+  const top=tower[tower.length-1];
+  const L=Math.max(moving.x, top.x);
+  const R=Math.min(moving.x+moving.w, top.x+top.w);
+  const overlap=R-L;
+  const lvl=tower.length;
+  if(overlap<=0){
+    debris.push({x:moving.x,w:moving.w,y:levelTopY(lvl),vy:0,vx:moving.dir*1.5});
+    moving=null; running=false; gameOver(); return;
+  }
+  // overhang chips off
+  if(moving.x < top.x) debris.push({x:moving.x,w:top.x-moving.x,y:levelTopY(lvl),vy:0,vx:-1.4});
+  const ro=(moving.x+moving.w)-(top.x+top.w);
+  if(ro>0) debris.push({x:top.x+top.w,w:ro,y:levelTopY(lvl),vy:0,vx:1.4});
+  tower.push({x:L,w:overlap});
+  score++; document.getElementById('score').textContent='Height: '+score;
+  if(score>best){ best=score; document.getElementById('best').textContent='Best: '+best; }
+  speed=Math.min(6.5, speed+0.13);
+  camTarget=Math.max(0, (tower.length-6)*BH);
+  spawn();
+}
+function levelTopY(levelFromBottom){ return (H-GROUND) - (levelFromBottom+1)*BH + camY; }
+function gameOver(){
+  document.getElementById('msg').textContent='🏔️ Your Inukshuk is '+score+' stones tall! Tap New Game to try again.';
+}
+function roundRect(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+function drawStone(x,y,w,h,i,glow){
+  const shades=['#9aa0a8','#8b929b','#a6acb4','#7f868f'];
+  ctx.fillStyle = glow ? '#c7ccd2' : shades[i%shades.length];
+  roundRect(x+1,y,w-2,h-3,6); ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,.18)'; roundRect(x+3,y+2,w-6,5,3); ctx.fill();
+}
+function loop(now){
+  const dt=Math.min(40, now-last); last=now;
+  // camera ease
+  camY += (camTarget-camY)*0.12;
+  // move
+  if(running && moving){
+    moving.x += moving.dir*speed*(dt/16.7);
+    if(moving.x<=0){ moving.x=0; moving.dir=1; }
+    if(moving.x+moving.w>=W){ moving.x=W-moving.w; moving.dir=-1; }
+  }
+  // debris
+  debris.forEach(d=>{ d.vy+=0.5; d.y+=d.vy; d.x+=d.vx; });
+  debris=debris.filter(d=>d.y<H+60);
+  render();
+  requestAnimationFrame(loop);
+}
+function render(){
+  // sky gradient (aurora night)
+  const g=ctx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0,'#0b1030'); g.addColorStop(0.55,'#132b4d'); g.addColorStop(1,'#1c4a5e');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+  // aurora bands
+  ctx.save(); ctx.globalAlpha=.30;
+  ctx.fillStyle='#3ddc97'; ctx.beginPath(); ctx.moveTo(0,120); ctx.quadraticCurveTo(W*0.5,70,W,140); ctx.lineTo(W,180); ctx.quadraticCurveTo(W*0.5,120,0,175); ctx.closePath(); ctx.fill();
+  ctx.globalAlpha=.22; ctx.fillStyle='#7b6cf6'; ctx.beginPath(); ctx.moveTo(0,170); ctx.quadraticCurveTo(W*0.5,120,W,190); ctx.lineTo(W,225); ctx.quadraticCurveTo(W*0.5,175,0,220); ctx.closePath(); ctx.fill();
+  ctx.restore();
+  // stars
+  stars.forEach(s=>{ ctx.fillStyle='rgba(255,255,255,'+s.a+')'; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,7); ctx.fill(); });
+  // ground snow
+  ctx.fillStyle='#e8f3fb'; ctx.fillRect(0,H-GROUND,W,GROUND);
+  ctx.fillStyle='#d3e6f2'; ctx.fillRect(0,H-GROUND,W,6);
+  // tower
+  for(let i=0;i<tower.length;i++){ const b=tower[i]; drawStone(b.x, levelTopY(i), b.w, BH, i, false); }
+  // moving stone
+  if(moving){ drawStone(moving.x, levelTopY(tower.length), moving.w, BH, tower.length, true); }
+  // debris
+  debris.forEach(d=> drawStone(d.x, d.y, d.w, BH, 1, false));
+}
+// input
+function tap(e){ if(e && e.cancelable) e.preventDefault(); if(!running) return; drop(); }
+cv.addEventListener('click', tap);
+cv.addEventListener('touchstart', tap, {passive:false});
+document.getElementById('dropBtn').addEventListener('click', ()=>{ if(running) drop(); });
+document.addEventListener('keydown', e=>{ if(e.code==='Space'){ e.preventDefault(); if(running) drop(); } });
+reset();
+</script>
+</body>
+</html>
