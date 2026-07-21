@@ -174,3 +174,11 @@ input.text-in{font-size:18px;padding:12px 14px;border:2px solid var(--line);bord
   .btn-lg{width:100%;margin:4px 0}
   .grid{gap:14px}
 }
+
+/* How to play box */
+.howto{max-width:640px;margin:16px auto;background:#eef6ff;border:1px solid #d5e6fb;border-radius:12px;padding:2px 18px}
+.howto summary{cursor:pointer;font-weight:800;padding:12px 0;color:#2b6cb0;list-style:none}
+.howto summary::-webkit-details-marker{display:none}
+.howto summary::before{content:"\1F4D6  How to play"}
+.howto[open] summary::before{content:"\1F4D6  How to play"}
+.howto p{margin:4px 0 14px;color:#33475b;font-size:15px;line-height:1.55}
