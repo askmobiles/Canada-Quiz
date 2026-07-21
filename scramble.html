@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canada Word Scramble — Family Games</title>
+<meta name="description" content="Free Canada word scramble game. Unscramble the Canadian words! Kids and family friendly.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="citizenship.html">Citizenship Test</a>
+      <a href="fun-quiz.html">Fun Quiz</a>
+      <a href="games.html">Family Games</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔀 Canada Word Scramble</h1>
+    <p>Unscramble the Canadian word. Use the hint if you get stuck!</p>
+  </section>
+
+  <div class="panel center">
+    <div class="scramble-word" id="word">-----</div>
+    <p class="muted" id="hint"></p>
+    <input class="text-in" id="input" placeholder="Type your answer" onkeydown="if(event.key==='Enter')check()">
+    <div style="margin-top:14px">
+      <button class="btn" onclick="check()">Check</button>
+      <button class="btn btn-ghost" onclick="newWord()">New Word</button>
+    </div>
+    <p id="result" style="font-weight:800;min-height:26px"></p>
+    <p class="pill" id="score">Solved: 0</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+  </div>
+</footer>
+
+<script>
+const WORDS=[
+  {word:"MAPLE",hint:"A famous Canadian tree and syrup"},
+  {word:"HOCKEY",hint:"Canada's national winter sport"},
+  {word:"BEAVER",hint:"A national animal on the nickel"},
+  {word:"CANADA",hint:"The name of our country"},
+  {word:"POUTINE",hint:"Fries, cheese curds, and gravy"},
+  {word:"OTTAWA",hint:"The capital city"},
+  {word:"MOOSE",hint:"A big animal with antlers"},
+  {word:"TORONTO",hint:"City with the CN Tower"},
+  {word:"WINTER",hint:"The snowy season"},
+  {word:"LOONIE",hint:"Nickname for the one-dollar coin"},
+  {word:"IGLOO",hint:"A house made of snow"},
+  {word:"CARIBOU",hint:"A northern deer"}
+];
+let current, solved=0;
+function scramble(w){let a=w.split('');for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}const s=a.join('');return s===w?scramble(w):s;}
+function newWord(){
+  current=WORDS[Math.floor(Math.random()*WORDS.length)];
+  document.getElementById('word').textContent=scramble(current.word);
+  document.getElementById('hint').textContent='Hint: '+current.hint;
+  document.getElementById('input').value='';
+  document.getElementById('result').textContent='';
+  document.getElementById('input').focus();
+}
+function check(){
+  const val=(document.getElementById('input').value||'').trim().toUpperCase();
+  const res=document.getElementById('result');
+  if(val===current.word){
+    res.style.color='#2a9d8f'; res.textContent='✅ Correct! It was '+current.word;
+    solved++; document.getElementById('score').textContent='Solved: '+solved;
+    setTimeout(newWord,1100);
+  } else { res.style.color='#e63946'; res.textContent='❌ Try again!'; }
+}
+newWord();
+</script>
+</body>
+</html>

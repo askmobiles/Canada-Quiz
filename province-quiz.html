@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which Province Are You? — Fun Canada Quiz</title>
+<meta name="description" content="Fun, shareable personality quiz: which Canadian province or territory matches you? Free, no signup.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="citizenship.html">Citizenship Test</a>
+      <a href="fun-quiz.html">Fun Quiz</a>
+      <a href="games.html">Family Games</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="start" class="panel center">
+    <div style="font-size:46px">🗺️</div>
+    <h1>Which Province Are You?</h1>
+    <p class="muted" style="max-width:560px;margin:0 auto">Answer 6 fun questions and find out which Canadian province or territory matches your personality. Great to share with friends and family!</p>
+    <p style="margin-top:18px"><button class="btn btn-lg" onclick="startQuiz()">Start Quiz</button></p>
+  </section>
+
+  <section id="quiz" class="panel" style="display:none">
+    <div class="center"><span class="pill" id="counter">Question 1 of 6</span></div>
+    <div class="progress"><span id="bar"></span></div>
+    <h2 id="qtext"></h2>
+    <div class="options" id="opts"></div>
+  </section>
+
+  <section id="result" class="panel center" style="display:none">
+    <div class="result-big" id="r-emoji">🍁</div>
+    <p class="muted">You are most like…</p>
+    <h1 id="r-name" style="color:var(--red)"></h1>
+    <p id="r-desc" style="max-width:520px;margin:0 auto 16px"></p>
+    <div>
+      <button class="btn btn-lg" onclick="startQuiz()">Try Again</button>
+      <a class="btn btn-ghost btn-lg" href="fun-quiz.html">Fun Quiz</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+// Each option adds points to provinces. Highest total wins.
+const P = {
+  ON:{name:"Ontario",emoji:"🏙️",desc:"Busy, friendly, and always on the go — you love city life, big lakes, and a bit of everything."},
+  QC:{name:"Quebec",emoji:"🥐",desc:"Full of culture, great food, and joie de vivre — you have style and love to celebrate life."},
+  BC:{name:"British Columbia",emoji:"🏔️",desc:"Calm, outdoorsy, and nature-loving — mountains, ocean, and fresh air are your happy place."},
+  AB:{name:"Alberta",emoji:"🤠",desc:"Adventurous and hard-working — you love wide open spaces, the Rockies, and a good rodeo."},
+  NS:{name:"Nova Scotia",emoji:"⚓",desc:"Warm, easygoing, and down-to-earth — you love the ocean, seafood, and a friendly chat."},
+  MB:{name:"Manitoba",emoji:"🌾",desc:"Genuine, tough, and kind — big prairie skies and close community are what you value."},
+  NU:{name:"Nunavut",emoji:"❄️",desc:"Strong, peaceful, and unique — you love quiet, wide open beauty and doing things your own way."}
+};
+const Q=[
+  {q:"Pick your perfect weekend:",a:[
+    {t:"Exploring a big city 🏙️",s:{ON:2,QC:1}},
+    {t:"Hiking in the mountains 🏔️",s:{BC:2,AB:1}},
+    {t:"Relaxing by the ocean 🌊",s:{NS:2,BC:1}},
+    {t:"A quiet day in nature ❄️",s:{NU:2,MB:1}}
+  ]},
+  {q:"Your ideal meal is:",a:[
+    {t:"Poutine and pastries 🥐",s:{QC:2}},
+    {t:"Fresh seafood 🦞",s:{NS:2}},
+    {t:"A big BBQ steak 🥩",s:{AB:2}},
+    {t:"Comfort food at home 🍲",s:{MB:1,ON:1}}
+  ]},
+  {q:"How do you like your weather?",a:[
+    {t:"Four full seasons 🍂",s:{ON:2,QC:1}},
+    {t:"Mild and green all year 🌲",s:{BC:2}},
+    {t:"Sunny with big skies ☀️",s:{AB:1,MB:2}},
+    {t:"Cold and snowy is fine ❄️",s:{NU:2}}
+  ]},
+  {q:"Pick a fun activity:",a:[
+    {t:"A festival or concert 🎉",s:{QC:2,ON:1}},
+    {t:"Skiing or snowboarding ⛷️",s:{BC:1,AB:2}},
+    {t:"Fishing or sailing 🎣",s:{NS:2,MB:1}},
+    {t:"Watching the northern lights 🌌",s:{NU:2}}
+  ]},
+  {q:"Your friends would say you are:",a:[
+    {t:"Outgoing and busy",s:{ON:2}},
+    {t:"Stylish and fun",s:{QC:2}},
+    {t:"Calm and kind",s:{BC:1,NS:1,MB:1}},
+    {t:"Tough and independent",s:{AB:1,NU:2}}
+  ]},
+  {q:"Choose a dream home:",a:[
+    {t:"A downtown condo 🏙️",s:{ON:2,QC:1}},
+    {t:"A cabin in the woods 🌲",s:{BC:2,AB:1}},
+    {t:"A house by the sea ⚓",s:{NS:2}},
+    {t:"A farm on the prairie 🌾",s:{MB:2,NU:1}}
+  ]}
+];
+let idx=0, scores={};
+function startQuiz(){
+  idx=0; scores={}; Object.keys(P).forEach(k=>scores[k]=0);
+  document.getElementById('start').style.display='none';
+  document.getElementById('result').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  showQ(); window.scrollTo(0,0);
+}
+function showQ(){
+  const q=Q[idx];
+  document.getElementById('counter').textContent='Question '+(idx+1)+' of '+Q.length;
+  document.getElementById('bar').style.width=(idx/Q.length*100)+'%';
+  document.getElementById('qtext').textContent=q.q;
+  const box=document.getElementById('opts'); box.innerHTML='';
+  q.a.forEach(opt=>{
+    const b=document.createElement('button');
+    b.className='option'; b.textContent=opt.t;
+    b.onclick=()=>{ for(const k in opt.s) scores[k]+=opt.s[k]; next(); };
+    box.appendChild(b);
+  });
+}
+function next(){
+  idx++;
+  if(idx<Q.length){ showQ(); window.scrollTo(0,0); }
+  else showResult();
+}
+function showResult(){
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('result').style.display='block';
+  let bestKey=Object.keys(scores)[0];
+  for(const k in scores) if(scores[k]>scores[bestKey]) bestKey=k;
+  const p=P[bestKey];
+  document.getElementById('r-emoji').textContent=p.emoji;
+  document.getElementById('r-name').textContent=p.name;
+  document.getElementById('r-desc').textContent=p.desc;
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>

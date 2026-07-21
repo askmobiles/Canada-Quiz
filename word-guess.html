@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canada Word Guess — Family Games</title>
+<meta name="description" content="Free Canada word guessing game (like hangman) for kids and families. Guess the letters before you run out of tries!">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+<style>
+  .word-display{font-size:clamp(28px,9vw,52px);font-weight:900;letter-spacing:8px;text-align:center;color:var(--red);min-height:60px;margin:10px 0}
+  .lives{font-size:26px;text-align:center;margin:6px 0}
+  .keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(38px,1fr));gap:6px;max-width:520px;margin:16px auto}
+  .key{padding:12px 0;font-size:17px;font-weight:700;border:2px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;text-transform:uppercase}
+  .key:hover{border-color:var(--red)}
+  .key:disabled{opacity:.4;cursor:default}
+  .key.good{background:#eafaf0;border-color:var(--green);color:var(--green-dark)}
+  .key.bad{background:#fdecee;border-color:var(--red);color:var(--red-dark)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="citizenship.html">Citizenship Test</a>
+      <a href="fun-quiz.html">Fun Quiz</a>
+      <a href="games.html">Family Games</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔤 Canada Word Guess</h1>
+    <p>Guess the Canadian word one letter at a time. You have 6 tries!</p>
+  </section>
+
+  <div class="panel">
+    <div class="center"><span class="pill" id="hint">Hint:</span> <span class="pill" id="score">Wins: 0</span></div>
+    <div class="lives" id="lives">🍁🍁🍁🍁🍁🍁</div>
+    <div class="word-display" id="word">_ _ _ _</div>
+    <p class="center" id="msg" style="font-weight:700;min-height:26px"></p>
+    <div class="keys" id="keys"></div>
+    <div class="center" style="margin-top:10px">
+      <button class="btn" onclick="newWord()">New Word</button>
+      <a class="btn btn-ghost" href="games.html">All Games</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+const WORDS=[
+  {w:"CANADA",h:"Our country"},
+  {w:"MAPLE",h:"Famous tree and syrup"},
+  {w:"HOCKEY",h:"National winter sport"},
+  {w:"BEAVER",h:"Animal on the nickel"},
+  {w:"MOOSE",h:"Big animal with antlers"},
+  {w:"OTTAWA",h:"The capital city"},
+  {w:"TORONTO",h:"City with the CN Tower"},
+  {w:"POUTINE",h:"Fries, cheese curds, gravy"},
+  {w:"WINTER",h:"The snowy season"},
+  {w:"MOUNTIE",h:"A Canadian police officer"},
+  {w:"IGLOO",h:"A house made of snow"},
+  {w:"NIAGARA",h:"Famous waterfalls"},
+  {w:"PENGUIN",h:"A bird that cannot fly"},
+  {w:"SNOWMAN",h:"You build it in winter"},
+  {w:"TOQUE",h:"A warm winter hat"},
+  {w:"LOONIE",h:"The one-dollar coin"},
+  {w:"CARIBOU",h:"A northern deer"},
+  {w:"QUEBEC",h:"A French-speaking province"}
+];
+const ALPHA="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+let target, guessed, lives, wins=0, over=false;
+
+function newWord(){
+  const pick=WORDS[Math.floor(Math.random()*WORDS.length)];
+  target=pick.w; guessed=new Set(); lives=6; over=false;
+  document.getElementById('hint').textContent='Hint: '+pick.h;
+  document.getElementById('msg').textContent='';
+  render(); buildKeys();
+}
+function render(){
+  document.getElementById('word').textContent =
+    target.split('').map(ch=>guessed.has(ch)?ch:'_').join(' ');
+  document.getElementById('lives').textContent = '🍁'.repeat(lives)+'💔'.repeat(6-lives);
+  document.getElementById('score').textContent='Wins: '+wins;
+}
+function buildKeys(){
+  const box=document.getElementById('keys'); box.innerHTML='';
+  ALPHA.forEach(ch=>{
+    const b=document.createElement('button');
+    b.className='key'; b.textContent=ch; b.onclick=()=>guess(ch,b);
+    box.appendChild(b);
+  });
+}
+function guess(ch,btn){
+  if(over || guessed.has(ch)) return;
+  btn.disabled=true;
+  if(target.includes(ch)){
+    guessed.add(ch); btn.classList.add('good'); render();
+    if(target.split('').every(c=>guessed.has(c))){
+      wins++; over=true;
+      document.getElementById('msg').style.color='#0f9d58';
+      document.getElementById('msg').textContent='🎉 You got it! The word was '+target;
+      render();
+    }
+  } else {
+    lives--; btn.classList.add('bad'); render();
+    if(lives<=0){
+      over=true;
+      document.getElementById('msg').style.color='#d80621';
+      document.getElementById('msg').textContent='😅 Out of tries! The word was '+target;
+      document.getElementById('word').textContent=target.split('').join(' ');
+    }
+  }
+}
+document.addEventListener('keydown',e=>{
+  const ch=e.key.toUpperCase();
+  if(ALPHA.includes(ch)){
+    const btns=[...document.querySelectorAll('.key')];
+    const b=btns.find(x=>x.textContent===ch && !x.disabled);
+    if(b) guess(ch,b);
+  }
+});
+newWord();
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tic-Tac-Toe — Family Games</title>
+<meta name="description" content="Free Tic-Tac-Toe game for two players or vs the computer. Kids and family friendly.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="citizenship.html">Citizenship Test</a>
+      <a href="fun-quiz.html">Fun Quiz</a>
+      <a href="games.html">Family Games</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>❌⭕ Tic-Tac-Toe</h1>
+    <p>Play with a friend, or beat the computer. Pick a level!</p>
+  </section>
+
+  <div class="panel center">
+    <div style="margin-bottom:8px">
+      <label class="muted">Mode:
+        <select id="mode" class="text-in" style="width:auto;padding:9px 10px" onchange="resetTTT()">
+          <option value="2p">2 Players</option>
+          <option value="easy">vs Computer — Easy</option>
+          <option value="hard" selected>vs Computer — Hard</option>
+        </select>
+      </label>
+    </div>
+    <p id="status" style="font-weight:800;font-size:18px">Player ❌, your turn</p>
+    <div class="board" id="board"></div>
+    <div style="margin-top:14px">
+      <button class="btn" onclick="resetTTT()">New Game</button>
+      <a class="btn btn-ghost" href="games.html">All Games</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+  </div>
+</footer>
+
+<script>
+let board, turn, over, mode;
+function resetTTT(){
+  mode=document.getElementById('mode').value;
+  board=['','','','','','','','',''];
+  turn='❌'; over=false;
+  document.getElementById('status').textContent='Player ❌, your turn';
+  render();
+}
+function render(){
+  const b=document.getElementById('board'); b.innerHTML='';
+  board.forEach((v,i)=>{
+    const c=document.createElement('button');
+    c.className='cell'; c.textContent=v;
+    c.onclick=()=>move(i);
+    b.appendChild(c);
+  });
+}
+function move(i){
+  if(over||board[i]!=='') return;
+  if(mode!=='2p' && turn==='⭕') return; // wait for computer
+  board[i]=turn; render();
+  if(check()) return;
+  turn=(turn==='❌')?'⭕':'❌';
+  document.getElementById('status').textContent='Player '+turn+', your turn';
+  if(mode!=='2p' && turn==='⭕' && !over){ setTimeout(cpuMove,420); }
+}
+function cpuMove(){
+  let i;
+  if(mode==='hard') i=bestMove(); else i=randomMove();
+  if(i==null) return;
+  board[i]='⭕'; render();
+  if(check()) return;
+  turn='❌';
+  document.getElementById('status').textContent='Player ❌, your turn';
+}
+function randomMove(){
+  const free=board.map((v,i)=>v===''?i:null).filter(x=>x!==null);
+  return free.length?free[Math.floor(Math.random()*free.length)]:null;
+}
+function bestMove(){
+  // minimax for ⭕
+  let best=-Infinity, mv=null;
+  board.forEach((v,i)=>{
+    if(v===''){ board[i]='⭕'; const s=minimax(false); board[i]=''; if(s>best){best=s;mv=i;} }
+  });
+  return mv;
+}
+function minimax(isCpu){
+  const w=winner();
+  if(w==='⭕') return 10; if(w==='❌') return -10; if(w==='tie') return 0;
+  if(isCpu){ let best=-Infinity; board.forEach((v,i)=>{ if(v===''){board[i]='⭕';best=Math.max(best,minimax(false));board[i]='';} }); return best; }
+  else { let best=Infinity; board.forEach((v,i)=>{ if(v===''){board[i]='❌';best=Math.min(best,minimax(true));board[i]='';} }); return best; }
+}
+function winner(){
+  const L=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  for(const [a,b,c] of L){ if(board[a]&&board[a]===board[b]&&board[a]===board[c]) return board[a]; }
+  return board.every(x=>x!=='')?'tie':null;
+}
+function check(){
+  const w=winner();
+  if(w){
+    over=true;
+    document.getElementById('status').textContent=(w==='tie')?"It's a tie! 🤝":('Player '+w+' wins! 🎉');
+    return true;
+  }
+  return false;
+}
+resetTTT();
+</script>
+</body>
+</html>
