@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Family Games — Canada Quiz &amp; Family Fun Games</title>
-<meta name="description" content="Free family games: Tic-Tac-Toe and Canada Word Scramble. No signup, works on phone and tablet.">
+<meta name="description" content="Free family games for kids and adults: memory match, word guess, snake, tic-tac-toe, word scramble, province quiz and more. No signup.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
 </head>
 <body>
-
 <header class="site-header">
   <div class="container">
     <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
@@ -23,135 +23,84 @@
 </header>
 
 <main class="container">
-  <section class="hero" style="padding-top:30px">
+  <section class="hero">
     <h1>🎲 Family Games</h1>
-    <p>Take a break and play together. More games coming soon!</p>
+    <p>Fun for everyone — from little kids to grown-ups. Free, no signup, works on phone and tablet.</p>
   </section>
 
-  <!-- Tic Tac Toe -->
-  <section class="panel">
-    <h2 class="center">❌⭕ Tic-Tac-Toe</h2>
-    <p class="center muted" id="ttt-status">Player ❌, your turn</p>
-    <div class="board" id="ttt-board"></div>
-    <div class="center">
-      <button class="btn" onclick="resetTTT()">New Game</button>
-    </div>
-  </section>
+  <!-- Ad slot (paste your Google AdSense code inside this box) -->
+  <div class="ad-slot"><span class="ad-label">Advertisement</span></div>
 
-  <!-- Word Scramble -->
-  <section class="panel">
-    <h2 class="center">🔤 Canada Word Scramble</h2>
-    <p class="center muted">Unscramble the Canadian word!</p>
-    <div class="scramble-word" id="scr-word">-----</div>
-    <p class="center muted" id="scr-hint"></p>
-    <div class="center">
-      <input class="text-in" id="scr-input" placeholder="Type your answer" onkeydown="if(event.key==='Enter')checkScramble()">
+  <h2 style="margin-bottom:2px">👶 For Kids &amp; Beginners</h2>
+  <div class="grid">
+    <div class="card c-blue">
+      <div class="emoji">🧠</div>
+      <h3>Memory Match</h3>
+      <p>Flip the cards and find the pairs. Easy, medium, and hard levels. Great for young kids.</p>
+      <a class="btn btn-blue" href="memory.html">Play</a>
     </div>
-    <div class="center" style="margin-top:14px">
-      <button class="btn" onclick="checkScramble()">Check</button>
-      <button class="btn btn-ghost" onclick="newScramble()">New Word</button>
+    <div class="card c-green">
+      <div class="emoji">🔀</div>
+      <h3>Word Scramble</h3>
+      <p>Unscramble fun Canadian words, with hints to help. Good for early readers.</p>
+      <a class="btn btn-green" href="scramble.html">Play</a>
     </div>
-    <p class="center" id="scr-result" style="font-weight:700;min-height:24px"></p>
-    <p class="center muted" id="scr-score">Solved: 0</p>
-  </section>
+    <div class="card c-red">
+      <div class="emoji">❌⭕</div>
+      <h3>Tic-Tac-Toe</h3>
+      <p>Classic two-player game, or play against the computer (easy or hard).</p>
+      <a class="btn" href="tictactoe.html">Play</a>
+    </div>
+  </div>
 
-  <div class="panel center">
-    <h3>More games on the way! 🎉</h3>
-    <p class="muted">Memory match, trivia, and charades are coming soon. Check back!</p>
+  <h2 style="margin-bottom:2px">🧑 For Older Kids &amp; Adults</h2>
+  <div class="grid">
+    <div class="card c-purple">
+      <div class="emoji">🔤</div>
+      <h3>Canada Word Guess</h3>
+      <p>Guess the Canadian word letter by letter before you run out of tries. Like hangman!</p>
+      <a class="btn" style="background:var(--purple)" href="word-guess.html">Play</a>
+    </div>
+    <div class="card c-orange">
+      <div class="emoji">🐍</div>
+      <h3>Maple Snake</h3>
+      <p>Eat the maple leaves and grow — it gets faster! Arrow keys or swipe on your phone.</p>
+      <a class="btn" style="background:var(--orange)" href="snake.html">Play</a>
+    </div>
+    <div class="card c-yellow">
+      <div class="emoji">🗺️</div>
+      <h3>Which Province Are You?</h3>
+      <p>A fun personality quiz — find out which province matches you. Fun to share!</p>
+      <a class="btn" style="background:var(--yellow);color:#3d3000" href="province-quiz.html">Play</a>
+    </div>
+  </div>
+
+  <!-- Ad slot -->
+  <div class="ad-slot"><span class="ad-label">Advertisement</span></div>
+
+  <h2 style="margin-bottom:2px">🎉 Family Party (coming soon)</h2>
+  <div class="grid">
+    <div class="card" style="border-top-color:#bdb3d6;opacity:.85">
+      <div class="emoji">🎭</div>
+      <h3>Charades Party</h3>
+      <p>Act it out, no talking! Team game for the whole family. Coming soon to the site.</p>
+      <span class="btn btn-ghost" style="opacity:.7;cursor:default">Coming soon</span>
+    </div>
+    <div class="card" style="border-top-color:#bdb3d6;opacity:.85">
+      <div class="emoji">🏆</div>
+      <h3>Family Trivia Party</h3>
+      <p>Team trivia night at home — kids vs grown-ups! Coming soon.</p>
+      <span class="btn btn-ghost" style="opacity:.7;cursor:default">Coming soon</span>
+    </div>
   </div>
 </main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="container center">
     <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
   </div>
 </footer>
-
-<script>
-/* ---------- Tic-Tac-Toe ---------- */
-let tttBoard, tttTurn, tttOver;
-function resetTTT(){
-  tttBoard = ['','','','','','','','',''];
-  tttTurn = '❌'; tttOver = false;
-  document.getElementById('ttt-status').textContent = 'Player ❌, your turn';
-  renderTTT();
-}
-function renderTTT(){
-  const b = document.getElementById('ttt-board');
-  b.innerHTML='';
-  tttBoard.forEach((v,i)=>{
-    const c=document.createElement('button');
-    c.className='cell'; c.textContent=v;
-    c.onclick=()=>tttMove(i);
-    b.appendChild(c);
-  });
-}
-function tttMove(i){
-  if(tttOver || tttBoard[i]!=='') return;
-  tttBoard[i]=tttTurn;
-  renderTTT();
-  const w=tttWinner();
-  if(w){
-    document.getElementById('ttt-status').textContent = (w==='tie')?"It's a tie! 🤝":('Player '+w+' wins! 🎉');
-    tttOver=true; return;
-  }
-  tttTurn = (tttTurn==='❌')?'⭕':'❌';
-  document.getElementById('ttt-status').textContent = 'Player '+tttTurn+', your turn';
-}
-function tttWinner(){
-  const L=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-  for(const [a,b,c] of L){
-    if(tttBoard[a] && tttBoard[a]===tttBoard[b] && tttBoard[a]===tttBoard[c]) return tttBoard[a];
-  }
-  return tttBoard.every(x=>x!=='') ? 'tie' : null;
-}
-
-/* ---------- Word Scramble ---------- */
-const SCRAMBLE_WORDS = [
-  {word:"MAPLE", hint:"A famous Canadian tree and syrup"},
-  {word:"HOCKEY", hint:"Canada's national winter sport"},
-  {word:"BEAVER", hint:"A national animal on the nickel"},
-  {word:"CANADA", hint:"The name of our country"},
-  {word:"POUTINE", hint:"Fries, cheese curds, and gravy"},
-  {word:"OTTAWA", hint:"The capital city"},
-  {word:"MOOSE", hint:"A big animal with antlers"},
-  {word:"TORONTO", hint:"City with the CN Tower"},
-  {word:"WINTER", hint:"The snowy season"},
-  {word:"LOONIE", hint:"Nickname for the one-dollar coin"}
-];
-let scrCurrent, scrSolved=0;
-function scramble(w){
-  let a=w.split('');
-  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
-  const s=a.join('');
-  return (s===w) ? scramble(w) : s;
-}
-function newScramble(){
-  scrCurrent = SCRAMBLE_WORDS[Math.floor(Math.random()*SCRAMBLE_WORDS.length)];
-  document.getElementById('scr-word').textContent = scramble(scrCurrent.word);
-  document.getElementById('scr-hint').textContent = 'Hint: ' + scrCurrent.hint;
-  document.getElementById('scr-input').value='';
-  document.getElementById('scr-result').textContent='';
-  document.getElementById('scr-input').focus();
-}
-function checkScramble(){
-  const val=(document.getElementById('scr-input').value||'').trim().toUpperCase();
-  const res=document.getElementById('scr-result');
-  if(val===scrCurrent.word){
-    res.style.color='#0f9d58';
-    res.textContent='✅ Correct! It was '+scrCurrent.word;
-    scrSolved++;
-    document.getElementById('scr-score').textContent='Solved: '+scrSolved;
-    setTimeout(newScramble, 1200);
-  } else {
-    res.style.color='#d80621';
-    res.textContent='❌ Try again!';
-  }
-}
-
-/* init */
-resetTTT();
-newScramble();
-</script>
 </body>
 </html>
