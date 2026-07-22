@@ -80,9 +80,19 @@
 let qs=[], cur=0, score=0, answered=false;
 
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pickFresh(bank, count, key){
+  let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
+  if(!Array.isArray(seen)) seen=[];
+  let unseen=bank.map((_,i)=>i).filter(i=>seen.indexOf(i)===-1);
+  if(unseen.length<count){ seen=[]; unseen=bank.map((_,i)=>i); }
+  for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
+  const chosen=unseen.slice(0,count);
+  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
+  return chosen.map(i=>bank[i]);
+}
 
 function startQuiz(){
-  qs = shuffle(FUN_QUESTIONS).slice(0, 10);
+  qs = pickFresh(FUN_QUESTIONS, Math.min(8, FUN_QUESTIONS.length), 'fun_seen');
   cur=0; score=0; answered=false;
   document.getElementById('start-screen').style.display='none';
   document.getElementById('result-screen').style.display='none';
