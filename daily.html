@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Challenge — New Quiz &amp; Word Every Day | Canada Quiz</title>
+<meta name="description" content="A brand new Daily Quiz and Daily Word every day — same for everyone. Build your daily streak! Free, no signup. Come back each day.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+<style>
+  .dl-streak{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:10px 0}
+  .dl-streak .box{background:#fff7e0;border:2px solid #ffe08a;border-radius:14px;padding:10px 20px;text-align:center;font-weight:800}
+  .dl-streak .box b{display:block;font-size:30px;color:#e6a400}
+  .dl-streak .box span{font-size:12px;color:#9a7a00;text-transform:uppercase}
+  .dl-card{background:#f4f6fa;border-radius:14px;padding:16px;margin:12px 0}
+  .dl-opts button{display:block;width:100%;text-align:left;margin:6px 0;padding:12px 14px;border:2px solid var(--line);background:#fff;border-radius:10px;font-weight:700;cursor:pointer;font-size:15px;color:var(--ink)}
+  .dl-opts button.correct{background:#e7f7f2;border-color:#2a9d8f;color:#1f7a6f}
+  .dl-opts button.wrong{background:#fde2e4;border-color:#e63946;color:#c1121f}
+  .dl-opts button.disabled{pointer-events:none;opacity:.85}
+  .dl-scr{font-size:30px;font-weight:900;letter-spacing:8px;text-align:center;margin:10px 0;text-transform:uppercase;color:var(--ink)}
+  .dl-in{width:100%;max-width:260px;font-size:18px;padding:10px;border:2px solid var(--line);border-radius:10px;text-align:center;text-transform:uppercase}
+  .dl-done{color:#2a9d8f;font-weight:800}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a><a href="daily.html">Daily</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>📅 Daily Challenge</h1>
+    <p id="dateline">A new quiz and word every day — same for everyone. Build your streak!</p>
+  </section>
+
+  <div class="dl-streak">
+    <div class="box"><b id="streakNum">0</b><span>🔥 Day streak</span></div>
+    <div class="box"><b id="bestNum">0</b><span>🏆 Best streak</span></div>
+    <div class="box"><b id="playedNum">0</b><span>✅ Days played</span></div>
+  </div>
+
+  <div class="ad-slot"><span class="ad-label">Advertisement</span></div>
+
+  <div class="panel">
+    <h2>🧠 Daily Quiz <span id="quizDone" class="dl-done" style="display:none">✓ done</span></h2>
+    <p class="muted">Five questions. Everyone gets the same ones today. Answering all five keeps your streak alive!</p>
+    <div id="quizArea"></div>
+  </div>
+
+  <div class="panel">
+    <h2>🔤 Daily Word <span id="wordDone" class="dl-done" style="display:none">✓ done</span></h2>
+    <p class="muted">Unscramble today's word. Here's a hint: <b id="wordHint">…</b></p>
+    <div class="dl-card">
+      <div class="dl-scr" id="scrambled">…</div>
+      <div class="center">
+        <input class="dl-in" id="wordIn" placeholder="your answer" autocomplete="off" autocapitalize="characters" spellcheck="false">
+        <div style="margin-top:10px">
+          <button class="btn" onclick="checkWord()">Check</button>
+          <button class="btn btn-ghost" onclick="revealWord()">Give up</button>
+        </div>
+        <p id="wordMsg" style="font-weight:800;min-height:22px;margin-top:8px"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel center">
+    <h2>🎯 More daily fun</h2>
+    <p class="muted">Keep the streak going with a fresh puzzle:</p>
+    <div style="margin-top:10px">
+      <a class="btn btn-blue" href="sudoku.html">🔢 Sudoku</a>
+      <a class="btn btn-green" href="word-master.html">🟩 Word Master</a>
+      <a class="btn btn-purple" href="connections.html">🔗 Word Groups</a>
+      <a class="btn btn-orange" href="spelling-bee.html">🐝 Spelling Bee</a>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+// ---- date-seeded RNG so everyone gets the same daily content ----
+function todayKey(){ const d=new Date(); return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate(); }
+function todayStr(){ const d=new Date(); return d.toISOString().slice(0,10); }
+function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+
+const TRIVIA=[
+  {q:"What is the capital city of Canada?",o:["Toronto","Ottawa","Vancouver","Montreal"],a:1},
+  {q:"Which planet is known as the Red Planet?",o:["Venus","Jupiter","Mars","Saturn"],a:2},
+  {q:"How many continents are there on Earth?",o:["5","6","7","8"],a:2},
+  {q:"What is the largest ocean on Earth?",o:["Atlantic","Indian","Arctic","Pacific"],a:3},
+  {q:"Which animal is the largest land animal?",o:["Elephant","Giraffe","Rhino","Hippo"],a:0},
+  {q:"How many sides does a hexagon have?",o:["5","6","7","8"],a:1},
+  {q:"What gas do plants breathe in that we breathe out?",o:["Oxygen","Nitrogen","Carbon dioxide","Helium"],a:2},
+  {q:"Which country has the maple leaf on its flag?",o:["USA","Canada","Brazil","Japan"],a:1},
+  {q:"What is the tallest animal in the world?",o:["Elephant","Giraffe","Camel","Horse"],a:1},
+  {q:"How many minutes are in one hour?",o:["30","45","60","90"],a:2},
+  {q:"What do bees make?",o:["Milk","Honey","Silk","Butter"],a:1},
+  {q:"Which is the largest planet in our solar system?",o:["Earth","Mars","Jupiter","Neptune"],a:2},
+  {q:"What is frozen water called?",o:["Steam","Ice","Snowflake only","Fog"],a:1},
+  {q:"How many colours are in a rainbow?",o:["5","6","7","9"],a:2},
+  {q:"What is the fastest land animal?",o:["Lion","Cheetah","Horse","Greyhound"],a:1},
+  {q:"Which ocean is the smallest?",o:["Arctic","Indian","Atlantic","Pacific"],a:0},
+  {q:"What is 9 times 8?",o:["63","72","81","64"],a:1},
+  {q:"Which metal is a magnet attracted to?",o:["Gold","Silver","Iron","Copper"],a:2},
+  {q:"What is the largest country in the world by area?",o:["Canada","China","USA","Russia"],a:3},
+  {q:"How many legs does a spider have?",o:["6","8","10","12"],a:1},
+  {q:"What is the main language spoken in Quebec?",o:["English","French","Spanish","German"],a:1},
+  {q:"Which shape has three sides?",o:["Square","Triangle","Circle","Pentagon"],a:1},
+  {q:"What do you call a baby dog?",o:["Kitten","Cub","Puppy","Foal"],a:2},
+  {q:"Which is the closest planet to the Sun?",o:["Venus","Earth","Mercury","Mars"],a:2},
+  {q:"How many days are in a week?",o:["5","6","7","8"],a:2},
+  {q:"What is the hardest natural material?",o:["Gold","Iron","Diamond","Granite"],a:2},
+  {q:"Which bird cannot fly?",o:["Eagle","Penguin","Sparrow","Owl"],a:1},
+  {q:"What is 100 divided by 4?",o:["20","25","30","40"],a:1},
+  {q:"Which Canadian coin is worth one dollar?",o:["Penny","Nickel","Loonie","Dime"],a:2},
+  {q:"What organ pumps blood around your body?",o:["Brain","Lungs","Heart","Liver"],a:2},
+  {q:"How many players are on a soccer team on the field?",o:["9","10","11","12"],a:2},
+  {q:"What is the largest mammal in the ocean?",o:["Shark","Blue whale","Dolphin","Octopus"],a:1},
+  {q:"Which season comes after winter?",o:["Summer","Autumn","Spring","Fall"],a:2},
+  {q:"What is the capital of France?",o:["London","Berlin","Paris","Rome"],a:2},
+  {q:"How many zeros are in one thousand?",o:["2","3","4","5"],a:1},
+  {q:"What do caterpillars turn into?",o:["Spiders","Butterflies","Bees","Ants"],a:1}
+];
+const DWORDS=[
+  {w:"MAPLE",h:"a Canadian tree with sweet syrup"},{w:"BEAVER",h:"a busy dam-building animal"},
+  {w:"HOCKEY",h:"a sport played on ice"},{w:"WINTER",h:"the coldest season"},
+  {w:"PLANET",h:"Earth is one of these"},{w:"ANIMAL",h:"a living creature, not a plant"},
+  {w:"ORANGE",h:"a fruit and a colour"},{w:"CASTLE",h:"where kings and queens live"},
+  {w:"GARDEN",h:"where flowers grow"},{w:"ROCKET",h:"it flies into space"},
+  {w:"ISLAND",h:"land with water all around"},{w:"MARKET",h:"a place to buy food"},
+  {w:"PENCIL",h:"you write with it"},{w:"JUNGLE",h:"a thick tropical forest"},
+  {w:"CAMERA",h:"it takes photos"},{w:"BRIDGE",h:"it crosses a river"},
+  {w:"SUMMER",h:"the warmest season"},{w:"FLOWER",h:"a colourful garden plant"},
+  {w:"MONKEY",h:"an animal that loves bananas"},{w:"WINDOW",h:"you look through it"},
+  {w:"GUITAR",h:"a musical instrument with strings"},{w:"TURTLE",h:"a slow animal with a shell"},
+  {w:"ROCKET",h:"it blasts into space"},{w:"PUZZLE",h:"you solve it piece by piece"},
+  {w:"CANADA",h:"the country this site is about"},{w:"FRIEND",h:"someone you like to play with"},
+  {w:"SCHOOL",h:"where you go to learn"},{w:"BASKET",h:"you carry things in it"},
+  {w:"DRAGON",h:"a mythical fire-breathing creature"},{w:"SILVER",h:"a shiny grey metal"}
+];
+
+// pick today's items
+const key=todayKey();
+let rng=mulberry32(key);
+function pick(arr,n){
+  const idx=arr.map((_,i)=>i);
+  for(let i=idx.length-1;i>0;i--){ const j=Math.floor(rng()*(i+1)); [idx[i],idx[j]]=[idx[j],idx[i]]; }
+  return idx.slice(0,n).map(i=>arr[i]);
+}
+const dq=pick(TRIVIA,5);
+rng=mulberry32(key+7);
+const dw=pick(DWORDS,1)[0];
+
+// state (per-day, localStorage)
+const state=loadState();
+function loadState(){ try{ return JSON.parse(localStorage.getItem('daily_state')||'{}'); }catch(e){ return {}; } }
+function saveState(s){ try{ localStorage.setItem('daily_state', JSON.stringify(s)); }catch(e){} }
+
+// streak display
+function loadStreak(){ try{ return JSON.parse(localStorage.getItem('daily_streak')||'{}'); }catch(e){ return {}; } }
+function saveStreak(s){ try{ localStorage.setItem('daily_streak', JSON.stringify(s)); }catch(e){} }
+function refreshStreak(){
+  const s=loadStreak();
+  document.getElementById('streakNum').textContent=s.streak||0;
+  document.getElementById('bestNum').textContent=s.best||0;
+  document.getElementById('playedNum').textContent=s.played||0;
+}
+function markPlayedToday(){
+  const t=todayStr(); const s=loadStreak();
+  if(s.last===t) { refreshStreak(); return; } // already counted today
+  // yesterday?
+  const y=new Date(); y.setDate(y.getDate()-1); const ys=y.toISOString().slice(0,10);
+  s.streak = (s.last===ys) ? (s.streak||0)+1 : 1;
+  s.best = Math.max(s.best||0, s.streak);
+  s.played = (s.played||0)+1;
+  s.last=t;
+  saveStreak(s); refreshStreak();
+}
+
+// ---- Daily Quiz ----
+let qi=0, qScore=0;
+const todayFlag='d'+key;
+function renderQuiz(){
+  const area=document.getElementById('quizArea');
+  if(state[todayFlag] && state[todayFlag].quizDone){
+    document.getElementById('quizDone').style.display='inline';
+    area.innerHTML='<div class="dl-card center"><p class="dl-done">✓ You finished today\'s quiz — score '+state[todayFlag].quizScore+'/5.</p><p class="muted">Come back tomorrow for a new one!</p></div>';
+    return;
+  }
+  if(qi>=dq.length){ finishQuiz(); return; }
+  const q=dq[qi];
+  let html='<div class="dl-card"><p style="font-weight:800">Q'+(qi+1)+' of 5: '+q.q+'</p><div class="dl-opts" id="dlopts"></div></div>';
+  area.innerHTML=html;
+  const box=document.getElementById('dlopts');
+  q.o.forEach((opt,i)=>{ const b=document.createElement('button'); b.textContent=opt; b.onclick=()=>answer(i,b); box.appendChild(b); });
+}
+function answer(i,btn){
+  const q=dq[qi];
+  document.querySelectorAll('#dlopts button').forEach((b,idx)=>{ b.classList.add('disabled'); if(idx===q.a)b.classList.add('correct'); if(idx===i&&i!==q.a)b.classList.add('wrong'); });
+  if(i===q.a) qScore++;
+  setTimeout(()=>{ qi++; renderQuiz(); }, 750);
+}
+function finishQuiz(){
+  state[todayFlag]=state[todayFlag]||{}; state[todayFlag].quizDone=true; state[todayFlag].quizScore=qScore; saveState(state);
+  document.getElementById('quizDone').style.display='inline';
+  document.getElementById('quizArea').innerHTML='<div class="dl-card center"><h3>🎉 You scored '+qScore+' / 5!</h3><p class="muted">Nice work — that keeps your streak going. New quiz tomorrow!</p></div>';
+  markPlayedToday();
+}
+
+// ---- Daily Word ----
+function scramble(w){
+  let a=w.split('');
+  for(let tries=0;tries<20;tries++){
+    for(let i=a.length-1;i>0;i--){ const j=Math.floor(mulberry32(key+i+tries*13)()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+    if(a.join('')!==w) break;
+  }
+  return a.join('');
+}
+function renderWord(){
+  document.getElementById('wordHint').textContent=dw.h;
+  document.getElementById('scrambled').textContent=scramble(dw.w);
+  if(state[todayFlag] && state[todayFlag].wordDone){
+    document.getElementById('wordDone').style.display='inline';
+    document.getElementById('wordMsg').className='dl-done';
+    document.getElementById('wordMsg').textContent='✓ Solved! Today\'s word was '+dw.w+'.';
+    document.getElementById('wordIn').value=dw.w; document.getElementById('wordIn').disabled=true;
+  }
+}
+function checkWord(){
+  const v=(document.getElementById('wordIn').value||'').trim().toUpperCase();
+  const m=document.getElementById('wordMsg');
+  if(v===dw.w){
+    m.className='dl-done'; m.textContent='✓ Correct! Great job!';
+    state[todayFlag]=state[todayFlag]||{}; state[todayFlag].wordDone=true; saveState(state);
+    document.getElementById('wordDone').style.display='inline';
+    document.getElementById('wordIn').disabled=true;
+    markPlayedToday();
+  } else {
+    m.className=''; m.style.color='#e63946'; m.textContent='Not quite — try again!';
+  }
+}
+function revealWord(){
+  const m=document.getElementById('wordMsg'); m.className=''; m.style.color='#5f6b7a';
+  m.textContent='Today\'s word was '+dw.w+'. Try the quiz to keep your streak!';
+  document.getElementById('wordIn').value=dw.w;
+}
+
+// date line
+document.getElementById('dateline').textContent='Today is '+new Date().toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'})+' — new challenges every day!';
+refreshStreak(); renderQuiz(); renderWord();
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Rubik's Cube — 3D Puzzle Game | Family Games</title>
+<meta name="description" content="Play a 3D Rubik's Cube online free. Scramble it, turn the faces, and try to solve it. Works on phone, tablet and computer. No signup.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧊</text></svg>">
+<style>
+  .rc-wrap{max-width:460px;margin:0 auto;text-align:center}
+  .rc-scene{width:100%;max-width:300px;height:300px;margin:16px auto;perspective:900px;touch-action:none}
+  .rc-cube{width:180px;height:180px;position:relative;margin:60px auto;transform-style:preserve-3d;transition:transform .15s}
+  .rc-face{position:absolute;width:180px;height:180px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:4px;padding:4px;background:#111;border-radius:8px;box-sizing:border-box}
+  .rc-st{border-radius:5px;border:1px solid rgba(0,0,0,.25)}
+  .rc-hud{display:flex;justify-content:center;gap:12px;margin:4px 0;font-weight:800}
+  .rc-hud .box{background:#eef1f5;border-radius:10px;padding:6px 14px}
+  .rc-moves{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;max-width:380px;margin:10px auto}
+  .rc-moves button{padding:12px 0;font-size:16px;font-weight:900;border:2px solid var(--line);background:#fff;border-radius:10px;cursor:pointer;color:var(--ink)}
+  .rc-moves button:active{background:#eef}
+  .rc-view{display:inline-flex;gap:6px;margin:6px 0}
+  .rc-view button{padding:8px 12px;border:2px solid var(--line);background:#fff;border-radius:8px;font-weight:800;cursor:pointer;color:var(--ink)}
+  .rc-prime{margin:6px 0}
+  .rc-prime label{font-weight:800;cursor:pointer}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a><a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🧊 Rubik's Cube</h1>
+    <p>Scramble it, twist the faces, and solve the 3D cube!</p>
+  </section>
+  <details class="howto"><summary></summary><p>Press <b>Scramble</b> to mix up the cube. Then use the letter buttons to turn each face: <b>U</b> (up), <b>D</b> (down), <b>L</b> (left), <b>R</b> (right), <b>F</b> (front), <b>B</b> (back). Turn on <b>Reverse ↺</b> to turn a face the other way. Drag the cube (or use the arrow buttons) to spin your view and see the other sides. Make every face a single solid colour to win! Tip: the middle square of each face never moves — that's the colour that side should become.</p></details>
+  <div class="panel">
+    <div class="rc-wrap">
+      <div class="rc-hud">
+        <div class="box">Moves: <span id="moves">0</span></div>
+        <div class="box">⏱ <span id="time">0:00</span></div>
+      </div>
+      <div class="rc-scene" id="scene">
+        <div class="rc-cube" id="cube"></div>
+      </div>
+      <div class="center rc-view">
+        <button onclick="spin(0,-45)">⟵</button>
+        <button onclick="spin(-20,0)">⟰</button>
+        <button onclick="spin(20,0)">⟱</button>
+        <button onclick="spin(0,45)">⟶</button>
+        <button onclick="resetView()">⭯ Reset view</button>
+      </div>
+      <div class="rc-prime">
+        <label><input type="checkbox" id="prime"> Reverse turn ↺ (turn faces the other way)</label>
+      </div>
+      <div class="rc-moves" id="moveBtns"></div>
+      <p class="center" id="msg" style="font-weight:800;min-height:24px"></p>
+      <div class="center">
+        <button class="btn" onclick="scramble()">🔀 Scramble</button>
+        <button class="btn btn-ghost" onclick="solveReset()">Reset to solved</button>
+        <a class="btn btn-ghost" href="games.html">All Games</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+const COL={U:'#f7f7f7',D:'#ffd23f',F:'#2a9d8f',B:'#4895ef',L:'#f4845f',R:'#e63946'};
+const NORMS=[[0,1,0,'U'],[0,-1,0,'D'],[0,0,1,'F'],[0,0,-1,'B'],[-1,0,0,'L'],[1,0,0,'R']];
+let cubies=[], moveCount=0, timer=null, secs=0, started=false, solvedState=true;
+
+function initCube(){
+  cubies=[];
+  for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)for(let z=-1;z<=1;z++){
+    const st={};
+    NORMS.forEach(([nx,ny,nz,f])=>{
+      if((nx!==0&&x===nx)||(ny!==0&&y===ny)||(nz!==0&&z===nz)) st[[nx,ny,nz].join(',')]=COL[f];
+    });
+    cubies.push({pos:[x,y,z], st});
+  }
+}
+function rotVec(v,axis,dir){
+  const [x,y,z]=v;
+  if(axis==='x') return dir>0?[x,-z,y]:[x,z,-y];
+  if(axis==='y') return dir>0?[z,y,-x]:[-z,y,x];
+  return dir>0?[-y,x,z]:[y,-x,z];
+}
+function turn(axis,layer,dir){
+  const idx= axis==='x'?0:axis==='y'?1:2;
+  cubies.forEach(cu=>{
+    if(cu.pos[idx]!==layer) return;
+    cu.pos=rotVec(cu.pos,axis,dir);
+    const nst={};
+    for(const k in cu.st){ const nv=rotVec(k.split(',').map(Number),axis,dir); nst[nv.join(',')]=cu.st[k]; }
+    cu.st=nst;
+  });
+}
+const MOVES={
+  U:['y',1,1], "U'":['y',1,-1], D:['y',-1,-1], "D'":['y',-1,1],
+  R:['x',1,1], "R'":['x',1,-1], L:['x',-1,-1], "L'":['x',-1,1],
+  F:['z',1,1], "F'":['z',1,-1], B:['z',-1,-1], "B'":['z',-1,1]
+};
+function doMove(name){
+  const m=MOVES[name]; if(!m) return;
+  turn(m[0],m[1],m[2]);
+}
+const FACES=[
+  {f:'U',n:[0,1,0],u:[1,0,0],v:[0,0,-1], tf:'rotateX(90deg) translateZ(90px)'},
+  {f:'D',n:[0,-1,0],u:[1,0,0],v:[0,0,1], tf:'rotateX(-90deg) translateZ(90px)'},
+  {f:'F',n:[0,0,1],u:[1,0,0],v:[0,1,0], tf:'translateZ(90px)'},
+  {f:'B',n:[0,0,-1],u:[-1,0,0],v:[0,1,0], tf:'rotateY(180deg) translateZ(90px)'},
+  {f:'L',n:[-1,0,0],u:[0,0,1],v:[0,1,0], tf:'rotateY(-90deg) translateZ(90px)'},
+  {f:'R',n:[1,0,0],u:[0,0,-1],v:[0,1,0], tf:'rotateY(90deg) translateZ(90px)'}
+];
+function stickerColor(face,row,col){
+  const cu=col-1, rv=1-row, t=[0,0,0];
+  for(let k=0;k<3;k++) t[k]= face.n[k]!==0? face.n[k] : face.u[k]*cu + face.v[k]*rv;
+  const c=cubies.find(q=>q.pos[0]===t[0]&&q.pos[1]===t[1]&&q.pos[2]===t[2]);
+  return c ? c.st[face.n.join(',')] : '#000';
+}
+function buildCube(){
+  const cube=document.getElementById('cube'); cube.innerHTML='';
+  FACES.forEach(face=>{
+    const fd=document.createElement('div'); fd.className='rc-face'; fd.style.transform=face.tf;
+    for(let r=0;r<3;r++)for(let c=0;c<3;c++){
+      const s=document.createElement('div'); s.className='rc-st'; s.dataset.k=face.f+r+c;
+      fd.appendChild(s);
+    }
+    cube.appendChild(fd);
+  });
+  paint();
+}
+function paint(){
+  FACES.forEach(face=>{
+    for(let r=0;r<3;r++)for(let c=0;c<3;c++){
+      const el=document.querySelector('[data-k="'+face.f+r+c+'"]');
+      if(el) el.style.background=stickerColor(face,r,c);
+    }
+  });
+}
+function isSolved(){
+  return FACES.every(face=>{
+    const first=stickerColor(face,0,0);
+    for(let r=0;r<3;r++)for(let c=0;c<3;c++){ if(stickerColor(face,r,c)!==first) return false; }
+    return true;
+  });
+}
+function buildMoveBtns(){
+  const box=document.getElementById('moveBtns'); box.innerHTML='';
+  ['U','D','L','R','F','B'].forEach(f=>{
+    const b=document.createElement('button'); b.textContent=f;
+    b.onclick=()=>userMove(f); box.appendChild(b);
+  });
+}
+function userMove(f){
+  const name = document.getElementById('prime').checked ? (f+"'") : f;
+  doMove(name); paint();
+  if(!started && !solvedState){ started=true; startTimer(); }
+  moveCount++; document.getElementById('moves').textContent=moveCount;
+  if(!solvedState && isSolved()){ win(); }
+}
+function startTimer(){ if(timer) return; timer=setInterval(()=>{ secs++; const m=Math.floor(secs/60),s=secs%60; document.getElementById('time').textContent=m+':'+(s<10?'0':'')+s; },1000); }
+function stopTimer(){ clearInterval(timer); timer=null; }
+function win(){
+  stopTimer(); solvedState=true;
+  document.getElementById('msg').style.color='#2a9d8f';
+  document.getElementById('msg').textContent='🎉 Solved in '+moveCount+' moves and '+document.getElementById('time').textContent+'! Amazing!';
+}
+function scramble(){
+  initCube();
+  const names=Object.keys(MOVES); let seq=[];
+  for(let i=0;i<25;i++){ seq.push(names[Math.floor(Math.random()*names.length)]); }
+  seq.forEach(doMove);
+  paint(); moveCount=0; secs=0; started=false; solvedState=false;
+  stopTimer(); document.getElementById('moves').textContent='0'; document.getElementById('time').textContent='0:00';
+  document.getElementById('msg').style.color='#5f6b7a';
+  document.getElementById('msg').textContent='Scrambled! Now solve it 🧠';
+}
+function solveReset(){
+  initCube(); paint(); moveCount=0; secs=0; started=false; solvedState=true;
+  stopTimer(); document.getElementById('moves').textContent='0'; document.getElementById('time').textContent='0:00';
+  document.getElementById('msg').textContent='';
+}
+// view
+let rx=-25, ry=-35;
+function applyView(){ document.getElementById('cube').style.transform='rotateX('+rx+'deg) rotateY('+ry+'deg)'; }
+function spin(dx,dy){ rx+=dx; ry+=dy; applyView(); }
+function resetView(){ rx=-25; ry=-35; applyView(); }
+// drag to rotate
+const scene=document.getElementById('scene');
+let dragging=false, lx=0, ly=0;
+function down(x,y){ dragging=true; lx=x; ly=y; }
+function moveD(x,y){ if(!dragging) return; ry+=(x-lx)*0.5; rx-=(y-ly)*0.5; lx=x; ly=y; applyView(); }
+function up(){ dragging=false; }
+scene.addEventListener('mousedown',e=>down(e.clientX,e.clientY));
+window.addEventListener('mousemove',e=>moveD(e.clientX,e.clientY));
+window.addEventListener('mouseup',up);
+scene.addEventListener('touchstart',e=>{const t=e.touches[0];down(t.clientX,t.clientY);},{passive:true});
+scene.addEventListener('touchmove',e=>{const t=e.touches[0];moveD(t.clientX,t.clientY);e.preventDefault();},{passive:false});
+scene.addEventListener('touchend',up);
+// keyboard
+document.addEventListener('keydown',e=>{
+  const f=e.key.toUpperCase();
+  if(['U','D','L','R','F','B'].includes(f)){
+    const name=e.shiftKey?(f+"'"):f; doMove(name); paint();
+    if(!started&&!solvedState){started=true;startTimer();}
+    moveCount++; document.getElementById('moves').textContent=moveCount;
+    if(!solvedState&&isSolved()) win();
+  }
+});
+initCube(); buildCube(); buildMoveBtns(); applyView();
+</script>
+</body>
+</html>
