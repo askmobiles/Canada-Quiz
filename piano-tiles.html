@@ -97,7 +97,13 @@ const SONGS={
   "Mary Had a Lamb":{bpm:120,notes:[["E4",1],["D4",1],["C4",1],["D4",1],["E4",1],["E4",1],["E4",2],["D4",1],["D4",1],["D4",2],["E4",1],["G4",1],["G4",2],["E4",1],["D4",1],["C4",1],["D4",1],["E4",1],["E4",1],["E4",1],["E4",1],["D4",1],["D4",1],["E4",1],["D4",1],["C4",4]]},
   "Ode to Joy":{bpm:130,notes:[["E4",1],["E4",1],["F4",1],["G4",1],["G4",1],["F4",1],["E4",1],["D4",1],["C4",1],["C4",1],["D4",1],["E4",1],["E4",1.5],["D4",.5],["D4",2],["E4",1],["E4",1],["F4",1],["G4",1],["G4",1],["F4",1],["E4",1],["D4",1],["C4",1],["C4",1],["D4",1],["E4",1],["D4",1.5],["C4",.5],["C4",2]]},
   "Jingle Bells":{bpm:140,notes:[["E4",1],["E4",1],["E4",2],["E4",1],["E4",1],["E4",2],["E4",1],["G4",1],["C4",1],["D4",1],["E4",4],["F4",1],["F4",1],["F4",1],["F4",1],["F4",1],["E4",1],["E4",1],["E4",1],["E4",1],["D4",1],["D4",1],["E4",1],["D4",2],["G4",2]]},
-  "Happy Birthday":{bpm:120,notes:[["C4",.75],["C4",.25],["D4",1],["C4",1],["F4",1],["E4",2],["C4",.75],["C4",.25],["D4",1],["C4",1],["G4",1],["F4",2],["C4",.75],["C4",.25],["C5",1],["A4",1],["F4",1],["E4",1],["D4",1],["A4",.75],["A4",.25],["A4",1],["F4",1],["G4",1],["F4",2]]}
+  "Happy Birthday":{bpm:120,notes:[["C4",.75],["C4",.25],["D4",1],["C4",1],["F4",1],["E4",2],["C4",.75],["C4",.25],["D4",1],["C4",1],["G4",1],["F4",2],["C4",.75],["C4",.25],["C5",1],["A4",1],["F4",1],["E4",1],["D4",1],["A4",.75],["A4",.25],["A4",1],["F4",1],["G4",1],["F4",2]]},
+  "Row Your Boat":{bpm:120,notes:[["C4",1],["C4",1],["C4",1],["D4",1],["E4",1],["E4",1],["D4",1],["E4",1],["F4",1],["G4",2],["C5",.5],["C5",.5],["C5",.5],["G4",.5],["G4",.5],["G4",.5],["E4",.5],["E4",.5],["E4",.5],["C4",.5],["C4",.5],["C4",.5],["G4",1],["F4",1],["E4",1],["D4",1],["C4",2]]},
+  "Old MacDonald":{bpm:130,notes:[["G4",1],["G4",1],["G4",1],["D4",1],["E4",1],["E4",1],["D4",2],["B4",1],["B4",1],["A4",1],["A4",1],["G4",2],["D4",1],["G4",1],["G4",1],["G4",1],["D4",1],["E4",1],["E4",1],["D4",2],["B4",1],["B4",1],["A4",1],["A4",1],["G4",2]]},
+  "London Bridge":{bpm:130,notes:[["G4",1],["A4",1],["G4",1],["F4",1],["E4",1],["F4",1],["G4",2],["D4",1],["E4",1],["F4",2],["E4",1],["F4",1],["G4",2],["G4",1],["A4",1],["G4",1],["F4",1],["E4",1],["F4",1],["G4",2],["D4",2],["G4",1],["E4",1],["C4",2]]},
+  "Hot Cross Buns":{bpm:120,notes:[["E4",1],["D4",1],["C4",2],["E4",1],["D4",1],["C4",2],["C4",.5],["C4",.5],["C4",.5],["C4",.5],["D4",.5],["D4",.5],["D4",.5],["D4",.5],["E4",1],["D4",1],["C4",2]]},
+  "Frère Jacques":{bpm:130,notes:[["C4",1],["D4",1],["E4",1],["C4",1],["C4",1],["D4",1],["E4",1],["C4",1],["E4",1],["F4",1],["G4",2],["E4",1],["F4",1],["G4",2],["G4",.5],["A4",.5],["G4",.5],["F4",.5],["E4",1],["C4",1],["G4",.5],["A4",.5],["G4",.5],["F4",.5],["E4",1],["C4",1],["C4",1],["G4",1],["C4",2]]},
+  "Itsy Bitsy Spider":{bpm:130,notes:[["C4",1],["C4",1],["C4",1],["D4",1],["E4",1],["E4",1],["E4",1],["D4",1],["C4",1],["D4",1],["E4",1],["C4",2],["E4",1],["E4",1],["F4",1],["G4",2],["G4",1],["F4",1],["E4",1],["F4",1],["G4",1],["E4",1],["C4",2]]}
 };
 
 let ac=null;
@@ -131,7 +137,25 @@ function buildSongBtns(){
 const stage=document.getElementById('stage');
 let tiles=[], running=false, score=0, combo=0, best=0, raf=0, lastT=0;
 const HIT_Y=()=> stage.clientHeight-70-32; // center of tile at hit line
-const SPEED=260; // px per second
+const SPEED=360; // px per second (faster!)
+function buzz(){ // error / wrong-note sound
+  if(!f0play()) return;
+  try{
+    const o=ac.createOscillator(), o2=ac.createOscillator(), g=ac.createGain();
+    o.type='sawtooth'; o.frequency.value=110; o2.type='square'; o2.frequency.value=104;
+    o.connect(g); o2.connect(g); g.connect(ac.destination);
+    const t=ac.currentTime;
+    g.gain.setValueAtTime(0.18,t); g.gain.exponentialRampToValueAtTime(0.0001,t+0.25);
+    o.start(t); o2.start(t); o.stop(t+0.26); o2.stop(t+0.26);
+  }catch(e){}
+}
+function f0play(){ try{ if(!ac) ac=new (window.AudioContext||window.webkitAudioContext)(); return true; }catch(e){ return false; } }
+function flashError(){
+  const c=document.getElementById('combo');
+  c.textContent='❌ Error!'; c.style.color='#e63946';
+  clearTimeout(flashError._t);
+  flashError._t=setTimeout(()=>{ c.style.color='var(--purple)'; if(c.textContent==='❌ Error!') c.textContent=''; },500);
+}
 let seed=1; function srnd(){ seed=(seed*1103515245+12345)&0x7fffffff; return seed/0x7fffffff; }
 
 function startGame(){
@@ -178,8 +202,9 @@ function loop(){
     tl.el.style.top=y+'px';
     tl.curY=y;
     if(!tl.missed && y>hitY+46){ // passed hit line untapped
-      tl.missed=true; combo=0; document.getElementById('combo').textContent='';
+      tl.missed=true; combo=0;
       tl.el.style.opacity='.25';
+      buzz(); flashError();
     }
     if(y<stage.clientHeight+80) remaining++;
   });
@@ -208,7 +233,7 @@ function tap(lane){
     document.getElementById('score').textContent=score;
     const c=document.getElementById('combo'); c.textContent = combo>=3? combo+'x combo!' : '';
   } else {
-    combo=0; document.getElementById('combo').textContent='';
+    combo=0; buzz(); flashError();
   }
 }
 function litKey(l){ const k=document.querySelector('.pt-key[data-l="'+l+'"]'); if(k){ k.classList.add('lit'); setTimeout(()=>k.classList.remove('lit'),110); } }

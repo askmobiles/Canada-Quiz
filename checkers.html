@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Checkers — Play vs Computer or a Friend | Family Games</title>
+<meta name="description" content="Play Checkers (draughts) free — against the computer or a friend on one device. Full rules with jumps and kings. Phone, tablet and computer.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔴</text></svg>">
+<style>
+  .ck-wrap{max-width:440px;margin:0 auto;text-align:center}
+  .ck-board{display:grid;grid-template-columns:repeat(8,1fr);width:100%;max-width:400px;margin:12px auto;border:3px solid var(--ink);border-radius:8px;overflow:hidden;touch-action:manipulation}
+  .ck-sq{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;position:relative}
+  .ck-sq.light{background:#eef1f5}.ck-sq.dark{background:#9fb3c8}
+  .ck-sq.canmove{cursor:pointer}
+  .ck-sq.dest::after{content:'';position:absolute;width:28%;height:28%;border-radius:50%;background:rgba(42,157,143,.55)}
+  .ck-sq.sel{outline:3px solid #ffb703;outline-offset:-3px}
+  .ck-p{width:74%;height:74%;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:clamp(13px,4vw,20px);box-shadow:0 2px 3px rgba(0,0,0,.3);cursor:pointer}
+  .ck-p.red{background:radial-gradient(circle at 35% 30%,#ff6b74,#e63946)}
+  .ck-p.blue{background:radial-gradient(circle at 35% 30%,#6ba9f0,#2f6fd0)}
+  .ck-p .crown{color:#ffe08a;font-size:clamp(12px,3.6vw,18px)}
+  .ck-hud{font-weight:800;min-height:24px;margin:6px 0}
+  .ck-mode{display:inline-flex;gap:6px;margin:4px 0}
+  .ck-mode button{padding:8px 12px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
+  .ck-mode button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a><a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔴 Checkers</h1>
+    <p>Play against the computer, or a friend on the same device!</p>
+  </section>
+  <details class="howto"><summary></summary><p>You are the <b>red</b> pieces at the bottom. Tap one of your pieces, then tap a highlighted green dot to move it diagonally. Jump over an opponent's piece to capture it — and if you can jump, you must! Reach the far side to become a <b>King 👑</b>, which can move both forwards and backwards. Capture all the other player's pieces (or block them so they can't move) to win!</p></details>
+  <div class="panel">
+    <div class="ck-wrap">
+      <div class="center"><div class="ck-mode" id="modes"></div></div>
+      <div class="ck-hud" id="hud">Your turn (red)</div>
+      <div class="ck-board" id="board"></div>
+      <div class="center" style="margin-top:10px">
+        <button class="btn" onclick="newGame()">New Game</button>
+        <a class="btn btn-ghost" href="games.html">All Games</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+// red = 1 (player, bottom, moves up), blue = -1 (top, moves down). Kings = ±2.
+let board=[], turn=1, mode='cpu', sel=-1, dests=[], busy=false, over=false;
+function rc(i){return [Math.floor(i/8), i%8];}
+function ii(r,c){return r*8+c;}
+function onb(r,c){return r>=0&&r<8&&c>=0&&c<8;}
+function side(v){return v>0?1:(v<0?-1:0);}
+function king(v){return Math.abs(v)===2;}
+function dirs(v){ if(king(v)) return [[-1,-1],[-1,1],[1,-1],[1,1]]; return v>0?[[-1,-1],[-1,1]]:[[1,-1],[1,1]]; }
+
+function newGame(){
+  buildModes();
+  board=new Array(64).fill(0);
+  for(let r=0;r<8;r++)for(let c=0;c<8;c++){
+    if((r+c)%2===1){
+      if(r<3) board[ii(r,c)]=-1;
+      else if(r>4) board[ii(r,c)]=1;
+    }
+  }
+  turn=1; sel=-1; dests=[]; busy=false; over=false;
+  setHud('Your turn (red)');
+  render();
+}
+function buildModes(){
+  const box=document.getElementById('modes'); box.innerHTML='';
+  [['cpu','vs Computer'],['friend','2 Players']].forEach(m=>{
+    const b=document.createElement('button'); b.textContent=m[1]; if(m[0]===mode)b.classList.add('on');
+    b.onclick=()=>{ mode=m[0]; newGame(); }; box.appendChild(b);
+  });
+}
+function captureSeqs(bd, start){
+  const results=[]; const s=side(bd[start]);
+  function rec(b,pos,path,caps){
+    let extended=false;
+    for(const [dr,dc] of dirs(b[pos])){
+      const [r,c]=rc(pos); const mr=r+dr,mc=c+dc,lr=r+2*dr,lc=c+2*dc;
+      if(!onb(lr,lc)) continue;
+      const mid=ii(mr,mc), land=ii(lr,lc);
+      if(b[land]!==0) continue;
+      if(b[mid]===0||side(b[mid])===s) continue;
+      if(caps.includes(mid)) continue;
+      const nb=b.slice(); let moved=nb[pos]; nb[pos]=0; nb[mid]=0;
+      let becameKing=false;
+      if(!king(moved) && ((s===1&&lr===0)||(s===-1&&lr===7))){ moved=2*s; becameKing=true; }
+      nb[land]=moved; extended=true;
+      if(becameKing) results.push({from:start,end:land,caps:caps.concat(mid)});
+      else rec(nb,land,path.concat(land),caps.concat(mid));
+    }
+    if(!extended && caps.length>0) results.push({from:start,end:pos,caps:caps.slice()});
+  }
+  rec(bd.slice(), start, [start], []);
+  return results;
+}
+function simpleMoves(bd, i){
+  const res=[];
+  for(const [dr,dc] of dirs(bd[i])){
+    const [r,c]=rc(i); const nr=r+dr,nc=c+dc;
+    if(onb(nr,nc) && bd[ii(nr,nc)]===0) res.push({from:i,end:ii(nr,nc),caps:[]});
+  }
+  return res;
+}
+function legalMoves(bd, s){
+  let caps=[];
+  for(let i=0;i<64;i++) if(side(bd[i])===s) caps=caps.concat(captureSeqs(bd,i));
+  if(caps.length) return caps;
+  let simp=[];
+  for(let i=0;i<64;i++) if(side(bd[i])===s) simp=simp.concat(simpleMoves(bd,i));
+  return simp;
+}
+function applyMove(bd, mv){
+  const v=bd[mv.from]; bd[mv.from]=0; mv.caps.forEach(c=>bd[c]=0);
+  let moved=v; const [er]=rc(mv.end); const s=side(v);
+  if(!king(moved) && ((s===1&&er===0)||(s===-1&&er===7))) moved=2*s;
+  bd[mv.end]=moved;
+}
+function render(){
+  const g=document.getElementById('board'); g.innerHTML='';
+  for(let i=0;i<64;i++){
+    const [r,c]=rc(i); const sq=document.createElement('div');
+    sq.className='ck-sq '+((r+c)%2===1?'dark':'light');
+    if(i===sel) sq.classList.add('sel');
+    if(dests.some(d=>d.end===i)) sq.classList.add('dest');
+    const v=board[i];
+    if(v!==0){
+      const p=document.createElement('div'); p.className='ck-p '+(v>0?'red':'blue');
+      if(king(v)) p.innerHTML='<span class="crown">👑</span>';
+      sq.appendChild(p);
+    }
+    sq.onclick=()=>clickSq(i);
+    g.appendChild(sq);
+  }
+}
+function myTurn(){ return mode==='friend' || turn===1; }
+function clickSq(i){
+  if(over||busy) return;
+  if(!myTurn()) return;
+  // clicking a destination?
+  const d=dests.find(x=>x.end===i);
+  if(d){ doMove(d); return; }
+  // selecting own piece
+  if(side(board[i])===turn){
+    const all=legalMoves(board, turn);
+    const forThis=all.filter(m=>m.from===i);
+    if(forThis.length){ sel=i; dests=forThis; render(); }
+    else { sel=-1; dests=[]; render();
+      if(all.length && all[0].caps.length) setHud('You must take the jump! (highlighted piece)');
+    }
+  } else { sel=-1; dests=[]; render(); }
+}
+function doMove(mv){
+  applyMove(board, mv); sel=-1; dests=[];
+  turn=-turn; render();
+  checkEndOrContinue();
+}
+function checkEndOrContinue(){
+  const moves=legalMoves(board, turn);
+  if(moves.length===0){
+    over=true;
+    const winner=(-turn);
+    if(mode==='friend') setHud((winner===1?'🔴 Red':'🔵 Blue')+' wins! 🎉');
+    else setHud(winner===1?'🎉 You win! Great job!':'😅 Computer wins. Try again!');
+    return;
+  }
+  if(mode==='cpu' && turn===-1){ busy=true; setHud('Computer is thinking…'); setTimeout(cpuMove, 550); }
+  else { setHud(mode==='friend' ? (turn===1?'Red\'s turn 🔴':'Blue\'s turn 🔵') : 'Your turn (red)'); }
+}
+function cpuMove(){
+  const moves=legalMoves(board, -1);
+  if(!moves.length){ busy=false; checkEndOrContinue(); return; }
+  // prefer most captures; then moves that reach king row; else random
+  let best=[], bestScore=-1;
+  moves.forEach(m=>{
+    let sc=m.caps.length*10;
+    const [er]=rc(m.end);
+    if(er===7 && !king(board[m.from])) sc+=3; // becomes king
+    if(er===7||er===0) sc+=0;
+    sc+=Math.random(); // tie-break randomness
+    if(sc>bestScore){ bestScore=sc; best=[m]; }
+  });
+  const mv=best[0];
+  applyMove(board, mv); turn=1; busy=false; render();
+  checkEndOrContinue();
+}
+function setHud(t){ document.getElementById('hud').textContent=t; }
+newGame();
+</script>
+</body>
+</html>

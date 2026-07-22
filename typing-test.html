@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typing Speed Test — How Fast Can You Type? | Family Games</title>
+<meta name="description" content="Free typing speed test. See your words-per-minute (WPM) and accuracy. Fun way to practise typing for kids and adults. No signup.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>">
+<style>
+  .ty-wrap{max-width:640px;margin:0 auto}
+  .ty-text{font-size:19px;line-height:1.8;background:#f4f6fa;border-radius:12px;padding:16px;margin:10px 0;text-align:left}
+  .ty-text span.ok{color:#2a9d8f}.ty-text span.bad{background:#fde2e4;color:#e63946;border-radius:3px}
+  .ty-text span.cur{background:#dcefff;border-radius:3px}
+  .ty-in{width:100%;font-size:17px;padding:12px;border:2px solid var(--line);border-radius:10px;font-family:inherit;resize:none}
+  .ty-stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+  .ty-stats .box{background:#eef1f5;border-radius:10px;padding:8px 16px;font-weight:800;text-align:center;min-width:80px}
+  .ty-stats .box b{display:block;font-size:12px;color:#6a7683;text-transform:uppercase}
+  .ty-stats .box span{font-size:22px;color:var(--ink)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a><a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>⌨️ Typing Speed Test</h1>
+    <p>How fast can you type? Find your words per minute!</p>
+  </section>
+  <details class="howto"><summary></summary><p>Start typing the sentence shown in the box. The timer starts on your first letter. Correct letters turn green, mistakes turn red. When you finish the sentence you'll see your speed in words per minute (WPM) and your accuracy. Press New Text to try a different one. Best on a computer keyboard!</p></details>
+  <div class="panel">
+    <div class="ty-wrap">
+      <div class="ty-stats">
+        <div class="box"><b>Speed</b><span id="wpm">0</span> wpm</div>
+        <div class="box"><b>Accuracy</b><span id="acc">100</span>%</div>
+        <div class="box"><b>Time</b><span id="time">0</span>s</div>
+      </div>
+      <div class="ty-text" id="text"></div>
+      <textarea class="ty-in" id="input" rows="3" placeholder="Click here and start typing…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+      <p class="center" id="msg" style="font-weight:800;min-height:22px;margin-top:10px"></p>
+      <div class="center">
+        <button class="btn" onclick="newText()">New Text</button>
+        <a class="btn btn-ghost" href="games.html">All Games</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+const TEXTS=[
+  "Canada is the second largest country in the world by total area.",
+  "The maple leaf is a famous symbol found on the Canadian flag.",
+  "Hockey is one of the most popular sports played across Canada.",
+  "Ottawa is the capital city of Canada and sits along a river.",
+  "Beavers are hard working animals often seen in Canadian rivers.",
+  "A polar bear has black skin under its thick white fur coat.",
+  "The northern lights can be seen glowing in the winter sky.",
+  "Practice a little every day and your typing will get faster.",
+  "Reading good books can help you learn many new and useful words.",
+  "The quick brown fox jumps over the lazy dog near the river bank."
+];
+let target='', started=false, startT=0, timer=null, finished=false;
+const inp=document.getElementById('input');
+function newText(){
+  target=TEXTS[Math.floor(Math.random()*TEXTS.length)];
+  started=false; finished=false; startT=0;
+  clearInterval(timer); timer=null;
+  inp.value=''; inp.disabled=false;
+  document.getElementById('wpm').textContent='0';
+  document.getElementById('acc').textContent='100';
+  document.getElementById('time').textContent='0';
+  document.getElementById('msg').textContent='';
+  paint(); inp.focus();
+}
+function paint(){
+  const t=document.getElementById('text'); const typed=inp.value; let html='';
+  for(let i=0;i<target.length;i++){
+    const ch=target[i].replace('<','&lt;');
+    if(i<typed.length){ html+='<span class="'+(typed[i]===target[i]?'ok':'bad')+'">'+ch+'</span>'; }
+    else if(i===typed.length){ html+='<span class="cur">'+ch+'</span>'; }
+    else html+='<span>'+ch+'</span>';
+  }
+  t.innerHTML=html;
+}
+function tick(){
+  const el=(Date.now()-startT)/1000;
+  document.getElementById('time').textContent=el.toFixed(0);
+  const words=inp.value.trim().split(/\s+/).filter(Boolean).length;
+  let wpm=el>0.1?Math.round(words/(el/60)):0;
+  if(!isFinite(wpm)||wpm>500) wpm=0;
+  document.getElementById('wpm').textContent=wpm;
+}
+inp.addEventListener('input',()=>{
+  if(finished) return;
+  if(!started && inp.value.length>0){ started=true; startT=Date.now(); timer=setInterval(tick,200); }
+  // accuracy
+  const typed=inp.value; let correct=0;
+  for(let i=0;i<typed.length;i++){ if(typed[i]===target[i]) correct++; }
+  const acc=typed.length?Math.round(correct/typed.length*100):100;
+  document.getElementById('acc').textContent=acc;
+  paint();
+  if(typed.length>=target.length){ finish(acc); }
+});
+function finish(acc){
+  finished=true; clearInterval(timer);
+  const el=Math.max(0.1,(Date.now()-startT)/1000);
+  const words=target.trim().split(/\s+/).length;
+  let wpm=Math.round(words/(el/60));
+  if(!isFinite(wpm)||wpm>500) wpm=500;
+  document.getElementById('wpm').textContent=wpm;
+  document.getElementById('time').textContent=el.toFixed(1);
+  inp.disabled=true;
+  let note;
+  if(wpm>=70) note='🚀 Super fast!'; else if(wpm>=45) note='🔥 Great speed!'; else if(wpm>=25) note='🙂 Nice going!'; else note='🌱 Keep practising!';
+  document.getElementById('msg').style.color='#2a9d8f';
+  document.getElementById('msg').textContent=note+' '+wpm+' wpm at '+acc+'% accuracy.';
+}
+newText();
+</script>
+</body>
+</html>

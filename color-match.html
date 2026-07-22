@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Color Match — Brain Reaction Game | Family Games</title>
+<meta name="description" content="Color Match brain game. Tap the colour of the word, not the word itself! A fun, fast Stroop-style reaction game for all ages. No signup.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+<style>
+  .cm-wrap{max-width:440px;margin:0 auto;text-align:center}
+  .cm-word{font-size:clamp(38px,13vw,64px);font-weight:900;margin:18px 0;min-height:70px;text-transform:uppercase;letter-spacing:1px}
+  .cm-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:340px;margin:12px auto}
+  .cm-opts button{padding:18px 0;font-size:19px;font-weight:900;border:none;border-radius:14px;color:#fff;cursor:pointer;text-transform:uppercase;box-shadow:0 3px 0 rgba(0,0,0,.15)}
+  .cm-opts button:active{transform:translateY(2px)}
+  .cm-hud{display:flex;justify-content:center;gap:12px;margin:4px 0;font-weight:800}
+  .cm-hud .box{background:#eef1f5;border-radius:10px;padding:8px 16px}
+  .cm-bar{height:12px;background:#eee;border-radius:999px;overflow:hidden;max-width:340px;margin:8px auto}
+  .cm-bar span{display:block;height:100%;background:var(--blue);width:100%;transition:width .1s linear}
+  .cm-q{font-weight:800;color:#6a7683;margin-bottom:4px}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a><a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🎨 Color Match</h1>
+    <p>Tap the COLOUR of the word — not what it says!</p>
+  </section>
+  <details class="howto"><summary></summary><p>A colour word appears — but it's printed in a different colour! Your job is to tap the button that matches the <b>colour of the letters</b>, not the word you read. For example, if the word "RED" is printed in blue, you tap BLUE. It's trickier than it sounds! Answer as many as you can before time runs out. Every right answer adds a little time.</p></details>
+  <div class="panel">
+    <div class="cm-wrap">
+      <div class="cm-hud">
+        <div class="box">⭐ <span id="score">0</span></div>
+        <div class="box">🏆 Best: <span id="best">0</span></div>
+      </div>
+      <div class="cm-bar"><span id="bar"></span></div>
+      <div class="cm-q" id="prompt">Tap the COLOUR of the word</div>
+      <div class="cm-word" id="word">Ready?</div>
+      <div class="cm-opts" id="opts"></div>
+      <p class="center" id="msg" style="font-weight:800;min-height:22px"></p>
+      <div class="center">
+        <button class="btn btn-lg" id="startBtn" onclick="startGame()">▶ Start</button>
+        <a class="btn btn-ghost" href="games.html">All Games</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+const COLORS=[
+  {name:'Red',hex:'#e63946'},{name:'Blue',hex:'#4895ef'},{name:'Green',hex:'#2a9d8f'},
+  {name:'Orange',hex:'#f4845f'},{name:'Purple',hex:'#8e7dbe'},{name:'Yellow',hex:'#f0a800'}
+];
+let score=0, best=0, running=false, inkColor=null, timeLeft=0, timer=null, TIME=8;
+try{ best=parseInt(localStorage.getItem('cm_best')||'0',10)||0; }catch(e){}
+document.getElementById('best').textContent=best;
+function startGame(){
+  score=0; running=true; timeLeft=TIME;
+  document.getElementById('score').textContent='0';
+  document.getElementById('msg').textContent='';
+  document.getElementById('startBtn').style.display='none';
+  nextRound(); runTimer();
+}
+function runTimer(){
+  clearInterval(timer);
+  timer=setInterval(()=>{
+    timeLeft-=0.1;
+    document.getElementById('bar').style.width=Math.max(0,timeLeft/TIME*100)+'%';
+    if(timeLeft<=0){ endGame(); }
+  },100);
+}
+function nextRound(){
+  const wordC=COLORS[Math.floor(Math.random()*COLORS.length)];
+  let inkC=COLORS[Math.floor(Math.random()*COLORS.length)];
+  // usually different from the word for the classic effect
+  if(Math.random()<0.8){ while(inkC.name===wordC.name) inkC=COLORS[Math.floor(Math.random()*COLORS.length)]; }
+  inkColor=inkC;
+  const w=document.getElementById('word'); w.textContent=wordC.name; w.style.color=inkC.hex;
+  // build 4 options incl the correct ink colour
+  const opts=[inkC];
+  const pool=COLORS.filter(c=>c.name!==inkC.name).sort(()=>Math.random()-0.5);
+  while(opts.length<4) opts.push(pool.pop());
+  opts.sort(()=>Math.random()-0.5);
+  const box=document.getElementById('opts'); box.innerHTML='';
+  opts.forEach(c=>{ const b=document.createElement('button'); b.textContent=c.name; b.style.background=c.hex; b.onclick=()=>pick(c); box.appendChild(b); });
+}
+function pick(c){
+  if(!running) return;
+  if(c.name===inkColor.name){
+    score++; document.getElementById('score').textContent=score;
+    timeLeft=Math.min(TIME, timeLeft+0.7); // reward time
+    flash('✔',' #2a9d8f'); nextRound();
+  } else {
+    timeLeft-=1.5; flash('✖','#e63946');
+    if(timeLeft<=0) endGame();
+  }
+}
+function flash(sym,col){ const m=document.getElementById('msg'); m.style.color=col; m.textContent=sym; clearTimeout(flash._t); flash._t=setTimeout(()=>{ if(m.textContent===sym)m.textContent=''; },300); }
+function endGame(){
+  running=false; clearInterval(timer);
+  document.getElementById('bar').style.width='0%';
+  if(score>best){ best=score; try{localStorage.setItem('cm_best',best);}catch(e){} document.getElementById('best').textContent=best; }
+  document.getElementById('word').textContent='⏰ Time!';
+  document.getElementById('word').style.color='var(--ink)';
+  document.getElementById('opts').innerHTML='';
+  document.getElementById('msg').style.color='#5f6b7a';
+  document.getElementById('msg').textContent='You scored '+score+(score>=best&&score>0?' — new best! 🎉':'')+'.';
+  const sb=document.getElementById('startBtn'); sb.style.display='inline-block'; sb.textContent='▶ Play again';
+}
+</script>
+</body>
+</html>
