@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Spelling Bee — Make Words from 7 Letters | Family Games</title>
+<meta name="description" content="Spelling Bee word game. Make as many words as you can from 7 letters, always using the middle letter. Free brain game for all ages.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>">
+<style>
+  .sb-wrap{max-width:420px;margin:0 auto;text-align:center}
+  .sb-current{font-size:28px;font-weight:900;letter-spacing:3px;min-height:38px;text-transform:uppercase;color:var(--ink);margin:6px 0}
+  .sb-hive{display:flex;flex-direction:column;align-items:center;gap:8px;margin:12px 0}
+  .sb-row{display:flex;gap:8px;justify-content:center}
+  .sb-cell{width:64px;height:56px;border:none;border-radius:12px;background:#eef1f5;font-size:24px;font-weight:900;text-transform:uppercase;cursor:pointer;color:var(--ink)}
+  .sb-cell.center{background:#ffb703;color:#3d3000}
+  .sb-cell:active{transform:scale(.94)}
+  .sb-rank{font-weight:800;margin:8px 0}
+  .sb-bar{height:10px;background:#eee;border-radius:999px;overflow:hidden;margin:4px 0 8px}
+  .sb-bar>span{display:block;height:100%;background:linear-gradient(90deg,#ffb703,#f4845f);width:0;transition:width .3s}
+  .sb-found{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}
+  .sb-word{background:#eef7f4;color:#1f7a6f;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700;text-transform:capitalize}
+  .sb-word.pan{background:#fff3d6;color:#9a7a00}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🐝 Spelling Bee</h1>
+    <p>Make words using these 7 letters!</p>
+  </section>
+
+  <details class="howto"><summary></summary><p>Make as many words as you can using the 7 letters. Every word must be at least 4 letters long and must use the middle (yellow) letter. You can use a letter more than once. Tap the letters or use your keyboard, then press Enter. Longer words score more points, and using all 7 letters is a "pangram" for a big bonus! Climb from Beginner to Genius.</p></details>
+
+  <div class="panel">
+    <div class="sb-wrap">
+      <div class="sb-rank" id="rank">Beginner</div>
+      <div class="sb-bar"><span id="bar"></span></div>
+      <p class="muted" id="score" style="margin:0 0 6px">Score: 0</p>
+      <div class="sb-current" id="current"></div>
+      <p id="msg" style="font-weight:800;min-height:20px;margin:2px 0"></p>
+      <div class="sb-hive" id="hive"></div>
+      <div class="center">
+        <button class="btn btn-ghost" onclick="del()">⌫ Delete</button>
+        <button class="btn btn-ghost" onclick="shuffleOuter()">🔀 Shuffle</button>
+        <button class="btn" onclick="submitWord()">Enter</button>
+      </div>
+      <div class="sb-found" id="found"></div>
+      <div class="center" style="margin-top:14px">
+        <button class="btn btn-ghost" onclick="newGame()">New Puzzle</button>
+        <a class="btn btn-ghost" href="games.html">All Games</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const PUZZLES = [{"center": "i", "outer": ["m", "e", "h", "r", "p", "a"], "words": ["amie", "amir", "apia", "aria", "eire", "emir", "erie", "hair", "heir", "hire", "ieee", "imam", "irma", "maim", "mari", "meir", "mime", "mimi", "mira", "mire", "pair", "pier", "pimp", "pipe", "prim", "rehi", "rime", "ripe", "aerie", "aimee", "eerie", "hiram", "mamie", "maria", "marie", "meier", "miami", "piper", "praia", "priam", "prime", "primp", "riper", "airier", "eerier", "empire", "hipper", "hippie", "impair", "miriam", "pariah", "pierre", "primer", "rapier", "rehire", "repair", "ripper", "ephraim", "hairier", "happier", "merriam", "merrier", "peppier", "perrier", "prairie", "premier", "preppie", "primmer", "premiere", "preppier"], "max": 287}, {"center": "o", "outer": ["e", "m", "y", "h", "d", "b"], "words": ["bode", "body", "bomb", "boob", "boom", "boyd", "byob", "demo", "dodo", "dome", "doom", "hobo", "hoed", "home", "homy", "hood", "memo", "mode", "moho", "mood", "obey", "oboe", "odom", "bobby", "boded", "booby", "booed", "domed", "hobby", "homed", "homey", "hooey", "modem", "mommy", "moody", "mooed", "bobbed", "bombed", "boobed", "boomed", "demoed", "doomed", "embody", "hooded", "hoodoo", "mobbed", "modded", "obeyed", "boyhood", "homeboy", "homebody", "hoodooed"], "max": 197}, {"center": "u", "outer": ["t", "i", "n", "a", "d", "e"], "words": ["ainu", "audi", "aunt", "dude", "duet", "dune", "dunn", "nude", "taut", "tuna", "tune", "tutu", "unit", "adieu", "auden", "audit", "daunt", "duane", "duded", "dunne", "endue", "ennui", "indue", "inuit", "taunt", "tuned", "undid", "undue", "unite", "untie", "attune", "denude", "dunant", "dunned", "endued", "indued", "intuit", "nutted", "united", "untied", "attuned", "audited", "daunted", "denuded", "dunedin", "taunted", "unaided", "undated", "uneaten", "attitude", "intuited", "inundate", "unedited", "unneeded", "attenuate", "inundated", "undaunted", "untainted", "attenuated", "unattended", "unintended", "uninitiated"], "max": 366}, {"center": "u", "outer": ["e", "d", "n", "t", "a", "p"], "words": ["aunt", "dude", "duet", "dune", "dunn", "dupe", "nude", "punt", "pupa", "putt", "taut", "tuna", "tune", "tutu", "auden", "daunt", "duane", "duded", "dunne", "duped", "endue", "pupae", "taunt", "taupe", "tuned", "undue", "upend", "upped", "attune", "denude", "depute", "dunant", "dunned", "endued", "nutted", "peanut", "punned", "punted", "pupped", "puppet", "putted", "update", "attuned", "daunted", "denuded", "deputed", "neptune", "taunted", "undated", "uneaten", "updated", "upended", "unneeded", "untapped", "attenuate", "undaunted", "attenuated", "unattended"], "max": 299}, {"center": "d", "outer": ["n", "t", "i", "m", "a", "o"], "words": ["adam", "adan", "aida", "amid", "dada", "dado", "damn", "dana", "data", "dido", "dina", "dino", "dint", "dion", "dodo", "dona", "donn", "doom", "maid", "mind", "mood", "odin", "odom", "toad", "todd", "adana", "adman", "admin", "admit", "amado", "damon", "diana", "diann", "ditto", "donna", "idiom", "idiot", "india", "indio", "madam", "nadia", "naiad", "nomad", "timid", "amanda", "damian", "damion", "danton", "dianna", "diatom", "dodoma", "domain", "domino", "doodad", "indian", "madman", "adamant", "andaman", "diamond", "indiana", "madonna", "addition", "dominant", "dominion", "domitian", "donation", "indianan", "mindanao", "damnation", "admonition", "datamation", "domination", "intimidation"], "max": 383}, {"center": "e", "outer": ["y", "v", "f", "n", "c", "r"], "words": ["cerf", "cree", "eery", "envy", "even", "ever", "eyre", "fern", "free", "frey", "frye", "nerf", "reef", "rene", "veer", "venn", "vern", "very", "crecy", "efren", "every", "fence", "ferry", "fever", "freer", "fryer", "nerve", "nervy", "never", "reeve", "refer", "renee", "verne", "verve", "evener", "fencer", "reefer", "revere", "revery", "veneer", "nyerere", "referee", "fervency", "reference", "reverence"], "max": 181}, {"center": "k", "outer": ["r", "i", "e", "c", "n", "a"], "words": ["akin", "cake", "erik", "ikea", "kane", "kara", "kari", "keck", "keen", "keri", "kern", "kerr", "kick", "kink", "kirk", "knee", "nark", "neck", "nick", "nike", "rack", "rake", "rank", "reek", "rick", "rink", "aiken", "crack", "crank", "creak", "creek", "crick", "erick", "erika", "karen", "karin", "kerri", "knack", "nanak", "nikki", "ankara", "canker", "ericka", "ickier", "inkier", "karina", "keenan", "keener", "kennan", "kicker", "nikkei", "ranker", "rankin", "rickie", "cracker", "kickier", "kinkier", "knacker", "rankine", "crankier", "creakier", "kankakee", "karenina", "nicknack", "knickknack"], "max": 272}, {"center": "k", "outer": ["w", "r", "o", "t", "e", "n"], "words": ["keen", "kent", "kern", "kerr", "keto", "knee", "knew", "knot", "know", "kook", "nook", "reek", "rook", "toke", "took", "trek", "week", "woke", "work", "known", "krone", "token", "twerk", "woken", "keener", "kenton", "kowtow", "kroner", "kronor", "retook", "rework", "worker", "network", "notwork", "workweek"], "max": 121}, {"center": "i", "outer": ["r", "g", "v", "o", "f", "n"], "words": ["finn", "gigo", "gino", "grin", "igor", "info", "iron", "orin", "riff", "ring", "viii", "going", "groin", "irvin", "onion", "orion", "rigor", "ringo", "vigor", "virgo", "fining", "firing", "giving", "goring", "gringo", "inning", "irving", "noggin", "offing", "origin", "roving", "virgin", "fogging", "forging", "gigging", "ginning", "gonging", "goofing", "gorging", "griffin", "ironing", "ongoing", "riffing", "rigging", "ringing", "roofing", "forgoing", "fringing", "frogging", "grinning", "grooving", "ignoring", "forgiving", "infringing"], "max": 300}, {"center": "x", "outer": ["r", "d", "i", "c", "n", "e"], "words": ["exec", "xcii", "xcix", "xiii", "xxii", "xxix", "xxxi", "dixie", "index", "nixed", "xxiii", "xxxii", "xxxix", "exceed", "xxxiii", "indexed", "excedrin", "exceeded", "dexedrine"], "max": 88}];
+const RANKS=[[0,"Beginner"],[0.05,"Good Start"],[0.12,"Nice"],[0.22,"Solid"],[0.35,"Great"],[0.5,"Amazing"],[0.65,"Genius"]];
+let center='', outer=[], all=new Set(), validSet=new Set(), maxScore=1;
+let current='', found=[], score=0;
+
+function newGame(){
+  const p=PUZZLES[Math.floor(Math.random()*PUZZLES.length)];
+  center=p.center; outer=p.outer.slice();
+  all=new Set([center,...outer]);
+  validSet=new Set(p.words); maxScore=p.max||1;
+  current=''; found=[]; score=0;
+  document.getElementById('msg').textContent='';
+  document.getElementById('found').innerHTML='';
+  updateScore(); renderHive(); renderCurrent();
+}
+function renderHive(){
+  const h=document.getElementById('hive'); h.innerHTML='';
+  const top=document.createElement('div'); top.className='sb-row';
+  const mid=document.createElement('div'); mid.className='sb-row';
+  const bot=document.createElement('div'); bot.className='sb-row';
+  // outer[0,1] top, outer[2] left, center, outer[3] right, outer[4,5] bottom
+  addKey(top, outer[0]); addKey(top, outer[1]);
+  addKey(mid, outer[2]); addKey(mid, center, true); addKey(mid, outer[3]);
+  addKey(bot, outer[4]); addKey(bot, outer[5]);
+  h.appendChild(top); h.appendChild(mid); h.appendChild(bot);
+}
+function addKey(row, ch, isCenter){
+  const b=document.createElement('button'); b.className='sb-cell'+(isCenter?' center':''); b.textContent=ch;
+  b.onclick=()=>{ current+=ch; renderCurrent(); }; row.appendChild(b);
+}
+function renderCurrent(){ document.getElementById('current').textContent=current; }
+function del(){ current=current.slice(0,-1); renderCurrent(); }
+function shuffleOuter(){ for(let i=outer.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[outer[i],outer[j]]=[outer[j],outer[i]];} renderHive(); }
+function wordScore(w){ let p = w.length===4?1:w.length; if(new Set(w).size===7 && [...new Set(w)].every(c=>all.has(c)) && all.size===7 && new Set(w).size===all.size) p+=7; return p; }
+function isPangram(w){ const s=new Set(w); return s.size===all.size && [...all].every(c=>s.has(c)); }
+function submitWord(){
+  const w=current.toLowerCase(); current=''; renderCurrent();
+  if(w.length<4){ msg('Too short (4+ letters)',true); return; }
+  if(w.indexOf(center)===-1){ msg('Must use the middle letter',true); return; }
+  for(const ch of w){ if(!all.has(ch)){ msg('Uses a letter not in the hive',true); return; } }
+  if(found.includes(w)){ msg('Already found',true); return; }
+  if(!validSet.has(w)){ msg('Not in word list',true); return; }
+  const pan=isPangram(w);
+  let pts = w.length===4?1:w.length; if(pan) pts+=7;
+  found.push(w); score+=pts;
+  msg(pan?'🐝 PANGRAM! +'+pts:'✅ +'+pts+' '+(w.length>=6?'Nice!':''),false);
+  const chip=document.createElement('span'); chip.className='sb-word'+(pan?' pan':''); chip.textContent=w;
+  document.getElementById('found').prepend(chip);
+  updateScore();
+}
+function updateScore(){
+  document.getElementById('score').textContent='Score: '+score+'  ('+found.length+' words)';
+  const pct=score/maxScore;
+  let rank=RANKS[0][1]; for(const [t,n] of RANKS){ if(pct>=t) rank=n; }
+  document.getElementById('rank').textContent=rank;
+  document.getElementById('bar').style.width=Math.min(100, pct*100/0.65)+'%';
+}
+function msg(t,bad){ const m=document.getElementById('msg'); m.style.color=bad?'#e63946':'#2a9d8f'; m.textContent=t; }
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){ submitWord(); }
+  else if(e.key==='Backspace'){ del(); }
+  else { const k=e.key.toLowerCase(); if(/^[a-z]$/.test(k) && all.has(k)){ current+=k; renderCurrent(); } }
+});
+newGame();
+</script>
+</body>
+</html>

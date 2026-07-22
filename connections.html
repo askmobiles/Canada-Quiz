@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Word Groups — Connections Puzzle | Family Games</title>
+<meta name="description" content="Word Groups — a free connections-style puzzle. Sort 16 words into 4 secret groups of 4. Fun brain game for all ages.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
+<style>
+  .cn-wrap{max-width:460px;margin:0 auto;text-align:center}
+  .cn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:14px auto}
+  .cn-tile{aspect-ratio:1.5/1;display:flex;align-items:center;justify-content:center;text-align:center;background:#eef1f5;border-radius:10px;font-weight:800;font-size:clamp(11px,3.2vw,15px);cursor:pointer;padding:2px;text-transform:uppercase;user-select:none}
+  .cn-tile.sel{background:var(--ink);color:#fff}
+  .cn-solved{border-radius:12px;padding:10px;margin:7px 0;color:#fff}
+  .cn-solved .cat{font-weight:900;text-transform:uppercase;font-size:14px}
+  .cn-solved .ws{font-size:14px;font-weight:700}
+  .g0{background:#e9b949}.g1{background:#2a9d8f}.g2{background:#4895ef}.g3{background:#8e7dbe}
+  .hearts{font-size:20px;margin:6px 0}
+  .shake{animation:sh .3s}
+  @keyframes sh{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔗 Word Groups</h1>
+    <p>Sort the 16 words into 4 secret groups of 4!</p>
+  </section>
+
+  <details class="howto"><summary></summary><p>There are 16 words that belong to 4 hidden groups of 4 (for example, "Canadian animals" or "colours"). Tap 4 words you think go together, then press Submit. If you're right, the group locks in with its colour. If you're wrong, you lose a life 💛 — you get 4 tries. Find all 4 groups to win!</p></details>
+
+  <div class="panel">
+    <div class="cn-wrap">
+      <div id="solved"></div>
+      <div class="cn-grid" id="grid"></div>
+      <div class="hearts" id="hearts"></div>
+      <p class="center" id="msg" style="font-weight:800;min-height:22px"></p>
+      <div class="center">
+        <button class="btn" id="submitBtn" onclick="submitGuess()">Submit</button>
+        <button class="btn btn-ghost" onclick="shuffleTiles()">Shuffle</button>
+        <button class="btn btn-ghost" onclick="newGame()">New Puzzle</button>
+      </div>
+      <div class="center" style="margin-top:8px"><a class="btn btn-ghost" href="games.html">All Games</a></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const PUZZLES=[
+  [["Canadian animals","Beaver","Moose","Loon","Caribou"],["Provinces","Ontario","Alberta","Quebec","Manitoba"],["Winter things","Snow","Ice","Toque","Mittens"],["Fruits","Apple","Banana","Cherry","Grape"]],
+  [["Hockey words","Puck","Stick","Goal","Rink"],["Colours","Red","Blue","Green","Yellow"],["Canadian foods","Poutine","Nanaimo","BeaverTail","Butter tart"],["Body parts","Arm","Leg","Head","Hand"]],
+  [["Oceans","Atlantic","Pacific","Arctic","Indian"],["Trees","Maple","Pine","Oak","Birch"],["Weather","Rain","Wind","Fog","Storm"],["Instruments","Guitar","Drums","Piano","Flute"]],
+  [["Canadian cities","Toronto","Calgary","Halifax","Regina"],["Farm animals","Cow","Pig","Sheep","Goat"],["Shapes","Circle","Square","Triangle","Star"],["Drinks","Water","Juice","Milk","Tea"]],
+  [["In space","Sun","Moon","Star","Planet"],["Sports","Soccer","Tennis","Golf","Boxing"],["Kitchen","Fork","Spoon","Plate","Cup"],["Birds","Eagle","Robin","Owl","Duck"]],
+  [["Time","Hour","Minute","Second","Day"],["Canadian coins","Penny","Nickel","Dime","Loonie"],["Bugs","Ant","Bee","Fly","Moth"],["Clothes","Shirt","Pants","Hat","Shoes"]],
+  [["Reptiles","Snake","Lizard","Turtle","Gecko"],["Canada symbols","Flag","Anthem","Maple","Poppy"],["Vehicles","Car","Bus","Train","Truck"],["Vegetables","Carrot","Potato","Onion","Pea"]],
+  [["Continents","Asia","Africa","Europe","Australia"],["Metals","Gold","Silver","Iron","Copper"],["Feelings","Happy","Sad","Angry","Scared"],["Berries","Blueberry","Strawberry","Raspberry","Cranberry"]]
+];
+let puzzle=null, tiles=[], selected=[], solved=[], lives=4;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function newGame(){
+  puzzle=PUZZLES[Math.floor(Math.random()*PUZZLES.length)];
+  tiles=[]; puzzle.forEach((g,gi)=>{ g.slice(1).forEach(w=>tiles.push({w, g:gi})); });
+  shuffle(tiles);
+  selected=[]; solved=[]; lives=4;
+  document.getElementById('msg').textContent='';
+  document.getElementById('submitBtn').disabled=false;
+  document.getElementById('solved').innerHTML='';
+  render(); drawHearts();
+}
+function drawHearts(){ document.getElementById('hearts').textContent='💛'.repeat(lives)+'🤍'.repeat(4-lives); }
+function render(){
+  const g=document.getElementById('grid'); g.innerHTML='';
+  tiles.forEach((t,i)=>{
+    const d=document.createElement('div'); d.className='cn-tile'+(selected.includes(i)?' sel':'');
+    d.textContent=t.w; d.onclick=()=>toggle(i); g.appendChild(d);
+  });
+}
+function toggle(i){
+  const k=selected.indexOf(i);
+  if(k>=0) selected.splice(k,1);
+  else { if(selected.length>=4) return; selected.push(i); }
+  render();
+}
+function shuffleTiles(){ shuffle(tiles); selected=[]; render(); }
+function submitGuess(){
+  if(selected.length!==4){ msg('Pick exactly 4 words',true); return; }
+  const gs=selected.map(i=>tiles[i].g);
+  const allSame = gs.every(x=>x===gs[0]);
+  if(allSame){
+    const gi=gs[0];
+    solved.push(gi);
+    // remove those tiles
+    tiles=tiles.filter((t,i)=>!selected.includes(i));
+    selected=[];
+    showSolved(gi);
+    render();
+    if(solved.length===4){ msg('🎉 You solved it! Great job!',false); document.getElementById('submitBtn').disabled=true; }
+    else msg('Nice! Group found.',false);
+  } else {
+    // one away?
+    const counts={}; gs.forEach(x=>counts[x]=(counts[x]||0)+1);
+    const max=Math.max(...Object.values(counts));
+    lives--; drawHearts();
+    const g=document.getElementById('grid'); g.classList.add('shake'); setTimeout(()=>g.classList.remove('shake'),300);
+    if(lives<=0){ revealAll(); }
+    else msg(max===3?'So close — one away!':'Not a group. Try again!',true);
+    selected=[]; render();
+  }
+}
+function showSolved(gi){
+  const box=document.getElementById('solved');
+  const d=document.createElement('div'); d.className='cn-solved g'+solved.indexOf(gi);
+  d.innerHTML='<div class="cat">'+puzzle[gi][0]+'</div><div class="ws">'+puzzle[gi].slice(1).join(' · ')+'</div>';
+  box.appendChild(d);
+}
+function revealAll(){
+  document.getElementById('submitBtn').disabled=true;
+  // show remaining groups
+  const remaining=[0,1,2,3].filter(gi=>!solved.includes(gi));
+  remaining.forEach(gi=>{ if(!solved.includes(gi)){ solved.push(gi); showSolved(gi); } });
+  tiles=[]; render();
+  msg('😅 Out of tries! Here were the groups.',true);
+}
+function msg(t,bad){ const m=document.getElementById('msg'); m.style.color=bad?'#e63946':'#2a9d8f'; m.textContent=t; }
+newGame();
+</script>
+</body>
+</html>
