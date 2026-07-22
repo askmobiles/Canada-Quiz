@@ -112,8 +112,22 @@ function shuffle(arr){
   return a;
 }
 
+/* Draw fresh questions each replay: prefer ones the player hasn't seen yet,
+   remembered in the browser. When the bank is used up, it resets. */
+function pickFresh(bank, count, key){
+  let seen=[];
+  try{ seen = JSON.parse(localStorage.getItem(key) || '[]'); }catch(e){ seen=[]; }
+  if(!Array.isArray(seen)) seen=[];
+  let unseen = bank.map((_,i)=>i).filter(i=>seen.indexOf(i)===-1);
+  if(unseen.length < count){ seen=[]; unseen = bank.map((_,i)=>i); }
+  for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
+  const chosen = unseen.slice(0, count);
+  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
+  return chosen.map(i=>bank[i]);
+}
+
 function startExam(){
-  examQuestions = shuffle(CITIZENSHIP_QUESTIONS).slice(0, Math.min(TOTAL, CITIZENSHIP_QUESTIONS.length));
+  examQuestions = pickFresh(CITIZENSHIP_QUESTIONS, Math.min(TOTAL, CITIZENSHIP_QUESTIONS.length), 'cq_cit_seen');
   current = 0; score = 0; wrongList = []; answered = false;
   timeLeft = TIME_LIMIT;
 

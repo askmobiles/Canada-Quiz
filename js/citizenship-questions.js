@@ -1,308 +1,156 @@
-/* Canada Citizenship Practice — starter question bank
-   Based on the official "Discover Canada" study guide themes.
+/* Canada Citizenship Practice — expanded question bank
+   Based on the official "Discover Canada" study guide.
    UNOFFICIAL practice questions. Review for accuracy before launch.
    Format: { q, options:[...], answer:index, explain, chapter }
 */
 const CITIZENSHIP_QUESTIONS = [
-  {
-    q: "How many correct answers do you need to pass the real Canadian citizenship test?",
-    options: ["10 out of 20", "15 out of 20", "18 out of 20", "20 out of 20"],
-    answer: 1,
-    explain: "The real test has 20 questions and you must get at least 15 correct (75%) to pass.",
-    chapter: "About the Test"
-  },
-  {
-    q: "What is the capital city of Canada?",
-    options: ["Toronto", "Vancouver", "Ottawa", "Montreal"],
-    answer: 2,
-    explain: "Ottawa, in Ontario, is the capital of Canada.",
-    chapter: "Canada's Regions"
-  },
-  {
-    q: "Who was the first Prime Minister of Canada?",
-    options: ["Sir John A. Macdonald", "Sir Wilfrid Laurier", "Sir George-Étienne Cartier", "William Lyon Mackenzie King"],
-    answer: 0,
-    explain: "Sir John A. Macdonald was Canada's first Prime Minister. His image is on the $10 bill.",
-    chapter: "Canada's History"
-  },
-  {
-    q: "What are the two official languages of Canada?",
-    options: ["English and Spanish", "English and French", "French and German", "English and Italian"],
-    answer: 1,
-    explain: "Canada has two official languages: English and French.",
-    chapter: "Modern Canada"
-  },
-  {
-    q: "On what date did Canada become a country (Confederation)?",
-    options: ["July 1, 1867", "July 4, 1776", "January 1, 1900", "November 11, 1918"],
-    answer: 0,
-    explain: "Canada became a country on July 1, 1867. We celebrate this every year as Canada Day.",
-    chapter: "Canada's History"
-  },
-  {
-    q: "How many provinces and territories does Canada have?",
-    options: ["10 provinces and 3 territories", "12 provinces and 2 territories", "8 provinces and 3 territories", "10 provinces and 5 territories"],
-    answer: 0,
-    explain: "Canada has 10 provinces and 3 territories.",
-    chapter: "Canada's Regions"
-  },
-  {
-    q: "Who is Canada's Head of State?",
-    options: ["The Prime Minister", "The Governor General", "The Sovereign (currently King Charles III)", "The President"],
-    answer: 2,
-    explain: "Canada's Head of State is the Sovereign — currently King Charles III. The Governor General represents the King in Canada.",
-    chapter: "How Canadians Govern Themselves"
-  },
-  {
-    q: "Who is Canada's Head of Government?",
-    options: ["The King", "The Prime Minister", "The Governor General", "The Chief Justice"],
-    answer: 1,
-    explain: "The Prime Minister is the Head of Government and runs the day-to-day government of Canada.",
-    chapter: "How Canadians Govern Themselves"
-  },
-  {
-    q: "What are the three parts of Parliament?",
-    options: ["The King, the Senate, and the House of Commons", "The Prime Minister, the courts, and the police", "The provinces, the cities, and the towns", "The Army, the Navy, and the Air Force"],
-    answer: 0,
-    explain: "Parliament has three parts: the Sovereign (King or Queen), the Senate, and the House of Commons.",
-    chapter: "How Canadians Govern Themselves"
-  },
-  {
-    q: "What is Canada's national winter sport?",
-    options: ["Curling", "Ice hockey", "Skiing", "Snowboarding"],
-    answer: 1,
-    explain: "Ice hockey is Canada's national winter sport. Lacrosse is the national summer sport.",
-    chapter: "Canadian Symbols"
-  },
-  {
-    q: "What is the name of Canada's national police force?",
-    options: ["The FBI", "The Royal Canadian Mounted Police (RCMP)", "The Canadian Guard", "The National Police Service"],
-    answer: 1,
-    explain: "The Royal Canadian Mounted Police (RCMP), also called 'the Mounties', is Canada's national police force.",
-    chapter: "Canadian Symbols"
-  },
-  {
-    q: "What is the title of Canada's national anthem?",
-    options: ["God Save the King", "The Maple Leaf Forever", "O Canada", "True North"],
-    answer: 2,
-    explain: "'O Canada' is Canada's national anthem. It was proclaimed the official anthem in 1980.",
-    chapter: "Canadian Symbols"
-  },
-  {
-    q: "Which document sets out the rights and freedoms of people in Canada?",
-    options: ["The Magna Carta", "The Canadian Charter of Rights and Freedoms", "The Declaration of Independence", "The Bill of Sale"],
-    answer: 1,
-    explain: "The Canadian Charter of Rights and Freedoms (1982) sets out the basic rights and freedoms of everyone in Canada.",
-    chapter: "Rights and Responsibilities"
-  },
-  {
-    q: "What do we celebrate on July 1st?",
-    options: ["Remembrance Day", "Canada Day", "Victoria Day", "Labour Day"],
-    answer: 1,
-    explain: "July 1st is Canada Day, celebrating the day Canada became a country in 1867.",
-    chapter: "Canadian Symbols"
-  },
-  {
-    q: "What do we remember on November 11th (Remembrance Day)?",
-    options: ["The men and women who served and died for Canada", "The first Prime Minister", "The founding of Ottawa", "The end of winter"],
-    answer: 0,
-    explain: "On Remembrance Day we honour the sacrifice of Canadians who served and died in wars. Many people wear a red poppy.",
-    chapter: "Canada's History"
-  },
-  {
-    q: "How old must you be to vote in a Canadian federal election?",
-    options: ["16 years old", "18 years old", "19 years old", "21 years old"],
-    answer: 1,
-    explain: "You must be a Canadian citizen and at least 18 years old on voting day to vote in a federal election.",
-    chapter: "Federal Elections"
-  },
-  {
-    q: "Which three groups are the Aboriginal (Indigenous) peoples of Canada?",
-    options: ["First Nations, Métis, and Inuit", "English, French, and Irish", "North, South, and Central", "Farmers, fishers, and miners"],
-    answer: 0,
-    explain: "The Aboriginal peoples of Canada are the First Nations, the Métis, and the Inuit.",
-    chapter: "Canada's History"
-  },
-  {
-    q: "What animal is an official symbol (emblem) of Canada?",
-    options: ["The lion", "The eagle", "The beaver", "The kangaroo"],
-    answer: 2,
-    explain: "The beaver is an official emblem of Canada and appears on the five-cent coin (nickel).",
-    chapter: "Canadian Symbols"
-  },
-  {
-    q: "Which ocean is on the WEST coast of Canada?",
-    options: ["The Atlantic Ocean", "The Pacific Ocean", "The Arctic Ocean", "The Indian Ocean"],
-    answer: 1,
-    explain: "The Pacific Ocean is on Canada's west coast (British Columbia). The Atlantic is on the east and the Arctic is to the north.",
-    chapter: "Canada's Regions"
-  },
-  {
-    q: "Which three provinces are known as the Prairie provinces?",
-    options: ["Ontario, Quebec, and Nova Scotia", "Manitoba, Saskatchewan, and Alberta", "B.C., Yukon, and Alberta", "New Brunswick, P.E.I., and Nova Scotia"],
-    answer: 1,
-    explain: "The Prairie provinces are Manitoba, Saskatchewan, and Alberta.",
-    chapter: "Canada's Regions"
-  },
-  {
-    q: "What is the population of Canada, approximately?",
-    options: ["About 3 million", "About 40 million", "About 100 million", "About 300 million"],
-    answer: 1,
-    explain: "Canada's population is roughly 40 million people, making it one of the least crowded countries by land area.",
-    chapter: "Modern Canada"
-  },
-  {
-    q: "Canada is the ____ largest country in the world by total area.",
-    options: ["First", "Second", "Fifth", "Tenth"],
-    answer: 1,
-    explain: "Canada is the second largest country in the world by total area, after Russia.",
-    chapter: "Canada's Regions"
-  },
-  {
-    q: "Which province is mostly French-speaking?",
-    options: ["Ontario", "Quebec", "Alberta", "Manitoba"],
-    answer: 1,
-    explain: "Quebec is the only province where most people speak French as their first language.",
-    chapter: "Canada's Regions"
-  },
-  {
-    q: "What was the last province to join Canada?",
-    options: ["British Columbia", "Alberta", "Newfoundland and Labrador", "Manitoba"],
-    answer: 2,
-    explain: "Newfoundland and Labrador was the last province to join Canada, in 1949.",
-    chapter: "Canada's History"
-  },
-  {
-    q: "How often must a federal election be held (at the latest)?",
-    options: ["Every year", "At least every four years", "Every ten years", "Only when the King decides"],
-    answer: 1,
-    explain: "By law, a federal election must be held at least every four years.",
-    chapter: "Federal Elections"
-  },
-  {
-    q: "Who represents the King (the Sovereign) in Canada at the federal level?",
-    options: ["The Prime Minister", "The Governor General", "The Mayor", "The Chief Justice"],
-    answer: 1,
-    explain: "The Governor General represents the Sovereign at the federal level in Canada.",
-    chapter: "How Canadians Govern Themselves"
-  },
-  {
-    q: "What are the four Atlantic provinces?",
-    options: ["Nova Scotia, New Brunswick, P.E.I., Newfoundland and Labrador", "Ontario, Quebec, Manitoba, Alberta", "B.C., Alberta, Saskatchewan, Manitoba", "Yukon, Nunavut, N.W.T., B.C."],
-    answer: 0,
-    explain: "The Atlantic provinces are Nova Scotia, New Brunswick, Prince Edward Island, and Newfoundland and Labrador.",
-    chapter: "Canada's Regions"
-  },
-  {
-    q: "What is the national summer sport of Canada?",
-    options: ["Baseball", "Soccer", "Lacrosse", "Cricket"],
-    answer: 2,
-    explain: "Lacrosse is Canada's national summer sport, and ice hockey is the national winter sport.",
-    chapter: "Canadian Symbols"
-  },
-  {
-    q: "In Canada, who has the right to vote and run for office?",
-    options: ["Only people born in Canada", "Canadian citizens", "Only property owners", "Only people over 30"],
-    answer: 1,
-    explain: "Canadian citizens aged 18 or older have the right to vote and to run for office in elections.",
-    chapter: "Rights and Responsibilities"
-  },
-  {
-    q: "What is a responsibility of Canadian citizenship?",
-    options: ["Obeying the law", "Never leaving Canada", "Paying no taxes", "Joining a political party"],
-    answer: 0,
-    explain: "Obeying the law is a key responsibility. Others include serving on a jury, voting, and helping others in the community.",
-    chapter: "Rights and Responsibilities"
-  },
-  {
-    q: "Which war took place partly in Canada in the years 1812–1814?",
-    options: ["World War I", "The War of 1812", "The Seven Years' War", "The Cold War"],
-    answer: 1,
-    explain: "In the War of 1812, the United States invaded Canada, but the invasion was defeated. This helped shape the border we have today.",
-    chapter: "Canada's History"
-  },
-  {
-    q: "The 1917 Battle of Vimy Ridge is remembered as an important moment for Canada during which war?",
-    options: ["The War of 1812", "The First World War", "The Second World War", "The Korean War"],
-    answer: 1,
-    explain: "Canadian troops captured Vimy Ridge in 1917 during the First World War. It is seen as a proud national moment.",
-    chapter: "Canada's History"
-  },
-  {
-    q: "What colour(s) is the Canadian flag?",
-    options: ["Red and white", "Blue and white", "Red, white, and blue", "Green and gold"],
-    answer: 0,
-    explain: "The Canadian flag is red and white with a single red maple leaf in the centre. It was first raised in 1965.",
-    chapter: "Canadian Symbols"
-  },
-  {
-    q: "Which level of government is responsible for national defence and citizenship?",
-    options: ["The city (municipal) government", "The provincial government", "The federal government", "The school board"],
-    answer: 2,
-    explain: "The federal government is responsible for things like national defence, citizenship, and foreign policy.",
-    chapter: "How Canadians Govern Themselves"
-  },
-  {
-    q: "Who do Canadians elect to represent them in the House of Commons?",
-    options: ["Senators", "Members of Parliament (MPs)", "Judges", "Governors"],
-    answer: 1,
-    explain: "Canadians vote to elect Members of Parliament (MPs) to represent them in the House of Commons.",
-    chapter: "Federal Elections"
-  },
-  {
-    q: "What is the名 name given to the first European and Aboriginal peoples who worked together in the early fur trade?",
-    options: ["The Loyalists", "The Voyageurs and their partners", "The Vikings", "The Pilgrims"],
-    answer: 1,
-    explain: "French fur traders (voyageurs) and First Nations partners built the early fur trade, one of Canada's first industries.",
-    chapter: "Canada's History"
-  },
-  {
-    q: "What is the meaning of the poppy that many Canadians wear in November?",
-    options: ["It celebrates spring", "It remembers those who died in war", "It is a symbol of hockey", "It marks Canada Day"],
-    answer: 1,
-    explain: "The red poppy is worn to remember Canadians who died serving in wars, inspired by the poem 'In Flanders Fields'.",
-    chapter: "Canada's History"
-  },
-  {
-    q: "Which famous Canadian ran the 'Marathon of Hope' to raise money for cancer research?",
-    options: ["Wayne Gretzky", "Terry Fox", "Sir John A. Macdonald", "Alexander Graham Bell"],
-    answer: 1,
-    explain: "Terry Fox, who lost a leg to cancer, ran the Marathon of Hope in 1980 and became a national hero.",
-    chapter: "Modern Canada"
-  },
-  {
-    q: "What are the three territories of Canada?",
-    options: ["Yukon, Northwest Territories, and Nunavut", "Ontario, Quebec, and Alberta", "Yukon, Alberta, and Manitoba", "Nunavut, Labrador, and Yukon"],
-    answer: 0,
-    explain: "Canada's three territories are Yukon, the Northwest Territories, and Nunavut, all in the North.",
-    chapter: "Canada's Regions"
-  },
-  {
-    q: "Where does the Prime Minister and Cabinet get the authority to govern?",
-    options: ["From winning the support of the elected House of Commons", "From the King alone", "From the courts", "From the newspapers"],
-    answer: 0,
-    explain: "In Canada's system of responsible government, the government must have the confidence (support) of the elected House of Commons.",
-    chapter: "How Canadians Govern Themselves"
-  },
-  {
-    q: "What is one thing Canada is known for producing and exporting?",
-    options: ["Oil, gas, grain, and minerals", "Only bananas", "Only cars", "Nothing at all"],
-    answer: 0,
-    explain: "Canada has a strong economy based on natural resources such as oil, gas, grain, lumber, and minerals, plus services and manufacturing.",
-    chapter: "Canada's Economy"
-  },
-  {
-    q: "The maple leaf is a symbol of Canada. Where can you see it?",
-    options: ["Only on the flag", "On the flag, coins, and the coat of arms", "Nowhere official", "Only in Quebec"],
-    answer: 1,
-    explain: "The maple leaf appears on the national flag, on coins (like the penny of the past), and on the Canadian coat of arms.",
-    chapter: "Canadian Symbols"
-  },
-  {
-    q: "Which country shares the longest border with Canada?",
-    options: ["Russia", "The United States", "Mexico", "Greenland"],
-    answer: 1,
-    explain: "Canada shares the longest border in the world with the United States to the south.",
-    chapter: "Canada's Regions"
-  }
+  // ---------- About the test ----------
+  { q:"How many correct answers do you need to pass the real Canadian citizenship test?", options:["10 out of 20","15 out of 20","18 out of 20","20 out of 20"], answer:1, explain:"The real test has 20 questions and you must get at least 15 correct (75%) to pass.", chapter:"About the Test" },
+  { q:"How much time do you have to complete the real citizenship test?", options:["10 minutes","30 minutes","60 minutes","No time limit"], answer:1, explain:"You have 30 minutes to answer the 20 questions.", chapter:"About the Test" },
+  { q:"Which official guide should you study to prepare for the citizenship test?", options:["Discover Canada","The Canada Handbook","A Guide to Voting","The Citizen's Almanac"], answer:0, explain:"The official study guide is called 'Discover Canada: The Rights and Responsibilities of Citizenship'.", chapter:"About the Test" },
+
+  // ---------- Rights and Responsibilities ----------
+  { q:"Which document sets out the rights and freedoms of people in Canada?", options:["The Magna Carta","The Canadian Charter of Rights and Freedoms","The Declaration of Independence","The Bill of Sale"], answer:1, explain:"The Canadian Charter of Rights and Freedoms (1982) sets out our basic rights and freedoms.", chapter:"Rights and Responsibilities" },
+  { q:"In what year did the Canadian Charter of Rights and Freedoms become part of the Constitution?", options:["1867","1931","1982","2001"], answer:2, explain:"The Charter became part of the Constitution in 1982.", chapter:"Rights and Responsibilities" },
+  { q:"Which of these is one of the fundamental freedoms in the Charter?", options:["Freedom of speech and expression","Free housing","Free education for life","Free health care for tourists"], answer:0, explain:"Freedom of thought, belief, opinion and expression is a fundamental freedom in the Charter.", chapter:"Rights and Responsibilities" },
+  { q:"Freedom of conscience and religion means Canadians can…", options:["Only follow one national religion","Practise any religion or none at all","Never discuss religion","Be forced to attend church"], answer:1, explain:"Freedom of conscience and religion lets people follow any religion or none.", chapter:"Rights and Responsibilities" },
+  { q:"Which of the following is a RESPONSIBILITY of Canadian citizenship?", options:["Obeying the law","Owning a home","Speaking French","Joining the army"], answer:0, explain:"Obeying the law is a key responsibility of citizenship.", chapter:"Rights and Responsibilities" },
+  { q:"Serving on a ______ is a responsibility of Canadian citizens when called.", options:["ship","jury","farm","committee"], answer:1, explain:"Serving on a jury when called is a responsibility of citizenship.", chapter:"Rights and Responsibilities" },
+  { q:"Which is a responsibility that helps your community and country?", options:["Volunteering and helping others","Avoiding all taxes","Ignoring elections","Never working"], answer:0, explain:"Helping others in the community is an important responsibility.", chapter:"Rights and Responsibilities" },
+  { q:"Where do Canada's laws and rights come from, in part?", options:["English common law and French civil law","Only the United States","Only the King","Only the provinces"], answer:0, explain:"Canadian law is rooted in English common law and, in Quebec, French civil law.", chapter:"Rights and Responsibilities" },
+  { q:"The right of 'habeas corpus' means…", options:["The right to keep property","The right to challenge unlawful detention","The right to vote twice","The right to free speech only"], answer:1, explain:"Habeas corpus is the right to challenge unlawful detention by the state; it comes from English law.", chapter:"Rights and Responsibilities" },
+  { q:"Mobility rights in the Charter allow Canadians to…", options:["Live and work anywhere in Canada","Drive without a licence","Travel for free","Cross any border freely"], answer:0, explain:"Mobility rights let citizens live and work anywhere in Canada and enter or leave the country.", chapter:"Rights and Responsibilities" },
+  { q:"Multiculturalism in Canada means…", options:["Only one culture is allowed","People of many backgrounds live together with respect","Everyone must speak one language","New cultures are banned"], answer:1, explain:"Canada values multiculturalism — many cultures living together with mutual respect.", chapter:"Rights and Responsibilities" },
+  { q:"Paying taxes is…", options:["Optional","A responsibility of everyone in Canada","Only for citizens over 65","Only for business owners"], answer:1, explain:"Paying taxes is a responsibility for everyone who earns money in Canada.", chapter:"Rights and Responsibilities" },
+  { q:"Which right do Canadian citizens have that some non-citizens do not?", options:["The right to vote in elections","The right to drive","The right to work","The right to an education"], answer:0, explain:"Only Canadian citizens can vote and run in federal and provincial elections.", chapter:"Rights and Responsibilities" },
+  { q:"Equality rights in the Charter mean everyone is…", options:["Equal under the law","Given the same salary","Given free land","Required to be the same religion"], answer:0, explain:"Equality rights mean every person is equal under the law, regardless of background.", chapter:"Rights and Responsibilities" },
+
+  // ---------- Who We Are / Aboriginal peoples ----------
+  { q:"Which three groups are the Aboriginal (Indigenous) peoples of Canada?", options:["First Nations, Métis, and Inuit","English, French, and Irish","North, South, and Central","Farmers, fishers, and miners"], answer:0, explain:"The Aboriginal peoples of Canada are the First Nations, the Métis, and the Inuit.", chapter:"Canada's History" },
+  { q:"The Inuit live mostly in which part of Canada?", options:["The Arctic (North)","The Prairies","The West Coast","Southern Ontario"], answer:0, explain:"The Inuit live mostly in the Arctic, in Canada's far North.", chapter:"Canada's History" },
+  { q:"The Métis are a people of mixed…", options:["Aboriginal and European ancestry","Asian and African ancestry","British and American ancestry","French and Spanish ancestry"], answer:0, explain:"The Métis are a distinct people of mixed Aboriginal and European (mainly French) ancestry.", chapter:"Canada's History" },
+  { q:"What were 'residential schools' in Canadian history?", options:["Schools that harmed and separated Aboriginal children from their families","Free universities","Schools for new immigrants","Military schools"], answer:0, explain:"Residential schools removed Aboriginal children from their families and harmed their cultures — a painful part of Canada's history.", chapter:"Canada's History" },
+  { q:"The word 'Canada' comes from an Aboriginal word 'kanata' meaning…", options:["Village","River","Mountain","Snow"], answer:0, explain:"'Kanata' is a Huron-Iroquois word meaning 'village' or 'settlement'.", chapter:"Canada's History" },
+
+  // ---------- Canada's History (early to 1800s) ----------
+  { q:"Which European explorers first reached Canada around 1,000 years ago?", options:["The Vikings (Norse)","The Spanish","The Portuguese","The Dutch"], answer:0, explain:"Norse (Viking) explorers reached the northern tip of Newfoundland about 1,000 years ago.", chapter:"Canada's History" },
+  { q:"Who claimed land for France and helped name 'Canada' in the 1530s?", options:["Jacques Cartier","John Cabot","Samuel de Champlain","Christopher Columbus"], answer:0, explain:"Jacques Cartier explored the St. Lawrence in the 1530s and the name 'Canada' came into use.", chapter:"Canada's History" },
+  { q:"Who founded Quebec City in 1608 and is called the 'Father of New France'?", options:["Samuel de Champlain","Jacques Cartier","John A. Macdonald","Louis Riel"], answer:0, explain:"Samuel de Champlain founded Quebec City in 1608.", chapter:"Canada's History" },
+  { q:"In the 1700s, the French colony in Canada was called…", options:["New France","Upper Canada","British Columbia","New England"], answer:0, explain:"The French colony along the St. Lawrence was called New France.", chapter:"Canada's History" },
+  { q:"Which animal's fur drove much of Canada's early economy?", options:["Beaver","Fox","Bear","Deer"], answer:0, explain:"The beaver fur trade was one of Canada's earliest and most important industries.", chapter:"Canada's Economy" },
+  { q:"The 1759 Battle of the Plains of Abraham was fought near which city?", options:["Montreal","Toronto","Quebec City","Halifax"], answer:2, explain:"The battle was fought near Quebec City; Britain defeated France there in 1759.", chapter:"Canada's History" },
+  { q:"After Britain defeated France, the 1763 Treaty of Paris gave Canada to…", options:["Britain","Spain","The United States","The Netherlands"], answer:0, explain:"The 1763 Treaty of Paris gave New France to Britain.", chapter:"Canada's History" },
+  { q:"Which 1774 law recognized the religion and language of the French in Canada?", options:["The Quebec Act","The Constitution Act","The Charter","The Indian Act"], answer:0, explain:"The Quebec Act of 1774 allowed religious freedom for Catholics and kept French civil law.", chapter:"Canada's History" },
+  { q:"The Loyalists who came to Canada after 1776 were loyal to…", options:["The British Crown","France","Spain","The United States"], answer:0, explain:"United Empire Loyalists left the United States to stay loyal to the British Crown.", chapter:"Canada's History" },
+  { q:"In the War of 1812, who invaded Canada but was defeated?", options:["The United States","France","Britain","Russia"], answer:0, explain:"The United States invaded Canada during the War of 1812 but the invasion was defeated.", chapter:"Canada's History" },
+  { q:"Which heroine warned of an American attack during the War of 1812?", options:["Laura Secord","Nellie McClung","Emily Carr","Agnes Macphail"], answer:0, explain:"Laura Secord walked 30 km to warn of an American attack in 1813.", chapter:"Canada's History" },
+  { q:"The Hudson's Bay Company, founded in 1670, traded mainly in…", options:["Furs","Gold","Spices","Cars"], answer:0, explain:"The Hudson's Bay Company was a major fur-trading company.", chapter:"Canada's Economy" },
+  { q:"'Responsible government' means the government must have the support of…", options:["The elected assembly","The King alone","The army","The courts"], answer:0, explain:"Responsible government means ministers must have the confidence of the elected assembly.", chapter:"How Canadians Govern Themselves" },
+
+  // ---------- Confederation ----------
+  { q:"On what date did Canada become a country (Confederation)?", options:["July 1, 1867","July 4, 1776","January 1, 1900","November 11, 1918"], answer:0, explain:"Canada became a country on July 1, 1867. We celebrate this as Canada Day.", chapter:"Canada's History" },
+  { q:"How many provinces first joined Confederation in 1867?", options:["Four","Six","Eight","Ten"], answer:0, explain:"Ontario, Quebec, Nova Scotia, and New Brunswick joined first in 1867.", chapter:"Canada's History" },
+  { q:"Who was Canada's first Prime Minister?", options:["Sir John A. Macdonald","Sir Wilfrid Laurier","Sir George-Étienne Cartier","Louis Riel"], answer:0, explain:"Sir John A. Macdonald was Canada's first Prime Minister. His image is on the $10 bill.", chapter:"Canada's History" },
+  { q:"The leaders who worked to create Canada in 1867 are called the…", options:["Fathers of Confederation","Founding Kings","First Ministers","Loyalists"], answer:0, explain:"The Fathers of Confederation created the Dominion of Canada in 1867.", chapter:"Canada's History" },
+  { q:"The law that created Canada in 1867 was called the…", options:["British North America Act (Constitution Act, 1867)","Charter of Rights","Quebec Act","Indian Act"], answer:0, explain:"The British North America Act (now the Constitution Act, 1867) created Canada.", chapter:"How Canadians Govern Themselves" },
+  { q:"Which railway, finished in 1885, connected Canada from east to west?", options:["The Canadian Pacific Railway","The Trans-Canada Highway","The Grand Trunk Road","The Arctic Line"], answer:0, explain:"The Canadian Pacific Railway was completed in 1885, uniting the country.", chapter:"Canada's History" },
+  { q:"Who led the Métis in the Red River and North-West resistances?", options:["Louis Riel","Terry Fox","Tecumseh","Sir John A. Macdonald"], answer:0, explain:"Louis Riel led the Métis and helped bring Manitoba into Confederation.", chapter:"Canada's History" },
+  { q:"What was the last province to join Canada, in 1949?", options:["British Columbia","Alberta","Newfoundland and Labrador","Manitoba"], answer:2, explain:"Newfoundland and Labrador was the last province to join Canada, in 1949.", chapter:"Canada's History" },
+  { q:"Nunavut became Canada's newest territory in which year?", options:["1949","1982","1999","2005"], answer:2, explain:"Nunavut was created as a territory in 1999.", chapter:"Canada's Regions" },
+
+  // ---------- 1900s history ----------
+  { q:"Canadian troops famously captured which ridge in 1917 during World War I?", options:["Vimy Ridge","Juno Beach","Normandy","Gallipoli"], answer:0, explain:"Canadians captured Vimy Ridge in 1917 — a proud national moment.", chapter:"Canada's History" },
+  { q:"Which Canadian doctor wrote the famous poem 'In Flanders Fields'?", options:["John McCrae","Frederick Banting","Norman Bethune","Alexander Fleming"], answer:0, explain:"Lieutenant-Colonel John McCrae wrote 'In Flanders Fields' during the First World War.", chapter:"Canada's History" },
+  { q:"On which beach did Canadian soldiers land on D-Day in 1944?", options:["Juno Beach","Vimy Beach","Dieppe Beach","Gold Beach"], answer:0, explain:"Canadian troops landed on Juno Beach in the D-Day invasion of June 6, 1944.", chapter:"Canada's History" },
+  { q:"In which year did most Canadian women gain the right to vote federally?", options:["1867","1918","1945","1982"], answer:1, explain:"Most women gained the right to vote in federal elections in 1918.", chapter:"Canada's History" },
+  { q:"The 'Famous Five' women helped win the 1929 ruling that women are legally…", options:["'Persons'","Voters","Citizens","Equal in pay"], answer:0, explain:"The 'Persons Case' of 1929 confirmed that women are 'persons' who can serve in the Senate.", chapter:"Canada's History" },
+  { q:"In what year was the current red-and-white maple leaf flag first raised?", options:["1867","1931","1965","1982"], answer:2, explain:"The maple leaf flag was first raised on February 15, 1965.", chapter:"Canadian Symbols" },
+  { q:"Terry Fox's 'Marathon of Hope' to fight cancer took place in which year?", options:["1965","1980","1995","2005"], answer:1, explain:"Terry Fox ran his Marathon of Hope in 1980 and became a national hero.", chapter:"Modern Canada" },
+  { q:"Which Canadian won the Nobel Peace Prize for helping create UN peacekeeping?", options:["Lester B. Pearson","Pierre Trudeau","Tommy Douglas","John Diefenbaker"], answer:0, explain:"Lester B. Pearson won the Nobel Peace Prize in 1957 and later became Prime Minister.", chapter:"Modern Canada" },
+  { q:"Insulin, used to treat diabetes, was co-discovered by which Canadian?", options:["Sir Frederick Banting","Alexander Graham Bell","Terry Fox","Marshall McLuhan"], answer:0, explain:"Sir Frederick Banting and Charles Best discovered insulin in the 1920s.", chapter:"Modern Canada" },
+  { q:"Who is often called the 'father of medicare' (public health care) in Canada?", options:["Tommy Douglas","John A. Macdonald","Wilfrid Laurier","Louis Riel"], answer:0, explain:"Tommy Douglas is remembered as the father of Canada's public health care system.", chapter:"Canada's Economy" },
+
+  // ---------- How Canadians Govern Themselves ----------
+  { q:"What type of government does Canada have?", options:["A federal state, parliamentary democracy and constitutional monarchy","A republic","A dictatorship","A city-state"], answer:0, explain:"Canada is a federal state, a parliamentary democracy, and a constitutional monarchy.", chapter:"How Canadians Govern Themselves" },
+  { q:"Who is Canada's Head of State?", options:["The Prime Minister","The Governor General","The Sovereign (currently King Charles III)","The President"], answer:2, explain:"Canada's Head of State is the Sovereign — currently King Charles III.", chapter:"How Canadians Govern Themselves" },
+  { q:"Who is Canada's Head of Government?", options:["The King","The Prime Minister","The Governor General","The Chief Justice"], answer:1, explain:"The Prime Minister is the Head of Government and runs the country day to day.", chapter:"How Canadians Govern Themselves" },
+  { q:"Who represents the Sovereign in Canada at the federal level?", options:["The Prime Minister","The Governor General","The Mayor","The Chief Justice"], answer:1, explain:"The Governor General represents the Sovereign at the federal level.", chapter:"How Canadians Govern Themselves" },
+  { q:"Who represents the Sovereign in each province?", options:["The Lieutenant Governor","The Mayor","The Premier","The Senator"], answer:0, explain:"A Lieutenant Governor represents the Sovereign in each province.", chapter:"How Canadians Govern Themselves" },
+  { q:"What are the three parts of Parliament?", options:["The Sovereign, the Senate, and the House of Commons","The Prime Minister, courts, and police","The provinces, cities, and towns","The Army, Navy, and Air Force"], answer:0, explain:"Parliament has three parts: the Sovereign, the Senate, and the House of Commons.", chapter:"How Canadians Govern Themselves" },
+  { q:"Members of which house of Parliament are ELECTED by the people?", options:["The House of Commons","The Senate","The Cabinet","The Supreme Court"], answer:0, explain:"Members of Parliament (MPs) in the House of Commons are elected by voters.", chapter:"How Canadians Govern Themselves" },
+  { q:"How do Senators get their positions?", options:["They are appointed","They are elected","They inherit them","They are chosen by lottery"], answer:0, explain:"Senators are appointed (on the advice of the Prime Minister), not elected.", chapter:"How Canadians Govern Themselves" },
+  { q:"Who usually becomes Prime Minister?", options:["The leader of the party with the most seats in the House of Commons","The oldest Senator","The King's cousin","The Chief Justice"], answer:0, explain:"The leader of the party with the most seats in the House of Commons usually becomes PM.", chapter:"How Canadians Govern Themselves" },
+  { q:"What is the Cabinet?", options:["Ministers chosen by the PM to run government departments","A group of judges","The Senate","The provincial premiers"], answer:0, explain:"Cabinet ministers are chosen by the Prime Minister and are usually MPs.", chapter:"How Canadians Govern Themselves" },
+  { q:"How many levels of government does Canada have?", options:["Two","Three","Four","Five"], answer:1, explain:"Canada has three levels: federal, provincial/territorial, and municipal (local).", chapter:"How Canadians Govern Themselves" },
+  { q:"Which level of government is responsible for national defence and citizenship?", options:["Municipal","Provincial","Federal","School boards"], answer:2, explain:"The federal government handles national defence, foreign policy, and citizenship.", chapter:"How Canadians Govern Themselves" },
+  { q:"Which level of government is mainly responsible for education and health care?", options:["Federal","Provincial/territorial","Municipal","The Crown"], answer:1, explain:"Provinces and territories are mainly responsible for education and health care.", chapter:"How Canadians Govern Themselves" },
+  { q:"Which is usually a responsibility of MUNICIPAL (local) government?", options:["Snow removal and recycling","National defence","Citizenship","Foreign treaties"], answer:0, explain:"Local governments handle services like snow removal, recycling, and local roads.", chapter:"How Canadians Govern Themselves" },
+  { q:"For a bill to become law, it must pass the House of Commons, the Senate, and then receive…", options:["Royal Assent from the Governor General","A public vote","Approval from the U.S.","A newspaper announcement"], answer:0, explain:"After both houses pass a bill, the Governor General gives Royal Assent to make it law.", chapter:"How Canadians Govern Themselves" },
+  { q:"The head of a provincial government is called the…", options:["Premier","President","Mayor","Governor"], answer:0, explain:"The Premier leads a provincial or territorial government.", chapter:"How Canadians Govern Themselves" },
+  { q:"The head of a city or town government is usually called the…", options:["Mayor","Premier","Governor General","Senator"], answer:0, explain:"A Mayor leads a municipal (city or town) government.", chapter:"How Canadians Govern Themselves" },
+
+  // ---------- Federal Elections ----------
+  { q:"How often must a federal election be held (at the latest)?", options:["Every year","At least every four years","Every ten years","Only when the King decides"], answer:1, explain:"By law a federal election must be held at least every four years.", chapter:"Federal Elections" },
+  { q:"How old must you be to vote in a Canadian federal election?", options:["16","18","19","21"], answer:1, explain:"You must be a Canadian citizen and at least 18 years old on voting day.", chapter:"Federal Elections" },
+  { q:"Who do Canadians elect to represent them in the House of Commons?", options:["Senators","Members of Parliament (MPs)","Judges","Mayors"], answer:1, explain:"Voters elect Members of Parliament (MPs) to the House of Commons.", chapter:"Federal Elections" },
+  { q:"The area represented by one Member of Parliament is called a…", options:["Riding (electoral district)","Province","Ward","County"], answer:0, explain:"A riding, or electoral district, is the area an MP represents.", chapter:"Federal Elections" },
+  { q:"What are the three requirements to vote in a federal election?", options:["Be a citizen, be 18+, and be on the voters list","Own a home, pay taxes, and be married","Speak English, drive, and work","Be born in Canada, be 21, and vote before"], answer:0, explain:"You must be a Canadian citizen, at least 18, and on the voters list.", chapter:"Federal Elections" },
+  { q:"In Canada, voting is done by…", options:["Secret ballot","Public show of hands","Phone call","The King's choice"], answer:0, explain:"Canadians vote by secret ballot, so no one can be forced to reveal their vote.", chapter:"Federal Elections" },
+  { q:"After a federal election, who usually forms the government?", options:["The party with the most seats in the House of Commons","The Senate","The party with the most money","The Supreme Court"], answer:0, explain:"The party that wins the most seats in the House of Commons usually forms the government.", chapter:"Federal Elections" },
+  { q:"Which independent agency runs federal elections in Canada?", options:["Elections Canada","The RCMP","The Senate","Service Canada"], answer:0, explain:"Elections Canada is the independent agency that runs federal elections.", chapter:"Federal Elections" },
+
+  // ---------- The Justice System ----------
+  { q:"What does the 'rule of law' mean?", options:["Everyone, including governments, must obey the law","Only citizens obey the law","The King is above the law","Police make the laws"], answer:0, explain:"The rule of law means everyone — even leaders — is under the same law.", chapter:"The Justice System" },
+  { q:"What is the highest court in Canada?", options:["The Supreme Court of Canada","The House of Commons","The Senate","The Provincial Court"], answer:0, explain:"The Supreme Court of Canada is the highest court in the country.", chapter:"The Justice System" },
+  { q:"In Canadian justice, a person charged with a crime is…", options:["Presumed innocent until proven guilty","Presumed guilty","Not allowed a lawyer","Judged by the King"], answer:0, explain:"You are presumed innocent until proven guilty, and have the right to a fair trial.", chapter:"The Justice System" },
+  { q:"What is the name of Canada's national police force?", options:["The FBI","The Royal Canadian Mounted Police (RCMP)","The Canadian Guard","The National Police Service"], answer:1, explain:"The Royal Canadian Mounted Police (RCMP), the 'Mounties', is the national police force.", chapter:"The Justice System" },
+
+  // ---------- Canadian Symbols ----------
+  { q:"What is Canada's national winter sport?", options:["Curling","Ice hockey","Skiing","Snowboarding"], answer:1, explain:"Ice hockey is the national winter sport; lacrosse is the national summer sport.", chapter:"Canadian Symbols" },
+  { q:"What is Canada's national summer sport?", options:["Baseball","Soccer","Lacrosse","Cricket"], answer:2, explain:"Lacrosse is Canada's national summer sport.", chapter:"Canadian Symbols" },
+  { q:"What is the title of Canada's national anthem?", options:["God Save the King","The Maple Leaf Forever","O Canada","True North"], answer:2, explain:"'O Canada' became the official national anthem in 1980.", chapter:"Canadian Symbols" },
+  { q:"What animal is an official emblem of Canada and appears on the nickel?", options:["The lion","The eagle","The beaver","The kangaroo"], answer:2, explain:"The beaver is an official emblem and appears on the five-cent coin.", chapter:"Canadian Symbols" },
+  { q:"What colours is the Canadian flag?", options:["Red and white","Blue and white","Red, white, and blue","Green and gold"], answer:0, explain:"The flag is red and white with a single red maple leaf.", chapter:"Canadian Symbols" },
+  { q:"What do we celebrate on July 1st?", options:["Remembrance Day","Canada Day","Victoria Day","Labour Day"], answer:1, explain:"July 1st is Canada Day, marking Confederation in 1867.", chapter:"Canadian Symbols" },
+  { q:"What do we remember on November 11th (Remembrance Day)?", options:["The men and women who served and died for Canada","The first Prime Minister","The founding of Ottawa","The end of winter"], answer:0, explain:"On Remembrance Day we honour Canadians who served and died in wars. Many wear a poppy.", chapter:"Canadian Symbols" },
+  { q:"The red flower worn on Remembrance Day is the…", options:["Rose","Poppy","Tulip","Lily"], answer:1, explain:"The red poppy honours those who died in war, inspired by 'In Flanders Fields'.", chapter:"Canadian Symbols" },
+  { q:"Canada's motto, 'A Mari Usque Ad Mare', means…", options:["From Sea to Sea","Peace and Order","True North","Strong and Free"], answer:0, explain:"The motto means 'From Sea to Sea'.", chapter:"Canadian Symbols" },
+  { q:"Which tower is a famous part of the Parliament Buildings in Ottawa?", options:["The Peace Tower","The CN Tower","The Calgary Tower","The Eiffel Tower"], answer:0, explain:"The Peace Tower is a landmark of the Parliament Buildings in Ottawa.", chapter:"Canadian Symbols" },
+  { q:"The fleur-de-lys is a traditional symbol of…", options:["French Canada / Quebec","British Columbia","The Prairies","The Arctic"], answer:0, explain:"The fleur-de-lys is a symbol of French heritage and appears on Quebec's flag.", chapter:"Canadian Symbols" },
+  { q:"The maple leaf is a symbol of Canada. Where does it appear?", options:["On the flag, coins, and coat of arms","Only on the flag","Nowhere official","Only in Quebec"], answer:0, explain:"The maple leaf appears on the flag, coins, and the coat of arms.", chapter:"Canadian Symbols" },
+
+  // ---------- Canada's Economy ----------
+  { q:"Which country is Canada's largest trading partner?", options:["The United States","China","Mexico","France"], answer:0, explain:"The United States is Canada's largest trading partner.", chapter:"Canada's Economy" },
+  { q:"What is Canada known for producing and exporting?", options:["Oil, gas, grain, lumber, and minerals","Only bananas","Only cars","Nothing at all"], answer:0, explain:"Canada exports natural resources like oil, gas, grain, lumber, and minerals.", chapter:"Canada's Economy" },
+  { q:"Canada's economy is often described as based on which three types of industries?", options:["Service, manufacturing, and natural resources","Farming, mining, and fishing only","Banking only","Tourism only"], answer:0, explain:"Canada has service, manufacturing, and natural-resource industries.", chapter:"Canada's Economy" },
+
+  // ---------- Canada's Regions ----------
+  { q:"What is the capital city of Canada?", options:["Toronto","Vancouver","Ottawa","Montreal"], answer:2, explain:"Ottawa, in Ontario, is the capital of Canada.", chapter:"Canada's Regions" },
+  { q:"How many provinces and territories does Canada have?", options:["10 provinces and 3 territories","12 provinces and 2 territories","8 provinces and 3 territories","10 provinces and 5 territories"], answer:0, explain:"Canada has 10 provinces and 3 territories.", chapter:"Canada's Regions" },
+  { q:"Canada is the ____ largest country in the world by total area.", options:["First","Second","Fifth","Tenth"], answer:1, explain:"Canada is the second largest country in the world, after Russia.", chapter:"Canada's Regions" },
+  { q:"Which three oceans border Canada?", options:["Atlantic, Pacific, and Arctic","Atlantic, Pacific, and Indian","Pacific, Arctic, and Southern","Atlantic, Indian, and Arctic"], answer:0, explain:"Canada is bordered by the Atlantic, Pacific, and Arctic Oceans.", chapter:"Canada's Regions" },
+  { q:"Which three provinces are the Prairie provinces?", options:["Manitoba, Saskatchewan, and Alberta","Ontario, Quebec, and Nova Scotia","B.C., Yukon, and Alberta","New Brunswick, P.E.I., and Nova Scotia"], answer:0, explain:"The Prairie provinces are Manitoba, Saskatchewan, and Alberta.", chapter:"Canada's Regions" },
+  { q:"What are the four Atlantic provinces?", options:["Nova Scotia, New Brunswick, P.E.I., Newfoundland and Labrador","Ontario, Quebec, Manitoba, Alberta","B.C., Alberta, Saskatchewan, Manitoba","Yukon, Nunavut, N.W.T., B.C."], answer:0, explain:"The Atlantic provinces are Nova Scotia, New Brunswick, Prince Edward Island, and Newfoundland and Labrador.", chapter:"Canada's Regions" },
+  { q:"What are Canada's three territories?", options:["Yukon, Northwest Territories, and Nunavut","Ontario, Quebec, and Alberta","Yukon, Alberta, and Manitoba","Nunavut, Labrador, and Yukon"], answer:0, explain:"The three territories are Yukon, the Northwest Territories, and Nunavut.", chapter:"Canada's Regions" },
+  { q:"Which province is mostly French-speaking?", options:["Ontario","Quebec","Alberta","Manitoba"], answer:1, explain:"Quebec is the only province where most people speak French as their first language.", chapter:"Canada's Regions" },
+  { q:"What is the capital of Ontario?", options:["Ottawa","Toronto","Hamilton","London"], answer:1, explain:"Toronto is the capital of Ontario (Ottawa is the national capital).", chapter:"Canada's Regions" },
+  { q:"What is the capital of Quebec?", options:["Montreal","Quebec City","Laval","Gatineau"], answer:1, explain:"Quebec City is the capital of the province of Quebec.", chapter:"Canada's Regions" },
+  { q:"What is the capital of British Columbia?", options:["Vancouver","Victoria","Kelowna","Surrey"], answer:1, explain:"Victoria is the capital of British Columbia.", chapter:"Canada's Regions" },
+  { q:"What is the capital of Alberta?", options:["Calgary","Edmonton","Red Deer","Banff"], answer:1, explain:"Edmonton is the capital of Alberta.", chapter:"Canada's Regions" },
+  { q:"What is the capital of Manitoba?", options:["Winnipeg","Brandon","Regina","Thunder Bay"], answer:0, explain:"Winnipeg is the capital of Manitoba.", chapter:"Canada's Regions" },
+  { q:"What is the capital of Saskatchewan?", options:["Saskatoon","Regina","Moose Jaw","Prince Albert"], answer:1, explain:"Regina is the capital of Saskatchewan.", chapter:"Canada's Regions" },
+  { q:"What is the capital of Nova Scotia?", options:["Halifax","Sydney","Dartmouth","Truro"], answer:0, explain:"Halifax is the capital of Nova Scotia.", chapter:"Canada's Regions" },
+  { q:"What is the capital of New Brunswick?", options:["Moncton","Saint John","Fredericton","Bathurst"], answer:2, explain:"Fredericton is the capital of New Brunswick.", chapter:"Canada's Regions" },
+  { q:"What is the capital of Prince Edward Island?", options:["Charlottetown","Summerside","Cornwall","Montague"], answer:0, explain:"Charlottetown is the capital of Prince Edward Island.", chapter:"Canada's Regions" },
+  { q:"What is the capital of Newfoundland and Labrador?", options:["Corner Brook","St. John's","Gander","Mount Pearl"], answer:1, explain:"St. John's is the capital of Newfoundland and Labrador.", chapter:"Canada's Regions" },
+  { q:"What is the capital of Yukon?", options:["Whitehorse","Dawson City","Yellowknife","Iqaluit"], answer:0, explain:"Whitehorse is the capital of Yukon.", chapter:"Canada's Regions" },
+  { q:"What is the capital of the Northwest Territories?", options:["Whitehorse","Yellowknife","Iqaluit","Inuvik"], answer:1, explain:"Yellowknife is the capital of the Northwest Territories.", chapter:"Canada's Regions" },
+  { q:"What is the capital of Nunavut?", options:["Iqaluit","Yellowknife","Whitehorse","Rankin Inlet"], answer:0, explain:"Iqaluit is the capital of Nunavut.", chapter:"Canada's Regions" },
+  { q:"Which ocean is on the WEST coast of Canada?", options:["The Atlantic Ocean","The Pacific Ocean","The Arctic Ocean","The Indian Ocean"], answer:1, explain:"The Pacific Ocean is on Canada's west coast (British Columbia).", chapter:"Canada's Regions" },
+  { q:"Which country shares the longest border with Canada?", options:["Russia","The United States","Mexico","Greenland"], answer:1, explain:"Canada shares the world's longest border with the United States.", chapter:"Canada's Regions" },
+  { q:"The Rocky Mountains run through Alberta and which other province?", options:["Ontario","Quebec","British Columbia","Nova Scotia"], answer:2, explain:"The Rocky Mountains run through Alberta and British Columbia.", chapter:"Canada's Regions" },
+  { q:"The famous Niagara Falls are located in which province?", options:["Quebec","Ontario","Alberta","Manitoba"], answer:1, explain:"Niagara Falls is in Ontario, on the border with the United States.", chapter:"Canada's Regions" },
+  { q:"Which is Canada's largest city by population?", options:["Toronto","Ottawa","Vancouver","Calgary"], answer:0, explain:"Toronto is Canada's largest city.", chapter:"Canada's Regions" },
+  { q:"Canada's population is approximately…", options:["About 3 million","About 40 million","About 100 million","About 300 million"], answer:1, explain:"Canada's population is roughly 40 million people.", chapter:"Modern Canada" },
+  { q:"What are the two official languages of Canada?", options:["English and Spanish","English and French","French and German","English and Italian"], answer:1, explain:"Canada's two official languages are English and French.", chapter:"Modern Canada" }
 ];
