@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Sliding Puzzle — Number Slide Game | Family Games</title>
+<meta name="description" content="Play the classic sliding number puzzle free. Slide the tiles into order. 3x3, 4x4 and 5x5 sizes. Works on phone, tablet and computer.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>">
+<style>
+  .sp-wrap{max-width:400px;margin:0 auto;text-align:center}
+  .sp-board{display:grid;gap:8px;margin:12px auto;width:100%;max-width:340px;aspect-ratio:1/1}
+  .sp-tile{display:flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;border-radius:10px;font-weight:900;font-size:clamp(20px,7vw,34px);cursor:pointer;user-select:none;transition:transform .05s}
+  .sp-tile:active{transform:scale(.96)}
+  .sp-tile.blank{background:transparent;cursor:default}
+  .sp-tile.good{background:#2a9d8f}
+  .sp-hud{display:flex;justify-content:center;gap:12px;margin:6px 0;font-weight:800}
+  .sp-hud .box{background:#eef1f5;border-radius:8px;padding:6px 14px}
+  .sp-mode{display:inline-flex;gap:6px;margin:4px 0}
+  .sp-mode button{padding:8px 14px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
+  .sp-mode button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a><a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🧩 Sliding Puzzle</h1>
+    <p>Slide the tiles until the numbers are in order!</p>
+  </section>
+  <details class="howto"><summary></summary><p>There's one empty space. Tap any tile next to the empty space and it slides over. Keep sliding until all the numbers are in order — 1, 2, 3… with the empty space at the bottom right. Pick a size: 3×3 is easy, 5×5 is a real challenge. Try to solve it in as few moves as you can!</p></details>
+  <div class="panel">
+    <div class="sp-wrap">
+      <div class="center"><div class="sp-mode" id="sizes"></div></div>
+      <div class="sp-hud">
+        <div class="box">Moves: <span id="moves">0</span></div>
+        <div class="box">⏱ <span id="time">0:00</span></div>
+      </div>
+      <div class="sp-board" id="board"></div>
+      <p class="center" id="msg" style="font-weight:800;min-height:22px"></p>
+      <div class="center">
+        <button class="btn" onclick="shuffleBoard()">Shuffle</button>
+        <a class="btn btn-ghost" href="games.html">All Games</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+let N=3, tiles=[], blank=0, moves=0, timer=null, secs=0, solved=false;
+function buildSizes(){
+  const box=document.getElementById('sizes'); box.innerHTML='';
+  [3,4,5].forEach(n=>{ const b=document.createElement('button'); b.textContent=n+'×'+n; if(n===N)b.classList.add('on'); b.onclick=()=>{N=n;shuffleBoard();}; box.appendChild(b); });
+}
+function goal(){ const a=[]; for(let i=1;i<N*N;i++)a.push(i); a.push(0); return a; }
+function neighbours(i){ const r=Math.floor(i/N),c=i%N,out=[]; if(r>0)out.push(i-N); if(r<N-1)out.push(i+N); if(c>0)out.push(i-1); if(c<N-1)out.push(i+1); return out; }
+function shuffleBoard(){
+  buildSizes();
+  tiles=goal(); blank=N*N-1;
+  // shuffle by random legal moves (guarantees solvable)
+  let last=-1;
+  for(let k=0;k<N*N*40;k++){ const nb=neighbours(blank).filter(x=>x!==last); const m=nb[Math.floor(Math.random()*nb.length)]; last=blank; [tiles[blank],tiles[m]]=[tiles[m],tiles[blank]]; blank=m; }
+  moves=0; secs=0; solved=false;
+  document.getElementById('moves').textContent=0;
+  document.getElementById('msg').textContent='';
+  document.getElementById('time').textContent='0:00';
+  clearInterval(timer); timer=null;
+  render();
+}
+function startTimer(){ if(timer) return; timer=setInterval(()=>{ secs++; const m=Math.floor(secs/60),s=secs%60; document.getElementById('time').textContent=m+':'+(s<10?'0':'')+s; },1000); }
+function render(){
+  const b=document.getElementById('board'); b.style.gridTemplateColumns='repeat('+N+',1fr)'; b.innerHTML='';
+  const g=goal();
+  tiles.forEach((v,i)=>{
+    const d=document.createElement('div');
+    if(v===0){ d.className='sp-tile blank'; }
+    else { d.className='sp-tile'+(v===g[i]?' good':''); d.textContent=v; d.onclick=()=>tap(i); }
+    b.appendChild(d);
+  });
+}
+function tap(i){
+  if(solved) return;
+  if(neighbours(i).includes(blank)){
+    startTimer();
+    [tiles[i],tiles[blank]]=[tiles[blank],tiles[i]]; blank=i;
+    moves++; document.getElementById('moves').textContent=moves;
+    render(); check();
+  }
+}
+function check(){
+  const g=goal();
+  if(tiles.every((v,i)=>v===g[i])){
+    solved=true; clearInterval(timer); timer=null;
+    document.getElementById('msg').style.color='#2a9d8f';
+    document.getElementById('msg').textContent='🎉 Solved in '+moves+' moves! Nice work!';
+  }
+}
+shuffleBoard();
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>2048 — Slide &amp; Add the Numbers | Family Games</title>
+<meta name="description" content="Play 2048 free — slide the tiles, add matching numbers, and reach 2048. Works on phone, tablet and computer. No signup.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔢</text></svg>">
+<style>
+  .g2-wrap{max-width:400px;margin:0 auto;text-align:center}
+  .g2-board{position:relative;background:#cdd5df;border-radius:12px;padding:10px;margin:12px auto;width:100%;max-width:360px;aspect-ratio:1/1;touch-action:none;user-select:none}
+  .g2-grid{position:absolute;inset:10px;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);gap:10px}
+  .g2-bg{background:#dde3ea;border-radius:8px}
+  .g2-tiles{position:absolute;inset:10px}
+  .g2-tile{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:8px;font-weight:900;transition:all .12s ease;width:calc(25% - 7.5px);height:calc(25% - 7.5px);font-size:clamp(18px,6vw,30px)}
+  .v2{background:#eef1f5;color:#5b6570}.v4{background:#e4ecf7;color:#5b6570}.v8{background:#f4a259;color:#fff}
+  .v16{background:#f18f3b;color:#fff}.v32{background:#ef6f4c;color:#fff}.v64{background:#e63946;color:#fff}
+  .v128{background:#ffb703;color:#fff;font-size:clamp(16px,5vw,26px)}.v256{background:#fca311;color:#fff;font-size:clamp(16px,5vw,26px)}
+  .v512{background:#8e7dbe;color:#fff;font-size:clamp(16px,5vw,26px)}.v1024{background:#6a5acd;color:#fff;font-size:clamp(13px,4.2vw,22px)}
+  .v2048{background:#2a9d8f;color:#fff;font-size:clamp(13px,4.2vw,22px)}.vbig{background:#1f7a6f;color:#fff;font-size:clamp(12px,4vw,20px)}
+  .g2-hud{display:flex;justify-content:center;gap:12px;margin:4px 0}
+  .g2-hud .box{background:#cdd5df;border-radius:8px;padding:6px 14px;font-weight:800;color:#3a4553}
+  .g2-hud .box b{display:block;font-size:12px;color:#6a7683;text-transform:uppercase}
+  .g2-over{position:absolute;inset:0;background:rgba(255,255,255,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:12px;z-index:9;gap:8px}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a><a href="citizenship.html">Citizenship</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔢 2048</h1>
+    <p>Slide the tiles, add matching numbers, and reach 2048!</p>
+  </section>
+  <details class="howto"><summary></summary><p>Use the arrow keys on a computer, or swipe on a phone or tablet. All the tiles slide the way you push. When two tiles with the same number touch, they join into one bigger number. Every move adds a new tile. Keep joining to reach the 2048 tile — but don't fill up the whole board!</p></details>
+  <div class="panel">
+    <div class="g2-wrap">
+      <div class="g2-hud">
+        <div class="box"><b>Score</b><span id="score">0</span></div>
+        <div class="box"><b>Best</b><span id="best">0</span></div>
+      </div>
+      <div class="g2-board" id="board">
+        <div class="g2-grid" id="bg"></div>
+        <div class="g2-tiles" id="tiles"></div>
+        <div class="g2-over" id="over" style="display:none">
+          <div style="font-size:38px" id="overIcon">🎉</div>
+          <h2 id="overTitle" style="margin:2px 0">You made 2048!</h2>
+          <p class="muted" id="overMsg"></p>
+          <button class="btn btn-lg" onclick="newGame()">Play again</button>
+        </div>
+      </div>
+      <div class="center" style="margin-top:10px">
+        <button class="btn" onclick="newGame()">New Game</button>
+        <a class="btn btn-ghost" href="games.html">All Games</a>
+      </div>
+      <p class="muted center" style="font-size:12.5px;margin-top:8px">Tip: on a phone, swipe up / down / left / right.</p>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+const N=4; let grid=[], score=0, best=0, won=false, over=false;
+try{ best=parseInt(localStorage.getItem('g2048_best')||'0',10)||0; }catch(e){}
+function idx(r,c){return r*N+c;}
+function newGame(){
+  grid=new Array(N*N).fill(0); score=0; won=false; over=false;
+  document.getElementById('over').style.display='none';
+  addTile(); addTile(); draw();
+}
+function empties(){ const e=[]; for(let i=0;i<N*N;i++) if(grid[i]===0) e.push(i); return e; }
+function addTile(){ const e=empties(); if(!e.length) return; const i=e[Math.floor(Math.random()*e.length)]; grid[i]=Math.random()<0.9?2:4; }
+function buildBg(){ const bg=document.getElementById('bg'); bg.innerHTML=''; for(let i=0;i<N*N;i++){ const d=document.createElement('div'); d.className='g2-bg'; bg.appendChild(d); } }
+function cls(v){ return v>=4096?'vbig':'v'+v; }
+function draw(){
+  document.getElementById('score').textContent=score;
+  document.getElementById('best').textContent=best;
+  const t=document.getElementById('tiles'); t.innerHTML='';
+  for(let r=0;r<N;r++)for(let c=0;c<N;c++){
+    const v=grid[idx(r,c)]; if(!v) continue;
+    const d=document.createElement('div'); d.className='g2-tile '+cls(v); d.textContent=v;
+    d.style.left='calc('+(c*25)+'% + '+(c*3.33)+'px)';
+    d.style.top='calc('+(r*25)+'% + '+(r*3.33)+'px)';
+    t.appendChild(d);
+  }
+}
+function slide(line){ // returns {line, gained}
+  let a=line.filter(x=>x); let gained=0;
+  for(let i=0;i<a.length-1;i++){ if(a[i]===a[i+1]){ a[i]*=2; gained+=a[i]; if(a[i]===2048) won=true; a.splice(i+1,1); } }
+  while(a.length<N) a.push(0);
+  return {line:a, gained};
+}
+function move(dir){
+  if(over) return;
+  const before=grid.join(',');
+  let gainedTotal=0;
+  for(let k=0;k<N;k++){
+    let line=[];
+    for(let j=0;j<N;j++){
+      if(dir==='left') line.push(grid[idx(k,j)]);
+      else if(dir==='right') line.push(grid[idx(k,N-1-j)]);
+      else if(dir==='up') line.push(grid[idx(j,k)]);
+      else line.push(grid[idx(N-1-j,k)]);
+    }
+    const res=slide(line); gainedTotal+=res.gained;
+    for(let j=0;j<N;j++){
+      const v=res.line[j];
+      if(dir==='left') grid[idx(k,j)]=v;
+      else if(dir==='right') grid[idx(k,N-1-j)]=v;
+      else if(dir==='up') grid[idx(j,k)]=v;
+      else grid[idx(N-1-j,k)]=v;
+    }
+  }
+  if(grid.join(',')===before) return; // no change
+  score+=gainedTotal;
+  if(score>best){ best=score; try{localStorage.setItem('g2048_best',best);}catch(e){} }
+  addTile(); draw();
+  if(won){ showOver('🎉','You made 2048!','Amazing! Keep going for a higher score, or start a new game.'); won=false; }
+  else if(!canMove()){ showOver('😅','Game over','No more moves. Score: '+score+'. Try again!'); over=true; }
+}
+function canMove(){
+  if(empties().length) return true;
+  for(let r=0;r<N;r++)for(let c=0;c<N;c++){
+    const v=grid[idx(r,c)];
+    if(c<N-1 && grid[idx(r,c+1)]===v) return true;
+    if(r<N-1 && grid[idx(r+1,c)]===v) return true;
+  }
+  return false;
+}
+function showOver(icon,title,msg){
+  document.getElementById('overIcon').textContent=icon;
+  document.getElementById('overTitle').textContent=title;
+  document.getElementById('overMsg').textContent=msg;
+  document.getElementById('over').style.display='flex';
+}
+document.addEventListener('keydown',e=>{
+  const m={ArrowLeft:'left',ArrowRight:'right',ArrowUp:'up',ArrowDown:'down'};
+  if(m[e.key]){ e.preventDefault(); move(m[e.key]); }
+});
+let sx=0,sy=0;
+const board=document.getElementById('board');
+board.addEventListener('touchstart',e=>{ const t=e.touches[0]; sx=t.clientX; sy=t.clientY; },{passive:true});
+board.addEventListener('touchend',e=>{
+  const t=e.changedTouches[0]; const dx=t.clientX-sx, dy=t.clientY-sy;
+  if(Math.abs(dx)<20&&Math.abs(dy)<20) return;
+  if(Math.abs(dx)>Math.abs(dy)) move(dx>0?'right':'left'); else move(dy>0?'down':'up');
+});
+buildBg(); newGame();
+</script>
+</body>
+</html>
