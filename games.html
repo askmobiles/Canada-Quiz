@@ -15,8 +15,14 @@
   .tag.word{background:#fff2e6;color:#c46a1b}
   .tag.arcade{background:#ffeef0;color:#c1121f}
   .tag.quiz{background:#fff7e0;color:#9a7a00}
-  .age-head{display:flex;align-items:center;gap:10px;margin:26px 0 2px}
+  .age-head{display:flex;align-items:center;gap:10px;margin:26px 0 2px;scroll-margin-top:80px}
   .age-head h2{margin:0}
+  .game-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(4px);padding:10px 0;margin:0 0 6px;border-bottom:1px solid var(--line)}
+  .game-search{width:100%;max-width:520px;display:block;margin:0 auto 10px;padding:12px 16px;font-size:16px;border:2px solid var(--line);border-radius:999px;font-family:inherit}
+  .game-chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .game-chips a{text-decoration:none;font-weight:800;font-size:13.5px;padding:7px 14px;border-radius:999px;background:#eef1f5;color:#3a4553;white-space:nowrap}
+  .game-chips a:active{background:#dbe3ec}
+  .no-results{text-align:center;font-weight:800;color:#6a7683;padding:24px}
 </style>
 </head>
 <body>
@@ -33,15 +39,27 @@
 </header>
 
 <main class="container">
-  <section class="hero">
+  <section class="hero" style="padding-bottom:6px">
     <h1>🎲 Family Games</h1>
     <p>Fun for everyone — from little kids to grown-ups. Free, no signup, works on phone and tablet.</p>
   </section>
 
+  <div class="game-nav">
+    <input class="game-search" id="gameSearch" type="search" placeholder="🔎 Search games (e.g. sudoku, party, chess)…" oninput="filterGames()" aria-label="Search games">
+    <div class="game-chips">
+      <a href="#sec-party">🎉 Party</a>
+      <a href="#sec-kids">👶 Kids</a>
+      <a href="#sec-puzzles">🧩 Puzzles</a>
+      <a href="#sec-classic">🕹️ Classic</a>
+      <a href="#sec-older">🧑 Older</a>
+    </div>
+  </div>
+  <p id="noResults" class="no-results" style="display:none">No games match — try a different word, or tap a category above.</p>
+
   <div class="ad-slot"><span class="ad-label">Advertisement</span></div>
 
   <!-- NEW ORIGINAL GAME -->
-  <div class="age-head"><h2>✨ New — Original Canadian Game</h2></div>
+  <div class="age-head" id="sec-new"><h2>✨ New — Original Canadian Game</h2></div>
   <div class="grid">
     <div class="card c-orange">
       <span class="tag arcade">Arcade · All ages</span>
@@ -53,7 +71,7 @@
   </div>
 
   <!-- FAMILY PARTY -->
-  <div class="age-head"><h2>🎉 Family Party — play together</h2></div>
+  <div class="age-head" id="sec-party"><h2>🎉 Family Party — play together</h2></div>
   <p class="muted" style="margin:0 0 6px">Pass one phone or tablet around. Great for family night, 4+ players.</p>
   <div class="grid">
     <div class="card c-purple">
@@ -77,10 +95,24 @@
       <p>Classic two-player game — or play against the computer (easy or hard).</p>
       <a class="btn" href="tictactoe.html">Play</a>
     </div>
+    <div class="card c-blue">
+      <span class="tag party">Party · Teams</span>
+      <div class="emoji">🏆</div>
+      <h3>Trivia Showdown</h3>
+      <p>Two teams take turns answering trivia questions. Keep score and see which team wins. Great for family night!</p>
+      <a class="btn btn-blue" href="trivia-showdown.html">Play</a>
+    </div>
+    <div class="card c-orange">
+      <span class="tag party">Party · All ages</span>
+      <div class="emoji">🤔</div>
+      <h3>Would You Rather?</h3>
+      <p>Two silly choices — which do you pick? 100+ fun, kid-friendly questions to read out loud and giggle over.</p>
+      <a class="btn btn-orange" href="would-you-rather.html">Play</a>
+    </div>
   </div>
 
   <!-- KIDS -->
-  <div class="age-head"><h2>👶 For Kids &amp; Beginners</h2></div>
+  <div class="age-head" id="sec-kids"><h2>👶 For Kids &amp; Beginners</h2></div>
   <div class="grid">
     <div class="card c-blue">
       <span class="tag brain">Brain · Ages 4+</span>
@@ -115,7 +147,7 @@
   <div class="ad-slot"><span class="ad-label">Advertisement</span></div>
 
   <!-- PUZZLES & BRAIN -->
-  <div class="age-head"><h2>🧩 Puzzles &amp; Brain Games</h2></div>
+  <div class="age-head" id="sec-puzzles"><h2>🧩 Puzzles &amp; Brain Games</h2></div>
   <p class="muted" style="margin:0 0 6px">A fresh puzzle every time — like the games in the big puzzle apps, but free and no signup.</p>
   <div class="grid">
     <div class="card c-blue">
@@ -156,7 +188,7 @@
   </div>
 
   <!-- CLASSIC GAMES -->
-  <div class="age-head"><h2>🕹️ Classic Games</h2></div>
+  <div class="age-head" id="sec-classic"><h2>🕹️ Classic Games</h2></div>
   <p class="muted" style="margin:0 0 6px">The famous ones everybody knows — free, no ads popping up in your face.</p>
   <div class="grid">
     <div class="card c-orange">
@@ -211,7 +243,7 @@
   </div>
 
   <!-- OLDER KIDS & ADULTS -->
-  <div class="age-head"><h2>🧑 For Older Kids &amp; Adults</h2></div>
+  <div class="age-head" id="sec-older"><h2>🧑 For Older Kids &amp; Adults</h2></div>
   <div class="grid">
     <div class="card c-purple">
       <span class="tag word">Word · Ages 8+</span>
@@ -243,6 +275,35 @@
     </div>
   </div>
 </main>
+
+<script>
+function filterGames(){
+  const q=(document.getElementById('gameSearch').value||'').toLowerCase().trim();
+  const grids=document.querySelectorAll('main .grid');
+  let anyVisible=false;
+  grids.forEach(grid=>{
+    let visible=0;
+    grid.querySelectorAll('.card').forEach(card=>{
+      const match=!q || card.textContent.toLowerCase().includes(q);
+      card.style.display=match?'':'none';
+      if(match) visible++;
+    });
+    grid.style.display=visible?'':'none';
+    // hide/show this section's heading block(s)
+    let el=grid.previousElementSibling;
+    while(el && !el.classList.contains('grid')){
+      if(el.classList.contains('age-head')||el.tagName==='P'){ el.style.display=visible?'':'none'; }
+      if(el.classList.contains('age-head')) break;
+      el=el.previousElementSibling;
+    }
+    if(visible) anyVisible=true;
+  });
+  document.getElementById('noResults').style.display=(q && !anyVisible)?'block':'none';
+  // hide the category chips while actively searching (they don't help mid-search)
+  document.querySelector('.game-chips').style.display=q?'none':'flex';
+}
+</script>
+
 
 <footer class="site-footer">
   <div class="container center">
