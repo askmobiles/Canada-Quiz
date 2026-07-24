@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Categories — Word Race Party Game | Canada Quiz</title>
+<meta name="description" content="Categories — a free Scattergories-style party game. Get a random letter and race to name a food, animal, country and more before time runs out!">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔤</text></svg>">
+<style>
+  .cg-wrap{max-width:520px;margin:0 auto;text-align:center}
+  .cg-letter{font-size:120px;font-weight:900;color:var(--red,#e63946);line-height:1;margin:6px 0}
+  .cg-list{list-style:none;padding:0;margin:12px auto;max-width:360px}
+  .cg-list li{background:#f4f6fa;border-radius:12px;padding:12px 16px;margin:8px 0;font-weight:800;font-size:17px;text-align:left}
+  .cg-timer{font-size:34px;font-weight:900;margin:8px 0}
+  .cg-mode{display:inline-flex;gap:6px;margin:6px 0}
+  .cg-mode button{padding:8px 14px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
+  .cg-mode button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a><a href="daily.html">Daily</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔤 Categories</h1>
+    <p>Get a letter — race to name something in each category!</p>
+  </section>
+  <details class="howto"><summary></summary><p>Press Start to get a random letter and a list of categories. Everyone races to think of something in each category that begins with that letter — for example, if the letter is B, a food could be "banana." Say your answers out loud or write them down before the timer runs out. Same answer as someone else? It doesn't count! Pick <b>Advanced</b> for trickier categories.</p></details>
+  <div class="panel">
+    <div class="cg-wrap">
+      <div class="center"><div class="cg-mode" id="modes"></div></div>
+      <div class="cg-letter" id="letter">?</div>
+      <div class="cg-timer" id="timer" style="display:none"></div>
+      <ul class="cg-list" id="list"></ul>
+      <div class="center">
+        <button class="btn btn-lg" id="startBtn" onclick="startRound()">▶ Start round</button>
+        <a class="btn btn-ghost" href="games.html">All Games</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+const EASY=["An animal","A food","A name","A colour","A country","Something in the kitchen","A sport","A fruit","A body part","A toy","An item of clothing","A drink"];
+const ADV=["A famous person","A country's capital","A word in science","A movie or TV show","Something in nature","A job","A city in the world","A verb (action word)","A musical instrument","A type of transport","An animal that is not a pet","Something you'd find at school"];
+const LETTERS="ABCDEFGHIJKLMNOPRSTW"; // skip very hard letters (Q,U,V,X,Y,Z)
+let level="Easy", timer=null, timeLeft=0;
+function buildModes(){
+  const box=document.getElementById('modes'); box.innerHTML='';
+  ["Easy","Advanced"].forEach(m=>{ const b=document.createElement('button'); b.textContent=m; if(m===level)b.classList.add('on'); b.onclick=()=>{level=m;}; box.appendChild(b); });
+}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function startRound(){
+  clearInterval(timer);
+  const L=LETTERS[Math.floor(Math.random()*LETTERS.length)];
+  document.getElementById('letter').textContent=L;
+  const cats=shuffle((level==="Easy"?EASY:ADV).slice()).slice(0,6);
+  const ul=document.getElementById('list'); ul.innerHTML='';
+  cats.forEach(c=>{ const li=document.createElement('li'); li.textContent=c+' — '+L+'…'; ul.appendChild(li); });
+  timeLeft=60; const t=document.getElementById('timer'); t.style.display='block'; t.style.color='var(--ink)';
+  tick(); timer=setInterval(tick,1000);
+  document.getElementById('startBtn').textContent='🔄 New round';
+}
+function tick(){
+  const t=document.getElementById('timer');
+  if(timeLeft<=0){ clearInterval(timer); t.textContent="⏰ Time's up!"; t.style.color='#e63946'; return; }
+  t.textContent='⏱ '+timeLeft+'s'; timeLeft--;
+}
+buildModes();
+</script>
+  <script src="js/game-fullscreen.js"></script>
+</body>
+</html>

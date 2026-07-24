@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story Maker — Silly Fill-in-the-Blanks Game | Canada Quiz</title>
+<meta name="description" content="Story Maker — a free fill-in-the-blanks word game. Give silly words, then read the funny story you made together. Great for kids and families.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<style>
+  .sm-wrap{max-width:560px;margin:0 auto}
+  .sm-field{margin:10px 0}
+  .sm-field label{display:block;font-weight:800;margin-bottom:4px}
+  .sm-field input{width:100%;padding:11px 14px;border:2px solid var(--line);border-radius:10px;font-size:16px;font-family:inherit}
+  .sm-story{font-size:18px;line-height:1.9;background:#f4f6fa;border-radius:14px;padding:18px}
+  .sm-story b{color:var(--red,#e63946)}
+  .sm-mode{display:inline-flex;gap:6px;margin:6px 0}
+  .sm-mode button{padding:8px 14px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
+  .sm-mode button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a><a href="daily.html">Daily</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>📖 Story Maker</h1>
+    <p>Give silly words, then read your funny story out loud!</p>
+  </section>
+  <details class="howto"><summary></summary><p>Don't peek at the story! Just fill in each silly word — a name, an animal, a funny word — without knowing where it goes. Take turns letting different people choose the words. When you press "Make my story," all your words drop into a story and you read the hilarious result out loud together. Pick <b>Advanced</b> for a longer story with trickier word types.</p></details>
+  <div class="panel">
+    <div class="sm-wrap">
+      <div class="center"><div class="sm-mode" id="modes"></div></div>
+      <div id="form"></div>
+      <div class="center" style="margin:12px 0">
+        <button class="btn btn-lg" onclick="makeStory()">✨ Make my story</button>
+        <button class="btn btn-ghost" onclick="newStory()">New story</button>
+      </div>
+      <div class="sm-story" id="out" style="display:none"></div>
+      <div class="center" style="margin-top:10px"><a class="btn btn-ghost" href="games.html">All Games</a></div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+// Each story: list of [label, key] prompts, and a template using {key}
+const EASY_STORIES=[
+ {prompts:[["A name","name"],["An animal","animal"],["A colour","colour"],["A silly word","silly"],["A food","food"],["A place","place"]],
+  text:"One sunny day, {name} went for a walk and found a {colour} {animal} sitting on the sidewalk. “{silly}!” it shouted. {name} was so surprised that they dropped their {food} right there at the {place}. From that day on, they were the very best of friends."},
+ {prompts:[["A name","name"],["A number","num"],["An animal","animal"],["A body part","body"],["A food","food"],["A silly word","silly"]],
+  text:"{name} woke up and counted {num} tiny {animal}s dancing on their {body}! They laughed so hard that {food} came out of their nose. “{silly}!” they giggled, and the whole room started to dance too."}
+];
+const ADV_STORIES=[
+ {prompts:[["A name","name"],["An adjective","adj"],["A job","job"],["A place","place"],["An animal (plural)","animals"],["A verb ending in -ing","verb"],["A silly word","silly"],["A food","food"]],
+  text:"Ladies and gentlemen, meet {name}, the most {adj} {job} in all of {place}. Every morning, {name} would go {verb} with a team of trained {animals}. One day, disaster struck — the {food} supply ran out! “{silly}!” cried {name}, and with great courage, saved the day and became a local legend."},
+ {prompts:[["A name","name"],["A country","country"],["An adjective","adj"],["A number","num"],["An animal","animal"],["A verb (action)","verb"],["A funny sound","sound"],["A place","place"]],
+  text:"Breaking news from {country}! The famous explorer {name} has discovered a {adj} new island. It is home to {num} giant {animal}s that {verb} all day and make a loud “{sound}!” sound. Scientists say the island may become the world's next great {place}."}
+];
+let level="Easy", story=null;
+function buildModes(){
+  const box=document.getElementById('modes'); box.innerHTML='';
+  ["Easy","Advanced"].forEach(m=>{ const b=document.createElement('button'); b.textContent=m; if(m===level)b.classList.add('on'); b.onclick=()=>{level=m;newStory();}; box.appendChild(b); });
+}
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+function newStory(){
+  story=pick(level==="Easy"?EASY_STORIES:ADV_STORIES);
+  const form=document.getElementById('form'); form.innerHTML='';
+  story.prompts.forEach(p=>{
+    const d=document.createElement('div'); d.className='sm-field';
+    d.innerHTML='<label>'+p[0]+'</label><input data-k="'+p[1]+'" placeholder="type here…" autocomplete="off">';
+    form.appendChild(d);
+  });
+  document.getElementById('out').style.display='none';
+}
+function makeStory(){
+  const vals={};
+  document.querySelectorAll('#form input').forEach(inp=>{ vals[inp.dataset.k]=(inp.value||'____').trim()||'____'; });
+  let t=story.text.replace(/\{(\w+)\}/g, (m,k)=> '<b>'+(vals[k]||'____')+'</b>');
+  const out=document.getElementById('out'); out.innerHTML=t; out.style.display='block';
+  out.scrollIntoView({behavior:'smooth',block:'center'});
+}
+buildModes(); newStory();
+</script>
+  <script src="js/game-fullscreen.js"></script>
+</body>
+</html>
