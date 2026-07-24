@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Quiz — Flags, Capitals &amp; Geography | Canada Quiz</title>
+<meta name="description" content="Free World Quiz — test yourself on flags of the world, capital cities, famous landmarks, and world geography. Fun for the whole family. No signup.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+<style>.flagq{font-size:80px;text-align:center;margin:6px 0}</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="start-screen" class="panel center">
+    <div style="font-size:46px">🌍</div>
+    <h1>World Quiz</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto">Test yourself on the world — flags, capital cities, famous landmarks, and geography. Pick a topic to begin!</p>
+    <details class="howto"><summary></summary><p>Choose a topic below. You'll get 10 questions — tap the answer you think is right and you'll see instantly if you're correct, with a short fact. Play again anytime for fresh questions!</p></details>
+    <div class="grid" id="cats" style="margin-top:18px"></div>
+  </section>
+
+  <section id="quiz-screen" class="panel" style="display:none">
+    <div class="quiz-meta">
+      <span class="pill" id="q-counter">Question 1</span>
+      <span class="pill" id="score-pill">Score: 0</span>
+    </div>
+    <div class="progress"><span id="progress-bar"></span></div>
+    <div id="flag" class="flagq" style="display:none"></div>
+    <h2 id="question-text"></h2>
+    <div class="options" id="options"></div>
+    <div id="explain-box" class="explain" style="display:none"></div>
+    <div class="center" style="margin-top:18px">
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Next →</button>
+    </div>
+  </section>
+
+  <section id="result-screen" class="panel center" style="display:none">
+    <div class="result-big">🌍</div>
+    <h2 id="result-title"></h2>
+    <p class="score" id="result-score"></p>
+    <p class="muted" id="result-msg"></p>
+    <div style="margin:18px 0">
+      <button class="btn btn-lg" onclick="backToCats()">Pick another topic</button>
+      <a class="btn btn-ghost btn-lg" href="quizzes.html">More quizzes</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const BANK={
+ "Flags of the World":{emoji:"🚩",color:"blue",flag:true,q:[
+   {q:"🇯🇵",options:["China","Japan","South Korea","Thailand"],answer:1,explain:"Japan's flag is a red circle (the sun) on white."},
+   {q:"🇧🇷",options:["Argentina","Mexico","Brazil","Portugal"],answer:2,explain:"Brazil's flag is green with a yellow diamond and blue globe."},
+   {q:"🇫🇷",options:["Italy","France","Netherlands","Russia"],answer:1,explain:"France's flag has three vertical stripes: blue, white, red."},
+   {q:"🇨🇦",options:["USA","United Kingdom","Canada","Australia"],answer:2,explain:"Canada's flag has a red maple leaf on white."},
+   {q:"🇮🇳",options:["India","Pakistan","Bangladesh","Sri Lanka"],answer:0,explain:"India's flag is orange, white, and green with a blue wheel."},
+   {q:"🇩🇪",options:["Belgium","Spain","Germany","Austria"],answer:2,explain:"Germany's flag has black, red, and gold horizontal stripes."},
+   {q:"🇮🇹",options:["Ireland","Italy","Mexico","Hungary"],answer:1,explain:"Italy's flag is green, white, and red vertical stripes."},
+   {q:"🇦🇺",options:["New Zealand","United Kingdom","Australia","Fiji"],answer:2,explain:"Australia's flag has the Union Jack and the Southern Cross stars."},
+   {q:"🇲🇽",options:["Italy","Mexico","Spain","Portugal"],answer:1,explain:"Mexico's flag is green, white, red with an eagle in the middle."},
+   {q:"🇬🇧",options:["United Kingdom","USA","France","Norway"],answer:0,explain:"The United Kingdom's flag is called the Union Jack."},
+   {q:"🇺🇸",options:["Liberia","USA","Malaysia","Chile"],answer:1,explain:"The USA flag has 50 stars and 13 stripes."},
+   {q:"🇿🇦",options:["Kenya","Nigeria","South Africa","Ghana"],answer:2,explain:"South Africa's flag has six colours in a Y shape."}
+ ]},
+ "Capital Cities":{emoji:"🏙️",color:"green",q:[
+   {q:"What is the capital of France?",options:["Lyon","Paris","Nice","Marseille"],answer:1,explain:"Paris is the capital and largest city of France."},
+   {q:"What is the capital of Canada?",options:["Toronto","Vancouver","Ottawa","Montreal"],answer:2,explain:"Ottawa, in Ontario, is Canada's capital."},
+   {q:"What is the capital of Japan?",options:["Osaka","Kyoto","Tokyo","Nagoya"],answer:2,explain:"Tokyo is the capital of Japan."},
+   {q:"What is the capital of Italy?",options:["Milan","Venice","Rome","Naples"],answer:2,explain:"Rome is the capital of Italy."},
+   {q:"What is the capital of Australia?",options:["Sydney","Melbourne","Canberra","Perth"],answer:2,explain:"Canberra is Australia's capital, not Sydney!"},
+   {q:"What is the capital of Egypt?",options:["Cairo","Alexandria","Giza","Luxor"],answer:0,explain:"Cairo is the capital of Egypt."},
+   {q:"What is the capital of Brazil?",options:["Rio de Janeiro","São Paulo","Brasília","Salvador"],answer:2,explain:"Brasília is the capital of Brazil."},
+   {q:"What is the capital of the United Kingdom?",options:["Manchester","London","Liverpool","Glasgow"],answer:1,explain:"London is the capital of the UK."},
+   {q:"What is the capital of Germany?",options:["Munich","Hamburg","Berlin","Frankfurt"],answer:2,explain:"Berlin is the capital of Germany."},
+   {q:"What is the capital of India?",options:["Mumbai","New Delhi","Kolkata","Chennai"],answer:1,explain:"New Delhi is the capital of India."},
+   {q:"What is the capital of the USA?",options:["New York","Los Angeles","Washington, D.C.","Chicago"],answer:2,explain:"Washington, D.C. is the capital of the USA."},
+   {q:"What is the capital of China?",options:["Shanghai","Beijing","Hong Kong","Guangzhou"],answer:1,explain:"Beijing is the capital of China."}
+ ]},
+ "Famous Landmarks":{emoji:"🗽",color:"orange",q:[
+   {q:"In which country is the Eiffel Tower?",options:["Italy","France","Spain","Belgium"],answer:1,explain:"The Eiffel Tower is in Paris, France."},
+   {q:"In which country is the Great Wall?",options:["Japan","India","China","Mongolia"],answer:2,explain:"The Great Wall of China is thousands of kilometres long."},
+   {q:"Where is the Statue of Liberty?",options:["France","Canada","USA","UK"],answer:2,explain:"The Statue of Liberty stands in New York, USA."},
+   {q:"In which country are the Pyramids of Giza?",options:["Mexico","Egypt","Peru","Iraq"],answer:1,explain:"The famous pyramids are in Egypt."},
+   {q:"Where is the Taj Mahal?",options:["India","Pakistan","Iran","Turkey"],answer:0,explain:"The Taj Mahal is a beautiful marble tomb in India."},
+   {q:"In which country is the CN Tower?",options:["USA","Canada","Australia","UK"],answer:1,explain:"The CN Tower is in Toronto, Canada."},
+   {q:"Where is the Colosseum?",options:["Greece","Italy","Spain","Egypt"],answer:1,explain:"The ancient Colosseum is in Rome, Italy."},
+   {q:"In which country is Machu Picchu?",options:["Mexico","Brazil","Peru","Chile"],answer:2,explain:"Machu Picchu is an ancient city high in the mountains of Peru."},
+   {q:"Where is Big Ben?",options:["USA","France","United Kingdom","Germany"],answer:2,explain:"Big Ben is the famous clock tower in London, UK."},
+   {q:"In which country is the Sydney Opera House?",options:["New Zealand","Australia","UK","Canada"],answer:1,explain:"The Sydney Opera House is in Australia."}
+ ]},
+ "World Geography":{emoji:"🗺️",color:"purple",q:[
+   {q:"What is the largest ocean on Earth?",options:["Atlantic","Indian","Pacific","Arctic"],answer:2,explain:"The Pacific is the biggest and deepest ocean."},
+   {q:"What is the longest river in the world?",options:["Amazon","Nile","Yangtze","Mississippi"],answer:1,explain:"The Nile in Africa is usually called the longest river."},
+   {q:"Which is the largest continent?",options:["Africa","Asia","Europe","North America"],answer:1,explain:"Asia is the largest continent by area and people."},
+   {q:"What is the tallest mountain in the world?",options:["K2","Mount Kilimanjaro","Mount Everest","Mont Blanc"],answer:2,explain:"Mount Everest is the highest mountain above sea level."},
+   {q:"Which is the largest country by land area?",options:["Canada","China","USA","Russia"],answer:3,explain:"Russia is the largest country in the world; Canada is second."},
+   {q:"How many continents are there?",options:["5","6","7","8"],answer:2,explain:"There are seven continents on Earth."},
+   {q:"Which desert is the largest hot desert?",options:["Gobi","Sahara","Kalahari","Arabian"],answer:1,explain:"The Sahara in Africa is the largest hot desert."},
+   {q:"What is the smallest ocean?",options:["Arctic","Indian","Atlantic","Southern"],answer:0,explain:"The Arctic Ocean is the smallest and shallowest."},
+   {q:"On which continent is the Amazon Rainforest?",options:["Africa","Asia","South America","Australia"],answer:2,explain:"The Amazon Rainforest is mostly in South America."},
+   {q:"Which country has the most people?",options:["India","China","USA","Indonesia"],answer:0,explain:"India is now the most populous country in the world."}
+ ]}
+};
+
+let qs=[], cur=0, score=0, answered=false, curCat="";
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pickFresh(bank,count,key){
+  let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
+  if(!Array.isArray(seen)) seen=[];
+  let unseen=bank.map((_,i)=>i).filter(i=>seen.indexOf(i)===-1);
+  if(unseen.length<count){ seen=[]; unseen=bank.map((_,i)=>i); }
+  for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
+  const chosen=unseen.slice(0,count);
+  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
+  return chosen.map(i=>bank[i]);
+}
+function buildCats(){
+  const box=document.getElementById('cats'); box.innerHTML='';
+  Object.keys(BANK).forEach(name=>{
+    const c=BANK[name];
+    const card=document.createElement('div'); card.className='card c-'+c.color;
+    card.innerHTML='<div class="emoji">'+c.emoji+'</div><h3>'+name+'</h3><p>'+c.q.length+' questions</p>';
+    const b=document.createElement('button'); b.className='btn btn-'+c.color; b.textContent='Start'; b.onclick=()=>startCat(name);
+    card.appendChild(b); box.appendChild(card);
+  });
+}
+function startCat(name){
+  curCat=name; const c=BANK[name];
+  qs=pickFresh(c.q, Math.min(10,c.q.length), 'wq_'+name);
+  cur=0; score=0; answered=false;
+  document.getElementById('start-screen').style.display='none';
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='block';
+  showQ(); window.scrollTo(0,0);
+}
+function showQ(){
+  answered=false; const q=qs[cur]; const isFlag=BANK[curCat].flag;
+  document.getElementById('q-counter').textContent='Question '+(cur+1)+' of '+qs.length;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  document.getElementById('progress-bar').style.width=(cur/qs.length*100)+'%';
+  const flag=document.getElementById('flag');
+  if(isFlag){ flag.style.display='block'; flag.textContent=q.q; document.getElementById('question-text').textContent='Which country has this flag?'; }
+  else { flag.style.display='none'; document.getElementById('question-text').textContent=q.q; }
+  const box=document.getElementById('options'); box.innerHTML='';
+  q.options.forEach((opt,i)=>{ const b=document.createElement('button'); b.className='option'; b.textContent=opt; b.onclick=()=>pick(i,b); box.appendChild(b); });
+  document.getElementById('explain-box').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+function pick(i,btn){
+  if(answered) return; answered=true; const q=qs[cur];
+  document.querySelectorAll('#options .option').forEach((b,idx)=>{ b.classList.add('disabled'); if(idx===q.answer) b.classList.add('correct'); if(idx===i&&i!==q.answer) b.classList.add('wrong'); });
+  if(i===q.answer) score++;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  const ex=document.getElementById('explain-box');
+  ex.innerHTML='<strong>'+(i===q.answer?'✅ Correct! ':'❌ The answer is '+q.options[q.answer]+'. ')+'</strong>'+q.explain;
+  ex.style.display='block';
+  document.getElementById('progress-bar').style.width=((cur+1)/qs.length*100)+'%';
+  const nb=document.getElementById('next-btn'); nb.textContent=(cur+1<qs.length)?'Next →':'See my score →'; nb.style.display='inline-block';
+}
+function nextQuestion(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0);} else finish(); }
+function finish(){
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('result-screen').style.display='block';
+  document.getElementById('result-score').textContent='You scored '+score+' / '+qs.length;
+  const pct=score/qs.length; let t,m;
+  if(pct===1){t='🌟 Perfect!';m='You are a world expert!';}
+  else if(pct>=0.7){t='🎉 Great job!';m='You know the world well!';}
+  else if(pct>=0.4){t='🙂 Nice try!';m='Play again to learn more world facts.';}
+  else {t='🌱 Keep exploring!';m='The world is big — give it another go!';}
+  document.getElementById('result-title').textContent=t; document.getElementById('result-msg').textContent=m;
+  window.scrollTo(0,0);
+}
+function backToCats(){
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('start-screen').style.display='block';
+  window.scrollTo(0,0);
+}
+buildCats();
+</script>
+  <script src="js/game-fullscreen.js"></script>
+</body>
+</html>
