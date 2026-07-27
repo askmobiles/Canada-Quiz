@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Touches de piano — Suis le rythme | Jeux en famille</title>
+<meta name="description" content="Jeu de rythme gratuit Piano Tiles. Touchez les tuiles qui tombent en rythme pour jouer de vraies chansons. Jeu musical amusant pour téléphone, tablette et ordinateur.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .pt-wrap{max-width:440px;margin:0 auto;text-align:center}
+  .pt-stage{position:relative;width:100%;max-width:400px;height:520px;margin:10px auto;background:#f4f6fa;border-radius:16px;overflow:hidden;border:3px solid var(--ink);touch-action:none;user-select:none}
+  .pt-lane{position:absolute;top:0;bottom:0;width:25%;border-right:1px dashed #d7dde3}
+  .pt-lane:nth-child(1){left:0}.pt-lane:nth-child(2){left:25%}.pt-lane:nth-child(3){left:50%}.pt-lane:nth-child(4){left:75%;border-right:none}
+  .pt-hit{position:absolute;left:0;right:0;bottom:70px;height:4px;background:var(--red);opacity:.55;z-index:5}
+  .pt-keys{position:absolute;left:0;right:0;bottom:0;height:70px;display:flex;z-index:6}
+  .pt-key{flex:1;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#8a97a6;border-right:1px solid #e2e7ee;background:#fff}
+  .pt-key:last-child{border-right:none}
+  .pt-key.lit{background:#dcefff;color:var(--blue)}
+  .pt-tile{position:absolute;width:calc(25% - 8px);height:64px;border-radius:10px;background:var(--blue);box-shadow:0 3px 0 rgba(0,0,0,.15);z-index:3}
+  .pt-tile.t0{background:#4895ef}.pt-tile.t1{background:#8e7dbe}.pt-tile.t2{background:#f4845f}.pt-tile.t3{background:#2a9d8f}
+  .pt-hud{display:flex;justify-content:space-between;max-width:400px;margin:0 auto;font-weight:800}
+  .pt-combo{position:absolute;top:12px;left:0;right:0;text-align:center;font-size:26px;font-weight:900;color:var(--purple);z-index:4;pointer-events:none;text-shadow:0 1px 2px #fff}
+  .pt-over{position:absolute;inset:0;background:rgba(255,255,255,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;gap:8px}
+  .pt-songs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0}
+  .pt-songs button{padding:9px 14px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
+  .pt-songs button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/piano-tiles.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/piano-tiles.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/piano-tiles.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/piano-tiles.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🎹 Piano Tiles</h1>
+    <p>Touchez les tuiles qui tombent en rythme — et écoutez la chanson jouer !</p>
+  </section>
+
+  <details class="howto"><summary></summary><p>Choisissez une chanson, puis touchez chaque tuile au moment où elle atteint la ligne rouge en bas. Sur un ordinateur, utilisez les touches <b>D F J K</b> pour les quatre colonnes; sur un téléphone ou une tablette, touchez simplement la colonne. Chaque bon toucher joue la note suivante de la chanson. Créez une combo en touchant au bon moment — manquez une tuile et votre combo repart à zéro. Essayez de terminer toute la chanson!</p></details>
+
+  <div class="panel">
+    <div class="pt-wrap">
+      <div class="pt-songs" id="songs"></div>
+      <div class="pt-hud">
+        <span>⭐ Score : <span id="score">0</span></span>
+        <span>🎯 Meilleur combo : <span id="best">0</span></span>
+      </div>
+      <div class="pt-stage" id="stage">
+        <div class="pt-lane"></div><div class="pt-lane"></div><div class="pt-lane"></div><div class="pt-lane"></div>
+        <div class="pt-combo" id="combo"></div>
+        <div class="pt-hit"></div>
+        <div class="pt-keys">
+          <div class="pt-key" data-l="0">D</div><div class="pt-key" data-l="1">F</div>
+          <div class="pt-key" data-l="2">J</div><div class="pt-key" data-l="3">K</div>
+        </div>
+        <div class="pt-over" id="over">
+          <div style="font-size:40px">🎵</div>
+          <h2 style="margin:2px 0">Prêt à jouer?</h2>
+          <p class="muted" id="overMsg">Choisis une chanson ci-dessus, puis appuie sur Commencer.</p>
+          <button class="btn btn-lg" id="startBtn" onclick="startGame()">▶ Commencer</button>
+        </div>
+      </div>
+      <div class="center" style="margin-top:10px">
+        <button class="btn btn-ghost" onclick="location.reload()">Réinit.</button>
+        <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+      </div>
+      <p class="muted center" style="font-size:12.5px;margin-top:8px">Astuce : activez le son 🔊 — chaque touche joue une note.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+// ---- note frequencies ----
+const F={C4:261.63,D4:293.66,E4:329.63,F4:349.23,G4:392.00,A4:440.00,B4:493.88,C5:523.25,D5:587.33,E5:659.25,F5:698.46,G5:783.99,R:0};
+// songs: [noteName, beats]  (all public-domain melodies)
+const SONGS={
+  "Twinkle Twinkle":{bpm:120,notes:[["C4",1],["C4",1],["G4",1],["G4",1],["A4",1],["A4",1],["G4",2],["F4",1],["F4",1],["E4",1],["E4",1],["D4",1],["D4",1],["C4",2],["G4",1],["G4",1],["F4",1],["F4",1],["E4",1],["E4",1],["D4",2],["G4",1],["G4",1],["F4",1],["F4",1],["E4",1],["E4",1],["D4",2],["C4",1],["C4",1],["G4",1],["G4",1],["A4",1],["A4",1],["G4",2],["F4",1],["F4",1],["E4",1],["E4",1],["D4",1],["D4",1],["C4",2]]},
+  "Mary Had a Lamb":{bpm:120,notes:[["E4",1],["D4",1],["C4",1],["D4",1],["E4",1],["E4",1],["E4",2],["D4",1],["D4",1],["D4",2],["E4",1],["G4",1],["G4",2],["E4",1],["D4",1],["C4",1],["D4",1],["E4",1],["E4",1],["E4",1],["E4",1],["D4",1],["D4",1],["E4",1],["D4",1],["C4",4]]},
+  "Ode to Joy":{bpm:130,notes:[["E4",1],["E4",1],["F4",1],["G4",1],["G4",1],["F4",1],["E4",1],["D4",1],["C4",1],["C4",1],["D4",1],["E4",1],["E4",1.5],["D4",.5],["D4",2],["E4",1],["E4",1],["F4",1],["G4",1],["G4",1],["F4",1],["E4",1],["D4",1],["C4",1],["C4",1],["D4",1],["E4",1],["D4",1.5],["C4",.5],["C4",2]]},
+  "Jingle Bells":{bpm:140,notes:[["E4",1],["E4",1],["E4",2],["E4",1],["E4",1],["E4",2],["E4",1],["G4",1],["C4",1],["D4",1],["E4",4],["F4",1],["F4",1],["F4",1],["F4",1],["F4",1],["E4",1],["E4",1],["E4",1],["E4",1],["D4",1],["D4",1],["E4",1],["D4",2],["G4",2]]},
+  "Happy Birthday":{bpm:120,notes:[["C4",.75],["C4",.25],["D4",1],["C4",1],["F4",1],["E4",2],["C4",.75],["C4",.25],["D4",1],["C4",1],["G4",1],["F4",2],["C4",.75],["C4",.25],["C5",1],["A4",1],["F4",1],["E4",1],["D4",1],["A4",.75],["A4",.25],["A4",1],["F4",1],["G4",1],["F4",2]]},
+  "Row Your Boat":{bpm:120,notes:[["C4",1],["C4",1],["C4",1],["D4",1],["E4",1],["E4",1],["D4",1],["E4",1],["F4",1],["G4",2],["C5",.5],["C5",.5],["C5",.5],["G4",.5],["G4",.5],["G4",.5],["E4",.5],["E4",.5],["E4",.5],["C4",.5],["C4",.5],["C4",.5],["G4",1],["F4",1],["E4",1],["D4",1],["C4",2]]},
+  "Old MacDonald":{bpm:130,notes:[["G4",1],["G4",1],["G4",1],["D4",1],["E4",1],["E4",1],["D4",2],["B4",1],["B4",1],["A4",1],["A4",1],["G4",2],["D4",1],["G4",1],["G4",1],["G4",1],["D4",1],["E4",1],["E4",1],["D4",2],["B4",1],["B4",1],["A4",1],["A4",1],["G4",2]]},
+  "London Bridge":{bpm:130,notes:[["G4",1],["A4",1],["G4",1],["F4",1],["E4",1],["F4",1],["G4",2],["D4",1],["E4",1],["F4",2],["E4",1],["F4",1],["G4",2],["G4",1],["A4",1],["G4",1],["F4",1],["E4",1],["F4",1],["G4",2],["D4",2],["G4",1],["E4",1],["C4",2]]},
+  "Hot Cross Buns":{bpm:120,notes:[["E4",1],["D4",1],["C4",2],["E4",1],["D4",1],["C4",2],["C4",.5],["C4",.5],["C4",.5],["C4",.5],["D4",.5],["D4",.5],["D4",.5],["D4",.5],["E4",1],["D4",1],["C4",2]]},
+  "Frère Jacques":{bpm:130,notes:[["C4",1],["D4",1],["E4",1],["C4",1],["C4",1],["D4",1],["E4",1],["C4",1],["E4",1],["F4",1],["G4",2],["E4",1],["F4",1],["G4",2],["G4",.5],["A4",.5],["G4",.5],["F4",.5],["E4",1],["C4",1],["G4",.5],["A4",.5],["G4",.5],["F4",.5],["E4",1],["C4",1],["C4",1],["G4",1],["C4",2]]},
+  "Itsy Bitsy Spider":{bpm:130,notes:[["C4",1],["C4",1],["C4",1],["D4",1],["E4",1],["E4",1],["E4",1],["D4",1],["C4",1],["D4",1],["E4",1],["C4",2],["E4",1],["E4",1],["F4",1],["G4",2],["G4",1],["F4",1],["E4",1],["F4",1],["G4",1],["E4",1],["C4",2]]}
+};
+
+let ac=null;
+function beep(f,dur){
+  if(!f) return;
+  try{
+    if(!ac) ac=new (window.AudioContext||window.webkitAudioContext)();
+    const o=ac.createOscillator(), g=ac.createGain();
+    o.type='triangle'; o.frequency.value=f;
+    o.connect(g); g.connect(ac.destination);
+    const t=ac.currentTime;
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(0.25,t+0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+(dur||0.4));
+    o.start(t); o.stop(t+(dur||0.4)+0.02);
+  }catch(e){}
+}
+
+let song=Object.keys(SONGS)[0];
+function buildSongBtns(){
+  const box=document.getElementById('songs'); box.innerHTML='';
+  Object.keys(SONGS).forEach(name=>{
+    const b=document.createElement('button'); b.textContent=name;
+    if(name===song) b.classList.add('on');
+    b.onclick=()=>{ song=name; buildSongBtns(); };
+    box.appendChild(b);
+  });
+}
+
+// ---- game state ----
+const stage=document.getElementById('stage');
+let tiles=[], running=false, score=0, combo=0, best=0, raf=0, lastT=0;
+const HIT_Y=()=> stage.clientHeight-70-32; // center of tile at hit line
+const SPEED=360; // px per second (faster!)
+function buzz(){ // error / wrong-note sound
+  if(!f0play()) return;
+  try{
+    const o=ac.createOscillator(), o2=ac.createOscillator(), g=ac.createGain();
+    o.type='sawtooth'; o.frequency.value=110; o2.type='square'; o2.frequency.value=104;
+    o.connect(g); o2.connect(g); g.connect(ac.destination);
+    const t=ac.currentTime;
+    g.gain.setValueAtTime(0.18,t); g.gain.exponentialRampToValueAtTime(0.0001,t+0.25);
+    o.start(t); o2.start(t); o.stop(t+0.26); o2.stop(t+0.26);
+  }catch(e){}
+}
+function f0play(){ try{ if(!ac) ac=new (window.AudioContext||window.webkitAudioContext)(); return true; }catch(e){ return false; } }
+function flashError(){
+  const c=document.getElementById('combo');
+  c.textContent='❌ Error!'; c.style.color='#e63946';
+  clearTimeout(flashError._t);
+  flashError._t=setTimeout(()=>{ c.style.color='var(--purple)'; if(c.textContent==='❌ Error!') c.textContent=''; },500);
+}
+let seed=1; function srnd(){ seed=(seed*1103515245+12345)&0x7fffffff; return seed/0x7fffffff; }
+
+function startGame(){
+  document.getElementById('over').style.display='none';
+  // clear old tiles
+  tiles.forEach(t=>t.el.remove()); tiles=[];
+  score=0; combo=0; best=0; seed=7;
+  document.getElementById('score').textContent='0';
+  document.getElementById('best').textContent='0';
+  document.getElementById('combo').textContent='';
+  // schedule tiles from song
+  const s=SONGS[song]; const beat=60/s.bpm; // seconds per beat
+  const travel=(HIT_Y()+64)/SPEED; // seconds for a tile to fall to hit line from top
+  let t=0.9; // lead-in seconds
+  let lane=0;
+  s.notes.forEach((n,idx)=>{
+    const dur=n[1]*beat;
+    if(n[0]!=='R'){
+      // choose a lane that differs from previous
+      let L=Math.floor(srnd()*4); if(L===lane) L=(L+1)%4; lane=L;
+      tiles.push({hitTime:t, lane:L, f:F[n[0]], dur:Math.min(dur,0.5), el:null, hit:false, missed:false, spawnY:0});
+    }
+    t+=dur;
+  });
+  running=true; startClock=performance.now()/1000; lastT=startClock;
+  // create tile elements
+  tiles.forEach(tl=>{
+    const d=document.createElement('div'); d.className='pt-tile t'+tl.lane;
+    d.style.left='calc('+(tl.lane*25)+'% + 4px)'; d.style.top='-70px';
+    stage.appendChild(d); tl.el=d;
+  });
+  cancelAnimationFrame(raf); loop();
+}
+let startClock=0;
+function loop(){
+  if(!running) return;
+  const now=performance.now()/1000; const elapsed=now-startClock;
+  const hitY=HIT_Y();
+  let remaining=0;
+  tiles.forEach(tl=>{
+    if(tl.hit){ tl.el.style.display='none'; return; }
+    // y so that at hitTime the tile top is at hitY
+    const y=hitY-(tl.hitTime-elapsed)*SPEED;
+    tl.el.style.top=y+'px';
+    tl.curY=y;
+    if(!tl.missed && y>hitY+46){ // passed hit line untapped
+      tl.missed=true; combo=0;
+      tl.el.style.opacity='.25';
+      buzz(); flashError();
+    }
+    if(y<stage.clientHeight+80) remaining++;
+  });
+  // end when all tiles resolved and past
+  const allDone = tiles.every(tl=> tl.hit || (tl.curY!==undefined && tl.curY>stage.clientHeight));
+  if(allDone && elapsed>0.5){ endGame(); return; }
+  raf=requestAnimationFrame(loop);
+}
+
+function tap(lane){
+  if(!running) return;
+  litKey(lane);
+  const hitY=HIT_Y();
+  // find nearest untapped tile in this lane within window
+  let bestTile=null, bestDist=1e9;
+  tiles.forEach(tl=>{
+    if(tl.hit||tl.missed||tl.lane!==lane||tl.curY===undefined) return;
+    const d=Math.abs(tl.curY-hitY);
+    if(d<bestDist){ bestDist=d; bestTile=tl; }
+  });
+  if(bestTile && bestDist<70){
+    bestTile.hit=true; bestTile.el.style.display='none';
+    beep(bestTile.f, bestTile.dur+0.15);
+    score+=10 + Math.floor(combo/4); combo++;
+    if(combo>best){ best=combo; document.getElementById('best').textContent=best; }
+    document.getElementById('score').textContent=score;
+    const c=document.getElementById('combo'); c.textContent = combo>=3? combo+'x combo!' : '';
+  } else {
+    combo=0; buzz(); flashError();
+  }
+}
+function litKey(l){ const k=document.querySelector('.pt-key[data-l="'+l+'"]'); if(k){ k.classList.add('lit'); setTimeout(()=>k.classList.remove('lit'),110); } }
+
+function endGame(){
+  running=false; cancelAnimationFrame(raf);
+  const hits=tiles.filter(t=>t.hit).length, total=tiles.length;
+  const o=document.getElementById('over'); o.style.display='flex';
+  let title, msg;
+  const pct=total?hits/total:0;
+  if(pct>=0.95){title='🌟 Perfect performance!';}
+  else if(pct>=0.7){title='🎉 Great playing!';}
+  else if(pct>=0.4){title='🙂 Nice try!';}
+  else {title='🎵 Keep practising!';}
+  o.querySelector('h2').textContent=title;
+  document.getElementById('overMsg').textContent='You hit '+hits+' of '+total+' notes · Score '+score+' · Best combo '+best;
+  document.getElementById('startBtn').textContent='▶ Play again';
+}
+
+// ---- input ----
+const KEYMAP={d:0,f:1,j:2,k:3};
+document.addEventListener('keydown',e=>{ const l=KEYMAP[e.key.toLowerCase()]; if(l!==undefined){ e.preventDefault(); tap(l); } });
+document.querySelectorAll('.pt-key').forEach(k=>{
+  const l=+k.dataset.l;
+  k.addEventListener('touchstart',e=>{e.preventDefault();tap(l);},{passive:false});
+  k.addEventListener('mousedown',e=>{e.preventDefault();tap(l);});
+});
+// tap anywhere in a lane (above the keys) also counts
+stage.addEventListener('touchstart',e=>{
+  if(!running) return;
+  const r=stage.getBoundingClientRect();
+  for(const t of e.changedTouches){
+    const x=t.clientX-r.left; const lane=Math.min(3,Math.max(0,Math.floor(x/(r.width/4))));
+    tap(lane);
+  }
+  e.preventDefault();
+},{passive:false});
+
+buildSongBtns();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

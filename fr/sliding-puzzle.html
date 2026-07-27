@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Puzzle coulissant — Jeu de chiffres à glisser | Jeux en famille</title>
+<meta name="description" content="Jouez gratuitement au casse-tête classique des tuiles numérotées. Glissez les tuiles pour les remettre en ordre. Tailles 3x3, 4x4 et 5x5. Fonctionne sur téléphone, tablette et ordinateur.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .sp-wrap{max-width:400px;margin:0 auto;text-align:center}
+  .sp-board{display:grid;gap:8px;margin:12px auto;width:100%;max-width:340px;aspect-ratio:1/1}
+  .sp-tile{display:flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;border-radius:10px;font-weight:900;font-size:clamp(20px,7vw,34px);cursor:pointer;user-select:none;transition:transform .05s}
+  .sp-tile:active{transform:scale(.96)}
+  .sp-tile.blank{background:transparent;cursor:default}
+  .sp-tile.good{background:#2a9d8f}
+  .sp-hud{display:flex;justify-content:center;gap:12px;margin:6px 0;font-weight:800}
+  .sp-hud .box{background:#eef1f5;border-radius:8px;padding:6px 14px}
+  .sp-mode{display:inline-flex;gap:6px;margin:4px 0}
+  .sp-mode button{padding:8px 14px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
+  .sp-mode button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/sliding-puzzle.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/sliding-puzzle.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/sliding-puzzle.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/sliding-puzzle.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🧩 Casse-tête coulissant</h1>
+    <p>Glisse les tuiles jusqu'à ce que les chiffres soient en ordre !</p>
+  </section>
+  <details class="howto"><summary></summary><p>Il y a un espace vide. Touchez n'importe quelle tuile à côté de l'espace vide et elle glissera. Continuez à glisser jusqu'à ce que tous les nombres soient dans l'ordre — 1, 2, 3… avec l'espace vide en bas à droite. Choisissez une taille : 3×3 est facile, 5×5 est un vrai défi. Essayez de le résoudre en le moins de mouvements possible!</p></details>
+  <div class="panel">
+    <div class="sp-wrap">
+      <div class="center"><div class="sp-mode" id="sizes"></div></div>
+      <div class="sp-hud">
+        <div class="box">Coups : <span id="moves">0</span></div>
+        <div class="box">⏱ <span id="time">0:00</span></div>
+      </div>
+      <div class="sp-board" id="board"></div>
+      <p class="center" id="msg" style="font-weight:800;min-height:22px"></p>
+      <div class="center">
+        <button class="btn" onclick="shuffleBoard()">Mélanger</button>
+        <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+<script>
+let N=3, tiles=[], blank=0, moves=0, timer=null, secs=0, solved=false;
+function buildSizes(){
+  const box=document.getElementById('sizes'); box.innerHTML='';
+  [3,4,5].forEach(n=>{ const b=document.createElement('button'); b.textContent=n+'×'+n; if(n===N)b.classList.add('on'); b.onclick=()=>{N=n;shuffleBoard();}; box.appendChild(b); });
+}
+function goal(){ const a=[]; for(let i=1;i<N*N;i++)a.push(i); a.push(0); return a; }
+function neighbours(i){ const r=Math.floor(i/N),c=i%N,out=[]; if(r>0)out.push(i-N); if(r<N-1)out.push(i+N); if(c>0)out.push(i-1); if(c<N-1)out.push(i+1); return out; }
+function shuffleBoard(){
+  buildSizes();
+  tiles=goal(); blank=N*N-1;
+  // shuffle by random legal moves (guarantees solvable)
+  let last=-1;
+  for(let k=0;k<N*N*40;k++){ const nb=neighbours(blank).filter(x=>x!==last); const m=nb[Math.floor(Math.random()*nb.length)]; last=blank; [tiles[blank],tiles[m]]=[tiles[m],tiles[blank]]; blank=m; }
+  moves=0; secs=0; solved=false;
+  document.getElementById('moves').textContent=0;
+  document.getElementById('msg').textContent='';
+  document.getElementById('time').textContent='0:00';
+  clearInterval(timer); timer=null;
+  render();
+}
+function startTimer(){ if(timer) return; timer=setInterval(()=>{ secs++; const m=Math.floor(secs/60),s=secs%60; document.getElementById('time').textContent=m+':'+(s<10?'0':'')+s; },1000); }
+function render(){
+  const b=document.getElementById('board'); b.style.gridTemplateColumns='repeat('+N+',1fr)'; b.innerHTML='';
+  const g=goal();
+  tiles.forEach((v,i)=>{
+    const d=document.createElement('div');
+    if(v===0){ d.className='sp-tile blank'; }
+    else { d.className='sp-tile'+(v===g[i]?' good':''); d.textContent=v; d.onclick=()=>tap(i); }
+    b.appendChild(d);
+  });
+}
+function tap(i){
+  if(solved) return;
+  if(neighbours(i).includes(blank)){
+    startTimer();
+    [tiles[i],tiles[blank]]=[tiles[blank],tiles[i]]; blank=i;
+    moves++; document.getElementById('moves').textContent=moves;
+    render(); check();
+  }
+}
+function check(){
+  const g=goal();
+  if(tiles.every((v,i)=>v===g[i])){
+    solved=true; clearInterval(timer); timer=null;
+    document.getElementById('msg').style.color='#2a9d8f';
+    document.getElementById('msg').textContent='🎉 Solved in '+moves+' moves! Nice work!';
+  }
+}
+shuffleBoard();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

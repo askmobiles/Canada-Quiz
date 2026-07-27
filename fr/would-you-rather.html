@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Tu préfères ? — Jeu de fête en famille | Canada Quiz</title>
+<meta name="description" content="Tu préfères? Un jeu de société familial gratuit avec plus de 100 questions amusantes adaptées aux enfants. Faites circuler le téléphone et voyez ce que chacun choisit. Sans inscription.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .wr-wrap{max-width:520px;margin:0 auto;text-align:center}
+  .wr-opts{display:flex;flex-direction:column;gap:14px;margin:16px 0}
+  .wr-opt{border:none;border-radius:16px;padding:24px 18px;font-size:19px;font-weight:800;color:#fff;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.15);line-height:1.35}
+  .wr-opt:active{transform:translateY(2px)}
+  .wr-a{background:#4895ef}.wr-b{background:#f4845f}
+  .wr-or{font-weight:900;color:#8a97a6;font-size:18px}
+  .wr-count{font-size:13px;font-weight:700;opacity:.9;margin-top:6px}
+  .wr-num{font-weight:800;color:#6a7683;margin-top:6px}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/would-you-rather.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/would-you-rather.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/would-you-rather.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/would-you-rather.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🤔 Tu préfères?</h1>
+    <p>Deux choix loufoques — lequel choisis-tu ?</p>
+  </section>
+  <details class="howto"><summary></summary><p>Parfait pour une soirée en famille! Lisez les deux choix à voix haute, et chacun dit celui qu'il choisirait — puis débattez pourquoi! Touchez l'option choisie par le plus de gens, et vous verrez le compte en direct. Appuyez sur « Question suivante » pour en obtenir une nouvelle. Il n'y a pas de mauvaises réponses — c'est juste pour le plaisir et les rires.</p></details>
+  <div class="panel">
+    <div class="wr-wrap">
+      <p class="wr-num" id="counter">Question 1</p>
+      <div class="wr-opts">
+        <button class="wr-opt wr-a" id="optA" onclick="pick(0)"></button>
+        <div class="wr-or">— OU —</div>
+        <button class="wr-opt wr-b" id="optB" onclick="pick(1)"></button>
+      </div>
+      <p id="tally" style="font-weight:800;min-height:22px"></p>
+      <div class="center">
+        <button class="btn btn-lg" onclick="nextQ()">Question suivante →</button>
+        <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+<script>
+const Q=[
+ ["have a pet dragon","have a pet unicorn"],["be able to fly","be able to turn invisible"],
+ ["eat pizza every day","eat ice cream every day"],["live at the beach","live in the mountains"],
+ ["have super strength","have super speed"],["be a famous singer","be a famous athlete"],
+ ["never have homework again","never do chores again"],["explore outer space","explore the deep ocean"],
+ ["have a talking cat","have a talking dog"],["be able to talk to animals","be able to speak every language"],
+ ["always be too hot","always be too cold"],["have hands for feet","have feet for hands"],
+ ["be a wizard","be a superhero"],["win an Olympic gold medal","win a Nobel prize"],
+ ["live without TV","live without video games"],["have a giant treehouse","have a secret underground base"],
+ ["be the funniest person you know","be the smartest person you know"],
+ ["have summer all year","have winter all year"],["ride a rollercoaster all day","play in a giant ball pit all day"],
+ ["have maple syrup on everything","have ketchup on everything"],
+ ["be a hockey superstar","be a movie star"],["own a candy store","own a toy store"],
+ ["shrink to the size of an ant","grow as tall as a building"],
+ ["have a robot best friend","have a dinosaur best friend"],
+ ["only whisper forever","only shout forever"],["be able to breathe underwater","be able to walk through walls"],
+ ["visit the past","visit the future"],["have a pool full of chocolate","have a pool full of jelly"],
+ ["be able to freeze time","be able to teleport"],["live in a castle","live in a spaceship"],
+ ["have wings","have a tail"],["always have to sing when you talk","always have to dance when you walk"],
+ ["eat a bug for $100","eat a spoon of hot sauce for $50"],["have a bunk bed","have a waterbed"],
+ ["be a pirate","be an astronaut"],["have snow in summer","have sunshine in winter"],
+ ["read minds","see the future"],["have a jetpack","have a hoverboard"],
+ ["never be able to run","never be able to jump"],["have a nose that glows","have ears that wiggle"],
+ ["be a giant among tiny people","be tiny among giant people"],
+ ["have unlimited books","have unlimited video games"],["meet a real polar bear","meet a real moose"],
+ ["have a magic paintbrush","have magic dancing shoes"],["control fire","control water"],
+ ["always know when someone is lying","always get away with a fib"],
+ ["have a pet penguin","have a pet monkey"],["be really good at drawing","be really good at music"],
+ ["live in a world made of candy","live in a world made of LEGO"],
+ ["have a personal chef","have a personal roller coaster"],
+ ["sneeze glitter","burp bubbles"],["have a car that flies","have a bike that goes super fast"],
+ ["spend a day as a bird","spend a day as a fish"],["be invisible for a day","be super strong for a day"],
+ ["have a beard made of spaghetti","have hair made of cheese"],
+ ["always win at board games","always win at sports"],["own a zoo","own a water park"],
+ ["have a magic backpack","have magic shoes"],["be able to talk to plants","be able to talk to computers"]
+];
+let order=[], idx=0, counts={};
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function start(){ order=shuffle(Q.map((_,i)=>i)); idx=0; counts={}; show(); }
+function show(){
+  const q=Q[order[idx]];
+  document.getElementById('counter').textContent='Question '+(idx+1);
+  document.getElementById('optA').innerHTML='Would you rather<br>'+cap(q[0])+'?';
+  document.getElementById('optB').innerHTML='...or would you rather<br>'+cap(q[1])+'?';
+  document.getElementById('tally').textContent='';
+}
+function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+function pick(which){
+  const key=order[idx];
+  counts[key]=counts[key]||[0,0]; counts[key][which]++;
+  const c=counts[key];
+  document.getElementById('tally').style.color='#2a9d8f';
+  document.getElementById('tally').textContent='Tally — Blue: '+c[0]+'  ·  Orange: '+c[1];
+}
+function nextQ(){ idx=(idx+1)%order.length; if(idx===0) order=shuffle(order); show(); window.scrollTo(0,0); }
+start();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

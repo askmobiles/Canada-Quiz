@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Canada Quiz">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e63946"/><stop offset="100%" stop-color="#f4845f"/>
+  </linearGradient>
+</defs>
+
+<path d="M64.00,15.48 L70.42,27.13 L76.98,25.80 L73.60,42.21 L92.85,33.22 L89.88,42.89 L104.40,47.11 L90.00,56.32 L92.40,62.57 L67.86,70.08 L67.86,98.64 L64.50,100.32 L60.14,98.64 L60.14,70.08 L35.60,62.57 L38.00,56.32 L23.60,47.11 L38.12,42.89 L35.15,33.22 L54.40,42.21 L51.02,25.80 L57.58,27.13 Z" fill="#e63946" stroke="#e63946" stroke-width="5.04" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="98" cy="98" r="21" fill="#ffb703" stroke="#fff" stroke-width="6"/>
+<text x="98" y="99" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="26" font-weight="800"
+      fill="#2b2d42" text-anchor="middle" dominant-baseline="central">?</text>
+</svg>

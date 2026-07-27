@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeu de mémoire canadien — Jeux en famille</title>
+<meta name="description" content="Jeu gratuit de mémoire sur le thème du Canada pour les enfants et les familles. Retournez les cartes et trouvez les paires!">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .mem-board{display:grid;gap:10px;max-width:460px;margin:20px auto}
+  .mem-card{aspect-ratio:1/1;border:none;background:none;cursor:pointer;perspective:600px}
+  .mem-inner{position:relative;width:100%;height:100%;transition:transform .4s;transform-style:preserve-3d}
+  .mem-card.flipped .mem-inner, .mem-card.matched .mem-inner{transform:rotateY(180deg)}
+  .mem-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:clamp(24px,7vw,40px)}
+  .mem-front{background:var(--red);color:#fff}
+  .mem-front::after{content:"🍁";opacity:.85}
+  .mem-back{background:#fff;border:2px solid var(--line);transform:rotateY(180deg)}
+  .mem-card.matched .mem-back{background:#eafaf0;border-color:var(--green)}
+  .stat-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/memory.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/memory.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/memory.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/memory.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🧠 Jeu de mémoire Canada</h1>
+    <p>Retournez deux cartes. Trouvez les paires identiques. Parfait pour tous les âges !</p>
+  <details class="howto"><summary></summary><p>Toutes les cartes commencent face cachée. Touchez une carte pour la retourner, puis touchez-en une autre pour trouver sa paire. Si les deux correspondent, elles restent ouvertes. Sinon, elles se retournent — essayez de vous souvenir où elles étaient! Trouvez toutes les paires pour gagner.</p></details>
+
+  </section>
+
+  <div class="panel">
+    <div class="stat-row">
+      <span class="pill" id="moves">Coups : 0</span>
+      <span class="pill" id="pairs">Paires : 0 / 8</span>
+      <span class="pill" id="timer">Temps : 0 s</span>
+    </div>
+    <div class="center" style="margin-bottom:6px">
+      <label class="muted">Niveau :
+        <select id="level" class="text-in" style="width:auto;padding:8px 10px" onchange="startGame()">
+          <option value="6">Facile (6 paires)</option>
+          <option value="8" selected>Moyen (8 paires)</option>
+          <option value="10">Difficile (10 paires)</option>
+        </select>
+      </label>
+    </div>
+    <div class="mem-board" id="board"></div>
+    <div class="center" style="margin-top:14px">
+      <button class="btn" onclick="startGame()">Nouvelle partie</button>
+      <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+    </div>
+    <div id="win" class="panel center" style="display:none;background:#eafaf0;border-color:var(--green)">
+      <div class="result-big">🎉</div>
+      <h2 id="win-text">Tu as gagné!</h2>
+      <button class="btn btn-lg" onclick="startGame()">Rejouer</button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+const ICONS = ["🍁","🏒","🦫","🐻","🦌","🦉","⛷️","🛶","🏔️","🍩","🐺","🦅","🌲","❄️","🦬","🐟"];
+let cards=[], first=null, lock=false, moves=0, pairs=0, need=8, t=0, timerId=null, started=false;
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function startGame(){
+  need = parseInt(document.getElementById('level').value,10);
+  const chosen = shuffle(ICONS).slice(0,need);
+  cards = shuffle([...chosen,...chosen]);
+  first=null; lock=false; moves=0; pairs=0; t=0; started=false;
+  clearInterval(timerId);
+  document.getElementById('moves').textContent='Moves: 0';
+  document.getElementById('pairs').textContent='Pairs: 0 / '+need;
+  document.getElementById('timer').textContent='Time: 0s';
+  document.getElementById('win').style.display='none';
+
+  const cols = need>=10?5:4;
+  const board=document.getElementById('board');
+  board.style.gridTemplateColumns='repeat('+cols+',1fr)';
+  board.innerHTML='';
+  cards.forEach((icon,i)=>{
+    const c=document.createElement('button');
+    c.className='mem-card';
+    c.innerHTML='<div class="mem-inner"><div class="mem-face mem-front"></div><div class="mem-face mem-back">'+icon+'</div></div>';
+    c.onclick=()=>flip(c,i,icon);
+    board.appendChild(c);
+  });
+}
+function startTimer(){
+  clearInterval(timerId);
+  timerId=setInterval(()=>{t++;document.getElementById('timer').textContent='Time: '+t+'s';},1000);
+}
+function flip(card,i,icon){
+  if(lock || card.classList.contains('flipped') || card.classList.contains('matched')) return;
+  if(!started){started=true;startTimer();}
+  card.classList.add('flipped');
+  if(first===null){ first={card,icon}; return; }
+  moves++; document.getElementById('moves').textContent='Moves: '+moves;
+  if(first.icon===icon){
+    first.card.classList.add('matched'); card.classList.add('matched');
+    first=null; pairs++;
+    document.getElementById('pairs').textContent='Pairs: '+pairs+' / '+need;
+    if(pairs===need) win();
+  } else {
+    lock=true;
+    const a=first.card;
+    setTimeout(()=>{ a.classList.remove('flipped'); card.classList.remove('flipped'); first=null; lock=false; },800);
+  }
+}
+function win(){
+  clearInterval(timerId);
+  document.getElementById('win-text').textContent='You won in '+moves+' moves and '+t+' seconds! 🍁';
+  document.getElementById('win').style.display='block';
+  window.scrollTo(0,document.body.scrollHeight);
+}
+startGame();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

@@ -7,7 +7,6 @@
 <meta name="description" content="Play Checkers (draughts) free — against the computer or a friend on one device. Full rules with jumps and kings. Phone, tablet and computer.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/style.css?v=3">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔴</text></svg>">
 <style>
   .ck-wrap{max-width:440px;margin:0 auto;text-align:center}
   .ck-board{display:grid;grid-template-columns:repeat(8,1fr);width:100%;max-width:400px;margin:12px auto;border:3px solid var(--ink);border-radius:8px;overflow:hidden;touch-action:manipulation}
@@ -25,14 +24,26 @@
   .ck-mode button{padding:8px 12px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
   .ck-mode button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
 </style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/checkers.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/checkers.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/checkers.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/checkers.html">
 </head>
 <body>
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
-    <nav class="nav">
-      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
-      <a href="games.html">Family Games</a><a href="citizenship.html">Citizenship</a>
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
     </nav>
   </div>
 </header>
@@ -56,9 +67,11 @@
 </main>
 <footer class="site-footer">
   <div class="container center">
-    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
   </div>
 </footer>
 <script>
@@ -208,6 +221,7 @@ function setHud(t){ document.getElementById('hud').textContent=t; }
 newGame();
 </script>
   <script src="js/game-fullscreen.js"></script>
+  <script src="js/site.js"></script>
   <script src="js/analytics.js"></script>
 </body>
 </html>

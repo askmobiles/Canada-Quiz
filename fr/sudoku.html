@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Sudoku — Casse-tête de chiffres gratuit | Jeux en famille</title>
+<meta name="description" content="Jeu de sudoku gratuit avec niveaux facile, moyen et difficile. Remplissez la grille pour que chaque rangée, colonne et boîte contienne les chiffres 1 à 9. Se joue sur téléphone et ordinateur.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .sk-wrap{max-width:440px;margin:0 auto;text-align:center}
+  .sk-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:0;max-width:420px;margin:12px auto;border:3px solid var(--ink);border-radius:6px;overflow:hidden;touch-action:manipulation}
+  .sk-cell{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:clamp(16px,5.4vw,24px);font-weight:700;border:1px solid #d7dde3;cursor:pointer;background:#fff;color:var(--blue)}
+  .sk-cell.given{color:var(--ink);font-weight:800}
+  .sk-cell.sel{background:#dcefff}
+  .sk-cell.bad{background:#fdecee;color:var(--red)}
+  .sk-cell.br{border-right:2px solid var(--ink)}
+  .sk-cell.bb{border-bottom:2px solid var(--ink)}
+  .sk-pad{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;max-width:340px;margin:12px auto}
+  .sk-pad button{padding:12px 0;font-size:20px;font-weight:800;border:2px solid var(--line);background:#fff;border-radius:10px;cursor:pointer;color:var(--ink)}
+  .sk-pad button:active{background:#eef}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/sudoku.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/sudoku.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/sudoku.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/sudoku.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔢 Sudoku</h1>
+    <p>Remplissez la grille pour que chaque rangée, colonne et boîte contienne les chiffres de 1 à 9.</p>
+  </section>
+
+  <details class="howto"><summary></summary><p>Remplissez les cases vides avec des nombres de 1 à 9. Chaque rangée, chaque colonne et chacun des neuf blocs de 3×3 doit contenir tous les nombres de 1 à 9, sans répétition. Touchez une case, puis touchez un nombre (ou utilisez votre clavier). Touchez un nombre puis la gomme (⌫) pour effacer. Choisissez un niveau et voyez si vous pouvez le résoudre!</p></details>
+
+  <div class="panel">
+    <div class="sk-wrap">
+      <div class="center" style="margin-bottom:6px">
+        <label class="muted">Niveau :
+          <select id="level" class="text-in" style="width:auto;padding:8px 10px" onchange="newGame()">
+            <option value="easy">Facile</option>
+            <option value="medium" selected>Moyen</option>
+            <option value="hard">Difficile</option>
+          </select>
+        </label>
+      </div>
+      <div class="sk-grid" id="grid"></div>
+      <div class="sk-pad" id="pad"></div>
+      <p class="center" id="msg" style="font-weight:800;min-height:22px"></p>
+      <div class="center">
+        <button class="btn" onclick="newGame()">Nouveau casse-tête</button>
+        <button class="btn btn-ghost" onclick="checkBoard()">Vérifier</button>
+        <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+let solution=[], puzzle=[], given=[], sel=-1;
+function rnd(n){return Math.floor(Math.random()*n);}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=rnd(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function ok(g,i,v){
+  const r=Math.floor(i/9), c=i%9;
+  for(let k=0;k<9;k++){ if(g[r*9+k]===v) return false; if(g[k*9+c]===v) return false; }
+  const br=Math.floor(r/3)*3, bc=Math.floor(c/3)*3;
+  for(let a=0;a<3;a++)for(let b=0;b<3;b++){ if(g[(br+a)*9+(bc+b)]===v) return false; }
+  return true;
+}
+function fill(g,i){
+  if(i>=81) return true;
+  if(g[i]!==0) return fill(g,i+1);
+  const nums=shuffle([1,2,3,4,5,6,7,8,9]);
+  for(const v of nums){ if(ok(g,i,v)){ g[i]=v; if(fill(g,i+1)) return true; g[i]=0; } }
+  return false;
+}
+function countSolutions(g,limit){
+  const i=g.indexOf(0);
+  if(i===-1) return 1;
+  let count=0;
+  for(let v=1;v<=9;v++){ if(ok(g,i,v)){ g[i]=v; count+=countSolutions(g,limit); g[i]=0; if(count>=limit) return count; } }
+  return count;
+}
+function newGame(){
+  const lvl=document.getElementById('level').value;
+  const target = lvl==='easy'?44:(lvl==='medium'?34:28); // givens
+  solution=new Array(81).fill(0); fill(solution,0);
+  puzzle=solution.slice();
+  const cells=shuffle([...Array(81).keys()]);
+  let givens=81;
+  for(const i of cells){
+    if(givens<=target) break;
+    const sy=80-i; // symmetric partner
+    const backup=puzzle[i], backup2=puzzle[sy];
+    puzzle[i]=0; puzzle[sy]=0;
+    const test=puzzle.slice();
+    if(countSolutions(test,2)!==1){ puzzle[i]=backup; puzzle[sy]=backup2; }
+    else { givens -= (i===sy?1:2); }
+  }
+  given=puzzle.map(v=>v!==0);
+  sel=-1;
+  document.getElementById('msg').textContent='';
+  render(); buildPad();
+}
+function render(){
+  const g=document.getElementById('grid'); g.innerHTML='';
+  for(let i=0;i<81;i++){
+    const d=document.createElement('div');
+    const c=i%9, r=Math.floor(i/9);
+    d.className='sk-cell'+(given[i]?' given':'')+((c===2||c===5)?' br':'')+((r===2||r===5)?' bb':'')+(i===sel?' sel':'');
+    d.textContent=puzzle[i]||'';
+    d.onclick=()=>{ if(!given[i]){ sel=i; render(); } };
+    g.appendChild(d);
+  }
+}
+function buildPad(){
+  const p=document.getElementById('pad'); p.innerHTML='';
+  for(let n=1;n<=9;n++){ const b=document.createElement('button'); b.textContent=n; b.onclick=()=>enter(n); p.appendChild(b); }
+  const del=document.createElement('button'); del.textContent='⌫'; del.onclick=()=>enter(0); p.appendChild(del);
+}
+function enter(n){
+  if(sel<0||given[sel]) return;
+  puzzle[sel]=n; render();
+  // auto win check
+  if(puzzle.every((v,i)=>v===solution[i])){ document.getElementById('msg').style.color='#2a9d8f'; document.getElementById('msg').textContent='🎉 Solved! Great job!'; }
+}
+function checkBoard(){
+  // mark conflicts
+  render();
+  let wrong=0, empty=0;
+  const cells=document.querySelectorAll('.sk-cell');
+  for(let i=0;i<81;i++){
+    if(puzzle[i]===0){ empty++; continue; }
+    if(puzzle[i]!==solution[i]){ cells[i].classList.add('bad'); wrong++; }
+  }
+  const m=document.getElementById('msg');
+  if(wrong===0 && empty===0){ m.style.color='#2a9d8f'; m.textContent='🎉 Solved! Perfect!'; }
+  else if(wrong===0){ m.style.color='#5f6b7a'; m.textContent='So far so good — '+empty+' squares left.'; }
+  else { m.style.color='#e63946'; m.textContent=wrong+' square(s) are wrong (shown in red).'; }
+}
+document.addEventListener('keydown',e=>{
+  if(sel<0) return;
+  if(/^[1-9]$/.test(e.key)) enter(parseInt(e.key,10));
+  else if(e.key==='Backspace'||e.key==='Delete'||e.key==='0') enter(0);
+});
+newGame();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

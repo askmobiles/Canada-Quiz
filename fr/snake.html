@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serpent érable — Jeux en famille</title>
+<meta name="description" content="Jeu d&#x27;arcade gratuit « snake » sur le thème du Canada. Mangez les feuilles d&#x27;érable et grandissez! Fonctionne sur téléphone et ordinateur.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .game-wrap{max-width:420px;margin:0 auto;text-align:center}
+  canvas{background:#fff;border:3px solid var(--red);border-radius:12px;width:100%;height:auto;touch-action:none}
+  .dpad{display:grid;grid-template-columns:repeat(3,64px);grid-template-rows:repeat(3,64px);gap:8px;justify-content:center;margin:16px auto}
+  .dpad button{font-size:24px;border:2px solid var(--line);background:#fff;border-radius:12px;cursor:pointer}
+  .dpad button:active{background:#fff0f1}
+  .d-up{grid-column:2;grid-row:1}.d-left{grid-column:1;grid-row:2}.d-right{grid-column:3;grid-row:2}.d-down{grid-column:2;grid-row:3}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/snake.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/snake.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/snake.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/snake.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🐍 Serpent d'érable</h1>
+    <p>Mange les feuilles d'érable 🍁 et grandis. Ne touche pas les murs ni toi-même!</p>
+  <details class="howto"><summary></summary><p>Dirigez le serpent avec les touches fléchées, les boutons à l'écran ou en glissant sur votre téléphone. Mangez les feuilles d'érable pour grandir et marquer des points. Ne heurtez pas les murs ni votre propre queue — et attention, ça accélère au fil du jeu!</p></details>
+
+  </section>
+
+  <div class="panel">
+    <div class="game-wrap">
+      <div class="stat-row" style="display:flex;gap:10px;justify-content:center;margin-bottom:10px">
+        <span class="pill" id="score">Score : 0</span>
+        <span class="pill" id="best">Meilleur : 0</span>
+      </div>
+      <canvas id="c" width="400" height="400"></canvas>
+      <p class="muted" id="hint">Appuie sur une touche fléchée ou un bouton pour commencer</p>
+      <div class="dpad">
+        <button class="d-up" onclick="setDir(0,-1)">⬆️</button>
+        <button class="d-left" onclick="setDir(-1,0)">⬅️</button>
+        <button class="d-right" onclick="setDir(1,0)">➡️</button>
+        <button class="d-down" onclick="setDir(0,1)">⬇️</button>
+      </div>
+      <button class="btn" onclick="resetGame()">Nouvelle partie</button>
+      <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+const cv=document.getElementById('c'), ctx=cv.getContext('2d');
+const N=20, CELL=cv.width/N;
+let snake, dir, nextDir, food, score, best=0, loopId=null, running=false, speed=140;
+
+function resetGame(){
+  snake=[{x:10,y:10},{x:9,y:10},{x:8,y:10}];
+  dir={x:1,y:0}; nextDir={x:1,y:0};
+  score=0; running=false; speed=140;
+  clearInterval(loopId);
+  placeFood();
+  document.getElementById('score').textContent='Score: 0';
+  document.getElementById('best').textContent='Best: '+best;
+  document.getElementById('hint').textContent='Press an arrow key or a button to start';
+  draw();
+}
+function placeFood(){
+  do{ food={x:Math.floor(Math.random()*N),y:Math.floor(Math.random()*N)}; }
+  while(snake.some(s=>s.x===food.x&&s.y===food.y));
+}
+function setDir(x,y){
+  if((x!==0 && x===-dir.x)||(y!==0 && y===-dir.y)) return; // no reverse
+  nextDir={x,y};
+  if(!running) start();
+}
+function start(){
+  running=true;
+  document.getElementById('hint').textContent='Go! 🍁';
+  clearInterval(loopId);
+  loopId=setInterval(tick,speed);
+}
+function tick(){
+  dir=nextDir;
+  const head={x:snake[0].x+dir.x, y:snake[0].y+dir.y};
+  if(head.x<0||head.y<0||head.x>=N||head.y>=N||snake.some(s=>s.x===head.x&&s.y===head.y)){
+    return gameOver();
+  }
+  snake.unshift(head);
+  if(head.x===food.x&&head.y===food.y){
+    score++;
+    document.getElementById('score').textContent='Score: '+score;
+    if(score>best){best=score;document.getElementById('best').textContent='Best: '+best;}
+    placeFood();
+    if(speed>70 && score%5===0){ speed-=10; start(); }
+  } else {
+    snake.pop();
+  }
+  draw();
+}
+function draw(){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  // food
+  ctx.font=(CELL-2)+'px serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText('🍁', food.x*CELL+CELL/2, food.y*CELL+CELL/2);
+  // snake
+  snake.forEach((s,i)=>{
+    ctx.fillStyle = i===0 ? '#a30016' : '#d80621';
+    ctx.fillRect(s.x*CELL+1,s.y*CELL+1,CELL-2,CELL-2);
+  });
+}
+function gameOver(){
+  running=false; clearInterval(loopId);
+  document.getElementById('hint').textContent='💥 Game over! Score: '+score+'. Press New Game.';
+}
+document.addEventListener('keydown',e=>{
+  const map={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0],w:[0,-1],s:[0,1],a:[-1,0],d:[1,0]};
+  const m=map[e.key];
+  if(m){ e.preventDefault(); setDir(m[0],m[1]); }
+});
+// swipe controls
+let tx=0,ty=0;
+cv.addEventListener('touchstart',e=>{const t=e.touches[0];tx=t.clientX;ty=t.clientY;},{passive:true});
+cv.addEventListener('touchend',e=>{
+  const t=e.changedTouches[0], dx=t.clientX-tx, dy=t.clientY-ty;
+  if(Math.abs(dx)>Math.abs(dy)) setDir(dx>0?1:-1,0); else setDir(0,dy>0?1:-1);
+});
+resetGame();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

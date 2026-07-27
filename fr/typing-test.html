@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de vitesse de frappe — À quelle vitesse tapez-vous ? | Jeux en famille</title>
+<meta name="description" content="Test de vitesse de frappe gratuit. Découvrez votre nombre de mots par minute (MPM) et votre précision. Une façon amusante de pratiquer la dactylographie pour enfants et adultes. Sans inscription.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .ty-wrap{max-width:640px;margin:0 auto}
+  .ty-text{font-size:19px;line-height:1.8;background:#f4f6fa;border-radius:12px;padding:16px;margin:10px 0;text-align:left}
+  .ty-text span.ok{color:#2a9d8f}.ty-text span.bad{background:#fde2e4;color:#e63946;border-radius:3px}
+  .ty-text span.cur{background:#dcefff;border-radius:3px}
+  .ty-in{width:100%;font-size:17px;padding:12px;border:2px solid var(--line);border-radius:10px;font-family:inherit;resize:none}
+  .ty-stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+  .ty-stats .box{background:#eef1f5;border-radius:10px;padding:8px 16px;font-weight:800;text-align:center;min-width:80px}
+  .ty-stats .box b{display:block;font-size:12px;color:#6a7683;text-transform:uppercase}
+  .ty-stats .box span{font-size:22px;color:var(--ink)}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/typing-test.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/typing-test.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/typing-test.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/typing-test.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>⌨️ Test de vitesse de frappe</h1>
+    <p>À quelle vitesse tapez-vous ? Découvrez vos mots par minute !</p>
+  </section>
+  <details class="howto"><summary></summary><p>Commencez à taper la phrase affichée dans la boîte. La minuterie démarre à votre première lettre. Les bonnes lettres deviennent vertes, les erreurs deviennent rouges. Quand vous terminez la phrase, vous verrez votre vitesse en mots par minute (MPM) et votre précision. Appuyez sur Nouveau texte pour en essayer un autre. Idéal avec un clavier d'ordinateur!</p></details>
+  <div class="panel">
+    <div class="ty-wrap">
+      <div class="ty-stats">
+        <div class="box"><b>Vitesse</b><span id="wpm">0</span> wpm</div>
+        <div class="box"><b>Précision</b><span id="acc">100</span>%</div>
+        <div class="box"><b>Temps</b><span id="time">0</span>s</div>
+      </div>
+      <div class="ty-text" id="text"></div>
+      <textarea class="ty-in" id="input" rows="3" placeholder="Clique ici et commence à taper…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+      <p class="center" id="msg" style="font-weight:800;min-height:22px;margin-top:10px"></p>
+      <div class="center">
+        <button class="btn" onclick="newText()">Nouveau texte</button>
+        <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+<script>
+const TEXTS=[
+  "Canada is the second largest country in the world by total area.",
+  "The maple leaf is a famous symbol found on the Canadian flag.",
+  "Hockey is one of the most popular sports played across Canada.",
+  "Ottawa is the capital city of Canada and sits along a river.",
+  "Beavers are hard working animals often seen in Canadian rivers.",
+  "A polar bear has black skin under its thick white fur coat.",
+  "The northern lights can be seen glowing in the winter sky.",
+  "Practice a little every day and your typing will get faster.",
+  "Reading good books can help you learn many new and useful words.",
+  "The quick brown fox jumps over the lazy dog near the river bank."
+];
+let target='', started=false, startT=0, timer=null, finished=false;
+const inp=document.getElementById('input');
+function newText(){
+  target=TEXTS[Math.floor(Math.random()*TEXTS.length)];
+  started=false; finished=false; startT=0;
+  clearInterval(timer); timer=null;
+  inp.value=''; inp.disabled=false;
+  document.getElementById('wpm').textContent='0';
+  document.getElementById('acc').textContent='100';
+  document.getElementById('time').textContent='0';
+  document.getElementById('msg').textContent='';
+  paint(); inp.focus();
+}
+function paint(){
+  const t=document.getElementById('text'); const typed=inp.value; let html='';
+  for(let i=0;i<target.length;i++){
+    const ch=target[i].replace('<','&lt;');
+    if(i<typed.length){ html+='<span class="'+(typed[i]===target[i]?'ok':'bad')+'">'+ch+'</span>'; }
+    else if(i===typed.length){ html+='<span class="cur">'+ch+'</span>'; }
+    else html+='<span>'+ch+'</span>';
+  }
+  t.innerHTML=html;
+}
+function tick(){
+  const el=(Date.now()-startT)/1000;
+  document.getElementById('time').textContent=el.toFixed(0);
+  const words=inp.value.trim().split(/\s+/).filter(Boolean).length;
+  let wpm=el>0.1?Math.round(words/(el/60)):0;
+  if(!isFinite(wpm)||wpm>500) wpm=0;
+  document.getElementById('wpm').textContent=wpm;
+}
+inp.addEventListener('input',()=>{
+  if(finished) return;
+  if(!started && inp.value.length>0){ started=true; startT=Date.now(); timer=setInterval(tick,200); }
+  // accuracy
+  const typed=inp.value; let correct=0;
+  for(let i=0;i<typed.length;i++){ if(typed[i]===target[i]) correct++; }
+  const acc=typed.length?Math.round(correct/typed.length*100):100;
+  document.getElementById('acc').textContent=acc;
+  paint();
+  if(typed.length>=target.length){ finish(acc); }
+});
+function finish(acc){
+  finished=true; clearInterval(timer);
+  const el=Math.max(0.1,(Date.now()-startT)/1000);
+  const words=target.trim().split(/\s+/).length;
+  let wpm=Math.round(words/(el/60));
+  if(!isFinite(wpm)||wpm>500) wpm=500;
+  document.getElementById('wpm').textContent=wpm;
+  document.getElementById('time').textContent=el.toFixed(1);
+  inp.disabled=true;
+  let note;
+  if(wpm>=70) note='🚀 Super fast!'; else if(wpm>=45) note='🔥 Great speed!'; else if(wpm>=25) note='🙂 Nice going!'; else note='🌱 Keep practising!';
+  document.getElementById('msg').style.color='#2a9d8f';
+  document.getElementById('msg').textContent=note+' '+wpm+' wpm at '+acc+'% accuracy.';
+}
+newText();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

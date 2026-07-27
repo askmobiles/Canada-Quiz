@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>Draw It — Free Pictionary Party Game | Canada Quiz</title>
 <meta name="description" content="Draw It — a free Pictionary-style party game. Draw the secret word on screen while your team guesses before the timer runs out. Easy and advanced word packs.">
-<link rel="canonical" href="https://canada-quiz.com/draw-it.html">
 <meta property="og:title" content="Draw It — Free Pictionary Party Game">
 <meta property="og:description" content="Draw the secret word while your team guesses. A free party game for families and friends.">
 <meta property="og:type" content="website">
@@ -13,7 +12,6 @@
 <meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/style.css?v=3">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 <style>
   .di-wrap{max-width:640px;margin:0 auto;text-align:center}
   .di-mode{display:inline-flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:6px 0}
@@ -33,14 +31,26 @@
   .di-team .sc{font-size:28px;font-weight:900}
   .di-team.t1 .sc{color:#e63946}.di-team.t2 .sc{color:#4895ef}
 </style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/draw-it.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/draw-it.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/draw-it.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/draw-it.html">
 </head>
 <body>
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
-    <nav class="nav">
-      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
-      <a href="games.html">Family Games</a><a href="daily.html">Daily</a><a href="blog.html">Blog</a>
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
     </nav>
   </div>
 </header>
@@ -76,9 +86,11 @@
 </main>
 <footer class="site-footer">
   <div class="container center">
-    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
   </div>
 </footer>
 <script>
@@ -181,6 +193,7 @@ function clearBoard(){ strokes=[]; if(ctx){ ctx.fillStyle='#ffffff'; ctx.fillRec
 
 buildModes(); buildSwatches(); setupCanvas();
 </script>
+  <script src="js/site.js"></script>
   <script src="js/analytics.js"></script>
   <script src="js/game-fullscreen.js"></script>
 </body>

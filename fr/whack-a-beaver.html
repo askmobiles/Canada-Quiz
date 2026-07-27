@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Tape-castor — Jeu canadien gratuit | Jeux en famille</title>
+<meta name="description" content="Tape-castor — un jeu de tapotement canadien amusant et gratuit. Tapez sur les castors, attrapez les feuilles d&#x27;érable dorées pour des points bonis, et évitez la mouffette! Amusant pour les enfants et les adultes, sur téléphone et ordinateur.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .wb-wrap{max-width:420px;margin:0 auto;text-align:center}
+  .wb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px auto;touch-action:manipulation}
+  .hole{aspect-ratio:1/1;background:radial-gradient(circle at 50% 120%, #8a6a4a 0%, #6b4f36 60%, #543f2b 100%);border-radius:50%/40%;position:relative;overflow:hidden;box-shadow:inset 0 -8px 16px rgba(0,0,0,.35);cursor:pointer}
+  .hole::after{content:"";position:absolute;left:8%;right:8%;bottom:6%;height:22%;background:#3f2f20;border-radius:50%;opacity:.6}
+  .critter{position:absolute;left:0;right:0;bottom:-100%;font-size:clamp(34px,11vw,52px);transition:bottom .12s ease;line-height:1.1}
+  .critter.up{bottom:14%}
+  .stat-row{display:flex;gap:10px;justify-content:center;margin:10px 0}
+  .flash{animation:fl .3s}
+  @keyframes fl{from{transform:scale(1.25)}to{transform:scale(1)}}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/whack-a-beaver.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/whack-a-beaver.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/whack-a-beaver.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/whack-a-beaver.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🦫 Tape-un-castor</h1>
+    <p>Touche les castors pour marquer des points. Attrape la 🍁 pour un bonus — mais ne touche pas la mouffette!</p>
+  </section>
+
+  <details class="howto"><summary></summary><p>Les castors surgissent des trous — touchez-les vite pour marquer des points avant qu'ils replongent! Une feuille d'érable dorée 🍁 vaut 3 points bonis. Mais attention : si vous touchez la mouffette 🦨, vous perdez des points. Vous avez 45 secondes — obtenez le meilleur pointage possible. Ça accélère avec le temps!</p></details>
+
+  <div class="panel">
+    <div class="wb-wrap">
+      <div class="stat-row">
+        <span class="pill" id="score">Score : 0</span>
+        <span class="pill" id="time">Temps : 45</span>
+        <span class="pill" id="best">Meilleur : 0</span>
+      </div>
+      <div class="wb-grid" id="grid"></div>
+      <p class="muted" id="msg" style="min-height:22px">Appuie sur Commencer et frappe ces castors !</p>
+      <button class="btn btn-lg" id="startBtn" onclick="startGame()">Commencer la partie</button>
+      <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+      <p class="muted" style="font-size:13px;margin-top:14px">Le castor 🦫 est l'un des animaux nationaux du Canada — vous le trouverez sur la pièce de 5 cents canadienne!</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+const HOLES=9;
+let score=0, best=0, timeLeft=45, running=false, gameTimer=null, popTimer=null, popGap=900;
+const active={}; // holeIndex -> {type, timeout}
+
+function buildGrid(){
+  const g=document.getElementById('grid'); g.innerHTML='';
+  for(let i=0;i<HOLES;i++){
+    const h=document.createElement('div'); h.className='hole'; h.dataset.i=i;
+    const c=document.createElement('div'); c.className='critter'; c.textContent='';
+    h.appendChild(c);
+    h.addEventListener('pointerdown', e=>{ e.preventDefault(); whack(i); });
+    g.appendChild(h);
+  }
+}
+function critterEl(i){ return document.querySelector('.hole[data-i="'+i+'"] .critter'); }
+
+function startGame(){
+  score=0; timeLeft=45; running=true; popGap=900;
+  Object.values(active).forEach(a=>clearTimeout(a.timeout));
+  for(const k in active) delete active[k];
+  document.querySelectorAll('.critter').forEach(c=>{c.classList.remove('up');c.textContent='';});
+  document.getElementById('score').textContent='Score: 0';
+  document.getElementById('time').textContent='Time: 45';
+  document.getElementById('best').textContent='Best: '+best;
+  document.getElementById('msg').textContent='Go! 🦫';
+  document.getElementById('startBtn').textContent='Restart';
+  clearInterval(gameTimer); clearTimeout(popTimer);
+  gameTimer=setInterval(()=>{
+    timeLeft--; document.getElementById('time').textContent='Time: '+timeLeft;
+    if(popGap>380 && timeLeft%8===0) popGap-=70; // speed up
+    if(timeLeft<=0) endGame();
+  },1000);
+  schedulePop();
+}
+function schedulePop(){
+  if(!running) return;
+  popTimer=setTimeout(()=>{
+    popOne();
+    schedulePop();
+  }, popGap*(0.6+Math.random()*0.7));
+}
+function popOne(){
+  const free=[]; for(let i=0;i<HOLES;i++) if(!active[i]) free.push(i);
+  if(!free.length) return;
+  const i=free[Math.floor(Math.random()*free.length)];
+  const r=Math.random();
+  let type='beaver';
+  if(r<0.12) type='leaf'; else if(r<0.28) type='skunk';
+  const emoji = type==='beaver'?'🦫':(type==='leaf'?'🍁':'🦨');
+  const c=critterEl(i); c.textContent=emoji; c.classList.add('up');
+  const upTime = Math.max(650, popGap*1.1);
+  const timeout=setTimeout(()=>{ c.classList.remove('up'); delete active[i]; }, upTime);
+  active[i]={type,timeout};
+}
+function whack(i){
+  if(!running || !active[i]) return;
+  const {type,timeout}=active[i]; clearTimeout(timeout);
+  const c=critterEl(i);
+  if(type==='beaver'){ score+=1; }
+  else if(type==='leaf'){ score+=3; }
+  else { score=Math.max(0,score-2); }
+  c.classList.add('flash');
+  setTimeout(()=>c.classList.remove('flash'),300);
+  c.classList.remove('up'); delete active[i];
+  document.getElementById('score').textContent='Score: '+score;
+}
+function endGame(){
+  running=false; clearInterval(gameTimer); clearTimeout(popTimer);
+  Object.values(active).forEach(a=>clearTimeout(a.timeout));
+  document.querySelectorAll('.critter').forEach(c=>c.classList.remove('up'));
+  if(score>best){ best=score; document.getElementById('best').textContent='Best: '+best; }
+  document.getElementById('msg').textContent='⏰ Time up! You scored '+score+'. Press Restart to play again!';
+  document.getElementById('startBtn').textContent='Play Again';
+}
+buildGrid();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

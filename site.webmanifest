@@ -1,0 +1,14 @@
+{
+  "name": "Canada Quiz & Family Fun Games",
+  "short_name": "Canada Quiz",
+  "description": "Free quizzes, family games and Canada citizenship test practice. No signup.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fdfbf7",
+  "theme_color": "#e63946",
+  "icons": [
+    { "src": "brand/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "brand/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

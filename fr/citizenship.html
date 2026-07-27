@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pratique du test de citoyenneté canadienne — Examen pratique gratuit</title>
+<meta name="description" content="Préparation gratuite au test de citoyenneté canadienne. 20 questions, minuterie, note de passage 15/20, avec explications. Basé sur le guide Découvrir le Canada. Sans inscription.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/citizenship.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/citizenship.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/citizenship.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/citizenship.html">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html" class="on" aria-current="page">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- START SCREEN -->
+  <section id="start-screen" class="panel center">
+    <div style="font-size:46px">🇨🇦</div>
+    <h1>Pratique du test de citoyenneté canadienne</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto 6px">
+      Ce test pratique fonctionne exactement comme le vrai : <strong>20 questions</strong>,
+      a <strong>Minuterie de 30 minutes</strong>, et tu réussis avec <strong>15 bonnes réponses ou plus</strong>. Après chaque question, tu verras la bonne réponse et une courte explication.
+    </p>
+  <details class="howto"><summary></summary><p>Cela fonctionne comme le vrai test : 20 questions, une minuterie de 30 minutes, et vous réussissez avec 15 bonnes réponses. Touchez une réponse pour la valider et voir l'explication, puis passez à la question suivante. À la fin, vous verrez RÉUSSI ou RÉESSAYER, et vous pourrez revoir les questions manquées.</p></details>
+
+    <p><span class="pill">20 questions</span> &nbsp; <span class="pill">30 minutes</span> &nbsp; <span class="pill">Réussite = 15/20</span></p>
+    <p style="margin-top:18px">
+      <button class="btn btn-lg" onclick="startExam()">Commencer l'examen pratique</button>
+    </p>
+    <div class="disclaimer" style="text-align:left">
+      <strong>Pratique non officielle.</strong> Non affilié au gouvernement du Canada. Veuillez étudier le guide officiel <em>Discover Canada</em> guide pour te préparer à ton vrai test.
+    </div>
+  </section>
+
+  <!-- QUIZ SCREEN -->
+  <section id="quiz-screen" class="panel" style="display:none">
+    <div class="quiz-meta">
+      <span class="pill" id="q-counter">Question 1 de 20</span>
+      <span class="timer" id="timer">30:00</span>
+    </div>
+    <div class="progress"><span id="progress-bar"></span></div>
+
+    <h2 id="question-text" style="margin-top:6px">La question va ici</h2>
+    <div class="options" id="options"></div>
+    <div id="explain-box" class="explain" style="display:none"></div>
+
+    <div class="center" style="margin-top:18px">
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Question suivante →</button>
+    </div>
+  </section>
+
+  <!-- RESULT SCREEN -->
+  <section id="result-screen" class="panel center" style="display:none">
+    <div id="result-icon" class="result-big">✅</div>
+    <div id="result-word" class="result-big pass">PASS</div>
+    <p class="score" id="result-score">Ton score : 0 / 20</p>
+    <p class="muted" id="result-msg"></p>
+
+    <div style="margin:20px 0">
+      <button class="btn btn-lg" onclick="startExam()">Réessayer</button>
+      <a class="btn btn-ghost btn-lg" href="index.html">Accueil</a>
+    </div>
+
+    <div id="review" style="text-align:left;margin-top:20px"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script src="../js/citizenship-questions.js"></script>
+<script>
+const TOTAL = 20;          // questions per exam
+const PASS_MARK = 15;      // need 15 to pass
+const TIME_LIMIT = 30*60;  // 30 minutes in seconds
+
+let examQuestions = [];
+let current = 0;
+let score = 0;
+let answered = false;
+let wrongList = [];
+let timerId = null;
+let timeLeft = TIME_LIMIT;
+
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+/* Draw fresh questions each replay: prefer ones the player hasn't seen yet,
+   remembered in the browser. When the bank is used up, it resets. */
+function pickFresh(bank, count, key){
+  let seen=[];
+  try{ seen = JSON.parse(localStorage.getItem(key) || '[]'); }catch(e){ seen=[]; }
+  if(!Array.isArray(seen)) seen=[];
+  let unseen = bank.map((_,i)=>i).filter(i=>seen.indexOf(i)===-1);
+  if(unseen.length < count){ seen=[]; unseen = bank.map((_,i)=>i); }
+  for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
+  const chosen = unseen.slice(0, count);
+  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
+  return chosen.map(i=>bank[i]);
+}
+
+function startExam(){
+  examQuestions = pickFresh(CITIZENSHIP_QUESTIONS, Math.min(TOTAL, CITIZENSHIP_QUESTIONS.length), 'cq_cit_seen');
+  current = 0; score = 0; wrongList = []; answered = false;
+  timeLeft = TIME_LIMIT;
+
+  document.getElementById('start-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'none';
+  document.getElementById('quiz-screen').style.display = 'block';
+
+  startTimer();
+  showQuestion();
+  window.scrollTo(0,0);
+}
+
+function startTimer(){
+  clearInterval(timerId);
+  updateTimerText();
+  timerId = setInterval(()=>{
+    timeLeft--;
+    updateTimerText();
+    if(timeLeft <= 0){
+      clearInterval(timerId);
+      finishExam(true);
+    }
+  }, 1000);
+}
+function updateTimerText(){
+  const m = Math.floor(timeLeft/60);
+  const s = timeLeft % 60;
+  document.getElementById('timer').textContent =
+    m + ':' + (s<10?'0':'') + s;
+}
+
+function showQuestion(){
+  answered = false;
+  const q = examQuestions[current];
+  document.getElementById('q-counter').textContent = 'Question ' + (current+1) + ' of ' + examQuestions.length;
+  document.getElementById('progress-bar').style.width = ((current)/examQuestions.length*100) + '%';
+  document.getElementById('question-text').textContent = q.q;
+
+  const box = document.getElementById('options');
+  box.innerHTML = '';
+  q.options.forEach((opt, i)=>{
+    const b = document.createElement('button');
+    b.className = 'option';
+    b.textContent = opt;
+    b.onclick = ()=>selectAnswer(i, b);
+    box.appendChild(b);
+  });
+
+  document.getElementById('explain-box').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'none';
+}
+
+function selectAnswer(i, btn){
+  if(answered) return;
+  answered = true;
+  const q = examQuestions[current];
+  const buttons = document.querySelectorAll('#options .option');
+
+  buttons.forEach((b, idx)=>{
+    b.classList.add('disabled');
+    if(idx === q.answer) b.classList.add('correct');
+    if(idx === i && i !== q.answer) b.classList.add('wrong');
+  });
+
+  if(i === q.answer){
+    score++;
+  } else {
+    wrongList.push({ q:q.q, your:q.options[i], correct:q.options[q.answer], explain:q.explain });
+  }
+
+  const ex = document.getElementById('explain-box');
+  ex.innerHTML = '<strong>' + (i===q.answer ? '✅ Correct! ' : '❌ Not quite. ') +
+    'The answer is: ' + q.options[q.answer] + '</strong><br>' + q.explain;
+  ex.style.display = 'block';
+
+  document.getElementById('progress-bar').style.width = ((current+1)/examQuestions.length*100) + '%';
+
+  const nb = document.getElementById('next-btn');
+  nb.textContent = (current+1 < examQuestions.length) ? 'Next question →' : 'See my result →';
+  nb.style.display = 'inline-block';
+}
+
+function nextQuestion(){
+  current++;
+  if(current < examQuestions.length){
+    showQuestion();
+    window.scrollTo(0,0);
+  } else {
+    finishExam(false);
+  }
+}
+
+function finishExam(timeUp){
+  clearInterval(timerId);
+  document.getElementById('quiz-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'block';
+
+  const passed = score >= PASS_MARK;
+  document.getElementById('result-icon').textContent = passed ? '✅' : '❌';
+  const word = document.getElementById('result-word');
+  word.textContent = passed ? 'PASS' : 'TRY AGAIN';
+  word.className = 'result-big ' + (passed ? 'pass' : 'fail');
+  document.getElementById('result-score').textContent = 'You scored ' + score + ' / ' + examQuestions.length;
+
+  let msg = '';
+  if(timeUp) msg = '⏰ Time ran out. ';
+  msg += passed
+    ? 'Great job! You would pass with this score. Keep practising to stay sharp.'
+    : 'You need ' + PASS_MARK + ' correct to pass. Review your mistakes below and try again — you can do it!';
+  document.getElementById('result-msg').textContent = msg;
+
+  const review = document.getElementById('review');
+  if(wrongList.length === 0){
+    review.innerHTML = '<div class="panel center" style="margin-top:0"><h3>Perfect on the ones that count — no wrong answers to review! 🎉</h3></div>';
+  } else {
+    let html = '<h3>Review your mistakes (' + wrongList.length + ')</h3>';
+    wrongList.forEach(w=>{
+      html += '<div class="panel" style="margin:12px 0">' +
+        '<p style="margin:0 0 6px"><strong>' + w.q + '</strong></p>' +
+        '<p style="margin:0;color:#a30016">Your answer: ' + w.your + '</p>' +
+        '<p style="margin:0;color:#0f9d58">Correct answer: ' + w.correct + '</p>' +
+        '<div class="explain" style="margin-top:8px">' + w.explain + '</div>' +
+        '</div>';
+    });
+    review.innerHTML = html;
+  }
+  window.scrollTo(0,0);
+}
+</script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Dessine-le — Jeu de Pictionary gratuit | Canada Quiz</title>
+<meta name="description" content="Dessine-le — un jeu de fête gratuit de style Pictionary. Dessinez le mot secret à l&#x27;écran pendant que votre équipe devine avant la fin du temps. Paquets de mots faciles et avancés.">
+<meta property="og:title" content="Dessine-le — Jeu de Pictionary gratuit en famille">
+<meta property="og:description" content="Dessinez le mot secret pendant que votre équipe devine. Un jeu de société gratuit pour la famille et les amis.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/fr/draw-it.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .di-wrap{max-width:640px;margin:0 auto;text-align:center}
+  .di-mode{display:inline-flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:6px 0}
+  .di-mode button{padding:8px 14px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
+  .di-mode button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .di-word{font-size:26px;font-weight:900;letter-spacing:.5px;margin:6px 0;min-height:32px;color:var(--red,#e63946)}
+  .di-word.hide{color:#9aa6b2;font-size:18px;letter-spacing:0}
+  .di-timer{font-size:30px;font-weight:900;margin:4px 0}
+  canvas.di-canvas{width:100%;max-width:600px;height:auto;aspect-ratio:4/3;background:#fff;border:3px solid var(--line);border-radius:14px;touch-action:none;display:block;margin:8px auto;cursor:crosshair}
+  .di-tools{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin:8px 0}
+  .di-swatch{width:30px;height:30px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line);cursor:pointer}
+  .di-swatch.on{box-shadow:0 0 0 3px #111}
+  .di-size{width:110px}
+  .di-teams{display:flex;gap:12px;justify-content:center;margin:8px 0}
+  .di-team{flex:1;max-width:190px;border-radius:14px;padding:8px;font-weight:800}
+  .di-team.t1{background:#fdeef0}.di-team.t2{background:#eaf2fe}
+  .di-team .sc{font-size:28px;font-weight:900}
+  .di-team.t1 .sc{color:#e63946}.di-team.t2 .sc{color:#4895ef}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/draw-it.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/draw-it.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/draw-it.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/draw-it.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🎨 Dessine-le</h1>
+    <p>Dessine le mot secret — ton équipe doit deviner avant la fin du temps!</p>
+  </section>
+  <details class="howto"><summary></summary><p>Choisis un paquet de mots, puis appuie sur <b>Nouveau mot</b>. Seul l'artiste regarde le mot — tout le monde d'autre détourne les yeux un instant! Appuie sur <b>Commence à dessiner</b> et dessinez sur le tableau blanc avec votre doigt ou votre souris. Pas de lettres, pas de chiffres, pas de paroles. Si votre équipe devine à temps, appuyez sur le bouton de l'équipe <b>+1</b> bouton. Passez ensuite l'appareil au prochain artiste. Choisissez <b>⭐ Avancé</b> pour des mots bien plus difficiles.</p></details>
+  <div class="panel">
+    <div class="di-wrap" data-fs-host>
+      <div class="di-mode" id="modes"></div>
+      <div class="di-teams">
+        <div class="di-team t1"><div>🔴 Rouge</div><div class="sc" id="s1">0</div><button class="btn btn-ghost" style="padding:4px 12px;margin-top:4px" onclick="addPt(0)">+1</button></div>
+        <div class="di-team t2"><div>🔵 Bleu</div><div class="sc" id="s2">0</div><button class="btn btn-ghost" style="padding:4px 12px;margin-top:4px" onclick="addPt(1)">+1</button></div>
+      </div>
+      <div class="di-word hide" id="word">Appuie sur « Nouveau mot » pour commencer</div>
+      <div class="di-timer" id="timer">⏱ 90s</div>
+      <canvas id="cv" class="di-canvas" width="800" height="600"></canvas>
+      <div class="di-tools" id="tools">
+        <span id="swatches"></span>
+        <input class="di-size" id="size" type="range" min="2" max="30" value="6" aria-label="Taille du pinceau">
+        <button class="btn btn-ghost" style="padding:6px 12px" onclick="undo()">↶ Annuler</button>
+        <button class="btn btn-ghost" style="padding:6px 12px" onclick="clearBoard()">🧽 Effacer</button>
+      </div>
+      <div class="center" style="margin:10px 0">
+        <button class="btn btn-lg" onclick="newWord()">🎲 Nouveau mot</button>
+        <button class="btn btn-green btn-lg" id="startBtn" onclick="startRound()">▶ Commencer à dessiner</button>
+      </div>
+      <div class="center"><a class="btn btn-ghost" href="games.html">Tous les jeux</a></div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+<script>
+const PACKS={
+ "😀 Easy":["cat","dog","house","sun","tree","car","fish","boat","star","apple","hat","book","ball","flower","cup","shoe","bird","moon","cake","key","chair","clock","door","bus","cloud","snowman","pizza","balloon","banana","train"],
+ "🍁 Canada":["maple leaf","beaver","hockey stick","canoe","igloo","moose","snowplow","Mountie","toque","poutine","CN Tower","polar bear","totem pole","snowshoe","maple syrup","goose","inukshuk","curling stone","log cabin","northern lights"],
+ "🎬 Movies & TV":["superhero","popcorn","camera","robot","dinosaur","pirate ship","wizard","spaceship","treasure map","haunted house","talking snowman","race car","dragon","time machine","secret agent","cartoon mouse"],
+ "⭐ Advanced":["gravity","imagination","teamwork","jealousy","recycling","democracy","time zone","rush hour","déjà vu","homesick","internet","inflation","echo","balance","tradition","invisible","opposite","migration","electricity","overtime","volunteer","tradition","daydream","reflection"],
+ "⭐ Advanced: Actions":["juggling","tiptoeing","whispering","celebrating","apologising","interviewing","parallel parking","losing your keys","sneezing loudly","teaching a class","waiting in line","packing a suitcase","untangling headphones","assembling furniture","missing the bus","cheering for a team"]
+};
+const COLORS=["#111111","#e63946","#f4a261","#ffd23f","#2a9d8f","#4895ef","#7b2cbf","#8d6e63","#ffffff"];
+let level=Object.keys(PACKS)[0], word="", timer=null, left=90, scores=[0,0];
+let cv,ctx,drawing=false,color=COLORS[0],size=6,strokes=[],cursor=null;
+
+function buildModes(){
+  const box=document.getElementById('modes'); box.innerHTML='';
+  Object.keys(PACKS).forEach(m=>{
+    const b=document.createElement('button'); b.textContent=m;
+    if(m===level) b.classList.add('on');
+    b.onclick=()=>{ level=m; buildModes(); };
+    box.appendChild(b);
+  });
+}
+function buildSwatches(){
+  const box=document.getElementById('swatches'); box.innerHTML='';
+  COLORS.forEach(c=>{
+    const s=document.createElement('span'); s.className='di-swatch'+(c===color?' on':'');
+    s.style.background=c; s.title=(c==='#ffffff'?'Eraser':'Colour');
+    s.onclick=()=>{ color=c; buildSwatches(); };
+    box.appendChild(s);
+  });
+}
+function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
+function newWord(){
+  const pool=PACKS[level];
+  let w=pick(pool); let guard=0;
+  while(w===word && pool.length>1 && guard++<20) w=pick(pool);
+  word=w;
+  const el=document.getElementById('word');
+  el.textContent=word.toUpperCase(); el.classList.remove('hide');
+  clearBoard(); stopTimer(); setTimerText(90);
+  document.getElementById('startBtn').textContent='▶ Start drawing';
+}
+function startRound(){
+  if(!word){ newWord(); return; }
+  clearBoard();
+  left=90; setTimerText(left);
+  stopTimer();
+  timer=setInterval(()=>{
+    left--; setTimerText(left);
+    if(left<=0){ stopTimer(); const t=document.getElementById('timer'); t.textContent="⏰ Time's up!"; t.style.color='#e63946'; }
+  },1000);
+  document.getElementById('startBtn').textContent='🔄 Restart timer';
+}
+function setTimerText(v){ const t=document.getElementById('timer'); t.textContent='⏱ '+v+'s'; t.style.color=v<=10?'#e63946':'var(--ink)'; }
+function stopTimer(){ if(timer){ clearInterval(timer); timer=null; } }
+function addPt(i){ scores[i]++; document.getElementById(i===0?'s1':'s2').textContent=scores[i]; stopTimer(); }
+
+function setupCanvas(){
+  cv=document.getElementById('cv'); ctx=cv.getContext('2d');
+  clearBoard();
+  document.getElementById('size').oninput=e=>{ size=+e.target.value; };
+  const pos=e=>{
+    const r=cv.getBoundingClientRect();
+    const p=(e.touches&&e.touches[0])||e;
+    return [ (p.clientX-r.left)*(cv.width/r.width), (p.clientY-r.top)*(cv.height/r.height) ];
+  };
+  const start=e=>{ e.preventDefault(); drawing=true; const [x,y]=pos(e); cursor=[x,y];
+    strokes.push({color:color,size:size,pts:[[x,y]]}); redraw(); };
+  const move=e=>{ if(!drawing) return; e.preventDefault(); const [x,y]=pos(e);
+    strokes[strokes.length-1].pts.push([x,y]); cursor=[x,y]; redraw(); };
+  const end=e=>{ drawing=false; };
+  if(window.PointerEvent){
+    cv.addEventListener('pointerdown',e=>{ cv.setPointerCapture&&cv.setPointerCapture(e.pointerId); start(e); });
+    cv.addEventListener('pointermove',move);
+    cv.addEventListener('pointerup',end);
+    cv.addEventListener('pointercancel',end);
+    cv.addEventListener('pointerleave',end);
+  } else {
+    cv.addEventListener('mousedown',start); cv.addEventListener('mousemove',move);
+    window.addEventListener('mouseup',end);
+    cv.addEventListener('touchstart',start,{passive:false});
+    cv.addEventListener('touchmove',move,{passive:false});
+    cv.addEventListener('touchend',end);
+  }
+}
+function redraw(){
+  ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,cv.width,cv.height);
+  ctx.lineCap='round'; ctx.lineJoin='round';
+  strokes.forEach(s=>{
+    ctx.strokeStyle=s.color; ctx.lineWidth=s.size*(cv.width/600);
+    ctx.beginPath();
+    if(s.pts.length===1){ ctx.arc(s.pts[0][0],s.pts[0][1],ctx.lineWidth/2,0,Math.PI*2); ctx.fillStyle=s.color; ctx.fill(); return; }
+    s.pts.forEach((p,i)=>{ i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]); });
+    ctx.stroke();
+  });
+}
+function undo(){ strokes.pop(); redraw(); }
+function clearBoard(){ strokes=[]; if(ctx){ ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,cv.width,cv.height); } }
+
+buildModes(); buildSwatches(); setupCanvas();
+</script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+  <script src="../js/game-fullscreen.js"></script>
+</body>
+</html>

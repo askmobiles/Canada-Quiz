@@ -182,3 +182,23 @@ input.text-in{font-size:18px;padding:12px 14px;border:2px solid var(--line);bord
 .howto summary::before{content:"\1F4D6  How to play"}
 .howto[open] summary::before{content:"\1F4D6  How to play"}
 .howto p{margin:4px 0 14px;color:#33475b;font-size:15px;line-height:1.55}
+
+/* ---------- Brand logo + language button (shared header/footer) ---------- */
+.brand-logo{height:38px;width:auto;display:block}
+.footer-logo{height:40px;width:auto;display:block;margin:0 auto 8px;opacity:.95}
+.lang-btn{
+  margin-left:6px;
+  background:rgba(255,255,255,.18);
+  color:#fff;border:1.5px solid rgba(255,255,255,.55);
+  font-weight:800;font-size:13.5px;letter-spacing:.6px;
+  padding:7px 12px;border-radius:10px;cursor:pointer;
+  font-family:inherit;line-height:1.2;
+}
+.lang-btn:hover{background:rgba(255,255,255,.32)}
+.lang-btn:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+html.lang-fr .nav a{font-size:13.5px;padding:8px 10px}
+@media (max-width:640px){
+  .brand-logo{height:30px}
+  .footer-logo{height:34px}
+  .lang-btn{padding:6px 10px;font-size:12.5px}
+}

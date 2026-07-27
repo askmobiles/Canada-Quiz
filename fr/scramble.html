@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mots mêlés canadiens — Jeux en famille</title>
+<meta name="description" content="Jeu gratuit de mots mêlés sur le Canada. Remettez les mots canadiens dans l&#x27;ordre! Parfait pour les enfants et la famille.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/scramble.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/scramble.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/scramble.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/scramble.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔀 Mots mêlés Canada</h1>
+    <p>Démêlez le mot canadien. Utilisez l'indice si vous êtes coincé !</p>
+  <details class="howto"><summary></summary><p>Les lettres d'un mot canadien sont mélangées. Lisez l'indice, puis tapez le bon mot et touchez Vérifier. Trouvez-le pour marquer un point et passer au prochain mot mélangé!</p></details>
+
+  </section>
+
+  <div class="panel center">
+    <div class="scramble-word" id="word">-----</div>
+    <p class="muted" id="hint"></p>
+    <input class="text-in" id="input" placeholder="Écris ta réponse" onkeydown="if(event.key==='Enter')check()">
+    <div style="margin-top:14px">
+      <button class="btn" onclick="check()">Vérifier</button>
+      <button class="btn btn-ghost" onclick="newWord()">Nouveau mot</button>
+    </div>
+    <p id="result" style="font-weight:800;min-height:26px"></p>
+    <p class="pill" id="score">Résolu : 0</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+const WORDS=[
+  {word:"MAPLE",hint:"A famous Canadian tree and syrup"},
+  {word:"HOCKEY",hint:"Canada's national winter sport"},
+  {word:"BEAVER",hint:"A national animal on the nickel"},
+  {word:"CANADA",hint:"The name of our country"},
+  {word:"POUTINE",hint:"Fries, cheese curds, and gravy"},
+  {word:"OTTAWA",hint:"The capital city"},
+  {word:"MOOSE",hint:"A big animal with antlers"},
+  {word:"TORONTO",hint:"City with the CN Tower"},
+  {word:"WINTER",hint:"The snowy season"},
+  {word:"LOONIE",hint:"Nickname for the one-dollar coin"},
+  {word:"IGLOO",hint:"A house made of snow"},
+  {word:"CARIBOU",hint:"A northern deer"}
+];
+let current, solved=0;
+function scramble(w){let a=w.split('');for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}const s=a.join('');return s===w?scramble(w):s;}
+function newWord(){
+  current=WORDS[Math.floor(Math.random()*WORDS.length)];
+  document.getElementById('word').textContent=scramble(current.word);
+  document.getElementById('hint').textContent='Hint: '+current.hint;
+  document.getElementById('input').value='';
+  document.getElementById('result').textContent='';
+  document.getElementById('input').focus();
+}
+function check(){
+  const val=(document.getElementById('input').value||'').trim().toUpperCase();
+  const res=document.getElementById('result');
+  if(val===current.word){
+    res.style.color='#2a9d8f'; res.textContent='✅ Correct! It was '+current.word;
+    solved++; document.getElementById('score').textContent='Solved: '+solved;
+    setTimeout(newWord,1100);
+  } else { res.style.color='#e63946'; res.textContent='❌ Try again!'; }
+}
+newWord();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

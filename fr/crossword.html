@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Mots croisés — Grille gratuite sur le Canada | Jeux en famille</title>
+<meta name="description" content="Mots croisés gratuits sur le Canada. Remplissez les mots à partir des indices. Interactif, fonctionne sur téléphone et ordinateur. Un jeu de réflexion amusant.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .cw-wrap{max-width:520px;margin:0 auto;text-align:center}
+  .cw-grid{display:grid;gap:1px;background:#333;border:2px solid #333;margin:10px auto;width:100%;max-width:min(94vw,460px);border-radius:4px;overflow:hidden}
+  .cw-cell{position:relative;aspect-ratio:1/1;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(9px,3vw,18px);text-transform:uppercase;cursor:pointer;color:var(--ink)}
+  .cw-cell.block{background:#333;cursor:default}
+  .cw-cell.active{background:#ffe08a}
+  .cw-cell.hl{background:#dcefff}
+  .cw-cell.bad{color:var(--red)}
+  .cw-num{position:absolute;top:0;left:1px;font-size:8px;font-weight:700;color:#666;line-height:1}
+  .cw-cluebar{background:#eef3ff;border-radius:10px;padding:10px 12px;font-weight:700;margin:8px 0;min-height:24px}
+  .cw-clues{display:flex;gap:16px;text-align:left;flex-wrap:wrap;margin-top:12px}
+  .cw-clues>div{flex:1;min-width:170px}
+  .cw-clues h4{margin:6px 0}
+  .cw-clue{padding:4px 6px;border-radius:6px;cursor:pointer;font-size:14px;color:#33475b}
+  .cw-clue.on{background:#dcefff}
+  .cw-kb{max-width:480px;margin:12px auto 0}
+  .cw-krow{display:flex;justify-content:center;gap:4px;margin-bottom:5px}
+  .cw-key{flex:1;max-width:40px;height:44px;border:none;border-radius:6px;background:#e6e8ec;font-weight:800;cursor:pointer;text-transform:uppercase}
+  .cw-key.wide{max-width:60px;font-size:12px}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/crossword.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/crossword.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/crossword.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/crossword.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>&#129513; Mots croisés</h1>
+    <p>Remplis les mots croisés sur le Canada à partir des indices !</p>
+  </section>
+
+  <details class="howto"><summary></summary><p>Touchez une case pour commencer, puis tapez la réponse à partir de l'indice affiché en haut. Touchez de nouveau une case pour basculer entre Horizontal et Vertical. Vous pouvez aussi toucher n'importe quel indice de la liste pour y accéder directement. Utilisez les touches à l'écran ou votre clavier. Appuyez sur Vérifier pour voir si vous avez raison, ou sur Révéler pour remplir les réponses. Remplissez toute la grille pour gagner!</p></details>
+
+  <div class="panel">
+    <div class="cw-wrap">
+      <div class="cw-cluebar" id="cluebar">Touche une case pour commencer</div>
+      <div class="cw-grid" id="grid"></div>
+      <p class="center" id="msg" style="font-weight:800;min-height:20px"></p>
+      <div class="cw-kb" id="kb"></div>
+      <div class="center" style="margin-top:10px">
+        <button class="btn btn-ghost" onclick="check()">Vérifier</button>
+        <button class="btn btn-ghost" onclick="reveal()">Révéler</button>
+        <button class="btn" onclick="newGame()">Nouveau casse-tête</button>
+      </div>
+      <div class="cw-clues" id="clues"></div>
+      <div class="center" style="margin-top:12px"><a class="btn btn-ghost" href="games.html">Tous les jeux</a></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+const PUZZLES = [{"rows": 17, "cols": 17, "cells": [[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "S"], [null, null, null, null, null, null, null, null, null, null, null, null, null, "M", "O", "O", "N"], [null, null, null, null, null, null, null, null, null, null, null, null, "P", null, "C", null, "O"], [null, null, null, null, null, null, null, null, null, null, "M", "O", "O", "S", "E", null, "W"], [null, null, null, null, null, null, null, null, "S", null, null, null, "L", null, "A", null, null], [null, null, null, null, null, null, null, "C", "A", "N", "A", "D", "A", null, "N", null, null], [null, null, null, null, null, null, null, null, "L", null, null, null, "R", null, null, null, null], [null, null, null, null, null, null, "H", null, "M", null, "O", null, null, null, null, null, null], ["O", "W", "L", null, null, "T", "O", "R", "O", "N", "T", "O", null, null, null, null, null], [null, "H", null, null, null, null, "C", null, "N", null, "T", null, null, null, null, null, null], [null, "A", null, "G", null, null, "K", null, null, "P", "A", "R", "K", null, null, null, null], [null, "L", "O", "O", "N", "I", "E", null, null, null, "W", null, null, "C", null, null, null], [null, "E", null, "O", null, null, "Y", null, "B", "E", "A", "V", "E", "R", null, null, null], [null, null, null, "S", null, null, null, null, "E", null, null, null, null, "O", null, "D", null], ["R", "I", "V", "E", "R", null, null, "L", "A", "K", "E", null, null, "W", null, "E", null], [null, null, null, null, null, null, null, null, "R", null, null, "C", "A", "N", "O", "E", null], [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "R", null]], "num": [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0], [10, 11, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 13, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0], [0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0], [19, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], "across": [{"num": 2, "row": 1, "col": 13, "answer": "MOON", "clue": "Orbits the Earth"}, {"num": 5, "row": 3, "col": 10, "answer": "MOOSE", "clue": "Large animal with big antlers"}, {"num": 7, "row": 5, "col": 7, "answer": "CANADA", "clue": "Our country"}, {"num": 10, "row": 8, "col": 0, "answer": "OWL", "clue": "Night bird"}, {"num": 12, "row": 8, "col": 5, "answer": "TORONTO", "clue": "City with the CN Tower"}, {"num": 14, "row": 10, "col": 9, "answer": "PARK", "clue": "Green place to play"}, {"num": 15, "row": 11, "col": 1, "answer": "LOONIE", "clue": "One-dollar coin"}, {"num": 17, "row": 12, "col": 8, "answer": "BEAVER", "clue": "Animal on the nickel"}, {"num": 19, "row": 14, "col": 0, "answer": "RIVER", "clue": "Flowing water"}, {"num": 20, "row": 14, "col": 7, "answer": "LAKE", "clue": "Body of fresh water"}, {"num": 21, "row": 15, "col": 11, "answer": "CANOE", "clue": "Paddled boat"}], "down": [{"num": 1, "row": 0, "col": 16, "answer": "SNOW", "clue": "Falls in winter"}, {"num": 3, "row": 1, "col": 14, "answer": "OCEAN", "clue": "Big body of salt water"}, {"num": 4, "row": 2, "col": 12, "answer": "POLAR", "clue": "Type of Arctic bear"}, {"num": 6, "row": 4, "col": 8, "answer": "SALMON", "clue": "A Canadian fish"}, {"num": 8, "row": 7, "col": 6, "answer": "HOCKEY", "clue": "Canada's winter sport"}, {"num": 9, "row": 7, "col": 10, "answer": "OTTAWA", "clue": "Canada's capital city"}, {"num": 11, "row": 8, "col": 1, "answer": "WHALE", "clue": "Largest sea animal"}, {"num": 13, "row": 10, "col": 3, "answer": "GOOSE", "clue": "Canada ___ (a bird)"}, {"num": 16, "row": 11, "col": 13, "answer": "CROWN", "clue": "A king wears one"}, {"num": 17, "row": 12, "col": 8, "answer": "BEAR", "clue": "Big furry animal"}, {"num": 18, "row": 13, "col": 15, "answer": "DEER", "clue": "Forest animal"}]}, {"rows": 15, "cols": 14, "cells": [[null, null, null, "P", null, null, null, null, null, null, null, "M", null, null], [null, "R", "A", "I", "N", null, null, null, "P", "O", "L", "A", "R", null], [null, null, null, "N", null, null, "O", null, null, null, null, "P", null, "H"], [null, "Q", "U", "E", "B", "E", "C", null, null, "I", "G", "L", "O", "O"], [null, null, null, null, "E", null, "E", null, "S", null, null, "E", null, "C"], [null, null, null, "C", "A", "N", "A", "D", "A", null, "M", null, null, "K"], [null, null, null, null, "V", null, "N", null, "L", "O", "O", "N", "I", "E"], [null, null, null, null, "E", null, null, null, "M", null, "O", null, null, "Y"], [null, null, "T", "O", "R", "O", "N", "T", "O", null, "S", null, null, null], [null, "F", null, null, null, "T", null, null, "N", null, "E", "L", "K", null], ["M", "O", "O", "N", null, "T", null, null, null, null, null, null, null, null], [null, "X", null, "O", null, "A", null, null, null, null, null, null, null, null], [null, null, "C", "R", "O", "W", "N", null, null, null, null, null, null, null], [null, null, null, "T", null, "A", null, null, null, null, null, null, null, null], [null, null, null, "H", null, null, null, null, null, null, null, null, null, null]], "num": [[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0], [0, 3, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 6], [0, 7, 0, 0, 8, 0, 0, 0, 0, 9, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0], [0, 0, 0, 11, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 14, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0], [0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0], [18, 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], "across": [{"num": 3, "row": 1, "col": 1, "answer": "RAIN", "clue": "Wet weather"}, {"num": 4, "row": 1, "col": 8, "answer": "POLAR", "clue": "Type of Arctic bear"}, {"num": 7, "row": 3, "col": 1, "answer": "QUEBEC", "clue": "French-speaking province"}, {"num": 9, "row": 3, "col": 9, "answer": "IGLOO", "clue": "House made of snow"}, {"num": 11, "row": 5, "col": 3, "answer": "CANADA", "clue": "Our country"}, {"num": 13, "row": 6, "col": 8, "answer": "LOONIE", "clue": "One-dollar coin"}, {"num": 14, "row": 8, "col": 2, "answer": "TORONTO", "clue": "City with the CN Tower"}, {"num": 17, "row": 9, "col": 10, "answer": "ELK", "clue": "Large deer"}, {"num": 18, "row": 10, "col": 0, "answer": "MOON", "clue": "Orbits the Earth"}, {"num": 20, "row": 12, "col": 2, "answer": "CROWN", "clue": "A king wears one"}], "down": [{"num": 1, "row": 0, "col": 3, "answer": "PINE", "clue": "Evergreen tree"}, {"num": 2, "row": 0, "col": 11, "answer": "MAPLE", "clue": "Canada's famous tree/syrup"}, {"num": 5, "row": 2, "col": 6, "answer": "OCEAN", "clue": "Big body of salt water"}, {"num": 6, "row": 2, "col": 13, "answer": "HOCKEY", "clue": "Canada's winter sport"}, {"num": 8, "row": 3, "col": 4, "answer": "BEAVER", "clue": "Animal on the nickel"}, {"num": 10, "row": 4, "col": 8, "answer": "SALMON", "clue": "A Canadian fish"}, {"num": 12, "row": 5, "col": 10, "answer": "MOOSE", "clue": "Large animal with big antlers"}, {"num": 15, "row": 8, "col": 5, "answer": "OTTAWA", "clue": "Canada's capital city"}, {"num": 16, "row": 9, "col": 1, "answer": "FOX", "clue": "Clever animal"}, {"num": 19, "row": 10, "col": 3, "answer": "NORTH", "clue": "Direction of the Arctic"}]}, {"rows": 17, "cols": 15, "cells": [[null, null, null, null, null, null, "L", null, null, null, null, null, null, null, null], [null, null, null, null, null, "P", "A", "R", "K", null, null, null, null, null, null], [null, null, null, null, null, null, "K", null, null, null, null, "P", null, "O", null], [null, null, "Q", "U", "E", "B", "E", "C", null, null, "N", "O", "R", "T", "H"], [null, null, null, null, null, "E", null, null, null, "S", null, "L", null, "T", null], [null, null, "O", "C", "E", "A", "N", null, "C", "A", "N", "A", "D", "A", null], [null, null, "W", null, null, "V", null, "C", null, "L", null, "R", null, "W", null], [null, null, "L", null, null, "E", null, "A", null, "M", null, null, null, "A", null], [null, null, null, "T", "O", "R", "O", "N", "T", "O", null, null, null, null, null], [null, null, null, null, null, null, null, "O", null, "N", null, null, null, null, null], [null, null, null, null, "R", "I", "V", "E", "R", null, null, null, null, null, null], [null, null, null, null, null, "G", null, null, null, null, null, null, null, null, null], [null, null, "M", "A", "P", "L", "E", null, null, null, null, null, null, null, null], [null, null, "O", null, null, "O", null, null, "L", null, null, null, null, null, null], [null, null, "O", null, "M", "O", "O", "S", "E", null, null, null, null, null, null], ["P", "I", "N", "E", null, null, null, null, "A", null, null, null, null, null, null], [null, null, null, null, null, "W", "O", "L", "F", null, null, null, null, null, null]], "num": [[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 4, 0], [0, 0, 5, 0, 0, 6, 0, 0, 0, 0, 7, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0], [0, 0, 9, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 13, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0]], "across": [{"num": 2, "row": 1, "col": 5, "answer": "PARK", "clue": "Green place to play"}, {"num": 5, "row": 3, "col": 2, "answer": "QUEBEC", "clue": "French-speaking province"}, {"num": 7, "row": 3, "col": 10, "answer": "NORTH", "clue": "Direction of the Arctic"}, {"num": 9, "row": 5, "col": 2, "answer": "OCEAN", "clue": "Big body of salt water"}, {"num": 10, "row": 5, "col": 8, "answer": "CANADA", "clue": "Our country"}, {"num": 12, "row": 8, "col": 3, "answer": "TORONTO", "clue": "City with the CN Tower"}, {"num": 13, "row": 10, "col": 4, "answer": "RIVER", "clue": "Flowing water"}, {"num": 15, "row": 12, "col": 2, "answer": "MAPLE", "clue": "Canada's famous tree/syrup"}, {"num": 17, "row": 14, "col": 4, "answer": "MOOSE", "clue": "Large animal with big antlers"}, {"num": 18, "row": 15, "col": 0, "answer": "PINE", "clue": "Evergreen tree"}, {"num": 19, "row": 16, "col": 5, "answer": "WOLF", "clue": "Wild animal in a pack"}], "down": [{"num": 1, "row": 0, "col": 6, "answer": "LAKE", "clue": "Body of fresh water"}, {"num": 3, "row": 2, "col": 11, "answer": "POLAR", "clue": "Type of Arctic bear"}, {"num": 4, "row": 2, "col": 13, "answer": "OTTAWA", "clue": "Canada's capital city"}, {"num": 6, "row": 3, "col": 5, "answer": "BEAVER", "clue": "Animal on the nickel"}, {"num": 8, "row": 4, "col": 9, "answer": "SALMON", "clue": "A Canadian fish"}, {"num": 9, "row": 5, "col": 2, "answer": "OWL", "clue": "Night bird"}, {"num": 11, "row": 6, "col": 7, "answer": "CANOE", "clue": "Paddled boat"}, {"num": 14, "row": 10, "col": 5, "answer": "IGLOO", "clue": "House made of snow"}, {"num": 15, "row": 12, "col": 2, "answer": "MOON", "clue": "Orbits the Earth"}, {"num": 16, "row": 13, "col": 8, "answer": "LEAF", "clue": "Grows on a tree"}]}, {"rows": 16, "cols": 14, "cells": [[null, null, null, null, null, null, null, null, null, "M", null, null, null, null], [null, null, null, null, null, null, "P", "O", "L", "A", "R", null, null, null], [null, null, null, null, null, null, null, null, null, "P", null, null, null, null], [null, null, null, null, null, null, null, "S", null, "L", null, null, null, null], [null, null, null, null, null, "B", "E", "A", "V", "E", "R", null, null, null], [null, null, null, null, null, null, null, "L", null, null, null, null, null, null], [null, null, null, null, null, "H", null, "M", null, null, null, null, null, null], [null, null, null, null, "T", "O", "R", "O", "N", "T", "O", null, null, null], [null, null, null, "C", null, "C", null, "N", null, null, "T", null, null, null], [null, "N", null, "A", null, "K", null, null, null, null, "T", null, null, null], ["L", "O", "O", "N", "I", "E", null, null, null, null, "A", null, "C", null], [null, "R", null, "A", null, "Y", null, null, null, null, "W", null, "R", null], [null, "T", null, "D", null, null, null, null, null, "C", "A", "N", "O", "E"], [null, "H", null, "A", null, null, null, null, "F", null, null, null, "W", null], [null, null, null, null, null, null, null, null, "O", "C", "E", "A", "N", null], [null, null, null, null, null, null, null, null, "X", null, null, null, null, null]], "num": [[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 7, 0, 0, 0], [0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], "across": [{"num": 2, "row": 1, "col": 6, "answer": "POLAR", "clue": "Type of Arctic bear"}, {"num": 4, "row": 4, "col": 5, "answer": "BEAVER", "clue": "Animal on the nickel"}, {"num": 6, "row": 7, "col": 4, "answer": "TORONTO", "clue": "City with the CN Tower"}, {"num": 10, "row": 10, "col": 0, "answer": "LOONIE", "clue": "One-dollar coin"}, {"num": 12, "row": 12, "col": 9, "answer": "CANOE", "clue": "Paddled boat"}, {"num": 14, "row": 14, "col": 8, "answer": "OCEAN", "clue": "Big body of salt water"}], "down": [{"num": 1, "row": 0, "col": 9, "answer": "MAPLE", "clue": "Canada's famous tree/syrup"}, {"num": 3, "row": 3, "col": 7, "answer": "SALMON", "clue": "A Canadian fish"}, {"num": 5, "row": 6, "col": 5, "answer": "HOCKEY", "clue": "Canada's winter sport"}, {"num": 7, "row": 7, "col": 10, "answer": "OTTAWA", "clue": "Canada's capital city"}, {"num": 8, "row": 8, "col": 3, "answer": "CANADA", "clue": "Our country"}, {"num": 9, "row": 9, "col": 1, "answer": "NORTH", "clue": "Direction of the Arctic"}, {"num": 11, "row": 10, "col": 12, "answer": "CROWN", "clue": "A king wears one"}, {"num": 13, "row": 13, "col": 8, "answer": "FOX", "clue": "Clever animal"}]}];
+let P=null, user=[], active=null, dir='A';
+function filled(r,c){ return P && r>=0 && c>=0 && r<P.rows && c<P.cols && P.cells[r][c]!==null; }
+function newGame(){
+  P=PUZZLES[Math.floor(Math.random()*PUZZLES.length)];
+  user=P.cells.map(row=>row.map(x=>x===null?null:''));
+  active=null; dir='A';
+  document.getElementById('msg').textContent='';
+  document.getElementById('cluebar').textContent='Tap a square to begin';
+  render(); buildClues(); buildKb();
+}
+function render(){
+  const g=document.getElementById('grid'); g.style.gridTemplateColumns='repeat('+P.cols+',1fr)'; g.innerHTML='';
+  const word=activeWord();
+  for(let r=0;r<P.rows;r++)for(let c=0;c<P.cols;c++){
+    const d=document.createElement('div');
+    if(P.cells[r][c]===null){ d.className='cw-cell block'; }
+    else{
+      d.className='cw-cell';
+      if(active&&active.r===r&&active.c===c) d.classList.add('active');
+      else if(word&&word.some(x=>x[0]===r&&x[1]===c)) d.classList.add('hl');
+      if(P.num[r][c]>0){ const s=document.createElement('span'); s.className='cw-num'; s.textContent=P.num[r][c]; d.appendChild(s); }
+      const t=document.createElement('span'); t.textContent=user[r][c]||''; d.appendChild(t);
+      d.onclick=()=>clickCell(r,c);
+    }
+    g.appendChild(d);
+  }
+}
+function clickCell(r,c){
+  if(active&&active.r===r&&active.c===c){ dir=(dir==='A')?'D':'A'; }
+  active={r,c}; updateClue(); render();
+}
+function activeWord(){
+  if(!active) return null;
+  const dr=dir==='D'?1:0, dc=dir==='A'?1:0;
+  let r=active.r,c=active.c;
+  while(filled(r-dr,c-dc)){ r-=dr; c-=dc; }
+  const cells=[]; while(filled(r,c)){ cells.push([r,c]); r+=dr; c+=dc; }
+  return cells.length>1?cells:[[active.r,active.c]];
+}
+function updateClue(){
+  const w=activeWord(); if(!w){return;}
+  const [r0,c0]=w[0];
+  const list=dir==='A'?P.across:P.down;
+  const e=list.find(x=>x.row===r0&&x.col===c0);
+  document.getElementById('cluebar').textContent = e ? (e.num+' '+(dir==='A'?'Across':'Down')+': '+e.clue) : 'Type your answer';
+  document.querySelectorAll('.cw-clue').forEach(el=>el.classList.remove('on'));
+  if(e){ const el=document.querySelector('.cw-clue[data-k="'+dir+e.num+'"]'); if(el) el.classList.add('on'); }
+}
+function type(ch){
+  if(!active) return;
+  user[active.r][active.c]=ch;
+  // advance
+  const dr=dir==='D'?1:0, dc=dir==='A'?1:0;
+  let r=active.r+dr,c=active.c+dc;
+  if(filled(r,c)) active={r,c};
+  updateClue(); render();
+  if(isComplete()) win();
+}
+function del(){
+  if(!active) return;
+  if(user[active.r][active.c]){ user[active.r][active.c]=''; }
+  else { const dr=dir==='D'?1:0, dc=dir==='A'?1:0; if(filled(active.r-dr,active.c-dc)){ active={r:active.r-dr,c:active.c-dc}; user[active.r][active.c]=''; } }
+  render();
+}
+function buildClues(){
+  const box=document.getElementById('clues'); box.innerHTML='';
+  const mk=(title,list,d)=>{
+    const col=document.createElement('div'); col.innerHTML='<h4>'+title+'</h4>';
+    list.slice().sort((a,b)=>a.num-b.num).forEach(e=>{
+      const cl=document.createElement('div'); cl.className='cw-clue'; cl.dataset.k=d+e.num; cl.textContent=e.num+'. '+e.clue;
+      cl.onclick=()=>{ dir=d; active={r:e.row,c:e.col}; updateClue(); render(); };
+      col.appendChild(cl);
+    });
+    return col;
+  };
+  box.appendChild(mk('Across',P.across,'A'));
+  box.appendChild(mk('Down',P.down,'D'));
+}
+const KB=[["Q","W","E","R","T","Y","U","I","O","P"],["A","S","D","F","G","H","J","K","L"],["DEL","Z","X","C","V","B","N","M"]];
+function buildKb(){
+  const kb=document.getElementById('kb'); kb.innerHTML='';
+  KB.forEach(row=>{ const kr=document.createElement('div'); kr.className='cw-krow';
+    row.forEach(k=>{ const b=document.createElement('button'); b.className='cw-key'+(k==='DEL'?' wide':''); b.textContent=k;
+      b.onclick=()=>{ if(k==='DEL') del(); else type(k); }; kr.appendChild(b); }); kb.appendChild(kr); });
+}
+function isComplete(){ for(let r=0;r<P.rows;r++)for(let c=0;c<P.cols;c++){ if(P.cells[r][c]!==null && !user[r][c]) return false; } return true; }
+function check(){
+  render(); let wrong=0;
+  const cells=document.querySelectorAll('.cw-cell');
+  let idx=0;
+  for(let r=0;r<P.rows;r++)for(let c=0;c<P.cols;c++){ const el=cells[idx++]; if(P.cells[r][c]!==null && user[r][c] && user[r][c]!==P.cells[r][c]){ el.classList.add('bad'); wrong++; } }
+  const m=document.getElementById('msg');
+  if(isComplete()&&wrong===0){ win(); }
+  else if(wrong===0){ m.style.color='#5f6b7a'; m.textContent='Looking good — keep going!'; }
+  else { m.style.color='#e63946'; m.textContent=wrong+' letter(s) are wrong (in red).'; }
+}
+function reveal(){ for(let r=0;r<P.rows;r++)for(let c=0;c<P.cols;c++){ if(P.cells[r][c]!==null) user[r][c]=P.cells[r][c]; } render(); document.getElementById('msg').style.color='#5f6b7a'; document.getElementById('msg').textContent='Answers revealed.'; }
+function win(){ document.getElementById('msg').style.color='#2a9d8f'; document.getElementById('msg').textContent='🎉 You completed the crossword!'; }
+document.addEventListener('keydown',e=>{
+  const k=e.key.toUpperCase();
+  if(/^[A-Z]$/.test(k)){ type(k); }
+  else if(e.key==='Backspace'){ e.preventDefault(); del(); }
+  else if(e.key==='ArrowRight'||e.key==='ArrowLeft'||e.key==='ArrowUp'||e.key==='ArrowDown'){
+    if(!active) return;
+    const mv={ArrowRight:[0,1],ArrowLeft:[0,-1],ArrowUp:[-1,0],ArrowDown:[1,0]}[e.key];
+    let r=active.r+mv[0],c=active.c+mv[1];
+    if(filled(r,c)){ active={r,c}; dir=(mv[1]!==0)?'A':'D'; updateClue(); render(); }
+  }
+});
+newGame();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

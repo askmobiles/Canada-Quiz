@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" width="300" height="260" role="img" aria-label="Canada Quiz and Family Fun Games">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e63946"/><stop offset="100%" stop-color="#f4845f"/>
+  </linearGradient>
+</defs>
+<rect x="88" y="6" width="124" height="124" rx="31" fill="url(#g)"/>
+<path d="M150.00,16.42 L156.58,28.35 L163.29,26.99 L159.83,43.79 L179.53,34.58 L176.50,44.48 L191.37,48.80 L176.62,58.24 L179.07,64.63 L153.96,72.32 L153.96,101.56 L150.52,103.28 L146.04,101.56 L146.04,72.32 L120.93,64.63 L123.38,58.24 L108.63,48.80 L123.50,44.48 L120.47,34.58 L140.17,43.79 L136.71,26.99 L143.42,28.35 Z" fill="#fff" stroke="#fff" stroke-width="5.16" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="196" cy="114" r="21" fill="#ffb703" stroke="#fff" stroke-width="6"/>
+<text x="196" y="115" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="26" font-weight="800" fill="#2b2d42" text-anchor="middle" dominant-baseline="central">?</text>
+<text x="150" y="188" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="44" font-weight="800" fill="#2b2d42" text-anchor="middle" letter-spacing="-0.5">Canada Quiz</text>
+<text x="150" y="218" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="19" font-weight="600" fill="#5f6b7a" text-anchor="middle" letter-spacing="2">FAMILY FUN GAMES</text>
+</svg>

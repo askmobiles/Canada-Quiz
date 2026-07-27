@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Maître des mots — Devinez le mot de 5 lettres | Jeux en famille</title>
+<meta name="description" content="Maître des mots — un jeu gratuit pour deviner un mot de 5 lettres. Vous avez 6 essais. Le vert signifie la bonne lettre au bon endroit, le jaune signifie la bonne lettre au mauvais endroit. Un jeu de réflexion amusant pour tous les âges.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>
+  .wm-wrap{max-width:400px;margin:0 auto;text-align:center}
+  .wm-board{display:grid;grid-template-rows:repeat(6,1fr);gap:6px;justify-content:center;margin:14px auto}
+  .wm-row{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .wm-tile{width:52px;height:52px;max-width:16vw;max-height:16vw;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;text-transform:uppercase;border:2px solid var(--line);border-radius:8px;color:var(--ink);background:#fff}
+  .wm-tile.filled{border-color:#b9c0c9}
+  .wm-tile.green{background:#2a9d8f;border-color:#2a9d8f;color:#fff}
+  .wm-tile.yellow{background:#ffb703;border-color:#ffb703;color:#3d3000}
+  .wm-tile.grey{background:#9aa0a8;border-color:#9aa0a8;color:#fff}
+  .wm-keyboard{max-width:480px;margin:14px auto 0}
+  .wm-krow{display:flex;justify-content:center;gap:5px;margin-bottom:6px}
+  .wm-key{min-width:28px;flex:1;max-width:42px;height:48px;border:none;border-radius:7px;background:#e6e8ec;font-weight:800;font-size:15px;cursor:pointer;text-transform:uppercase;color:var(--ink)}
+  .wm-key.wide{max-width:64px;font-size:12px}
+  .wm-key.green{background:#2a9d8f;color:#fff}
+  .wm-key.yellow{background:#ffb703;color:#3d3000}
+  .wm-key.grey{background:#9aa0a8;color:#fff}
+  .wm-msg{font-weight:800;min-height:24px;margin:8px 0}
+  .shake{animation:sh .3s}
+  @keyframes sh{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/word-master.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/word-master.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/word-master.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/word-master.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🟩 Maître des mots</h1>
+    <p>Devine le mot de 5 lettres en 6 essais !</p>
+  </section>
+
+  <details class="howto"><summary></summary><p>Devinez le mot caché de 5 lettres. Tapez un mot et appuyez sur Entrée. Après chaque essai, les tuiles changent de couleur : <strong>vert</strong> signifie que la lettre est correcte et bien placée, <strong>jaune</strong> signifie que la lettre est dans le mot, mais à une position différente, et <strong>gris</strong> signifie que la lettre n'est pas du tout dans le mot. Vous avez 6 essais — utilisez les indices pour le trouver!</p></details>
+
+  <div class="panel">
+    <div class="wm-wrap">
+      <div class="wm-board" id="board"></div>
+      <p class="wm-msg" id="msg"></p>
+      <div class="wm-keyboard" id="keyboard"></div>
+      <div style="margin-top:12px">
+        <button class="btn" onclick="newGame()">Nouveau mot</button>
+        <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+const WORDS = ["APPLE","BEACH","BRAIN","BREAD","BRICK","BRUSH","CANOE","CHAIR","CHESS","CLOUD","CRANE","DANCE","DREAM","EAGLE","EARTH","FLAME","FLUTE","FROST","GHOST","GLASS","GRAPE","GREEN","HEART","HONEY","HORSE","HOUSE","IGLOO","JELLY","JUICE","KOALA","LEMON","LIGHT","MAGIC","MANGO","MAPLE","MOOSE","MOUSE","MUSIC","NIGHT","OCEAN","OTTER","PAINT","PANDA","PEACH","PEARL","PIANO","PIZZA","PLANT","PLATE","POINT","PRIZE","QUEEN","QUILT","RADIO","RIVER","ROBOT","ROUND","SHARK","SHEEP","SHINE","SHOES","SKATE","SMILE","SNAKE","SNOWY","SPACE","SPICE","SPOON","STARE","STONE","STORM","SUGAR","SUNNY","SWEET","TABLE","TIGER","TOAST","TOWER","TRAIN","TREAT","TRUCK","TULIP","VOICE","WATER","WHALE","WHEAT","WHEEL","WITCH","WORLD","ZEBRA","GOOSE","BERRY","CLOWN","CROWN","DAISY","FAIRY","GIANT","GLOVE","GRASS","HAPPY","JEANS","KNIFE","MELON","MONEY","MOTOR","NURSE","OLIVE","ONION","PARTY","PENNY","PILOT","PUPPY","ROBIN","SALAD","SCARF","SHELL","SKUNK","SLOTH","SNAIL","SPARK","STORE","SWORD","TEETH","THUMB","TRUST","WAGON","WINDY","YOUTH"];
+const ROWS=6, COLS=5;
+let answer='', row=0, col=0, grid=[], over=false;
+const keyState={}; // letter -> best state
+
+function newGame(){
+  answer = WORDS[Math.floor(Math.random()*WORDS.length)];
+  row=0; col=0; over=false; grid=[];
+  for(let i=0;i<ROWS;i++) grid.push(['','','','','']);
+  for(const k in keyState) delete keyState[k];
+  document.getElementById('msg').textContent='';
+  buildBoard(); buildKeyboard();
+}
+function buildBoard(){
+  const b=document.getElementById('board'); b.innerHTML='';
+  for(let r=0;r<ROWS;r++){
+    const tr=document.createElement('div'); tr.className='wm-row'; tr.dataset.r=r;
+    for(let c=0;c<COLS;c++){
+      const t=document.createElement('div'); t.className='wm-tile'; t.dataset.r=r; t.dataset.c=c;
+      tr.appendChild(t);
+    }
+    b.appendChild(tr);
+  }
+}
+function tileEl(r,c){ return document.querySelector('.wm-tile[data-r="'+r+'"][data-c="'+c+'"]'); }
+const KB=[["Q","W","E","R","T","Y","U","I","O","P"],["A","S","D","F","G","H","J","K","L"],["ENTER","Z","X","C","V","B","N","M","DEL"]];
+function buildKeyboard(){
+  const kb=document.getElementById('keyboard'); kb.innerHTML='';
+  KB.forEach(rowKeys=>{
+    const kr=document.createElement('div'); kr.className='wm-krow';
+    rowKeys.forEach(k=>{
+      const b=document.createElement('button'); b.className='wm-key'+((k==='ENTER'||k==='DEL')?' wide':''); b.textContent=k;
+      if(keyState[k]) b.classList.add(keyState[k]);
+      b.onclick=()=>press(k);
+      kr.appendChild(b);
+    });
+    kb.appendChild(kr);
+  });
+}
+function press(k){
+  if(over) return;
+  if(k==='ENTER') submitGuess();
+  else if(k==='DEL'){ if(col>0){ col--; grid[row][col]=''; renderRow(); } }
+  else if(/^[A-Z]$/.test(k)){ if(col<COLS){ grid[row][col]=k; col++; renderRow(); } }
+}
+function renderRow(){
+  for(let c=0;c<COLS;c++){ const t=tileEl(row,c); t.textContent=grid[row][c]; t.classList.toggle('filled', grid[row][c]!==''); }
+}
+function submitGuess(){
+  if(col<COLS){ msgShake('Not enough letters'); return; }
+  const guess=grid[row].join('');
+  // score with duplicate handling
+  const res=Array(COLS).fill('grey');
+  const counts={};
+  for(const ch of answer) counts[ch]=(counts[ch]||0)+1;
+  for(let c=0;c<COLS;c++){ if(guess[c]===answer[c]){ res[c]='green'; counts[guess[c]]--; } }
+  for(let c=0;c<COLS;c++){ if(res[c]==='green') continue; const ch=guess[c]; if(counts[ch]>0){ res[c]='yellow'; counts[ch]--; } }
+  for(let c=0;c<COLS;c++){
+    const t=tileEl(row,c); t.classList.add(res[c]);
+    const ch=guess[c];
+    // upgrade key colour: green>yellow>grey
+    const rank={grey:0,yellow:1,green:2};
+    if(!keyState[ch] || rank[res[c]]>rank[keyState[ch]]) keyState[ch]=res[c];
+  }
+  buildKeyboard();
+  if(guess===answer){ over=true; document.getElementById('msg').style.color='#2a9d8f'; document.getElementById('msg').textContent='🎉 You got it in '+(row+1)+'/'+ROWS+'!'; return; }
+  row++; col=0;
+  if(row>=ROWS){ over=true; document.getElementById('msg').style.color='#e63946'; document.getElementById('msg').textContent='😅 Out of tries! The word was '+answer+'.'; }
+}
+function msgShake(text){
+  const m=document.getElementById('msg'); m.style.color='#e63946'; m.textContent=text;
+  const r=document.querySelector('.wm-row[data-r="'+row+'"]'); if(r){ r.classList.add('shake'); setTimeout(()=>r.classList.remove('shake'),300); }
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter') press('ENTER');
+  else if(e.key==='Backspace') press('DEL');
+  else { const k=e.key.toUpperCase(); if(/^[A-Z]$/.test(k)) press(k); }
+});
+newGame();
+</script>
+  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

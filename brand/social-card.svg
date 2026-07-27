@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#e63946"/><stop offset="100%" stop-color="#f4845f"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="630" fill="#fdfbf7"/>
+<rect width="1200" height="150" fill="url(#g)"/>
+<rect y="580" width="1200" height="50" fill="url(#g)"/>
+<g opacity="0.07"><path d="M930.00,54.40 L969.77,126.53 L1010.37,118.28 L989.46,219.89 L1108.57,164.23 L1090.24,224.08 L1180.12,250.18 L1090.98,307.24 L1105.80,345.91 L953.92,392.40 L953.92,569.20 L933.12,579.60 L906.08,569.20 L906.08,392.40 L754.20,345.91 L769.02,307.24 L679.88,250.18 L769.76,224.08 L751.43,164.23 L870.54,219.89 L849.63,118.28 L890.23,126.53 Z" fill="#e63946" stroke="#e63946" stroke-width="31.20" stroke-linejoin="round" stroke-linecap="round"/></g>
+<rect x="440" y="196" width="180" height="180" rx="44" fill="url(#g)"/>
+<path d="M530.00,216.28 L539.48,233.48 L549.17,231.51 L544.18,255.74 L572.58,242.47 L568.21,256.74 L589.64,262.97 L568.39,276.57 L571.92,285.79 L535.70,296.88 L535.70,339.04 L530.74,341.52 L524.30,339.04 L524.30,296.88 L488.08,285.79 L491.61,276.57 L470.36,262.97 L491.79,256.74 L487.42,242.47 L515.82,255.74 L510.83,231.51 L520.52,233.48 Z" fill="#fff" stroke="#fff" stroke-width="7.44" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="600" cy="356" r="30" fill="#ffb703" stroke="#fdfbf7" stroke-width="8"/>
+<text x="600" y="358" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="37" font-weight="800" fill="#2b2d42" text-anchor="middle" dominant-baseline="central">?</text>
+<text x="600" y="450" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="66" font-weight="800" fill="#2b2d42" text-anchor="middle" letter-spacing="-1">Canada Quiz</text>
+<text x="600" y="500" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="27" font-weight="600" fill="#5f6b7a" text-anchor="middle" letter-spacing="3">FAMILY FUN GAMES</text>
+<text x="600" y="548" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="23" font-weight="600" fill="#2a9d8f" text-anchor="middle">Free quizzes, family games &amp; citizenship practice — no signup</text>
+</svg>
