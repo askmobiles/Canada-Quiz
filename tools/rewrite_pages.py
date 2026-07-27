@@ -15,6 +15,17 @@ import glob, json, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://canada-quiz.com/"
 
+# ---------------------------------------------------------------------------
+# CACHE STAMP — bump this EVERY time css/style.css, js/site.js or js/analytics.js
+# changes, then re-run this script + build_fr.py.
+#
+# Why: browsers keep a saved copy of the stylesheet. If the file changes but the
+# web address stays the same, returning visitors keep the OLD stylesheet and the
+# new page looks broken. Changing ?v=... makes it a new address, so everyone gets
+# the fresh file. (This bit us on 27 Jul 2026 — new hero HTML + old cached CSS.)
+# ---------------------------------------------------------------------------
+ASSET_VER = "20260727"
+
 # The full A-to-Z page list shown at the bottom of every page.
 # Add a new page to tools/site_map.json and re-run this script.
 SITE_MAP = json.load(open(os.path.join(ROOT, "tools", "site_map.json"), encoding="utf-8"))
@@ -147,13 +158,19 @@ def main():
         s = FOOTER_RE.sub(lambda m: footer_html(), s, count=1)
 
         # --- site.js --------------------------------------------------------
-        s = re.sub(r'[ \t]*<script src="js/site\.js"></script>\n?', "", s)
-        if '<script src="js/analytics.js"></script>' in s:
-            s = s.replace('<script src="js/analytics.js"></script>',
-                          '<script src="js/site.js"></script>\n'
-                          '  <script src="js/analytics.js"></script>', 1)
+        s = re.sub(r'[ \t]*<script src="js/site\.js(\?[^"]*)?"></script>\n?', "", s)
+        if re.search(r'<script src="js/analytics\.js(\?[^"]*)?"></script>', s):
+            s = re.sub(r'<script src="js/analytics\.js(\?[^"]*)?"></script>',
+                       '<script src="js/site.js?v=%s"></script>\n'
+                       '  <script src="js/analytics.js?v=%s"></script>' % (ASSET_VER, ASSET_VER),
+                       s, count=1)
         else:
-            s = s.replace("</body>", '  <script src="js/site.js"></script>\n</body>', 1)
+            s = s.replace("</body>",
+                          '  <script src="js/site.js?v=%s"></script>\n</body>' % ASSET_VER, 1)
+
+        # --- cache stamp on the stylesheet ----------------------------------
+        s = re.sub(r'(<link rel="stylesheet" href="css/style\.css)(\?[^"]*)?(")',
+                   r'\g<1>?v=%s\g<3>' % ASSET_VER, s)
 
         if s != orig:
             open(path, "w", encoding="utf-8").write(s)
