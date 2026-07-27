@@ -1,0 +1,99 @@
+{
+  "groups": [
+    {
+      "title": "Quizzes",
+      "links": [
+        ["quizzes.html", "All Quizzes"],
+        ["gk-quiz.html", "General Knowledge"],
+        ["canada-quiz.html", "Canada Quiz"],
+        ["fun-quiz.html", "Fun Canada Quiz"],
+        ["province-quiz.html", "Which Province Are You?"],
+        ["world-quiz.html", "World Quiz"],
+        ["science-quiz.html", "Science &amp; Space"],
+        ["entertainment-quiz.html", "Movies, Music &amp; Sports"],
+        ["citizenship.html", "Citizenship Test Practice"]
+      ]
+    },
+    {
+      "title": "Brain &amp; Puzzle Games",
+      "links": [
+        ["word-master.html", "Word Master"],
+        ["word-search.html", "Word Search"],
+        ["word-guess.html", "Word Guess"],
+        ["scramble.html", "Word Scramble"],
+        ["spelling-bee.html", "Spelling Bee"],
+        ["crossword.html", "Crossword"],
+        ["connections.html", "Word Groups"],
+        ["sudoku.html", "Sudoku"],
+        ["minesweeper.html", "Minesweeper"],
+        ["sliding-puzzle.html", "Sliding Puzzle"],
+        ["game-2048.html", "2048"],
+        ["memory.html", "Memory Match"],
+        ["rubiks-cube.html", "Rubik's Cube"],
+        ["typing-test.html", "Typing Speed Test"],
+        ["color-match.html", "Color Match"]
+      ]
+    },
+    {
+      "title": "Action &amp; Classic Games",
+      "links": [
+        ["snake.html", "Maple Snake"],
+        ["whack-a-beaver.html", "Whack-a-Beaver"],
+        ["piano-tiles.html", "Piano Tiles"],
+        ["tictactoe.html", "Tic-Tac-Toe"],
+        ["checkers.html", "Checkers"],
+        ["inukshuk.html", "Inukshuk Builder"]
+      ]
+    },
+    {
+      "title": "Party Games",
+      "links": [
+        ["charades.html", "Charades"],
+        ["imposter.html", "Imposter"],
+        ["would-you-rather.html", "Would You Rather?"],
+        ["trivia-showdown.html", "Trivia Showdown"],
+        ["hold-to-head.html", "Hold to Head"],
+        ["top-answers.html", "Top Answers"],
+        ["categories-game.html", "Categories"],
+        ["story-maker.html", "Story Maker"],
+        ["draw-it.html", "Draw It"],
+        ["spin-wheel.html", "Spin the Wheel"]
+      ]
+    },
+    {
+      "title": "Blog",
+      "links": [
+        ["blog.html", "All Articles"],
+        ["how-to-prepare-for-the-canadian-citizenship-test.html", "How to Prepare for the Citizenship Test"],
+        ["10-tips-to-pass-your-citizenship-test.html", "10 Tips to Pass the Test"],
+        ["rights-and-responsibilities-of-canadian-citizens.html", "Rights and Responsibilities"],
+        ["how-canadas-government-works.html", "How Canada's Government Works"],
+        ["what-is-confederation.html", "What Is Confederation?"],
+        ["a-short-history-of-canada.html", "A Short History of Canada"],
+        ["the-history-of-canada-day.html", "The History of Canada Day"],
+        ["the-story-of-the-canadian-flag.html", "The Story of the Canadian Flag"],
+        ["canadian-symbols-explained.html", "Canadian Symbols Explained"],
+        ["canada-provinces-and-territories-explained.html", "Provinces and Territories"],
+        ["canada-geography-coast-to-coast.html", "Canada's Geography"],
+        ["canadas-animals-and-wildlife.html", "Animals and Wildlife"],
+        ["canadas-two-official-languages.html", "Our Two Official Languages"],
+        ["canadian-holidays-explained.html", "Canadian Holidays"],
+        ["indigenous-peoples-of-canada.html", "Indigenous Peoples of Canada"],
+        ["famous-canadians-in-history.html", "Famous Canadians in History"],
+        ["20-fun-facts-about-canada-for-kids.html", "20 Fun Facts for Kids"]
+      ]
+    },
+    {
+      "title": "The Site",
+      "links": [
+        ["index.html", "Home"],
+        ["daily.html", "Daily Challenge"],
+        ["games.html", "All Family Games"],
+        ["about.html", "About Us"],
+        ["contact.html", "Contact"],
+        ["privacy.html", "Privacy Policy"],
+        ["terms.html", "Terms &amp; Conditions"]
+      ]
+    }
+  ]
+}

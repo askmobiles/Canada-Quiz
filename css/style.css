@@ -202,3 +202,27 @@ html.lang-fr .nav a{font-size:13.5px;padding:8px 10px}
   .footer-logo{height:34px}
   .lang-btn{padding:6px 10px;font-size:12.5px}
 }
+
+/* ---- footer "All pages" directory (one link to every page on the site) ---- */
+.footer-map{margin:18px auto 10px;max-width:1040px;text-align:left;
+  border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);
+  padding:10px 0}
+.footer-map>summary{cursor:pointer;list-style:none;text-align:center;font-weight:800;
+  letter-spacing:.3px;padding:6px 10px;border-radius:10px;color:#fff;font-size:14px}
+.footer-map>summary::-webkit-details-marker{display:none}
+.footer-map>summary::after{content:" ▾";opacity:.75}
+.footer-map[open]>summary::after{content:" ▴"}
+.footer-map>summary:hover{background:rgba(255,255,255,.10)}
+.footer-map>summary:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+.footer-map-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px 22px;padding:12px 4px 6px}
+.footer-map-col h4{margin:0 0 6px;font-size:13px;text-transform:uppercase;
+  letter-spacing:.7px;color:#fff;opacity:.85}
+.footer-map-col a{display:block;padding:3px 0;font-size:13.5px;line-height:1.35;
+  color:#e7e0f2;text-decoration:none}
+.footer-map-col a:hover{color:#ffc6cd;text-decoration:underline}
+@media (max-width:640px){
+  .footer-map-cols{grid-template-columns:1fr 1fr;gap:12px 14px}
+  .footer-map-col a{font-size:13px}
+}
+.footer-map>summary .fm-count{opacity:.72;font-weight:600}

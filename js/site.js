@@ -286,7 +286,18 @@
       f.className = "site-footer";
       document.body.appendChild(f);
     }
+    /* Keep the "All pages" list that is already written into the page —
+       it is one long block, so we do not want a second copy inside this file.
+       On the French pages it is already in French (build_fr.py did that). */
+    var map = f.querySelector(".footer-map");
     f.innerHTML = footerHTML();
+    if (map) {
+      var box = f.querySelector(".container") || f;
+      var last = box.querySelector("p.muted");
+      if (last) box.insertBefore(map, last); else box.appendChild(map);
+      /* open on a big screen, folded away on a phone */
+      if (window.innerWidth >= 900) map.setAttribute("open", "");
+    }
     f.setAttribute("data-no-i18n", "");
 
     h.addEventListener("click", function (e) {

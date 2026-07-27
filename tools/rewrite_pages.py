@@ -10,10 +10,14 @@ Makes every English page use:
 Run it from the site folder:   python3 tools/rewrite_pages.py
 It only touches the .html files in the site root.
 """
-import glob, os, re, sys
+import glob, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://canada-quiz.com/"
+
+# The full A-to-Z page list shown at the bottom of every page.
+# Add a new page to tools/site_map.json and re-run this script.
+SITE_MAP = json.load(open(os.path.join(ROOT, "tools", "site_map.json"), encoding="utf-8"))
 
 NAV = [
     ("index.html",       "Home"),
@@ -46,7 +50,7 @@ def header_html(page):
         '  <div class="container">\n'
         '    <a class="brand" href="index.html" aria-label="%s">'
         '<img src="brand/logo-horizontal-white.svg" alt="%s" class="brand-logo" width="230" height="55"></a>\n'
-        '    <nav class="nav" aria-label="Main">\n'
+        '    <nav class="nav" aria-label="Main navigation">\n'
         '      %s\n'
         '      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" '
         'aria-label="Passer en français" title="Passer en français">'
@@ -57,6 +61,24 @@ def header_html(page):
     )
 
 
+def footer_map_html():
+    """The full A-to-Z list of every page, grouped, at the bottom of the site."""
+    total = sum(len(g["links"]) for g in SITE_MAP["groups"])
+    cols = []
+    for g in SITE_MAP["groups"]:
+        items = "\n        ".join('<a href="%s">%s</a>' % (h, l) for h, l in g["links"])
+        cols.append('      <div class="footer-map-col">\n'
+                    '        <h4>%s</h4>\n'
+                    '        %s\n'
+                    '      </div>' % (g["title"], items))
+    return ('    <details class="footer-map">\n'
+            '      <summary>All pages <span class="fm-count">(%d)</span></summary>\n'
+            '      <div class="footer-map-cols">\n'
+            '%s\n'
+            '      </div>\n'
+            '    </details>' % (total, "\n".join(cols)))
+
+
 def footer_html():
     links = " · ".join('<a href="%s">%s</a>' % (h, l) for h, l in FOOTER_LINKS)
     return (
@@ -65,10 +87,11 @@ def footer_html():
         '    <img src="brand/logo-horizontal-white.svg" alt="%s" class="footer-logo" width="200" height="48">\n'
         '    <p>%s</p>\n'
         '    <div class="footer-links">%s</div>\n'
+        '%s\n'
         '    <p class="muted" style="color:#b4a9cc;font-size:12px">%s</p>\n'
         '    <p class="muted" style="color:#b4a9cc;font-size:12.5px">%s</p>\n'
         '  </div>\n'
-        '</footer>' % (BRAND, FOOTER_TAG, links, COPYRIGHT, DISCLAIMER)
+        '</footer>' % (BRAND, FOOTER_TAG, links, footer_map_html(), COPYRIGHT, DISCLAIMER)
     )
 
 
