@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movies, Music &amp; Sports Quiz — Free Fun Trivia | Canada Quiz</title>
+<meta name="description" content="Free entertainment quiz — movies and TV, music, sports and food from around the world. Fun trivia for families and friends. No signup needed.">
+<link rel="canonical" href="https://canada-quiz.com/entertainment-quiz.html">
+<meta property="og:title" content="Movies, Music &amp; Sports Quiz — Free Fun Trivia | Canada Quiz">
+<meta property="og:description" content="Free entertainment quiz — movies and TV, music, sports and food from around the world. Fun trivia for families and friends. No signup needed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/entertainment-quiz.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+<style>.bigq{font-size:80px;text-align:center;margin:6px 0}</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">&#127809;</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="start-screen" class="panel center">
+    <div style="font-size:46px">🎬</div>
+    <h1>Movies, Music &amp; Sports Quiz</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto">Movies and TV, music, sports, and food from around the world. Pick a topic and see how many you get right!</p>
+    <details class="howto"><summary></summary><p>Choose a topic below. You'll get 10 questions &mdash; tap the answer you think is right and you'll see instantly if you're correct, with a short fact. Play again anytime for fresh questions!</p></details>
+    <div class="grid" id="cats" style="margin-top:18px"></div>
+  </section>
+
+  <section id="quiz-screen" class="panel" style="display:none">
+    <div class="quiz-meta">
+      <span class="pill" id="q-counter">Question 1</span>
+      <span class="pill" id="score-pill">Score: 0</span>
+    </div>
+    <div class="progress"><span id="progress-bar"></span></div>
+    <div id="bigq" class="bigq" style="display:none"></div>
+    <h2 id="question-text"></h2>
+    <div class="options" id="options"></div>
+    <div id="explain-box" class="explain" style="display:none"></div>
+    <div class="center" style="margin-top:18px">
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Next &rarr;</button>
+    </div>
+  </section>
+
+  <section id="result-screen" class="panel center" style="display:none">
+    <div class="result-big">🎬</div>
+    <h2 id="result-title"></h2>
+    <p class="score" id="result-score"></p>
+    <p class="muted" id="result-msg"></p>
+    <div style="margin:18px 0">
+      <button class="btn btn-lg" onclick="backToCats()">Pick another topic</button>
+      <a class="btn btn-ghost btn-lg" href="quizzes.html">More quizzes</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>&#127809; Canada Quiz &amp; Family Fun Games &mdash; free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> &middot; <a href="about.html">About</a> &middot; <a href="contact.html">Contact</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">&copy; 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const BANK={
+ "Movies & TV": {
+  "emoji": "🎬",
+  "color": "purple",
+  "q": [
+   {
+    "q": "In which movie does a young lion named Simba grow up to be king?",
+    "options": [
+     "Madagascar",
+     "The Lion King",
+     "Zootopia",
+     "Tarzan"
+    ],
+    "answer": 1,
+    "explain": "The Lion King follows Simba's journey to become king of the Pride Lands."
+   },
+   {
+    "q": "What kind of animal is Nemo in Finding Nemo?",
+    "options": [
+     "Dolphin",
+     "Clownfish",
+     "Turtle",
+     "Shark"
+    ],
+    "answer": 1,
+    "explain": "Nemo is a little orange-and-white clownfish."
+   },
+   {
+    "q": "In Frozen, what is the name of the snowman?",
+    "options": [
+     "Sven",
+     "Olaf",
+     "Kristoff",
+     "Hans"
+    ],
+    "answer": 1,
+    "explain": "Olaf is the friendly snowman who loves warm hugs."
+   },
+   {
+    "q": "Which movie features a family of superheroes?",
+    "options": [
+     "The Incredibles",
+     "Cars",
+     "Up",
+     "Brave"
+    ],
+    "answer": 0,
+    "explain": "The Incredibles is about a whole family with superpowers."
+   },
+   {
+    "q": "What colour is Shrek?",
+    "options": [
+     "Blue",
+     "Green",
+     "Purple",
+     "Brown"
+    ],
+    "answer": 1,
+    "explain": "Shrek is a big green ogre."
+   },
+   {
+    "q": "In Toy Story, what type of toy is Woody?",
+    "options": [
+     "Astronaut",
+     "Cowboy",
+     "Dinosaur",
+     "Robot"
+    ],
+    "answer": 1,
+    "explain": "Woody is a pull-string cowboy doll."
+   },
+   {
+    "q": "Which film is about a rat who wants to be a chef?",
+    "options": [
+     "Ratatouille",
+     "Bolt",
+     "Coco",
+     "Luca"
+    ],
+    "answer": 0,
+    "explain": "Ratatouille follows Remy, a rat with a talent for cooking."
+   },
+   {
+    "q": "What is the name of the wizard school in Harry Potter?",
+    "options": [
+     "Camelot",
+     "Hogwarts",
+     "Neverland",
+     "Narnia"
+    ],
+    "answer": 1,
+    "explain": "Hogwarts School of Witchcraft and Wizardry."
+   },
+   {
+    "q": "Which animated movie is set in the country of Colombia?",
+    "options": [
+     "Encanto",
+     "Moana",
+     "Mulan",
+     "Brave"
+    ],
+    "answer": 0,
+    "explain": "Encanto tells the story of the magical Madrigal family in Colombia."
+   },
+   {
+    "q": "In Moana, what is the name of the demigod?",
+    "options": [
+     "Maui",
+     "Tui",
+     "Pua",
+     "Tamatoa"
+    ],
+    "answer": 0,
+    "explain": "Maui is the demigod who joins Moana on her journey."
+   },
+   {
+    "q": "Which show features a yellow family from Springfield?",
+    "options": [
+     "Family Guy",
+     "The Simpsons",
+     "Rugrats",
+     "Doug"
+    ],
+    "answer": 1,
+    "explain": "The Simpsons has been on TV since 1989."
+   },
+   {
+    "q": "What is the name of the toy space ranger in Toy Story?",
+    "options": [
+     "Buzz Lightyear",
+     "Rex",
+     "Slinky",
+     "Hamm"
+    ],
+    "answer": 0,
+    "explain": "Buzz Lightyear's catchphrase is 'To infinity and beyond!'"
+   },
+   {
+    "q": "Which movie features a giant gorilla climbing a skyscraper?",
+    "options": [
+     "Godzilla",
+     "King Kong",
+     "Jumanji",
+     "Rampage"
+    ],
+    "answer": 1,
+    "explain": "King Kong famously climbs the Empire State Building."
+   },
+   {
+    "q": "What is the highest award in the movie industry called?",
+    "options": [
+     "The Grammy",
+     "The Oscar",
+     "The Emmy",
+     "The Tony"
+    ],
+    "answer": 1,
+    "explain": "The Academy Award — the Oscar — is the top film prize."
+   }
+  ]
+ },
+ "Music": {
+  "emoji": "🎵",
+  "color": "orange",
+  "q": [
+   {
+    "q": "How many strings does a standard guitar have?",
+    "options": [
+     "4",
+     "5",
+     "6",
+     "8"
+    ],
+    "answer": 2,
+    "explain": "A standard acoustic or electric guitar has six strings."
+   },
+   {
+    "q": "Which instrument has black and white keys?",
+    "options": [
+     "Violin",
+     "Piano",
+     "Trumpet",
+     "Drum"
+    ],
+    "answer": 1,
+    "explain": "The piano has 88 black and white keys."
+   },
+   {
+    "q": "Which Canadian singer is famous for the song 'Hello'?",
+    "options": [
+     "Adele",
+     "Shania Twain",
+     "Celine Dion",
+     "Alanis Morissette"
+    ],
+    "answer": 0,
+    "explain": "'Hello' is by Adele, who is British — Canada's Celine Dion sang 'My Heart Will Go On'."
+   },
+   {
+    "q": "Which Canadian singer performed 'My Heart Will Go On' from Titanic?",
+    "options": [
+     "Shania Twain",
+     "Celine Dion",
+     "Avril Lavigne",
+     "Sarah McLachlan"
+    ],
+    "answer": 1,
+    "explain": "Celine Dion, from Quebec, sang the Titanic theme song."
+   },
+   {
+    "q": "What family of instruments does the trumpet belong to?",
+    "options": [
+     "Strings",
+     "Brass",
+     "Woodwind",
+     "Percussion"
+    ],
+    "answer": 1,
+    "explain": "The trumpet is a brass instrument played by buzzing your lips."
+   },
+   {
+    "q": "How many lines are on a musical staff?",
+    "options": [
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "A musical staff has five lines and four spaces."
+   },
+   {
+    "q": "Which instrument is played by hitting it with sticks?",
+    "options": [
+     "Flute",
+     "Drums",
+     "Harp",
+     "Cello"
+    ],
+    "answer": 1,
+    "explain": "Drums are percussion instruments played with sticks or hands."
+   },
+   {
+    "q": "Which Canadian rapper and singer is from Toronto?",
+    "options": [
+     "Drake",
+     "Eminem",
+     "Post Malone",
+     "Bruno Mars"
+    ],
+    "answer": 0,
+    "explain": "Drake grew up in Toronto and often mentions the city in his songs."
+   },
+   {
+    "q": "What does 'forte' mean in music?",
+    "options": [
+     "Slow",
+     "Loud",
+     "Fast",
+     "Quiet"
+    ],
+    "answer": 1,
+    "explain": "Forte means to play loudly; piano means softly."
+   },
+   {
+    "q": "Which famous band included John, Paul, George and Ringo?",
+    "options": [
+     "The Rolling Stones",
+     "The Beatles",
+     "Queen",
+     "The Who"
+    ],
+    "answer": 1,
+    "explain": "The Beatles were formed in Liverpool, England."
+   },
+   {
+    "q": "What is Canada's national anthem called?",
+    "options": [
+     "Maple Leaf Forever",
+     "O Canada",
+     "True North",
+     "God Save the King"
+    ],
+    "answer": 1,
+    "explain": "'O Canada' became the official national anthem in 1980."
+   },
+   {
+    "q": "Which instrument is the largest in a string orchestra?",
+    "options": [
+     "Violin",
+     "Viola",
+     "Cello",
+     "Double bass"
+    ],
+    "answer": 3,
+    "explain": "The double bass is the biggest and lowest string instrument."
+   }
+  ]
+ },
+ "Sports": {
+  "emoji": "⚽",
+  "color": "green",
+  "q": [
+   {
+    "q": "How many players are on the ice per team in hockey?",
+    "options": [
+     "5",
+     "6",
+     "7",
+     "8"
+    ],
+    "answer": 1,
+    "explain": "Six players including the goalie."
+   },
+   {
+    "q": "What trophy do NHL champions win?",
+    "options": [
+     "The Grey Cup",
+     "The Stanley Cup",
+     "The World Cup",
+     "The Vezina"
+    ],
+    "answer": 1,
+    "explain": "The Stanley Cup is the oldest trophy in North American pro sports."
+   },
+   {
+    "q": "How many players are on a soccer team on the field?",
+    "options": [
+     "9",
+     "10",
+     "11",
+     "12"
+    ],
+    "answer": 2,
+    "explain": "Eleven players per side, including the goalkeeper."
+   },
+   {
+    "q": "What sport is played at Wimbledon?",
+    "options": [
+     "Golf",
+     "Tennis",
+     "Cricket",
+     "Rugby"
+    ],
+    "answer": 1,
+    "explain": "Wimbledon is the oldest tennis tournament in the world."
+   },
+   {
+    "q": "Which sport uses a puck?",
+    "options": [
+     "Basketball",
+     "Ice hockey",
+     "Baseball",
+     "Volleyball"
+    ],
+    "answer": 1,
+    "explain": "Hockey players shoot a hard rubber puck."
+   },
+   {
+    "q": "How often are the Summer Olympic Games held?",
+    "options": [
+     "Every 2 years",
+     "Every 3 years",
+     "Every 4 years",
+     "Every 5 years"
+    ],
+    "answer": 2,
+    "explain": "The Summer Olympics happen every four years."
+   },
+   {
+    "q": "In basketball, how many points is a shot behind the arc?",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "A shot from behind the three-point line is worth 3 points."
+   },
+   {
+    "q": "What is Canada's official summer sport?",
+    "options": [
+     "Hockey",
+     "Lacrosse",
+     "Soccer",
+     "Baseball"
+    ],
+    "answer": 1,
+    "explain": "Lacrosse is Canada's official summer sport; hockey is the winter sport."
+   },
+   {
+    "q": "Which sport features a 'home run'?",
+    "options": [
+     "Cricket",
+     "Baseball",
+     "Golf",
+     "Curling"
+    ],
+    "answer": 1,
+    "explain": "A home run lets the batter run all the bases and score."
+   },
+   {
+    "q": "What is the name of the CFL championship game trophy?",
+    "options": [
+     "Stanley Cup",
+     "Grey Cup",
+     "Vanier Cup",
+     "Memorial Cup"
+    ],
+    "answer": 1,
+    "explain": "The Grey Cup is Canadian football's championship trophy."
+   },
+   {
+    "q": "In curling, what is the target circle called?",
+    "options": [
+     "The ring",
+     "The house",
+     "The button zone",
+     "The circle"
+    ],
+    "answer": 1,
+    "explain": "The target is called the house; the very centre is the button."
+   },
+   {
+    "q": "How many holes are on a full golf course?",
+    "options": [
+     "9",
+     "12",
+     "18",
+     "24"
+    ],
+    "answer": 2,
+    "explain": "A full round of golf is 18 holes."
+   }
+  ]
+ },
+ "Food Around the World": {
+  "emoji": "🍜",
+  "color": "blue",
+  "q": [
+   {
+    "q": "Which Canadian dish is fries with cheese curds and gravy?",
+    "options": [
+     "Poutine",
+     "Nanaimo bar",
+     "Tourtière",
+     "Butter tart"
+    ],
+    "answer": 0,
+    "explain": "Poutine comes from Quebec and is loved across Canada."
+   },
+   {
+    "q": "Which country is famous for inventing pizza?",
+    "options": [
+     "France",
+     "Italy",
+     "Greece",
+     "Spain"
+    ],
+    "answer": 1,
+    "explain": "Pizza as we know it comes from Naples, Italy."
+   },
+   {
+    "q": "What food is sushi mainly made with?",
+    "options": [
+     "Bread",
+     "Rice",
+     "Pasta",
+     "Potato"
+    ],
+    "answer": 1,
+    "explain": "Sushi is seasoned rice served with fish, egg or vegetables."
+   },
+   {
+    "q": "Maple syrup comes from which tree?",
+    "options": [
+     "Oak",
+     "Maple",
+     "Pine",
+     "Birch"
+    ],
+    "answer": 1,
+    "explain": "Sap from maple trees is boiled down into syrup; Canada makes most of the world's supply."
+   },
+   {
+    "q": "Which country is tacos originally from?",
+    "options": [
+     "Spain",
+     "Mexico",
+     "Peru",
+     "Brazil"
+    ],
+    "answer": 1,
+    "explain": "Tacos come from Mexico."
+   },
+   {
+    "q": "What is the main ingredient in guacamole?",
+    "options": [
+     "Tomato",
+     "Avocado",
+     "Cucumber",
+     "Pepper"
+    ],
+    "answer": 1,
+    "explain": "Guacamole is made from mashed avocado."
+   },
+   {
+    "q": "Which Canadian dessert has three layers and no baking on top?",
+    "options": [
+     "Butter tart",
+     "Nanaimo bar",
+     "Beaver tail",
+     "Date square"
+    ],
+    "answer": 1,
+    "explain": "The Nanaimo bar is named after Nanaimo, British Columbia."
+   },
+   {
+    "q": "Which country is curry most associated with?",
+    "options": [
+     "Japan",
+     "India",
+     "Italy",
+     "Greece"
+    ],
+    "answer": 1,
+    "explain": "Curry dishes are a huge part of Indian cooking."
+   },
+   {
+    "q": "What is pasta traditionally made from?",
+    "options": [
+     "Rice flour",
+     "Wheat flour",
+     "Corn flour",
+     "Potato flour"
+    ],
+    "answer": 1,
+    "explain": "Most pasta is made from durum wheat flour and water."
+   },
+   {
+    "q": "Which fruit is known as the 'king of fruits' in Southeast Asia?",
+    "options": [
+     "Mango",
+     "Durian",
+     "Papaya",
+     "Lychee"
+    ],
+    "answer": 1,
+    "explain": "Durian is famous for its strong smell and rich taste."
+   },
+   {
+    "q": "What drink is made from crushed grapes?",
+    "options": [
+     "Cider",
+     "Wine",
+     "Beer",
+     "Rum"
+    ],
+    "answer": 1,
+    "explain": "Wine is made by fermenting grape juice."
+   },
+   {
+    "q": "Which country invented the sandwich's name?",
+    "options": [
+     "France",
+     "England",
+     "Germany",
+     "Italy"
+    ],
+    "answer": 1,
+    "explain": "It is named after the Earl of Sandwich in England."
+   }
+  ]
+ }
+};
+const LSKEY="entq_";
+
+let qs=[], cur=0, score=0, answered=false, curCat="";
+function pickFresh(bank,count,key){
+  let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
+  if(!Array.isArray(seen)) seen=[];
+  let unseen=bank.map((_,i)=>i).filter(i=>seen.indexOf(i)===-1);
+  if(unseen.length<count){ seen=[]; unseen=bank.map((_,i)=>i); }
+  for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
+  const chosen=unseen.slice(0,count);
+  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
+  return chosen.map(i=>bank[i]);
+}
+function buildCats(){
+  const box=document.getElementById('cats'); box.innerHTML='';
+  Object.keys(BANK).forEach(name=>{
+    const c=BANK[name];
+    const card=document.createElement('div'); card.className='card c-'+c.color;
+    card.innerHTML='<div class="emoji">'+c.emoji+'</div><h3>'+name+'</h3><p>'+c.q.length+' questions</p>';
+    const b=document.createElement('button'); b.className='btn btn-'+c.color; b.textContent='Start'; b.onclick=()=>startCat(name);
+    card.appendChild(b); box.appendChild(card);
+  });
+}
+function startCat(name){
+  curCat=name; const c=BANK[name];
+  qs=pickFresh(c.q, Math.min(10,c.q.length), LSKEY+name);
+  cur=0; score=0; answered=false;
+  document.getElementById('start-screen').style.display='none';
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='block';
+  showQ(); window.scrollTo(0,0);
+}
+function showQ(){
+  answered=false; const q=qs[cur]; const big=BANK[curCat].big;
+  document.getElementById('q-counter').textContent='Question '+(cur+1)+' of '+qs.length;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  document.getElementById('progress-bar').style.width=(cur/qs.length*100)+'%';
+  const bq=document.getElementById('bigq');
+  if(big && q.icon){ bq.style.display='block'; bq.textContent=q.icon; } else { bq.style.display='none'; }
+  document.getElementById('question-text').textContent=q.q;
+  const box=document.getElementById('options'); box.innerHTML='';
+  q.options.forEach((opt,i)=>{ const b=document.createElement('button'); b.className='option'; b.textContent=opt; b.onclick=()=>pick(i,b); box.appendChild(b); });
+  document.getElementById('explain-box').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+function pick(i,btn){
+  if(answered) return; answered=true; const q=qs[cur];
+  document.querySelectorAll('#options .option').forEach((b,idx)=>{ b.classList.add('disabled'); if(idx===q.answer) b.classList.add('correct'); if(idx===i&&i!==q.answer) b.classList.add('wrong'); });
+  if(i===q.answer) score++;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  const ex=document.getElementById('explain-box');
+  ex.innerHTML='<strong>'+(i===q.answer?'\u2705 Correct! ':'\u274C The answer is '+q.options[q.answer]+'. ')+'</strong>'+q.explain;
+  ex.style.display='block';
+  document.getElementById('progress-bar').style.width=((cur+1)/qs.length*100)+'%';
+  const nb=document.getElementById('next-btn'); nb.textContent=(cur+1<qs.length)?'Next \u2192':'See my score \u2192'; nb.style.display='inline-block';
+}
+function nextQuestion(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0);} else finish(); }
+function finish(){
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('result-screen').style.display='block';
+  document.getElementById('result-score').textContent='You scored '+score+' / '+qs.length;
+  const pct=score/qs.length; let t,m;
+  if(pct===1){t='\uD83C\uDF1F Perfect!';m='You know your pop culture!';}
+  else if(pct>=0.7){t='\uD83C\uDF89 Great job!';m='Nicely done — you know your stuff!';}
+  else if(pct>=0.4){t='\uD83D\uDE42 Nice try!';m='Play again to learn more.';}
+  else {t='\uD83C\uDF31 Keep learning!';m='Give it another go \u2014 you will do better!';}
+  document.getElementById('result-title').textContent=t; document.getElementById('result-msg').textContent=m;
+  window.scrollTo(0,0);
+}
+function backToCats(){
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('start-screen').style.display='block';
+  window.scrollTo(0,0);
+}
+buildCats();
+</script>
+  <script src="js/analytics.js"></script>
+  <script src="js/game-fullscreen.js"></script>
+</body>
+</html>

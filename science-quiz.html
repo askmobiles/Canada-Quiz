@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science &amp; Space Quiz — Free Fun Science Questions | Canada Quiz</title>
+<meta name="description" content="Free Science and Space quiz for kids and families. Questions on planets, animals, the human body and how things work. No signup, play instantly.">
+<link rel="canonical" href="https://canada-quiz.com/science-quiz.html">
+<meta property="og:title" content="Science &amp; Space Quiz — Free Fun Science Questions | Canada Quiz">
+<meta property="og:description" content="Free Science and Space quiz for kids and families. Questions on planets, animals, the human body and how things work. No signup, play instantly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/science-quiz.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+<style>.bigq{font-size:80px;text-align:center;margin:6px 0}</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">&#127809;</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="start-screen" class="panel center">
+    <div style="font-size:46px">🔬</div>
+    <h1>Science &amp; Space Quiz</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto">Planets, animals, your amazing body, and how the world works. Pick a topic and see how much you know!</p>
+    <details class="howto"><summary></summary><p>Choose a topic below. You'll get 10 questions &mdash; tap the answer you think is right and you'll see instantly if you're correct, with a short fact. Play again anytime for fresh questions!</p></details>
+    <div class="grid" id="cats" style="margin-top:18px"></div>
+  </section>
+
+  <section id="quiz-screen" class="panel" style="display:none">
+    <div class="quiz-meta">
+      <span class="pill" id="q-counter">Question 1</span>
+      <span class="pill" id="score-pill">Score: 0</span>
+    </div>
+    <div class="progress"><span id="progress-bar"></span></div>
+    <div id="bigq" class="bigq" style="display:none"></div>
+    <h2 id="question-text"></h2>
+    <div class="options" id="options"></div>
+    <div id="explain-box" class="explain" style="display:none"></div>
+    <div class="center" style="margin-top:18px">
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Next &rarr;</button>
+    </div>
+  </section>
+
+  <section id="result-screen" class="panel center" style="display:none">
+    <div class="result-big">🔬</div>
+    <h2 id="result-title"></h2>
+    <p class="score" id="result-score"></p>
+    <p class="muted" id="result-msg"></p>
+    <div style="margin:18px 0">
+      <button class="btn btn-lg" onclick="backToCats()">Pick another topic</button>
+      <a class="btn btn-ghost btn-lg" href="quizzes.html">More quizzes</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <p>&#127809; Canada Quiz &amp; Family Fun Games &mdash; free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> &middot; <a href="about.html">About</a> &middot; <a href="contact.html">Contact</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">&copy; 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const BANK={
+ "Space & Planets": {
+  "emoji": "🚀",
+  "color": "purple",
+  "q": [
+   {
+    "q": "Which planet is closest to the Sun?",
+    "options": [
+     "Venus",
+     "Mercury",
+     "Mars",
+     "Earth"
+    ],
+    "answer": 1,
+    "explain": "Mercury is the smallest planet and the closest to the Sun."
+   },
+   {
+    "q": "Which planet is known as the Red Planet?",
+    "options": [
+     "Jupiter",
+     "Venus",
+     "Mars",
+     "Saturn"
+    ],
+    "answer": 2,
+    "explain": "Mars looks red because its soil is full of rusty iron."
+   },
+   {
+    "q": "What is the largest planet in our solar system?",
+    "options": [
+     "Saturn",
+     "Neptune",
+     "Jupiter",
+     "Uranus"
+    ],
+    "answer": 2,
+    "explain": "Jupiter is so big that all the other planets could fit inside it."
+   },
+   {
+    "q": "Which planet has the most famous rings?",
+    "options": [
+     "Jupiter",
+     "Saturn",
+     "Uranus",
+     "Neptune"
+    ],
+    "answer": 1,
+    "explain": "Saturn's rings are made of ice and rock pieces."
+   },
+   {
+    "q": "What do we call a rock that burns up in Earth's sky?",
+    "options": [
+     "Comet",
+     "Meteor",
+     "Asteroid",
+     "Satellite"
+    ],
+    "answer": 1,
+    "explain": "A meteor is the bright streak we call a shooting star."
+   },
+   {
+    "q": "How long does light from the Sun take to reach Earth?",
+    "options": [
+     "8 seconds",
+     "8 minutes",
+     "8 hours",
+     "8 days"
+    ],
+    "answer": 1,
+    "explain": "Sunlight travels about 150 million km in roughly 8 minutes."
+   },
+   {
+    "q": "Which planet spins on its side?",
+    "options": [
+     "Uranus",
+     "Mars",
+     "Venus",
+     "Mercury"
+    ],
+    "answer": 0,
+    "explain": "Uranus is tipped over about 98 degrees, so it rolls like a barrel."
+   },
+   {
+    "q": "What is the name of our galaxy?",
+    "options": [
+     "Andromeda",
+     "Milky Way",
+     "Orion",
+     "Pegasus"
+    ],
+    "answer": 1,
+    "explain": "We live in the Milky Way galaxy, which has billions of stars."
+   },
+   {
+    "q": "Who was the first person to walk on the Moon?",
+    "options": [
+     "Yuri Gagarin",
+     "Buzz Aldrin",
+     "Neil Armstrong",
+     "Michael Collins"
+    ],
+    "answer": 2,
+    "explain": "Neil Armstrong stepped onto the Moon in July 1969."
+   },
+   {
+    "q": "What force keeps planets orbiting the Sun?",
+    "options": [
+     "Magnetism",
+     "Gravity",
+     "Friction",
+     "Electricity"
+    ],
+    "answer": 1,
+    "explain": "Gravity is the pull that keeps everything in orbit."
+   },
+   {
+    "q": "Which planet is hottest?",
+    "options": [
+     "Mercury",
+     "Venus",
+     "Mars",
+     "Jupiter"
+    ],
+    "answer": 1,
+    "explain": "Venus is hottest because thick clouds trap heat like a blanket."
+   },
+   {
+    "q": "What is the Canadarm famous for?",
+    "options": [
+     "Building bridges",
+     "Working in space",
+     "Digging mines",
+     "Fixing cars"
+    ],
+    "answer": 1,
+    "explain": "The Canadarm is a robotic arm Canada built for the space shuttle."
+   },
+   {
+    "q": "What is a light-year a measure of?",
+    "options": [
+     "Time",
+     "Distance",
+     "Brightness",
+     "Weight"
+    ],
+    "answer": 1,
+    "explain": "A light-year is how far light travels in one year — a distance, not a time."
+   },
+   {
+    "q": "Which Canadian astronaut sang from the space station?",
+    "options": [
+     "Chris Hadfield",
+     "Roberta Bondar",
+     "Marc Garneau",
+     "David Saint-Jacques"
+    ],
+    "answer": 0,
+    "explain": "Chris Hadfield became famous for singing and filming videos aboard the ISS."
+   },
+   {
+    "q": "What is the Sun?",
+    "options": [
+     "A planet",
+     "A star",
+     "A moon",
+     "A comet"
+    ],
+    "answer": 1,
+    "explain": "The Sun is a medium-sized star at the centre of our solar system."
+   }
+  ]
+ },
+ "Animals & Nature": {
+  "emoji": "🦊",
+  "color": "green",
+  "q": [
+   {
+    "q": "What is the largest animal on Earth?",
+    "options": [
+     "Elephant",
+     "Blue whale",
+     "Giraffe",
+     "Polar bear"
+    ],
+    "answer": 1,
+    "explain": "The blue whale can grow longer than three school buses."
+   },
+   {
+    "q": "How many legs does a spider have?",
+    "options": [
+     "6",
+     "8",
+     "10",
+     "12"
+    ],
+    "answer": 1,
+    "explain": "Spiders have eight legs; insects have six."
+   },
+   {
+    "q": "Which animal can change colour to hide?",
+    "options": [
+     "Chameleon",
+     "Rabbit",
+     "Horse",
+     "Cow"
+    ],
+    "answer": 0,
+    "explain": "Chameleons change colour for camouflage and to show mood."
+   },
+   {
+    "q": "What do bees make?",
+    "options": [
+     "Milk",
+     "Honey",
+     "Silk",
+     "Wax paper"
+    ],
+    "answer": 1,
+    "explain": "Bees make honey from flower nectar."
+   },
+   {
+    "q": "Which of these is a mammal?",
+    "options": [
+     "Shark",
+     "Dolphin",
+     "Salmon",
+     "Octopus"
+    ],
+    "answer": 1,
+    "explain": "Dolphins breathe air and feed their babies milk, so they are mammals."
+   },
+   {
+    "q": "What is a baby frog called?",
+    "options": [
+     "Cub",
+     "Tadpole",
+     "Kitten",
+     "Fawn"
+    ],
+    "answer": 1,
+    "explain": "A tadpole hatches from an egg and later grows legs."
+   },
+   {
+    "q": "Which bird cannot fly?",
+    "options": [
+     "Eagle",
+     "Penguin",
+     "Sparrow",
+     "Owl"
+    ],
+    "answer": 1,
+    "explain": "Penguins use their wings to swim instead of fly."
+   },
+   {
+    "q": "What do we call animals that eat only plants?",
+    "options": [
+     "Carnivores",
+     "Herbivores",
+     "Omnivores",
+     "Insectivores"
+    ],
+    "answer": 1,
+    "explain": "Herbivores eat plants; carnivores eat meat."
+   },
+   {
+    "q": "Which Canadian animal builds dams?",
+    "options": [
+     "Moose",
+     "Beaver",
+     "Caribou",
+     "Lynx"
+    ],
+    "answer": 1,
+    "explain": "The beaver is Canada's national animal and a champion dam builder."
+   },
+   {
+    "q": "How many hearts does an octopus have?",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "An octopus has three hearts and blue blood."
+   },
+   {
+    "q": "What is the fastest land animal?",
+    "options": [
+     "Lion",
+     "Cheetah",
+     "Horse",
+     "Ostrich"
+    ],
+    "answer": 1,
+    "explain": "A cheetah can run over 100 km/h in short bursts."
+   },
+   {
+    "q": "Which animal sleeps through winter in a den?",
+    "options": [
+     "Bear",
+     "Deer",
+     "Fox",
+     "Goose"
+    ],
+    "answer": 0,
+    "explain": "Bears hibernate through the cold winter months."
+   },
+   {
+    "q": "What is a group of wolves called?",
+    "options": [
+     "Herd",
+     "Pack",
+     "School",
+     "Flock"
+    ],
+    "answer": 1,
+    "explain": "Wolves live and hunt together in a pack."
+   },
+   {
+    "q": "What part of a plant takes in water?",
+    "options": [
+     "Leaves",
+     "Roots",
+     "Flower",
+     "Stem"
+    ],
+    "answer": 1,
+    "explain": "Roots pull water and minerals from the soil."
+   }
+  ]
+ },
+ "The Human Body": {
+  "emoji": "🧠",
+  "color": "orange",
+  "q": [
+   {
+    "q": "Which organ pumps blood around your body?",
+    "options": [
+     "Lungs",
+     "Heart",
+     "Liver",
+     "Brain"
+    ],
+    "answer": 1,
+    "explain": "The heart is a muscle that pumps blood all day and night."
+   },
+   {
+    "q": "How many bones are in an adult human body?",
+    "options": [
+     "106",
+     "206",
+     "306",
+     "406"
+    ],
+    "answer": 1,
+    "explain": "Adults have about 206 bones; babies are born with more."
+   },
+   {
+    "q": "Which organ helps you breathe?",
+    "options": [
+     "Kidneys",
+     "Lungs",
+     "Stomach",
+     "Spleen"
+    ],
+    "answer": 1,
+    "explain": "Lungs take in oxygen and push out carbon dioxide."
+   },
+   {
+    "q": "What is the largest organ of the human body?",
+    "options": [
+     "Liver",
+     "Skin",
+     "Brain",
+     "Heart"
+    ],
+    "answer": 1,
+    "explain": "Skin is the biggest organ and protects everything inside."
+   },
+   {
+    "q": "Which part of the body controls thinking?",
+    "options": [
+     "Heart",
+     "Brain",
+     "Lungs",
+     "Stomach"
+    ],
+    "answer": 1,
+    "explain": "The brain controls thinking, memory and movement."
+   },
+   {
+    "q": "What are your bones connected by?",
+    "options": [
+     "Veins",
+     "Joints",
+     "Nerves",
+     "Hairs"
+    ],
+    "answer": 1,
+    "explain": "Joints are places where two bones meet and can move."
+   },
+   {
+    "q": "How many teeth does a typical adult have?",
+    "options": [
+     "20",
+     "28",
+     "32",
+     "40"
+    ],
+    "answer": 2,
+    "explain": "Most adults have 32 teeth, including wisdom teeth."
+   },
+   {
+    "q": "What carries blood away from the heart?",
+    "options": [
+     "Veins",
+     "Arteries",
+     "Nerves",
+     "Tendons"
+    ],
+    "answer": 1,
+    "explain": "Arteries carry blood away; veins bring it back."
+   },
+   {
+    "q": "Which sense uses your tongue?",
+    "options": [
+     "Sight",
+     "Taste",
+     "Hearing",
+     "Smell"
+    ],
+    "answer": 1,
+    "explain": "Taste buds on the tongue detect sweet, salty, sour and bitter."
+   },
+   {
+    "q": "What is the smallest bone in the body?",
+    "options": [
+     "Stirrup, in the ear",
+     "Finger tip bone",
+     "Nose bone",
+     "Toe bone"
+    ],
+    "answer": 0,
+    "explain": "The stirrup (stapes) in your ear is smaller than a grain of rice."
+   },
+   {
+    "q": "What does the stomach do?",
+    "options": [
+     "Pumps blood",
+     "Breaks down food",
+     "Filters air",
+     "Stores memory"
+    ],
+    "answer": 1,
+    "explain": "The stomach uses acid and muscles to break food down."
+   },
+   {
+    "q": "How many chambers does the human heart have?",
+    "options": [
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "The heart has four chambers: two atria and two ventricles."
+   }
+  ]
+ },
+ "How Things Work": {
+  "emoji": "⚙️",
+  "color": "blue",
+  "q": [
+   {
+    "q": "What state of water is ice?",
+    "options": [
+     "Liquid",
+     "Solid",
+     "Gas",
+     "Plasma"
+    ],
+    "answer": 1,
+    "explain": "Ice is water in its solid state."
+   },
+   {
+    "q": "At what temperature does water boil at sea level?",
+    "options": [
+     "50°C",
+     "80°C",
+     "100°C",
+     "150°C"
+    ],
+    "answer": 2,
+    "explain": "Pure water boils at 100°C at sea level."
+   },
+   {
+    "q": "What gas do humans breathe in to live?",
+    "options": [
+     "Nitrogen",
+     "Oxygen",
+     "Carbon dioxide",
+     "Helium"
+    ],
+    "answer": 1,
+    "explain": "We breathe in oxygen and breathe out carbon dioxide."
+   },
+   {
+    "q": "What makes a compass needle point north?",
+    "options": [
+     "Wind",
+     "Magnetism",
+     "Sunlight",
+     "Gravity"
+    ],
+    "answer": 1,
+    "explain": "Earth acts like a giant magnet, pulling the needle north."
+   },
+   {
+    "q": "What do we call frozen rain?",
+    "options": [
+     "Fog",
+     "Hail",
+     "Mist",
+     "Dew"
+    ],
+    "answer": 1,
+    "explain": "Hail is rain that freezes into ice balls inside storm clouds."
+   },
+   {
+    "q": "Which of these is a renewable energy source?",
+    "options": [
+     "Coal",
+     "Oil",
+     "Wind",
+     "Natural gas"
+    ],
+    "answer": 2,
+    "explain": "Wind never runs out, so it is renewable."
+   },
+   {
+    "q": "What is H₂O better known as?",
+    "options": [
+     "Salt",
+     "Water",
+     "Sugar",
+     "Air"
+    ],
+    "answer": 1,
+    "explain": "H₂O means two hydrogen atoms and one oxygen atom — water."
+   },
+   {
+    "q": "What simple machine is a ramp?",
+    "options": [
+     "Lever",
+     "Pulley",
+     "Inclined plane",
+     "Wheel"
+    ],
+    "answer": 2,
+    "explain": "A ramp is an inclined plane; it makes lifting easier."
+   },
+   {
+    "q": "Why do we see lightning before we hear thunder?",
+    "options": [
+     "Light travels faster",
+     "Sound travels faster",
+     "Thunder starts later",
+     "Clouds block sound"
+    ],
+    "answer": 0,
+    "explain": "Light travels much faster than sound, so we see it first."
+   },
+   {
+    "q": "What does a thermometer measure?",
+    "options": [
+     "Weight",
+     "Temperature",
+     "Speed",
+     "Sound"
+    ],
+    "answer": 1,
+    "explain": "A thermometer measures how hot or cold something is."
+   },
+   {
+    "q": "What is the centre of an atom called?",
+    "options": [
+     "Shell",
+     "Nucleus",
+     "Electron",
+     "Molecule"
+    ],
+    "answer": 1,
+    "explain": "The nucleus holds protons and neutrons at the atom's centre."
+   },
+   {
+    "q": "What kind of energy does a moving object have?",
+    "options": [
+     "Kinetic",
+     "Chemical",
+     "Nuclear",
+     "Potential"
+    ],
+    "answer": 0,
+    "explain": "Kinetic energy is the energy of motion."
+   }
+  ]
+ }
+};
+const LSKEY="sciq_";
+
+let qs=[], cur=0, score=0, answered=false, curCat="";
+function pickFresh(bank,count,key){
+  let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
+  if(!Array.isArray(seen)) seen=[];
+  let unseen=bank.map((_,i)=>i).filter(i=>seen.indexOf(i)===-1);
+  if(unseen.length<count){ seen=[]; unseen=bank.map((_,i)=>i); }
+  for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
+  const chosen=unseen.slice(0,count);
+  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
+  return chosen.map(i=>bank[i]);
+}
+function buildCats(){
+  const box=document.getElementById('cats'); box.innerHTML='';
+  Object.keys(BANK).forEach(name=>{
+    const c=BANK[name];
+    const card=document.createElement('div'); card.className='card c-'+c.color;
+    card.innerHTML='<div class="emoji">'+c.emoji+'</div><h3>'+name+'</h3><p>'+c.q.length+' questions</p>';
+    const b=document.createElement('button'); b.className='btn btn-'+c.color; b.textContent='Start'; b.onclick=()=>startCat(name);
+    card.appendChild(b); box.appendChild(card);
+  });
+}
+function startCat(name){
+  curCat=name; const c=BANK[name];
+  qs=pickFresh(c.q, Math.min(10,c.q.length), LSKEY+name);
+  cur=0; score=0; answered=false;
+  document.getElementById('start-screen').style.display='none';
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='block';
+  showQ(); window.scrollTo(0,0);
+}
+function showQ(){
+  answered=false; const q=qs[cur]; const big=BANK[curCat].big;
+  document.getElementById('q-counter').textContent='Question '+(cur+1)+' of '+qs.length;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  document.getElementById('progress-bar').style.width=(cur/qs.length*100)+'%';
+  const bq=document.getElementById('bigq');
+  if(big && q.icon){ bq.style.display='block'; bq.textContent=q.icon; } else { bq.style.display='none'; }
+  document.getElementById('question-text').textContent=q.q;
+  const box=document.getElementById('options'); box.innerHTML='';
+  q.options.forEach((opt,i)=>{ const b=document.createElement('button'); b.className='option'; b.textContent=opt; b.onclick=()=>pick(i,b); box.appendChild(b); });
+  document.getElementById('explain-box').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+function pick(i,btn){
+  if(answered) return; answered=true; const q=qs[cur];
+  document.querySelectorAll('#options .option').forEach((b,idx)=>{ b.classList.add('disabled'); if(idx===q.answer) b.classList.add('correct'); if(idx===i&&i!==q.answer) b.classList.add('wrong'); });
+  if(i===q.answer) score++;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  const ex=document.getElementById('explain-box');
+  ex.innerHTML='<strong>'+(i===q.answer?'\u2705 Correct! ':'\u274C The answer is '+q.options[q.answer]+'. ')+'</strong>'+q.explain;
+  ex.style.display='block';
+  document.getElementById('progress-bar').style.width=((cur+1)/qs.length*100)+'%';
+  const nb=document.getElementById('next-btn'); nb.textContent=(cur+1<qs.length)?'Next \u2192':'See my score \u2192'; nb.style.display='inline-block';
+}
+function nextQuestion(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0);} else finish(); }
+function finish(){
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('result-screen').style.display='block';
+  document.getElementById('result-score').textContent='You scored '+score+' / '+qs.length;
+  const pct=score/qs.length; let t,m;
+  if(pct===1){t='\uD83C\uDF1F Perfect!';m='You are a real scientist!';}
+  else if(pct>=0.7){t='\uD83C\uDF89 Great job!';m='Great science knowledge!';}
+  else if(pct>=0.4){t='\uD83D\uDE42 Nice try!';m='Play again to learn more.';}
+  else {t='\uD83C\uDF31 Keep learning!';m='Give it another go \u2014 you will do better!';}
+  document.getElementById('result-title').textContent=t; document.getElementById('result-msg').textContent=m;
+  window.scrollTo(0,0);
+}
+function backToCats(){
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('start-screen').style.display='block';
+  window.scrollTo(0,0);
+}
+buildCats();
+</script>
+  <script src="js/analytics.js"></script>
+  <script src="js/game-fullscreen.js"></script>
+</body>
+</html>

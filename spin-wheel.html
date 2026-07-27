@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Spin the Wheel — Free Family Challenge Party Game | Canada Quiz</title>
+<meta name="description" content="Spin the Wheel — a free family party game. Spin for a silly challenge, a talk question, or an advanced brain teaser. No signup, plays on any phone or tablet.">
+<link rel="canonical" href="https://canada-quiz.com/spin-wheel.html">
+<meta property="og:title" content="Spin the Wheel — Free Family Party Game">
+<meta property="og:description" content="Spin for a silly challenge, a talk question, or a brain teaser. Free family party game.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/spin-wheel.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎡</text></svg>">
+<style>
+  .sw-wrap{max-width:560px;margin:0 auto;text-align:center}
+  .sw-mode{display:inline-flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:6px 0}
+  .sw-mode button{padding:8px 14px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
+  .sw-mode button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .sw-stage{position:relative;width:min(88vw,340px);margin:14px auto 6px}
+  .sw-pointer{position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:34px;z-index:3;line-height:1;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+  canvas#wheel{width:100%;height:auto;display:block;border-radius:50%;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+  .sw-result{font-size:20px;font-weight:800;line-height:1.5;background:#f4f6fa;border-radius:14px;padding:18px;margin:12px 0;min-height:28px}
+  .sw-result .lbl{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#7a869a;margin-bottom:6px}
+  .sw-count{font-weight:800;color:#7a869a}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="leaf">🍁</span> Canada Quiz &amp; Family Fun Games</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a><a href="daily.html">Daily</a><a href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🎡 Spin the Wheel</h1>
+    <p>Spin it — then do whatever it lands on!</p>
+  </section>
+  <details class="howto"><summary></summary><p>Sit in a circle and take turns. Tap <b>SPIN</b>, wait for the wheel to stop, and read out the challenge that appears underneath. Do it, or pass to the next player. Pick a pack at the top: <b>Silly Challenges</b> for laughs, <b>Talk Time</b> for questions that get everyone talking, <b>Canada</b> for a maple-flavoured round, or <b>⭐ Advanced</b> for real brain teasers and tricky challenges.</p></details>
+  <div class="panel">
+    <div class="sw-wrap" data-fs-host>
+      <div class="sw-mode" id="modes"></div>
+      <div class="sw-stage">
+        <div class="sw-pointer">🔻</div>
+        <canvas id="wheel" width="600" height="600"></canvas>
+      </div>
+      <div class="center" style="margin:6px 0">
+        <button class="btn btn-lg" id="spinBtn" onclick="spin()">🎡 SPIN</button>
+      </div>
+      <div class="sw-result" id="result"><span class="lbl">Your challenge</span>Tap SPIN to start!</div>
+      <p class="sw-count" id="count"></p>
+      <div class="center"><a class="btn btn-ghost" href="games.html">All Games</a></div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <p>🍁 Canada Quiz &amp; Family Fun Games — free family fun.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+const PACKS={
+ "🤪 Silly Challenges":[
+  "Do your best animal impression — everyone guesses which animal.",
+  "Talk in a robot voice until your next turn.",
+  "Balance a book on your head and walk across the room.",
+  "Sing 'Happy Birthday' like an opera singer.",
+  "Make the funniest face you can and hold it for 10 seconds.",
+  "Do 10 jumping jacks while spelling your name out loud.",
+  "Say the alphabet backwards from J to A.",
+  "Invent a secret handshake with the person on your left.",
+  "Do your best impression of someone in this room.",
+  "Dance with no music for 15 seconds.",
+  "Speak only in questions until your next turn.",
+  "Try to touch your nose with your tongue.",
+  "Make up a 10-second jingle about your favourite food.",
+  "Walk like a penguin to the door and back.",
+  "Tell a joke — if nobody laughs, you spin again!",
+  "Pretend to be a sports commentator describing this room."
+ ],
+ "💬 Talk Time":[
+  "What is the best day you have ever had?",
+  "If you could have any superpower, what would it be and why?",
+  "What is one thing you are really proud of?",
+  "If you could eat only one meal forever, what would it be?",
+  "What is the funniest thing that ever happened to you?",
+  "Which place in the world do you most want to visit?",
+  "What is something new you learned this week?",
+  "If you had $1,000 to give away, who would you give it to?",
+  "What is your favourite family tradition?",
+  "Who is someone you look up to, and why?",
+  "What would you do if you were in charge for one day?",
+  "What is the kindest thing anyone has ever done for you?",
+  "If you could have dinner with anyone, who would it be?",
+  "What is something you want to be really good at one day?",
+  "What makes a good friend?",
+  "What is one thing you would change about your day today?"
+ ],
+ "🍁 Canada Round":[
+  "Name three provinces in 10 seconds.",
+  "Sing the first line of 'O Canada'.",
+  "Name a famous Canadian — everyone else says one fact about them.",
+  "Describe poutine to someone who has never heard of it.",
+  "Name a Canadian animal for each letter in C-A-N-A-D-A.",
+  "Act out a hockey goal celebration.",
+  "Name Canada's capital city — no help allowed!",
+  "Say 'sorry' in the most Canadian way possible.",
+  "Name three things that are red and white.",
+  "Describe a Canadian winter in exactly five words.",
+  "Name a territory of Canada. Bonus point for all three.",
+  "Draw a maple leaf in the air with your finger — everyone judges it."
+ ],
+ "⭐ Advanced Challenges":[
+  "Name 5 countries in Europe in 15 seconds.",
+  "Count backwards from 50 in steps of 3.",
+  "Say a word, then everyone adds a word to build a sentence — you must remember the whole thing.",
+  "Explain how a rainbow forms in under 20 seconds.",
+  "Name one thing for each letter of your first name — no repeats.",
+  "Give a 20-second speech convincing everyone that cereal is a soup.",
+  "Name 6 planets in order from the Sun.",
+  "Do a tongue twister three times fast: 'red lorry, yellow lorry'.",
+  "Name a country for each of the five continents you choose.",
+  "Describe your day today using only three words.",
+  "Multiply your age by 7, then subtract 12 — out loud, no phone.",
+  "Name 5 things in this room that start with the same letter.",
+  "Teach everyone one word in another language and use it in a sentence.",
+  "Argue the opposite of your real opinion on pineapple pizza for 20 seconds.",
+  "Name 4 Canadian prime ministers.",
+  "Spell 'Saskatchewan' out loud without looking."
+ ]
+};
+const SLICE_COLORS=["#e63946","#f4a261","#ffd23f","#2a9d8f","#4895ef","#7b2cbf","#ef476f","#06d6a0"];
+const SLICES=8;
+let level=Object.keys(PACKS)[0];
+let angle=0, spinning=false, used={}, spins=0;
+let cv,ctx;
+
+function buildModes(){
+  const box=document.getElementById('modes'); box.innerHTML='';
+  Object.keys(PACKS).forEach(m=>{
+    const b=document.createElement('button'); b.textContent=m;
+    if(m===level) b.classList.add('on');
+    b.onclick=()=>{ if(spinning) return; level=m; buildModes(); drawWheel();
+      document.getElementById('result').innerHTML='<span class="lbl">Your challenge</span>Tap SPIN to start!'; };
+    box.appendChild(b);
+  });
+}
+function drawWheel(){
+  const R=cv.width/2, step=Math.PI*2/SLICES;
+  ctx.clearRect(0,0,cv.width,cv.height);
+  ctx.save(); ctx.translate(R,R); ctx.rotate(angle);
+  for(let i=0;i<SLICES;i++){
+    ctx.beginPath(); ctx.moveTo(0,0);
+    ctx.arc(0,0,R-8,i*step-Math.PI/2-step/2,(i+1)*step-Math.PI/2-step/2);
+    ctx.closePath();
+    ctx.fillStyle=SLICE_COLORS[i%SLICE_COLORS.length]; ctx.fill();
+    ctx.strokeStyle='#ffffff'; ctx.lineWidth=4; ctx.stroke();
+    ctx.save();
+    ctx.rotate(i*step-Math.PI/2);
+    ctx.fillStyle='#ffffff'; ctx.font='700 44px system-ui,-apple-system,Segoe UI,sans-serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText('★', R*0.62, 0);
+    ctx.restore();
+  }
+  ctx.restore();
+  // hub
+  ctx.beginPath(); ctx.arc(R,R,R*0.16,0,Math.PI*2);
+  ctx.fillStyle='#ffffff'; ctx.fill();
+  ctx.strokeStyle='#e9edf3'; ctx.lineWidth=6; ctx.stroke();
+  ctx.fillStyle='#111'; ctx.font='700 46px system-ui,-apple-system,Segoe UI,sans-serif';
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('🍁',R,R+2);
+}
+function nextItem(){
+  const pool=PACKS[level];
+  if(!used[level]) used[level]=[];
+  if(used[level].length>=pool.length) used[level]=[];
+  const left=pool.map((_,i)=>i).filter(i=>used[level].indexOf(i)===-1);
+  const idx=left[Math.floor(Math.random()*left.length)];
+  used[level].push(idx);
+  return pool[idx];
+}
+function spin(){
+  if(spinning) return;
+  spinning=true;
+  document.getElementById('spinBtn').disabled=true;
+  document.getElementById('result').innerHTML='<span class="lbl">Spinning…</span>🎡';
+  const turns=4+Math.random()*3;
+  const target=angle+turns*Math.PI*2;
+  const start=angle, dur=2600;
+  let t0=null;
+  function frame(ts){
+    if(t0===null) t0=ts;
+    const p=Math.min(1,(ts-t0)/dur);
+    const eased=1-Math.pow(1-p,3);
+    angle=start+(target-start)*eased;
+    drawWheel();
+    if(p<1){ requestAnimationFrame(frame); }
+    else{
+      spinning=false;
+      document.getElementById('spinBtn').disabled=false;
+      spins++;
+      document.getElementById('result').innerHTML='<span class="lbl">Your challenge</span>'+nextItem();
+      document.getElementById('count').textContent='Spins this round: '+spins;
+    }
+  }
+  requestAnimationFrame(frame);
+}
+cv=document.getElementById('wheel'); ctx=cv.getContext('2d');
+buildModes(); drawWheel();
+</script>
+  <script src="js/analytics.js"></script>
+  <script src="js/game-fullscreen.js"></script>
+</body>
+</html>
