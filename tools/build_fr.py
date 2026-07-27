@@ -99,6 +99,13 @@ def fix_tag(tag, page):
 
         # 1. asset paths need one level up, because we are inside /fr/
         if k in ("src", "href") and (val.startswith(ASSET_DIRS) or val in ASSET_FILES):
+            # if a French twin of the picture exists (name-fr.svg), use it,
+            # so pictures with words inside them read in French too
+            base, ext = os.path.splitext(val)
+            twin = base + "-fr" + ext
+            if ext.lower() in (".svg", ".png", ".jpg", ".webp") and \
+               os.path.exists(os.path.join(ROOT, twin)):
+                return '%s="../%s"' % (key, twin)
             return '%s="../%s"' % (key, val)
 
         # 2. words the reader can see

@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 600" width="720" height="600"
+     role="img" aria-label="A Canadian landscape with mountains, a lake, pine trees, a waving Canadian flag, a quiz card, school books and a trophy">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#dcefff"/><stop offset=".62" stop-color="#eef7ff"/><stop offset="1" stop-color="#fdf6e6"/>
+  </linearGradient>
+  <linearGradient id="mtnBack" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#a8c2e8"/><stop offset="1" stop-color="#8aa9d6"/>
+  </linearGradient>
+  <linearGradient id="mtnFront" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#8fb0dd"/><stop offset="1" stop-color="#6f92c4"/>
+  </linearGradient>
+  <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#bfe4f5"/><stop offset="1" stop-color="#8fcbe6"/>
+  </linearGradient>
+  <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#7fc26b"/><stop offset="1" stop-color="#5aa84f"/>
+  </linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffd85e"/><stop offset="1" stop-color="#f0a500"/>
+  </linearGradient>
+  <clipPath id="round"><rect width="720" height="600" rx="30"/></clipPath>
+  <clipPath id="flagClip"><path d="M431,130 C471,126 511,136 551,130 C567,127 575,125 581,124 L581,220 C575,221 567,223 551,226 C511,232 471,222 431,226 Z"/></clipPath>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#2b2d42" flood-opacity=".18"/>
+  </filter>
+  <style>
+    .flag{transform-origin:431px 178px;animation:wave 3.6s ease-in-out infinite}
+    @keyframes wave{
+      0%,100%{transform:skewY(0deg) scaleX(1)}
+      25%    {transform:skewY(-2deg)  scaleX(.982)}
+      50%    {transform:skewY(0deg)   scaleX(1)}
+      75%    {transform:skewY(2deg)   scaleX(.982)}
+    }
+    .rip{animation:rip 3.6s linear infinite}
+    .rip2{animation:rip 3.6s linear infinite;animation-delay:-1.8s}
+    @keyframes rip{0%{transform:translateX(-70px)}100%{transform:translateX(180px)}}
+    .cloud{animation:drift 26s ease-in-out infinite}
+    .cloud2{animation:drift 34s ease-in-out infinite;animation-delay:-9s}
+    @keyframes drift{0%,100%{transform:translateX(0)}50%{transform:translateX(26px)}}
+    .sunray{transform-origin:612px 96px;animation:spin 42s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .bob{transform-origin:center;animation:bob 4.2s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @media (prefers-reduced-motion:reduce){
+      .flag,.rip,.rip2,.cloud,.cloud2,.sunray,.bob{animation:none}
+    }
+  </style>
+</defs>
+
+<g clip-path="url(#round)">
+
+  <!-- ===== sky ===== -->
+  <rect width="720" height="600" fill="url(#sky)"/>
+
+  <!-- sun -->
+  <g class="sunray" opacity=".85">
+    <g fill="#ffd166" opacity=".9">
+      <rect x="608" y="26" width="8" height="26" rx="4"/>
+      <rect x="608" y="140" width="8" height="26" rx="4"/>
+      <rect x="542" y="92" width="26" height="8" rx="4"/>
+      <rect x="656" y="92" width="26" height="8" rx="4"/>
+      <rect x="561" y="45" width="8" height="26" rx="4" transform="rotate(-45 565 58)"/>
+      <rect x="655" y="121" width="8" height="26" rx="4" transform="rotate(-45 659 134)"/>
+      <rect x="655" y="45" width="8" height="26" rx="4" transform="rotate(45 659 58)"/>
+      <rect x="561" y="121" width="8" height="26" rx="4" transform="rotate(45 565 134)"/>
+    </g>
+  </g>
+  <circle cx="612" cy="96" r="46" fill="#ffe6a6" opacity=".6"/>
+  <circle cx="612" cy="96" r="34" fill="#ffc93c"/>
+
+  <!-- clouds -->
+  <g class="cloud" fill="#ffffff" opacity=".95">
+    <ellipse cx="128" cy="86" rx="46" ry="24"/><ellipse cx="168" cy="92" rx="34" ry="19"/><ellipse cx="94" cy="96" rx="30" ry="16"/>
+  </g>
+  <g class="cloud2" fill="#ffffff" opacity=".8">
+    <ellipse cx="300" cy="52" rx="36" ry="18"/><ellipse cx="332" cy="58" rx="26" ry="14"/><ellipse cx="272" cy="60" rx="22" ry="12"/>
+  </g>
+
+  <!-- birds -->
+  <g stroke="#5f6b7a" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7">
+    <path d="M196 150 q9 -8 18 0 q9 -8 18 0"/>
+    <path d="M248 128 q7 -6 14 0 q7 -6 14 0"/>
+  </g>
+
+  <!-- ===== mountains ===== -->
+  <path fill="url(#mtnBack)" d="M-20 330 L70 196 L140 262 L214 168 L300 296 L360 236 L430 316 L520 250 L600 318 L740 240 L740 340 L-20 340 Z"/>
+  <path fill="#ffffff" opacity=".92" d="M214 168 L246 208 L228 202 L214 212 L200 200 L184 206 Z"/>
+  <path fill="#ffffff" opacity=".92" d="M70 196 L98 232 L84 226 L70 236 L58 226 L44 232 Z"/>
+  <path fill="url(#mtnFront)" d="M-20 344 L96 244 L182 320 L262 236 L354 330 L440 268 L540 344 L640 282 L740 348 L740 372 L-20 372 Z"/>
+  <path fill="#ffffff" opacity=".9" d="M262 236 L292 272 L276 266 L262 276 L248 266 L234 272 Z"/>
+  <path fill="#ffffff" opacity=".9" d="M640 282 L664 312 L652 307 L640 315 L628 307 L616 312 Z"/>
+
+  <!-- ===== lake ===== -->
+  <path fill="url(#lake)" d="M-20 348 L740 348 L740 402 L-20 402 Z"/>
+  <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".6">
+    <path d="M60 368 h48"/><path d="M150 382 h64"/><path d="M300 366 h44"/>
+    <path d="M470 384 h58"/><path d="M600 368 h50"/>
+  </g>
+
+  <!-- ===== hills ===== -->
+  <path fill="url(#hill)" d="M-20 400 Q120 372 260 400 Q400 428 540 398 Q640 376 740 402 L740 620 L-20 620 Z"/>
+  <path fill="#6bb55c" opacity=".55" d="M-20 452 Q160 424 340 452 Q520 480 740 444 L740 620 L-20 620 Z"/>
+
+  <!-- ===== pine trees ===== -->
+  <g>
+    <g transform="translate(48,300) scale(1.15)">
+      <rect x="-6" y="86" width="12" height="26" rx="4" fill="#8a5a3b"/>
+      <path d="M0 0 L34 52 L18 52 L44 92 L-44 92 L-18 52 L-34 52 Z" fill="#2f7d4f"/>
+    </g>
+    <g transform="translate(116,326) scale(.9)">
+      <rect x="-6" y="86" width="12" height="26" rx="4" fill="#8a5a3b"/>
+      <path d="M0 0 L34 52 L18 52 L44 92 L-44 92 L-18 52 L-34 52 Z" fill="#3a8f5c"/>
+    </g>
+    <g transform="translate(690,318) scale(1.05)">
+      <rect x="-6" y="86" width="12" height="26" rx="4" fill="#8a5a3b"/>
+      <path d="M0 0 L34 52 L18 52 L44 92 L-44 92 L-18 52 L-34 52 Z" fill="#2f7d4f"/>
+    </g>
+    <g transform="translate(638,344) scale(.8)">
+      <rect x="-6" y="86" width="12" height="26" rx="4" fill="#8a5a3b"/>
+      <path d="M0 0 L34 52 L18 52 L44 92 L-44 92 L-18 52 L-34 52 Z" fill="#3a8f5c"/>
+    </g>
+  </g>
+
+  <!-- moose -->
+  <g fill="#7b5a3a" opacity=".92" transform="translate(140,344) scale(.5)">
+    <path d="M4 8 L-4 -14 L-16 -8 L-10 -22 L-24 -20 L-12 -32 M40 8 L48 -14 L60 -8 L54 -22 L68 -20 L56 -32"
+          stroke="#7b5a3a" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="22" cy="16" rx="20" ry="16"/>
+    <rect x="34" y="22" width="60" height="34" rx="16"/>
+    <rect x="42" y="52" width="9" height="26" rx="4"/><rect x="80" y="52" width="9" height="26" rx="4"/>
+  </g>
+
+  <!-- ===== flag ===== -->
+  <rect x="424" y="118" width="9" height="300" rx="4" fill="#3b4252"/>
+  <circle cx="428" cy="116" r="8" fill="#2b2d42"/>
+  <g class="flag">
+    <g clip-path="url(#flagClip)">
+      <rect x="424" y="118" width="160" height="116" fill="#ffffff"/>
+      <rect x="424" y="118" width="41" height="116" fill="#e63946"/>
+      <rect x="544" y="118" width="42" height="116" fill="#e63946"/>
+      <g transform="translate(466,142) scale(.6)">
+        <path d="M64.00,15.48 L70.42,27.13 L76.98,25.80 L73.60,42.21 L92.85,33.22 L89.88,42.89 L104.40,47.11 L90.00,56.32 L92.40,62.57 L67.86,70.08 L67.86,98.64 L64.50,100.32 L60.14,98.64 L60.14,70.08 L35.60,62.57 L38.00,56.32 L23.60,47.11 L38.12,42.89 L35.15,33.22 L54.40,42.21 L51.02,25.80 L57.58,27.13 Z"
+              fill="#e63946" stroke="#e63946" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+      </g>
+      <rect class="rip"  x="424" y="112" width="26" height="128" fill="#2b2d42" opacity=".07"/>
+      <rect class="rip2" x="424" y="112" width="18" height="128" fill="#ffffff" opacity=".22"/>
+    </g>
+  </g>
+
+  <!-- ===== books ===== -->
+  <g filter="url(#soft)">
+    <g font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#ffffff">
+      <rect x="168" y="392" width="158" height="28" rx="7" fill="#8e7dbe"/>
+      <text x="247" y="411" text-anchor="middle">HISTORY</text>
+      <rect x="162" y="422" width="164" height="28" rx="7" fill="#4895ef"/>
+      <text x="244" y="441" text-anchor="middle">SCIENCE</text>
+      <rect x="166" y="452" width="160" height="28" rx="7" fill="#2a9d8f"/>
+      <text x="246" y="471" text-anchor="middle">WORLD</text>
+      <rect x="160" y="482" width="166" height="28" rx="7" fill="#f4845f"/>
+      <text x="243" y="501" text-anchor="middle">CANADA</text>
+    </g>
+  </g>
+
+  <!-- lightbulb -->
+  <g transform="translate(92,486)"><g class="bob">
+    <g filter="url(#soft)">
+      <circle cx="0" cy="0" r="26" fill="url(#gold)"/>
+      <rect x="-10" y="24" width="20" height="9" rx="4" fill="#c9c9c9"/>
+      <rect x="-10" y="35" width="20" height="9" rx="4" fill="#a9a9a9"/>
+      <path d="M-7 -4 q7 -12 14 0 q-3 8 -7 12 q-4 -4 -7 -12 Z" fill="#fff8dc" opacity=".95"/>
+    </g>
+    <g stroke="#ffb703" stroke-width="4" stroke-linecap="round" opacity=".85">
+      <path d="M-40 -18 h-12"/><path d="M40 -18 h12"/><path d="M-30 -42 l-8 -8"/><path d="M30 -42 l8 -8"/><path d="M0 -44 v-12"/>
+    </g>
+  </g></g>
+
+  <!-- ===== quiz card ===== -->
+  <g filter="url(#soft)">
+    <rect x="348" y="326" width="244" height="208" rx="20" fill="#ffffff" stroke="#4895ef" stroke-width="8"/>
+    <rect x="368" y="344" width="204" height="46" rx="13" fill="#4895ef"/>
+    <text x="470" y="368" text-anchor="middle" dominant-baseline="central"
+          font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="30" font-weight="800" fill="#ffffff">?</text>
+    <g font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="800" fill="#ffffff">
+      <circle cx="390" cy="412" r="14" fill="#e63946"/><text x="390" y="413" text-anchor="middle" dominant-baseline="central">A</text>
+      <circle cx="390" cy="444" r="14" fill="#4895ef"/><text x="390" y="445" text-anchor="middle" dominant-baseline="central">B</text>
+      <circle cx="390" cy="476" r="14" fill="#2a9d8f"/><text x="390" y="477" text-anchor="middle" dominant-baseline="central">C</text>
+      <circle cx="390" cy="508" r="14" fill="#ffb703"/><text x="390" y="509" text-anchor="middle" dominant-baseline="central">D</text>
+    </g>
+    <g fill="#e9edf3">
+      <rect x="414" y="405" width="148" height="14" rx="7"/>
+      <rect x="414" y="437" width="130" height="14" rx="7"/>
+      <rect x="414" y="469" width="152" height="14" rx="7"/>
+      <rect x="414" y="501" width="118" height="14" rx="7"/>
+    </g>
+  </g>
+
+  <!-- ===== trophy ===== -->
+  <g transform="translate(642,470)"><g class="bob" filter="url(#soft)">
+    <path d="M-26 -34 h52 v20 a26 26 0 0 1 -52 0 Z" fill="url(#gold)"/>
+    <path d="M-26 -30 h-14 a14 14 0 0 0 14 22 Z" fill="#f0a500"/>
+    <path d="M26 -30 h14 a14 14 0 0 1 -14 22 Z" fill="#f0a500"/>
+    <rect x="-6" y="10" width="12" height="16" rx="3" fill="#f0a500"/>
+    <rect x="-20" y="26" width="40" height="12" rx="5" fill="#e09000"/>
+    <path d="M0 -28 l5 10 h11 l-9 7 3 11 -10 -6 -10 6 3 -11 -9 -7 h11 Z" fill="#fff3c4"/>
+  </g></g>
+
+  <!-- dice -->
+  <g transform="translate(556,506) rotate(-12)" filter="url(#soft)">
+    <rect x="0" y="0" width="48" height="48" rx="12" fill="#ffffff" stroke="#e2e6ee" stroke-width="3"/>
+    <g fill="#8e7dbe">
+      <circle cx="13" cy="13" r="4.5"/><circle cx="35" cy="13" r="4.5"/>
+      <circle cx="24" cy="24" r="4.5"/>
+      <circle cx="13" cy="35" r="4.5"/><circle cx="35" cy="35" r="4.5"/>
+    </g>
+  </g>
+
+  <!-- little maple leaves on the grass -->
+  <g opacity=".9">
+    <g transform="translate(78,516) scale(.2) rotate(-14)">
+      <path d="M64.00,15.48 L70.42,27.13 L76.98,25.80 L73.60,42.21 L92.85,33.22 L89.88,42.89 L104.40,47.11 L90.00,56.32 L92.40,62.57 L67.86,70.08 L67.86,98.64 L64.50,100.32 L60.14,98.64 L60.14,70.08 L35.60,62.57 L38.00,56.32 L23.60,47.11 L38.12,42.89 L35.15,33.22 L54.40,42.21 L51.02,25.80 L57.58,27.13 Z" fill="#e63946"/>
+    </g>
+    <g transform="translate(676,538) scale(.17) rotate(18)">
+      <path d="M64.00,15.48 L70.42,27.13 L76.98,25.80 L73.60,42.21 L92.85,33.22 L89.88,42.89 L104.40,47.11 L90.00,56.32 L92.40,62.57 L67.86,70.08 L67.86,98.64 L64.50,100.32 L60.14,98.64 L60.14,70.08 L35.60,62.57 L38.00,56.32 L23.60,47.11 L38.12,42.89 L35.15,33.22 L54.40,42.21 L51.02,25.80 L57.58,27.13 Z" fill="#f4845f"/>
+    </g>
+  </g>
+
+</g>
+</svg>
