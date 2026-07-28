@@ -35,6 +35,7 @@ NAV = [
     ("quizzes.html",     "Quizzes"),
     ("games.html",       "Family Games"),
     ("citizenship.html", "Citizenship"),
+    ("driving-test.html",  "Driving Test"),
     ("daily.html",       "Daily"),
     ("blog.html",        "Blog"),
 ]

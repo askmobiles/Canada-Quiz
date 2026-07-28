@@ -38,6 +38,7 @@
     { href: "quizzes.html",     label: "Quizzes" },
     { href: "games.html",       label: "Family Games" },
     { href: "citizenship.html", label: "Citizenship" },
+    { href: "driving-test.html", label: "Driving Test" },
     { href: "daily.html",       label: "Daily" },
     { href: "blog.html",        label: "Blog" }
   ];
