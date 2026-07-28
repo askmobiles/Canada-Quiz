@@ -11,11 +11,12 @@
 <meta property="og:url" content="https://canada-quiz.com/fr/spin-wheel.html">
 <meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../css/style.css?v=20260727">
+<link rel="stylesheet" href="../css/style.css?v=20260728">
 <style>
   .sw-wrap{max-width:560px;margin:0 auto;text-align:center}
   .sw-mode{display:inline-flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:6px 0}
-  .sw-mode button{padding:8px 14px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
+  .sw-mode button{padding:7px 12px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink);font-size:14px}
+  @media(max-width:520px){.sw-mode button{padding:6px 10px;font-size:13px}}
   .sw-mode button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
   .sw-stage{position:relative;width:min(88vw,340px);margin:14px auto 6px}
   .sw-pointer{position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:34px;z-index:3;line-height:1;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
@@ -52,7 +53,7 @@
     <h1>🎡 Tourne la roue</h1>
     <p>Fais-la tourner — puis fais ce sur quoi elle s'arrête !</p>
   </section>
-  <details class="howto"><summary></summary><p>Assoyez-vous en cercle et prenez chacun votre tour. Touche <b>SPIN</b>, attendez que la roue s'arrête, et lisez à voix haute le défi qui apparaît en dessous. Faites-le, ou passez au joueur suivant. Choisissez un ensemble en haut : <b>Défis rigolos</b> pour rire, <b>Temps de parole</b> pour des questions qui font parler tout le monde, <b>Canada</b> pour une manche au goût d'érable, ou <b>⭐ Avancé</b> pour de vrais casse-tête et des défis corsés.</p></details>
+  <details class="howto"><summary></summary><p>Assoyez-vous en cercle et prenez chacun votre tour. Touche <b>SPIN</b>, wait for the wheel to stop, and read out the challenge that appears underneath. Do it, or pass to the next player. Pick a pack at the top — there are fourteen. <b>Défis rigolos</b> et <b>Mime-le</b> pour rire, <b>Temps de parole</b> et <b>Famille et souvenirs</b> pour des questions qui font parler tout le monde, <b>Bouge!</b> quand les enfants ont besoin de se dépenser, <b>Casse-têtes</b>, <b>Jeux de mots</b> et <b>Sprint de 30 secondes</b> pour réfléchir vite, <b>Dessine et crée</b>, <b>Musique et sons</b>, <b>Le monde animal</b>, <b>Autour du monde</b> et <b>Ronde canadienne</b> pour du nouveau à chaque tour, et <b>⭐ Avancé</b> pour les plus corsés. <b>🎲 Tout mélangé</b> combine tous les paquets.</p></details>
   <div class="panel">
     <div class="sw-wrap" data-fs-host>
       <div class="sw-mode" id="modes"></div>
@@ -184,7 +185,13 @@ const PACKS={
   "Make up a 10-second jingle about your favourite food.",
   "Walk like a penguin to the door and back.",
   "Tell a joke — if nobody laughs, you spin again!",
-  "Pretend to be a sports commentator describing this room."
+  "Pretend to be a sports commentator describing this room.",
+  "Laugh like a movie villain for 10 seconds.",
+  "Talk in slow motion until your next turn.",
+  "Give the person on your right a brand new silly nickname.",
+  "Pretend you are a cat for 20 seconds. No words allowed.",
+  "Sneeze in three different funny ways.",
+  "Say your name as if you were a famous news reader."
  ],
  "💬 Talk Time":[
   "What is the best day you have ever had?",
@@ -202,7 +209,13 @@ const PACKS={
   "If you could have dinner with anyone, who would it be?",
   "What is something you want to be really good at one day?",
   "What makes a good friend?",
-  "What is one thing you would change about your day today?"
+  "What is one thing you would change about your day today?",
+  "What is the best gift you have ever been given?",
+  "If you could keep only three things you own, what would they be?",
+  "What job did you want when you were little?",
+  "What is something that always makes you feel better?",
+  "If you could live in any year in history, which one?",
+  "What is one rule you would make for the whole world?"
  ],
  "🍁 Canada Round":[
   "Name three provinces in 10 seconds.",
@@ -216,7 +229,209 @@ const PACKS={
   "Name three things that are red and white.",
   "Describe a Canadian winter in exactly five words.",
   "Name a territory of Canada. Bonus point for all three.",
-  "Draw a maple leaf in the air with your finger — everyone judges it."
+  "Draw a maple leaf in the air with your finger — everyone judges it.",
+  "Name two oceans that touch Canada.",
+  "Act out shovelling snow off a very long driveway.",
+  "Name three Canadian cities that are not in your province.",
+  "Say one word in French that everyone here already knows.",
+  "Name a food Canada is famous for, besides poutine.",
+  "Pretend to be a moose crossing the road.",
+  "Name the two official languages of Canada.",
+  "Tell everyone your favourite thing about living in Canada."
+ ],
+ "🎭 Act It Out":[
+  "Act out brushing your teeth — but you are late for the bus.",
+  "Act out being stuck in a tiny box.",
+  "Act out eating something far too spicy.",
+  "Act out a person carrying twelve grocery bags.",
+  "Act out waking up on the first day of summer holidays.",
+  "Act out a doctor, but do not say a single word.",
+  "Act out fishing and catching a very big fish.",
+  "Act out walking a dog that will not walk.",
+  "Act out opening a present you do not like — but be polite.",
+  "Act out a teacher who cannot find the whiteboard marker.",
+  "Act out being very cold at a bus stop.",
+  "Act out taking a photo of a beautiful mountain.",
+  "Act out a chef who just burned dinner.",
+  "Act out a pilot landing a plane.",
+  "Act out someone trying not to laugh in a quiet room.",
+  "Act out a baby learning to walk.",
+  "Act out a superhero who is scared of heights.",
+  "Act out carrying a very hot cup of tea across the room."
+ ],
+ "🏃 Move It!":[
+  "Do 10 star jumps.",
+  "Balance on one foot for 20 seconds.",
+  "Touch your toes 5 times slowly.",
+  "Hop on one leg to the door and back.",
+  "Hold a plank while everyone counts to 15.",
+  "Do 5 push-ups — knees are allowed!",
+  "Spin around 3 times, then walk in a straight line.",
+  "Do the best dance move you know for 10 seconds.",
+  "Stretch up high, then touch the floor — 5 times.",
+  "March on the spot for 20 seconds.",
+  "Sit down and stand up 5 times without using your hands.",
+  "Pretend to skip with an invisible rope for 15 seconds.",
+  "Walk heel-to-toe across the room like a tightrope.",
+  "Do a slow-motion running race with the person on your left.",
+  "Copy every move the player on your right makes for 15 seconds.",
+  "Reach up and pretend to pick 10 apples from a tree.",
+  "Do 8 arm circles forwards, then 8 backwards.",
+  "Stand up and shake everything out for 10 seconds."
+ ],
+ "🧠 Brain Teasers":[
+  "Name 5 things that are always cold.",
+  "Name 4 things you find in a kitchen that start with S.",
+  "Count from 1 to 20, but clap instead of saying every even number.",
+  "Name 3 things that are heavier than a bicycle.",
+  "What has hands but cannot clap? Say your answer out loud.",
+  "Name 5 things that come in pairs.",
+  "Say the days of the week backwards.",
+  "Name 4 things that are round and can roll.",
+  "Think of a number, double it, add 10, then halve it. Say the answer.",
+  "Name 3 jobs where you wear a uniform.",
+  "Name 5 things you would pack for a snowy trip.",
+  "What gets wetter the more it dries? Say your answer out loud.",
+  "Name 4 things that make noise but are not music.",
+  "Name 3 things that are see-through.",
+  "Say the months of the year in under 10 seconds.",
+  "Name 5 things in a school bag.",
+  "Name 3 things that grow but are not plants.",
+  "Name 4 things that are sticky."
+ ],
+ "🎨 Draw & Create":[
+  "Draw a house in the air with your finger — everyone guesses the shape.",
+  "Draw your family as stick people in 30 seconds.",
+  "Invent a flag for this room and describe it.",
+  "Design a new pizza and give it a name.",
+  "Draw an animal with your eyes closed.",
+  "Invent a new holiday. What day is it and what do people do?",
+  "Make up a new ice cream flavour and describe the taste.",
+  "Draw the person across from you in 20 seconds.",
+  "Invent a machine that does one boring job for you.",
+  "Draw a car from the future.",
+  "Make a hat out of anything nearby and wear it.",
+  "Invent a new sport that uses a chair.",
+  "Draw your favourite food and let everyone guess.",
+  "Design a poster for this game in your head, then describe it.",
+  "Invent a new word and use it in a sentence.",
+  "Build the tallest tower you can with three things near you."
+ ],
+ "🔤 Word Games":[
+  "Say 5 words that rhyme with 'cake'.",
+  "Name a word that starts with every letter of C-A-N-A-D-A.",
+  "Say a sentence where every word starts with the letter B.",
+  "Name 5 words that mean 'happy'.",
+  "Say 'she sells seashells' three times fast.",
+  "Name a word with double letters in it — three times in a row.",
+  "Say a word backwards and let everyone guess it.",
+  "Name 5 animals in alphabetical order.",
+  "Think of the longest word you know and spell it out loud.",
+  "Say 5 words that rhyme with 'snow'.",
+  "Name 4 words that mean the same as 'big'.",
+  "Say 'unique New York' three times fast.",
+  "Name 5 words that end in 'ing'.",
+  "Give a word, and the next player must start a word with its last letter.",
+  "Name 3 words that sound the same but are spelled differently.",
+  "Describe your morning without using the word 'I'.",
+  "Say a compliment using only words that start with S.",
+  "Name 5 words you learned in the last year."
+ ],
+ "👨‍👩‍👧 Family & Memories":[
+  "Tell everyone about your first day at a new school.",
+  "What is a family story that gets told again and again?",
+  "Say one thing you love about each person here.",
+  "What is the best trip your family ever took?",
+  "Tell everyone about a meal you will never forget.",
+  "What did you look like when you were five?",
+  "Who taught you something important? What was it?",
+  "What is a rule in your home that other families might find strange?",
+  "Tell everyone about a time you were very brave.",
+  "What is your happiest memory from last year?",
+  "Which family member makes you laugh the most, and why?",
+  "What smell reminds you of home?",
+  "Tell everyone about a pet you had or wish you had.",
+  "What song reminds you of your family?",
+  "What is one thing you hope your family does together next year?",
+  "Tell everyone about a time you got lost.",
+  "What is the best advice anyone in your family ever gave you?",
+  "Describe your home to someone who has never seen it."
+ ],
+ "🌍 Around the World":[
+  "Name 5 countries in 15 seconds.",
+  "Name a country for each letter in W-O-R-L-D.",
+  "Say hello in three different languages.",
+  "Name 4 countries that are colder than Canada in winter.",
+  "Name 3 famous buildings and the country they are in.",
+  "Name a country you would like to visit and say why.",
+  "Name 5 capital cities.",
+  "Name 3 countries that touch an ocean.",
+  "Name a food from another country and describe it.",
+  "Name 4 continents in 10 seconds.",
+  "Name 3 countries in South America.",
+  "Name a country that is an island.",
+  "Name 3 famous rivers.",
+  "Name a country whose flag has only two colours.",
+  "Name 3 countries where people speak French.",
+  "Describe a country without saying its name — everyone guesses.",
+  "Name the biggest country in the world by land.",
+  "Name 3 things you would need to travel to another country."
+ ],
+ "🐾 Animal Kingdom":[
+  "Make the sound of an animal — everyone guesses.",
+  "Name 5 animals that live in the water.",
+  "Name 4 animals that can fly but are not birds… or try!",
+  "Name an animal for each colour: black, white, brown, grey.",
+  "Move across the room like your favourite animal.",
+  "Name 5 animals bigger than a person.",
+  "Name 3 animals that sleep all winter.",
+  "Name 4 farm animals and what we get from each.",
+  "Name 5 animals that live in Canada.",
+  "Describe an animal without naming it — everyone guesses.",
+  "Name 3 animals with stripes.",
+  "Name an animal you are a little bit scared of, and why.",
+  "Name 4 baby animal names, like puppy and kitten.",
+  "Name 3 animals that can climb trees.",
+  "If you could be any animal for one day, which one and why?",
+  "Name 5 insects."
+ ],
+ "⏱ 30-Second Sprint":[
+  "Name as many colours as you can in 30 seconds.",
+  "Name as many fruits as you can in 30 seconds.",
+  "Name as many things in this room as you can in 30 seconds.",
+  "Name as many sports as you can in 30 seconds.",
+  "Name as many countries as you can in 30 seconds.",
+  "Name as many jobs as you can in 30 seconds.",
+  "Name as many things that are blue as you can in 30 seconds.",
+  "Name as many vegetables as you can in 30 seconds.",
+  "Name as many cartoon characters as you can in 30 seconds.",
+  "Name as many things in a kitchen as you can in 30 seconds.",
+  "Name as many words starting with T as you can in 30 seconds.",
+  "Name as many things you can wear as you can in 30 seconds.",
+  "Name as many Canadian cities as you can in 30 seconds.",
+  "Name as many things with wheels as you can in 30 seconds.",
+  "Name as many drinks as you can in 30 seconds.",
+  "Name as many school subjects as you can in 30 seconds.",
+  "Name as many things in a garden as you can in 30 seconds.",
+  "Name as many musical instruments as you can in 30 seconds."
+ ],
+ "🎵 Music & Sound":[
+  "Hum a song — everyone tries to guess it.",
+  "Clap a rhythm and let everyone copy it.",
+  "Sing any song using only the word 'la'.",
+  "Name 5 musical instruments.",
+  "Sing the first line of your favourite song.",
+  "Make a beat using only your hands and the table.",
+  "Name a song everyone in this room knows.",
+  "Sing a song in a whisper — everyone guesses it.",
+  "Make three different sounds with your mouth.",
+  "Name 4 songs with a colour in the title.",
+  "Sing 'Twinkle Twinkle Little Star' as slowly as you can.",
+  "Copy the sound of rain, then wind, then thunder.",
+  "Name a singer everyone here has heard of.",
+  "Make up a two-line song about the person on your left.",
+  "Tap out the rhythm of a song — everyone guesses.",
+  "Sing your name as if it were an opera."
  ],
  "⭐ Advanced Challenges":[
   "Name 5 countries in Europe in 15 seconds.",
@@ -234,9 +449,17 @@ const PACKS={
   "Teach everyone one word in another language and use it in a sentence.",
   "Argue the opposite of your real opinion on pineapple pizza for 20 seconds.",
   "Name 4 Canadian prime ministers.",
-  "Spell 'Saskatchewan' out loud without looking."
+  "Spell 'Saskatchewan' out loud without looking.",
+  "Explain why the sky is blue in under 20 seconds.",
+  "Say the alphabet, skipping every vowel.",
+  "Name 5 things invented in the last 100 years.",
+  "Explain your favourite game to someone who has never played it — in 30 seconds.",
+  "Name 3 things that would be different if gravity were half as strong.",
+  "Tell a complete story with a beginning, middle and end in 30 seconds."
  ]
 };
+// A mixed pack that pulls from every other pack — good for big groups.
+PACKS["🎲 Everything"]=Object.keys(PACKS).reduce((all,k)=>all.concat(PACKS[k]),[]);
 const SLICE_COLORS=["#e63946","#f4a261","#ffd23f","#2a9d8f","#4895ef","#7b2cbf","#ef476f","#06d6a0"];
 const SLICES=8;
 let level=Object.keys(PACKS)[0];
@@ -253,6 +476,11 @@ function buildModes(){
     box.appendChild(b);
   });
 }
+// the little picture painted on every slice = the emoji in front of the pack name
+function packEmoji(){
+  const first=(level||'').split(' ')[0];
+  return first && !/^[A-Za-z0-9]/.test(first) ? first : '★';
+}
 function drawWheel(){
   const R=cv.width/2, step=Math.PI*2/SLICES;
   ctx.clearRect(0,0,cv.width,cv.height);
@@ -267,7 +495,7 @@ function drawWheel(){
     ctx.rotate(i*step-Math.PI/2);
     ctx.fillStyle='#ffffff'; ctx.font='700 44px system-ui,-apple-system,Segoe UI,sans-serif';
     ctx.textAlign='center'; ctx.textBaseline='middle';
-    ctx.fillText('★', R*0.62, 0);
+    ctx.fillText(packEmoji(), R*0.62, 0);
     ctx.restore();
   }
   ctx.restore();
@@ -316,8 +544,8 @@ function spin(){
 cv=document.getElementById('wheel'); ctx=cv.getContext('2d');
 buildModes(); drawWheel();
 </script>
-  <script src="../js/site.js?v=20260727"></script>
-  <script src="../js/analytics.js?v=20260727"></script>
+  <script src="../js/site.js?v=20260728"></script>
+  <script src="../js/analytics.js?v=20260728"></script>
   <script src="../js/game-fullscreen.js"></script>
 </body>
 </html>
