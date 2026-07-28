@@ -42,7 +42,8 @@
         ["piano-tiles.html", "Piano Tiles"],
         ["tictactoe.html", "Tic-Tac-Toe"],
         ["checkers.html", "Checkers"],
-        ["inukshuk.html", "Inukshuk Builder"]
+        ["inukshuk.html", "Inukshuk Builder"],
+        ["tag.html", "Tag"]
       ]
     },
     {

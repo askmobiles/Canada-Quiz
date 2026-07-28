@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tag — Family Games</title>
+<meta name="description" content="Free two-player Tag game for kids and families. Move, jump and grab power-ups on any phone.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=20260729">
+<style>
+  /* ---- Tag game — scoped styles (prefix .tag-) ---- */
+  .tag-stage{
+    position:relative;
+    width:100%;
+    max-width:760px;
+    margin:6px auto 0;
+    border-radius:14px;
+    overflow:hidden;
+    background:var(--bg);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    touch-action:none;
+  }
+  .tag-canvas{ display:block; width:100%; height:auto; background:var(--bg); }
+  .tag-hud{
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+    font-weight:800; margin:2px 0 6px;
+  }
+  .tag-chip{
+    background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:5px 12px; font-size:15px; color:var(--ink);
+  }
+  .tag-chip.p1{ color:var(--blue); }
+  .tag-chip.p2{ color:var(--red); }
+  .tag-chip.clock{ color:var(--ink); }
+
+  /* On-screen touch pads (inside stage so they show in full screen too) */
+  .tag-pad{ position:absolute; bottom:12px; display:flex; gap:10px; align-items:flex-end; }
+  .tag-pad.left{ left:12px; }
+  .tag-pad.right{ right:12px; }
+  .tag-key{
+    width:56px; height:56px; border-radius:50%;
+    background:rgba(255,255,255,.72); border:2px solid var(--line);
+    color:var(--ink); font-size:22px; font-weight:900;
+    display:flex; align-items:center; justify-content:center;
+    touch-action:none; user-select:none; box-shadow:var(--shadow);
+  }
+  .tag-key.jump{ width:66px; height:66px; }
+  .tag-key:active{ background:#fff; transform:translateY(2px); }
+  .tag-pad.left .tag-key{ border-color:var(--blue); }
+  .tag-pad.right .tag-key{ border-color:var(--red); }
+
+  /* Start / result panel over the stage */
+  .tag-cover{
+    position:absolute; inset:0; z-index:4;
+    background:rgba(43,45,66,.86); color:#fff;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:12px; text-align:center; padding:20px;
+  }
+  .tag-cover h2{ font-size:clamp(24px,6vw,34px); color:var(--yellow); margin:0; }
+  .tag-cover p{ margin:0; max-width:460px; line-height:1.5; font-size:clamp(14px,3.2vw,16px); color:#f4f2ee; }
+  .tag-cover .tag-score b.p1{ color:var(--blue); }
+  .tag-cover .tag-score b.p2{ color:#ff9aa6; }
+  .tag-hide{ display:none !important; }
+
+  .tag-rotate{
+    position:absolute; inset:0; z-index:6;
+    background:var(--ink); color:#fff;
+    display:none; flex-direction:column; align-items:center; justify-content:center;
+    gap:10px; text-align:center; padding:20px;
+  }
+  .tag-rotate.show{ display:flex; }
+  .tag-rotate .ic{ font-size:44px; }
+</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/tag.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/tag.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/tag.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/tag.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🍁 Tag</h1>
+    <p>A fun chase game for two players. Tag your friend to pass it on!</p>
+    <details class="howto"><summary></summary><p>One player is IT, shown with an arrow. Move and jump across the platforms. If you are IT, touch the other player to pass it on. Grab power-ups to help you. When time runs out, the player who was IT for less time wins.</p></details>
+  </section>
+
+  <div class="panel center" data-fs-host>
+    <div class="tag-hud">
+      <span class="tag-chip p1">🟦 <span>Blue</span> <span data-no-i18n id="tagS1">0.0</span>s</span>
+      <span class="tag-chip clock">⏱ <span data-no-i18n id="tagClock">60</span></span>
+      <span class="tag-chip p2">🟥 <span>Red</span> <span data-no-i18n id="tagS2">0.0</span>s</span>
+    </div>
+
+    <div class="tag-stage" id="tagStage">
+      <canvas class="tag-canvas" id="tagCanvas" width="760" height="440"></canvas>
+
+      <!-- touch controls -->
+      <div class="tag-pad left" data-no-i18n>
+        <div class="tag-key" data-player="blue" data-act="left">◀</div>
+        <div class="tag-key" data-player="blue" data-act="right">▶</div>
+        <div class="tag-key jump" data-player="blue" data-act="jump">⬆</div>
+      </div>
+      <div class="tag-pad right" data-no-i18n>
+        <div class="tag-key jump" data-player="red" data-act="jump">⬆</div>
+        <div class="tag-key" data-player="red" data-act="left">◀</div>
+        <div class="tag-key" data-player="red" data-act="right">▶</div>
+      </div>
+
+      <!-- rotate hint -->
+      <div class="tag-rotate" id="tagRotate">
+        <div class="ic" data-no-i18n>📱</div>
+        <p style="font-weight:800;color:var(--yellow)">Please turn your phone</p>
+        <p>Tag is a two-player game. Turn sideways so you both fit.</p>
+      </div>
+
+      <!-- start / result cover -->
+      <div class="tag-cover" id="tagCover">
+        <h2 id="tagTitle">Tag</h2>
+        <p>Two players. One is IT and must touch the other to pass it on. Jump across the platforms and grab power-ups!</p>
+        <p>The player who was IT for less time wins.</p>
+        <p id="tagScoreLine" class="tag-score tag-hide"></p>
+        <p style="font-size:14px;color:#d7d3ea">Blue: move with the buttons on the left. Red: move with the buttons on the right. On a computer: Blue uses A, D and W. Red uses the arrow keys.</p>
+        <button class="btn btn-yellow" id="tagStartBtn">Start Game</button>
+      </div>
+    </div>
+
+    <div style="margin-top:14px">
+      <button class="btn" onclick="tagStart()">New Game</button>
+      <a class="btn btn-ghost" href="games.html">All Games</a>
+    </div>
+    <p class="muted" style="margin-top:10px;font-size:14px">Power-ups: Speed, Super Jump, Shield, and Freeze.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <details class="footer-map">
+      <summary>All pages <span class="fm-count">(66)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <h4>Quizzes</h4>
+        <a href="quizzes.html">All Quizzes</a>
+        <a href="gk-quiz.html">General Knowledge</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Fun Canada Quiz</a>
+        <a href="province-quiz.html">Which Province Are You?</a>
+        <a href="world-quiz.html">World Quiz</a>
+        <a href="science-quiz.html">Science &amp; Space</a>
+        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
+        <a href="citizenship.html">Citizenship Test Practice</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Brain &amp; Puzzle Games</h4>
+        <a href="word-master.html">Word Master</a>
+        <a href="word-search.html">Word Search</a>
+        <a href="word-guess.html">Word Guess</a>
+        <a href="scramble.html">Word Scramble</a>
+        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="crossword.html">Crossword</a>
+        <a href="connections.html">Word Groups</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Minesweeper</a>
+        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Memory Match</a>
+        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="typing-test.html">Typing Speed Test</a>
+        <a href="color-match.html">Color Match</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Action &amp; Classic Games</h4>
+        <a href="snake.html">Maple Snake</a>
+        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
+        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="checkers.html">Checkers</a>
+        <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="tag.html">Tag</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Party Games</h4>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposter</a>
+        <a href="would-you-rather.html">Would You Rather?</a>
+        <a href="trivia-showdown.html">Trivia Showdown</a>
+        <a href="hold-to-head.html">Hold to Head</a>
+        <a href="top-answers.html">Top Answers</a>
+        <a href="categories-game.html">Categories</a>
+        <a href="story-maker.html">Story Maker</a>
+        <a href="draw-it.html">Draw It</a>
+        <a href="spin-wheel.html">Spin the Wheel</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Blog</h4>
+        <a href="blog.html">All Articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
+        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
+        <a href="what-is-confederation.html">What Is Confederation?</a>
+        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
+        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
+        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
+        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
+        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
+        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
+        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
+        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
+        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
+        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>The Site</h4>
+        <a href="index.html">Home</a>
+        <a href="daily.html">Daily Challenge</a>
+        <a href="games.html">All Family Games</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var cv = document.getElementById('tagCanvas');
+  var ctx = cv.getContext('2d');
+  var W = cv.width, H = cv.height;
+
+  // read brand colours from CSS variables (never hard-code hex)
+  var css = getComputedStyle(document.documentElement);
+  function V(name){ return css.getPropertyValue(name).trim(); }
+  var COL = {
+    blue:V('--blue'), red:V('--red'), ink:V('--ink'), yellow:V('--yellow'),
+    green:V('--green'), purple:V('--purple'), orange:V('--orange'),
+    bg:V('--bg'), card:V('--card'), muted:V('--muted')
+  };
+
+  var GRAVITY=0.7, MOVE=0.9, FRICTION=0.82, MAX_SPEED=6, JUMP=13.5;
+  var ROUND_TIME=60, TAG_COOLDOWN=1.2;
+
+  var platforms=[
+    {x:0,   y:410, w:760, h:30},
+    {x:90,  y:330, w:150, h:16},
+    {x:520, y:330, w:150, h:16},
+    {x:300, y:262, w:160, h:16},
+    {x:40,  y:186, w:130, h:16},
+    {x:590, y:186, w:130, h:16},
+    {x:315, y:120, w:130, h:16}
+  ];
+
+  function mkPlayer(x, col){
+    return {x:x,y:90,w:32,h:32,vx:0,vy:0,onGround:false,col:col,
+            iLeft:false,iRight:false,jump:false,facing:1,itTime:0,
+            speedT:0,jumpT:0,shieldT:0,frozenT:0};
+  }
+  var blue, red, itIsBlue, powerups, clock, running=false, lastT=0, spawnT=0, tagCD=0;
+
+  var PU=['speed','jump','shield','freeze'];
+  var PU_ICON={speed:'⚡',jump:'⬆',shield:'🛡',freeze:'❄'};
+  var PU_COL={speed:COL.yellow,jump:COL.green,shield:COL.blue,freeze:COL.purple};
+
+  // ---- input (keyboard) ----
+  function setKey(e,down){
+    var k=e.key.toLowerCase(), used=true;
+    if(k==='a') blue.iLeft=down;
+    else if(k==='d') blue.iRight=down;
+    else if(k==='w'){ if(down) blue.jump=true; }
+    else if(k==='arrowleft') red.iLeft=down;
+    else if(k==='arrowright') red.iRight=down;
+    else if(k==='arrowup'){ if(down) red.jump=true; }
+    else used=false;
+    if(used) e.preventDefault();
+  }
+  document.addEventListener('keydown', function(e){ if(e.repeat) return; if(running) setKey(e,true); });
+  document.addEventListener('keyup', function(e){ if(running) setKey(e,false); });
+
+  // ---- input (touch / pointer) — ONE handler per button ----
+  var pads=document.querySelectorAll('#tagStage .tag-key');
+  pads.forEach(function(btn){
+    var who=btn.getAttribute('data-player'), act=btn.getAttribute('data-act');
+    function down(e){ e.preventDefault(); var p=(who==='blue')?blue:red;
+      if(act==='left') p.iLeft=true; else if(act==='right') p.iRight=true; else p.jump=true; }
+    function up(e){ e.preventDefault(); var p=(who==='blue')?blue:red;
+      if(act==='left') p.iLeft=false; else if(act==='right') p.iRight=false; }
+    btn.addEventListener('pointerdown',down);
+    btn.addEventListener('pointerup',up);
+    btn.addEventListener('pointercancel',up);
+    btn.addEventListener('pointerleave',up);
+  });
+
+  function reset(){
+    blue=mkPlayer(120,COL.blue); red=mkPlayer(608,COL.red);
+    itIsBlue=Math.random()<0.5; powerups=[]; clock=ROUND_TIME; spawnT=0; tagCD=0;
+  }
+  function spawnPU(){
+    var p=platforms[1+Math.floor(Math.random()*(platforms.length-1))];
+    var t=PU[Math.floor(Math.random()*PU.length)];
+    powerups.push({x:p.x+16+Math.random()*(p.w-48),y:p.y-24,w:20,h:20,type:t,bob:Math.random()*6.28});
+  }
+  function applyPU(pl,t){
+    if(t==='speed') pl.speedT=5; else if(t==='jump') pl.jumpT=5;
+    else if(t==='shield') pl.shieldT=4; else (pl===blue?red:blue).frozenT=1.6;
+  }
+  function upd(pl,dt){
+    var it=(pl===blue)===itIsBlue; if(it) pl.itTime+=dt;
+    var frozen=pl.frozenT>0, sM=pl.speedT>0?1.7:1, jM=pl.jumpT>0?1.35:1;
+    if(!frozen){
+      if(pl.iLeft){ pl.vx-=MOVE*sM; pl.facing=-1; }
+      if(pl.iRight){ pl.vx+=MOVE*sM; pl.facing=1; }
+      if(pl.jump && pl.onGround){ pl.vy=-JUMP*jM; pl.onGround=false; }
+    }
+    pl.jump=false;                       // jump is edge-triggered — one per press
+    pl.vx*=FRICTION;
+    var cap=MAX_SPEED*sM; if(pl.vx>cap)pl.vx=cap; if(pl.vx<-cap)pl.vx=-cap;
+    pl.vy+=GRAVITY;
+    pl.x+=pl.vx;
+    if(pl.x<0){pl.x=0;pl.vx=0;} if(pl.x+pl.w>W){pl.x=W-pl.w;pl.vx=0;}
+    pl.y+=pl.vy; pl.onGround=false;
+    for(var i=0;i<platforms.length;i++){ var p=platforms[i];
+      if(pl.x+pl.w>p.x && pl.x<p.x+p.w && pl.vy>=0 && pl.y+pl.h>p.y && pl.y+pl.h-pl.vy<=p.y+1){
+        pl.y=p.y-pl.h; pl.vy=0; pl.onGround=true;
+      }
+    }
+    if(pl.y+pl.h>H){pl.y=H-pl.h;pl.vy=0;pl.onGround=true;}
+    ['speedT','jumpT','shieldT','frozenT'].forEach(function(t){ if(pl[t]>0) pl[t]=Math.max(0,pl[t]-dt); });
+  }
+  function hit(a,b){ return a.x<b.x+b.w && a.x+a.w>b.x && a.y<b.y+b.h && a.y+a.h>b.y; }
+
+  function step(dt){
+    upd(blue,dt); upd(red,dt);
+    for(var i=powerups.length-1;i>=0;i--){
+      if(hit(blue,powerups[i])){ applyPU(blue,powerups[i].type); powerups.splice(i,1); continue; }
+      if(hit(red,powerups[i])){ applyPU(red,powerups[i].type); powerups.splice(i,1); }
+    }
+    spawnT-=dt; if(spawnT<=0 && powerups.length<3){ spawnPU(); spawnT=3+Math.random()*2; }
+    if(tagCD>0) tagCD-=dt;
+    var runner=itIsBlue?red:blue;
+    if(tagCD<=0 && hit(blue,red) && runner.shieldT<=0){
+      itIsBlue=!itIsBlue; tagCD=TAG_COOLDOWN;
+      var d=blue.x<red.x?-1:1; blue.vx+=d*4; red.vx-=d*4;
+    }
+    clock-=dt; if(clock<=0){ clock=0; endGame(); }
+  }
+
+  function rr(x,y,w,h,r){ ctx.beginPath();
+    ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r);
+    ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+
+  function drawPlayer(pl){
+    var it=(pl===blue)===itIsBlue;
+    if(pl.shieldT>0){ ctx.save(); ctx.globalAlpha=0.35+0.25*Math.sin(Date.now()/100);
+      ctx.fillStyle=COL.blue; rr(pl.x-5,pl.y-5,pl.w+10,pl.h+10,9); ctx.fill(); ctx.restore(); }
+    ctx.fillStyle=pl.col; rr(pl.x,pl.y,pl.w,pl.h,6); ctx.fill();
+    if(pl.frozenT>0){ ctx.fillStyle='rgba(142,125,190,.55)'; rr(pl.x,pl.y,pl.w,pl.h,6); ctx.fill(); }
+    ctx.fillStyle='#fff';
+    var ex=pl.facing>=0?pl.x+pl.w-13:pl.x+5;
+    ctx.fillRect(ex,pl.y+9,6,6); ctx.fillRect(ex+(pl.facing>=0?-9:9),pl.y+9,6,6);
+    if(it){ var ay=pl.y-13-3*Math.sin(Date.now()/180);
+      ctx.fillStyle=COL.yellow; ctx.beginPath();
+      ctx.moveTo(pl.x+pl.w/2,ay+11); ctx.lineTo(pl.x+pl.w/2-8,ay); ctx.lineTo(pl.x+pl.w/2+8,ay);
+      ctx.closePath(); ctx.fill(); }
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<platforms.length;i++){ var p=platforms[i];
+      ctx.fillStyle=COL.ink; rr(p.x,p.y,p.w,p.h,5); ctx.fill(); }
+    for(var j=0;j<powerups.length;j++){ var pu=powerups[j];
+      var by=pu.y+3*Math.sin(Date.now()/300+pu.bob);
+      ctx.save(); ctx.shadowColor=PU_COL[pu.type]; ctx.shadowBlur=10;
+      ctx.fillStyle=PU_COL[pu.type]; rr(pu.x,by,pu.w,pu.h,6); ctx.fill(); ctx.restore();
+      ctx.font='14px serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(PU_ICON[pu.type],pu.x+pu.w/2,by+pu.h/2+1); ctx.textBaseline='alphabetic';
+    }
+    drawPlayer(blue); drawPlayer(red);
+    document.getElementById('tagS1').textContent=blue.itTime.toFixed(1);
+    document.getElementById('tagS2').textContent=red.itTime.toFixed(1);
+    document.getElementById('tagClock').textContent=Math.ceil(clock);
+  }
+  function loop(t){ if(!running) return;
+    var dt=Math.min(0.05,(t-lastT)/1000||0); lastT=t; step(dt); draw(); requestAnimationFrame(loop); }
+
+  function tagStart(){
+    reset();
+    document.getElementById('tagScoreLine').classList.add('tag-hide');
+    document.getElementById('tagCover').classList.add('tag-hide');
+    running=true; lastT=performance.now(); requestAnimationFrame(loop);
+  }
+  function endGame(){
+    running=false;
+    var title=document.getElementById('tagTitle');
+    var line=document.getElementById('tagScoreLine');
+    var cover=document.getElementById('tagCover');
+    if(Math.abs(blue.itTime-red.itTime)<0.3){ title.textContent="It's a tie!"; }
+    else { title.textContent=(blue.itTime<red.itTime)?'Blue wins!':'Red wins!'; }
+    line.innerHTML='<b class="p1">Blue</b> <span data-no-i18n>'+blue.itTime.toFixed(1)+
+      '</span>s &nbsp;·&nbsp; <b class="p2">Red</b> <span data-no-i18n>'+red.itTime.toFixed(1)+'</span>s';
+    line.classList.remove('tag-hide');
+    document.getElementById('tagStartBtn').textContent='Play Again';
+    cover.classList.remove('tag-hide');
+  }
+
+  function checkRotate(){
+    var portrait = ('ontouchstart' in window) && window.innerHeight>window.innerWidth &&
+                   Math.min(window.innerWidth,window.innerHeight)<520;
+    document.getElementById('tagRotate').classList.toggle('show', portrait);
+  }
+  window.addEventListener('resize',checkRotate);
+  window.addEventListener('orientationchange',checkRotate);
+
+  document.getElementById('tagStartBtn').addEventListener('click',tagStart);
+  window.tagStart=tagStart;          // used by the "New Game" button
+  reset(); draw(); checkRotate();    // draw the first frame behind the start cover
+})();
+</script>
+  <script src="js/game-fullscreen.js"></script>
+  <script src="js/site.js?v=20260729"></script>
+  <script src="js/analytics.js?v=20260729"></script>
+</body>
+</html>
