@@ -6,7 +6,7 @@
 <title>Quiz mondial — Drapeaux, capitales et géographie | Canada Quiz</title>
 <meta name="description" content="Quiz gratuit sur le monde — testez vos connaissances sur les drapeaux du monde, les capitales, les monuments célèbres et la géographie mondiale. Amusant pour toute la famille. Sans inscription.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../css/style.css?v=20260729">
+<link rel="stylesheet" href="../css/style.css?v=20260730">
 <style>.flagq{font-size:80px;text-align:center;margin:6px 0}</style>
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
@@ -37,8 +37,8 @@
   <section id="start-screen" class="panel center">
     <div style="font-size:46px">🌍</div>
     <h1>Quiz sur le monde</h1>
-    <p class="muted" style="max-width:600px;margin:0 auto">Testez-vous sur le monde — drapeaux, capitales, monuments célèbres et géographie. Choisissez une catégorie pour commencer!</p>
-    <details class="howto"><summary></summary><p>Choisissez un sujet ci-dessous. Vous obtiendrez 10 questions — touchez la réponse que vous pensez être bonne, et vous saurez instantanément si vous avez raison, avec un court fait. Rejouez à tout moment pour de nouvelles questions!</p></details>
+    <p class="muted" style="max-width:600px;margin:0 auto">Testez-vous sur le monde — drapeaux, capitales, monuments célèbres et géographie. Choisissez une catégorie pour commencer !</p>
+    <details class="howto"><summary></summary><p>Choisissez un sujet ci-dessous. Vous obtiendrez 10 questions &mdash ; touchez la réponse que vous pensez être bonne, et vous saurez instantanément si vous avez raison, avec un court fait. Rejouez à tout moment pour de nouvelles questions !</p></details>
     <div class="grid" id="cats" style="margin-top:18px"></div>
   </section>
 
@@ -53,7 +53,7 @@
     <div class="options" id="options"></div>
     <div id="explain-box" class="explain" style="display:none"></div>
     <div class="center" style="margin-top:18px">
-      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Suivant →</button>
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Suivant &rarr ;</button>
     </div>
   </section>
 
@@ -75,7 +75,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(70)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(71)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quiz</h4>
@@ -83,7 +83,7 @@
         <a href="gk-quiz.html">Culture générale</a>
         <a href="canada-quiz.html">Canada Quiz</a>
         <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
-        <a href="province-quiz.html">Quelle province es-tu?</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
         <a href="world-quiz.html">Quiz sur le monde</a>
         <a href="science-quiz.html">Sciences et espace</a>
         <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
@@ -123,12 +123,13 @@
         <a href="tictactoe.html">Tic-tac-toe</a>
         <a href="checkers.html">Dames</a>
         <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="tag.html">Tague</a>
       </div>
       <div class="footer-map-col">
         <h4>Jeux de groupe</h4>
         <a href="charades.html">Charades</a>
         <a href="imposter.html">Imposteur</a>
-        <a href="would-you-rather.html">Préfères-tu?</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
         <a href="trivia-showdown.html">Duel de quiz</a>
         <a href="hold-to-head.html">Devine sur le front</a>
         <a href="top-answers.html">Meilleures réponses</a>
@@ -144,7 +145,7 @@
         <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
         <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
         <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
-        <a href="what-is-confederation.html">Qu'est-ce que la Confédération?</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
         <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
         <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
         <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
@@ -176,8 +177,8 @@
 </footer>
 
 <script>
-const BANK={
- "Flags of the World":{emoji:"🚩",color:"blue",flag:true,q:[
+const BANK = {
+  "Flags of the World": { emoji:"🚩", color:"blue", flag:true, q:[
    {q:"🇯🇵",options:["China","Japan","South Korea","Thailand"],answer:1,explain:"Japan's flag is a red circle (the sun) on white."},
    {q:"🇧🇷",options:["Argentina","Mexico","Brazil","Portugal"],answer:2,explain:"Brazil's flag is green with a yellow diamond and blue globe."},
    {q:"🇫🇷",options:["Italy","France","Netherlands","Russia"],answer:1,explain:"France's flag has three vertical stripes: blue, white, red."},
@@ -189,9 +190,17 @@ const BANK={
    {q:"🇲🇽",options:["Italy","Mexico","Spain","Portugal"],answer:1,explain:"Mexico's flag is green, white, red with an eagle in the middle."},
    {q:"🇬🇧",options:["United Kingdom","USA","France","Norway"],answer:0,explain:"The United Kingdom's flag is called the Union Jack."},
    {q:"🇺🇸",options:["Liberia","USA","Malaysia","Chile"],answer:1,explain:"The USA flag has 50 stars and 13 stripes."},
-   {q:"🇿🇦",options:["Kenya","Nigeria","South Africa","Ghana"],answer:2,explain:"South Africa's flag has six colours in a Y shape."}
- ]},
- "Capital Cities":{emoji:"🏙️",color:"green",q:[
+   {q:"🇿🇦",options:["Kenya","Nigeria","South Africa","Ghana"],answer:2,explain:"South Africa's flag has six colours in a Y shape."},
+   {q:"🇨🇭",options:["Turkey","Switzerland","Austria","Poland"],answer:1,explain:"Switzerland's flag is a white cross on a red square."},
+   {q:"🇰🇷",options:["Vietnam","Philippines","South Korea","Nepal"],answer:2,explain:"South Korea's flag has a red and blue circle in the middle."},
+   {q:"🇬🇷",options:["Greece","Uruguay","Finland","Israel"],answer:0,explain:"Greece's flag has blue and white stripes with a white cross."},
+   {q:"🇯🇲",options:["Ghana","Ethiopia","Guyana","Jamaica"],answer:3,explain:"Jamaica's flag has a gold diagonal cross with green and black triangles."},
+   {q:"🇦🇷",options:["Ecuador","Chile","Argentina","Colombia"],answer:2,explain:"Argentina's flag is light blue and white with a golden sun."},
+   {q:"🇮🇪",options:["Italy","Hungary","Nigeria","Ireland"],answer:3,explain:"Ireland's flag has green, white, and orange vertical stripes."},
+   {q:"🇸🇪",options:["Norway","Sweden","Denmark","Iceland"],answer:1,explain:"Sweden's flag is blue with a yellow cross."},
+   {q:"🇳🇬",options:["Nigeria","Kenya","Ghana","Senegal"],answer:0,explain:"Nigeria's flag has green, white, and green vertical stripes."}
+  ]},
+  "Capital Cities": { emoji:"🏙️", color:"green", q:[
    {q:"What is the capital of France?",options:["Lyon","Paris","Nice","Marseille"],answer:1,explain:"Paris is the capital and largest city of France."},
    {q:"What is the capital of Canada?",options:["Toronto","Vancouver","Ottawa","Montreal"],answer:2,explain:"Ottawa, in Ontario, is Canada's capital."},
    {q:"What is the capital of Japan?",options:["Osaka","Kyoto","Tokyo","Nagoya"],answer:2,explain:"Tokyo is the capital of Japan."},
@@ -203,9 +212,17 @@ const BANK={
    {q:"What is the capital of Germany?",options:["Munich","Hamburg","Berlin","Frankfurt"],answer:2,explain:"Berlin is the capital of Germany."},
    {q:"What is the capital of India?",options:["Mumbai","New Delhi","Kolkata","Chennai"],answer:1,explain:"New Delhi is the capital of India."},
    {q:"What is the capital of the USA?",options:["New York","Los Angeles","Washington, D.C.","Chicago"],answer:2,explain:"Washington, D.C. is the capital of the USA."},
-   {q:"What is the capital of China?",options:["Shanghai","Beijing","Hong Kong","Guangzhou"],answer:1,explain:"Beijing is the capital of China."}
- ]},
- "Famous Landmarks":{emoji:"🗽",color:"orange",q:[
+   {q:"What is the capital of China?",options:["Shanghai","Beijing","Hong Kong","Guangzhou"],answer:1,explain:"Beijing is the capital of China."},
+   {q:"What is the capital of Spain?",options:["Barcelona","Madrid","Seville","Valencia"],answer:1,explain:"Madrid is the capital and largest city of Spain."},
+   {q:"What is the capital of Russia?",options:["Moscow","Saint Petersburg","Kazan","Sochi"],answer:0,explain:"Moscow is the capital of Russia and its biggest city."},
+   {q:"What is the capital of Kenya?",options:["Mombasa","Kisumu","Nairobi","Nakuru"],answer:2,explain:"Nairobi is the capital of Kenya, in East Africa."},
+   {q:"What is the capital of Mexico?",options:["Cancún","Mexico City","Guadalajara","Monterrey"],answer:1,explain:"Mexico City is the capital of Mexico and sits high in the mountains."},
+   {q:"What is the capital of Argentina?",options:["Córdoba","Rosario","Mendoza","Buenos Aires"],answer:3,explain:"Buenos Aires is the capital of Argentina."},
+   {q:"What is the capital of South Korea?",options:["Busan","Incheon","Seoul","Daegu"],answer:2,explain:"Seoul is the capital of South Korea."},
+   {q:"What is the capital of Turkey?",options:["Istanbul","Izmir","Antalya","Ankara"],answer:3,explain:"Ankara is the capital of Turkey, not Istanbul."},
+   {q:"What is the capital of New Zealand?",options:["Wellington","Auckland","Christchurch","Dunedin"],answer:0,explain:"Wellington is the capital of New Zealand, not Auckland."}
+  ]},
+  "Famous Landmarks": { emoji:"🗽", color:"orange", q:[
    {q:"In which country is the Eiffel Tower?",options:["Italy","France","Spain","Belgium"],answer:1,explain:"The Eiffel Tower is in Paris, France."},
    {q:"In which country is the Great Wall?",options:["Japan","India","China","Mongolia"],answer:2,explain:"The Great Wall of China is thousands of kilometres long."},
    {q:"Where is the Statue of Liberty?",options:["France","Canada","USA","UK"],answer:2,explain:"The Statue of Liberty stands in New York, USA."},
@@ -215,9 +232,17 @@ const BANK={
    {q:"Where is the Colosseum?",options:["Greece","Italy","Spain","Egypt"],answer:1,explain:"The ancient Colosseum is in Rome, Italy."},
    {q:"In which country is Machu Picchu?",options:["Mexico","Brazil","Peru","Chile"],answer:2,explain:"Machu Picchu is an ancient city high in the mountains of Peru."},
    {q:"Where is Big Ben?",options:["USA","France","United Kingdom","Germany"],answer:2,explain:"Big Ben is the famous clock tower in London, UK."},
-   {q:"In which country is the Sydney Opera House?",options:["New Zealand","Australia","UK","Canada"],answer:1,explain:"The Sydney Opera House is in Australia."}
- ]},
- "World Geography":{emoji:"🗺️",color:"purple",q:[
+   {q:"In which country is the Sydney Opera House?",options:["New Zealand","Australia","UK","Canada"],answer:1,explain:"The Sydney Opera House is in Australia."},
+   {q:"In which country is Christ the Redeemer?",options:["Argentina","Portugal","Peru","Brazil"],answer:3,explain:"The huge Christ the Redeemer statue stands above Rio de Janeiro."},
+   {q:"Where is the Leaning Tower of Pisa?",options:["Spain","Greece","Italy","France"],answer:2,explain:"The famous tilting tower stands in the city of Pisa."},
+   {q:"In which city is the Burj Khalifa?",options:["Doha","Dubai","Riyadh","Cairo"],answer:1,explain:"The Burj Khalifa in Dubai is one of the tallest buildings on Earth."},
+   {q:"In which country is Petra?",options:["Egypt","Jordan","Israel","Morocco"],answer:1,explain:"Petra is an ancient city carved right into pink rock."},
+   {q:"Where is Angkor Wat?",options:["Thailand","Vietnam","Laos","Cambodia"],answer:3,explain:"Angkor Wat is a giant ancient temple in the middle of the jungle."},
+   {q:"In which country is the Parthenon?",options:["Greece","Turkey","Italy","Cyprus"],answer:0,explain:"The Parthenon is an ancient temple on a hill above Athens."},
+   {q:"In which country is Chichen Itza?",options:["Guatemala","Belize","Mexico","Honduras"],answer:2,explain:"Chichen Itza is a large Maya pyramid site with a famous step pyramid."},
+   {q:"Where are the giant Moai stone statues?",options:["Chile","Peru","Fiji","New Zealand"],answer:0,explain:"The Moai stand on Easter Island, which belongs to Chile."}
+  ]},
+  "World Geography": { emoji:"🗺️", color:"purple", q:[
    {q:"What is the largest ocean on Earth?",options:["Atlantic","Indian","Pacific","Arctic"],answer:2,explain:"The Pacific is the biggest and deepest ocean."},
    {q:"What is the longest river in the world?",options:["Amazon","Nile","Yangtze","Mississippi"],answer:1,explain:"The Nile in Africa is usually called the longest river."},
    {q:"Which is the largest continent?",options:["Africa","Asia","Europe","North America"],answer:1,explain:"Asia is the largest continent by area and people."},
@@ -227,8 +252,44 @@ const BANK={
    {q:"Which desert is the largest hot desert?",options:["Gobi","Sahara","Kalahari","Arabian"],answer:1,explain:"The Sahara in Africa is the largest hot desert."},
    {q:"What is the smallest ocean?",options:["Arctic","Indian","Atlantic","Southern"],answer:0,explain:"The Arctic Ocean is the smallest and shallowest."},
    {q:"On which continent is the Amazon Rainforest?",options:["Africa","Asia","South America","Australia"],answer:2,explain:"The Amazon Rainforest is mostly in South America."},
-   {q:"Which country has the most people?",options:["India","China","USA","Indonesia"],answer:0,explain:"India is now the most populous country in the world."}
- ]}
+   {q:"Which country has the most people?",options:["India","China","USA","Indonesia"],answer:0,explain:"India is now the most populous country in the world."},
+   {q:"Which imaginary line divides Earth into north and south?",options:["The Prime Meridian","The equator","The Arctic Circle","The Tropic of Cancer"],answer:1,explain:"The equator is an imaginary line right around the middle of Earth."},
+   {q:"Which continent has no permanent residents?",options:["Africa","Australia","Antarctica","South America"],answer:2,explain:"Antarctica is so cold that only scientists stay, and only for a while."},
+   {q:"On which continent is most of Egypt?",options:["Europe","Asia","Australia","Africa"],answer:3,explain:"Egypt is in the northeast of Africa, with a small part in Asia."},
+   {q:"How many main time zones does the world have?",options:["12","24","36","48"],answer:1,explain:"The world is split into 24 main time zones, one for each hour of the day."},
+   {q:"Which country is made of thousands of islands, including Java?",options:["Indonesia","Philippines","Malaysia","Thailand"],answer:0,explain:"Indonesia is spread over thousands of islands in Southeast Asia."},
+   {q:"Which country is named after the equator?",options:["Panama","Colombia","Peru","Ecuador"],answer:3,explain:"Ecuador means 'equator' in Spanish, and the line runs through the country."},
+   {q:"Which two continents does Russia sit in?",options:["Europe and Asia","Asia and Africa","Europe and Africa","Asia and Australia"],answer:0,explain:"Russia stretches across both Europe and Asia."},
+   {q:"What is the largest island in the world?",options:["Madagascar","Borneo","Greenland","New Guinea"],answer:2,explain:"Greenland is the largest island on Earth and most of it is covered in ice."}
+  ]},
+  "Countries & Cultures": { emoji:"🌍", color:"red", q:[
+   {q:"Which country is famous for inventing pizza?",options:["Greece","Italy","Spain","France"],answer:1,explain:"Pizza as we know it comes from the city of Naples in Italy."},
+   {q:"Which language do people speak in Brazil?",options:["Spanish","Portuguese","French","Italian"],answer:1,explain:"Brazil speaks Portuguese, while most of South America speaks Spanish."},
+   {q:"In which country did the festival of lights, Diwali, begin?",options:["India","Japan","Egypt","Greece"],answer:0,explain:"Diwali is a festival of lights that began in India."},
+   {q:"Which country's traditional art of paper folding is called origami?",options:["China","Korea","Japan","Vietnam"],answer:2,explain:"Origami is the Japanese art of folding paper into shapes."},
+   {q:"Which country is the home of the tango dance?",options:["Spain","Mexico","Cuba","Argentina"],answer:3,explain:"The tango began in the city of Buenos Aires."},
+   {q:"Which country is the home of the Māori people?",options:["Australia","New Zealand","Fiji","Samoa"],answer:1,explain:"The Māori are the Indigenous people of New Zealand."},
+   {q:"In which country is the kilt traditional clothing?",options:["Ireland","Wales","Scotland","Norway"],answer:2,explain:"The kilt is a traditional pleated garment from Scotland."},
+   {q:"In which country did the Olympic Games begin?",options:["Italy","Egypt","Turkey","Greece"],answer:3,explain:"The very first Olympic Games were held in ancient Greece."},
+   {q:"Which country produces most of the world's maple syrup?",options:["Canada","Sweden","Russia","Norway"],answer:0,explain:"Most of the world's maple syrup is made in Canada. 🍁"},
+   {q:"Which country is famous for windmills and wooden shoes?",options:["Belgium","Denmark","Netherlands","Germany"],answer:2,explain:"Windmills and wooden shoes are old traditions in the Netherlands."},
+   {q:"In which country did the party piñata become a tradition?",options:["Mexico","Spain","Peru","Cuba"],answer:0,explain:"Piñatas filled with treats are a birthday tradition in Mexico."},
+   {q:"In which country did the dragon dance begin?",options:["Japan","India","Korea","China"],answer:3,explain:"The dragon dance is a Chinese tradition at Lunar New Year."}
+  ]},
+  "Rivers, Mountains & Oceans": { emoji:"🏔️", color:"blue", q:[
+   {q:"Which river flows through the Amazon Rainforest?",options:["Congo River","Nile River","Amazon River","Mekong River"],answer:2,explain:"The Amazon River winds through the rainforest in South America."},
+   {q:"On which continent are the Andes Mountains?",options:["Africa","Asia","Europe","South America"],answer:3,explain:"The Andes run all the way down the west side of South America."},
+   {q:"Which ocean lies between Africa and Australia?",options:["Atlantic Ocean","Indian Ocean","Pacific Ocean","Arctic Ocean"],answer:1,explain:"The Indian Ocean sits between Africa, southern Asia and Australia."},
+   {q:"In which mountain range is Mount Everest?",options:["The Alps","The Andes","The Rockies","The Himalayas"],answer:3,explain:"Mount Everest rises in the Himalayas, on the border of Nepal and China."},
+   {q:"Which river flows through London?",options:["The Seine","The Rhine","The Danube","The Thames"],answer:3,explain:"The Thames flows right through the middle of London, England."},
+   {q:"Which ocean is on Canada's east coast?",options:["Pacific Ocean","Arctic Ocean","Atlantic Ocean","Indian Ocean"],answer:2,explain:"The Atlantic Ocean washes Canada's east coast. 🌊"},
+   {q:"Which mountains separate France and Spain?",options:["The Alps","The Pyrenees","The Apennines","The Carpathians"],answer:1,explain:"The Pyrenees form a natural wall between France and Spain."},
+   {q:"Which river flows north through Germany to the North Sea?",options:["The Rhine","The Volga","The Loire","The Po"],answer:0,explain:"The Rhine is a busy river that crosses Germany on its way to the sea."},
+   {q:"What is the deepest known place in the ocean?",options:["The Mariana Trench","The Bermuda Triangle","The Ring of Fire","The Great Barrier Reef"],answer:0,explain:"The Mariana Trench in the Pacific Ocean is the deepest spot we know of."},
+   {q:"Which is the highest mountain in Africa?",options:["Mount Kenya","Table Mountain","Mount Kilimanjaro","Mount Elgon"],answer:2,explain:"Mount Kilimanjaro in Tanzania is the highest peak in Africa."},
+   {q:"Which sea lies between Europe and Africa?",options:["The Mediterranean Sea","The Red Sea","The Black Sea","The Baltic Sea"],answer:0,explain:"The Mediterranean Sea lies between southern Europe and North Africa."},
+   {q:"Which mountain range runs down western North America?",options:["The Appalachians","The Rockies","The Andes","The Alps"],answer:1,explain:"The Rocky Mountains stretch from Canada down through the United States."}
+  ]}
 };
 
 let qs=[], cur=0, score=0, answered=false, curCat="";
@@ -307,8 +368,8 @@ function backToCats(){
 }
 buildCats();
 </script>
-  <script src="../js/game-fullscreen.js"></script>
-  <script src="../js/site.js?v=20260729"></script>
-  <script src="../js/analytics.js?v=20260729"></script>
+  <script src="../js/game-fullscreen.js?v=20260730"></script>
+  <script src="../js/site.js?v=20260730"></script>
+  <script src="../js/analytics.js?v=20260730"></script>
 </body>
 </html>

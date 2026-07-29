@@ -24,7 +24,7 @@ SITE = "https://canada-quiz.com/"
 # new page looks broken. Changing ?v=... makes it a new address, so everyone gets
 # the fresh file. (This bit us on 27 Jul 2026 — new hero HTML + old cached CSS.)
 # ---------------------------------------------------------------------------
-ASSET_VER = "20260729"
+ASSET_VER = "20260730"
 
 # The full A-to-Z page list shown at the bottom of every page.
 # Add a new page to tools/site_map.json and re-run this script.
@@ -171,6 +171,14 @@ def main():
 
         # --- cache stamp on the stylesheet ----------------------------------
         s = re.sub(r'(<link rel="stylesheet" href="css/style\.css)(\?[^"]*)?(")',
+                   r'\g<1>?v=%s\g<3>' % ASSET_VER, s)
+
+        # --- cache stamp on EVERY other local script -------------------------
+        # js/fun-questions.js, js/citizenship-questions.js, js/driving-engine.js,
+        # js/driving/signs.js, js/driving/on.js, js/game-fullscreen.js ...
+        # Without this a returning visitor keeps an old cached copy and never
+        # sees new questions or new road signs.
+        s = re.sub(r'(<script src="js/[A-Za-z0-9_./-]+\.js)(\?[^"]*)?(")',
                    r'\g<1>?v=%s\g<3>' % ASSET_VER, s)
 
         if s != orig:

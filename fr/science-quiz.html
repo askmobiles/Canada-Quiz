@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://canada-quiz.com/fr/science-quiz.html">
 <meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../css/style.css?v=20260729">
+<link rel="stylesheet" href="../css/style.css?v=20260730">
 <style>.bigq{font-size:80px;text-align:center;margin:6px 0}</style>
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
@@ -41,9 +41,9 @@
 <main class="container">
   <section id="start-screen" class="panel center">
     <div style="font-size:46px">🔬</div>
-    <h1>Quiz sciences &amp; espace</h1>
-    <p class="muted" style="max-width:600px;margin:0 auto">Planètes, animaux, votre corps extraordinaire et le fonctionnement du monde. Choisissez une catégorie et voyez ce que vous savez!</p>
-    <details class="howto"><summary></summary><p>Choisissez un sujet ci-dessous. Vous obtiendrez 10 questions &mdash; touchez la réponse que vous pensez être bonne, et vous saurez instantanément si vous avez raison, avec un court fait. Rejouez à tout moment pour de nouvelles questions!</p></details>
+    <h1>Quiz sciences &amp ; espace</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto">Planètes, animaux, votre corps extraordinaire et le fonctionnement du monde. Choisissez une catégorie et voyez ce que vous savez !</p>
+    <details class="howto"><summary></summary><p>Choisissez un sujet ci-dessous. Vous obtiendrez 10 questions &mdash ; touchez la réponse que vous pensez être bonne, et vous saurez instantanément si vous avez raison, avec un court fait. Rejouez à tout moment pour de nouvelles questions !</p></details>
     <div class="grid" id="cats" style="margin-top:18px"></div>
   </section>
 
@@ -58,7 +58,7 @@
     <div class="options" id="options"></div>
     <div id="explain-box" class="explain" style="display:none"></div>
     <div class="center" style="margin-top:18px">
-      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Suivant &rarr;</button>
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Suivant &rarr ;</button>
     </div>
   </section>
 
@@ -80,7 +80,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(70)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(71)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quiz</h4>
@@ -88,7 +88,7 @@
         <a href="gk-quiz.html">Culture générale</a>
         <a href="canada-quiz.html">Canada Quiz</a>
         <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
-        <a href="province-quiz.html">Quelle province es-tu?</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
         <a href="world-quiz.html">Quiz sur le monde</a>
         <a href="science-quiz.html">Sciences et espace</a>
         <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
@@ -128,12 +128,13 @@
         <a href="tictactoe.html">Tic-tac-toe</a>
         <a href="checkers.html">Dames</a>
         <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="tag.html">Tague</a>
       </div>
       <div class="footer-map-col">
         <h4>Jeux de groupe</h4>
         <a href="charades.html">Charades</a>
         <a href="imposter.html">Imposteur</a>
-        <a href="would-you-rather.html">Préfères-tu?</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
         <a href="trivia-showdown.html">Duel de quiz</a>
         <a href="hold-to-head.html">Devine sur le front</a>
         <a href="top-answers.html">Meilleures réponses</a>
@@ -149,7 +150,7 @@
         <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
         <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
         <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
-        <a href="what-is-confederation.html">Qu'est-ce que la Confédération?</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
         <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
         <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
         <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
@@ -181,614 +182,119 @@
 </footer>
 
 <script>
-const BANK={
- "Space & Planets": {
-  "emoji": "🚀",
-  "color": "purple",
-  "q": [
-   {
-    "q": "Which planet is closest to the Sun?",
-    "options": [
-     "Venus",
-     "Mercury",
-     "Mars",
-     "Earth"
-    ],
-    "answer": 1,
-    "explain": "Mercury is the smallest planet and the closest to the Sun."
-   },
-   {
-    "q": "Which planet is known as the Red Planet?",
-    "options": [
-     "Jupiter",
-     "Venus",
-     "Mars",
-     "Saturn"
-    ],
-    "answer": 2,
-    "explain": "Mars looks red because its soil is full of rusty iron."
-   },
-   {
-    "q": "What is the largest planet in our solar system?",
-    "options": [
-     "Saturn",
-     "Neptune",
-     "Jupiter",
-     "Uranus"
-    ],
-    "answer": 2,
-    "explain": "Jupiter is so big that all the other planets could fit inside it."
-   },
-   {
-    "q": "Which planet has the most famous rings?",
-    "options": [
-     "Jupiter",
-     "Saturn",
-     "Uranus",
-     "Neptune"
-    ],
-    "answer": 1,
-    "explain": "Saturn's rings are made of ice and rock pieces."
-   },
-   {
-    "q": "What do we call a rock that burns up in Earth's sky?",
-    "options": [
-     "Comet",
-     "Meteor",
-     "Asteroid",
-     "Satellite"
-    ],
-    "answer": 1,
-    "explain": "A meteor is the bright streak we call a shooting star."
-   },
-   {
-    "q": "How long does light from the Sun take to reach Earth?",
-    "options": [
-     "8 seconds",
-     "8 minutes",
-     "8 hours",
-     "8 days"
-    ],
-    "answer": 1,
-    "explain": "Sunlight travels about 150 million km in roughly 8 minutes."
-   },
-   {
-    "q": "Which planet spins on its side?",
-    "options": [
-     "Uranus",
-     "Mars",
-     "Venus",
-     "Mercury"
-    ],
-    "answer": 0,
-    "explain": "Uranus is tipped over about 98 degrees, so it rolls like a barrel."
-   },
-   {
-    "q": "What is the name of our galaxy?",
-    "options": [
-     "Andromeda",
-     "Milky Way",
-     "Orion",
-     "Pegasus"
-    ],
-    "answer": 1,
-    "explain": "We live in the Milky Way galaxy, which has billions of stars."
-   },
-   {
-    "q": "Who was the first person to walk on the Moon?",
-    "options": [
-     "Yuri Gagarin",
-     "Buzz Aldrin",
-     "Neil Armstrong",
-     "Michael Collins"
-    ],
-    "answer": 2,
-    "explain": "Neil Armstrong stepped onto the Moon in July 1969."
-   },
-   {
-    "q": "What force keeps planets orbiting the Sun?",
-    "options": [
-     "Magnetism",
-     "Gravity",
-     "Friction",
-     "Electricity"
-    ],
-    "answer": 1,
-    "explain": "Gravity is the pull that keeps everything in orbit."
-   },
-   {
-    "q": "Which planet is hottest?",
-    "options": [
-     "Mercury",
-     "Venus",
-     "Mars",
-     "Jupiter"
-    ],
-    "answer": 1,
-    "explain": "Venus is hottest because thick clouds trap heat like a blanket."
-   },
-   {
-    "q": "What is the Canadarm famous for?",
-    "options": [
-     "Building bridges",
-     "Working in space",
-     "Digging mines",
-     "Fixing cars"
-    ],
-    "answer": 1,
-    "explain": "The Canadarm is a robotic arm Canada built for the space shuttle."
-   },
-   {
-    "q": "What is a light-year a measure of?",
-    "options": [
-     "Time",
-     "Distance",
-     "Brightness",
-     "Weight"
-    ],
-    "answer": 1,
-    "explain": "A light-year is how far light travels in one year — a distance, not a time."
-   },
-   {
-    "q": "Which Canadian astronaut sang from the space station?",
-    "options": [
-     "Chris Hadfield",
-     "Roberta Bondar",
-     "Marc Garneau",
-     "David Saint-Jacques"
-    ],
-    "answer": 0,
-    "explain": "Chris Hadfield became famous for singing and filming videos aboard the ISS."
-   },
-   {
-    "q": "What is the Sun?",
-    "options": [
-     "A planet",
-     "A star",
-     "A moon",
-     "A comet"
-    ],
-    "answer": 1,
-    "explain": "The Sun is a medium-sized star at the centre of our solar system."
-   }
-  ]
- },
- "Animals & Nature": {
-  "emoji": "🦊",
-  "color": "green",
-  "q": [
-   {
-    "q": "What is the largest animal on Earth?",
-    "options": [
-     "Elephant",
-     "Blue whale",
-     "Giraffe",
-     "Polar bear"
-    ],
-    "answer": 1,
-    "explain": "The blue whale can grow longer than three school buses."
-   },
-   {
-    "q": "How many legs does a spider have?",
-    "options": [
-     "6",
-     "8",
-     "10",
-     "12"
-    ],
-    "answer": 1,
-    "explain": "Spiders have eight legs; insects have six."
-   },
-   {
-    "q": "Which animal can change colour to hide?",
-    "options": [
-     "Chameleon",
-     "Rabbit",
-     "Horse",
-     "Cow"
-    ],
-    "answer": 0,
-    "explain": "Chameleons change colour for camouflage and to show mood."
-   },
-   {
-    "q": "What do bees make?",
-    "options": [
-     "Milk",
-     "Honey",
-     "Silk",
-     "Wax paper"
-    ],
-    "answer": 1,
-    "explain": "Bees make honey from flower nectar."
-   },
-   {
-    "q": "Which of these is a mammal?",
-    "options": [
-     "Shark",
-     "Dolphin",
-     "Salmon",
-     "Octopus"
-    ],
-    "answer": 1,
-    "explain": "Dolphins breathe air and feed their babies milk, so they are mammals."
-   },
-   {
-    "q": "What is a baby frog called?",
-    "options": [
-     "Cub",
-     "Tadpole",
-     "Kitten",
-     "Fawn"
-    ],
-    "answer": 1,
-    "explain": "A tadpole hatches from an egg and later grows legs."
-   },
-   {
-    "q": "Which bird cannot fly?",
-    "options": [
-     "Eagle",
-     "Penguin",
-     "Sparrow",
-     "Owl"
-    ],
-    "answer": 1,
-    "explain": "Penguins use their wings to swim instead of fly."
-   },
-   {
-    "q": "What do we call animals that eat only plants?",
-    "options": [
-     "Carnivores",
-     "Herbivores",
-     "Omnivores",
-     "Insectivores"
-    ],
-    "answer": 1,
-    "explain": "Herbivores eat plants; carnivores eat meat."
-   },
-   {
-    "q": "Which Canadian animal builds dams?",
-    "options": [
-     "Moose",
-     "Beaver",
-     "Caribou",
-     "Lynx"
-    ],
-    "answer": 1,
-    "explain": "The beaver is Canada's national animal and a champion dam builder."
-   },
-   {
-    "q": "How many hearts does an octopus have?",
-    "options": [
-     "1",
-     "2",
-     "3",
-     "4"
-    ],
-    "answer": 2,
-    "explain": "An octopus has three hearts and blue blood."
-   },
-   {
-    "q": "What is the fastest land animal?",
-    "options": [
-     "Lion",
-     "Cheetah",
-     "Horse",
-     "Ostrich"
-    ],
-    "answer": 1,
-    "explain": "A cheetah can run over 100 km/h in short bursts."
-   },
-   {
-    "q": "Which animal sleeps through winter in a den?",
-    "options": [
-     "Bear",
-     "Deer",
-     "Fox",
-     "Goose"
-    ],
-    "answer": 0,
-    "explain": "Bears hibernate through the cold winter months."
-   },
-   {
-    "q": "What is a group of wolves called?",
-    "options": [
-     "Herd",
-     "Pack",
-     "School",
-     "Flock"
-    ],
-    "answer": 1,
-    "explain": "Wolves live and hunt together in a pack."
-   },
-   {
-    "q": "What part of a plant takes in water?",
-    "options": [
-     "Leaves",
-     "Roots",
-     "Flower",
-     "Stem"
-    ],
-    "answer": 1,
-    "explain": "Roots pull water and minerals from the soil."
-   }
-  ]
- },
- "The Human Body": {
-  "emoji": "🧠",
-  "color": "orange",
-  "q": [
-   {
-    "q": "Which organ pumps blood around your body?",
-    "options": [
-     "Lungs",
-     "Heart",
-     "Liver",
-     "Brain"
-    ],
-    "answer": 1,
-    "explain": "The heart is a muscle that pumps blood all day and night."
-   },
-   {
-    "q": "How many bones are in an adult human body?",
-    "options": [
-     "106",
-     "206",
-     "306",
-     "406"
-    ],
-    "answer": 1,
-    "explain": "Adults have about 206 bones; babies are born with more."
-   },
-   {
-    "q": "Which organ helps you breathe?",
-    "options": [
-     "Kidneys",
-     "Lungs",
-     "Stomach",
-     "Spleen"
-    ],
-    "answer": 1,
-    "explain": "Lungs take in oxygen and push out carbon dioxide."
-   },
-   {
-    "q": "What is the largest organ of the human body?",
-    "options": [
-     "Liver",
-     "Skin",
-     "Brain",
-     "Heart"
-    ],
-    "answer": 1,
-    "explain": "Skin is the biggest organ and protects everything inside."
-   },
-   {
-    "q": "Which part of the body controls thinking?",
-    "options": [
-     "Heart",
-     "Brain",
-     "Lungs",
-     "Stomach"
-    ],
-    "answer": 1,
-    "explain": "The brain controls thinking, memory and movement."
-   },
-   {
-    "q": "What are your bones connected by?",
-    "options": [
-     "Veins",
-     "Joints",
-     "Nerves",
-     "Hairs"
-    ],
-    "answer": 1,
-    "explain": "Joints are places where two bones meet and can move."
-   },
-   {
-    "q": "How many teeth does a typical adult have?",
-    "options": [
-     "20",
-     "28",
-     "32",
-     "40"
-    ],
-    "answer": 2,
-    "explain": "Most adults have 32 teeth, including wisdom teeth."
-   },
-   {
-    "q": "What carries blood away from the heart?",
-    "options": [
-     "Veins",
-     "Arteries",
-     "Nerves",
-     "Tendons"
-    ],
-    "answer": 1,
-    "explain": "Arteries carry blood away; veins bring it back."
-   },
-   {
-    "q": "Which sense uses your tongue?",
-    "options": [
-     "Sight",
-     "Taste",
-     "Hearing",
-     "Smell"
-    ],
-    "answer": 1,
-    "explain": "Taste buds on the tongue detect sweet, salty, sour and bitter."
-   },
-   {
-    "q": "What is the smallest bone in the body?",
-    "options": [
-     "Stirrup, in the ear",
-     "Finger tip bone",
-     "Nose bone",
-     "Toe bone"
-    ],
-    "answer": 0,
-    "explain": "The stirrup (stapes) in your ear is smaller than a grain of rice."
-   },
-   {
-    "q": "What does the stomach do?",
-    "options": [
-     "Pumps blood",
-     "Breaks down food",
-     "Filters air",
-     "Stores memory"
-    ],
-    "answer": 1,
-    "explain": "The stomach uses acid and muscles to break food down."
-   },
-   {
-    "q": "How many chambers does the human heart have?",
-    "options": [
-     "2",
-     "3",
-     "4",
-     "5"
-    ],
-    "answer": 2,
-    "explain": "The heart has four chambers: two atria and two ventricles."
-   }
-  ]
- },
- "How Things Work": {
-  "emoji": "⚙️",
-  "color": "blue",
-  "q": [
-   {
-    "q": "What state of water is ice?",
-    "options": [
-     "Liquid",
-     "Solid",
-     "Gas",
-     "Plasma"
-    ],
-    "answer": 1,
-    "explain": "Ice is water in its solid state."
-   },
-   {
-    "q": "At what temperature does water boil at sea level?",
-    "options": [
-     "50°C",
-     "80°C",
-     "100°C",
-     "150°C"
-    ],
-    "answer": 2,
-    "explain": "Pure water boils at 100°C at sea level."
-   },
-   {
-    "q": "What gas do humans breathe in to live?",
-    "options": [
-     "Nitrogen",
-     "Oxygen",
-     "Carbon dioxide",
-     "Helium"
-    ],
-    "answer": 1,
-    "explain": "We breathe in oxygen and breathe out carbon dioxide."
-   },
-   {
-    "q": "What makes a compass needle point north?",
-    "options": [
-     "Wind",
-     "Magnetism",
-     "Sunlight",
-     "Gravity"
-    ],
-    "answer": 1,
-    "explain": "Earth acts like a giant magnet, pulling the needle north."
-   },
-   {
-    "q": "What do we call frozen rain?",
-    "options": [
-     "Fog",
-     "Hail",
-     "Mist",
-     "Dew"
-    ],
-    "answer": 1,
-    "explain": "Hail is rain that freezes into ice balls inside storm clouds."
-   },
-   {
-    "q": "Which of these is a renewable energy source?",
-    "options": [
-     "Coal",
-     "Oil",
-     "Wind",
-     "Natural gas"
-    ],
-    "answer": 2,
-    "explain": "Wind never runs out, so it is renewable."
-   },
-   {
-    "q": "What is H₂O better known as?",
-    "options": [
-     "Salt",
-     "Water",
-     "Sugar",
-     "Air"
-    ],
-    "answer": 1,
-    "explain": "H₂O means two hydrogen atoms and one oxygen atom — water."
-   },
-   {
-    "q": "What simple machine is a ramp?",
-    "options": [
-     "Lever",
-     "Pulley",
-     "Inclined plane",
-     "Wheel"
-    ],
-    "answer": 2,
-    "explain": "A ramp is an inclined plane; it makes lifting easier."
-   },
-   {
-    "q": "Why do we see lightning before we hear thunder?",
-    "options": [
-     "Light travels faster",
-     "Sound travels faster",
-     "Thunder starts later",
-     "Clouds block sound"
-    ],
-    "answer": 0,
-    "explain": "Light travels much faster than sound, so we see it first."
-   },
-   {
-    "q": "What does a thermometer measure?",
-    "options": [
-     "Weight",
-     "Temperature",
-     "Speed",
-     "Sound"
-    ],
-    "answer": 1,
-    "explain": "A thermometer measures how hot or cold something is."
-   },
-   {
-    "q": "What is the centre of an atom called?",
-    "options": [
-     "Shell",
-     "Nucleus",
-     "Electron",
-     "Molecule"
-    ],
-    "answer": 1,
-    "explain": "The nucleus holds protons and neutrons at the atom's centre."
-   },
-   {
-    "q": "What kind of energy does a moving object have?",
-    "options": [
-     "Kinetic",
-     "Chemical",
-     "Nuclear",
-     "Potential"
-    ],
-    "answer": 0,
-    "explain": "Kinetic energy is the energy of motion."
-   }
-  ]
- }
+const BANK = {
+  "Space & Planets": { emoji:"🚀", color:"purple", q:[
+   {q:"Which planet is closest to the Sun?",options:["Venus","Mercury","Mars","Earth"],answer:1,explain:"Mercury is the smallest planet and the closest to the Sun."},
+   {q:"Which planet is known as the Red Planet?",options:["Jupiter","Venus","Mars","Saturn"],answer:2,explain:"Mars looks red because its soil is full of rusty iron."},
+   {q:"What is the largest planet in our solar system?",options:["Saturn","Neptune","Jupiter","Uranus"],answer:2,explain:"Jupiter is so big that all the other planets could fit inside it."},
+   {q:"Which planet has the most famous rings?",options:["Jupiter","Saturn","Uranus","Neptune"],answer:1,explain:"Saturn's rings are made of ice and rock pieces."},
+   {q:"What do we call a rock that burns up in Earth's sky?",options:["Comet","Meteor","Asteroid","Satellite"],answer:1,explain:"A meteor is the bright streak we call a shooting star."},
+   {q:"How long does light from the Sun take to reach Earth?",options:["8 seconds","8 minutes","8 hours","8 days"],answer:1,explain:"Sunlight travels about 150 million km in roughly 8 minutes."},
+   {q:"Which planet spins on its side?",options:["Uranus","Mars","Venus","Mercury"],answer:0,explain:"Uranus is tipped over about 98 degrees, so it rolls like a barrel."},
+   {q:"What is the name of our galaxy?",options:["Andromeda","Milky Way","Orion","Pegasus"],answer:1,explain:"We live in the Milky Way galaxy, which has billions of stars."},
+   {q:"Who was the first person to walk on the Moon?",options:["Yuri Gagarin","Buzz Aldrin","Neil Armstrong","Michael Collins"],answer:2,explain:"Neil Armstrong stepped onto the Moon in July 1969."},
+   {q:"What force keeps planets orbiting the Sun?",options:["Magnetism","Gravity","Friction","Electricity"],answer:1,explain:"Gravity is the pull that keeps everything in orbit."},
+   {q:"Which planet is hottest?",options:["Mercury","Venus","Mars","Jupiter"],answer:1,explain:"Venus is hottest because thick clouds trap heat like a blanket."},
+   {q:"What is the Canadarm famous for?",options:["Building bridges","Working in space","Digging mines","Fixing cars"],answer:1,explain:"The Canadarm is a robotic arm Canada built for the space shuttle."},
+   {q:"What is a light-year a measure of?",options:["Time","Distance","Brightness","Weight"],answer:1,explain:"A light-year is how far light travels in one year — a distance, not a time."},
+   {q:"Which Canadian astronaut sang from the space station?",options:["Chris Hadfield","Roberta Bondar","Marc Garneau","David Saint-Jacques"],answer:0,explain:"Chris Hadfield became famous for singing and filming videos aboard the ISS."},
+   {q:"What is the Sun?",options:["A planet","A star","A moon","A comet"],answer:1,explain:"The Sun is a medium-sized star at the centre of our solar system."},
+   {q:"How many planets are in our solar system?",options:["Six","Seven","Eight","Nine"],answer:2,explain:"There are eight planets, from Mercury out to Neptune."},
+   {q:"Which planet is farthest from the Sun?",options:["Neptune","Saturn","Uranus","Jupiter"],answer:0,explain:"Neptune is the eighth planet and the most distant one from the Sun."},
+   {q:"What causes day and night on Earth?",options:["The Moon's shadow","Earth spinning on its axis","Clouds covering the Sun","The Sun moving around Earth"],answer:1,explain:"Earth turns once about every 24 hours, so each side faces the Sun in turn."},
+   {q:"How long does Earth take to travel once around the Sun?",options:["About one day","About one month","About one year","About ten years"],answer:2,explain:"One trip around the Sun takes about 365 days, which is why a year is that long."},
+   {q:"Why does the Moon appear to shine?",options:["It is a small star","It is made of burning gas","It glows on its own","It reflects sunlight"],answer:3,explain:"The Moon makes no light of its own; it bounces sunlight back to us."},
+   {q:"What do we call the path a planet takes around the Sun?",options:["An orbit","An eclipse","A comet","A galaxy"],answer:0,explain:"An orbit is the curved path one object takes around another in space."}
+  ]},
+  "Animals & Nature": { emoji:"🦊", color:"green", q:[
+   {q:"What is the largest animal on Earth?",options:["Elephant","Blue whale","Giraffe","Polar bear"],answer:1,explain:"The blue whale can grow longer than three school buses."},
+   {q:"How many legs does a spider have?",options:["6","8","10","12"],answer:1,explain:"Spiders have eight legs; insects have six."},
+   {q:"Which animal can change colour to hide?",options:["Chameleon","Rabbit","Horse","Cow"],answer:0,explain:"Chameleons change colour for camouflage and to show mood."},
+   {q:"What do bees make?",options:["Milk","Honey","Silk","Wax paper"],answer:1,explain:"Bees make honey from flower nectar."},
+   {q:"Which of these is a mammal?",options:["Shark","Dolphin","Salmon","Octopus"],answer:1,explain:"Dolphins breathe air and feed their babies milk, so they are mammals."},
+   {q:"What is a baby frog called?",options:["Cub","Tadpole","Kitten","Fawn"],answer:1,explain:"A tadpole hatches from an egg and later grows legs."},
+   {q:"Which bird cannot fly?",options:["Eagle","Penguin","Sparrow","Owl"],answer:1,explain:"Penguins use their wings to swim instead of fly."},
+   {q:"What do we call animals that eat only plants?",options:["Carnivores","Herbivores","Omnivores","Insectivores"],answer:1,explain:"Herbivores eat plants; carnivores eat meat."},
+   {q:"Which Canadian animal builds dams?",options:["Moose","Beaver","Caribou","Lynx"],answer:1,explain:"The beaver is Canada's national animal and a champion dam builder."},
+   {q:"How many hearts does an octopus have?",options:["1","2","3","4"],answer:2,explain:"An octopus has three hearts and blue blood."},
+   {q:"What is the fastest land animal?",options:["Lion","Cheetah","Horse","Ostrich"],answer:1,explain:"A cheetah can run over 100 km/h in short bursts."},
+   {q:"Which animal sleeps through winter in a den?",options:["Bear","Deer","Fox","Goose"],answer:0,explain:"Bears hibernate through the cold winter months."},
+   {q:"What is a group of wolves called?",options:["Herd","Pack","School","Flock"],answer:1,explain:"Wolves live and hunt together in a pack."},
+   {q:"What part of a plant takes in water?",options:["Leaves","Roots","Flower","Stem"],answer:1,explain:"Roots pull water and minerals from the soil."},
+   {q:"What do we call an animal that is active at night?",options:["Nocturnal","Migratory","Tropical","Aquatic"],answer:0,explain:"Nocturnal animals such as owls and raccoons sleep by day and hunt at night."},
+   {q:"What does a caterpillar turn into?",options:["A bee","A dragonfly","A butterfly","A beetle"],answer:2,explain:"A caterpillar forms a chrysalis and comes out as a butterfly."},
+   {q:"Which gas do plants take in from the air to make their food?",options:["Helium","Carbon dioxide","Oxygen","Nitrogen"],answer:1,explain:"Plants use carbon dioxide, water and sunlight to make food and give off oxygen."},
+   {q:"Which bear lives on the sea ice of Canada's Arctic?",options:["The polar bear","The panda","The sun bear","The sloth bear"],answer:0,explain:"Polar bears hunt on Arctic sea ice and are strong swimmers."},
+   {q:"What do we call an animal with a backbone?",options:["An invertebrate","A vertebrate","An amphibian","A mollusc"],answer:1,explain:"Fish, birds, reptiles and mammals are all vertebrates."},
+   {q:"Which tree keeps its green needles all winter?",options:["Maple","Oak","Birch","Pine"],answer:3,explain:"Pines are evergreens, so they stay green while maples and birches lose their leaves."}
+  ]},
+  "The Human Body": { emoji:"🧠", color:"orange", q:[
+   {q:"Which organ pumps blood around your body?",options:["Lungs","Heart","Liver","Brain"],answer:1,explain:"The heart is a muscle that pumps blood all day and night."},
+   {q:"How many bones are in an adult human body?",options:["106","206","306","406"],answer:1,explain:"Adults have about 206 bones; babies are born with more."},
+   {q:"Which organ helps you breathe?",options:["Kidneys","Lungs","Stomach","Spleen"],answer:1,explain:"Lungs take in oxygen and push out carbon dioxide."},
+   {q:"What is the largest organ of the human body?",options:["Liver","Skin","Brain","Heart"],answer:1,explain:"Skin is the biggest organ and protects everything inside."},
+   {q:"Which part of the body controls thinking?",options:["Heart","Brain","Lungs","Stomach"],answer:1,explain:"The brain controls thinking, memory and movement."},
+   {q:"What are your bones connected by?",options:["Veins","Joints","Nerves","Hairs"],answer:1,explain:"Joints are places where two bones meet and can move."},
+   {q:"How many teeth does a typical adult have?",options:["20","28","32","40"],answer:2,explain:"Most adults have 32 teeth, including wisdom teeth."},
+   {q:"What carries blood away from the heart?",options:["Veins","Arteries","Nerves","Tendons"],answer:1,explain:"Arteries carry blood away; veins bring it back."},
+   {q:"Which sense uses your tongue?",options:["Sight","Taste","Hearing","Smell"],answer:1,explain:"Taste buds on the tongue detect sweet, salty, sour and bitter."},
+   {q:"What is the smallest bone in the body?",options:["Stirrup, in the ear","Finger tip bone","Nose bone","Toe bone"],answer:0,explain:"The stirrup (stapes) in your ear is smaller than a grain of rice."},
+   {q:"What does the stomach do?",options:["Pumps blood","Breaks down food","Filters air","Stores memory"],answer:1,explain:"The stomach uses acid and muscles to break food down."},
+   {q:"How many chambers does the human heart have?",options:["2","3","4","5"],answer:2,explain:"The heart has four chambers: two atria and two ventricles."},
+   {q:"Which bones protect your heart and lungs?",options:["The skull","The ribs","The hips","The spine"],answer:1,explain:"The rib cage is a bony shield around the chest."},
+   {q:"What is the main job of red blood cells?",options:["Digesting food","Storing fat","Building bones","Carrying oxygen"],answer:3,explain:"Red blood cells carry oxygen from your lungs to the rest of your body."},
+   {q:"Which organs filter your blood and make urine?",options:["The lungs","The liver","The kidneys","The heart"],answer:2,explain:"Your two kidneys clean the blood and send the waste away as urine."},
+   {q:"What is the hardest substance in the human body?",options:["Tooth enamel","Bone","Hair","Fingernail"],answer:0,explain:"Enamel is the tough white coating that protects your teeth."},
+   {q:"Which part of the eye lets light in?",options:["The eyelash","The eyebrow","The eyelid","The pupil"],answer:3,explain:"The pupil is the dark opening that grows or shrinks to control light."},
+   {q:"How many senses do people traditionally count?",options:["Three","Four","Five","Six"],answer:2,explain:"The five classic senses are sight, hearing, smell, taste and touch."}
+  ]},
+  "How Things Work": { emoji:"⚙️", color:"blue", q:[
+   {q:"What state of water is ice?",options:["Liquid","Solid","Gas","Plasma"],answer:1,explain:"Ice is water in its solid state."},
+   {q:"At what temperature does water boil at sea level?",options:["50°C","80°C","100°C","150°C"],answer:2,explain:"Pure water boils at 100°C at sea level."},
+   {q:"What gas do humans breathe in to live?",options:["Nitrogen","Oxygen","Carbon dioxide","Helium"],answer:1,explain:"We breathe in oxygen and breathe out carbon dioxide."},
+   {q:"What makes a compass needle point north?",options:["Wind","Magnetism","Sunlight","Gravity"],answer:1,explain:"Earth acts like a giant magnet, pulling the needle north."},
+   {q:"What do we call frozen rain?",options:["Fog","Hail","Mist","Dew"],answer:1,explain:"Hail is rain that freezes into ice balls inside storm clouds."},
+   {q:"Which of these is a renewable energy source?",options:["Coal","Oil","Wind","Natural gas"],answer:2,explain:"Wind never runs out, so it is renewable."},
+   {q:"What is H₂O better known as?",options:["Salt","Water","Sugar","Air"],answer:1,explain:"H₂O means two hydrogen atoms and one oxygen atom — water."},
+   {q:"What simple machine is a ramp?",options:["Lever","Pulley","Inclined plane","Wheel"],answer:2,explain:"A ramp is an inclined plane; it makes lifting easier."},
+   {q:"Why do we see lightning before we hear thunder?",options:["Light travels faster","Sound travels faster","Thunder starts later","Clouds block sound"],answer:0,explain:"Light travels much faster than sound, so we see it first."},
+   {q:"What does a thermometer measure?",options:["Weight","Temperature","Speed","Sound"],answer:1,explain:"A thermometer measures how hot or cold something is."},
+   {q:"What is the centre of an atom called?",options:["Shell","Nucleus","Electron","Molecule"],answer:1,explain:"The nucleus holds protons and neutrons at the atom's centre."},
+   {q:"What kind of energy does a moving object have?",options:["Kinetic","Chemical","Nuclear","Potential"],answer:0,explain:"Kinetic energy is the energy of motion."},
+   {q:"What force slows down a sliding object?",options:["Gravity","Friction","Magnetism","Pressure"],answer:1,explain:"Friction happens when two surfaces rub together and resist moving."},
+   {q:"What simple machine is a seesaw?",options:["A lever","A pulley","A wheel","A screw"],answer:0,explain:"A seesaw is a lever: a bar that balances and turns on a fixed point."},
+   {q:"What happens to most metals when they are heated?",options:["They shrink","They expand","They freeze","They turn to gas"],answer:1,explain:"Heat makes the tiny particles in metal move more, so the metal grows slightly."},
+   {q:"What do we call a material that lets electricity pass through easily?",options:["An insulator","A magnet","A conductor","A battery"],answer:2,explain:"Metals like copper are good conductors, which is why wires are made of them."},
+   {q:"What makes sound?",options:["Shadows","Magnets","Colours","Vibrations"],answer:3,explain:"Sound is made by vibrations travelling through air, water or solids."}
+  ]},
+  "Weather & Earth": { emoji:"🌦️", color:"blue", q:[
+   {q:"What instrument measures wind speed?",options:["A barometer","An anemometer","A thermometer","A rain gauge"],answer:1,explain:"An anemometer has cups that spin faster as the wind blows harder."},
+   {q:"What makes a rainbow appear in the sky?",options:["Wind blowing dust around","Clouds bumping together","Sunlight bending through raindrops","Snow melting on hills"],answer:2,explain:"Raindrops bend sunlight and split it into the colours we see."},
+   {q:"What is the outer rocky layer of Earth called?",options:["The core","The mantle","The atmosphere","The crust"],answer:3,explain:"We live on the crust, a thin layer of rock over the hotter mantle."},
+   {q:"What do we call a long period with almost no rain?",options:["A drought","A flood","A blizzard","A tide"],answer:0,explain:"A drought dries out soil, rivers and crops over weeks or months."},
+   {q:"Which kind of rock forms when lava cools and hardens?",options:["Igneous rock","Sedimentary rock","Metamorphic rock","Fossil rock"],answer:0,explain:"Igneous rock comes from melted rock that cools, like granite and basalt."},
+   {q:"In the water cycle, what is it called when water turns into vapour?",options:["Condensation","Evaporation","Precipitation","Collection"],answer:1,explain:"The Sun warms water in lakes and oceans until it rises as invisible vapour."},
+   {q:"What do we call a scientist who studies the weather?",options:["A geologist","A biologist","A meteorologist","An astronomer"],answer:2,explain:"Meteorologists read maps and satellites to forecast rain, snow and storms."},
+   {q:"What is fog?",options:["Smoke from far-off fires","Very fine falling snow","Dust blown from deserts","A cloud sitting near the ground"],answer:3,explain:"Fog is simply a cloud that forms close to the ground."},
+   {q:"What causes the seasons on Earth?",options:["Earth's tilt as it circles the Sun","How close the Moon comes","Changes in the ocean tides","Clouds blocking the sunlight"],answer:0,explain:"Earth leans about 23 degrees, so each half gets more sunlight at different times."},
+   {q:"What is the imaginary line around the middle of Earth called?",options:["The axis","The equator","The meridian","The horizon"],answer:1,explain:"The equator splits the planet into the northern and southern halves."},
+   {q:"Which season has the shortest days in Canada?",options:["Spring","Summer","Autumn","Winter"],answer:3,explain:"In winter Canada tilts away from the Sun, so daylight hours are shortest."},
+   {q:"Where is most of Earth's fresh water found?",options:["In rivers","In clouds","In ice and glaciers","In lakes"],answer:2,explain:"Most fresh water is frozen in ice caps and glaciers, not flowing in rivers."}
+  ]},
+  "Numbers & Math": { emoji:"🔢", color:"yellow", q:[
+   {q:"How many sides does a hexagon have?",options:["Five","Six","Seven","Eight"],answer:1,explain:"Hexa means six, so a hexagon has six sides and six corners."},
+   {q:"What is 7 times 8?",options:["54","56","62","64"],answer:1,explain:"Seven groups of eight make 56."},
+   {q:"What do we call a whole number greater than 1 that can only be divided by 1 and itself?",options:["An even number","A square number","A prime number","A negative number"],answer:2,explain:"Prime numbers like 2, 3, 5 and 7 have exactly two factors."},
+   {q:"How many degrees are in a right angle?",options:["45","60","90","180"],answer:2,explain:"A right angle is a square corner, exactly 90 degrees."},
+   {q:"What is half of 150?",options:["75","65","85","95"],answer:0,explain:"Splitting 150 into two equal parts gives 75 each."},
+   {q:"What is the perimeter of a square with 5 cm sides?",options:["20 cm","10 cm","15 cm","25 cm"],answer:0,explain:"Perimeter adds all four sides: 5 + 5 + 5 + 5 = 20 cm."},
+   {q:"How many items are in a dozen?",options:["Twenty","Ten","Twenty-four","Twelve"],answer:3,explain:"A dozen always means twelve, like a dozen eggs."},
+   {q:"What do we call the answer to an addition question?",options:["The sum","The product","The difference","The quotient"],answer:0,explain:"Adding gives a sum; multiplying gives a product."},
+   {q:"How many minutes are in three hours?",options:["120","150","240","180"],answer:3,explain:"Each hour has 60 minutes, and 3 times 60 is 180."},
+   {q:"How many zeros does one million have?",options:["Four","Five","Seven","Six"],answer:3,explain:"One million is written 1 000 000, with six zeros."},
+   {q:"What is pi rounded to two decimal places?",options:["3.12","3.14","3.16","3.41"],answer:1,explain:"Pi is about 3.14 and helps us measure circles."},
+   {q:"How many degrees do the three angles of a triangle add up to?",options:["90","270","180","360"],answer:2,explain:"Every triangle's angles add up to exactly 180 degrees."}
+  ]}
 };
 const LSKEY="sciq_";
 
@@ -867,8 +373,8 @@ function backToCats(){
 }
 buildCats();
 </script>
-  <script src="../js/site.js?v=20260729"></script>
-  <script src="../js/analytics.js?v=20260729"></script>
-  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js?v=20260730"></script>
+  <script src="../js/analytics.js?v=20260730"></script>
+  <script src="../js/game-fullscreen.js?v=20260730"></script>
 </body>
 </html>

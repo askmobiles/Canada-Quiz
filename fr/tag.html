@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tague — Jeux en famille</title>
-<meta name="description" content="Jeu de tague gratuit à deux joueurs pour les enfants et la famille. Bouge, saute et attrape des bonus sur ton téléphone.">
+<meta name="description" content="Jeu de tague gratuit à deux joueurs pour les enfants et la famille. Bouge, saute et attrape des bonus sur n&#x27;importe quel téléphone.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../css/style.css?v=20260729">
+<link rel="stylesheet" href="../css/style.css?v=20260730">
 <style>
   /* ---- Tag game — scoped styles (prefix .tag-) ---- */
   .tag-stage{
@@ -89,6 +89,7 @@
       <a href="quizzes.html">Quiz</a>
       <a href="games.html">Jeux en famille</a>
       <a href="citizenship.html">Citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
       <a href="daily.html">Du jour</a>
       <a href="blog.html">Blogue</a>
       <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
@@ -99,8 +100,8 @@
 <main class="container">
   <section class="hero" style="padding:26px 20px 6px">
     <h1>🍁 Tague</h1>
-    <p>Un jeu de poursuite amusant pour deux joueurs. Touche ton ami pour lui donner la tague!</p>
-    <details class="howto"><summary></summary><p>Un joueur a la tague; une flèche le montre. Bouge et saute d'une plateforme à l'autre. Si tu as la tague, touche l'autre joueur pour la lui donner. Attrape des bonus pour t'aider. À la fin du temps, le joueur qui a eu la tague le moins longtemps gagne.</p></details>
+    <p>Un jeu de poursuite amusant pour deux joueurs. Touche ton ami pour lui passer la tague !</p>
+    <details class="howto"><summary></summary><p>Un joueur a la tague : une flèche le montre. Déplace-toi et saute d'une plateforme à l'autre. Si tu as la tague, touche l'autre joueur pour la lui passer. Attrape les bonus pour t'aider. À la fin du temps, le joueur qui a eu la tague le moins longtemps gagne.</p></details>
   </section>
 
   <div class="panel center" data-fs-host>
@@ -129,16 +130,16 @@
       <div class="tag-rotate" id="tagRotate">
         <div class="ic" data-no-i18n>📱</div>
         <p style="font-weight:800;color:var(--yellow)">Tourne ton téléphone</p>
-        <p>La tague est un jeu à deux joueurs. Mets-le à l'horizontale pour que vous entriez tous les deux.</p>
+        <p>Tague est un jeu à deux. Mets le téléphone à l'horizontale pour que vous teniez tous les deux.</p>
       </div>
 
       <!-- start / result cover -->
       <div class="tag-cover" id="tagCover">
         <h2 id="tagTitle">Tague</h2>
-        <p>Deux joueurs. L'un a la tague et doit toucher l'autre pour la lui donner. Saute d'une plateforme à l'autre et attrape des bonus!</p>
+        <p>Deux joueurs. L'un a la tague et doit toucher l'autre pour la lui passer. Saute d'une plateforme à l'autre et attrape les bonus !</p>
         <p>Le joueur qui a eu la tague le moins longtemps gagne.</p>
         <p id="tagScoreLine" class="tag-score tag-hide"></p>
-        <p style="font-size:14px;color:#d7d3ea">Bleu : bouge avec les boutons de gauche. Rouge : bouge avec les boutons de droite. Sur un ordinateur : Bleu utilise A, D et W. Rouge utilise les touches fléchées.</p>
+        <p style="font-size:14px;color:#d7d3ea">Bleu : utilise les boutons de gauche. Rouge : utilise les boutons de droite. Sur un ordinateur : Bleu joue avec A, D et W. Rouge joue avec les flèches.</p>
         <button class="btn btn-yellow" id="tagStartBtn">Commencer la partie</button>
       </div>
     </div>
@@ -147,7 +148,7 @@
       <button class="btn" onclick="tagStart()">Nouvelle partie</button>
       <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
     </div>
-    <p class="muted" style="margin-top:10px;font-size:14px">Bonus : Vitesse, Super saut, Bouclier et Gel.</p>
+    <p class="muted" style="margin-top:10px;font-size:14px">Les bonus : Vitesse, Super saut, Bouclier et Gel.</p>
   </div>
 </main>
 
@@ -157,7 +158,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(66)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(71)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quiz</h4>
@@ -165,11 +166,19 @@
         <a href="gk-quiz.html">Culture générale</a>
         <a href="canada-quiz.html">Canada Quiz</a>
         <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
-        <a href="province-quiz.html">Quelle province es-tu?</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
         <a href="world-quiz.html">Quiz sur le monde</a>
         <a href="science-quiz.html">Sciences et espace</a>
         <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
         <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Pratique de l'examen de conduite</h4>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
       </div>
       <div class="footer-map-col">
         <h4>Jeux de réflexion et casse-têtes</h4>
@@ -203,7 +212,7 @@
         <h4>Jeux de groupe</h4>
         <a href="charades.html">Charades</a>
         <a href="imposter.html">Imposteur</a>
-        <a href="would-you-rather.html">Préfères-tu?</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
         <a href="trivia-showdown.html">Duel de quiz</a>
         <a href="hold-to-head.html">Devine sur le front</a>
         <a href="top-answers.html">Meilleures réponses</a>
@@ -219,7 +228,7 @@
         <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
         <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
         <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
-        <a href="what-is-confederation.html">Qu'est-ce que la Confédération?</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
         <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
         <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
         <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
@@ -442,8 +451,8 @@
   reset(); draw(); checkRotate();    // draw the first frame behind the start cover
 })();
 </script>
-  <script src="../js/game-fullscreen.js"></script>
-  <script src="../js/site.js?v=20260729"></script>
-  <script src="../js/analytics.js?v=20260729"></script>
+  <script src="../js/game-fullscreen.js?v=20260730"></script>
+  <script src="../js/site.js?v=20260730"></script>
+  <script src="../js/analytics.js?v=20260730"></script>
 </body>
 </html>

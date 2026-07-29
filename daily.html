@@ -6,7 +6,7 @@
 <title>Daily Challenge — New Quiz &amp; Word Every Day | Canada Quiz</title>
 <meta name="description" content="A brand new Daily Quiz and Daily Word every day — same for everyone. Build your daily streak! Free, no signup. Come back each day.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="css/style.css?v=20260729">
+<link rel="stylesheet" href="css/style.css?v=20260730">
 <style>
   .dl-streak{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:10px 0}
   .dl-streak .box{background:#fff7e0;border:2px solid #ffe08a;border-radius:14px;padding:10px 20px;text-align:center;font-weight:800}
@@ -98,7 +98,7 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <details class="footer-map">
-      <summary>All pages <span class="fm-count">(70)</span></summary>
+      <summary>All pages <span class="fm-count">(71)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quizzes</h4>
@@ -146,6 +146,7 @@
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="tag.html">Tag</a>
       </div>
       <div class="footer-map-col">
         <h4>Party Games</h4>
@@ -239,7 +240,71 @@ const TRIVIA=[
   {q:"Which season comes after winter?",o:["Summer","Autumn","Spring","Fall"],a:2},
   {q:"What is the capital of France?",o:["London","Berlin","Paris","Rome"],a:2},
   {q:"How many zeros are in one thousand?",o:["2","3","4","5"],a:1},
-  {q:"What do caterpillars turn into?",o:["Spiders","Butterflies","Bees","Ants"],a:1}
+  {q:"What do caterpillars turn into?",o:["Spiders","Butterflies","Bees","Ants"],a:1},
+  {q:"How many provinces does Canada have?",o:["9","10","11","13"],a:1},
+  {q:"Which animal is shown on the Canadian nickel?",o:["Moose","Loon","Polar bear","Beaver"],a:3},
+  {q:"Which bird is pictured on the Canadian one-dollar coin?",o:["Loon","Goose","Eagle","Owl"],a:0},
+  {q:"What is the largest Canadian province by area?",o:["Ontario","Alberta","Manitoba","Quebec"],a:3},
+  {q:"Which Canadian city is home to the CN Tower?",o:["Toronto","Calgary","Halifax","Winnipeg"],a:0},
+  {q:"Which ocean lies off Canada's east coast?",o:["Pacific","Indian","Southern","Atlantic"],a:3},
+  {q:"What is the capital city of Nunavut?",o:["Iqaluit","Yellowknife","Whitehorse","Regina"],a:0},
+  {q:"Whitehorse is the capital of which territory?",o:["Nunavut","Northwest Territories","Labrador","Yukon"],a:3},
+  {q:"Which mountain range runs through western Canada?",o:["The Alps","The Andes","The Himalayas","The Rocky Mountains"],a:3},
+  {q:"Which Great Lake lies entirely inside the United States?",o:["Lake Erie","Lake Michigan","Lake Huron","Lake Ontario"],a:1},
+  {q:"What is the smallest Canadian province by area?",o:["Prince Edward Island","Nova Scotia","New Brunswick","Newfoundland and Labrador"],a:0},
+  {q:"Which holiday does Canada celebrate on July 1?",o:["Canada Day","Victoria Day","Labour Day","Thanksgiving"],a:0},
+  {q:"What is Canada's national summer sport?",o:["Soccer","Lacrosse","Baseball","Rowing"],a:1},
+  {q:"Which province lies directly west of Manitoba?",o:["Saskatchewan","Alberta","Ontario","British Columbia"],a:0},
+  {q:"What are Canada's two official languages?",o:["English and Spanish","French and German","English and Italian","English and French"],a:3},
+  {q:"Which Canadian city hosted the 2010 Winter Olympic Games?",o:["Vancouver","Calgary","Montreal","Quebec City"],a:0},
+  {q:"What is the capital city of British Columbia?",o:["Vancouver","Victoria","Kelowna","Kamloops"],a:1},
+  {q:"Poutine is fries and gravy topped with what?",o:["Sour cream","Melted butter","Baked beans","Cheese curds"],a:3},
+  {q:"What is the highest mountain in Canada?",o:["Mount Robson","Mount Royal","Mount Logan","Mount Tremblant"],a:2},
+  {q:"In which year did Canada become a country?",o:["1776","1812","1867","1901"],a:2},
+  {q:"What is the NHL championship trophy called?",o:["The Grey Cup","The Memorial Cup","The World Cup","The Stanley Cup"],a:3},
+  {q:"Maple syrup is made by boiling what?",o:["Tree sap","Tree bark","Maple leaves","Tree roots"],a:0},
+  {q:"What is the capital city of Japan?",o:["Tokyo","Seoul","Beijing","Bangkok"],a:0},
+  {q:"Egypt is found on which continent?",o:["Asia","Africa","Europe","South America"],a:1},
+  {q:"What is the largest hot desert in the world?",o:["The Gobi","The Mojave","The Kalahari","The Sahara"],a:3},
+  {q:"Which continent is the coldest?",o:["Europe","Asia","Africa","Antarctica"],a:3},
+  {q:"Kangaroos live in the wild in which country?",o:["Australia","Brazil","Kenya","India"],a:0},
+  {q:"Mount Everest is part of which mountain range?",o:["The Andes","The Alps","The Himalayas","The Urals"],a:2},
+  {q:"What is the chemical formula for water?",o:["CO2","H2O","O2","NaCl"],a:1},
+  {q:"Which force pulls objects toward the ground?",o:["Gravity","Friction","Magnetism","Pressure"],a:0},
+  {q:"What do we call animals that eat only plants?",o:["Carnivores","Omnivores","Herbivores","Predators"],a:2},
+  {q:"Which part of a plant takes in water from the soil?",o:["Leaves","Flowers","Roots","Seeds"],a:2},
+  {q:"Which planet is famous for its bright rings?",o:["Mars","Venus","Mercury","Saturn"],a:3},
+  {q:"What is the largest organ of the human body?",o:["The heart","The skin","The brain","The liver"],a:1},
+  {q:"What is a pattern of stars in the night sky called?",o:["A galaxy","A comet","A meteor","A constellation"],a:3},
+  {q:"How many legs does an insect have?",o:["4","6","8","10"],a:1},
+  {q:"What do we call a group of wolves?",o:["A herd","A pack","A flock","A swarm"],a:1},
+  {q:"Which animal can change the colour of its skin?",o:["Camel","Zebra","Chameleon","Otter"],a:2},
+  {q:"What is the largest bird in the world?",o:["Eagle","Swan","Pelican","Ostrich"],a:3},
+  {q:"Which animal is the largest member of the deer family?",o:["Elk","Moose","Caribou","White-tailed deer"],a:1},
+  {q:"How many hearts does an octopus have?",o:["1","2","3","4"],a:2},
+  {q:"Who was the first person to walk on the Moon?",o:["Yuri Gagarin","John Glenn","Buzz Aldrin","Neil Armstrong"],a:3},
+  {q:"The pyramids of Giza were built in which country?",o:["Greece","Egypt","Mexico","Peru"],a:1},
+  {q:"The Olympic Games began long ago in which country?",o:["Italy","Egypt","Greece","France"],a:2},
+  {q:"How many players from one team are on the ice in hockey?",o:["4","5","6","7"],a:2},
+  {q:"In tennis, what is a score of zero called?",o:["Love","Duck","Nil","Blank"],a:0},
+  {q:"How many rings are on the Olympic flag?",o:["5","3","4","6"],a:0},
+  {q:"Which sport is played with a shuttlecock?",o:["Squash","Badminton","Tennis","Table tennis"],a:1},
+  {q:"How many holes are played in a full round of golf?",o:["9","12","18","21"],a:2},
+  {q:"Which food is made from crushed cocoa beans?",o:["Cheese","Bread","Butter","Chocolate"],a:3},
+  {q:"What is the main ingredient in bread?",o:["Flour","Sugar","Butter","Salt"],a:0},
+  {q:"Nanaimo bars and butter tarts are Canadian what?",o:["Soups","Breads","Desserts","Drinks"],a:2},
+  {q:"Which vegetable is orange and grows underground?",o:["Lettuce","Carrot","Pepper","Cabbage"],a:1},
+  {q:"How many letters are in the English alphabet?",o:["24","25","26","28"],a:2},
+  {q:"What does the French word bonjour mean?",o:["Goodbye","Hello","Please","Thank you"],a:1},
+  {q:"What is the opposite of ancient?",o:["Heavy","Quiet","Modern","Narrow"],a:2},
+  {q:"What is 12 times 12?",o:["144","132","124","154"],a:0},
+  {q:"What is half of 250?",o:["105","125","115","135"],a:1},
+  {q:"How many sides does an octagon have?",o:["6","7","8","9"],a:2},
+  {q:"How many degrees are in a right angle?",o:["90","45","60","180"],a:0},
+  {q:"How many days are in a leap year?",o:["364","365","366","367"],a:2},
+  {q:"Which month can have 29 days?",o:["January","February","March","April"],a:1},
+  {q:"In which direction does the sun rise?",o:["North","South","West","East"],a:3},
+  {q:"Which instrument has black and white keys?",o:["Guitar","Violin","Piano","Drum"],a:2}
 ];
 const DWORDS=[
   {w:"MAPLE",h:"a Canadian tree with sweet syrup"},{w:"BEAVER",h:"a busy dam-building animal"},
@@ -369,7 +434,7 @@ function revealWord(){
 document.getElementById('dateline').textContent='Today is '+new Date().toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'})+' — new challenges every day!';
 refreshStreak(); renderQuiz(); renderWord();
 </script>
-  <script src="js/site.js?v=20260729"></script>
-  <script src="js/analytics.js?v=20260729"></script>
+  <script src="js/site.js?v=20260730"></script>
+  <script src="js/analytics.js?v=20260730"></script>
 </body>
 </html>

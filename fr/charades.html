@@ -6,7 +6,7 @@
 <title>Fête de charades 🎭 — Jeux en famille</title>
 <meta name="description" content="Jeu gratuit Charades en fête pour toute la famille. 2 équipes, minuterie, plus de 1 400 mots en 13 catégories. Jouez sur téléphone, tablette ou ordinateur.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../css/style.css?v=20260729">
+<link rel="stylesheet" href="../css/style.css?v=20260730">
 <style>
   .game-stage{position:relative}
   .screen{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;padding:26px 16px;min-height:66vh}
@@ -78,8 +78,8 @@
 <!-- HOME -->
 <div class="screen active" id="screen-home">
   <h1>🎭 Fête de charades</h1>
-  <p class="subtitle">4 joueurs et plus, 2 équipes. Un joueur regarde l'écran et mime le mot — les coéquipiers devinent. Interdit de parler!</p>
-  <details class="howto"><summary></summary><p>Divisez-vous en 2 équipes. Un joueur regarde l'écran et mime le mot secret — pas de parole, pas de pointer d'objets réels! Les coéquipiers crient leurs suppositions. Touchez le bouton vert quand ils trouvent (+1 point), ou Passer pour un nouveau mot. Quand la minuterie se termine, c'est au tour de l'autre équipe. L'équipe avec le plus de points gagne!</p></details>
+  <p class="subtitle">4 joueurs et plus, 2 équipes. Un joueur regarde l'écran et mime le mot — les coéquipiers devinent. Interdit de parler !</p>
+  <details class="howto"><summary></summary><p>Divisez-vous en 2 équipes. Un joueur regarde l'écran et mime le mot secret — pas de parole, pas de pointer d'objets réels ! Les coéquipiers crient leurs suppositions. Touchez le bouton vert quand ils trouvent (+1 point), ou Passer pour un nouveau mot. Quand la minuterie se termine, c'est au tour de l'autre équipe. L'équipe avec le plus de points gagne !</p></details>
 
   <div>
     <p style="margin-bottom:10px; font-weight:700; font-size:1.15rem;">Choisis des catégories :</p>
@@ -101,7 +101,7 @@
 <div class="screen" id="screen-handoff">
   <div class="team-banner" id="handoff-team">Équipe rouge</div>
   <div id="round-info"></div>
-  <h1>📱 Passe l'écran!</h1>
+  <h1>📱 Passe l'écran !</h1>
   <p class="subtitle" id="handoff-msg">Acteur : venez regarder l'écran. Tous les autres — pas de triche ! 🙈</p>
   <button class="gbtn big green" onclick="showWord()">👀 Je suis l'acteur — Montre-moi le mot</button>
 </div>
@@ -110,8 +110,8 @@
 <div class="screen" id="screen-word">
   <div class="category-tag" id="word-category"></div>
   <div id="word-display"></div>
-  <p class="hint">Mémorisez-le! Quand vous touchez Commencer, le mot se cache et la minuterie démarre. Mimez-le — sans parler, sans pointer d'objets!</p>
-  <button class="gbtn big yellow" onclick="startActing()">🎬 Compris — Commence à mimer!</button>
+  <p class="hint">Mémorisez-le ! Quand vous touchez Commencer, le mot se cache et la minuterie démarre. Mimez-le — sans parler, sans pointer d'objets !</p>
+  <button class="gbtn big yellow" onclick="startActing()">🎬 Compris — Commence à mimer !</button>
   <button class="gbtn blue" style="font-size:1.1rem; padding:14px 28px;" onclick="newWord()">🔄 Trop difficile — donne-moi un autre mot</button>
 </div>
 
@@ -121,7 +121,7 @@
   <div id="timer">60</div>
   <p class="hint">L'équipe devine... Quand quelqu'un dit le bon mot, touchez ✅</p>
   <div class="action-row">
-    <button class="gbtn green" onclick="guessedIt()">✅ Ils ont trouvé!<br><span style="font-size:.8em; font-weight:400;">+1 point → mot suivant</span></button>
+    <button class="gbtn green" onclick="guessedIt()">✅ Ils ont trouvé !<br><span style="font-size:.8em; font-weight:400;">+1 point → mot suivant</span></button>
     <button class="gbtn" onclick="skipWord()">⏭️ Passer<br><span style="font-size:.8em; font-weight:400;">nouveau mot</span></button>
   </div>
   <button class="gbtn blue" style="font-size:1rem; padding:12px 24px;" onclick="peekWord()" id="peek-btn">👁️ Voir le mot</button>
@@ -130,7 +130,7 @@
 
 <!-- ROUND OVER -->
 <div class="screen" id="screen-roundover">
-  <h1>⏰ Temps écoulé!</h1>
+  <h1>⏰ Temps écoulé !</h1>
   <div class="scoreboard">
     <div class="score-card team-a-bg" id="card-a"><div class="name">🔴 Équipe rouge</div><div class="pts" id="score-a">0</div></div>
     <div class="score-card team-b-bg" id="card-b"><div class="name">🔵 Équipe bleue</div><div class="pts" id="score-b">0</div></div>
@@ -143,7 +143,7 @@
 <!-- GAME OVER -->
 <div class="screen" id="screen-gameover">
   <div class="trophy">🏆</div>
-  <h1 id="winner-text">L'équipe rouge gagne!</h1>
+  <h1 id="winner-text">L'équipe rouge gagne !</h1>
   <div class="scoreboard">
     <div class="score-card team-a-bg"><div class="name">🔴 Équipe rouge</div><div class="pts" id="final-a">0</div></div>
     <div class="score-card team-b-bg"><div class="name">🔵 Équipe bleue</div><div class="pts" id="final-b">0</div></div>
@@ -160,7 +160,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(70)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(71)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quiz</h4>
@@ -168,7 +168,7 @@
         <a href="gk-quiz.html">Culture générale</a>
         <a href="canada-quiz.html">Canada Quiz</a>
         <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
-        <a href="province-quiz.html">Quelle province es-tu?</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
         <a href="world-quiz.html">Quiz sur le monde</a>
         <a href="science-quiz.html">Sciences et espace</a>
         <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
@@ -208,12 +208,13 @@
         <a href="tictactoe.html">Tic-tac-toe</a>
         <a href="checkers.html">Dames</a>
         <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="tag.html">Tague</a>
       </div>
       <div class="footer-map-col">
         <h4>Jeux de groupe</h4>
         <a href="charades.html">Charades</a>
         <a href="imposter.html">Imposteur</a>
-        <a href="would-you-rather.html">Préfères-tu?</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
         <a href="trivia-showdown.html">Duel de quiz</a>
         <a href="hold-to-head.html">Devine sur le front</a>
         <a href="top-answers.html">Meilleures réponses</a>
@@ -229,7 +230,7 @@
         <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
         <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
         <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
-        <a href="what-is-confederation.html">Qu'est-ce que la Confédération?</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
         <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
         <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
         <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
@@ -262,7 +263,7 @@
 
 <script>
 const WORDS = {
-  "Animals": ["Elephant","Giraffe","Penguin","Kangaroo","Monkey","Snake","Butterfly","Crab","Rooster","Gorilla","Cat","Dog","Frog","Shark","Eagle","Turtle","Rabbit","Spider","Bee","Horse","Lion","Octopus","Bat","Flamingo","Squirrel","Tiger","Bear","Wolf","Fox","Deer","Moose","Owl","Parrot","Peacock","Swan","Duck","Chicken","Turkey","Pig","Cow","Sheep","Goat","Donkey","Camel","Zebra","Hippo","Rhino","Crocodile","Alligator","Lizard","Chameleon","Iguana","Dolphin","Whale","Seal","Walrus","Otter","Beaver","Raccoon","Skunk","Porcupine","Hedgehog","Mole","Mouse","Rat","Hamster","Guinea pig","Ferret","Sloth","Koala","Panda","Polar bear","Cheetah","Leopard","Jaguar","Hyena","Meerkat","Lemur","Chimpanzee","Orangutan","Baboon","Ostrich","Emu","Pelican","Seagull","Woodpecker","Hummingbird","Vulture","Hawk","Falcon","Crow","Pigeon","Jellyfish","Starfish","Seahorse","Lobster","Shrimp","Snail","Worm","Ant","Grasshopper","Ladybug","Dragonfly","Mosquito","Firefly","Scorpion","Goldfish","Bull","Puppy","Kitten"],
+  "Animals": ["Elephant","Giraffe","Penguin","Kangaroo","Monkey","Snake","Butterfly","Crab","Rooster","Gorilla","Cat","Dog","Frog","Shark","Eagle","Turtle","Rabbit","Spider","Bee","Horse","Lion","Octopus","Bat","Flamingo","Squirrel","Tiger","Bear","Wolf","Fox","Deer","Moose","Owl","Parrot","Peacock","Swan","Duck","Chicken","Wild turkey","Pig","Cow","Sheep","Goat","Donkey","Camel","Zebra","Hippo","Rhino","Crocodile","Alligator","Lizard","Chameleon","Iguana","Dolphin","Whale","Seal","Walrus","Otter","Beaver","Raccoon","Skunk","Porcupine","Hedgehog","Mole","Mouse","Rat","Hamster","Guinea pig","Ferret","Sloth","Koala","Panda","Polar bear","Cheetah","Leopard","Jaguar","Hyena","Meerkat","Lemur","Chimpanzee","Orangutan","Baboon","Ostrich","Emu","Pelican","Seagull","Woodpecker","Hummingbird","Vulture","Hawk","Falcon","Crow","Pigeon","Jellyfish","Starfish","Seahorse","Lobster","Shrimp","Snail","Worm","Ant","Grasshopper","Ladybug","Dragonfly","Mosquito","Firefly","Scorpion","Goldfish","Bull","Puppy","Kitten"],
   "Movies": ["Titanic","Spider-Man","Frozen","The Lion King","Jurassic Park","Harry Potter","Jaws","Superman","Avatar","Toy Story","Batman","Finding Nemo","King Kong","Rocky","Star Wars","Shrek","Aladdin","The Karate Kid","Ghostbusters","Home Alone","E.T.","The Matrix","Forrest Gump","Pirates of the Caribbean","Indiana Jones","Back to the Future","The Wizard of Oz","Mary Poppins","The Terminator","Godzilla","Transformers","The Avengers","Iron Man","Captain America","Thor","Black Panther","Wonder Woman","The Hulk","Moana","Coco","Up","Wall-E","Ratatouille","The Incredibles","Monsters Inc","Cars","Brave","Tangled","Beauty and the Beast","Cinderella","Snow White","Sleeping Beauty","The Little Mermaid","Peter Pan","Pinocchio","Dumbo","Bambi","The Jungle Book","101 Dalmatians","Lady and the Tramp","Mulan","Pocahontas","Hercules","Tarzan","Lilo & Stitch","Kung Fu Panda","Madagascar","Ice Age","Despicable Me","Minions","The Secret Life of Pets","Zootopia","Sing","Trolls","How to Train Your Dragon","The Lego Movie","Sonic the Hedgehog","Free Willy","Twister","The Mask","Jumanji","Night at the Museum","The Mummy","Fast and Furious","Mission Impossible","James Bond","Men in Black","The Hunger Games","Twilight","The Chronicles of Narnia","The Hobbit","The Lord of the Rings","Charlie and the Chocolate Factory","Matilda","The Grinch","Elf","The Polar Express","The Nightmare Before Christmas","Casper","Hotel Transylvania","The Addams Family","Scooby-Doo","Alvin and the Chipmunks","Paddington","Big Hero 6","Inside Out","Encanto","Turning Red","Luca","Rambo","The Godfather","Grease"],
   "Actions": ["Swimming","Dancing","Brushing teeth","Driving a car","Fishing","Cooking","Sleeping","Taking a selfie","Playing guitar","Riding a horse","Skiing","Boxing","Yoga","Painting","Typing","Ironing clothes","Juggling","Climbing a mountain","Playing basketball","Washing dishes","Sneezing","Karate","Rowing a boat","Making pizza","Texting","Running","Jumping rope","Push-ups","Shoveling snow","Mowing the lawn","Walking a dog","Feeding a baby","Changing a diaper","Blowing up a balloon","Blowing out candles","Opening a gift","Wrapping a present","Building a sandcastle","Flying a kite","Riding a bike","Rollerblading","Ice skating","Playing chess","Playing cards","Doing a puzzle","Knitting","Hammering a nail","Sawing wood","Digging a hole","Planting flowers","Watering plants","Raking leaves","Picking apples","Milking a cow","Riding a rollercoaster","Bungee jumping","Skydiving","Scuba diving","Snorkeling","Kayaking","Hitchhiking","Camping","Making a fire","Roasting marshmallows","Taking a shower","Shaving","Combing hair","Putting on makeup","Tying shoelaces","Getting dressed","Folding laundry","Sweeping the floor","Mopping","Making the bed","Eating spaghetti","Eating corn on the cob","Peeling a banana","Cracking an egg","Flipping pancakes","Stirring soup","Cutting vegetables","Grilling burgers","Eating ice cream","Drinking coffee","Blowing your nose","Yawning","Snoring","Hiccuping","Coughing","Laughing","Crying","Whistling","Clapping","Waving goodbye","Shaking hands","High five","Tickling","Hugging","Marching","Tiptoeing","Limping","Crawling","Stretching","Meditating","Jogging","Doing a cartwheel","Doing a handstand","Hula hooping","Playing hide and seek","Playing piano","Playing violin","Conducting an orchestra","Singing opera","Beatboxing","Rapping","Ballet dancing","Breakdancing","Moonwalking","Directing traffic","Delivering mail","Walking on a tightrope"],
   "Jobs": ["Doctor","Teacher","Chef","Police officer","Firefighter","Barber","Dentist","Pilot","Farmer","Photographer","Waiter","Mechanic","Magician","DJ","Astronaut","Lifeguard","Delivery driver","Tailor","Referee","Surgeon","Nurse","Lawyer","Judge","Accountant","Banker","Cashier","Salesperson","Real estate agent","Architect","Engineer","Programmer","Scientist","Chemist","Veterinarian","Pharmacist","Optometrist","Psychologist","Paramedic","Soldier","Sailor","Fisherman","Butcher","Baker","Florist","Gardener","Plumber","Electrician","Carpenter","Painter","Welder","Miner","Construction worker","Crane operator","Truck driver","Taxi driver","Bus driver","Train conductor","Flight attendant","Air traffic controller","Travel agent","Hotel manager","Housekeeper","Janitor","Security guard","Detective","Spy","Zookeeper","Animal trainer","Dog groomer","Actor","Singer","Dancer","Musician","Comedian","Clown","Puppeteer","Ventriloquist","News anchor","Journalist","Author","Poet","Librarian","Translator","Tour guide","Artist","Sculptor","Tattoo artist","Fashion designer","Model","Makeup artist","Hairdresser","Massage therapist","Personal trainer","Yoga instructor","Coach","Race car driver","Jockey","Boxer","Wrestler","Weatherman","Politician","Mayor","President","King","Queen","Knight","Pirate","Ninja","Cowboy","Barista","Bartender","Butler","Nanny","Principal","Professor","Bodyguard"],
@@ -455,8 +456,8 @@ function endGame() {
   show('screen-gameover');
 }
 </script>
-  <script src="../js/game-fullscreen.js"></script>
-  <script src="../js/site.js?v=20260729"></script>
-  <script src="../js/analytics.js?v=20260729"></script>
+  <script src="../js/game-fullscreen.js?v=20260730"></script>
+  <script src="../js/site.js?v=20260730"></script>
+  <script src="../js/analytics.js?v=20260730"></script>
 </body>
 </html>

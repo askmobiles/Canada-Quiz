@@ -47,7 +47,7 @@ window.CQ_DRIVE_Q = [];
        e:"Un cercle rouge avec une barre rouge signifie que ce qui est illustré est interdit. Les camionneurs doivent prendre un autre chemin, tandis que les autos et les autres petits véhicules peuvent encore utiliser cette route." },
   c:3 },
 
-{ id:"sa5", sec:"signs", sign:"speed-limit-ends",
+{ id:"sa5", sec:"signs", sign:"speed-limit-begins",
   en:{ q:"What does this sign tell you?",
        a:["The limit you are driving now has ended and no limit applies","A new speed limit starts just ahead","You have been driving too fast","The road ahead is closed"],
        e:"This sign warns you that the limit is about to change. Start adjusting your speed now so you are at the new limit when you get there." },

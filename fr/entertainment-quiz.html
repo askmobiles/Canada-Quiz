@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://canada-quiz.com/fr/entertainment-quiz.html">
 <meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../css/style.css?v=20260729">
+<link rel="stylesheet" href="../css/style.css?v=20260730">
 <style>.bigq{font-size:80px;text-align:center;margin:6px 0}</style>
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
@@ -41,9 +41,9 @@
 <main class="container">
   <section id="start-screen" class="panel center">
     <div style="font-size:46px">🎬</div>
-    <h1>Quiz cinéma, musique &amp; sports</h1>
-    <p class="muted" style="max-width:600px;margin:0 auto">Films et télé, musique, sports et cuisine du monde entier. Choisissez une catégorie et voyez combien vous réussissez!</p>
-    <details class="howto"><summary></summary><p>Choisissez un sujet ci-dessous. Vous obtiendrez 10 questions &mdash; touchez la réponse que vous pensez être bonne, et vous saurez instantanément si vous avez raison, avec un court fait. Rejouez à tout moment pour de nouvelles questions!</p></details>
+    <h1>Quiz cinéma, musique &amp ; sports</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto">Films et télé, musique, sports et cuisine du monde entier. Choisissez une catégorie et voyez combien vous réussissez !</p>
+    <details class="howto"><summary></summary><p>Choisissez un sujet ci-dessous. Vous obtiendrez 10 questions &mdash ; touchez la réponse que vous pensez être bonne, et vous saurez instantanément si vous avez raison, avec un court fait. Rejouez à tout moment pour de nouvelles questions !</p></details>
     <div class="grid" id="cats" style="margin-top:18px"></div>
   </section>
 
@@ -58,7 +58,7 @@
     <div class="options" id="options"></div>
     <div id="explain-box" class="explain" style="display:none"></div>
     <div class="center" style="margin-top:18px">
-      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Suivant &rarr;</button>
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Suivant &rarr ;</button>
     </div>
   </section>
 
@@ -80,7 +80,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(70)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(71)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quiz</h4>
@@ -88,7 +88,7 @@
         <a href="gk-quiz.html">Culture générale</a>
         <a href="canada-quiz.html">Canada Quiz</a>
         <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
-        <a href="province-quiz.html">Quelle province es-tu?</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
         <a href="world-quiz.html">Quiz sur le monde</a>
         <a href="science-quiz.html">Sciences et espace</a>
         <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
@@ -128,12 +128,13 @@
         <a href="tictactoe.html">Tic-tac-toe</a>
         <a href="checkers.html">Dames</a>
         <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="tag.html">Tague</a>
       </div>
       <div class="footer-map-col">
         <h4>Jeux de groupe</h4>
         <a href="charades.html">Charades</a>
         <a href="imposter.html">Imposteur</a>
-        <a href="would-you-rather.html">Préfères-tu?</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
         <a href="trivia-showdown.html">Duel de quiz</a>
         <a href="hold-to-head.html">Devine sur le front</a>
         <a href="top-answers.html">Meilleures réponses</a>
@@ -149,7 +150,7 @@
         <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
         <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
         <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
-        <a href="what-is-confederation.html">Qu'est-ce que la Confédération?</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
         <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
         <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
         <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
@@ -181,581 +182,119 @@
 </footer>
 
 <script>
-const BANK={
- "Movies & TV": {
-  "emoji": "🎬",
-  "color": "purple",
-  "q": [
-   {
-    "q": "In which movie does a young lion named Simba grow up to be king?",
-    "options": [
-     "Madagascar",
-     "The Lion King",
-     "Zootopia",
-     "Tarzan"
-    ],
-    "answer": 1,
-    "explain": "The Lion King follows Simba's journey to become king of the Pride Lands."
-   },
-   {
-    "q": "What kind of animal is Nemo in Finding Nemo?",
-    "options": [
-     "Dolphin",
-     "Clownfish",
-     "Turtle",
-     "Shark"
-    ],
-    "answer": 1,
-    "explain": "Nemo is a little orange-and-white clownfish."
-   },
-   {
-    "q": "In Frozen, what is the name of the snowman?",
-    "options": [
-     "Sven",
-     "Olaf",
-     "Kristoff",
-     "Hans"
-    ],
-    "answer": 1,
-    "explain": "Olaf is the friendly snowman who loves warm hugs."
-   },
-   {
-    "q": "Which movie features a family of superheroes?",
-    "options": [
-     "The Incredibles",
-     "Cars",
-     "Up",
-     "Brave"
-    ],
-    "answer": 0,
-    "explain": "The Incredibles is about a whole family with superpowers."
-   },
-   {
-    "q": "What colour is Shrek?",
-    "options": [
-     "Blue",
-     "Green",
-     "Purple",
-     "Brown"
-    ],
-    "answer": 1,
-    "explain": "Shrek is a big green ogre."
-   },
-   {
-    "q": "In Toy Story, what type of toy is Woody?",
-    "options": [
-     "Astronaut",
-     "Cowboy",
-     "Dinosaur",
-     "Robot"
-    ],
-    "answer": 1,
-    "explain": "Woody is a pull-string cowboy doll."
-   },
-   {
-    "q": "Which film is about a rat who wants to be a chef?",
-    "options": [
-     "Ratatouille",
-     "Bolt",
-     "Coco",
-     "Luca"
-    ],
-    "answer": 0,
-    "explain": "Ratatouille follows Remy, a rat with a talent for cooking."
-   },
-   {
-    "q": "What is the name of the wizard school in Harry Potter?",
-    "options": [
-     "Camelot",
-     "Hogwarts",
-     "Neverland",
-     "Narnia"
-    ],
-    "answer": 1,
-    "explain": "Hogwarts School of Witchcraft and Wizardry."
-   },
-   {
-    "q": "Which animated movie is set in the country of Colombia?",
-    "options": [
-     "Encanto",
-     "Moana",
-     "Mulan",
-     "Brave"
-    ],
-    "answer": 0,
-    "explain": "Encanto tells the story of the magical Madrigal family in Colombia."
-   },
-   {
-    "q": "In Moana, what is the name of the demigod?",
-    "options": [
-     "Maui",
-     "Tui",
-     "Pua",
-     "Tamatoa"
-    ],
-    "answer": 0,
-    "explain": "Maui is the demigod who joins Moana on her journey."
-   },
-   {
-    "q": "Which show features a yellow family from Springfield?",
-    "options": [
-     "Family Guy",
-     "The Simpsons",
-     "Rugrats",
-     "Doug"
-    ],
-    "answer": 1,
-    "explain": "The Simpsons has been on TV since 1989."
-   },
-   {
-    "q": "What is the name of the toy space ranger in Toy Story?",
-    "options": [
-     "Buzz Lightyear",
-     "Rex",
-     "Slinky",
-     "Hamm"
-    ],
-    "answer": 0,
-    "explain": "Buzz Lightyear's catchphrase is 'To infinity and beyond!'"
-   },
-   {
-    "q": "Which movie features a giant gorilla climbing a skyscraper?",
-    "options": [
-     "Godzilla",
-     "King Kong",
-     "Jumanji",
-     "Rampage"
-    ],
-    "answer": 1,
-    "explain": "King Kong famously climbs the Empire State Building."
-   },
-   {
-    "q": "What is the highest award in the movie industry called?",
-    "options": [
-     "The Grammy",
-     "The Oscar",
-     "The Emmy",
-     "The Tony"
-    ],
-    "answer": 1,
-    "explain": "The Academy Award — the Oscar — is the top film prize."
-   }
-  ]
- },
- "Music": {
-  "emoji": "🎵",
-  "color": "orange",
-  "q": [
-   {
-    "q": "How many strings does a standard guitar have?",
-    "options": [
-     "4",
-     "5",
-     "6",
-     "8"
-    ],
-    "answer": 2,
-    "explain": "A standard acoustic or electric guitar has six strings."
-   },
-   {
-    "q": "Which instrument has black and white keys?",
-    "options": [
-     "Violin",
-     "Piano",
-     "Trumpet",
-     "Drum"
-    ],
-    "answer": 1,
-    "explain": "The piano has 88 black and white keys."
-   },
-   {
-    "q": "Which Canadian singer is famous for the song 'Hello'?",
-    "options": [
-     "Adele",
-     "Shania Twain",
-     "Celine Dion",
-     "Alanis Morissette"
-    ],
-    "answer": 0,
-    "explain": "'Hello' is by Adele, who is British — Canada's Celine Dion sang 'My Heart Will Go On'."
-   },
-   {
-    "q": "Which Canadian singer performed 'My Heart Will Go On' from Titanic?",
-    "options": [
-     "Shania Twain",
-     "Celine Dion",
-     "Avril Lavigne",
-     "Sarah McLachlan"
-    ],
-    "answer": 1,
-    "explain": "Celine Dion, from Quebec, sang the Titanic theme song."
-   },
-   {
-    "q": "What family of instruments does the trumpet belong to?",
-    "options": [
-     "Strings",
-     "Brass",
-     "Woodwind",
-     "Percussion"
-    ],
-    "answer": 1,
-    "explain": "The trumpet is a brass instrument played by buzzing your lips."
-   },
-   {
-    "q": "How many lines are on a musical staff?",
-    "options": [
-     "3",
-     "4",
-     "5",
-     "6"
-    ],
-    "answer": 2,
-    "explain": "A musical staff has five lines and four spaces."
-   },
-   {
-    "q": "Which instrument is played by hitting it with sticks?",
-    "options": [
-     "Flute",
-     "Drums",
-     "Harp",
-     "Cello"
-    ],
-    "answer": 1,
-    "explain": "Drums are percussion instruments played with sticks or hands."
-   },
-   {
-    "q": "Which Canadian rapper and singer is from Toronto?",
-    "options": [
-     "Drake",
-     "Eminem",
-     "Post Malone",
-     "Bruno Mars"
-    ],
-    "answer": 0,
-    "explain": "Drake grew up in Toronto and often mentions the city in his songs."
-   },
-   {
-    "q": "What does 'forte' mean in music?",
-    "options": [
-     "Slow",
-     "Loud",
-     "Fast",
-     "Quiet"
-    ],
-    "answer": 1,
-    "explain": "Forte means to play loudly; piano means softly."
-   },
-   {
-    "q": "Which famous band included John, Paul, George and Ringo?",
-    "options": [
-     "The Rolling Stones",
-     "The Beatles",
-     "Queen",
-     "The Who"
-    ],
-    "answer": 1,
-    "explain": "The Beatles were formed in Liverpool, England."
-   },
-   {
-    "q": "What is Canada's national anthem called?",
-    "options": [
-     "Maple Leaf Forever",
-     "O Canada",
-     "True North",
-     "God Save the King"
-    ],
-    "answer": 1,
-    "explain": "'O Canada' became the official national anthem in 1980."
-   },
-   {
-    "q": "Which instrument is the largest in a string orchestra?",
-    "options": [
-     "Violin",
-     "Viola",
-     "Cello",
-     "Double bass"
-    ],
-    "answer": 3,
-    "explain": "The double bass is the biggest and lowest string instrument."
-   }
-  ]
- },
- "Sports": {
-  "emoji": "⚽",
-  "color": "green",
-  "q": [
-   {
-    "q": "How many players are on the ice per team in hockey?",
-    "options": [
-     "5",
-     "6",
-     "7",
-     "8"
-    ],
-    "answer": 1,
-    "explain": "Six players including the goalie."
-   },
-   {
-    "q": "What trophy do NHL champions win?",
-    "options": [
-     "The Grey Cup",
-     "The Stanley Cup",
-     "The World Cup",
-     "The Vezina"
-    ],
-    "answer": 1,
-    "explain": "The Stanley Cup is the oldest trophy in North American pro sports."
-   },
-   {
-    "q": "How many players are on a soccer team on the field?",
-    "options": [
-     "9",
-     "10",
-     "11",
-     "12"
-    ],
-    "answer": 2,
-    "explain": "Eleven players per side, including the goalkeeper."
-   },
-   {
-    "q": "What sport is played at Wimbledon?",
-    "options": [
-     "Golf",
-     "Tennis",
-     "Cricket",
-     "Rugby"
-    ],
-    "answer": 1,
-    "explain": "Wimbledon is the oldest tennis tournament in the world."
-   },
-   {
-    "q": "Which sport uses a puck?",
-    "options": [
-     "Basketball",
-     "Ice hockey",
-     "Baseball",
-     "Volleyball"
-    ],
-    "answer": 1,
-    "explain": "Hockey players shoot a hard rubber puck."
-   },
-   {
-    "q": "How often are the Summer Olympic Games held?",
-    "options": [
-     "Every 2 years",
-     "Every 3 years",
-     "Every 4 years",
-     "Every 5 years"
-    ],
-    "answer": 2,
-    "explain": "The Summer Olympics happen every four years."
-   },
-   {
-    "q": "In basketball, how many points is a shot behind the arc?",
-    "options": [
-     "1",
-     "2",
-     "3",
-     "4"
-    ],
-    "answer": 2,
-    "explain": "A shot from behind the three-point line is worth 3 points."
-   },
-   {
-    "q": "What is Canada's official summer sport?",
-    "options": [
-     "Hockey",
-     "Lacrosse",
-     "Soccer",
-     "Baseball"
-    ],
-    "answer": 1,
-    "explain": "Lacrosse is Canada's official summer sport; hockey is the winter sport."
-   },
-   {
-    "q": "Which sport features a 'home run'?",
-    "options": [
-     "Cricket",
-     "Baseball",
-     "Golf",
-     "Curling"
-    ],
-    "answer": 1,
-    "explain": "A home run lets the batter run all the bases and score."
-   },
-   {
-    "q": "What is the name of the CFL championship game trophy?",
-    "options": [
-     "Stanley Cup",
-     "Grey Cup",
-     "Vanier Cup",
-     "Memorial Cup"
-    ],
-    "answer": 1,
-    "explain": "The Grey Cup is Canadian football's championship trophy."
-   },
-   {
-    "q": "In curling, what is the target circle called?",
-    "options": [
-     "The ring",
-     "The house",
-     "The button zone",
-     "The circle"
-    ],
-    "answer": 1,
-    "explain": "The target is called the house; the very centre is the button."
-   },
-   {
-    "q": "How many holes are on a full golf course?",
-    "options": [
-     "9",
-     "12",
-     "18",
-     "24"
-    ],
-    "answer": 2,
-    "explain": "A full round of golf is 18 holes."
-   }
-  ]
- },
- "Food Around the World": {
-  "emoji": "🍜",
-  "color": "blue",
-  "q": [
-   {
-    "q": "Which Canadian dish is fries with cheese curds and gravy?",
-    "options": [
-     "Poutine",
-     "Nanaimo bar",
-     "Tourtière",
-     "Butter tart"
-    ],
-    "answer": 0,
-    "explain": "Poutine comes from Quebec and is loved across Canada."
-   },
-   {
-    "q": "Which country is famous for inventing pizza?",
-    "options": [
-     "France",
-     "Italy",
-     "Greece",
-     "Spain"
-    ],
-    "answer": 1,
-    "explain": "Pizza as we know it comes from Naples, Italy."
-   },
-   {
-    "q": "What food is sushi mainly made with?",
-    "options": [
-     "Bread",
-     "Rice",
-     "Pasta",
-     "Potato"
-    ],
-    "answer": 1,
-    "explain": "Sushi is seasoned rice served with fish, egg or vegetables."
-   },
-   {
-    "q": "Maple syrup comes from which tree?",
-    "options": [
-     "Oak",
-     "Maple",
-     "Pine",
-     "Birch"
-    ],
-    "answer": 1,
-    "explain": "Sap from maple trees is boiled down into syrup; Canada makes most of the world's supply."
-   },
-   {
-    "q": "Which country is tacos originally from?",
-    "options": [
-     "Spain",
-     "Mexico",
-     "Peru",
-     "Brazil"
-    ],
-    "answer": 1,
-    "explain": "Tacos come from Mexico."
-   },
-   {
-    "q": "What is the main ingredient in guacamole?",
-    "options": [
-     "Tomato",
-     "Avocado",
-     "Cucumber",
-     "Pepper"
-    ],
-    "answer": 1,
-    "explain": "Guacamole is made from mashed avocado."
-   },
-   {
-    "q": "Which Canadian dessert has three layers and no baking on top?",
-    "options": [
-     "Butter tart",
-     "Nanaimo bar",
-     "Beaver tail",
-     "Date square"
-    ],
-    "answer": 1,
-    "explain": "The Nanaimo bar is named after Nanaimo, British Columbia."
-   },
-   {
-    "q": "Which country is curry most associated with?",
-    "options": [
-     "Japan",
-     "India",
-     "Italy",
-     "Greece"
-    ],
-    "answer": 1,
-    "explain": "Curry dishes are a huge part of Indian cooking."
-   },
-   {
-    "q": "What is pasta traditionally made from?",
-    "options": [
-     "Rice flour",
-     "Wheat flour",
-     "Corn flour",
-     "Potato flour"
-    ],
-    "answer": 1,
-    "explain": "Most pasta is made from durum wheat flour and water."
-   },
-   {
-    "q": "Which fruit is known as the 'king of fruits' in Southeast Asia?",
-    "options": [
-     "Mango",
-     "Durian",
-     "Papaya",
-     "Lychee"
-    ],
-    "answer": 1,
-    "explain": "Durian is famous for its strong smell and rich taste."
-   },
-   {
-    "q": "What drink is made from crushed grapes?",
-    "options": [
-     "Cider",
-     "Wine",
-     "Beer",
-     "Rum"
-    ],
-    "answer": 1,
-    "explain": "Wine is made by fermenting grape juice."
-   },
-   {
-    "q": "Which country invented the sandwich's name?",
-    "options": [
-     "France",
-     "England",
-     "Germany",
-     "Italy"
-    ],
-    "answer": 1,
-    "explain": "It is named after the Earl of Sandwich in England."
-   }
-  ]
- }
+const BANK = {
+  "Movies & TV": { emoji:"🎬", color:"purple", q:[
+   {q:"In which movie does a young lion named Simba grow up to be king?",options:["Madagascar","The Lion King","Zootopia","Tarzan"],answer:1,explain:"The Lion King follows Simba's journey to become king of the Pride Lands."},
+   {q:"What kind of animal is Nemo in Finding Nemo?",options:["Dolphin","Clownfish","Turtle","Shark"],answer:1,explain:"Nemo is a little orange-and-white clownfish."},
+   {q:"In Frozen, what is the name of the snowman?",options:["Sven","Olaf","Kristoff","Hans"],answer:1,explain:"Olaf is the friendly snowman who loves warm hugs."},
+   {q:"Which movie features a family of superheroes?",options:["The Incredibles","Cars","Up","Brave"],answer:0,explain:"The Incredibles is about a whole family with superpowers."},
+   {q:"What colour is Shrek?",options:["Blue","Green","Purple","Brown"],answer:1,explain:"Shrek is a big green ogre."},
+   {q:"In Toy Story, what type of toy is Woody?",options:["Astronaut","Cowboy","Dinosaur","Robot"],answer:1,explain:"Woody is a pull-string cowboy doll."},
+   {q:"Which film is about a rat who wants to be a chef?",options:["Ratatouille","Bolt","Coco","Luca"],answer:0,explain:"Ratatouille follows Remy, a rat with a talent for cooking."},
+   {q:"What is the name of the wizard school in Harry Potter?",options:["Camelot","Hogwarts","Neverland","Narnia"],answer:1,explain:"Hogwarts School of Witchcraft and Wizardry."},
+   {q:"Which animated movie is set in the country of Colombia?",options:["Encanto","Moana","Mulan","Brave"],answer:0,explain:"Encanto tells the story of the magical Madrigal family in Colombia."},
+   {q:"In Moana, what is the name of the demigod?",options:["Maui","Tui","Pua","Tamatoa"],answer:0,explain:"Maui is the demigod who joins Moana on her journey."},
+   {q:"Which show features a yellow family from Springfield?",options:["Family Guy","The Simpsons","Rugrats","Doug"],answer:1,explain:"The Simpsons has been on TV since 1989."},
+   {q:"What is the name of the toy space ranger in Toy Story?",options:["Buzz Lightyear","Rex","Slinky","Hamm"],answer:0,explain:"Buzz Lightyear's catchphrase is 'To infinity and beyond!'"},
+   {q:"Which movie features a giant gorilla climbing a skyscraper?",options:["Godzilla","King Kong","Jumanji","Rampage"],answer:1,explain:"King Kong famously climbs the Empire State Building."},
+   {q:"What is the highest award in the movie industry called?",options:["The Grammy","The Oscar","The Emmy","The Tony"],answer:1,explain:"The Academy Award — the Oscar — is the top film prize."},
+   {q:"In the film The Wizard of Oz, what colour are Dorothy's slippers?",options:["Blue","Silver","Red","Green"],answer:2,explain:"In the 1939 film her magic slippers are bright red, though the book described them as silver."},
+   {q:"What is the name of Batman's home city?",options:["Gotham City","Metropolis","Central City","Star City"],answer:0,explain:"Batman protects the made-up city of Gotham, while Superman's city is called Metropolis."},
+   {q:"Which Disney film is about a young elephant with very large ears?",options:["Bambi","Dumbo","Bolt","Rio"],answer:1,explain:"Dumbo came out in 1941 and tells the story of a little elephant whose big ears let him fly."},
+   {q:"In which film series do people say 'May the Force be with you'?",options:["Star Trek","Stargate","Battlestar Galactica","Star Wars"],answer:3,explain:"The line comes from Star Wars, the space adventure series that began in 1977."},
+   {q:"Which country's film industry is nicknamed Bollywood?",options:["China","Japan","Brazil","India"],answer:3,explain:"Bollywood is the Hindi-language film industry based in the city of Mumbai."},
+   {q:"What happens to Pinocchio's nose when he tells a lie?",options:["It grows longer","It turns blue","It disappears","It gets shorter"],answer:0,explain:"In the story by Carlo Collodi, the wooden puppet's nose grows each time he lies."},
+   {q:"Which Muppet character is a green frog?",options:["Gonzo","Fozzie Bear","Kermit","Animal"],answer:2,explain:"Kermit the Frog was created by the puppet maker Jim Henson in 1955."}
+  ]},
+  "Music": { emoji:"🎵", color:"orange", q:[
+   {q:"How many strings does a standard guitar have?",options:["4","5","6","8"],answer:2,explain:"A standard acoustic or electric guitar has six strings."},
+   {q:"Which instrument has black and white keys?",options:["Violin","Piano","Trumpet","Drum"],answer:1,explain:"The piano has 88 black and white keys."},
+   {q:"Which Canadian singer is famous for the song 'Hello'?",options:["Adele","Shania Twain","Celine Dion","Alanis Morissette"],answer:0,explain:"'Hello' is by Adele, who is British — Canada's Celine Dion sang 'My Heart Will Go On'."},
+   {q:"Which Canadian singer performed 'My Heart Will Go On' from Titanic?",options:["Shania Twain","Celine Dion","Avril Lavigne","Sarah McLachlan"],answer:1,explain:"Celine Dion, from Quebec, sang the Titanic theme song."},
+   {q:"What family of instruments does the trumpet belong to?",options:["Strings","Brass","Woodwind","Percussion"],answer:1,explain:"The trumpet is a brass instrument played by buzzing your lips."},
+   {q:"How many lines are on a musical staff?",options:["3","4","5","6"],answer:2,explain:"A musical staff has five lines and four spaces."},
+   {q:"Which instrument is played by hitting it with sticks?",options:["Flute","Drums","Harp","Cello"],answer:1,explain:"Drums are percussion instruments played with sticks or hands."},
+   {q:"Which Canadian rapper and singer is from Toronto?",options:["Drake","Eminem","Post Malone","Bruno Mars"],answer:0,explain:"Drake grew up in Toronto and often mentions the city in his songs."},
+   {q:"What does 'forte' mean in music?",options:["Slow","Loud","Fast","Quiet"],answer:1,explain:"Forte means to play loudly; piano means softly."},
+   {q:"Which famous band included John, Paul, George and Ringo?",options:["The Rolling Stones","The Beatles","The Beach Boys","The Who"],answer:1,explain:"The Beatles were formed in Liverpool, England."},
+   {q:"What is Canada's national anthem called?",options:["Maple Leaf Forever","O Canada","True North","God Save the King"],answer:1,explain:"'O Canada' became the official national anthem in 1980."},
+   {q:"Which instrument is the largest in a string orchestra?",options:["Violin","Viola","Cello","Double bass"],answer:3,explain:"The double bass is the biggest and lowest string instrument."},
+   {q:"Who composed the Fifth Symphony that starts with four famous notes?",options:["Wolfgang Amadeus Mozart","Ludwig van Beethoven","Johann Sebastian Bach","Franz Schubert"],answer:1,explain:"Beethoven finished his Fifth Symphony in 1808 and its opening notes are known worldwide."},
+   {q:"How many keys does a full-size piano have?",options:["66","76","88","96"],answer:2,explain:"A standard modern piano has 88 keys: 52 white ones and 36 black ones."},
+   {q:"Which country was the composer Mozart born in?",options:["Germany","Italy","France","Austria"],answer:3,explain:"Mozart was born in Salzburg, Austria, in 1756 and began composing as a small child."},
+   {q:"In music, what does the word 'tempo' mean?",options:["The speed of the music","The volume of the music","The words of the song","The mood of the song"],answer:0,explain:"Tempo tells musicians how fast or how slowly to play a piece."},
+   {q:"Which instrument family does the flute belong to?",options:["Brass","Woodwind","Percussion","Strings"],answer:1,explain:"The flute is a woodwind instrument, even though modern flutes are made of metal."},
+   {q:"What is a group of four musicians called?",options:["A duo","A trio","A quartet","A choir"],answer:2,explain:"Four players make a quartet, three make a trio and two make a duo."},
+   {q:"Who composed the music for 'O Canada'?",options:["Calixa Lavallée","Robert Stanley Weir","Glenn Gould","Gilles Vigneault"],answer:0,explain:"Calixa Lavallée wrote the music in 1880, and Robert Stanley Weir added English words later."}
+  ]},
+  "Sports": { emoji:"⚽", color:"green", q:[
+   {q:"How many players are on the ice per team in hockey?",options:["5","6","7","8"],answer:1,explain:"Six players including the goalie."},
+   {q:"What trophy do NHL champions win?",options:["The Grey Cup","The Stanley Cup","The World Cup","The Vezina"],answer:1,explain:"The Stanley Cup is the oldest trophy in North American pro sports."},
+   {q:"How many players are on a soccer team on the field?",options:["9","10","11","12"],answer:2,explain:"Eleven players per side, including the goalkeeper."},
+   {q:"What sport is played at Wimbledon?",options:["Golf","Tennis","Cricket","Rugby"],answer:1,explain:"Wimbledon is the oldest tennis tournament in the world."},
+   {q:"Which sport uses a puck?",options:["Basketball","Ice hockey","Baseball","Volleyball"],answer:1,explain:"Hockey players shoot a hard rubber puck."},
+   {q:"How often are the Summer Olympic Games held?",options:["Every 2 years","Every 3 years","Every 4 years","Every 5 years"],answer:2,explain:"The Summer Olympics happen every four years."},
+   {q:"In basketball, how many points is a shot behind the arc?",options:["1","2","3","4"],answer:2,explain:"A shot from behind the three-point line is worth 3 points."},
+   {q:"What is Canada's official summer sport?",options:["Hockey","Lacrosse","Soccer","Baseball"],answer:1,explain:"Lacrosse is Canada's official summer sport; hockey is the winter sport."},
+   {q:"Which sport features a 'home run'?",options:["Cricket","Baseball","Golf","Curling"],answer:1,explain:"A home run lets the batter run all the bases and score."},
+   {q:"What is the name of the CFL championship game trophy?",options:["Stanley Cup","Grey Cup","Vanier Cup","Memorial Cup"],answer:1,explain:"The Grey Cup is Canadian football's championship trophy."},
+   {q:"In curling, what is the target circle called?",options:["The ring","The house","The button zone","The circle"],answer:1,explain:"The target is called the house; the very centre is the button."},
+   {q:"How many holes are on a full golf course?",options:["9","12","18","24"],answer:2,explain:"A full round of golf is 18 holes."},
+   {q:"How many rings are on the Olympic flag?",options:["Three","Four","Five","Six"],answer:2,explain:"The five rings stand for the five parts of the world that take part in the Games."},
+   {q:"What surface are the tennis courts at Wimbledon made of?",options:["Grass","Clay","Sand","Wood"],answer:0,explain:"Wimbledon is the only one of the four big tennis tournaments played on grass."},
+   {q:"How many periods are in a regular ice hockey game?",options:["Two","Three","Four","Nine"],answer:1,explain:"A hockey game has three periods of twenty minutes each."},
+   {q:"In soccer, which player is allowed to use their hands?",options:["The captain","The striker","The referee","The goalkeeper"],answer:3,explain:"Only the goalkeeper may use hands, and only inside their own penalty area."},
+   {q:"What is the highest possible score in ten-pin bowling?",options:["100","200","300","500"],answer:2,explain:"A perfect game of twelve strikes in a row scores 300 points."},
+   {q:"In badminton, what do players hit over the net?",options:["A shuttlecock","A puck","A beanbag","A disc"],answer:0,explain:"Badminton uses a light shuttlecock instead of a ball."},
+   {q:"About how long is an Olympic marathon race?",options:["About 21 kilometres","About 42 kilometres","About 60 kilometres","About 80 kilometres"],answer:1,explain:"A marathon covers about 42 kilometres, which is a little over 26 miles."}
+  ]},
+  "Food Around the World": { emoji:"🍜", color:"blue", q:[
+   {q:"Which Canadian dish is fries with cheese curds and gravy?",options:["Poutine","Nanaimo bar","Tourtière","Butter tart"],answer:0,explain:"Poutine comes from Quebec and is loved across Canada."},
+   {q:"Which country is famous for inventing pizza?",options:["France","Italy","Greece","Spain"],answer:1,explain:"Pizza as we know it comes from Naples, Italy."},
+   {q:"What food is sushi mainly made with?",options:["Bread","Rice","Pasta","Potato"],answer:1,explain:"Sushi is seasoned rice served with fish, egg or vegetables."},
+   {q:"Maple syrup comes from which tree?",options:["Oak","Maple","Pine","Birch"],answer:1,explain:"Sap from maple trees is boiled down into syrup; Canada makes most of the world's supply."},
+   {q:"Which country is tacos originally from?",options:["Spain","Mexico","Peru","Brazil"],answer:1,explain:"Tacos come from Mexico."},
+   {q:"What is the main ingredient in guacamole?",options:["Tomato","Avocado","Cucumber","Pepper"],answer:1,explain:"Guacamole is made from mashed avocado."},
+   {q:"Which Canadian dessert has three layers and no baking on top?",options:["Butter tart","Nanaimo bar","Beaver tail","Date square"],answer:1,explain:"The Nanaimo bar is named after Nanaimo, British Columbia."},
+   {q:"Which country is curry most associated with?",options:["Japan","India","Italy","Greece"],answer:1,explain:"Curry dishes are a huge part of Indian cooking."},
+   {q:"What is pasta traditionally made from?",options:["Rice flour","Wheat flour","Corn flour","Potato flour"],answer:1,explain:"Most pasta is made from durum wheat flour and water."},
+   {q:"Which fruit is known as the 'king of fruits' in Southeast Asia?",options:["Mango","Durian","Papaya","Lychee"],answer:1,explain:"Durian is famous for its strong smell and rich taste."},
+   {q:"What drink is made from crushed grapes?",options:["Cider","Wine","Beer","Rum"],answer:1,explain:"Wine is made by fermenting grape juice."},
+   {q:"Which country invented the sandwich's name?",options:["France","England","Germany","Italy"],answer:1,explain:"It is named after the Earl of Sandwich in England."},
+   {q:"Which country does the rice dish paella come from?",options:["Portugal","Spain","Greece","Morocco"],answer:1,explain:"Paella began in the Valencia region of Spain and is cooked in a wide flat pan."},
+   {q:"What vegetable is Korean kimchi usually made from?",options:["Carrot","Potato","Cucumber","Cabbage"],answer:3,explain:"Kimchi is most often made from salted napa cabbage mixed with spices."},
+   {q:"Chocolate is made from the seeds of which tree?",options:["The cacao tree","The coconut tree","The almond tree","The olive tree"],answer:0,explain:"Chocolate comes from cacao beans, the seeds that grow inside pods on the cacao tree."},
+   {q:"Which country does the noodle soup pho come from?",options:["Thailand","Cambodia","Laos","Vietnam"],answer:3,explain:"Pho is a Vietnamese noodle soup usually served with fresh herbs."},
+   {q:"What is tofu made from?",options:["Rice","Soybeans","Corn","Wheat"],answer:1,explain:"Tofu is made by pressing soy milk into soft white blocks."}
+  ]},
+  "Video Games": { emoji:"🎮", color:"red", q:[
+   {q:"What is the name of Nintendo's famous plumber character?",options:["Luigi","Mario","Wario","Toad"],answer:1,explain:"Mario first appeared in 1981 and became Nintendo's best-known character."},
+   {q:"What kind of animal is the video game character Sonic?",options:["A hedgehog","A fox","A squirrel","A mouse"],answer:0,explain:"Sonic is a blue hedgehog who first appeared in a Sega game in 1991."},
+   {q:"Which puzzle game is played with falling blocks of different shapes?",options:["Tetris","Pong","Snake","Solitaire"],answer:0,explain:"Tetris was created in 1984 by the Russian programmer Alexey Pajitnov."},
+   {q:"In Minecraft, what shape are almost all the building blocks?",options:["Spheres","Pyramids","Cubes","Cylinders"],answer:2,explain:"Minecraft worlds are built from cube-shaped blocks that players can mine and place."},
+   {q:"Which company created the first Super Mario and Zelda games?",options:["Sega","Atari","Sony","Nintendo"],answer:3,explain:"Nintendo, a Japanese company, released both series in the 1980s."},
+   {q:"In the arcade game Pac-Man, what chases the player around the maze?",options:["Ghosts","Robots","Dragons","Sharks"],answer:0,explain:"Four coloured ghosts chase Pac-Man while he eats the dots in the maze."},
+   {q:"What is the name of Mario's brother?",options:["Wario","Yoshi","Luigi","Toad"],answer:2,explain:"Luigi is Mario's taller brother and wears green instead of red."},
+   {q:"In Angry Birds, what are the birds launched from?",options:["A cannon","A slingshot","A balloon","A trampoline"],answer:1,explain:"Players pull back a large slingshot to send the birds flying at the towers."},
+   {q:"Which game series features a young hero named Link?",options:["Metroid","Kirby","The Legend of Zelda","Star Fox"],answer:2,explain:"Link is the hero of The Legend of Zelda games, which began in 1986."},
+   {q:"In Pokémon, what type of Pokémon is Pikachu?",options:["Water type","Fire type","Grass type","Electric type"],answer:3,explain:"Pikachu is an Electric type, known for its yellow body and lightning-shaped tail."},
+   {q:"Which arcade game has a big gorilla rolling barrels down ramps?",options:["Frogger","Donkey Kong","Galaga","Centipede"],answer:1,explain:"Donkey Kong came out in 1981 and gave Mario his very first appearance."},
+   {q:"The early arcade game Pong is based on which sport?",options:["Soccer","Golf","Basketball","Table tennis"],answer:3,explain:"Pong, released in 1972, copies table tennis with two paddles and a bouncing dot."}
+  ]},
+  "Books & Cartoons": { emoji:"📚", color:"yellow", q:[
+   {q:"Who wrote the novel Anne of Green Gables?",options:["Lucy Maud Montgomery","Margaret Atwood","Alice Munro","Emily Carr"],answer:0,explain:"Lucy Maud Montgomery published the book in 1908 and set it on Prince Edward Island."},
+   {q:"Who wrote Charlie and the Chocolate Factory?",options:["C.S. Lewis","Roald Dahl","E.B. White","Beatrix Potter"],answer:1,explain:"Roald Dahl published the story in 1964 and also wrote Matilda and The BFG."},
+   {q:"Which writer created the character Winnie-the-Pooh?",options:["Lewis Carroll","J.M. Barrie","A.A. Milne","Dr. Seuss"],answer:2,explain:"A.A. Milne wrote the Pooh stories in the 1920s for his son Christopher Robin."},
+   {q:"In Alice's Adventures in Wonderland, which animal does Alice follow?",options:["A grey owl","A black cat","A brown mouse","A white rabbit"],answer:3,explain:"Alice follows a white rabbit in a waistcoat down a hole into Wonderland."},
+   {q:"In Charlotte's Web, what kind of animal is Wilbur?",options:["A goat","A sheep","A pig","A horse"],answer:2,explain:"Wilbur is a young pig helped by his friend Charlotte, a clever spider."},
+   {q:"Which cartoon cat is always chasing a mouse named Jerry?",options:["Felix","Tom","Sylvester","Garfield"],answer:1,explain:"Tom and Jerry cartoons began in 1940 and use almost no talking."},
+   {q:"Which cartoon rabbit is known for saying 'What's up, Doc?'",options:["Peter Rabbit","Roger Rabbit","Bugs Bunny","Thumper"],answer:2,explain:"Bugs Bunny has used that greeting since his cartoons began in 1940."},
+   {q:"In the Peanuts comic, what is the name of Charlie Brown's dog?",options:["Pluto","Odie","Rex","Snoopy"],answer:3,explain:"Snoopy is a beagle who often naps on the roof of his doghouse."},
+   {q:"Who wrote The Cat in the Hat?",options:["Dr. Seuss","Eric Carle","Shel Silverstein","Maurice Sendak"],answer:0,explain:"Dr. Seuss wrote the 1957 book using a short list of simple words for new readers."},
+   {q:"Which cartoon character is a yellow sponge who lives under the sea?",options:["Popeye","SpongeBob SquarePants","Donald Duck","Woody Woodpecker"],answer:1,explain:"SpongeBob SquarePants lives in a pineapple in the town of Bikini Bottom."},
+   {q:"In the Asterix comics, which country is the little village in?",options:["France","Italy","Spain","Greece"],answer:0,explain:"Asterix lives in ancient Gaul, the land we now call France."},
+   {q:"What kind of dog is the cartoon character Scooby-Doo?",options:["A poodle","A beagle","A Labrador","A Great Dane"],answer:3,explain:"Scooby-Doo is a very large and very nervous Great Dane."}
+  ]}
 };
 const LSKEY="entq_";
 
@@ -834,8 +373,8 @@ function backToCats(){
 }
 buildCats();
 </script>
-  <script src="../js/site.js?v=20260729"></script>
-  <script src="../js/analytics.js?v=20260729"></script>
-  <script src="../js/game-fullscreen.js"></script>
+  <script src="../js/site.js?v=20260730"></script>
+  <script src="../js/analytics.js?v=20260730"></script>
+  <script src="../js/game-fullscreen.js?v=20260730"></script>
 </body>
 </html>

@@ -45,9 +45,22 @@ def main():
 
     out = {}
 
+    # In extra_fr.json, writing a phrase as its OWN translation
+    #     "The Beatles": "The Beatles"
+    # means "leave this in English".  Band names, acronym answers and anything
+    # that must not be translated go there.  Those keys are locked so the
+    # machine word list cannot put French back in.
+    locked = set()
+    for k, v in extra.items():
+        if norm(k) == norm(v):
+            locked.add(norm(k))
+            locked.add(norm(html.unescape(k)))
+
     def add(k, v, force=False):
         k, v = norm(k), norm(v)
         if not k or not v or v == k:
+            return
+        if k in locked:
             return
         if k in out and not force:
             return
