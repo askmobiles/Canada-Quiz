@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earth &amp; Environment Quiz for Kids — Free Nature and Recycling Questions | Canada Quiz</title>
+<meta name="description" content="Free Earth and environment quiz for kids and families. Questions on our planet, weather, oceans, forests, wildlife, recycling and saving energy. No signup, play instantly.">
+<meta property="og:title" content="Earth &amp; Environment Quiz for Kids — Free Nature and Recycling Questions | Canada Quiz">
+<meta property="og:description" content="Free Earth and environment quiz for kids and families. Questions on our planet, weather, oceans, forests, wildlife, recycling and saving energy. No signup, play instantly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/fr/earth-quiz.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=20260802">
+<style>.bigq{font-size:80px;text-align:center;margin:6px 0}</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/earth-quiz.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/earth-quiz.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/earth-quiz.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/earth-quiz.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="start-screen" class="panel center">
+    <div style="font-size:46px">🌍</div>
+    <h1>Earth &amp; Environment Quiz</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto">Notre planète, la météo, les océans, les forêts et la faune. Apprends à prendre soin de la Terre que nous partageons tous !</p>
+    <details class="howto"><summary></summary><p>Choisissez un sujet ci-dessous. Vous obtiendrez 10 questions &mdash ; touchez la réponse que vous pensez être bonne, et vous saurez instantanément si vous avez raison, avec un court fait. Rejouez à tout moment pour de nouvelles questions !</p></details>
+    <div class="grid" id="cats" style="margin-top:18px"></div>
+  </section>
+
+  <section id="quiz-screen" class="panel" style="display:none">
+    <div class="quiz-meta">
+      <span class="pill" id="q-counter">Question 1</span>
+      <span class="pill" id="score-pill">Score : 0</span>
+    </div>
+    <div class="progress"><span id="progress-bar"></span></div>
+    <div id="bigq" class="bigq" style="display:none"></div>
+    <h2 id="question-text"></h2>
+    <div class="options" id="options"></div>
+    <div id="explain-box" class="explain" style="display:none"></div>
+    <div class="center" style="margin-top:18px">
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Suivant &rarr ;</button>
+    </div>
+  </section>
+
+  <section id="result-screen" class="panel center" style="display:none">
+    <div class="result-big">🌍</div>
+    <h2 id="result-title"></h2>
+    <p class="score" id="result-score"></p>
+    <p class="muted" id="result-msg"></p>
+    <div style="margin:18px 0">
+      <button class="btn btn-lg" onclick="backToCats()">Choisir un autre sujet</button>
+      <a class="btn btn-ghost btn-lg" href="quizzes.html">Plus de quiz</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <details class="footer-map">
+      <summary>Toutes les pages <span class="fm-count">(81)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <h4>Quiz</h4>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="gk-quiz.html">Culture générale</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
+        <a href="science-quiz.html">Sciences et espace</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Pratique de l'examen de conduite</h4>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Jeux de réflexion et casse-têtes</h4>
+        <a href="word-master.html">Maître des mots</a>
+        <a href="word-search.html">Mots cachés</a>
+        <a href="word-guess.html">Devine le mot</a>
+        <a href="scramble.html">Mots brouillés</a>
+        <a href="spelling-bee.html">Concours d'épellation</a>
+        <a href="crossword.html">Mots croisés</a>
+        <a href="connections.html">Groupes de mots</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Démineur</a>
+        <a href="sliding-puzzle.html">Taquin</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Jeu de mémoire</a>
+        <a href="rubiks-cube.html">Cube Rubik</a>
+        <a href="typing-test.html">Test de vitesse de frappe</a>
+        <a href="color-match.html">Associe les couleurs</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Jeux d'action et jeux classiques</h4>
+        <a href="snake.html">Serpent érable</a>
+        <a href="whack-a-beaver.html">Tape-le-castor</a>
+        <a href="piano-tiles.html">Touches de piano</a>
+        <a href="tictactoe.html">Tic-tac-toe</a>
+        <a href="checkers.html">Dames</a>
+        <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="tag.html">Tague</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Connect 4</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Jeux de groupe</h4>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="categories-game.html">Catégories</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="draw-it.html">Dessine-le</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Blogue</h4>
+        <a href="blog.html">Tous les articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
+        <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
+        <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
+        <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
+        <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
+        <a href="canada-geography-coast-to-coast.html">La géographie du Canada</a>
+        <a href="canadas-animals-and-wildlife.html">Animaux et faune</a>
+        <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
+        <a href="canadian-holidays-explained.html">Les fêtes canadiennes</a>
+        <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
+        <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Le site</h4>
+        <a href="index.html">Accueil</a>
+        <a href="daily.html">Défi du jour</a>
+        <a href="games.html">Tous les jeux en famille</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+const BANK = {
+  "Our Planet Earth": { emoji:"🌍", color:"blue", q:[
+   {q:"What is the thick layer of hot rock between Earth's crust and its core called?",options:["The mantle","The valley","The ridge","The basin"],answer:0,explain:"The mantle is a deep layer of slow-moving hot rock that sits under the crust."},
+   {q:"Earth's centre is made mostly of which metal?",options:["Copper","Silver","Iron","Tin"],answer:2,explain:"Earth's core is mostly iron and nickel, and it is hotter than a pizza oven."},
+   {q:"What are the huge moving slabs of rock that Earth's surface is broken into called?",options:["Tectonic plates","Sand dunes","Coral banks","Ice sheets"],answer:0,explain:"Tectonic plates float on the mantle and creep along about as fast as your fingernails grow."},
+   {q:"Most earthquakes happen when tectonic plates do what?",options:["Cool down","Suddenly slip","Float away","Turn to sand"],answer:1,explain:"Plates push against each other for years, then slip suddenly and shake the ground."},
+   {q:"Which instrument records the shaking of an earthquake?",options:["Telescope","Barometer","Microscope","Seismograph"],answer:3,explain:"A seismograph draws a wiggly line that shows how strongly the ground moved."},
+   {q:"Melted rock that is still underground is called what?",options:["Magma","Gravel","Quartz","Clay"],answer:0,explain:"Underground it is magma; once it pours out of a volcano we call it lava."},
+   {q:"What is the bowl-shaped opening at the top of a volcano called?",options:["A delta","A dune","A crater","A fjord"],answer:2,explain:"Ash, gas and lava escape through the crater when a volcano erupts."},
+   {q:"Rock made from layers of sand and mud pressed together is called what?",options:["Igneous rock","Molten rock","Sedimentary rock","Volcanic rock"],answer:2,explain:"Sedimentary rock forms in flat layers, a bit like a stack of pancakes."},
+   {q:"Marble and slate are examples of which kind of rock?",options:["Metamorphic rock","Sedimentary rock","Igneous rock","Volcanic rock"],answer:0,explain:"Heat and pressure squeeze one rock into a brand new one called metamorphic rock."},
+   {q:"What is a fossil?",options:["A shiny mineral found in a cave","A trace of an ancient living thing","A drop of rain frozen in ice","A piece of glass from a volcano"],answer:1,explain:"Fossils form when remains are buried in mud that slowly hardens into rock."},
+   {q:"Why is it summer in Australia while Canada has winter?",options:["Australia spins faster","Australia has thinner air","Australia is nearer the Sun","They are in opposite halves"],answer:3,explain:"Earth is tilted, so the two halves of the world lean toward the Sun at different times."},
+   {q:"Which imaginary circle crosses Canada's far north?",options:["The Tropic of Cancer","The Arctic Circle","The Prime Meridian","The Tropic of Capricorn"],answer:1,explain:"North of the Arctic Circle the Sun can stay up all night in summer."},
+   {q:"How long does Earth take to spin around once?",options:["7 hours","12 hours","24 hours","48 hours"],answer:2,explain:"One full spin takes about 24 hours, which is why a day is that long."},
+   {q:"What do we call a scientist who studies rocks and the Earth?",options:["A geologist","A botanist","A chemist","A zoologist"],answer:0,explain:"Geologists read rock layers the way we read pages, to learn Earth's story."},
+   {q:"The Ring of Fire around the Pacific Ocean is famous for what?",options:["Sand storms","Rainbows","Coral islands","Volcanoes and quakes"],answer:3,explain:"Plate edges meet all around the Pacific, so eruptions and quakes are common there."},
+   {q:"What is it called when wind and water slowly wear rock away?",options:["Eclipse","Fusion","Gravity","Erosion"],answer:3,explain:"Erosion carved valleys and canyons over millions of years, one grain at a time."},
+   {q:"The Canadian Shield is a huge region covered by what?",options:["Warm sand","Very old rock","Salt flats","Soft clay"],answer:1,explain:"The Shield is some of the oldest rock on the planet, wrapped around Hudson Bay."}
+  ]},
+  "Weather & Climate": { emoji:"🌦️", color:"purple", q:[
+   {q:"In the water cycle, what is it called when water vapour cools into droplets?",options:["Erosion","Condensation","Filtration","Reflection"],answer:1,explain:"Condensation makes clouds, and it also fogs up a cold window on a warm day."},
+   {q:"Rain, snow, sleet and hail are all types of what?",options:["Humidity","Pressure","Precipitation","Evaporation"],answer:2,explain:"Precipitation is any water that falls from clouds back down to the ground."},
+   {q:"Wind is caused by differences in what?",options:["Air pressure","Soil colour","Rock weight","Sea salt"],answer:0,explain:"Air flows from high pressure areas to low pressure areas, and we feel that flow as wind."},
+   {q:"Climate describes the usual weather of a place over how long?",options:["One hour","One day","One week","Many years"],answer:3,explain:"Weather is what happens outside on one day; climate is the pattern over many years."},
+   {q:"Which clouds are thin, wispy and very high in the sky?",options:["Cirrus","Cumulus","Stratus","Nimbus"],answer:0,explain:"Cirrus clouds look like white hair and are made of tiny ice crystals."},
+   {q:"Which puffy clouds look like cotton balls on a sunny day?",options:["Cirrus","Cumulus","Stratus","Nimbus"],answer:1,explain:"Cumulus clouds pile upward like cauliflower and often mean fair weather."},
+   {q:"What is lightning?",options:["A burst of wind","A cloud of dust","A giant electric spark","A ring of ice"],answer:2,explain:"Lightning is a huge spark that jumps between charged parts of a storm cloud."},
+   {q:"What makes the booming sound of thunder?",options:["Clouds bumping","Rain hitting soil","Wind in trees","Air heated by lightning"],answer:3,explain:"Lightning heats the air so fast that it explodes outward, and we hear the bang."},
+   {q:"Which instrument measures air pressure?",options:["A barometer","A compass","A telescope","A stopwatch"],answer:0,explain:"Falling pressure on a barometer often warns that a storm is on the way."},
+   {q:"Fog is really what, forming close to the ground?",options:["Smoke","A cloud","Dust","Steam"],answer:1,explain:"Fog is a cloud that forms at ground level when damp air cools down."},
+   {q:"What is a tornado?",options:["A wall of falling hail","A long band of fog","A spinning column of air","A ring of warm rain"],answer:2,explain:"A tornado is a violently spinning column of air that stretches from cloud to ground."},
+   {q:"A hurricane forms over which kind of surface?",options:["Cold mountains","Dry desert","Frozen ice","Warm ocean"],answer:3,explain:"Warm ocean water gives a hurricane the heat and moisture it needs to grow."},
+   {q:"How many sides does a snowflake crystal usually have?",options:["Six","Three","Eight","Ten"],answer:0,explain:"Water molecules lock together in a six-sided pattern, so snowflakes grow six arms."},
+   {q:"What does humidity measure?",options:["Wind speed","Water vapour in the air","Cloud height","Sunlight strength"],answer:1,explain:"High humidity means lots of water vapour in the air, which makes days feel sticky."},
+   {q:"What is the blanket of gases around our planet called?",options:["The horizon","The equator","The atmosphere","The crust"],answer:2,explain:"The atmosphere holds our air, moves our weather and shields us from space rocks."},
+   {q:"At what temperature in Celsius does water freeze?",options:["10 degrees","5 degrees","Minus 10 degrees","0 degrees"],answer:3,explain:"Water turns to ice at 0 degrees Celsius, which is why puddles freeze overnight."},
+   {q:"What do we call rain that freezes as soon as it lands on cold ground?",options:["Freezing rain","Light drizzle","Wet fog","Warm mist"],answer:0,explain:"Freezing rain coats roads and branches in clear ice and makes walking slippery."}
+  ]},
+  "Oceans & Water": { emoji:"🌊", color:"green", q:[
+   {q:"Why is sea water salty?",options:["Fish add salt to it","Rivers carry salt from rocks","Rain falls already salty","Sand melts into salt"],answer:1,explain:"Rivers wash tiny bits of salt out of rocks and carry them to the sea, where they stay."},
+   {q:"What mainly causes the ocean's tides?",options:["Boat traffic","Rainfall","The Moon's pull","Ocean fish"],answer:2,explain:"The Moon's gravity tugs on the ocean, so water piles up and slides back twice a day."},
+   {q:"Modern maps usually name how many oceans?",options:["Two","Three","Four","Five"],answer:3,explain:"They are the Pacific, Atlantic, Indian, Southern and Arctic oceans."},
+   {q:"Which ocean circles the continent of Antarctica?",options:["The Southern Ocean","The Indian Ocean","The Atlantic Ocean","The Arctic Ocean"],answer:0,explain:"The Southern Ocean is the cold band of water that wraps all the way around Antarctica."},
+   {q:"Coral reefs are built by which kind of creature?",options:["Small silver fish","Tiny animals called polyps","Fast-growing sea plants","Hard-shelled water snails"],answer:1,explain:"Coral polyps are soft animals that build hard stony homes, layer after layer."},
+   {q:"What is a watershed?",options:["A stone wall built across a dam","A long dock for fishing boats","A shed beside a lake","Land that drains to one river"],answer:3,explain:"Every drop of rain that lands in a watershed ends up in the same river or lake."},
+   {q:"About how much of Earth's surface is covered by water?",options:["About 20 percent","About 40 percent","About 70 percent","About 95 percent"],answer:2,explain:"Roughly seven tenths of the planet is water, which is why Earth looks blue from space."},
+   {q:"Almost all of the water on Earth is which kind?",options:["Salt water","Fresh water","Frozen rain","Bottled water"],answer:0,explain:"About 97 parts in 100 of Earth's water sits in the salty oceans."},
+   {q:"What do we call the place where a river meets the sea and the water mixes?",options:["A canal","A reef","An estuary","A geyser"],answer:2,explain:"An estuary is part fresh and part salty, and it feeds huge numbers of birds and fish."},
+   {q:"Which of the Great Lakes covers the largest area?",options:["Lake Ontario","Lake Erie","Lake Huron","Lake Superior"],answer:3,explain:"Lake Superior is the biggest of the Great Lakes by surface area, and also the deepest."},
+   {q:"Which huge saltwater bay reaches deep into northern Canada?",options:["Hudson Bay","Bay of Fundy","Georgian Bay","Baffin Bay"],answer:0,explain:"Hudson Bay is a shallow inland sea that freezes over for much of the year."},
+   {q:"What is a glacier?",options:["A salty pond","A slow-moving mass of ice","A field of hail","A frozen waterfall"],answer:1,explain:"Glaciers are thick ice that creeps downhill and scrapes valleys into the land."},
+   {q:"Roughly how much of an iceberg floats below the surface?",options:["About one tenth","About one quarter","About nine tenths","About one half"],answer:2,explain:"Only a small tip shows above water, so sailors watch icebergs very carefully."},
+   {q:"What do we call a steady flow of water moving through the ocean?",options:["A crest","A tide pool","A ripple","A current"],answer:3,explain:"Ocean currents move heat around the planet and help set the climate of coasts."},
+   {q:"A tsunami is usually set off by what?",options:["A strong breeze","An underwater earthquake","A high tide","A heavy rainfall"],answer:1,explain:"When the sea floor jolts, it shoves the water above it and sends out giant waves."},
+   {q:"Water with almost no salt in it is called what?",options:["Fresh water","Brine","Sea water","Mineral spray"],answer:0,explain:"Rivers, most lakes and rain are fresh water, and that is the water we drink."},
+   {q:"What do we call water stored underground in soil and rock?",options:["Steam water","Surf water","Groundwater","Rain water"],answer:2,explain:"Wells pump up groundwater, and many Canadian homes drink it every day."}
+  ]},
+  "Forests & Wildlife": { emoji:"🌲", color:"orange", q:[
+   {q:"What is the process called when a plant makes food using sunlight?",options:["Digestion","Photosynthesis","Evaporation","Pollination"],answer:1,explain:"In photosynthesis a leaf mixes sunlight, water and air to make its own sugar."},
+   {q:"Which gas do plants give off while making their food?",options:["Helium","Nitrogen","Oxygen","Methane"],answer:2,explain:"Plants release oxygen as they work, and that is the gas we need to breathe."},
+   {q:"Most of the material in a growing tree's wood comes from where?",options:["Gases in the air","Stones in the soil","Water in the rain","Insects on the bark"],answer:0,explain:"Trees pull carbon dioxide from the air and lock the carbon into wood as they grow."},
+   {q:"What do we call the order of who eats whom in nature?",options:["A life cycle","A food chain","A habitat","A tree line"],answer:1,explain:"A food chain starts with a plant and passes energy up to the animals that eat it."},
+   {q:"An animal that is hunted and eaten by another animal is called what?",options:["A grazer","A hunter","Prey","A scout"],answer:2,explain:"The hunter is the predator and the animal it catches is the prey."},
+   {q:"What do we call the natural home where an animal lives?",options:["Its climate","Its species","Its season","Its habitat"],answer:3,explain:"A habitat gives an animal the food, water and shelter it needs to survive."},
+   {q:"What is an ecosystem?",options:["Living things plus their surroundings","A map showing all forest trails","A list of rare plants and flowers","A group of very tall old trees"],answer:0,explain:"An ecosystem is every living thing in an area together with the soil, air and water."},
+   {q:"What is a species?",options:["A young animal born in spring","A group that can have young together","A crowd of animals feeding together","An animal kept as a family pet"],answer:1,explain:"Members of one species are alike enough to have young that can have young too."},
+   {q:"What is the vast northern Canadian forest of spruce and fir called?",options:["The rainforest","The savanna","The boreal forest","The orchard belt"],answer:2,explain:"The boreal forest stretches right across Canada and stores huge amounts of carbon."},
+   {q:"Trees that drop all their leaves each autumn are called what?",options:["Coniferous","Tropical","Evergreen","Deciduous"],answer:3,explain:"Maples, oaks and birches are deciduous, so they stand bare all winter long."},
+   {q:"Which kind of tree grows its seeds inside cones?",options:["Coniferous trees","Fruit trees","Deciduous trees","Palm trees"],answer:0,explain:"Pines, spruces and firs are conifers, and their cones protect the seeds inside."},
+   {q:"What is it called when pollen moves from one flower to another?",options:["Germination","Pollination","Migration","Digestion"],answer:1,explain:"Pollination lets flowers make seeds, and much of our food depends on it."},
+   {q:"Besides bees, which of these often carries pollen between flowers?",options:["Earthworms","Snails","Butterflies","Beetles in soil"],answer:2,explain:"Butterflies sip nectar and carry dusty pollen from bloom to bloom on their bodies."},
+   {q:"How can you tell the age of a tree that has been cut down?",options:["Weigh the bark","Measure the roots","Count the leaves","Count the rings"],answer:3,explain:"A tree adds one ring to its trunk each year, so the rings tell you its age."},
+   {q:"What do we call living things that break down dead leaves and wood?",options:["Decomposers","Producers","Migrators","Pollinators"],answer:0,explain:"Fungi, worms and bacteria are decomposers that turn dead stuff back into soil."},
+   {q:"What is chlorophyll?",options:["The rough outer bark of a tree","The green colour that catches sunlight","The sticky sap inside a tree trunk","A small seed found inside cones"],answer:1,explain:"Chlorophyll is the green stuff in leaves that grabs sunlight for photosynthesis."},
+   {q:"Why do maple leaves turn red and orange in autumn?",options:["Frost paints them","Rain washes them","The green colour fades","Wind dries them"],answer:2,explain:"As the green chlorophyll fades, hidden yellow and orange colours show through — and maples also make brand-new red pigment in the cool autumn sunshine. 🍁"}
+  ]},
+  "Recycling & Waste": { emoji:"♻️", color:"red", q:[
+   {q:"What do the three Rs stand for?",options:["Rinse, rebuild, return","Reduce, reuse, recycle","Repair, refill, remove","Recycle, repeat, reward"],answer:1,explain:"Reduce, reuse, recycle is the order to follow when you want to make less garbage."},
+   {q:"In the three Rs, which action comes first?",options:["Reduce","Reuse","Recycle","Rinse"],answer:0,explain:"Reduce comes first because the easiest garbage to handle is garbage you never make."},
+   {q:"What is compost?",options:["Melted plastic pellets","Crushed glass powder","Rotted food and plant scraps","Shredded metal pieces"],answer:2,explain:"Compost is dark crumbly material made from rotted scraps, and gardens love it."},
+   {q:"Which bin does a banana peel usually belong in?",options:["The blue bin","The garbage bin","The battery box","The compost bin"],answer:3,explain:"Food scraps go to compost, where they rot down and feed the soil again."},
+   {q:"Which of these belongs in the blue recycling bin?",options:["A clean cardboard box","A used paper tissue","A broken plastic toy","A greasy pizza crust"],answer:0,explain:"Clean, dry cardboard is easy to recycle, but greasy or soiled paper is not."},
+   {q:"What is a landfill?",options:["A factory that melts old metal cans","A large site where garbage is buried","A truck that collects green bins","A machine that sorts waste paper"],answer:1,explain:"A landfill packs garbage into the ground in layers and covers it with soil."},
+   {q:"Which material can be melted and recycled over and over without getting worse?",options:["Newspaper","Cardboard","Aluminum","Plastic wrap"],answer:2,explain:"Aluminum and glass can be recycled endlessly, while paper fibres get shorter each time."},
+   {q:"Glass is made mostly from which material?",options:["Clay","Chalk","Salt","Sand"],answer:3,explain:"Sand is heated until it melts, then cooled into the clear glass we use for jars."},
+   {q:"What does 'biodegradable' mean?",options:["It breaks down naturally","It floats on water","It can be painted","It never gets wet"],answer:0,explain:"Biodegradable things are broken down by tiny living creatures until nothing is left."},
+   {q:"About how long does a glass bottle take to break down in nature?",options:["About one month","About ten years","Thousands of years","About one season"],answer:2,explain:"Glass barely breaks down at all, which is why recycling it matters so much."},
+   {q:"Which of these would rot away fastest in a compost pile?",options:["A glass jar","An apple core","A plastic straw","A metal can"],answer:1,explain:"An apple core rots in a few weeks, while glass, plastic and metal simply sit there."},
+   {q:"Where should old batteries be taken?",options:["The compost bin","The kitchen garbage","A special drop-off spot","The paper bin"],answer:2,explain:"Batteries hold metals that can leak, so towns collect them at special drop-off spots."},
+   {q:"What does the triangle made of three chasing arrows mean?",options:["The item is fragile","The item is heavy","The item is new","The item can be recycled"],answer:3,explain:"The looping arrows show the item can be collected and made into something new."},
+   {q:"Turning an old jar into a pencil holder is an example of which R?",options:["Reuse","Reduce","Recycle","Refuse"],answer:0,explain:"Reusing keeps an object working as it is, with no melting or shredding needed."},
+   {q:"Why is it good to rinse a yogurt container before recycling it?",options:["It makes the container lighter","Leftover food can spoil the batch","It changes the plastic colour","It makes it fit in the bin better"],answer:1,explain:"Food left inside can ruin a whole load of clean recycling, so a quick rinse helps."},
+   {q:"Old phones, laptops and cables that are thrown out are called what?",options:["Yard waste","Blue box paper","Electronic waste","Bulk metal"],answer:2,explain:"Electronic waste holds valuable metals, so it needs its own special recycling depot."}
+  ]},
+  "Energy & Saving Power": { emoji:"⚡", color:"yellow", q:[
+   {q:"What does 'renewable energy' mean?",options:["Energy stored deep inside metal","Energy from a source that refills","Energy that costs a family nothing","Energy that never moves at all"],answer:1,explain:"Sunlight, wind and moving water keep coming back, so they are called renewable."},
+   {q:"Which of these is a fossil fuel?",options:["Wind","Sunlight","Coal","Moving water"],answer:2,explain:"Coal formed from plants buried millions of years ago, so there is a limited supply."},
+   {q:"What do solar panels turn sunlight into?",options:["Fresh water","Clean air","Steam heat","Electricity"],answer:3,explain:"Solar cells change sunlight straight into electricity, with no moving parts at all."},
+   {q:"How many blades do most large wind turbines have?",options:["One","Two","Six","Three"],answer:3,explain:"Three blades give a good balance of spinning power and steady, quiet turning."},
+   {q:"Hydroelectric power is made using what?",options:["Moving water","Burning wood","Blowing sand","Falling snow"],answer:0,explain:"Water rushing through a dam spins turbines, and Canada makes lots of power this way."},
+   {q:"Compared with older bulbs, an LED bulb uses what?",options:["More electricity","Much less electricity","The same electricity","No electricity"],answer:1,explain:"LED bulbs make light without wasting much heat, so they use far less power."},
+   {q:"What is 'phantom power'?",options:["Power made by a lightning bolt","Power stored inside a large magnet","Power drawn by plugged-in devices","Power made by pedalling a bicycle"],answer:2,explain:"A charger left in the wall keeps sipping electricity even when nothing is attached."},
+   {q:"What does insulation in the walls of a house do?",options:["Blocks all sunlight","Holds up the roof","Cleans indoor air","Slows heat escaping"],answer:3,explain:"Insulation works like a winter coat for a house, keeping warmth inside during cold months."},
+   {q:"In a typical Canadian home in winter, which uses the most energy?",options:["Heating the house","The toaster","A phone charger","The doorbell"],answer:0,explain:"Keeping rooms warm through a Canadian winter takes more energy than everything else."},
+   {q:"Which unit does an electricity bill use to measure the power you used?",options:["Litre","Kilowatt-hour","Kilogram","Decibel"],answer:1,explain:"One kilowatt-hour runs a thousand-watt heater for one hour."},
+   {q:"What does a battery hold until you need it?",options:["Water","Light","Stored energy","Fresh air"],answer:2,explain:"A battery keeps energy in chemical form and releases it as electricity when connected."},
+   {q:"Energy taken from heat deep underground is called what?",options:["Tidal energy","Solar energy","Wind energy","Geothermal energy"],answer:3,explain:"Geothermal systems use the steady warmth of the ground to heat buildings."},
+   {q:"Which kitchen appliance runs day and night without stopping?",options:["The refrigerator","The blender","The kettle","The toaster"],answer:0,explain:"A fridge cools around the clock, so keeping its door shut really does save energy."},
+   {q:"Washing clothes in cold water instead of hot mainly saves what?",options:["Powdered laundry soap","The energy used to heat water","Space inside the machine","Time spent doing laundry"],answer:1,explain:"Most of a washing machine's energy goes into heating the water, not turning the drum."},
+   {q:"What do we call the network of wires that carries electricity to homes?",options:["The chain","The tunnel","The grid","The belt"],answer:2,explain:"The grid links power stations to towns through long lines held up by tall towers."},
+   {q:"What does a thermostat in a house control?",options:["The water pressure","The door locks","The outdoor lights","The indoor temperature"],answer:3,explain:"Turning a thermostat down a couple of degrees at night saves heating energy."}
+  ]}
+};
+const LSKEY="earthq_";
+
+let qs=[], cur=0, score=0, answered=false, curCat="";
+function balanceOpts(it){
+  const opts=it.options||it.o, ans=(it.answer!==undefined)?it.answer:it.a;
+  if(!Array.isArray(opts)||opts.length!==4||!(ans>=0&&ans<=3)) return it;
+  const txt=opts.join(' ').toLowerCase();
+  if(/all of the|none of the|both of/.test(txt)) return it;
+  if(opts.every(o=>!isNaN(parseFloat(String(o).replace(/[\s,$%]/g,''))))) return it;
+  const idx=[0,1,2,3];
+  for(let i=3;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
+  const c=Object.assign({},it), o2=idx.map(i=>opts[i]), a2=idx.indexOf(ans);
+  if(it.options){ c.options=o2; c.answer=a2; } else { c.o=o2; c.a=a2; }
+  return c;
+}
+function pickFresh(bank,count,key){
+  let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
+  if(!Array.isArray(seen)) seen=[];
+  let unseen=bank.map((_,i)=>i).filter(i=>seen.indexOf(i)===-1);
+  if(unseen.length<count){ seen=[]; unseen=bank.map((_,i)=>i); }
+  for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
+  const chosen=unseen.slice(0,count);
+  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
+  return chosen.map(i=>balanceOpts(bank[i]));
+}
+function buildCats(){
+  const box=document.getElementById('cats'); box.innerHTML='';
+  Object.keys(BANK).forEach(name=>{
+    const c=BANK[name];
+    const card=document.createElement('div'); card.className='card c-'+c.color;
+    card.innerHTML='<div class="emoji">'+c.emoji+'</div><h3>'+name+'</h3><p>'+c.q.length+' questions</p>';
+    const b=document.createElement('button'); b.className='btn btn-'+c.color; b.textContent='Start'; b.onclick=()=>startCat(name);
+    card.appendChild(b); box.appendChild(card);
+  });
+}
+function startCat(name){
+  curCat=name; const c=BANK[name];
+  qs=pickFresh(c.q, Math.min(10,c.q.length), LSKEY+name);
+  cur=0; score=0; answered=false;
+  document.getElementById('start-screen').style.display='none';
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='block';
+  showQ(); window.scrollTo(0,0);
+}
+function showQ(){
+  answered=false; const q=qs[cur]; const big=BANK[curCat].big;
+  document.getElementById('q-counter').textContent='Question '+(cur+1)+' of '+qs.length;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  document.getElementById('progress-bar').style.width=(cur/qs.length*100)+'%';
+  const bq=document.getElementById('bigq');
+  if(big && q.icon){ bq.style.display='block'; bq.textContent=q.icon; } else { bq.style.display='none'; }
+  document.getElementById('question-text').textContent=q.q;
+  const box=document.getElementById('options'); box.innerHTML='';
+  q.options.forEach((opt,i)=>{ const b=document.createElement('button'); b.className='option'; b.textContent=opt; b.onclick=()=>pick(i,b); box.appendChild(b); });
+  document.getElementById('explain-box').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+function pick(i,btn){
+  if(answered) return; answered=true; const q=qs[cur];
+  document.querySelectorAll('#options .option').forEach((b,idx)=>{ b.classList.add('disabled'); if(idx===q.answer) b.classList.add('correct'); if(idx===i&&i!==q.answer) b.classList.add('wrong'); });
+  if(i===q.answer) score++;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  const ex=document.getElementById('explain-box');
+  ex.innerHTML='<strong>'+(i===q.answer?'\u2705 Correct! ':'\u274C The answer is '+q.options[q.answer]+'. ')+'</strong>'+q.explain;
+  ex.style.display='block';
+  document.getElementById('progress-bar').style.width=((cur+1)/qs.length*100)+'%';
+  const nb=document.getElementById('next-btn'); nb.textContent=(cur+1<qs.length)?'Next \u2192':'See my score \u2192'; nb.style.display='inline-block';
+}
+function nextQuestion(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0);} else finish(); }
+function finish(){
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('result-screen').style.display='block';
+  document.getElementById('result-score').textContent='You scored '+score+' / '+qs.length;
+  const pct=score/qs.length; let t,m;
+  if(pct===1){t='\uD83C\uDF1F Perfect!';m='You are an Earth expert!';}
+  else if(pct>=0.7){t='\uD83C\uDF89 Great job!';m='Great environment knowledge!';}
+  else if(pct>=0.4){t='\uD83D\uDE42 Nice try!';m='Play again to learn more.';}
+  else {t='\uD83C\uDF31 Keep learning!';m='Give it another go \u2014 you will do better!';}
+  document.getElementById('result-title').textContent=t; document.getElementById('result-msg').textContent=m;
+  window.scrollTo(0,0);
+}
+function backToCats(){
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('start-screen').style.display='block';
+  window.scrollTo(0,0);
+}
+buildCats();
+</script>
+  <script src="../js/site.js?v=20260802"></script>
+  <script src="../js/analytics.js?v=20260802"></script>
+  <script src="../js/game-fullscreen.js?v=20260802"></script>
+</body>
+</html>

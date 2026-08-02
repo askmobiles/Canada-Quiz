@@ -6,11 +6,11 @@
 <title>Groupes de mots — Casse-tête Connexions | Jeux en famille</title>
 <meta name="description" content="Groupes de mots — une énigme gratuite de style « connexions ». Classez 16 mots en 4 groupes secrets de 4. Un jeu de réflexion amusant pour tous les âges.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../css/style.css?v=20260730">
+<link rel="stylesheet" href="../css/style.css?v=20260802">
 <style>
   .cn-wrap{max-width:460px;margin:0 auto;text-align:center}
-  .cn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:14px auto}
-  .cn-tile{aspect-ratio:1.5/1;display:flex;align-items:center;justify-content:center;text-align:center;background:#eef1f5;border-radius:10px;font-weight:800;font-size:clamp(11px,3.2vw,15px);cursor:pointer;padding:2px;text-transform:uppercase;user-select:none}
+  .cn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:14px auto;max-width:100%}
+  .cn-tile{aspect-ratio:1.5/1;display:flex;align-items:center;justify-content:center;text-align:center;background:#eef1f5;border-radius:10px;font-weight:800;font-size:clamp(11px,3.2vw,15px);cursor:pointer;padding:2px;text-transform:uppercase;user-select:none;overflow:hidden;word-break:break-word;hyphens:auto;min-width:0}
   .cn-tile.sel{background:var(--ink);color:#fff}
   .cn-solved{border-radius:12px;padding:10px;margin:7px 0;color:#fff}
   .cn-solved .cat{font-weight:900;text-transform:uppercase;font-size:14px}
@@ -75,7 +75,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(71)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(81)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quiz</h4>
@@ -88,6 +88,10 @@
         <a href="science-quiz.html">Sciences et espace</a>
         <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
         <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
       </div>
       <div class="footer-map-col">
         <h4>Pratique de l'examen de conduite</h4>
@@ -114,6 +118,10 @@
         <a href="rubiks-cube.html">Cube Rubik</a>
         <a href="typing-test.html">Test de vitesse de frappe</a>
         <a href="color-match.html">Associe les couleurs</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
       </div>
       <div class="footer-map-col">
         <h4>Jeux d'action et jeux classiques</h4>
@@ -124,6 +132,8 @@
         <a href="checkers.html">Dames</a>
         <a href="inukshuk.html">Construis un inukshuk</a>
         <a href="tag.html">Tague</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Connect 4</a>
       </div>
       <div class="footer-map-col">
         <h4>Jeux de groupe</h4>
@@ -256,8 +266,8 @@ function revealAll(){
 function msg(t,bad){ const m=document.getElementById('msg'); m.style.color=bad?'#e63946':'#2a9d8f'; m.textContent=t; }
 newGame();
 </script>
-  <script src="../js/game-fullscreen.js?v=20260730"></script>
-  <script src="../js/site.js?v=20260730"></script>
-  <script src="../js/analytics.js?v=20260730"></script>
+  <script src="../js/game-fullscreen.js?v=20260802"></script>
+  <script src="../js/site.js?v=20260802"></script>
+  <script src="../js/analytics.js?v=20260802"></script>
 </body>
 </html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect 4 — Play Free vs the Computer or a Friend | Canada Quiz</title>
+<meta name="description" content="Play Connect 4 free online with no signup and no download. Drop your discs against a friend or beat the computer on easy, medium or hard. Works on any phone.">
+<meta property="og:title" content="Connect 4 — Play Free vs the Computer or a Friend | Canada Quiz">
+<meta property="og:description" content="Play Connect 4 free online with no signup and no download. Drop your discs against a friend or beat the computer on easy, medium or hard. Works on any phone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/connect4.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=20260802">
+<style>
+.c4-modes{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:420px;margin:0 auto 12px}
+.c4-mode{font-size:13px;line-height:1.15;padding:9px 6px;min-height:44px;white-space:normal}
+.c4-mode.c4-on{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 4px 10px rgba(230,57,70,.28)}
+.c4-status{font-weight:800;font-size:17px;line-height:1.25;min-height:24px;margin:0 0 10px;color:var(--ink)}
+.c4-play{width:100%;max-width:min(420px,max(220px,calc((100vh - 300px) * 1.1666)));margin:0 auto}
+.c4-drops{display:flex;width:100%;margin-bottom:4px}
+.c4-drop{flex:1 1 0;min-width:0;min-height:46px;padding:0;border:0;background:transparent;color:#9aa6b4;font-size:20px;line-height:1;border-radius:12px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,color .15s,transform .15s,opacity .15s}
+.c4-drop:disabled{opacity:.2;cursor:default}
+.c4-drop.c4-hot{background:rgba(230,57,70,.14);color:var(--red);transform:translateY(3px)}
+.c4-drop.c4-hot-y{background:rgba(255,183,3,.22);color:#a97600;transform:translateY(3px)}
+.c4-drop:not(:disabled):active{transform:translateY(4px);background:rgba(43,45,66,.10)}
+.c4-frame{background:#1d3557;padding:6px;border-radius:18px;box-shadow:0 8px 18px rgba(29,53,87,.28)}
+.c4-board{position:relative;width:100%;border-radius:12px;overflow:hidden;background:#f1f5fa;cursor:pointer}
+.c4-board::before{content:"";display:block;padding-top:85.7143%}
+.c4-layer{position:absolute;inset:0;z-index:1;display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(6,1fr)}
+.c4-mask{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:radial-gradient(circle at 50% 50%,rgba(29,53,87,0) 40.5%,#1d3557 42.5%);background-size:calc(100% / 7) calc(100% / 6);background-repeat:repeat}
+.c4-cell{position:relative}
+.c4-disc{position:absolute;left:8%;top:8%;width:84%;height:84%;border-radius:50%;background:transparent;transform:translateY(0);will-change:transform}
+.c4-disc.c4-r{background:radial-gradient(circle at 32% 27%,#ff8891,var(--red) 58%,var(--red-dark));box-shadow:inset 0 -3px 6px rgba(0,0,0,.26)}
+.c4-disc.c4-y{background:radial-gradient(circle at 32% 27%,#ffe49a,var(--yellow) 58%,#d18f00);box-shadow:inset 0 -3px 6px rgba(0,0,0,.22)}
+.c4-disc.c4-ghost{opacity:.36}
+@keyframes c4-pulse{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.04);filter:brightness(1.45) saturate(1.2)}}
+@keyframes c4-ring{0%,100%{transform:scale(.78);opacity:.7}50%{transform:scale(1.14);opacity:1}}
+.c4-disc.c4-win{animation:c4-pulse .75s ease-in-out infinite}
+.c4-disc.c4-win::after{content:"";position:absolute;left:28%;top:28%;width:44%;height:44%;border-radius:50%;border:3px solid #fff;box-shadow:0 0 8px rgba(255,255,255,.85);animation:c4-ring .75s ease-in-out infinite}
+.c4-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.c4-pills .c4-pr{background:rgba(230,57,70,.12);color:var(--red-dark)}
+.c4-pills .c4-py{background:rgba(255,183,3,.20);color:#8a6300}
+.c4-pills .c4-pc{background:rgba(72,149,239,.14);color:#1b5fae}
+@media (max-width:360px){
+  .c4-mode{font-size:12px;padding:8px 4px}
+  .c4-status{font-size:15px}
+  .c4-drop{min-height:44px;font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){
+  .c4-disc{transition:none !important}
+  .c4-disc.c4-win{animation:none;filter:brightness(1.4) saturate(1.2)}
+  .c4-disc.c4-win::after{animation:none;opacity:1;transform:scale(1)}
+}
+</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/connect4.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/connect4.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/connect4.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/connect4.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔴🟡 Connect 4</h1>
+    <p>Drop four in a row before your opponent does.</p>
+  <details class="howto"><summary></summary><p>Tap a column to drop your disc — it falls to the lowest empty slot. Get four of your colour in a row across, down or diagonally to win. Play a friend on the same phone, or take on the computer at easy, medium or hard.</p></details>
+
+  </section>
+
+  <div class="panel center" data-fs-host>
+    <div class="c4-modes" id="c4-modes">
+      <button class="btn btn-ghost c4-mode" type="button" data-mode="2p">2 Players</button>
+      <button class="btn btn-ghost c4-mode" type="button" data-mode="easy">vs Computer — Easy</button>
+      <button class="btn btn-ghost c4-mode" type="button" data-mode="med">vs Computer — Medium</button>
+      <button class="btn btn-ghost c4-mode" type="button" data-mode="hard">vs Computer — Hard</button>
+    </div>
+    <div class="c4-status" id="c4-status" data-no-i18n aria-live="polite">&nbsp;</div>
+    <div class="c4-play">
+      <div class="c4-drops" id="c4-drops" data-no-i18n></div>
+      <div class="c4-frame">
+        <div class="c4-board" id="c4-board">
+          <div class="c4-layer" id="c4-layer"></div>
+          <div class="c4-mask" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+    <div class="c4-pills" id="c4-pills" data-no-i18n></div>
+    <div style="margin-top:14px">
+      <button class="btn" id="c4-new" type="button">New Game</button>
+      <button class="btn btn-ghost" id="c4-reset" type="button">Reset Scores</button>
+      <a class="btn btn-ghost" href="games.html">All Games</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <details class="footer-map">
+      <summary>All pages <span class="fm-count">(81)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <h4>Quizzes</h4>
+        <a href="quizzes.html">All Quizzes</a>
+        <a href="gk-quiz.html">General Knowledge</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Fun Canada Quiz</a>
+        <a href="province-quiz.html">Which Province Are You?</a>
+        <a href="world-quiz.html">World Quiz</a>
+        <a href="science-quiz.html">Science &amp; Space</a>
+        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
+        <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Driving Test Practice</h4>
+        <a href="driving-test.html">Canada Driving Test</a>
+        <a href="ontario-g1-practice-test.html">Ontario G1 Practice Test</a>
+        <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
+        <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
+        <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Brain &amp; Puzzle Games</h4>
+        <a href="word-master.html">Word Master</a>
+        <a href="word-search.html">Word Search</a>
+        <a href="word-guess.html">Word Guess</a>
+        <a href="scramble.html">Word Scramble</a>
+        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="crossword.html">Crossword</a>
+        <a href="connections.html">Word Groups</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Minesweeper</a>
+        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Memory Match</a>
+        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="typing-test.html">Typing Speed Test</a>
+        <a href="color-match.html">Color Match</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="flags-game.html">Flags of the World</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Action &amp; Classic Games</h4>
+        <a href="snake.html">Maple Snake</a>
+        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
+        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="checkers.html">Checkers</a>
+        <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="tag.html">Tag</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Party Games</h4>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposter</a>
+        <a href="would-you-rather.html">Would You Rather?</a>
+        <a href="trivia-showdown.html">Trivia Showdown</a>
+        <a href="hold-to-head.html">Hold to Head</a>
+        <a href="top-answers.html">Top Answers</a>
+        <a href="categories-game.html">Categories</a>
+        <a href="story-maker.html">Story Maker</a>
+        <a href="draw-it.html">Draw It</a>
+        <a href="spin-wheel.html">Spin the Wheel</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Blog</h4>
+        <a href="blog.html">All Articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
+        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
+        <a href="what-is-confederation.html">What Is Confederation?</a>
+        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
+        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
+        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
+        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
+        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
+        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
+        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
+        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
+        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
+        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>The Site</h4>
+        <a href="index.html">Home</a>
+        <a href="daily.html">Daily Challenge</a>
+        <a href="games.html">All Family Games</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr){ return FR ? fr : en; }
+  function $(id){ return document.getElementById(id); }
+
+  var layer   = $('c4-layer'),
+      dropsEl = $('c4-drops'),
+      statusEl= $('c4-status'),
+      pillsEl = $('c4-pills'),
+      boardEl = $('c4-board'),
+      modesEl = $('c4-modes'),
+      newBtn  = $('c4-new'),
+      resetBtn= $('c4-reset');
+  if(!layer || !dropsEl || !statusEl || !pillsEl || !boardEl || !modesEl) return;
+
+  var COLS=7, ROWS=6, RED=1, YEL=2;
+  var ORDER=[3,2,4,1,5,0,6];
+  var DIRS=[[0,1],[1,0],[1,1],[1,-1]];
+
+  /* ---- every 4-in-a-row window (69 of them), used by the computer's eval ---- */
+  var WINS=[];
+  (function(){
+    for(var r=0;r<ROWS;r++) for(var c=0;c<COLS;c++) for(var k=0;k<4;k++){
+      var dr=DIRS[k][0], dc=DIRS[k][1];
+      var r3=r+3*dr, c3=c+3*dc;
+      if(r3<0||r3>=ROWS||c3<0||c3>=COLS) continue;
+      WINS.push([r*7+c,(r+dr)*7+(c+dc),(r+2*dr)*7+(c+2*dc),r3*7+c3]);
+    }
+  })();
+
+  /* ---------------- game state ---------------- */
+  var bd=new Int8Array(42), hh=new Int8Array(7), filled=0;
+  var turn=RED, starter=RED, over=false, busy=false, result=null;
+  var mode='2p';
+  var score={r:0,y:0,d:0};
+  var rec=loadRec();
+  var cells=[], discs=[], dropBtns=[];
+  var ghostIdx=-1, hoverCol=-1, aiTimer=0, canHover=false;
+
+  try{ canHover = !!(window.matchMedia && window.matchMedia('(hover:hover)').matches); }catch(e){ canHover=false; }
+
+  function loadRec(){
+    var o={w:0,l:0,d:0};
+    try{
+      var s=window.localStorage ? localStorage.getItem('cq_c4_rec') : null;
+      if(s){
+        var p=JSON.parse(s);
+        if(p && typeof p==='object'){
+          o.w=Math.max(0,parseInt(p.w,10)||0);
+          o.l=Math.max(0,parseInt(p.l,10)||0);
+          o.d=Math.max(0,parseInt(p.d,10)||0);
+        }
+      }
+    }catch(e){}
+    return o;
+  }
+  function saveRec(){
+    try{ if(window.localStorage) localStorage.setItem('cq_c4_rec', JSON.stringify(rec)); }catch(e){}
+  }
+
+  /* ---------------- build the board ---------------- */
+  (function build(){
+    var r,c,cell,d,b;
+    for(r=0;r<ROWS;r++) for(c=0;c<COLS;c++){
+      cell=document.createElement('div');
+      cell.className='c4-cell';
+      cell.setAttribute('data-r',r);
+      cell.setAttribute('data-c',c);
+      d=document.createElement('i');
+      d.className='c4-disc';
+      cell.appendChild(d);
+      layer.appendChild(cell);
+      cells.push(cell); discs.push(d);
+    }
+    for(c=0;c<COLS;c++){
+      b=document.createElement('button');
+      b.type='button';
+      b.className='c4-drop';
+      b.setAttribute('data-c',c);
+      b.setAttribute('aria-label', T('Drop a piece in column ','Déposer un jeton dans la colonne ')+(c+1));
+      b.textContent='▼';
+      dropsEl.appendChild(b);
+      dropBtns.push(b);
+    }
+  })();
+
+  /* ---------------- helpers ---------------- */
+  function isComputerTurn(){ return mode!=='2p' && turn===YEL && !over; }
+  function validCols(){ var a=[],c; for(c=0;c<COLS;c++) if(hh[c]<ROWS) a.push(c); return a; }
+
+  function winLine(r,c,p){
+    for(var k=0;k<4;k++){
+      var dr=DIRS[k][0], dc=DIRS[k][1], i, rr, cc;
+      var before=[], after=[];
+      for(i=1;i<4;i++){ rr=r-dr*i; cc=c-dc*i; if(rr<0||rr>=ROWS||cc<0||cc>=COLS||bd[rr*7+cc]!==p) break; before.unshift(rr*7+cc); }
+      for(i=1;i<4;i++){ rr=r+dr*i; cc=c+dc*i; if(rr<0||rr>=ROWS||cc<0||cc>=COLS||bd[rr*7+cc]!==p) break; after.push(rr*7+cc); }
+      var line=before.concat([r*7+c], after);
+      if(line.length>=4){
+        var start=Math.min(before.length, line.length-4);
+        return line.slice(start, start+4);
+      }
+    }
+    return null;
+  }
+
+  /* ---------------- painting ---------------- */
+  function paint(r,c,p,anim){
+    var idx=r*7+c, d=discs[idx];
+    if(!d) return;
+    d.className='c4-disc '+(p===RED?'c4-r':'c4-y');
+    if(anim){
+      d.style.transition='none';
+      d.style.transform='translateY('+(-(r+1)*119)+'%)';
+      if(d.offsetWidth>=0){ /* force reflow so the start position sticks */ }
+      d.style.transition='transform 250ms cubic-bezier(.36,0,.72,.5)';
+      d.style.transform='translateY(0)';
+    }else{
+      d.style.transition='none';
+      d.style.transform='translateY(0)';
+    }
+  }
+
+  function clearGhost(){
+    if(ghostIdx>=0){
+      var d=discs[ghostIdx];
+      if(d){ d.className='c4-disc'; d.style.transition='none'; d.style.transform='translateY(0)'; }
+      ghostIdx=-1;
+    }
+    for(var i=0;i<dropBtns.length;i++) dropBtns[i].classList.remove('c4-hot','c4-hot-y');
+  }
+  function drawGhost(){
+    if(!canHover || hoverCol<0 || over || busy) return;
+    if(mode!=='2p' && turn===YEL) return;
+    if(hh[hoverCol]>=ROWS) return;
+    var r=ROWS-1-hh[hoverCol], idx=r*7+hoverCol, d=discs[idx];
+    if(!d) return;
+    d.className='c4-disc '+(turn===RED?'c4-r':'c4-y')+' c4-ghost';
+    ghostIdx=idx;
+    var b=dropBtns[hoverCol];
+    if(b) b.classList.add(turn===RED?'c4-hot':'c4-hot-y');
+  }
+
+  /* ---------------- status + pills ---------------- */
+  function statusText(){
+    if(over){
+      if(result===0) return T("It's a draw — the board is full.","Partie nulle — la grille est pleine.");
+      if(mode==='2p') return result===RED ? T('Red wins! 🎉','Les rouges gagnent ! 🎉')
+                                          : T('Yellow wins! 🎉','Les jaunes gagnent ! 🎉');
+      return result===RED ? T('You win! 🎉','Vous gagnez ! 🎉')
+                          : T('The computer wins. Try again!',"L'ordinateur gagne. Réessayez !");
+    }
+    if(mode==='2p') return turn===RED ? T("Red's turn","Aux rouges de jouer")
+                                      : T("Yellow's turn","Aux jaunes de jouer");
+    if(turn===RED) return T('Your turn — you are Red','À vous de jouer — vous êtes les rouges');
+    return busy ? T('The computer is thinking…',"L'ordinateur réfléchit…")
+                : T("The computer's turn","Au tour de l'ordinateur");
+  }
+
+  function pill(text, cls){
+    var s=document.createElement('span');
+    s.className='pill'+(cls?' '+cls:'');
+    s.textContent=text;
+    pillsEl.appendChild(s);
+  }
+  function drawPills(){
+    pillsEl.innerHTML='';
+    pill(T('Red wins','Victoires rouges')+': '+score.r, 'c4-pr');
+    pill(T('Yellow wins','Victoires jaunes')+': '+score.y, 'c4-py');
+    pill(T('Draws','Parties nulles')+': '+score.d, '');
+    pill(T('Vs computer',"Contre l'ordinateur")+(FR?' : ':': ')
+         +rec.w+' '+T('won','gagnées')+', '+rec.l+' '+T('lost','perdues')+', '+rec.d+' '+T('drawn','nulles'), 'c4-pc');
+  }
+
+  function updateUI(){
+    statusEl.textContent=statusText();
+    var lock = over || busy || isComputerTurn();
+    for(var c=0;c<COLS;c++){
+      var b=dropBtns[c];
+      if(b) b.disabled = lock || hh[c]>=ROWS;
+    }
+    boardEl.setAttribute('aria-busy', busy?'true':'false');
+    clearGhost();
+    drawGhost();
+    drawPills();
+  }
+
+  /* ---------------- moves ---------------- */
+  function doDrop(c,p){
+    if(!(c>=0 && c<COLS)) return false;
+    if(hh[c]>=ROWS) return false;
+    clearGhost();
+    var r=ROWS-1-hh[c];
+    bd[r*7+c]=p; hh[c]++; filled++;
+    paint(r,c,p,true);
+    var line=winLine(r,c,p);
+    if(line){ endGame(p,line); return true; }
+    if(filled>=42){ endGame(0,null); return true; }
+    turn = (p===RED)?YEL:RED;
+    updateUI();
+    maybeAI();
+    return true;
+  }
+
+  function play(c){
+    if(over||busy) return;
+    if(isComputerTurn()) return;
+    doDrop(c,turn);
+  }
+
+  function endGame(p,line){
+    over=true; busy=false; result=p;
+    if(line){ for(var i=0;i<line.length;i++){ var d=discs[line[i]]; if(d) d.classList.add('c4-win'); } }
+    if(p===RED) score.r++; else if(p===YEL) score.y++; else score.d++;
+    if(mode!=='2p'){
+      if(p===RED) rec.w++; else if(p===YEL) rec.l++; else rec.d++;
+      saveRec();
+    }
+    if(p===RED) starter=YEL;
+    else if(p===YEL) starter=RED;
+    else starter=(starter===RED?YEL:RED);
+    updateUI();
+  }
+
+  function newGame(resetStarter){
+    if(aiTimer){ clearTimeout(aiTimer); aiTimer=0; }
+    ghostIdx=-1;
+    for(var i=0;i<42;i++){
+      bd[i]=0;
+      var d=discs[i];
+      if(d){ d.className='c4-disc'; d.style.transition='none'; d.style.transform='translateY(0)'; }
+    }
+    for(var c=0;c<COLS;c++) hh[c]=0;
+    filled=0; over=false; busy=false; result=null;
+    if(resetStarter) starter=RED;
+    turn=starter;
+    updateUI();
+    maybeAI();
+  }
+
+  /* ---------------- the computer ---------------- */
+  var AB=new Int8Array(42), AH=new Int8Array(7), ACNT=0, nodes=0, tStart=0;
+  var AI=YEL, HU=RED, INF=1e9;
+
+  function sync(){ AB.set(bd); AH.set(hh); ACNT=filled; }
+  function aDrop(c,p){ var r=ROWS-1-AH[c]; AB[r*7+c]=p; AH[c]++; ACNT++; return r; }
+  function aUndo(c){ AH[c]--; ACNT--; var r=ROWS-1-AH[c]; AB[r*7+c]=0; }
+
+  function aWin(r,c,p){
+    for(var k=0;k<4;k++){
+      var dr=DIRS[k][0], dc=DIRS[k][1], n=1, i, rr, cc;
+      for(i=1;i<4;i++){ rr=r-dr*i; cc=c-dc*i; if(rr<0||rr>=ROWS||cc<0||cc>=COLS||AB[rr*7+cc]!==p) break; n++; }
+      for(i=1;i<4;i++){ rr=r+dr*i; cc=c+dc*i; if(rr<0||rr>=ROWS||cc<0||cc>=COLS||AB[rr*7+cc]!==p) break; n++; }
+      if(n>=4) return true;
+    }
+    return false;
+  }
+
+  /* column that wins right now for p, or -1 */
+  function immediate(p){
+    for(var i=0;i<ORDER.length;i++){
+      var c=ORDER[i];
+      if(AH[c]>=ROWS) continue;
+      var r=aDrop(c,p);
+      var w=aWin(r,c,p);
+      aUndo(c);
+      if(w) return c;
+    }
+    return -1;
+  }
+
+  function evalPos(){
+    var s=0, r, i, k, w, a, b, v;
+    for(r=0;r<ROWS;r++){ v=AB[r*7+3]; if(v===AI) s+=6; else if(v===HU) s-=6; }
+    for(i=0;i<WINS.length;i++){
+      w=WINS[i]; a=0; b=0;
+      for(k=0;k<4;k++){ v=AB[w[k]]; if(v===AI) a++; else if(v===HU) b++; }
+      if(a && b) continue;
+      if(a===3) s+=50; else if(a===2) s+=10; else if(a===1) s+=1;
+      else if(b===3) s-=55; else if(b===2) s-=11; else if(b===1) s-=1;
+    }
+    return s;
+  }
+
+  function search(depth, alpha, beta, maxing){
+    nodes++;
+    if(nodes>70000) return evalPos();
+    if((nodes & 511)===0 && (Date.now()-tStart)>260) return evalPos();
+    var me = maxing?AI:HU, any=false;
+    var best = maxing?-INF:INF;
+    for(var i=0;i<ORDER.length;i++){
+      var c=ORDER[i];
+      if(AH[c]>=ROWS) continue;
+      any=true;
+      var r=aDrop(c,me), sc;
+      if(aWin(r,c,me)) sc = maxing ? (900000+depth) : -(900000+depth);
+      else if(ACNT>=42) sc = 0;
+      else if(depth<=1) sc = evalPos();
+      else sc = search(depth-1, alpha, beta, !maxing);
+      aUndo(c);
+      if(maxing){ if(sc>best) best=sc; if(best>alpha) alpha=best; }
+      else { if(sc<best) best=sc; if(best<beta) beta=best; }
+      if(alpha>=beta) break;
+    }
+    return any?best:0;
+  }
+
+  function bestMove(depth){
+    var best=-INF, bestC=-1, alpha=-INF;
+    nodes=0; tStart=Date.now();
+    for(var i=0;i<ORDER.length;i++){
+      var c=ORDER[i];
+      if(AH[c]>=ROWS) continue;
+      var r=aDrop(c,AI), sc;
+      if(aWin(r,c,AI)) sc=900000+depth;
+      else if(ACNT>=42) sc=0;
+      else if(depth<=1) sc=evalPos();
+      else sc=search(depth-1, alpha, INF, false);
+      aUndo(c);
+      if(bestC<0 || sc>best){ best=sc; bestC=c; }
+      if(best>alpha) alpha=best;
+    }
+    return bestC;
+  }
+
+  function randomValid(){
+    var v=validCols();
+    if(!v.length) return -1;
+    return v[Math.floor(Math.random()*v.length)];
+  }
+
+  function chooseMove(){
+    sync();
+    var v=validCols();
+    if(!v.length) return -1;
+    if(mode==='easy'){
+      var wc=immediate(AI);
+      if(wc>=0 && Math.random()<0.5) return wc;
+      var bc=immediate(HU);
+      if(bc>=0 && Math.random()<0.5) return bc;
+      return v[Math.floor(Math.random()*v.length)];
+    }
+    var w=immediate(AI);   if(w>=0) return w;   /* always take a win  */
+    var b=immediate(HU);   if(b>=0) return b;   /* always block a loss */
+    var c=bestMove(mode==='hard'?6:3);
+    return (c>=0 && c<COLS && hh[c]<ROWS) ? c : v[Math.floor(Math.random()*v.length)];
+  }
+
+  function maybeAI(){
+    if(!isComputerTurn()) return;
+    busy=true;
+    updateUI();
+    if(aiTimer) clearTimeout(aiTimer);
+    aiTimer=setTimeout(function(){
+      aiTimer=0;
+      if(over || mode==='2p' || turn!==YEL){ busy=false; updateUI(); return; }
+      var c=-1;
+      try{ c=chooseMove(); }catch(err){ c=-1; }
+      if(!(c>=0 && c<COLS) || hh[c]>=ROWS) c=randomValid();
+      busy=false;
+      if(c<0){ updateUI(); return; }
+      doDrop(c,YEL);
+    },220);
+  }
+
+  /* ---------------- input ---------------- */
+  function colFrom(e){
+    var t=(e && e.target && e.target.closest) ? e.target.closest('[data-c]') : null;
+    if(!t) return -1;
+    var n=parseInt(t.getAttribute('data-c'),10);
+    return (n>=0 && n<COLS) ? n : -1;
+  }
+  function onClick(e){ var c=colFrom(e); if(c>=0) play(c); }
+  dropsEl.addEventListener('click', onClick);
+  boardEl.addEventListener('click', onClick);
+
+  function onOver(e){
+    if(!canHover) return;
+    var c=colFrom(e);
+    if(c===hoverCol) return;
+    hoverCol=c;
+    clearGhost(); drawGhost();
+  }
+  function onOut(){
+    if(!canHover || hoverCol<0) return;
+    hoverCol=-1;
+    clearGhost();
+  }
+  dropsEl.addEventListener('mouseover', onOver);
+  boardEl.addEventListener('mouseover', onOver);
+  dropsEl.addEventListener('mouseleave', onOut);
+  boardEl.addEventListener('mouseleave', onOut);
+
+  modesEl.addEventListener('click', function(e){
+    var t=(e && e.target && e.target.closest) ? e.target.closest('.c4-mode') : null;
+    if(!t) return;
+    var m=t.getAttribute('data-mode');
+    if(!m) return;
+    mode=m;
+    markModes();
+    newGame(true);
+  });
+  function markModes(){
+    var bs=modesEl.querySelectorAll('.c4-mode');
+    for(var i=0;i<bs.length;i++){
+      if(bs[i].getAttribute('data-mode')===mode) bs[i].classList.add('c4-on');
+      else bs[i].classList.remove('c4-on');
+    }
+  }
+
+  if(newBtn) newBtn.addEventListener('click', function(){ newGame(false); });
+  if(resetBtn) resetBtn.addEventListener('click', function(){
+    score={r:0,y:0,d:0};
+    rec={w:0,l:0,d:0};
+    saveRec();
+    updateUI();
+  });
+
+  markModes();
+  newGame(true);
+})();
+</script>
+  <script src="js/game-fullscreen.js?v=20260802"></script>
+  <script src="js/site.js?v=20260802"></script>
+  <script src="js/analytics.js?v=20260802"></script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI &amp; Technology Quiz for Kids — Free Computer &amp; Internet Questions | Canada Quiz</title>
+<meta name="description" content="Free AI and technology quiz for kids and families. Questions on computers, artificial intelligence, the internet, robots, coding and online safety. No signup, play instantly.">
+<meta property="og:title" content="AI &amp; Technology Quiz for Kids — Free Computer &amp; Internet Questions | Canada Quiz">
+<meta property="og:description" content="Free AI and technology quiz for kids and families. Questions on computers, artificial intelligence, the internet, robots, coding and online safety. No signup, play instantly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/ai-quiz.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=20260802">
+<style>.bigq{font-size:80px;text-align:center;margin:6px 0}</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/ai-quiz.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/ai-quiz.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/ai-quiz.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/ai-quiz.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="start-screen" class="panel center">
+    <div style="font-size:46px">🤖</div>
+    <h1>AI &amp; Technology Quiz</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto">Computers, artificial intelligence, robots and the internet. Learn how the technology all around you really works!</p>
+    <details class="howto"><summary></summary><p>Choose a topic below. You'll get 10 questions &mdash; tap the answer you think is right and you'll see instantly if you're correct, with a short fact. Play again anytime for fresh questions!</p></details>
+    <div class="grid" id="cats" style="margin-top:18px"></div>
+  </section>
+
+  <section id="quiz-screen" class="panel" style="display:none">
+    <div class="quiz-meta">
+      <span class="pill" id="q-counter">Question 1</span>
+      <span class="pill" id="score-pill">Score: 0</span>
+    </div>
+    <div class="progress"><span id="progress-bar"></span></div>
+    <div id="bigq" class="bigq" style="display:none"></div>
+    <h2 id="question-text"></h2>
+    <div class="options" id="options"></div>
+    <div id="explain-box" class="explain" style="display:none"></div>
+    <div class="center" style="margin-top:18px">
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Next &rarr;</button>
+    </div>
+  </section>
+
+  <section id="result-screen" class="panel center" style="display:none">
+    <div class="result-big">🤖</div>
+    <h2 id="result-title"></h2>
+    <p class="score" id="result-score"></p>
+    <p class="muted" id="result-msg"></p>
+    <div style="margin:18px 0">
+      <button class="btn btn-lg" onclick="backToCats()">Pick another topic</button>
+      <a class="btn btn-ghost btn-lg" href="quizzes.html">More quizzes</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <details class="footer-map">
+      <summary>All pages <span class="fm-count">(81)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <h4>Quizzes</h4>
+        <a href="quizzes.html">All Quizzes</a>
+        <a href="gk-quiz.html">General Knowledge</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Fun Canada Quiz</a>
+        <a href="province-quiz.html">Which Province Are You?</a>
+        <a href="world-quiz.html">World Quiz</a>
+        <a href="science-quiz.html">Science &amp; Space</a>
+        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
+        <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Driving Test Practice</h4>
+        <a href="driving-test.html">Canada Driving Test</a>
+        <a href="ontario-g1-practice-test.html">Ontario G1 Practice Test</a>
+        <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
+        <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
+        <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Brain &amp; Puzzle Games</h4>
+        <a href="word-master.html">Word Master</a>
+        <a href="word-search.html">Word Search</a>
+        <a href="word-guess.html">Word Guess</a>
+        <a href="scramble.html">Word Scramble</a>
+        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="crossword.html">Crossword</a>
+        <a href="connections.html">Word Groups</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Minesweeper</a>
+        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Memory Match</a>
+        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="typing-test.html">Typing Speed Test</a>
+        <a href="color-match.html">Color Match</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="flags-game.html">Flags of the World</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Action &amp; Classic Games</h4>
+        <a href="snake.html">Maple Snake</a>
+        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
+        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="checkers.html">Checkers</a>
+        <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="tag.html">Tag</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Party Games</h4>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposter</a>
+        <a href="would-you-rather.html">Would You Rather?</a>
+        <a href="trivia-showdown.html">Trivia Showdown</a>
+        <a href="hold-to-head.html">Hold to Head</a>
+        <a href="top-answers.html">Top Answers</a>
+        <a href="categories-game.html">Categories</a>
+        <a href="story-maker.html">Story Maker</a>
+        <a href="draw-it.html">Draw It</a>
+        <a href="spin-wheel.html">Spin the Wheel</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Blog</h4>
+        <a href="blog.html">All Articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
+        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
+        <a href="what-is-confederation.html">What Is Confederation?</a>
+        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
+        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
+        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
+        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
+        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
+        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
+        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
+        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
+        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
+        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>The Site</h4>
+        <a href="index.html">Home</a>
+        <a href="daily.html">Daily Challenge</a>
+        <a href="games.html">All Family Games</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+const BANK = {
+  "How Computers Work": { emoji:"💻", color:"blue", q:[
+   {q:"What does CPU stand for in a computer?",options:["Computer Power Utility","Central Processing Unit","Central Program Update","Common Printing Unit"],answer:1,explain:"The CPU is the chip that carries out the instructions in every program you run."},
+   {q:"Which part of a computer is often called its brain?",options:["The processor","The screen","The keyboard","The speaker"],answer:0,explain:"The processor does the calculating and decision-making for everything the computer shows you."},
+   {q:"What is RAM used for in a computer?",options:["Storing files forever","Holding work in progress","Cooling the machine","Printing documents"],answer:1,explain:"RAM is fast temporary memory that holds whatever the computer is working on right now."},
+   {q:"What happens to most of the contents of RAM when a computer is switched off?",options:["It is printed out","It moves to the screen","It is emailed away","It is erased"],answer:3,explain:"RAM needs power to remember, so unsaved work disappears when the machine loses electricity."},
+   {q:"How many bits make up one byte?",options:["Four","Six","Eight","Twelve"],answer:2,explain:"A byte is eight bits, and eight bits are just enough to store one ordinary letter."},
+   {q:"A kilobyte is about how many bytes?",options:["A hundred","A thousand","A million","A billion"],answer:1,explain:"Sizes climb by about a thousand each step: kilobyte, megabyte, gigabyte, terabyte."},
+   {q:"Which of these is a piece of computer hardware?",options:["A web browser","A spreadsheet","An operating system","A keyboard"],answer:3,explain:"Hardware is the parts you can touch; software is the instructions stored inside them."},
+   {q:"What is an operating system?",options:["The main software running a device","A cooling fan that lowers the heat","A cable that joins two devices","A setting that controls printing"],answer:0,explain:"The operating system manages memory, files and apps so everything on the device works together."},
+   {q:"Which device is an input device?",options:["Mouse","Monitor","Printer","Speaker"],answer:0,explain:"Input devices send information into a computer; output devices send information back to you."},
+   {q:"What does a hard drive do?",options:["Cools the processor","Connects to Wi-Fi","Displays pictures","Stores files long term"],answer:3,explain:"A hard drive keeps your files even after the power goes off, unlike temporary memory."},
+   {q:"What are the tiny dots that make up a screen image called?",options:["Bytes","Fonts","Pixels","Cursors"],answer:2,explain:"Thousands of coloured pixels sit side by side, and your eye blends them into one picture."},
+   {q:"Which number system do computers use to store information?",options:["Binary","Roman","Decimal","Tally"],answer:0,explain:"Binary uses only two digits, matching a circuit that is either switched on or switched off."},
+   {q:"In binary, what is the number 2 written as?",options:["11","01","10","20"],answer:2,explain:"Binary counting goes 0, 1, then 10, because each column is worth twice the one on its right."},
+   {q:"What does USB stand for on a computer port?",options:["Ultra Speed Battery","Upper Storage Block","United System Board","Universal Serial Bus"],answer:3,explain:"USB became a shared standard so one shape of plug could connect many kinds of device."},
+   {q:"What is the motherboard in a computer?",options:["The outer case","The largest cable","The battery pack","The main circuit board"],answer:3,explain:"The motherboard is the big board that connects the processor, memory and other parts together."},
+   {q:"Why do many computers have a fan inside?",options:["To dry the screen","To carry heat away","To make the case lighter","To clean the keyboard"],answer:1,explain:"Chips get warm as they work, and a fan blows that heat out so parts are not damaged."},
+   {q:"What does the word 'software' mean?",options:["Programs and instructions","Soft plastic parts","Padded carrying cases","Screen cleaning cloths"],answer:0,explain:"Software is the set of instructions that tells the hardware exactly what to do."}
+  ]},
+  "Artificial Intelligence": { emoji:"🤖", color:"purple", q:[
+   {q:"What do the letters AI stand for?",options:["Automatic Input","Advanced Internet","Artificial Intelligence","Applied Imaging"],answer:2,explain:"Artificial intelligence means machines doing tasks that usually need human thinking."},
+   {q:"In machine learning, what is 'training data'?",options:["The price of a computer","The examples a system learns from","A kind of keyboard","A screen resolution"],answer:1,explain:"A system studies many examples and finds patterns in them instead of being told every rule."},
+   {q:"Which term describes computer systems that improve by studying examples?",options:["Screen mirroring","Word processing","Disk cleaning","Machine learning"],answer:3,explain:"Machine learning systems adjust themselves as they see more examples of a task."},
+   {q:"A computer model loosely inspired by brain cells is called a…",options:["Water wheel","Steam engine","Neural network","Solar panel"],answer:2,explain:"Neural networks pass numbers through layers of simple connected units, a bit like nerve cells."},
+   {q:"In 1997, a chess computer named Deep Blue beat which world champion?",options:["Bobby Fischer","Magnus Carlsen","Garry Kasparov","Anatoly Karpov"],answer:2,explain:"Deep Blue's 1997 win was the first match victory by a computer over a reigning world champion."},
+   {q:"Alan Turing suggested a famous test to judge whether a machine could do what?",options:["Lift heavy loads without any help","Predict the weather a week ahead","Travel underwater for long trips","Hold a conversation like a human"],answer:3,explain:"In the Turing test, a judge chats by text and tries to tell the human from the machine."},
+   {q:"What does speech recognition software do?",options:["Turns spoken words into text","Makes photos brighter","Sorts files by size","Charges a battery"],answer:0,explain:"Speech recognition matches the sounds in your voice to words it has learned."},
+   {q:"What is computer vision?",options:["Teaching computers to understand images","Cleaning a monitor","Adjusting screen brightness","Designing eyeglasses"],answer:0,explain:"Computer vision lets software pick out objects, faces or writing inside a picture."},
+   {q:"What is a chatbot designed to do?",options:["Print photographs","Hold a conversation in text","Measure temperature","Charge phones faster"],answer:1,explain:"A chatbot reads what you type and produces a reply that fits the conversation."},
+   {q:"Why can an AI system give wrong answers?",options:["It always tells the truth","It can repeat mistakes in its data","It has no electricity","It cannot read English"],answer:1,explain:"A system learns from examples, so errors or gaps in those examples show up in its answers."},
+   {q:"What does 'bias' mean when people talk about AI?",options:["A slow internet link at a school","A power cable that has come loose","Unfair patterns learned from data","A screen with a crack in the glass"],answer:2,explain:"If the examples a system learns from are unbalanced, its answers can be unfair too."},
+   {q:"A computer program that follows a set of steps to solve a problem uses an…",options:["Antenna","Algorithm","Adapter","Alphabet"],answer:1,explain:"An algorithm is simply a clear list of steps, like a recipe for solving one problem."},
+   {q:"The phrase 'artificial intelligence' was first used at a 1956 meeting held at which university?",options:["Dartmouth","Toronto","Oxford","Harvard"],answer:0,explain:"The 1956 Dartmouth workshop gave the new research field its lasting name."},
+   {q:"What is a recommendation system?",options:["A machine that folds paper into shapes","Software that suggests items you may like","A battery that recharges from sunlight","A drawing tablet used with a special pen"],answer:1,explain:"It compares your choices with other people's choices to guess what you might enjoy."},
+   {q:"In a self-driving car, what job do the sensors do?",options:["Play music through the car speakers","Print paper maps of the roads ahead","Gather information about surroundings","Inflate the tires to the right level"],answer:2,explain:"Cameras and other sensors feed the computer a picture of the road so it can decide what to do."},
+   {q:"What does an AI language model mainly work with?",options:["Metal and wood","Wind and water","Paint and canvas","Words and sentences"],answer:3,explain:"Language models learn patterns in text so they can continue or answer a piece of writing."},
+   {q:"What is one good reason to check an AI answer with a trusted source?",options:["It uses far too much printer paper","It can sound sure while being wrong","It stops working after every sunset","It cannot read or write in French"],answer:1,explain:"AI writing can be confident and still be mistaken, so checking facts is always wise."}
+  ]},
+  "The Internet": { emoji:"🌐", color:"green", q:[
+   {q:"Who is credited with inventing the World Wide Web in 1989?",options:["Charles Babbage","Grace Hopper","Alan Turing","Tim Berners-Lee"],answer:3,explain:"He designed the Web while working at CERN, a physics laboratory in Europe."},
+   {q:"In which year did the World Wide Web become available to the public?",options:["1971","1981","1991","2001"],answer:2,explain:"The first public websites appeared in 1991, two years after the Web was designed."},
+   {q:"ARPANET, an early ancestor of the internet, sent its first message in which year?",options:["1949","1959","1969","1979"],answer:2,explain:"In 1969 two university computers exchanged the first ARPANET message over a phone line."},
+   {q:"What do the letters URL stand for?",options:["User Reading List","Upload Record Log","Universal Router Link","Uniform Resource Locator"],answer:3,explain:"A URL is the full address that tells a browser exactly where a page lives."},
+   {q:"What does HTML stand for?",options:["Home Tool Menu List","High Transfer Media Line","Hard Type Machine Log","HyperText Markup Language"],answer:3,explain:"HTML is the code that describes the headings, paragraphs and links on a web page."},
+   {q:"What is an IP address?",options:["A number identifying a device on a network","A secret password used to open your email","A brand of cable sold in computer shops","A screen size measured across in inches"],answer:0,explain:"Every device online needs an IP address so replies can find their way back to it."},
+   {q:"What does a router do in a home network?",options:["Sharpens blurry photos before you print them","Prints paper receipts for every page you open","Stores movies in a large box under the desk","Directs data between devices and the internet"],answer:3,explain:"The router acts like a traffic officer, sending each piece of data to the right device."},
+   {q:"What does a search engine do?",options:["Cleans your hard drive of old files","Charges your laptop battery faster","Finds web pages matching your words","Writes your homework answers for you"],answer:2,explain:"It keeps a huge index of pages and ranks the ones that best match what you typed."},
+   {q:"In an email address, what comes after the @ symbol?",options:["The person's first name","The message subject","The date sent","The domain name"],answer:3,explain:"The part after @ names the mail system that looks after that person's inbox."},
+   {q:"Which domain ending is used for Canadian websites?",options:[".ca",".cn",".co",".cd"],answer:0,explain:"Each country has its own two-letter ending, and Canada's is .ca."},
+   {q:"Information sent across the internet is broken into small pieces called…",options:["Bundles","Baskets","Packets","Parcels"],answer:2,explain:"Packets travel separately and are put back in order when they all arrive."},
+   {q:"What does Wi-Fi use to connect a device to a network?",options:["Copper pipes","Sound waves","Radio waves","Magnets"],answer:2,explain:"Wi-Fi sends data as radio signals between your device and a nearby access point."},
+   {q:"What is a hyperlink?",options:["A very fast printer used in large offices","A clickable connection to another page","A screen protector made of thin glass","A file that plays music through speakers"],answer:1,explain:"Hyperlinks are what make the Web a web, joining pages to one another with a click."},
+   {q:"What are undersea cables used for?",options:["Anchoring very large ships in a harbour","Carrying internet data between continents","Measuring the height of the ocean tides","Catching schools of fish far out at sea"],answer:1,explain:"Most international internet traffic travels through fibre-optic cables on the ocean floor."},
+   {q:"What does it mean to download a file?",options:["Restarting a router that has stopped working","Turning off a screen to save battery power","Deleting a folder of files you no longer need","Copying a file from the internet to your device"],answer:3,explain:"Downloading brings a file to you; uploading sends one of your files out."},
+   {q:"What does the letter 's' in 'https' tell you about a website?",options:["It is Canadian","The connection is secured","It is a shop","The site is small"],answer:1,explain:"The s means the traffic is encrypted, so others cannot easily read what you send."},
+   {q:"What does a web server do?",options:["Stores and sends out web pages","Cools the internet","Repairs broken cables","Designs logos"],answer:0,explain:"When you open a page, a server somewhere sends the files to your browser."}
+  ]},
+  "Robots & Machines": { emoji:"🦾", color:"orange", q:[
+   {q:"The word 'robot' first appeared in a 1920 play written in which language?",options:["Czech","Greek","Swedish","Dutch"],answer:0,explain:"It came from a Czech word for forced labour, used in Karel Capek's play about machine workers."},
+   {q:"What does a sensor on a robot do?",options:["Paints the outer body of the whole machine","Stores spare parts for use in later repairs","Detects something about its surroundings","Plays warning music whenever it moves"],answer:2,explain:"Sensors measure things like light, distance or heat and report them to the robot's computer."},
+   {q:"What is an actuator on a robot?",options:["A cooling vent","A part that creates movement","A memory chip","A warning sticker"],answer:1,explain:"Motors and other actuators turn the robot's decisions into real movement."},
+   {q:"Canadarm, the robotic arm built in Canada, was used on which vehicle?",options:["A submarine","A racing car","The Space Shuttle","A snowplough"],answer:2,explain:"Canadarm launched with the Space Shuttle in 1981 and grabbed satellites in orbit."},
+   {q:"Which Canadian robotic arm works on the International Space Station?",options:["Canadarm2","Beaverbot","Maple Claw","Northern Grip"],answer:0,explain:"Canadarm2 helped build the station and still moves equipment and visiting spacecraft."},
+   {q:"What is a drone?",options:["A hand tool used for cutting through metal","An aircraft flown without a pilot on board","A kind of battery used in bright torches","A garden hose used for watering plants"],answer:1,explain:"Drones are steered by remote control or by their own onboard computer."},
+   {q:"What are robots often used for in car factories?",options:["Serving lunch","Welding and assembling parts","Selling cars","Designing adverts"],answer:1,explain:"Robots repeat welds and lifts with great accuracy and never get tired."},
+   {q:"Which robot vehicles have explored the surface of Mars?",options:["Tankers","Trawlers","Gliders","Rovers"],answer:3,explain:"Mars rovers drive slowly across the ground, taking photographs and testing rocks."},
+   {q:"Why are robots often sent into volcanoes or deep water?",options:["They enjoy looking at the view from there","They need salt water to keep working","The places are too dangerous for people","They work well only when they are wet"],answer:2,explain:"Machines can be replaced, so they take on jobs that would risk a human life."},
+   {q:"What is a humanoid robot?",options:["A robot that only floats","A robot made of paper","A robot shaped like a person","A robot with no power"],answer:2,explain:"Humanoid robots have a head, arms and legs so they can use spaces built for people."},
+   {q:"A robot's set of instructions is usually stored as a…",options:["Poster","Postcard","Painting","Program"],answer:3,explain:"Change the program and the same machine can do a completely different job."},
+   {q:"Which simple machine is a wheel joined to a rod through its centre?",options:["Pulley","Wheel and axle","Lever","Wedge"],answer:1,explain:"The wheel and axle lets a small turning force move a heavy load along the ground."},
+   {q:"What does a pulley help you do?",options:["Measure liquids","Cut through wood","Cool a room","Lift a load more easily"],answer:3,explain:"A rope around a grooved wheel changes the direction of your pull, making lifting easier."},
+   {q:"A robot vacuum cleaner mostly uses sensors to do what?",options:["Choose the music to play","Avoid bumping into things","Water the indoor plants","Fold the clean laundry"],answer:1,explain:"Its sensors spot walls, stairs and furniture so it can steer around them."},
+   {q:"What kind of energy powers most small mobile robots?",options:["Steam from boiling water","Coal burned in a furnace","Electricity from batteries","Wind caught in a large sail"],answer:2,explain:"Batteries let a robot carry its own power supply and move around freely."},
+   {q:"What is an exoskeleton suit designed to do?",options:["Keep food cold","Help a person lift or walk","Clean windows","Measure rainfall"],answer:1,explain:"Powered frames worn on the body add strength and support to a person's own muscles."},
+   {q:"Robot arms in factories are often described by their number of what?",options:["Colours","Wheels","Songs","Joints"],answer:3,explain:"More joints means more directions the arm can bend, so it can reach awkward spots."}
+  ]},
+  "Coding Basics": { emoji:"⌨️", color:"red", q:[
+   {q:"In coding, what does a loop do?",options:["Repeats a set of instructions","Ends the program","Changes the colours","Saves the file"],answer:0,explain:"A loop saves you from typing the same instruction over and over again."},
+   {q:"What does a variable do in a program?",options:["Turns off the computer","Prints the screen","Stores a value under a name","Draws a border"],answer:2,explain:"A variable is like a labelled box that holds a number, a word or a list."},
+   {q:"An 'if' statement in code lets a program do what?",options:["Repeat forever","Connect to Wi-Fi","Print in colour","Make a choice between paths"],answer:3,explain:"The program checks a condition and follows one path when it is true and another when it is false."},
+   {q:"Who wrote what is often called the first computer program, in the 1840s?",options:["Marie Curie","Florence Nightingale","Ada Lovelace","Mary Anning"],answer:2,explain:"Ada Lovelace wrote steps for a calculating machine long before electronic computers existed."},
+   {q:"Which programming language is named after a British comedy show?",options:["Python","Ruby","Java","Swift"],answer:0,explain:"Python's creator named it after Monty Python's Flying Circus, but a snake became its symbol."},
+   {q:"What does a computer bug mean to a programmer?",options:["An insect in the case","A dusty fan","A mistake in the code","A dead battery"],answer:2,explain:"Fixing these mistakes is called debugging, a word used since the early days of computing."},
+   {q:"What is a function in programming?",options:["A password rule","A broken keyboard key","A screen background","A named block of reusable code"],answer:3,explain:"You write a function once and then call it whenever you need that job done."},
+   {q:"In many block-based coding apps, you build programs by doing what?",options:["Typing long numbers","Speaking into a mic","Drawing with a pencil","Dragging blocks together"],answer:3,explain:"Snapping blocks together shows the order of steps without worrying about spelling."},
+   {q:"What is a comment in source code?",options:["A pop-up advertisement shown in a new window","A note for humans that the computer ignores","A saved password kept inside the browser","A printed receipt from an online shop order"],answer:1,explain:"Comments explain why the code does something, which helps whoever reads it later."},
+   {q:"What does a compiler do?",options:["Turns code into instructions a machine can run","Cleans the screen of dust and fingerprints","Deletes old files that you have not opened","Measures how fast a person is able to type"],answer:0,explain:"Programmers write in words, and a compiler translates that into the computer's own language."},
+   {q:"A list of steps written in plain words before real coding is called…",options:["Hardware","Firmware","Clipboard","Pseudocode"],answer:3,explain:"Pseudocode helps you plan the logic first, without worrying about a language's rules."},
+   {q:"Counting in most programming languages, a list's first item usually has which index?",options:["0","1","2","10"],answer:0,explain:"Many languages start counting at zero, which surprises beginners at first."},
+   {q:"Grace Hopper helped create which early programming language?",options:["COBOL","HTML","CSS","SQL"],answer:0,explain:"She pushed for languages written in English-like words instead of pure numbers."},
+   {q:"What is CSS used for on a web page?",options:["Storing passwords","Recording video","Sending email","Describing how the page looks"],answer:3,explain:"CSS sets colours, spacing and fonts, while HTML sets the content itself."},
+   {q:"In coding, what is an infinite loop?",options:["A loop that runs once","A loop that never stops on its own","A loop that prints colours","A loop that saves files"],answer:1,explain:"Without a condition to end it, the program keeps repeating the same steps forever."},
+   {q:"What does an app's source code look like?",options:["Written instructions in a language","Pictures of the buttons and menus","A list of prices for every item sold","A folder full of songs and videos"],answer:0,explain:"Source code is text that people can read and edit before it is turned into a working app."}
+  ]},
+  "Staying Safe Online": { emoji:"🛡️", color:"yellow", q:[
+   {q:"What makes a password stronger?",options:["Using your first name","Being long and hard to guess","Using the word password","Being three letters"],answer:1,explain:"Length matters most, because every extra character makes guessing far harder."},
+   {q:"What is phishing?",options:["A fake message that tries to steal your information","A method for speeding up a slow Wi-Fi link","A photo editing tool that removes red eyes","A keyboard with keys arranged in a circle"],answer:0,explain:"Phishing messages pretend to come from someone you trust so you will hand over details."},
+   {q:"What does a password manager do?",options:["Stores your passwords safely","Prints your passwords","Shares them with friends","Deletes your accounts"],answer:0,explain:"It keeps a locked list of your passwords so each account can have a different one."},
+   {q:"Which of these should you keep private online?",options:["Your favourite colour","Your favourite sport","The name of your pet fish","Your home address"],answer:3,explain:"Personal details like your address let strangers find you in real life."},
+   {q:"A stranger online asks to meet you in person. What is the safest thing to do?",options:["Agree quietly","Send them a photo","Tell a trusted adult","Give your address"],answer:2,explain:"Telling a trusted adult right away is the safest step, and you are never in trouble for it."},
+   {q:"What does a privacy setting on an account do?",options:["Makes the screen brighter","Controls who can see your posts","Speeds up downloads","Changes the language"],answer:1,explain:"Privacy settings let you decide whether everyone or only your friends can see what you share."},
+   {q:"Why should you use a different password for each account?",options:["Passwords slowly wear out when they are used","One stolen password then unlocks fewer accounts","It makes typing them in a good deal faster","Websites require it before you can sign up"],answer:1,explain:"If one site is broken into, your other accounts stay locked and safe."},
+   {q:"What is two-factor authentication?",options:["A second check besides your password","Two screens working at the same time","Two internet cables into one device","A password of double the usual length"],answer:0,explain:"A code sent to your phone means a stolen password alone is not enough to get in."},
+   {q:"What is malware?",options:["A type of screen","A shopping website","A drawing app","Harmful software"],answer:3,explain:"Malware is any program written to damage a device or steal information from it."},
+   {q:"What does antivirus software try to do?",options:["Find and remove harmful programs","Add new games","Increase screen size","Save battery power"],answer:0,explain:"It scans files for known harmful patterns and blocks them before they cause damage."},
+   {q:"A message says you won a huge prize in a contest you never entered. It is most likely a…",options:["Report card","Receipt","Scam","Weather alert"],answer:2,explain:"Prize messages for contests you never entered are a common trick to collect your details."},
+   {q:"What does encryption do to information?",options:["Makes the file much larger than before","Prints two paper copies of it at once","Scrambles it so others cannot read it","Changes the colour of all its letters"],answer:2,explain:"Only someone with the right key can turn the scrambled message back into readable text."},
+   {q:"What is the safest thing to do with a link in a message from someone you do not know?",options:["Leave it alone and check with an adult","Forward it to every one of your friends","Click it quickly before it disappears","Save it to your computer desktop for later"],answer:0,explain:"Unknown links can lead to fake pages built to trick you, so it is best not to click."},
+   {q:"Why is it wise to install updates for your apps and devices?",options:["They change the colours","They fix security holes","They add more ads","They make files bigger"],answer:1,explain:"Updates repair weaknesses that people with bad intentions have learned to use."},
+   {q:"What is a digital footprint?",options:["A muddy shoe mark left on a clean floor","A type of keyboard shaped like a foot","The trail of information you leave online","A scratch across the front of a screen"],answer:2,explain:"Posts, comments and photos can stay online for years, so think before you share."},
+   {q:"Someone is being unkind to you in an online game. What is a good first step?",options:["Save the messages and tell an adult","Be unkind back","Give them your password","Delete all your schoolwork"],answer:0,explain:"Keeping the evidence and telling an adult helps grown-ups sort the problem out properly."}
+  ]}
+};
+const LSKEY="aiq_";
+
+let qs=[], cur=0, score=0, answered=false, curCat="";
+function balanceOpts(it){
+  const opts=it.options||it.o, ans=(it.answer!==undefined)?it.answer:it.a;
+  if(!Array.isArray(opts)||opts.length!==4||!(ans>=0&&ans<=3)) return it;
+  const txt=opts.join(' ').toLowerCase();
+  if(/all of the|none of the|both of/.test(txt)) return it;
+  if(opts.every(o=>!isNaN(parseFloat(String(o).replace(/[\s,$%]/g,''))))) return it;
+  const idx=[0,1,2,3];
+  for(let i=3;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
+  const c=Object.assign({},it), o2=idx.map(i=>opts[i]), a2=idx.indexOf(ans);
+  if(it.options){ c.options=o2; c.answer=a2; } else { c.o=o2; c.a=a2; }
+  return c;
+}
+function pickFresh(bank,count,key){
+  let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
+  if(!Array.isArray(seen)) seen=[];
+  let unseen=bank.map((_,i)=>i).filter(i=>seen.indexOf(i)===-1);
+  if(unseen.length<count){ seen=[]; unseen=bank.map((_,i)=>i); }
+  for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
+  const chosen=unseen.slice(0,count);
+  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
+  return chosen.map(i=>balanceOpts(bank[i]));
+}
+function buildCats(){
+  const box=document.getElementById('cats'); box.innerHTML='';
+  Object.keys(BANK).forEach(name=>{
+    const c=BANK[name];
+    const card=document.createElement('div'); card.className='card c-'+c.color;
+    card.innerHTML='<div class="emoji">'+c.emoji+'</div><h3>'+name+'</h3><p>'+c.q.length+' questions</p>';
+    const b=document.createElement('button'); b.className='btn btn-'+c.color; b.textContent='Start'; b.onclick=()=>startCat(name);
+    card.appendChild(b); box.appendChild(card);
+  });
+}
+function startCat(name){
+  curCat=name; const c=BANK[name];
+  qs=pickFresh(c.q, Math.min(10,c.q.length), LSKEY+name);
+  cur=0; score=0; answered=false;
+  document.getElementById('start-screen').style.display='none';
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='block';
+  showQ(); window.scrollTo(0,0);
+}
+function showQ(){
+  answered=false; const q=qs[cur]; const big=BANK[curCat].big;
+  document.getElementById('q-counter').textContent='Question '+(cur+1)+' of '+qs.length;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  document.getElementById('progress-bar').style.width=(cur/qs.length*100)+'%';
+  const bq=document.getElementById('bigq');
+  if(big && q.icon){ bq.style.display='block'; bq.textContent=q.icon; } else { bq.style.display='none'; }
+  document.getElementById('question-text').textContent=q.q;
+  const box=document.getElementById('options'); box.innerHTML='';
+  q.options.forEach((opt,i)=>{ const b=document.createElement('button'); b.className='option'; b.textContent=opt; b.onclick=()=>pick(i,b); box.appendChild(b); });
+  document.getElementById('explain-box').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+function pick(i,btn){
+  if(answered) return; answered=true; const q=qs[cur];
+  document.querySelectorAll('#options .option').forEach((b,idx)=>{ b.classList.add('disabled'); if(idx===q.answer) b.classList.add('correct'); if(idx===i&&i!==q.answer) b.classList.add('wrong'); });
+  if(i===q.answer) score++;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  const ex=document.getElementById('explain-box');
+  ex.innerHTML='<strong>'+(i===q.answer?'\u2705 Correct! ':'\u274C The answer is '+q.options[q.answer]+'. ')+'</strong>'+q.explain;
+  ex.style.display='block';
+  document.getElementById('progress-bar').style.width=((cur+1)/qs.length*100)+'%';
+  const nb=document.getElementById('next-btn'); nb.textContent=(cur+1<qs.length)?'Next \u2192':'See my score \u2192'; nb.style.display='inline-block';
+}
+function nextQuestion(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0);} else finish(); }
+function finish(){
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('result-screen').style.display='block';
+  document.getElementById('result-score').textContent='You scored '+score+' / '+qs.length;
+  const pct=score/qs.length; let t,m;
+  if(pct===1){t='\uD83C\uDF1F Perfect!';m='You are a technology whiz!';}
+  else if(pct>=0.7){t='\uD83C\uDF89 Great job!';m='Great technology knowledge!';}
+  else if(pct>=0.4){t='\uD83D\uDE42 Nice try!';m='Play again to learn more.';}
+  else {t='\uD83C\uDF31 Keep learning!';m='Give it another go \u2014 you will do better!';}
+  document.getElementById('result-title').textContent=t; document.getElementById('result-msg').textContent=m;
+  window.scrollTo(0,0);
+}
+function backToCats(){
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('start-screen').style.display='block';
+  window.scrollTo(0,0);
+}
+buildCats();
+</script>
+  <script src="js/site.js?v=20260802"></script>
+  <script src="js/analytics.js?v=20260802"></script>
+  <script src="js/game-fullscreen.js?v=20260802"></script>
+</body>
+</html>

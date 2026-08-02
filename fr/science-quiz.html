@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://canada-quiz.com/fr/science-quiz.html">
 <meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../css/style.css?v=20260730">
+<link rel="stylesheet" href="../css/style.css?v=20260802">
 <style>.bigq{font-size:80px;text-align:center;margin:6px 0}</style>
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
@@ -80,7 +80,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(71)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(81)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quiz</h4>
@@ -93,6 +93,10 @@
         <a href="science-quiz.html">Sciences et espace</a>
         <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
         <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
       </div>
       <div class="footer-map-col">
         <h4>Pratique de l'examen de conduite</h4>
@@ -119,6 +123,10 @@
         <a href="rubiks-cube.html">Cube Rubik</a>
         <a href="typing-test.html">Test de vitesse de frappe</a>
         <a href="color-match.html">Associe les couleurs</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
       </div>
       <div class="footer-map-col">
         <h4>Jeux d'action et jeux classiques</h4>
@@ -129,6 +137,8 @@
         <a href="checkers.html">Dames</a>
         <a href="inukshuk.html">Construis un inukshuk</a>
         <a href="tag.html">Tague</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Connect 4</a>
       </div>
       <div class="footer-map-col">
         <h4>Jeux de groupe</h4>
@@ -205,6 +215,16 @@ const BANK = {
    {q:"How long does Earth take to travel once around the Sun?",options:["About one day","About one month","About one year","About ten years"],answer:2,explain:"One trip around the Sun takes about 365 days, which is why a year is that long."},
    {q:"Why does the Moon appear to shine?",options:["It is a small star","It is made of burning gas","It glows on its own","It reflects sunlight"],answer:3,explain:"The Moon makes no light of its own; it bounces sunlight back to us."},
    {q:"What do we call the path a planet takes around the Sun?",options:["An orbit","An eclipse","A comet","A galaxy"],answer:0,explain:"An orbit is the curved path one object takes around another in space."}
+  ,
+   {q:"Which planet has a giant storm called the Great Red Spot?",options:["Saturn","Neptune","Jupiter","Mars"],answer:2,explain:"Jupiter's Great Red Spot is a storm wider than Earth that has raged for centuries."},
+   {q:"What do we call a huge cloud of gas and dust where new stars form?",options:["Nebula","Comet","Crater","Eclipse"],answer:0,explain:"A nebula is a giant cloud where gravity slowly pulls gas together into new stars."},
+   {q:"What are Saturn's rings mostly made of?",options:["Hot gas","Ice and rock","Liquid water","Melted metal"],answer:1,explain:"Saturn's rings are billions of chunks of ice and rock circling the planet."},
+   {q:"Which planet is closest to Earth in size?",options:["Mercury","Neptune","Mars","Venus"],answer:3,explain:"Venus is almost the same width as Earth, so it is nicknamed Earth's twin."},
+   {q:"What do we call the bowl-shaped hollows all over the Moon?",options:["Dunes","Canyons","Reefs","Craters"],answer:3,explain:"Craters are dents left where space rocks crashed into the Moon long ago."},
+   {q:"What was Sputnik, launched in 1957?",options:["The first space station","The first rocket to Mars","The first Moon landing","The first satellite in space"],answer:3,explain:"Sputnik was a metal ball that beeped as it circled Earth, starting the space age."},
+   {q:"About how long does the Moon take to travel once around Earth?",options:["About 7 days","About 27 days","About 100 days","About 365 days"],answer:1,explain:"The Moon circles Earth in about 27 days. It takes a bit longer, about 29 and a half days, to go through all its phases, and that phase cycle is where the idea of a month began."},
+   {q:"How many moons does Earth have?",options:["No moons","One moon","Two moons","Four moons"],answer:1,explain:"Earth has one moon, while bigger planets such as Jupiter have many more."},
+   {q:"What colour does the sky look on the Moon in daytime?",options:["Blue","Pink","Black","Grey"],answer:2,explain:"The Moon has almost no air to scatter sunlight, so its sky stays black."}
   ]},
   "Animals & Nature": { emoji:"🦊", color:"green", q:[
    {q:"What is the largest animal on Earth?",options:["Elephant","Blue whale","Giraffe","Polar bear"],answer:1,explain:"The blue whale can grow longer than three school buses."},
@@ -227,6 +247,16 @@ const BANK = {
    {q:"Which bear lives on the sea ice of Canada's Arctic?",options:["The polar bear","The panda","The sun bear","The sloth bear"],answer:0,explain:"Polar bears hunt on Arctic sea ice and are strong swimmers."},
    {q:"What do we call an animal with a backbone?",options:["An invertebrate","A vertebrate","An amphibian","A mollusc"],answer:1,explain:"Fish, birds, reptiles and mammals are all vertebrates."},
    {q:"Which tree keeps its green needles all winter?",options:["Maple","Oak","Birch","Pine"],answer:3,explain:"Pines are evergreens, so they stay green while maples and birches lose their leaves."}
+  ,
+   {q:"What do we call an animal that eats both plants and meat?",options:["Herbivore","Omnivore","Carnivore","Insectivore"],answer:1,explain:"Omnivores such as bears and people can digest both plants and meat."},
+   {q:"What is a baby kangaroo called?",options:["Joey","Cub","Kit","Fawn"],answer:0,explain:"A joey is tiny at birth and finishes growing inside its mother's pouch."},
+   {q:"Frogs and toads belong to which animal group?",options:["Amphibians","Reptiles","Fish","Mammals"],answer:0,explain:"Amphibians start life in water with gills and later breathe air on land."},
+   {q:"What is the process plants use to make food from sunlight called?",options:["Pollination","Digestion","Evaporation","Photosynthesis"],answer:3,explain:"In photosynthesis, leaves use sunlight, water and air to make sugar for the plant."},
+   {q:"What do we call the moving of pollen from one flower to another?",options:["Migration","Germination","Pollination","Hibernation"],answer:2,explain:"Bees, birds and wind carry pollen so that flowers can make seeds and fruit."},
+   {q:"Which of these animals is a reptile?",options:["Penguin","Otter","Salamander","Crocodile"],answer:3,explain:"Reptiles such as crocodiles have scaly skin and lay their eggs on land."},
+   {q:"What do we call trees that drop their leaves every autumn?",options:["Deciduous trees","Tropical trees","Coniferous trees","Fruit trees"],answer:0,explain:"Deciduous trees such as maples drop their leaves to save water through the cold."},
+   {q:"Which bird can hover in one spot and fly backwards?",options:["Robin","Hummingbird","Eagle","Seagull"],answer:1,explain:"A hummingbird beats its wings so fast that it can hover or fly backwards."},
+   {q:"What do we call the long journey birds make each autumn to warmer places?",options:["Grazing","Nesting","Migration","Moulting"],answer:2,explain:"Migration is the long yearly trip animals take to find food and gentler weather."}
   ]},
   "The Human Body": { emoji:"🧠", color:"orange", q:[
    {q:"Which organ pumps blood around your body?",options:["Lungs","Heart","Liver","Brain"],answer:1,explain:"The heart is a muscle that pumps blood all day and night."},
@@ -247,6 +277,15 @@ const BANK = {
    {q:"What is the hardest substance in the human body?",options:["Tooth enamel","Bone","Hair","Fingernail"],answer:0,explain:"Enamel is the tough white coating that protects your teeth."},
    {q:"Which part of the eye lets light in?",options:["The eyelash","The eyebrow","The eyelid","The pupil"],answer:3,explain:"The pupil is the dark opening that grows or shrinks to control light."},
    {q:"How many senses do people traditionally count?",options:["Three","Four","Five","Six"],answer:2,explain:"The five classic senses are sight, hearing, smell, taste and touch."}
+  ,
+   {q:"How many lungs does a person have?",options:["One","Two","Three","Four"],answer:1,explain:"Your two lungs fill with air and pass oxygen into your blood."},
+   {q:"What are the small bones that make up your spine called?",options:["Vertebrae","Tendons","Cartilage","Ligaments"],answer:0,explain:"About 33 vertebrae stack up to let your back bend and to guard your spinal cord."},
+   {q:"What carries messages between your brain and the rest of your body?",options:["Glands","Veins","Muscles","Nerves"],answer:3,explain:"Nerves send tiny electrical signals, so your brain learns what your body feels."},
+   {q:"What connects your muscles to your bones?",options:["Nerves","Arteries","Tendons","Cartilage"],answer:2,explain:"Tendons are tough cords that pull on a bone whenever a muscle tightens."},
+   {q:"Which part of the body makes the sound of your voice?",options:["Vocal cords","Eardrums","Tonsils","Windpipe"],answer:0,explain:"Vocal cords are two small folds in your throat that buzz when air rushes past."},
+   {q:"About how many bones is a baby born with?",options:["About 100","About 200","About 300","About 500"],answer:2,explain:"Babies have about 300 bones, and many of them join together as a child grows."},
+   {q:"What is the medical name for your kneecap?",options:["Femur","Sternum","Tibia","Patella"],answer:3,explain:"The patella is a small shield of bone that protects the front of your knee."},
+   {q:"Which liquid in your mouth starts to break down food?",options:["Saliva","Plasma","Mucus","Bile"],answer:0,explain:"Saliva wets your food and starts breaking down starch before you even swallow."}
   ]},
   "How Things Work": { emoji:"⚙️", color:"blue", q:[
    {q:"What state of water is ice?",options:["Liquid","Solid","Gas","Plasma"],answer:1,explain:"Ice is water in its solid state."},
@@ -266,6 +305,15 @@ const BANK = {
    {q:"What happens to most metals when they are heated?",options:["They shrink","They expand","They freeze","They turn to gas"],answer:1,explain:"Heat makes the tiny particles in metal move more, so the metal grows slightly."},
    {q:"What do we call a material that lets electricity pass through easily?",options:["An insulator","A magnet","A conductor","A battery"],answer:2,explain:"Metals like copper are good conductors, which is why wires are made of them."},
    {q:"What makes sound?",options:["Shadows","Magnets","Colours","Vibrations"],answer:3,explain:"Sound is made by vibrations travelling through air, water or solids."}
+  ,
+   {q:"Which simple machine helps you raise a flag to the top of a pole?",options:["Lever","Wedge","Pulley","Screw"],answer:2,explain:"A pulley sends the rope around a wheel, so pulling down lifts the flag up."},
+   {q:"What kind of energy is stored in a stretched rubber band?",options:["Sound energy","Stored energy","Light energy","Heat energy"],answer:1,explain:"A stretched band holds stored energy that turns into movement when you let go."},
+   {q:"What is the fixed point that a lever turns on called?",options:["Fulcrum","Piston","Magnet","Spring"],answer:0,explain:"A lever pivots on its fulcrum, letting a small push lift a heavy load."},
+   {q:"Sound travels fastest through which of these?",options:["Air","Water","Steel","Empty space"],answer:2,explain:"Sound moves fastest through solids because their particles are packed close together."},
+   {q:"What do we call the complete loop that electricity flows around?",options:["A magnet","A circuit","A battery","A switch"],answer:1,explain:"Electricity flows only when a circuit makes an unbroken loop from the power source and back."},
+   {q:"What do the lenses in a pair of glasses do to light?",options:["Absorb it","Colour it","Stop it","Bend it"],answer:3,explain:"Curved lenses bend light so that it lands neatly on the back of your eye."},
+   {q:"Inside a wind turbine, which part turns movement into electricity?",options:["The furnace","The pump","The generator","The compressor"],answer:2,explain:"Spinning blades turn a generator, which uses magnets to push electricity along wires."},
+   {q:"Which colour soaks up the most heat from sunlight?",options:["White","Silver","Yellow","Black"],answer:3,explain:"Black surfaces absorb nearly all the light that hits them, so they warm up quickly."}
   ]},
   "Weather & Earth": { emoji:"🌦️", color:"blue", q:[
    {q:"What instrument measures wind speed?",options:["A barometer","An anemometer","A thermometer","A rain gauge"],answer:1,explain:"An anemometer has cups that spin faster as the wind blows harder."},
@@ -280,6 +328,15 @@ const BANK = {
    {q:"What is the imaginary line around the middle of Earth called?",options:["The axis","The equator","The meridian","The horizon"],answer:1,explain:"The equator splits the planet into the northern and southern halves."},
    {q:"Which season has the shortest days in Canada?",options:["Spring","Summer","Autumn","Winter"],answer:3,explain:"In winter Canada tilts away from the Sun, so daylight hours are shortest."},
    {q:"Where is most of Earth's fresh water found?",options:["In rivers","In clouds","In ice and glaciers","In lakes"],answer:2,explain:"Most fresh water is frozen in ice caps and glaciers, not flowing in rivers."}
+  ,
+   {q:"What is the word for rain, snow and hail all together?",options:["Condensation","Precipitation","Evaporation","Insulation"],answer:1,explain:"Precipitation is any water that falls from clouds, whether it is liquid or frozen."},
+   {q:"What do we call a spinning column of air that touches the ground?",options:["Hurricane","Monsoon","Tornado","Blizzard"],answer:2,explain:"A tornado is a narrow, fast-spinning funnel of wind stretching from cloud to ground."},
+   {q:"Which instrument measures air pressure?",options:["Barometer","Telescope","Microscope","Anemometer"],answer:0,explain:"When a barometer reading falls, clouds and rain are often on the way."},
+   {q:"What are clouds mostly made of?",options:["Tiny water droplets","Puffs of cotton","Grains of sand","Clouds of smoke"],answer:0,explain:"Clouds are billions of tiny water droplets and ice crystals floating in the air."},
+   {q:"Which layer at the centre of Earth is the hottest?",options:["The crust","The ocean floor","The mantle","The inner core"],answer:3,explain:"The inner core is a ball of solid metal about as hot as the surface of the Sun."},
+   {q:"What do we call melted rock while it is still underground?",options:["Magma","Lava","Granite","Sediment"],answer:0,explain:"Melted rock is called magma underground and lava once it reaches the surface."},
+   {q:"Which scale is used to measure the strength of an earthquake?",options:["The Mohs scale","The Richter scale","The Beaufort scale","The Celsius scale"],answer:1,explain:"The Richter scale gives a quake a number, and each step up means far stronger shaking."},
+   {q:"Which kind of rock forms from layers of sand and mud pressed together?",options:["Igneous rock","Metamorphic rock","Sedimentary rock","Volcanic rock"],answer:2,explain:"Sedimentary rock builds up in layers, and fossils are often found inside it."}
   ]},
   "Numbers & Math": { emoji:"🔢", color:"yellow", q:[
    {q:"How many sides does a hexagon have?",options:["Five","Six","Seven","Eight"],answer:1,explain:"Hexa means six, so a hexagon has six sides and six corners."},
@@ -294,11 +351,32 @@ const BANK = {
    {q:"How many zeros does one million have?",options:["Four","Five","Seven","Six"],answer:3,explain:"One million is written 1 000 000, with six zeros."},
    {q:"What is pi rounded to two decimal places?",options:["3.12","3.14","3.16","3.41"],answer:1,explain:"Pi is about 3.14 and helps us measure circles."},
    {q:"How many degrees do the three angles of a triangle add up to?",options:["90","270","180","360"],answer:2,explain:"Every triangle's angles add up to exactly 180 degrees."}
+  ,
+   {q:"What is 6 × 7?",options:["36","42","48","54"],answer:1,explain:"Six groups of seven make 42, the same as seven groups of six."},
+   {q:"What is 144 ÷ 12?",options:["8","10","11","12"],answer:3,explain:"Twelve twelves make 144, so 144 shared into 12 equal groups gives 12."},
+   {q:"How many sides does a pentagon have?",options:["Four","Five","Six","Eight"],answer:1,explain:"Penta means five in Greek, so a pentagon has five sides and five corners."},
+   {q:"What is 25% of 80?",options:["15","20","25","40"],answer:1,explain:"One quarter of 80 is 20, because 80 divided by 4 equals 20."},
+   {q:"What is the area of a rectangle 4 cm wide and 6 cm long?",options:["10 cm²","20 cm²","24 cm²","48 cm²"],answer:2,explain:"Area is length times width, so 4 times 6 gives 24 square centimetres."},
+   {q:"What do we call the answer to a subtraction question?",options:["The product","The average","The difference","The quotient"],answer:2,explain:"The answer to a subtraction is the difference, like 9 minus 4 leaving 5."},
+   {q:"How many seconds are in five minutes?",options:["30","60","150","300"],answer:3,explain:"Each minute holds 60 seconds, and 60 times 5 equals 300 seconds."},
+   {q:"How many millimetres are in one metre?",options:["1","10","100","1000"],answer:3,explain:"A metre splits into 1000 millimetres, so one millimetre is a very small step."}
   ]}
 };
 const LSKEY="sciq_";
 
 let qs=[], cur=0, score=0, answered=false, curCat="";
+function balanceOpts(it){
+  const opts=it.options||it.o, ans=(it.answer!==undefined)?it.answer:it.a;
+  if(!Array.isArray(opts)||opts.length!==4||!(ans>=0&&ans<=3)) return it;
+  const txt=opts.join(' ').toLowerCase();
+  if(/all of the|none of the|both of/.test(txt)) return it;
+  if(opts.every(o=>!isNaN(parseFloat(String(o).replace(/[\s,$%]/g,''))))) return it;
+  const idx=[0,1,2,3];
+  for(let i=3;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
+  const c=Object.assign({},it), o2=idx.map(i=>opts[i]), a2=idx.indexOf(ans);
+  if(it.options){ c.options=o2; c.answer=a2; } else { c.o=o2; c.a=a2; }
+  return c;
+}
 function pickFresh(bank,count,key){
   let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
   if(!Array.isArray(seen)) seen=[];
@@ -307,7 +385,7 @@ function pickFresh(bank,count,key){
   for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
   const chosen=unseen.slice(0,count);
   try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
-  return chosen.map(i=>bank[i]);
+  return chosen.map(i=>balanceOpts(bank[i]));
 }
 function buildCats(){
   const box=document.getElementById('cats'); box.innerHTML='';
@@ -373,8 +451,8 @@ function backToCats(){
 }
 buildCats();
 </script>
-  <script src="../js/site.js?v=20260730"></script>
-  <script src="../js/analytics.js?v=20260730"></script>
-  <script src="../js/game-fullscreen.js?v=20260730"></script>
+  <script src="../js/site.js?v=20260802"></script>
+  <script src="../js/analytics.js?v=20260802"></script>
+  <script src="../js/game-fullscreen.js?v=20260802"></script>
 </body>
 </html>

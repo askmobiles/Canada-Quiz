@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Race — Free Timed Mental Math Practice for Kids | Canada Quiz</title>
+<meta name="description" content="Race the clock with quick mental math: addition, subtraction, times tables and division for Grades 1 to 6. Free, no signup, and built to play on a phone.">
+<meta property="og:title" content="Math Race — Free Timed Mental Math Practice for Kids | Canada Quiz">
+<meta property="og:description" content="Race the clock with quick mental math: addition, subtraction, times tables and division for Grades 1 to 6. Free, no signup, and built to play on a phone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/fr/math-race.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=20260802">
+<style>
+.mr-wrap{max-width:520px;margin:0 auto;text-align:left}
+.mr-screen{display:none}
+.mr-screen.mr-on{display:block}
+.mr-label{font-weight:800;margin:14px 0 6px;font-size:.95rem;color:var(--muted)}
+.mr-label:first-child{margin-top:0}
+.mr-opts{display:flex;flex-wrap:wrap;gap:8px}
+.mr-opt{flex:1 1 30%;min-width:104px;min-height:48px;padding:10px 12px;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;line-height:1.2}
+.mr-opt:hover{border-color:var(--blue)}
+.mr-opt.mr-sel{border-color:var(--red);background:#fff1f2;color:var(--red-dark)}
+.mr-note{margin:14px 0 0;font-size:.85rem}
+.mr-full{width:100%;margin-top:12px}
+.mr-hud{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.mr-chip{display:inline-block;padding:8px 14px;border-radius:999px;background:#f5f2ec;border:2px solid var(--line);font-weight:900;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.mr-chip.mr-time{min-width:96px;text-align:center}
+.mr-chip.mr-danger{color:#fff;background:var(--red);border-color:var(--red-dark);animation:mr-pulse .7s ease-in-out infinite}
+@keyframes mr-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.mr-track{position:relative;height:46px;margin:12px 0 4px;border:2px dashed var(--line);border-radius:23px;background:linear-gradient(90deg,#eef6fb,#e6f3ef)}
+.mr-car{position:absolute;top:50%;left:6%;transform:translate(-50%,-50%);font-size:1.7rem;line-height:1;transition:left .25s ease;will-change:left}
+.mr-goal{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:1.3rem;line-height:1}
+.mr-lap{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:.8rem;font-weight:800;color:var(--muted)}
+.mr-burst{min-height:26px;text-align:center;font-weight:900;color:var(--green-dark);font-size:1.05rem;opacity:0}
+.mr-burst.mr-show{opacity:1;animation:mr-pop .5s ease}
+@keyframes mr-pop{0%{transform:scale(.6)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+.mr-q{text-align:center;font-weight:900;font-size:clamp(2.1rem,13vw,3.4rem);line-height:1.2;letter-spacing:1px;margin:2px 0 8px;font-variant-numeric:tabular-nums}
+.mr-ansbox{min-height:60px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;border:3px solid var(--line);border-radius:16px;background:var(--card);margin-bottom:10px;font-variant-numeric:tabular-nums}
+.mr-ansbox.mr-empty{color:#c9cdd4}
+.mr-ansbox.mr-good{border-color:var(--green);background:#e7f6f3;color:var(--green-dark)}
+.mr-ansbox.mr-bad{border-color:var(--red);background:#fdeaec;color:var(--red-dark);animation:mr-shake .3s}
+@keyframes mr-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.mr-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mr-key{min-height:54px;font-family:inherit;font-size:1.5rem;font-weight:800;border:2px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);cursor:pointer;-webkit-user-select:none;user-select:none;touch-action:manipulation}
+.mr-key:hover{background:#f7f4ee}
+.mr-key:active{transform:scale(.95)}
+.mr-enterk{grid-column:1 / -1;background:var(--green);border-color:var(--green-dark);color:#fff;font-size:1.2rem;min-height:56px}
+.mr-enterk:hover{background:var(--green-dark)}
+.mr-big{font-size:1.35rem;font-weight:900;text-align:center;margin:0 0 10px}
+.mr-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px}
+.mr-stat{background:#f8f5ef;border:2px solid var(--line);border-radius:14px;padding:10px;text-align:center}
+.mr-stat b{display:block;font-size:1.6rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.mr-stat span{font-size:.78rem;color:var(--muted);font-weight:700}
+.mr-pb{text-align:center;font-weight:800;margin:0 0 12px;color:var(--green-dark)}
+.mr-misshead{font-weight:800;margin:6px 0 6px;font-size:.95rem}
+.mr-missrow{display:flex;justify-content:space-between;gap:10px;padding:8px 10px;border:2px solid var(--line);border-radius:12px;margin-bottom:6px;font-weight:700;font-variant-numeric:tabular-nums;background:var(--card)}
+.mr-missrow s{color:var(--red-dark);font-weight:700}
+.mr-missrow b{color:var(--green-dark)}
+@media (max-width:400px){.mr-opt{min-width:96px;font-size:.88rem}.mr-chip{font-size:.95rem;padding:7px 11px}}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/math-race.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/math-race.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/math-race.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/math-race.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🛶 Course de maths</h1>
+    <p>Battez le chronomètre avec du calcul mental rapide.</p>
+  <details class="howto"><summary></summary><p>Choisissez une opération, un niveau scolaire et une durée, puis répondez à autant de questions que possible avant la fin du chronomètre. Touchez le pavé numérique et appuyez sur Entrée pour chaque réponse : comme il faut appuyer sur Entrée, une faute de frappe peut toujours être corrigée avant. Chaque bonne réponse fait avancer le canot d'un pas sur la piste.</p></details>
+
+  </section>
+
+  <div class="panel" data-fs-host>
+    <div class="mr-wrap" id="mr-wrap">
+
+      <div class="mr-screen mr-on" id="mr-setup">
+        <div class="mr-label">Choisissez une opération</div>
+        <div class="mr-opts" id="mr-ops">
+          <button type="button" class="mr-opt mr-sel" data-op="add">Addition</button>
+          <button type="button" class="mr-opt" data-op="sub">Soustraction</button>
+          <button type="button" class="mr-opt" data-op="mul">Multiplication</button>
+          <button type="button" class="mr-opt" data-op="div">Division</button>
+          <button type="button" class="mr-opt" data-op="mix">Mélange</button>
+        </div>
+
+        <div class="mr-label">Choisissez un niveau</div>
+        <div class="mr-opts" id="mr-lvls">
+          <button type="button" class="mr-opt mr-sel" data-lvl="1">1re-2e année</button>
+          <button type="button" class="mr-opt" data-lvl="2">3e-4e année</button>
+          <button type="button" class="mr-opt" data-lvl="3">5e-6e année</button>
+        </div>
+
+        <div class="mr-label">Choisissez la durée de la manche</div>
+        <div class="mr-opts" id="mr-durs">
+          <button type="button" class="mr-opt mr-sel" data-dur="60">60 secondes</button>
+          <button type="button" class="mr-opt" data-dur="120">120 secondes</button>
+        </div>
+
+        <p class="muted mr-note">En 5e-6e année, une mauvaise réponse coûte 2 secondes.</p>
+        <button class="btn btn-green btn-lg mr-full" id="mr-start">Commencer la course</button>
+      </div>
+
+      <div class="mr-screen" id="mr-play">
+        <div class="mr-hud">
+          <span class="mr-chip mr-time" id="mr-time" data-no-i18n>1:00</span>
+          <span class="mr-chip" id="mr-score" data-no-i18n>0</span>
+          <span class="mr-chip" id="mr-streak" data-no-i18n>0</span>
+        </div>
+        <div class="mr-track" id="mr-track">
+          <span class="mr-lap" id="mr-lap" data-no-i18n></span>
+          <span class="mr-car" id="mr-car">🛶</span>
+          <span class="mr-goal">🏁</span>
+        </div>
+        <div class="mr-burst" id="mr-burst" data-no-i18n aria-live="polite"></div>
+        <div class="mr-q" id="mr-q" data-no-i18n>&nbsp;</div>
+        <div class="mr-ansbox mr-empty" id="mr-ans" data-no-i18n aria-live="polite">?</div>
+        <div class="mr-pad" id="mr-pad">
+          <button type="button" class="mr-key" data-k="1">1</button>
+          <button type="button" class="mr-key" data-k="2">2</button>
+          <button type="button" class="mr-key" data-k="3">3</button>
+          <button type="button" class="mr-key" data-k="4">4</button>
+          <button type="button" class="mr-key" data-k="5">5</button>
+          <button type="button" class="mr-key" data-k="6">6</button>
+          <button type="button" class="mr-key" data-k="7">7</button>
+          <button type="button" class="mr-key" data-k="8">8</button>
+          <button type="button" class="mr-key" data-k="9">9</button>
+          <button type="button" class="mr-key" data-k="neg" id="mr-neg">±</button>
+          <button type="button" class="mr-key" data-k="0">0</button>
+          <button type="button" class="mr-key" data-k="bs" id="mr-bs">⌫</button>
+          <button type="button" class="mr-key mr-enterk" data-k="ok" id="mr-enter" data-no-i18n>Entrée</button>
+        </div>
+        <button class="btn btn-ghost mr-full" id="mr-quit">Terminer la manche</button>
+      </div>
+
+      <div class="mr-screen" id="mr-end">
+        <div id="mr-res" data-no-i18n></div>
+        <div id="mr-miss" data-no-i18n></div>
+        <button class="btn btn-green btn-lg mr-full" id="mr-again">Rejouer</button>
+        <button class="btn btn-ghost mr-full" id="mr-change">Changer les réglages</button>
+      </div>
+
+    </div>
+  </div>
+  <div style="margin-top:14px">
+    <button class="btn" id="mr-new">Nouvelle partie</button>
+    <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <details class="footer-map">
+      <summary>Toutes les pages <span class="fm-count">(81)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <h4>Quiz</h4>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="gk-quiz.html">Culture générale</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
+        <a href="science-quiz.html">Sciences et espace</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Pratique de l'examen de conduite</h4>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Jeux de réflexion et casse-têtes</h4>
+        <a href="word-master.html">Maître des mots</a>
+        <a href="word-search.html">Mots cachés</a>
+        <a href="word-guess.html">Devine le mot</a>
+        <a href="scramble.html">Mots brouillés</a>
+        <a href="spelling-bee.html">Concours d'épellation</a>
+        <a href="crossword.html">Mots croisés</a>
+        <a href="connections.html">Groupes de mots</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Démineur</a>
+        <a href="sliding-puzzle.html">Taquin</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Jeu de mémoire</a>
+        <a href="rubiks-cube.html">Cube Rubik</a>
+        <a href="typing-test.html">Test de vitesse de frappe</a>
+        <a href="color-match.html">Associe les couleurs</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Jeux d'action et jeux classiques</h4>
+        <a href="snake.html">Serpent érable</a>
+        <a href="whack-a-beaver.html">Tape-le-castor</a>
+        <a href="piano-tiles.html">Touches de piano</a>
+        <a href="tictactoe.html">Tic-tac-toe</a>
+        <a href="checkers.html">Dames</a>
+        <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="tag.html">Tague</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Connect 4</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Jeux de groupe</h4>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="categories-game.html">Catégories</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="draw-it.html">Dessine-le</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Blogue</h4>
+        <a href="blog.html">Tous les articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
+        <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
+        <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
+        <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
+        <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
+        <a href="canada-geography-coast-to-coast.html">La géographie du Canada</a>
+        <a href="canadas-animals-and-wildlife.html">Animaux et faune</a>
+        <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
+        <a href="canadian-holidays-explained.html">Les fêtes canadiennes</a>
+        <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
+        <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Le site</h4>
+        <a href="index.html">Accueil</a>
+        <a href="daily.html">Défi du jour</a>
+        <a href="games.html">Tous les jeux en famille</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr){ return FR ? fr : en; }
+  function $(id){ return document.getElementById(id); }
+
+  var elWrap = $('mr-wrap');
+  if (!elWrap) return;
+  var elSetup = $('mr-setup'), elPlay = $('mr-play'), elEnd = $('mr-end');
+  var elOps = $('mr-ops'), elLvls = $('mr-lvls'), elDurs = $('mr-durs'), elStart = $('mr-start');
+  var elTime = $('mr-time'), elScore = $('mr-score'), elStreak = $('mr-streak');
+  var elCar = $('mr-car'), elLap = $('mr-lap'), elBurst = $('mr-burst');
+  var elQ = $('mr-q'), elAns = $('mr-ans'), elPad = $('mr-pad'), elEnter = $('mr-enter');
+  var elNeg = $('mr-neg'), elBs = $('mr-bs'), elQuit = $('mr-quit');
+  var elRes = $('mr-res'), elMiss = $('mr-miss');
+  var elAgain = $('mr-again'), elChange = $('mr-change'), elNew = $('mr-new');
+  if (!elSetup || !elPlay || !elEnd || !elQ || !elAns || !elPad) return;
+
+  var TICK = 1000;      // ms per second of game clock (test hook can shorten)
+  var FB = 450;         // feedback pause before the next question
+  var LAP = 10;         // correct answers per lap of the track
+  var MAXLEN = 5;       // most digits a child can type
+  var PENALTY = 2;      // seconds lost on a wrong answer at Grade 5-6
+  var KEY = 'cq_mathrace_best';
+
+  var op = 'add', lvl = 1, dur = 60;
+  var playing = false, locked = false;
+  var timeLeft = 0, correct = 0, wrong = 0, streak = 0, bestStreak = 0;
+  var cur = null, buf = '', misses = [], timerId = 0, fbId = 0, burstId = 0, lastText = '';
+
+  /* ---------- question generator ---------- */
+  function ri(lo, hi){
+    if (hi < lo) hi = lo;
+    return lo + Math.floor(Math.random() * (hi - lo + 1));
+  }
+  function pick(a){ return a[ri(0, a.length - 1)]; }
+
+  function makeAdd(l){
+    var a, b;
+    if (l === 1){ a = ri(1, 19); b = ri(1, 20 - a); }
+    else if (l === 2){ a = ri(2, 90); b = ri(2, 100 - a); }
+    else { a = ri(20, 900); b = ri(10, 1000 - a); }
+    return { op:'add', a:a, b:b, ans:a + b, text:a + ' + ' + b };
+  }
+  function makeSub(l){
+    var a, b;
+    if (l === 1){ a = ri(2, 20); b = ri(1, a); }
+    else if (l === 2){ a = ri(10, 100); b = ri(1, a); }
+    else { a = ri(5, 200); b = ri(5, 200); }
+    return { op:'sub', a:a, b:b, ans:a - b, text:a + ' − ' + b };
+  }
+  function makeMul(l){
+    var a, b, t;
+    if (l === 1){
+      a = pick([2, 5, 10]); b = ri(1, 10);
+      if (ri(0, 1)){ t = a; a = b; b = t; }
+    } else if (l === 2){ a = ri(2, 10); b = ri(2, 10); }
+    else { a = ri(10, 99); b = ri(2, 9); }
+    return { op:'mul', a:a, b:b, ans:a * b, text:a + ' × ' + b };
+  }
+  function makeDiv(l){
+    var d, q;
+    if (l === 1){ d = pick([2, 5, 10]); q = ri(1, 10); }
+    else if (l === 2){ d = ri(2, 10); q = ri(2, 10); }
+    else { d = ri(2, 12); q = ri(2, 12); }
+    if (!d) d = 2;                       // belt and braces: never divide by zero
+    return { op:'div', a:d * q, b:d, ans:q, text:(d * q) + ' ÷ ' + d };
+  }
+  function genQ(o, l){
+    l = (l === 2 || l === 3) ? l : 1;
+    if (o === 'mix') o = pick(['add', 'sub', 'mul', 'div']);
+    if (o === 'sub') return makeSub(l);
+    if (o === 'mul') return makeMul(l);
+    if (o === 'div') return makeDiv(l);
+    return makeAdd(l);
+  }
+  function nextQ(){
+    var q = genQ(op, lvl), i = 0;
+    while (q.text === lastText && i < 8){ q = genQ(op, lvl); i++; }
+    lastText = q.text;
+    return q;
+  }
+
+  /* ---------- personal best ---------- */
+  function loadBest(){
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return {};
+      var o = JSON.parse(raw);
+      return (o && typeof o === 'object') ? o : {};
+    } catch (e){ return {}; }
+  }
+  function saveBest(o){
+    try { localStorage.setItem(KEY, JSON.stringify(o)); } catch (e){}
+  }
+  function bestKey(){ return op + '|' + lvl + '|' + dur; }
+
+  /* ---------- screens ---------- */
+  function show(which){
+    elSetup.className = 'mr-screen' + (which === 'setup' ? ' mr-on' : '');
+    elPlay.className = 'mr-screen' + (which === 'play' ? ' mr-on' : '');
+    elEnd.className = 'mr-screen' + (which === 'end' ? ' mr-on' : '');
+  }
+
+  /* ---------- rendering ---------- */
+  function fmtTime(s){
+    if (s < 0) s = 0;
+    var m = Math.floor(s / 60), r = s % 60;
+    return m + ':' + (r < 10 ? '0' : '') + r;
+  }
+  function drawTime(){
+    if (!elTime) return;
+    elTime.textContent = '⏱ ' + fmtTime(timeLeft);
+    elTime.className = 'mr-chip mr-time' + (timeLeft <= 10 ? ' mr-danger' : '');
+    elTime.setAttribute('aria-label', T('Time left', 'Temps restant') + ' ' + fmtTime(timeLeft));
+  }
+  function drawHud(){
+    if (elScore){
+      elScore.textContent = '✅ ' + correct;
+      elScore.setAttribute('aria-label', T('Correct answers', 'Bonnes réponses') + ' ' + correct);
+    }
+    if (elStreak){
+      elStreak.textContent = '🔥 ' + streak;
+      elStreak.setAttribute('aria-label', T('Streak', 'Série') + ' ' + streak);
+    }
+  }
+  function drawTrack(){
+    if (!elCar) return;
+    var lap = Math.floor(correct / LAP);
+    var step = correct % LAP;
+    elCar.style.left = (6 + (step / LAP) * 84) + '%';
+    if (elLap) elLap.textContent = lap > 0 ? '🏁×' + lap : '';
+  }
+  function drawAns(cls){
+    if (!elAns) return;
+    var txt = buf === '' ? '?' : buf;
+    elAns.textContent = txt;
+    elAns.className = 'mr-ansbox' + (buf === '' && !cls ? ' mr-empty' : '') + (cls ? ' ' + cls : '');
+  }
+  function burst(msg){
+    if (!elBurst) return;
+    elBurst.textContent = msg;
+    elBurst.className = 'mr-burst mr-show';
+    if (burstId) clearTimeout(burstId);
+    burstId = setTimeout(function(){
+      if (elBurst){ elBurst.className = 'mr-burst'; elBurst.textContent = ''; }
+    }, 1200);
+  }
+
+  /* ---------- play ---------- */
+  function ask(){
+    cur = nextQ();
+    buf = '';
+    locked = false;
+    if (elQ) elQ.textContent = cur.text + ' =';
+    drawAns('');
+  }
+
+  function tick(){
+    if (!playing) return;
+    timeLeft--;
+    if (timeLeft <= 0){ timeLeft = 0; drawTime(); finish(); return; }
+    drawTime();
+  }
+
+  function startRound(){
+    playing = true;
+    locked = false;
+    timeLeft = dur;
+    correct = 0; wrong = 0; streak = 0; bestStreak = 0;
+    misses = []; lastText = '';
+    if (elBurst){ elBurst.className = 'mr-burst'; elBurst.textContent = ''; }
+    drawTime(); drawHud(); drawTrack();
+    show('play');
+    ask();
+    if (timerId) clearInterval(timerId);
+    timerId = setInterval(tick, TICK);
+  }
+
+  function submit(){
+    if (!playing || locked || !cur) return;
+    if (buf === '' || buf === '-'){
+      drawAns('mr-bad');
+      setTimeout(function(){ if (playing && !locked) drawAns(''); }, 260);
+      return;
+    }
+    var val = parseInt(buf, 10);
+    if (isNaN(val)){ buf = ''; drawAns(''); return; }
+    locked = true;
+    if (val === cur.ans){
+      correct++;
+      streak++;
+      if (streak > bestStreak) bestStreak = streak;
+      drawAns('mr-good');
+      drawTrack();
+      if (streak === 5 || streak === 10 || streak === 20){
+        burst('🎉 ' + T(streak + ' in a row!', streak + ' de suite !'));
+      }
+    } else {
+      wrong++;
+      streak = 0;
+      misses.push({ text: cur.text, given: val, ans: cur.ans });
+      drawAns('mr-bad');
+      if (lvl === 3){
+        timeLeft = Math.max(0, timeLeft - PENALTY);
+        drawTime();
+      }
+    }
+    drawHud();
+    if (fbId) clearTimeout(fbId);
+    fbId = setTimeout(function(){
+      if (!playing) return;
+      if (timeLeft <= 0){ finish(); return; }
+      ask();
+    }, FB);
+  }
+
+  function press(k){
+    if (!playing || locked) return;
+    if (k === 'bs'){
+      if (buf.length) buf = buf.slice(0, -1);
+      drawAns('');
+      return;
+    }
+    if (k === 'neg'){
+      buf = buf.charAt(0) === '-' ? buf.slice(1) : '-' + buf;
+      drawAns('');
+      return;
+    }
+    if (k === 'ok'){ submit(); return; }
+    if (/^[0-9]$/.test(k)){
+      var digits = buf.replace('-', '');
+      if (digits.length >= MAXLEN) return;
+      if (digits === '0') buf = (buf.charAt(0) === '-' ? '-' : '') + k;
+      else buf += k;
+      drawAns('');
+    }
+  }
+
+  /* ---------- end ---------- */
+  function esc(s){
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function finish(){
+    if (!playing) return;
+    playing = false;
+    locked = true;
+    if (timerId){ clearInterval(timerId); timerId = 0; }
+    if (fbId){ clearTimeout(fbId); fbId = 0; }
+
+    var total = correct + wrong;
+    var acc = total ? Math.round((correct / total) * 100) : 0;
+    var qpm = Math.round(total / (dur / 60));
+
+    var head = correct >= 20 ? '🏆 ' + T('Superb race!', 'Superbe course !')
+             : correct >= 10 ? '🚀 ' + T('Great going!', 'Excellent travail !')
+             : '🛠 ' + T('Keep practising!', 'Continue de pratiquer !');
+
+    var pbs = loadBest();
+    var k = bestKey();
+    var prev = (typeof pbs[k] === 'number' && isFinite(pbs[k])) ? pbs[k] : 0;
+    var isNew = correct > prev;
+    if (isNew){ pbs[k] = correct; saveBest(pbs); }
+    var pbLine = isNew
+      ? '⭐ ' + T('New personal best!', 'Nouveau record personnel !')
+      : (prev > 0 ? T('Your best for this setting: ' + prev, 'Votre record pour ce réglage : ' + prev) : '');
+
+    if (elRes){
+      elRes.innerHTML =
+        '<p class="mr-big">' + esc(head) + '</p>' +
+        '<div class="mr-stats">' +
+          '<div class="mr-stat"><b>' + correct + '</b><span>' + esc(T('Correct', 'Bonnes')) + '</span></div>' +
+          '<div class="mr-stat"><b>' + wrong + '</b><span>' + esc(T('Wrong', 'Erreurs')) + '</span></div>' +
+          '<div class="mr-stat"><b>' + acc + '%</b><span>' + esc(T('Accuracy', 'Précision')) + '</span></div>' +
+          '<div class="mr-stat"><b>' + qpm + '</b><span>' + esc(T('Questions per minute', 'Questions par minute')) + '</span></div>' +
+        '</div>' +
+        (pbLine ? '<p class="mr-pb">' + esc(pbLine) + '</p>' : '') +
+        '<p class="mr-pb">' + esc(T('Best streak: ' + bestStreak, 'Meilleure série : ' + bestStreak)) + '</p>';
+    }
+    if (elMiss){
+      if (!misses.length){
+        elMiss.innerHTML = '<p class="mr-misshead">' + esc(T('No mistakes at all. Amazing!', 'Aucune erreur. Bravo !')) + '</p>';
+      } else {
+        var rows = '';
+        for (var i = 0; i < misses.length; i++){
+          var m = misses[i];
+          rows += '<div class="mr-missrow"><span>' + esc(m.text) + '</span><span><s>' + esc(m.given) + '</s> &rarr; <b>' + esc(m.ans) + '</b></span></div>';
+        }
+        elMiss.innerHTML = '<p class="mr-misshead">' + esc(T('Have another look at these:', 'Revois celles-ci :')) + '</p>' + rows;
+      }
+    }
+    show('end');
+  }
+
+  function toSetup(){
+    playing = false;
+    locked = true;
+    if (timerId){ clearInterval(timerId); timerId = 0; }
+    if (fbId){ clearTimeout(fbId); fbId = 0; }
+    show('setup');
+  }
+
+  /* ---------- wiring ---------- */
+  function chooser(box, attr, set){
+    if (!box) return;
+    box.addEventListener('click', function(e){
+      var t = e.target;
+      while (t && t !== box){
+        if (t.nodeType === 1 && t.hasAttribute(attr)) break;
+        t = t.parentNode;
+      }
+      if (!t || t === box) return;
+      var v = t.getAttribute(attr);
+      if (v === null) return;
+      var all = box.querySelectorAll('[' + attr + ']');
+      for (var i = 0; i < all.length; i++) all[i].className = 'mr-opt';
+      t.className = 'mr-opt mr-sel';
+      set(v);
+    });
+  }
+  chooser(elOps, 'data-op', function(v){ op = v; });
+  chooser(elLvls, 'data-lvl', function(v){ lvl = parseInt(v, 10) || 1; });
+  chooser(elDurs, 'data-dur', function(v){ dur = parseInt(v, 10) === 120 ? 120 : 60; });
+
+  if (elStart) elStart.addEventListener('click', startRound);
+  if (elAgain) elAgain.addEventListener('click', startRound);
+  if (elChange) elChange.addEventListener('click', toSetup);
+  if (elQuit) elQuit.addEventListener('click', function(){ if (playing) finish(); });
+  if (elNew) elNew.addEventListener('click', toSetup);
+
+  elPad.addEventListener('click', function(e){
+    var t = e.target;
+    while (t && t !== elPad){
+      if (t.nodeType === 1 && t.hasAttribute('data-k')) break;
+      t = t.parentNode;
+    }
+    if (!t || t === elPad) return;
+    press(t.getAttribute('data-k'));
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (!playing) return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    var k = e.key;
+    if (k >= '0' && k <= '9' && k.length === 1){ e.preventDefault(); press(k); return; }
+    if (k === 'Backspace'){ e.preventDefault(); press('bs'); return; }
+    if (k === 'Enter'){ e.preventDefault(); press('ok'); return; }
+    if (k === '-' || k === 'Subtract'){ e.preventDefault(); press('neg'); return; }
+  });
+
+  /* ---------- labels written by JS ---------- */
+  if (elEnter){
+    elEnter.textContent = T('Enter', 'Entrée');
+    elEnter.setAttribute('aria-label', T('Check my answer', 'Vérifier ma réponse'));
+  }
+  if (elBs) elBs.setAttribute('aria-label', T('Backspace', 'Retour arrière'));
+  if (elNeg) elNeg.setAttribute('aria-label', T('Plus or minus', 'Plus ou moins'));
+  elPad.setAttribute('aria-label', T('Number pad', 'Pavé numérique'));
+  if (elAns) elAns.setAttribute('aria-label', T('Your answer', 'Votre réponse'));
+  var trk = $('mr-track');
+  if (trk) trk.setAttribute('aria-label', T('Race track', 'Piste de course'));
+  drawTime(); drawHud(); drawTrack();
+
+  /* ---------- test hook (harmless in production) ---------- */
+  window.__mrTest = {
+    gen: function(o, l){ return genQ(o, l); },
+    setTick: function(ms){ TICK = Math.max(1, ms | 0); },
+    setFeedback: function(ms){ FB = Math.max(0, ms | 0); },
+    state: function(){
+      return {
+        playing: playing, locked: locked, timeLeft: timeLeft,
+        correct: correct, wrong: wrong, streak: streak,
+        answer: cur ? cur.ans : null, buf: buf, op: op, lvl: lvl, dur: dur
+      };
+    }
+  };
+})();
+</script>
+  <script src="../js/game-fullscreen.js?v=20260802"></script>
+  <script src="../js/site.js?v=20260802"></script>
+  <script src="../js/analytics.js?v=20260802"></script>
+</body>
+</html>

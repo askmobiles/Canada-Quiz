@@ -6,7 +6,7 @@
 <title>World Quiz — Flags, Capitals &amp; Geography | Canada Quiz</title>
 <meta name="description" content="Free World Quiz — test yourself on flags of the world, capital cities, famous landmarks, and world geography. Fun for the whole family. No signup.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="css/style.css?v=20260730">
+<link rel="stylesheet" href="css/style.css?v=20260802">
 <style>.flagq{font-size:80px;text-align:center;margin:6px 0}</style>
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -75,7 +75,7 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <details class="footer-map">
-      <summary>All pages <span class="fm-count">(71)</span></summary>
+      <summary>All pages <span class="fm-count">(81)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quizzes</h4>
@@ -88,6 +88,10 @@
         <a href="science-quiz.html">Science &amp; Space</a>
         <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
         <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
       </div>
       <div class="footer-map-col">
         <h4>Driving Test Practice</h4>
@@ -114,6 +118,10 @@
         <a href="rubiks-cube.html">Rubik's Cube</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="flags-game.html">Flags of the World</a>
       </div>
       <div class="footer-map-col">
         <h4>Action &amp; Classic Games</h4>
@@ -124,6 +132,8 @@
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
         <a href="tag.html">Tag</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
       </div>
       <div class="footer-map-col">
         <h4>Party Games</h4>
@@ -199,6 +209,16 @@ const BANK = {
    {q:"🇮🇪",options:["Italy","Hungary","Nigeria","Ireland"],answer:3,explain:"Ireland's flag has green, white, and orange vertical stripes."},
    {q:"🇸🇪",options:["Norway","Sweden","Denmark","Iceland"],answer:1,explain:"Sweden's flag is blue with a yellow cross."},
    {q:"🇳🇬",options:["Nigeria","Kenya","Ghana","Senegal"],answer:0,explain:"Nigeria's flag has green, white, and green vertical stripes."}
+  ,
+   {q:"🇵🇹",flag:true,options:["Portugal","Spain","Greece","Italy"],answer:0,explain:"Portugal's flag is green and red, with a shield over a golden sphere."},
+   {q:"🇳🇱",flag:true,options:["Belgium","Netherlands","Luxembourg","Denmark"],answer:1,explain:"The Dutch flag has three stripes: red on top, then white, then blue."},
+   {q:"🇳🇴",flag:true,options:["Iceland","Sweden","Norway","Finland"],answer:2,explain:"Norway's flag is red with a blue cross outlined in white."},
+   {q:"🇨🇳",flag:true,options:["Indonesia","Singapore","Bangladesh","China"],answer:3,explain:"China's red flag has five yellow stars in the top left corner."},
+   {q:"🇰🇪",flag:true,options:["Kenya","Ghana","Uganda","Tanzania"],answer:0,explain:"Kenya's flag shows a Maasai shield and two spears in the centre."},
+   {q:"🇻🇳",flag:true,options:["Thailand","Vietnam","Malaysia","Philippines"],answer:1,explain:"Vietnam's flag is red with one large yellow star in the middle."},
+   {q:"🇩🇰",flag:true,options:["Switzerland","Austria","Denmark","England"],answer:2,explain:"Denmark's flag is red with a white cross and is very old."},
+   {q:"🇹🇷",flag:true,options:["Greece","Egypt","Morocco","Turkey"],answer:3,explain:"Turkey's red flag shows a white crescent moon and a white star."},
+   {q:"🇵🇱",flag:true,options:["Poland","Austria","Hungary","Indonesia"],answer:0,explain:"Poland's flag is white on the top half and red on the bottom half."}
   ]},
   "Capital Cities": { emoji:"🏙️", color:"green", q:[
    {q:"What is the capital of France?",options:["Lyon","Paris","Nice","Marseille"],answer:1,explain:"Paris is the capital and largest city of France."},
@@ -221,6 +241,16 @@ const BANK = {
    {q:"What is the capital of South Korea?",options:["Busan","Incheon","Seoul","Daegu"],answer:2,explain:"Seoul is the capital of South Korea."},
    {q:"What is the capital of Turkey?",options:["Istanbul","Izmir","Antalya","Ankara"],answer:3,explain:"Ankara is the capital of Turkey, not Istanbul."},
    {q:"What is the capital of New Zealand?",options:["Wellington","Auckland","Christchurch","Dunedin"],answer:0,explain:"Wellington is the capital of New Zealand, not Auckland."}
+  ,
+   {q:"What is the capital of Portugal?",options:["Porto","Lisbon","Madrid","Seville"],answer:1,explain:"Lisbon sits on the Tagus River near the Atlantic Ocean."},
+   {q:"What is the capital of Norway?",options:["Bergen","Stockholm","Oslo","Helsinki"],answer:2,explain:"Oslo is Norway's largest city and sits at the end of a long fjord."},
+   {q:"What is the capital of Peru?",options:["Quito","Bogotá","La Paz","Lima"],answer:3,explain:"Lima was founded in 1535 and sits near Peru's Pacific coast."},
+   {q:"What is the capital of Greece?",options:["Athens","Sparta","Thessaloniki","Corinth"],answer:0,explain:"Athens is one of the world's oldest cities, lived in for over 3,000 years."},
+   {q:"What is the capital of Poland?",options:["Kraków","Warsaw","Gdańsk","Prague"],answer:1,explain:"Warsaw stands on the Vistula River in the centre of Poland."},
+   {q:"What is the capital of Thailand?",options:["Hanoi","Jakarta","Bangkok","Manila"],answer:2,explain:"Bangkok grew beside the Chao Phraya River and is Thailand's biggest city."},
+   {q:"What is the capital of Cuba?",options:["Kingston","San Juan","Nassau","Havana"],answer:3,explain:"Havana sits on Cuba's north coast and was founded by Spanish settlers."},
+   {q:"What is the capital of Austria?",options:["Vienna","Salzburg","Munich","Zurich"],answer:0,explain:"Vienna sits on the Danube River and is famous for classical music."},
+   {q:"What is the capital of Chile?",options:["Valparaíso","Santiago","Montevideo","Asunción"],answer:1,explain:"Santiago lies in a valley with the Andes Mountains rising to the east."}
   ]},
   "Famous Landmarks": { emoji:"🗽", color:"orange", q:[
    {q:"In which country is the Eiffel Tower?",options:["Italy","France","Spain","Belgium"],answer:1,explain:"The Eiffel Tower is in Paris, France."},
@@ -241,6 +271,15 @@ const BANK = {
    {q:"In which country is the Parthenon?",options:["Greece","Turkey","Italy","Cyprus"],answer:0,explain:"The Parthenon is an ancient temple on a hill above Athens."},
    {q:"In which country is Chichen Itza?",options:["Guatemala","Belize","Mexico","Honduras"],answer:2,explain:"Chichen Itza is a large Maya pyramid site with a famous step pyramid."},
    {q:"Where are the giant Moai stone statues?",options:["Chile","Peru","Fiji","New Zealand"],answer:0,explain:"The Moai stand on Easter Island, which belongs to Chile."}
+  ,
+   {q:"Stonehenge, a ring of giant standing stones, is in which country?",options:["Ireland","Scotland","England","Wales"],answer:2,explain:"Stonehenge was built about 5,000 years ago on Salisbury Plain."},
+   {q:"In which country are four presidents' faces carved into Mount Rushmore?",options:["Canada","Mexico","Brazil","United States"],answer:3,explain:"The giant faces were carved into a granite cliff in South Dakota."},
+   {q:"In which city is the Golden Gate Bridge?",options:["San Francisco","Los Angeles","Seattle","New York City"],answer:0,explain:"The bridge's orange towers stand over the entrance to San Francisco Bay."},
+   {q:"In which country is the Sagrada Família?",options:["Portugal","Spain","Italy","France"],answer:1,explain:"Work on this tall stone building in Barcelona began back in 1882."},
+   {q:"In which country is Neuschwanstein Castle?",options:["Austria","Switzerland","Germany","Czechia"],answer:2,explain:"This fairy-tale castle was built in the Bavarian mountains in the 1800s."},
+   {q:"In which city is the Brandenburg Gate?",options:["Vienna","Hamburg","Munich","Berlin"],answer:3,explain:"The gate has stood in Berlin since 1791 and has twelve tall columns, six on each side."},
+   {q:"In which country is the huge red rock called Uluru?",options:["Australia","New Zealand","South Africa","Namibia"],answer:0,explain:"Uluru rises 348 metres above the desert in the middle of Australia."},
+   {q:"The Terracotta Army of clay soldiers was found in which country?",options:["Japan","China","Mongolia","Vietnam"],answer:1,explain:"Thousands of life-size clay soldiers were buried to guard an emperor's tomb."}
   ]},
   "World Geography": { emoji:"🗺️", color:"purple", q:[
    {q:"What is the largest ocean on Earth?",options:["Atlantic","Indian","Pacific","Arctic"],answer:2,explain:"The Pacific is the biggest and deepest ocean."},
@@ -261,6 +300,15 @@ const BANK = {
    {q:"Which country is named after the equator?",options:["Panama","Colombia","Peru","Ecuador"],answer:3,explain:"Ecuador means 'equator' in Spanish, and the line runs through the country."},
    {q:"Which two continents does Russia sit in?",options:["Europe and Asia","Asia and Africa","Europe and Africa","Asia and Australia"],answer:0,explain:"Russia stretches across both Europe and Asia."},
    {q:"What is the largest island in the world?",options:["Madagascar","Borneo","Greenland","New Guinea"],answer:2,explain:"Greenland is the largest island on Earth and most of it is covered in ice."}
+  ,
+   {q:"Which continent has the most countries?",options:["Europe","Asia","Africa","South America"],answer:2,explain:"Africa is made up of 54 countries, more than any other continent."},
+   {q:"Which imaginary line sits at 23.5 degrees north of the equator?",options:["Equator","Tropic of Capricorn","Arctic Circle","Tropic of Cancer"],answer:3,explain:"The Tropic of Cancer marks how far north the Sun can shine straight overhead."},
+   {q:"Which large island country lies off the southeast coast of Africa?",options:["Madagascar","Sri Lanka","Cuba","Iceland"],answer:0,explain:"Madagascar broke away from Africa long ago, so many of its animals are unique."},
+   {q:"Which canal lets ships travel between the Atlantic and Pacific Oceans?",options:["Suez Canal","Panama Canal","Erie Canal","Kiel Canal"],answer:1,explain:"The Panama Canal opened in 1914 and saves ships a long trip around South America."},
+   {q:"Which canal joins the Mediterranean Sea to the Red Sea?",options:["Grand Canal","Rideau Canal","Suez Canal","Corinth Canal"],answer:2,explain:"The Suez Canal opened in 1869 and cuts straight through the desert of Egypt."},
+   {q:"The Prime Meridian, at 0 degrees longitude, passes through which part of London?",options:["Chelsea","Camden","Westminster","Greenwich"],answer:3,explain:"Mapmakers agreed in 1884 to measure longitude starting from Greenwich."},
+   {q:"Which European country is shaped like a boot?",options:["Italy","Greece","Norway","Portugal"],answer:0,explain:"Italy's long peninsula looks like a boot kicking the island of Sicily."},
+   {q:"Which two countries share the longest land border in the world?",options:["Russia and China","Canada and the United States","Chile and Argentina","India and China"],answer:1,explain:"The border between Canada and its neighbour runs about 8,891 kilometres. 🍁"}
   ]},
   "Countries & Cultures": { emoji:"🌍", color:"red", q:[
    {q:"Which country is famous for inventing pizza?",options:["Greece","Italy","Spain","France"],answer:1,explain:"Pizza as we know it comes from the city of Naples in Italy."},
@@ -275,6 +323,15 @@ const BANK = {
    {q:"Which country is famous for windmills and wooden shoes?",options:["Belgium","Denmark","Netherlands","Germany"],answer:2,explain:"Windmills and wooden shoes are old traditions in the Netherlands."},
    {q:"In which country did the party piñata become a tradition?",options:["Mexico","Spain","Peru","Cuba"],answer:0,explain:"Piñatas filled with treats are a birthday tradition in Mexico."},
    {q:"In which country did the dragon dance begin?",options:["Japan","India","Korea","China"],answer:3,explain:"The dragon dance is a Chinese tradition at Lunar New Year."}
+  ,
+   {q:"Flamenco dancing and guitar music come from which country?",options:["Italy","Portugal","Spain","Mexico"],answer:2,explain:"Flamenco grew in the Andalusia region of southern Spain."},
+   {q:"In which country is the sauna a national tradition?",options:["Norway","Sweden","Iceland","Finland"],answer:3,explain:"Finland has millions of saunas, small hot rooms where people relax."},
+   {q:"The Lego brick was invented in which country?",options:["Denmark","Germany","Sweden","Netherlands"],answer:0,explain:"A carpenter in Denmark named his toy company after words meaning 'play well'."},
+   {q:"The sari is traditional clothing in which country?",options:["Thailand","India","Indonesia","Egypt"],answer:1,explain:"A sari is one long piece of cloth wrapped and draped around the body."},
+   {q:"Which country writes with an alphabet called Hangul?",options:["Japan","China","South Korea","Mongolia"],answer:2,explain:"Hangul was created in the 1400s so ordinary people could read and write."},
+   {q:"The samba is a lively dance and music style from which country?",options:["Cuba","Colombia","Argentina","Brazil"],answer:3,explain:"Samba bands lead the huge street parades of the carnival in Rio de Janeiro."},
+   {q:"Which African country is known as the birthplace of coffee?",options:["Ethiopia","Kenya","Morocco","Ghana"],answer:0,explain:"Coffee plants grew wild in the highlands of Ethiopia before spreading worldwide."},
+   {q:"The didgeridoo, a long wooden wind instrument, comes from which country?",options:["New Zealand","Australia","Papua New Guinea","Fiji"],answer:1,explain:"Aboriginal Australians have played the didgeridoo for thousands of years."}
   ]},
   "Rivers, Mountains & Oceans": { emoji:"🏔️", color:"blue", q:[
    {q:"Which river flows through the Amazon Rainforest?",options:["Congo River","Nile River","Amazon River","Mekong River"],answer:2,explain:"The Amazon River winds through the rainforest in South America."},
@@ -289,11 +346,32 @@ const BANK = {
    {q:"Which is the highest mountain in Africa?",options:["Mount Kenya","Table Mountain","Mount Kilimanjaro","Mount Elgon"],answer:2,explain:"Mount Kilimanjaro in Tanzania is the highest peak in Africa."},
    {q:"Which sea lies between Europe and Africa?",options:["The Mediterranean Sea","The Red Sea","The Black Sea","The Baltic Sea"],answer:0,explain:"The Mediterranean Sea lies between southern Europe and North Africa."},
    {q:"Which mountain range runs down western North America?",options:["The Appalachians","The Rockies","The Andes","The Alps"],answer:1,explain:"The Rocky Mountains stretch from Canada down through the United States."}
+  ,
+   {q:"Which river flows through Paris?",options:["Loire","Rhône","Seine","Rhine"],answer:2,explain:"The Seine winds through Paris and flows on to the English Channel."},
+   {q:"Which river flows through both Vienna and Budapest?",options:["Elbe","Oder","Vistula","Danube"],answer:3,explain:"The Danube crosses ten countries on its way to the Black Sea."},
+   {q:"Which mountain range forms part of the boundary between Europe and Asia?",options:["Ural Mountains","Alps","Carpathians","Apennines"],answer:0,explain:"The Urals run north to south across Russia for about 2,500 kilometres."},
+   {q:"Which ocean surrounds Antarctica?",options:["Indian Ocean","Southern Ocean","Arctic Ocean","Pacific Ocean"],answer:1,explain:"The Southern Ocean is cold and stormy, and it is dotted with icebergs."},
+   {q:"Which is the highest mountain in South America?",options:["Chimborazo","Cotopaxi","Aconcagua","Huascarán"],answer:2,explain:"Aconcagua rises 6,961 metres in the Andes of Argentina."},
+   {q:"Which lake is the deepest in the world?",options:["Lake Superior","Lake Tanganyika","Lake Victoria","Lake Baikal"],answer:3,explain:"Lake Baikal in Siberia is more than 1,600 metres deep."},
+   {q:"In which very salty lake do swimmers float easily?",options:["Dead Sea","Black Sea","Red Sea","Caspian Sea"],answer:0,explain:"The Dead Sea is so salty that swimmers bob on the surface like corks."},
+   {q:"Which waterfall has the longest drop in the world?",options:["Niagara Falls","Angel Falls","Victoria Falls","Iguazu Falls"],answer:1,explain:"Angel Falls in Venezuela drops 979 metres from a flat-topped mountain."}
   ]}
 };
 
 let qs=[], cur=0, score=0, answered=false, curCat="";
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function balanceOpts(it){
+  const opts=it.options||it.o, ans=(it.answer!==undefined)?it.answer:it.a;
+  if(!Array.isArray(opts)||opts.length!==4||!(ans>=0&&ans<=3)) return it;
+  const txt=opts.join(' ').toLowerCase();
+  if(/all of the|none of the|both of/.test(txt)) return it;
+  if(opts.every(o=>!isNaN(parseFloat(String(o).replace(/[\s,$%]/g,''))))) return it;
+  const idx=[0,1,2,3];
+  for(let i=3;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
+  const c=Object.assign({},it), o2=idx.map(i=>opts[i]), a2=idx.indexOf(ans);
+  if(it.options){ c.options=o2; c.answer=a2; } else { c.o=o2; c.a=a2; }
+  return c;
+}
 function pickFresh(bank,count,key){
   let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
   if(!Array.isArray(seen)) seen=[];
@@ -302,7 +380,7 @@ function pickFresh(bank,count,key){
   for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
   const chosen=unseen.slice(0,count);
   try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
-  return chosen.map(i=>bank[i]);
+  return chosen.map(i=>balanceOpts(bank[i]));
 }
 function buildCats(){
   const box=document.getElementById('cats'); box.innerHTML='';
@@ -368,8 +446,8 @@ function backToCats(){
 }
 buildCats();
 </script>
-  <script src="js/game-fullscreen.js?v=20260730"></script>
-  <script src="js/site.js?v=20260730"></script>
-  <script src="js/analytics.js?v=20260730"></script>
+  <script src="js/game-fullscreen.js?v=20260802"></script>
+  <script src="js/site.js?v=20260802"></script>
+  <script src="js/analytics.js?v=20260802"></script>
 </body>
 </html>

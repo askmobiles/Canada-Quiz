@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chess — Play Free Online vs the Computer or a Friend | Canada Quiz</title>
+<meta name="description" content="Play free chess online with no signup: real rules, castling, en passant and promotion, plus three computer levels or two players on one phone.">
+<meta property="og:title" content="Chess — Play Free Online vs the Computer or a Friend | Canada Quiz">
+<meta property="og:description" content="Play free chess online with no signup: real rules, castling, en passant and promotion, plus three computer levels or two players on one phone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/fr/chess.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css?v=20260802">
+<style>
+.ch-bar{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.ch-mode{max-width:100%;width:auto;min-height:44px;font-weight:700}
+.ch-rec{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:0 0 8px}
+.ch-status{font-weight:800;font-size:1.02rem;color:var(--ink);min-height:26px;margin:6px 0 8px;line-height:1.3}
+.ch-taken{min-height:28px;display:flex;align-items:center;justify-content:center;gap:1px;flex-wrap:wrap;font-size:19px;line-height:1;background:#f6f1ea;border:1px solid var(--line);border-radius:12px;padding:4px 8px;margin:4px auto;max-width:460px;overflow:hidden}
+.ch-taken .ch-plus{font-size:.8rem;font-weight:800;color:var(--muted);margin-left:6px;font-family:inherit}
+.ch-wrap{margin:8px -6px}
+.ch-board{width:100%;max-width:min(460px,70vh);margin:0 auto;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);aspect-ratio:1/1;border:3px solid #6b4f34;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);touch-action:manipulation}
+.ch-sq{-webkit-appearance:none;appearance:none;border:0;margin:0;padding:0;width:100%;height:100%;min-width:0;min-height:0;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;line-height:1;border-radius:0;box-shadow:none;font-family:"Segoe UI Symbol","Noto Sans Symbols 2","DejaVu Sans",sans-serif;font-size:clamp(21px,7.6vw,40px);-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;transition:none}
+.ch-lt{background:#f3e2c8}
+.ch-dk{background:#bd8c5b}
+.ch-last{box-shadow:inset 0 0 0 100px rgba(255,183,3,.32)}
+.ch-chk{box-shadow:inset 0 0 0 100px rgba(230,57,70,.45)}
+.ch-sel{box-shadow:inset 0 0 0 100px rgba(42,157,143,.34),inset 0 0 0 4px var(--green-dark)}
+.ch-w{color:#fff;text-shadow:0 0 2px #222736,1px 1px 0 #222736,-1px -1px 0 #222736,1px -1px 0 #222736,-1px 1px 0 #222736}
+.ch-b{color:#1f2230;text-shadow:0 1px 0 rgba(255,255,255,.4)}
+.ch-dot::after{content:"";position:absolute;left:50%;top:50%;width:28%;height:28%;margin:-14% 0 0 -14%;border-radius:50%;background:rgba(31,122,111,.72);pointer-events:none}
+.ch-dotcap::after{width:84%;height:84%;margin:-42% 0 0 -42%;background:transparent;border:4px solid rgba(193,18,31,.68);box-sizing:border-box}
+.ch-board.ch-lock .ch-sq{cursor:default}
+.ch-promo{margin:10px auto 0;max-width:460px;padding:10px;border:2px dashed var(--yellow);border-radius:var(--radius);background:#fffdf5}
+.ch-promo[hidden]{display:none}
+.ch-promo-t{font-weight:800;color:var(--ink);margin-bottom:8px}
+.ch-promo-b{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.ch-pbtn{font-size:28px;line-height:1;min-width:54px;min-height:54px;padding:6px 10px;font-family:"Segoe UI Symbol","Noto Sans Symbols 2","DejaVu Sans",sans-serif}
+.ch-ctl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.ch-ctl>button{min-height:44px}
+@media(max-width:380px){.ch-wrap{margin-left:-10px;margin-right:-10px}.ch-taken{font-size:17px}}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/chess.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/chess.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/chess.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/chess.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>♞ Échecs</h1>
+    <p>De vrais échecs dans votre navigateur — gratuit, sans inscription, sur tous les téléphones.</p>
+  <details class="howto"><summary></summary><p>Touchez une de vos pièces et les cases où elle peut aller s'allument d'un point, puis touchez la case voulue. Jouez contre un ami sur le même téléphone ou choisissez un ordinateur facile, moyen ou difficile. Toutes les vraies règles sont là : le roque, la prise en passant, la promotion du pion, l'échec, l'échec et mat et le pat.</p></details>
+
+  </section>
+
+  <div class="panel center" data-fs-host>
+    <div class="ch-bar">
+      <select id="ch-mode" class="text-in ch-mode" aria-label="Mode de jeu">
+        <option value="2p">2 joueurs</option>
+        <option value="e">Contre l'ordinateur — facile</option>
+        <option value="m">Contre l'ordinateur — moyen</option>
+        <option value="h">Contre l'ordinateur — difficile</option>
+      </select>
+    </div>
+    <div class="ch-rec">
+      <span class="pill" id="ch-rw" data-no-i18n></span>
+      <span class="pill" id="ch-rl" data-no-i18n></span>
+      <span class="pill" id="ch-rd" data-no-i18n></span>
+    </div>
+    <div class="ch-status" id="ch-status" data-no-i18n>&nbsp;</div>
+    <div class="ch-taken" id="ch-taken-top" data-no-i18n></div>
+    <div class="ch-wrap">
+      <div class="ch-board" id="ch-board" data-no-i18n aria-label="Échiquier"></div>
+    </div>
+    <div class="ch-taken" id="ch-taken-bot" data-no-i18n></div>
+    <div class="ch-promo" id="ch-promo" hidden>
+      <div class="ch-promo-t" id="ch-promo-t" data-no-i18n></div>
+      <div class="ch-promo-b" data-no-i18n>
+        <button type="button" class="btn btn-yellow ch-pbtn" id="ch-pq" data-p="q">&#9819;</button>
+        <button type="button" class="btn btn-ghost ch-pbtn" id="ch-pr" data-p="r">&#9820;</button>
+        <button type="button" class="btn btn-ghost ch-pbtn" id="ch-pb" data-p="b">&#9821;</button>
+        <button type="button" class="btn btn-ghost ch-pbtn" id="ch-pn" data-p="n">&#9822;</button>
+      </div>
+    </div>
+    <div class="ch-ctl">
+      <button type="button" class="btn btn-blue" id="ch-flip">Tourner l'échiquier</button>
+      <button type="button" class="btn btn-yellow" id="ch-undo">Annuler le coup</button>
+    </div>
+    <div style="margin-top:14px">
+      <button class="btn" id="ch-new">Nouvelle partie</button>
+      <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <details class="footer-map">
+      <summary>Toutes les pages <span class="fm-count">(81)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <h4>Quiz</h4>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="gk-quiz.html">Culture générale</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
+        <a href="science-quiz.html">Sciences et espace</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Pratique de l'examen de conduite</h4>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Jeux de réflexion et casse-têtes</h4>
+        <a href="word-master.html">Maître des mots</a>
+        <a href="word-search.html">Mots cachés</a>
+        <a href="word-guess.html">Devine le mot</a>
+        <a href="scramble.html">Mots brouillés</a>
+        <a href="spelling-bee.html">Concours d'épellation</a>
+        <a href="crossword.html">Mots croisés</a>
+        <a href="connections.html">Groupes de mots</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Démineur</a>
+        <a href="sliding-puzzle.html">Taquin</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Jeu de mémoire</a>
+        <a href="rubiks-cube.html">Cube Rubik</a>
+        <a href="typing-test.html">Test de vitesse de frappe</a>
+        <a href="color-match.html">Associe les couleurs</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Jeux d'action et jeux classiques</h4>
+        <a href="snake.html">Serpent érable</a>
+        <a href="whack-a-beaver.html">Tape-le-castor</a>
+        <a href="piano-tiles.html">Touches de piano</a>
+        <a href="tictactoe.html">Tic-tac-toe</a>
+        <a href="checkers.html">Dames</a>
+        <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="tag.html">Tague</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Connect 4</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Jeux de groupe</h4>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="categories-game.html">Catégories</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="draw-it.html">Dessine-le</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Blogue</h4>
+        <a href="blog.html">Tous les articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
+        <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
+        <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
+        <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
+        <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
+        <a href="canada-geography-coast-to-coast.html">La géographie du Canada</a>
+        <a href="canadas-animals-and-wildlife.html">Animaux et faune</a>
+        <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
+        <a href="canadian-holidays-explained.html">Les fêtes canadiennes</a>
+        <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
+        <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Le site</h4>
+        <a href="index.html">Accueil</a>
+        <a href="daily.html">Défi du jour</a>
+        <a href="games.html">Tous les jeux en famille</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr){ return FR ? fr : en; }
+  function $(id){ return document.getElementById(id); }
+
+  var boardEl = $('ch-board'), statusEl = $('ch-status'), modeEl = $('ch-mode'),
+      topEl = $('ch-taken-top'), botEl = $('ch-taken-bot'),
+      promoEl = $('ch-promo'), promoT = $('ch-promo-t'),
+      flipB = $('ch-flip'), undoB = $('ch-undo'), newB = $('ch-new'),
+      pillW = $('ch-rw'), pillL = $('ch-rl'), pillD = $('ch-rd');
+  if(!boardEl || !statusEl) return;
+
+  /* ---------------- board model ---------------- */
+  var EMPTY = '.';
+  var START = ('rnbqkbnr' + 'pppppppp' + '........' + '........' +
+               '........' + '........' + 'PPPPPPPP' + 'RNBQKBNR').split('');
+  var GLYPH = { K:'♔', Q:'♕', R:'♖', B:'♗', N:'♘', P:'♙',
+                k:'♚', q:'♛', r:'♜', b:'♝', n:'♞', p:'♟' };
+  var VAL = { P:100, N:320, B:330, R:500, Q:900, K:20000 };
+  var N_D = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];
+  var B_D = [[-1,-1],[-1,1],[1,-1],[1,1]];
+  var R_D = [[-1,0],[1,0],[0,-1],[0,1]];
+  var K_D = [[-1,-1],[-1,1],[1,-1],[1,1],[-1,0],[1,0],[0,-1],[0,1]];
+
+  function colorOf(p){ return p === EMPTY ? '' : (p < 'a' ? 'w' : 'b'); }
+  function foe(s){ return s === 'w' ? 'b' : 'w'; }
+
+  var st = null;
+  function freshState(){
+    return { b: START.slice(), turn:'w', cw:{K:true,Q:true,k:true,q:true}, ep:-1, half:0, full:1 };
+  }
+
+  function mk(f, t, p, c, pr, k){ return { f:f, t:t, p:p, c:c, pr:pr, k:k, s:0 }; }
+
+  function addPawn(res, f, t, p, c, last){
+    if(last){
+      var set = colorOf(p) === 'w' ? ['Q','R','B','N'] : ['q','r','b','n'];
+      for(var i=0;i<4;i++) res.push(mk(f,t,p,c,set[i],0));
+    } else res.push(mk(f,t,p,c,'',0));
+  }
+
+  function ray(res, s, side, from, r, c, dirs, slide, p, capsOnly){
+    var b = s.b, i, rr, cc, tp, j;
+    for(i=0;i<dirs.length;i++){
+      rr = r; cc = c;
+      for(;;){
+        rr += dirs[i][0]; cc += dirs[i][1];
+        if(rr<0||rr>7||cc<0||cc>7) break;
+        j = rr*8+cc; tp = b[j];
+        if(tp === EMPTY){ if(!capsOnly) res.push(mk(from,j,p,EMPTY,'',0)); }
+        else { if(colorOf(tp) !== side) res.push(mk(from,j,p,tp,'',0)); break; }
+        if(!slide) break;
+      }
+    }
+  }
+
+  function gen(s, side, capsOnly){
+    var b = s.b, res = [], i, r, c, p, up;
+    for(i=0;i<64;i++){
+      p = b[i];
+      if(p === EMPTY || colorOf(p) !== side) continue;
+      r = i >> 3; c = i & 7; up = p.toUpperCase();
+      if(up === 'P'){
+        var dir = side === 'w' ? -1 : 1;
+        var home = side === 'w' ? 6 : 1;
+        var last = side === 'w' ? 0 : 7;
+        var r1 = r + dir;
+        if(r1 >= 0 && r1 < 8){
+          if(!capsOnly && b[r1*8+c] === EMPTY){
+            addPawn(res, i, r1*8+c, p, EMPTY, r1 === last);
+            if(r === home && b[(r+2*dir)*8+c] === EMPTY) res.push(mk(i,(r+2*dir)*8+c,p,EMPTY,'',1));
+          }
+          for(var dc=-1; dc<=1; dc+=2){
+            var cc2 = c + dc; if(cc2 < 0 || cc2 > 7) continue;
+            var j = r1*8+cc2, tp = b[j];
+            if(tp !== EMPTY){ if(colorOf(tp) !== side) addPawn(res, i, j, p, tp, r1 === last); }
+            else if(j === s.ep) res.push(mk(i, j, p, side === 'w' ? 'p' : 'P', '', 2));
+          }
+        }
+      }
+      else if(up === 'N') ray(res,s,side,i,r,c,N_D,false,p,capsOnly);
+      else if(up === 'B') ray(res,s,side,i,r,c,B_D,true,p,capsOnly);
+      else if(up === 'R') ray(res,s,side,i,r,c,R_D,true,p,capsOnly);
+      else if(up === 'Q') ray(res,s,side,i,r,c,K_D,true,p,capsOnly);
+      else if(up === 'K') ray(res,s,side,i,r,c,K_D,false,p,capsOnly);
+    }
+    if(!capsOnly) genCastle(s, side, res);
+    return res;
+  }
+
+  function genCastle(s, side, res){
+    var b = s.b;
+    if(side === 'w'){
+      if(s.cw.K && b[60]==='K' && b[63]==='R' && b[61]===EMPTY && b[62]===EMPTY &&
+         !attacked(s,60,'b') && !attacked(s,61,'b') && !attacked(s,62,'b'))
+        res.push(mk(60,62,'K',EMPTY,'',3));
+      if(s.cw.Q && b[60]==='K' && b[56]==='R' && b[59]===EMPTY && b[58]===EMPTY && b[57]===EMPTY &&
+         !attacked(s,60,'b') && !attacked(s,59,'b') && !attacked(s,58,'b'))
+        res.push(mk(60,58,'K',EMPTY,'',4));
+    } else {
+      if(s.cw.k && b[4]==='k' && b[7]==='r' && b[5]===EMPTY && b[6]===EMPTY &&
+         !attacked(s,4,'w') && !attacked(s,5,'w') && !attacked(s,6,'w'))
+        res.push(mk(4,6,'k',EMPTY,'',3));
+      if(s.cw.q && b[4]==='k' && b[0]==='r' && b[3]===EMPTY && b[2]===EMPTY && b[1]===EMPTY &&
+         !attacked(s,4,'w') && !attacked(s,3,'w') && !attacked(s,2,'w'))
+        res.push(mk(4,2,'k',EMPTY,'',4));
+    }
+  }
+
+  function attacked(s, sq, by){
+    var b = s.b, r = sq >> 3, c = sq & 7, i, rr, cc, p, dc;
+    var pd = by === 'w' ? 1 : -1;
+    var pawn = by === 'w' ? 'P' : 'p';
+    for(dc=-1; dc<=1; dc+=2){
+      rr = r + pd; cc = c + dc;
+      if(rr>=0 && rr<8 && cc>=0 && cc<8 && b[rr*8+cc] === pawn) return true;
+    }
+    var kn = by === 'w' ? 'N' : 'n';
+    for(i=0;i<8;i++){
+      rr = r + N_D[i][0]; cc = c + N_D[i][1];
+      if(rr>=0 && rr<8 && cc>=0 && cc<8 && b[rr*8+cc] === kn) return true;
+    }
+    var kg = by === 'w' ? 'K' : 'k';
+    for(i=0;i<8;i++){
+      rr = r + K_D[i][0]; cc = c + K_D[i][1];
+      if(rr>=0 && rr<8 && cc>=0 && cc<8 && b[rr*8+cc] === kg) return true;
+    }
+    for(i=0;i<4;i++){
+      rr = r; cc = c;
+      for(;;){
+        rr += B_D[i][0]; cc += B_D[i][1];
+        if(rr<0||rr>7||cc<0||cc>7) break;
+        p = b[rr*8+cc];
+        if(p !== EMPTY){
+          if(colorOf(p) === by){ var u = p.toUpperCase(); if(u === 'B' || u === 'Q') return true; }
+          break;
+        }
+      }
+    }
+    for(i=0;i<4;i++){
+      rr = r; cc = c;
+      for(;;){
+        rr += R_D[i][0]; cc += R_D[i][1];
+        if(rr<0||rr>7||cc<0||cc>7) break;
+        p = b[rr*8+cc];
+        if(p !== EMPTY){
+          if(colorOf(p) === by){ var u2 = p.toUpperCase(); if(u2 === 'R' || u2 === 'Q') return true; }
+          break;
+        }
+      }
+    }
+    return false;
+  }
+
+  function kingSq(s, side){
+    var k = side === 'w' ? 'K' : 'k';
+    for(var i=0;i<64;i++) if(s.b[i] === k) return i;
+    return -1;
+  }
+  function inCheck(s, side){
+    var k = kingSq(s, side);
+    return k < 0 ? false : attacked(s, k, foe(side));
+  }
+
+  function make(s, m){
+    var b = s.b;
+    var u = { ep:s.ep, half:s.half, K:s.cw.K, Q:s.cw.Q, k:s.cw.k, q:s.cw.q };
+    b[m.f] = EMPTY;
+    if(m.k === 2){
+      b[s.turn === 'w' ? m.t + 8 : m.t - 8] = EMPTY;
+      b[m.t] = m.p;
+    } else {
+      b[m.t] = m.pr ? m.pr : m.p;
+    }
+    if(m.k === 3){ if(s.turn === 'w'){ b[63]=EMPTY; b[61]='R'; } else { b[7]=EMPTY; b[5]='r'; } }
+    else if(m.k === 4){ if(s.turn === 'w'){ b[56]=EMPTY; b[59]='R'; } else { b[0]=EMPTY; b[3]='r'; } }
+    var up = m.p.toUpperCase();
+    if(up === 'K'){ if(s.turn === 'w'){ s.cw.K=false; s.cw.Q=false; } else { s.cw.k=false; s.cw.q=false; } }
+    if(m.f === 63 || m.t === 63) s.cw.K = false;
+    if(m.f === 56 || m.t === 56) s.cw.Q = false;
+    if(m.f === 7  || m.t === 7 ) s.cw.k = false;
+    if(m.f === 0  || m.t === 0 ) s.cw.q = false;
+    s.ep = (m.k === 1) ? ((m.f + m.t) >> 1) : -1;
+    s.half = (up === 'P' || m.c !== EMPTY) ? 0 : s.half + 1;
+    if(s.turn === 'b') s.full++;
+    s.turn = foe(s.turn);
+    return u;
+  }
+
+  function unmake(s, m, u){
+    var b = s.b;
+    s.turn = foe(s.turn);
+    if(s.turn === 'b') s.full--;
+    s.ep = u.ep; s.half = u.half;
+    s.cw.K = u.K; s.cw.Q = u.Q; s.cw.k = u.k; s.cw.q = u.q;
+    b[m.f] = m.p;
+    if(m.k === 2){
+      b[m.t] = EMPTY;
+      b[s.turn === 'w' ? m.t + 8 : m.t - 8] = m.c;
+    } else {
+      b[m.t] = m.c;
+    }
+    if(m.k === 3){ if(s.turn === 'w'){ b[63]='R'; b[61]=EMPTY; } else { b[7]='r'; b[5]=EMPTY; } }
+    else if(m.k === 4){ if(s.turn === 'w'){ b[56]='R'; b[59]=EMPTY; } else { b[0]='r'; b[3]=EMPTY; } }
+  }
+
+  function legal(s){
+    var side = s.turn, ms = gen(s, side, false), out = [], i, u;
+    for(i=0;i<ms.length;i++){
+      u = make(s, ms[i]);
+      if(!inCheck(s, side)) out.push(ms[i]);
+      unmake(s, ms[i], u);
+    }
+    return out;
+  }
+
+  /* ---------------- evaluation ---------------- */
+  var PST = {
+    P:[  0,  0,  0,  0,  0,  0,  0,  0,
+        50, 50, 50, 50, 50, 50, 50, 50,
+        10, 10, 20, 30, 30, 20, 10, 10,
+         5,  5, 10, 25, 25, 10,  5,  5,
+         0,  0,  0, 20, 20,  0,  0,  0,
+         5, -5,-10,  0,  0,-10, -5,  5,
+         5, 10, 10,-20,-20, 10, 10,  5,
+         0,  0,  0,  0,  0,  0,  0,  0],
+    N:[-50,-40,-30,-30,-30,-30,-40,-50,
+       -40,-20,  0,  0,  0,  0,-20,-40,
+       -30,  0, 10, 15, 15, 10,  0,-30,
+       -30,  5, 15, 20, 20, 15,  5,-30,
+       -30,  0, 15, 20, 20, 15,  0,-30,
+       -30,  5, 10, 15, 15, 10,  5,-30,
+       -40,-20,  0,  5,  5,  0,-20,-40,
+       -50,-40,-30,-30,-30,-30,-40,-50],
+    B:[-20,-10,-10,-10,-10,-10,-10,-20,
+       -10,  0,  0,  0,  0,  0,  0,-10,
+       -10,  0,  5, 10, 10,  5,  0,-10,
+       -10,  5,  5, 10, 10,  5,  5,-10,
+       -10,  0, 10, 10, 10, 10,  0,-10,
+       -10, 10, 10, 10, 10, 10, 10,-10,
+       -10,  5,  0,  0,  0,  0,  5,-10,
+       -20,-10,-10,-10,-10,-10,-10,-20],
+    R:[  0,  0,  0,  0,  0,  0,  0,  0,
+         5, 10, 10, 10, 10, 10, 10,  5,
+        -5,  0,  0,  0,  0,  0,  0, -5,
+        -5,  0,  0,  0,  0,  0,  0, -5,
+        -5,  0,  0,  0,  0,  0,  0, -5,
+        -5,  0,  0,  0,  0,  0,  0, -5,
+        -5,  0,  0,  0,  0,  0,  0, -5,
+         0,  0,  0,  5,  5,  0,  0,  0],
+    Q:[-20,-10,-10, -5, -5,-10,-10,-20,
+       -10,  0,  0,  0,  0,  0,  0,-10,
+       -10,  0,  5,  5,  5,  5,  0,-10,
+        -5,  0,  5,  5,  5,  5,  0, -5,
+         0,  0,  5,  5,  5,  5,  0, -5,
+       -10,  5,  5,  5,  5,  5,  0,-10,
+       -10,  0,  5,  0,  0,  0,  0,-10,
+       -20,-10,-10, -5, -5,-10,-10,-20],
+    K:[-30,-40,-40,-50,-50,-40,-40,-30,
+       -30,-40,-40,-50,-50,-40,-40,-30,
+       -30,-40,-40,-50,-50,-40,-40,-30,
+       -30,-40,-40,-50,-50,-40,-40,-30,
+       -20,-30,-30,-40,-40,-30,-30,-20,
+       -10,-20,-20,-20,-20,-20,-20,-10,
+        20, 20,  0,  0,  0,  0, 20, 20,
+        20, 30, 10,  0,  0, 10, 30, 20]
+  };
+
+  function evaluate(s){
+    var sc = 0, i, p, up, tbl;
+    for(i=0;i<64;i++){
+      p = s.b[i];
+      if(p === EMPTY) continue;
+      up = p.toUpperCase();
+      tbl = PST[up];
+      if(colorOf(p) === 'w') sc += VAL[up] + (tbl ? tbl[i] : 0);
+      else sc -= VAL[up] + (tbl ? tbl[i ^ 56] : 0);
+    }
+    return sc;
+  }
+
+  function order(ms){
+    var i, m;
+    for(i=0;i<ms.length;i++){
+      m = ms[i]; m.s = 0;
+      if(m.c !== EMPTY) m.s = 1000 + VAL[m.c.toUpperCase()] * 10 - VAL[m.p.toUpperCase()];
+      if(m.pr) m.s += 800;
+    }
+    ms.sort(function(a,b){ return b.s - a.s; });
+  }
+
+  var NODE_CAP = 40000, nodes = 0, aborted = false;
+
+  function qsearch(s, alpha, beta, qd){
+    nodes++;
+    if(nodes > NODE_CAP){ aborted = true; return evaluate(s); }
+    var stand = evaluate(s);
+    if(qd <= 0) return stand;
+    var white = s.turn === 'w';
+    if(white){ if(stand >= beta) return stand; if(stand > alpha) alpha = stand; }
+    else { if(stand <= alpha) return stand; if(stand < beta) beta = stand; }
+    var ms = gen(s, s.turn, true);
+    order(ms);
+    var v = stand, i, u, r, mover = s.turn;
+    for(i=0;i<ms.length;i++){
+      u = make(s, ms[i]);
+      if(inCheck(s, mover)){ unmake(s, ms[i], u); continue; }
+      r = qsearch(s, alpha, beta, qd - 1);
+      unmake(s, ms[i], u);
+      if(aborted) break;
+      if(white){ if(r > v) v = r; if(v > alpha) alpha = v; if(alpha >= beta) break; }
+      else { if(r < v) v = r; if(v < beta) beta = v; if(beta <= alpha) break; }
+    }
+    return v;
+  }
+
+  function ab(s, depth, alpha, beta){
+    nodes++;
+    if(nodes > NODE_CAP){ aborted = true; return evaluate(s); }
+    if(depth <= 0) return qsearch(s, alpha, beta, 3);
+    var ms = legal(s);
+    if(!ms.length) return inCheck(s, s.turn) ? (s.turn === 'w' ? -(90000 + depth) : (90000 + depth)) : 0;
+    if(s.half >= 100) return 0;
+    order(ms);
+    var i, u, r, v;
+    if(s.turn === 'w'){
+      v = -1e9;
+      for(i=0;i<ms.length;i++){
+        u = make(s, ms[i]); r = ab(s, depth-1, alpha, beta); unmake(s, ms[i], u);
+        if(r > v) v = r;
+        if(v > alpha) alpha = v;
+        if(alpha >= beta || aborted) break;
+      }
+    } else {
+      v = 1e9;
+      for(i=0;i<ms.length;i++){
+        u = make(s, ms[i]); r = ab(s, depth-1, alpha, beta); unmake(s, ms[i], u);
+        if(r < v) v = r;
+        if(v < beta) beta = v;
+        if(beta <= alpha || aborted) break;
+      }
+    }
+    return v;
+  }
+
+  function shuffle(a){
+    for(var i=a.length-1;i>0;i--){ var j=(Math.random()*(i+1))|0, t=a[i]; a[i]=a[j]; a[j]=t; }
+    return a;
+  }
+
+  function searchBest(s, maxDepth){
+    var ms = legal(s);
+    if(!ms.length) return null;
+    shuffle(ms); order(ms);
+    var best = ms[0], d, i, u, v, lb, lv, alpha, beta;
+    nodes = 0; aborted = false;
+    for(d=1; d<=maxDepth; d++){
+      lb = null; lv = s.turn === 'w' ? -1e9 : 1e9;
+      alpha = -1e9; beta = 1e9;
+      for(i=0;i<ms.length;i++){
+        u = make(s, ms[i]); v = ab(s, d-1, alpha, beta); unmake(s, ms[i], u);
+        if(aborted) break;
+        if(s.turn === 'w'){ if(v > lv){ lv = v; lb = ms[i]; } if(lv > alpha) alpha = lv; }
+        else { if(v < lv){ lv = v; lb = ms[i]; } if(lv < beta) beta = lv; }
+      }
+      if(lb && (!aborted || d === 1)) best = lb;
+      if(aborted) break;
+    }
+    return best;
+  }
+
+  function easyMove(s){
+    var ms = legal(s);
+    if(!ms.length) return null;
+    var good = [], i, m, u, def, gain;
+    for(i=0;i<ms.length;i++){
+      m = ms[i];
+      if(m.c === EMPTY) continue;
+      u = make(s, m);
+      def = attacked(s, m.t, s.turn);
+      unmake(s, m, u);
+      gain = VAL[m.c.toUpperCase()] - (def ? VAL[m.p.toUpperCase()] : 0);
+      if(gain > 0) good.push(m);
+    }
+    if(good.length) return good[(Math.random() * good.length) | 0];
+    return ms[(Math.random() * ms.length) | 0];
+  }
+
+  function pickMove(s, mode){
+    if(mode === 'e') return easyMove(s);
+    if(mode === 'm') return searchBest(s, 2);
+    return searchBest(s, 3);
+  }
+
+  /* ---------------- game state ---------------- */
+  var AUTO = /[?&]chauto\b/.test(location.search);
+  var AI_SIDE = 'b';
+  var mode = '2p', flipped = false, sel = -1, dots = [], lastMove = null,
+      over = false, thinking = false, hist = [], keys = [], pendingPromo = null, timer = 0;
+  var rec = { w:0, l:0, d:0 };
+
+  function posKey(){
+    return st.b.join('') + st.turn + (st.cw.K?'K':'') + (st.cw.Q?'Q':'') +
+           (st.cw.k?'k':'') + (st.cw.q?'q':'') + ':' + st.ep;
+  }
+  function snap(){
+    return { b: st.b.slice(), turn: st.turn, K:st.cw.K, Q:st.cw.Q, k:st.cw.k, q:st.cw.q,
+             ep: st.ep, half: st.half, full: st.full, last: lastMove };
+  }
+  function restore(sn){
+    st.b = sn.b.slice(); st.turn = sn.turn;
+    st.cw.K = sn.K; st.cw.Q = sn.Q; st.cw.k = sn.k; st.cw.q = sn.q;
+    st.ep = sn.ep; st.half = sn.half; st.full = sn.full;
+    lastMove = sn.last;
+  }
+
+  function loadRec(){
+    try{
+      var raw = localStorage.getItem('cq_chess_rec');
+      if(raw){
+        var o = JSON.parse(raw);
+        if(o && typeof o === 'object'){
+          rec.w = o.w | 0; rec.l = o.l | 0; rec.d = o.d | 0;
+        }
+      }
+    }catch(e){}
+  }
+  function saveRec(){
+    try{ localStorage.setItem('cq_chess_rec', JSON.stringify(rec)); }catch(e){}
+  }
+  function drawRec(){
+    if(pillW) pillW.textContent = T('Wins: ', 'Victoires : ') + rec.w;
+    if(pillL) pillL.textContent = T('Losses: ', 'Défaites : ') + rec.l;
+    if(pillD) pillD.textContent = T('Draws: ', 'Parties nulles : ') + rec.d;
+  }
+
+  /* ---------------- rendering ---------------- */
+  var cells = [];
+  function buildBoard(){
+    boardEl.textContent = '';
+    cells = [];
+    for(var d=0; d<64; d++){
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'ch-sq';
+      btn.setAttribute('data-d', String(d));
+      boardEl.appendChild(btn);
+      cells.push(btn);
+    }
+  }
+
+  function toDisp(i){ return flipped ? 63 - i : i; }
+  function toIdx(d){ return flipped ? 63 - d : d; }
+
+  function render(){
+    var chkSq = inCheck(st, st.turn) ? kingSq(st, st.turn) : -1;
+    for(var d=0; d<64; d++){
+      var i = toIdx(d), cell = cells[d];
+      if(!cell) continue;
+      var r = i >> 3, c = i & 7, p = st.b[i];
+      var cls = 'ch-sq ' + (((r + c) & 1) ? 'ch-dk' : 'ch-lt');
+      if(lastMove && (i === lastMove.f || i === lastMove.t)) cls += ' ch-last';
+      if(i === chkSq) cls += ' ch-chk';
+      if(i === sel) cls += ' ch-sel';
+      if(dots.indexOf(i) >= 0) cls += (p === EMPTY ? ' ch-dot' : ' ch-dot ch-dotcap');
+      if(p !== EMPTY) cls += colorOf(p) === 'w' ? ' ch-w' : ' ch-b';
+      cell.className = cls;
+      cell.textContent = p === EMPTY ? '' : GLYPH[p];
+      cell.setAttribute('aria-label', sqName(i));
+    }
+    boardEl.className = 'ch-board' + ((over || thinking) ? ' ch-lock' : '');
+    drawTaken();
+  }
+
+  function sqName(i){ return 'abcdefgh'.charAt(i & 7) + (8 - (i >> 3)); }
+
+  var FULL = { P:8, N:2, B:2, R:2, Q:1 };
+  function drawTaken(){
+    var have = { w:{P:0,N:0,B:0,R:0,Q:0}, b:{P:0,N:0,B:0,R:0,Q:0} }, i, p, up;
+    for(i=0;i<64;i++){
+      p = st.b[i];
+      if(p === EMPTY) continue;
+      up = p.toUpperCase();
+      if(up === 'K') continue;
+      have[colorOf(p)][up]++;
+    }
+    var lostW = [], lostB = [], scW = 0, scB = 0, k, n;
+    var order2 = ['Q','R','B','N','P'];
+    for(i=0;i<order2.length;i++){
+      k = order2[i];
+      n = FULL[k] - have.w[k];
+      while(n-- > 0){ lostW.push(k); scW += VAL[k]; }
+      n = FULL[k] - have.b[k];
+      while(n-- > 0){ lostB.push(k.toLowerCase()); scB += VAL[k]; }
+    }
+    /* lostB = black pieces captured by White; lostW = white pieces captured by Black */
+    var bottom = flipped ? lostW : lostB;   /* trophies of the player at the bottom */
+    var top = flipped ? lostB : lostW;
+    var bottomAdv = flipped ? (scW - scB) : (scB - scW);
+    var topAdv = -bottomAdv;
+    fillTaken(botEl, bottom, bottomAdv);
+    fillTaken(topEl, top, topAdv);
+  }
+
+  function fillTaken(el, arr, adv){
+    if(!el) return;
+    el.textContent = '';
+    for(var i=0;i<arr.length;i++){
+      var s2 = document.createElement('span');
+      s2.className = arr[i] < 'a' ? 'ch-w' : 'ch-b';
+      s2.textContent = GLYPH[arr[i]];
+      el.appendChild(s2);
+    }
+    if(adv > 0){
+      var pl = document.createElement('span');
+      pl.className = 'ch-plus';
+      pl.textContent = '+' + Math.round(adv / 100);
+      el.appendChild(pl);
+    }
+    if(!arr.length && adv <= 0) el.appendChild(document.createTextNode(' '));
+  }
+
+  function say(txt){ if(statusEl) statusEl.textContent = txt; }
+
+  /* ---------------- game flow ---------------- */
+  function repCount(){
+    var k = posKey(), n = 0;
+    for(var i=0;i<keys.length;i++) if(keys[i] === k) n++;
+    return n;
+  }
+
+  function insufficient(){
+    var men = [], i, p, up;
+    for(i=0;i<64;i++){
+      p = st.b[i];
+      if(p === EMPTY) continue;
+      up = p.toUpperCase();
+      if(up === 'K') continue;
+      men.push(up);
+    }
+    if(men.length === 0) return true;
+    if(men.length === 1 && (men[0] === 'N' || men[0] === 'B')) return true;
+    return false;
+  }
+
+  function finish(kind){
+    over = true;
+    sel = -1; dots = [];
+    var vs = (mode !== '2p');
+    if(kind === 'mate'){
+      var loser = st.turn;                 /* side to move is mated */
+      if(vs){
+        if(loser === AI_SIDE){ rec.w++; say(T('Checkmate — you win!', 'Échec et mat — vous gagnez !')); }
+        else { rec.l++; say(T('Checkmate — the computer wins.', 'Échec et mat — l’ordinateur gagne.')); }
+        saveRec(); drawRec();
+      } else {
+        say(loser === 'b' ? T('Checkmate — White wins!', 'Échec et mat — les blancs gagnent !')
+                          : T('Checkmate — Black wins!', 'Échec et mat — les noirs gagnent !'));
+      }
+    } else {
+      if(vs){ rec.d++; saveRec(); drawRec(); }
+      if(kind === 'stale') say(T('Stalemate — the game is a draw.', 'Pat — la partie est nulle.'));
+      else if(kind === '50') say(T('Draw — 50 moves with no capture or pawn move.', 'Partie nulle — 50 coups sans prise ni coup de pion.'));
+      else if(kind === 'rep') say(T('Draw — the same position happened three times.', 'Partie nulle — la même position s’est produite trois fois.'));
+      else say(T('Draw — not enough pieces left to checkmate.', 'Partie nulle — il ne reste pas assez de pièces pour mater.'));
+    }
+    render();
+  }
+
+  function checkEnd(){
+    var ms = legal(st);
+    if(!ms.length){ finish(inCheck(st, st.turn) ? 'mate' : 'stale'); return true; }
+    if(st.half >= 100){ finish('50'); return true; }
+    if(repCount() >= 3){ finish('rep'); return true; }
+    if(insufficient()){ finish('draw'); return true; }
+    return false;
+  }
+
+  function turnText(){
+    var chk = inCheck(st, st.turn);
+    if(mode !== '2p'){
+      if(st.turn === AI_SIDE) return chk ? T('Check — the computer must move.', 'Échec — l’ordinateur doit jouer.')
+                                         : T('Computer is up.', 'C’est à l’ordinateur.');
+      return chk ? T('Check! Your king is in danger.', 'Échec ! Votre roi est en danger.')
+                 : T('Your turn — you play White.', 'À votre tour — vous jouez les blancs.');
+    }
+    if(st.turn === 'w') return chk ? T('Check — White to move.', 'Échec — aux blancs de jouer.')
+                                   : T('White to move.', 'Aux blancs de jouer.');
+    return chk ? T('Check — Black to move.', 'Échec — aux noirs de jouer.')
+               : T('Black to move.', 'Aux noirs de jouer.');
+  }
+
+  function aiToMove(){
+    if(mode === '2p') return false;
+    return AUTO || st.turn === AI_SIDE;
+  }
+
+  function afterMove(){
+    sel = -1; dots = [];
+    keys.push(posKey());
+    render();
+    if(checkEnd()) return;
+    say(turnText());
+    if(aiToMove()) scheduleAI();
+  }
+
+  function scheduleAI(){
+    thinking = true;
+    say(T('Thinking…', 'Réflexion…'));
+    render();
+    if(timer) clearTimeout(timer);
+    timer = setTimeout(function(){
+      timer = 0;
+      try{
+        var m = pickMove(st, mode === '2p' ? 'h' : mode);
+        thinking = false;
+        if(!m){ render(); checkEnd(); return; }
+        hist.push(snap());
+        make(st, m);
+        lastMove = { f:m.f, t:m.t };
+        afterMove();
+      }catch(err){
+        thinking = false;
+        say(T('Your turn.', 'À votre tour.'));
+        render();
+      }
+    }, 30);
+  }
+
+  function humanCanMove(){
+    return !over && !thinking && !pendingPromo && (mode === '2p' || (!AUTO && st.turn !== AI_SIDE));
+  }
+
+  function movesFrom(i){
+    var ms = legal(st), out = [];
+    for(var j=0;j<ms.length;j++) if(ms[j].f === i) out.push(ms[j]);
+    return out;
+  }
+
+  function applyMove(m){
+    hist.push(snap());
+    make(st, m);
+    lastMove = { f:m.f, t:m.t };
+    afterMove();
+  }
+
+  function onSquare(d){
+    if(!humanCanMove()) return;
+    var i = toIdx(d), p = st.b[i];
+    if(sel >= 0){
+      var opts = movesFrom(sel), pick = [], j;
+      for(j=0;j<opts.length;j++) if(opts[j].t === i) pick.push(opts[j]);
+      if(pick.length){
+        if(pick.length > 1 && pick[0].pr){ askPromo(pick); return; }
+        applyMove(pick[0]);
+        return;
+      }
+    }
+    if(p !== EMPTY && colorOf(p) === st.turn){
+      sel = i;
+      dots = [];
+      var mv = movesFrom(i);
+      for(j=0;j<mv.length;j++) if(dots.indexOf(mv[j].t) < 0) dots.push(mv[j].t);
+    } else { sel = -1; dots = []; }
+    render();
+  }
+
+  function askPromo(list){
+    pendingPromo = list;
+    if(promoT) promoT.textContent = T('Make your pawn a…', 'Transformez votre pion en…');
+    if(promoEl) promoEl.hidden = false;
+    say(T('Choose a piece for your pawn.', 'Choisissez une pièce pour votre pion.'));
+    render();
+  }
+
+  function choosePromo(letter){
+    var list = pendingPromo;
+    pendingPromo = null;
+    if(promoEl) promoEl.hidden = true;
+    if(!list || !list.length) return;
+    var want = (letter || 'q').toLowerCase(), chosen = list[0], i;
+    for(i=0;i<list.length;i++){
+      if(list[i].pr && list[i].pr.toLowerCase() === want){ chosen = list[i]; break; }
+    }
+    applyMove(chosen);
+  }
+
+  function stepBack(){
+    restore(hist.pop());
+    if(keys.length > 1) keys.pop();
+  }
+
+  function undo(){
+    if(thinking || !hist.length) return;
+    if(timer){ clearTimeout(timer); timer = 0; }
+    pendingPromo = null;
+    if(promoEl) promoEl.hidden = true;
+    stepBack();
+    if(mode !== '2p' && !AUTO){
+      while(hist.length && st.turn === AI_SIDE) stepBack();
+    }
+    over = false; thinking = false; sel = -1; dots = [];
+    render();
+    say(turnText());
+  }
+
+  function newGame(){
+    if(timer){ clearTimeout(timer); timer = 0; }
+    st = freshState();
+    sel = -1; dots = []; lastMove = null; over = false; thinking = false;
+    hist = []; keys = []; pendingPromo = null;
+    if(promoEl) promoEl.hidden = true;
+    keys.push(posKey());
+    render();
+    say(turnText());
+    if(aiToMove()) scheduleAI();
+  }
+
+  /* ---------------- wiring ---------------- */
+  boardEl.addEventListener('click', function(ev){
+    var t = ev.target;
+    while(t && t !== boardEl && !t.getAttribute) t = t.parentNode;
+    if(!t || t === boardEl) return;
+    var d = t.getAttribute('data-d');
+    if(d === null && t.parentNode && t.parentNode.getAttribute) d = t.parentNode.getAttribute('data-d');
+    if(d === null) return;
+    try{ onSquare(parseInt(d, 10)); }catch(e){}
+  });
+
+  var pbtns = [['ch-pq','q'],['ch-pr','r'],['ch-pb','b'],['ch-pn','n']];
+  var pnames = { q:[ 'Queen','Dame' ], r:['Rook','Tour'], b:['Bishop','Fou'], n:['Knight','Cavalier'] };
+  (function(){
+    for(var i=0;i<pbtns.length;i++){
+      (function(pair){
+        var el = $(pair[0]);
+        if(!el) return;
+        el.setAttribute('aria-label', T(pnames[pair[1]][0], pnames[pair[1]][1]));
+        el.setAttribute('title', T(pnames[pair[1]][0], pnames[pair[1]][1]));
+        el.addEventListener('click', function(){ try{ choosePromo(pair[1]); }catch(e){} });
+      })(pbtns[i]);
+    }
+  })();
+
+  if(flipB) flipB.addEventListener('click', function(){ flipped = !flipped; render(); });
+  if(undoB) undoB.addEventListener('click', function(){ try{ undo(); }catch(e){} });
+  if(newB) newB.addEventListener('click', function(){ try{ newGame(); }catch(e){} });
+  if(modeEl) modeEl.addEventListener('change', function(){
+    mode = modeEl.value || '2p';
+    try{ newGame(); }catch(e){}
+  });
+
+  loadRec();
+  drawRec();
+  buildBoard();
+  if(modeEl) mode = modeEl.value || '2p';
+  newGame();
+})();
+</script>
+  <script src="../js/game-fullscreen.js?v=20260802"></script>
+  <script src="../js/site.js?v=20260802"></script>
+  <script src="../js/analytics.js?v=20260802"></script>
+</body>
+</html>

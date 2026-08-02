@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map of Canada Quiz — Provinces, Territories and Capitals | Canada Quiz</title>
+<meta name="description" content="Free map of Canada quiz with no signup. Find all 13 provinces and territories, name them, learn every capital city and explore fun facts. Works on any phone.">
+<meta property="og:title" content="Map of Canada Quiz — Provinces, Territories and Capitals | Canada Quiz">
+<meta property="og:description" content="Free map of Canada quiz with no signup. Find all 13 provinces and territories, name them, learn every capital city and explore fun facts. Works on any phone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/canada-map.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=20260802">
+<style>
+.cm-wrap{max-width:680px;margin:0 auto}
+.cm-modes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:6px 0 4px}
+.cm-modes button{width:100%;min-height:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.15}
+.cm-modes small{font-weight:600;font-size:.72rem;opacity:.85}
+.cm-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:2px 0 8px}
+.cm-bar .cm-tag{font-weight:800;font-size:.85rem;color:var(--muted)}
+.cm-q{flex:1 1 100%;order:-1;text-align:center;font-weight:800;font-size:1.02rem;color:var(--ink);min-height:2.4em;display:flex;align-items:center;justify-content:center}
+.cm-mapbox{width:100%;background:#e7f2fa;border:2px solid var(--line);border-radius:var(--radius);overflow:hidden;touch-action:manipulation}
+.cm-map{display:block;width:100%;height:auto}
+.cm-p{stroke:#ffffff;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round;cursor:pointer;transition:fill .18s ease,filter .18s ease}
+.cm-map.cm-lock .cm-p{cursor:default}
+.cm-p:hover,.cm-p.cm-hot{filter:brightness(1.16) saturate(1.1)}
+.cm-map.cm-dim .cm-p{fill:#d9e2ea}
+.cm-p.cm-lit{fill:var(--red)!important;stroke:var(--ink);stroke-width:4}
+.cm-p.cm-bad{fill:var(--red-dark)!important;stroke:var(--ink);stroke-width:4}
+.cm-p.cm-good{fill:var(--green-dark)!important;stroke:var(--ink);stroke-width:4}
+.cm-p.cm-sel{stroke:var(--ink);stroke-width:4.5}
+.cm-water{fill:#bfdcef;pointer-events:none}
+.cm-usa{fill:#e9e4db;pointer-events:none}
+.cm-lab{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:800;font-size:17px;fill:#1f2a36;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:#ffffff;stroke-width:3.6;stroke-linejoin:round}
+.cm-opts{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+@media(min-width:420px){.cm-opts{grid-template-columns:1fr 1fr}}
+.cm-opt{display:block;width:100%;min-height:48px;padding:12px 14px;border:2px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font:inherit;font-weight:700;font-size:.98rem;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.cm-opt:hover{border-color:var(--blue)}
+.cm-opt.cm-ok{background:var(--green);border-color:var(--green-dark);color:#fff}
+.cm-opt.cm-no{background:var(--red);border-color:var(--red-dark);color:#fff}
+.cm-opt[disabled]{cursor:default;opacity:.95}
+.cm-card{margin-top:10px;border:2px solid var(--line);border-radius:var(--radius);background:var(--card);padding:12px 14px;text-align:left}
+.cm-card h3{margin:0 0 4px;font-size:1.15rem;color:var(--ink)}
+.cm-meta{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 8px}
+.cm-chip{display:inline-block;padding:4px 10px;border-radius:999px;background:#f1f5f9;color:var(--ink);font-weight:700;font-size:.82rem}
+.cm-card ul{margin:0;padding-left:20px}
+.cm-card li{margin:4px 0;color:var(--muted);font-weight:600}
+.cm-res{text-align:center}
+.cm-res .cm-big{font-size:2rem;font-weight:900;color:var(--ink);margin:6px 0}
+.cm-miss{text-align:left;margin:10px 0 0;padding:0;list-style:none}
+.cm-miss li{padding:7px 10px;border-bottom:1px solid var(--line);font-weight:600;color:var(--muted);font-size:.92rem}
+.cm-miss li:last-child{border-bottom:0}
+.cm-hide{display:none!important}
+.cm-foot{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/canada-map.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/canada-map.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/canada-map.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/canada-map.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🍁 Map of Canada</h1>
+    <p>Find all 13 provinces and territories, name them, and learn every capital.</p>
+  <details class="howto"><summary></summary><p>Pick a mode, then play 13 rounds. In Find It you tap the province or territory we name; in Name It and Capital Cities you choose the right answer out of four. Explore the Map lets you tap any place for its capital, its two-letter code and two facts.</p></details>
+
+  </section>
+
+  <div class="panel" data-fs-host>
+    <div class="cm-wrap">
+
+      <div id="cm-menu">
+        <p class="center muted" style="margin:0 0 8px;font-weight:700">Choose a game mode</p>
+        <div class="cm-modes">
+          <button class="btn btn-blue" id="cm-m-find" type="button">Find It<small>Tap the right place</small></button>
+          <button class="btn btn-green" id="cm-m-name" type="button">Name It<small>Pick the right name</small></button>
+          <button class="btn btn-purple" id="cm-m-cap" type="button">Capital Cities<small>Pick the right capital</small></button>
+          <button class="btn btn-orange" id="cm-m-exp" type="button">Explore the Map<small>Facts about every place</small></button>
+        </div>
+      </div>
+
+      <div id="cm-play" class="cm-hide">
+        <div class="cm-bar">
+          <div class="cm-q" id="cm-q" data-no-i18n></div>
+          <span class="cm-tag" id="cm-round" data-no-i18n></span>
+          <span class="cm-tag" id="cm-score" data-no-i18n></span>
+        </div>
+
+        <div class="cm-mapbox">
+          <svg class="cm-map" id="cm-svg" viewBox="80 135 880 640" role="img" aria-label="Map of Canada" preserveAspectRatio="xMidYMid meet">
+            <path class="cm-usa" d="M243,588 L517,588 L530,586 L550,584 L572,588 L588,596 L600,606 L608,616 L618,624 L622,638 L620,654 L626,668 L636,678 L648,684 L660,686 L672,682 L686,674 L698,666 L706,654 L732,652 L744,664 L748,686 L740,708 L726,726 L712,742 L700,762 L280,762 L252,700 L238,646 L240,608 Z"></path>
+            <g id="cm-shapes">
+              <path class="cm-p" id="cm-s-YT" data-id="YT" fill="#4895ef" d="M97,390 L268,390 L232,344 L196,303 L162,270 L97,275 Z"></path>
+              <path class="cm-p" id="cm-s-NT" data-id="NT" fill="#ffb703" d="M268,390 L453,390 L414,329 L396,285 L364,280 L340,268 L334,237 L314,211 L286,206 L266,227 L272,262 L240,270 L206,265 L176,265 L162,270 L196,303 L232,344 Z"></path>
+              <path class="cm-p" id="cm-s-NU" data-id="NU" fill="#2a9d8f" d="M453,390 L521,390 L530,356 L541,324 L558,302 L580,288 L600,275 L620,260 L644,270 L664,293 L692,303 L722,293 L752,268 L776,232 L784,193 L764,165 L730,157 L694,175 L662,206 L636,224 L620,211 L586,186 L546,160 L500,147 L452,163 L410,186 L374,214 L348,242 L340,268 L364,280 L396,285 L414,329 Z"></path>
+              <path class="cm-p" id="cm-s-BC" data-id="BC" fill="#2a9d8f" d="M150,390 L288,390 L288,498 L343,588 L243,588 L226,564 L206,521 L188,475 L168,431 Z"></path>
+              <path class="cm-p" id="cm-s-AB" data-id="AB" fill="#8e7dbe" d="M288,390 L380,390 L380,588 L343,588 L288,498 Z"></path>
+              <path class="cm-p" id="cm-s-SK" data-id="SK" fill="#4895ef" d="M380,390 L453,390 L453,588 L380,588 Z"></path>
+              <path class="cm-p" id="cm-s-MB" data-id="MB" fill="#f4845f" d="M453,390 L521,390 L528,413 L540,436 L552,454 L536,490 L521,534 L517,588 L453,588 Z"></path>
+              <path class="cm-p" id="cm-s-ON" data-id="ON" fill="#8e7dbe" d="M552,454 L588,480 L616,493 L622,526 L632,557 L652,567 L663,623 L706,654 L698,666 L686,674 L672,682 L660,686 L648,684 L636,678 L626,668 L620,654 L622,638 L618,624 L608,616 L600,606 L588,596 L572,588 L550,584 L530,586 L517,588 L521,534 L536,490 Z"></path>
+              <path class="cm-p" id="cm-s-QC" data-id="QC" fill="#4895ef" d="M652,567 L664,536 L662,500 L652,465 L648,429 L654,396 L668,370 L688,357 L716,355 L742,360 L764,367 L768,403 L777,426 L788,406 L793,385 L781,426 L770,467 L761,503 L757,534 L790,541 L818,549 L840,552 L806,559 L776,572 L750,588 L728,605 L718,618 L746,618 L772,611 L796,600 L818,590 L802,605 L784,613 L766,621 L750,626 L732,652 L703,654 L663,623 Z"></path>
+              <path class="cm-p" id="cm-s-NL" data-id="NL" fill="#f4845f" d="M793,385 L812,416 L826,449 L838,485 L846,524 L840,552 L818,549 L790,541 L757,534 L761,503 L770,467 L781,426 Z M876,530 L916,522 L940,562 L928,606 L898,622 L876,600 L868,562 Z"></path>
+              <path class="cm-p" id="cm-s-NB" data-id="NB" fill="#2a9d8f" d="M722,610 L792,618 L800,656 L784,694 L752,704 L722,678 L718,640 Z"></path>
+              <path class="cm-p" id="cm-s-PE" data-id="PE" fill="#ffb703" d="M806,596 L850,588 L860,614 L834,634 L808,624 Z"></path>
+              <path class="cm-p" id="cm-s-NS" data-id="NS" fill="#8e7dbe" d="M792,702 L822,682 L856,690 L884,708 L904,740 L880,760 L850,740 L820,734 L798,722 L782,712 Z"></path>
+            </g>
+            <g id="cm-waters">
+              <path class="cm-water" d="M521,390 L530,356 L541,324 L558,302 L580,288 L604,291 L630,314 L656,339 L688,357 L668,370 L654,396 L648,429 L652,465 L662,500 L664,536 L652,567 L632,557 L622,526 L616,493 L588,480 L552,454 L540,436 L528,413 Z"></path>
+              <path class="cm-water" d="M718,618 L728,605 L750,588 L776,572 L806,559 L840,552 L852,570 L820,585 L796,598 L772,608 L746,616 Z"></path>
+              <path class="cm-water" d="M500,600 L512,589 L532,586 L554,584 L576,589 L592,600 L584,614 L560,621 L532,620 L510,612 Z"></path>
+              <path class="cm-water" d="M552,632 L570,630 L578,656 L576,684 L566,706 L554,704 L548,678 L548,654 Z"></path>
+              <path class="cm-water" d="M580,634 L598,626 L610,616 L619,622 L609,637 L606,652 L612,666 L602,678 L586,676 L578,658 Z"></path>
+              <path class="cm-water" d="M614,690 L634,682 L654,679 L672,684 L668,695 L644,700 L622,698 Z"></path>
+              <path class="cm-water" d="M676,673 L692,665 L706,664 L712,671 L703,681 L686,681 Z"></path>
+              <path class="cm-water" d="M486,498 L498,494 L506,512 L508,538 L502,562 L492,566 L484,544 L482,520 Z"></path>
+              <path class="cm-water" d="M282,328 L296,318 L312,322 L318,334 L308,346 L292,346 L282,338 Z"></path>
+              <path class="cm-water" d="M312,368 L330,360 L350,362 L358,372 L346,382 L326,382 L314,376 Z"></path>
+            </g>
+            <g id="cm-labels" class="cm-hide"></g>
+          </svg>
+        </div>
+
+        <div class="cm-opts cm-hide" id="cm-opts"></div>
+        <div class="cm-card cm-hide" id="cm-card" data-no-i18n></div>
+        <p class="center muted cm-hide" id="cm-hint" style="margin:10px 0 0;font-weight:700">Tap any province or territory on the map.</p>
+      </div>
+
+      <div id="cm-res" class="cm-res cm-hide">
+        <div class="cm-big" id="cm-res-score" data-no-i18n></div>
+        <p class="muted" id="cm-res-best" style="margin:0;font-weight:700" data-no-i18n></p>
+        <p id="cm-res-head" style="margin:12px 0 0;font-weight:800;color:var(--ink)" data-no-i18n></p>
+        <ul class="cm-miss" id="cm-res-list" data-no-i18n></ul>
+      </div>
+
+      <div class="cm-foot">
+        <button class="btn btn-ghost cm-hide" id="cm-back" type="button">Back to Modes</button>
+        <button class="btn btn-green cm-hide" id="cm-again" type="button">Play Again</button>
+      </div>
+
+    </div>
+
+    <div style="margin-top:14px">
+      <button class="btn" id="cm-new">New Game</button>
+      <a class="btn btn-ghost" href="games.html">All Games</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <details class="footer-map">
+      <summary>All pages <span class="fm-count">(81)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <h4>Quizzes</h4>
+        <a href="quizzes.html">All Quizzes</a>
+        <a href="gk-quiz.html">General Knowledge</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Fun Canada Quiz</a>
+        <a href="province-quiz.html">Which Province Are You?</a>
+        <a href="world-quiz.html">World Quiz</a>
+        <a href="science-quiz.html">Science &amp; Space</a>
+        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
+        <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Driving Test Practice</h4>
+        <a href="driving-test.html">Canada Driving Test</a>
+        <a href="ontario-g1-practice-test.html">Ontario G1 Practice Test</a>
+        <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
+        <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
+        <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Brain &amp; Puzzle Games</h4>
+        <a href="word-master.html">Word Master</a>
+        <a href="word-search.html">Word Search</a>
+        <a href="word-guess.html">Word Guess</a>
+        <a href="scramble.html">Word Scramble</a>
+        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="crossword.html">Crossword</a>
+        <a href="connections.html">Word Groups</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Minesweeper</a>
+        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Memory Match</a>
+        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="typing-test.html">Typing Speed Test</a>
+        <a href="color-match.html">Color Match</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="flags-game.html">Flags of the World</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Action &amp; Classic Games</h4>
+        <a href="snake.html">Maple Snake</a>
+        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
+        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="checkers.html">Checkers</a>
+        <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="tag.html">Tag</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Party Games</h4>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposter</a>
+        <a href="would-you-rather.html">Would You Rather?</a>
+        <a href="trivia-showdown.html">Trivia Showdown</a>
+        <a href="hold-to-head.html">Hold to Head</a>
+        <a href="top-answers.html">Top Answers</a>
+        <a href="categories-game.html">Categories</a>
+        <a href="story-maker.html">Story Maker</a>
+        <a href="draw-it.html">Draw It</a>
+        <a href="spin-wheel.html">Spin the Wheel</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Blog</h4>
+        <a href="blog.html">All Articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
+        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
+        <a href="what-is-confederation.html">What Is Confederation?</a>
+        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
+        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
+        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
+        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
+        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
+        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
+        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
+        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
+        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
+        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>The Site</h4>
+        <a href="index.html">Home</a>
+        <a href="daily.html">Daily Challenge</a>
+        <a href="games.html">All Family Games</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr){ return FR ? fr : en; }
+  function $(id){ return document.getElementById(id); }
+
+  var P = [
+    { id:'BC', en:'British Columbia', fr:'Colombie-Britannique', de:'de la Colombie-Britannique',
+      cap:'Victoria', capFr:'Victoria', ab:'BC', lx:215, ly:493,
+      f1:'It is the only province that touches the Pacific Ocean.',
+      f1f:'C’est la seule province qui touche l’océan Pacifique.',
+      f2:'The Rocky Mountains run along its eastern edge.',
+      f2f:'Les montagnes Rocheuses longent sa bordure est.' },
+    { id:'AB', en:'Alberta', fr:'Alberta', de:'de l’Alberta',
+      cap:'Edmonton', capFr:'Edmonton', ab:'AB', lx:330, ly:493,
+      f1:'Banff, Canada’s first national park, sits in the Alberta Rockies.',
+      f1f:'Banff, le premier parc national du Canada, se trouve dans les Rocheuses albertaines.',
+      f2:'Dinosaur Provincial Park holds one of the world’s richest dinosaur fossil beds.',
+      f2f:'Le parc provincial Dinosaur abrite l’un des gisements de fossiles de dinosaures les plus riches au monde.' },
+    { id:'SK', en:'Saskatchewan', fr:'Saskatchewan', de:'de la Saskatchewan',
+      cap:'Regina', capFr:'Regina', ab:'SK', lx:416, ly:493,
+      f1:'Its name comes from a Cree word meaning “swift-flowing river”.',
+      f1f:'Son nom vient d’un mot cri qui signifie « rivière au courant rapide ».',
+      f2:'It is one of only two provinces with completely straight-line borders.',
+      f2f:'C’est l’une des deux seules provinces dont les frontières sont entièrement en ligne droite.' },
+    { id:'MB', en:'Manitoba', fr:'Manitoba', de:'du Manitoba',
+      cap:'Winnipeg', capFr:'Winnipeg', ab:'MB', lx:478, ly:506,
+      f1:'The town of Churchill, on Hudson Bay, is known as the polar bear capital of the world.',
+      f1f:'La ville de Churchill, sur la baie d’Hudson, est surnommée la capitale mondiale de l’ours polaire.',
+      f2:'It has more than one hundred thousand lakes.',
+      f2f:'Elle compte plus de cent mille lacs.' },
+    { id:'ON', en:'Ontario', fr:'Ontario', de:'de l’Ontario',
+      cap:'Toronto', capFr:'Toronto', ab:'ON', lx:580, ly:540,
+      f1:'Four of the five Great Lakes touch its shores.',
+      f1f:'Quatre des cinq Grands Lacs bordent ses rives.',
+      f2:'Ottawa, the capital of Canada, is in Ontario.',
+      f2f:'Ottawa, la capitale du Canada, se trouve en Ontario.' },
+    { id:'QC', en:'Quebec', fr:'Québec', de:'du Québec',
+      cap:'Quebec City', capFr:'Québec', ab:'QC', lx:700, ly:493,
+      f1:'French is the official language of the province.',
+      f1f:'Le français est la langue officielle de la province.',
+      f2:'It is the largest province in Canada by land area.',
+      f2f:'C’est la plus grande province du Canada par sa superficie.' },
+    { id:'NB', en:'New Brunswick', fr:'Nouveau-Brunswick', de:'du Nouveau-Brunswick',
+      cap:'Fredericton', capFr:'Fredericton', ab:'NB', lx:760, ly:660,
+      f1:'It is the only officially bilingual province in Canada.',
+      f1f:'C’est la seule province officiellement bilingue du Canada.',
+      f2:'The Bay of Fundy, on its coast, has the highest tides in the world.',
+      f2f:'La baie de Fundy, sur sa côte, connaît les plus hautes marées du monde.' },
+    { id:'NS', en:'Nova Scotia', fr:'Nouvelle-Écosse', de:'de la Nouvelle-Écosse',
+      cap:'Halifax', capFr:'Halifax', ab:'NS', lx:846, ly:724,
+      f1:'Its name is Latin for “New Scotland”.',
+      f1f:'Son nom signifie « Nouvelle-Écosse » en latin.',
+      f2:'It is almost an island — a narrow strip of land joins it to New Brunswick.',
+      f2f:'C’est presque une île : une mince bande de terre la relie au Nouveau-Brunswick.' },
+    { id:'PE', en:'Prince Edward Island', fr:'Île-du-Prince-Édouard', de:'de l’Île-du-Prince-Édouard',
+      cap:'Charlottetown', capFr:'Charlottetown', ab:'PE', lx:832, ly:614,
+      f1:'It is the smallest province in Canada.',
+      f1f:'C’est la plus petite province du Canada.',
+      f2:'Its red soil and the story of Anne of Green Gables made the island famous.',
+      f2f:'Sa terre rouge et l’histoire d’Anne… la maison aux pignons verts ont rendu l’île célèbre.' },
+    { id:'NL', en:'Newfoundland and Labrador', fr:'Terre-Neuve-et-Labrador', de:'de Terre-Neuve-et-Labrador',
+      cap:'St. John’s', capFr:'St. John’s', ab:'NL', lx:790, ly:510,
+      f1:'It is made of two parts: the island of Newfoundland and mainland Labrador.',
+      f1f:'Elle est formée de deux parties : l’île de Terre-Neuve et le Labrador continental.',
+      f2:'It has its own time zone, half an hour ahead of Atlantic Time.',
+      f2f:'Elle a son propre fuseau horaire, une demi-heure en avance sur l’heure de l’Atlantique.' },
+    { id:'YT', en:'Yukon', fr:'Yukon', de:'du Yukon',
+      cap:'Whitehorse', capFr:'Whitehorse', ab:'YT', lx:150, ly:365,
+      f1:'Mount Logan, the highest mountain in Canada, stands in Yukon.',
+      f1f:'Le mont Logan, la plus haute montagne du Canada, se dresse au Yukon.',
+      f2:'The Klondike Gold Rush drew thousands of prospectors to Dawson City in 1898.',
+      f2f:'La ruée vers l’or du Klondike a attiré des milliers de prospecteurs à Dawson en 1898.' },
+    { id:'NT', en:'Northwest Territories', fr:'Territoires du Nord-Ouest', de:'des Territoires du Nord-Ouest',
+      cap:'Yellowknife', capFr:'Yellowknife', ab:'NT', lx:280, ly:357,
+      f1:'The Mackenzie River, the longest river in Canada, flows north to the Arctic Ocean.',
+      f1f:'Le fleuve Mackenzie, le plus long cours d’eau du Canada, coule vers le nord jusqu’à l’océan Arctique.',
+      f2:'Great Bear Lake, the largest lake entirely inside Canada, is here.',
+      f2f:'Le Grand lac de l’Ours, le plus grand lac entièrement en territoire canadien, s’y trouve.' },
+    { id:'NU', en:'Nunavut', fr:'Nunavut', de:'du Nunavut',
+      cap:'Iqaluit', capFr:'Iqaluit', ab:'NU', lx:470, ly:352,
+      f1:'Nunavut means “our land” in Inuktitut.',
+      f1f:'Nunavut signifie « notre terre » en inuktitut.',
+      f2:'It was created in 1999 out of the eastern Northwest Territories.',
+      f2f:'Il a été créé en 1999 à partir de l’est des Territoires du Nord-Ouest.' }
+  ];
+
+  function nameOf(p){ return FR ? p.fr : p.en; }
+  function capOf(p){ return FR ? p.capFr : p.cap; }
+  function factsOf(p){ return FR ? [p.f1f, p.f2f] : [p.f1, p.f2]; }
+  function byId(id){ for (var i=0;i<P.length;i++){ if (P[i].id===id) return P[i]; } return null; }
+
+  var KEY = 'cq_cmap_best';
+  function readBest(){
+    try { var r = window.localStorage.getItem(KEY); var o = r ? JSON.parse(r) : null;
+          return (o && typeof o === 'object') ? o : {}; } catch(e){ return {}; }
+  }
+  function writeBest(o){ try { window.localStorage.setItem(KEY, JSON.stringify(o)); } catch(e){} }
+
+  var svg    = $('cm-svg'),
+      gShape = $('cm-shapes'),
+      gLab   = $('cm-labels'),
+      menu   = $('cm-menu'),
+      play   = $('cm-play'),
+      res    = $('cm-res'),
+      qEl    = $('cm-q'),
+      rEl    = $('cm-round'),
+      sEl    = $('cm-score'),
+      optsEl = $('cm-opts'),
+      cardEl = $('cm-card'),
+      hintEl = $('cm-hint'),
+      backBt = $('cm-back'),
+      againBt= $('cm-again'),
+      newBt  = $('cm-new');
+
+  if (!svg || !gShape || !menu || !play) return;
+
+  var shapes = {};
+  (function(){
+    var list = gShape.querySelectorAll('.cm-p');
+    for (var i=0;i<list.length;i++){ shapes[list[i].getAttribute('data-id')] = list[i]; }
+  })();
+
+  function buildLabels(){
+    if (!gLab) return;
+    var ns = 'http://www.w3.org/2000/svg';
+    while (gLab.firstChild) gLab.removeChild(gLab.firstChild);
+    for (var i=0;i<P.length;i++){
+      var t = document.createElementNS(ns, 'text');
+      t.setAttribute('class', 'cm-lab');
+      t.setAttribute('x', P[i].lx);
+      t.setAttribute('y', P[i].ly);
+      t.textContent = P[i].ab;
+      gLab.appendChild(t);
+    }
+  }
+  buildLabels();
+
+  function show(el, on){ if (el) el.classList[on ? 'remove' : 'add']('cm-hide'); }
+  function clearFx(){
+    for (var k in shapes){ if (Object.prototype.hasOwnProperty.call(shapes,k)){
+      shapes[k].classList.remove('cm-lit','cm-bad','cm-good','cm-sel'); } }
+  }
+  function shuffle(a){
+    for (var i=a.length-1;i>0;i--){ var j = Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; }
+    return a;
+  }
+
+  var mode = null, order = [], idx = 0, score = 0, missed = [], locked = false, timers = [];
+  function clearTimers(){ for (var i=0;i<timers.length;i++) clearTimeout(timers[i]); timers = []; }
+  function later(fn, ms){ timers.push(setTimeout(fn, ms)); }
+
+  function modeLabel(m){
+    if (m === 'find') return T('Find It', 'Trouve-le');
+    if (m === 'name') return T('Name It', 'Nomme-le');
+    if (m === 'cap')  return T('Capital Cities', 'Villes capitales');
+    return T('Explore the Map', 'Explorer la carte');
+  }
+
+  function goMenu(){
+    clearTimers(); clearFx(); mode = null; locked = false;
+    svg.classList.remove('cm-dim','cm-lock');
+    show(menu, true); show(play, false); show(res, false);
+    show(optsEl, false); show(cardEl, false); show(hintEl, false);
+    show(backBt, false); show(againBt, false); show(gLab, false);
+    if (qEl) qEl.textContent = '';
+    if (rEl) rEl.textContent = '';
+    if (sEl) sEl.textContent = '';
+  }
+
+  function start(m){
+    clearTimers(); clearFx();
+    mode = m; idx = 0; score = 0; missed = []; locked = false;
+    svg.classList.remove('cm-dim','cm-lock');
+    show(menu, false); show(res, false); show(play, true);
+    show(backBt, true); show(againBt, false);
+    show(cardEl, false);
+    if (m === 'exp'){
+      show(gLab, true); show(optsEl, false); show(hintEl, true);
+      if (qEl) qEl.textContent = T('Explore the Map', 'Explorer la carte');
+      if (rEl) rEl.textContent = '';
+      if (sEl) sEl.textContent = '';
+      return;
+    }
+    show(gLab, false); show(hintEl, false);
+    order = shuffle(P.slice());
+    show(optsEl, m !== 'find');
+    if (m === 'name') svg.classList.add('cm-dim');
+    nextRound();
+  }
+
+  function paintBar(){
+    if (rEl) rEl.textContent = T('Question ', 'Question ') + (idx + 1) + ' / ' + P.length;
+    if (sEl) sEl.textContent = T('Score ', 'Score ') + score + ' / ' + P.length;
+  }
+
+  function nextRound(){
+    clearFx();
+    locked = false;
+    svg.classList.remove('cm-lock');
+    if (idx >= order.length){ finish(); return; }
+    var p = order[idx];
+    paintBar();
+    if (mode === 'find'){
+      if (qEl) qEl.textContent = T('Where is ' + nameOf(p) + '?', 'Trouve : ' + nameOf(p));
+      if (optsEl){ optsEl.innerHTML = ''; }
+    } else if (mode === 'name'){
+      var sh = shapes[p.id];
+      if (sh) sh.classList.add('cm-lit');
+      if (qEl) qEl.textContent = T('Which place is highlighted?', 'Quel endroit est en surbrillance ?');
+      buildOptions(p, function(o){ return nameOf(o); });
+    } else {
+      if (qEl) qEl.textContent = T('What is the capital of ' + nameOf(p) + '?',
+                                   'Quelle est la capitale ' + p.de + ' ?');
+      buildOptions(p, function(o){ return capOf(o); });
+    }
+  }
+
+  function buildOptions(p, textFn){
+    if (!optsEl) return;
+    optsEl.innerHTML = '';
+    var pool = [], i;
+    for (i=0;i<P.length;i++){ if (P[i].id !== p.id) pool.push(P[i]); }
+    shuffle(pool);
+    var picks = [p, pool[0], pool[1], pool[2]];
+    shuffle(picks);
+    for (i=0;i<picks.length;i++){
+      (function(o){
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'cm-opt';
+        b.setAttribute('data-id', o.id);
+        b.setAttribute('data-no-i18n', '');
+        b.textContent = textFn(o);
+        b.addEventListener('click', function(){ answerOption(b, o, p); });
+        optsEl.appendChild(b);
+      })(picks[i]);
+    }
+  }
+
+  function lockOptions(){
+    if (!optsEl) return;
+    var bs = optsEl.querySelectorAll('button');
+    for (var i=0;i<bs.length;i++){ bs[i].disabled = true; }
+  }
+
+  function answerOption(btn, chosen, correct){
+    if (locked) return;
+    locked = true;
+    lockOptions();
+    var right = (chosen.id === correct.id);
+    if (right){
+      score++; btn.classList.add('cm-ok');
+    } else {
+      btn.classList.add('cm-no');
+      missed.push(correct);
+      var bs = optsEl.querySelectorAll('button');
+      for (var i=0;i<bs.length;i++){
+        if (bs[i].getAttribute('data-id') === correct.id) bs[i].classList.add('cm-ok');
+      }
+    }
+    paintBar();
+    later(function(){ idx++; nextRound(); }, right ? 750 : 1500);
+  }
+
+  function tapShape(id){
+    var p = byId(id);
+    if (!p) return;
+    if (mode === 'exp'){ showCard(p); return; }
+    if (mode !== 'find' || locked) return;
+    var target = order[idx];
+    if (!target) return;
+    locked = true;
+    svg.classList.add('cm-lock');
+    if (id === target.id){
+      score++;
+      var g = shapes[id];
+      if (g) g.classList.add('cm-good');
+      paintBar();
+      later(function(){ idx++; nextRound(); }, 700);
+    } else {
+      missed.push(target);
+      var bad = shapes[id];
+      if (bad) bad.classList.add('cm-bad');
+      paintBar();
+      later(function(){
+        if (bad) bad.classList.remove('cm-bad');
+        var good = shapes[target.id];
+        if (good) good.classList.add('cm-good');
+        later(function(){ idx++; nextRound(); }, 900);
+      }, 600);
+    }
+  }
+
+  function showCard(p){
+    if (!cardEl) return;
+    clearFx();
+    var sh = shapes[p.id];
+    if (sh) sh.classList.add('cm-sel');
+    var f = factsOf(p);
+    cardEl.innerHTML = '';
+    var h = document.createElement('h3');
+    h.textContent = nameOf(p);
+    cardEl.appendChild(h);
+    var meta = document.createElement('div');
+    meta.className = 'cm-meta';
+    var c1 = document.createElement('span');
+    c1.className = 'cm-chip';
+    c1.textContent = T('Capital: ', 'Capitale : ') + capOf(p);
+    var c2 = document.createElement('span');
+    c2.className = 'cm-chip';
+    c2.textContent = T('Postal abbreviation: ', 'Abréviation postale : ') + p.ab;
+    meta.appendChild(c1); meta.appendChild(c2);
+    cardEl.appendChild(meta);
+    var ul = document.createElement('ul');
+    for (var i=0;i<f.length;i++){
+      var li = document.createElement('li');
+      li.textContent = f[i];
+      ul.appendChild(li);
+    }
+    cardEl.appendChild(ul);
+    show(cardEl, true);
+  }
+
+  function finish(){
+    clearTimers(); clearFx();
+    svg.classList.remove('cm-dim');
+    show(play, false); show(res, true); show(againBt, true); show(backBt, true);
+    var b = readBest();
+    var prev = (typeof b[mode] === 'number') ? b[mode] : 0;
+    if (score > prev){ b[mode] = score; writeBest(b); prev = score; }
+    var sc = $('cm-res-score'), be = $('cm-res-best'), hd = $('cm-res-head'), ls = $('cm-res-list');
+    if (sc) sc.textContent = modeLabel(mode) + ' — ' + score + ' / ' + P.length;
+    if (be) be.textContent = T('Best for this mode: ', 'Meilleur résultat pour ce mode : ') + prev + ' / ' + P.length;
+    if (hd) hd.textContent = missed.length
+        ? T('What you missed:', 'Ce que tu as manqué :')
+        : T('Perfect score — you got every one right!', 'Score parfait : tu as tout réussi !');
+    if (ls){
+      ls.innerHTML = '';
+      for (var i=0;i<missed.length;i++){
+        var li = document.createElement('li');
+        li.textContent = (mode === 'cap')
+          ? nameOf(missed[i]) + ' → ' + capOf(missed[i])
+          : nameOf(missed[i]) + ' (' + missed[i].ab + ')';
+        ls.appendChild(li);
+      }
+    }
+  }
+
+  gShape.addEventListener('click', function(ev){
+    var t = ev.target;
+    if (!t || !t.getAttribute) return;
+    var id = t.getAttribute('data-id');
+    if (id) tapShape(id);
+  });
+
+  var mb = { 'cm-m-find':'find', 'cm-m-name':'name', 'cm-m-cap':'cap', 'cm-m-exp':'exp' };
+  Object.keys(mb).forEach(function(k){
+    var el = $(k);
+    if (el) el.addEventListener('click', function(){ start(mb[k]); });
+  });
+  if (backBt)  backBt.addEventListener('click', goMenu);
+  if (againBt) againBt.addEventListener('click', function(){ if (mode) start(mode); });
+  if (newBt)   newBt.addEventListener('click', goMenu);
+
+  goMenu();
+})();
+</script>
+  <script src="js/game-fullscreen.js?v=20260802"></script>
+  <script src="js/site.js?v=20260802"></script>
+  <script src="js/analytics.js?v=20260802"></script>
+</body>
+</html>

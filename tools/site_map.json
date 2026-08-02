@@ -1,7 +1,6 @@
 {
  "groups": [
   {
-   "title": "Quizzes",
    "links": [
     [
      "quizzes.html",
@@ -38,11 +37,27 @@
     [
      "citizenship.html",
      "Citizenship Test Practice"
+    ],
+    [
+     "ai-quiz.html",
+     "AI &amp; Technology"
+    ],
+    [
+     "body-quiz.html",
+     "Human Body &amp; Health"
+    ],
+    [
+     "money-quiz.html",
+     "Money Skills for Kids"
+    ],
+    [
+     "earth-quiz.html",
+     "Earth &amp; Environment"
     ]
-   ]
+   ],
+   "title": "Quizzes"
   },
   {
-   "title": "Driving Test Practice",
    "links": [
     [
      "driving-test.html",
@@ -64,10 +79,10 @@
      "ontario-g1-rules-of-the-road.html",
      "Ontario Rules of the Road"
     ]
-   ]
+   ],
+   "title": "Driving Test Practice"
   },
   {
-   "title": "Brain &amp; Puzzle Games",
    "links": [
     [
      "word-master.html",
@@ -128,11 +143,27 @@
     [
      "color-match.html",
      "Color Match"
+    ],
+    [
+     "math-race.html",
+     "Math Race"
+    ],
+    [
+     "times-tables.html",
+     "Times Tables Champion"
+    ],
+    [
+     "canada-map.html",
+     "Map of Canada"
+    ],
+    [
+     "flags-game.html",
+     "Flags of the World"
     ]
-   ]
+   ],
+   "title": "Brain &amp; Puzzle Games"
   },
   {
-   "title": "Action &amp; Classic Games",
    "links": [
     [
      "snake.html",
@@ -161,11 +192,19 @@
     [
      "tag.html",
      "Tag"
+    ],
+    [
+     "chess.html",
+     "Chess"
+    ],
+    [
+     "connect4.html",
+     "Connect 4"
     ]
-   ]
+   ],
+   "title": "Action &amp; Classic Games"
   },
   {
-   "title": "Party Games",
    "links": [
     [
      "charades.html",
@@ -207,10 +246,10 @@
      "spin-wheel.html",
      "Spin the Wheel"
     ]
-   ]
+   ],
+   "title": "Party Games"
   },
   {
-   "title": "Blog",
    "links": [
     [
      "blog.html",
@@ -284,10 +323,10 @@
      "20-fun-facts-about-canada-for-kids.html",
      "20 Fun Facts for Kids"
     ]
-   ]
+   ],
+   "title": "Blog"
   },
   {
-   "title": "The Site",
    "links": [
     [
      "index.html",
@@ -317,7 +356,8 @@
      "terms.html",
      "Terms &amp; Conditions"
     ]
-   ]
+   ],
+   "title": "The Site"
   }
  ]
 }

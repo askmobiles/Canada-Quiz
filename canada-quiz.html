@@ -6,7 +6,7 @@
 <title>Canada Quiz — History, Culture, Geography &amp; Famous Canadians</title>
 <meta name="description" content="Free Canada quiz for everyone! Test your knowledge of Canadian history (1700s, 1800s, 1900s), culture, geography, food, and famous Canadians. Fun and educational, no signup.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="css/style.css?v=20260730">
+<link rel="stylesheet" href="css/style.css?v=20260802">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
@@ -74,7 +74,7 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <details class="footer-map">
-      <summary>All pages <span class="fm-count">(71)</span></summary>
+      <summary>All pages <span class="fm-count">(81)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quizzes</h4>
@@ -87,6 +87,10 @@
         <a href="science-quiz.html">Science &amp; Space</a>
         <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
         <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
       </div>
       <div class="footer-map-col">
         <h4>Driving Test Practice</h4>
@@ -113,6 +117,10 @@
         <a href="rubiks-cube.html">Rubik's Cube</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="flags-game.html">Flags of the World</a>
       </div>
       <div class="footer-map-col">
         <h4>Action &amp; Classic Games</h4>
@@ -123,6 +131,8 @@
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
         <a href="tag.html">Tag</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
       </div>
       <div class="footer-map-col">
         <h4>Party Games</h4>
@@ -191,6 +201,14 @@ const BANK = {
     {q:"The Loyalists who moved north to Canada in the 1780s came from where?",o:["The United States","Ireland","Germany","Mexico"],a:0,e:"Loyalists left the United States after its revolution and settled in Canada."},
     {q:"Who reached the Pacific Ocean by land in 1793 and wrote it on a rock?",o:["Jacques Cartier","Alexander Mackenzie","John Cabot","Henry Hudson"],a:1,e:"Alexander Mackenzie crossed the continent by land and reached the Pacific in 1793."},
     {q:"In the fur trade, European traders exchanged goods for furs with whom?",o:["Spanish sailors","American farmers","First Nations and Métis peoples","Russian soldiers"],a:2,e:"First Nations and Métis peoples were the skilled trappers and guides of the fur trade."}
+  ,
+    {q:"Halifax, founded in 1749, is in which province?",o:["New Brunswick","Quebec","Ontario","Nova Scotia"],a:3,e:"Halifax became Britain's main naval base on Canada's Atlantic coast."},
+    {q:"The Fortress of Louisbourg was a French stronghold on which island?",o:["Prince Edward Island","Anticosti Island","Cape Breton Island","Vancouver Island"],a:2,e:"Louisbourg guarded the entrance to the St. Lawrence and fell to British forces in 1758."},
+    {q:"In 1755, the British forced the Acadians from their farms in an event known as what?",o:["The Great Upheaval","The Long March","The Great Migration","The Winter Crossing"],a:0,e:"Thousands of Acadian families were deported by ship, and many of them later settled in Louisiana."},
+    {q:"In New France, the landowners who handed out long, narrow strips of farmland were called what?",o:["Coureurs","Seigneurs","Habitants","Voyageurs"],a:1,e:"Seigneurs gave out narrow river lots so that every family could reach the water."},
+    {q:"Which dried food of pounded meat and fat did Indigenous Peoples share with fur traders?",o:["Bannock","Hardtack","Porridge","Pemmican"],a:3,e:"Pemmican kept for months without spoiling, so it fed travellers on very long canoe trips."},
+    {q:"Which city was the fur-trade headquarters of the North West Company?",o:["Halifax","Kingston","Montreal","Quebec City"],a:2,e:"The North West Company was the Hudson's Bay Company's biggest rival for furs."},
+    {q:"What were most beaver pelts shipped to Europe in the 1700s used to make?",o:["Hats","Shoes","Ropes","Paper"],a:0,e:"Beaver fur was pressed into felt for the tall, fashionable hats worn all over Europe."}
   ]},
   "History: 1800s": { emoji:"🚂", q:[
     {q:"In the War of 1812, Canada (British) fought against which country?",o:["France","The United States","Spain","Russia"],a:1,e:"The United States invaded, but the invasion was defeated — this shaped today's border."},
@@ -206,6 +224,13 @@ const BANK = {
     {q:"Gold found in the Klondike in 1896 brought thousands to which territory?",o:["Yukon","Nunavut","Labrador","Vancouver Island"],a:0,e:"The Klondike Gold Rush drew people to Yukon, and Dawson City grew almost overnight."},
     {q:"Prince Edward Island joined Canada in which year?",o:["1867","1870","1873","1905"],a:2,e:"Prince Edward Island hosted the 1864 talks but only joined Canada in 1873."},
     {q:"Laura Secord became famous in 1813 for walking far to deliver what?",o:["A flag","A warning","Medicine","A treaty"],a:1,e:"Laura Secord walked about 30 km to warn British and Indigenous troops of an attack."}
+  ,
+    {q:"The Underground Railroad helped people escaping slavery reach freedom in which country?",o:["Mexico","Cuba","Britain","Canada"],a:3,e:"It was a secret network of guides and safe houses, not a real railway with trains."},
+    {q:"Harriet Tubman lived for years in which Ontario city while guiding people to freedom?",o:["London","Windsor","St. Catharines","Hamilton"],a:2,e:"Harriet Tubman went back south many times to guide family and friends north to Canada."},
+    {q:"Which queen chose Ottawa as the capital in 1857?",o:["Queen Victoria","Queen Anne","Queen Mary","Queen Elizabeth I"],a:0,e:"Ottawa sat safely inland, between English-speaking and French-speaking areas, so it was a fair compromise."},
+    {q:"The Rideau Canal, finished in 1832, links Ottawa with which city?",o:["Toronto","Montreal","Cornwall","Kingston"],a:3,e:"The canal was dug as a safe supply route well away from the American border."},
+    {q:"The Cariboo Gold Rush of the 1860s drew thousands of miners to which colony?",o:["Nova Scotia","British Columbia","Manitoba","Yukon"],a:1,e:"Miners pushed up the Fraser River, and a wagon road was cut through the mountains."},
+    {q:"Which invention linked Canada and Britain by an undersea cable in 1866?",o:["Telegraph","Telephone","Radio","Television"],a:0,e:"Messages that once took ten days by ship could now cross the ocean in minutes."}
   ]},
   "History: 1900s": { emoji:"🎖️", q:[
     {q:"Canadian troops famously captured which ridge in 1917 during World War I?",o:["Vimy Ridge","Juno Beach","Normandy","Gallipoli"],a:0,e:"The capture of Vimy Ridge in 1917 is seen as a proud Canadian moment."},
@@ -221,6 +246,13 @@ const BANK = {
     {q:"Nunavut became Canada's third territory in which year?",o:["1982","1993","1999","2005"],a:2,e:"Nunavut was created in 1999 as a territory with a mostly Inuit population."},
     {q:"Montreal hosted a famous 1967 world's fair known by what short name?",o:["Expo 67","Fair 67","World 67","Canada 67"],a:0,e:"Expo 67 in Montreal marked 100 years since Confederation and drew millions of visitors."},
     {q:"In 2008, Canada gave a formal apology to Indigenous Peoples about what?",o:["Fishing rules","Residential schools","Voting rules","Railway routes"],a:1,e:"In 2008 Canada formally apologized for the residential school system and began reconciliation work."}
+  ,
+    {q:"The Halifax Explosion, one of Canada's worst disasters, happened in which year?",o:["1901","1917","1929","1945"],a:1,e:"Two ships collided in the harbour and a cargo of explosives blew up, flattening much of the city."},
+    {q:"The Avro Arrow, built in Ontario in the 1950s, was what kind of machine?",o:["A jet aircraft","A steam train","A racing car","A weather satellite"],a:0,e:"The Arrow was a very fast Canadian fighter jet, and its cancellation is still talked about."},
+    {q:"In 1929, the 'Famous Five' won a case that recognized women in law as what?",o:["Voters","Citizens","Owners","Persons"],a:3,e:"Being called persons in law meant that women could be appointed to Canada's Senate."},
+    {q:"In 1921, Agnes Macphail became the first Canadian woman elected to which place?",o:["The Supreme Court","The House of Commons","The Senate","The Bank of Canada"],a:1,e:"Agnes Macphail spoke up for farmers and for better treatment of people in prison."},
+    {q:"Which Canadian city hosted Expo 86, a world's fair about transportation?",o:["Calgary","Ottawa","Vancouver","Winnipeg"],a:2,e:"Expo 86 drew millions of visitors and left Vancouver its round Science World building."},
+    {q:"In which year did 'O Canada' officially become the national anthem?",o:["1867","1931","1967","1980"],a:3,e:"The song was written in 1880, but it took a hundred years to become official."}
   ]},
   "Culture & Food": { emoji:"🍁", q:[
     {q:"Which famous dish of fries, cheese curds, and gravy comes from Quebec?",o:["Poutine","Nachos","Pierogi","Chili"],a:0,e:"Poutine started in Quebec and is loved across Canada."},
@@ -236,6 +268,13 @@ const BANK = {
     {q:"The Calgary Stampede is a huge yearly festival of what?",o:["Rodeo and western culture","Jazz music","Ice sculpture","Film and movies"],a:0,e:"The Calgary Stampede fills Alberta each July with rodeo, pancakes and western culture."},
     {q:"Bonhomme is the smiling snowman mascot of which winter festival?",o:["The Calgary Stampede","The Toronto Film Festival","The Ottawa Tulip Festival","The Quebec Winter Carnival"],a:3,e:"Bonhomme leads the Quebec Winter Carnival, one of the biggest winter festivals in the world."},
     {q:"At a Canadian coffee shop, what is a 'double-double'?",o:["Two coffees at once","A very large cup","Coffee with two creams and two sugars","Coffee with two shots"],a:2,e:"A double-double means two creams and two sugars, a phrase heard across Canada."}
+  ,
+    {q:"Which sandwich piled high with spiced cured beef is a Montreal specialty?",o:["Smoked meat","Pulled pork","Roast turkey","Melted cheese"],a:0,e:"Montreal smoked meat is beef brisket cured with spices and steamed for hours."},
+    {q:"At a Canadian coffee shop, what is a 'Timbit'?",o:["A filled cookie","A small round donut","A muffin top","A sugar cube"],a:1,e:"Timbits are bite-sized donut holes sold in boxes so a crowd can share them."},
+    {q:"Montreal's famous bagels are boiled in water sweetened with what?",o:["Molasses","Brown sugar","Honey","Maple syrup"],a:2,e:"The dough is boiled in honey water and then baked in a wood-fired oven."},
+    {q:"Bannock, eaten across Canada, is a simple kind of what?",o:["Soup","Stew","Cheese","Bread"],a:3,e:"Bannock is a flat bread that can be baked, fried, or cooked on a stick over a fire."},
+    {q:"In Newfoundland, a visitor being 'screeched in' traditionally kisses which animal?",o:["Cod","Puffin","Seal","Lobster"],a:0,e:"The playful ceremony turns visitors into honorary Newfoundlanders after a kiss on a fish."},
+    {q:"Inuit throat singing is usually performed by how many people at a time?",o:["One","Two","Four","Eight"],a:1,e:"Two singers stand face to face and trade sounds until one of them laughs."}
   ]},
   "Geography": { emoji:"🗺️", q:[
     {q:"What is the capital city of Canada?",o:["Toronto","Ottawa","Vancouver","Montreal"],a:1,e:"Ottawa, in Ontario, is the capital of Canada."},
@@ -251,6 +290,14 @@ const BANK = {
     {q:"Which province is officially bilingual in English and French?",o:["Quebec","New Brunswick","Ontario","Manitoba"],a:1,e:"New Brunswick is Canada's only officially bilingual province."},
     {q:"Baffin Island, the largest island in Canada, belongs to which territory?",o:["Yukon","Northwest Territories","Nunavut","Newfoundland and Labrador"],a:2,e:"Baffin Island is in Nunavut and is one of the largest islands in the world."},
     {q:"Which province is the smallest in area?",o:["Nova Scotia","New Brunswick","Newfoundland and Labrador","Prince Edward Island"],a:3,e:"Prince Edward Island is Canada's smallest province in both land area and population."}
+  ,
+    {q:"Which province lies directly east of Alberta?",o:["Manitoba","Saskatchewan","British Columbia","Ontario"],a:1,e:"Saskatchewan sits between Alberta and Manitoba on the Canadian prairies."},
+    {q:"Which city is the capital of Alberta?",o:["Calgary","Red Deer","Lethbridge","Edmonton"],a:3,e:"Edmonton stands on the North Saskatchewan River and holds Alberta's legislature."},
+    {q:"Which is the largest lake found completely inside Canada?",o:["Great Bear Lake","Great Slave Lake","Lake Winnipeg","Lake Athabasca"],a:0,e:"Great Bear Lake lies in the Northwest Territories and stays frozen much of the year."},
+    {q:"How many time zones does Canada have?",o:["Four","Five","Six","Eight"],a:2,e:"Canada reaches so far from east to west that it is split into six time zones, from Pacific in the west to Newfoundland in the east."},
+    {q:"Which huge inland sea reaches deep into northern Canada?",o:["Baffin Bay","Bay of Fundy","Georgian Bay","Hudson Bay"],a:3,e:"Hudson Bay freezes over each winter and gave the old fur-trade company its name."},
+    {q:"The Canadian Shield is a vast region covered by very ancient what?",o:["Sand","Rock","Ice","Clay"],a:1,e:"The Shield's ancient rock wraps around Hudson Bay and holds thousands of lakes."},
+    {q:"Which Canadian region shares a long border with Alaska?",o:["Yukon","Nunavut","Manitoba","Ontario"],a:0,e:"Yukon's western edge runs along Alaska, and Mount Logan rises near that border."}
   ]},
   "Famous Canadians": { emoji:"⭐", q:[
     {q:"Which hockey legend is nicknamed 'The Great One'?",o:["Sidney Crosby","Wayne Gretzky","Bobby Orr","Mario Lemieux"],a:1,e:"Wayne Gretzky, 'The Great One', is one of hockey's greatest players."},
@@ -266,6 +313,13 @@ const BANK = {
     {q:"Tommy Douglas is often called the father of what in Canada?",o:["Public health care","The railway","The postal system","Public libraries"],a:0,e:"Tommy Douglas led Saskatchewan and helped bring public health care to all of Canada."},
     {q:"The Group of Seven were Canadians famous for doing what?",o:["Singing","Painting landscapes","Building bridges","Writing laws"],a:1,e:"The Group of Seven painted bold pictures of Canada's forests, lakes and northern skies."},
     {q:"Artist Emily Carr painted the forests and villages of which province?",o:["Alberta","Ontario","British Columbia","Quebec"],a:2,e:"Emily Carr painted the tall forests and coastal villages of British Columbia."}
+  ,
+    {q:"Who was the first Canadian to travel into space?",o:["Chris Hadfield","Marc Garneau","Roberta Bondar","Julie Payette"],a:1,e:"Marc Garneau flew on a space shuttle mission in 1984 as a payload specialist."},
+    {q:"Which Canadian thinker made the phrase 'global village' famous?",o:["Marshall McLuhan","Northrop Frye","Pierre Berton","Robertson Davies"],a:0,e:"McLuhan said new media would make the whole world feel like one small village."},
+    {q:"Which Canadian singer is famous for the children's song 'Baby Beluga'?",o:["Fred Penner","Sharon Hampson","Charlotte Diamond","Raffi"],a:3,e:"Raffi wrote gentle songs that Canadian children have sung in classrooms for decades."},
+    {q:"Painter Tom Thomson is best known for painting the wilderness of which province?",o:["Quebec","Ontario","Manitoba","Alberta"],a:1,e:"Thomson painted the lakes and pines of Algonquin Park and inspired the Group of Seven."},
+    {q:"Doctor Norman Bethune is honoured as a hero in which country?",o:["Japan","India","China","Brazil"],a:2,e:"Bethune set up a mobile blood service and cared for wounded soldiers in China."},
+    {q:"Alexander Graham Bell spent his summers at a lakeside home in which province?",o:["Prince Edward Island","New Brunswick","Ontario","Nova Scotia"],a:3,e:"Bell's house at Baddeck looked over a lake where he tested kites and early aircraft."}
   ]},
   "Hockey & Sports": { emoji:"🏒", q:[
     {q:"The Stanley Cup is named after Lord Stanley, who held which job in Canada?",o:["Prime Minister","Governor General","Mayor of Montreal","Chief Justice"],a:1,e:"Lord Stanley was Governor General when he donated the cup for hockey in 1892."},
@@ -279,6 +333,13 @@ const BANK = {
     {q:"The 1972 Summit Series was a hockey showdown between Canada and which team?",o:["Sweden","The Soviet Union","The United States","Finland"],a:1,e:"Canada beat the Soviet Union in the 1972 Summit Series with a goal in the final minute."},
     {q:"Which Canadian city hosted the Summer Olympic Games in 1976?",o:["Montreal","Toronto","Vancouver","Calgary"],a:0,e:"Montreal hosted the 1976 Summer Olympics, the first Olympic Games held in Canada."},
     {q:"What is the name of the machine that smooths the ice between periods?",o:["A groomer","A skater","A Zamboni","A polisher"],a:2,e:"The Zamboni shaves the ice and lays down water that freezes into a smooth new surface."}
+  ,
+    {q:"How long is one period in a professional hockey game?",o:["10 minutes","15 minutes","20 minutes","30 minutes"],a:2,e:"Three periods of twenty minutes add up to sixty minutes of playing time."},
+    {q:"What is it called when one player scores three goals in a single game?",o:["Hat trick","Power play","Face-off","Shutout"],a:0,e:"Fans often toss their hats onto the ice to celebrate a player's third goal."},
+    {q:"The Vezina Trophy in hockey goes to a player who plays which position?",o:["Centre","Defence","Goaltender","Winger"],a:2,e:"The trophy is named after Georges Vezina, a famous Montreal goaltender."},
+    {q:"In lacrosse, players carry the ball in a net at the end of what?",o:["A rope","A stick","A pole","A glove"],a:1,e:"Lacrosse grew out of games played by Indigenous nations long before Europeans arrived."},
+    {q:"How many players make up a curling team?",o:["Two","Three","Four","Six"],a:2,e:"Each curler throws two stones, and the skip decides where the team should aim."},
+    {q:"In Canadian football, how many players from one team are on the field?",o:["9","10","11","12"],a:3,e:"Canadian football uses twelve players and a longer, wider field than the American game."}
   ]},
   "Canadian Inventions": { emoji:"💡", q:[
     {q:"Banting and Best discovered insulin while working at which university?",o:["McGill University","Dalhousie University","The University of Toronto","The University of Alberta"],a:2,e:"The insulin work was done at the University of Toronto in the early 1920s."},
@@ -292,6 +353,13 @@ const BANK = {
     {q:"IMAX, invented in Canada, is a system for showing what?",o:["Giant-screen movies","Live sports scores","Radio programs","Photo slideshows"],a:0,e:"IMAX was created by Canadians and first wowed crowds at Expo 70 with its giant screen."},
     {q:"Goalie Jacques Plante changed hockey in 1959 by wearing what?",o:["Longer skates","A helmet camera","A face mask","Padded gloves"],a:2,e:"Jacques Plante wore a face mask in a 1959 game, and goalie masks soon became normal."},
     {q:"Canola, developed by Canadian scientists, is grown mainly to make what?",o:["Paper","Cooking oil","Rope","Rubber"],a:1,e:"Canola was bred in Canada in the 1970s, and its yellow fields become cooking oil."}
+  ,
+    {q:"Canadian Donald Hings invented an early portable version of which device?",o:["Radio","Camera","Clock","Fan"],a:0,e:"His two-way walkie-talkie let soldiers and pilots talk while they were moving around."},
+    {q:"Canadians Woodward and Evans sold their early light bulb patent to which inventor?",o:["Nikola Tesla","Thomas Edison","Henry Ford","Guglielmo Marconi"],a:1,e:"Edison bought their Canadian patent in 1879 and improved the bulb for everyday use."},
+    {q:"Canadian Lewis Urry invented a long-lasting kind of what?",o:["Magnet","Light bulb","Battery","Wire"],a:2,e:"His alkaline battery kept toys and flashlights running far longer than older ones."},
+    {q:"Canadian James Gosling created which computer programming language?",o:["Java","Python","Ruby","Swift"],a:0,e:"Java was designed to run the same way on many different kinds of machines."},
+    {q:"Quebec's Arthur Sicard built a machine that clears what from streets?",o:["Leaves","Sand","Mud","Snow"],a:3,e:"Sicard's snow blower scooped up deep snow and threw it into a waiting truck."},
+    {q:"Canadian Norman Breakey invented which handy painting tool?",o:["The spray can","The paint roller","The putty knife","The paint tray"],a:1,e:"A rolling sleeve soaked in paint covers a wall much faster than a brush does."}
   ]}
 };
 
@@ -307,6 +375,18 @@ function buildCats(){
   });
 }
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function balanceOpts(it){
+  const opts=it.options||it.o, ans=(it.answer!==undefined)?it.answer:it.a;
+  if(!Array.isArray(opts)||opts.length!==4||!(ans>=0&&ans<=3)) return it;
+  const txt=opts.join(' ').toLowerCase();
+  if(/all of the|none of the|both of/.test(txt)) return it;
+  if(opts.every(o=>!isNaN(parseFloat(String(o).replace(/[\s,$%]/g,''))))) return it;
+  const idx=[0,1,2,3];
+  for(let i=3;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
+  const c=Object.assign({},it), o2=idx.map(i=>opts[i]), a2=idx.indexOf(ans);
+  if(it.options){ c.options=o2; c.answer=a2; } else { c.o=o2; c.a=a2; }
+  return c;
+}
 function pickFresh(bank, count, key){
   let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
   if(!Array.isArray(seen)) seen=[];
@@ -315,7 +395,7 @@ function pickFresh(bank, count, key){
   for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
   const chosen=unseen.slice(0,count);
   try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
-  return chosen.map(i=>bank[i]);
+  return chosen.map(i=>balanceOpts(bank[i]));
 }
 function startCat(name){
   catName=name; qs=pickFresh(BANK[name].q, BANK[name].q.length, 'ca_'+name); cur=0; score=0; answered=false;
@@ -359,7 +439,7 @@ function finish(){
 }
 buildCats();
 </script>
-  <script src="js/site.js?v=20260730"></script>
-  <script src="js/analytics.js?v=20260730"></script>
+  <script src="js/site.js?v=20260802"></script>
+  <script src="js/analytics.js?v=20260802"></script>
 </body>
 </html>

@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Times Tables Champion — Free Multiplication Practice for Kids | Canada Quiz</title>
+<meta name="description" content="Free times tables practice for kids: learn tables 1 to 12 with memory tips, quiz with no timer, then beat the clock for a medal. No signup, no ads to click.">
+<meta property="og:title" content="Times Tables Champion — Free Multiplication Practice for Kids | Canada Quiz">
+<meta property="og:description" content="Free times tables practice for kids: learn tables 1 to 12 with memory tips, quiz with no timer, then beat the clock for a medal. No signup, no ads to click.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/times-tables.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=20260802">
+<style>
+.tt-wrap{max-width:520px;margin:0 auto;text-align:left}
+.tt-view{display:none}
+.tt-view.tt-live{display:block}
+.tt-modes{display:grid;gap:12px;margin:4px 0 18px}
+.tt-modes .btn{width:100%;font-size:20px;padding:18px 14px;min-height:64px;line-height:1.2}
+.tt-h{font-size:17px;font-weight:800;color:var(--ink);margin:0 0 8px;letter-spacing:.2px}
+.tt-hint{font-size:14px;color:var(--muted);margin:0 0 12px;line-height:1.45}
+.tt-chips{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+@media (min-width:470px){.tt-chips{grid-template-columns:repeat(12,1fr);gap:4px}}
+.tt-chip{display:inline-flex;align-items:center;justify-content:center;gap:2px;min-height:44px;padding:2px 2px;border-radius:12px;background:#f3f5f8;border:2px solid var(--line);font-weight:800;font-size:15px;color:var(--muted);flex-direction:column;line-height:1.05}
+.tt-chip b{font-size:16px;color:var(--ink)}
+.tt-chip i{font-style:normal;font-size:14px}
+.tt-chip.tt-m-bronze{background:#fbf0e6;border-color:#e0b48c}
+.tt-chip.tt-m-silver{background:#f1f3f6;border-color:#b9c2cc}
+.tt-chip.tt-m-gold{background:#fff6dd;border-color:#f0c419}
+.tt-chip.tt-m-champion{background:#eaf7f4;border-color:var(--green)}
+.tt-allline{font-size:14px;margin-top:10px}
+.tt-box{border:2px dashed var(--line);border-radius:var(--radius);padding:14px;margin:16px 0 6px}
+.tt-box .btn{width:100%;font-size:18px;min-height:56px}
+.tt-note{font-size:13px;margin-top:8px;line-height:1.45}
+.tt-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 14px}
+.tt-num{min-height:56px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink);font-size:24px;font-weight:800;cursor:pointer;font-family:inherit;padding:0;-webkit-tap-highlight-color:transparent}
+.tt-num:active{transform:translateY(1px)}
+.tt-num.tt-sel{background:var(--blue);border-color:var(--blue);color:#fff}
+.tt-num.tt-all{grid-column:1 / -1;font-size:17px;min-height:50px}
+.tt-num.tt-all.tt-sel{background:var(--purple);border-color:var(--purple)}
+.tt-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tt-actions .btn{flex:1 1 46%;min-height:52px}
+.tt-tip{background:#fff8e6;border:2px solid #ffe3a3;border-radius:14px;padding:12px 14px;font-size:15px;line-height:1.5;color:var(--ink);margin:0 0 12px}
+.tt-tip b{display:block;font-size:13px;letter-spacing:.6px;text-transform:uppercase;color:#b07d00;margin-bottom:4px}
+.tt-title{font-size:26px;font-weight:800;margin:2px 0 10px;color:var(--ink)}
+.tt-list{display:grid;gap:6px;margin-bottom:12px}
+.tt-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:6px 14px;border-radius:12px;border:2px solid var(--line);background:var(--card);font-size:22px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit;width:100%;text-align:left;-webkit-tap-highlight-color:transparent}
+.tt-row span{pointer-events:none}
+.tt-rr{font-size:24px;font-weight:800;color:var(--muted)}
+.tt-row.tt-on{background:var(--blue);border-color:var(--blue);color:#fff;transform:scale(1.02)}
+.tt-row.tt-on .tt-rr{color:#fff}
+.tt-bar{height:12px;border-radius:99px;background:#eef1f5;overflow:hidden;margin:2px 0 10px}
+.tt-bar i{display:block;height:100%;width:0;background:var(--green);border-radius:99px;transition:width .25s ease}
+.tt-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--muted);margin-bottom:6px}
+.tt-clock{font-variant-numeric:tabular-nums;font-weight:800;color:var(--ink)}
+.tt-q{text-align:center;font-size:46px;font-weight:800;color:var(--ink);margin:14px 0 4px;letter-spacing:1px;line-height:1.1}
+.tt-qsub{text-align:center;font-size:15px;color:var(--muted);margin-bottom:12px}
+.tt-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tt-opt{min-height:66px;border-radius:16px;border:2px solid var(--line);background:var(--card);color:var(--ink);font-size:30px;font-weight:800;cursor:pointer;font-family:inherit;padding:6px;-webkit-tap-highlight-color:transparent}
+.tt-opt:active{transform:translateY(1px)}
+.tt-opt.tt-good{background:var(--green);border-color:var(--green);color:#fff}
+.tt-opt.tt-bad{background:var(--red);border-color:var(--red);color:#fff}
+.tt-opt.tt-dim{opacity:.55}
+.tt-fb{margin-top:12px;font-size:18px;font-weight:800;text-align:center;min-height:24px}
+.tt-fb.tt-ok{color:var(--green-dark)}
+.tt-fb.tt-no{color:var(--red-dark)}
+.tt-ex{background:#f4f7fb;border-radius:14px;padding:11px 13px;font-size:15px;line-height:1.5;color:var(--ink);margin-top:10px;word-break:break-word}
+.tt-medal{text-align:center;font-size:64px;line-height:1;margin:6px 0 4px}
+.tt-mname{text-align:center;font-size:26px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.tt-stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.tt-stat{background:#f4f7fb;border-radius:14px;padding:10px 16px;text-align:center;min-width:100px}
+.tt-stat b{display:block;font-size:24px;color:var(--ink)}
+.tt-stat span{font-size:13px;color:var(--muted)}
+.tt-missed{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tt-missed span{background:#fdecee;border:1px solid #f6c9cf;border-radius:10px;padding:6px 9px;font-size:15px;font-weight:700;color:var(--red-dark)}
+@media (max-width:359px){.tt-q{font-size:38px}.tt-opt{font-size:26px;min-height:60px}.tt-num{font-size:21px}}
+</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/times-tables.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/times-tables.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/times-tables.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/times-tables.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>✖️ Times Tables Champion</h1>
+    <p>Learn every table from 1 to 12, then win your medals.</p>
+  <details class="howto"><summary></summary><p>Start with Learn to walk down a table one line at a time with a memory tip for each one. Practice has no timer and explains every answer, while Challenge gives you 20 questions against the clock for a bronze, silver, gold or champion medal. Every fact you miss is remembered, so you can tap Practise my tricky ones and drill exactly those.</p></details>
+
+  </section>
+
+  <div class="panel" data-fs-host>
+    <div class="tt-wrap">
+
+      <div class="tt-view tt-live" id="tt-v-home">
+        <div class="tt-modes">
+          <button class="btn btn-blue btn-lg" id="tt-go-learn">📖 Learn a table</button>
+          <button class="btn btn-green btn-lg" id="tt-go-practice">✏️ Practice — no timer</button>
+          <button class="btn btn-orange btn-lg" id="tt-go-chal">⏱️ Challenge — 20 questions</button>
+        </div>
+        <p class="tt-h">My medals</p>
+        <div class="tt-chips" id="tt-chips" data-no-i18n></div>
+        <p class="tt-allline muted" id="tt-allmedal" data-no-i18n></p>
+        <div class="tt-box">
+          <button class="btn btn-purple" id="tt-go-weak">🎯 Practise my tricky ones</button>
+          <p class="tt-note muted" id="tt-weaknote" data-no-i18n></p>
+        </div>
+      </div>
+
+      <div class="tt-view" id="tt-v-learnpick">
+        <p class="tt-h">Pick a table to learn</p>
+        <p class="tt-hint">Tap a number to see the whole table, one row at a time.</p>
+        <div class="tt-nums" id="tt-learn-nums"></div>
+        <div class="tt-actions"><button class="btn btn-ghost tt-home">Back to menu</button></div>
+      </div>
+
+      <div class="tt-view" id="tt-v-learn">
+        <p class="tt-title" id="tt-learn-title" data-no-i18n></p>
+        <p class="tt-tip"><b id="tt-tip-label" data-no-i18n></b><span id="tt-tip-text" data-no-i18n></span></p>
+        <div class="tt-list" id="tt-learn-list"></div>
+        <div class="tt-actions">
+          <button class="btn btn-blue" id="tt-learn-next" data-no-i18n></button>
+          <button class="btn btn-ghost" id="tt-learn-reset">Start over</button>
+          <button class="btn btn-green" id="tt-learn-practise">Practise this table</button>
+          <button class="btn btn-ghost tt-home">Back to menu</button>
+        </div>
+      </div>
+
+      <div class="tt-view" id="tt-v-practicepick">
+        <p class="tt-h">Pick the tables you want to practise</p>
+        <p class="tt-hint">Choose one, choose a few, or choose them all. There is no timer here.</p>
+        <div class="tt-nums" id="tt-practice-nums"></div>
+        <p class="tt-note muted" id="tt-practice-note" data-no-i18n></p>
+        <div class="tt-actions">
+          <button class="btn btn-green" id="tt-practice-start">Start practice</button>
+          <button class="btn btn-ghost tt-home">Back to menu</button>
+        </div>
+      </div>
+
+      <div class="tt-view" id="tt-v-chalpick">
+        <p class="tt-h">Pick one table for your challenge</p>
+        <p class="tt-hint">Twenty questions against the clock. Answer fast and win a medal for that table.</p>
+        <div class="tt-nums" id="tt-chal-nums"></div>
+        <p class="tt-note muted" id="tt-chal-note" data-no-i18n></p>
+        <div class="tt-actions">
+          <button class="btn btn-orange" id="tt-chal-start">Start challenge</button>
+          <button class="btn btn-ghost tt-home">Back to menu</button>
+        </div>
+      </div>
+
+      <div class="tt-view" id="tt-v-quiz">
+        <div class="tt-meta">
+          <span id="tt-count" data-no-i18n></span>
+          <span class="tt-clock" id="tt-clock" data-no-i18n></span>
+        </div>
+        <div class="tt-bar" id="tt-barwrap"><i id="tt-barfill"></i></div>
+        <p class="tt-q" id="tt-question" data-no-i18n></p>
+        <p class="tt-qsub" id="tt-qsub" data-no-i18n></p>
+        <div class="tt-opts" id="tt-options"></div>
+        <p class="tt-fb" id="tt-feedback" data-no-i18n></p>
+        <p class="tt-ex" id="tt-explain" style="display:none" data-no-i18n></p>
+        <div class="tt-actions">
+          <button class="btn btn-blue" id="tt-next" style="display:none" data-no-i18n></button>
+          <button class="btn btn-ghost tt-home">Back to menu</button>
+        </div>
+      </div>
+
+      <div class="tt-view" id="tt-v-result">
+        <p class="tt-medal" id="tt-res-icon" data-no-i18n></p>
+        <p class="tt-mname" id="tt-res-name" data-no-i18n></p>
+        <div class="tt-stats">
+          <div class="tt-stat"><b id="tt-res-score" data-no-i18n></b><span id="tt-res-scorelab" data-no-i18n></span></div>
+          <div class="tt-stat" id="tt-res-timebox"><b id="tt-res-time" data-no-i18n></b><span id="tt-res-timelab" data-no-i18n></span></div>
+        </div>
+        <p class="tt-h" id="tt-res-misslab" data-no-i18n></p>
+        <div class="tt-missed" id="tt-res-missed" data-no-i18n></div>
+        <div class="tt-actions">
+          <button class="btn btn-orange" id="tt-res-again">Play again</button>
+          <button class="btn btn-purple" id="tt-res-fix">Practise the ones I missed</button>
+          <button class="btn btn-ghost tt-home">Back to menu</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div style="margin-top:14px">
+    <button class="btn" id="tt-new">New Game</button>
+    <a class="btn btn-ghost" href="games.html">All Games</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <details class="footer-map">
+      <summary>All pages <span class="fm-count">(81)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <h4>Quizzes</h4>
+        <a href="quizzes.html">All Quizzes</a>
+        <a href="gk-quiz.html">General Knowledge</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Fun Canada Quiz</a>
+        <a href="province-quiz.html">Which Province Are You?</a>
+        <a href="world-quiz.html">World Quiz</a>
+        <a href="science-quiz.html">Science &amp; Space</a>
+        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
+        <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Driving Test Practice</h4>
+        <a href="driving-test.html">Canada Driving Test</a>
+        <a href="ontario-g1-practice-test.html">Ontario G1 Practice Test</a>
+        <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
+        <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
+        <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Brain &amp; Puzzle Games</h4>
+        <a href="word-master.html">Word Master</a>
+        <a href="word-search.html">Word Search</a>
+        <a href="word-guess.html">Word Guess</a>
+        <a href="scramble.html">Word Scramble</a>
+        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="crossword.html">Crossword</a>
+        <a href="connections.html">Word Groups</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Minesweeper</a>
+        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Memory Match</a>
+        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="typing-test.html">Typing Speed Test</a>
+        <a href="color-match.html">Color Match</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="flags-game.html">Flags of the World</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Action &amp; Classic Games</h4>
+        <a href="snake.html">Maple Snake</a>
+        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
+        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="checkers.html">Checkers</a>
+        <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="tag.html">Tag</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Party Games</h4>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposter</a>
+        <a href="would-you-rather.html">Would You Rather?</a>
+        <a href="trivia-showdown.html">Trivia Showdown</a>
+        <a href="hold-to-head.html">Hold to Head</a>
+        <a href="top-answers.html">Top Answers</a>
+        <a href="categories-game.html">Categories</a>
+        <a href="story-maker.html">Story Maker</a>
+        <a href="draw-it.html">Draw It</a>
+        <a href="spin-wheel.html">Spin the Wheel</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Blog</h4>
+        <a href="blog.html">All Articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
+        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
+        <a href="what-is-confederation.html">What Is Confederation?</a>
+        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
+        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
+        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
+        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
+        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
+        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
+        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
+        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
+        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
+        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>The Site</h4>
+        <a href="index.html">Home</a>
+        <a href="daily.html">Daily Challenge</a>
+        <a href="games.html">All Family Games</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr){ return FR ? fr : en; }
+  function $(id){ return document.getElementById(id); }
+  function on(el, ev, fn){ if(el && el.addEventListener){ el.addEventListener(ev, fn); } }
+  function txt(el, s){ if(el){ el.textContent = s; } }
+  function TIMES(a, b){ return a + ' × ' + b; }
+  function mk(tag, cls){
+    var el = document.createElement(tag);
+    if(cls){ el.className = cls; }
+    el.setAttribute('data-no-i18n', '');
+    return el;
+  }
+
+  var MKEY = 'cq_tt_medals', WKEY = 'cq_tt_weak';
+  var RANK = { none:0, bronze:1, silver:2, gold:3, champion:4 };
+  var ICON = { none:'', bronze:'🥉', silver:'🥈', gold:'🥇', champion:'🏆' };
+  var SING = ['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve'];
+  var PLUR = ['','ones','twos','threes','fours','fives','sixes','sevens','eights','nines','tens','elevens','twelves'];
+
+  /* ---------- storage (never throws) ---------- */
+  function loadObj(key){
+    try{
+      var s = localStorage.getItem(key);
+      if(!s){ return {}; }
+      var o = JSON.parse(s);
+      if(o && typeof o === 'object' && !(o instanceof Array)){ return o; }
+      return {};
+    }catch(e){ return {}; }
+  }
+  function saveObj(key, obj){ try{ localStorage.setItem(key, JSON.stringify(obj)); }catch(e){} }
+
+  function factKey(a, b){ return a + 'x' + b; }
+  function weakList(){
+    var w = loadObj(WKEY), out = [], k, p, a, b;
+    for(k in w){
+      if(!Object.prototype.hasOwnProperty.call(w, k)){ continue; }
+      p = String(k).split('x');
+      a = parseInt(p[0], 10);
+      b = parseInt(p[1], 10);
+      if(a >= 1 && a <= 12 && b >= 1 && b <= 12 && (parseInt(w[k], 10) || 0) > 0){ out.push({ a:a, b:b }); }
+    }
+    out.sort(function(x, y){ return (x.a - y.a) || (x.b - y.b); });
+    return out;
+  }
+  function markWrong(a, b){
+    var w = loadObj(WKEY), k = factKey(a, b), n = (parseInt(w[k], 10) || 0) + 1;
+    w[k] = n > 5 ? 5 : n;
+    saveObj(WKEY, w);
+  }
+  function markRight(a, b){
+    var w = loadObj(WKEY), k = factKey(a, b);
+    if(!Object.prototype.hasOwnProperty.call(w, k)){ return; }
+    var n = (parseInt(w[k], 10) || 0) - 1;
+    if(n <= 0){ delete w[k]; } else { w[k] = n; }
+    saveObj(WKEY, w);
+  }
+  function medals(){ return loadObj(MKEY); }
+  function saveMedal(key, m){
+    var all = medals(), cur = all[key];
+    if((RANK[m] || 0) > (RANK[cur] || 0)){ all[key] = m; saveObj(MKEY, all); }
+  }
+
+  /* ---------- content ---------- */
+  function tipFor(t){
+    switch(t){
+      case 1: return T('Anything multiplied by 1 stays exactly the same, so the 1 times table is really just counting.',
+                       'Tout nombre multiplié par 1 reste identique : la table de 1, c’est simplement compter.');
+      case 2: return T('Times 2 means double it — add the number to itself — and every answer is an even number.',
+                       'Multiplier par 2, c’est doubler : additionne le nombre à lui-même, et toutes les réponses sont paires.');
+      case 3: return T('Times 3 is double the number, then add one more of it: 4 doubled is 8, plus 4 more makes 12.',
+                       'Multiplier par 3, c’est doubler le nombre puis en ajouter un de plus : 4 doublé fait 8, plus 4 donne 12.');
+      case 4: return T('Times 4 is double, then double again: 7 becomes 14, and 14 becomes 28.',
+                       'Multiplier par 4, c’est doubler deux fois : 7 devient 14, et 14 devient 28.');
+      case 5: return T('Every answer in the 5 times table ends in 5 or 0, and it is always half of the 10 times table.',
+                       'Toutes les réponses de la table de 5 finissent par 5 ou 0, et elles valent toujours la moitié de la table de 10.');
+      case 6: return T('Times 6 is the 5 times table plus one more of the number: 7 fives is 35, plus 7 more makes 42.',
+                       'Multiplier par 6, c’est la table de 5 plus une fois le nombre : 7 fois 5 fait 35, plus 7 donne 42.');
+      case 7: return T('The 7 times table is the tricky one, so lean on the pattern 5, 6, 7, 8 to remember that 7 × 8 = 56.',
+                       'La table de 7 est la plus difficile : retiens la suite 5, 6, 7, 8 pour te rappeler que 7 × 8 = 56.');
+      case 8: return T('Times 8 is double, double, double: 3 becomes 6, then 12, then 24.',
+                       'Multiplier par 8, c’est doubler trois fois : 3 devient 6, puis 12, puis 24.');
+      case 9: return T('Hold up ten fingers and fold down the one you are multiplying by: the fingers before it are the tens and the ones after are the units, and the two digits always add up to 9.',
+                       'Lève tes dix doigts et replie celui que tu multiplies : les doigts avant forment les dizaines et ceux après, les unités, et les deux chiffres donnent toujours 9.');
+      case 10: return T('Times 10 simply puts a zero on the end of the number: 7 becomes 70.',
+                        'Multiplier par 10, c’est simplement ajouter un zéro à la fin du nombre : 7 devient 70.');
+      case 11: return T('From 1 to 9, times 11 just repeats the digit twice — 4 becomes 44 — and after that you keep adding 11.',
+                        'De 1 à 9, multiplier par 11 répète le chiffre deux fois (4 devient 44) ; ensuite, tu continues en ajoutant 11.');
+      case 12: return T('Times 12 is the 10 times table plus the 2 times table: 6 × 10 is 60, plus 6 × 2 is 12, so 72.',
+                        'Multiplier par 12, c’est la table de 10 plus la table de 2 : 6 × 10 fait 60, plus 6 × 2 fait 12, donc 72.');
+      default: return '';
+    }
+  }
+  function skipCount(a, b){
+    var out = [], i;
+    for(i = 1; i <= a; i++){ out.push(i * b); }
+    return out.join(', ');
+  }
+  function explainFact(a, b){
+    var word = (a === 1 ? SING[b] : PLUR[b]) || String(b);
+    return T(TIMES(a, b) + ' is ' + a + ' ' + word + ': ' + skipCount(a, b),
+             TIMES(a, b) + ', c’est ' + a + ' fois ' + b + ' : ' + skipCount(a, b));
+  }
+  function medalName(m){
+    if(m === 'champion'){ return T('Champion', 'Champion'); }
+    if(m === 'gold'){ return T('Gold medal', 'Médaille d’or'); }
+    if(m === 'silver'){ return T('Silver medal', 'Médaille d’argent'); }
+    if(m === 'bronze'){ return T('Bronze medal', 'Médaille de bronze'); }
+    return T('Keep practising', 'Continue de t’entraîner');
+  }
+  function medalFor(correct, seconds){
+    if(correct >= 20 && seconds <= 90){ return 'champion'; }
+    if(correct >= 20){ return 'gold'; }
+    if(correct >= 18 && seconds <= 180){ return 'gold'; }
+    if(correct >= 15){ return 'silver'; }
+    if(correct >= 10){ return 'bronze'; }
+    return 'none';
+  }
+
+  /* ---------- question building ---------- */
+  function shuffle(arr){
+    var i, j, t;
+    for(i = arr.length - 1; i > 0; i--){
+      j = Math.floor(Math.random() * (i + 1));
+      t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+    }
+    return arr;
+  }
+  function distractors(a, b){
+    /* near misses a child really makes: one multiple out, digit swap, off by one or ten */
+    var p = a * b, seen = {}, near = [], spare = [], s, k;
+    function push(list, v){
+      v = Math.round(v);
+      if(v > 0 && v !== p && v < 200 && !seen[v]){ seen[v] = 1; list.push(v); }
+    }
+    function near_(v){ push(near, v); }
+    function spare_(v){ push(spare, v); }
+    near_(p + b); near_(p - b); near_(p + a); near_(p - a);
+    s = String(p);
+    if(s.length === 2 && s.charAt(0) !== s.charAt(1)){ near_(parseInt(s.charAt(1) + s.charAt(0), 10)); }
+    if(s.length === 3){
+      near_(parseInt(s.charAt(0) + s.charAt(2) + s.charAt(1), 10));
+      near_(parseInt(s.charAt(1) + s.charAt(0) + s.charAt(2), 10));
+    }
+    near_(p + 1); near_(p - 1); near_(p + 2); near_(p - 2); near_(p + 10); near_(p - 10);
+    spare_(a + b); spare_(p + 5); spare_(p + 3); spare_(p - 3); spare_(p + 20);
+    for(k = 1; (near.length + spare.length) < 3 && k < 90; k++){ spare_(p + k); }
+    shuffle(near);
+    shuffle(spare);
+    return near.concat(spare).slice(0, 3);
+  }
+  function makeQ(a, b){
+    var p = a * b, opts = distractors(a, b);
+    opts.push(p);
+    shuffle(opts);
+    return { a:a, b:b, p:p, opts:opts };
+  }
+  function randomFacts(tables, n){
+    var out = [], i, t, b, last = '', tries, key;
+    if(!tables || !tables.length){ tables = [2]; }
+    for(i = 0; i < n; i++){
+      tries = 0;
+      do{
+        t = tables[Math.floor(Math.random() * tables.length)];
+        b = 1 + Math.floor(Math.random() * 12);
+        key = t + 'x' + b;
+        tries++;
+      }while(key === last && tries < 8);
+      last = key;
+      out.push({ a:t, b:b });
+    }
+    return out;
+  }
+
+  /* ---------- views ---------- */
+  var VIEWS = ['home','learnpick','learn','practicepick','chalpick','quiz','result'];
+  function show(name){
+    var i, el;
+    for(i = 0; i < VIEWS.length; i++){
+      el = $('tt-v-' + VIEWS[i]);
+      if(!el){ continue; }
+      if(VIEWS[i] === name){ el.classList.add('tt-live'); } else { el.classList.remove('tt-live'); }
+    }
+  }
+
+  /* ---------- home ---------- */
+  function renderChips(){
+    var box = $('tt-chips'), m = medals(), i, chip, med, b, ic;
+    if(box){
+      box.innerHTML = '';
+      for(i = 1; i <= 12; i++){
+        med = m[String(i)];
+        if(!RANK[med]){ med = 'none'; }
+        chip = mk('span', 'tt-chip tt-m-' + med);
+        chip.setAttribute('title', TIMES(i, 12) + ' — ' + medalName(med));
+        b = mk('b'); b.textContent = String(i);
+        ic = mk('i'); ic.textContent = ICON[med] || '·';
+        chip.appendChild(b);
+        chip.appendChild(ic);
+        box.appendChild(chip);
+      }
+    }
+    var allEl = $('tt-allmedal');
+    if(allEl){
+      var am = m['all'];
+      if(RANK[am]){
+        txt(allEl, T('All tables challenge: ', 'Défi toutes les tables : ') + (ICON[am] || '') + ' ' + medalName(am));
+      } else {
+        txt(allEl, T('Win a challenge to fill in a medal chip.', 'Gagne un défi pour remplir une pastille de médaille.'));
+      }
+    }
+    var w = weakList(), note = $('tt-weaknote'), btn = $('tt-go-weak');
+    if(note){
+      if(w.length === 1){ txt(note, T('1 tricky fact is waiting for you.', '1 fait difficile t’attend.')); }
+      else if(w.length){ txt(note, w.length + T(' tricky facts are waiting for you.', ' faits difficiles t’attendent.')); }
+      else { txt(note, T('Nothing tricky yet. Play Practice or Challenge and the facts you miss are saved right here.', 'Rien de difficile pour l’instant. Joue à l’entraînement ou au défi et les faits ratés seront gardés ici.')); }
+    }
+    if(btn){
+      btn.disabled = !w.length;
+      btn.style.opacity = w.length ? '1' : '0.5';
+    }
+  }
+  function goHome(){
+    stopTimer();
+    clearPending();
+    renderChips();
+    show('home');
+  }
+
+  /* ---------- number pickers ---------- */
+  function buildNums(hostId, withAll, onPick){
+    var host = $(hostId), i, btn;
+    if(!host){ return; }
+    host.innerHTML = '';
+    for(i = 1; i <= 12; i++){
+      btn = mk('button', 'tt-num');
+      btn.type = 'button';
+      btn.setAttribute('data-t', String(i));
+      btn.textContent = String(i);
+      host.appendChild(btn);
+    }
+    if(withAll){
+      btn = mk('button', 'tt-num tt-all');
+      btn.type = 'button';
+      btn.setAttribute('data-t', 'all');
+      btn.textContent = T('All tables, 1 to 12', 'Toutes les tables, de 1 à 12');
+      host.appendChild(btn);
+    }
+    on(host, 'click', function(ev){
+      var el = ev.target;
+      while(el && el !== host && el.nodeName !== 'BUTTON'){ el = el.parentNode; }
+      if(!el || el === host || el.nodeName !== 'BUTTON'){ return; }
+      var v = el.getAttribute('data-t');
+      if(v){ onPick(v); }
+    });
+  }
+  function paint(host, isOn){
+    if(!host){ return; }
+    var els = host.getElementsByTagName('button'), i;
+    for(i = 0; i < els.length; i++){
+      if(isOn(els[i].getAttribute('data-t'))){ els[i].classList.add('tt-sel'); }
+      else { els[i].classList.remove('tt-sel'); }
+    }
+  }
+
+  var pSel = {}, cSel = null;
+
+  function practicePicked(){
+    var out = [], i;
+    for(i = 1; i <= 12; i++){ if(pSel[i]){ out.push(i); } }
+    return out;
+  }
+  function paintPractice(){
+    var sel = practicePicked(), all = sel.length === 12;
+    paint($('tt-practice-nums'), function(v){ return v === 'all' ? all : !!pSel[parseInt(v, 10)]; });
+    var note = $('tt-practice-note');
+    if(!note){ return; }
+    if(!sel.length){ txt(note, T('Choose at least one table to begin.', 'Choisis au moins une table pour commencer.')); }
+    else if(all){ txt(note, T('All 12 tables are selected.', 'Les 12 tables sont sélectionnées.')); }
+    else { txt(note, T('Selected: ', 'Sélection : ') + sel.join(', ')); }
+  }
+  function paintChal(){
+    paint($('tt-chal-nums'), function(v){ return v === String(cSel); });
+    var note = $('tt-chal-note');
+    if(!note){ return; }
+    if(!cSel){ txt(note, T('Choose a table to begin.', 'Choisis une table pour commencer.')); }
+    else if(cSel === 'all'){ txt(note, T('Mixed challenge: every table from 1 to 12.', 'Défi mélangé : toutes les tables de 1 à 12.')); }
+    else { txt(note, T('Challenge on the ' + cSel + ' times table.', 'Défi sur la table de ' + cSel + '.')); }
+  }
+
+  /* ---------- LEARN ---------- */
+  var learnTable = 1, learnIdx = 0;
+  function renderLearn(t){
+    learnTable = t;
+    learnIdx = 0;
+    txt($('tt-learn-title'), T('The ' + t + ' times table', 'La table de ' + t));
+    txt($('tt-tip-label'), T('Handy tip', 'Astuce'));
+    txt($('tt-tip-text'), tipFor(t));
+    var list = $('tt-learn-list'), i, row, l, r;
+    if(list){
+      list.innerHTML = '';
+      for(i = 1; i <= 12; i++){
+        row = mk('button', 'tt-row');
+        row.type = 'button';
+        row.setAttribute('data-i', String(i - 1));
+        l = mk('span', 'tt-rl');
+        l.textContent = TIMES(t, i) + ' = ';
+        r = mk('span', 'tt-rr');
+        r.textContent = String(t * i);
+        row.appendChild(l);
+        row.appendChild(r);
+        list.appendChild(row);
+      }
+    }
+    paintLearn();
+  }
+  function paintLearn(){
+    var list = $('tt-learn-list');
+    txt($('tt-learn-next'), T('Next line ▾', 'Ligne suivante ▾'));
+    if(!list){ return; }
+    var rows = list.getElementsByTagName('button'), i;
+    for(i = 0; i < rows.length; i++){
+      if(i === learnIdx){ rows[i].classList.add('tt-on'); } else { rows[i].classList.remove('tt-on'); }
+    }
+    var cur = rows[learnIdx];
+    if(cur && cur.getBoundingClientRect && cur.scrollIntoView){
+      try{
+        var r = cur.getBoundingClientRect(), h = window.innerHeight || 600;
+        if(r.top < 8 || r.bottom > h - 8){ cur.scrollIntoView({ block:'center' }); }
+      }catch(e){}
+    }
+  }
+
+  /* ---------- QUIZ ---------- */
+  var Q = { mode:'practice', tables:[], key:'', queue:[], idx:0, correct:0, missed:[], missedUnique:[], answered:false, total:0, start:0, elapsed:0, cur:null };
+  var tickId = 0, pending = 0;
+
+  function clearPending(){ if(pending){ clearTimeout(pending); pending = 0; } }
+  function stopTimer(){ if(tickId){ clearInterval(tickId); tickId = 0; } }
+  function fmtTime(sec){
+    sec = Math.max(0, Math.round(sec));
+    var m = Math.floor(sec / 60), s = sec % 60;
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+  function tick(){
+    if(Q.mode !== 'challenge'){ return; }
+    txt($('tt-clock'), '⏱ ' + fmtTime((Date.now() - Q.start) / 1000));
+  }
+  function modeLabel(){
+    if(Q.mode === 'challenge'){ return T('Beat the clock!', 'Bats le chrono !'); }
+    if(Q.mode === 'weak'){ return T('Your tricky facts', 'Tes faits difficiles'); }
+    return T('No timer — take your time.', 'Pas de chrono — prends ton temps.');
+  }
+
+  function startQuiz(mode, tables, facts){
+    clearPending();
+    stopTimer();
+    Q.mode = mode;
+    Q.tables = (tables || []).slice(0);
+    Q.idx = 0;
+    Q.correct = 0;
+    Q.missed = [];
+    Q.missedUnique = [];
+    Q.answered = false;
+    Q.cur = null;
+    Q.key = (Q.tables.length === 12 ? 'all' : String(Q.tables[0] || ''));
+    if(mode === 'challenge'){
+      Q.queue = randomFacts(Q.tables, 20);
+      Q.total = 20;
+    } else if(mode === 'weak'){
+      Q.queue = shuffle((facts || []).slice(0));
+      Q.total = Q.queue.length;
+    } else {
+      Q.queue = randomFacts(Q.tables, 40);
+      Q.total = 0;
+    }
+    if(!Q.queue.length){ goHome(); return; }
+    Q.start = Date.now();
+    Q.elapsed = 0;
+    var bw = $('tt-barwrap');
+    if(bw){ bw.style.display = Q.total ? 'block' : 'none'; }
+    txt($('tt-clock'), mode === 'challenge' ? '⏱ 0:00' : '');
+    if(mode === 'challenge'){ tickId = setInterval(tick, 250); }
+    show('quiz');
+    askQuestion();
+  }
+
+  function askQuestion(){
+    clearPending();
+    if(Q.total && Q.idx >= Q.total){ finishQuiz(); return; }
+    if(Q.idx >= Q.queue.length){ Q.queue = Q.queue.concat(randomFacts(Q.tables, 40)); }
+    var f = Q.queue[Q.idx];
+    if(!f){ finishQuiz(); return; }
+    Q.cur = makeQ(f.a, f.b);
+    Q.answered = false;
+    txt($('tt-question'), TIMES(Q.cur.a, Q.cur.b) + ' = ?');
+    txt($('tt-qsub'), modeLabel());
+    var fb = $('tt-feedback');
+    if(fb){ fb.className = 'tt-fb'; fb.textContent = ''; }
+    var ex = $('tt-explain');
+    if(ex){ ex.textContent = ''; ex.style.display = 'none'; }
+    var nx = $('tt-next');
+    if(nx){ nx.style.display = 'none'; txt(nx, T('Next question ▸', 'Question suivante ▸')); }
+    if(Q.total){ txt($('tt-count'), T('Question ', 'Question ') + (Q.idx + 1) + ' / ' + Q.total); }
+    else { txt($('tt-count'), T('Question ', 'Question ') + (Q.idx + 1) + '  ✓ ' + Q.correct); }
+    updateBar();
+    var box = $('tt-options'), i, b;
+    if(box){
+      box.innerHTML = '';
+      for(i = 0; i < Q.cur.opts.length; i++){
+        b = mk('button', 'tt-opt');
+        b.type = 'button';
+        b.setAttribute('data-v', String(Q.cur.opts[i]));
+        b.textContent = String(Q.cur.opts[i]);
+        box.appendChild(b);
+      }
+    }
+  }
+  function updateBar(){
+    var fill = $('tt-barfill');
+    if(fill){ fill.style.width = (Q.total ? Math.round((Q.idx / Q.total) * 100) : 0) + '%'; }
+  }
+
+  function answer(val){
+    if(Q.answered || !Q.cur){ return; }
+    Q.answered = true;
+    var q = Q.cur, ok = (val === q.p), box = $('tt-options'), els, i, v;
+    if(box){
+      els = box.getElementsByTagName('button');
+      for(i = 0; i < els.length; i++){
+        v = parseInt(els[i].getAttribute('data-v'), 10);
+        if(v === q.p){ els[i].classList.add('tt-good'); }
+        else if(v === val){ els[i].classList.add('tt-bad'); }
+        else { els[i].classList.add('tt-dim'); }
+      }
+    }
+    var fb = $('tt-feedback');
+    if(ok){
+      Q.correct++;
+      markRight(q.a, q.b);
+      if(fb){ fb.className = 'tt-fb tt-ok'; fb.textContent = T('Yes! ', 'Oui ! ') + TIMES(q.a, q.b) + ' = ' + q.p; }
+    } else {
+      Q.missed.push({ a:q.a, b:q.b });
+      markWrong(q.a, q.b);
+      if(fb){ fb.className = 'tt-fb tt-no'; fb.textContent = T('Not quite — ', 'Presque — ') + TIMES(q.a, q.b) + ' = ' + q.p; }
+    }
+    Q.idx++;
+    updateBar();
+    if(Q.mode === 'challenge'){
+      pending = setTimeout(function(){ pending = 0; askQuestion(); }, 450);
+      return;
+    }
+    var ex = $('tt-explain');
+    if(ex){ ex.style.display = 'block'; ex.textContent = explainFact(q.a, q.b); }
+    var nx = $('tt-next');
+    if(nx){
+      nx.style.display = '';
+      txt(nx, (Q.total && Q.idx >= Q.total) ? T('See my results ▸', 'Voir mes résultats ▸') : T('Next question ▸', 'Question suivante ▸'));
+    }
+  }
+
+  function finishQuiz(){
+    clearPending();
+    stopTimer();
+    Q.elapsed = (Date.now() - Q.start) / 1000;
+    var med = 'none';
+    if(Q.mode === 'challenge'){
+      med = medalFor(Q.correct, Q.elapsed);
+      if(med !== 'none' && Q.key){ saveMedal(Q.key, med); }
+      txt($('tt-res-icon'), ICON[med] || '🍁');
+      txt($('tt-res-name'), medalName(med));
+    } else {
+      txt($('tt-res-icon'), '🌟');
+      txt($('tt-res-name'), T('Tricky facts done!', 'Faits difficiles terminés !'));
+    }
+    txt($('tt-res-score'), Q.correct + ' / ' + Q.total);
+    txt($('tt-res-scorelab'), T('correct', 'bonnes réponses'));
+    txt($('tt-res-time'), fmtTime(Q.elapsed));
+    txt($('tt-res-timelab'), T('time', 'temps'));
+    var tb = $('tt-res-timebox');
+    if(tb){ tb.style.display = (Q.mode === 'challenge') ? '' : 'none'; }
+    var seen = {}, list = [], i, f, k;
+    for(i = 0; i < Q.missed.length; i++){
+      f = Q.missed[i];
+      k = factKey(f.a, f.b);
+      if(!seen[k]){ seen[k] = 1; list.push(f); }
+    }
+    Q.missedUnique = list;
+    txt($('tt-res-misslab'), list.length ? T('Facts to work on', 'Faits à travailler') : T('Nothing missed — perfect!', 'Aucune erreur — parfait !'));
+    var box = $('tt-res-missed'), s;
+    if(box){
+      box.innerHTML = '';
+      for(i = 0; i < list.length; i++){
+        s = mk('span');
+        s.textContent = TIMES(list[i].a, list[i].b) + ' = ' + (list[i].a * list[i].b);
+        box.appendChild(s);
+      }
+    }
+    var fix = $('tt-res-fix');
+    if(fix){ fix.style.display = list.length ? '' : 'none'; }
+    var again = $('tt-res-again');
+    if(again){ again.style.display = (Q.mode === 'challenge' || weakList().length) ? '' : 'none'; }
+    renderChips();
+    show('result');
+  }
+
+  /* ---------- wiring ---------- */
+  function init(){
+    buildNums('tt-learn-nums', false, function(v){
+      var t = parseInt(v, 10);
+      if(t >= 1 && t <= 12){ renderLearn(t); show('learn'); }
+    });
+    buildNums('tt-practice-nums', true, function(v){
+      var i, t;
+      if(v === 'all'){
+        var all = practicePicked().length === 12;
+        for(i = 1; i <= 12; i++){ pSel[i] = !all; }
+      } else {
+        t = parseInt(v, 10);
+        if(t >= 1 && t <= 12){ pSel[t] = !pSel[t]; }
+      }
+      paintPractice();
+    });
+    buildNums('tt-chal-nums', true, function(v){
+      cSel = (v === 'all') ? 'all' : parseInt(v, 10);
+      paintChal();
+    });
+
+    on($('tt-go-learn'), 'click', function(){ show('learnpick'); });
+    on($('tt-go-practice'), 'click', function(){ paintPractice(); show('practicepick'); });
+    on($('tt-go-chal'), 'click', function(){ paintChal(); show('chalpick'); });
+    on($('tt-go-weak'), 'click', function(){
+      var w = weakList();
+      if(!w.length){ renderChips(); return; }
+      startQuiz('weak', [], w);
+    });
+
+    on($('tt-learn-next'), 'click', function(){
+      learnIdx = (learnIdx + 1) % 12;
+      paintLearn();
+    });
+    on($('tt-learn-reset'), 'click', function(){ learnIdx = 0; paintLearn(); });
+    on($('tt-learn-practise'), 'click', function(){ startQuiz('practice', [learnTable]); });
+    on($('tt-learn-list'), 'click', function(ev){
+      var el = ev.target;
+      while(el && el.nodeName !== 'BUTTON' && el.parentNode){ el = el.parentNode; }
+      if(!el || el.nodeName !== 'BUTTON'){ return; }
+      var i = parseInt(el.getAttribute('data-i'), 10);
+      if(i >= 0 && i < 12){ learnIdx = i; paintLearn(); }
+    });
+
+    on($('tt-practice-start'), 'click', function(){
+      var sel = practicePicked();
+      if(!sel.length){ paintPractice(); return; }
+      startQuiz('practice', sel);
+    });
+    on($('tt-chal-start'), 'click', function(){
+      var tables = [], i;
+      if(!cSel){ paintChal(); return; }
+      if(cSel === 'all'){ for(i = 1; i <= 12; i++){ tables.push(i); } }
+      else { tables.push(cSel); }
+      startQuiz('challenge', tables);
+    });
+
+    on($('tt-options'), 'click', function(ev){
+      var el = ev.target;
+      while(el && el.nodeName !== 'BUTTON' && el.parentNode){ el = el.parentNode; }
+      if(!el || el.nodeName !== 'BUTTON'){ return; }
+      var v = parseInt(el.getAttribute('data-v'), 10);
+      if(!isNaN(v)){ answer(v); }
+    });
+    on($('tt-next'), 'click', function(){
+      if(Q.total && Q.idx >= Q.total){ finishQuiz(); } else { askQuestion(); }
+    });
+
+    on($('tt-res-again'), 'click', function(){
+      if(Q.mode === 'challenge' && Q.tables.length){ startQuiz('challenge', Q.tables); return; }
+      if(Q.mode === 'weak'){
+        var w = weakList();
+        if(w.length){ startQuiz('weak', [], w); return; }
+      }
+      goHome();
+    });
+    on($('tt-res-fix'), 'click', function(){
+      var list = (Q.missedUnique || []).slice(0);
+      if(!list.length){ goHome(); return; }
+      startQuiz('weak', [], list);
+    });
+
+    var homes = document.querySelectorAll ? document.querySelectorAll('.tt-home') : [], h;
+    for(h = 0; h < homes.length; h++){ on(homes[h], 'click', goHome); }
+    on($('tt-new'), 'click', goHome);
+
+    goHome();
+  }
+
+  try{ init(); }catch(e){}
+})();
+</script>
+  <script src="js/game-fullscreen.js?v=20260802"></script>
+  <script src="js/site.js?v=20260802"></script>
+  <script src="js/analytics.js?v=20260802"></script>
+</body>
+</html>

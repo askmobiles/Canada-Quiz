@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human Body &amp; Health Quiz for Kids — Free Science Questions | Canada Quiz</title>
+<meta name="description" content="Free human body and health quiz for kids and families. Questions on bones, muscles, the heart, the brain, food, germs and healthy habits. No signup, play instantly.">
+<meta property="og:title" content="Human Body &amp; Health Quiz for Kids — Free Science Questions | Canada Quiz">
+<meta property="og:description" content="Free human body and health quiz for kids and families. Questions on bones, muscles, the heart, the brain, food, germs and healthy habits. No signup, play instantly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/body-quiz.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=20260802">
+<style>.bigq{font-size:80px;text-align:center;margin:6px 0}</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/body-quiz.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/body-quiz.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/body-quiz.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/body-quiz.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="start-screen" class="panel center">
+    <div style="font-size:46px">🫀</div>
+    <h1>Human Body &amp; Health Quiz</h1>
+    <p class="muted" style="max-width:600px;margin:0 auto">Bones, muscles, your heart, your brain and the food you eat. Find out how your amazing body works!</p>
+    <details class="howto"><summary></summary><p>Choose a topic below. You'll get 10 questions &mdash; tap the answer you think is right and you'll see instantly if you're correct, with a short fact. Play again anytime for fresh questions!</p></details>
+    <div class="grid" id="cats" style="margin-top:18px"></div>
+  </section>
+
+  <section id="quiz-screen" class="panel" style="display:none">
+    <div class="quiz-meta">
+      <span class="pill" id="q-counter">Question 1</span>
+      <span class="pill" id="score-pill">Score: 0</span>
+    </div>
+    <div class="progress"><span id="progress-bar"></span></div>
+    <div id="bigq" class="bigq" style="display:none"></div>
+    <h2 id="question-text"></h2>
+    <div class="options" id="options"></div>
+    <div id="explain-box" class="explain" style="display:none"></div>
+    <div class="center" style="margin-top:18px">
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQuestion()">Next &rarr;</button>
+    </div>
+  </section>
+
+  <section id="result-screen" class="panel center" style="display:none">
+    <div class="result-big">🫀</div>
+    <h2 id="result-title"></h2>
+    <p class="score" id="result-score"></p>
+    <p class="muted" id="result-msg"></p>
+    <div style="margin:18px 0">
+      <button class="btn btn-lg" onclick="backToCats()">Pick another topic</button>
+      <a class="btn btn-ghost btn-lg" href="quizzes.html">More quizzes</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <details class="footer-map">
+      <summary>All pages <span class="fm-count">(81)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <h4>Quizzes</h4>
+        <a href="quizzes.html">All Quizzes</a>
+        <a href="gk-quiz.html">General Knowledge</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Fun Canada Quiz</a>
+        <a href="province-quiz.html">Which Province Are You?</a>
+        <a href="world-quiz.html">World Quiz</a>
+        <a href="science-quiz.html">Science &amp; Space</a>
+        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
+        <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Driving Test Practice</h4>
+        <a href="driving-test.html">Canada Driving Test</a>
+        <a href="ontario-g1-practice-test.html">Ontario G1 Practice Test</a>
+        <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
+        <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
+        <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Brain &amp; Puzzle Games</h4>
+        <a href="word-master.html">Word Master</a>
+        <a href="word-search.html">Word Search</a>
+        <a href="word-guess.html">Word Guess</a>
+        <a href="scramble.html">Word Scramble</a>
+        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="crossword.html">Crossword</a>
+        <a href="connections.html">Word Groups</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Minesweeper</a>
+        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Memory Match</a>
+        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="typing-test.html">Typing Speed Test</a>
+        <a href="color-match.html">Color Match</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="flags-game.html">Flags of the World</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Action &amp; Classic Games</h4>
+        <a href="snake.html">Maple Snake</a>
+        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
+        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="checkers.html">Checkers</a>
+        <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="tag.html">Tag</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Party Games</h4>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposter</a>
+        <a href="would-you-rather.html">Would You Rather?</a>
+        <a href="trivia-showdown.html">Trivia Showdown</a>
+        <a href="hold-to-head.html">Hold to Head</a>
+        <a href="top-answers.html">Top Answers</a>
+        <a href="categories-game.html">Categories</a>
+        <a href="story-maker.html">Story Maker</a>
+        <a href="draw-it.html">Draw It</a>
+        <a href="spin-wheel.html">Spin the Wheel</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Blog</h4>
+        <a href="blog.html">All Articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
+        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
+        <a href="what-is-confederation.html">What Is Confederation?</a>
+        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
+        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
+        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
+        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
+        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
+        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
+        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
+        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
+        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
+        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>The Site</h4>
+        <a href="index.html">Home</a>
+        <a href="daily.html">Daily Challenge</a>
+        <a href="games.html">All Family Games</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+const BANK = {
+  "Bones & Muscles": { emoji:"🦴", color:"red", q:[
+   {q:"Which bone is the longest in the human body?",options:["Femur","Humerus","Tibia","Ulna"],answer:0,explain:"The femur is your thigh bone, running from your hip all the way to your knee."},
+   {q:"What is the medical name for your kneecap?",options:["Sternum","Patella","Clavicle","Scapula"],answer:1,explain:"The patella is a small round bone that shields the front of your knee joint."},
+   {q:"In which part of the body is the humerus bone?",options:["Lower leg","Neck","Upper arm","Foot"],answer:2,explain:"The humerus is the long bone between your shoulder and your elbow."},
+   {q:"What is the long flat bone down the centre of your chest called?",options:["Scapula","Radius","Fibula","Sternum"],answer:3,explain:"The sternum, or breastbone, is where your ribs meet at the front."},
+   {q:"What is the everyday name for the clavicle?",options:["Collarbone","Shinbone","Jawbone","Tailbone"],answer:0,explain:"The clavicle runs from your breastbone to your shoulder and is called the collarbone."},
+   {q:"What are the small stacked bones of your spine called?",options:["Tendons","Vertebrae","Cartilage","Ligaments"],answer:1,explain:"Your spine is a stack of bones called vertebrae, which lets your back bend."},
+   {q:"What soft tissue inside some bones makes new blood cells?",options:["Cartilage","Enamel","Bone marrow","Tendon"],answer:2,explain:"Bone marrow fills the hollow centre of some bones and makes fresh blood cells."},
+   {q:"What bendy material gives shape to your ears and the tip of your nose?",options:["Bone","Enamel","Marrow","Cartilage"],answer:3,explain:"Cartilage is firm but flexible, so your ears can bend without breaking."},
+   {q:"What connects a muscle to a bone?",options:["A tendon","A ligament","A nerve","A vein"],answer:0,explain:"Tendons are tough cords that pull on bones whenever a muscle tightens."},
+   {q:"Which muscle bends your arm at the elbow?",options:["Triceps","Biceps","Deltoid","Hamstring"],answer:1,explain:"The biceps sits at the front of your upper arm and pulls your forearm up."},
+   {q:"Which muscle straightens your arm at the elbow?",options:["Biceps","Deltoid","Triceps","Calf"],answer:2,explain:"The triceps sits at the back of your upper arm and pushes your forearm straight."},
+   {q:"Where in your body are the hamstring muscles?",options:["Front of the chest","Back of the neck","Side of the hip","Back of the thigh"],answer:3,explain:"Hamstrings run down the back of your thigh and help you bend your knee."},
+   {q:"How does a muscle make a bone move?",options:["By pulling on it","By pushing on it","By spinning it","By stretching longer"],answer:0,explain:"Muscles can only pull, so they work in pairs to move a bone both ways."},
+   {q:"What kind of joint is your elbow?",options:["Ball-and-socket joint","Hinge joint","Fixed joint","Gliding joint"],answer:1,explain:"A hinge joint bends one way like a door hinge, and that is how your elbow works."},
+   {q:"What kind of joint is your shoulder?",options:["Hinge joint","Fixed joint","Ball-and-socket joint","Pivot joint"],answer:2,explain:"A ball-and-socket joint lets your arm swing in almost every direction."},
+   {q:"How many bones are there in one human hand?",options:["12","18","22","27"],answer:3,explain:"Each hand holds 27 bones, which is why fingers can make so many fine movements."},
+   {q:"What slippery liquid helps your joints move smoothly?",options:["Joint fluid","Sweat","Saliva","Tears"],answer:0,explain:"A slippery fluid inside each joint works like oil so bones glide instead of scraping."}
+  ]},
+  "Heart & Blood": { emoji:"❤️", color:"purple", q:[
+   {q:"Which blood vessels carry blood back towards your heart?",options:["Veins","Arteries","Nerves","Tendons"],answer:0,explain:"Veins bring blood back to the heart after it has delivered oxygen around the body."},
+   {q:"What are the tiniest blood vessels in your body called?",options:["Veins","Capillaries","Arteries","Valves"],answer:1,explain:"Capillaries are so thin that oxygen can pass straight through their walls."},
+   {q:"Which gas does blood pick up while passing through the lungs?",options:["Nitrogen","Carbon dioxide","Oxygen","Helium"],answer:2,explain:"Blood is pumped to the lungs to collect oxygen before travelling round the body."},
+   {q:"What is the pale liquid part of blood called?",options:["Marrow","Platelets","Enamel","Plasma"],answer:3,explain:"Plasma is mostly water, and it carries blood cells and nutrients along."},
+   {q:"Which tiny blood cells help a scrape stop bleeding?",options:["Platelets","Nerve cells","Skin cells","Muscle cells"],answer:0,explain:"Platelets stick together at a cut and build a clot that seals the gap."},
+   {q:"What is the red substance in blood that carries oxygen?",options:["Insulin","Hemoglobin","Keratin","Collagen"],answer:1,explain:"Hemoglobin grabs oxygen in the lungs and gives blood its red colour."},
+   {q:"What is the job of the valves inside your heart?",options:["Making new blood cells","Storing extra oxygen","Stopping blood flowing backwards","Cleaning dust from blood"],answer:2,explain:"Heart valves snap shut so blood keeps moving in one direction only."},
+   {q:"Roughly how big is an adult human heart?",options:["About the size of a pea","About the size of a grape","About the size of a melon","About the size of a fist"],answer:3,explain:"An adult heart is about fist-sized and sits between the lungs, slightly to the left."},
+   {q:"What is a pulse?",options:["The beat of blood in an artery","The tickle of a nerve ending","The rush of air in the lungs","The squeeze of the stomach"],answer:0,explain:"Each heartbeat pushes a wave of blood along your arteries, and that is your pulse."},
+   {q:"Where do people most often feel their pulse?",options:["The elbow","The wrist","The knee","The shoulder"],answer:1,explain:"An artery runs close to the skin at the wrist, so the beat is easy to feel."},
+   {q:"What is the largest artery leaving the heart called?",options:["The jugular","The femoral","The aorta","The carotid"],answer:2,explain:"The aorta is the big artery that carries oxygen-rich blood out to the body."},
+   {q:"About how many times does a resting adult heart beat each minute?",options:["About 20 times","About 40 times","About 200 times","About 70 times"],answer:3,explain:"A calm adult heart beats around 70 times a minute, faster during exercise."},
+   {q:"What type of tissue is the heart mostly made of?",options:["Muscle","Bone","Cartilage","Skin"],answer:0,explain:"The heart is a special muscle that squeezes and relaxes without you thinking about it."},
+   {q:"What are the two upper chambers of the heart called?",options:["Ventricles","Atria","Capillaries","Arteries"],answer:1,explain:"The atria are the two upper rooms of the heart, and they receive blood coming in."},
+   {q:"What are the two lower chambers of the heart called?",options:["Atria","Capillaries","Ventricles","Valves"],answer:2,explain:"The ventricles are the strong lower rooms that push blood out of the heart."},
+   {q:"What colour is blood that is full of oxygen?",options:["Deep blue","Dark purple","Pale green","Bright red"],answer:3,explain:"Oxygen makes hemoglobin turn bright red, so fresh blood from the lungs looks scarlet."},
+   {q:"What makes the 'lub-dub' sound of a heartbeat?",options:["The heart valves closing","The lungs filling with air","The ribs moving apart","The blood cooling down"],answer:0,explain:"Doctors hear valves snapping shut, which gives every heartbeat its double sound."}
+  ]},
+  "Brain & Senses": { emoji:"🧠", color:"blue", q:[
+   {q:"Which part of the eye turns light into signals for the brain?",options:["The eyelid","The retina","The eyebrow","The tear duct"],answer:1,explain:"The retina lines the back of the eye and changes light into nerve signals."},
+   {q:"What is the thin sheet inside your ear that vibrates when sound reaches it?",options:["The cochlea","The iris","The eardrum","The retina"],answer:2,explain:"Sound waves make the eardrum shake, and that shaking is passed deeper into the ear."},
+   {q:"What is the coloured ring around the pupil called?",options:["Cornea","Retina","Lens","Iris"],answer:3,explain:"The iris is a tiny muscle that changes the size of the pupil to control light."},
+   {q:"What are the tiny bumps on your tongue that pick up flavour called?",options:["Taste buds","Sweat glands","Nerve knots","Ear hairs"],answer:0,explain:"Taste buds send flavour messages to the brain, helped a lot by your sense of smell."},
+   {q:"Which sense do your nostrils give you?",options:["Hearing","Smell","Touch","Balance"],answer:1,explain:"Smell receptors high inside the nose catch tiny particles floating in the air."},
+   {q:"Which part of the brain helps you balance and move smoothly?",options:["The cortex","The retina","The cerebellum","The eardrum"],answer:2,explain:"The cerebellum sits at the back of the brain and fine-tunes every movement."},
+   {q:"What thick bundle of nerves runs down inside your backbone?",options:["The optic nerve","The windpipe","The aorta","The spinal cord"],answer:3,explain:"The spinal cord carries messages between the brain and the rest of the body."},
+   {q:"What hard case protects your brain?",options:["The skull","The ribs","The spine","The jaw"],answer:0,explain:"The skull is a helmet of bone built right into your head."},
+   {q:"Which snail-shaped part of the inner ear helps you hear?",options:["The iris","The cochlea","The retina","The pupil"],answer:1,explain:"The cochlea is a coiled tube of fluid that turns vibrations into nerve signals."},
+   {q:"What is the clear front window of the eye called?",options:["Retina","Iris","Cornea","Pupil"],answer:2,explain:"The cornea is a clear dome that bends light as it enters the eye."},
+   {q:"Which body part senses whether something is warm or cold?",options:["Ear","Nose","Tongue","Skin"],answer:3,explain:"Your skin is packed with tiny sensors for heat, cold, pressure and pain."},
+   {q:"What is a reflex, such as pulling your hand back from something hot?",options:["An automatic fast reaction","A slow planned action","A memory of the past","A kind of daydream"],answer:0,explain:"A reflex is handled by the spinal cord, so it happens before you even think."},
+   {q:"What are the left and right halves of the brain called?",options:["Ventricles","Hemispheres","Capillaries","Vertebrae"],answer:1,explain:"The brain has two hemispheres joined by a thick bridge of nerve fibres."},
+   {q:"Which nerve carries pictures from the eye to the brain?",options:["The spinal nerve","The facial nerve","The optic nerve","The auditory nerve"],answer:2,explain:"The optic nerve is a cable of about a million fibres leaving the back of each eye."},
+   {q:"What is the wrinkled outer layer of the brain called?",options:["The marrow","The cochlea","The plasma","The cortex"],answer:3,explain:"The folded cortex packs a huge surface into a small space inside your skull."},
+   {q:"Why do people blink?",options:["To keep the eyes moist","To rest the brain","To hear better","To warm the nose"],answer:0,explain:"Blinking spreads tears across the eye, washing away dust and keeping it wet."},
+   {q:"What do the semicircular canals in your ear help you do?",options:["Taste sweet things","Keep your balance","Smell flowers","Digest your food"],answer:1,explain:"Fluid moving in these loops tells your brain which way your head is tilting."}
+  ]},
+  "Food & Nutrition": { emoji:"🥗", color:"green", q:[
+   {q:"Which vitamin are oranges especially rich in?",options:["Vitamin A","Vitamin D","Vitamin C","Vitamin K"],answer:2,explain:"Oranges and other citrus fruit are packed with vitamin C, which helps heal skin."},
+   {q:"Which mineral in milk and cheese helps build strong bones?",options:["Iron","Sodium","Zinc","Calcium"],answer:3,explain:"Calcium is stored in bones and teeth and keeps them hard and strong."},
+   {q:"Which nutrient do beans, eggs and fish give you plenty of?",options:["Protein","Fibre","Sugar","Water"],answer:0,explain:"Protein gives the body the building blocks it uses to make muscle and repair itself."},
+   {q:"What is the tube that carries food from your throat to your stomach?",options:["The trachea","The esophagus","The aorta","The colon"],answer:1,explain:"The esophagus squeezes in waves to push each mouthful downwards."},
+   {q:"Where are most nutrients taken into the blood from food?",options:["In the mouth","In the stomach","In the small intestine","In the throat"],answer:2,explain:"The small intestine is long and folded, so it can soak up nutrients as food passes."},
+   {q:"Which nutrient in vegetables and whole grains keeps food moving through you?",options:["Calcium","Protein","Iron","Fibre"],answer:3,explain:"Fibre is the tough part of plants that the body cannot digest, and it helps digestion."},
+   {q:"What does saliva in your mouth begin to do to your food?",options:["Break it down","Freeze it","Colour it","Store it"],answer:0,explain:"Saliva wets food and starts breaking starches down before you even swallow."},
+   {q:"Which vitamin does your skin make when sunlight lands on it?",options:["Vitamin C","Vitamin D","Vitamin B12","Vitamin K"],answer:1,explain:"Sunlight lets skin make vitamin D, which helps the body use calcium for bones."},
+   {q:"Which mineral in spinach and red meat helps blood carry oxygen?",options:["Calcium","Iodine","Iron","Potassium"],answer:2,explain:"Iron is part of hemoglobin, the substance in blood that holds on to oxygen."},
+   {q:"What are carbohydrates such as bread, rice and pasta mainly used for?",options:["Building bones","Growing hair","Cleaning blood","Giving energy"],answer:3,explain:"The body turns carbohydrates into sugar, its favourite quick fuel for running and thinking."},
+   {q:"Which organ makes bile, a green liquid that helps digest fats?",options:["The liver","The lungs","The heart","The brain"],answer:0,explain:"The liver makes bile, which breaks large drops of fat into tiny ones."},
+   {q:"Roughly what share of the human body is water?",options:["About one tenth","About two thirds","About one twentieth","About nine tenths"],answer:1,explain:"Around two thirds of your body is water, which is why drinking matters so much."},
+   {q:"What is the main nutrient in nuts, butter and olive oil?",options:["Fibre","Protein","Fat","Calcium"],answer:2,explain:"Fats store energy and help the body take in vitamins A, D, E and K."},
+   {q:"Which food group do lentils, chickpeas and kidney beans belong to?",options:["Grains","Dairy","Berries","Legumes"],answer:3,explain:"Legumes are seeds that grow in pods, and they are full of protein and fibre."},
+   {q:"What is the very first step of digestion?",options:["Chewing food in the mouth","Squeezing it in the stomach","Soaking it in the intestine","Sorting it in the liver"],answer:0,explain:"Chewing breaks food into small pieces so the rest of the body can handle it."},
+   {q:"Which vitamin, found in carrots, helps your eyes work in dim light?",options:["Vitamin C","Vitamin A","Vitamin D","Vitamin B12"],answer:1,explain:"Carrots hold beta-carotene, which the body turns into vitamin A for healthy eyes."},
+   {q:"What are the tiny finger-shaped folds lining the small intestine called?",options:["Buds","Valves","Villi","Fibres"],answer:2,explain:"Millions of villi give the intestine a huge surface for soaking up nutrients."}
+  ]},
+  "Germs & Staying Well": { emoji:"🦠", color:"yellow", q:[
+   {q:"What is the main job of white blood cells?",options:["Carrying oxygen","Storing calcium","Building bones","Fighting germs"],answer:3,explain:"White blood cells patrol the body and attack germs that get inside."},
+   {q:"Why does washing with soap remove germs so well?",options:["Soap lifts germs off skin","Soap freezes germs solid","Soap makes skin harder","Soap adds vitamins"],answer:0,explain:"Soap loosens grease and germs from skin so running water can rinse them away."},
+   {q:"A virus can only make copies of itself in which place?",options:["In dry air","Inside a living cell","In bright sunlight","In cold water"],answer:1,explain:"A virus is not a full cell, so it must borrow a living cell's machinery to copy itself."},
+   {q:"What is a bacterium?",options:["A tiny animal with legs","A kind of small seed","A single-celled living thing","A drop of coloured water"],answer:2,explain:"Bacteria are single cells, and most kinds are harmless or even helpful to us."},
+   {q:"What does a vaccine train the body to do?",options:["Grow taller quickly","Store extra water","Digest food faster","Recognize a germ"],answer:3,explain:"A vaccine shows the immune system a harmless sample so it can recognize the real germ."},
+   {q:"Why do people cough into their elbow?",options:["To stop droplets spreading","To keep the throat warm","To make the sound softer","To rest the arm"],answer:0,explain:"Coughs fling tiny droplets, and an elbow catches them instead of hands or air."},
+   {q:"What are antibodies?",options:["Tiny bones in the ear","Proteins that lock onto germs","Sugars stored in muscle","Cells that carry oxygen"],answer:1,explain:"Antibodies stick to a germ like a label so white blood cells can find it."},
+   {q:"About how long should hands be scrubbed with soap?",options:["About 2 seconds","About 5 seconds","About 20 seconds","About 5 minutes"],answer:2,explain:"Around twenty seconds of scrubbing, about two rounds of a short song, does the job."},
+   {q:"Which body covering forms a barrier that keeps germs out?",options:["Hair","Nails","Eyelashes","Skin"],answer:3,explain:"Unbroken skin is a tough wall that most germs simply cannot cross."},
+   {q:"What sticky substance inside your nose traps dust and germs?",options:["Mucus","Saliva","Plasma","Sweat"],answer:0,explain:"Mucus is a sticky trap, and tiny hairs then sweep the mess back out."},
+   {q:"What does the word 'contagious' mean?",options:["Very large in size","Able to spread to others","Made inside a machine","Found only in water"],answer:1,explain:"A contagious illness is one that can pass from person to person."},
+   {q:"Pasteurization heats milk and juice in order to do what?",options:["Add extra vitamins","Change the colour","Kill germs","Make it thicker"],answer:2,explain:"Louis Pasteur showed that gentle heating kills germs so drinks keep longer."},
+   {q:"What is the immune system?",options:["A set of bones in the chest","A tube that carries food","A network of blood vessels","The body's defence against germs"],answer:3,explain:"The immune system is a team of cells and proteins that guards the whole body."},
+   {q:"Alexander Fleming discovered penicillin by noticing what growing in a dish?",options:["A mould","A crystal","A seed","A fern"],answer:0,explain:"A stray mould killed the bacteria around it, which led to the first antibiotic."},
+   {q:"What do the tiny hairs lining your windpipe do?",options:["Warm the blood","Sweep dust upwards","Make new cells","Store oxygen"],answer:1,explain:"These hairs beat like little brooms, moving trapped dust up and away from the lungs."},
+   {q:"What are the small lumps in your neck and armpits that help fight germs called?",options:["Taste buds","Sweat glands","Lymph nodes","Villi"],answer:2,explain:"Lymph nodes are checkpoints where white blood cells gather to tackle germs."}
+  ]},
+  "Sleep, Exercise & Growing": { emoji:"😴", color:"orange", q:[
+   {q:"About how many hours of sleep do most school-age children need each night?",options:["About 4 hours","About 10 hours","About 14 hours","About 18 hours"],answer:1,explain:"Children of school age generally need around nine to twelve hours of sleep."},
+   {q:"In which stage of sleep do most vivid dreams happen?",options:["Deep sleep","Light sleep","REM sleep","Quiet sleep"],answer:2,explain:"During REM sleep the eyes flicker under the lids and the brain is very busy."},
+   {q:"What happens to muscles when you exercise them regularly?",options:["They turn into fat","They stop working","They lose their blood","They get stronger"],answer:3,explain:"Exercise makes tiny repairs in muscle fibres, and they rebuild a little stronger."},
+   {q:"What are growth plates?",options:["Soft areas near the ends of bones","Flat muscles across the chest","Thin layers of skin on hands","Small air sacs inside the lungs"],answer:0,explain:"Growth plates are soft zones where children's bones add length, hardening when growing stops."},
+   {q:"Why does your breathing speed up during exercise?",options:["To cool the blood down","To bring in more oxygen","To make the heart smaller","To dry out the skin"],answer:1,explain:"Working muscles burn more oxygen, so the lungs pull in air faster to keep up."},
+   {q:"What does the body make to cool itself down during exercise?",options:["Mucus","Saliva","Sweat","Tears"],answer:2,explain:"Sweat evaporating from your skin carries heat away and cools you down."},
+   {q:"What important job does the brain do with the day's events while you sleep?",options:["Grows new bones","Cleans the blood","Digests your supper","Stores memories"],answer:3,explain:"Sleep helps the brain sort the day and keep what it wants to remember."},
+   {q:"What is the dome-shaped muscle below the lungs that helps you breathe?",options:["The diaphragm","The biceps","The cortex","The cochlea"],answer:0,explain:"The diaphragm flattens to pull air in, then domes upward to push air out."},
+   {q:"Babies are born with more bones than adults because many later do what?",options:["Disappear completely","Fuse together","Turn into muscle","Move to the spine"],answer:1,explain:"Small bones join up as a child grows, so adults end up with fewer of them."},
+   {q:"What is the body's natural sleep-and-wake rhythm called?",options:["A reflex","A pulse","A body clock","A growth spurt"],answer:2,explain:"An inner body clock, set partly by daylight, tells you when to feel sleepy."},
+   {q:"Why do athletes warm up before playing sport?",options:["To use up spare energy","To cool the muscles down","To slow the heart down","To prepare the muscles"],answer:3,explain:"A warm-up raises blood flow to muscles so they stretch and work more easily."},
+   {q:"What is a period of quick growth in height during the teenage years called?",options:["A growth spurt","A reflex arc","A sleep cycle","A heat wave"],answer:0,explain:"Bodies often shoot up in height during a growth spurt, then settle again."},
+   {q:"Exercise such as jogging or swimming that keeps the heart beating faster is called what?",options:["Static exercise","Aerobic exercise","Passive exercise","Silent exercise"],answer:1,explain:"Aerobic means with air, because this kind of movement uses lots of oxygen."},
+   {q:"What does regular exercise do to your bones over time?",options:["Shortens them","Softens them","Strengthens them","Cools them"],answer:2,explain:"Bones respond to being used by adding minerals, which makes them denser and tougher."},
+   {q:"Which body part gets longer at the growth plates?",options:["Muscles","Nerves","Veins","Bones"],answer:3,explain:"New bone is added at the growth plates, and that is how children get taller."},
+   {q:"What happens to your heart rate after you stop exercising and rest?",options:["It slowly returns to normal","It stops for a moment","It stays high forever","It doubles once more"],answer:0,explain:"Once muscles need less oxygen, the heart gradually slows back to its resting speed."}
+  ]}
+};
+const LSKEY="bodyq_";
+
+let qs=[], cur=0, score=0, answered=false, curCat="";
+function balanceOpts(it){
+  const opts=it.options||it.o, ans=(it.answer!==undefined)?it.answer:it.a;
+  if(!Array.isArray(opts)||opts.length!==4||!(ans>=0&&ans<=3)) return it;
+  const txt=opts.join(' ').toLowerCase();
+  if(/all of the|none of the|both of/.test(txt)) return it;
+  if(opts.every(o=>!isNaN(parseFloat(String(o).replace(/[\s,$%]/g,''))))) return it;
+  const idx=[0,1,2,3];
+  for(let i=3;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
+  const c=Object.assign({},it), o2=idx.map(i=>opts[i]), a2=idx.indexOf(ans);
+  if(it.options){ c.options=o2; c.answer=a2; } else { c.o=o2; c.a=a2; }
+  return c;
+}
+function pickFresh(bank,count,key){
+  let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
+  if(!Array.isArray(seen)) seen=[];
+  let unseen=bank.map((_,i)=>i).filter(i=>seen.indexOf(i)===-1);
+  if(unseen.length<count){ seen=[]; unseen=bank.map((_,i)=>i); }
+  for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
+  const chosen=unseen.slice(0,count);
+  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
+  return chosen.map(i=>balanceOpts(bank[i]));
+}
+function buildCats(){
+  const box=document.getElementById('cats'); box.innerHTML='';
+  Object.keys(BANK).forEach(name=>{
+    const c=BANK[name];
+    const card=document.createElement('div'); card.className='card c-'+c.color;
+    card.innerHTML='<div class="emoji">'+c.emoji+'</div><h3>'+name+'</h3><p>'+c.q.length+' questions</p>';
+    const b=document.createElement('button'); b.className='btn btn-'+c.color; b.textContent='Start'; b.onclick=()=>startCat(name);
+    card.appendChild(b); box.appendChild(card);
+  });
+}
+function startCat(name){
+  curCat=name; const c=BANK[name];
+  qs=pickFresh(c.q, Math.min(10,c.q.length), LSKEY+name);
+  cur=0; score=0; answered=false;
+  document.getElementById('start-screen').style.display='none';
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='block';
+  showQ(); window.scrollTo(0,0);
+}
+function showQ(){
+  answered=false; const q=qs[cur]; const big=BANK[curCat].big;
+  document.getElementById('q-counter').textContent='Question '+(cur+1)+' of '+qs.length;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  document.getElementById('progress-bar').style.width=(cur/qs.length*100)+'%';
+  const bq=document.getElementById('bigq');
+  if(big && q.icon){ bq.style.display='block'; bq.textContent=q.icon; } else { bq.style.display='none'; }
+  document.getElementById('question-text').textContent=q.q;
+  const box=document.getElementById('options'); box.innerHTML='';
+  q.options.forEach((opt,i)=>{ const b=document.createElement('button'); b.className='option'; b.textContent=opt; b.onclick=()=>pick(i,b); box.appendChild(b); });
+  document.getElementById('explain-box').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+function pick(i,btn){
+  if(answered) return; answered=true; const q=qs[cur];
+  document.querySelectorAll('#options .option').forEach((b,idx)=>{ b.classList.add('disabled'); if(idx===q.answer) b.classList.add('correct'); if(idx===i&&i!==q.answer) b.classList.add('wrong'); });
+  if(i===q.answer) score++;
+  document.getElementById('score-pill').textContent='Score: '+score;
+  const ex=document.getElementById('explain-box');
+  ex.innerHTML='<strong>'+(i===q.answer?'\u2705 Correct! ':'\u274C The answer is '+q.options[q.answer]+'. ')+'</strong>'+q.explain;
+  ex.style.display='block';
+  document.getElementById('progress-bar').style.width=((cur+1)/qs.length*100)+'%';
+  const nb=document.getElementById('next-btn'); nb.textContent=(cur+1<qs.length)?'Next \u2192':'See my score \u2192'; nb.style.display='inline-block';
+}
+function nextQuestion(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0);} else finish(); }
+function finish(){
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('result-screen').style.display='block';
+  document.getElementById('result-score').textContent='You scored '+score+' / '+qs.length;
+  const pct=score/qs.length; let t,m;
+  if(pct===1){t='\uD83C\uDF1F Perfect!';m='You are a body expert!';}
+  else if(pct>=0.7){t='\uD83C\uDF89 Great job!';m='Great health knowledge!';}
+  else if(pct>=0.4){t='\uD83D\uDE42 Nice try!';m='Play again to learn more.';}
+  else {t='\uD83C\uDF31 Keep learning!';m='Give it another go \u2014 you will do better!';}
+  document.getElementById('result-title').textContent=t; document.getElementById('result-msg').textContent=m;
+  window.scrollTo(0,0);
+}
+function backToCats(){
+  document.getElementById('result-screen').style.display='none';
+  document.getElementById('quiz-screen').style.display='none';
+  document.getElementById('start-screen').style.display='block';
+  window.scrollTo(0,0);
+}
+buildCats();
+</script>
+  <script src="js/site.js?v=20260802"></script>
+  <script src="js/analytics.js?v=20260802"></script>
+  <script src="js/game-fullscreen.js?v=20260802"></script>
+</body>
+</html>

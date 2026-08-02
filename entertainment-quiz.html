@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://canada-quiz.com/entertainment-quiz.html">
 <meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="css/style.css?v=20260730">
+<link rel="stylesheet" href="css/style.css?v=20260802">
 <style>.bigq{font-size:80px;text-align:center;margin:6px 0}</style>
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -80,7 +80,7 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <details class="footer-map">
-      <summary>All pages <span class="fm-count">(71)</span></summary>
+      <summary>All pages <span class="fm-count">(81)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quizzes</h4>
@@ -93,6 +93,10 @@
         <a href="science-quiz.html">Science &amp; Space</a>
         <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
         <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
       </div>
       <div class="footer-map-col">
         <h4>Driving Test Practice</h4>
@@ -119,6 +123,10 @@
         <a href="rubiks-cube.html">Rubik's Cube</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="flags-game.html">Flags of the World</a>
       </div>
       <div class="footer-map-col">
         <h4>Action &amp; Classic Games</h4>
@@ -129,6 +137,8 @@
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
         <a href="tag.html">Tag</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
       </div>
       <div class="footer-map-col">
         <h4>Party Games</h4>
@@ -205,6 +215,16 @@ const BANK = {
    {q:"Which country's film industry is nicknamed Bollywood?",options:["China","Japan","Brazil","India"],answer:3,explain:"Bollywood is the Hindi-language film industry based in the city of Mumbai."},
    {q:"What happens to Pinocchio's nose when he tells a lie?",options:["It grows longer","It turns blue","It disappears","It gets shorter"],answer:0,explain:"In the story by Carlo Collodi, the wooden puppet's nose grows each time he lies."},
    {q:"Which Muppet character is a green frog?",options:["Gonzo","Fozzie Bear","Kermit","Animal"],answer:2,explain:"Kermit the Frog was created by the puppet maker Jim Henson in 1955."}
+  ,
+   {q:"In which year was the first Star Wars film released?",options:["1957","1967","1977","1987"],answer:2,explain:"The first Star Wars film reached theatres in 1977 and became a huge hit."},
+   {q:"Who directed the 1982 film E.T. the Extra-Terrestrial?",options:["George Lucas","Steven Spielberg","Tim Burton","James Cameron"],answer:1,explain:"Steven Spielberg directed E.T., the story of a boy who befriends a lost alien."},
+   {q:"In the Pixar film Up, what lifts Carl's house into the sky?",options:["Kites","Rockets","Birds","Balloons"],answer:3,explain:"Thousands of coloured balloons carry the house away on a great adventure."},
+   {q:"In the film Mary Poppins, what does Mary use to float down from the sky?",options:["Ladder","Umbrella","Kite","Parachute"],answer:1,explain:"Mary Poppins drifts down from the clouds holding the handle of her umbrella."},
+   {q:"The film The Sound of Music is set in which country?",options:["Austria","Sweden","Poland","Portugal"],answer:0,explain:"The story follows the von Trapp family in the mountains of Austria."},
+   {q:"In Jurassic Park, dinosaur DNA is found inside insects trapped in what?",options:["Ice","Clay","Amber","Wax"],answer:2,explain:"Amber is hardened tree sap, and it can preserve tiny insects for millions of years."},
+   {q:"What is the name of the boy raised by wolves in The Jungle Book?",options:["Kaa","Akela","Baloo","Mowgli"],answer:3,explain:"Mowgli grows up in the jungle with animal friends like Baloo the bear."},
+   {q:"What colour is the Sesame Street character Elmo?",options:["Red","Blue","Green","Orange"],answer:0,explain:"Elmo is the small red monster with the giggly voice on Sesame Street."},
+   {q:"Which Canadian children's television host had puppet friends named Casey and Finnegan?",options:["Raffi","Fred Penner","Mr. Dressup","The Friendly Giant"],answer:2,explain:"Mr. Dressup delighted Canadian kids for decades with his Tickle Trunk and puppets. 🍁"}
   ]},
   "Music": { emoji:"🎵", color:"orange", q:[
    {q:"How many strings does a standard guitar have?",options:["4","5","6","8"],answer:2,explain:"A standard acoustic or electric guitar has six strings."},
@@ -226,6 +246,16 @@ const BANK = {
    {q:"Which instrument family does the flute belong to?",options:["Brass","Woodwind","Percussion","Strings"],answer:1,explain:"The flute is a woodwind instrument, even though modern flutes are made of metal."},
    {q:"What is a group of four musicians called?",options:["A duo","A trio","A quartet","A choir"],answer:2,explain:"Four players make a quartet, three make a trio and two make a duo."},
    {q:"Who composed the music for 'O Canada'?",options:["Calixa Lavallée","Robert Stanley Weir","Glenn Gould","Gilles Vigneault"],answer:0,explain:"Calixa Lavallée wrote the music in 1880, and Robert Stanley Weir added English words later."}
+  ,
+   {q:"Which instrument is usually played by drawing a bow across its strings?",options:["Trumpet","Violin","Flute","Piano"],answer:1,explain:"A violin makes sound when its bow, strung with fine hair, rubs the strings."},
+   {q:"What is the highest singing voice in a choir called?",options:["Bass","Tenor","Baritone","Soprano"],answer:3,explain:"Soprano singers carry the highest notes and often sing the melody."},
+   {q:"How many notes are there from one C to the next C on a piano?",options:["Six","Seven","Eight","Ten"],answer:2,explain:"Counting both ends, C to C covers eight notes, which musicians call an octave."},
+   {q:"Bagpipes are most closely linked with which country?",options:["Scotland","Greece","Finland","Japan"],answer:0,explain:"Scottish bagpipes are played at parades and celebrations around the world."},
+   {q:"Which large instrument has strings stretched across a tall triangular frame?",options:["Banjo","Harp","Cello","Guitar"],answer:1,explain:"A harp is plucked with the fingers and can have almost fifty strings."},
+   {q:"The steel drum was first made on the islands of which country?",options:["Cuba","Jamaica","Trinidad and Tobago","Barbados"],answer:2,explain:"Metalworkers in Trinidad and Tobago shaped the first steel drums from old oil barrels."},
+   {q:"Which composer wrote the violin concertos called The Four Seasons?",options:["Antonio Vivaldi","Johann Sebastian Bach","Joseph Haydn","George Frideric Handel"],answer:0,explain:"Vivaldi wrote The Four Seasons in Italy about three hundred years ago."},
+   {q:"What do we call the person who stands in front of an orchestra and leads it?",options:["Composer","Conductor","Soloist","Producer"],answer:1,explain:"A conductor keeps the whole orchestra together using hand and baton signals."},
+   {q:"Jazz music grew up in which American city?",options:["Boston","Seattle","Denver","New Orleans"],answer:3,explain:"Brass bands in New Orleans helped create jazz more than a hundred years ago."}
   ]},
   "Sports": { emoji:"⚽", color:"green", q:[
    {q:"How many players are on the ice per team in hockey?",options:["5","6","7","8"],answer:1,explain:"Six players including the goalie."},
@@ -247,6 +277,15 @@ const BANK = {
    {q:"What is the highest possible score in ten-pin bowling?",options:["100","200","300","500"],answer:2,explain:"A perfect game of twelve strikes in a row scores 300 points."},
    {q:"In badminton, what do players hit over the net?",options:["A shuttlecock","A puck","A beanbag","A disc"],answer:0,explain:"Badminton uses a light shuttlecock instead of a ball."},
    {q:"About how long is an Olympic marathon race?",options:["About 21 kilometres","About 42 kilometres","About 60 kilometres","About 80 kilometres"],answer:1,explain:"A marathon covers about 42 kilometres, which is a little over 26 miles."}
+  ,
+   {q:"In soccer, which colour of card sends a player off the field?",options:["Yellow","Red","Blue","Green"],answer:1,explain:"A red card means the player must leave and the team plays one short."},
+   {q:"How many players from one team are on a volleyball court?",options:["Six","Five","Seven","Nine"],answer:0,explain:"Six players stand on each side of the net and rotate around the court."},
+   {q:"In curling, what do players slide down the ice toward the target?",options:["Puck","Ball","Disc","Stone"],answer:3,explain:"A curling stone is made of polished granite and weighs about twenty kilograms."},
+   {q:"The Tour de France is a famous race in which sport?",options:["Running","Rowing","Cycling","Swimming"],answer:2,explain:"Riders cycle right around France for about three weeks every summer."},
+   {q:"In which sport do players score points called a 'try'?",options:["Rugby","Cricket","Hockey","Handball"],answer:0,explain:"In rugby, a try is scored by grounding the ball behind the other team's line."},
+   {q:"Which gymnastics apparatus is a long narrow beam that athletes balance on?",options:["Vault","Parallel bars","Balance beam","Pommel horse"],answer:2,explain:"The balance beam is about ten centimetres wide, so gymnasts need great control."},
+   {q:"Which team sport is played in a swimming pool with a ball and two goals?",options:["Rowing","Diving","Sailing","Water polo"],answer:3,explain:"Water polo players tread water for the whole game while passing and shooting."},
+   {q:"Which Japanese martial art means 'the gentle way' and is based on throws?",options:["Karate","Taekwondo","Judo","Kendo"],answer:2,explain:"Judo uses balance and leverage to throw an opponent instead of striking them."}
   ]},
   "Food Around the World": { emoji:"🍜", color:"blue", q:[
    {q:"Which Canadian dish is fries with cheese curds and gravy?",options:["Poutine","Nanaimo bar","Tourtière","Butter tart"],answer:0,explain:"Poutine comes from Quebec and is loved across Canada."},
@@ -266,6 +305,15 @@ const BANK = {
    {q:"Chocolate is made from the seeds of which tree?",options:["The cacao tree","The coconut tree","The almond tree","The olive tree"],answer:0,explain:"Chocolate comes from cacao beans, the seeds that grow inside pods on the cacao tree."},
    {q:"Which country does the noodle soup pho come from?",options:["Thailand","Cambodia","Laos","Vietnam"],answer:3,explain:"Pho is a Vietnamese noodle soup usually served with fresh herbs."},
    {q:"What is tofu made from?",options:["Rice","Soybeans","Corn","Wheat"],answer:1,explain:"Tofu is made by pressing soy milk into soft white blocks."}
+  ,
+   {q:"Which country is the flaky crescent-shaped pastry called a croissant linked with?",options:["France","Ireland","Brazil","Egypt"],answer:0,explain:"Croissants became a breakfast favourite in France and are now eaten worldwide."},
+   {q:"Which ingredient is mashed to make the dip called hummus?",options:["Lentils","Chickpeas","Rice","Corn"],answer:1,explain:"Chickpeas are blended with sesame paste, lemon and garlic to make hummus."},
+   {q:"The paprika-flavoured stew called goulash comes from which country?",options:["Norway","Portugal","Hungary","Finland"],answer:2,explain:"Goulash began as a hearty stew cooked by Hungarian herders over open fires."},
+   {q:"Traditional Swiss fondue is a warm pot of which melted food?",options:["Butter","Sugar","Honey","Cheese"],answer:3,explain:"Diners dip bread on long forks into a warm pot of melted cheese."},
+   {q:"Greek tzatziki is a dip made from cucumber and what?",options:["Cream","Custard","Mayonnaise","Yogurt"],answer:3,explain:"Thick yogurt, cucumber, garlic and herbs make this cool Greek dip."},
+   {q:"Japanese miso paste is made by fermenting which bean?",options:["Broad beans","Soybeans","Green beans","Lima beans"],answer:1,explain:"Fermented soybeans give miso soup its deep, salty flavour."},
+   {q:"Spicy jerk chicken is a well-known dish from which country?",options:["Jamaica","Iceland","Nepal","Chile"],answer:0,explain:"Jamaican cooks rub the chicken with allspice and hot peppers, then smoke it slowly."},
+   {q:"Vanilla comes from the pod of which kind of plant?",options:["Fern","Cactus","Orchid","Palm tree"],answer:2,explain:"Vanilla pods grow on a climbing orchid and are dried before they are used."}
   ]},
   "Video Games": { emoji:"🎮", color:"red", q:[
    {q:"What is the name of Nintendo's famous plumber character?",options:["Luigi","Mario","Wario","Toad"],answer:1,explain:"Mario first appeared in 1981 and became Nintendo's best-known character."},
@@ -280,6 +328,15 @@ const BANK = {
    {q:"In Pokémon, what type of Pokémon is Pikachu?",options:["Water type","Fire type","Grass type","Electric type"],answer:3,explain:"Pikachu is an Electric type, known for its yellow body and lightning-shaped tail."},
    {q:"Which arcade game has a big gorilla rolling barrels down ramps?",options:["Frogger","Donkey Kong","Galaga","Centipede"],answer:1,explain:"Donkey Kong came out in 1981 and gave Mario his very first appearance."},
    {q:"The early arcade game Pong is based on which sport?",options:["Soccer","Golf","Basketball","Table tennis"],answer:3,explain:"Pong, released in 1972, copies table tennis with two paddles and a bouncing dot."}
+  ,
+   {q:"The puzzle game Tetris was created by a programmer from which country?",options:["Japan","Sweden","Canada","Russia"],answer:3,explain:"Alexey Pajitnov made Tetris in Moscow in 1984 and it spread around the world."},
+   {q:"Which company created the PlayStation game console?",options:["Sony","Nintendo","Atari","Sega"],answer:0,explain:"Sony released the first PlayStation in 1994, and its games came on discs."},
+   {q:"In the Pokémon games, what do trainers throw to catch a Pokémon?",options:["Poké Ball","Net","Rope","Cage"],answer:0,explain:"A Poké Ball opens when it hits and keeps the Pokémon safely inside."},
+   {q:"In Super Mario Bros., what does Mario collect as he runs through each level?",options:["Stars","Keys","Coins","Gems"],answer:2,explain:"Collecting one hundred gold coins earns Mario an extra life."},
+   {q:"The adventurer Lara Croft is the hero of which game series?",options:["Mega Man","Tomb Raider","Final Fantasy","SimCity"],answer:1,explain:"Lara Croft has explored ancient tombs in these games since 1996."},
+   {q:"Which company makes the Xbox game console?",options:["Apple","Microsoft","Samsung","Philips"],answer:1,explain:"Microsoft, the company behind Windows, launched the first Xbox in 2001."},
+   {q:"In the arcade classic Space Invaders, what are players shooting at?",options:["Cars","Dragons","Aliens","Robots"],answer:2,explain:"Rows of aliens march down the screen while the player shoots from below."},
+   {q:"In Minecraft, which green creature explodes when it comes close to you?",options:["Zombie","Skeleton","Enderman","Creeper"],answer:3,explain:"A creeper hisses for a moment and then blows up, damaging whatever is nearby."}
   ]},
   "Books & Cartoons": { emoji:"📚", color:"yellow", q:[
    {q:"Who wrote the novel Anne of Green Gables?",options:["Lucy Maud Montgomery","Margaret Atwood","Alice Munro","Emily Carr"],answer:0,explain:"Lucy Maud Montgomery published the book in 1908 and set it on Prince Edward Island."},
@@ -294,11 +351,32 @@ const BANK = {
    {q:"Which cartoon character is a yellow sponge who lives under the sea?",options:["Popeye","SpongeBob SquarePants","Donald Duck","Woody Woodpecker"],answer:1,explain:"SpongeBob SquarePants lives in a pineapple in the town of Bikini Bottom."},
    {q:"In the Asterix comics, which country is the little village in?",options:["France","Italy","Spain","Greece"],answer:0,explain:"Asterix lives in ancient Gaul, the land we now call France."},
    {q:"What kind of dog is the cartoon character Scooby-Doo?",options:["A poodle","A beagle","A Labrador","A Great Dane"],answer:3,explain:"Scooby-Doo is a very large and very nervous Great Dane."}
+  ,
+   {q:"Who wrote the fantasy novel The Hobbit?",options:["J.R.R. Tolkien","C.S. Lewis","Rudyard Kipling","Mark Twain"],answer:0,explain:"Tolkien published The Hobbit in 1937, about Bilbo Baggins and a dragon's treasure."},
+   {q:"In the Harry Potter books, what kind of animal is Hedwig?",options:["Cat","Owl","Rat","Toad"],answer:1,explain:"Hedwig is a snowy owl who carries Harry's letters back and forth."},
+   {q:"Which cartoon family lives in the stone-age town of Bedrock?",options:["The Jetsons","The Addams Family","The Flintstones","The Rugrats"],answer:2,explain:"The Flintstones live in the stone age and drive a car powered by their feet."},
+   {q:"Which artist created the cartoon character Mickey Mouse?",options:["Charles Schulz","Chuck Jones","Walt Disney","Stan Lee"],answer:2,explain:"Walt Disney and Ub Iwerks drew Mickey Mouse back in 1928."},
+   {q:"The character Pippi Longstocking was created by a writer from which country?",options:["Spain","Greece","Wales","Sweden"],answer:3,explain:"Astrid Lindgren of Sweden wrote about a girl strong enough to lift a horse."},
+   {q:"In The Lion, the Witch and the Wardrobe, how do the children reach Narnia?",options:["Through a mirror","Through a well","Through a door","Through a wardrobe"],answer:3,explain:"The children push past the coats in an old wardrobe and step into snowy Narnia."},
+   {q:"The comic-book hero Superman was born on which planet?",options:["Mars","Krypton","Vulcan","Saturn"],answer:1,explain:"Superman was sent to Earth as a baby when the planet Krypton was destroyed."},
+   {q:"Which cartoon sailor becomes strong after eating spinach?",options:["Tintin","Astro Boy","Felix","Popeye"],answer:3,explain:"Popeye gulps down a can of spinach whenever he needs sudden strength."}
   ]}
 };
 const LSKEY="entq_";
 
 let qs=[], cur=0, score=0, answered=false, curCat="";
+function balanceOpts(it){
+  const opts=it.options||it.o, ans=(it.answer!==undefined)?it.answer:it.a;
+  if(!Array.isArray(opts)||opts.length!==4||!(ans>=0&&ans<=3)) return it;
+  const txt=opts.join(' ').toLowerCase();
+  if(/all of the|none of the|both of/.test(txt)) return it;
+  if(opts.every(o=>!isNaN(parseFloat(String(o).replace(/[\s,$%]/g,''))))) return it;
+  const idx=[0,1,2,3];
+  for(let i=3;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
+  const c=Object.assign({},it), o2=idx.map(i=>opts[i]), a2=idx.indexOf(ans);
+  if(it.options){ c.options=o2; c.answer=a2; } else { c.o=o2; c.a=a2; }
+  return c;
+}
 function pickFresh(bank,count,key){
   let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
   if(!Array.isArray(seen)) seen=[];
@@ -307,7 +385,7 @@ function pickFresh(bank,count,key){
   for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
   const chosen=unseen.slice(0,count);
   try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
-  return chosen.map(i=>bank[i]);
+  return chosen.map(i=>balanceOpts(bank[i]));
 }
 function buildCats(){
   const box=document.getElementById('cats'); box.innerHTML='';
@@ -373,8 +451,8 @@ function backToCats(){
 }
 buildCats();
 </script>
-  <script src="js/site.js?v=20260730"></script>
-  <script src="js/analytics.js?v=20260730"></script>
-  <script src="js/game-fullscreen.js?v=20260730"></script>
+  <script src="js/site.js?v=20260802"></script>
+  <script src="js/analytics.js?v=20260802"></script>
+  <script src="js/game-fullscreen.js?v=20260802"></script>
 </body>
 </html>

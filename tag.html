@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tag — Family Games</title>
-<meta name="description" content="Free two-player Tag game for kids and families. Move, jump and grab power-ups on any phone.">
+<meta name="description" content="Free two-player Tag game for kids and families. Three worlds, pick your colour, grab power-ups. Plays on any phone.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="css/style.css?v=20260730">
+<link rel="stylesheet" href="css/style.css?v=20260802">
 <style>
   /* ---- Tag game — scoped styles (prefix .tag-) ---- */
   .tag-stage{
@@ -23,44 +23,57 @@
   }
   .tag-canvas{ display:block; width:100%; height:auto; background:var(--bg); }
   .tag-hud{
-    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap; align-items:center;
     font-weight:800; margin:2px 0 6px;
   }
   .tag-chip{
     background:var(--card); border:1px solid var(--line);
     border-radius:999px; padding:5px 12px; font-size:15px; color:var(--ink);
+    display:inline-flex; align-items:center; gap:6px;
   }
-  .tag-chip.p1{ color:var(--blue); }
-  .tag-chip.p2{ color:var(--red); }
-  .tag-chip.clock{ color:var(--ink); }
+  .tag-chip .dot{ width:14px; height:14px; border-radius:4px; display:inline-block; background:var(--blue); }
+  .tag-chip .itbadge{
+    display:none; background:var(--yellow); color:var(--ink);
+    border-radius:999px; padding:1px 8px; font-size:12.5px; font-weight:900;
+  }
+  .tag-chip.is-it{ border-color:var(--yellow); box-shadow:0 0 0 2px rgba(255,183,3,.35); }
+  .tag-chip.is-it .itbadge{ display:inline-block; }
+  .tag-chip.clock{ font-variant-numeric:tabular-nums; }
+  .tag-chip.clock.low{ color:var(--red); border-color:var(--red); }
 
   /* On-screen touch pads (inside stage so they show in full screen too) */
-  .tag-pad{ position:absolute; bottom:12px; display:flex; gap:10px; align-items:flex-end; }
-  .tag-pad.left{ left:12px; }
-  .tag-pad.right{ right:12px; }
-  .tag-key{
-    width:56px; height:56px; border-radius:50%;
-    background:rgba(255,255,255,.72); border:2px solid var(--line);
-    color:var(--ink); font-size:22px; font-weight:900;
-    display:flex; align-items:center; justify-content:center;
-    touch-action:none; user-select:none; box-shadow:var(--shadow);
+  .tag-pad{
+    position:absolute; bottom:10px;
+    display:grid; grid-template-columns:repeat(2, auto); gap:9px;
   }
-  .tag-key.jump{ width:66px; height:66px; }
-  .tag-key:active{ background:#fff; transform:translateY(2px); }
-  .tag-pad.left .tag-key{ border-color:var(--blue); }
-  .tag-pad.right .tag-key{ border-color:var(--red); }
+  .tag-pad.left{ left:10px; }
+  .tag-pad.right{ right:10px; }
+  .tag-key{
+    width:68px; height:68px; border-radius:50%;
+    background:rgba(255,255,255,.78); border:3px solid var(--line);
+    color:var(--ink); font-size:27px; font-weight:900; line-height:1;
+    display:flex; align-items:center; justify-content:center;
+    touch-action:none; user-select:none; -webkit-user-select:none;
+    box-shadow:var(--shadow); cursor:pointer;
+  }
+  .tag-key.jump{ background:rgba(255,255,255,.92); }
+  .tag-key:active{ background:#fff; transform:scale(.94); }
+  @media (max-width:620px){
+    .tag-key{ width:58px; height:58px; font-size:23px; border-width:2px; }
+    .tag-pad{ gap:7px; bottom:8px; }
+    .tag-pad.left{ left:8px; } .tag-pad.right{ right:8px; }
+  }
 
   /* Start / result panel over the stage */
   .tag-cover{
     position:absolute; inset:0; z-index:4;
-    background:rgba(43,45,66,.86); color:#fff;
+    background:rgba(43,45,66,.88); color:#fff;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:12px; text-align:center; padding:20px;
+    gap:10px; text-align:center; padding:16px; overflow-y:auto;
   }
-  .tag-cover h2{ font-size:clamp(24px,6vw,34px); color:var(--yellow); margin:0; }
-  .tag-cover p{ margin:0; max-width:460px; line-height:1.5; font-size:clamp(14px,3.2vw,16px); color:#f4f2ee; }
-  .tag-cover .tag-score b.p1{ color:var(--blue); }
-  .tag-cover .tag-score b.p2{ color:#ff9aa6; }
+  .tag-cover h2{ font-size:clamp(22px,5.6vw,32px); color:var(--yellow); margin:0; }
+  .tag-cover p{ margin:0; max-width:470px; line-height:1.5; font-size:clamp(13px,3.1vw,15.5px); color:#f4f2ee; }
+  .tag-cover .tag-btns{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
   .tag-hide{ display:none !important; }
 
   .tag-rotate{
@@ -71,6 +84,46 @@
   }
   .tag-rotate.show{ display:flex; }
   .tag-rotate .ic{ font-size:44px; }
+
+  /* ---- Setup: worlds + colours (below the stage) ---- */
+  .tag-setup{ margin-top:16px; text-align:left; }
+  .tag-setup h3{
+    margin:0 0 8px; font-size:16px; color:var(--ink);
+    display:flex; align-items:center; gap:8px;
+  }
+  .tag-worlds{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:18px; }
+  @media (max-width:560px){ .tag-worlds{ grid-template-columns:1fr; } }
+  .tag-world{
+    display:flex; flex-direction:column; align-items:center; gap:3px;
+    padding:12px 8px; border-radius:14px; cursor:pointer;
+    background:var(--card); border:3px solid var(--line); color:var(--ink);
+    font-family:inherit; text-align:center; transition:.15s;
+  }
+  .tag-world:hover{ border-color:var(--blue); }
+  .tag-world.sel{ border-color:var(--green); background:#eefbf9; }
+  .tag-world .wi{ font-size:30px; line-height:1; }
+  .tag-world b{ font-size:15px; }
+  .tag-world i{ font-style:normal; font-size:12.5px; color:var(--muted); line-height:1.35; }
+
+  .tag-colrow{
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    margin-bottom:10px; padding:8px 10px;
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+  }
+  .tag-collabel{ font-weight:800; font-size:14.5px; min-width:82px; color:var(--ink); }
+  .tag-sw{ display:flex; gap:7px; flex-wrap:wrap; }
+  .tag-sw button{
+    width:36px; height:36px; border-radius:9px; cursor:pointer;
+    border:3px solid transparent; padding:0; font-size:17px; line-height:1;
+    display:flex; align-items:center; justify-content:center; color:#fff;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);
+  }
+  .tag-sw button.on{ border-color:var(--ink); transform:scale(1.06); }
+  .tag-sw button.taken{ opacity:.28; cursor:not-allowed; }
+  @media (max-width:400px){ .tag-sw button{ width:32px; height:32px; } }
+
+  .tag-pulist{ display:flex; flex-wrap:wrap; gap:6px 14px; justify-content:center; margin-top:12px; }
+  .tag-pulist span{ font-size:13.5px; color:var(--muted); }
 </style>
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -100,15 +153,15 @@
 <main class="container">
   <section class="hero" style="padding:26px 20px 6px">
     <h1>🍁 Tag</h1>
-    <p>A fun chase game for two players. Tag your friend to pass it on!</p>
-    <details class="howto"><summary></summary><p>One player is IT, shown with an arrow. Move and jump across the platforms. If you are IT, touch the other player to pass it on. Grab power-ups to help you. When time runs out, the player who was IT for less time wins.</p></details>
+    <p>A fun chase game for two players. Pick a world, pick your colour, and don't be IT when the clock runs out!</p>
+    <details class="howto"><summary></summary><p>One player is IT, shown with an arrow above their head. Move and jump across the platforms, and press the down button to drop through a platform. If you are IT, touch the other player to pass it on. Grab power-ups to help you. When time runs out, whoever is IT at that moment loses.</p></details>
   </section>
 
   <div class="panel center" data-fs-host>
     <div class="tag-hud">
-      <span class="tag-chip p1">🟦 <span>Blue</span> <span data-no-i18n id="tagS1">0.0</span>s</span>
-      <span class="tag-chip clock">⏱ <span data-no-i18n id="tagClock">60</span></span>
-      <span class="tag-chip p2">🟥 <span>Red</span> <span data-no-i18n id="tagS2">0.0</span>s</span>
+      <span class="tag-chip p1" id="tagChip1"><span class="dot" data-no-i18n id="tagDot1"></span> <span>Player 1</span> <span class="itbadge" data-no-i18n id="tagBadge1">IT</span></span>
+      <span class="tag-chip clock" id="tagClockChip">⏱ <span data-no-i18n id="tagClock">60</span></span>
+      <span class="tag-chip p2" id="tagChip2"><span class="dot" data-no-i18n id="tagDot2"></span> <span>Player 2</span> <span class="itbadge" data-no-i18n id="tagBadge2">IT</span></span>
     </div>
 
     <div class="tag-stage" id="tagStage">
@@ -116,14 +169,16 @@
 
       <!-- touch controls -->
       <div class="tag-pad left" data-no-i18n>
-        <div class="tag-key" data-player="blue" data-act="left">◀</div>
-        <div class="tag-key" data-player="blue" data-act="right">▶</div>
-        <div class="tag-key jump" data-player="blue" data-act="jump">⬆</div>
+        <div class="tag-key jump" data-player="blue" data-act="jump" aria-label="Player 1 jump">⬆</div>
+        <div class="tag-key" data-player="blue" data-act="down" aria-label="Player 1 drop down">⬇</div>
+        <div class="tag-key" data-player="blue" data-act="left" aria-label="Player 1 left">◀</div>
+        <div class="tag-key" data-player="blue" data-act="right" aria-label="Player 1 right">▶</div>
       </div>
       <div class="tag-pad right" data-no-i18n>
-        <div class="tag-key jump" data-player="red" data-act="jump">⬆</div>
-        <div class="tag-key" data-player="red" data-act="left">◀</div>
-        <div class="tag-key" data-player="red" data-act="right">▶</div>
+        <div class="tag-key jump" data-player="red" data-act="jump" aria-label="Player 2 jump">⬆</div>
+        <div class="tag-key" data-player="red" data-act="down" aria-label="Player 2 drop down">⬇</div>
+        <div class="tag-key" data-player="red" data-act="left" aria-label="Player 2 left">◀</div>
+        <div class="tag-key" data-player="red" data-act="right" aria-label="Player 2 right">▶</div>
       </div>
 
       <!-- rotate hint -->
@@ -136,11 +191,12 @@
       <!-- start / result cover -->
       <div class="tag-cover" id="tagCover">
         <h2 id="tagTitle">Tag</h2>
-        <p>Two players. One is IT and must touch the other to pass it on. Jump across the platforms and grab power-ups!</p>
-        <p>The player who was IT for less time wins.</p>
-        <p id="tagScoreLine" class="tag-score tag-hide"></p>
-        <p style="font-size:14px;color:#d7d3ea">Blue: move with the buttons on the left. Red: move with the buttons on the right. On a computer: Blue uses A, D and W. Red uses the arrow keys.</p>
-        <button class="btn btn-yellow" id="tagStartBtn">Start Game</button>
+        <p id="tagSub">Two players. One is IT and must touch the other to pass it on. Jump across the platforms, drop through them, and grab power-ups!</p>
+        <p id="tagRule">When the clock runs out, whoever is IT at that moment loses.</p>
+        <p style="font-size:13.5px;color:#d7d3ea">Player 1 uses the buttons on the left. Player 2 uses the buttons on the right. On a computer: Player 1 uses A, D, W and S. Player 2 uses the arrow keys.</p>
+        <div class="tag-btns">
+          <button class="btn btn-yellow" id="tagStartBtn">Start Game</button>
+        </div>
       </div>
     </div>
 
@@ -148,7 +204,37 @@
       <button class="btn" onclick="tagStart()">New Game</button>
       <a class="btn btn-ghost" href="games.html">All Games</a>
     </div>
-    <p class="muted" style="margin-top:10px;font-size:14px">Power-ups: Speed, Super Jump, Shield, and Freeze.</p>
+
+    <div class="tag-setup">
+      <h3><span data-no-i18n>1.</span> Choose your world</h3>
+      <div class="tag-worlds" id="tagWorlds">
+        <button type="button" class="tag-world sel" data-world="0">
+          <span class="wi" data-no-i18n>🍁</span><b>Maple Park</b><i>Easy — wide platforms and open space</i>
+        </button>
+        <button type="button" class="tag-world" data-world="1">
+          <span class="wi" data-no-i18n>🏔️</span><b>Rocky Mountains</b><i>Lots of ledges to climb and jump</i>
+        </button>
+        <button type="button" class="tag-world" data-world="2">
+          <span class="wi" data-no-i18n>❄️</span><b>Frozen Lake</b><i>Slippery ice — you slide a long way</i>
+        </button>
+      </div>
+
+      <h3><span data-no-i18n>2.</span> Choose your colours</h3>
+      <div class="tag-colrow">
+        <span class="tag-collabel">Player 1</span>
+        <div class="tag-sw" id="tagSw1" data-no-i18n></div>
+      </div>
+      <div class="tag-colrow">
+        <span class="tag-collabel">Player 2</span>
+        <div class="tag-sw" id="tagSw2" data-no-i18n></div>
+      </div>
+      <p class="muted" style="font-size:13.5px;margin:2px 0 0">Two players cannot pick the same colour.</p>
+    </div>
+
+    <div class="tag-pulist">
+      <span>⚡ Speed</span><span>⬆ Super Jump</span><span>🛡 Shield</span><span>❄ Freeze</span>
+      <span>🔄 Swap Places</span><span>🐌 Slow Them Down</span><span>🦋 Double Jump</span><span>🐭 Shrink</span>
+    </div>
   </div>
 </main>
 
@@ -158,7 +244,7 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <details class="footer-map">
-      <summary>All pages <span class="fm-count">(71)</span></summary>
+      <summary>All pages <span class="fm-count">(81)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <h4>Quizzes</h4>
@@ -171,6 +257,10 @@
         <a href="science-quiz.html">Science &amp; Space</a>
         <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
         <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
       </div>
       <div class="footer-map-col">
         <h4>Driving Test Practice</h4>
@@ -197,6 +287,10 @@
         <a href="rubiks-cube.html">Rubik's Cube</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="flags-game.html">Flags of the World</a>
       </div>
       <div class="footer-map-col">
         <h4>Action &amp; Classic Games</h4>
@@ -207,6 +301,8 @@
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
         <a href="tag.html">Tag</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
       </div>
       <div class="footer-map-col">
         <h4>Party Games</h4>
@@ -265,7 +361,11 @@
   var ctx = cv.getContext('2d');
   var W = cv.width, H = cv.height;
 
-  // read brand colours from CSS variables (never hard-code hex)
+  // ---- language for text this script generates (same pattern as the driving engine) ----
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr){ return FR ? fr : en; }
+
+  // read brand colours from CSS variables (never hard-code brand hex)
   var css = getComputedStyle(document.documentElement);
   function V(name){ return css.getPropertyValue(name).trim(); }
   var COL = {
@@ -274,38 +374,81 @@
     bg:V('--bg'), card:V('--card'), muted:V('--muted')
   };
 
-  var GRAVITY=0.7, MOVE=0.9, FRICTION=0.82, MAX_SPEED=6, JUMP=13.5;
+  // ---- the colour palette players choose from ----
+  var PALETTE = [
+    {id:'blue',   hex:COL.blue,    en:'Blue',   fr:'Bleu'},
+    {id:'red',    hex:COL.red,     en:'Red',    fr:'Rouge'},
+    {id:'green',  hex:COL.green,   en:'Green',  fr:'Vert'},
+    {id:'purple', hex:COL.purple,  en:'Purple', fr:'Violet'},
+    {id:'orange', hex:COL.orange,  en:'Orange', fr:'Orange'},
+    {id:'yellow', hex:COL.yellow,  en:'Yellow', fr:'Jaune'},
+    {id:'pink',   hex:'#e75a8c',   en:'Pink',   fr:'Rose'},
+    {id:'teal',   hex:'#17a2a2',   en:'Teal',   fr:'Turquoise'}
+  ];
+  var pick1 = 0, pick2 = 1;   // indexes into PALETTE
+
+  var GRAVITY=0.7, MOVE=0.9, MAX_SPEED=6, JUMP=13.5;
   var ROUND_TIME=60, TAG_COOLDOWN=1.2;
 
-  var platforms=[
-    {x:0,   y:410, w:760, h:30},
-    {x:90,  y:330, w:150, h:16},
-    {x:520, y:330, w:150, h:16},
-    {x:300, y:262, w:160, h:16},
-    {x:40,  y:186, w:130, h:16},
-    {x:590, y:186, w:130, h:16},
-    {x:315, y:120, w:130, h:16}
+  // ---- the three worlds ----
+  // p[0] is ALWAYS the solid ground — you can never drop through it.
+  var WORLDS = [
+    {
+      id:'park', sky:'#dff1fb', ground:'#3f7d4e', plat:COL.ink, friction:0.82, decor:'trees',
+      p:[ {x:0,y:410,w:760,h:30},
+          {x:90,y:330,w:150,h:16},  {x:520,y:330,w:150,h:16},
+          {x:300,y:262,w:160,h:16},
+          {x:40,y:186,w:130,h:16},  {x:590,y:186,w:130,h:16},
+          {x:315,y:120,w:130,h:16} ]
+    },
+    {
+      id:'mountain', sky:'#e8e2f2', ground:'#6b6357', plat:'#4a4a5e', friction:0.82, decor:'peaks',
+      p:[ {x:0,y:410,w:760,h:30},
+          {x:0,y:344,w:120,h:16},   {x:640,y:344,w:120,h:16},
+          {x:170,y:302,w:112,h:16}, {x:478,y:302,w:112,h:16},
+          {x:330,y:252,w:100,h:16},
+          {x:78,y:214,w:112,h:16},  {x:570,y:214,w:112,h:16},
+          {x:246,y:170,w:92,h:16},  {x:422,y:170,w:92,h:16},
+          {x:330,y:104,w:100,h:16} ]
+    },
+    {
+      id:'ice', sky:'#e4f4fb', ground:'#a9d8e8', plat:'#7fb8d4', friction:0.955, decor:'snow',
+      p:[ {x:0,y:410,w:760,h:30},
+          {x:110,y:322,w:220,h:16}, {x:430,y:322,w:220,h:16},
+          {x:20,y:242,w:150,h:16},  {x:590,y:242,w:150,h:16},
+          {x:280,y:200,w:200,h:16},
+          {x:148,y:122,w:120,h:16}, {x:492,y:122,w:120,h:16} ]
+    }
   ];
+  var worldIx = 0;
+  function world(){ return WORLDS[worldIx]; }
+  function platforms(){ return WORLDS[worldIx].p; }
 
   function mkPlayer(x, col){
     return {x:x,y:90,w:32,h:32,vx:0,vy:0,onGround:false,col:col,
-            iLeft:false,iRight:false,jump:false,facing:1,itTime:0,
-            speedT:0,jumpT:0,shieldT:0,frozenT:0};
+            iLeft:false,iRight:false,iDown:false,jump:false,facing:1,itTime:0,
+            speedT:0,jumpT:0,shieldT:0,frozenT:0,slowT:0,wingsT:0,tinyT:0,
+            dropT:0,airJumps:0};
   }
   var blue, red, itIsBlue, powerups, clock, running=false, lastT=0, spawnT=0, tagCD=0;
+  var flakes=[]; for(var f=0;f<40;f++) flakes.push({x:Math.random()*760,y:Math.random()*440,s:0.4+Math.random()*0.9,r:1+Math.random()*2});
 
-  var PU=['speed','jump','shield','freeze'];
-  var PU_ICON={speed:'⚡',jump:'⬆',shield:'🛡',freeze:'❄'};
-  var PU_COL={speed:COL.yellow,jump:COL.green,shield:COL.blue,freeze:COL.purple};
+  // ---- power-ups ----
+  var PU=['speed','jump','shield','freeze','swap','slow','wings','tiny'];
+  var PU_ICON={speed:'⚡',jump:'⬆',shield:'🛡',freeze:'❄',swap:'🔄',slow:'🐌',wings:'🦋',tiny:'🐭'};
+  var PU_COL={speed:COL.yellow,jump:COL.green,shield:COL.blue,freeze:COL.purple,
+              swap:COL.orange,slow:COL.red,wings:'#e75a8c',tiny:'#17a2a2'};
 
   // ---- input (keyboard) ----
   function setKey(e,down){
     var k=e.key.toLowerCase(), used=true;
     if(k==='a') blue.iLeft=down;
     else if(k==='d') blue.iRight=down;
+    else if(k==='s') blue.iDown=down;
     else if(k==='w'){ if(down) blue.jump=true; }
     else if(k==='arrowleft') red.iLeft=down;
     else if(k==='arrowright') red.iRight=down;
+    else if(k==='arrowdown') red.iDown=down;
     else if(k==='arrowup'){ if(down) red.jump=true; }
     else used=false;
     if(used) e.preventDefault();
@@ -318,9 +461,14 @@
   pads.forEach(function(btn){
     var who=btn.getAttribute('data-player'), act=btn.getAttribute('data-act');
     function down(e){ e.preventDefault(); var p=(who==='blue')?blue:red;
-      if(act==='left') p.iLeft=true; else if(act==='right') p.iRight=true; else p.jump=true; }
+      if(act==='left') p.iLeft=true;
+      else if(act==='right') p.iRight=true;
+      else if(act==='down') p.iDown=true;
+      else p.jump=true; }
     function up(e){ e.preventDefault(); var p=(who==='blue')?blue:red;
-      if(act==='left') p.iLeft=false; else if(act==='right') p.iRight=false; }
+      if(act==='left') p.iLeft=false;
+      else if(act==='right') p.iRight=false;
+      else if(act==='down') p.iDown=false; }
     btn.addEventListener('pointerdown',down);
     btn.addEventListener('pointerup',up);
     btn.addEventListener('pointercancel',up);
@@ -328,40 +476,71 @@
   });
 
   function reset(){
-    blue=mkPlayer(120,COL.blue); red=mkPlayer(608,COL.red);
+    blue=mkPlayer(120,PALETTE[pick1].hex); red=mkPlayer(608,PALETTE[pick2].hex);
     itIsBlue=Math.random()<0.5; powerups=[]; clock=ROUND_TIME; spawnT=0; tagCD=0;
+    paintHud();
   }
   function spawnPU(){
-    var p=platforms[1+Math.floor(Math.random()*(platforms.length-1))];
+    var ps=platforms();
+    var p=ps[1+Math.floor(Math.random()*(ps.length-1))];
     var t=PU[Math.floor(Math.random()*PU.length)];
-    powerups.push({x:p.x+16+Math.random()*(p.w-48),y:p.y-24,w:20,h:20,type:t,bob:Math.random()*6.28});
+    powerups.push({x:p.x+16+Math.random()*Math.max(8,p.w-48),y:p.y-24,w:20,h:20,type:t,bob:Math.random()*6.28});
   }
   function applyPU(pl,t){
-    if(t==='speed') pl.speedT=5; else if(t==='jump') pl.jumpT=5;
-    else if(t==='shield') pl.shieldT=4; else (pl===blue?red:blue).frozenT=1.6;
+    var other=(pl===blue)?red:blue;
+    if(t==='speed')       pl.speedT=5;
+    else if(t==='jump')   pl.jumpT=5;
+    else if(t==='shield') pl.shieldT=4;
+    else if(t==='freeze') other.frozenT=1.6;
+    else if(t==='slow')   other.slowT=4;
+    else if(t==='wings'){ pl.wingsT=6; pl.airJumps=1; }
+    else if(t==='tiny')   pl.tinyT=5;
+    else if(t==='swap'){
+      var tx=pl.x, ty=pl.y, tvx=pl.vx, tvy=pl.vy;
+      pl.x=other.x; pl.y=other.y; pl.vx=other.vx; pl.vy=other.vy;
+      other.x=tx; other.y=ty; other.vx=tvx; other.vy=tvy;
+      tagCD=Math.max(tagCD,0.6);           // no instant tag right after a swap
+    }
   }
   function upd(pl,dt){
     var it=(pl===blue)===itIsBlue; if(it) pl.itTime+=dt;
-    var frozen=pl.frozenT>0, sM=pl.speedT>0?1.7:1, jM=pl.jumpT>0?1.35:1;
+
+    // shrink power-up changes the box size
+    var size = pl.tinyT>0 ? 21 : 32;
+    if(pl.w!==size){ pl.y += (pl.w-size); pl.x += (pl.w-size)/2; pl.w=size; pl.h=size; }
+
+    var frozen=pl.frozenT>0;
+    var sM = pl.speedT>0 ? 1.7 : (pl.slowT>0 ? 0.5 : 1);
+    var jM = pl.jumpT>0 ? 1.35 : 1;
     if(!frozen){
       if(pl.iLeft){ pl.vx-=MOVE*sM; pl.facing=-1; }
       if(pl.iRight){ pl.vx+=MOVE*sM; pl.facing=1; }
-      if(pl.jump && pl.onGround){ pl.vy=-JUMP*jM; pl.onGround=false; }
+      if(pl.jump){
+        if(pl.onGround){ pl.vy=-JUMP*jM; pl.onGround=false; }
+        else if(pl.airJumps>0){ pl.vy=-JUMP*jM*0.92; pl.airJumps--; }
+      }
+      // drop through a platform (never through the solid ground)
+      if(pl.iDown && pl.onGround && pl.dropT<=0){ pl.dropT=0.28; pl.onGround=false; }
     }
     pl.jump=false;                       // jump is edge-triggered — one per press
-    pl.vx*=FRICTION;
+    pl.vx*=world().friction;
     var cap=MAX_SPEED*sM; if(pl.vx>cap)pl.vx=cap; if(pl.vx<-cap)pl.vx=-cap;
     pl.vy+=GRAVITY;
     pl.x+=pl.vx;
     if(pl.x<0){pl.x=0;pl.vx=0;} if(pl.x+pl.w>W){pl.x=W-pl.w;pl.vx=0;}
     pl.y+=pl.vy; pl.onGround=false;
-    for(var i=0;i<platforms.length;i++){ var p=platforms[i];
+    var ps=platforms();
+    for(var i=0;i<ps.length;i++){
+      if(i>0 && pl.dropT>0) continue;    // falling through — ignore everything but the ground
+      var p=ps[i];
       if(pl.x+pl.w>p.x && pl.x<p.x+p.w && pl.vy>=0 && pl.y+pl.h>p.y && pl.y+pl.h-pl.vy<=p.y+1){
         pl.y=p.y-pl.h; pl.vy=0; pl.onGround=true;
       }
     }
     if(pl.y+pl.h>H){pl.y=H-pl.h;pl.vy=0;pl.onGround=true;}
-    ['speedT','jumpT','shieldT','frozenT'].forEach(function(t){ if(pl[t]>0) pl[t]=Math.max(0,pl[t]-dt); });
+    if(pl.onGround) pl.airJumps = (pl.wingsT>0) ? 1 : 0;
+    ['speedT','jumpT','shieldT','frozenT','slowT','wingsT','tinyT','dropT'].forEach(function(t){
+      if(pl[t]>0) pl[t]=Math.max(0,pl[t]-dt); });
   }
   function hit(a,b){ return a.x<b.x+b.w && a.x+a.w>b.x && a.y<b.y+b.h && a.y+a.h>b.y; }
 
@@ -371,12 +550,13 @@
       if(hit(blue,powerups[i])){ applyPU(blue,powerups[i].type); powerups.splice(i,1); continue; }
       if(hit(red,powerups[i])){ applyPU(red,powerups[i].type); powerups.splice(i,1); }
     }
-    spawnT-=dt; if(spawnT<=0 && powerups.length<3){ spawnPU(); spawnT=3+Math.random()*2; }
+    spawnT-=dt; if(spawnT<=0 && powerups.length<4){ spawnPU(); spawnT=2.4+Math.random()*2; }
     if(tagCD>0) tagCD-=dt;
     var runner=itIsBlue?red:blue;
     if(tagCD<=0 && hit(blue,red) && runner.shieldT<=0){
       itIsBlue=!itIsBlue; tagCD=TAG_COOLDOWN;
       var d=blue.x<red.x?-1:1; blue.vx+=d*4; red.vx-=d*4;
+      paintHud();
     }
     clock-=dt; if(clock<=0){ clock=0; endGame(); }
   }
@@ -385,24 +565,62 @@
     ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r);
     ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
 
+  function drawBg(){
+    var w=world();
+    ctx.fillStyle=w.sky; ctx.fillRect(0,0,W,H);
+    if(w.decor==='peaks'){
+      ctx.fillStyle='#cfc7dd';
+      [[90,300],[300,250],[540,290],[700,320]].forEach(function(m){
+        ctx.beginPath(); ctx.moveTo(m[0]-150,410); ctx.lineTo(m[0],m[1]); ctx.lineTo(m[0]+150,410); ctx.closePath(); ctx.fill();
+      });
+      ctx.fillStyle='#fff';
+      [[300,250],[540,290]].forEach(function(m){
+        ctx.beginPath(); ctx.moveTo(m[0]-32,m[1]+32); ctx.lineTo(m[0],m[1]); ctx.lineTo(m[0]+32,m[1]+32); ctx.closePath(); ctx.fill();
+      });
+    } else if(w.decor==='trees'){
+      [70,200,430,690].forEach(function(tx){
+        ctx.fillStyle='#8a6a4a'; ctx.fillRect(tx-5,368,10,44);
+        ctx.fillStyle='#2f7a45';
+        for(var k=0;k<3;k++){ ctx.beginPath();
+          ctx.moveTo(tx,300+k*26); ctx.lineTo(tx-30,352+k*20); ctx.lineTo(tx+30,352+k*20); ctx.closePath(); ctx.fill(); }
+      });
+      ctx.globalAlpha=.5; ctx.fillStyle='#fff';
+      [[140,70,26],[330,50,20],[600,84,24]].forEach(function(c){
+        ctx.beginPath(); ctx.arc(c[0],c[1],c[2],0,6.3); ctx.arc(c[0]+c[2],c[1]+4,c[2]*.8,0,6.3); ctx.fill(); });
+      ctx.globalAlpha=1;
+    } else if(w.decor==='snow'){
+      ctx.fillStyle='rgba(255,255,255,.85)';
+      for(var i=0;i<flakes.length;i++){ var fl=flakes[i];
+        fl.y+=fl.s; if(fl.y>H) { fl.y=-4; fl.x=Math.random()*W; }
+        ctx.beginPath(); ctx.arc(fl.x,fl.y,fl.r,0,6.3); ctx.fill(); }
+    }
+  }
+
   function drawPlayer(pl){
     var it=(pl===blue)===itIsBlue;
     if(pl.shieldT>0){ ctx.save(); ctx.globalAlpha=0.35+0.25*Math.sin(Date.now()/100);
-      ctx.fillStyle=COL.blue; rr(pl.x-5,pl.y-5,pl.w+10,pl.h+10,9); ctx.fill(); ctx.restore(); }
+      ctx.fillStyle='#fff'; rr(pl.x-6,pl.y-6,pl.w+12,pl.h+12,10); ctx.fill(); ctx.restore(); }
+    if(pl.wingsT>0){ ctx.save(); ctx.globalAlpha=.6; ctx.fillStyle='#fff';
+      ctx.beginPath(); ctx.ellipse(pl.x-6,pl.y+pl.h/2,7,12,0,0,6.3); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(pl.x+pl.w+6,pl.y+pl.h/2,7,12,0,0,6.3); ctx.fill(); ctx.restore(); }
     ctx.fillStyle=pl.col; rr(pl.x,pl.y,pl.w,pl.h,6); ctx.fill();
     if(pl.frozenT>0){ ctx.fillStyle='rgba(142,125,190,.55)'; rr(pl.x,pl.y,pl.w,pl.h,6); ctx.fill(); }
+    if(pl.slowT>0){ ctx.fillStyle='rgba(230,57,70,.28)'; rr(pl.x,pl.y,pl.w,pl.h,6); ctx.fill(); }
     ctx.fillStyle='#fff';
-    var ex=pl.facing>=0?pl.x+pl.w-13:pl.x+5;
-    ctx.fillRect(ex,pl.y+9,6,6); ctx.fillRect(ex+(pl.facing>=0?-9:9),pl.y+9,6,6);
+    var es=Math.max(4,Math.round(pl.w*0.19));
+    var ex=pl.facing>=0?pl.x+pl.w-(es+7):pl.x+5;
+    ctx.fillRect(ex,pl.y+pl.h*0.28,es,es);
+    ctx.fillRect(ex+(pl.facing>=0?-(es+3):(es+3)),pl.y+pl.h*0.28,es,es);
     if(it){ var ay=pl.y-13-3*Math.sin(Date.now()/180);
       ctx.fillStyle=COL.yellow; ctx.beginPath();
       ctx.moveTo(pl.x+pl.w/2,ay+11); ctx.lineTo(pl.x+pl.w/2-8,ay); ctx.lineTo(pl.x+pl.w/2+8,ay);
       ctx.closePath(); ctx.fill(); }
   }
   function draw(){
-    ctx.clearRect(0,0,W,H);
-    for(var i=0;i<platforms.length;i++){ var p=platforms[i];
-      ctx.fillStyle=COL.ink; rr(p.x,p.y,p.w,p.h,5); ctx.fill(); }
+    var w=world(), ps=platforms();
+    drawBg();
+    for(var i=0;i<ps.length;i++){ var p=ps[i];
+      ctx.fillStyle = (i===0) ? w.ground : w.plat; rr(p.x,p.y,p.w,p.h,5); ctx.fill(); }
     for(var j=0;j<powerups.length;j++){ var pu=powerups[j];
       var by=pu.y+3*Math.sin(Date.now()/300+pu.bob);
       ctx.save(); ctx.shadowColor=PU_COL[pu.type]; ctx.shadowBlur=10;
@@ -411,31 +629,89 @@
       ctx.fillText(PU_ICON[pu.type],pu.x+pu.w/2,by+pu.h/2+1); ctx.textBaseline='alphabetic';
     }
     drawPlayer(blue); drawPlayer(red);
-    document.getElementById('tagS1').textContent=blue.itTime.toFixed(1);
-    document.getElementById('tagS2').textContent=red.itTime.toFixed(1);
     document.getElementById('tagClock').textContent=Math.ceil(clock);
+    document.getElementById('tagClockChip').classList.toggle('low', clock<=10);
   }
   function loop(t){ if(!running) return;
     var dt=Math.min(0.05,(t-lastT)/1000||0); lastT=t; step(dt); draw(); requestAnimationFrame(loop); }
 
+  // ---- HUD ----
+  function paintHud(){
+    document.getElementById('tagDot1').style.background=PALETTE[pick1].hex;
+    document.getElementById('tagDot2').style.background=PALETTE[pick2].hex;
+    document.getElementById('tagBadge1').textContent=T('IT','CHAT');
+    document.getElementById('tagBadge2').textContent=T('IT','CHAT');
+    document.getElementById('tagChip1').classList.toggle('is-it', !!itIsBlue);
+    document.getElementById('tagChip2').classList.toggle('is-it', !itIsBlue);
+  }
+
   function tagStart(){
     reset();
-    document.getElementById('tagScoreLine').classList.add('tag-hide');
     document.getElementById('tagCover').classList.add('tag-hide');
     running=true; lastT=performance.now(); requestAnimationFrame(loop);
   }
   function endGame(){
     running=false;
-    var title=document.getElementById('tagTitle');
-    var line=document.getElementById('tagScoreLine');
-    var cover=document.getElementById('tagCover');
-    if(Math.abs(blue.itTime-red.itTime)<0.3){ title.textContent="It's a tie!"; }
-    else { title.textContent=(blue.itTime<red.itTime)?'Blue wins!':'Red wins!'; }
-    line.innerHTML='<b class="p1">Blue</b> <span data-no-i18n>'+blue.itTime.toFixed(1)+
-      '</span>s &nbsp;·&nbsp; <b class="p2">Red</b> <span data-no-i18n>'+red.itTime.toFixed(1)+'</span>s';
-    line.classList.remove('tag-hide');
-    document.getElementById('tagStartBtn').textContent='Play Again';
-    cover.classList.remove('tag-hide');
+    var loser = itIsBlue ? 1 : 2;
+    var winner = itIsBlue ? 2 : 1;
+    var wName = T('Player ','Joueur ')+winner;
+    var lName = T('Player ','Joueur ')+loser;
+    document.getElementById('tagTitle').textContent = wName + T(' wins!',' gagne !');
+    document.getElementById('tagSub').textContent =
+      lName + T(' was IT when the time ran out.',' était le chat à la fin du temps.');
+    document.getElementById('tagRule').textContent =
+      T('Change the world or your colours below, then play again.',
+        'Changez de monde ou de couleur en dessous, puis rejouez.');
+    document.getElementById('tagStartBtn').textContent = T('Play Again','Rejouer');
+    document.getElementById('tagCover').classList.remove('tag-hide');
+  }
+
+  // ---- world picker ----
+  document.querySelectorAll('#tagWorlds .tag-world').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('#tagWorlds .tag-world').forEach(function(x){ x.classList.remove('sel'); });
+      b.classList.add('sel');
+      worldIx = parseInt(b.getAttribute('data-world'),10)||0;
+      running=false; reset(); draw();
+      document.getElementById('tagCover').classList.remove('tag-hide');
+    });
+  });
+
+  // ---- colour pickers (two players can never share a colour) ----
+  function buildSwatches(){
+    [1,2].forEach(function(n){
+      var host=document.getElementById('tagSw'+n); host.innerHTML='';
+      PALETTE.forEach(function(c,ix){
+        var b=document.createElement('button');
+        b.type='button'; b.style.background=c.hex;
+        b.setAttribute('data-ix',ix);
+        b.setAttribute('aria-label', T('Player ','Joueur ')+n+' — '+T(c.en,c.fr));
+        b.title = T(c.en,c.fr);
+        b.addEventListener('click', function(){
+          var mine=(n===1)?pick1:pick2, theirs=(n===1)?pick2:pick1;
+          if(ix===theirs) return;               // taken by the other player
+          if(n===1) pick1=ix; else pick2=ix;
+          paintSwatches();
+          running=false; reset(); draw();
+          document.getElementById('tagCover').classList.remove('tag-hide');
+        });
+        host.appendChild(b);
+      });
+    });
+    paintSwatches();
+  }
+  function paintSwatches(){
+    [1,2].forEach(function(n){
+      var mine=(n===1)?pick1:pick2, theirs=(n===1)?pick2:pick1;
+      document.querySelectorAll('#tagSw'+n+' button').forEach(function(b){
+        var ix=parseInt(b.getAttribute('data-ix'),10);
+        b.classList.toggle('on', ix===mine);
+        b.classList.toggle('taken', ix===theirs);
+        b.textContent = (ix===mine) ? '✓' : '';
+        b.disabled = (ix===theirs);
+      });
+    });
+    paintHud();
   }
 
   function checkRotate(){
@@ -448,11 +724,12 @@
 
   document.getElementById('tagStartBtn').addEventListener('click',tagStart);
   window.tagStart=tagStart;          // used by the "New Game" button
+  buildSwatches();
   reset(); draw(); checkRotate();    // draw the first frame behind the start cover
 })();
 </script>
-  <script src="js/game-fullscreen.js?v=20260730"></script>
-  <script src="js/site.js?v=20260730"></script>
-  <script src="js/analytics.js?v=20260730"></script>
+  <script src="js/game-fullscreen.js?v=20260802"></script>
+  <script src="js/site.js?v=20260802"></script>
+  <script src="js/analytics.js?v=20260802"></script>
 </body>
 </html>

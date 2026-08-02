@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flags of the World — Free Flag Quiz for Kids and Adults | Canada Quiz</title>
+<meta name="description" content="Free flags of the world quiz for kids and adults: name the country, find the flag or guess the capital city. 100+ flags, six continents, no signup and no download.">
+<meta property="og:title" content="Flags of the World — Free Flag Quiz for Kids and Adults | Canada Quiz">
+<meta property="og:description" content="Free flags of the world quiz for kids and adults: name the country, find the flag or guess the capital city. 100+ flags, six continents, no signup and no download.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canada-quiz.com/flags-game.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7256851069341390" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css?v=20260802">
+<style>
+.fg-wrap{max-width:560px;margin:0 auto;text-align:center}
+.fg-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 auto 10px}
+.fg-tab{font-size:14px;line-height:1.15;padding:10px 6px;min-height:46px;white-space:normal}
+.fg-tab.fg-on{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 4px 10px rgba(230,57,70,.28)}
+.fg-filter{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:0 auto 12px}
+.fg-cont{min-height:40px;padding:8px 13px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--muted);font:inherit;font-weight:800;font-size:13px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.fg-cont.fg-on{background:var(--blue);border-color:var(--blue);color:#fff}
+.fg-bar{height:10px;border-radius:999px;background:var(--line);overflow:hidden;margin:0 auto 8px}
+.fg-bar-in{height:100%;width:0;border-radius:999px;background:var(--green);transition:width .25s ease}
+.fg-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--muted);margin:0 0 10px}
+.fg-ask{font-size:18px;font-weight:800;line-height:1.3;margin:0 0 10px;min-height:24px}
+.fg-sub{font-size:14px;color:var(--muted);margin:-4px 0 10px}
+.fg-frame{display:block;width:100%;height:auto;border-radius:6px}
+.fg-big{max-width:230px;margin:0 auto 12px}
+.fg-opts{display:grid;grid-template-columns:1fr;gap:8px;margin:0 auto}
+.fg-opt{display:block;width:100%;min-height:48px;padding:11px 12px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:700;font-size:16px;line-height:1.25;cursor:pointer;text-align:center;-webkit-tap-highlight-color:transparent}
+.fg-opt:active{transform:translateY(1px)}
+.fg-opt.fg-good{background:rgba(42,157,143,.14);border-color:var(--green);color:var(--green-dark)}
+.fg-opt.fg-bad{background:rgba(230,57,70,.12);border-color:var(--red);color:var(--red-dark)}
+.fg-opt.fg-off{opacity:.55}
+.fg-opts.fg-grid{grid-template-columns:1fr 1fr}
+.fg-opts.fg-grid .fg-opt{padding:8px}
+.fg-note{margin:12px auto 0;padding:12px 14px;border-radius:14px;background:#f4f7fb;border:2px solid var(--line);font-size:15px;line-height:1.45;text-align:left}
+.fg-note b{display:block;margin-bottom:3px}
+.fg-note.fg-nb-good{background:rgba(42,157,143,.10);border-color:rgba(42,157,143,.45)}
+.fg-note.fg-nb-bad{background:rgba(230,57,70,.09);border-color:rgba(230,57,70,.40)}
+.fg-next{width:100%;max-width:320px;margin:12px auto 0;min-height:52px}
+.fg-score{font-size:44px;font-weight:900;line-height:1;margin:6px 0 2px}
+.fg-msg{font-size:17px;font-weight:800;margin:0 0 4px}
+.fg-best{font-size:14px;color:var(--muted);margin:0 0 14px}
+.fg-missed{text-align:left;margin:0 auto 14px;display:grid;gap:8px}
+.fg-miss{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:12px;background:#fbf7f8;border:1px solid var(--line)}
+.fg-miss .fg-mini{width:52px;flex:0 0 52px}
+.fg-miss span{font-size:14px;line-height:1.35}
+.fg-miss span b{display:block;font-size:15px}
+.fg-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px;margin-top:4px}
+.fg-cell{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 4px 7px;text-align:center}
+.fg-cell .fg-frame{margin-bottom:5px}
+.fg-cell b{display:block;font-size:12px;font-weight:800;line-height:1.2}
+.fg-cell i{display:block;font-style:normal;font-size:11px;color:var(--muted);margin-top:2px;line-height:1.2}
+.fg-count{font-size:13px;color:var(--muted);margin:0 0 8px;font-weight:700}
+.fg-hide{display:none}
+@media (max-width:360px){
+  .fg-tab{font-size:13px;padding:9px 4px}
+  .fg-opt{font-size:15px;padding:10px 8px}
+  .fg-ask{font-size:16px}
+  .fg-wall{grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:8px}
+}
+@media (prefers-reduced-motion:reduce){.fg-bar-in{transition:none}}
+</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/flags-game.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/flags-game.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/flags-game.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/flags-game.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🌍 Flags of the World</h1>
+    <p>Learn 100+ flags, countries and capital cities.</p>
+  <details class="howto"><summary></summary><p>Pick a game: see a flag and name the country, see a country and pick its flag, or match a flag to its capital city. Choose a continent if you want to study just one part of the world, then answer 12 questions and see which flags you missed. Tap Explore Flags any time to browse every flag with its country and capital.</p></details>
+
+  </section>
+
+  <div class="panel" data-fs-host>
+    <div class="fg-wrap">
+      <div class="fg-tabs" id="fg-tabs">
+        <button class="btn btn-ghost fg-tab" type="button" data-mode="country">Guess the Country</button>
+        <button class="btn btn-ghost fg-tab" type="button" data-mode="flag">Guess the Flag</button>
+        <button class="btn btn-ghost fg-tab" type="button" data-mode="capital">Capital City</button>
+        <button class="btn btn-ghost fg-tab" type="button" data-mode="explore">Explore Flags</button>
+      </div>
+      <div class="fg-filter" id="fg-filter" data-no-i18n></div>
+
+      <div id="fg-quiz">
+        <div class="fg-bar"><div class="fg-bar-in" id="fg-bar"></div></div>
+        <div class="fg-meta" id="fg-meta" data-no-i18n><span></span><span></span></div>
+        <div class="fg-ask" id="fg-ask" data-no-i18n aria-live="polite"></div>
+        <div id="fg-stage" data-no-i18n></div>
+        <div class="fg-opts" id="fg-opts" data-no-i18n></div>
+        <div class="fg-note fg-hide" id="fg-note" data-no-i18n></div>
+        <button class="btn btn-green btn-lg fg-next fg-hide" type="button" id="fg-next" data-no-i18n></button>
+      </div>
+
+      <div id="fg-result" class="fg-hide" data-no-i18n></div>
+      <div id="fg-explore" class="fg-hide" data-no-i18n></div>
+    </div>
+
+    <div style="margin-top:14px">
+      <button class="btn" id="fg-new" type="button">New Game</button>
+      <a class="btn btn-ghost" href="games.html">All Games</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <details class="footer-map">
+      <summary>All pages <span class="fm-count">(81)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <h4>Quizzes</h4>
+        <a href="quizzes.html">All Quizzes</a>
+        <a href="gk-quiz.html">General Knowledge</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Fun Canada Quiz</a>
+        <a href="province-quiz.html">Which Province Are You?</a>
+        <a href="world-quiz.html">World Quiz</a>
+        <a href="science-quiz.html">Science &amp; Space</a>
+        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
+        <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Driving Test Practice</h4>
+        <a href="driving-test.html">Canada Driving Test</a>
+        <a href="ontario-g1-practice-test.html">Ontario G1 Practice Test</a>
+        <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
+        <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
+        <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Brain &amp; Puzzle Games</h4>
+        <a href="word-master.html">Word Master</a>
+        <a href="word-search.html">Word Search</a>
+        <a href="word-guess.html">Word Guess</a>
+        <a href="scramble.html">Word Scramble</a>
+        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="crossword.html">Crossword</a>
+        <a href="connections.html">Word Groups</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Minesweeper</a>
+        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Memory Match</a>
+        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="typing-test.html">Typing Speed Test</a>
+        <a href="color-match.html">Color Match</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="flags-game.html">Flags of the World</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Action &amp; Classic Games</h4>
+        <a href="snake.html">Maple Snake</a>
+        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
+        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="checkers.html">Checkers</a>
+        <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="tag.html">Tag</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Party Games</h4>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposter</a>
+        <a href="would-you-rather.html">Would You Rather?</a>
+        <a href="trivia-showdown.html">Trivia Showdown</a>
+        <a href="hold-to-head.html">Hold to Head</a>
+        <a href="top-answers.html">Top Answers</a>
+        <a href="categories-game.html">Categories</a>
+        <a href="story-maker.html">Story Maker</a>
+        <a href="draw-it.html">Draw It</a>
+        <a href="spin-wheel.html">Spin the Wheel</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>Blog</h4>
+        <a href="blog.html">All Articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
+        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
+        <a href="what-is-confederation.html">What Is Confederation?</a>
+        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
+        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
+        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
+        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
+        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
+        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
+        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
+        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
+        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
+        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
+      </div>
+      <div class="footer-map-col">
+        <h4>The Site</h4>
+        <a href="index.html">Home</a>
+        <a href="daily.html">Daily Challenge</a>
+        <a href="games.html">All Family Games</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr){ return FR ? fr : en; }
+  function $(id){ return document.getElementById(id); }
+
+  /* ---------- tiny SVG builders (viewBox 0 0 60 40) ---------- */
+  var uid = 0;
+  function f(v){ v = Math.round(v * 1000) / 1000; return isFinite(v) ? String(v) : '0'; }
+  function pts(a){ var o = [], i; for(i = 0; i < a.length; i += 2){ o.push(f(a[i]) + ',' + f(a[i+1])); } return o.join(' '); }
+  function rc(x, y, w, h, c){ return '<rect x="'+f(x)+'" y="'+f(y)+'" width="'+f(Math.max(0,w))+'" height="'+f(Math.max(0,h))+'" fill="'+c+'"/>'; }
+  function ci(x, y, r, c){ return '<circle cx="'+f(x)+'" cy="'+f(y)+'" r="'+f(Math.max(0,r))+'" fill="'+c+'"/>'; }
+  function co(x, y, r, c, w){ return '<circle cx="'+f(x)+'" cy="'+f(y)+'" r="'+f(Math.max(0,r))+'" fill="none" stroke="'+c+'" stroke-width="'+f(w)+'"/>'; }
+  function pg(c, a){ return '<polygon points="'+pts(a)+'" fill="'+c+'"/>'; }
+  function po(c, w, a){ return '<polygon points="'+pts(a)+'" fill="none" stroke="'+c+'" stroke-width="'+f(w)+'" stroke-linejoin="round"/>'; }
+  function ln(x1, y1, x2, y2, c, w){ return '<line x1="'+f(x1)+'" y1="'+f(y1)+'" x2="'+f(x2)+'" y2="'+f(y2)+'" stroke="'+c+'" stroke-width="'+f(w)+'"/>'; }
+
+  function starPts(cx, cy, r, n, rot, ratio){
+    n = n || 5; ratio = (ratio === undefined) ? 0.382 : ratio;
+    var out = [], step = Math.PI / n, a = (rot || 0) * Math.PI / 180 - Math.PI / 2, i, rr;
+    for(i = 0; i < 2 * n; i++){ rr = (i % 2 === 0) ? r : r * ratio; out.push(cx + rr * Math.cos(a), cy + rr * Math.sin(a)); a += step; }
+    return out;
+  }
+  /* true crescent: outer circle (cx,cy,R) with inner circle (cx+dx,cy,r) bitten out */
+  function moon(cx, cy, R, r, dx, c){
+    if(dx <= 0 || R <= r) return ci(cx, cy, R, c);
+    var x0 = (R * R - r * r + dx * dx) / (2 * dx), s = R * R - x0 * x0;
+    if(s <= 0) return ci(cx, cy, R, c);
+    var y0 = Math.sqrt(s);
+    return '<path d="M' + f(cx + x0) + ',' + f(cy - y0) +
+           ' A' + f(R) + ',' + f(R) + ' 0 1 0 ' + f(cx + x0) + ',' + f(cy + y0) +
+           ' A' + f(r) + ',' + f(r) + ' 0 1 1 ' + f(cx + x0) + ',' + f(cy - y0) + ' Z" fill="' + c + '"/>';
+  }
+  /* union jack drawn into a box, safely clipped */
+  function unionJack(x, y, w, h){
+    var id = 'fgc' + (++uid), s = h / 40, o = '';
+    o += '<clipPath id="' + id + '"><rect x="'+f(x)+'" y="'+f(y)+'" width="'+f(w)+'" height="'+f(h)+'"/></clipPath>';
+    o += '<g clip-path="url(#' + id + ')">';
+    o += rc(x, y, w, h, '#012169');
+    o += ln(x, y, x + w, y + h, '#FFFFFF', 11 * s) + ln(x + w, y, x, y + h, '#FFFFFF', 11 * s);
+    o += ln(x, y, x + w, y + h, '#C8102E', 4.4 * s) + ln(x + w, y, x, y + h, '#C8102E', 4.4 * s);
+    o += rc(x + w / 2 - 6.6 * s, y, 13.2 * s, h, '#FFFFFF') + rc(x, y + h / 2 - 6.6 * s, w, 13.2 * s, '#FFFFFF');
+    o += rc(x + w / 2 - 4 * s, y, 8 * s, h, '#C8102E') + rc(x, y + h / 2 - 4 * s, w, 8 * s, '#C8102E');
+    o += '</g>';
+    return o;
+  }
+  /* 11-point maple leaf, right half then mirrored */
+  var LEAF = [0,-1, .13,-.53, .36,-.61, .30,-.40, .66,-.44, .56,-.22, 1,-.12, .82,.10, .70,.34, .34,.30, .40,.55, .10,.50, .10,1];
+  function leafPts(cx, cy, h){
+    var p = [], i;
+    for(i = 0; i < LEAF.length; i += 2){ p.push(cx + LEAF[i] * h, cy + LEAF[i+1] * h); }
+    for(i = LEAF.length - 2; i >= 0; i -= 2){ if(LEAF[i] === 0) continue; p.push(cx - LEAF[i] * h, cy + LEAF[i+1] * h); }
+    return p;
+  }
+
+  function shp(s){
+    var t = s[0], i, o = '', c, ww, hh;
+    if(t === 'h'){ c = s.slice(1); hh = 40 / c.length; for(i = 0; i < c.length; i++){ o += rc(0, i * hh, 60, hh + 0.03, c[i]); } return o; }
+    if(t === 'v'){ c = s.slice(1); ww = 60 / c.length; for(i = 0; i < c.length; i++){ o += rc(i * ww, 0, ww + 0.03, 40, c[i]); } return o; }
+    if(t === 'r') return rc(s[1], s[2], s[3], s[4], s[5]);
+    if(t === 'c') return ci(s[1], s[2], s[3], s[4]);
+    if(t === 'co') return co(s[1], s[2], s[3], s[4], s[5]);
+    if(t === 'p') return pg(s[1], s[2]);
+    if(t === 'po') return po(s[1], s[2], s[3]);
+    if(t === 'l') return ln(s[1], s[2], s[3], s[4], s[5], s[6]);
+    if(t === 's') return pg(s[4], starPts(s[1], s[2], s[3], s[6], s[5], s[7]));
+    if(t === 'so') return po(s[4], s[5], starPts(s[1], s[2], s[3], s[7], s[6], s[8]));
+    if(t === 'x') return rc(s[2] - s[4] / 2, 0, s[4], 40, s[1]) + rc(0, s[3] - s[4] / 2, 60, s[4], s[1]);
+    if(t === 'm') return moon(s[1], s[2], s[3], s[4], s[5], s[6]);
+    if(t === 'd') return '<path d="' + s[2] + '" fill="' + s[1] + '"/>';
+    if(t === 'do') return '<path d="' + s[3] + '" fill="none" stroke="' + s[1] + '" stroke-width="' + f(s[2]) + '" stroke-linejoin="round" stroke-linecap="round"/>';
+    if(t === 'uj') return unionJack(s[1], s[2], s[3], s[4]);
+    if(t === 'leaf') return pg(s[4], leafPts(s[1], s[2], s[3]));
+    if(t === 'sun') return pg(s[5], starPts(s[1], s[2], s[3], s[4], 0, 0.55)) + ci(s[1], s[2], s[3] * 0.56, s[5]);
+    if(t === 'dots'){ var a = s[3]; for(i = 0; i < a.length; i += 2){ o += ci(a[i], a[i+1], s[2], s[1]); } return o; }
+    if(t === 'sp'){ /* spoked wheel: cx,cy,r,n,col,w */
+      o += co(s[1], s[2], s[3], s[5], s[6]);
+      o += ci(s[1], s[2], s[3] * 0.16, s[5]);
+      for(i = 0; i < s[4]; i++){ var an = i * 2 * Math.PI / s[4];
+        o += ln(s[1], s[2], s[1] + s[3] * Math.cos(an), s[2] + s[3] * Math.sin(an), s[5], s[6] * 0.72); }
+      return o; }
+    if(t === 'chk'){ /* x,y,cell,cols,rows,c1,c2 */
+      for(var r2 = 0; r2 < s[5]; r2++){ for(var c2 = 0; c2 < s[4]; c2++){
+        o += rc(s[1] + c2 * s[3], s[2] + r2 * s[3], s[3] + 0.02, s[3] + 0.02, ((r2 + c2) % 2) ? s[7] : s[6]); } }
+      return o; }
+    if(t === 'G'){ for(i = 0; i < s[2].length; i++){ o += shp(s[2][i]); } return '<g transform="' + s[1] + '">' + o + '</g>'; }
+    return '';
+  }
+
+  function flagSVG(co2, cls){
+    var body = '', i;
+    if(co2.bg !== null){ body += rc(0, 0, 60, 40, co2.bg || '#FFFFFF'); }
+    for(i = 0; i < co2.d.length; i++){ body += shp(co2.d[i]); }
+    if(co2.bg !== null){ body += '<rect class="fg-bd" x=".4" y=".4" width="59.2" height="39.2" fill="none" stroke="rgba(43,45,66,.28)" stroke-width=".8"/>'; }
+    return '<svg class="fg-frame ' + (cls || '') + '" viewBox="0 0 60 40" width="100%" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid meet">' + body + '</svg>';
+  }
+
+  /* ---------- one-line facts, shared between countries ---------- */
+  var FACTS = {
+    tri:    ['Three equal bands — the tricolour design copied around the world.', 'Trois bandes égales : le modèle tricolore copié partout dans le monde.'],
+    fr:     ['The blue-white-red tricolour of 1794 inspired flags on every continent.', 'Le tricolore bleu-blanc-rouge de 1794 a inspiré des drapeaux sur tous les continents.'],
+    nordic: ['The Nordic cross is set off-centre, closer to the flagpole.', 'La croix nordique est décentrée, plus proche du mât.'],
+    pana:   ['Red, gold and green are the pan-African colours, borrowed from Ethiopia.', 'Le rouge, le jaune et le vert sont les couleurs panafricaines, empruntées à l’Éthiopie.'],
+    panb:   ['Red, white, black and green are the four pan-Arab colours.', 'Le rouge, le blanc, le noir et le vert sont les quatre couleurs panarabes.'],
+    slav:   ['White, blue and red are the pan-Slavic colours.', 'Le blanc, le bleu et le rouge sont les couleurs panslaves.'],
+    star1:  ['A single star stands for unity and independence.', 'Une seule étoile représente l’unité et l’indépendance.'],
+    crescent:['The crescent and star are a very old symbol of the region.', 'Le croissant et l’étoile sont un symbole très ancien de la région.'],
+    diag:   ['A diagonal band splits the flag corner to corner.', 'Une bande diagonale coupe le drapeau d’un coin à l’autre.'],
+    hoist:  ['The triangle at the left points away from the flagpole.', 'Le triangle de gauche s’éloigne du mât.'],
+    uj:     ['The small Union Jack in the corner marks a link with Britain.', 'Le petit Union Jack dans le coin rappelle un lien avec la Grande-Bretagne.'],
+    ca:     ['Canada got this flag in 1965; the leaf has eleven points.', 'Le Canada a adopté ce drapeau en 1965 ; la feuille compte onze pointes.'],
+    us:     ['Thirteen stripes for the first colonies, fifty stars for the states.', 'Treize bandes pour les premières colonies, cinquante étoiles pour les États.'],
+    uk:     ['The Union Jack layers the crosses of England, Scotland and Ireland.', 'L’Union Jack superpose les croix d’Angleterre, d’Écosse et d’Irlande.'],
+    jp:     ['The red disc is the rising sun; the flag is called Hinomaru.', 'Le disque rouge est le soleil levant ; ce drapeau s’appelle Hinomaru.'],
+    ch:     ['One of only two square national flags — the other is Vatican City.', 'L’un des deux seuls drapeaux nationaux carrés — l’autre est celui du Vatican.'],
+    np:     ['The only national flag that is not a rectangle.', 'Le seul drapeau national qui n’est pas un rectangle.'],
+    dk:     ['The Dannebrog is the oldest national flag still in use.', 'Le Dannebrog est le plus ancien drapeau national encore utilisé.'],
+    gr:     ['Nine stripes for the nine syllables of the Greek freedom cry.', 'Neuf bandes pour les neuf syllabes du cri de liberté grec.'],
+    br:     ['The banner reads "Order and Progress"; each star is a Brazilian state.', 'La banderole dit « Ordre et Progrès » ; chaque étoile est un État brésilien.'],
+    cn:     ['One large star for the party, four small ones for the people.', 'Une grande étoile pour le parti, quatre petites pour le peuple.'],
+    kr:     ['The red and blue circle is the taegeuk, balance of opposites.', 'Le cercle rouge et bleu est le taegeuk, l’équilibre des contraires.'],
+    in:     ['The navy wheel is the Ashoka Chakra and has 24 spokes.', 'La roue bleue est le chakra d’Ashoka et compte 24 rayons.'],
+    il:     ['The blue stripes recall the stripes of a prayer shawl.', 'Les bandes bleues rappellent celles du châle de prière.'],
+    sun:    ['The golden Sun of May shines in the middle of the flag.', 'Le Soleil de Mai doré brille au centre du drapeau.'],
+    disc:   ['A plain field with a single disc — simple and unmistakable.', 'Un fond uni avec un seul disque : simple et reconnaissable.'],
+    za:     ['The green Y joins many peoples into one road forward.', 'Le Y vert réunit plusieurs peuples sur une même route.'],
+    ie:     ['Green for one tradition, orange for the other, white for peace between them.', 'Le vert pour une tradition, l’orange pour l’autre, le blanc pour la paix entre les deux.'],
+    ua:     ['Blue sky above a field of ripe wheat.', 'Un ciel bleu au-dessus d’un champ de blé mûr.'],
+    pl:     ['White above red — the oldest colours of the Polish crown.', 'Blanc sur rouge : les plus anciennes couleurs de la couronne polonaise.'],
+    de:     ['Black, red and gold have stood for German unity since the 1800s.', 'Le noir, le rouge et l’or symbolisent l’unité allemande depuis le XIXe siècle.'],
+    at:     ['One of the oldest flag designs in the world, from the 1200s.', 'L’un des plus anciens motifs de drapeau au monde, datant du XIIIe siècle.'],
+    checker:['The red and white chequerboard is a very old royal emblem.', 'Le damier rouge et blanc est un très vieil emblème royal.'],
+    cross:  ['A cross fills the whole flag, edge to edge.', 'Une croix occupe tout le drapeau, d’un bord à l’autre.'],
+    sc:     ['Five rays fan out from one corner, one for each part of the nation.', 'Cinq rayons s’ouvrent depuis un coin, un pour chaque partie de la nation.'],
+    ph:     ['The flag is flown upside down in wartime — a unique rule.', 'Ce drapeau est hissé à l’envers en temps de guerre : une règle unique.'],
+    lb:     ['The green cedar tree has stood for this country for centuries.', 'Le cèdre vert représente ce pays depuis des siècles.'],
+    tt2:    ['A bold diagonal in three colours, land, water and people.', 'Une diagonale nette en trois couleurs : la terre, l’eau et le peuple.'],
+    quarter:['The flag is split into four quarters.', 'Le drapeau est divisé en quatre quartiers.'],
+    bicolour:['Just two bands of colour — one of the simplest flags there is.', 'Seulement deux bandes de couleur : l’un des drapeaux les plus simples.']
+  };
+  function factOf(k){ var a = FACTS[k] || FACTS.tri; return T(a[0], a[1]); }
+
+  var CONTS = ['Europe', 'Africa', 'Asia', 'Americas', 'Oceania'];
+  function contName(c){
+    if(c === 'Europe') return T('Europe', 'Europe');
+    if(c === 'Africa') return T('Africa', 'Afrique');
+    if(c === 'Asia') return T('Asia', 'Asie');
+    if(c === 'Americas') return T('Americas', 'Amériques');
+    if(c === 'Oceania') return T('Oceania', 'Océanie');
+    return T('All', 'Tous');
+  }
+
+  /* ---------- the flag table ---------- */
+  var FLAGS = [
+  /* ===== EUROPE ===== */
+  {n:'France',c:'Europe',p:'Paris',k:'fr',d:[['v','#0055A4','#FFFFFF','#EF4135']]},
+  {n:'Italy',f:'Italie',c:'Europe',p:'Rome',k:'tri',d:[['v','#009246','#F1F2F1','#CE2B37']]},
+  {n:'Ireland',f:'Irlande',c:'Europe',p:'Dublin',k:'ie',d:[['v','#169B62','#FFFFFF','#FF883E']]},
+  {n:'Belgium',f:'Belgique',c:'Europe',p:'Brussels',q:'Bruxelles',k:'tri',d:[['v','#000000','#FDDA24','#EF3340']]},
+  {n:'Germany',f:'Allemagne',c:'Europe',p:'Berlin',k:'de',d:[['h','#000000','#DD0000','#FFCE00']]},
+  {n:'Netherlands',f:'Pays-Bas',c:'Europe',p:'Amsterdam',k:'tri',d:[['h','#AE1C28','#FFFFFF','#21468B']]},
+  {n:'Russia',f:'Russie',c:'Europe',p:'Moscow',q:'Moscou',k:'slav',d:[['h','#FFFFFF','#0039A6','#D52B1E']]},
+  {n:'Romania',f:'Roumanie',c:'Europe',p:'Bucharest',q:'Bucarest',k:'tri',d:[['v','#002B7F','#FCD116','#CE1126']]},
+  {n:'Ukraine',c:'Europe',p:'Kyiv',k:'ua',d:[['h','#0057B7','#FFD700']]},
+  {n:'Poland',f:'Pologne',c:'Europe',p:'Warsaw',q:'Varsovie',k:'pl',d:[['h','#FFFFFF','#DC143C']]},
+  {n:'Austria',f:'Autriche',c:'Europe',p:'Vienna',q:'Vienne',k:'at',d:[['h','#ED2939','#FFFFFF','#ED2939']]},
+  {n:'Hungary',f:'Hongrie',c:'Europe',p:'Budapest',k:'tri',d:[['h','#CE2939','#FFFFFF','#477050']]},
+  {n:'Bulgaria',f:'Bulgarie',c:'Europe',p:'Sofia',k:'tri',d:[['h','#FFFFFF','#00966E','#D62612']]},
+  {n:'Estonia',f:'Estonie',c:'Europe',p:'Tallinn',k:'tri',d:[['h','#0072CE','#000000','#FFFFFF']]},
+  {n:'Latvia',f:'Lettonie',c:'Europe',p:'Riga',k:'bicolour',d:[['r',0,0,60,16,'#9E3039'],['r',0,16,60,8,'#FFFFFF'],['r',0,24,60,16,'#9E3039']]},
+  {n:'Lithuania',f:'Lituanie',c:'Europe',p:'Vilnius',k:'tri',d:[['h','#FDB913','#006A44','#C1272D']]},
+  {n:'Luxembourg',c:'Europe',p:'Luxembourg City',q:'Luxembourg',k:'tri',d:[['h','#ED2939','#FFFFFF','#00A1DE']]},
+  {n:'Denmark',f:'Danemark',c:'Europe',p:'Copenhagen',q:'Copenhague',k:'dk',bg:'#C8102E',d:[['x','#FFFFFF',21,20,6.6]]},
+  {n:'Sweden',f:'Suède',c:'Europe',p:'Stockholm',k:'nordic',bg:'#006AA7',d:[['x','#FECC00',21,20,6.6]]},
+  {n:'Norway',f:'Norvège',c:'Europe',p:'Oslo',k:'nordic',bg:'#BA0C2F',d:[['x','#FFFFFF',21,20,9.4],['x','#00205B',21,20,4.6]]},
+  {n:'Finland',f:'Finlande',c:'Europe',p:'Helsinki',k:'nordic',bg:'#FFFFFF',d:[['x','#003580',21,20,8]]},
+  {n:'Iceland',f:'Islande',c:'Europe',p:'Reykjavík',k:'nordic',bg:'#02529C',d:[['x','#FFFFFF',21,20,9.4],['x','#DC1E35',21,20,4.6]]},
+  {n:'Faroe Islands',f:'Îles Féroé',c:'Europe',p:'Tórshavn',k:'nordic',bg:'#FFFFFF',d:[['x','#0065BD',21,20,9.4],['x','#ED2939',21,20,4.6]]},
+  {n:'Switzerland',f:'Suisse',c:'Europe',p:'Bern',q:'Berne',k:'ch',bg:'#DA291C',d:[['r',26.5,9,7,22,'#FFFFFF'],['r',19,16.5,22,7,'#FFFFFF']]},
+  {n:'Greece',f:'Grèce',c:'Europe',p:'Athens',q:'Athènes',k:'gr',bg:'#FFFFFF',d:[
+    ['r',0,0,60,4.45,'#0D5EAF'],['r',0,8.89,60,4.45,'#0D5EAF'],['r',0,17.78,60,4.45,'#0D5EAF'],['r',0,26.67,60,4.45,'#0D5EAF'],['r',0,35.56,60,4.45,'#0D5EAF'],
+    ['r',0,0,17.78,17.78,'#0D5EAF'],['r',7.11,0,3.56,17.78,'#FFFFFF'],['r',0,7.11,17.78,3.56,'#FFFFFF']]},
+  {n:'Czechia',f:'Tchéquie',c:'Europe',p:'Prague',k:'hoist',d:[['r',0,0,60,20,'#FFFFFF'],['r',0,20,60,20,'#D7141A'],['p','#11457E',[0,0,0,40,24,20]]]},
+  {n:'Spain',f:'Espagne',c:'Europe',p:'Madrid',k:'bicolour',d:[['r',0,0,60,10,'#AA151B'],['r',0,10,60,20,'#F1BF00'],['r',0,30,60,10,'#AA151B']]},
+  {n:'Portugal',c:'Europe',p:'Lisbon',q:'Lisbonne',k:'bicolour',d:[['r',0,0,24,40,'#006600'],['r',24,0,36,40,'#FF0000'],
+    ['co',24,20,6.2,'#FFE900',1.7],['p','#DA291C',[21,16.4,27,16.4,27,21.2,24,23.9,21,21.2]],['p','#FFFFFF',[22,17.5,26,17.5,26,20.9,24,22.5,22,20.9]],
+    ['dots','#DA291C',0.5,[23,18.6,25,18.6,24,20.2,23,21.4,25,21.4]]]},
+  {n:'United Kingdom',f:'Royaume-Uni',c:'Europe',p:'London',q:'Londres',k:'uk',d:[['uj',0,0,60,40]]},
+  {n:'Malta',f:'Malte',c:'Europe',p:'Valletta',q:'La Valette',k:'bicolour',d:[['v','#FFFFFF','#CF142B'],['r',5.6,3.6,3.2,7.2,'#A9A9A9'],['r',3.6,5.6,7.2,3.2,'#A9A9A9']]},
+  {n:'Croatia',f:'Croatie',c:'Europe',p:'Zagreb',k:'checker',d:[['h','#FF0000','#FFFFFF','#171796'],['chk',23.5,13.5,2.6,5,5,'#FFFFFF','#FF0000']]},
+
+  /* ===== AFRICA ===== */
+  {n:'Nigeria',f:'Nigéria',c:'Africa',p:'Abuja',k:'tri',d:[['v','#008751','#FFFFFF','#008751']]},
+  {n:'Chad',f:'Tchad',c:'Africa',p:'N’Djamena',k:'tri',d:[['v','#002664','#FECB00','#C60C30']]},
+  {n:'Gabon',c:'Africa',p:'Libreville',k:'tri',d:[['h','#009E60','#FCD116','#3A75C4']]},
+  {n:'Mali',c:'Africa',p:'Bamako',k:'pana',d:[['v','#14B53A','#FCD116','#CE1126']]},
+  {n:'Guinea',f:'Guinée',c:'Africa',p:'Conakry',k:'pana',d:[['v','#CE1126','#FCD116','#009460']]},
+  {n:'Senegal',f:'Sénégal',c:'Africa',p:'Dakar',k:'pana',d:[['v','#00853F','#FDEF42','#E31B23'],['s',30,20,6,'#00853F']]},
+  {n:'Ivory Coast',f:'Côte d’Ivoire',c:'Africa',p:'Yamoussoukro',k:'tri',d:[['v','#F77F00','#FFFFFF','#009E60']]},
+  {n:'Sierra Leone',c:'Africa',p:'Freetown',k:'tri',d:[['h','#1EB53A','#FFFFFF','#0072C6']]},
+  {n:'Egypt',f:'Égypte',c:'Africa',p:'Cairo',q:'Le Caire',k:'panb',d:[['h','#CE1126','#FFFFFF','#000000'],
+    ['p','#C09300',[30,13.4,32.8,15.4,36,14.8,34.2,18,35.4,20,32.2,20,32.2,24,30,26.6,27.8,24,27.8,20,24.6,20,25.8,18,24,14.8,27.2,15.4]]]},
+  {n:'Sudan',f:'Soudan',c:'Africa',p:'Khartoum',k:'panb',d:[['h','#D21034','#FFFFFF','#000000'],['p','#007229',[0,0,0,40,20,20]]]},
+  {n:'Libya',f:'Libye',c:'Africa',p:'Tripoli',k:'crescent',d:[['r',0,0,60,10,'#E70013'],['r',0,10,60,20,'#000000'],['r',0,30,60,10,'#239E46'],
+    ['m',27,20,5.6,4.5,2.1,'#FFFFFF'],['s',34.2,20,2.7,'#FFFFFF']]},
+  {n:'Morocco',f:'Maroc',c:'Africa',p:'Rabat',k:'star1',bg:'#C1272D',d:[['so',30,20,9.5,'#006233',1.4,0,5,0.5]]},
+  {n:'Tunisia',f:'Tunisie',c:'Africa',p:'Tunis',k:'crescent',bg:'#E70013',d:[['c',30,20,12,'#FFFFFF'],['m',29,20,8,6.4,2.6,'#E70013'],['s',33.6,20,3.2,'#E70013']]},
+  {n:'Algeria',f:'Algérie',c:'Africa',p:'Algiers',q:'Alger',k:'crescent',d:[['r',0,0,30,40,'#006233'],['r',30,0,30,40,'#FFFFFF'],
+    ['m',29,20,9,7.4,3.2,'#D21034'],['s',36.8,20,3.4,'#D21034',18]]},
+  {n:'Somalia',f:'Somalie',c:'Africa',p:'Mogadishu',q:'Mogadiscio',k:'star1',bg:'#4189DD',d:[['s',30,20,11,'#FFFFFF']]},
+  {n:'Togo',c:'Africa',p:'Lomé',k:'pana',d:[['r',0,0,60,8,'#006A4E'],['r',0,8,60,8,'#FFCE00'],['r',0,16,60,8,'#006A4E'],['r',0,24,60,8,'#FFCE00'],['r',0,32,60,8,'#006A4E'],
+    ['r',0,0,16,16,'#D21034'],['s',8,8,5.5,'#FFFFFF']]},
+  {n:'Benin',f:'Bénin',c:'Africa',p:'Porto-Novo',k:'pana',d:[['r',0,0,24,40,'#008751'],['r',24,0,36,20,'#FCD116'],['r',24,20,36,20,'#E8112D']]},
+  {n:'Madagascar',c:'Africa',p:'Antananarivo',k:'tri',d:[['r',0,0,20,40,'#FFFFFF'],['r',20,0,40,20,'#FC3D32'],['r',20,20,40,20,'#007E3A']]},
+  {n:'Republic of the Congo',f:'République du Congo',c:'Africa',p:'Brazzaville',k:'diag',d:[
+    ['p','#009543',[0,0,60,0,0,40]],['p','#DC241F',[60,0,60,40,0,40]],['l',0,40,60,0,'#FBDE4A',13]]},
+  {n:'Democratic Republic of the Congo',f:'République démocratique du Congo',c:'Africa',p:'Kinshasa',k:'diag',bg:'#007FFF',d:[
+    ['l',0,40,60,0,'#F7D618',9],['l',0,40,60,0,'#CE1021',5.6],['s',9,8,4.4,'#F7D618']]},
+  {n:'Namibia',f:'Namibie',c:'Africa',p:'Windhoek',k:'diag',d:[
+    ['p','#003580',[0,0,60,0,0,40]],['p','#009543',[60,0,60,40,0,40]],['l',0,40,60,0,'#FFFFFF',11],['l',0,40,60,0,'#D21034',7],
+    ['s',13,10,6.2,'#FFCE00',0,12,0.45],['c',13,10,3,'#FFCE00']]},
+  {n:'Tanzania',f:'Tanzanie',c:'Africa',p:'Dodoma',k:'diag',d:[
+    ['p','#1EB53A',[0,0,60,0,0,40]],['p','#00A3DD',[60,0,60,40,0,40]],['l',0,40,60,0,'#FCD116',12],['l',0,40,60,0,'#000000',7.6]]},
+  {n:'Cameroon',f:'Cameroun',c:'Africa',p:'Yaoundé',k:'pana',d:[['v','#007A5E','#CE1126','#FCD116'],['s',30,20,6,'#FCD116']]},
+  {n:'Ghana',c:'Africa',p:'Accra',k:'pana',d:[['h','#CE1126','#FCD116','#006B3F'],['s',30,20,5,'#000000']]},
+  {n:'Ethiopia',f:'Éthiopie',c:'Africa',p:'Addis Ababa',q:'Addis-Abeba',k:'pana',d:[['h','#078930','#FCDD09','#DA121A'],
+    ['c',30,20,8.6,'#0F47AF'],['so',30,20,6.4,'#FCDD09',1.2,0,5,0.5]]},
+  {n:'Botswana',c:'Africa',p:'Gaborone',k:'tri',bg:'#75AADB',d:[['r',0,15,60,10,'#FFFFFF'],['r',0,17,60,6,'#000000']]},
+  {n:'Burkina Faso',c:'Africa',p:'Ouagadougou',k:'pana',d:[['r',0,0,60,20,'#EF2B2D'],['r',0,20,60,20,'#009E49'],['s',30,20,7,'#FCD116']]},
+  {n:'Niger',c:'Africa',p:'Niamey',k:'disc',d:[['h','#E05206','#FFFFFF','#0DB02B'],['c',30,20,5,'#E05206']]},
+  {n:'South Africa',f:'Afrique du Sud',c:'Africa',p:'Pretoria',k:'za',d:[
+    ['r',0,0,60,20,'#DE3831'],['r',0,20,60,20,'#002395'],['p','#000000',[0,0,0,40,22,20]],
+    ['l',26,20,-6,-9.1,'#FFFFFF',11],['l',26,20,-6,49.1,'#FFFFFF',11],['l',26,20,62,20,'#FFFFFF',11],
+    ['l',26,20,-6,-9.1,'#007A4D',7],['l',26,20,-6,49.1,'#007A4D',7],['l',26,20,62,20,'#007A4D',7]]},
+  {n:'Mauritania',f:'Mauritanie',c:'Africa',p:'Nouakchott',k:'crescent',bg:'#00A651',d:[
+    ['r',0,0,60,4,'#CD2A3E'],['r',0,36,60,4,'#CD2A3E'],['G','rotate(-90 30 22)',[['m',30,22,10,8.4,3.4,'#FFC400']]],['s',30,14,2.9,'#FFC400']]},
+  {n:'Seychelles',c:'Africa',p:'Victoria',k:'sc',d:[
+    ['p','#003F87',[0,0,20,0,0,40]],['p','#FCD856',[20,0,60,0,0,40]],['p','#D62828',[60,0,60,13.33,0,40]],
+    ['p','#FFFFFF',[60,13.33,60,26.67,0,40]],['p','#007A3D',[60,26.67,60,40,0,40]]]},
+  {n:'Gambia',f:'Gambie',c:'Africa',p:'Banjul',k:'tri',d:[['r',0,0,60,12.6,'#CE1126'],['r',0,12.6,60,14.8,'#FFFFFF'],['r',0,14.6,60,10.8,'#0C1C8C'],['r',0,27.4,60,12.6,'#3A7728']]},
+  {n:'Mauritius',f:'Maurice',c:'Africa',p:'Port Louis',k:'quarter',d:[['h','#EA2839','#1A206D','#FFD500','#00A551']]},
+  {n:'Guinea-Bissau',f:'Guinée-Bissau',c:'Africa',p:'Bissau',k:'pana',d:[['r',0,0,60,20,'#FCD116'],['r',0,20,60,20,'#009E49'],['r',0,0,20,40,'#CE1126'],['s',10,20,6,'#000000']]},
+
+  /* ===== ASIA ===== */
+  {n:'Japan',f:'Japon',c:'Asia',p:'Tokyo',k:'jp',bg:'#FFFFFF',d:[['c',30,20,12,'#BC002D']]},
+  {n:'Bangladesh',c:'Asia',p:'Dhaka',k:'disc',bg:'#006A4E',d:[['c',26,20,10.5,'#F42A41']]},
+  {n:'Laos',c:'Asia',p:'Vientiane',k:'disc',d:[['r',0,0,60,10,'#CE1126'],['r',0,10,60,20,'#002868'],['r',0,30,60,10,'#CE1126'],['c',30,20,7,'#FFFFFF']]},
+  {n:'Indonesia',f:'Indonésie',c:'Asia',p:'Jakarta',k:'bicolour',d:[['h','#CE1126','#FFFFFF']]},
+  {n:'China',f:'Chine',c:'Asia',p:'Beijing',q:'Pékin',k:'cn',bg:'#DE2910',d:[
+    ['s',11,10,6,'#FFDE00'],['s',21,4.2,2.1,'#FFDE00',25],['s',25,9,2.1,'#FFDE00',48],['s',25,15.4,2.1,'#FFDE00',70],['s',21,20.2,2.1,'#FFDE00',95]]},
+  {n:'Vietnam',f:'Viêt Nam',c:'Asia',p:'Hanoi',q:'Hanoï',k:'star1',bg:'#DA251D',d:[['s',30,20,11.5,'#FFFF00']]},
+  {n:'Turkey',f:'Turquie',c:'Asia',p:'Ankara',k:'crescent',bg:'#E30A17',d:[['m',23,20,9,7.2,3,'#FFFFFF'],['s',35.4,20,4.6,'#FFFFFF',-18]]},
+  {n:'Israel',f:'Israël',c:'Asia',p:'Jerusalem',q:'Jérusalem',k:'il',bg:'#FFFFFF',d:[
+    ['r',0,5,60,4.4,'#0038B8'],['r',0,30.6,60,4.4,'#0038B8'],
+    ['po','#0038B8',1.3,[30,12.6,36.1,23.2,23.9,23.2]],['po','#0038B8',1.3,[30,27.4,23.9,16.8,36.1,16.8]]]},
+  {n:'Pakistan',c:'Asia',p:'Islamabad',k:'crescent',bg:'#01411C',d:[
+    ['r',0,0,15,40,'#FFFFFF'],['G','rotate(-20 37 20)',[['m',37,20,8.6,7,3.3,'#FFFFFF']]],['s',45.4,12.4,3.2,'#FFFFFF',-20]]},
+  {n:'India',f:'Inde',c:'Asia',p:'New Delhi',k:'in',d:[['h','#FF9933','#FFFFFF','#138808'],['sp',30,20,5.1,24,'#000080',0.65]]},
+  {n:'Thailand',f:'Thaïlande',c:'Asia',p:'Bangkok',k:'tri',bg:'#FFFFFF',d:[
+    ['r',0,0,60,6.67,'#A51931'],['r',0,13.33,60,13.34,'#2D2A4A'],['r',0,33.33,60,6.67,'#A51931']]},
+  {n:'Kuwait',f:'Koweït',c:'Asia',p:'Kuwait City',q:'Koweït',k:'panb',d:[
+    ['r',0,0,60,13.33,'#007A3D'],['r',0,13.33,60,13.34,'#FFFFFF'],['r',0,26.67,60,13.33,'#CE1126'],['p','#000000',[0,0,15,13.33,15,26.67,0,40]]]},
+  {n:'Jordan',f:'Jordanie',c:'Asia',p:'Amman',k:'panb',d:[['h','#000000','#FFFFFF','#007A3D'],['p','#CE1126',[0,0,0,40,24,20]],['s',9,20,3.1,'#FFFFFF',0,7,0.55]]},
+  {n:'United Arab Emirates',f:'Émirats arabes unis',c:'Asia',p:'Abu Dhabi',k:'panb',d:[
+    ['r',15,0,45,13.33,'#00732F'],['r',15,13.33,45,13.34,'#FFFFFF'],['r',15,26.67,45,13.33,'#000000'],['r',0,0,15,40,'#CE1126']]},
+  {n:'Yemen',f:'Yémen',c:'Asia',p:'Sanaa',k:'panb',d:[['h','#CE1126','#FFFFFF','#000000']]},
+  {n:'Qatar',c:'Asia',p:'Doha',k:'hoist',bg:'#8A1538',d:[['r',0,0,11,40,'#FFFFFF'],
+    ['p','#FFFFFF',[11,0,17,2.22,11,4.44,17,6.67,11,8.89,17,11.11,11,13.33,17,15.56,11,17.78,17,20,11,22.22,17,24.44,11,26.67,17,28.89,11,31.11,17,33.33,11,35.56,17,37.78,11,40]]]},
+  {n:'South Korea',f:'Corée du Sud',c:'Asia',p:'Seoul',q:'Séoul',k:'kr',bg:'#FFFFFF',d:[
+    ['G','rotate(-33 30 20)',[
+      ['d','#CD2E3A','M22,20 A8,8 0 0 1 38,20 A4,4 0 0 0 30,20 A4,4 0 0 1 22,20 Z'],
+      ['d','#0047A0','M22,20 A8,8 0 0 0 38,20 A4,4 0 0 1 30,20 A4,4 0 0 0 22,20 Z']]],
+    ['G','translate(11.5,8.5) rotate(-57)',[['r',-5,-3.3,10,1.7,'#000000'],['r',-5,-0.85,10,1.7,'#000000'],['r',-5,1.6,10,1.7,'#000000']]],
+    ['G','translate(48.5,8.5) rotate(57)',[['r',-5,-3.3,4.3,1.7,'#000000'],['r',0.7,-3.3,4.3,1.7,'#000000'],['r',-5,-0.85,10,1.7,'#000000'],['r',-5,1.6,4.3,1.7,'#000000'],['r',0.7,1.6,4.3,1.7,'#000000']]],
+    ['G','translate(11.5,31.5) rotate(57)',[['r',-5,-3.3,10,1.7,'#000000'],['r',-5,-0.85,4.3,1.7,'#000000'],['r',0.7,-0.85,4.3,1.7,'#000000'],['r',-5,1.6,10,1.7,'#000000']]],
+    ['G','translate(48.5,31.5) rotate(-57)',[['r',-5,-3.3,4.3,1.7,'#000000'],['r',0.7,-3.3,4.3,1.7,'#000000'],['r',-5,-0.85,4.3,1.7,'#000000'],['r',0.7,-0.85,4.3,1.7,'#000000'],['r',-5,1.6,4.3,1.7,'#000000'],['r',0.7,1.6,4.3,1.7,'#000000']]]]},
+  {n:'Singapore',f:'Singapour',c:'Asia',p:'Singapore',q:'Singapour',k:'crescent',d:[
+    ['r',0,0,60,20,'#EF3340'],['r',0,20,60,20,'#FFFFFF'],['m',13,10,6.4,5.2,2.4,'#FFFFFF'],
+    ['s',23,5.8,1.9,'#FFFFFF'],['s',26.99,8.7,1.9,'#FFFFFF'],['s',25.47,13.4,1.9,'#FFFFFF'],['s',20.53,13.4,1.9,'#FFFFFF'],['s',19.01,8.7,1.9,'#FFFFFF']]},
+  {n:'Nepal',f:'Népal',c:'Asia',p:'Kathmandu',q:'Katmandou',k:'np',bg:null,d:[
+    ['d','#DC143C','M20,2 L42,14 L27,20.5 L38,29.5 L20,38 Z'],
+    ['do','#003893',2.4,'M20,2 L42,14 L27,20.5 L38,29.5 L20,38 Z'],
+    ['s',26,12.4,3.7,'#FFFFFF',0,12,0.62],['c',26.9,13.7,2.7,'#DC143C'],
+    ['s',25.5,28.6,4,'#FFFFFF',0,12,0.6],['c',25.5,28.6,2.1,'#FFFFFF']]},
+  {n:'Armenia',f:'Arménie',c:'Asia',p:'Yerevan',q:'Erevan',k:'tri',d:[['h','#D90012','#0033A0','#F2A800']]},
+  {n:'Georgia',f:'Géorgie',c:'Asia',p:'Tbilisi',q:'Tbilissi',k:'cross',bg:'#FFFFFF',d:[
+    ['r',25.5,0,9,40,'#FF0000'],['r',0,15.5,60,9,'#FF0000'],
+    ['G','translate(12.5,7.5)',[['r',-1.1,-3.4,2.2,6.8,'#FF0000'],['r',-3.4,-1.1,6.8,2.2,'#FF0000']]],
+    ['G','translate(47.5,7.5)',[['r',-1.1,-3.4,2.2,6.8,'#FF0000'],['r',-3.4,-1.1,6.8,2.2,'#FF0000']]],
+    ['G','translate(12.5,32.5)',[['r',-1.1,-3.4,2.2,6.8,'#FF0000'],['r',-3.4,-1.1,6.8,2.2,'#FF0000']]],
+    ['G','translate(47.5,32.5)',[['r',-1.1,-3.4,2.2,6.8,'#FF0000'],['r',-3.4,-1.1,6.8,2.2,'#FF0000']]]]},
+  {n:'Philippines',c:'Asia',p:'Manila',q:'Manille',k:'ph',d:[
+    ['r',0,0,60,20,'#0038A8'],['r',0,20,60,20,'#CE1126'],['p','#FFFFFF',[0,0,0,40,26,20]],
+    ['s',8.5,20,5.2,'#FCD116',0,8,0.42],['c',8.5,20,2.4,'#FCD116'],
+    ['s',3,4,1.7,'#FCD116'],['s',3,36,1.7,'#FCD116'],['s',21,20,1.7,'#FCD116']]},
+  {n:'Myanmar',c:'Asia',p:'Naypyidaw',k:'star1',d:[['h','#FECB00','#34B233','#EA2839'],['s',30,20,11,'#FFFFFF']]},
+  {n:'Lebanon',f:'Liban',c:'Asia',p:'Beirut',q:'Beyrouth',k:'lb',d:[
+    ['r',0,0,60,10,'#ED1C24'],['r',0,10,60,20,'#FFFFFF'],['r',0,30,60,10,'#ED1C24'],
+    ['p','#00A550',[30,11,35.5,16.5,32.8,16.5,37,21.5,33.2,21.5,38,26.5,22,26.5,26.8,21.5,23,21.5,27.2,16.5,24.5,16.5]],['r',29,26,2,3.4,'#00A550']]},
+  {n:'Syria',f:'Syrie',c:'Asia',p:'Damascus',q:'Damas',k:'panb',d:[['h','#CE1126','#FFFFFF','#000000'],['s',22,20,3.1,'#007A3D'],['s',38,20,3.1,'#007A3D']]},
+
+  /* ===== AMERICAS ===== */
+  {n:'Canada',c:'Americas',p:'Ottawa',k:'ca',bg:'#FFFFFF',d:[['r',0,0,15,40,'#D80621'],['r',45,0,15,40,'#D80621'],['leaf',30,20,13,'#D80621']]},
+  {n:'United States',f:'États-Unis',c:'Americas',p:'Washington, D.C.',k:'us',bg:'#FFFFFF',d:[
+    ['r',0,0,60,3.08,'#B22234'],['r',0,6.15,60,3.08,'#B22234'],['r',0,12.31,60,3.08,'#B22234'],['r',0,18.46,60,3.08,'#B22234'],
+    ['r',0,24.62,60,3.08,'#B22234'],['r',0,30.77,60,3.08,'#B22234'],['r',0,36.92,60,3.08,'#B22234'],
+    ['r',0,0,24,21.54,'#3C3B6E'],
+    ['dots','#FFFFFF',0.72,[2,2.15,6,2.15,10,2.15,14,2.15,18,2.15,22,2.15, 4,4.3,8,4.3,12,4.3,16,4.3,20,4.3,
+      2,6.46,6,6.46,10,6.46,14,6.46,18,6.46,22,6.46, 4,8.62,8,8.62,12,8.62,16,8.62,20,8.62,
+      2,10.77,6,10.77,10,10.77,14,10.77,18,10.77,22,10.77, 4,12.92,8,12.92,12,12.92,16,12.92,20,12.92,
+      2,15.08,6,15.08,10,15.08,14,15.08,18,15.08,22,15.08, 4,17.23,8,17.23,12,17.23,16,17.23,20,17.23,
+      2,19.38,6,19.38,10,19.38,14,19.38,18,19.38,22,19.38]]]},
+  {n:'Mexico',f:'Mexique',c:'Americas',p:'Mexico City',q:'Mexico',k:'tri',d:[['v','#006847','#FFFFFF','#CE1126'],
+    ['do','#2E7D32',1.2,'M23.8,20.5 Q24.8,26.8 30,27.8 Q35.2,26.8 36.2,20.5'],
+    ['p','#7B3F1E',[30,13.4,32.2,16,35.6,15,34.4,18.6,32.8,20.8,30,22.8,26.6,21.2,25.2,18.2,26.2,15.6,28.2,16.6]]]},
+  {n:'Peru',f:'Pérou',c:'Americas',p:'Lima',k:'tri',d:[['v','#D91023','#FFFFFF','#D91023']]},
+  {n:'Colombia',f:'Colombie',c:'Americas',p:'Bogotá',k:'tri',d:[['r',0,0,60,20,'#FCD116'],['r',0,20,60,10,'#003893'],['r',0,30,60,10,'#CE1126']]},
+  {n:'Jamaica',f:'Jamaïque',c:'Americas',p:'Kingston',k:'diag',d:[
+    ['p','#009B3A',[0,0,60,0,30,20]],['p','#009B3A',[0,40,60,40,30,20]],['p','#000000',[0,0,0,40,30,20]],['p','#000000',[60,0,60,40,30,20]],
+    ['l',0,0,60,40,'#FED100',6.6],['l',60,0,0,40,'#FED100',6.6]]},
+  {n:'Panama',c:'Americas',p:'Panama City',q:'Panama',k:'quarter',bg:'#FFFFFF',d:[
+    ['r',30,0,30,20,'#DA121A'],['r',0,20,30,20,'#072357'],['s',15,10,6,'#072357'],['s',45,30,6,'#DA121A']]},
+  {n:'Chile',f:'Chili',c:'Americas',p:'Santiago',k:'star1',bg:'#FFFFFF',d:[['r',0,20,60,20,'#D52B1E'],['r',0,0,20,20,'#0039A6'],['s',10,10,6.5,'#FFFFFF']]},
+  {n:'Cuba',c:'Americas',p:'Havana',q:'La Havane',k:'hoist',bg:'#FFFFFF',d:[
+    ['r',0,0,60,8,'#002A8F'],['r',0,16,60,8,'#002A8F'],['r',0,32,60,8,'#002A8F'],
+    ['p','#CF142B',[0,0,0,40,24,20]],['s',8.5,20,5.4,'#FFFFFF']]},
+  {n:'Uruguay',c:'Americas',p:'Montevideo',k:'sun',bg:'#FFFFFF',d:[
+    ['r',0,4.44,60,4.44,'#0038A8'],['r',0,13.33,60,4.44,'#0038A8'],['r',0,22.22,60,4.44,'#0038A8'],['r',0,31.11,60,4.44,'#0038A8'],
+    ['r',0,0,22.2,22.2,'#FFFFFF'],['sun',11,11,4.4,16,0,'#FCD116']]},
+  {n:'Argentina',f:'Argentine',c:'Americas',p:'Buenos Aires',k:'sun',d:[['h','#74ACDF','#FFFFFF','#74ACDF'],['sun',30,20,4.6,16,0,'#F6B40E']]},
+  {n:'Costa Rica',c:'Americas',p:'San José',k:'tri',bg:'#FFFFFF',d:[
+    ['r',0,0,60,6.67,'#002B7F'],['r',0,13.33,60,13.34,'#CE1126'],['r',0,33.33,60,6.67,'#002B7F']]},
+  {n:'Bahamas',c:'Americas',p:'Nassau',k:'hoist',d:[['h','#00778B','#FFC72C','#00778B'],['p','#000000',[0,0,0,40,20,20]]]},
+  {n:'Guyana',c:'Americas',p:'Georgetown',k:'hoist',bg:'#009E49',d:[
+    ['p','#FFFFFF',[0,0,0,40,52,20]],['p','#FCD116',[0,1.8,0,38.2,47,20]],['p','#000000',[0,0,0,40,26,20]],['p','#CE1126',[0,2.6,0,37.4,22,20]]]},
+  {n:'Trinidad and Tobago',f:'Trinité-et-Tobago',c:'Americas',p:'Port of Spain',q:'Port-d’Espagne',k:'tt2',bg:'#CE1126',d:[
+    ['l',0,0,60,40,'#FFFFFF',13],['l',0,0,60,40,'#000000',8.5]]},
+  {n:'Barbados',f:'Barbade',c:'Americas',p:'Bridgetown',k:'tri',d:[['v','#00267F','#FFC726','#00267F'],
+    ['r',29.2,15.5,1.6,15,'#000000'],['r',23.6,14.6,12.8,1.8,'#000000'],
+    ['p','#000000',[24.4,6,25.9,9.6,22.9,9.6]],['r',23.6,9.2,1.7,6,'#000000'],
+    ['p','#000000',[35.6,6,37.1,9.6,34.1,9.6]],['r',34.7,9.2,1.7,6,'#000000'],
+    ['p','#000000',[30,4.6,31.4,9.8,30,15.5,28.6,9.8]]]},
+  {n:'Saint Lucia',f:'Sainte-Lucie',c:'Americas',p:'Castries',k:'tri',bg:'#66CCFF',d:[
+    ['p','#FFFFFF',[30,5.5,15,34,45,34]],['p','#000000',[30,9.5,18.5,34,41.5,34]],['p','#FCD116',[30,20,22,34,38,34]]]},
+  {n:'Honduras',c:'Americas',p:'Tegucigalpa',k:'tri',d:[['h','#0073CF','#FFFFFF','#0073CF'],
+    ['s',30,20,2.4,'#0073CF'],['s',21.5,15.5,2.4,'#0073CF'],['s',38.5,15.5,2.4,'#0073CF'],['s',21.5,24.5,2.4,'#0073CF'],['s',38.5,24.5,2.4,'#0073CF']]},
+  {n:'Bolivia',f:'Bolivie',c:'Americas',p:'Sucre',k:'tri',d:[['h','#D52B1E','#F9E300','#007934']]},
+  {n:'Venezuela',c:'Americas',p:'Caracas',k:'tri',d:[['h','#FFCC00','#00247D','#CF142B'],
+    ['dots','#FFFFFF',1.5,[22.2,18.1,24.1,15.6,26.6,14.1,29.5,13.6,32.4,14.2,34.9,15.7,36.8,18.2]],['s',30,13.6,1.6,'#FFFFFF']]},
+  {n:'Brazil',f:'Brésil',c:'Americas',p:'Brasília',k:'br',bg:'#009C3B',d:[
+    ['p','#FFDF00',[30,3.5,56,20,30,36.5,4,20]],['c',30,20,8.6,'#002776'],
+    ['do','#FFFFFF',2.6,'M22.8,16.5 Q30,22.6 37.2,16.5'],
+    ['dots','#FFFFFF',0.55,[27,14,32,13.4,34.5,15.5,26,17.6,31,18.4,29,22.5,33,23.5,25.5,21.5]]]},
+  {n:'Haiti',f:'Haïti',c:'Americas',p:'Port-au-Prince',k:'bicolour',d:[
+    ['r',0,0,60,20,'#00209F'],['r',0,20,60,20,'#D21034'],['r',23,14,14,12,'#FFFFFF'],
+    ['p','#007749',[30,15.6,31.2,19,30,23.2,28.8,19]],['r',26.5,23,7,1.1,'#D21034']]},
+  {n:'Dominican Republic',f:'République dominicaine',c:'Americas',p:'Santo Domingo',q:'Saint-Domingue',k:'quarter',bg:'#FFFFFF',d:[
+    ['r',0,0,30,20,'#002D62'],['r',30,0,30,20,'#CE1126'],['r',0,20,30,20,'#CE1126'],['r',30,20,30,20,'#002D62'],
+    ['r',26.5,0,7,40,'#FFFFFF'],['r',0,16.5,60,7,'#FFFFFF']]},
+  {n:'Suriname',c:'Americas',p:'Paramaribo',k:'star1',bg:'#377E3F',d:[
+    ['r',0,8,60,4,'#FFFFFF'],['r',0,12,60,16,'#B40A2D'],['r',0,28,60,4,'#FFFFFF'],['s',30,20,5.5,'#ECC81D']]},
+  {n:'Guatemala',c:'Americas',p:'Guatemala City',q:'Guatemala',k:'tri',d:[['v','#4997D0','#FFFFFF','#4997D0'],
+    ['do','#2E7D32',1.2,'M24.6,19 Q25.6,26 30,27.4 Q34.4,26 35.4,19'],
+    ['r',26.4,15.5,7.2,1.7,'#7B6A3A'],['r',29.2,15,1.6,9,'#3E7C4B']]},
+  {n:'Paraguay',c:'Americas',p:'Asunción',k:'tri',d:[['h','#D52B1E','#FFFFFF','#0038A8'],
+    ['c',30,20,5,'#FFFFFF'],['co',30,20,4.4,'#2E7D32',1.1],['s',30,20,2.4,'#F9E300']]},
+
+  /* ===== OCEANIA ===== */
+  {n:'Australia',f:'Australie',c:'Oceania',p:'Canberra',k:'uj',bg:'#012169',d:[
+    ['uj',0,0,30,20],['s',15,30,5,'#FFFFFF',0,7,0.5],
+    ['s',48,6.5,3,'#FFFFFF'],['s',40.5,15,3,'#FFFFFF'],['s',55,13.5,3,'#FFFFFF'],['s',48,29,3.2,'#FFFFFF'],['s',50.5,19.5,1.7,'#FFFFFF']]},
+  {n:'New Zealand',f:'Nouvelle-Zélande',c:'Oceania',p:'Wellington',k:'uj',bg:'#012169',d:[
+    ['uj',0,0,30,20],
+    ['s',48,8,3.6,'#FFFFFF'],['s',48,8,2.6,'#CC142B'],
+    ['s',40.5,19,3.2,'#FFFFFF'],['s',40.5,19,2.2,'#CC142B'],
+    ['s',54.5,17,3.2,'#FFFFFF'],['s',54.5,17,2.2,'#CC142B'],
+    ['s',47.5,30,3.6,'#FFFFFF'],['s',47.5,30,2.6,'#CC142B']]},
+  {n:'Palau',f:'Palaos',c:'Oceania',p:'Ngerulmud',k:'disc',bg:'#4AADD6',d:[['c',26,20,11,'#FFDE00']]},
+  {n:'Tonga',c:'Oceania',p:'Nuku’alofa',k:'cross',bg:'#C10000',d:[
+    ['r',0,0,24,16,'#FFFFFF'],['r',9.6,2,4.8,12,'#C10000'],['r',3.2,6.6,17.6,4.8,'#C10000']]},
+  {n:'Marshall Islands',f:'Îles Marshall',c:'Oceania',p:'Majuro',k:'diag',bg:'#003893',d:[
+    ['p','#FFFFFF',[0,33,60,0,60,6.5,0,36.5]],['p','#DD7500',[0,36.5,60,6.5,60,13,0,40]],
+    ['s',13.5,11,6.6,'#FFFFFF',0,12,0.42]]},
+  {n:'Micronesia',f:'Micronésie',c:'Oceania',p:'Palikir',k:'star1',bg:'#75AADB',d:[
+    ['s',30,11,3.4,'#FFFFFF'],['s',39,20,3.4,'#FFFFFF'],['s',30,29,3.4,'#FFFFFF'],['s',21,20,3.4,'#FFFFFF']]},
+  {n:'Nauru',c:'Oceania',p:'Yaren',k:'star1',bg:'#002B7F',d:[['r',0,18.5,60,3,'#FFC61E'],['s',15,30,4.6,'#FFFFFF',0,12,0.42]]},
+  {n:'Samoa',c:'Oceania',p:'Apia',k:'star1',bg:'#CE1126',d:[
+    ['r',0,0,27,20,'#002B7F'],['s',13,4.6,2,'#FFFFFF'],['s',7,10,2.2,'#FFFFFF'],['s',19,9,2.2,'#FFFFFF'],['s',13,16,2.4,'#FFFFFF'],['s',16,12.6,1.2,'#FFFFFF']]},
+  {n:'Solomon Islands',f:'Îles Salomon',c:'Oceania',p:'Honiara',k:'diag',d:[
+    ['p','#0051BA',[0,0,60,0,0,40]],['p','#215B33',[60,0,60,40,0,40]],['l',0,40,60,0,'#FCD116',3.6],
+    ['s',7,6,2.4,'#FFFFFF'],['s',17,6,2.4,'#FFFFFF'],['s',7,15,2.4,'#FFFFFF'],['s',17,15,2.4,'#FFFFFF'],['s',12,10.5,2.4,'#FFFFFF']]}
+  ];
+
+  /* ---------- helpers ---------- */
+  function nameOf(c){ return FR ? (c.f || c.n) : c.n; }
+  function capOf(c){ return FR ? (c.q || c.p) : c.p; }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function pool(cont){ if(!cont) return FLAGS.slice(); var o = [], i; for(i = 0; i < FLAGS.length; i++){ if(FLAGS[i].c === cont) o.push(FLAGS[i]); } return o; }
+
+  var ROUND = 12;
+  var els = {
+    tabs: $('fg-tabs'), filter: $('fg-filter'), quiz: $('fg-quiz'), bar: $('fg-bar'), meta: $('fg-meta'),
+    ask: $('fg-ask'), stage: $('fg-stage'), opts: $('fg-opts'), note: $('fg-note'), next: $('fg-next'),
+    result: $('fg-result'), explore: $('fg-explore'), fresh: $('fg-new')
+  };
+  if(!els.tabs || !els.quiz || !els.opts) return;
+
+  var mode = 'country', cont = '', qn = 0, score = 0, missed = [], cur = null, locked = false, order = [];
+
+  function readBest(){
+    try{ var raw = localStorage.getItem('cq_flags_best'); return raw ? (JSON.parse(raw) || {}) : {}; }
+    catch(e){ return {}; }
+  }
+  function saveBest(o){ try{ localStorage.setItem('cq_flags_best', JSON.stringify(o)); }catch(e){} }
+  function bestKey(){ return mode + '|' + (cont || 'all'); }
+
+  /* ---------- question building ---------- */
+  function makeQ(answer, p){
+    var same = [], other = [], i, c, seen = {}, key;
+    key = (mode === 'capital') ? capOf(answer) : nameOf(answer);
+    seen[key] = 1;
+    for(i = 0; i < p.length; i++){
+      c = p[i];
+      if(c === answer) continue;
+      var k2 = (mode === 'capital') ? capOf(c) : nameOf(c);
+      if(seen[k2]) continue;
+      seen[k2] = 1;
+      if(c.c === answer.c) same.push(c); else other.push(c);
+    }
+    shuffle(same); shuffle(other);
+    var picks = same.concat(other).slice(0, 3);
+    var opts = picks.concat([answer]);
+    shuffle(opts);
+    return { a: answer, opts: opts };
+  }
+
+  function nextCountry(p){
+    if(!order.length){ order = shuffle(p.slice()); }
+    return order.pop();
+  }
+
+  /* ---------- rendering ---------- */
+  function show(el, on){ if(el){ el.classList[on ? 'remove' : 'add']('fg-hide'); } }
+
+  function paintTabs(){
+    var b = els.tabs.getElementsByTagName('button'), i;
+    for(i = 0; i < b.length; i++){ b[i].classList[b[i].getAttribute('data-mode') === mode ? 'add' : 'remove']('fg-on'); }
+  }
+  function paintFilter(){
+    var html = '<button type="button" class="fg-cont' + (cont === '' ? ' fg-on' : '') + '" data-c="">' + esc(T('All', 'Tous')) + '</button>', i;
+    for(i = 0; i < CONTS.length; i++){
+      html += '<button type="button" class="fg-cont' + (cont === CONTS[i] ? ' fg-on' : '') + '" data-c="' + CONTS[i] + '">' + esc(contName(CONTS[i])) + '</button>';
+    }
+    els.filter.innerHTML = html;
+  }
+
+  function startRound(){
+    qn = 0; score = 0; missed = []; order = []; locked = false;
+    show(els.quiz, true); show(els.result, false); show(els.explore, false);
+    nextQ();
+  }
+
+  function nextQ(){
+    var p = pool(cont);
+    if(qn >= ROUND){ finish(); return; }
+    qn++;
+    cur = makeQ(nextCountry(p), p);
+    locked = false;
+    els.bar.style.width = Math.round((qn - 1) / ROUND * 100) + '%';
+    els.meta.innerHTML = '<span>' + esc(T('Question ', 'Question ') + qn + T(' of ', ' sur ') + ROUND) + '</span><span>' +
+      esc(T('Score: ', 'Score : ') + score) + '</span>';
+    show(els.note, false); show(els.next, false);
+    els.note.className = 'fg-note fg-hide';
+
+    var a = cur.a, html = '', i;
+    if(mode === 'country'){
+      els.ask.textContent = T('Which country flies this flag?', 'Quel pays arbore ce drapeau ?');
+      els.stage.innerHTML = '<div class="fg-big">' + flagSVG(a) + '</div>';
+      els.opts.className = 'fg-opts';
+      for(i = 0; i < cur.opts.length; i++){ html += '<button type="button" class="fg-opt" data-i="' + i + '">' + esc(nameOf(cur.opts[i])) + '</button>'; }
+    } else if(mode === 'flag'){
+      els.ask.textContent = T('Which flag belongs to ', 'Quel drapeau est celui de ') + nameOf(a) + ' ?';
+      els.stage.innerHTML = '';
+      els.opts.className = 'fg-opts fg-grid';
+      for(i = 0; i < cur.opts.length; i++){ html += '<button type="button" class="fg-opt" data-i="' + i + '">' + flagSVG(cur.opts[i]) + '</button>'; }
+    } else {
+      els.ask.textContent = T('What is the capital of ', 'Quelle est la capitale de ') + nameOf(a) + ' ?';
+      els.stage.innerHTML = '<div class="fg-big">' + flagSVG(a) + '</div>';
+      els.opts.className = 'fg-opts';
+      for(i = 0; i < cur.opts.length; i++){ html += '<button type="button" class="fg-opt" data-i="' + i + '">' + esc(capOf(cur.opts[i])) + '</button>'; }
+    }
+    els.opts.innerHTML = html;
+  }
+
+  function answer(i){
+    if(locked || !cur) return;
+    locked = true;
+    var right = cur.opts[i] === cur.a, b = els.opts.getElementsByTagName('button'), j;
+    for(j = 0; j < b.length; j++){
+      if(cur.opts[j] === cur.a) b[j].classList.add('fg-good');
+      else if(j === i) b[j].classList.add('fg-bad');
+      else b[j].classList.add('fg-off');
+    }
+    if(right){ score++; } else { missed.push(cur.a); }
+    els.meta.innerHTML = '<span>' + esc(T('Question ', 'Question ') + qn + T(' of ', ' sur ') + ROUND) + '</span><span>' +
+      esc(T('Score: ', 'Score : ') + score) + '</span>';
+    els.bar.style.width = Math.round(qn / ROUND * 100) + '%';
+    els.note.className = 'fg-note ' + (right ? 'fg-nb-good' : 'fg-nb-bad');
+    els.note.innerHTML = '<b>' + esc((right ? T('Correct! ', 'Bonne réponse ! ') : T('Not quite — ', 'Presque — ')) +
+      nameOf(cur.a) + T(', capital ', ', capitale ') + capOf(cur.a)) + '</b>' + esc(factOf(cur.a.k));
+    show(els.note, true);
+    els.next.textContent = (qn >= ROUND) ? T('See my results', 'Voir mes résultats') : T('Next flag', 'Drapeau suivant');
+    show(els.next, true);
+  }
+
+  function finish(){
+    var best = readBest(), k = bestKey(), prev = best[k] || 0, isNew = score > prev;
+    if(isNew){ best[k] = score; saveBest(best); }
+    var msg;
+    if(score === ROUND) msg = T('Perfect round!', 'Tour parfait !');
+    else if(score >= 9) msg = T('Great flag knowledge!', 'Superbe connaissance des drapeaux !');
+    else if(score >= 6) msg = T('Good going — keep practising.', 'Bien joué — continue à t’exercer.');
+    else msg = T('Try the Explore tab, then play again.', 'Essaie l’onglet Explorer, puis rejoue.');
+
+    var html = '<div class="fg-score">' + score + ' / ' + ROUND + '</div>' +
+      '<p class="fg-msg">' + esc(msg) + '</p>' +
+      '<p class="fg-best">' + esc(isNew ? T('New best score!', 'Nouveau meilleur score !') :
+        (T('Best here: ', 'Meilleur score ici : ') + Math.max(prev, score) + ' / ' + ROUND)) + '</p>';
+    if(missed.length){
+      html += '<p class="fg-msg">' + esc(T('Flags to review', 'Drapeaux à revoir')) + '</p><div class="fg-missed">';
+      for(var i = 0; i < missed.length; i++){
+        html += '<div class="fg-miss"><span class="fg-mini">' + flagSVG(missed[i]) + '</span><span><b>' +
+          esc(nameOf(missed[i])) + '</b>' + esc(capOf(missed[i]) + ' · ' + contName(missed[i].c)) + '</span></div>';
+      }
+      html += '</div>';
+    } else {
+      html += '<p class="fg-best">' + esc(T('You missed nothing at all.', 'Tu n’as rien manqué.')) + '</p>';
+    }
+    html += '<button type="button" class="btn btn-green btn-lg fg-next" id="fg-again">' + esc(T('Play again', 'Rejouer')) + '</button>';
+    els.result.innerHTML = html;
+    show(els.quiz, false); show(els.result, true);
+    var ag = $('fg-again');
+    if(ag) ag.addEventListener('click', startRound);
+  }
+
+  function paintExplore(){
+    var p = pool(cont), html = '', i;
+    html = '<p class="fg-count">' + esc(p.length + T(' flags', ' drapeaux') + (cont ? ' · ' + contName(cont) : '')) + '</p><div class="fg-wall">';
+    p = p.slice().sort(function(a, b){ return nameOf(a) < nameOf(b) ? -1 : 1; });
+    for(i = 0; i < p.length; i++){
+      html += '<div class="fg-cell">' + flagSVG(p[i]) + '<b>' + esc(nameOf(p[i])) + '</b><i>' + esc(capOf(p[i])) + '</i></div>';
+    }
+    els.explore.innerHTML = html + '</div>';
+    show(els.quiz, false); show(els.result, false); show(els.explore, true);
+  }
+
+  function refresh(){
+    paintTabs(); paintFilter();
+    if(mode === 'explore') paintExplore(); else startRound();
+  }
+
+  /* ---------- events ---------- */
+  els.tabs.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('button[data-mode]') : null;
+    if(!b) return;
+    mode = b.getAttribute('data-mode');
+    refresh();
+  });
+  els.filter.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('button[data-c]') : null;
+    if(!b) return;
+    cont = b.getAttribute('data-c');
+    refresh();
+  });
+  els.opts.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('button[data-i]') : null;
+    if(!b) return;
+    answer(parseInt(b.getAttribute('data-i'), 10));
+  });
+  els.next.addEventListener('click', function(){ if(qn >= ROUND) finish(); else nextQ(); });
+  if(els.fresh) els.fresh.addEventListener('click', function(){ if(mode === 'explore') paintExplore(); else startRound(); });
+
+  refresh();
+
+  try{
+    if(/[?&]fgtest=1/.test(location.search)){
+      window.__fg = { data: FLAGS, svg: flagSVG, conts: CONTS,
+        gen: function(m, ct){ var old = mode; mode = m; var p = pool(ct); var q = makeQ(p[Math.floor(Math.random() * p.length)], p); mode = old; return q; },
+        label: function(m, c){ return m === 'capital' ? capOf(c) : nameOf(c); } };
+    }
+  }catch(e){}
+})();
+</script>
+  <script src="js/game-fullscreen.js?v=20260802"></script>
+  <script src="js/site.js?v=20260802"></script>
+  <script src="js/analytics.js?v=20260802"></script>
+</body>
+</html>
