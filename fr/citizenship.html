@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pratique du test de citoyenneté canadienne — Examen pratique gratuit</title>
 <meta name="description" content="Préparation gratuite au test de citoyenneté canadienne. 20 questions, minuterie, note de passage 15/20, avec explications. Basé sur le guide Découvrir le Canada. Sans inscription.">
-<link rel="stylesheet" href="../css/style.css?v=20260802c">
+<link rel="stylesheet" href="../css/style.css?v=20260802d">
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
@@ -42,7 +42,7 @@
       Ce test pratique fonctionne exactement comme le vrai : <strong>20 questions</strong>,
       a <strong>Minuterie de 30 minutes</strong>, et tu réussis avec <strong>15 bonnes réponses ou plus</strong>. Après chaque question, tu verras la bonne réponse et une courte explication.
     </p>
-  <details class="howto"><summary></summary><p>Cela fonctionne comme le vrai test : 20 questions, une minuterie de 30 minutes, et vous réussissez avec 15 bonnes réponses. Touchez une réponse pour la valider et voir l'explication, puis passez à la question suivante. À la fin, vous verrez RÉUSSI ou RÉESSAYER, et vous pourrez revoir les questions manquées.</p></details>
+  <details class="howto"><summary>📖 Comment jouer</summary><p>Cela fonctionne comme le vrai test : 20 questions, une minuterie de 30 minutes, et vous réussissez avec 15 bonnes réponses. Touchez une réponse pour la valider et voir l'explication, puis passez à la question suivante. À la fin, vous verrez RÉUSSI ou RÉESSAYER, et vous pourrez revoir les questions manquées.</p></details>
 
     <p><span class="pill">20 questions</span> &nbsp; <span class="pill">30 minutes</span> &nbsp; <span class="pill">Réussite = 15/20</span></p>
     <p style="margin-top:18px">
@@ -96,7 +96,7 @@
       <summary>Toutes les pages <span class="fm-count">(91)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
-        <h4>Quiz</h4>
+        <div class="fm-h">Quiz</div>
         <a href="quizzes.html">Tous les quiz</a>
         <a href="gk-quiz.html">Culture générale</a>
         <a href="canada-quiz.html">Canada Quiz</a>
@@ -112,7 +112,7 @@
         <a href="earth-quiz.html">Terre &amp ; environnement</a>
       </div>
       <div class="footer-map-col">
-        <h4>Pratique de l'examen de conduite</h4>
+        <div class="fm-h">Pratique de l'examen de conduite</div>
         <a href="driving-test.html">Examen de conduite au Canada</a>
         <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
         <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
@@ -120,7 +120,7 @@
         <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
       </div>
       <div class="footer-map-col">
-        <h4>Jeux de réflexion et casse-têtes</h4>
+        <div class="fm-h">Jeux de réflexion et casse-têtes</div>
         <a href="word-master.html">Maître des mots</a>
         <a href="word-search.html">Mots cachés</a>
         <a href="word-guess.html">Devine le mot</a>
@@ -142,7 +142,7 @@
         <a href="flags-game.html">Drapeaux du monde</a>
       </div>
       <div class="footer-map-col">
-        <h4>Jeux d'action et jeux classiques</h4>
+        <div class="fm-h">Jeux d'action et jeux classiques</div>
         <a href="snake.html">Serpent érable</a>
         <a href="whack-a-beaver.html">Tape-le-castor</a>
         <a href="piano-tiles.html">Touches de piano</a>
@@ -154,7 +154,7 @@
         <a href="connect4.html">Puissance 4</a>
       </div>
       <div class="footer-map-col">
-        <h4>Jeux de groupe</h4>
+        <div class="fm-h">Jeux de groupe</div>
         <a href="charades.html">Charades</a>
         <a href="imposter.html">Imposteur</a>
         <a href="would-you-rather.html">Préfères-tu ?</a>
@@ -167,7 +167,7 @@
         <a href="spin-wheel.html">Tourne la roue</a>
       </div>
       <div class="footer-map-col">
-        <h4>Blogue</h4>
+        <div class="fm-h">Blogue</div>
         <a href="blog.html">Tous les articles</a>
         <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
         <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
@@ -198,7 +198,7 @@
         <a href="newcomer-first-year-in-canada-checklist.html">Aide-mémoire pour la première année au Canada</a>
       </div>
       <div class="footer-map-col">
-        <h4>Le site</h4>
+        <div class="fm-h">Le site</div>
         <a href="index.html">Accueil</a>
         <a href="daily.html">Défi du jour</a>
         <a href="games.html">Tous les jeux en famille</a>
@@ -214,7 +214,7 @@
   </div>
 </footer>
 
-<script src="../js/citizenship-questions.js?v=20260802c"></script>
+<script src="../js/citizenship-questions.js?v=20260802d"></script>
 <script>
 const TOTAL = 20;          // questions per exam
 const PASS_MARK = 15;      // need 15 to pass
@@ -382,8 +382,8 @@ function finishExam(timeUp){
   window.scrollTo(0,0);
 }
 </script>
-  <script src="../js/site.js?v=20260802c"></script>
-  <script src="../js/analytics.js?v=20260802c"></script>
-  <script src="../js/ads.js?v=20260802c" defer></script>
+  <script src="../js/site.js?v=20260802d"></script>
+  <script src="../js/analytics.js?v=20260802d"></script>
+  <script src="../js/ads.js?v=20260802d" defer></script>
 </body>
 </html>

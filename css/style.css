@@ -192,8 +192,6 @@ input.text-in{font-size:18px;padding:12px 14px;border:2px solid var(--line);bord
 .howto{max-width:640px;margin:16px auto;background:#eef6ff;border:1px solid #d5e6fb;border-radius:12px;padding:2px 18px}
 .howto summary{cursor:pointer;font-weight:800;padding:12px 0;color:#2b6cb0;list-style:none}
 .howto summary::-webkit-details-marker{display:none}
-.howto summary::before{content:"\1F4D6  How to play"}
-.howto[open] summary::before{content:"\1F4D6  How to play"}
 .howto p{margin:4px 0 14px;color:#33475b;font-size:15px;line-height:1.55}
 
 /* ---------- Brand logo + language button (shared header/footer) ---------- */
@@ -229,7 +227,7 @@ html.lang-fr .nav a{font-size:13.5px;padding:8px 10px}
 .footer-map>summary:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
 .footer-map-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:14px 22px;padding:12px 4px 6px}
-.footer-map-col h4{margin:0 0 6px;font-size:13px;text-transform:uppercase;
+.footer-map-col h4,.footer-map-col .fm-h{margin:0 0 6px;font-size:13px;text-transform:uppercase;
   letter-spacing:.7px;color:#fff;opacity:.85}
 .footer-map-col a{display:block;padding:3px 0;font-size:13.5px;line-height:1.35;
   color:#e7e0f2;text-decoration:none}
@@ -324,5 +322,15 @@ details.dq-learn summary{cursor:pointer;font-weight:700;color:var(--ink)}
 details.dq-learn[open] summary{margin-bottom:8px}
 details.dq-learn p{margin:6px 0}
 .prov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-top:18px}
-.prov-soon{opacity:.62}
+.prov-soon{filter:saturate(.35);background:#faf8f5}
 .prov-soon .btn{pointer-events:none}
+
+/* Links sitting inside a block of text must be recognisable without colour
+   (WCAG 1.4.1). Underline them; standalone links, buttons and cards keep the
+   plain look. */
+main p a:not(.btn):not(.card),
+main li a:not(.btn):not(.card),
+.disclaimer a,
+main .muted a:not(.btn){text-decoration:underline;text-underline-offset:2px}
+main p a:not(.btn):hover,
+main li a:not(.btn):hover{text-decoration:underline}

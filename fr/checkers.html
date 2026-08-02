@@ -2,10 +2,10 @@
 <html lang="fr" data-lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dames — Jouez contre l'ordinateur ou un ami | Jeux en famille</title>
 <meta name="description" content="Jouez aux dames gratuitement — contre l&#x27;ordinateur ou un ami sur un même appareil. Règles complètes, avec prises et promotions en dame. Téléphone, tablette et ordinateur.">
-<link rel="stylesheet" href="../css/style.css?v=20260802c">
+<link rel="stylesheet" href="../css/style.css?v=20260802d">
 <style>
   .ck-wrap{max-width:440px;margin:0 auto;text-align:center}
   .ck-board{display:grid;grid-template-columns:repeat(8,1fr);width:100%;max-width:400px;margin:12px auto;border:3px solid var(--ink);border-radius:8px;overflow:hidden;touch-action:manipulation}
@@ -52,7 +52,7 @@
     <h1>🔴 Dames</h1>
     <p>Jouez contre l'ordinateur ou un ami sur le même appareil !</p>
   </section>
-  <details class="howto"><summary></summary><p>Tu es le <b>rouge</b> pièces au bas. Touchez l'une de vos pièces, puis touchez un point vert en surbrillance pour la déplacer en diagonale. Sautez par-dessus une pièce adverse pour la capturer — et si vous pouvez sauter, vous devez le faire ! Atteignez le côté opposé pour devenir une <b>Roi 👑</b>, qui peut se déplacer vers l'avant et vers l'arrière. Capturez toutes les pièces de l'autre joueur (ou bloquez-les pour qu'elles ne puissent plus bouger) pour gagner !</p></details>
+  <details class="howto"><summary>📖 Comment jouer</summary><p>Tu es le <b>rouge</b> pièces au bas. Touchez l'une de vos pièces, puis touchez un point vert en surbrillance pour la déplacer en diagonale. Sautez par-dessus une pièce adverse pour la capturer — et si vous pouvez sauter, vous devez le faire ! Atteignez le côté opposé pour devenir une <b>Roi 👑</b>, qui peut se déplacer vers l'avant et vers l'arrière. Capturez toutes les pièces de l'autre joueur (ou bloquez-les pour qu'elles ne puissent plus bouger) pour gagner !</p></details>
   <div class="panel">
     <div class="ck-wrap">
       <div class="center"><div class="ck-mode" id="modes"></div></div>
@@ -74,7 +74,7 @@
       <summary>Toutes les pages <span class="fm-count">(91)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
-        <h4>Quiz</h4>
+        <div class="fm-h">Quiz</div>
         <a href="quizzes.html">Tous les quiz</a>
         <a href="gk-quiz.html">Culture générale</a>
         <a href="canada-quiz.html">Canada Quiz</a>
@@ -90,7 +90,7 @@
         <a href="earth-quiz.html">Terre &amp ; environnement</a>
       </div>
       <div class="footer-map-col">
-        <h4>Pratique de l'examen de conduite</h4>
+        <div class="fm-h">Pratique de l'examen de conduite</div>
         <a href="driving-test.html">Examen de conduite au Canada</a>
         <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
         <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
@@ -98,7 +98,7 @@
         <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
       </div>
       <div class="footer-map-col">
-        <h4>Jeux de réflexion et casse-têtes</h4>
+        <div class="fm-h">Jeux de réflexion et casse-têtes</div>
         <a href="word-master.html">Maître des mots</a>
         <a href="word-search.html">Mots cachés</a>
         <a href="word-guess.html">Devine le mot</a>
@@ -120,7 +120,7 @@
         <a href="flags-game.html">Drapeaux du monde</a>
       </div>
       <div class="footer-map-col">
-        <h4>Jeux d'action et jeux classiques</h4>
+        <div class="fm-h">Jeux d'action et jeux classiques</div>
         <a href="snake.html">Serpent érable</a>
         <a href="whack-a-beaver.html">Tape-le-castor</a>
         <a href="piano-tiles.html">Touches de piano</a>
@@ -132,7 +132,7 @@
         <a href="connect4.html">Puissance 4</a>
       </div>
       <div class="footer-map-col">
-        <h4>Jeux de groupe</h4>
+        <div class="fm-h">Jeux de groupe</div>
         <a href="charades.html">Charades</a>
         <a href="imposter.html">Imposteur</a>
         <a href="would-you-rather.html">Préfères-tu ?</a>
@@ -145,7 +145,7 @@
         <a href="spin-wheel.html">Tourne la roue</a>
       </div>
       <div class="footer-map-col">
-        <h4>Blogue</h4>
+        <div class="fm-h">Blogue</div>
         <a href="blog.html">Tous les articles</a>
         <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
         <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
@@ -176,7 +176,7 @@
         <a href="newcomer-first-year-in-canada-checklist.html">Aide-mémoire pour la première année au Canada</a>
       </div>
       <div class="footer-map-col">
-        <h4>Le site</h4>
+        <div class="fm-h">Le site</div>
         <a href="index.html">Accueil</a>
         <a href="daily.html">Défi du jour</a>
         <a href="games.html">Tous les jeux en famille</a>
@@ -337,9 +337,9 @@ function cpuMove(){
 function setHud(t){ document.getElementById('hud').textContent=t; }
 newGame();
 </script>
-  <script src="../js/game-fullscreen.js?v=20260802c"></script>
-  <script src="../js/site.js?v=20260802c"></script>
-  <script src="../js/analytics.js?v=20260802c"></script>
-  <script src="../js/ads.js?v=20260802c" defer></script>
+  <script src="../js/game-fullscreen.js?v=20260802d"></script>
+  <script src="../js/site.js?v=20260802d"></script>
+  <script src="../js/analytics.js?v=20260802d"></script>
+  <script src="../js/ads.js?v=20260802d" defer></script>
 </body>
 </html>

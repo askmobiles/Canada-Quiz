@@ -24,7 +24,7 @@ SITE = "https://canada-quiz.com/"
 # new page looks broken. Changing ?v=... makes it a new address, so everyone gets
 # the fresh file. (This bit us on 27 Jul 2026 — new hero HTML + old cached CSS.)
 # ---------------------------------------------------------------------------
-ASSET_VER = "20260802c"
+ASSET_VER = "20260802d"
 
 # The full A-to-Z page list shown at the bottom of every page.
 # Add a new page to tools/site_map.json and re-run this script.
@@ -80,7 +80,7 @@ def footer_map_html():
     for g in SITE_MAP["groups"]:
         items = "\n        ".join('<a href="%s">%s</a>' % (h, l) for h, l in g["links"])
         cols.append('      <div class="footer-map-col">\n'
-                    '        <h4>%s</h4>\n'
+                    '        <div class="fm-h">%s</div>\n'
                     '        %s\n'
                     '      </div>' % (g["title"], items))
     return ('    <details class="footer-map">\n'
@@ -129,6 +129,23 @@ ADS_HEAD_RE = re.compile(
     r'^[ \t]*<script[^>]*pagead2\.googlesyndication\.com[^>]*>\s*</script>[ \t]*\n?', re.M)
 ADS_TAIL_RE = re.compile(r'[ \t]*<script src="js/ads\.js(\?[^"]*)?"[^>]*></script>\n?')
 
+# Pinch-zoom must never be switched off in the page source: blocking it locks
+# out anyone who needs to enlarge the text (WCAG 1.4.4, and Lighthouse checks
+# it). js/game-fullscreen.js still locks the viewport while a game is actually
+# in play mode, and puts it back on the way out.
+VIEWPORT_RE = re.compile(r'(<meta name="viewport" content=")([^"]*)(">)')
+
+
+def fix_viewport(s):
+    def repl(m):
+        parts = [p.strip() for p in m.group(2).split(",")]
+        parts = [p for p in parts
+                 if not p.startswith("user-scalable")
+                 and not p.startswith("maximum-scale")]
+        return m.group(1) + ", ".join(parts) + m.group(3)
+    return VIEWPORT_RE.sub(repl, s)
+
+
 
 def main():
     files = sorted(f for f in glob.glob(os.path.join(ROOT, "*.html")))
@@ -154,6 +171,8 @@ def main():
             + '<link rel="alternate" hreflang="fr" href="%sfr/%s">\n' % (SITE, page)
             + '<link rel="alternate" hreflang="x-default" href="%s%s">\n' % (SITE, page)
         )
+        s = fix_viewport(s)
+
         if "</head>" not in s:
             print("!! no </head> in", page); continue
         s = s.replace("</head>", head_add + "</head>", 1)
