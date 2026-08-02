@@ -24,7 +24,7 @@ SITE = "https://canada-quiz.com/"
 # new page looks broken. Changing ?v=... makes it a new address, so everyone gets
 # the fresh file. (This bit us on 27 Jul 2026 — new hero HTML + old cached CSS.)
 # ---------------------------------------------------------------------------
-ASSET_VER = "20260802"
+ASSET_VER = "20260802c"
 
 # The full A-to-Z page list shown at the bottom of every page.
 # Add a new page to tools/site_map.json and re-run this script.
@@ -123,6 +123,12 @@ FOOTER_RE = re.compile(r'<footer class="site-footer">.*?</footer>', re.S)
 HREFLANG_RE = re.compile(r'^[ \t]*<link rel="alternate" hreflang=[^\n]*\n', re.M)
 CANON_RE = re.compile(r'^[ \t]*<link rel="canonical"[^\n]*\n', re.M)
 
+# The old AdSense tag that used to sit in <head>. It is now loaded late by
+# js/ads.js instead, so the page draws first and the ads follow. See js/ads.js.
+ADS_HEAD_RE = re.compile(
+    r'^[ \t]*<script[^>]*pagead2\.googlesyndication\.com[^>]*>\s*</script>[ \t]*\n?', re.M)
+ADS_TAIL_RE = re.compile(r'[ \t]*<script src="js/ads\.js(\?[^"]*)?"[^>]*></script>\n?')
+
 
 def main():
     files = sorted(f for f in glob.glob(os.path.join(ROOT, "*.html")))
@@ -138,6 +144,8 @@ def main():
         s = OLD_MANIFEST.sub("", s)
         s = HREFLANG_RE.sub("", s)
         s = CANON_RE.sub("", s)
+        s = ADS_HEAD_RE.sub("", s)   # AdSense moves out of <head> (see js/ads.js)
+        s = ADS_TAIL_RE.sub("", s)   # re-added below, so the ?v= stamp stays fresh
 
         head_add = (
             ICON_BLOCK + "\n"
@@ -168,6 +176,10 @@ def main():
         else:
             s = s.replace("</body>",
                           '  <script src="js/site.js?v=%s"></script>\n</body>' % ASSET_VER, 1)
+
+        # --- ads.js: loads AdSense AFTER the page is readable -----------------
+        s = s.replace("</body>",
+                      '  <script src="js/ads.js?v=%s" defer></script>\n</body>' % ASSET_VER, 1)
 
         # --- cache stamp on the stylesheet ----------------------------------
         s = re.sub(r'(<link rel="stylesheet" href="css/style\.css)(\?[^"]*)?(")',
