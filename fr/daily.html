@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Défi du jour — Nouveau quiz et nouveau mot chaque jour | Canada Quiz</title>
 <meta name="description" content="Un tout nouveau quiz du jour et mot du jour chaque jour — les mêmes pour tout le monde. Bâtissez votre série quotidienne ! Gratuit, sans inscription. Revenez chaque jour.">
-<link rel="stylesheet" href="../css/style.css?v=20260803a">
+<link rel="stylesheet" href="../css/style.css?v=20260804b">
 <style>
   .dl-streak{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:10px 0}
   .dl-streak .box{background:#fff7e0;border:2px solid #ffe08a;border-radius:14px;padding:10px 20px;text-align:center;font-weight:800}
@@ -86,10 +86,68 @@
     <div style="margin-top:10px">
       <a class="btn btn-blue" href="sudoku.html">🔢 Sudoku</a>
       <a class="btn btn-green" href="word-master.html">🟩 Maître des mots</a>
-      <a class="btn btn-purple" href="connections.html">🔗 Groupes de mots</a>
-      <a class="btn btn-orange" href="spelling-bee.html">🐝 Concours d'épellation</a>
+      <a class="btn btn-purple" href="word-groups.html">🔗 Groupes de mots</a>
+      <a class="btn btn-orange" href="word-hive.html">🐝 Ruche de mots</a>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de ce quiz</h2>
+  <p>Le Défi quotidien est un petit rituel plutôt qu'une longue séance. Il propose deux tâches qui changent une fois par jour : un quiz de cinq questions et un seul mot mêlé. Toutes les personnes qui ouvrent la page à la même date reçoivent exactement le même duo.</p>
+  <p>Comme il est identique pour tout le monde, il circule bien d'une personne à l'autre. Vous pouvez écrire à un ami pour savoir comment il s'en est tiré à la troisième question, ou comparer les résultats au souper, en sachant que vous avez affronté les mêmes cinq questions.</p>
+  <p>Trois compteurs en haut de la page suivent discrètement votre habitude : série de jours en cours, meilleure série et nombre total de jours joués. Terminez le quiz ou trouvez le mot pour garder la série vivante ; sautez une journée et elle recommence à un.</p>
+  <h2>Ce que contient ce quiz</h2>
+  <ul>
+    <li>Le quiz quotidien compte cinq questions à choix multiples auxquelles on répond une à la fois, avec une note sur cinq à la fin.</li>
+    <li>Les questions proviennent d'un vaste bassin couvrant le Canada, les sciences, la géographie, les animaux, les nombres et des faits du quotidien.</li>
+    <li>Le mot du jour vous donne un mot mêlé accompagné d'un indice écrit sur son sens, ainsi qu'une case pour votre réponse.</li>
+    <li>Le bouton de vérification teste ce que vous avez tapé, et le bouton d'abandon révèle le mot du jour pour que rien ne vous bloque tout l'après-midi.</li>
+    <li>Un encadré de suggestions renvoie vers le sudoku, Word Master, Groupes de mots et Ruche de mots pour une séance plus longue.</li>
+  </ul>
+  <h2>Exemples de questions</h2>
+  <ol class="sq-list">
+    <li class="sq">
+      <p class="sq-q">Quelle est la capitale du Canada ?</p>
+      <p class="sq-a"><strong>Réponse :</strong> <span>Ottawa</span></p>
+    </li>
+    <li class="sq">
+      <p class="sq-q">Combien de joueurs d'une équipe de soccer sont sur le terrain ?</p>
+      <p class="sq-a"><strong>Réponse :</strong> <span>11</span></p>
+    </li>
+    <li class="sq">
+      <p class="sq-q">Quel est le plus grand désert chaud du monde ?</p>
+      <p class="sq-a"><strong>Réponse :</strong> <span>Le Sahara</span></p>
+    </li>
+    <li class="sq">
+      <p class="sq-q">En anglais, que veut dire le mot bonjour ?</p>
+      <p class="sq-a"><strong>Réponse :</strong> <span>Hello</span></p>
+    </li>
+    <li class="sq">
+      <p class="sq-q">Lequel des Grands Lacs a la plus grande superficie ?</p>
+      <p class="sq-a"><strong>Réponse :</strong> <span>Lac Supérieur</span></p>
+    </li>
+  </ol>
+  <h2>Bon à savoir</h2>
+  <ul>
+    <li>Le quiz et le mot du jour sont choisis à partir de la date du calendrier, ce qui explique pourquoi un joueur de Halifax et un joueur de Victoria voient la même énigme.</li>
+    <li>Les compteurs de séries n'existent que dans votre navigateur. Effacer vos données de navigation ou changer d'appareil remet le compte à zéro.</li>
+    <li>L'une ou l'autre des tâches compte. Terminer les cinq questions marque la journée comme jouée, et trouver correctement le mot mêlé également.</li>
+    <li>Les mots mêlés deviennent plus faciles si vous cherchez d'abord une paire de lettres probable, comme CH ou ST, puis construisez le reste autour.</li>
+    <li>L'indice sous le mot du jour décrit ce que le mot signifie, non la façon dont il s'écrit : lisez-le donc avant de déplacer les lettres.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>À quel moment exactement le défi change-t-il ?</h3>
+  <p>Il suit la date de votre propre appareil : un nouveau quiz et un nouveau mot apparaissent donc à minuit chez vous. Revenez le lendemain matin et les deux sections vous attendront, toutes neuves.</p>
+  <h3>Qu'arrive-t-il à ma série si je saute une journée ?</h3>
+  <p>La série en cours revient à un lors de votre prochaine visite, mais votre meilleure série demeure inscrite et votre total de jours joués continue de grimper. Une pause ne coûte rien d'autre.</p>
+  <h3>Combien de temps prennent les deux parties ensemble ?</h3>
+  <p>Habituellement de trois à cinq minutes. Le quiz ne compte que cinq questions sans chronomètre, et le mot mêlé est une seule énigme : l'ensemble tient donc dans une pause-café.</p>
+  <h3>Les questions conviennent-elles à toute la famille ?</h3>
+  <p>Oui. Elles portent sur la culture générale du quotidien plutôt que sur des sujets spécialisés, et la formulation reste simple. Les enfants battent souvent les adultes sur les questions d'animaux et d'espace, et c'est une bonne partie du plaisir.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="sudoku.html">Poursuivez avec une grille de chiffres dans le sudoku</a> · <a href="word-master.html">Traquez le mot caché en six essais ou moins</a> · <a href="gk-quiz.html">Faites un quiz de culture générale plus long quand cinq questions ne suffisent pas</a> · <a href="word-hive.html">Formez le plus de mots possible à partir de sept lettres</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 <footer class="site-footer">
   <div class="container center">
@@ -129,15 +187,15 @@
         <a href="word-search.html">Mots cachés</a>
         <a href="word-guess.html">Devine le mot</a>
         <a href="scramble.html">Mots brouillés</a>
-        <a href="spelling-bee.html">Concours d'épellation</a>
+        <a href="word-hive.html">Ruche de mots</a>
         <a href="crossword.html">Mots croisés</a>
-        <a href="connections.html">Groupes de mots</a>
+        <a href="word-groups.html">Groupes de mots</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Démineur</a>
         <a href="sliding-puzzle.html">Taquin</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Jeu de mémoire</a>
-        <a href="rubiks-cube.html">Cube Rubik</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Test de vitesse de frappe</a>
         <a href="color-match.html">Associe les couleurs</a>
         <a href="math-race.html">Course de maths</a>
@@ -149,7 +207,7 @@
         <div class="fm-h">Jeux d'action et jeux classiques</div>
         <a href="snake.html">Serpent érable</a>
         <a href="whack-a-beaver.html">Tape-le-castor</a>
-        <a href="piano-tiles.html">Touches de piano</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-tac-toe</a>
         <a href="checkers.html">Dames</a>
         <a href="inukshuk.html">Construis un inukshuk</a>
@@ -515,8 +573,8 @@ function revealWord(){
 document.getElementById('dateline').textContent='Today is '+new Date().toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'})+' — new challenges every day!';
 refreshStreak(); renderQuiz(); renderWord();
 </script>
-  <script src="../js/site.js?v=20260803a"></script>
-  <script src="../js/analytics.js?v=20260803a"></script>
-  <script src="../js/ads.js?v=20260803a" defer></script>
+  <script src="../js/site.js?v=20260804b"></script>
+  <script src="../js/analytics.js?v=20260804b"></script>
+  <script src="../js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

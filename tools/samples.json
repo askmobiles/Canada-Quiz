@@ -1,0 +1,299 @@
+{
+ "ai-quiz.html": [
+  {
+   "a": "Mouse",
+   "e": "Input devices send information into a computer; output devices send information back to you.",
+   "q": "Which device is an input device?"
+  },
+  {
+   "a": "Hold a conversation in text",
+   "e": "A chatbot reads what you type and produces a reply that fits the conversation.",
+   "q": "What is a chatbot designed to do?"
+  },
+  {
+   "a": "The domain name",
+   "e": "The part after @ names the mail system that looks after that person's inbox.",
+   "q": "In an email address, what comes after the @ symbol?"
+  },
+  {
+   "a": "The places are too dangerous for people",
+   "e": "Machines can be replaced, so they take on jobs that would risk a human life.",
+   "q": "Why are robots often sent into volcanoes or deep water?"
+  },
+  {
+   "a": "A note for humans that the computer ignores",
+   "e": "Comments explain why the code does something, which helps whoever reads it later.",
+   "q": "What is a comment in source code?"
+  }
+ ],
+ "body-quiz.html": [
+  {
+   "a": "A tendon",
+   "e": "Tendons are tough cords that pull on bones whenever a muscle tightens.",
+   "q": "What connects a muscle to a bone?"
+  },
+  {
+   "a": "The beat of blood in an artery",
+   "e": "Each heartbeat pushes a wave of blood along your arteries, and that is your pulse.",
+   "q": "What is a pulse?"
+  },
+  {
+   "a": "The cochlea",
+   "e": "The cochlea is a coiled tube of fluid that turns vibrations into nerve signals.",
+   "q": "Which snail-shaped part of the inner ear helps you hear?"
+  },
+  {
+   "a": "Iron",
+   "e": "Iron is part of hemoglobin, the substance in blood that holds on to oxygen.",
+   "q": "Which mineral in spinach and red meat helps blood carry oxygen?"
+  },
+  {
+   "a": "Skin",
+   "e": "Unbroken skin is a tough wall that most germs simply cannot cross.",
+   "q": "Which body covering forms a barrier that keeps germs out?"
+  }
+ ],
+ "canada-quiz.html": [
+  {
+   "a": "The United States",
+   "e": "Loyalists left the United States after its revolution and settled in Canada.",
+   "q": "The Loyalists who moved north to Canada in the 1780s came from where?"
+  },
+  {
+   "a": "First Nations",
+   "e": "Canada and many First Nations signed the numbered treaties about land and promises.",
+   "q": "The numbered treaties of the 1870s were agreements between Canada and whom?"
+  },
+  {
+   "a": "Lester B. Pearson",
+   "e": "Lester B. Pearson won the Nobel Peace Prize in 1957 and later became prime minister.",
+   "q": "Which Canadian won the Nobel Peace Prize for the idea of UN peacekeeping?"
+  },
+  {
+   "a": "July 1",
+   "e": "Canada Day is July 1, the day Confederation happened in 1867.",
+   "q": "Canada Day is celebrated on which date each year?"
+  },
+  {
+   "a": "New Brunswick",
+   "e": "New Brunswick is Canada's only officially bilingual province.",
+   "q": "Which province is officially bilingual in English and French?"
+  }
+ ],
+ "daily.html": [
+  {
+   "a": "Ottawa",
+   "e": "",
+   "q": "What is the capital city of Canada?"
+  },
+  {
+   "a": "11",
+   "e": "",
+   "q": "How many players are on a soccer team on the field?"
+  },
+  {
+   "a": "The Sahara",
+   "e": "",
+   "q": "What is the largest hot desert in the world?"
+  },
+  {
+   "a": "Hello",
+   "e": "",
+   "q": "What does the French word bonjour mean?"
+  },
+  {
+   "a": "Lake Superior",
+   "e": "",
+   "q": "Which of the Great Lakes has the largest surface area?"
+  }
+ ],
+ "earth-quiz.html": [
+  {
+   "a": "Metamorphic rock",
+   "e": "Heat and pressure squeeze one rock into a brand new one called metamorphic rock.",
+   "q": "Marble and slate are examples of which kind of rock?"
+  },
+  {
+   "a": "A barometer",
+   "e": "Falling pressure on a barometer often warns that a storm is on the way.",
+   "q": "Which instrument measures air pressure?"
+  },
+  {
+   "a": "An estuary",
+   "e": "An estuary is part fresh and part salty, and it feeds huge numbers of birds and fish.",
+   "q": "What do we call the place where a river meets the sea and the water mixes?"
+  },
+  {
+   "a": "The boreal forest",
+   "e": "The boreal forest stretches right across Canada and stores huge amounts of carbon.",
+   "q": "What is the vast northern Canadian forest of spruce and fir called?"
+  },
+  {
+   "a": "It breaks down naturally",
+   "e": "Biodegradable things are broken down by tiny living creatures until nothing is left.",
+   "q": "What does 'biodegradable' mean?"
+  }
+ ],
+ "entertainment-quiz.html": [
+  {
+   "a": "Gotham City",
+   "e": "Batman protects the made-up city of Gotham, while Superman's city is called Metropolis.",
+   "q": "What is the name of Batman's home city?"
+  },
+  {
+   "a": "Austria",
+   "e": "Mozart was born in Salzburg, Austria, in 1756 and began composing as a small child.",
+   "q": "Which country was the composer Mozart born in?"
+  },
+  {
+   "a": "Grass",
+   "e": "Wimbledon is the only one of the four big tennis tournaments played on grass.",
+   "q": "What surface are the tennis courts at Wimbledon made of?"
+  },
+  {
+   "a": "Spain",
+   "e": "Paella began in the Valencia region of Spain and is cooked in a wide flat pan.",
+   "q": "Which country does the rice dish paella come from?"
+  },
+  {
+   "a": "Donkey Kong",
+   "e": "Donkey Kong came out in 1981 and gave Mario his very first appearance.",
+   "q": "Which arcade game has a big gorilla rolling barrels down ramps?"
+  }
+ ],
+ "fun-quiz.html": [
+  {
+   "a": "Maple syrup",
+   "e": "Canada produces most of the world's maple syrup, mostly from Quebec! 🍁",
+   "q": "What sweet syrup is Canada world-famous for?"
+  },
+  {
+   "a": "Early spring",
+   "e": "Sap runs in early spring when nights are cold and days are mild.",
+   "q": "When is maple sap collected from the trees?"
+  },
+  {
+   "a": "Wayne Gretzky",
+   "e": "Wayne Gretzky earned the nickname 'The Great One' for his record scoring.",
+   "q": "Which Canadian hockey player is nicknamed 'The Great One'?"
+  },
+  {
+   "a": "The Canada goose",
+   "e": "Flocks of Canada geese honk loudly as they fly in a V each spring and fall.",
+   "q": "Which large black-necked bird flies in a V shape over Canada?"
+  },
+  {
+   "a": "Paddies",
+   "e": "Rice plants grow well with their roots standing in shallow water.",
+   "q": "Rice is usually grown in flooded fields called what?"
+  }
+ ],
+ "gk-quiz.html": [
+  {
+   "a": "Paris",
+   "e": "Paris is the capital of France.",
+   "q": "What is the capital city of France?"
+  },
+  {
+   "a": "The mitochondria",
+   "e": "They break sugar down using oxygen to make ATP, the small energy carrier every cell spends.",
+   "q": "Which part of a cell releases the energy stored in food?"
+  },
+  {
+   "a": "The ostrich",
+   "e": "An ostrich is far too heavy to fly, so it escapes danger by running very fast.",
+   "q": "Which is the largest bird in the world?"
+  },
+  {
+   "a": "6",
+   "e": "Usually 6 players are on the ice, including the goalie.",
+   "q": "How many players are on the ice for one hockey team (usually)?"
+  },
+  {
+   "a": "The piano",
+   "e": "Pressing a piano key makes a small hammer inside hit a string, so it is both string and percussion.",
+   "q": "Which instrument has black and white keys?"
+  }
+ ],
+ "money-quiz.html": [
+  {
+   "a": "10",
+   "e": "Ten coins worth 10 cents each add up to 100 cents, which is one dollar.",
+   "q": "How many ten-cent coins make one dollar?"
+  },
+  {
+   "a": "An amount you plan to save",
+   "e": "A goal gives your saving a purpose, like a bike, so it is easier to keep going.",
+   "q": "What is a savings goal?"
+  },
+  {
+   "a": "Proving what you paid for",
+   "e": "A receipt is your proof of purchase if you return an item or want to check a price.",
+   "q": "What is a receipt for?"
+  },
+  {
+   "a": "$36",
+   "e": "Twelve dollars for each of three hours adds up to thirty-six dollars.",
+   "q": "Ravi earns $12 an hour and works 3 hours. How much does he earn?"
+  },
+  {
+   "a": "$9",
+   "e": "Twelve dollars minus the three-dollar coupon leaves nine dollars to pay.",
+   "q": "A book costs $12 and a coupon takes $3 off. How much do you pay?"
+  }
+ ],
+ "science-quiz.html": [
+  {
+   "a": "Eight",
+   "e": "There are eight planets, from Mercury out to Neptune.",
+   "q": "How many planets are in our solar system?"
+  },
+  {
+   "a": "Nocturnal",
+   "e": "Nocturnal animals such as owls and raccoons sleep by day and hunt at night.",
+   "q": "What do we call an animal that is active at night?"
+  },
+  {
+   "a": "Carrying oxygen",
+   "e": "Red blood cells carry oxygen from your lungs to the rest of your body.",
+   "q": "What is the main job of red blood cells?"
+  },
+  {
+   "a": "Friction",
+   "e": "Friction happens when two surfaces rub together and resist moving.",
+   "q": "What force slows down a sliding object?"
+  },
+  {
+   "a": "Winter",
+   "e": "In winter Canada tilts away from the Sun, so daylight hours are shortest.",
+   "q": "Which season has the shortest days in Canada?"
+  }
+ ],
+ "world-quiz.html": [
+  {
+   "a": "Greece",
+   "e": "Greece's flag has blue and white stripes with a white cross.",
+   "q": "🇬🇷"
+  },
+  {
+   "a": "Nairobi",
+   "e": "Nairobi is the capital of Kenya, in East Africa.",
+   "q": "What is the capital of Kenya?"
+  },
+  {
+   "a": "Jordan",
+   "e": "Petra is an ancient city carved right into pink rock.",
+   "q": "In which country is Petra?"
+  },
+  {
+   "a": "24",
+   "e": "The world is split into 24 main time zones, one for each hour of the day.",
+   "q": "How many main time zones does the world have?"
+  },
+  {
+   "a": "Mexico",
+   "e": "Piñatas filled with treats are a birthday tradition in Mexico.",
+   "q": "In which country did the party piñata become a tradition?"
+  }
+ ]
+}

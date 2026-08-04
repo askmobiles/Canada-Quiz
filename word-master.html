@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Word Master — Guess the 5-Letter Word | Family Games</title>
 <meta name="description" content="Word Master — a free 5-letter word guessing game. You get 6 tries. Green means right letter and spot, yellow means right letter wrong spot. Fun brain game for all ages.">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
   .wm-wrap{max-width:400px;margin:0 auto;text-align:center}
   .wm-board{display:grid;grid-template-rows:repeat(6,1fr);gap:6px;justify-content:center;margin:14px auto}
@@ -70,6 +70,44 @@
       </div>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Word Master gives you six chances to find a hidden five-letter word. After each guess the tiles change colour and tell you a little more, until the answer falls into place or the last row runs out on you.</p>
+  <p>The colour code is simple. Green means the letter is correct and sitting in the right place. Yellow means it belongs to the word but somewhere else. Grey means you can forget that letter completely.</p>
+  <p>It suits teenagers and adults, and works nicely as a shared puzzle where everyone shouts suggestions. The answers are ordinary English nouns like river, piano and moose, so patience matters far more than unusual vocabulary.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>A board of six rows and five tiles fills the screen, one row for each guess you are allowed.</li>
+    <li>An on-screen keyboard sits underneath, and its keys take on the colours you have already discovered.</li>
+    <li>A physical keyboard works too, with Enter to submit a guess and Backspace to delete a letter.</li>
+    <li>Guesses shorter than five letters are refused, and the row shakes to tell you it is not ready yet.</li>
+    <li>Repeated letters are scored properly, so a word containing the same letter twice shows the right mix of colours.</li>
+    <li>The New Word button picks a fresh answer from a bank of more than a hundred everyday five-letter words.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Open with a word rich in vowels and common consonants, such as crane or stone. A strong first guess narrows the field fast.</li>
+    <li>Your second guess should avoid letters already ruled out. Reusing a grey letter wastes a row you may badly need later on.</li>
+    <li>A yellow tile is worth more than it looks: you now know the letter is in the word and know one place it is not.</li>
+    <li>Watch the keyboard colours rather than the board. They sum up everything you have learned so far in a single glance.</li>
+    <li>Some answers hide a double letter. If you are stuck with one row left, try repeating a letter you already know is green.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Is there a new word every day?</h3>
+  <p>No, this version gives you a random word whenever you press New Word, which lets you play as many rounds in a row as you feel like.</p>
+  <h3>Do I have to type a real word?</h3>
+  <p>The page does not check your guess against a dictionary. It only asks for five letters, which makes the game gentler for children and for people learning English.</p>
+  <h3>What happens if I use all six rows?</h3>
+  <p>The board locks and a message reveals the answer. Press New Word and a different five-letter word is chosen straight away for the next round.</p>
+  <h3>Can several people work on one puzzle?</h3>
+  <p>Yes, and it is often more fun that way. Put the screen where everyone can see it and take turns choosing which word goes into the next row.</p>
+  <h3>Are the answers about Canada?</h3>
+  <p>Mostly not. The list gathers everyday words such as whale, sugar and train, though a few Canadian favourites like canoe, maple and igloo do slip in.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="games.html">Explore all the word and logic games together</a> · <a href="word-groups.html">Sort sixteen words into four hidden groups</a> · <a href="crossword.html">Fill in a crossword grid clue by clue</a> · <a href="daily.html">Take on today's daily challenge</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 
 <footer class="site-footer">
@@ -110,15 +148,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -130,7 +168,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -280,9 +318,9 @@ document.addEventListener('keydown',e=>{
 });
 newGame();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

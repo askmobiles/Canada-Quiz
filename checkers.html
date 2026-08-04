@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkers — Play vs Computer or a Friend | Family Games</title>
 <meta name="description" content="Play Checkers (draughts) free — against the computer or a friend on one device. Full rules with jumps and kings. Phone, tablet and computer.">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
   .ck-wrap{max-width:440px;margin:0 auto;text-align:center}
   .ck-board{display:grid;grid-template-columns:repeat(8,1fr);width:100%;max-width:400px;margin:12px auto;border:3px solid var(--ink);border-radius:8px;overflow:hidden;touch-action:manipulation}
@@ -64,6 +64,42 @@
       </div>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Checkers, also called draughts, is here in its full form: an eight-by-eight board, forced jumps and kings that move in every direction. You play the red pieces at the bottom and move by tapping a piece and then a highlighted square.</p>
+  <p>Two modes cover most situations. Take on the computer when you are alone and want a quick game, or pass the phone back and forth with a friend sitting next to you in the two-player mode.</p>
+  <p>It is one of the easiest games to teach a child. The rules fit into a sentence, every move is diagonal, and a beginner can win a genuine game after one afternoon of practice.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>You control the red pieces at the bottom, and green dots appear on every square the selected piece can reach.</li>
+    <li>Jumping over an opponent's piece captures it, and whenever a jump is available you are required to take it.</li>
+    <li>A piece that reaches the far row becomes a King, marked with a crown, and may then move backwards as well.</li>
+    <li>Buttons above the board switch between playing the computer and playing a friend on the same device.</li>
+    <li>A status line names whose turn it is and lets you know when the computer is thinking about its reply.</li>
+    <li>The New Game button clears the board at once, so a poor opening costs you nothing more than a tap.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Because jumps are forced, offering a piece on purpose can steer your opponent into a move they would rather not make.</li>
+    <li>Keeping your back row intact as long as possible stops the other side from crowning kings on your half of the board.</li>
+    <li>Pieces on the edges cannot be jumped from both sides, which makes them safer, though they also have fewer moves available.</li>
+    <li>Trading pieces one for one helps whoever is already ahead, so avoid straight swaps when you are the player behind.</li>
+    <li>A double or triple jump often hides where a single one looks obvious, so check one square further before you tap.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Is the checkers computer hard to beat?</h3>
+  <p>It looks for the biggest capture and likes moves that crown a king, so it punishes careless play. It does not plan many moves ahead, and beginners beat it regularly.</p>
+  <h3>Can two people play checkers on one phone?</h3>
+  <p>Yes. Choose the two-player mode and pass the device after each turn. Red always moves first and the line above the board says whose turn it is.</p>
+  <h3>What happens if a player has no move left?</h3>
+  <p>Blocking your opponent so that no legal move remains wins the game, just as capturing all their pieces does. The board recognises both endings on its own.</p>
+  <h3>Do I need to know the rules before I start?</h3>
+  <p>No. The how-to-play panel at the top explains tapping, jumping and kings in one short paragraph, and the green dots show you the legal moves as you go along.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="chess.html">Move up to a full game of chess with all the real rules</a> · <a href="connect4.html">Drop four discs in a row in Connect 4</a> · <a href="tictactoe.html">Play a very quick round of tic-tac-toe</a> · <a href="games.html">Look through the whole family games collection</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 <footer class="site-footer">
   <div class="container center">
@@ -103,15 +139,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -123,7 +159,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -337,9 +373,9 @@ function cpuMove(){
 function setHud(t){ document.getElementById('hud').textContent=t; }
 newGame();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

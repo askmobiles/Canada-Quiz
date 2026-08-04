@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2048 — Slide &amp; Add the Numbers | Family Games</title>
 <meta name="description" content="Play 2048 free — slide the tiles, add matching numbers, and reach 2048. Works on phone, tablet and computer. No signup.">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
   .g2-wrap{max-width:400px;margin:0 auto;text-align:center}
   .g2-board{position:relative;background:#cdd5df;border-radius:12px;padding:10px;margin:12px auto;width:100%;max-width:360px;aspect-ratio:1/1;touch-action:none;user-select:none}
@@ -76,6 +76,41 @@
       <p class="muted center" style="font-size:12.5px;margin-top:8px">Tip: on a phone, swipe up / down / left / right.</p>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>2048 is a sliding number puzzle on a four by four board. Push every tile in one direction, and when two tiles carrying the same number collide they merge into their double. Two becomes four, four becomes eight, and the goal is a single 2048 tile.</p>
+  <p>It is a quiet, one player game with no timer, no opponent and no noise. Good for a bus ride, a waiting room or the ten minutes before dinner. Children practise doubling numbers without ever noticing that they are practising.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>Arrow keys move the tiles on a computer, while a swipe up, down, left or right works on a phone or tablet.</li>
+    <li>Every move drops one new tile onto an empty square, almost always a two and occasionally a four.</li>
+    <li>The board is four squares by four squares, so sixteen tiles means a full board and the end of the game.</li>
+    <li>Your current score and your best score sit above the board, and the best score is kept on your device.</li>
+    <li>Reaching the 2048 tile brings up a congratulations panel, and you may carry on for a higher score.</li>
+    <li>The New Game button clears the board at any moment and starts you again with two fresh tiles.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Choose one corner and keep your biggest tile there. Most strong runs come from never letting that corner tile move.</li>
+    <li>Try to use only two or three directions. The fourth direction is usually what breaks a tidy board apart.</li>
+    <li>Build your largest numbers along one full row or column, in order, so they can zip together in a single push.</li>
+    <li>When the board fills up, look for two equal tiles sitting side by side before you press anything at all.</li>
+    <li>Merging small tiles early keeps space free, because a board crowded with lonely twos and fours is hard to rescue.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Is my score kept if I close the page?</h3>
+  <p>Your best score is stored in your own browser, so it is still waiting when you come back on the same device. The board itself starts fresh on every visit.</p>
+  <h3>What happens once I reach the 2048 tile?</h3>
+  <p>A panel appears to say you made it, and you can either start a new game or keep sliding. Tiles above 2048 are perfectly possible if the board stays tidy.</p>
+  <h3>Does the game work without a keyboard?</h3>
+  <p>Yes. On a touch screen you swipe in the direction you want the tiles to travel. The swipe does not need to be long, since a short flick is enough.</p>
+  <h3>Is 2048 useful for practising maths?</h3>
+  <p>It gives steady practice at doubling and at reading numbers quickly, which is why many parents and teachers allow it. It remains a puzzle first, though, not a lesson.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="sudoku.html">Take on a number grid of a different kind in Sudoku</a> · <a href="sliding-puzzle.html">Slide the pieces back into order in the classic puzzle</a> · <a href="minesweeper.html">Read the clues and clear the field in Minesweeper</a> · <a href="games.html">See every puzzle and brain game we have built</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 <footer class="site-footer">
   <div class="container center">
@@ -115,15 +150,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -135,7 +170,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -291,9 +326,9 @@ board.addEventListener('touchend',e=>{
 });
 buildBg(); newGame();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://canada-quiz.com/chess.html">
 <meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
 .ch-bar{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:10px}
 .ch-mode{max-width:100%;width:auto;min-height:44px;font-weight:700}
@@ -111,6 +111,44 @@
       <a class="btn btn-ghost" href="games.html">All Games</a>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>This is real chess in a browser tab, with the complete rule set rather than a simplified version. Castling, en passant, pawn promotion, check, checkmate and stalemate are all handled, so a game ends the way it would on a wooden board.</p>
+  <p>Play a friend on one phone or face the computer at easy, medium or hard. There is no account, no rating to protect and no clock ticking, which makes it a comfortable place to try an opening you are still learning.</p>
+  <p>Beginners get the most help from the board itself. Tap a piece and every legal square lights up with a dot, so you learn how the knight and the bishop travel by watching rather than by memorising a diagram.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>A drop-down at the top selects two-player mode or a computer opponent at easy, medium or hard.</li>
+    <li>Tapping a piece lights up its legal squares, and tapping one of those lit squares completes the move.</li>
+    <li>Captured pieces are displayed above and below the board so you can judge the material balance at a glance.</li>
+    <li>When a pawn reaches the last rank, four buttons let you promote it to a queen, rook, bishop or knight.</li>
+    <li>Flip board turns the view around, which helps when two people share one phone across a table.</li>
+    <li>Undo move takes back the last move, and a running tally of wins, losses and draws sits above the board.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>En passant lasts for one move only: if you do not capture right after the enemy pawn's double step, the chance is gone for good.</li>
+    <li>Castling is not allowed while the king is in check, when it would cross an attacked square, or if either piece has already moved.</li>
+    <li>Promoting a pawn to a knight instead of a queen is occasionally stronger, usually when the new knight arrives with check.</li>
+    <li>Stalemate counts as a draw, so a player who is far ahead should leave the losing king a legal move instead of smothering it by accident.</li>
+    <li>Developing every piece before attacking works better than hunting an early checkmate, which computer opponents defend without much trouble.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Can I take a chess move back?</h3>
+  <p>Yes. The undo button steps your last move back, which helps while you are learning and when a finger slips on a small screen. Use it as often as you like.</p>
+  <h3>Which computer level should I start with?</h3>
+  <p>Easy is the right place to begin if you are new or returning after many years. Move to medium once you win comfortably, and save hard for when you want a proper fight.</p>
+  <h3>Does the page remember my results between games?</h3>
+  <p>Small markers above the board count wins, losses and draws while you keep playing. No sign-in is required to keep that tally running as you play more games.</p>
+  <h3>Can two people play face to face on one device?</h3>
+  <p>Yes. Pick two-player mode and use the flip board button so the pieces face whoever is about to move. It works on a phone, a tablet or a laptop.</p>
+  <h3>Is any part of the chess game locked or paid?</h3>
+  <p>No. All three computer levels, the undo button, the flip view and the promotion choices are available immediately, with nothing to unlock and no account to create.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="checkers.html">Try checkers for a quicker game on a board of the same size</a> · <a href="sudoku.html">Switch to sudoku when you feel like a solo puzzle</a> · <a href="daily.html">Take on today's daily challenge</a> · <a href="games.html">Find more brain and board games to play for free</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 
 <footer class="site-footer">
@@ -151,15 +189,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -171,7 +209,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -1000,9 +1038,9 @@
   newGame();
 })();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Top Answers — Game-Show Party Game | Canada Quiz</title>
-<meta name="description" content="Top Answers — a free Family Feud style party game. Two teams guess the most popular answers to win points. Fun game-show fun for families.">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<meta name="description" content="Top Answers — a free game-show style party game. Two teams guess the most popular answers to win points. Fun game-show fun for families.">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
   .ta-wrap{max-width:560px;margin:0 auto;text-align:center}
   .ta-teams{display:flex;gap:12px;justify-content:center;margin:8px 0}
@@ -70,6 +70,41 @@
       </div>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Top Answers is a game-show style party game for two teams. A question appears, five hidden answers sit on the board, and each one is worth points according to how popular it is. The board fills the middle of the screen so a whole room can follow along.</p>
+  <p>One person acts as the host. Read the question out loud, listen to the team's guess, then tap the matching row to reveal it. If they miss, hand the turn over with the switch button.</p>
+  <p>It is made for a room full of people rather than one player alone — family evenings, classrooms, birthday parties, or any time you need something loud and quick to explain. One shared screen is enough.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>Two teams, red and blue, keep their scores side by side at the top, and the team whose turn it is lights up.</li>
+    <li>Each question hides five answers; tapping a row reveals both the answer and the points it carries.</li>
+    <li>The switch team button passes the turn over when a team guesses wrong or runs out of ideas.</li>
+    <li>Next question moves to a fresh board, and the questions are shuffled so no two evenings run in the same order.</li>
+    <li>Four boards are marked advanced and cover planets, European countries, musical instruments and jobs that help people.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>The easier boards ask for a pizza topping, a farm animal, something Canadian, or something you keep in the fridge.</li>
+    <li>The top answer is usually the most obvious one. Teams that overthink and reach for something clever often score the fewest points.</li>
+    <li>Points are far from equal. On most boards the first answer is worth three or four times the last one, so guessing order matters.</li>
+    <li>Set your own time limit, maybe ten seconds per guess. The game has no timer, and a fast pace keeps the room laughing.</li>
+    <li>Playing host is a real job. Reading the question with a little drama makes an ordinary answer feel like a jackpot.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>How many people do I need for a game?</h3>
+  <p>Three is enough: two guessers and someone to tap the screen. It gets much better with bigger teams, because the arguments about which answer to say are half the fun.</p>
+  <h3>Who keeps track of the score?</h3>
+  <p>The page does it for you. Every revealed answer adds its points to whichever team is highlighted, so check that the right team is active before you tap a row.</p>
+  <h3>What happens if a team says something that is not on the board?</h3>
+  <p>Nothing is lost. Press the switch button and let the other side try. Only answers printed on the board can be revealed, and only those carry points.</p>
+  <h3>Are the questions suitable for children?</h3>
+  <p>Most boards ask for everyday things a young child can name, like a farm animal or a red fruit. Put a child on each team so nobody feels left behind on the advanced boards.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="games.html">See every party game gathered in one place</a> · <a href="trivia-showdown.html">Challenge another team in a two-team trivia match</a> · <a href="imposter.html">Pass one phone around and unmask the hidden imposter</a> · <a href="hold-to-head.html">Hold the phone to your forehead and guess the word</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 <footer class="site-footer">
   <div class="container center">
@@ -109,15 +144,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -129,7 +164,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -242,9 +277,9 @@ function showQ(){
 function nextQ(){ qi=(qi+1)%order.length; if(qi===0) order=shuffle(order); showQ(); window.scrollTo(0,0); }
 order=shuffle(QUESTIONS.map((_,i)=>i)); showQ();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

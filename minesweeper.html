@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minesweeper — Classic Puzzle Game | Family Games</title>
 <meta name="description" content="Play Minesweeper free. Clear the board without hitting a mine. Easy, medium and hard levels. Works on phone, tablet and computer.">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
   .ms-wrap{max-width:460px;margin:0 auto;text-align:center}
   .ms-grid{display:grid;gap:2px;justify-content:center;margin:12px auto;touch-action:manipulation}
@@ -68,6 +68,45 @@
       </div>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Minesweeper is a puzzle of pure deduction. Open a square and it shows a number, and that number tells you exactly how many mines touch it. From those clues you work out which neighbouring squares are safe and which ones you must never open.</p>
+  <p>This version is free, opens instantly and asks for nothing at all. There is no signup, no level to unlock and no waiting. Pick a board size, tap once, and you are already reading your first set of numbers.</p>
+  <p>It suits a coffee break as much as a long evening. A small board can be cleared in a couple of minutes, while the largest one is a proper sit-down puzzle that keeps an experienced player thinking hard.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>Easy gives a nine by nine board holding ten hidden mines, which is the gentlest way in.</li>
+    <li>Medium moves up to a twelve by twelve board with twenty-four mines packed into it.</li>
+    <li>Hard sets a fourteen by fourteen board with forty mines, a real test of patient reasoning.</li>
+    <li>A flag button switches tapping into marking mode, and on a computer a right-click plants a flag directly.</li>
+    <li>Two counters at the top show how many mines the board holds and how many flags you have placed.</li>
+    <li>Opening a square with no mines nearby clears its whole empty neighbourhood in one sweep.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Your very first tap is always safe, and so are the squares immediately around it, so open the board without hesitating.</li>
+    <li>A one with exactly one unopened neighbour has found its mine. Flag that square and everything else touching the one is safe.</li>
+    <li>When a number already touches its full count of flags, every remaining square around it can be opened without risk.</li>
+    <li>Work the edges and corners first. They have fewer neighbours, so their numbers give away more information per clue.</li>
+    <li>Comparing two numbers side by side often solves squares that neither one could settle on its own.</li>
+    <li>Turn the flag button off before a long clearing run, or you will spend your turns planting flags on squares you meant to open.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Can I lose on the very first square I tap?</h3>
+  <p>No. The mines are placed after that first tap, and the game deliberately keeps them away from the square you chose and its neighbours. Every game therefore starts with a real opening to work from.</p>
+  <h3>How do I place a flag on a touchscreen?</h3>
+  <p>Press the flag button first so it switches on, then tap any square to mark it. Press the button again to go back to opening squares normally, because the two modes cannot be used at once.</p>
+  <h3>Do I have to flag every mine to win?</h3>
+  <p>No. You win the moment every safe square is open, whether or not the mines carry flags. Flags are a memory aid for you, and the counter simply tracks how many you have used.</p>
+  <h3>Which board size should a beginner start with?</h3>
+  <p>Start on the nine by nine board with ten mines. It is small enough to see the whole grid at once on a phone, and the clues are usually enough to finish without a single guess.</p>
+  <h3>Is guessing ever necessary in this puzzle?</h3>
+  <p>Occasionally two possibilities are left that the numbers cannot separate, especially on the largest board. Most games are solvable by reasoning alone, so check every clue carefully before you take a chance.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="sudoku.html">Fill the grid with numbers in a game of Sudoku</a> · <a href="connect4.html">Drop four discs in a row to beat your opponent</a> · <a href="word-master.html">Guess the hidden five-letter word in Word Master</a> · <a href="games.html">Discover the rest of the brain and puzzle games</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 <footer class="site-footer">
   <div class="container center">
@@ -107,15 +146,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -127,7 +166,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -277,9 +316,9 @@ function render(showAll){
 function toggleFlagMode(){ flagMode=!flagMode; document.getElementById('flagBtn').textContent='🚩 Flag: '+(flagMode?'ON':'OFF'); document.getElementById('flagBtn').style.background=flagMode?'#ffb703':''; }
 newGame();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

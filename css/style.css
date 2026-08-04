@@ -346,3 +346,22 @@ main li a:not(.btn):hover{text-decoration:underline}
 .lvl-pick .lvl.on{background:var(--red-aa);border-color:var(--red-aa);color:#fff}
 .lvl-pick .lvl.on small{color:#fff}
 .lvl-pick .lvl:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+
+/* ---- Page documentation block (the written content under each page) ------ */
+.pagedoc{max-width:760px;margin:26px auto 0;padding:22px 20px 26px;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  color:var(--ink);line-height:1.65}
+.pagedoc h2{font-size:1.18rem;margin:22px 0 8px;color:var(--ink)}
+.pagedoc h2:first-child{margin-top:0}
+.pagedoc h3{font-size:1rem;margin:16px 0 4px;color:var(--ink)}
+.pagedoc p{margin:0 0 10px}
+.pagedoc ul{margin:0 0 10px;padding-left:22px}
+.pagedoc li{margin:0 0 6px}
+.pagedoc a{color:var(--red-dark);text-decoration:underline}
+.pagedoc .sq-list{margin:0;padding-left:22px}
+.pagedoc .sq{margin:0 0 14px}
+.pagedoc .sq-q{font-weight:700;margin:0 0 3px}
+.pagedoc .sq-a{margin:0 0 3px}
+.pagedoc .sq-e{margin:0;color:var(--muted)}
+.pagedoc .pd-rel{margin:0}
+@media(max-width:520px){.pagedoc{padding:18px 15px 22px;margin-top:20px}}

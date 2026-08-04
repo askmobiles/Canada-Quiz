@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sudoku — Free Number Puzzle | Family Games</title>
 <meta name="description" content="Free Sudoku puzzle game with easy, medium, and hard levels. Fill the grid so every row, column and box has 1 to 9. Plays on phone and computer.">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
   .sk-wrap{max-width:440px;margin:0 auto;text-align:center}
   .sk-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:0;max-width:420px;margin:12px auto;border:3px solid var(--ink);border-radius:6px;overflow:hidden;touch-action:manipulation}
@@ -73,6 +73,42 @@
       </div>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Sudoku is a quiet number puzzle you can pick up for five minutes or forty. Nine rows, nine columns and nine small boxes all need the digits one through nine, and no digit may repeat inside any of them.</p>
+  <p>This page builds a brand new puzzle every time you ask for one, so you never meet the same board twice. Each board is tested while it is being made to be sure it has exactly one correct answer.</p>
+  <p>It suits anyone who likes thinking slowly — a parent with a coffee, a student on the bus, a grandparent who used to do them in the newspaper. Nothing counts down and nothing punishes you for pausing.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>A dropdown at the top lets you choose easy, medium or hard, and medium is already selected when the page opens.</li>
+    <li>Harder levels simply start with fewer numbers already filled in, which leaves you more squares to work out.</li>
+    <li>Tap an empty square to select it, then tap a number on the pad placed just below the grid.</li>
+    <li>The eraser key on the pad clears a square, and on a computer the number keys and Backspace also work.</li>
+    <li>The check button turns any wrong square red and tells you how many squares are still empty.</li>
+    <li>Finish the grid correctly and a congratulation message appears straight away, without you pressing anything.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Start by hunting for rows, columns or boxes that already hold seven or eight numbers — the missing digits there are almost free.</li>
+    <li>If a number can only go in one square of a box, place it there, even when that square could also hold other numbers.</li>
+    <li>Thick lines mark the nine three-by-three boxes. Reading a box as one unit, instead of square by square, speeds up your scanning.</li>
+    <li>Guessing works badly here. One wrong digit quietly ruins everything you place after it, so it is faster to prove a number before writing it.</li>
+    <li>The starting numbers are placed symmetrically around the centre of the grid, which is the classic look used by printed puzzles.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Does every puzzle have just one answer?</h3>
+  <p>Yes. While the board is being created, a number is only removed if the puzzle still has a single solution. Every square can therefore be worked out by logic, never by luck.</p>
+  <h3>Is it comfortable to play on a phone?</h3>
+  <p>Yes. The grid resizes to fit the screen and the number pad sits underneath it, so everything is reached with a thumb. No keyboard is needed on a small screen.</p>
+  <h3>What should I do when I get stuck?</h3>
+  <p>Use the check button. Wrong squares turn red and you are told how many squares remain. You can then clear anything you doubt with the eraser and try that area again.</p>
+  <h3>Will my grid still be there if I leave the page?</h3>
+  <p>No. The board lives in the page only, so closing the tab ends that puzzle. Asking for a new puzzle also builds a fresh grid, so finish one before you start another.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="games.html">See the full list of puzzle and brain games</a> · <a href="minesweeper.html">Clear a board without hitting a hidden mine</a> · <a href="math-race.html">Race the clock with quick mental maths questions</a> · <a href="daily.html">Take on today's daily quiz and daily word</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 
 <footer class="site-footer">
@@ -113,15 +149,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -133,7 +169,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -292,9 +328,9 @@ document.addEventListener('keydown',e=>{
 });
 newGame();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

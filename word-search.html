@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Word Search — Free Puzzle, 3 Levels | Family Games</title>
 <meta name="description" content="Free word search puzzle with easy, medium, and hard levels and a variety of topics — animals, nature, space, food and more. Fun for kids and adults. New puzzle every time.">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
   .ws-wrap{max-width:480px;margin:0 auto}
   .ws-grid{display:grid;gap:2px;margin:10px auto;touch-action:none;user-select:none;-webkit-user-select:none}
@@ -69,6 +69,44 @@
       </div>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Word Search hides ten words inside a letter grid and asks you to find every one. Press the first letter, drag to the last, and the word turns green in the grid and gets crossed off the list below it.</p>
+  <p>Three levels change both the grid and the vocabulary. Easy uses short words like frog and snow in a smaller grid, Medium moves up to volcano and rainbow, and Hard hides long ones such as helicopter and orchestra.</p>
+  <p>Each puzzle is built from scratch, so the same level never gives you the same grid twice. That makes it a good quiet activity for a child, for a waiting room, or for a classroom filler that never runs out.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>A level menu at the top offers Easy with short words, Medium, and Hard with long words, and switching builds a new grid.</li>
+    <li>Words can run across, down or diagonally, and they can also be written backwards in any of those directions.</li>
+    <li>You select a word by pressing its first letter and dragging your finger or mouse all the way to its last letter.</li>
+    <li>Found words turn green inside the grid and appear struck through in the word list just underneath.</li>
+    <li>Ten words hide in every puzzle, drawn from a bank covering animals, nature, space, food, travel and everyday objects.</li>
+    <li>A message appears once the final word is found, and New Puzzle generates a completely different grid.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Hunt for unusual letters first. Words containing J, K, Q, V, X or Z stand out clearly from the random filler around them.</li>
+    <li>Sweep one row at a time instead of letting your eyes wander. A slow, systematic search beats a fast, scattered one.</li>
+    <li>Remember that words may be reversed. If you cannot spot one forwards, look for its final letter and read backwards from there.</li>
+    <li>Long words are often easier than short ones, because a nine-letter answer has far fewer places where it can possibly fit.</li>
+    <li>Diagonals are where people lose time. When a level feels impossible, check the diagonals before checking anything else.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Which level should a young child start with?</h3>
+  <p>Easy. The grid is smaller and the words are three or four letters long, which keeps a first puzzle short enough to finish before interest fades.</p>
+  <h3>Can I print the puzzle?</h3>
+  <p>Not as a worksheet. The grid is made to be played on screen, because dragging across the letters is what marks a word as found.</p>
+  <h3>Does the same puzzle come back?</h3>
+  <p>No. Every grid is built from nothing with a random selection of words and random filler letters, so each puzzle you open is genuinely new.</p>
+  <h3>What if I cannot find the last word?</h3>
+  <p>There is no reveal button, so the choices are to keep looking or to press New Puzzle and start again with a fresh grid at any level.</p>
+  <h3>How many words must I find?</h3>
+  <p>Ten in every puzzle, whatever the level. They are listed under the grid, so you always know exactly what is still left to look for.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="games.html">Discover all the puzzle games in one place</a> · <a href="sudoku.html">Solve a number grid in classic Sudoku</a> · <a href="minesweeper.html">Clear the minefield square by square</a> · <a href="quizzes.html">Switch to a quiz when you fancy a change</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 
 <footer class="site-footer">
@@ -109,15 +147,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -129,7 +167,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -287,9 +325,9 @@ gridEl.addEventListener('pointermove',e=>{ if(!selecting)return; const t=cellFro
 document.addEventListener('pointerup',e=>{ if(!selecting)return; selecting=false; const t=cellFromPoint(e.clientX,e.clientY); if(t){ trySelect(startRC[0],startRC[1],+t.dataset.r,+t.dataset.c); } clearSel(); startRC=null; });
 newPuzzle();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

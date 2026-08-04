@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Démineur — Jeu de réflexion classique | Jeux en famille</title>
 <meta name="description" content="Jouez au démineur gratuitement. Dégagez le plateau sans toucher une mine. Niveaux facile, moyen et difficile. Fonctionne sur téléphone, tablette et ordinateur.">
-<link rel="stylesheet" href="../css/style.css?v=20260803a">
+<link rel="stylesheet" href="../css/style.css?v=20260804b">
 <style>
   .ms-wrap{max-width:460px;margin:0 auto;text-align:center}
   .ms-grid{display:grid;gap:2px;justify-content:center;margin:12px auto;touch-action:manipulation}
@@ -68,6 +68,45 @@
       </div>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de ce jeu</h2>
+  <p>Le démineur est un casse-tête de pure déduction. Ouvrez une case et elle affiche un nombre : ce nombre indique exactement combien de mines la touchent. À partir de ces indices, vous déterminez quelles cases voisines sont sûres et lesquelles ne doivent jamais être ouvertes.</p>
+  <p>Cette version est gratuite, s'ouvre aussitôt et ne demande rien du tout. Aucune inscription, aucun niveau à débloquer, aucune attente. Choisissez une taille de grille, touchez une fois et vous lisez déjà vos premiers nombres.</p>
+  <p>Il convient autant à une pause-café qu'à une longue soirée. Une petite grille se termine en deux minutes, tandis que la plus grande est un vrai casse-tête qui fait réfléchir un joueur expérimenté.</p>
+  <h2>Comment ça marche</h2>
+  <ul>
+    <li>Le niveau facile offre une grille de neuf sur neuf contenant dix mines cachées, l'entrée la plus douce.</li>
+    <li>Le niveau moyen passe à une grille de douze sur douze avec vingt-quatre mines réparties dedans.</li>
+    <li>Le niveau difficile propose une grille de quatorze sur quatorze avec quarante mines, un vrai test de raisonnement patient.</li>
+    <li>Un bouton de drapeau fait passer le toucher en mode marquage ; sur ordinateur, un clic droit plante un drapeau directement.</li>
+    <li>Deux compteurs en haut indiquent combien de mines contient la grille et combien de drapeaux vous avez posés.</li>
+    <li>Ouvrir une case sans mine à proximité dégage tout le voisinage vide d'un seul coup.</li>
+  </ul>
+  <h2>Conseils pour jouer</h2>
+  <ul>
+    <li>Votre tout premier toucher est toujours sûr, ainsi que les cases juste autour : ouvrez la grille sans hésiter.</li>
+    <li>Un 1 qui n'a plus qu'une seule case fermée voisine a trouvé sa mine. Marquez-la : tout le reste autour de ce 1 est sûr.</li>
+    <li>Quand un nombre touche déjà son compte complet de drapeaux, toutes les autres cases autour peuvent s'ouvrir sans risque.</li>
+    <li>Travaillez d'abord les bords et les coins. Ils ont moins de voisins, donc leurs nombres livrent plus d'information par indice.</li>
+    <li>Comparer deux nombres côte à côte résout souvent des cases qu'aucun des deux ne pouvait régler seul.</li>
+    <li>Désactivez le bouton de drapeau avant une longue série d'ouvertures, sinon vous planterez des drapeaux sur les cases que vous vouliez ouvrir.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>Puis-je perdre dès la première case touchée ?</h3>
+  <p>Non. Les mines sont placées après ce premier toucher, et le jeu les tient volontairement loin de la case choisie et de ses voisines. Chaque partie commence donc par une vraie ouverture.</p>
+  <h3>Comment poser un drapeau sur un écran tactile ?</h3>
+  <p>Appuyez d'abord sur le bouton de drapeau pour l'activer, puis touchez une case pour la marquer. Appuyez de nouveau pour revenir à l'ouverture normale : les deux modes ne vont pas ensemble.</p>
+  <h3>Faut-il marquer chaque mine pour gagner ?</h3>
+  <p>Non. Vous gagnez dès que toutes les cases sûres sont ouvertes, avec ou sans drapeaux sur les mines. Les drapeaux sont une aide-mémoire et le compteur suit simplement leur nombre.</p>
+  <h3>Quelle taille de grille un débutant devrait-il choisir ?</h3>
+  <p>Commencez par la grille de neuf sur neuf avec dix mines. Elle tient entièrement sur un écran de téléphone et les indices suffisent souvent à terminer sans deviner.</p>
+  <h3>Faut-il parfois deviner dans ce casse-tête ?</h3>
+  <p>Il arrive que deux possibilités restent sans que les nombres puissent trancher, surtout sur la grande grille. La plupart des parties se résolvent par le raisonnement : vérifiez chaque indice avant de risquer.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="sudoku.html">Remplissez la grille de chiffres dans une partie de sudoku</a> · <a href="connect4.html">Alignez quatre jetons pour battre votre adversaire</a> · <a href="word-master.html">Devinez le mot caché de cinq lettres dans Word Master</a> · <a href="games.html">Découvrez les autres jeux de réflexion et casse-tête</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 <footer class="site-footer">
   <div class="container center">
@@ -107,15 +146,15 @@
         <a href="word-search.html">Mots cachés</a>
         <a href="word-guess.html">Devine le mot</a>
         <a href="scramble.html">Mots brouillés</a>
-        <a href="spelling-bee.html">Concours d'épellation</a>
+        <a href="word-hive.html">Ruche de mots</a>
         <a href="crossword.html">Mots croisés</a>
-        <a href="connections.html">Groupes de mots</a>
+        <a href="word-groups.html">Groupes de mots</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Démineur</a>
         <a href="sliding-puzzle.html">Taquin</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Jeu de mémoire</a>
-        <a href="rubiks-cube.html">Cube Rubik</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Test de vitesse de frappe</a>
         <a href="color-match.html">Associe les couleurs</a>
         <a href="math-race.html">Course de maths</a>
@@ -127,7 +166,7 @@
         <div class="fm-h">Jeux d'action et jeux classiques</div>
         <a href="snake.html">Serpent érable</a>
         <a href="whack-a-beaver.html">Tape-le-castor</a>
-        <a href="piano-tiles.html">Touches de piano</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-tac-toe</a>
         <a href="checkers.html">Dames</a>
         <a href="inukshuk.html">Construis un inukshuk</a>
@@ -277,9 +316,9 @@ function render(showAll){
 function toggleFlagMode(){ flagMode=!flagMode; document.getElementById('flagBtn').textContent='🚩 Flag: '+(flagMode?'ON':'OFF'); document.getElementById('flagBtn').style.background=flagMode?'#ffb703':''; }
 newGame();
 </script>
-  <script src="../js/game-fullscreen.js?v=20260803a"></script>
-  <script src="../js/site.js?v=20260803a"></script>
-  <script src="../js/analytics.js?v=20260803a"></script>
-  <script src="../js/ads.js?v=20260803a" defer></script>
+  <script src="../js/game-fullscreen.js?v=20260804b"></script>
+  <script src="../js/site.js?v=20260804b"></script>
+  <script src="../js/analytics.js?v=20260804b"></script>
+  <script src="../js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

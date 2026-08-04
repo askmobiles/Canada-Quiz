@@ -101,15 +101,15 @@
      "Word Scramble"
     ],
     [
-     "spelling-bee.html",
-     "Spelling Bee"
+     "word-hive.html",
+     "Word Hive"
     ],
     [
      "crossword.html",
      "Crossword"
     ],
     [
-     "connections.html",
+     "word-groups.html",
      "Word Groups"
     ],
     [
@@ -133,8 +133,8 @@
      "Memory Match"
     ],
     [
-     "rubiks-cube.html",
-     "Rubik's Cube"
+     "cube-twist.html",
+     "Cube Twist"
     ],
     [
      "typing-test.html",
@@ -174,8 +174,8 @@
      "Whack-a-Beaver"
     ],
     [
-     "piano-tiles.html",
-     "Piano Tiles"
+     "tile-tap.html",
+     "Tile Tap"
     ],
     [
      "tictactoe.html",

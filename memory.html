@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Canada Memory Match — Family Games</title>
 <meta name="description" content="Free Canada-themed memory matching game for kids and families. Flip the cards and find the pairs!">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
   .mem-board{display:grid;gap:10px;max-width:460px;margin:20px auto}
   .mem-card{aspect-ratio:1/1;border:none;background:none;cursor:pointer;perspective:600px}
@@ -77,6 +77,45 @@
       <button class="btn btn-lg" onclick="startGame()">Play Again</button>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Canada Memory Match is the classic pairs game with a Canadian face on it. All the cards begin face down. You turn over two at a time, and when the pictures match they stay open. When they do not, they flip back and you try to remember where they were.</p>
+  <p>There is no reading and no time pressure, so it works for a preschooler and still gives a grandparent something to think about. Everyone in the room can play the same board and simply compare how many moves each of them needed.</p>
+  <p>Three board sizes let the game grow with the player. A small board is a two-minute warm-up, and the largest one is a genuine memory test that rewards a calm, orderly search instead of random tapping.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>A level menu offers easy with six pairs, medium with eight pairs, or hard with ten pairs.</li>
+    <li>The card pictures are Canadian: a maple leaf, a hockey stick, a beaver, a bear, a moose, an owl and a canoe.</li>
+    <li>More pictures include a skier, a mountain, a wolf, an eagle, an evergreen, a snowflake, a bison and a fish.</li>
+    <li>Three counters run along the top of the board: your moves, your matched pairs, and the seconds elapsed.</li>
+    <li>The clock only starts when you flip your first card, so nobody is rushed while choosing a level.</li>
+    <li>Finishing all the pairs shows a winning message with the number of moves and the time you took.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Work along one row at a time instead of tapping about. An orderly search tells you where a picture is not, which is nearly as useful as where it is.</li>
+    <li>Say each picture out loud as you turn it over. Hearing yourself name the moose or the canoe fixes it in memory far better than looking alone.</li>
+    <li>Unmatched cards stay visible for a short moment before flipping back, so pause and look rather than reaching for the next card immediately.</li>
+    <li>Moves count each pair of flips, not each card, so two cards turned over together count as one single move.</li>
+    <li>The pictures are chosen fresh from a pool of sixteen every game, so a new board can hold animals you did not see last time.</li>
+    <li>For a family contest, keep the level the same for everybody and compare moves rather than seconds, which is fairer to younger fingers.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Can two people play against each other on one screen?</h3>
+  <p>The board tracks one player at a time, so the usual way is to take turns. One person finishes a board, notes their moves and time, then presses New Game and hands the device over.</p>
+  <h3>What is a good number of moves to aim for?</h3>
+  <p>On the eight pair board, finishing under twenty moves is strong and under sixteen is close to perfect. Beginners often need thirty or more, and that number drops quickly with practice.</p>
+  <h3>Does changing the level restart my board?</h3>
+  <p>Yes. Picking a new level deals a fresh set of cards immediately and resets the moves, pairs and clock to zero, so finish the board you are on before you switch.</p>
+  <h3>Is this game any good for a child who cannot read yet?</h3>
+  <p>It is one of the best on the site for them. Every card is a picture, the only action is tapping, and there is nothing to type, so a three-year-old can play with a little help.</p>
+  <h3>Why does the timer sometimes show zero when I start?</h3>
+  <p>It waits for your first flip before it begins counting. That way you can read the level menu, explain the rules to a child, or set the phone down without losing seconds.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="canadas-animals-and-wildlife.html">Meet the real animals behind the cards in this article</a> · <a href="sliding-puzzle.html">Slide the tiles back into order in the sliding puzzle</a> · <a href="fun-quiz.html">Answer the light-hearted fun quiz about Canada</a> · <a href="games.html">Choose another quiet game for a young child</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 
 <footer class="site-footer">
@@ -117,15 +156,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -137,7 +176,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -264,9 +303,9 @@ function win(){
 }
 startGame();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

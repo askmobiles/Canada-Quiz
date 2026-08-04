@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Serpent érable — Jeux en famille</title>
 <meta name="description" content="Jeu d&#x27;arcade gratuit « snake » sur le thème du Canada. Mangez les feuilles d&#x27;érable et grandissez ! Fonctionne sur téléphone et ordinateur.">
-<link rel="stylesheet" href="../css/style.css?v=20260803a">
+<link rel="stylesheet" href="../css/style.css?v=20260804b">
 <style>
   .game-wrap{max-width:420px;margin:0 auto;text-align:center}
   canvas{background:#fff;border:3px solid var(--red);border-radius:12px;width:100%;height:auto;touch-action:none}
@@ -65,6 +65,40 @@
       <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de ce jeu</h2>
+  <p>Maple Snake, c'est le vieux jeu d'arcade repeint aux couleurs du Canada. Vous dirigez un serpent rouge sur un plateau carré et vous mangez des feuilles d'érable. Chaque feuille ajoute un segment, et plus le serpent s'allonge, plus il devient difficile de ne pas se rentrer dedans.</p>
+  <p>Les parties sont courtes : le jeu tient dans une pause-café ou dans les dernières minutes avant le souper. Les enfants comprennent en quelques secondes, et les adultes qui jouaient à quelque chose de semblable autrefois redemandent souvent un tour après la première collision.</p>
+  <h2>Comment ça marche</h2>
+  <ul>
+    <li>Le plateau est une grille de vingt cases sur vingt, et les murs mettent fin à la partie dès que la tête en touche un.</li>
+    <li>Dirigez le serpent avec les touches fléchées, les touches W A S D, les quatre boutons à l'écran ou un glissement du doigt.</li>
+    <li>Chaque feuille d'érable avalée ajoute un point au pointage et un segment de plus à la queue derrière vous.</li>
+    <li>Le serpent accélère un peu tous les cinq points : vers la fin d'une partie, le plateau paraît nettement plus petit.</li>
+    <li>Le pointage et le meilleur résultat s'affichent au-dessus du plateau, et un bouton relance tout dès qu'une partie se termine.</li>
+  </ul>
+  <h2>Conseils pour jouer</h2>
+  <ul>
+    <li>Impossible de faire demi-tour d'un coup : le jeu ignore la commande inverse. Cela évite discrètement aux débutants une collision immédiate.</li>
+    <li>Longer le bord extérieur garde le centre du plateau dégagé et vous laisse un endroit où fuir quand la queue devient longue.</li>
+    <li>C'est en allant chercher une feuille coincée dans un coin que la plupart des parties finissent : approchez les coins le long du mur plutôt que de face.</li>
+    <li>Comme la vitesse augmente avec le pointage, prévoir deux mouvements d'avance compte bien plus ici que d'avoir les doigts rapides.</li>
+    <li>Le meilleur résultat affiché ne vaut que pour la visite en cours : recharger la page relance ce défi à partir de zéro.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>Le jeu devient-il plus difficile ou la vitesse reste-t-elle la même ?</h3>
+  <p>Il devient plus difficile tout seul. Toutes les cinq feuilles, le serpent avance un peu plus vite, jusqu'à une limite fixe : une longue partie devient donc effrénée vers la fin.</p>
+  <h3>Puis-je jouer sans clavier du tout ?</h3>
+  <p>Oui. Quatre boutons fléchés se trouvent juste sous le plateau, et un glissement du doigt sur le plateau fait tourner le serpent dans cette direction. Un téléphone ou une tablette n'a besoin de rien d'autre.</p>
+  <h3>Pourquoi mon serpent est-il mort alors que la voie semblait libre ?</h3>
+  <p>Presque toujours parce que la tête a touché sa propre queue. La queue suit la tête d'un pas : un virage serré en fin de partie referme l'espace avant que l'oeil le remarque.</p>
+  <h3>Est-ce que ce jeu convient à un jeune enfant ?</h3>
+  <p>Il n'y a rien d'effrayant : un carré coloré qui mange des feuilles. Les tout-petits trouveront peut-être la vitesse finale trop rapide, mais une nouvelle partie ne demande qu'une touche.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="whack-a-beaver.html">Tapez sur les castors aussi vite qu'ils surgissent</a> · <a href="tile-tap.html">Suivez le rythme des tuiles qui tombent dans un test de réflexes</a> · <a href="tictactoe.html">Faites une partie rapide de tic-tac-toe contre quelqu'un</a> · <a href="games.html">Choisissez un autre jeu d'arcade ou un classique à essayer</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 
 <footer class="site-footer">
@@ -105,15 +139,15 @@
         <a href="word-search.html">Mots cachés</a>
         <a href="word-guess.html">Devine le mot</a>
         <a href="scramble.html">Mots brouillés</a>
-        <a href="spelling-bee.html">Concours d'épellation</a>
+        <a href="word-hive.html">Ruche de mots</a>
         <a href="crossword.html">Mots croisés</a>
-        <a href="connections.html">Groupes de mots</a>
+        <a href="word-groups.html">Groupes de mots</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Démineur</a>
         <a href="sliding-puzzle.html">Taquin</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Jeu de mémoire</a>
-        <a href="rubiks-cube.html">Cube Rubik</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Test de vitesse de frappe</a>
         <a href="color-match.html">Associe les couleurs</a>
         <a href="math-race.html">Course de maths</a>
@@ -125,7 +159,7 @@
         <div class="fm-h">Jeux d'action et jeux classiques</div>
         <a href="snake.html">Serpent érable</a>
         <a href="whack-a-beaver.html">Tape-le-castor</a>
-        <a href="piano-tiles.html">Touches de piano</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-tac-toe</a>
         <a href="checkers.html">Dames</a>
         <a href="inukshuk.html">Construis un inukshuk</a>
@@ -272,9 +306,9 @@ cv.addEventListener('touchend',e=>{
 });
 resetGame();
 </script>
-  <script src="../js/game-fullscreen.js?v=20260803a"></script>
-  <script src="../js/site.js?v=20260803a"></script>
-  <script src="../js/analytics.js?v=20260803a"></script>
-  <script src="../js/ads.js?v=20260803a" defer></script>
+  <script src="../js/game-fullscreen.js?v=20260804b"></script>
+  <script src="../js/site.js?v=20260804b"></script>
+  <script src="../js/analytics.js?v=20260804b"></script>
+  <script src="../js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

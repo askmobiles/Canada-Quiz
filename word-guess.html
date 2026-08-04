@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Canada Word Guess — Family Games</title>
 <meta name="description" content="Free Canada word guessing game (like hangman) for kids and families. Guess the letters before you run out of tries!">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
   .word-display{font-size:clamp(28px,9vw,52px);font-weight:900;letter-spacing:8px;text-align:center;color:var(--red);min-height:60px;margin:10px 0}
   .lives{font-size:26px;text-align:center;margin:6px 0}
@@ -60,6 +60,44 @@
       <a class="btn btn-ghost" href="games.html">All Games</a>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Canada Word Guess is the old paper game of hangman, redrawn with maple leaves. A Canadian word hides behind a row of blanks and you uncover it one letter at a time, with six leaves standing between you and a lost round.</p>
+  <p>Most of the words belong to Canada in some way, since animals, cities, food, weather, money and clothing all appear. A short hint sits above the blanks, so even someone who has just arrived in the country has something to work from.</p>
+  <p>It is quick, quiet and easy to share around a table. Children tap the letter buttons, adults use the keyboard, and a running wins counter always gives you a reason to try just one more word.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>A hint pill above the puzzle describes the hidden word, such as fries with cheese curds and gravy.</li>
+    <li>Six maple leaves stand for your lives, and each one turns into a broken heart when you guess wrong.</li>
+    <li>A full alphabet of buttons sits below the word, and each letter dims once you have already tried it.</li>
+    <li>Correct letters turn the button green and fill into the blanks, while wrong letters turn it red and cost a life.</li>
+    <li>A wins counter climbs each time you solve a word, and the New Word button starts a fresh puzzle instantly.</li>
+    <li>You can play by touching the on-screen letters or by typing them on a real keyboard, and both behave identically.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Start with vowels. Most of the words hide an A, an E or an O somewhere, and finding one quickly narrows the shape of the answer.</li>
+    <li>After the vowels, try the common consonants R, S, T, N and L before spending a life on a rare letter like Z.</li>
+    <li>Read the hint carefully, because it names the category, so a clue about a warm winter hat points straight at a short word.</li>
+    <li>Count the blanks. A six-letter word with a hint about the capital city leaves you very few possibilities left to test.</li>
+    <li>If you lose, the whole word is revealed. Lost rounds teach you the word list, so later games get noticeably easier.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>How many wrong guesses am I allowed?</h3>
+  <p>Six. Each mistake removes one maple leaf. When the last leaf goes the round ends and the page shows you the word you were hunting for.</p>
+  <h3>Are all the words about Canada?</h3>
+  <p>Nearly all of them, covering places, animals, food, coins and winter things. A few general words appear too, so the list is not only about geography.</p>
+  <h3>Is this useful practice for learning English?</h3>
+  <p>It can be. The words are short, common and paired with a plain hint, which makes it a gentle way to build everyday vocabulary for newcomers and children.</p>
+  <h3>Can I play without a keyboard?</h3>
+  <p>Yes. Every letter has its own button on screen, sized for fingers, so a phone or tablet works perfectly well with no typing at all.</p>
+  <h3>Does the game get harder as I win?</h3>
+  <p>No, the difficulty stays level. Words are drawn at random each round, so a very short one can follow a very long one with no warning.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="games.html">Open the full family games collection</a> · <a href="scramble.html">Put mixed-up letters back in order in Word Scramble</a> · <a href="fun-quiz.html">Take the light-hearted fun Canada quiz</a> · <a href="canadian-slang-words.html">Learn the words Canadians actually use</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 
 <footer class="site-footer">
@@ -100,15 +138,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -120,7 +158,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -265,9 +303,9 @@ document.addEventListener('keydown',e=>{
 });
 newWord();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

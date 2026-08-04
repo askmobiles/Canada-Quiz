@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" data-lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Piano Tiles — Tap the Beat | Family Games</title>
-<meta name="description" content="Free Piano Tiles rhythm game. Tap the falling tiles in beat to play real songs. Fun music game for phone, tablet and computer.">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<title>Tile Tap — Suis le rythme | Jeux en famille</title>
+<meta name="description" content="Jeu de rythme gratuit Tile Tap. Touchez les tuiles qui tombent en rythme pour jouer de vraies chansons. Jeu musical amusant pour téléphone, tablette et ordinateur.">
+<link rel="stylesheet" href="../css/style.css?v=20260804b">
 <style>
   .pt-wrap{max-width:440px;margin:0 auto;text-align:center}
   .pt-stage{position:relative;width:100%;max-width:400px;height:520px;margin:10px auto;background:#f4f6fa;border-radius:16px;overflow:hidden;border:3px solid var(--ink);touch-action:none;user-select:none}
@@ -25,26 +25,26 @@
   .pt-songs button{padding:9px 14px;border:2px solid var(--line);background:#fff;border-radius:999px;font-weight:800;cursor:pointer;color:var(--ink)}
   .pt-songs button.on{background:var(--blue-dark);color:#fff;border-color:var(--blue-dark)}
 </style>
-<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<link rel="canonical" href="https://canada-quiz.com/piano-tiles.html">
-<link rel="alternate" hreflang="en" href="https://canada-quiz.com/piano-tiles.html">
-<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/piano-tiles.html">
-<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/piano-tiles.html">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/tile-tap.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/tile-tap.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/tile-tap.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/tile-tap.html">
 </head>
 <body>
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="quizzes.html">Quizzes</a>
-      <a href="games.html">Family Games</a>
-      <a href="citizenship.html">Citizenship</a>
-      <a href="driving-test.html">Driving Test</a>
-      <a href="daily.html">Daily</a>
-      <a href="blog.html">Blog</a>
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
       <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
     </nav>
   </div>
@@ -52,18 +52,18 @@
 
 <main class="container">
   <section class="hero" style="padding:26px 20px 6px">
-    <h1>🎹 Piano Tiles</h1>
-    <p>Tap the falling tiles in beat — and hear the song play!</p>
+    <h1>🎹 Tile Tap</h1>
+    <p>Touchez les tuiles qui tombent en rythme — et écoutez la chanson jouer !</p>
   </section>
 
-  <details class="howto"><summary>📖 How to play</summary><p>Pick a song, then tap each tile the moment it reaches the red line at the bottom. On a computer use the keys <b>D F J K</b> for the four columns; on a phone or tablet just tap the column. Every correct tap plays the next note of the song. Build a combo by tapping in time — miss a tile and your combo resets. Try to finish the whole song!</p></details>
+  <details class="howto"><summary>📖 Comment jouer</summary><p>Choisissez une chanson, puis touchez chaque tuile au moment où elle atteint la ligne rouge en bas. Sur un ordinateur, utilisez les touches <b>D F J K</b> pour les quatre colonnes ; sur un téléphone ou une tablette, touchez simplement la colonne. Chaque bon toucher joue la note suivante de la chanson. Créez une combo en touchant au bon moment — manquez une tuile et votre combo repart à zéro. Essayez de terminer toute la chanson !</p></details>
 
   <div class="panel">
     <div class="pt-wrap">
       <div class="pt-songs" id="songs"></div>
       <div class="pt-hud">
-        <span>⭐ Score: <span id="score">0</span></span>
-        <span>🎯 Best combo: <span id="best">0</span></span>
+        <span>⭐ Score : <span id="score">0</span></span>
+        <span>🎯 Meilleur combo : <span id="best">0</span></span>
       </div>
       <div class="pt-stage" id="stage">
         <div class="pt-lane"></div><div class="pt-lane"></div><div class="pt-lane"></div><div class="pt-lane"></div>
@@ -75,144 +75,182 @@
         </div>
         <div class="pt-over" id="over">
           <div style="font-size:40px">🎵</div>
-          <h2 style="margin:2px 0">Ready to play?</h2>
-          <p class="muted" id="overMsg">Pick a song above, then press Start.</p>
-          <button class="btn btn-lg" id="startBtn" onclick="startGame()">▶ Start</button>
+          <h2 style="margin:2px 0">Prêt à jouer ?</h2>
+          <p class="muted" id="overMsg">Choisis une chanson ci-dessus, puis appuie sur Commencer.</p>
+          <button class="btn btn-lg" id="startBtn" onclick="startGame()">▶ Commencer</button>
         </div>
       </div>
       <div class="center" style="margin-top:10px">
-        <button class="btn btn-ghost" onclick="location.reload()">Reset</button>
-        <a class="btn btn-ghost" href="games.html">All Games</a>
+        <button class="btn btn-ghost" onclick="location.reload()">Réinit.</button>
+        <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
       </div>
-      <p class="muted center" style="font-size:12.5px;margin-top:8px">Tip: turn your sound on 🔊 — every tap plays a note.</p>
+      <p class="muted center" style="font-size:12.5px;margin-top:8px">Astuce : activez le son 🔊 — chaque touche joue une note.</p>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de ce jeu</h2>
+  <p>Tile Tap transforme de simples touches en musique. Des tuiles colorées glissent dans quatre colonnes vers une ligne rouge au bas de l'écran, et chaque tuile attrapée au bon moment joue la note suivante d'une vraie mélodie.</p>
+  <p>Comme les notes ne sonnent que lorsque vous les touchez, la chanson est vraiment la vôtre. Enchaînez les tuiles proprement et la mélodie coule ; perdez le rythme et elle trébuche, ce qui fait sentir la mesure plutôt que la compter.</p>
+  <p>Il convient à une courte pause, à un long trajet en voiture ou à un concours familial du meilleur enchaînement. Des enfants qui n'ont jamais touché un piano entendent une mélodie connue naître de leurs doigts : un beau premier goût de la musique.</p>
+  <h2>Comment ça marche</h2>
+  <ul>
+    <li>Onze mélodies du domaine public sont proposées, dont Twinkle Twinkle, l'Ode à la joie, Jingle Bells et Frère Jacques.</li>
+    <li>Sur un ordinateur, les quatre colonnes se jouent avec les touches D, F, J et K, placées juste sous vos doigts.</li>
+    <li>Sur un téléphone ou une tablette, il suffit de toucher la colonne où tombe la tuile, sans aucun clavier.</li>
+    <li>Une tuile compte lorsqu'elle atteint la ligne rouge, et la toucher fait aussitôt jouer cette note dans votre haut-parleur.</li>
+    <li>Le tableau affiche votre pointage et votre meilleur enchaînement, et chaque palier d'enchaînement ajoute discrètement un peu plus par note.</li>
+    <li>À la fin, vous voyez combien de notes vous avez réussies sur le total, avec un message adapté à votre précision.</li>
+  </ul>
+  <h2>Conseils pour jouer</h2>
+  <ul>
+    <li>Toucher une colonne vide ne coûte rien. Seule une tuile qui franchit la ligne rouge brise votre enchaînement : touchez donc sans crainte.</li>
+    <li>Posez vos doigts sur D, F, J et K avant de commencer. Déplacer une main au milieu d'une chanson est la cause habituelle de la première tuile manquée.</li>
+    <li>Regardez la ligne rouge plutôt que le haut de l'écran. Les joueurs qui suivent chaque tuile depuis le sommet touchent presque toujours trop tôt.</li>
+    <li>Commencez par Hot Cross Buns ou Mary Had a Lamb. Leurs notes sont lentes et régulières, ce qui installe un bon sens de la pulsation.</li>
+    <li>Happy Birthday et Row Your Boat mêlent des notes longues et des notes très brèves : gardez-les pour le moment où votre synchronisation sera assurée.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>Faut-il savoir lire la musique pour jouer à Tile Tap ?</h3>
+  <p>Pas du tout. Les tuiles qui tombent indiquent le moment de toucher et la note est produite pour vous. Bien des joueurs terminent une chanson entière sans avoir jamais vu une partition.</p>
+  <h3>Pourquoi n'entends-je aucune note sur mon appareil ?</h3>
+  <p>Le jeu crée ses propres notes dans le navigateur : vérifiez que le volume est monté et que le téléphone n'est pas en mode silencieux. Certains appareils ne produisent du son qu'après votre tout premier contact.</p>
+  <h3>Le jeu est-il gratuit et faut-il installer quelque chose ?</h3>
+  <p>Il est gratuit et il n'y a rien à installer. Le jeu fonctionne dans la page même, sans compte à ouvrir, sans téléchargement et sans achat caché derrière une chanson.</p>
+  <h3>Qu'est-ce qui compte exactement comme une tuile manquée ?</h3>
+  <p>Seulement une tuile qui dépasse la ligne rouge sans avoir été touchée. Toucher une colonne vide est simplement ignoré, donc les touches nerveuses ne gâchent jamais une bonne série.</p>
+  <h3>Les jeunes enfants peuvent-ils y arriver ?</h3>
+  <p>Oui, avec un peu de patience. Les tuiles tombent à vitesse constante et une tuile manquée ne fait que remettre l'enchaînement à zéro : la chanson se rend toujours jusqu'à sa dernière note.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="games.html">Parcourez toute la collection de jeux pour la famille</a> · <a href="memory.html">Testez votre mémoire dans le jeu Paires de mémoire</a> · <a href="typing-test.html">Découvrez la vitesse réelle de vos doigts dans le test de frappe</a> · <a href="whack-a-beaver.html">Essayez un autre jeu de réflexes avec Tape-le-castor</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 
 <footer class="site-footer">
   <div class="container center">
-    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
-    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
-    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>All pages <span class="fm-count">(91)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(91)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
-        <div class="fm-h">Quizzes</div>
-        <a href="quizzes.html">All Quizzes</a>
-        <a href="gk-quiz.html">General Knowledge</a>
+        <div class="fm-h">Quiz</div>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="gk-quiz.html">Culture générale</a>
         <a href="canada-quiz.html">Canada Quiz</a>
-        <a href="fun-quiz.html">Fun Canada Quiz</a>
-        <a href="province-quiz.html">Which Province Are You?</a>
-        <a href="world-quiz.html">World Quiz</a>
-        <a href="science-quiz.html">Science &amp; Space</a>
-        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
-        <a href="citizenship.html">Citizenship Test Practice</a>
-        <a href="ai-quiz.html">AI &amp; Technology</a>
-        <a href="body-quiz.html">Human Body &amp; Health</a>
-        <a href="money-quiz.html">Money Skills for Kids</a>
-        <a href="earth-quiz.html">Earth &amp; Environment</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
+        <a href="science-quiz.html">Sciences et espace</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">IA &amp; technologie</a>
+        <a href="body-quiz.html">Corps humain &amp; santé</a>
+        <a href="money-quiz.html">L'argent expliqué aux enfants</a>
+        <a href="earth-quiz.html">Terre &amp; environnement</a>
       </div>
       <div class="footer-map-col">
-        <div class="fm-h">Driving Test Practice</div>
-        <a href="driving-test.html">Canada Driving Test</a>
-        <a href="ontario-g1-practice-test.html">Ontario G1 Practice Test</a>
-        <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
-        <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
-        <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+        <div class="fm-h">Pratique de l'examen de conduite</div>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
       </div>
       <div class="footer-map-col">
-        <div class="fm-h">Brain &amp; Puzzle Games</div>
-        <a href="word-master.html">Word Master</a>
-        <a href="word-search.html">Word Search</a>
-        <a href="word-guess.html">Word Guess</a>
-        <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
-        <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <div class="fm-h">Jeux de réflexion et casse-têtes</div>
+        <a href="word-master.html">Maître des mots</a>
+        <a href="word-search.html">Mots cachés</a>
+        <a href="word-guess.html">Devine le mot</a>
+        <a href="scramble.html">Mots brouillés</a>
+        <a href="word-hive.html">Ruche de mots</a>
+        <a href="crossword.html">Mots croisés</a>
+        <a href="word-groups.html">Groupes de mots</a>
         <a href="sudoku.html">Sudoku</a>
-        <a href="minesweeper.html">Minesweeper</a>
-        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="minesweeper.html">Démineur</a>
+        <a href="sliding-puzzle.html">Taquin</a>
         <a href="game-2048.html">2048</a>
-        <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
-        <a href="typing-test.html">Typing Speed Test</a>
-        <a href="color-match.html">Color Match</a>
-        <a href="math-race.html">Math Race</a>
-        <a href="times-tables.html">Times Tables Champion</a>
-        <a href="canada-map.html">Map of Canada</a>
-        <a href="flags-game.html">Flags of the World</a>
+        <a href="memory.html">Jeu de mémoire</a>
+        <a href="cube-twist.html">Cube Twist</a>
+        <a href="typing-test.html">Test de vitesse de frappe</a>
+        <a href="color-match.html">Associe les couleurs</a>
+        <a href="math-race.html">Course de maths</a>
+        <a href="times-tables.html">Champion des tables de multiplication</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
       </div>
       <div class="footer-map-col">
-        <div class="fm-h">Action &amp; Classic Games</div>
-        <a href="snake.html">Maple Snake</a>
-        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
-        <a href="tictactoe.html">Tic-Tac-Toe</a>
-        <a href="checkers.html">Checkers</a>
-        <a href="inukshuk.html">Inukshuk Builder</a>
-        <a href="tag.html">Tag</a>
-        <a href="chess.html">Chess</a>
-        <a href="connect4.html">Connect 4</a>
+        <div class="fm-h">Jeux d'action et jeux classiques</div>
+        <a href="snake.html">Serpent érable</a>
+        <a href="whack-a-beaver.html">Tape-le-castor</a>
+        <a href="tile-tap.html">Tile Tap</a>
+        <a href="tictactoe.html">Tic-tac-toe</a>
+        <a href="checkers.html">Dames</a>
+        <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="tag.html">Tague</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Puissance 4</a>
       </div>
       <div class="footer-map-col">
-        <div class="fm-h">Party Games</div>
+        <div class="fm-h">Jeux de groupe</div>
         <a href="charades.html">Charades</a>
-        <a href="imposter.html">Imposter</a>
-        <a href="would-you-rather.html">Would You Rather?</a>
-        <a href="trivia-showdown.html">Trivia Showdown</a>
-        <a href="hold-to-head.html">Hold to Head</a>
-        <a href="top-answers.html">Top Answers</a>
-        <a href="categories-game.html">Categories</a>
-        <a href="story-maker.html">Story Maker</a>
-        <a href="draw-it.html">Draw It</a>
-        <a href="spin-wheel.html">Spin the Wheel</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="categories-game.html">Catégories</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="draw-it.html">Dessine-le</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
       </div>
       <div class="footer-map-col">
-        <div class="fm-h">Blog</div>
-        <a href="blog.html">All Articles</a>
-        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
-        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
-        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
-        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
-        <a href="what-is-confederation.html">What Is Confederation?</a>
-        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
-        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
-        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
-        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
-        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
-        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
-        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
-        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
-        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
-        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
-        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
-        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
-        <a href="canadian-food-poutine-maple-syrup.html">Canadian Food &amp; Maple Syrup</a>
-        <a href="hockey-in-canada.html">Hockey in Canada</a>
-        <a href="canadas-national-parks.html">Canada's National Parks</a>
-        <a href="canadian-inventions.html">Canadian Inventions</a>
-        <a href="winter-in-canada.html">Winter in Canada</a>
-        <a href="canadian-money-explained.html">Canadian Money Explained</a>
-        <a href="canadas-biggest-cities.html">Canada's Biggest Cities</a>
-        <a href="canadian-slang-words.html">Canadian Slang</a>
-        <a href="how-to-get-a-drivers-licence-in-canada.html">Getting a Driver's Licence</a>
-        <a href="newcomer-first-year-in-canada-checklist.html">First Year in Canada Checklist</a>
+        <div class="fm-h">Blogue</div>
+        <a href="blog.html">Tous les articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
+        <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
+        <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
+        <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
+        <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
+        <a href="canada-geography-coast-to-coast.html">La géographie du Canada</a>
+        <a href="canadas-animals-and-wildlife.html">Animaux et faune</a>
+        <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
+        <a href="canadian-holidays-explained.html">Les fêtes canadiennes</a>
+        <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
+        <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Cuisine canadienne &amp; sirop d'érable</a>
+        <a href="hockey-in-canada.html">Le hockey au Canada</a>
+        <a href="canadas-national-parks.html">Les parcs nationaux du Canada</a>
+        <a href="canadian-inventions.html">Inventions canadiennes</a>
+        <a href="winter-in-canada.html">L'hiver au Canada</a>
+        <a href="canadian-money-explained.html">L'argent canadien expliqué</a>
+        <a href="canadas-biggest-cities.html">Les plus grandes villes du Canada</a>
+        <a href="canadian-slang-words.html">L'argot canadien</a>
+        <a href="how-to-get-a-drivers-licence-in-canada.html">Obtenir son permis de conduire</a>
+        <a href="newcomer-first-year-in-canada-checklist.html">Aide-mémoire pour la première année au Canada</a>
       </div>
       <div class="footer-map-col">
-        <div class="fm-h">The Site</div>
-        <a href="index.html">Home</a>
-        <a href="daily.html">Daily Challenge</a>
-        <a href="games.html">All Family Games</a>
-        <a href="about.html">About Us</a>
+        <div class="fm-h">Le site</div>
+        <a href="index.html">Accueil</a>
+        <a href="daily.html">Défi du jour</a>
+        <a href="games.html">Tous les jeux en famille</a>
+        <a href="about.html">À propos</a>
         <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="terms.html">Conditions d'utilisation</a>
       </div>
       </div>
     </details>
-    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
-    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
   </div>
 </footer>
 
@@ -414,9 +452,9 @@ stage.addEventListener('pointerdown',e=>{
 
 buildSongBtns();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="../js/game-fullscreen.js?v=20260804b"></script>
+  <script src="../js/site.js?v=20260804b"></script>
+  <script src="../js/analytics.js?v=20260804b"></script>
+  <script src="../js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Would You Rather? — Family Party Game | Canada Quiz</title>
-<meta name="description" content="Would You Rather? A free family party game with 100+ fun, kid-friendly questions. Pass the phone around and see what everyone picks. No signup.">
-<link rel="stylesheet" href="css/style.css?v=20260803a">
+<meta name="description" content="Would You Rather? A free family party game with nearly 60 fun, kid-friendly questions. Pass the phone around and see what everyone picks. No signup.">
+<link rel="stylesheet" href="css/style.css?v=20260804b">
 <style>
   .wr-wrap{max-width:520px;margin:0 auto;text-align:center}
   .wr-opts{display:flex;flex-direction:column;gap:14px;margin:16px 0}
@@ -61,6 +61,45 @@
       </div>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Would You Rather? puts two silly choices on the screen, one blue and one orange, and asks which one you would take. There is no right answer and no winner. The fun is hearing why your sister picked the pet dragon over the pet unicorn.</p>
+  <p>It was made for family evenings, long car rides and waiting rooms. One person holds the phone and reads both choices out loud. Everybody answers, argues for a moment, then you tap the option most of the room chose and move on.</p>
+  <p>Teachers and group leaders use this kind of game to warm up a shy room, because nobody can be wrong. Younger children who cannot read yet still take part easily, as long as an adult reads the two choices aloud for them.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>Two big buttons hold the choices: the blue one on top, the orange one below, with OR sitting between them.</li>
+    <li>Tapping a button adds one to the tally, so the group can record how many people chose blue and orange.</li>
+    <li>The next question button brings up a new pair, and the counter at the top moves up by one.</li>
+    <li>Close to sixty question pairs are shuffled into a different order every time the page is loaded.</li>
+    <li>When the list reaches the end, the pairs shuffle again, so the running order never repeats itself exactly.</li>
+    <li>A button to all the family games sits beside it, in case the group wants to switch to something else.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Ask everyone to answer at the same moment, on the count of three. It stops the quiet players from simply copying the loudest one.</li>
+    <li>The best part is the reason, not the choice. Make a house rule that every player explains their pick in one single sentence.</li>
+    <li>Use the tally to run a family tournament. Read ten pairs, then see whether blue or orange has won the evening overall.</li>
+    <li>With young children, act the choices out instead of saying them. Flapping your arms like a bird makes the wings-or-tail question far funnier.</li>
+    <li>Pairs like maple syrup on everything or ketchup on everything work beautifully at the dinner table, where somebody will always try to test it.</li>
+    <li>If a player keeps choosing the same colour every round, ask them instead to defend the option they have just turned down.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Is Would You Rather? free to play?</h3>
+  <p>Yes, completely. There is nothing to buy, nothing to unlock and no account to create. Open the page and the first pair of choices is already sitting on the screen waiting for you.</p>
+  <h3>How many players do I need for this game?</h3>
+  <p>It works from two people upward and gets better with a crowd. One phone is enough for a whole room, because one person reads the choices out loud to everybody else.</p>
+  <h3>Are the questions safe for young children?</h3>
+  <p>Yes. The choices stay gentle and silly: pet dragons, talking cats, flying cars and pools of chocolate. Nothing is rude or frightening, so a parent can hand the phone over without reading ahead.</p>
+  <h3>Does this game keep a score?</h3>
+  <p>Under the buttons there is a tally showing how many people picked each side of the question on screen. It is not a score, and it clears when you move on to the next pair.</p>
+  <h3>Can I use this in a classroom or at a party?</h3>
+  <p>Yes. Read the pairs from a projector, or pass a tablet around the circle. Because no answer can be wrong, quieter students often speak up more easily than they would in an ordinary quiz.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="games.html">See the full list of family games on the site</a> · <a href="charades.html">Act out words with the family charades game</a> · <a href="trivia-showdown.html">Challenge the family to a trivia showdown</a> · <a href="spin-wheel.html">Let the spinning wheel decide who goes first</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 <footer class="site-footer">
   <div class="container center">
@@ -100,15 +139,15 @@
         <a href="word-search.html">Word Search</a>
         <a href="word-guess.html">Word Guess</a>
         <a href="scramble.html">Word Scramble</a>
-        <a href="spelling-bee.html">Spelling Bee</a>
+        <a href="word-hive.html">Word Hive</a>
         <a href="crossword.html">Crossword</a>
-        <a href="connections.html">Word Groups</a>
+        <a href="word-groups.html">Word Groups</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Minesweeper</a>
         <a href="sliding-puzzle.html">Sliding Puzzle</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Memory Match</a>
-        <a href="rubiks-cube.html">Rubik's Cube</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
         <a href="math-race.html">Math Race</a>
@@ -120,7 +159,7 @@
         <div class="fm-h">Action &amp; Classic Games</div>
         <a href="snake.html">Maple Snake</a>
         <a href="whack-a-beaver.html">Whack-a-Beaver</a>
-        <a href="piano-tiles.html">Piano Tiles</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-Tac-Toe</a>
         <a href="checkers.html">Checkers</a>
         <a href="inukshuk.html">Inukshuk Builder</a>
@@ -246,9 +285,9 @@ function pick(which){
 function nextQ(){ idx=(idx+1)%order.length; if(idx===0) order=shuffle(order); show(); window.scrollTo(0,0); }
 start();
 </script>
-  <script src="js/game-fullscreen.js?v=20260803a"></script>
-  <script src="js/site.js?v=20260803a"></script>
-  <script src="js/analytics.js?v=20260803a"></script>
-  <script src="js/ads.js?v=20260803a" defer></script>
+  <script src="js/game-fullscreen.js?v=20260804b"></script>
+  <script src="js/site.js?v=20260804b"></script>
+  <script src="js/analytics.js?v=20260804b"></script>
+  <script src="js/ads.js?v=20260804b" defer></script>
 </body>
 </html>

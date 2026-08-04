@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sudoku — Casse-tête de chiffres gratuit | Jeux en famille</title>
 <meta name="description" content="Jeu de sudoku gratuit avec niveaux facile, moyen et difficile. Remplissez la grille pour que chaque rangée, colonne et boîte contienne les chiffres 1 à 9. Se joue sur téléphone et ordinateur.">
-<link rel="stylesheet" href="../css/style.css?v=20260803a">
+<link rel="stylesheet" href="../css/style.css?v=20260804b">
 <style>
   .sk-wrap{max-width:440px;margin:0 auto;text-align:center}
   .sk-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:0;max-width:420px;margin:12px auto;border:3px solid var(--ink);border-radius:6px;overflow:hidden;touch-action:manipulation}
@@ -73,6 +73,42 @@
       </div>
     </div>
   </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de ce jeu</h2>
+  <p>Le sudoku est un casse-tête de chiffres tranquille, bon pour cinq minutes comme pour quarante. Neuf rangées, neuf colonnes et neuf petites boîtes doivent toutes contenir les chiffres de un à neuf, sans jamais répéter un chiffre.</p>
+  <p>Cette page fabrique une grille toute neuve chaque fois que vous en demandez une : vous ne reverrez jamais la même. Chaque grille est vérifiée pendant sa création pour garantir une seule bonne réponse.</p>
+  <p>Il convient à qui aime réfléchir lentement : un parent avec un café, un élève dans l'autobus, un grand-parent qui en faisait dans le journal. Aucun compte à rebours, aucune pénalité si vous vous arrêtez.</p>
+  <h2>Comment ça marche</h2>
+  <ul>
+    <li>Un menu déroulant en haut permet de choisir facile, moyen ou difficile, et le niveau moyen est déjà choisi à l'ouverture.</li>
+    <li>Les niveaux plus durs commencent tout simplement avec moins de chiffres donnés, ce qui vous laisse plus de cases à trouver.</li>
+    <li>Touchez une case vide pour la choisir, puis touchez un chiffre sur le clavier placé juste sous la grille.</li>
+    <li>La touche d'effacement du clavier vide une case, et sur un ordinateur les touches de chiffres et Retour arrière fonctionnent aussi.</li>
+    <li>Le bouton de vérification colore en rouge les cases fautives et vous dit combien de cases restent vides.</li>
+    <li>Terminez la grille correctement et un message de félicitations apparaît aussitôt, sans que vous appuyiez sur quoi que ce soit.</li>
+  </ul>
+  <h2>Conseils pour jouer</h2>
+  <ul>
+    <li>Commencez par chercher les rangées, colonnes ou boîtes qui contiennent déjà sept ou huit chiffres : les chiffres manquants s'y trouvent presque gratuitement.</li>
+    <li>Si un chiffre ne peut aller que dans une seule case d'une boîte, placez-le, même si cette case pourrait aussi accueillir d'autres chiffres.</li>
+    <li>Des traits épais délimitent les neuf boîtes de trois sur trois. Lire une boîte comme un tout, au lieu de case par case, accélère beaucoup votre recherche.</li>
+    <li>Deviner fonctionne mal ici. Un seul chiffre erroné gâche en silence tout ce que vous placez ensuite : il vaut mieux prouver un chiffre avant de l'écrire.</li>
+    <li>Les chiffres de départ sont placés de façon symétrique autour du centre de la grille, l'allure classique des casse-tête imprimés.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>Chaque grille a-t-elle une seule solution ?</h3>
+  <p>Oui. Pendant la création de la grille, un chiffre n'est retiré que si le casse-tête garde une solution unique. Chaque case se déduit donc par logique, jamais par chance.</p>
+  <h3>Est-ce agréable à jouer sur un téléphone ?</h3>
+  <p>Oui. La grille s'ajuste à l'écran et le clavier de chiffres se trouve juste en dessous : tout se fait avec le pouce. Aucun clavier n'est nécessaire sur un petit écran.</p>
+  <h3>Que faire si je suis bloqué ?</h3>
+  <p>Utilisez le bouton de vérification. Les cases fautives deviennent rouges et on vous indique combien de cases restent. Effacez ensuite ce dont vous doutez et reprenez ce coin de la grille.</p>
+  <h3>Ma grille sera-t-elle encore là si je quitte la page ?</h3>
+  <p>Non. La grille n'existe que dans la page ; fermer l'onglet met fin au casse-tête. Demander une nouvelle grille en crée aussi une autre, alors terminez avant d'en commencer une.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="games.html">Voyez la liste complète des casse-tête et jeux de logique</a> · <a href="minesweeper.html">Nettoyez une grille sans toucher une mine cachée</a> · <a href="math-race.html">Affrontez le chrono avec des questions de calcul mental</a> · <a href="daily.html">Relevez le quiz du jour et le mot du jour</a></p>
+</section>
+<!--/PAGEDOC-->
 </main>
 
 <footer class="site-footer">
@@ -113,15 +149,15 @@
         <a href="word-search.html">Mots cachés</a>
         <a href="word-guess.html">Devine le mot</a>
         <a href="scramble.html">Mots brouillés</a>
-        <a href="spelling-bee.html">Concours d'épellation</a>
+        <a href="word-hive.html">Ruche de mots</a>
         <a href="crossword.html">Mots croisés</a>
-        <a href="connections.html">Groupes de mots</a>
+        <a href="word-groups.html">Groupes de mots</a>
         <a href="sudoku.html">Sudoku</a>
         <a href="minesweeper.html">Démineur</a>
         <a href="sliding-puzzle.html">Taquin</a>
         <a href="game-2048.html">2048</a>
         <a href="memory.html">Jeu de mémoire</a>
-        <a href="rubiks-cube.html">Cube Rubik</a>
+        <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Test de vitesse de frappe</a>
         <a href="color-match.html">Associe les couleurs</a>
         <a href="math-race.html">Course de maths</a>
@@ -133,7 +169,7 @@
         <div class="fm-h">Jeux d'action et jeux classiques</div>
         <a href="snake.html">Serpent érable</a>
         <a href="whack-a-beaver.html">Tape-le-castor</a>
-        <a href="piano-tiles.html">Touches de piano</a>
+        <a href="tile-tap.html">Tile Tap</a>
         <a href="tictactoe.html">Tic-tac-toe</a>
         <a href="checkers.html">Dames</a>
         <a href="inukshuk.html">Construis un inukshuk</a>
@@ -292,9 +328,9 @@ document.addEventListener('keydown',e=>{
 });
 newGame();
 </script>
-  <script src="../js/game-fullscreen.js?v=20260803a"></script>
-  <script src="../js/site.js?v=20260803a"></script>
-  <script src="../js/analytics.js?v=20260803a"></script>
-  <script src="../js/ads.js?v=20260803a" defer></script>
+  <script src="../js/game-fullscreen.js?v=20260804b"></script>
+  <script src="../js/site.js?v=20260804b"></script>
+  <script src="../js/analytics.js?v=20260804b"></script>
+  <script src="../js/ads.js?v=20260804b" defer></script>
 </body>
 </html>
