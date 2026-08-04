@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Word Search — Free Puzzle, 3 Levels | Family Games</title>
 <meta name="description" content="Free word search puzzle with easy, medium, and hard levels and a variety of topics — animals, nature, space, food and more. Fun for kids and adults. New puzzle every time.">
-<link rel="stylesheet" href="css/style.css?v=20260802d">
+<link rel="stylesheet" href="css/style.css?v=20260803a">
 <style>
   .ws-wrap{max-width:480px;margin:0 auto}
   .ws-grid{display:grid;gap:2px;margin:10px auto;touch-action:none;user-select:none;-webkit-user-select:none}
@@ -287,9 +287,9 @@ gridEl.addEventListener('pointermove',e=>{ if(!selecting)return; const t=cellFro
 document.addEventListener('pointerup',e=>{ if(!selecting)return; selecting=false; const t=cellFromPoint(e.clientX,e.clientY); if(t){ trySelect(startRC[0],startRC[1],+t.dataset.r,+t.dataset.c); } clearSel(); startRC=null; });
 newPuzzle();
 </script>
-  <script src="js/game-fullscreen.js?v=20260802d"></script>
-  <script src="js/site.js?v=20260802d"></script>
-  <script src="js/analytics.js?v=20260802d"></script>
-  <script src="js/ads.js?v=20260802d" defer></script>
+  <script src="js/game-fullscreen.js?v=20260803a"></script>
+  <script src="js/site.js?v=20260803a"></script>
+  <script src="js/analytics.js?v=20260803a"></script>
+  <script src="js/ads.js?v=20260803a" defer></script>
 </body>
 </html>

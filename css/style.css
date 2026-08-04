@@ -334,3 +334,15 @@ main li a:not(.btn):not(.card),
 main .muted a:not(.btn){text-decoration:underline;text-underline-offset:2px}
 main p a:not(.btn):hover,
 main li a:not(.btn):hover{text-decoration:underline}
+
+/* ---- General Knowledge: Easy / Medium / Hard picker ---------------------- */
+.lvl-pick{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px auto 4px;max-width:560px}
+.lvl-pick .lvl{flex:1 1 150px;min-height:64px;cursor:pointer;
+  background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:14px;
+  padding:10px 12px;font:inherit;font-weight:700;font-size:1rem;line-height:1.25;
+  transition:background .15s,border-color .15s,color .15s}
+.lvl-pick .lvl small{display:block;font-weight:600;font-size:.72rem;margin-top:3px;color:var(--muted)}
+.lvl-pick .lvl:hover{border-color:var(--red-aa)}
+.lvl-pick .lvl.on{background:var(--red-aa);border-color:var(--red-aa);color:#fff}
+.lvl-pick .lvl.on small{color:#fff}
+.lvl-pick .lvl:focus-visible{outline:3px solid var(--ink);outline-offset:2px}

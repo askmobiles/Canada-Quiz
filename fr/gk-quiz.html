@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz de culture générale — Monde, sciences, animaux, histoire et plus</title>
-<meta name="description" content="Quiz gratuit de culture générale pour toute la famille : géographie mondiale, science, animaux, histoire, sports et faits amusants. Nouvelles questions à chaque fois. Sans inscription.">
-<link rel="stylesheet" href="../css/style.css?v=20260802d">
+<title>Quiz de culture générale — facile, moyen et difficile | Sciences, maths, histoire et plus</title>
+<meta name="description" content="Quiz de culture générale gratuit avec 405 questions réparties en trois niveaux : facile pour les enfants, moyen, et difficile pour les adultes. Sciences, mathématiques, animaux, histoire, sport, technologie, mots et arts. Sans inscription.">
+<link rel="stylesheet" href="../css/style.css?v=20260803a">
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
@@ -35,9 +35,15 @@
   <section id="start" class="panel center">
     <div style="font-size:46px">🌍</div>
     <h1>Quiz de culture générale</h1>
-    <h2 class="sr-only">Sujets de quiz</h2>
-    <p class="muted" style="max-width:600px;margin:0 auto 8px">Des quiz amusants et éducatifs pour toute la famille — choisissez un sujet ! Chaque réponse est accompagnée d'une courte explication, et vous obtenez de nouvelles questions à chaque partie.</p>
-  <details class="howto"><summary>📖 Comment jouer</summary><p>Choisissez un sujet, puis répondez à chaque question en touchant une option. Vous saurez tout de suite si vous avez raison, avec une courte explication pour apprendre. Chaque partie vous propose de nouvelles questions — terminez pour voir votre pointage, puis essayez un autre sujet !</p></details>
+    <h2 class="sr-only">Choisissez un niveau, puis un sujet</h2>
+    <p class="muted" style="max-width:640px;margin:0 auto 8px">Neuf sujets, trois niveaux, 405 questions. Sciences, mathématiques, animaux, histoire, sport, technologie, mots et arts. Le niveau Facile est fait pour les enfants, le niveau Difficile mettra n'importe quel adulte à l'épreuve. Chaque réponse est accompagnée d'une courte explication, et vous obtenez de nouvelles questions à chaque partie.</p>
+  <details class="howto"><summary>📖 Comment jouer</summary><p>Choisissez d'abord un niveau : Facile, Moyen ou Difficile. Choisissez ensuite un sujet et répondez à 10 questions en touchant une option. Vous voyez tout de suite si vous avez raison, avec une courte explication pour apprendre. Terminez pour voir votre score, puis essayez un niveau plus difficile ou un nouveau sujet.</p></details>
+
+    <div class="lvl-pick" role="group" aria-label="Niveau de difficulté">
+      <button type="button" class="lvl on" data-lvl="easy" aria-pressed="true"><span aria-hidden="true">😊</span> Facile<small>7 ans et plus</small></button>
+      <button type="button" class="lvl" data-lvl="medium" aria-pressed="false"><span aria-hidden="true">🙂</span> Moyen<small>Adolescents et adultes</small></button>
+      <button type="button" class="lvl" data-lvl="hard" aria-pressed="false"><span aria-hidden="true">🔥</span> Difficile<small>Un vrai défi</small></button>
+    </div>
 
     <div class="grid" id="cat-grid" style="margin-top:20px"></div>
   </section>
@@ -45,6 +51,7 @@
   <section id="quiz" class="panel" style="display:none">
     <div class="quiz-meta">
       <span class="pill" id="counter">Question 1</span>
+      <span class="pill" id="level-pill">Facile</span>
       <span class="pill" id="score-pill">Score : 0</span>
     </div>
     <div class="progress"><span id="bar"></span></div>
@@ -52,7 +59,7 @@
     <div class="options" id="opts"></div>
     <div id="explain-box" class="explain" style="display:none"></div>
     <div class="center" style="margin-top:18px">
-      <button class="btn" id="next-btn" style="display:none" onclick="nextQ()">Suivant &rarr ;</button>
+      <button class="btn" id="next-btn" style="display:none" onclick="nextQ()">Suivant →</button>
     </div>
   </section>
 
@@ -60,11 +67,14 @@
     <div class="result-big">🌟</div>
     <h2 id="r-title"></h2>
     <p class="score" id="r-score"></p>
+    <p class="muted" id="r-where"></p>
     <p class="muted" id="r-msg"></p>
     <div style="margin:18px 0">
-      <button class="btn btn-lg" onclick="location.reload()">Choisir un autre sujet</button>
-      <a class="btn btn-ghost btn-lg" href="quizzes.html">Tous les quiz</a>
+      <button class="btn btn-lg" id="again-btn">Rejouer</button>
+      <button class="btn btn-green btn-lg" id="step-up-btn" style="display:none"></button>
+      <button class="btn btn-ghost btn-lg" id="back-btn">Choisir un autre sujet</button>
     </div>
+    <p><a href="quizzes.html">Voir tous les quiz</a></p>
   </section>
 </main>
 
@@ -87,10 +97,10 @@
         <a href="science-quiz.html">Sciences et espace</a>
         <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
         <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
-        <a href="ai-quiz.html">IA &amp ; technologie</a>
-        <a href="body-quiz.html">Corps humain &amp ; santé</a>
+        <a href="ai-quiz.html">IA &amp; technologie</a>
+        <a href="body-quiz.html">Corps humain &amp; santé</a>
         <a href="money-quiz.html">L'argent expliqué aux enfants</a>
-        <a href="earth-quiz.html">Terre &amp ; environnement</a>
+        <a href="earth-quiz.html">Terre &amp; environnement</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Pratique de l'examen de conduite</div>
@@ -167,7 +177,7 @@
         <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
         <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
         <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
-        <a href="canadian-food-poutine-maple-syrup.html">Cuisine canadienne &amp ; sirop d'érable</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Cuisine canadienne &amp; sirop d'érable</a>
         <a href="hockey-in-canada.html">Le hockey au Canada</a>
         <a href="canadas-national-parks.html">Les parcs nationaux du Canada</a>
         <a href="canadian-inventions.html">Inventions canadiennes</a>
@@ -195,277 +205,198 @@
   </div>
 </footer>
 
+<script src="../js/gk-questions.js?v=20260803a"></script>
 <script>
-const BANK = {
-  "World & Geography": { emoji:"🗺️", q:[
-    {q:"What is the capital city of France?",o:["London","Paris","Rome","Madrid"],a:1,e:"Paris is the capital of France."},
-    {q:"Which is the largest ocean on Earth?",o:["Atlantic","Indian","Pacific","Arctic"],a:2,e:"The Pacific Ocean is the largest and deepest ocean."},
-    {q:"How many continents are there in the world?",o:["5","6","7","8"],a:2,e:"There are 7 continents."},
-    {q:"What is the largest hot desert in the world?",o:["Sahara","Gobi","Arabian","Kalahari"],a:0,e:"The Sahara Desert in Africa is the largest hot desert."},
-    {q:"Which continent is the largest by area?",o:["Africa","Asia","Europe","North America"],a:1,e:"Asia is the largest continent."},
-    {q:"The Great Pyramids are found in which country?",o:["Mexico","Greece","Egypt","India"],a:2,e:"The Great Pyramids are in Egypt."},
-    {q:"What is the capital city of Japan?",o:["Beijing","Seoul","Bangkok","Tokyo"],a:3,e:"Tokyo is the capital of Japan."},
-    {q:"Which is the tallest mountain in the world?",o:["Mount Everest","K2","Kilimanjaro","Mont Blanc"],a:0,e:"Mount Everest is the highest mountain above sea level."},
-    {q:"What is the capital city of Italy?",o:["Venice","Milan","Rome","Naples"],a:2,e:"Rome is the capital of Italy."},
-    {q:"Which country has the most people in the world?",o:["China","India","USA","Russia"],a:1,e:"India is now the most populous country in the world."},
-    {q:"The Great Barrier Reef is found near which country?",o:["Brazil","Australia","Japan","Kenya"],a:1,e:"The Great Barrier Reef is off the coast of Australia."},
-    {q:"What is the capital city of the United Kingdom?",o:["Manchester","Dublin","London","Edinburgh"],a:2,e:"London is the capital of the United Kingdom."},
-    {q:"In which continent is Egypt located?",o:["Asia","Africa","Europe","South America"],a:1,e:"Egypt is in Africa."},
-    {q:"The Amazon rainforest is mostly in which country?",o:["Brazil","Mexico","India","Congo"],a:0,e:"Most of the Amazon rainforest is in Brazil."},
-    {q:"Which is the smallest continent?",o:["Europe","Antarctica","Australia","South America"],a:2,e:"Australia is the smallest continent."},
-    {q:"What is the capital city of Canada?",o:["Toronto","Ottawa","Vancouver","Montreal"],a:1,e:"Ottawa is the capital of Canada."},
-    {q:"Which river is the longest in the world (commonly taught)?",o:["Amazon","Nile","Yangtze","Mississippi"],a:1,e:"The Nile in Africa is usually taught as the longest river."},
-    {q:"Mount Fuji is a famous mountain in which country?",o:["China","Japan","Nepal","Peru"],a:1,e:"Mount Fuji is in Japan."}
-  ,
-    {q:"What is the capital city of Portugal?",o:["Madrid","Lisbon","Athens","Dublin"],a:1,e:"Lisbon sits beside the Tagus River on Portugal's Atlantic coast."},
-    {q:"Which body of water is so salty that swimmers float easily?",o:["The Black Sea","The Red Sea","The Caspian Sea","The Dead Sea"],a:3,e:"The Dead Sea is packed with salt, and salty water holds people up."},
-    {q:"Deep, narrow sea inlets called fjords are famous in which country?",o:["Norway","Greece","Portugal","Poland"],a:0,e:"Glaciers carved Norway's fjords long ago and left steep cliffs beside the sea."},
-    {q:"Which continent is made up of the greatest number of countries?",o:["Europe","Asia","South America","Africa"],a:3,e:"Africa is divided into 54 countries, more than any other continent."},
-    {q:"The Panama Canal joins the Atlantic Ocean to which ocean?",o:["Arctic","Indian","Pacific","Southern"],a:2,e:"Ships cut through Panama instead of sailing all the way around South America."},
-    {q:"Which large island country lies off the southeast coast of Africa?",o:["Madagascar","Sri Lanka","Cuba","Iceland"],a:0,e:"Madagascar split from Africa long ago, so many of its animals live nowhere else."},
-    {q:"What is the imaginary line at zero degrees longitude called?",o:["The Tropic of Cancer","The Prime Meridian","The Arctic Circle","The Date Line"],a:1,e:"This line passes through Greenwich in England and marks where longitude begins."}
-  ]},
-  "Science & Nature": { emoji:"🔬", q:[
-    {q:"Which planet is known as the Red Planet?",o:["Venus","Mars","Jupiter","Saturn"],a:1,e:"Mars looks red because of iron (rust) on its surface."},
-    {q:"What gas do plants take in from the air to make food?",o:["Oxygen","Carbon dioxide","Nitrogen","Helium"],a:1,e:"Plants take in carbon dioxide and give out oxygen."},
-    {q:"What is the chemical formula for water?",o:["CO2","O2","H2O","NaCl"],a:2,e:"Water is H2O."},
-    {q:"What is the closest star to Earth?",o:["The Moon","The Sun","Polaris","Mars"],a:1,e:"The Sun is the closest star to Earth."},
-    {q:"How many bones are in the adult human body?",o:["106","206","306","406"],a:1,e:"An adult body has 206 bones."},
-    {q:"What force pulls objects down toward the ground?",o:["Magnetism","Gravity","Friction","Electricity"],a:1,e:"Gravity pulls objects toward Earth."},
-    {q:"What is the largest planet in our solar system?",o:["Earth","Saturn","Jupiter","Neptune"],a:2,e:"Jupiter is the largest planet."},
-    {q:"How many legs does an insect have?",o:["4","6","8","10"],a:1,e:"All insects have 6 legs."},
-    {q:"What gas do humans need to breathe to live?",o:["Carbon dioxide","Oxygen","Hydrogen","Helium"],a:1,e:"Humans breathe in oxygen to live."},
-    {q:"How many planets are in our solar system?",o:["7","8","9","10"],a:1,e:"There are 8 planets in our solar system."},
-    {q:"What do bees make?",o:["Milk","Honey","Silk","Wax only"],a:1,e:"Bees make honey."},
-    {q:"What part of a plant makes food using sunlight?",o:["Roots","Leaves","Flowers","Seeds"],a:1,e:"Leaves make food using sunlight (photosynthesis)."},
-    {q:"What is frozen water called?",o:["Steam","Ice","Rain","Fog"],a:1,e:"Frozen water is called ice."},
-    {q:"Which of these is the fastest?",o:["Sound","Light","Wind","A car"],a:1,e:"Light travels faster than anything else."},
-    {q:"What do we call animals that eat only plants?",o:["Carnivores","Herbivores","Omnivores","Insectivores"],a:1,e:"Herbivores eat only plants."},
-    {q:"Which planet do we live on?",o:["Mars","Venus","Earth","Mercury"],a:2,e:"We live on Earth."},
-    {q:"What happens to water when it gets very hot and boils?",o:["It turns to ice","It turns to steam","It disappears forever","It turns to oil"],a:1,e:"Boiling water turns into steam (water vapour)."}
-  ,
-    {q:"At what temperature does water freeze at sea level?",o:["0 °C","10 °C","32 °C","100 °C"],a:0,e:"Water turns into ice at 0 degrees Celsius, the freezing point used in Canada."},
-    {q:"What is the change from caterpillar to butterfly called?",o:["Migration","Photosynthesis","Hibernation","Metamorphosis"],a:3,e:"Metamorphosis is the big body change that many insects and frogs go through."},
-    {q:"Which planet has a giant storm called the Great Red Spot?",o:["Mars","Jupiter","Neptune","Venus"],a:1,e:"Jupiter's Great Red Spot is a swirling storm wider than the whole Earth."},
-    {q:"What are the tiny building blocks that make up all living things?",o:["Cells","Crystals","Magnets","Fossils"],a:0,e:"Every plant and animal is built from cells, far too small to see without a microscope."},
-    {q:"Which gas makes up most of the air around us?",o:["Nitrogen","Hydrogen","Oxygen","Helium"],a:0,e:"Nitrogen fills about 78 percent of the air, and oxygen fills about 21 percent."},
-    {q:"Which scientist is famous for the equation E = mc²?",o:["Marie Curie","Galileo Galilei","Charles Darwin","Albert Einstein"],a:3,e:"Albert Einstein showed that matter and energy are two forms of the same thing."},
-    {q:"What do we call a scientist who studies rocks?",o:["A biologist","A geologist","An astronomer","A chemist"],a:1,e:"Geologists read rocks like a history book to learn how Earth has changed."}
-  ]},
-  "Animals": { emoji:"🦁", q:[
-    {q:"What is the largest animal on Earth?",o:["Elephant","Blue whale","Giraffe","Shark"],a:1,e:"The blue whale is the largest animal ever."},
-    {q:"Which is the fastest land animal?",o:["Lion","Horse","Cheetah","Kangaroo"],a:2,e:"The cheetah is the fastest land animal."},
-    {q:"How many hearts does an octopus have?",o:["1","2","3","4"],a:2,e:"An octopus has three hearts."},
-    {q:"Which bird cannot fly?",o:["Eagle","Penguin","Parrot","Owl"],a:1,e:"Penguins cannot fly but are great swimmers."},
-    {q:"What is the tallest animal in the world?",o:["Elephant","Giraffe","Horse","Camel"],a:1,e:"The giraffe is the tallest animal."},
-    {q:"What do you call a baby dog?",o:["Kitten","Cub","Puppy","Calf"],a:2,e:"A baby dog is a puppy."},
-    {q:"Which animal is known as the 'King of the Jungle'?",o:["Tiger","Lion","Bear","Wolf"],a:1,e:"The lion is called the King of the Jungle."},
-    {q:"How many legs does a spider have?",o:["6","8","10","12"],a:1,e:"Spiders have 8 legs."},
-    {q:"What is the largest land animal?",o:["Elephant","Rhino","Hippo","Giraffe"],a:0,e:"The elephant is the largest land animal."},
-    {q:"What do you call a baby cat?",o:["Puppy","Kitten","Cub","Chick"],a:1,e:"A baby cat is a kitten."},
-    {q:"Which animal is famous for being very slow?",o:["Cheetah","Sloth","Rabbit","Horse"],a:1,e:"The sloth is famous for being very slow."},
-    {q:"Which animal has a long trunk?",o:["Giraffe","Elephant","Camel","Zebra"],a:1,e:"The elephant has a long trunk."},
-    {q:"Bees, ants, and butterflies are all types of…",o:["Fish","Birds","Insects","Reptiles"],a:2,e:"They are all insects."},
-    {q:"What do you call a group of wolves?",o:["A herd","A pack","A flock","A school"],a:1,e:"A group of wolves is called a pack."},
-    {q:"Which sea animal is very smart and has eight arms?",o:["Shark","Octopus","Dolphin","Crab"],a:1,e:"The octopus has eight arms and is very intelligent."},
-    {q:"Which animal is known for its black and white stripes?",o:["Leopard","Zebra","Cheetah","Tiger"],a:1,e:"The zebra has black and white stripes."},
-    {q:"What do you call a baby cow?",o:["Calf","Kid","Foal","Lamb"],a:0,e:"A baby cow is a calf."}
-  ,
-    {q:"What do you call a baby sheep?",o:["A kid","A foal","A calf","A lamb"],a:3,e:"A lamb stays close to its mother for the first months of its life."},
-    {q:"Which mammal is able to fly?",o:["Bat","Squirrel","Rabbit","Mouse"],a:0,e:"Bats have skin stretched between long finger bones, and it works like a wing."},
-    {q:"What is a group of lions called?",o:["A herd","A pride","A flock","A pack"],a:1,e:"A pride is a lion family that hunts and rests together on the grasslands."},
-    {q:"How many humps does a Bactrian camel have?",o:["None","One","Two","Three"],a:2,e:"Bactrian camels have two humps, while dromedary camels have one."},
-    {q:"Which bird is well known for copying human speech?",o:["Parrot","Pelican","Penguin","Pigeon"],a:0,e:"Parrots copy sounds they hear often, including words from the people around them."},
-    {q:"What do we call an animal that eats both plants and meat?",o:["A carnivore","A herbivore","A scavenger","An omnivore"],a:3,e:"Bears and people are omnivores, because they eat both plants and meat."},
-    {q:"Which animal carries its baby, called a joey, in a pouch?",o:["Kangaroo","Otter","Badger","Raccoon"],a:0,e:"A newborn kangaroo is tiny and keeps growing safely inside its mother's pouch."}
-  ]},
-  "History": { emoji:"🏛️", q:[
-    {q:"Who was the first person to walk on the Moon?",o:["Buzz Aldrin","Yuri Gagarin","Neil Armstrong","John Glenn"],a:2,e:"Neil Armstrong walked on the Moon in 1969."},
-    {q:"Who painted the famous 'Mona Lisa'?",o:["Picasso","Van Gogh","Leonardo da Vinci","Michelangelo"],a:2,e:"Leonardo da Vinci painted the Mona Lisa."},
-    {q:"Which famous ship sank in 1912?",o:["Titanic","Mayflower","Santa Maria","Endeavour"],a:0,e:"The Titanic sank in 1912."},
-    {q:"The Great Wall is located in which country?",o:["Japan","India","China","Korea"],a:2,e:"The Great Wall of China."},
-    {q:"In which country did the Olympic Games first begin?",o:["Italy","Greece","Egypt","England"],a:1,e:"The ancient Olympics began in Greece."},
-    {q:"Who wrote the famous play 'Romeo and Juliet'?",o:["Charles Dickens","William Shakespeare","Mark Twain","Homer"],a:1,e:"William Shakespeare wrote Romeo and Juliet."},
-    {q:"Ancient Romans mainly spoke which language?",o:["Greek","Latin","Spanish","French"],a:1,e:"The Romans spoke Latin."},
-    {q:"The Statue of Liberty was a gift to the USA from which country?",o:["England","France","Spain","Italy"],a:1,e:"France gave the Statue of Liberty to the USA."},
-    {q:"Ancient Egyptian kings were called…",o:["Emperors","Pharaohs","Sultans","Czars"],a:1,e:"Egyptian kings were called pharaohs."},
-    {q:"Which explorer is often credited with reaching the Americas in 1492?",o:["Marco Polo","Christopher Columbus","Vasco da Gama","Magellan"],a:1,e:"Christopher Columbus reached the Americas in 1492."},
-    {q:"The Egyptian pyramids were built mainly as…",o:["Palaces","Tombs","Temples","Forts"],a:1,e:"The pyramids were built as tombs for the pharaohs."},
-    {q:"Who was the first President of the United States?",o:["Abraham Lincoln","George Washington","Thomas Jefferson","John Adams"],a:1,e:"George Washington was the first U.S. President."},
-    {q:"The ancient Colosseum is found in which city?",o:["Athens","Rome","Cairo","Paris"],a:1,e:"The Colosseum is in Rome, Italy."},
-    {q:"Which ancient people built Machu Picchu in South America?",o:["Aztecs","Inca","Maya","Vikings"],a:1,e:"The Inca built Machu Picchu."},
-    {q:"Who is credited with inventing the telephone?",o:["Thomas Edison","Alexander Graham Bell","Nikola Tesla","Henry Ford"],a:1,e:"Alexander Graham Bell is credited with the telephone."},
-    {q:"Which famous scientist came up with the theory of gravity after (legend says) seeing an apple fall?",o:["Einstein","Isaac Newton","Galileo","Darwin"],a:1,e:"Sir Isaac Newton is famous for the theory of gravity."}
-  ,
-    {q:"The Vikings sailed from which part of Europe?",o:["Southern Europe","Northern Europe","Eastern Europe","Central Europe"],a:1,e:"Viking sailors came from Norway, Sweden and Denmark in northern Europe."},
-    {q:"In which year did the Second World War end?",o:["1918","1939","1945","1950"],a:2,e:"The Second World War ended in 1945 after six years of fighting."},
-    {q:"Whose expedition was the first to sail all the way around the world?",o:["Marco Polo","Captain Cook","Vasco da Gama","Ferdinand Magellan"],a:3,e:"Magellan's ships finished the voyage in 1522, although he died along the way."},
-    {q:"The Silk Road was a famous trade route between Europe and which continent?",o:["Asia","Africa","Australia","South America"],a:0,e:"Traders carried silk, spices and new ideas along this route for hundreds of years."},
-    {q:"The ancient Egyptians wrote using small pictures called what?",o:["Hieroglyphics","Runes","Calligraphy","Braille"],a:0,e:"Hieroglyphics used pictures to stand for sounds and words, often carved into stone."},
-    {q:"Which nurse became known as 'The Lady with the Lamp'?",o:["Amelia Earhart","Rosa Parks","Jane Austen","Florence Nightingale"],a:3,e:"Florence Nightingale cared for wounded soldiers at night and made hospitals much cleaner."},
-    {q:"The Wright brothers are remembered for building the first powered what?",o:["Submarine","Motorcycle","Airplane","Steam train"],a:2,e:"In 1903 the Wright brothers flew a powered airplane for the first time."}
-  ]},
-  "Sports": { emoji:"⚽", q:[
-    {q:"How many players from one team are on a soccer field at once?",o:["9","10","11","12"],a:2,e:"A soccer team has 11 players on the field."},
-    {q:"How many rings are on the Olympic flag?",o:["3","4","5","6"],a:2,e:"The Olympic flag has 5 rings."},
-    {q:"Which sport uses a racket and a shuttlecock?",o:["Tennis","Badminton","Squash","Cricket"],a:1,e:"Badminton uses a shuttlecock."},
-    {q:"In which sport can you score a 'strike' or a 'spare'?",o:["Bowling","Golf","Boxing","Darts"],a:0,e:"Strikes and spares are in bowling."},
-    {q:"How many points is a single free throw worth in basketball?",o:["1","2","3","4"],a:0,e:"A free throw is worth 1 point."},
-    {q:"In which sport would you perform a 'slam dunk'?",o:["Volleyball","Basketball","Tennis","Hockey"],a:1,e:"A slam dunk is in basketball."},
-    {q:"How many players are on a basketball team on the court?",o:["4","5","6","7"],a:1,e:"Each basketball team has 5 players on the court."},
-    {q:"What is Canada's national winter sport?",o:["Curling","Ice hockey","Skiing","Skating"],a:1,e:"Ice hockey is Canada's national winter sport."},
-    {q:"In tennis, a score of zero is called…",o:["Nil","Love","Duck","Zip"],a:1,e:"In tennis, zero is called 'love'."},
-    {q:"Which sport is played with clubs and a small white ball, aiming for holes?",o:["Golf","Cricket","Hockey","Polo"],a:0,e:"Golf uses clubs and holes."},
-    {q:"How many strikes make an 'out' in baseball?",o:["2","3","4","5"],a:1,e:"Three strikes make an out in baseball."},
-    {q:"Which sport uses a flat rubber disc called a 'puck'?",o:["Soccer","Ice hockey","Rugby","Cricket"],a:1,e:"Ice hockey uses a puck."},
-    {q:"The Summer Olympic Games are held every how many years?",o:["2","3","4","5"],a:2,e:"The Summer Olympics are held every 4 years."},
-    {q:"In which sport might you hear the word 'checkmate'?",o:["Chess","Boxing","Fencing","Judo"],a:0,e:"'Checkmate' is used in chess."},
-    {q:"How many players are on the ice for one hockey team (usually)?",o:["5","6","7","8"],a:1,e:"Usually 6 players are on the ice, including the goalie."},
-    {q:"What do you call the person who leads and controls a soccer match?",o:["Coach","Referee","Captain","Manager"],a:1,e:"The referee controls the match."}
-  ,
-    {q:"How many players from one team are on a volleyball court?",o:["Five","Six","Seven","Nine"],a:1,e:"Volleyball teams play six at a time, three near the net and three at the back."},
-    {q:"In which sport do players score a 'try'?",o:["Rugby","Cricket","Handball","Water polo"],a:0,e:"In rugby a try is scored by grounding the ball behind the other team's line."},
-    {q:"Which colour of card does a soccer referee show to send a player off?",o:["Yellow","Blue","Green","Red"],a:3,e:"A red card means the player must leave the field and cannot be replaced."},
-    {q:"Which swimming stroke is swum lying on your back?",o:["Backstroke","Butterfly","Breaststroke","Front crawl"],a:0,e:"Swimmers doing backstroke face the sky and pull their arms over their heads."},
-    {q:"How many players are on a cricket team on the field?",o:["Nine","Ten","Eleven","Twelve"],a:2,e:"Cricket teams field eleven players, the same number as a soccer team."},
-    {q:"In which sport do competitors shoot at a target with a bow?",o:["Fencing","Archery","Curling","Judo"],a:1,e:"Archers aim for the small gold circle right at the centre of the target."},
-    {q:"Which race combines swimming, cycling and running?",o:["Marathon","Decathlon","Pentathlon","Triathlon"],a:3,e:"A triathlon has three parts in a row: swim first, then bike, then run."}
-  ]},
-  "Fun Facts & Math": { emoji:"🎈", q:[
-    {q:"How many colours are in a rainbow?",o:["5","6","7","8"],a:2,e:"A rainbow has 7 colours."},
-    {q:"How many days are in a leap year?",o:["364","365","366","367"],a:2,e:"A leap year has 366 days."},
-    {q:"How many sides does a triangle have?",o:["2","3","4","5"],a:1,e:"A triangle has 3 sides."},
-    {q:"What colour do you get by mixing blue and yellow?",o:["Purple","Green","Orange","Brown"],a:1,e:"Blue and yellow make green."},
-    {q:"How many minutes are in one hour?",o:["30","45","60","90"],a:2,e:"There are 60 minutes in an hour."},
-    {q:"How many letters are in the English alphabet?",o:["24","25","26","27"],a:2,e:"There are 26 letters."},
-    {q:"What is 7 × 8?",o:["54","56","58","64"],a:1,e:"7 × 8 = 56."},
-    {q:"How many sides does a hexagon have?",o:["5","6","7","8"],a:1,e:"A hexagon has 6 sides."},
-    {q:"How many days are in a week?",o:["5","6","7","8"],a:2,e:"There are 7 days in a week."},
-    {q:"How many sides does a square have?",o:["3","4","5","6"],a:1,e:"A square has 4 sides."},
-    {q:"What is half of 100?",o:["25","40","50","60"],a:2,e:"Half of 100 is 50."},
-    {q:"How many months are in a year?",o:["10","11","12","13"],a:2,e:"There are 12 months in a year."},
-    {q:"What is 9 × 9?",o:["72","81","89","99"],a:1,e:"9 × 9 = 81."},
-    {q:"What colour do you get by mixing red and white?",o:["Pink","Orange","Purple","Grey"],a:0,e:"Red and white make pink."},
-    {q:"How many zeros are in the number one thousand (1000)?",o:["2","3","4","5"],a:1,e:"One thousand has 3 zeros."},
-    {q:"How many hours are in one day?",o:["12","24","36","48"],a:1,e:"There are 24 hours in a day."},
-    {q:"What is 12 ÷ 4?",o:["2","3","4","6"],a:1,e:"12 ÷ 4 = 3."}
-  ,
-    {q:"How many sides does a pentagon have?",o:["Four","Five","Six","Seven"],a:1,e:"A pentagon has five straight sides and five corners."},
-    {q:"What is 6 × 7?",o:["24","30","36","42"],a:3,e:"Six groups of seven make forty-two."},
-    {q:"How many seconds are in one minute?",o:["30","60","90","100"],a:1,e:"One minute is sixty seconds, and sixty minutes make one hour."},
-    {q:"What colour do you get by mixing red and yellow?",o:["Purple","Green","Orange","Brown"],a:2,e:"Red and yellow are primary colours, and together they make orange."},
-    {q:"How many centimetres are in one metre?",o:["10","50","100","1000"],a:2,e:"The metric system counts in tens, so one metre equals one hundred centimetres."},
-    {q:"What is 25 percent of 80?",o:["16","20","25","40"],a:1,e:"Twenty-five percent means one quarter, and one quarter of eighty is twenty."},
-    {q:"How many corners does a cube have?",o:["Four","Six","Eight","Twelve"],a:2,e:"A cube has eight corners, six flat faces and twelve edges."},
-    {q:"What number comes next in the pattern 2, 4, 8, 16?",o:["18","24","32","64"],a:2,e:"Each number is double the one before it, so sixteen doubled gives thirty-two."}
-  ]},
-  "Technology": { emoji:"💻", q:[
-    {q:"What does WWW stand for on the internet?",o:["Wide World Website","World Web Working","World Wide Web","Web World Wide"],a:2,e:"WWW means World Wide Web, the huge collection of pages you visit online."},
-    {q:"What does USB stand for?",o:["United System Board","Universal Serial Bus","Useful Storage Box","Universal Screen Base"],a:1,e:"USB means Universal Serial Bus, the plug used to connect keyboards, mice and memory sticks."},
-    {q:"What does a GPS help you find?",o:["Where you are on Earth","How fast your heart beats","What the weather will be","How heavy your bag is"],a:0,e:"GPS means Global Positioning System, and satellites help it show your position on a map."},
-    {q:"What does PDF stand for?",o:["Personal Data File","Printed Digital Folder","Public Document Form","Portable Document Format"],a:3,e:"PDF means Portable Document Format, a file that looks the same on any computer or phone."},
-    {q:"What does RAM stand for in a computer?",o:["Random Access Memory","Rapid Address Machine","Regular Access Mode","Ready And Moving"],a:0,e:"RAM means Random Access Memory, the fast memory a computer uses while it is working."},
-    {q:"What is a pixel?",o:["A small computer speaker","A short computer song","One tiny dot in a picture","A kind of printing paper"],a:2,e:"A digital picture is made of thousands of tiny coloured dots called pixels."},
-    {q:"Binary code uses only which two digits?",o:["1 and 2","0 and 1","A and B","8 and 9"],a:1,e:"Computers store everything as binary, long strings of 0s and 1s."},
-    {q:"What is a web browser used for?",o:["Cooling the computer down","Printing photos on paper","Charging the battery faster","Opening and viewing websites"],a:3,e:"A browser is the program that finds web pages and shows them on your screen."},
-    {q:"Who was Ada Lovelace?",o:["An early computer programmer","A singer from the 1950s","An explorer of the Arctic","A builder of tall bridges"],a:0,e:"In the 1840s Ada Lovelace wrote instructions for an early machine, so many call her the first programmer."},
-    {q:"Which symbol is in every email address?",o:["#","&","@","%"],a:2,e:"The @ sign separates the user name from the name of the mail service."},
-    {q:"Wi-Fi sends information through the air using what?",o:["Sound waves","Radio waves","Steam power","Strong magnets"],a:1,e:"Wi-Fi carries information through the air as radio waves, with no cable needed."},
-    {q:"What does a QR code most often store?",o:["The battery level","A phone's password","The time of day","A link to a website"],a:3,e:"A QR code is a pattern of small squares that often stores a website address."},
-    {q:"Why is the common English keyboard called QWERTY?",o:["The number of keys on it","The name of its inventor","The first six letters on top","A word meaning fast typing"],a:2,e:"The name comes from the first six letters on the top letter row: Q-W-E-R-T-Y."},
-    {q:"In computing, what is a bug?",o:["A mistake in a program's code","A tiny insect in the screen","A very old computer game","A button on the keyboard"],a:0,e:"A bug is an error in the code that makes a program behave the wrong way."}
-  ,
-    {q:"What does CPU stand for in a computer?",o:["Central Power Unit","Central Processing Unit","Computer Program Unit","Control Printing Unit"],a:1,e:"The CPU is the chip that does the thinking and the calculating inside a computer."},
-    {q:"What is the small picture you click to open a program called?",o:["A folder","A cursor","An icon","A window"],a:2,e:"An icon is a little picture that stands for a program or a file."},
-    {q:"Which part of a computer keeps your files after the power is turned off?",o:["The screen","The hard drive","The keyboard","The speaker"],a:1,e:"A hard drive stores files for good, while memory empties when the computer shuts down."},
-    {q:"What do we call a group of computers connected so they can share information?",o:["A network","A battery","A printer","A password"],a:0,e:"A network links computers together so they can send files and messages."},
-    {q:"What is a computer virus?",o:["A cooling fan","A type of cable","A harmful program","A screen setting"],a:2,e:"A virus is a harmful program that spreads between computers and can damage files."},
-    {q:"What does it mean to download a file?",o:["To delete it forever","To print it on paper","To copy it to your device","To share it with friends"],a:2,e:"Downloading copies a file from the internet onto your own computer or phone."},
-    {q:"What is a step-by-step set of instructions for a computer called?",o:["A pixel","A cable","A monitor","An algorithm"],a:3,e:"An algorithm is a clear list of steps a computer follows to finish a task."}
-  ]}
-};
+var FR = /\/fr\//.test(location.pathname);
+function T(en, fr){ return FR ? fr : en; }
 
+var LEVELS = [
+  {k:"easy",   label:"Easy",   fr:"Facile",    emoji:"😊"},
+  {k:"medium", label:"Medium", fr:"Moyen",     emoji:"🙂"},
+  {k:"hard",   label:"Hard",   fr:"Difficile", emoji:"🔥"}
+];
+var PER_ROUND = 10;
+var BANK = window.GK_BANK || {};
+var level = "easy";
+
+function lvlInfo(k){ for(var i=0;i<LEVELS.length;i++) if(LEVELS[i].k===k) return LEVELS[i]; return LEVELS[0]; }
+function lvlName(k){ var L=lvlInfo(k); return T(L.label, L.fr); }
+
+/* keep the four options from always sitting in the same place */
 function balanceOpts(it){
-  const opts=it.options||it.o, ans=(it.answer!==undefined)?it.answer:it.a;
-  if(!Array.isArray(opts)||opts.length!==4||!(ans>=0&&ans<=3)) return it;
-  const txt=opts.join(' ').toLowerCase();
-  if(/all of the|none of the|both of/.test(txt)) return it;
-  if(opts.every(o=>!isNaN(parseFloat(String(o).replace(/[\s,$%]/g,''))))) return it;
-  const idx=[0,1,2,3];
-  for(let i=3;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
-  const c=Object.assign({},it), o2=idx.map(i=>opts[i]), a2=idx.indexOf(ans);
-  if(it.options){ c.options=o2; c.answer=a2; } else { c.o=o2; c.a=a2; }
-  return c;
-}
-function pickFresh(bank, count, key){
-  let seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){ seen=[]; }
-  if(!Array.isArray(seen)) seen=[];
-  let unseen=bank.map((_,i)=>i).filter(i=>seen.indexOf(i)===-1);
-  if(unseen.length<count){ seen=[]; unseen=bank.map((_,i)=>i); }
-  for(let i=unseen.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [unseen[i],unseen[j]]=[unseen[j],unseen[i]]; }
-  const chosen=unseen.slice(0,count);
-  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
-  return chosen.map(i=>balanceOpts(bank[i]));
+  var pairs = it.o.map(function(t,i){ return {t:t, c:(i===it.a)}; });
+  for(var i=pairs.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=pairs[i]; pairs[i]=pairs[j]; pairs[j]=t; }
+  var a=0; for(var k=0;k<pairs.length;k++) if(pairs[k].c) a=k;
+  return {q:it.q, o:pairs.map(function(p){return p.t;}), a:a, e:it.e};
 }
 
-let qs=[], cur=0, score=0, answered=false, catName='';
+/* remember what you have already been asked, so a replay feels new */
+function pickFresh(bank, count, key){
+  var seen=[]; try{ seen=JSON.parse(localStorage.getItem(key)||"[]"); }catch(e){ seen=[]; }
+  if(!Array.isArray(seen)) seen=[];
+  var unseen=bank.map(function(_,i){return i;}).filter(function(i){return seen.indexOf(i)===-1;});
+  if(unseen.length<count){ seen=[]; unseen=bank.map(function(_,i){return i;}); }
+  for(var i=unseen.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=unseen[i]; unseen[i]=unseen[j]; unseen[j]=t; }
+  var chosen=unseen.slice(0,count);
+  try{ localStorage.setItem(key, JSON.stringify(seen.concat(chosen))); }catch(e){}
+  return chosen.map(function(i){ return balanceOpts(bank[i]); });
+}
+
+var SUBJ_FR={"World & Geography":"Monde et géographie","Science & Nature":"Sciences et nature","Math & Numbers":"Mathématiques et nombres","Animals":"Animaux","History":"Histoire","Sports":"Sports","Technology":"Technologie","Words, Art & Music":"Mots, art et musique","Fun Facts":"Faits amusants"};
+function subjName(n){ return FR ? (SUBJ_FR[n]||n) : n; }
+
+function poolFor(name, lvl){
+  if(name==="__mix__"){
+    var all=[];
+    Object.keys(BANK).forEach(function(n){ all=all.concat(BANK[n][lvl]||[]); });
+    return all;
+  }
+  return (BANK[name] && BANK[name][lvl]) || [];
+}
+
+var qs=[], cur=0, score=0, answered=false, catName="", catLabel="";
+
+function setLevel(k){
+  level=k;
+  var btns=document.querySelectorAll(".lvl-pick .lvl");
+  for(var i=0;i<btns.length;i++){
+    var on = btns[i].getAttribute("data-lvl")===k;
+    btns[i].classList.toggle("on", on);
+    btns[i].setAttribute("aria-pressed", on ? "true" : "false");
+  }
+  buildCats();
+  try{ localStorage.setItem("gk_level", k); }catch(e){}
+}
+
+function makeCard(emoji, title, note, onPlay){
+  var card=document.createElement("div"); card.className="card";
+  var e=document.createElement("div"); e.className="emoji"; e.setAttribute("aria-hidden","true"); e.textContent=emoji;
+  var h=document.createElement("h3"); h.textContent=title;
+  var p=document.createElement("p"); p.className="muted"; p.textContent=note;
+  var b=document.createElement("button"); b.className="btn"; b.type="button";
+  b.textContent=T("Play","Jouer");
+  b.setAttribute("aria-label", T("Play ","Jouer ")+title+" — "+lvlName(level));
+  b.onclick=onPlay;
+  card.appendChild(e); card.appendChild(h); card.appendChild(p); card.appendChild(b);
+  return card;
+}
+
 function buildCats(){
-  const grid=document.getElementById('cat-grid'); grid.innerHTML='';
-  Object.keys(BANK).forEach(name=>{
-    const c=BANK[name];
-    const card=document.createElement('div'); card.className='card';
-    card.innerHTML='<div class="emoji">'+c.emoji+'</div><h3>'+name+'</h3><p class="muted">'+c.q.length+' questions</p>';
-    const b=document.createElement('button'); b.className='btn'; b.textContent='Play';
-    b.onclick=()=>startCat(name); card.appendChild(b); grid.appendChild(card);
+  var grid=document.getElementById("cat-grid"); if(!grid) return;
+  grid.innerHTML="";
+  var mixCount=poolFor("__mix__", level).length;
+  grid.appendChild(makeCard("🎲", T("Mixed","Mélange"),
+    mixCount+" "+T("questions","questions")+" — "+T("a bit of everything","un peu de tout"),
+    function(){ startCat("__mix__", T("Mixed","Mélange")); }));
+  Object.keys(BANK).forEach(function(name){
+    var c=BANK[name];
+    grid.appendChild(makeCard(c.emoji, subjName(name), c[level].length+" "+T("questions","questions"),
+      (function(n){ return function(){ startCat(n, subjName(n)); }; })(name)));
   });
 }
-function startCat(name){
-  catName=name;
-  const per=Math.min(8, BANK[name].q.length);
-  qs=pickFresh(BANK[name].q, per, 'gk_'+name);
+
+function startCat(name, label){
+  catName=name; catLabel=label;
+  var pool=poolFor(name, level);
+  var per=Math.min(PER_ROUND, pool.length);
+  qs=pickFresh(pool, per, "gk_"+level+"_"+name);
   cur=0; score=0; answered=false;
-  document.getElementById('start').style.display='none';
-  document.getElementById('result').style.display='none';
-  document.getElementById('quiz').style.display='block';
+  document.getElementById("level-pill").textContent=lvlName(level);
+  document.getElementById("start").style.display="none";
+  document.getElementById("result").style.display="none";
+  document.getElementById("quiz").style.display="block";
   showQ(); window.scrollTo(0,0);
 }
+
 function showQ(){
-  answered=false; const it=qs[cur];
-  document.getElementById('counter').textContent='Question '+(cur+1)+' of '+qs.length;
-  document.getElementById('score-pill').textContent='Score: '+score;
-  document.getElementById('bar').style.width=(cur/qs.length*100)+'%';
-  document.getElementById('qtext').textContent=it.q;
-  const box=document.getElementById('opts'); box.innerHTML='';
-  it.o.forEach((opt,i)=>{ const b=document.createElement('button'); b.className='option'; b.textContent=opt; b.onclick=()=>pick(i,b); box.appendChild(b); });
-  document.getElementById('explain-box').style.display='none';
-  document.getElementById('next-btn').style.display='none';
+  answered=false; var it=qs[cur];
+  document.getElementById("counter").textContent=T("Question ","Question ")+(cur+1)+T(" of "," sur ")+qs.length;
+  document.getElementById("score-pill").textContent="Score: "+score;
+  document.getElementById("bar").style.width=(cur/qs.length*100)+"%";
+  document.getElementById("qtext").textContent=it.q;
+  var box=document.getElementById("opts"); box.innerHTML="";
+  it.o.forEach(function(opt,i){
+    var b=document.createElement("button"); b.type="button"; b.className="option";
+    b.textContent=opt; b.onclick=function(){ pick(i,b); }; box.appendChild(b);
+  });
+  document.getElementById("explain-box").style.display="none";
+  document.getElementById("next-btn").style.display="none";
 }
+
 function pick(i,btn){
-  if(answered) return; answered=true; const it=qs[cur];
-  document.querySelectorAll('#opts .option').forEach((b,idx)=>{ b.classList.add('disabled'); if(idx===it.a)b.classList.add('correct'); if(idx===i&&i!==it.a)b.classList.add('wrong'); });
+  if(answered) return; answered=true; var it=qs[cur];
+  var opts=document.querySelectorAll("#opts .option");
+  for(var k=0;k<opts.length;k++){
+    opts[k].classList.add("disabled");
+    opts[k].setAttribute("aria-disabled","true");
+    if(k===it.a) opts[k].classList.add("correct");
+    if(k===i && i!==it.a) opts[k].classList.add("wrong");
+  }
   if(i===it.a) score++;
-  document.getElementById('score-pill').textContent='Score: '+score;
-  const ex=document.getElementById('explain-box');
-  ex.innerHTML='<strong>'+(i===it.a?'✅ Correct! ':'❌ The answer is '+it.o[it.a]+'. ')+'</strong>'+it.e; ex.style.display='block';
-  document.getElementById('bar').style.width=((cur+1)/qs.length*100)+'%';
-  const nb=document.getElementById('next-btn'); nb.textContent=(cur+1<qs.length)?'Next →':'See my score →'; nb.style.display='inline-block';
+  document.getElementById("score-pill").textContent="Score: "+score;
+  var ex=document.getElementById("explain-box");
+  ex.innerHTML="";
+  var st=document.createElement("strong");
+  if(i===it.a){ st.textContent=T("✅ Correct! ","✅ Exact ! "); }
+  else{
+    st.appendChild(document.createTextNode(T("❌ The answer is ","❌ La bonne réponse est ")));
+    var os=document.createElement("span"); os.textContent=it.o[it.a]; st.appendChild(os);
+    st.appendChild(document.createTextNode(". "));
+  }
+  ex.appendChild(st);
+  ex.appendChild(document.createTextNode(it.e));
+  ex.style.display="block";
+  document.getElementById("bar").style.width=((cur+1)/qs.length*100)+"%";
+  var nb=document.getElementById("next-btn");
+  nb.textContent=(cur+1<qs.length) ? T("Next →","Suivant →") : T("See my score →","Voir mon score →");
+  nb.style.display="inline-block";
 }
+
 function nextQ(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0); } else finish(); }
+
 function finish(){
-  document.getElementById('quiz').style.display='none';
-  document.getElementById('result').style.display='block';
-  document.getElementById('r-score').textContent='You scored '+score+' / '+qs.length+' in '+catName;
-  const pct=score/qs.length; let t,m;
-  if(pct===1){t='Perfect! 🌟';m='Amazing — full marks!';}
-  else if(pct>=0.7){t='Great job! 🎉';m='You know your stuff!';}
-  else if(pct>=0.4){t='Nice try! 👍';m='Play again for new questions!';}
-  else {t='Keep learning! 😊';m='Every quiz makes you smarter — try again!';}
-  document.getElementById('r-title').textContent=t; document.getElementById('r-msg').textContent=m; window.scrollTo(0,0);
+  document.getElementById("quiz").style.display="none";
+  document.getElementById("result").style.display="block";
+  document.getElementById("r-score").textContent=T("You scored ","Vous avez obtenu ")+score+" / "+qs.length;
+  var wh=document.getElementById("r-where"); wh.innerHTML="";
+  var ws=document.createElement("span"); ws.textContent=catLabel; wh.appendChild(ws);
+  wh.appendChild(document.createTextNode(" — "+lvlName(level)));
+  var pct=score/qs.length, t, m;
+  if(pct===1){ t=T("Perfect! 🌟","Parfait ! 🌟"); m=T("Amazing — full marks!","Bravo, la note parfaite !"); }
+  else if(pct>=0.7){ t=T("Great job! 🎉","Bien joué ! 🎉"); m=T("You know your stuff!","Vous connaissez votre sujet !"); }
+  else if(pct>=0.4){ t=T("Nice try! 👍","Bel effort ! 👍"); m=T("Play again for new questions!","Rejouez pour de nouvelles questions !"); }
+  else { t=T("Keep learning! 😊","Continuez d'apprendre ! 😊"); m=T("Every quiz makes you smarter — try again!","Chaque quiz vous rend plus fort. Réessayez !"); }
+  document.getElementById("r-title").textContent=t;
+  document.getElementById("r-msg").textContent=m;
+
+  var up=document.getElementById("step-up-btn");
+  var nextLvl = level==="easy" ? "medium" : (level==="medium" ? "hard" : null);
+  if(nextLvl && pct>=0.7){
+    up.style.display="inline-block";
+    up.textContent=T("Try ","Essayer ")+lvlName(nextLvl)+" →";
+    up.onclick=function(){ setLevel(nextLvl); startCat(catName, catLabel); };
+  } else { up.style.display="none"; up.onclick=null; }
+  window.scrollTo(0,0);
 }
-buildCats();
+
+function backToStart(){
+  document.getElementById("quiz").style.display="none";
+  document.getElementById("result").style.display="none";
+  document.getElementById("start").style.display="block";
+  window.scrollTo(0,0);
+}
+
+document.querySelectorAll(".lvl-pick .lvl").forEach(function(b){
+  b.addEventListener("click", function(){ setLevel(b.getAttribute("data-lvl")); });
+});
+document.getElementById("again-btn").onclick=function(){ startCat(catName, catLabel); };
+document.getElementById("back-btn").onclick=backToStart;
+
+var saved=null; try{ saved=localStorage.getItem("gk_level"); }catch(e){}
+setLevel((saved==="medium"||saved==="hard") ? saved : "easy");
 </script>
-  <script src="../js/site.js?v=20260802d"></script>
-  <script src="../js/analytics.js?v=20260802d"></script>
-  <script src="../js/ads.js?v=20260802d" defer></script>
+  <script src="../js/site.js?v=20260803a"></script>
+  <script src="../js/analytics.js?v=20260803a"></script>
+  <script src="../js/ads.js?v=20260803a" defer></script>
 </body>
 </html>

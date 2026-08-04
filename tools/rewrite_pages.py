@@ -24,7 +24,7 @@ SITE = "https://canada-quiz.com/"
 # new page looks broken. Changing ?v=... makes it a new address, so everyone gets
 # the fresh file. (This bit us on 27 Jul 2026 — new hero HTML + old cached CSS.)
 # ---------------------------------------------------------------------------
-ASSET_VER = "20260802d"
+ASSET_VER = "20260803a"
 
 # The full A-to-Z page list shown at the bottom of every page.
 # Add a new page to tools/site_map.json and re-run this script.
