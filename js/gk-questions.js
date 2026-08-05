@@ -19,7 +19,26 @@ window.GK_BANK = {
       {"q":"The Amazon rainforest is mostly in which country?","o":["Brazil","Mexico","India","Congo"],"a":0,"e":"Most of the Amazon rainforest is in Brazil."},
       {"q":"Which is the smallest continent?","o":["Europe","Antarctica","Australia","South America"],"a":2,"e":"Australia is the smallest continent."},
       {"q":"What is the capital city of Canada?","o":["Toronto","Ottawa","Vancouver","Montreal"],"a":1,"e":"Ottawa is the capital of Canada."}
-    ],
+    ,
+   /* +50 World & Geography easy */
+   {q:"What do we call a round model of the Earth that you can spin?",o:["A globe","A compass","An atlas","A telescope"],a:0,e:"A globe shows the true shape of the Earth, while a flat map always stretches some parts. 🌍"},
+   {q:"What is a piece of land with water all around it called?",o:["A valley","A canyon","A harbour","An island"],a:3,e:"An island can be tiny or huge, and Canada has more islands than almost any other country."},
+   {q:"What do we call a book that is full of maps?",o:["A dictionary","A calendar","An atlas","A diary"],a:2,e:"An atlas gathers maps of countries, oceans and cities in one book."},
+   {q:"Which small tool has a needle that always points north?",o:["A thermometer","A compass","A calculator","A stopwatch"],a:1,e:"A compass needle is a small magnet that lines up with the magnetic field of the Earth."},
+   {q:"What do we call the hot melted rock that flows out of a volcano?",o:["Lava","Sand","Coal","Clay"],a:0,e:"The same melted rock is called magma while it is still underground. 🌋"},
+   {q:"In which country do kangaroos live in the wild?",o:["Ireland","Norway","Japan","Australia"],a:3,e:"Australia is both a country and a continent, and many of its animals live nowhere else."},
+   {q:"What do we call a green spot with water in the middle of a desert?",o:["A lagoon","A glacier","An oasis","A meadow"],a:2,e:"The water in an oasis comes up from under the ground, so plants can grow there."},
+   {q:"Which continent lies just south of Europe, across the Mediterranean Sea?",o:["Asia","Africa","South America","Australia"],a:1,e:"Only a narrow stretch of sea separates southern Europe from northern Africa."},
+   {q:"What do we call a very large body of salt water, such as the Pacific?",o:["An ocean","A lake","A river","A bay"],a:0,e:"Oceans cover more of the Earth than land does."},
+   {q:"Which is the biggest country in South America?",o:["Chile","Peru","Colombia","Brazil"],a:3,e:"Brazil fills almost half of South America and touches most of the countries on the continent."},
+   {q:"What do we call the very top of a mountain?",o:["The base","The slope","The peak","The valley floor"],a:2,e:"Climbers say they have reached the peak when there is nothing higher left to climb. ⛰️"},
+   {q:"On most maps, which direction is at the top?",o:["South","North","East","West"],a:1,e:"Mapmakers agreed long ago to put north at the top, so maps are easy to compare."},
+   {q:"Which continent is India part of?",o:["Asia","Africa","Europe","Oceania"],a:0,e:"India sits in southern Asia, on a large triangle of land that points into the Indian Ocean."},
+   {q:"What do we call the strip of land right beside the sea?",o:["The plain","The prairie","The desert","The coast"],a:3,e:"Waves, tides and wind slowly change the shape of a coast over time. 🌊"},
+   {q:"On most maps, which colour is used for lakes, rivers and seas?",o:["Green","Brown","Blue","Yellow"],a:2,e:"Mapmakers use colours as a code: blue for water, green for low land and brown for mountains."},
+   {q:"How many oceans are usually named on a world map today?",o:["Three","Five","Four","Seven"],a:1,e:"The five are the Pacific, Atlantic, Indian, Southern and Arctic Oceans."},
+   {q:"What do we call water that drops over the edge of a cliff in a river?",o:["A waterfall","A whirlpool","A spring","A tide"],a:0,e:"A waterfall forms where a river crosses from hard rock onto softer rock that wears away faster."}
+  ],
     medium:[
       {"q":"Mount Fuji is a famous mountain in which country?","o":["China","Japan","Nepal","Peru"],"a":1,"e":"Mount Fuji is in Japan."},
       {"q":"Which river is the longest in the world (commonly taught)?","o":["Amazon","Nile","Yangtze","Mississippi"],"a":1,"e":"The Nile in Africa is usually taught as the longest river."},
@@ -36,7 +55,26 @@ window.GK_BANK = {
       {"q":"The Equator passes through which of these countries?","o":["Ecuador","Egypt","Mexico","Morocco"],"a":0,"e":"Ecuador is named after the Equator because the line crosses the country just north of Quito."},
       {"q":"Which continent has no permanent towns or cities?","o":["Antarctica","Australia","South America","Europe"],"a":0,"e":"Antarctica is too cold and icy to farm or build on, so only scientists stay, and only for a while."},
       {"q":"Which narrow stretch of water separates Spain from Morocco?","o":["The Strait of Gibraltar","The Strait of Malacca","The Strait of Hormuz","The Strait of Dover"],"a":0,"e":"Only about 14 km of sea lie between Europe and Africa there, joining the Atlantic to the Mediterranean."}
-    ],
+    ,
+   /* +50 World & Geography medium */
+   {q:"Which country is made up of two main islands, called the North Island and the South Island?",o:["Ireland","New Zealand","Iceland","Japan"],a:1,e:"New Zealand lies in the South Pacific, about three hours by plane from Australia."},
+   {q:"What do we call a country that has no coastline at all?",o:["A landlocked country","An island nation","A coastal country","A peninsula country"],a:0,e:"Landlocked countries such as Switzerland must send goods through their neighbours to reach a port."},
+   {q:"Which is the largest country in Africa by land area?",o:["Egypt","Nigeria","Sudan","Algeria"],a:3,e:"Most of Algeria is Sahara desert, which is why it covers so much land."},
+   {q:"Spain and Portugal sit together on which peninsula?",o:["The Balkan Peninsula","The Italian Peninsula","The Iberian Peninsula","The Scandinavian Peninsula"],a:2,e:"A peninsula is land with water on three sides, and Iberia juts out into the Atlantic."},
+   {q:"Which chain of five large lakes lies along the border of Canada and the United States?",o:["The Finger Lakes","The Great Lakes","The Prairie Lakes","The Northern Lakes"],a:1,e:"Superior, Michigan, Huron, Erie and Ontario together hold a huge share of the fresh water of the world. 💧"},
+   {q:"What do we call the fan-shaped land where a river splits into channels and meets the sea?",o:["A delta","A gulf","A canyon","A basin"],a:0,e:"A delta builds up from mud and sand that the river drops as it slows down."},
+   {q:"Which very small country on the Mediterranean coast is surrounded on land by France?",o:["Andorra","Malta","San Marino","Monaco"],a:3,e:"Monaco is barely two square kilometres, small enough to walk across in under an hour."},
+   {q:"Which state of the United States covers the largest area?",o:["Texas","California","Alaska","Montana"],a:2,e:"Alaska is so big that it is more than twice the size of Texas, and it borders Canada."},
+   {q:"Which island country lies in the North Atlantic between Greenland and Norway?",o:["Ireland","Iceland","Denmark","Finland"],a:1,e:"Iceland sits on a crack between two plates of the Earth, which gives it volcanoes and hot springs."},
+   {q:"Which country is often called the Land of the Rising Sun?",o:["Japan","China","Thailand","South Korea"],a:0,e:"The name comes from Japan lying to the east of the Asian mainland, where the sun appears to rise."},
+   {q:"The Gobi Desert covers parts of northern China and which other country?",o:["Nepal","Kazakhstan","Vietnam","Mongolia"],a:3,e:"The Gobi is a cold desert, with freezing winters as well as dry summers."},
+   {q:"What is the imaginary line in the Pacific Ocean where each new calendar day begins?",o:["The Prime Meridian","The Tropic of Cancer","The International Date Line","The Arctic Circle"],a:2,e:"Cross it going west and you jump a day forward; cross it going east and you live the same day twice."},
+   {q:"Which sea lies between Great Britain and Norway?",o:["The Baltic Sea","The North Sea","The Irish Sea","The Barents Sea"],a:1,e:"The North Sea is shallow and busy, crossed by fishing boats and ferries every day."},
+   {q:"Which country was called Persia until the 1930s?",o:["Iran","Iraq","Turkey","Egypt"],a:0,e:"The country asked the world to use Iran, the name its own people had long used."},
+   {q:"Which northern European country is nicknamed the land of a thousand lakes?",o:["Sweden","Estonia","Latvia","Finland"],a:3,e:"Finland actually has well over a hundred thousand lakes, carved out by ancient ice sheets."},
+   {q:"Which is the highest mountain in North America?",o:["Mount Logan","Mount Whitney","Denali","Mount Rainier"],a:2,e:"Denali stands in Alaska; Mount Logan in Yukon is second and is the highest in Canada."},
+   {q:"What is the capital city of Vietnam?",o:["Hanoi","Bangkok","Manila","Jakarta"],a:0,e:"Hanoi is in the north of the country, while the largest city, Ho Chi Minh City, is in the south."}
+  ],
     hard:[
       {"q":"What is the name of the deepest known trench in the ocean?","o":["The Mariana Trench","The Puerto Rico Trench","The Java Trench","The Tonga Trench"],"a":0,"e":"It drops almost 11 km below the western Pacific, deeper than Mount Everest is tall."},
       {"q":"Which lake holds the most fresh water of any lake on Earth?","o":["Lake Baikal","Lake Superior","Lake Victoria","Lake Tanganyika"],"a":0,"e":"Baikal in Siberia is over 1,600 m deep, so its narrow shape still holds a huge volume."},
@@ -53,7 +91,25 @@ window.GK_BANK = {
       {"q":"Which large city has one half in Europe and the other half in Asia?","o":["Istanbul","Athens","Cairo","Baku"],"a":0,"e":"The Bosphorus strait cuts straight through the city and marks the boundary between continents."},
       {"q":"The Ring of Fire around the Pacific is known for what?","o":["Volcanoes and earthquakes","Coral reefs and lagoons","Deserts and sand dunes","Glaciers and ice caps"],"a":0,"e":"Plates of Earth's crust push against each other all around the Pacific rim, shaking the ground."},
       {"q":"Which island country lies in all four hemispheres at once?","o":["Kiribati","Maldives","Fiji","Seychelles"],"a":0,"e":"Its Pacific islands spread across both the Equator and the line of 180 degrees longitude."}
-    ]
+    ,
+   /* +50 World & Geography hard */
+   {q:"If cold deserts are counted too, which is the largest desert on Earth?",o:["The Sahara","The Gobi Desert","Antarctica","The Arabian Desert"],a:2,e:"A desert is defined by how little rain or snow falls, not by heat, and almost none falls on Antarctica."},
+   {q:"Which lake covers the largest area of any lake in the world?",o:["Lake Superior","The Caspian Sea","Lake Victoria","Lake Baikal"],a:1,e:"The Caspian is called a sea because its water is salty, but land closes it in, so it counts as a lake."},
+   {q:"The Caribbean island of Hispaniola is shared by Haiti and which other country?",o:["The Dominican Republic","Cuba","Jamaica","Puerto Rico"],a:0,e:"Two countries share the island: French and Creole are spoken in Haiti, Spanish in the Dominican Republic."},
+   {q:"Which South American country has two capital cities, Sucre and La Paz?",o:["Ecuador","Paraguay","Uruguay","Bolivia"],a:3,e:"Sucre keeps the high courts while La Paz holds the government offices, so both are capitals."},
+   {q:"Which is the largest peninsula in the world?",o:["The Scandinavian Peninsula","The Balkan Peninsula","The Arabian Peninsula","The Labrador Peninsula"],a:2,e:"The Arabian Peninsula is bigger than many countries and is nearly all desert."},
+   {q:"Which narrow waterway runs through Istanbul and links the Black Sea to the Sea of Marmara?",o:["The Dardanelles","The Bosphorus","The Strait of Hormuz","The Strait of Malacca"],a:1,e:"The Bosphorus is only about 700 metres wide at its narrowest point, yet ships from many countries use it."},
+   {q:"Which warm ocean current helps keep winters in western Europe mild?",o:["The Gulf Stream","The Humboldt Current","The Labrador Current","The California Current"],a:0,e:"It carries warm water north from the tropics, which is why Britain is milder than Labrador at the same latitude."},
+   {q:"Which country is crossed by both the Equator and the Tropic of Capricorn?",o:["Kenya","Indonesia","Australia","Brazil"],a:3,e:"Brazil stretches so far from north to south that both lines cross it. 🌎"},
+   {q:"Which of these capital cities lies farthest north?",o:["Oslo","Helsinki","Reykjavik","Stockholm"],a:2,e:"Reykjavik, the capital of Iceland, sits just south of the Arctic Circle."},
+   {q:"K2, the second highest mountain on Earth, stands in which mountain range?",o:["The Himalayas","The Karakoram","The Hindu Kush","The Pamir Mountains"],a:1,e:"The Karakoram sits just northwest of the Himalayas and holds some of the steepest peaks anywhere."},
+   {q:"Which mountain top is the farthest point from the centre of the Earth?",o:["Chimborazo in Ecuador","Mount Everest in Nepal","Mount Kilimanjaro in Tanzania","Denali in Alaska"],a:0,e:"The Earth bulges at the Equator, so a peak near the Equator can reach farther out even if it is not the tallest. 🌐"},
+   {q:"The Kalahari Desert covers much of Botswana, Namibia and which third country?",o:["Angola","Zimbabwe","Zambia","South Africa"],a:3,e:"Unlike the Sahara, the Kalahari gets enough rain in places for grass and thorn trees to grow."},
+   {q:"The Great Rift Valley, a giant split in the crust of the Earth, runs mainly through which continent?",o:["Asia","South America","Africa","Europe"],a:2,e:"The valley is where two plates are slowly pulling apart, and it holds several deep lakes."},
+   {q:"The Danube, one of the longest rivers in Europe, begins in which country?",o:["Austria","Germany","Switzerland","Hungary"],a:1,e:"It starts in the Black Forest in Germany and flows east all the way to the Black Sea."},
+   {q:"What do we call the flat, treeless land of the far north where the soil stays frozen below the surface?",o:["Tundra","Savannah","Steppe","Taiga"],a:0,e:"Much of northern Canada is tundra, where mosses and tiny shrubs grow but trees cannot."},
+   {q:"Which inland sea in Central Asia shrank to a fraction of its old size after its rivers were used for farming?",o:["The Caspian Sea","The Dead Sea","The Black Sea","The Aral Sea"],a:3,e:"Water was taken from the two rivers feeding it, and old fishing boats now sit on dry sand."}
+  ]
   },
   "Science & Nature": { emoji:"🔬",
     easy:[
@@ -72,7 +128,26 @@ window.GK_BANK = {
       {"q":"What happens to water when it gets very hot and boils?","o":["It turns to ice","It turns to steam","It disappears forever","It turns to oil"],"a":1,"e":"Boiling water turns into steam (water vapour)."},
       {"q":"At what temperature does water freeze at sea level?","o":["0 °C","10 °C","32 °C","100 °C"],"a":0,"e":"Water turns into ice at 0 degrees Celsius, the freezing point used in Canada."},
       {"q":"What are the tiny building blocks that make up all living things?","o":["Cells","Crystals","Magnets","Fossils"],"a":0,"e":"Every plant and animal is built from cells, far too small to see without a microscope."}
-    ],
+    ,
+   /* +50 Science & Nature easy */
+   {q:"Which star is closest to Earth?",o:["The Sun","The North Star","Alpha Centauri","Sirius"],a:0,e:"The Sun is a star, and it is far closer to us than any other star."},
+   {q:"What do we call hot melted rock that flows out of a volcano?",o:["Sand","Lava","Coal","Clay"],a:1,e:"Melted rock is called magma while it is underground and lava once it reaches the surface."},
+   {q:"Which part of a plant usually grows under the ground?",o:["The leaves","The flowers","The roots","The stem"],a:2,e:"Roots hold the plant in place and soak up water from the soil."},
+   {q:"Which of these makes its own light?",o:["A mirror","A window","A shadow","The Sun"],a:3,e:"The Sun makes its own light, while a mirror only bounces back light that came from somewhere else."},
+   {q:"Which gas makes the bubbles in sparkling water?",o:["Carbon dioxide","Helium","Nitrogen","Hydrogen"],a:0,e:"Carbon dioxide gas is pushed into the water, and it escapes as bubbles when the bottle is opened."},
+   {q:"What is the layer of gases that surrounds the Earth called?",o:["The crust","The atmosphere","The ozone","The horizon"],a:1,e:"The atmosphere holds the air we breathe and keeps the planet warm enough to live on."},
+   {q:"What do we call an animal that has fur and feeds its babies milk?",o:["A reptile","A bird","A mammal","A fish"],a:2,e:"Mammals feed their young with milk, and almost all of them have hair or fur."},
+   {q:"Which of these will float in a bowl of water?",o:["A steel nail","A glass marble","A small stone","A piece of dry wood"],a:3,e:"Dry wood floats because it is lighter than the same amount of water."},
+   {q:"What do we call the Moon phase when we cannot see the Moon at all?",o:["A new moon","A full moon","A half moon","A crescent moon"],a:0,e:"At new moon the lit side of the Moon faces away from us, so it looks dark. 🌑"},
+   {q:"What do we call water when it is in the form of a gas?",o:["Frost","Water vapour","Slush","Dew"],a:1,e:"Water vapour is invisible, and it turns back into tiny drops when it cools."},
+   {q:"What do most seeds need before they will start to grow?",o:["Salt and wind","Water and warmth","Snow and shade","Smoke and dust"],a:1,e:"A seed rests until water and warmth wake it up so a tiny plant can push out. 🌱"},
+   {q:"What is garden soil mostly made of?",o:["Melted rock and metal","Salt and sugar","Tiny bits of rock and dead plants","Sand and plastic"],a:2,e:"Soil forms slowly as rock breaks into small pieces and mixes with rotted leaves and plants."},
+   {q:"A magnet will stick to which of these?",o:["A plastic spoon","A wooden block","A paper cup","An iron nail"],a:3,e:"Magnets pull on iron, steel and a few other metals, but not on plastic, wood or paper. 🧲"},
+   {q:"What do we call a natural object that travels around a planet?",o:["A moon","A comet","A star","A galaxy"],a:0,e:"A moon circles a planet the way our Moon circles Earth, and some planets have dozens of them."},
+   {q:"Which of these is not a living thing?",o:["A tree","A mushroom","A rock","An earthworm"],a:2,e:"Living things grow, need food or sunlight and can make more of their own kind, and a rock does none of these."},
+   {q:"Which of these materials is a metal?",o:["Glass","Copper","Rubber","Cotton"],a:1,e:"Copper is a metal, which is why it is shiny, bendy and very good at carrying electricity."},
+   {q:"What do we call a long period when much of the Earth was covered by thick ice?",o:["A heat wave","A dry spell","An ice age","A flood season"],a:2,e:"During an ice age, huge sheets of ice spread over large parts of the land for thousands of years."}
+  ],
     medium:[
       {"q":"How many bones are in the adult human body?","o":["106","206","306","406"],"a":1,"e":"An adult body has 206 bones."},
       {"q":"What is the change from caterpillar to butterfly called?","o":["Migration","Photosynthesis","Hibernation","Metamorphosis"],"a":3,"e":"Metamorphosis is the big body change that many insects and frogs go through."},
@@ -89,7 +164,26 @@ window.GK_BANK = {
       {"q":"What is the general word for rain, snow, sleet and hail?","o":["Precipitation","Condensation","Evaporation","Humidity"],"a":0,"e":"Precipitation covers any water that falls out of a cloud, whether it lands liquid or frozen."},
       {"q":"On the pH scale, which number means a liquid is neutral?","o":["0","7","10","14"],"a":1,"e":"Below that number a liquid is acidic and above it a liquid is basic, so pure water sits in the middle."},
       {"q":"Sound travels fastest through which of these?","o":["Air","Steel","Water","Empty space"],"a":1,"e":"Sound moves by shaking particles, and the tightly packed particles of a solid pass the shake along quickest."}
-    ],
+    ,
+   /* +50 Science & Nature medium */
+   {q:"Which element is the most common in the universe?",o:["Oxygen","Carbon","Hydrogen","Iron"],a:2,e:"Hydrogen is the simplest and lightest element, and stars are made mostly of it."},
+   {q:"Table salt is made from which two elements?",o:["Sodium and chlorine","Calcium and sulphur","Potassium and iodine","Sodium and carbon"],a:0,e:"Sodium and chlorine are both harmful on their own, but joined together they make ordinary salt."},
+   {q:"What does a newton measure?",o:["Time","Force","Volume","Loudness"],a:1,e:"The newton is the unit of force, named after the scientist who described the laws of motion."},
+   {q:"Which colour of visible light has the longest wavelength?",o:["Blue","Green","Red","Violet"],a:2,e:"Red light has the longest waves our eyes can see, and violet light has the shortest."},
+   {q:"Which blood vessels carry blood back towards the heart?",o:["Arteries","Nerves","Tendons","Veins"],a:3,e:"Veins bring blood back to the heart, and many of them have small valves that stop it flowing backwards."},
+   {q:"What is the green colouring in leaves that captures sunlight called?",o:["Chlorophyll","Keratin","Starch","Pollen"],a:0,e:"Chlorophyll soaks up sunlight and gives leaves their green colour. 🍃"},
+   {q:"Earth's outer shell is broken into huge slow-moving pieces called what?",o:["Ocean basins","Tectonic plates","Sand dunes","Ice sheets"],a:1,e:"Tectonic plates drift a few centimetres a year, and where they meet we get earthquakes and mountains."},
+   {q:"Which gas high in the atmosphere blocks much of the Sun's ultraviolet light?",o:["Methane","Argon","Ozone","Neon"],a:2,e:"Ozone is a form of oxygen, and the ozone layer works like sunscreen for the whole planet."},
+   {q:"Which planet takes the least time to travel once around the Sun?",o:["Venus","Earth","Mars","Mercury"],a:3,e:"Mercury is the closest planet to the Sun, so its year lasts only about 88 Earth days."},
+   {q:"What is a comet mostly made of?",o:["Ice, dust and rock","Iron and nickel","Glowing hot gas","Liquid water"],a:0,e:"A comet is like a dirty snowball, and it grows a bright tail when the Sun warms it. ☄️"},
+   {q:"What is the unit used to measure electric current?",o:["The volt","The ampere","The watt","The ohm"],a:1,e:"The ampere, often shortened to amp, tells you how much electric charge flows each second."},
+   {q:"Which part of an atom carries a negative electric charge?",o:["The proton","The neutron","The electron","The nucleus"],a:2,e:"Electrons are tiny and negatively charged, and they move around the outside of the atom."},
+   {q:"How many chromosomes are in a typical human body cell?",o:["23","46","64","12"],a:1,e:"We receive 23 chromosomes from each parent, which makes 46 in all."},
+   {q:"Instead of seeds, mushrooms and other fungi spread using what?",o:["Spores","Roots","Buds","Eggs"],a:0,e:"Spores are far smaller than seeds and drift away on the air to start new fungi."},
+   {q:"Which kind of rock is made when heat and pressure change an existing rock?",o:["Igneous rock","Sedimentary rock","Metamorphic rock","Volcanic glass"],a:2,e:"Metamorphic rock is changed rock, which is how limestone slowly becomes marble."},
+   {q:"Why would you weigh less standing on the Moon than on Earth?",o:["The Moon has no air","The Moon spins more slowly","The Moon is much colder","The Moon's gravity is weaker"],a:3,e:"Weight depends on gravity, and the Moon pulls about six times more gently than Earth, though your mass stays the same."},
+   {q:"What mainly causes the rise and fall of ocean tides?",o:["The wind over the sea","The pull of the Moon","The spin of the clouds","The warmth of the Sun"],a:1,e:"The Moon's gravity tugs the oceans into a bulge, and the Sun adds a smaller pull of its own. 🌊"}
+  ],
     hard:[
       {"q":"In a closed system, what does the second law of thermodynamics say about entropy?","o":["It always decreases","It never decreases","It stays exactly the same","It rises and falls in cycles"],"a":1,"e":"Energy always spreads out, which is why heat flows from hot to cold and never back on its own."},
       {"q":"Light from a galaxy moving away from us is shifted toward which colour?","o":["Blue","Green","Violet","Red"],"a":3,"e":"Moving away stretches the light waves, and longer visible wavelengths look redder to us."},
@@ -106,7 +200,25 @@ window.GK_BANK = {
       {"q":"What does the Coriolis effect explain?","o":["Why winds and storms curve as they travel","Why the sea has two high tides a day","Why deserts often sit near the equator","Why lightning strikes the tallest objects"],"a":0,"e":"Earth keeps turning underneath the moving air, so a straight path looks bent from the ground."},
       {"q":"Which part of the brain keeps your balance and smooths your movements?","o":["The hippocampus","The brain stem","The cerebellum","The pituitary gland"],"a":2,"e":"It sits low at the back of the head and fine tunes the orders the rest of the brain sends out."},
       {"q":"Where in the lungs does oxygen actually pass into the blood?","o":["In the windpipe","In the alveoli","In the ribs","In the diaphragm"],"a":1,"e":"These are tiny air sacs with walls only one cell thick, so gases cross them very easily."}
-    ]
+    ,
+   /* +50 Science & Nature hard */
+   {q:"What does Newton's third law of motion state?",o:["Objects always fall at the same speed","Every action has an equal and opposite reaction","Energy can never be moved about","Heavier objects need less force"],a:1,e:"When you push on something, it pushes back on you just as hard, which is how a rocket drives itself forward."},
+   {q:"About how fast does light travel through empty space?",o:["300 kilometres per second","3,000 kilometres per second","30,000 kilometres per second","300,000 kilometres per second"],a:3,e:"Light covers about 300,000 kilometres every second, fast enough to circle the Earth seven times."},
+   {q:"How many electrons can the first shell of an atom hold?",o:["Two","Four","Six","Eight"],a:0,e:"The first shell is full with two electrons, while the shell after it can hold eight."},
+   {q:"In DNA, which base always pairs with adenine?",o:["Guanine","Cytosine","Thymine","Uracil"],a:2,e:"Adenine always joins thymine and cytosine always joins guanine, which lets DNA copy itself exactly."},
+   {q:"What is the name of the cell division that makes two identical new cells?",o:["Meiosis","Mitosis","Osmosis","Digestion"],a:1,e:"Mitosis copies a cell exactly, which is how your body grows and heals a small cut."},
+   {q:"Which layer of the Earth is liquid metal and helps create our magnetic field?",o:["The inner core","The mantle","The outer core","The crust"],a:2,e:"Molten iron swirling in the outer core works like a giant dynamo and makes the Earth magnetic."},
+   {q:"What is the name of the single supercontinent of about 250 million years ago?",o:["Pangaea","Atlantis","Gondwana","Laurentia"],a:0,e:"Pangaea slowly broke apart, and the pieces drifted away to become the continents we know today."},
+   {q:"What do we call the huge explosion of a massive star at the end of its life?",o:["A solar flare","A supernova","A meteor shower","An eclipse"],a:1,e:"A supernova can outshine a whole galaxy for a short time and spreads new elements out into space."},
+   {q:"What process keeps the Sun shining?",o:["Burning coal and gas","Falling meteors heating it","Hydrogen joining to form helium","Electricity from its magnetic field"],a:2,e:"Deep inside the Sun, hydrogen nuclei fuse into helium and release an enormous amount of energy."},
+   {q:"Ohm's law links voltage and current with which third quantity?",o:["Resistance","Mass","Frequency","Pressure"],a:0,e:"Ohm's law says voltage equals current multiplied by resistance, so more resistance means less current."},
+   {q:"What does a catalyst do in a chemical reaction?",o:["It stops the reaction completely","It is used up and disappears","It speeds the reaction up without being used up","It turns the product into a gas"],a:2,e:"A catalyst helps a reaction happen faster and is still there, unchanged, at the end."},
+   {q:"Plants make food by photosynthesis, but how do they get the energy out of that food?",o:["By transpiration","By germination","By pollination","By respiration"],a:3,e:"Plants respire day and night, just as animals do, breaking sugar down to release the energy stored inside it."},
+   {q:"Enzymes in living things are mostly which kind of molecule?",o:["Proteins","Fats","Sugars","Minerals"],a:0,e:"Most enzymes are proteins that speed up the body's chemical reactions, such as breaking food down."},
+   {q:"How do scientists work out the age of very old rocks?",o:["By counting their layers of colour","By measuring the radioactive decay inside them","By weighing them very carefully","By testing how hard they are"],a:1,e:"Some elements break down at a steady, known rate, so the amounts left behind act like a slow clock."},
+   {q:"What is the boundary around a black hole called, beyond which nothing can escape?",o:["The corona","The accretion disc","The event horizon","The singularity"],a:2,e:"Once anything crosses the event horizon, not even light can travel back out."},
+   {q:"Why do astronauts float inside a spacecraft that is orbiting the Earth?",o:["There is no gravity that far from Earth","The spacecraft pushes them upward","The air inside is lighter than they are","They are falling around the Earth with the spacecraft"],a:3,e:"Gravity is still strong in orbit, but the crew and the craft fall together at the same rate, so it feels like weightlessness."}
+  ]
   },
   "Math & Numbers": { emoji:"➗",
     easy:[
@@ -125,7 +237,26 @@ window.GK_BANK = {
       {"q":"What is 6 × 7?","o":["24","30","36","42"],"a":3,"e":"Six groups of seven make forty-two."},
       {"q":"What is 7 × 8?","o":["54","56","58","64"],"a":1,"e":"7 × 8 = 56."},
       {"q":"How many zeros are in the number one thousand (1000)?","o":["2","3","4","5"],"a":1,"e":"One thousand has 3 zeros."}
-    ],
+    ,
+   /* +50 Math & Numbers easy */
+   {q:"What is 24 + 18?",o:["42","32","43","52"],a:0,e:"Add the ones first: 4 + 8 = 12, so write 2 and carry 1. Then 2 + 1 + 1 = 4, giving 42."},
+   {q:"What is 12 + 18 + 20?",o:["30","50","40","60"],a:1,e:"12 + 18 makes 30, and 30 + 20 makes 50."},
+   {q:"What is 50 - 27?",o:["27","33","23","37"],a:2,e:"27 needs 3 more to reach 30, and 20 more to reach 50, so the answer is 23."},
+   {q:"A bus has 100 seats and 65 people are sitting down. How many seats are empty?",o:["25","45","65","35"],a:3,e:"Take the people away from the seats: 100 - 65 = 35 empty seats. 🚌"},
+   {q:"What is 8 × 6?",o:["48","42","46","54"],a:0,e:"Six eights are 48, the same as 8 + 8 + 8 + 8 + 8 + 8."},
+   {q:"What is 9 × 4?",o:["32","36","40","45"],a:1,e:"Ten fours are 40, and one four less is 36."},
+   {q:"What is 11 × 12?",o:["112","121","132","144"],a:2,e:"Eleven twelves are one twelve less than 144, which gives 132."},
+   {q:"What is 45 ÷ 5?",o:["5","7","8","9"],a:3,e:"Five nines make 45, so 45 shared into groups of 5 gives 9."},
+   {q:"What is 56 ÷ 7?",o:["8","6","7","9"],a:0,e:"Seven eights are 56, so the answer is 8."},
+   {q:"What is double 35?",o:["55","70","65","75"],a:1,e:"Double means add the number to itself: 35 + 35 = 70."},
+   {q:"What is half of 48?",o:["12","22","24","26"],a:2,e:"Half of 40 is 20 and half of 8 is 4, so half of 48 is 24."},
+   {q:"What is a quarter of 40?",o:["4","8","20","10"],a:3,e:"A quarter means one of four equal parts: 40 ÷ 4 = 10."},
+   {q:"How many sides does an octagon have?",o:["8","6","7","10"],a:0,e:"Octa means eight, so an octagon has eight straight sides, like a stop sign. 🛑"},
+   {q:"How many flat faces does a cube have?",o:["4","6","8","12"],a:1,e:"A cube has a top, a bottom and four sides, which makes six flat faces."},
+   {q:"The clock shows 3:45. How many minutes are left until 4 o'clock?",o:["10 minutes","20 minutes","15 minutes","45 minutes"],a:2,e:"From 45 minutes to 60 minutes is 15 minutes, so 4 o'clock is a quarter of an hour away. ⏰"},
+   {q:"A movie starts at 6:30 and lasts 90 minutes. What time does it end?",o:["7:20","7:30","8:30","8:00"],a:3,e:"90 minutes is one hour and 30 minutes: 6:30 plus one hour is 7:30, plus 30 minutes is 8:00. 🎬"},
+   {q:"What time is quarter past seven in the morning?",o:["7:15","6:45","7:30","7:45"],a:0,e:"A quarter of an hour is 15 minutes, so quarter past seven is 7:15."}
+  ],
     medium:[
       {"q":"What is 9 × 9?","o":["72","81","89","99"],"a":1,"e":"9 × 9 = 81."},
       {"q":"How many centimetres are in one metre?","o":["10","50","100","1000"],"a":2,"e":"The metric system counts in tens, so one metre equals one hundred centimetres."},
@@ -142,7 +273,26 @@ window.GK_BANK = {
       {"q":"A recipe uses 2 cups of flour for every 1 cup of sugar. How much flour do you need for 3 cups of sugar?","o":["3 cups","4 cups","5 cups","6 cups"],"a":3,"e":"The ratio is 2 to 1, so 3 cups of sugar needs 3 x 2 = 6 cups of flour."},
       {"q":"What is three quarters of 60?","o":["15","30","40","45"],"a":3,"e":"One quarter of 60 is 15, so three quarters is 3 x 15 = 45."},
       {"q":"The three angles inside any triangle add up to how many degrees?","o":["90","180","270","360"],"a":1,"e":"The angles of a triangle always add up to 180 degrees."}
-    ],
+    ,
+   /* +50 Math & Numbers medium */
+   {q:"What is 1/2 + 1/4?",o:["1/6","3/4","1/3","2/3"],a:1,e:"Change 1/2 into 2/4, then 2/4 + 1/4 = 3/4."},
+   {q:"What is 2/3 of 27?",o:["9","21","18","24"],a:2,e:"One third of 27 is 9, so two thirds is 9 × 2 = 18."},
+   {q:"Which of these fractions is the largest?",o:["2/5","3/8","4/9","1/2"],a:3,e:"As decimals they are 0.5, 0.4, 0.375 and about 0.44, so 1/2 is the biggest."},
+   {q:"What is 40 percent of 250?",o:["100","90","110","125"],a:0,e:"10 percent of 250 is 25, and 25 × 4 = 100."},
+   {q:"A shirt costs 60 dollars and is on sale at 25 percent off. What is the sale price?",o:["15 dollars","45 dollars","35 dollars","50 dollars"],a:1,e:"25 percent of 60 is 15, and 60 - 15 = 45 dollars. 👕"},
+   {q:"On a test you scored 18 out of 24. What is that as a percentage?",o:["60 percent","72 percent","75 percent","80 percent"],a:2,e:"18 ÷ 24 = 0.75, and 0.75 × 100 = 75 percent."},
+   {q:"What is the average of 7, 11, 14 and 16?",o:["13","16","48","12"],a:3,e:"The four numbers add to 48, and 48 ÷ 4 = 12."},
+   {q:"The average of four numbers is 9. What do the four numbers add up to?",o:["36","13","18","45"],a:0,e:"Average × how many numbers = total, so 9 × 4 = 36."},
+   {q:"A rectangle is 9 metres long and 4 metres wide. What is its perimeter?",o:["13 metres","26 metres","18 metres","36 metres"],a:1,e:"The perimeter is all four sides added: 9 + 4 + 9 + 4 = 26 metres."},
+   {q:"A triangle has a base of 10 cm and a height of 6 cm. What is its area?",o:["16 square cm","32 square cm","30 square cm","60 square cm"],a:2,e:"The area of a triangle is base × height ÷ 2, so 10 × 6 ÷ 2 = 30 square cm."},
+   {q:"A square has a perimeter of 20 cm. What is its area?",o:["10 square cm","20 square cm","100 square cm","25 square cm"],a:3,e:"Each side is 20 ÷ 4 = 5 cm, and 5 × 5 = 25 square cm."},
+   {q:"If x + 7 = 19, what is x?",o:["12","11","13","26"],a:0,e:"Take 7 away from both sides: 19 - 7 = 12."},
+   {q:"If 2x + 5 = 17, what is x?",o:["8.5","6","11","12"],a:1,e:"Take 5 off both sides to get 2x = 12, then halve it, so x = 6."},
+   {q:"Blue and yellow paint are mixed in the ratio 3 to 2. In 30 litres of the mix, how much is blue?",o:["12 litres","15 litres","18 litres","20 litres"],a:2,e:"3 + 2 = 5 shares, so one share is 6 litres, and blue gets 3 shares, or 18 litres. 🎨"},
+   {q:"Two friends share 84 dollars in the ratio 3 to 4. How much does the friend with the bigger share get?",o:["36 dollars","42 dollars","56 dollars","48 dollars"],a:3,e:"3 + 4 = 7 shares, so one share is 12 dollars, and 4 shares is 48 dollars."},
+   {q:"How many grams are in 2.5 kilograms?",o:["2500","25","250","25000"],a:0,e:"One kilogram is 1000 grams, so 2.5 × 1000 = 2500 grams. ⚖️"},
+   {q:"How many minutes are in 3.5 hours?",o:["180","210","195","350"],a:1,e:"Three hours is 180 minutes, and half an hour is 30 more, which makes 210."}
+  ],
     hard:[
       {"q":"What is 2 to the power of 10?","o":["100","512","1024","2048"],"a":2,"e":"Doubling ten times gives 1024, which is why a kilobyte was once 1024 bytes."},
       {"q":"When you roll two dice and add them, which total comes up most often?","o":["6","7","8","12"],"a":1,"e":"Seven can be made six different ways, more than any other total."},
@@ -159,7 +309,25 @@ window.GK_BANK = {
       {"q":"A price goes up 10 percent, then goes down 10 percent. Compared with the start, the final price is:","o":["Higher","Exactly the same","A little lower","Exactly half"],"a":2,"e":"100 becomes 110, and 10 percent off 110 is 99, so it ends a little lower."},
       {"q":"In how many different orders can 3 people stand in a line?","o":["3","6","9","27"],"a":1,"e":"3 x 2 x 1 = 6 different orders."},
       {"q":"Which letter is the Roman numeral for 500?","o":["C","D","L","M"],"a":1,"e":"D stands for 500, while C is 100, L is 50 and M is 1000."}
-    ]
+    ,
+   /* +50 Math & Numbers hard */
+   {q:"A train travels 240 km in 3 hours. At the same speed, how far does it go in 5 hours?",o:["320 km","360 km","400 km","480 km"],a:2,e:"240 ÷ 3 = 80 km each hour, and 80 × 5 = 400 km. 🚆"},
+   {q:"A tap fills a 45 litre tub in 15 minutes. How long does the same tap take to fill a 120 litre tub?",o:["30 minutes","36 minutes","45 minutes","40 minutes"],a:3,e:"The tap gives 45 ÷ 15 = 3 litres a minute, so 120 ÷ 3 = 40 minutes."},
+   {q:"A class of 28 students goes on a trip. Each van holds 6 students. How many vans are needed?",o:["5","4","6","7"],a:0,e:"Four vans carry 24 students, so a fifth van is needed for the last 4. 🚐"},
+   {q:"A town has 5000 people. The number grows 20 percent in the first year and another 20 percent in the second year. How many people live there then?",o:["6000","7200","7000","7400"],a:1,e:"5000 grows to 6000, and 20 percent of 6000 is 1200, which gives 7200."},
+   {q:"You put 500 dollars in a savings account that adds 5 percent interest each year. How much is there after two years?",o:["525 dollars","550 dollars","551.25 dollars","555 dollars"],a:2,e:"Year one adds 25 dollars to make 525, then 5 percent of 525 is 26.25, giving 551.25 dollars. 💰"},
+   {q:"After a 20 percent discount, a board game costs 48 dollars. What was the price before the discount?",o:["56 dollars","57.60 dollars","68 dollars","60 dollars"],a:3,e:"48 dollars is 80 percent of the old price, so the old price is 48 ÷ 0.8 = 60 dollars."},
+   {q:"A box measures 5 cm by 4 cm by 3 cm. What is its volume?",o:["60 cubic cm","12 cubic cm","47 cubic cm","94 cubic cm"],a:0,e:"Volume is length × width × height, so 5 × 4 × 3 = 60 cubic cm."},
+   {q:"A cube has edges 4 cm long. What is its volume?",o:["16 cubic cm","64 cubic cm","48 cubic cm","96 cubic cm"],a:1,e:"The volume of a cube is edge × edge × edge, so 4 × 4 × 4 = 64 cubic cm."},
+   {q:"The minute hand of a clock moves from 12 round to 3. Through how many degrees has it turned?",o:["45 degrees","180 degrees","90 degrees","270 degrees"],a:2,e:"A full turn is 360 degrees, and this is a quarter of the way round, so 360 ÷ 4 = 90 degrees."},
+   {q:"What do the four angles inside any four-sided shape add up to?",o:["180 degrees","270 degrees","540 degrees","360 degrees"],a:3,e:"A four-sided shape can be cut into two triangles, and 180 + 180 = 360 degrees."},
+   {q:"A straight line is split into two angles. One of them is 115 degrees. How big is the other one?",o:["65 degrees","55 degrees","75 degrees","245 degrees"],a:0,e:"Angles that sit on a straight line add up to 180, so 180 - 115 = 65 degrees."},
+   {q:"How many prime numbers are there between 1 and 20?",o:["6","8","7","9"],a:1,e:"They are 2, 3, 5, 7, 11, 13, 17 and 19, which makes eight in all."},
+   {q:"What number comes next: 3, 7, 15, 31?",o:["47","55","63","62"],a:2,e:"Each number is doubled and then 1 is added, so 31 × 2 + 1 = 63."},
+   {q:"You roll one fair six-sided die. What is the chance of getting a number greater than 4?",o:["1 in 2","1 in 6","2 in 3","1 in 3"],a:3,e:"Only 5 and 6 are greater than 4, so 2 faces out of 6 work, which is 1 in 3."},
+   {q:"You flip a fair coin twice. What is the chance of getting heads both times?",o:["1 in 4","1 in 2","1 in 3","1 in 8"],a:0,e:"There are four results that are equally likely, and only one of them is heads twice."},
+   {q:"What is 3 to the power of 4?",o:["12","81","27","64"],a:1,e:"3 × 3 = 9, then 9 × 3 = 27, and 27 × 3 = 81."}
+  ]
   },
   "Animals": { emoji:"🦁",
     easy:[
@@ -178,7 +346,26 @@ window.GK_BANK = {
       {"q":"Which mammal is able to fly?","o":["Bat","Squirrel","Rabbit","Mouse"],"a":0,"e":"Bats have skin stretched between long finger bones, and it works like a wing."},
       {"q":"Which bird is well known for copying human speech?","o":["Parrot","Pelican","Penguin","Pigeon"],"a":0,"e":"Parrots copy sounds they hear often, including words from the people around them."},
       {"q":"Which animal carries its baby, called a joey, in a pouch?","o":["Kangaroo","Otter","Badger","Raccoon"],"a":0,"e":"A newborn kangaroo is tiny and keeps growing safely inside its mother's pouch."}
-    ],
+    ,
+   /* +50 Animals easy */
+   {q:"Which large animal is often called the ship of the desert?",o:["Camel","Zebra","Donkey","Llama"],a:0,e:"Camels carry people and goods across hot sand and can go a long time without drinking. 🐪"},
+   {q:"What do we call a baby frog that lives in the water?",o:["Minnow","Tadpole","Newt","Guppy"],a:1,e:"A tadpole has a tail and gills, then slowly grows legs and lungs to become a frog."},
+   {q:"Which bird is famous for spreading a big fan of colourful tail feathers?",o:["Pelican","Pigeon","Peacock","Parrot"],a:2,e:"The male peacock lifts his long tail feathers into a shining fan to impress a female. 🦚"},
+   {q:"What is the main food of a giant panda?",o:["Fish","Fresh grass","Berries","Bamboo"],a:3,e:"Giant pandas spend many hours a day chewing bamboo stems and leaves in the forests of China."},
+   {q:"Which sea animal has a hard shell and walks sideways?",o:["Squid","Eel","Clam","Crab"],a:3,e:"A crab's legs bend in a way that makes moving sideways quick and easy."},
+   {q:"Which farm animal gives us the wool for sweaters?",o:["Sheep","Goat","Cow","Pig"],a:0,e:"Sheep grow a thick woolly coat that is trimmed off each year without hurting them."},
+   {q:"Wild penguins live in which half of the world?",o:["The northern half","The southern half","Only near the Equator","Only in the Arctic"],a:1,e:"Every wild penguin lives south of the Equator, from Antarctica up to the coasts of Africa and South America. 🐧"},
+   {q:"Which small animal has a bushy tail and hides nuts for the winter?",o:["Squirrel","Rabbit","Hedgehog","Mole"],a:0,e:"Squirrels bury nuts in many spots, and the ones they forget can grow into new trees. 🐿️"},
+   {q:"What covers the body of most fish?",o:["Fur","Feathers","Scales","Shells"],a:2,e:"Scales are thin overlapping plates that protect a fish and help it slip through the water."},
+   {q:"Which large Canadian bird of prey has a white head and a white tail?",o:["Great horned owl","Snowy owl","Bald eagle","Osprey"],a:2,e:"The bald eagle is not really bald, since its head is simply covered in bright white feathers. 🦅"},
+   {q:"Which lizard is famous for changing colour to match its mood and its surroundings?",o:["Leopard gecko","Green iguana","Blue-tongued skink","Chameleon"],a:3,e:"A chameleon shifts colour by moving tiny crystals in its skin, which also helps it stay hidden."},
+   {q:"What do we call the home a bird builds to hold its eggs?",o:["A nest","A burrow","A hive","A den"],a:0,e:"Birds weave twigs, grass and mud into a nest so their eggs stay warm and safe."},
+   {q:"Which insect makes its own light and glows on summer nights?",o:["Moth","The cricket","Dragonfly","Firefly"],a:3,e:"A firefly mixes special chemicals in its body to make a cool glow that never burns. ✨"},
+   {q:"Which sea animal usually has five arms and is shaped like a star?",o:["Sea star","Sea horse","Sea urchin","Sea snail"],a:0,e:"A sea star can slowly grow a brand new arm if it loses one, which is very handy."},
+   {q:"What do we call a baby sheep?",o:["A calf","A foal","A lamb","A kid"],a:2,e:"A lamb can stand up and walk within minutes of being born."},
+   {q:"Which is the largest member of the cat family?",o:["Lion","Leopard","Cheetah","Tiger"],a:3,e:"A tiger can weigh more than three grown adults and lives in the forests of Asia."},
+   {q:"Which slow garden animal carries a spiral shell on its back?",o:["Worm","Snail","Beetle","Slug"],a:1,e:"A snail can pull its whole soft body inside its shell when it wants to rest. 🐌"}
+  ],
     medium:[
       {"q":"How many hearts does an octopus have?","o":["1","2","3","4"],"a":2,"e":"An octopus has three hearts."},
       {"q":"What is a group of lions called?","o":["A herd","A pride","A flock","A pack"],"a":1,"e":"A pride is a lion family that hunts and rests together on the grasslands."},
@@ -195,7 +382,26 @@ window.GK_BANK = {
       {"q":"Which is the largest bird in the world?","o":["The condor","The ostrich","The emu","The albatross"],"a":1,"e":"An ostrich is far too heavy to fly, so it escapes danger by running very fast."},
       {"q":"Which of these sea animals is a mammal and not a fish?","o":["The shark","The eel","The dolphin","The tuna"],"a":2,"e":"Dolphins breathe air with lungs and feed their babies milk, just like land mammals."},
       {"q":"What do we call an animal that is active at night and sleeps by day?","o":["Migratory","Territorial","Domestic","Nocturnal"],"a":3,"e":"Nocturnal animals such as owls and raccoons have senses built for finding food in the dark."}
-    ],
+    ,
+   /* +50 Animals medium */
+   {q:"A rhinoceros horn is made of the same material as which part of you?",o:["Your leg bones","Your front teeth","Your hair and nails","Your outer skin"],a:2,e:"Rhino horns are packed keratin, the same tough material that makes human hair and fingernails."},
+   {q:"Which bird can hover in one spot and even fly backwards?",o:["The swallow","The hummingbird","The kingfisher","The wren"],a:1,e:"A hummingbird beats its wings in a figure-eight pattern, so it can hang in the air and reverse."},
+   {q:"What do we call a large group of fish swimming together?",o:["A herd","A flock","A swarm","A school"],a:3,e:"Swimming in a school makes it much harder for a hunter to pick out any single fish."},
+   {q:"Which Australian animal sleeps most of the day and eats eucalyptus leaves?",o:["The koala","The wombat","The possum","The bandicoot"],a:0,e:"Eucalyptus leaves give very little energy, so a koala rests up to 20 hours a day to save it."},
+   {q:"Lemurs live in the wild on only one island. Which one?",o:["Sri Lanka","Borneo","Tasmania","Madagascar"],a:3,e:"Madagascar drifted away from other land long ago, so its animals grew up entirely on their own."},
+   {q:"Which tiny insect can lift objects many times heavier than itself?",o:["The fly","The ant","The mosquito","The moth"],a:1,e:"An ant's small body means its muscles are very strong compared with its light weight. 🐜"},
+   {q:"Which fish can puff itself up into a round ball?",o:["The pufferfish","The catfish","The swordfish","The flying fish"],a:0,e:"A pufferfish gulps water to swell up until it is far too big and round to swallow."},
+   {q:"Which creature has the largest eyes of any animal?",o:["The blue whale","The giant squid","The elephant","The ostrich"],a:1,e:"A giant squid's eye can be as wide as a dinner plate, perfect for seeing in the dark deep sea."},
+   {q:"Which sea mammal floats on its back and uses a stone to open shellfish?",o:["The seal","The walrus","The manatee","The sea otter"],a:3,e:"Sea otters are one of the few animals that use tools, and each keeps a favourite stone in a skin pocket."},
+   {q:"What colour is a giraffe's tongue?",o:["Bright pink","Bright yellow","Dark blue-purple","Pale mint green"],a:2,e:"The dark colour works like sunscreen while the giraffe reaches for leaves under the hot sun."},
+   {q:"Which snake grows the longest of all snakes?",o:["The green anaconda","The eastern rat snake","The reticulated python","The common boa constrictor"],a:2,e:"A reticulated python from Southeast Asia can stretch out longer than a small car."},
+   {q:"Which bird reaches the highest speed when it dives through the air?",o:["The golden eagle","The wandering albatross","The herring gull","The peregrine falcon"],a:3,e:"A diving peregrine falcon can pass 300 km per hour, making it the quickest animal in the sky."},
+   {q:"Which Canadian animal turns white in winter and brown in summer?",o:["The snowshoe hare","The northern raccoon","The common porcupine","The eastern chipmunk"],a:0,e:"Changing coat colour helps the snowshoe hare blend into the snow, then into the forest floor."},
+   {q:"Which Australian bird has a call that sounds like loud human laughing?",o:["The emu","The kookaburra","The galah","The lyrebird"],a:1,e:"A kookaburra family sings together at dawn to let others know the area is theirs."},
+   {q:"Which fish has a wide head shaped like a hammer?",o:["The spotted eagle ray","The hammerhead shark","The spotted moray eel","The giant barracuda"],a:1,e:"That wide head spreads its eyes far apart, giving the hammerhead shark a very good view around itself."},
+   {q:"How does a honeybee tell the rest of the hive where good flowers are?",o:["By singing a tune","By dancing a pattern","By tapping the wall","By changing colour"],a:1,e:"A returning bee waggles in a figure-eight, and the angle of the dance points the way to the flowers."},
+   {q:"Which South American bird is known for its huge, brightly coloured beak?",o:["The macaw","The flamingo","The toucan","The condor"],a:2,e:"A toucan's big beak is light and hollow inside, and it also helps the bird stay cool."}
+  ],
     hard:[
       {"q":"Which animal makes the longest migration of any animal?","o":["The humpback whale","The caribou","The Arctic tern","The monarch butterfly"],"a":2,"e":"It follows summer from the Arctic to the Antarctic and back, so it sees more daylight than any other animal."},
       {"q":"In a butterfly's life cycle, which stage comes right after the caterpillar?","o":["The egg","The larva","The adult","The pupa"],"a":3,"e":"Inside the pupa, or chrysalis, the caterpillar's body is rebuilt into a winged adult."},
@@ -212,7 +418,25 @@ window.GK_BANK = {
       {"q":"Which mammal lays eggs instead of giving birth to live young?","o":["The wombat","The opossum","The platypus","The koala"],"a":2,"e":"It belongs to the monotremes, the only mammals that lay eggs and still feed their babies milk."},
       {"q":"Why do beavers build dams across streams?","o":["To trap fish in the still water","To store branches behind the wall","To keep other beavers away","To make deep water around their lodge"],"a":3,"e":"Deep water hides the underwater door of the lodge and keeps wolves and bears from reaching it."},
       {"q":"Where do adult Pacific salmon go to lay their eggs?","o":["The stream where they hatched","The deepest part of the ocean","Any warm lake near the coast","The mouth of the largest river"],"a":0,"e":"Salmon use smell and the earth's magnetic field to find their home stream after years at sea."}
-    ]
+    ,
+   /* +50 Animals hard */
+   {q:"Which animal has the longest pregnancy of any mammal?",o:["The blue whale","The giraffe","The elephant","The rhinoceros"],a:2,e:"An elephant calf grows for about 22 months before it is born, and it can walk almost right away. 🐘"},
+   {q:"Which amphibian keeps its feathery gills and stays in the water its whole life?",o:["The bullfrog","The axolotl","The fire salamander","The common toad"],a:1,e:"The axolotl of Mexico never fully changes into a land animal, and it can regrow lost body parts."},
+   {q:"Which bird has soft feather edges that make its flight almost silent?",o:["The heron","The swan","The crane","The owl"],a:3,e:"Soft fringes on an owl's wing feathers break up the rush of air, so it glides without a sound. 🦉"},
+   {q:"Which bird builds a decorated stage of colourful objects to attract a mate?",o:["The magpie","The starling","The cuckoo","The bowerbird"],a:3,e:"A male bowerbird in Australia and New Guinea sorts berries, petals and shells by colour in his bower."},
+   {q:"Which small shrimp-like creature is the main food of many great whales?",o:["Squid","Jellyfish","Krill","Sea snails"],a:2,e:"Krill gather in huge swarms in cold seas, and one whale can strain millions of them from the water."},
+   {q:"Which reptile from New Zealand has a light-sensing spot on top of its head?",o:["The gecko","The land tortoise","The tuatara","The monitor lizard"],a:2,e:"The tuatara's third eye is slowly covered by scales as it grows, and scientists think it helps track daylight."},
+   {q:"Which group of insects has more known species than any other?",o:["Beetles","Butterflies","Ants","Bees"],a:0,e:"About one in four known animal species is a beetle, from specks smaller than a grain of rice to palm-sized giants."},
+   {q:"Which fish can leave the water and move across mud using its fins?",o:["The Atlantic sardine","The Pacific halibut","The yellow perch","The mudskipper"],a:3,e:"A mudskipper keeps water in its gill pockets and breathes through its skin while it hops about on land."},
+   {q:"Which insect makes a loud summer song by vibrating a drum-like part of its body?",o:["The cicada","The cricket","The grasshopper","The beetle"],a:0,e:"A cicada clicks stiff plates called tymbals in and out very fast, and its hollow body makes the sound louder."},
+   {q:"The name hippopotamus comes from ancient Greek words meaning what?",o:["Water dancer","River horse","Mud giant","Lake ox"],a:1,e:"Hippos spend their days resting in rivers to stay cool, so the old Greek name river horse fits them well."},
+   {q:"Which sea creature has pale blue blood because copper carries its oxygen?",o:["The starfish","The sea cucumber","The horseshoe crab","The sea sponge"],a:2,e:"Copper turns blood a pale blue, and the horseshoe crab has used this design for hundreds of millions of years."},
+   {q:"What is the scientific study of birds called?",o:["Ornithology","Entomology","Herpetology","Ichthyology"],a:0,e:"Ornithology is the study of birds, while entomology covers insects and ichthyology covers fish."},
+   {q:"Which big cat can purr steadily but cannot roar?",o:["The lion","The jaguar","The leopard","The cheetah"],a:3,e:"A cheetah's throat bones are stiff, so it purrs and chirps like a bird instead of roaring."},
+   {q:"The long spiral tusk of a narwhal is actually what?",o:["A horn of bone","A very long tooth","A hardened fin","A twisted claw"],a:1,e:"A narwhal's tusk is a tooth that grows straight out through its lip, and it is full of tiny nerve endings."},
+   {q:"Where are a cricket's ears located?",o:["On its head","On its front legs","Under its wings","On its antennae"],a:1,e:"A cricket hears through thin patches on its front legs, which pick up the songs of other crickets."},
+   {q:"Which is the largest kind of sea turtle?",o:["The leatherback turtle","The green turtle","The hawksbill turtle","The loggerhead turtle"],a:0,e:"A leatherback has a soft rubbery shell and swims in cold water as far north as Canada's coasts."}
+  ]
   },
   "History": { emoji:"🏛️",
     easy:[
@@ -231,7 +455,26 @@ window.GK_BANK = {
       {"q":"Which famous scientist came up with the theory of gravity after (legend says) seeing an apple fall?","o":["Einstein","Isaac Newton","Galileo","Darwin"],"a":1,"e":"Sir Isaac Newton is famous for the theory of gravity."},
       {"q":"The Wright brothers are remembered for building the first powered what?","o":["Submarine","Motorcycle","Airplane","Steam train"],"a":2,"e":"In 1903 the Wright brothers flew a powered airplane for the first time."},
       {"q":"In which year did Canada become a country?","o":["1776","1812","1867","1905"],"a":2,"e":"Confederation joined the first provinces into the new country of Canada on July 1, 1867."}
-    ],
+    ,
+   /* +50 History easy */
+   {q:"Which ancient people built the Great Sphinx, the giant statue with a lion's body?",o:["The ancient Greeks","The ancient Egyptians","The ancient Persians","The ancient Romans"],a:1,e:"The Great Sphinx sits near the pyramids at Giza and was carved from one huge block of limestone about 4,500 years ago."},
+   {q:"Which metal gave its name to the age that came right after the Stone Age?",o:["Bronze","Silver","Iron","Gold"],a:0,e:"Bronze is made by mixing copper and tin, and it made stronger tools than stone. 🔨"},
+   {q:"What does an archaeologist do?",o:["Studies stars through a telescope","Studies the past by digging up old objects","Draws maps of new countries","Repairs and cleans old paintings in museums"],a:1,e:"Archaeologists learn about people who left no written records by studying the things they left behind."},
+   {q:"Who was the first Prime Minister of Canada?",o:["Wilfrid Laurier","Louis Riel","John A. Macdonald","Robert Baldwin"],a:2,e:"John A. Macdonald took office in 1867, the year the Dominion of Canada was formed."},
+   {q:"The first peoples who lived in Canada long before Europeans arrived are known as what?",o:["Settlers","Explorers","Colonists","Indigenous peoples"],a:3,e:"Indigenous peoples have lived across the land now called Canada for thousands of years, in many different nations with their own languages."},
+   {q:"Which French explorer founded Quebec City in 1608?",o:["Samuel de Champlain","Jacques Cartier","Louis Jolliet","Pierre Radisson"],a:0,e:"Champlain chose a narrow bend of the St. Lawrence River, and his small trading post grew into Quebec City."},
+   {q:"Ancient Egyptians wrote on sheets made from a tall river plant. What were the sheets called?",o:["Canvas","Papyrus","Linen","Vellum"],a:1,e:"Papyrus was cut into strips, pressed together and dried, giving Egypt a light writing surface long before paper reached Europe."},
+   {q:"Which ancient city is famous for the Parthenon temple standing on a rocky hill?",o:["Cairo","Rome","Athens","Istanbul"],a:2,e:"The Parthenon was built in Athens about 2,450 years ago on a hill called the Acropolis."},
+   {q:"Thousands of life-size clay soldiers, known as the Terracotta Army, were buried in which country?",o:["India","Japan","Korea","China"],a:3,e:"Farmers digging a well in 1974 found the clay army, made to guard the tomb of China's first emperor."},
+   {q:"On sunny days, people long ago told the time using which simple device?",o:["A sundial","A compass","A pendulum","An hourglass"],a:0,e:"A sundial has a raised edge that casts a shadow, and the shadow moves around the dial as the Sun crosses the sky. ☀️"},
+   {q:"Before electric fridges, how did many families keep food cold in summer?",o:["They buried it in sand","They kept it near a fire","They used big blocks of ice","They wrapped it in wool"],a:2,e:"Ice was cut from frozen lakes in winter, packed in sawdust and sold all summer for wooden iceboxes."},
+   {q:"Which vegetable came from the Americas and became a main food in Europe after the 1500s?",o:["The potato","The carrot","The onion","The turnip"],a:0,e:"Potatoes were first grown in the Andes mountains, and they later fed millions of people across Europe."},
+   {q:"Which machine of the 1800s let people send messages along wires using taps of code?",o:["The radio","The telegraph","The typewriter","The phonograph"],a:1,e:"The telegraph carried news across countries in minutes instead of the weeks a letter needed."},
+   {q:"What were most castles in the Middle Ages built to do?",o:["Store grain for the whole country","Hold markets and fairs","Keep the people inside safe","Serve as schools for children"],a:2,e:"Thick walls, a high gate and often a water-filled ditch made a castle hard to enter uninvited."},
+   {q:"Which two-wheeled machine with pedals became a popular way to travel in the 1800s?",o:["The scooter","The rickshaw","The tram","The bicycle"],a:3,e:"Early bicycles had wooden or iron wheels, and rubber tires later made the ride far smoother. 🚲"},
+   {q:"In medieval Europe, books were copied by hand onto sheets made of what?",o:["Woven silk","Thin animal skin","Dried leaves","Pressed bark"],a:1,e:"This material was called parchment, and one large book could use the skins of a whole flock of sheep."},
+   {q:"Which ancient empire built long, straight stone roads all across Europe?",o:["The Roman Empire","The Greek city-states","The Persian Empire","The Ottoman Empire"],a:0,e:"Roman roads were built in layers with a curved top so rain ran off, and some are still used as routes today."}
+  ],
     medium:[
       {"q":"Ancient Romans mainly spoke which language?","o":["Greek","Latin","Spanish","French"],"a":1,"e":"The Romans spoke Latin."},
       {"q":"The Statue of Liberty was a gift to the USA from which country?","o":["England","France","Spain","Italy"],"a":1,"e":"France gave the Statue of Liberty to the USA."},
@@ -248,7 +491,26 @@ window.GK_BANK = {
       {"q":"In which year did the First World War begin?","o":["1912","1914","1916","1918"],"a":1,"e":"The fighting started in the summer of 1914 and lasted more than four years."},
       {"q":"Mohandas Gandhi led a peaceful movement for independence in which country?","o":["India","Egypt","Indonesia","Kenya"],"a":0,"e":"Gandhi used protest without violence, and India became independent from British rule in 1947."},
       {"q":"Who developed the printing press with movable metal type in Europe around 1450?","o":["Johannes Gutenberg","Galileo Galilei","Marco Polo","William Caxton"],"a":0,"e":"His press made books cheap enough that new ideas could spread across Europe quickly."}
-    ],
+    ,
+   /* +50 History medium */
+   {q:"Which ancient civilisation built the carefully planned cities of Harappa and Mohenjo-daro?",o:["The Indus Valley civilisation","The Shang of China","The Minoans of Crete","The Olmecs of Mexico"],a:0,e:"These cities had straight streets, brick houses and covered drains more than 4,000 years ago."},
+   {q:"Cuneiform, one of the oldest writing systems, was pressed into wet clay by people of which region?",o:["The Nile Delta","The Ganges plain","Mesopotamia","The Yellow River valley"],a:2,e:"Scribes in Mesopotamia used a reed with a wedge-shaped tip, and cuneiform simply means wedge-shaped."},
+   {q:"Which African empire, centred on Timbuktu, grew rich from the gold and salt trade in the 1300s?",o:["The Kingdom of Kush","The Mali Empire","The Kingdom of Benin","The Swahili city-states"],a:1,e:"Timbuktu also became a centre of learning, with libraries holding thousands of handwritten books."},
+   {q:"The huge stone walls of Great Zimbabwe were built by people in which part of the world?",o:["North Africa","West Africa","East Asia","Southern Africa"],a:3,e:"The walls were fitted together without mortar, and the site gave the modern country of Zimbabwe its name."},
+   {q:"Which Polynesian people carved the giant stone heads, called moai, on Easter Island?",o:["The Maori","The Rapa Nui","The Samoans","The Hawaiians"],a:1,e:"The Rapa Nui carved nearly 900 moai from volcanic rock and moved them for kilometres across the island."},
+   {q:"Which people of Central America created a very accurate calendar and a writing system made of glyphs?",o:["The Maya","The Inca","The Zapotec","The Taino"],a:0,e:"Maya astronomers tracked the Sun, Moon and planets closely enough to predict eclipses. 🌘"},
+   {q:"European ships first reached Asia by sea by sailing around which southern African landmark?",o:["Cape Verde","The Horn of Africa","The Cape of Good Hope","The Strait of Gibraltar"],a:2,e:"Portuguese sailors rounded this cape in 1488, opening a sea route that avoided the long overland journey."},
+   {q:"What was the Renaissance in Europe?",o:["A time of new art and learning from about 1400 to 1600","A time when most people left the towns to farm the land","A series of long droughts in the 1200s","A change from stone tools to metal tools"],a:0,e:"Renaissance means rebirth, because scholars rediscovered ancient Greek and Roman ideas and artists tried bold new techniques."},
+   {q:"Which way of keeping food fresh for years in sealed containers was developed in the early 1800s?",o:["Freezing","Canning","Smoking","Pickling"],a:1,e:"Food was sealed in a jar or tin and heated, which killed the tiny organisms that make food spoil."},
+   {q:"Louis Pasteur is remembered for a gentle heating process that makes milk safe to drink. What is it called?",o:["Filtration","Fermentation","Distillation","Pasteurization"],a:3,e:"Heating milk briefly and then cooling it removes harmful germs without changing the taste much. 🥛"},
+   {q:"Which 1982 change brought Canada's constitution home and added the Charter of Rights and Freedoms?",o:["The Statute of Westminster","The Constitution Act","The Quebec Act","The Act of Union"],a:1,e:"Before 1982, changes to Canada's constitution had to pass through the British Parliament."},
+   {q:"Which waterway, opened in 1959, lets large ships sail from the Atlantic Ocean into the Great Lakes?",o:["The Rideau Canal","The Welland Locks","The St. Lawrence Seaway","The Trent-Severn Waterway"],a:2,e:"A chain of locks lifts ships about 180 metres between the ocean and Lake Superior. 🚢"},
+   {q:"The Klondike Gold Rush of the 1890s drew tens of thousands of people to which part of Canada?",o:["Northern Ontario","The Yukon","Cape Breton","The Prairies"],a:1,e:"Most hopeful miners crossed steep mountain passes carrying a year's worth of food before they could even start digging."},
+   {q:"Which wonder of the ancient world was a huge tower whose fire guided ships into an Egyptian harbour?",o:["The Colossus of Rhodes","The Temple of Artemis","The Hanging Gardens","The Lighthouse of Alexandria"],a:3,e:"The lighthouse stood for over 1,500 years before earthquakes finally brought it down."},
+   {q:"Which Italian traveller wrote a famous book about his long journey to China in the 1200s?",o:["Marco Polo","Amerigo Vespucci","Giovanni Caboto","Antonio Pigafetta"],a:0,e:"His descriptions of paper money, coal and huge cities amazed European readers who had never seen such things."},
+   {q:"What was the main work of a village blacksmith long ago?",o:["Grinding grain into flour","Making cloth on a loom","Building roofs out of straw","Shaping iron into tools and horseshoes"],a:3,e:"The smith heated iron until it glowed soft, then hammered it into shape on an anvil."},
+   {q:"Which Chinese invention of about 1,900 years ago changed how people kept records?",o:["The compass","Gunpowder","Paper","The wheelbarrow"],a:2,e:"Paper was made by mashing plant fibres and rags into a pulp, then draining it into thin sheets."}
+  ],
     hard:[
       {"q":"The Battle of Vimy Ridge, where all four Canadian divisions fought together for the first time, took place in which year?","o":["1915","1916","1917","1918"],"a":2,"e":"The victory in France in April 1917 became a symbol of Canada acting as a nation of its own."},
       {"q":"Which 1931 law gave Canada full control of its own foreign policy?","o":["The Statute of Westminster","The British North America Act","The Constitution Act","The Treaty of Paris"],"a":0,"e":"It ended Britain's power to make laws for the dominions, a big step toward full independence."},
@@ -265,7 +527,25 @@ window.GK_BANK = {
       {"q":"Which people of ancient Mexico built the city of Tenochtitlan?","o":["The Aztec","The Maya","The Inca","The Toltec"],"a":0,"e":"Tenochtitlan was built on an island in a lake, where Mexico City stands today."},
       {"q":"Which king of ancient Babylon is remembered for one of the earliest written codes of law?","o":["Hammurabi","Nebuchadnezzar","Cyrus","Sargon"],"a":0,"e":"He had the laws carved on a tall stone pillar so everyone could see the rules and punishments."},
       {"q":"The Black Death swept across Europe in which century?","o":["The 12th century","The 14th century","The 16th century","The 17th century"],"a":1,"e":"The plague of the 1340s killed a huge share of Europe's people and raised the wages of survivors."}
-    ]
+    ,
+   /* +50 History hard */
+   {q:"Which empire built more than 30,000 kilometres of mountain roads without wheels or horses?",o:["The Inca Empire","The Aztec Empire","The Maya kingdoms","The Chimu Kingdom"],a:0,e:"Inca runners carried messages along these Andes roads in relays, covering huge distances in a single day."},
+   {q:"Which ancient kingdom in what is now Ethiopia raised tall carved stone pillars and traded across the Red Sea?",o:["Songhai","Aksum","Carthage","Meroe"],a:1,e:"Aksum minted its own coins and sat on the trade route linking Africa, Arabia and India."},
+   {q:"Which early West African culture is known for terracotta heads made in Nigeria over 2,000 years ago?",o:["The Ife","The Asante","The Dogon","The Nok"],a:3,e:"Nok sculptors shaped clay heads with detailed hair and jewellery, and their people also worked iron early."},
+   {q:"During which period, from 1603 to 1868, did Japan keep contact with foreign traders very limited?",o:["The Heian period","The Nara period","The Edo period","The Meiji period"],a:2,e:"For most of the Edo period only a few foreign ships were allowed, at a single island trading post near Nagasaki."},
+   {q:"Which 1494 treaty divided newly mapped lands between Spain and Portugal along a line on the map?",o:["The Treaty of Tordesillas","The Treaty of Utrecht","The Treaty of Paris","The Treaty of Ghent"],a:0,e:"The line was drawn down the Atlantic, which is why Brazil ended up speaking Portuguese while its neighbours speak Spanish."},
+   {q:"Which 1648 set of agreements is often said to have shaped the modern idea of independent states?",o:["The Congress of Vienna","The Treaty of Verdun","The Edict of Nantes","The Peace of Westphalia"],a:3,e:"The talks settled that each ruler decided matters inside their own borders, an idea still built into international law."},
+   {q:"Which Metis leader is remembered as the founder of the province of Manitoba?",o:["Gabriel Dumont","James Douglas","Louis Riel","Cuthbert Grant"],a:2,e:"Riel led the Red River community's negotiations, and Manitoba joined Confederation in 1870."},
+   {q:"In which year did women in most of Canada first gain the right to vote in federal elections?",o:["1902","1918","1929","1940"],a:1,e:"Quebec women had to wait until 1940 to vote in their own provincial elections."},
+   {q:"The United States bought Alaska in 1867 from which country?",o:["Britain","Denmark","Spain","Russia"],a:3,e:"Russia sold Alaska for about 7.2 million dollars, and gold and oil were found there later."},
+   {q:"Whose 1543 book argued that the Earth travels around the Sun?",o:["Nicolaus Copernicus","Johannes Kepler","Tycho Brahe","Galileo Galilei"],a:0,e:"Copernicus put the Sun at the centre, and over the next hundred years telescopes showed he was right. 🔭"},
+   {q:"Which process of the 1850s made cheap steel possible and changed how bridges and rails were built?",o:["The Bessemer process","The Haber process","The Solvay process","The Siemens furnace"],a:0,e:"Blasting air through melted iron burned off extra carbon quickly, turning a slow craft into mass production."},
+   {q:"Which ancient Greek writer is often called the father of history?",o:["Homer","Herodotus","Plato","Aristotle"],a:1,e:"Herodotus travelled widely and tried to explain why events happened, instead of only listing them."},
+   {q:"Which Roman emperor's collection of laws became a foundation for legal systems across Europe?",o:["Augustus","Hadrian","Trajan","Justinian"],a:3,e:"Justinian's scholars gathered centuries of scattered Roman law into one organised code in the 500s."},
+   {q:"Which trading people of the Mediterranean spread an alphabet that most modern alphabets grew from?",o:["The Phoenicians","The Etruscans","The Hittites","The Lydians"],a:0,e:"Their alphabet used about 22 letters for sounds, far easier to learn than hundreds of picture signs."},
+   {q:"What do historians mean by the Columbian Exchange?",o:["A market in Seville where traders swapped American gold for European silver","A set of shipping rules that European ports agreed on in the 1500s","The movement of plants, animals and foods between the Americas and the rest of the world","The trading of secret maps and sea charts among rival explorers"],a:2,e:"Tomatoes, corn and potatoes travelled east while wheat, horses and coffee travelled west, changing meals on every continent. 🌽"},
+   {q:"Which life-saving medicine was first isolated by researchers in Toronto in 1921?",o:["Aspirin","Penicillin","Insulin","Vitamin C"],a:2,e:"The Toronto team sold the patent for one dollar so that the medicine could reach as many people as possible."}
+  ]
   },
   "Sports": { emoji:"⚽",
     easy:[
@@ -284,7 +564,26 @@ window.GK_BANK = {
       {"q":"Which colour of card does a soccer referee show to send a player off?","o":["Yellow","Blue","Green","Red"],"a":3,"e":"A red card means the player must leave the field and cannot be replaced."},
       {"q":"Which swimming stroke is swum lying on your back?","o":["Backstroke","Butterfly","Breaststroke","Front crawl"],"a":0,"e":"Swimmers doing backstroke face the sky and pull their arms over their heads."},
       {"q":"In which sport do competitors shoot at a target with a bow?","o":["Fencing","Archery","Curling","Judo"],"a":1,"e":"Archers aim for the small gold circle right at the centre of the target."}
-    ],
+    ,
+   /* +50 Sports easy */
+   {q:"How many holes are played in a full round of golf?",o:["9","12","18","24"],a:2,e:"A full round of golf is 18 holes, and most courses are built as two loops of nine."},
+   {q:"In baseball, how many bases must a runner touch to score a run?",o:["Two","Three","Four","Five"],a:2,e:"A runner touches first, second and third base and then home plate, which makes four in all. ⚾"},
+   {q:"What do swimmers wear over their eyes to see clearly under water?",o:["Goggles","A visor","A mask and snorkel","Sunglasses"],a:0,e:"Swimming goggles keep the water out and let a swimmer follow the line painted on the pool floor."},
+   {q:"How many players are on each team in beach volleyball?",o:["Two","Four","Six","Eight"],a:0,e:"Beach volleyball is played two against two, so each player has a lot of sand to cover."},
+   {q:"Curling stones are made from which material?",o:["Steel","Concrete","Hard plastic","Granite"],a:3,e:"Curling stones are cut from very hard granite so they slide smoothly and do not chip on the ice."},
+   {q:"A standard ice hockey game is divided into how many periods?",o:["Two","Three","Four","Six"],a:1,e:"Hockey has three periods of twenty minutes, with a break to clean the ice in between."},
+   {q:"In soccer, which player is allowed to catch the ball with their hands?",o:["Any defender","The captain","The goalkeeper","The striker"],a:2,e:"Only the goalkeeper may use their hands, and only inside their own penalty area."},
+   {q:"In judo and karate, which belt colour usually shows an expert?",o:["White","Yellow","Green","Black"],a:3,e:"Students start with a white belt and work through several colours before earning a black belt."},
+   {q:"In cricket, what is the set of three wooden stumps called?",o:["The wicket","The batting crease","The over","The boundary"],a:0,e:"The bowler tries to knock the bails off the wicket, and the batter tries to defend it."},
+   {q:"What shape is the ball used in rugby?",o:["Round","Oval","Square","Flat"],a:1,e:"The oval rugby ball is easy to carry under one arm and bounces in surprising directions."},
+   {q:"How many players are on the court during a doubles tennis match?",o:["Two","Three","Four","Six"],a:2,e:"Doubles puts two players on each side of the net, so four people share the court."},
+   {q:"In which winter sport do athletes slide down an icy track lying feet first?",o:["Skeleton","Bobsleigh","Curling","Luge"],a:3,e:"Luge riders go feet first on their backs, while skeleton riders go head first on their fronts."},
+   {q:"In a relay race, what do runners hand to each other?",o:["A flag","A baton","A hoop","A ribbon"],a:1,e:"The baton must change hands inside a marked zone, or the whole team is disqualified."},
+   {q:"In basketball, what is it called when a player bounces the ball while moving?",o:["Passing","Blocking","Rebounding","Dribbling"],a:3,e:"A player must dribble to move with the ball, because walking while holding it is a violation."},
+   {q:"How long is a standard soccer match, not counting stoppage time?",o:["60 minutes","75 minutes","90 minutes","120 minutes"],a:2,e:"A match is two halves of 45 minutes, and the referee adds a few extra minutes for delays."},
+   {q:"Which sport is played in a pool where players tread water and throw a ball into a goal?",o:["Diving","Rowing","Synchronised swimming","Water polo"],a:3,e:"Water polo players may not touch the bottom, so they kick hard the whole game to stay up. 🏊"},
+   {q:"Sumo wrestling is the traditional national sport of which country?",o:["China","Japan","Korea","Mongolia"],a:1,e:"Sumo bouts take place in a round clay ring, and a wrestler loses by stepping out or touching the ground."}
+  ],
     medium:[
       {"q":"How many points is a single free throw worth in basketball?","o":["1","2","3","4"],"a":0,"e":"A free throw is worth 1 point."},
       {"q":"In tennis, a score of zero is called…","o":["Nil","Love","Duck","Zip"],"a":1,"e":"In tennis, zero is called 'love'."},
@@ -301,7 +600,26 @@ window.GK_BANK = {
       {"q":"How long is an Olympic marathon race?","o":["About 21 kilometres","About 32 kilometres","About 42 kilometres","About 50 kilometres"],"a":2,"e":"The exact distance is 42.195 km, fixed at the 1908 London Games and kept ever since."},
       {"q":"In tennis, what is the score called when both players reach 40?","o":["Tiebreak","Advantage","Deuce","Match point"],"a":2,"e":"From deuce a player must win two points in a row to take the game."},
       {"q":"Which sport did Canadian born James Naismith invent in 1891?","o":["Volleyball","Baseball","Handball","Basketball"],"a":3,"e":"Naismith was born in Ontario and nailed peach baskets to a gym balcony for the first game."}
-    ],
+    ,
+   /* +50 Sports medium */
+   {q:"In curling, what is the player who directs the team's shots called?",o:["The skip","The lead","The second","The vice"],a:0,e:"The skip stands at the far end, chooses each shot and tells the sweepers what to do. 🥌"},
+   {q:"In modern table tennis, how many points does a player need to win a game?",o:["11","15","18","21"],a:0,e:"Games go to 11 points, but a player must be at least two points ahead to take the game."},
+   {q:"A traditional badminton shuttlecock is made with what?",o:["Wool","Rubber strips","Paper","Feathers"],a:3,e:"Sixteen feathers are set into a small cork base, which makes the shuttle slow down quickly in the air."},
+   {q:"How many players from one team are on the court in team handball?",o:["Five","Six","Seven","Nine"],a:2,e:"Handball teams field six outfield players plus a goalkeeper, and players may run while holding the ball."},
+   {q:"How long is one lap of the inside lane of a standard outdoor running track?",o:["200 metres","400 metres","500 metres","800 metres"],a:1,e:"The inside lane measures 400 metres, so a 1500 metre race is almost four laps."},
+   {q:"In cricket, how many balls are bowled in one over?",o:["Six","Four","Five","Eight"],a:0,e:"After six legal deliveries the over ends and a different bowler takes over from the other end."},
+   {q:"How many players are on the field for one team in rugby union?",o:["11","13","15","18"],a:2,e:"Rugby union uses 15 players a side, while rugby league uses 13."},
+   {q:"In volleyball, what is a hard downward hit over the net called?",o:["A dig","A spike","A set","A block"],a:1,e:"A spike is usually the third touch, after a dig and a set have lifted the ball high."},
+   {q:"Which winter sport combines cross-country skiing with rifle shooting?",o:["Nordic combined","Ski jumping","Speed skating","Biathlon"],a:3,e:"Biathlon racers must calm their breathing before shooting, because a miss costs time or an extra loop."},
+   {q:"A standard professional baseball game is scheduled for how many innings?",o:["Seven","Eight","Nine","Ten"],a:2,e:"Each of the nine innings gives both teams a turn at bat, and extra innings are played if the score is tied."},
+   {q:"In basketball, how many points is a shot from behind the three point line worth?",o:["One","Two","Three","Four"],a:2,e:"Shots taken beyond the arc count for three points, which rewards accurate long range shooting. 🏀"},
+   {q:"In which year were the first modern Olympic Games held?",o:["1874","1896","1912","1924"],a:1,e:"The first modern Games took place in Athens in 1896 with athletes from fourteen countries."},
+   {q:"In golf, what does the word par mean for a hole?",o:["The length of the hole in metres","The number of strokes a good player should need","The prize given for winning the hole","The number of players in one group"],a:1,e:"Par is the expected number of strokes, so finishing under par means you played better than expected."},
+   {q:"What is a velodrome used for?",o:["Indoor rowing","Horse racing","Speed skating","Track cycling"],a:3,e:"A velodrome is an oval track with steeply banked corners so riders can take them at high speed."},
+   {q:"In ice hockey, what is a power play?",o:["A shot taken from the blue line","A team playing with an extra skater because of a penalty","The last minute of a period","A face-off at centre ice"],a:1,e:"When a player is sent to the penalty box, the other team skates with one more player until the penalty ends."},
+   {q:"Which racquet sport is played inside a court with four walls and a small rubber ball?",o:["Squash","Tennis","Badminton","Table tennis"],a:0,e:"In squash the ball may be played off the side and back walls, so rallies can last a long time."},
+   {q:"In rowing, what is the job of the coxswain?",o:["Rowing the fastest oar","Repairing the oars","Starting the race with a horn","Steering the boat and setting the rhythm"],a:3,e:"The coxswain faces forward, steers with a small rudder and calls the pace to the crew."}
+  ],
     hard:[
       {"q":"In an Olympic individual medley race, which stroke is swum first?","o":["Breaststroke","Butterfly","Backstroke","Freestyle"],"a":1,"e":"The set order is butterfly, backstroke, breaststroke, then freestyle, and it never changes."},
       {"q":"In curling, what is the target area of rings at each end of the ice called?","o":["The pebble","The button","The hack","The house"],"a":3,"e":"The house is the whole set of rings, and the small circle at its centre is the button."},
@@ -318,7 +636,25 @@ window.GK_BANK = {
       {"q":"Which gymnastics apparatus is used only by women at the Olympics?","o":["The uneven bars","The pommel horse","The rings","The parallel bars"],"a":0,"e":"Women compete on four apparatus and men on six, and their bar events are different."},
       {"q":"How long is the pool used for Olympic swimming races?","o":["50 metres","25 metres","33 metres","100 metres"],"a":0,"e":"The Games use a long course pool, twice the length of most community pools."},
       {"q":"In lacrosse, what is the netted stick called?","o":["A paddle","A mallet","A baton","A crosse"],"a":3,"e":"Crosse is the French word for a hooked stick, and it gave the sport its English name."}
-    ]
+    ,
+   /* +50 Sports hard */
+   {q:"In Olympic fencing, which weapon allows a hit anywhere on the body?",o:["Foil","Sabre","Rapier","Epee"],a:3,e:"With the epee the whole body counts, while the foil scores only on the torso and the sabre above the waist."},
+   {q:"In ice hockey, what is icing?",o:["Scoring in the last minute of a period","Shooting the puck from your own half across the far goal line untouched","Holding the puck against the boards","Changing all five skaters at once"],a:1,e:"Icing stops play and sends the face-off back to the offending team's end, so teams cannot just fire the puck away."},
+   {q:"How long is a cricket pitch between the two wickets?",o:["18 yards","20 yards","22 yards","26 yards"],a:2,e:"The pitch measures 22 yards, about 20 metres, and that length has not changed for hundreds of years."},
+   {q:"In tennis, how many games does a player normally need to win a set?",o:["Four","Five","Six","Eight"],a:2,e:"A set goes to the first player with six games and a lead of two, and a tie break settles it at six games all."},
+   {q:"The first Winter Olympic Games were held in 1924 in which country?",o:["Norway","Switzerland","Austria","France"],a:3,e:"Chamonix in the French Alps hosted that first winter meeting, which was only later called an Olympic Games."},
+   {q:"How many hurdles does a runner clear in the 110 metre hurdles?",o:["Eight","Ten","Twelve","Fifteen"],a:1,e:"There are ten evenly spaced hurdles, and the fastest runners take exactly three strides between each one."},
+   {q:"How high above the floor is a basketball hoop in standard play?",o:["2.75 metres","3.05 metres","3.40 metres","3.75 metres"],a:1,e:"The rim sits 3.05 metres up, which is ten feet, the same height used when the game was first played."},
+   {q:"In figure skating, what is the row of small teeth at the front of the blade called?",o:["The rocker","The stanchion","The heel guard","The toe pick"],a:3,e:"Skaters dig the toe pick into the ice to launch certain jumps, such as the toe loop."},
+   {q:"In curling, what is the strip of ice that one game is played on called?",o:["A sheet","A lane","A racetrack","A slab"],a:0,e:"Each strip of ice is called a sheet, and a building holding several sheets is called a rink."},
+   {q:"In volleyball, what is the defensive specialist in a different coloured shirt called?",o:["The setter","The libero","The captain","The opposite"],a:1,e:"The libero plays only in the back row and may not attack the ball from above the height of the net."},
+   {q:"In rugby union, what is the restart called where the ball is thrown between two lines of lifted jumpers?",o:["A line-out","A scrum","A ruck","A maul"],a:0,e:"A line-out brings the ball back after it has gone out of play at the side of the field."},
+   {q:"The sport of curling began several hundred years ago in which country?",o:["Canada","Sweden","Scotland","Iceland"],a:2,e:"Curling started on frozen ponds in Scotland in the 1500s, and Scottish settlers later brought it to Canada."},
+   {q:"In table tennis, how must a player hold the ball at the start of a serve?",o:["Resting on an open flat palm","Pinched between two fingers","Balanced on the paddle","Pressed against the edge of the table"],a:0,e:"The rules ask for an open palm and a toss of at least sixteen centimetres so the opponent can see the ball. 🏓"},
+   {q:"In cricket, what do the letters LBW stand for?",o:["Long ball wide","Left bat wide","Low bounce warning","Leg before wicket"],a:3,e:"A batter is out leg before wicket when their leg stops a ball that would have gone on to hit the stumps."},
+   {q:"Which athletics event uses a heavy metal ball joined to a wire with a handle?",o:["Shot put","Discus","Hammer throw","Javelin"],a:2,e:"The hammer thrower spins several times inside a circle to build up speed before letting go."},
+   {q:"In sailing, what does it mean to tack?",o:["To drop the anchor","To lower every sail","To tie the boat to a dock","To turn the bow of the boat through the wind"],a:3,e:"A boat cannot sail straight into the wind, so it zig zags, turning its bow through the wind each time."}
+  ]
   },
   "Technology": { emoji:"💻",
     easy:[
@@ -337,7 +673,26 @@ window.GK_BANK = {
       {"q":"What is a folder on a computer for?","o":["Making the computer run faster","Playing music out loud","Keeping files together in one place","Joining two computers by cable"],"a":2,"e":"Folders group files so you can find them again instead of hunting through everything."},
       {"q":"What does a search engine help you do?","o":["Save a file onto a memory stick","Find web pages about a topic","Turn a photo into a drawing","Send a letter by post"],"a":1,"e":"You type in some words and the search engine lists the pages that match them best."},
       {"q":"Most website addresses that you type begin with which of these?","o":["mp3","jpg","zip","http"],"a":3,"e":"The http part tells the browser how to ask a website for its pages."}
-    ],
+    ,
+   /* +50 Technology easy */
+   {q:"What does a wind turbine turn into electricity?",o:["The moving air of the wind","The salt in sea water","The sound of the ocean","The heat of the sun"],a:0,e:"Wind pushes the long blades around, and the spinning shaft drives a generator that makes electricity. 🍃"},
+   {q:"What do solar panels use to make electricity?",o:["Warm soil","Sunlight","Rain water","Strong wind"],a:1,e:"Solar cells turn light straight into electric current, so they work best on bright days. ☀️"},
+   {q:"What stores the energy that runs an electric car?",o:["A spinning stone wheel","A tank of water","A large battery pack","A bag of compressed air"],a:2,e:"An electric car carries a big rechargeable battery, and you plug the car in to fill it up again."},
+   {q:"Where do rockets carry satellites and astronauts?",o:["To the sea floor","Into a wind tunnel","Into deep caves","Into space"],a:3,e:"A rocket burns fuel very fast to push itself hard enough to escape the pull of Earth's gravity. 🚀"},
+   {q:"What does an X-ray picture mainly show a doctor?",o:["The bones inside the body","The sound of the voice","The taste of food","The colour of the skin"],a:0,e:"X-rays pass easily through the soft parts of the body but not through bone, so bones show up clearly."},
+   {q:"What do we call a small flying machine with no pilot on board?",o:["A parachute","A drone","A glider","A hot air balloon"],a:1,e:"Drones are flown from the ground by remote control, and people use them for filming, mapping and delivering small items. 🚁"},
+   {q:"What does a microphone change sound into?",o:["Water vapour","Light","An electrical signal","Heat"],a:2,e:"Sound waves make a thin part inside the microphone vibrate, and that movement becomes an electrical signal a device can record."},
+   {q:"What does a loudspeaker do?",o:["It measures how loud a room is","It blocks unwanted noise","It stores music files","It turns electrical signals back into sound"],a:3,e:"A speaker pushes a cone back and forth very fast, and that moving air is the sound you hear."},
+   {q:"In everyday computer talk, the word app is short for what?",o:["Application","Approval","Appearance","Appliance"],a:0,e:"An application is simply a program that does a job for you, such as a calculator or a map."},
+   {q:"What does airplane mode on a phone switch off?",o:["The screen","The wireless signals the phone sends out","The clock","The camera"],a:1,e:"Turning off the radio signals stops the phone sending or receiving, which is why crews ask for it during a flight. ✈️"},
+   {q:"What does a charger do to a phone battery?",o:["It makes the battery smaller","It cools the battery down","It puts electrical energy back into it","It cleans the battery"],a:2,e:"Charging pushes energy back into the chemicals inside the battery so the phone can use it again later."},
+   {q:"What is the screen of a desktop computer usually called?",o:["The tower","The router","The scanner","The monitor"],a:3,e:"The monitor shows you what the computer is doing, while the box beside it holds the parts that do the work."},
+   {q:"What does a hydroelectric dam use to make electricity?",o:["Moving water","Ocean salt","Falling snow","Burning coal"],a:0,e:"Water rushing down through the dam spins turbines, and Canada makes a large share of its power this way."},
+   {q:"What did electric light bulbs mostly replace in homes?",o:["Hand held fans","Candles and oil lamps","Wood stoves","Glass windows"],a:1,e:"Before electric lighting, families lit their rooms with small flames, which gave a much weaker and less steady light."},
+   {q:"What does a hearing aid do for the person wearing it?",o:["It measures body temperature","It plays recorded music only","It makes sounds louder and clearer","It translates languages"],a:2,e:"A hearing aid picks up sound with a tiny microphone, boosts it, and plays it gently into the ear."},
+   {q:"What holds up the car of an ordinary elevator?",o:["A jet of air","A magnet on the roof","A long wooden pole","Strong steel cables"],a:3,e:"A motor winds the cables over a wheel to lift the car, and safety brakes grip the rails if a cable ever slips."},
+   {q:"Which very old invention made carts and wagons possible?",o:["The wheel","The mirror","The button","The umbrella"],a:0,e:"The wheel and axle let people roll heavy loads instead of dragging them, thousands of years before engines existed. 🛞"}
+  ],
     medium:[
       {"q":"What does WWW stand for on the internet?","o":["Wide World Website","World Web Working","World Wide Web","Web World Wide"],"a":2,"e":"WWW means World Wide Web, the huge collection of pages you visit online."},
       {"q":"What does USB stand for?","o":["United System Board","Universal Serial Bus","Useful Storage Box","Universal Screen Base"],"a":1,"e":"USB means Universal Serial Bus, the plug used to connect keyboards, mice and memory sticks."},
@@ -354,7 +709,26 @@ window.GK_BANK = {
       {"q":"What does two-step verification add to your password?","o":["A longer list of saved passwords","A second check, such as a code sent to your phone","A faster connection to the website","An extra copy of your files"],"a":1,"e":"Even if a thief learns your password, they still cannot get in without that second code."},
       {"q":"Why should you be careful when using free public Wi-Fi?","o":["It slowly damages the screen of your device","It erases the photos you have saved","Other people on the network may see what you send","It changes the language of your device"],"a":2,"e":"On an open network your traffic can be watched, so avoid banking or shopping while you are on it."},
       {"q":"Which of these makes the strongest password?","o":["Your first name and your birth year","The word password with a 1 at the end","A long line of several unrelated words","The name of the street you live on"],"a":2,"e":"Length matters most, and words that a stranger cannot guess about you are far harder to break."}
-    ],
+    ,
+   /* +50 Technology medium */
+   {q:"What is the job of a SIM card in a mobile phone?",o:["It charges the battery","It makes the screen brighter","It stores all your photos","It identifies the phone to the mobile network"],a:3,e:"The SIM holds the account details the network checks, which is why moving it to another phone moves your number too."},
+   {q:"Which type of rechargeable battery is used in most phones and electric cars?",o:["Alkaline","Lead acid","Lithium ion","Zinc carbon"],a:2,e:"Lithium ion cells hold a lot of energy for their weight and can be recharged hundreds of times."},
+   {q:"What does the screen of most phones sense when you touch it?",o:["The heat of your hand","A tiny electrical change from your finger","The weight of your finger","The sound of the tap"],a:1,e:"These screens carry a light electric charge, and your skin changes it slightly at the exact spot you touch."},
+   {q:"In mobile network names such as 3G and 4G, what does the G stand for?",o:["Generation","Global","Ground","Gigabyte"],a:0,e:"Each generation is a new set of agreed standards that carries data faster than the one before it."},
+   {q:"What does an ultrasound scanner use to see inside the body?",o:["Bright white light","Strong radio static","Warm moving air","Very high sound waves"],a:3,e:"The machine sends sound too high for us to hear into the body and builds a picture from the echoes that bounce back."},
+   {q:"What does a heart pacemaker do?",o:["It measures sugar in the blood","It takes the place of a lung","It sends small electrical pulses to keep the heartbeat steady","It cleans the blood"],a:2,e:"A pacemaker is a tiny battery powered device placed under the skin, and it only sends a pulse when the heart needs one."},
+   {q:"Why does a rocket carry its own supply of oxygen?",o:["To keep the fuel cold","Because there is no air in space to burn the fuel with","To make the rocket lighter","To help the astronauts sleep"],a:1,e:"Fuel needs oxygen to burn, and above the atmosphere there is none, so the rocket brings both parts with it."},
+   {q:"How does a jet engine push an airplane forward?",o:["By blowing hot gas out of the back at high speed","By pulling on the air above the wing","By spinning the wheels faster","By flapping its blades like wings"],a:0,e:"The engine squeezes air, burns fuel in it, and throws the hot gas backwards, which pushes the plane the other way."},
+   {q:"What does regenerative braking do in an electric vehicle?",o:["It sprays water onto the brakes","It shuts the motor off completely","It heats the cabin with brake heat","It turns some of the slowing motion back into stored electricity"],a:3,e:"The motor works backwards as a generator while the car slows, so some energy returns to the battery instead of being wasted."},
+   {q:"What produces the heat in a nuclear power station?",o:["Sunlight focused by mirrors","Burning natural gas","Splitting the atoms of a heavy fuel","Rubbing metal parts together"],a:2,e:"Splitting heavy atoms releases heat that boils water, and the steam spins turbines just as in other power stations."},
+   {q:"What does a transformer on an electricity network do?",o:["It stores electricity for the night","It changes the voltage of the electricity","It turns electricity into water","It counts how much power a home uses"],a:1,e:"Transformers raise the voltage for the long journey along power lines and lower it again before it reaches your home."},
+   {q:"What carries the information inside a fibre optic cable?",o:["Pulses of light","Drops of liquid","Puffs of air","Small moving magnets"],a:0,e:"Very thin glass threads guide flashes of light over long distances with little loss, which is why they carry so much data. ✨"},
+   {q:"What did steam engines mainly power in the 1800s?",o:["Radios and telephones","Home refrigerators","Street cameras","Factories, trains and ships"],a:3,e:"Burning fuel boiled water, and the pressure of the steam moved pistons that drove machines and wheels."},
+   {q:"Where does an internal combustion engine burn its fuel?",o:["In the exhaust pipe","In a boiler outside the engine","Inside closed cylinders","In the fuel tank"],a:2,e:"Fuel and air burn very fast inside each cylinder and push a piston down, and that up and down motion is turned into spinning."},
+   {q:"What did the transistor replace in early computers?",o:["Wooden switches","Large glass vacuum tubes","Paper maps","Copper water pipes"],a:1,e:"Transistors do the same switching job but are far smaller, cooler and more reliable, which is why computers could shrink."},
+   {q:"What does a home router do?",o:["It passes data between your devices and the internet connection","It stores your files permanently","It cools the other devices down","It records television programs"],a:0,e:"The router decides where each piece of data should go, so several devices can share one connection at the same time."},
+   {q:"What is an LED?",o:["A type of glass lens","A kind of loud alarm","A rechargeable battery","A small part that gives off light when electricity flows through it"],a:3,e:"LEDs turn most of their electricity into light instead of heat, so they use far less power than older bulbs. 💡"}
+  ],
     hard:[
       {"q":"Who was Ada Lovelace?","o":["An early computer programmer","A singer from the 1950s","An explorer of the Arctic","A builder of tall bridges"],"a":0,"e":"In the 1840s Ada Lovelace wrote instructions for an early machine, so many call her the first programmer."},
       {"q":"Wi-Fi sends information through the air using what?","o":["Sound waves","Radio waves","Steam power","Strong magnets"],"a":1,"e":"Wi-Fi carries information through the air as radio waves, with no cable needed."},
@@ -371,7 +745,25 @@ window.GK_BANK = {
       {"q":"What does a firewall do on a network?","o":["Stops the processor from getting too hot","Checks traffic and blocks connections that are not allowed","Copies important files onto a second drive","Shares one printer between several computers"],"a":1,"e":"A firewall sits at the edge of a network and filters what is allowed to come in or go out."},
       {"q":"What is a cookie that a website stores?","o":["A picture used as the logo of the site","A short program that blocks adverts","A small file that lets the site remember you","A password held by your internet provider"],"a":2,"e":"Cookies keep small notes inside your browser, which is how a site knows you are still signed in."},
       {"q":"How many bits make up one byte?","o":["4","16","32","8"],"a":3,"e":"Eight bits give 256 different combinations, enough to stand for one character of text."}
-    ]
+    ,
+   /* +50 Technology hard */
+   {q:"What is special about a satellite in a geostationary orbit?",o:["It stays above the same spot on the equator","It circles the Moon instead of Earth","It travels backwards around Earth","It never moves at all"],a:0,e:"At about 36 000 kilometres up, one orbit takes exactly one day, so from the ground the satellite seems to hang still. 🛰️"},
+   {q:"How many positioning satellites must a receiver hear to work out where it is?",o:["One","Two","At least four","Exactly twelve"],a:2,e:"Three satellites fix the place on the ground and a fourth corrects the receiver's clock, which has to be extremely accurate."},
+   {q:"Why is electricity sent along long power lines at very high voltage?",o:["To make the wires lighter","To lose less energy as heat on the way","To make light bulbs shine brighter","To keep birds away from the wires"],a:1,e:"Higher voltage means less current for the same power, and it is the current that heats the wire and wastes energy."},
+   {q:"Inside a computer chip, what does a transistor work as?",o:["A small mirror","A miniature battery","A little pump","A tiny switch"],a:3,e:"Billions of these switches turn on and off in patterns, and those patterns are the ones and zeros a computer works with."},
+   {q:"Which material are almost all computer chips built on?",o:["Silicon","Copper","Rubber","Marble"],a:0,e:"Silicon is a semiconductor, which means it can be treated to let electricity through at some moments and block it at others."},
+   {q:"In packet switching, how does a message travel across the internet?",o:["As one long unbroken stream","Broken into small pieces that may take different routes","Only along a single reserved wire","Copied to every computer in the world"],a:1,e:"Each piece carries the address it is going to, and the computer at the far end puts the pieces back in the right order."},
+   {q:"On a network, what does latency measure?",o:["The strength of your password","How much data can flow each second","The delay before data starts to arrive","The number of devices connected"],a:2,e:"A connection can carry huge amounts of data and still feel slow if every piece takes a long time to make the trip."},
+   {q:"What does an MRI scanner use to build pictures of the inside of the body?",o:["A narrow beam of X-rays","Hot air blown over the skin","A coloured dye only","Strong magnets and radio waves"],a:3,e:"The magnets line up water molecules in the body, and the machine listens to the faint radio signal those molecules give back."},
+   {q:"How does a hydrogen fuel cell make electricity?",o:["By combining hydrogen with oxygen, leaving water behind","By spinning a magnet in a tank of water","By heating hydrogen until it glows","By burning hydrogen inside a cylinder"],a:0,e:"The reaction happens quietly without any flame, and the only thing leaving the tailpipe is water. 💧"},
+   {q:"Why can a heat pump give out more heat than the electricity it uses?",o:["It creates energy out of nothing","It moves heat from outside instead of making it","It quietly burns a little fuel as well","It stores sunlight in a hidden tank"],a:1,e:"A heat pump works like a fridge running backwards, carrying warmth that already exists outdoors into the building."},
+   {q:"Why are big rockets built in separate stages?",o:["To give the crew more windows","To make them easier to paint","So empty fuel tanks can be dropped to save weight","So each stage can land on a different planet"],a:2,e:"Carrying an empty tank costs fuel, so letting it fall away makes the rest of the climb much easier."},
+   {q:"What is a gravity assist, sometimes called a slingshot?",o:["A cable that pulls a spacecraft home","A parachute used for landing","A rocket engine that never stops burning","Using a planet's gravity to change a spacecraft's speed and direction"],a:3,e:"Flying close past a moving planet lets a probe borrow a little of that planet's motion, saving a great deal of fuel."},
+   {q:"Why did the standard shipping container change world trade so much?",o:["Goods could move from ship to train to truck without being unpacked","It kept food frozen for the first time","It could float on its own","It cost less to build than a wooden crate"],a:0,e:"One standard box size let cranes and vehicles everywhere handle the same load, cutting the time and cost of moving goods."},
+   {q:"How does a magnetic levitation train cut the friction with its track?",o:["The train rides on a cushion of water","Magnets lift the train slightly off the rail","Oil is poured onto the rails","The wheels are made of soft rubber"],a:1,e:"With nothing touching the guideway, the main thing left to slow the train down is the air in front of it."},
+   {q:"What happens inside a solar cell when sunlight hits it?",o:["The light spins a very small turbine","The light warms water in a pipe","The light knocks electrons loose and they flow as a current","The light is stored as a chemical fuel"],a:2,e:"This is called the photovoltaic effect, and it makes electricity straight from light with no moving parts at all. ⚡"},
+   {q:"How is nuclear fusion different from nuclear fission?",o:["Fusion needs no fuel at all","Fusion happens only at very low temperatures","Fusion gives out no energy","Fusion joins light atoms together instead of splitting heavy ones"],a:3,e:"Fusion is what powers the Sun, and engineers are still working on machines that can hold a fusion reaction here on Earth."}
+  ]
   },
   "Words, Art & Music": { emoji:"🎨",
     easy:[
@@ -390,7 +782,26 @@ window.GK_BANK = {
       {"q":"What do we call two words that end with the same sound?","o":["A rhyme","A verse","A title","A letter"],"a":0,"e":"Rhymes make poems and songs easier to remember because the ear expects the matching sound."},
       {"q":"What do we call a painting of mountains, fields or the countryside?","o":["A landscape","A portrait","A still life","A poster"],"a":0,"e":"Landscape painting shows the land itself, while a still life shows objects on a table."},
       {"q":"Which of these is a musical instrument you blow into?","o":["The flute","The cello","The piano","The triangle"],"a":0,"e":"Blowing across the flute's hole makes the air inside vibrate, and vibrating air is sound."}
-    ],
+    ,
+   /* +50 Words, Art & Music easy */
+   {q:"What do we call a word that means the opposite of another word?",o:["An antonym","A synonym","A pronoun","A syllable"],a:0,e:"Hot and cold are antonyms, because they mean opposite things."},
+   {q:"How many letters are in the English alphabet?",o:["21","24","26","30"],a:2,e:"The English alphabet has 26 letters, from A to Z. 🔤"},
+   {q:"Which of these words is a synonym for \"brave\"?",o:["Careful","Curious","Clumsy","Courageous"],a:3,e:"A synonym is a word with almost the same meaning, so brave and courageous can swap places."},
+   {q:"Which family of instruments does the trumpet belong to?",o:["Strings","Percussion","Brass","Woodwind"],a:2,e:"Brass instruments are made of metal, and you buzz your lips into the mouthpiece. 🎺"},
+   {q:"What do we call a large group of musicians who play strings, brass, woodwind and percussion together?",o:["An orchestra","A choir","A duet","A chorus"],a:0,e:"An orchestra brings all four instrument families together under one conductor."},
+   {q:"In music, how many people perform a duet?",o:["One","Two","Three","Four"],a:1,e:"Duet comes from a word meaning two, so a duet is music for two performers."},
+   {q:"Which of these is called a warm colour?",o:["Red","Blue","Green","Grey"],a:0,e:"Reds, oranges and yellows are called warm colours because they remind us of fire and sunshine. 🔥"},
+   {q:"What is the flat board an artist uses to hold and mix paints called?",o:["An easel","A palette","A canvas","A picture frame"],a:1,e:"A palette lets a painter mix colours right beside the picture."},
+   {q:"What is a self-portrait?",o:["A picture an artist makes of himself","A picture of a busy city street","A picture of fruit sitting on a table","A picture drawn only with a pencil"],a:0,e:"Many famous painters practised by painting themselves in a mirror."},
+   {q:"Which is the smallest instrument in the string family of an orchestra?",o:["The cello","The double bass","The viola","The violin"],a:3,e:"The violin is the smallest string instrument, so it plays the highest notes. 🎻"},
+   {q:"What does the idiom \"a piece of cake\" mean?",o:["Something very sweet","Something very easy","Something shared out fairly","Something that takes a long time"],a:1,e:"If a job is a piece of cake, it is so easy that you finish it without trouble. 🍰"},
+   {q:"Which of these letters is a vowel?",o:["B","K","T","E"],a:3,e:"The English vowels are A, E, I, O and U, and every word needs at least one vowel sound."},
+   {q:"What do we call the words of a song?",o:["The tempo","The rhythm","The lyrics","The title"],a:2,e:"Lyrics are the words a singer sings, while the music is the tune underneath."},
+   {q:"What do we call a book that tells a made-up story?",o:["A dictionary","An atlas","A non-fiction book","Fiction"],a:3,e:"Fiction comes out of the imagination, while non-fiction books tell about real things. 📚"},
+   {q:"What colour do you get when you mix black and white paint?",o:["Brown","Grey","Cream","Navy blue"],a:1,e:"Adding white to black makes grey, and the more white you add the lighter the grey."},
+   {q:"Which of these instruments is played by drawing a bow across its strings?",o:["The flute","The drum","The trumpet","The cello"],a:3,e:"The cello is held between the knees and played with a bow made of horsehair."},
+   {q:"What do we call the steady beat you can clap along to in a song?",o:["The lyrics","The volume","The rhythm","The title"],a:2,e:"Rhythm is the pattern of beats that makes music easy to dance or march to. 🥁"}
+  ],
     medium:[
       {"q":"Who painted the Mona Lisa?","o":["Leonardo da Vinci","Michelangelo","Raphael","Donatello"],"a":0,"e":"Leonardo carried the painting with him for years and never fully declared it finished."},
       {"q":"In grammar, what does an adjective do?","o":["It describes a noun","It shows an action","It joins two sentences","It replaces a name"],"a":0,"e":"Adjectives add detail to nouns, so \"a red door\" tells you more than \"a door\"."},
@@ -407,7 +818,26 @@ window.GK_BANK = {
       {"q":"Which colour is made by mixing red and blue paint?","o":["Purple","Green","Brown","Orange"],"a":0,"e":"Purple was once so costly to make that only kings and emperors were allowed to wear it."},
       {"q":"Who composed the famous \"Fifth Symphony\" that begins with four strong notes?","o":["Ludwig van Beethoven","Wolfgang Amadeus Mozart","Johann Sebastian Bach","Franz Schubert"],"a":0,"e":"Beethoven wrote much of his greatest music while going deaf, feeling the vibrations instead."},
       {"q":"What do we call a sculpture made by shaping soft clay?","o":["Modelling","Carving","Sketching","Printing"],"a":0,"e":"Modelling adds material, while carving removes it, so the two work in opposite directions."}
-    ],
+    ,
+   /* +50 Words, Art & Music medium */
+   {q:"In grammar, what does a pronoun do?",o:["It joins two sentences together","It takes the place of a noun","It describes an action","It shows a strong feeling"],a:1,e:"Words like he, she, it and they are pronouns that save us repeating a name."},
+   {q:"What does the idiom \"to let the cat out of the bag\" mean?",o:["To give away a secret by mistake","To make a very big mess of a job","To leave home very early in the day","To change your mind at the last moment"],a:0,e:"The saying comes from old markets, where a buyer might open a bag and find the wrong animal inside. 🐱"},
+   {q:"On the colour wheel, which colour sits directly opposite blue?",o:["Green","Purple","Orange","Red"],a:2,e:"Colours opposite each other are called complementary, and they look brighter side by side."},
+   {q:"Which three colours are the secondary colours in painting?",o:["Red, yellow and blue","Orange, green and purple","Pink, brown and grey","Black, white and gold"],a:1,e:"Secondary colours are made by mixing two primary colours together."},
+   {q:"In common time, how many beats does a half note (minim) last?",o:["One","Two","Three","Four"],a:1,e:"A whole note lasts four beats, so a half note lasts two."},
+   {q:"In music, what does the tempo marking \"adagio\" tell the players?",o:["Play very loudly","Play faster and faster","Play with very short notes","Play slowly and calmly"],a:3,e:"Adagio is an Italian word, and most tempo words in music come from Italian. 🎵"},
+   {q:"Which Dutch painter is famous for \"The Night Watch\" and for many self-portraits?",o:["Rembrandt","Raphael","Titian","Rubens"],a:0,e:"Rembrandt worked in Amsterdam in the 1600s and was a master of light and shadow."},
+   {q:"What is a fresco?",o:["A drawing made with coloured chalk","A picture built up from small tiles","A print pressed from a carved block","A painting made on wet plaster"],a:3,e:"The paint sinks into the wet plaster as it dries, so the picture becomes part of the wall."},
+   {q:"Which composer wrote the opera \"The Magic Flute\" and was already performing as a small child?",o:["Johann Sebastian Bach","Joseph Haydn","Wolfgang Amadeus Mozart","George Frideric Handel"],a:2,e:"Mozart was touring Europe as a young performer before he was ten years old."},
+   {q:"What do we call a poem that has exactly 14 lines?",o:["A ballad","A limerick","An ode","A sonnet"],a:3,e:"Shakespeare wrote more than 150 sonnets, each one exactly 14 lines long."},
+   {q:"The word \"alphabet\" comes from the first two letters of which alphabet?",o:["Greek","Latin","Arabic","Hebrew"],a:0,e:"The Greek letters alpha and beta gave us the word alphabet."},
+   {q:"Which instrument family does the flute belong to?",o:["Brass","Percussion","Strings","Woodwind"],a:3,e:"Flutes count as woodwind because they were once made of wood, even though most are metal today."},
+   {q:"In drawing, what does perspective help an artist show?",o:["Depth and distance on a flat surface","The exact colours of an object","How heavy an object is","The sound a scene would make"],a:0,e:"With perspective, things drawn smaller and higher up look further away."},
+   {q:"What is a lullaby?",o:["A marching song played for a parade","A gentle song to help a baby fall asleep","A loud song sung at harvest time","A song with no words at all"],a:1,e:"Lullabies are usually slow and quiet, and almost every culture has its own. 🌙"},
+   {q:"The bagpipes are a traditional instrument most closely linked with which country?",o:["Portugal","Greece","Scotland","Norway"],a:2,e:"A piper squeezes air out of the bag and through the pipes, so the sound never stops for a breath."},
+   {q:"In English words like \"rewrite\" and \"return\", what does the prefix \"re-\" usually mean?",o:["Not","Before","Again","Very"],a:2,e:"A prefix is a short piece added to the front of a word to change its meaning."},
+   {q:"In an orchestra, what is the main job of the conductor?",o:["To tune every instrument before the concert","To write the music the orchestra plays","To keep the players together and shape the sound","To announce each piece to the audience"],a:2,e:"The conductor's beating hand shows the tempo, and the free hand shows loud and soft."}
+  ],
     hard:[
       {"q":"Which art movement is Claude Monet best known for starting?","o":["Impressionism","Cubism","Surrealism","Baroque"],"a":0,"e":"The name came from a critic mocking Monet's painting \"Impression, Sunrise\" as unfinished."},
       {"q":"Which artist is most closely linked with the beginnings of Cubism?","o":["Pablo Picasso","Henri Matisse","Edgar Degas","Gustav Klimt"],"a":0,"e":"Cubism breaks an object apart and shows several viewpoints at once on a flat surface."},
@@ -424,7 +854,25 @@ window.GK_BANK = {
       {"q":"In painting, what is a \"still life\"?","o":["A picture of objects such as fruit and flowers","A picture of a quiet village","A picture of a sleeping person","A picture with no colour in it"],"a":0,"e":"Still life lets an artist control the light and the arrangement completely, since nothing moves."},
       {"q":"Who composed \"The Four Seasons\", a famous set of violin concertos?","o":["Antonio Vivaldi","George Frideric Handel","Joseph Haydn","Frederic Chopin"],"a":0,"e":"Vivaldi paired each concerto with a poem, so the music copies birdsong, storms and ice."},
       {"q":"In grammar, what does an adverb usually describe?","o":["A verb","A noun","A pronoun","A conjunction"],"a":0,"e":"Adverbs tell how, when or where an action happens, as in \"she sang beautifully\"."}
-    ]
+    ,
+   /* +50 Words, Art & Music hard */
+   {q:"In music, what is a fugue?",o:["A short piece played before the curtain rises","A song for one voice with no accompaniment at all","A piece where one tune is overlapped by other voices","A slow dance with three beats in every bar"],a:2,e:"Johann Sebastian Bach is the composer most admired for writing fugues."},
+   {q:"Which composer wrote the set of six Brandenburg Concertos?",o:["Antonio Vivaldi","Johann Sebastian Bach","Franz Schubert","Frederic Chopin"],a:1,e:"Bach offered the six concertos to a German nobleman in 1721, and each one uses a different mix of instruments."},
+   {q:"In painting, what does the word \"chiaroscuro\" describe?",o:["Paint put on in thin see-through layers","A strong contrast between light and dark","A picture made only of straight lines","Colours arranged from palest to deepest"],a:1,e:"Chiaroscuro joins the Italian words for light and dark, and it makes painted figures look solid and dramatic."},
+   {q:"In English grammar, what is a gerund?",o:["A noun that names a whole group of things at once","A word that links two clauses together","A verb form ending in -ing that is used as a noun","An adjective made from a person's name"],a:2,e:"In the sentence \"Swimming is fun\", the word swimming is a gerund, because it acts as the subject."},
+   {q:"What do we call a word made from the first letters of a phrase and said as a word, such as \"radar\"?",o:["An abbreviation","A contraction","A compound word","An acronym"],a:3,e:"If you say each letter on its own instead, the short form is called an initialism."},
+   {q:"What is the study of where words come from called?",o:["Etymology","Entomology","Phonetics","Calligraphy"],a:0,e:"Etymology traces a word back through older languages to its earliest known form."},
+   {q:"Which language family includes English, Spanish, Hindi and Russian?",o:["Indo-European","Sino-Tibetan","Afro-Asiatic","Uralic"],a:0,e:"These languages sound very different today, but they all grew out of one ancient parent language."},
+   {q:"In painting, what does the word \"impasto\" mean?",o:["Paint thinned with water until it is see-through","Paint laid on so thickly that the brush marks stand up","A pattern scratched into a dry surface","A background painted in before the main figures"],a:1,e:"Vincent van Gogh used heavy impasto, which is why his skies look almost carved."},
+   {q:"In music, what does \"a cappella\" mean?",o:["Sung very quietly from off stage","Played by the strings without a conductor","Repeated exactly a second time","Sung by voices alone, with no instruments"],a:3,e:"The phrase means \"in the chapel\" in Italian, where church choirs often sang with no instruments."},
+   {q:"Which clef is normally used for low instruments such as the cello and the tuba?",o:["The treble clef","The bass clef","The alto clef","The tenor clef"],a:1,e:"The bass clef is also called the F clef, because its two dots sit on either side of the F line."},
+   {q:"What is an oxymoron?",o:["A word spelled the same forwards and backwards","A sentence with no main verb in it","A phrase that puts two opposite ideas side by side","A word borrowed from another language"],a:2,e:"Bittersweet and deafening silence are oxymorons, and writers use them to surprise us."},
+   {q:"\"The Great Wave\" is a famous example of which Japanese art form?",o:["Silk weaving","Sand painting","Paper folding","Woodblock printing"],a:3,e:"Japanese woodblock prints were cut into blocks of cherry wood and printed by hand in the 1800s."},
+   {q:"In opera, what is the libretto?",o:["The written words that the singers sing","The raised platform built for the orchestra","The opening piece played by the orchestra","The costume worn by the leading singer"],a:0,e:"Libretto means \"little book\" in Italian, because the words were sold to the audience as a small booklet."},
+   {q:"Which writing system did the ancient Sumerians press into wet clay with a cut reed?",o:["Cuneiform","Hieroglyphs","Runes","Sanskrit"],a:0,e:"Cuneiform means wedge-shaped, which describes the marks the reed left in the clay."},
+   {q:"Which folk instrument, with a round body and a long neck, grew up in North America from instruments brought from West Africa?",o:["The banjo","The mandolin","The ukulele","The dulcimer"],a:0,e:"The banjo developed from gourd instruments carried from West Africa to the Americas. 🪕"},
+   {q:"In a perspective drawing, what is the vanishing point?",o:["The brightest area of the whole picture","The line where the sky seems to meet the open sea","The spot on the horizon where parallel lines meet","The corner where the artist signs the finished work"],a:2,e:"Artists in Renaissance Italy worked out vanishing points to make flat pictures look deep."}
+  ]
   },
   "Fun Facts": { emoji:"🎈",
     easy:[
@@ -443,7 +891,26 @@ window.GK_BANK = {
       {"q":"What colour are most school buses in Canada?","o":["Yellow","Green","Blue","White"],"a":0,"e":"Bright yellow with black letters is easy to see in fog and in early light."},
       {"q":"What do you call a boat that travels under the water?","o":["A submarine","A ferry","A canoe","A tugboat"],"a":0,"e":"A submarine lets water in or pushes it back out to sink and to rise again."},
       {"q":"Which sweet food do bees make?","o":["Honey","Butter","Syrup","Jam"],"a":0,"e":"Bees turn flower nectar into honey and store it in the hive for the winter."}
-    ],
+    ,
+   /* +50 Fun Facts easy */
+   {q:"Botanically, a banana counts as which kind of fruit?",o:["A nut","A berry","A vegetable","A grain"],a:1,e:"A banana grows from one flower and holds its seeds inside, which is exactly what botanists call a berry."},
+   {q:"Why do golf balls have hundreds of little dimples?",o:["They help the ball fly farther","They make the ball easier to see","They stop the ball from cracking","They make the ball bounce higher"],a:0,e:"The dimples change the way air slides around the ball, so it cuts through the air much better than a smooth ball would."},
+   {q:"What is the hard little tube at the end of a shoelace called?",o:["A ferrule","A grommet","An aglet","A toggle"],a:2,e:"It is called an aglet, and it keeps the lace from fraying so you can still push it through the holes."},
+   {q:"What makes a popcorn kernel pop?",o:["Sugar burning inside it","Air trapped in the shell","Oil soaking deep into the seed","Water inside turning to steam"],a:3,e:"Every kernel holds a drop of water; heat turns it to steam until the hard shell bursts and the soft inside puffs out."},
+   {q:"Peanuts are not really nuts. What are they?",o:["Legumes, like peas and beans","Berries, like grapes and currants","Grains, like wheat","Roots, like carrots"],a:0,e:"Peanuts grow in pods under the ground and belong to the same plant family as peas and beans."},
+   {q:"What is the tallest grass in the world?",o:["Sugar cane","Wheat","Bamboo","Corn"],a:2,e:"Bamboo is a giant grass, and some kinds shoot up taller than a house in a single season."},
+   {q:"Vanilla flavour comes from the pod of which kind of plant?",o:["A fern","A cactus","A palm tree","An orchid"],a:3,e:"Vanilla is the seed pod of a climbing orchid, and each flower must be pollinated by hand, which is why real vanilla costs so much."},
+   {q:"Cinnamon sticks are made from which part of a tree?",o:["The bark","The roots","The leaves","The seeds"],a:0,e:"Cinnamon is the inner bark of a tree, and it curls itself into a stick as it dries."},
+   {q:"Where does a pineapple grow?",o:["High up in the top of a tall tree","On a vine along a fence","On a low plant near the ground","Under the soil like a potato"],a:2,e:"Pineapples grow one at a time in the middle of a spiky plant about knee high."},
+   {q:"Why are flamingos pink?",o:["They stand in warm water all day","They get their colour from the food they eat","Their feathers change colour in strong sunlight","They hatch out of the egg bright pink"],a:1,e:"Flamingo chicks hatch grey and slowly turn pink from the tiny shrimp and algae in their food."},
+   {q:"Which bird is able to fly backwards?",o:["The hummingbird","The kingfisher","The wood pigeon","The blue jay"],a:0,e:"A hummingbird beats its wings in a figure eight, so it can hover in one spot and even push itself in reverse."},
+   {q:"Which of these animals cannot jump at all?",o:["The horse","The elephant","The goat","The deer"],a:1,e:"An elephant is far too heavy, and its legs are built like sturdy pillars to carry weight rather than to spring."},
+   {q:"Why can nobody hear a sound in outer space?",o:["Sound freezes solid in the cold","Sound has nothing to travel through","Sound moves too fast for our ears out there","Sunlight drowns out all the sound"],a:1,e:"Sound needs air, water or some other material to carry it along, and space is very nearly empty."},
+   {q:"What job do your eyebrows do best?",o:["They keep dust from getting up your nose","They help you hear better","They keep sweat out of your eyes","They keep your forehead warm"],a:2,e:"Eyebrows work like little roof gutters, steering sweat and raindrops around your eyes instead of into them."},
+   {q:"How long is a fortnight?",o:["Two weeks","Two days","Two months","Two years"],a:0,e:"Fortnight is an old English short form of fourteen nights, so it means two whole weeks."},
+   {q:"How many buns are in a baker's dozen?",o:["Ten","Eleven","Twelve","Thirteen"],a:3,e:"Bakers long ago tossed in one extra so that nobody could accuse them of selling a short count."},
+   {q:"Why does a bathroom mirror fog up during a hot shower?",o:["Steam turns back into water on the cool glass","The glass gets so warm that it softens","Soap floats through the air and lands on the glass","Light bends around the wet glass"],a:0,e:"Warm water vapour meets the cooler mirror, cools down at once, and gathers as thousands of tiny droplets."}
+  ],
     medium:[
       {"q":"Why do onions make people cry when they are cut?","o":["They release a gas that stings the eyes","They give off a dust that dries the eyes","They warm the air just above the board","They smell too strong for the human nose"],"a":0,"e":"Cutting breaks cells whose contents mix into a gas, which stings when it meets your tears."},
       {"q":"Why can honey be kept for years without spoiling?","o":["It holds very little water","It contains a lot of salt","It has almost no sugar in it","It is naturally a little frozen"],"a":0,"e":"Little water and lots of sugar pull moisture out of microbes, so they cannot grow."},
@@ -460,7 +927,26 @@ window.GK_BANK = {
       {"q":"Why is white clothing cooler to wear in strong sunshine?","o":["It reflects more sunlight away from you","It always uses thinner and lighter cloth","It pulls cool air in through the collar","It stops sweat from leaving the skin"],"a":0,"e":"Dark cloth soaks up light and turns it into heat, while white bounces most of it back."},
       {"q":"Why do many coins have ridges around the edge?","o":["To show if metal had been shaved off","To make them easier to stack in piles","To keep them from rolling off a table","To help them slide faster into a slot"],"a":0,"e":"When coins were silver, a ridged edge made trimming the rim easy to spot."},
       {"q":"The old saying red sky at night, sailor's delight suggests what?","o":["Fair weather is likely on the way","A storm will arrive before morning","Heavy snow will fall overnight","Thick fog will cover the water"],"a":0,"e":"Weather often moves from west to east, so a red evening sky hints at dry air to the west."}
-    ],
+    ,
+   /* +50 Fun Facts medium */
+   {q:"Why are a beaver's front teeth orange?",o:["They are stained by tree bark","They are coated in dried sap","The colour warns other beavers away","Iron in the enamel makes them stronger"],a:3,e:"Beaver enamel contains iron, which colours the teeth orange and makes them tough enough to chew through tree trunks."},
+   {q:"What colour is an octopus's blood?",o:["Green","Red","Blue","Clear"],a:2,e:"Octopus blood carries oxygen using copper instead of iron, and copper gives it a blue colour."},
+   {q:"A shark's skeleton is made mostly of what?",o:["Cartilage","Thin hollow bone","Thick overlapping scales","Muscle alone"],a:0,e:"Sharks have no true bones; their whole frame is cartilage, the same bendy material as the tip of your nose."},
+   {q:"Butterflies taste their food with which body part?",o:["Their antennae","Their wings","Their eyes","Their feet"],a:3,e:"A butterfly lands on a leaf and tastes it through its feet to check whether it is the right plant for her eggs."},
+   {q:"Why must an owl turn its whole head to look sideways?",o:["Its eyes are fixed tubes that cannot roll","Its eyelids are far too heavy","Its feathers block the side view","Its eyes only work in a straight line at night"],a:0,e:"Owl eyes are long tubes locked in place, so the bird swivels its extra flexible neck instead of moving its eyes."},
+   {q:"A starfish does not have which of these?",o:["A stomach","A mouth","A brain","Skin"],a:2,e:"Instead of a brain, a starfish has a ring of nerves that lets each arm feel its own way along the sea floor."},
+   {q:"On a cacao tree, where do the pods that give us chocolate grow?",o:["Straight out of the trunk and branches","Only on the very top branches","On a vine that creeps along the ground","Under the soil beside the roots"],a:0,e:"Cacao pods sprout right off the trunk, so a loaded tree looks like it is wearing melons on its bark."},
+   {q:"What is the name of the dot above the letters i and j?",o:["A serif","A tittle","A caret","A cedilla"],a:1,e:"In English it is called a tittle, an old word that simply means a very small written mark."},
+   {q:"What is the word for the earthy smell in the air after rain falls on dry ground?",o:["Petrichor","Humus","Zephyr","Verdure"],a:0,e:"Petrichor comes from oils that dry soil and plants give off, which the first raindrops lift back into the air."},
+   {q:"Ships measure their speed in knots. Where did that name come from?",o:["Knots tied into the sails","Knots in the wood of the tall mast","Knots used to tie up the heavy anchor","Knots on a rope let out behind a ship"],a:3,e:"Sailors let out a rope with knots at even spaces and counted how many slipped past in a set amount of time."},
+   {q:"A horse's height is measured in hands. About how long is one hand?",o:["About 5 cm","About 10 cm","About 20 cm","About 30 cm"],a:1,e:"One hand is exactly four inches, close to 10 cm, and the unit started as the width of a grown person's palm."},
+   {q:"Gemstones are weighed in carats. Where did that word come from?",o:["A kind of old coin","A Greek trading city","Carob tree seeds","A small silver weight"],a:2,e:"Carob seeds are all close to the same weight, so traders long ago used them as tiny counterweights on their scales."},
+   {q:"Why is kitchen foil shiny on one side and dull on the other?",o:["One side is coated with a thin wax","One side is meant to face the heat","Two sheets are rolled together as a pair","The dull side is made a little bit thicker"],a:2,e:"At the last rolling step the foil is squeezed in pairs, so only the sides touching the polished rollers come out shiny."},
+   {q:"Why are most street manhole covers round?",o:["Round metal costs less to make","Round covers are much lighter to lift up","A round cover cannot fall into its hole","Round holes are quicker to dig"],a:2,e:"A circle is the same width in every direction, so a round lid can never be turned sideways and slip through the opening."},
+   {q:"Why does a stop sign have eight sides?",o:["Eight sides use up the least metal","It matches the eight main road directions","Eight sides catch headlights better","The shape is known even under snow"],a:3,e:"The outline alone tells a driver what the sign says, even when the writing is hidden by snow or seen from the back."},
+   {q:"What was the tiny extra pocket on a pair of jeans first made for?",o:["Loose coins","Sewing needles","A pocket watch","A folded paper note"],a:2,e:"Workers slid a round pocket watch in there, where it sat snug and would not be crushed on the job."},
+   {q:"Bubble wrap was first invented to be sold as what?",o:["Wallpaper","Bandages","Pool floats","Boot lining"],a:0,e:"Its two inventors sealed air between plastic sheets hoping to make textured wallpaper; nobody bought it, so they sold it for packing instead."}
+  ],
     hard:[
       {"q":"The white band in the middle of the Canadian flag has its own heraldic name. What is it?","o":["A Canadian pale","A maple field","A national fess","A royal chief"],"a":0,"e":"A pale is a vertical band, and Canada's is double width, so it earned its own name."},
       {"q":"Why does bread go stale even inside a sealed bag?","o":["Its starch slowly turns back into crystals","All of its water escapes through the bag","The yeast keeps eating the sugar inside","The oil in the crust slowly turns solid"],"a":0,"e":"Staling is starch rearranging itself, which is why a short warm-up softens bread again."},
@@ -477,6 +963,24 @@ window.GK_BANK = {
       {"q":"Why does down filling keep a winter coat so warm?","o":["It traps a lot of still air","It blocks the wind like a shell","It soaks up sweat from the skin","It is heavier than other fillings"],"a":0,"e":"Insulation works by holding air still, and light fluffy down traps a lot of it per gram."},
       {"q":"The saying every cloud has a silver lining comes from which real sight?","o":["Sunlight glowing behind a cloud's edge","Ice crystals shining high in the sky","Lightning flashing inside a dark cloud","Moonlight caught in falling rain"],"a":0,"e":"When the sun sits behind a cloud, its rim looks bright, and that became an image of hope."},
       {"q":"Ice hockey is Canada's official national winter sport. What is the official summer sport?","o":["Lacrosse","Baseball","Soccer","Canoeing"],"a":0,"e":"A 1994 law named lacrosse the national summer sport and hockey the winter one."}
-    ]
+    ,
+   /* +50 Fun Facts hard */
+   {q:"On which planet does one full spin take longer than one trip around the Sun?",o:["Mercury","Venus","Mars","Neptune"],a:1,e:"Venus turns so slowly that its day is longer than its year, and it also spins the opposite way from most planets."},
+   {q:"Why will the boot prints left on the Moon still be there in a million years?",o:["The dust there is frozen solid","They were sprayed with a sealant","Moon dust sets hard like cement","The Moon has no wind and no rain"],a:3,e:"With no air moving and no water running, nothing sweeps the fine grey dust back over the prints."},
+   {q:"About how much of all the material in our solar system sits inside the Sun?",o:["About half","About three quarters","About 90 percent","About 99.8 percent"],a:3,e:"Every planet, moon, comet and speck of dust added together is only a crumb next to the Sun."},
+   {q:"Why does the sky look black from space even when the Sun is shining?",o:["The Sun is much farther away out there","There is no air to scatter the sunlight","Space is too cold for light to spread","Sunlight only glows close to a planet"],a:1,e:"On Earth the air scatters sunlight and paints the sky blue; with no air, the light shoots straight past and the sky stays black."},
+   {q:"Which animal has fingerprints so much like ours that they can be mixed up?",o:["The koala","The dolphin","The raccoon","The zebra"],a:0,e:"Koala fingertips carry the same loops and swirls as human ones, even though koalas are only very distant relatives of ours."},
+   {q:"The English word muscle comes from a Latin word meaning what?",o:["Strong rope","Rising bread","Little mouse","Tight knot"],a:2,e:"Romans thought a muscle rippling under the skin looked like a small mouse running along under a blanket."},
+   {q:"The word quarantine comes from an Italian word for which number?",o:["Seven","Twenty","Thirty","Forty"],a:3,e:"Ships arriving at busy ports centuries ago had to wait forty days before anyone was allowed to step ashore."},
+   {q:"Why do the hands of a clock turn the way they do?",o:["It matches the way a sundial's shadow moves","It matches the way most rivers flow","The direction was chosen by drawing lots","It matches the way people write on a page"],a:0,e:"The first clock makers copied sundials, and north of the equator a sundial's shadow sweeps in exactly that direction."},
+   {q:"Why do many books have a few blank pages at the very end?",o:["To let readers write their own notes","Because pages print on folded sheets of 16","To protect the last chapter from wear","Because the glue needs extra paper to hold"],a:1,e:"Printers fold large sheets into groups of pages, so a book almost always has to round up to the next full group."},
+   {q:"Why is the bottom of a fizzy drink can pushed inwards like a dome?",o:["So the cans stack more neatly","To make the can look bigger","To help the drink pour out faster","To hold back the pressure inside"],a:3,e:"A curved dome spreads the push of the trapped gas evenly, so the can stays strong while using very little metal."},
+   {q:"Nutmeg and the spice mace come from where?",o:["Two completely different trees","The roots of one plant","The flowers of a climbing vine","The same single fruit"],a:3,e:"Mace is the lacy red coat wrapped around the nutmeg seed, and both sit inside one fruit from the same tree."},
+   {q:"Saffron threads are which part of a crocus flower?",o:["The bright outer petals","The green stem","The stigmas in the flower","The dried roots below the soil"],a:2,e:"Each flower offers only three tiny threads, all picked by hand, which is why saffron is the priciest spice by weight."},
+   {q:"The heat of a chili pepper is measured on which scale?",o:["The Mohs scale","The Scoville scale","The Beaufort scale","The Brix scale"],a:1,e:"The Scoville scale counts how far the pepper must be watered down before the burning taste can no longer be noticed."},
+   {q:"What are the tiny specks on the outside of a strawberry?",o:["Simply the seeds of the plant","Each one is a small fruit","Tiny dried flower petals","Leftover grains of pollen"],a:1,e:"The juicy red part is really a swollen flower base, and every speck is its own little fruit with a seed tucked inside."},
+   {q:"A gross of pencils is how many pencils?",o:["60","100","120","144"],a:3,e:"A gross is a dozen dozen, so twelve twelves make one hundred and forty-four."},
+   {q:"Why does a piece of chocolate melt so easily on your tongue?",o:["Cocoa butter melts near body heat","Saliva dissolves the sugar first","Chocolate is mostly water","Chewing warms it up very fast"],a:0,e:"Cocoa butter stays firm on the shelf but turns liquid a shade under 37 degrees, which is exactly your body heat."}
+  ]
   }
 };

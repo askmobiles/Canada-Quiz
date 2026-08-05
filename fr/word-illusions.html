@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Illusions de mots — jeu de couleurs et de mots | Jeux en famille</title>
+<meta name="description" content="Jeu de réflexion Illusions de mots. Touchez la couleur du mot, pas le mot lui-même ! Un jeu de réaction rapide de type Stroop pour tous les âges. Gratuit, sans inscription.">
+<link rel="stylesheet" href="../css/style.css?v=20260805a">
+<style>
+  .wi-wrap{max-width:460px;margin:0 auto;text-align:center}
+  .wi-word{font-size:clamp(38px,13vw,64px);font-weight:900;margin:18px 0;min-height:74px;text-transform:uppercase;letter-spacing:1px}
+  .wi-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:380px;margin:14px auto}
+  .wi-opts button{padding:22px 6px;font-size:20px;font-weight:900;border:none;border-radius:14px;color:#fff;cursor:pointer;text-transform:uppercase;box-shadow:0 3px 0 rgba(0,0,0,.15);min-height:64px}
+  .wi-opts button:active{transform:translateY(2px)}
+  .wi-hud{display:flex;justify-content:center;gap:12px;margin:4px 0;font-weight:800}
+  .wi-hud .box{background:#eef1f5;border-radius:10px;padding:8px 16px}
+  .wi-bar{height:12px;background:#eee;border-radius:999px;overflow:hidden;max-width:380px;margin:8px auto}
+  .wi-bar span{display:block;height:100%;background:var(--blue);width:100%;transition:width .1s linear}
+  .wi-q{font-weight:800;color:#6a7683;margin-bottom:4px}
+  .wi-result{font-weight:800;min-height:26px;margin:6px 0}
+  .wi-result strong{font-size:22px}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/word-illusions.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/word-illusions.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/word-illusions.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/word-illusions.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🎨 Illusions de mots</h1>
+    <p>Touchez la COULEUR du mot — pas ce qu'il dit !</p>
+  </section>
+
+  <div class="ad-slot"><span class="ad-label">Publicité</span></div>
+
+  <details class="howto"><summary>📖 Comment jouer</summary><p>Un mot de couleur apparaît — mais il est écrit dans une autre couleur ! Votre travail est de toucher le bouton qui correspond à la <b>couleur des lettres</b>, pas au mot que vous lisez. Par exemple, si le mot « ROUGE » est écrit en bleu, vous touchez BLEU. C'est plus difficile qu'il n'y paraît, parce que la lecture se fait toute seule tandis que regarder demande un effort. Répondez au plus grand nombre possible avant que la barre se vide. Chaque bonne réponse redonne un peu de temps.</p></details>
+
+  <div class="panel">
+    <div class="wi-wrap">
+      <div class="wi-hud">
+        <div class="box">⭐ <span id="score">0</span></div>
+        <div class="box"><span>🏆 Record :</span> <span id="best">0</span></div>
+      </div>
+      <div class="wi-bar"><span id="bar"></span></div>
+      <div class="wi-q" id="prompt">Touchez la COULEUR du mot</div>
+      <div class="wi-word" id="word" data-no-i18n>Prêt ?</div>
+      <div class="wi-opts" id="opts" data-no-i18n></div>
+      <p class="center wi-result" id="msg" data-no-i18n></p>
+      <p class="center wi-result" id="result" style="display:none">
+        <span id="resLabel">Vous avez obtenu</span> <strong id="resScore">0</strong>
+        <span id="resNew" style="display:none">— un nouveau record !</span>
+      </p>
+      <div class="center">
+        <button class="btn btn-lg" id="startBtn" onclick="startGame()">▶ Commencer</button>
+        <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+      </div>
+    </div>
+  </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de ce jeu</h2>
+  <p>Word Illusions est un petit casse-tête rapide bâti sur une seule astuce. Un nom de couleur apparaît à l'écran, mais les lettres sont imprimées dans une autre couleur, et vous devez toucher la couleur des lettres plutôt que le mot que vous lisez. Ce jeu s'appelait autrefois Color Match ici, et il a changé de nom quand un jeu de mélange de couleurs est venu reprendre l'ancien.</p>
+  <p>Une barre de temps s'écoule au-dessus du mot, et elle est volontairement courte. Chaque bonne réponse vous rend un peu de temps et chaque erreur vous en retire une tranche : une longue série est donc une suite de choix rapides et assurés plutôt que prudents. Quand la barre se vide, la manche est terminée et votre score s'affiche.</p>
+  <p>Toute personne capable de lire des noms de couleurs peut jouer, de l'enfant du primaire jusqu'aux grands-parents. La lecture se fait toute seule alors que regarder demande un effort : voilà pourquoi le jeu mord davantage à mesure que vous accélérez. C'est un joli petit test de concentration et de rapidité, et une manche tient facilement dans quelques minutes libres.</p>
+  <h2>Comment ça marche</h2>
+  <ul>
+    <li>Chaque tour place quatre boutons à l'écran, tirés de six couleurs : rouge, bleu, vert, orange, mauve et jaune.</li>
+    <li>Le mot que vous lisez et la couleur des lettres ne concordent presque jamais, et c'est là tout le casse-tête.</li>
+    <li>Une barre de temps défile en haut du jeu, et la manche se termine dès qu'elle se vide.</li>
+    <li>Une bonne réponse remet un peu de temps sur la barre, tandis qu'une erreur en enlève davantage.</li>
+    <li>Votre score monte à chaque bonne réponse et reste visible pendant la partie.</li>
+    <li>Votre meilleur score est conservé sur l'appareil utilisé, il y a donc toujours un record à battre.</li>
+  </ul>
+  <h2>Conseils pour jouer</h2>
+  <ul>
+    <li>Le casse-tête est une version de l'effet Stroop, où nommer la couleur d'un mot discordant prend systématiquement plus de temps que de le lire.</li>
+    <li>Laisser votre regard s'adoucir un peu, pour voir les formes des lettres au lieu de les lire, enlève une bonne part de la pression du mot.</li>
+    <li>Se dépêcher est payant ici, car seule une bonne réponse redonne du temps à la barre, alors qu'une hésitation vous coûte sans rien vous rapporter.</li>
+    <li>Tenir le téléphone à deux mains met chaque bouton à portée de pouce et fait gagner une fraction de seconde à chaque réponse.</li>
+    <li>La concentration et le repos comptent, car un même joueur obtient un score plus faible fatigué qu'après une bonne nuit de sommeil.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>Dois-je toucher le mot ou la couleur ?</h3>
+  <p>Toujours la couleur dans laquelle les lettres sont imprimées, jamais le mot qu'elles forment. Cela semble facile jusqu'à ce que le mot rouge arrive en lettres bleues et que vos yeux s'obstinent à le lire d'abord.</p>
+  <h3>Pourquoi est-ce si difficile alors que la règle est si simple ?</h3>
+  <p>La lecture est automatique chez quiconque lit bien : le sens du mot arrive donc avant même que vous ayez décidé de regarder la couleur. Devancer le mot demande un effort volontaire, et l'effort prend du temps que la barre ne vous accorde pas.</p>
+  <h3>Où mon meilleur score est-il rangé ?</h3>
+  <p>Il se trouve dans votre propre navigateur, sur l'appareil utilisé, et n'en sort jamais. Effacer vos données de navigation ou changer de téléphone remet le record à zéro.</p>
+  <h3>Y a-t-il quelque chose à installer ?</h3>
+  <p>Rien du tout. Le jeu fonctionne dans cette page : un téléphone, une tablette ou un portable avec un navigateur suffit, et il n'y a ni compte ni adresse courriel à fournir.</p>
+  <h3>Le jeu convient-il aux enfants ?</h3>
+  <p>Tout enfant capable de lire les six noms de couleurs peut participer, même si le court chronomètre semble pressant au début. S'asseoir à côté d'un plus jeune et nommer la couleur à voix haute ensemble rend le jeu bien plus accueillant.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="games.html">Parcourez toute la collection de jeux familiaux gratuits</a> · <a href="color-match.html">Fabriquez une couleur à partir de son nom et voyez si vous approchez</a> · <a href="typing-test.html">Mesurez votre vitesse et votre précision au clavier</a> · <a href="math-race.html">Affrontez le chronomètre avec du calcul mental rapide</a></p>
+</section>
+<!--/PAGEDOC-->
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <details class="footer-map">
+      <summary>Toutes les pages <span class="fm-count">(101)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <div class="fm-h">Quiz</div>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="gk-quiz.html">Culture générale</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
+        <a href="science-quiz.html">Sciences et espace</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">IA &amp; technologie</a>
+        <a href="body-quiz.html">Corps humain &amp; santé</a>
+        <a href="money-quiz.html">L'argent expliqué aux enfants</a>
+        <a href="earth-quiz.html">Terre &amp; environnement</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Pratique de l'examen de conduite</div>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+        <a href="ontario-g1-study-guide.html">Guide d'étude G1 Ontario</a>
+        <a href="bc-class-7l-practice-test.html">Test pratique C.-B. classe 7L</a>
+        <a href="bc-class-7l-mock-test.html">Examen blanc C.-B. classe 7L</a>
+        <a href="bc-road-signs.html">Panneaux routiers de la C.-B.</a>
+        <a href="bc-rules-of-the-road.html">Code de la route de la C.-B.</a>
+        <a href="alberta-class-7-practice-test.html">Test pratique Alberta classe 7</a>
+        <a href="alberta-class-7-mock-test.html">Examen blanc Alberta classe 7</a>
+        <a href="alberta-road-signs.html">Panneaux routiers de l'Alberta</a>
+        <a href="alberta-rules-of-the-road.html">Code de la route de l'Alberta</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de réflexion et casse-têtes</div>
+        <a href="word-master.html">Maître des mots</a>
+        <a href="word-search.html">Mots cachés</a>
+        <a href="word-guess.html">Devine le mot</a>
+        <a href="scramble.html">Mots brouillés</a>
+        <a href="word-hive.html">Ruche de mots</a>
+        <a href="crossword.html">Mots croisés</a>
+        <a href="word-groups.html">Groupes de mots</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="minesweeper.html">Démineur</a>
+        <a href="sliding-puzzle.html">Taquin</a>
+        <a href="game-2048.html">2048</a>
+        <a href="memory.html">Jeu de mémoire</a>
+        <a href="cube-twist.html">Cube Twist</a>
+        <a href="typing-test.html">Test de vitesse de frappe</a>
+        <a href="color-match.html">Trouve la couleur</a>
+        <a href="word-illusions.html">Illusions de mots</a>
+        <a href="math-race.html">Course de maths</a>
+        <a href="times-tables.html">Champion des tables de multiplication</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux d'action et jeux classiques</div>
+        <a href="snake.html">Serpent érable</a>
+        <a href="whack-a-beaver.html">Tape-le-castor</a>
+        <a href="tile-tap.html">Tile Tap</a>
+        <a href="tictactoe.html">Tic-tac-toe</a>
+        <a href="checkers.html">Dames</a>
+        <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="tag.html">Tague</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Puissance 4</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de groupe</div>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="categories-game.html">Catégories</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="draw-it.html">Dessine-le</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Blogue</div>
+        <a href="blog.html">Tous les articles</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
+        <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
+        <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
+        <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
+        <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
+        <a href="canada-geography-coast-to-coast.html">La géographie du Canada</a>
+        <a href="canadas-animals-and-wildlife.html">Animaux et faune</a>
+        <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
+        <a href="canadian-holidays-explained.html">Les fêtes canadiennes</a>
+        <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
+        <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Cuisine canadienne &amp; sirop d'érable</a>
+        <a href="hockey-in-canada.html">Le hockey au Canada</a>
+        <a href="canadas-national-parks.html">Les parcs nationaux du Canada</a>
+        <a href="canadian-inventions.html">Inventions canadiennes</a>
+        <a href="winter-in-canada.html">L'hiver au Canada</a>
+        <a href="canadian-money-explained.html">L'argent canadien expliqué</a>
+        <a href="canadas-biggest-cities.html">Les plus grandes villes du Canada</a>
+        <a href="canadian-slang-words.html">L'argot canadien</a>
+        <a href="how-to-get-a-drivers-licence-in-canada.html">Obtenir son permis de conduire</a>
+        <a href="newcomer-first-year-in-canada-checklist.html">Aide-mémoire pour la première année au Canada</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Le site</div>
+        <a href="index.html">Accueil</a>
+        <a href="daily.html">Défi du jour</a>
+        <a href="games.html">Tous les jeux en famille</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+<script>
+var FR = /\/fr\//.test(location.pathname);
+function T(en, fr){ return FR ? fr : en; }
+
+var COLORS = [
+  { en:'Red',    fr:'Rouge',  hex:'#e63946' },
+  { en:'Blue',   fr:'Bleu',   hex:'#4895ef' },
+  { en:'Green',  fr:'Vert',   hex:'#2a9d8f' },
+  { en:'Orange', fr:'Orange', hex:'#f4845f' },
+  { en:'Purple', fr:'Mauve',  hex:'#8e7dbe' },
+  { en:'Yellow', fr:'Jaune',  hex:'#f0a800' }
+];
+function CN(c){ return FR ? c.fr : c.en; }
+
+var score = 0, best = 0, running = false, inkColor = null;
+var timeLeft = 0, timer = null, TIME = 8;
+
+try { best = parseInt(localStorage.getItem('wi_best') || '0', 10) || 0; } catch (e) {}
+document.getElementById('best').textContent = best;
+
+function $(id){ return document.getElementById(id); }
+
+function startGame(){
+  score = 0; running = true; timeLeft = TIME;
+  $('score').textContent = '0';
+  $('msg').textContent = '';
+  $('result').style.display = 'none';
+  $('word').style.color = '';
+  $('startBtn').style.display = 'none';
+  nextRound(); runTimer();
+}
+
+function runTimer(){
+  clearInterval(timer);
+  timer = setInterval(function(){
+    timeLeft -= 0.1;
+    $('bar').style.width = Math.max(0, timeLeft / TIME * 100) + '%';
+    if (timeLeft <= 0) endGame();
+  }, 100);
+}
+
+function nextRound(){
+  var wordC = COLORS[Math.floor(Math.random() * COLORS.length)];
+  var inkC  = COLORS[Math.floor(Math.random() * COLORS.length)];
+  if (Math.random() < 0.8){
+    while (inkC.en === wordC.en) inkC = COLORS[Math.floor(Math.random() * COLORS.length)];
+  }
+  inkColor = inkC;
+
+  var w = $('word');
+  w.textContent = CN(wordC);
+  w.style.color = inkC.hex;
+
+  var opts = [inkC];
+  var pool = COLORS.filter(function(c){ return c.en !== inkC.en; })
+                   .sort(function(){ return Math.random() - 0.5; });
+  while (opts.length < 4) opts.push(pool.pop());
+  opts.sort(function(){ return Math.random() - 0.5; });
+
+  var box = $('opts');
+  box.innerHTML = '';
+  opts.forEach(function(c){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = CN(c);
+    b.style.background = c.hex;
+    b.setAttribute('aria-label', CN(c));
+    b.onclick = function(){ pick(c); };
+    box.appendChild(b);
+  });
+}
+
+function pick(c){
+  if (!running) return;
+  if (c.en === inkColor.en){
+    score++;
+    $('score').textContent = score;
+    timeLeft = Math.min(TIME, timeLeft + 0.7);
+    flash('✔', '#2a9d8f');
+    nextRound();
+  } else {
+    timeLeft -= 1.5;
+    flash('✖', '#e63946');
+    if (timeLeft <= 0) endGame();
+  }
+}
+
+function flash(sym, col){
+  var m = $('msg');
+  m.style.color = col;
+  m.textContent = sym;
+  clearTimeout(flash._t);
+  flash._t = setTimeout(function(){ if (m.textContent === sym) m.textContent = ''; }, 300);
+}
+
+function endGame(){
+  running = false;
+  clearInterval(timer);
+  $('bar').style.width = '0%';
+
+  var isNew = score > best && score > 0;
+  if (score > best){
+    best = score;
+    try { localStorage.setItem('wi_best', best); } catch (e) {}
+    $('best').textContent = best;
+  }
+
+  $('word').textContent = '⏰';
+  $('word').style.color = 'var(--ink)';
+  $('opts').innerHTML = '';
+  $('msg').textContent = '';
+
+  $('resScore').textContent = score;
+  $('resNew').style.display = isNew ? 'inline' : 'none';
+  $('result').style.display = 'block';
+
+  var sb = $('startBtn');
+  sb.style.display = 'inline-block';
+  sb.textContent = T('▶ Play again', '▶ Rejouer');
+}
+</script>
+  <script src="../js/game-fullscreen.js?v=20260805a"></script>
+  <script src="../js/site.js?v=20260805a"></script>
+  <script src="../js/analytics.js?v=20260805a"></script>
+  <script src="../js/ads.js?v=20260805a" defer></script>
+</body>
+</html>

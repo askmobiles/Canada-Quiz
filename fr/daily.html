@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Défi du jour — Nouveau quiz et nouveau mot chaque jour | Canada Quiz</title>
 <meta name="description" content="Un tout nouveau quiz du jour et mot du jour chaque jour — les mêmes pour tout le monde. Bâtissez votre série quotidienne ! Gratuit, sans inscription. Revenez chaque jour.">
-<link rel="stylesheet" href="../css/style.css?v=20260804b">
+<link rel="stylesheet" href="../css/style.css?v=20260805a">
 <style>
   .dl-streak{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:10px 0}
   .dl-streak .box{background:#fff7e0;border:2px solid #ffe08a;border-radius:14px;padding:10px 20px;text-align:center;font-weight:800}
@@ -111,20 +111,20 @@
       <p class="sq-a"><strong>Réponse :</strong> <span>Ottawa</span></p>
     </li>
     <li class="sq">
-      <p class="sq-q">Combien de joueurs d'une équipe de soccer sont sur le terrain ?</p>
-      <p class="sq-a"><strong>Réponse :</strong> <span>11</span></p>
+      <p class="sq-q">Quelle ville canadienne abrite la Tour CN ?</p>
+      <p class="sq-a"><strong>Réponse :</strong> <span>Toronto</span></p>
     </li>
     <li class="sq">
-      <p class="sq-q">Quel est le plus grand désert chaud du monde ?</p>
-      <p class="sq-a"><strong>Réponse :</strong> <span>Le Sahara</span></p>
-    </li>
-    <li class="sq">
-      <p class="sq-q">En anglais, que veut dire le mot bonjour ?</p>
-      <p class="sq-a"><strong>Réponse :</strong> <span>Hello</span></p>
+      <p class="sq-q">Combien de joueurs d'une même équipe sont sur la glace au hockey ?</p>
+      <p class="sq-a"><strong>Réponse :</strong> <span>6</span></p>
     </li>
     <li class="sq">
       <p class="sq-q">Lequel des Grands Lacs a la plus grande superficie ?</p>
       <p class="sq-a"><strong>Réponse :</strong> <span>Lac Supérieur</span></p>
+    </li>
+    <li class="sq">
+      <p class="sq-q">Quel grand fleuve traverse l'Égypte vers le nord ?</p>
+      <p class="sq-a"><strong>Réponse :</strong> <span>Le Nil</span></p>
     </li>
   </ol>
   <h2>Bon à savoir</h2>
@@ -155,7 +155,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(91)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(101)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <div class="fm-h">Quiz</div>
@@ -180,6 +180,15 @@
         <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
         <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
         <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+        <a href="ontario-g1-study-guide.html">Guide d'étude G1 Ontario</a>
+        <a href="bc-class-7l-practice-test.html">Test pratique C.-B. classe 7L</a>
+        <a href="bc-class-7l-mock-test.html">Examen blanc C.-B. classe 7L</a>
+        <a href="bc-road-signs.html">Panneaux routiers de la C.-B.</a>
+        <a href="bc-rules-of-the-road.html">Code de la route de la C.-B.</a>
+        <a href="alberta-class-7-practice-test.html">Test pratique Alberta classe 7</a>
+        <a href="alberta-class-7-mock-test.html">Examen blanc Alberta classe 7</a>
+        <a href="alberta-road-signs.html">Panneaux routiers de l'Alberta</a>
+        <a href="alberta-rules-of-the-road.html">Code de la route de l'Alberta</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Jeux de réflexion et casse-têtes</div>
@@ -197,7 +206,8 @@
         <a href="memory.html">Jeu de mémoire</a>
         <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Test de vitesse de frappe</a>
-        <a href="color-match.html">Associe les couleurs</a>
+        <a href="color-match.html">Trouve la couleur</a>
+        <a href="word-illusions.html">Illusions de mots</a>
         <a href="math-race.html">Course de maths</a>
         <a href="times-tables.html">Champion des tables de multiplication</a>
         <a href="canada-map.html">Carte du Canada</a>
@@ -433,7 +443,59 @@ const TRIVIA=[
   {q:"In Roman numerals, which number does the letter L stand for?",o:["5","50","15","500"],a:1},
   {q:"In which year did the Second World War end?",o:["1918","1939","1945","1950"],a:2},
   {q:"In which city did a famous wall come down in 1989?",o:["Vienna","Berlin","Prague","Warsaw"],a:1}
-];
+,
+   /* +50 TRIVIA */
+   {q:"Which animal is known as the ship of the desert?",o:["The horse","The donkey","The llama","The camel"],a:3},
+   {q:"What is the capital city of Australia?",o:["Canberra","Sydney","Melbourne","Perth"],a:0},
+   {q:"What do we call a scientist who studies rocks?",o:["A biologist","A geologist","A chemist","A physicist"],a:1},
+   {q:"What is the capital city of Newfoundland and Labrador?",o:["Halifax","Fredericton","Charlottetown","St. John's"],a:3},
+   {q:"Nunavut, Yukon and which other territory make up northern Canada?",o:["New Brunswick","Northwest Territories","Nova Scotia","Newfoundland"],a:1},
+   {q:"Which animal appears on the Canadian 25-cent coin?",o:["A beaver","A caribou","A moose","A polar bear"],a:1},
+   {q:"What is Canada's national winter sport?",o:["Curling","Skiing","Ice hockey","Skating"],a:2},
+   {q:"Which is the hottest planet in our solar system?",o:["Mercury","Venus","Mars","Jupiter"],a:1},
+   {q:"Which gas makes up most of the air we breathe?",o:["Nitrogen","Oxygen","Carbon dioxide","Helium"],a:0},
+   {q:"How many bones are in the body of an adult person?",o:["106","206","306","406"],a:1},
+   {q:"Which great river flows north through Egypt?",o:["The Amazon","The Congo","The Danube","The Nile"],a:3},
+   {q:"What is the largest island in the world?",o:["Madagascar","Borneo","Iceland","Greenland"],a:3},
+   {q:"Which country gave the Statue of Liberty to the United States?",o:["France","Britain","Spain","Italy"],a:0},
+   {q:"What is a baby swan called?",o:["A cygnet","A gosling","A duckling","A chick"],a:0},
+   {q:"What does a thermometer measure?",o:["Temperature","Weight","Speed","Distance"],a:0},
+   {q:"What is the coloured part of the eye called?",o:["The lens","The iris","The cornea","The retina"],a:1},
+   {q:"How many teeth does an adult person usually have?",o:["32","24","28","36"],a:0},
+   {q:"Which continent has the most countries?",o:["Africa","Asia","Europe","South America"],a:0},
+   {q:"What is the capital city of Alberta?",o:["Edmonton","Calgary","Red Deer","Banff"],a:0},
+   {q:"What is the scientific name for the Northern Lights?",o:["Aurora borealis","Solar wind","Star clouds","Moon glow"],a:0},
+   {q:"What do we call an animal that is awake at night?",o:["Migratory","Aquatic","Tropical","Nocturnal"],a:3},
+   {q:"Which sport is played on ice with heavy stones and brooms?",o:["Bowling","Hockey","Ringette","Curling"],a:3},
+   {q:"How many squares are on a chessboard?",o:["36","49","64","81"],a:2},
+   {q:"Which desert stretches across Mongolia and northern China?",o:["The Sahara","The Kalahari","The Gobi","The Atacama"],a:2},
+   {q:"Which country lies directly south of Canada?",o:["The United States","Mexico","Greenland","Iceland"],a:0},
+   {q:"How many time zones does Canada have?",o:["Four","Five","Seven","Six"],a:3},
+   {q:"What colour is the skin under a polar bear's fur?",o:["White","Black","Pink","Grey"],a:1},
+   {q:"What do we call a group of lions?",o:["A pack","A pride","A herd","A troop"],a:1},
+   {q:"Which vitamin is found in oranges and lemons?",o:["Vitamin A","Vitamin B","Vitamin K","Vitamin C"],a:3},
+   {q:"What do we call a book full of maps?",o:["A ledger","An atlas","An almanac","A journal"],a:1},
+   {q:"What is the study of living things called?",o:["Geology","Chemistry","Biology","Physics"],a:2},
+   {q:"Which metal is a liquid at room temperature?",o:["Copper","Silver","Lead","Mercury"],a:3},
+   {q:"What does an anemometer measure?",o:["Rainfall","Air pressure","Sunlight","Wind speed"],a:3},
+   {q:"What is the largest fish in the ocean?",o:["The blue marlin","The whale shark","The tuna","The swordfish"],a:1},
+   {q:"Which planet spins on its side?",o:["Mars","Neptune","Uranus","Saturn"],a:2},
+   {q:"What is the capital city of Saskatchewan?",o:["Regina","Saskatoon","Moose Jaw","Prince Albert"],a:0},
+   {q:"Which trees grow the tallest in the world?",o:["Oaks","Pines","Redwoods","Maples"],a:2},
+   {q:"What is the sweet liquid bees collect from flowers called?",o:["Sap","Pollen","Nectar","Resin"],a:2},
+   {q:"Who wrote the play Romeo and Juliet?",o:["Charles Dickens","William Shakespeare","Jane Austen","Mark Twain"],a:1},
+   {q:"In which country was paper first invented?",o:["Egypt","Greece","China","India"],a:2},
+   {q:"How many players from one team are on a basketball court?",o:["Four","Five","Six","Seven"],a:1},
+   {q:"What is a baby horse called?",o:["A calf","A kid","A cub","A foal"],a:3},
+   {q:"What do we call animals that eat only meat?",o:["Carnivores","Herbivores","Omnivores","Insectivores"],a:0},
+   {q:"Which ocean lies between Africa and Australia?",o:["The Pacific Ocean","The Indian Ocean","The Arctic Ocean","The Atlantic Ocean"],a:1},
+   {q:"Which mountain range divides Europe from Asia?",o:["The Alps","The Andes","The Urals","The Pyrenees"],a:2},
+   {q:"What do we call a word that means the same as another word?",o:["An antonym","A homonym","A synonym","A pronoun"],a:2},
+   {q:"Which planet is the farthest from the Sun?",o:["Saturn","Uranus","Neptune","Pluto"],a:2},
+   {q:"What is the calm centre of a hurricane called?",o:["The wall","The middle","The eye","The tail"],a:2},
+   {q:"Which is the longest bone in the human body?",o:["The thigh bone","The shin bone","The arm bone","The collar bone"],a:0},
+   {q:"Which Canadian holiday falls on the first Monday of September?",o:["Victoria Day","Thanksgiving","Family Day","Labour Day"],a:3}
+  ];
 const DWORDS=[
   {w:"MAPLE",h:"a Canadian tree with sweet syrup"},{w:"BEAVER",h:"a busy dam-building animal"},
   {w:"HOCKEY",h:"a sport played on ice"},{w:"WINTER",h:"the coldest season"},
@@ -573,8 +635,8 @@ function revealWord(){
 document.getElementById('dateline').textContent='Today is '+new Date().toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'})+' — new challenges every day!';
 refreshStreak(); renderQuiz(); renderWord();
 </script>
-  <script src="../js/site.js?v=20260804b"></script>
-  <script src="../js/analytics.js?v=20260804b"></script>
-  <script src="../js/ads.js?v=20260804b" defer></script>
+  <script src="../js/site.js?v=20260805a"></script>
+  <script src="../js/analytics.js?v=20260805a"></script>
+  <script src="../js/ads.js?v=20260805a" defer></script>
 </body>
 </html>

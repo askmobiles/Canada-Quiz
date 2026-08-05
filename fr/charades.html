@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fête de charades 🎭 — Jeux en famille</title>
 <meta name="description" content="Jeu gratuit Charades en fête pour toute la famille. 2 équipes, minuterie, plus de 1 400 mots en 13 catégories. Jouez sur téléphone, tablette ou ordinateur.">
-<link rel="stylesheet" href="../css/style.css?v=20260804b">
+<link rel="stylesheet" href="../css/style.css?v=20260805a">
 <style>
   .game-stage{position:relative}
   .screen{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;padding:26px 16px;min-height:66vh}
   .screen.active{display:flex}
   .screen>*{min-width:0;max-width:100%}
-  .screen h1{font-size:clamp(2rem,7vw,3.4rem);color:var(--ink);margin:0}
+  .screen h1,.screen h2.big{font-size:clamp(2rem,7vw,3.4rem);color:var(--ink);margin:0;font-weight:800}
   .subtitle{font-size:clamp(1rem,3vw,1.3rem);color:var(--muted);max-width:600px}
   .gbtn{border:none;border-radius:14px;padding:16px 32px;font-size:clamp(1.1rem,3.5vw,1.5rem);font-weight:800;cursor:pointer;color:#fff;background:var(--red-aa);box-shadow:0 4px 0 rgba(0,0,0,.08);transition:transform .08s;touch-action:manipulation}
   .gbtn:active{transform:translateY(2px);box-shadow:none}
@@ -101,7 +101,7 @@
 <div class="screen" id="screen-handoff">
   <div class="team-banner" id="handoff-team">Équipe rouge</div>
   <div id="round-info"></div>
-  <h1>📱 Passe l'écran !</h1>
+  <h2 class="big">📱 Passe l'écran !</h2>
   <p class="subtitle" id="handoff-msg">Acteur : venez regarder l'écran. Tous les autres — pas de triche ! 🙈</p>
   <button class="gbtn big green" onclick="showWord()">👀 Je suis l'acteur — Montre-moi le mot</button>
 </div>
@@ -130,7 +130,7 @@
 
 <!-- ROUND OVER -->
 <div class="screen" id="screen-roundover">
-  <h1>⏰ Temps écoulé !</h1>
+  <h2 class="big">⏰ Temps écoulé !</h2>
   <div class="scoreboard">
     <div class="score-card team-a-bg" id="card-a"><div class="name">🔴 Équipe rouge</div><div class="pts" id="score-a">0</div></div>
     <div class="score-card team-b-bg" id="card-b"><div class="name">🔵 Équipe bleue</div><div class="pts" id="score-b">0</div></div>
@@ -143,7 +143,7 @@
 <!-- GAME OVER -->
 <div class="screen" id="screen-gameover">
   <div class="trophy">🏆</div>
-  <h1 id="winner-text">L'équipe rouge gagne !</h1>
+  <h2 class="big" id="winner-text">L'équipe rouge gagne !</h2>
   <div class="scoreboard">
     <div class="score-card team-a-bg"><div class="name">🔴 Équipe rouge</div><div class="pts" id="final-a">0</div></div>
     <div class="score-card team-b-bg"><div class="name">🔵 Équipe bleue</div><div class="pts" id="final-b">0</div></div>
@@ -198,7 +198,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(91)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(101)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <div class="fm-h">Quiz</div>
@@ -223,6 +223,15 @@
         <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
         <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
         <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+        <a href="ontario-g1-study-guide.html">Guide d'étude G1 Ontario</a>
+        <a href="bc-class-7l-practice-test.html">Test pratique C.-B. classe 7L</a>
+        <a href="bc-class-7l-mock-test.html">Examen blanc C.-B. classe 7L</a>
+        <a href="bc-road-signs.html">Panneaux routiers de la C.-B.</a>
+        <a href="bc-rules-of-the-road.html">Code de la route de la C.-B.</a>
+        <a href="alberta-class-7-practice-test.html">Test pratique Alberta classe 7</a>
+        <a href="alberta-class-7-mock-test.html">Examen blanc Alberta classe 7</a>
+        <a href="alberta-road-signs.html">Panneaux routiers de l'Alberta</a>
+        <a href="alberta-rules-of-the-road.html">Code de la route de l'Alberta</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Jeux de réflexion et casse-têtes</div>
@@ -240,7 +249,8 @@
         <a href="memory.html">Jeu de mémoire</a>
         <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Test de vitesse de frappe</a>
-        <a href="color-match.html">Associe les couleurs</a>
+        <a href="color-match.html">Trouve la couleur</a>
+        <a href="word-illusions.html">Illusions de mots</a>
         <a href="math-race.html">Course de maths</a>
         <a href="times-tables.html">Champion des tables de multiplication</a>
         <a href="canada-map.html">Carte du Canada</a>
@@ -514,9 +524,9 @@ function endGame() {
   show('screen-gameover');
 }
 </script>
-  <script src="../js/game-fullscreen.js?v=20260804b"></script>
-  <script src="../js/site.js?v=20260804b"></script>
-  <script src="../js/analytics.js?v=20260804b"></script>
-  <script src="../js/ads.js?v=20260804b" defer></script>
+  <script src="../js/game-fullscreen.js?v=20260805a"></script>
+  <script src="../js/site.js?v=20260805a"></script>
+  <script src="../js/analytics.js?v=20260805a"></script>
+  <script src="../js/ads.js?v=20260805a" defer></script>
 </body>
 </html>

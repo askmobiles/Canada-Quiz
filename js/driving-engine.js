@@ -44,6 +44,10 @@
                     fr: "Vous devez obtenir %1 bonnes réponses sur %2 dans cette section." },
     bothNeeded:   { en: "You must pass BOTH sections. Doing well in one does not make up for the other.",
                     fr: "Vous devez réussir LES DEUX sections. Une bonne note dans l'une ne compense pas l'autre." },
+    overallRule:  { en: "You must get %1 of the %2 questions right to pass.",
+                    fr: "Vous devez répondre correctement à %1 des %2 questions pour réussir." },
+    sectionInfo:  { en: "You must get %1 of %2 right in this section.",
+                    fr: "Vous devez obtenir %1 bonnes réponses sur %2 dans cette section." },
     timeUp:       { en: "Time is up — here is your result.",
                     fr: "Le temps est écoulé — voici votre résultat." },
     review:       { en: "The questions you missed",    fr: "Les questions manquées" },
@@ -171,7 +175,8 @@
             }).join(" &nbsp; ") +
             ' &nbsp; <span class="pill">' + P.minutes + " min</span></p>" +
           '<p class="muted" style="max-width:620px;margin:8px auto 0">' +
-            esc(T("bothNeeded")) + "</p>" +
+            esc(P.overallPass ? T("overallRule", P.overallPass, total())
+                              : T("bothNeeded")) + "</p>" +
           '<p style="margin-top:18px"><button class="btn btn-lg" id="dq-go">' +
             esc(T("startTest")) + "</button></p>" +
         "</section>";
@@ -276,13 +281,18 @@
       qs.forEach(function (it) {
         if (it.given === it.q.c) { per[it.sec]++; all++; }
       });
-      var passed = P.sections.every(function (s) { return per[s.id] >= s.pass; });
+      var passed = P.overallPass
+        ? (all >= P.overallPass)
+        : P.sections.every(function (s) { return per[s.id] >= s.pass; });
 
       var lines = P.sections.map(function (s) {
         var got = per[s.id], ok = got >= s.pass;
+        var mark = P.overallPass ? "•" : (ok ? "✅" : "❌");
+        var note = P.overallPass ? "" :
+          " <span class=\"muted\">(" + esc(T("sectionRule", s.pass, s.ask)) + ")</span>";
         return '<p class="score" style="margin:4px 0">' +
-          (ok ? "✅" : "❌") + " " + esc(L(s.name)) + " — <strong>" + got + " / " + s.ask +
-          "</strong> <span class=\"muted\">(" + esc(T("sectionRule", s.pass, s.ask)) + ")</span></p>";
+          mark + " " + esc(L(s.name)) + " — <strong>" + got + " / " + s.ask +
+          "</strong>" + note + "</p>";
       }).join("");
 
       var missed = qs.filter(function (it) { return it.given !== it.q.c; });

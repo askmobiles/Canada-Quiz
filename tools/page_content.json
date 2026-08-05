@@ -297,6 +297,1182 @@
    ]
   ]
  },
+ "alberta-class-7-mock-test.html": {
+  "about": [
+   {
+    "en": "This page copies the shape of the Alberta Class 7 knowledge test so the real one feels familiar. You answer fifteen road sign questions and fifteen rules of the road questions, thirty in all, with a thirty-minute timer running the whole way through.",
+    "fr": "Cette page reprend la forme de l'examen théorique de classe 7 de l'Alberta pour que le vrai vous semble familier. Vous répondez à quinze questions sur les panneaux et à quinze questions sur le code de la route, trente en tout, avec un chronomètre de trente minutes du début à la fin."
+   },
+   {
+    "en": "The pass mark is twenty-five out of thirty, counted across the whole test rather than half by half. That is gentler than Ontario, where each half must reach its own mark, but it still leaves you room for only five mistakes in total.",
+    "fr": "Le seuil de réussite est de vingt-cinq sur trente, calculé sur l'ensemble de l'examen plutôt que moitié par moitié. C'est plus indulgent qu'en Ontario, où chaque moitié doit atteindre son propre seuil, mais cela ne vous laisse quand même droit qu'à cinq erreurs."
+   },
+   {
+    "en": "The questions are drawn at random from our bank of one hundred and twenty original questions, so no two runs look the same. This is unofficial practice with no link to the Government of Alberta or any registry agent, and passing here gives you confidence rather than a licence.",
+    "fr": "Les questions sont tirées au hasard dans notre banque de cent vingt questions originales, si bien que deux essais ne se ressemblent jamais. Il s'agit d'une pratique non officielle sans lien avec le gouvernement de l'Alberta ni avec un agent d'immatriculation : réussir ici vous donne de la confiance, pas un permis."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Five wrong answers is your whole budget, no matter which part of the test they fall in.",
+    "fr": "Cinq mauvaises réponses, c'est tout ce que vous pouvez vous permettre, peu importe la partie de l'examen où elles tombent."
+   },
+   {
+    "en": "Because Alberta totals the whole test, a very strong showing on the signs can quietly rescue a shaky patch on the rules.",
+    "fr": "Comme l'Alberta additionne tout l'examen, un très bon résultat sur les panneaux peut discrètement rattraper un passage fragile sur les règles."
+   },
+   {
+    "en": "Thirty minutes for thirty questions gives you a full minute each, which is plenty once the material is familiar.",
+    "fr": "Trente minutes pour trente questions vous donnent une minute complète chacune, ce qui est amplement suffisant quand la matière est bien connue."
+   },
+   {
+    "en": "When two choices both sound sensible, the safer and more patient one is usually what the guide expects.",
+    "fr": "Quand deux choix semblent tous deux sensés, c'est habituellement le plus prudent et le plus patient qu'attend le guide."
+   },
+   {
+    "en": "Run the test several times, because the random draw will show you questions an earlier attempt never reached.",
+    "fr": "Refaites l'examen plusieurs fois, car le tirage aléatoire vous montrera des questions qu'un essai précédent n'avait jamais atteintes."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No. This is unofficial practice written in our own words, and we are not affiliated with the Government of Alberta or any registry agent. A pass here is a good sign of readiness, nothing more.",
+     "fr": "Non. C'est une pratique non officielle rédigée dans nos propres mots, et nous ne sommes affiliés ni au gouvernement de l'Alberta ni à un agent d'immatriculation. Une réussite ici est un bon signe de préparation, rien de plus."
+    },
+    "q": {
+     "en": "Is this the official Alberta Class 7 knowledge test?",
+     "fr": "S'agit-il de l'examen théorique officiel de classe 7 de l'Alberta ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Your thirty answers are totalled together and compared with the pass mark of twenty-five, exactly as Alberta does it. There is no separate mark for the sign half and the rules half.",
+     "fr": "Vos trente réponses sont additionnées ensemble et comparées au seuil de vingt-cinq, exactement comme le fait l'Alberta. Il n'y a pas de note distincte pour la moitié des panneaux et celle des règles."
+    },
+    "q": {
+     "en": "How is the score counted on this mock test?",
+     "fr": "Comment le résultat est-il calculé dans cet examen blanc ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The test stops where you are and takes you straight to your result. Questions you never opened are counted as wrong, so it is better to keep moving than to sit on one difficult question.",
+     "fr": "L'examen s'arrête là où vous en êtes et vous mène directement à votre résultat. Les questions jamais ouvertes comptent comme des erreurs : mieux vaut avancer que de bloquer sur une question difficile."
+    },
+    "q": {
+     "en": "What happens if the timer reaches zero before I finish?",
+     "fr": "Que se passe-t-il si le chronomètre atteint zéro avant la fin ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. The result screen gathers every missed question in one list, showing what you chose, what was correct and a short explanation. That list tells you which chapters or which sign groups to go back to.",
+     "fr": "Oui. L'écran de résultat rassemble toutes les questions manquées dans une seule liste, avec votre choix, la bonne réponse et une courte explication. Cette liste vous indique quels chapitres ou quels groupes de panneaux revoir."
+    },
+    "q": {
+     "en": "Can I look back at the questions I answered wrongly?",
+     "fr": "Puis-je revoir les questions auxquelles j'ai répondu incorrectement ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No account, no email and nothing to install. The test begins in your browser as soon as the page loads, and you can close the tab and start over whenever you have half an hour free.",
+     "fr": "Aucun compte, aucun courriel, rien à installer. L'examen démarre dans votre navigateur dès le chargement de la page, et vous pouvez fermer l'onglet et recommencer dès que vous avez une demi-heure libre."
+    },
+    "q": {
+     "en": "Do I need an account before I start the Alberta mock test?",
+     "fr": "Dois-je créer un compte avant de commencer l'examen blanc albertain ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "The test runs fifteen sign questions and fifteen rules questions, the same balance the real knowledge test uses.",
+    "fr": "L'examen comprend quinze questions sur les panneaux et quinze questions sur les règles, le même équilibre que l'examen réel."
+   },
+   {
+    "en": "A thirty-minute timer counts down on screen, and the test ends the moment it reaches zero.",
+    "fr": "Un chronomètre de trente minutes défile à l'écran, et l'examen se termine dès qu'il atteint zéro."
+   },
+   {
+    "en": "Every answer is marked the instant you tap it, with a short explanation of why that choice is the right one.",
+    "fr": "Chaque réponse est corrigée dès que vous la touchez, avec une courte explication de la raison pour laquelle ce choix est le bon."
+   },
+   {
+    "en": "The result screen shows your total out of thirty and a clear PASS or TRY AGAIN against the mark of twenty-five.",
+    "fr": "L'écran de résultat affiche votre total sur trente et un RÉUSSI ou À REPRENDRE bien clair selon le seuil de vingt-cinq."
+   },
+   {
+    "en": "Every question you missed is listed at the end with the answer you picked, the correct answer and the reason behind it.",
+    "fr": "Toutes les questions manquées sont listées à la fin avec la réponse choisie, la bonne réponse et l'explication qui l'accompagne."
+   },
+   {
+    "en": "Questions are picked at random from sixty sign questions and sixty rules questions, so every run is a fresh test.",
+    "fr": "Les questions sont tirées au hasard parmi soixante questions sur les panneaux et soixante sur les règles, donc chaque essai est un nouvel examen."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "alberta-road-signs.html",
+    {
+     "en": "Go back to the sign pictures and drill them by group",
+     "fr": "Revenez aux images des panneaux et pratiquez-les par groupe"
+    }
+   ],
+   [
+    "alberta-rules-of-the-road.html",
+    {
+     "en": "Read the rules chapters with no clock running",
+     "fr": "Lisez les chapitres du code de la route sans chronomètre"
+    }
+   ],
+   [
+    "alberta-class-7-practice-test.html",
+    {
+     "en": "Return to the Alberta Class 7 practice home page",
+     "fr": "Retournez à la page d'accueil de la pratique classe 7 de l'Alberta"
+    }
+   ],
+   [
+    "how-to-get-a-drivers-licence-in-canada.html",
+    {
+     "en": "Read how the steps to a driver's licence work in Canada",
+     "fr": "Découvrez les étapes pour obtenir un permis de conduire au Canada"
+    }
+   ]
+  ]
+ },
+ "alberta-class-7-practice-test.html": {
+  "about": [
+   {
+    "en": "This page is the starting point for our free Alberta Class 7 practice. From here you can open a full timed mock test, study every road sign group by group, or work through the rules of the road chapter by chapter. Everything is free and nothing asks you for an account.",
+    "fr": "Cette page est le point de départ de notre pratique gratuite pour la classe 7 de l'Alberta. D'ici, vous pouvez ouvrir un examen blanc chronométré complet, étudier chaque panneau routier groupe par groupe, ou parcourir le code de la route chapitre par chapitre. Tout est gratuit et rien ne vous demande de compte."
+   },
+   {
+    "en": "The real Class 7 knowledge test asks thirty multiple-choice questions and you need twenty-five right answers to pass. Alberta adds your score up across the whole test instead of marking each half on its own, which is different from Ontario, where each half needs its own pass mark. That means a strong result on the signs really can help carry a weaker result on the rules.",
+    "fr": "Le véritable examen théorique de classe 7 pose trente questions à choix multiple et il faut vingt-cinq bonnes réponses pour réussir. L'Alberta additionne votre résultat sur l'ensemble de l'examen au lieu de noter chaque moitié séparément, contrairement à l'Ontario, où chaque moitié exige son propre seuil. Un bon résultat sur les panneaux peut donc vraiment compenser un résultat plus faible sur les règles."
+   },
+   {
+    "en": "You sit the real test at a registry agent office, where you also complete a vision screening and show your identification. This is unofficial practice with no connection to the Government of Alberta or to any registry agent. Read the free Alberta Basic Licence Driver's Guide for the complete rules, and use these pages to find out what you still need to learn.",
+    "fr": "Vous passez le vrai examen chez un agent d'immatriculation, où vous faites aussi un examen de la vue et présentez vos pièces d'identité. Il s'agit d'une pratique non officielle sans aucun lien avec le gouvernement de l'Alberta ni avec un agent d'immatriculation. Lisez le guide officiel gratuit Alberta Basic Licence Driver's Guide pour les règles complètes, et servez-vous de ces pages pour repérer ce qu'il vous reste à apprendre."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Alberta counts your score over the whole test, so five wrong answers spread anywhere still leave you with a pass.",
+    "fr": "L'Alberta compte votre résultat sur l'ensemble de l'examen : cinq mauvaises réponses réparties n'importe où vous laissent quand même la réussite."
+   },
+   {
+    "en": "Ontario is stricter on one point, because it asks for a separate pass mark in each half of its knowledge test.",
+    "fr": "L'Ontario est plus sévère sur un point, car il exige un seuil de réussite distinct dans chaque moitié de son examen théorique."
+   },
+   {
+    "en": "Our Alberta question bank holds one hundred and twenty original questions, sixty about signs and sixty about the rules.",
+    "fr": "Notre banque de questions albertaine compte cent vingt questions originales, soixante sur les panneaux et soixante sur les règles."
+   },
+   {
+    "en": "Bring your identification to the registry agent office, since the visit also includes a vision screening before the test.",
+    "fr": "Apportez vos pièces d'identité chez l'agent d'immatriculation, car la visite comprend aussi un examen de la vue avant le test."
+   },
+   {
+    "en": "Most people lose marks on the signs rather than the rules, simply because there are many signs and several of them look alike.",
+    "fr": "La plupart des gens perdent des points sur les panneaux plutôt que sur les règles, tout simplement parce qu'ils sont nombreux et que plusieurs se ressemblent."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "There are thirty multiple-choice questions and you need twenty-five correct to pass. The score is added up over the whole test, so a mistake on a sign question and a mistake on a rules question count exactly the same.",
+     "fr": "Il y a trente questions à choix multiple et il faut vingt-cinq bonnes réponses pour réussir. Le résultat est calculé sur l'ensemble de l'examen : une erreur sur un panneau et une erreur sur une règle comptent exactement pareil."
+    },
+    "q": {
+     "en": "How many questions are on the real Alberta Class 7 knowledge test?",
+     "fr": "Combien de questions comporte le vrai examen théorique de classe 7 en Alberta ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. We are not affiliated with the Government of Alberta or with any registry agent, and nothing you do here counts toward a licence. Everything is written in our own words as practice, and the free Alberta Basic Licence Driver's Guide remains the book to study.",
+     "fr": "Non. Nous ne sommes affiliés ni au gouvernement de l'Alberta ni à un agent d'immatriculation, et rien de ce que vous faites ici ne compte pour un permis. Tout est rédigé dans nos propres mots à titre de pratique, et le guide gratuit Alberta Basic Licence Driver's Guide reste l'ouvrage à étudier."
+    },
+    "q": {
+     "en": "Is this website connected to the Government of Alberta?",
+     "fr": "Ce site web est-il lié au gouvernement de l'Alberta ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Neither. There is no account, no email address and no download of any kind. The pages run in your browser, so you can practise on a phone while you wait somewhere and pick up again later.",
+     "fr": "Ni l'un ni l'autre. Aucun compte, aucune adresse courriel, aucun téléchargement. Les pages fonctionnent dans votre navigateur : vous pouvez donc pratiquer sur un téléphone pendant une attente et reprendre plus tard."
+    },
+    "q": {
+     "en": "Do I have to sign up or pay to use these Alberta pages?",
+     "fr": "Dois-je m'inscrire ou payer pour utiliser ces pages albertaines ?"
+    }
+   },
+   {
+    "a": {
+     "en": "You take it at a registry agent office. The same visit includes a vision screening, and you must bring identification with you, so it helps to check what documents you need before you go.",
+     "fr": "Vous le passez chez un agent d'immatriculation. La même visite comprend un examen de la vue, et vous devez apporter des pièces d'identité : il vaut donc mieux vérifier les documents exigés avant de partir."
+    },
+    "q": {
+     "en": "Where do I take the real knowledge test in Alberta?",
+     "fr": "Où passe-t-on le vrai examen théorique en Alberta ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Start with the two study pages while the material is new, because neither of them is timed. Once the signs and the chapters feel comfortable, move to the mock test and see whether you clear twenty-five out of thirty.",
+     "fr": "Commencez par les deux pages d'étude tant que la matière est nouvelle, car aucune des deux n'est chronométrée. Quand les panneaux et les chapitres vous semblent à l'aise, passez à l'examen blanc et voyez si vous dépassez vingt-cinq sur trente."
+    },
+    "q": {
+     "en": "Which of the three Alberta pages should I open first?",
+     "fr": "Laquelle des trois pages albertaines devrais-je ouvrir en premier ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "An opening panel explains the shape of the real Alberta knowledge test, with its thirty questions and its pass mark of twenty-five.",
+    "fr": "Un premier panneau explique la forme du véritable examen théorique albertain, avec ses trente questions et son seuil de réussite de vingt-cinq."
+   },
+   {
+    "en": "Three cards send you to the timed mock test, the road sign study page and the rules of the road study page.",
+    "fr": "Trois cartes vous mènent à l'examen blanc chronométré, à la page d'étude des panneaux et à la page d'étude du code de la route."
+   },
+   {
+    "en": "The mock test card describes thirty questions, a thirty-minute timer and the pass mark counted across the whole test.",
+    "fr": "La carte de l'examen blanc décrit trente questions, un chronomètre de trente minutes et le seuil calculé sur l'ensemble de l'examen."
+   },
+   {
+    "en": "The road signs card leads to a gallery where the signs are grouped by type, each one drawn with its name and its meaning.",
+    "fr": "La carte des panneaux mène à une galerie où les panneaux sont regroupés par type, chacun dessiné avec son nom et sa signification."
+   },
+   {
+    "en": "The rules card leads to study pages arranged by chapter, covering licensing, safe driving, sharing the road, driving conditions and more.",
+    "fr": "La carte des règles mène à des pages d'étude classées par chapitre, qui couvrent le permis, la conduite sécuritaire, le partage de la route, les conditions de conduite et le reste."
+   },
+   {
+    "en": "A closing section gives advice on passing the first time and carries a plain notice that this practice is unofficial.",
+    "fr": "Une section finale donne des conseils pour réussir du premier coup et porte un avis clair indiquant que cette pratique n'est pas officielle."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "alberta-class-7-mock-test.html",
+    {
+     "en": "Sit the full timed Alberta mock test",
+     "fr": "Passez l'examen blanc chronométré complet de l'Alberta"
+    }
+   ],
+   [
+    "alberta-road-signs.html",
+    {
+     "en": "Study every Alberta road sign group by group",
+     "fr": "Étudiez chaque panneau routier de l'Alberta groupe par groupe"
+    }
+   ],
+   [
+    "alberta-rules-of-the-road.html",
+    {
+     "en": "Work through the Alberta rules chapter by chapter",
+     "fr": "Parcourez le code de la route albertain chapitre par chapitre"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See every province we cover on the driving test hub",
+     "fr": "Voyez toutes les provinces couvertes sur la page des examens de conduite"
+    }
+   ]
+  ]
+ },
+ "alberta-road-signs.html": {
+  "about": [
+   {
+    "en": "The sign questions on the Alberta Class 7 test are the ones you can study with your eyes. This page shows the signs as clean drawings, sorted into groups, with the name of each one written underneath so the picture and the meaning settle in together.",
+    "fr": "Les questions sur les panneaux de l'examen de classe 7 en Alberta sont celles qui s'étudient avec les yeux. Cette page présente les panneaux sous forme de dessins nets, classés en groupes, avec le nom de chacun écrit dessous pour que l'image et la signification s'installent ensemble."
+   },
+   {
+    "en": "Nothing here is timed and nothing is scored. Open a group, look through the pictures until they feel familiar, then press the practice button under that group to answer only the questions that use those particular signs.",
+    "fr": "Rien ici n'est chronométré et rien n'est noté. Ouvrez un groupe, regardez les images jusqu'à ce qu'elles vous soient familières, puis appuyez sur le bouton de pratique sous ce groupe pour répondre uniquement aux questions qui utilisent ces panneaux."
+   },
+   {
+    "en": "This is unofficial practice with no link to the Government of Alberta or any registry agent. The free Alberta Basic Licence Driver's Guide is still the book to read, and this page is simply where you drill the pictures until they stay put in your memory.",
+    "fr": "Il s'agit d'une pratique non officielle sans lien avec le gouvernement de l'Alberta ni avec un agent d'immatriculation. Le guide gratuit Alberta Basic Licence Driver's Guide reste l'ouvrage à lire, et cette page sert simplement à répéter les images jusqu'à ce qu'elles restent en mémoire."
+   }
+  ],
+  "facts": [
+   {
+    "en": "A red circle with a slash through it bans whatever the picture shows, and a green circle gives you permission for it.",
+    "fr": "Un cercle rouge barré interdit ce que montre l'image, et un cercle vert vous en donne la permission."
+   },
+   {
+    "en": "Yellow diamonds warn you about what lies ahead, and orange ones carry the same kind of warning but only while road work lasts.",
+    "fr": "Les losanges jaunes vous préviennent de ce qui vient devant, et les orange portent le même genre d'avertissement, mais seulement pendant la durée des travaux."
+   },
+   {
+    "en": "Road signs use the same shapes and colours right across Canada, so what you learn here travels with you to another province.",
+    "fr": "Les panneaux routiers utilisent les mêmes formes et les mêmes couleurs partout au Canada : ce que vous apprenez ici vous suit dans une autre province."
+   },
+   {
+    "en": "The pictures on this page are our own drawings of the standard shapes and colours, made so the page loads quickly on any phone.",
+    "fr": "Les images de cette page sont nos propres dessins des formes et des couleurs normalisées, conçus pour que la page se charge vite sur n'importe quel téléphone."
+   },
+   {
+    "en": "Learn one group at a time rather than the whole gallery at once, because signs that look alike are much easier to mix up when you rush.",
+    "fr": "Apprenez un groupe à la fois plutôt que toute la galerie d'un coup, car les panneaux qui se ressemblent se confondent bien plus facilement quand on se presse."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "The gallery holds eighty drawings spread across the six groups. Each group tells you how many signs it contains before you scroll, so you can take on one manageable set at a time.",
+     "fr": "La galerie contient quatre-vingts dessins répartis dans les six groupes. Chaque groupe indique le nombre de panneaux qu'il renferme avant même que vous défiliez, ce qui permet d'aborder un ensemble raisonnable à la fois."
+    },
+    "q": {
+     "en": "How many signs does this Alberta study page show?",
+     "fr": "Combien de panneaux cette page d'étude albertaine présente-t-elle ?"
+    }
+   },
+   {
+    "a": {
+     "en": "They are our own artwork, drawn to match the standard Canadian shapes, colours and symbols. Nothing is copied from any publication, and what you learn from the picture is what you will recognise on the road.",
+     "fr": "Ce sont nos propres illustrations, dessinées pour correspondre aux formes, aux couleurs et aux symboles canadiens normalisés. Rien n'est copié d'une publication, et ce que l'image vous apprend est ce que vous reconnaîtrez sur la route."
+    },
+    "q": {
+     "en": "Are these drawings the same as the signs on Alberta roads?",
+     "fr": "Ces dessins sont-ils identiques aux panneaux des routes albertaines ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. Under each group sits a practice button that runs only the questions using those signs, so you can drill the warning diamonds without ever touching the information signs.",
+     "fr": "Oui. Sous chaque groupe se trouve un bouton de pratique qui ne lance que les questions utilisant ces panneaux : vous pouvez donc travailler les losanges d'avertissement sans jamais toucher aux panneaux d'information."
+    },
+    "q": {
+     "en": "Can I practise just one group of signs at a time?",
+     "fr": "Puis-je pratiquer un seul groupe de panneaux à la fois ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No clock runs on this page at all. Spend as long as you like on each picture, and save the timed experience for the full mock test once you feel prepared.",
+     "fr": "Aucun chronomètre ne tourne sur cette page. Passez autant de temps que vous voulez sur chaque image, et gardez l'expérience chronométrée pour l'examen blanc complet quand vous vous sentirez prêt."
+    },
+    "q": {
+     "en": "Is there a clock running while I study the signs?",
+     "fr": "Y a-t-il un chronomètre qui tourne pendant l'étude des panneaux ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. We are not affiliated with the Government of Alberta or any registry agent, so read the free Alberta Basic Licence Driver's Guide for the full rules. Use this page afterwards to make the pictures stick.",
+     "fr": "Non. Nous ne sommes affiliés ni au gouvernement de l'Alberta ni à un agent d'immatriculation : lisez donc le guide gratuit Alberta Basic Licence Driver's Guide pour les règles complètes. Servez-vous ensuite de cette page pour ancrer les images."
+    },
+    "q": {
+     "en": "Does this page replace the official Alberta driver's guide?",
+     "fr": "Cette page remplace-t-elle le guide officiel du conducteur de l'Alberta ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Regulatory signs come first, covering stop, yield, speed limits, turn bans, parking rules and lane restrictions.",
+    "fr": "Les panneaux de prescription viennent en premier : arrêt, cédez le passage, limites de vitesse, interdictions de virage, règles de stationnement et restrictions de voie."
+   },
+   {
+    "en": "Warning signs form the yellow diamond group for curves, hills, railway crossings, school zones, wildlife and merging traffic.",
+    "fr": "Les panneaux d'avertissement forment le groupe des losanges jaunes : courbes, côtes, passages à niveau, zones scolaires, animaux sauvages et voies qui se rejoignent."
+   },
+   {
+    "en": "Construction signs make up the orange group, with work zones, flag persons, detours and closed lanes.",
+    "fr": "Les panneaux de chantier composent le groupe orange, avec les zones de travaux, les signaleurs, les détours et les voies fermées."
+   },
+   {
+    "en": "Information signs are the green and blue ones that point you toward hospitals, fuel, food, exits and highway routes.",
+    "fr": "Les panneaux d'information sont les verts et les bleus qui vous dirigent vers les hôpitaux, le carburant, la restauration, les sorties et les routes principales."
+   },
+   {
+    "en": "Traffic lights have their own group, covering red, amber, green, advance arrows and flashing signals.",
+    "fr": "Les feux de circulation ont leur propre groupe : rouge, jaune, vert, flèches de priorité et feux clignotants."
+   },
+   {
+    "en": "Road markings close the set with solid and broken lines, lane lines, stop lines and crosswalks.",
+    "fr": "Les marques sur la chaussée terminent la série : lignes continues et discontinues, lignes de voie, lignes d'arrêt et passages pour piétons."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "alberta-class-7-mock-test.html",
+    {
+     "en": "Try the timed test once the signs feel familiar",
+     "fr": "Essayez l'examen chronométré quand les panneaux vous sont familiers"
+    }
+   ],
+   [
+    "alberta-rules-of-the-road.html",
+    {
+     "en": "Move on to the written rules that fill the other half",
+     "fr": "Passez aux règles écrites qui forment l'autre moitié"
+    }
+   ],
+   [
+    "alberta-class-7-practice-test.html",
+    {
+     "en": "See all the Alberta practice pages in one place",
+     "fr": "Voyez toutes les pages de pratique de l'Alberta au même endroit"
+    }
+   ],
+   [
+    "ontario-g1-practice-test.html",
+    {
+     "en": "Compare with the Ontario G1 practice test",
+     "fr": "Comparez avec la pratique du permis G1 de l'Ontario"
+    }
+   ]
+  ]
+ },
+ "alberta-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "This page holds the rules half of the Alberta Class 7 knowledge test, arranged by topic instead of thrown at you all at once. Open any question to see the answer with a short explanation, then practise the whole chapter when you are ready. No timer runs and no score is kept.",
+    "fr": "Cette page rassemble la moitié des règles de l'examen théorique de classe 7 de l'Alberta, organisée par sujet plutôt que servie d'un seul bloc. Ouvrez une question pour voir la réponse et une courte explication, puis pratiquez tout le chapitre quand vous êtes prêt. Aucun chronomètre ne tourne et aucun résultat n'est conservé."
+   },
+   {
+    "en": "The chapters follow the ground the real test covers, from the graduated licensing programme through safe driving, sharing the road with others, difficult driving conditions, keeping your licence, driving while impaired, looking after your vehicle, and what to do at a collision.",
+    "fr": "Les chapitres suivent le terrain couvert par le vrai examen : le programme de permis par étapes, la conduite sécuritaire, le partage de la route, les conditions de conduite difficiles, la conservation du permis, la conduite avec facultés affaiblies, l'entretien du véhicule et la conduite à tenir lors d'une collision."
+   },
+   {
+    "en": "Every question here is written in our own words as unofficial practice. We are not affiliated with the Government of Alberta or any registry agent, and the free Alberta Basic Licence Driver's Guide remains the source you should read from cover to cover before your test.",
+    "fr": "Chaque question ici est rédigée dans nos propres mots à titre de pratique non officielle. Nous ne sommes affiliés ni au gouvernement de l'Alberta ni à un agent d'immatriculation, et le guide gratuit Alberta Basic Licence Driver's Guide demeure la source à lire d'un bout à l'autre avant votre examen."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Leave at least two seconds of space behind the vehicle ahead on a dry road, and considerably more when the surface is wet or icy.",
+    "fr": "Laissez au moins deux secondes d'espace derrière le véhicule qui vous précède sur une chaussée sèche, et nettement plus quand la surface est mouillée ou glacée."
+   },
+   {
+    "en": "Give a cyclist a full metre of room when you pass, which often means waiting for a safe gap rather than squeezing by.",
+    "fr": "Laissez un mètre complet à un cycliste lorsque vous le dépassez, ce qui oblige souvent à attendre un espace sûr plutôt qu'à vous faufiler."
+   },
+   {
+    "en": "Slow to sixty kilometres per hour when you pass a stopped emergency vehicle with its lights on, or to the posted limit if that is lower.",
+    "fr": "Ralentissez à soixante kilomètres à l'heure en croisant un véhicule d'urgence immobilisé dont les gyrophares fonctionnent, ou à la limite affichée si elle est inférieure."
+   },
+   {
+    "en": "Unless a sign says otherwise, the limit is fifty kilometres per hour inside a city or town and eighty outside one, while playground and school zones drop to thirty during their posted hours.",
+    "fr": "Sauf indication contraire d'un panneau, la limite est de cinquante kilomètres à l'heure en ville et de quatre-vingts à l'extérieur, tandis que les zones de terrain de jeu et les zones scolaires descendent à trente pendant les heures affichées."
+   },
+   {
+    "en": "Take one chapter at a time and practise it straight away, because eight chapters read in a single sitting rarely stay in your head.",
+    "fr": "Prenez un chapitre à la fois et pratiquez-le tout de suite, car huit chapitres lus d'une seule traite restent rarement en tête."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "There are eight in all: graduated licensing, safe and responsible driving, sharing the road, driving conditions, keeping your licence, impaired driving, your vehicle, and emergencies and collisions. Together they cover the rules side of the knowledge test.",
+     "fr": "Il y en a huit en tout : le permis par étapes, la conduite sécuritaire et responsable, le partage de la route, les conditions de conduite, la conservation du permis, la conduite avec facultés affaiblies, votre véhicule, ainsi que les urgences et les collisions. Ensemble, ils couvrent le volet des règles de l'examen théorique."
+    },
+    "q": {
+     "en": "Which chapters does this Alberta rules page cover?",
+     "fr": "Quels chapitres cette page des règles albertaines couvre-t-elle ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Not at all. There is no clock and no running score, which is the point of a study page. When you want the pressure of thirty minutes, the Alberta mock test is waiting for you.",
+     "fr": "Pas du tout. Il n'y a ni horloge ni pointage, et c'est justement le but d'une page d'étude. Quand vous voudrez la pression des trente minutes, l'examen blanc albertain vous attend."
+    },
+    "q": {
+     "en": "Is this study page timed like the real test?",
+     "fr": "Cette page d'étude est-elle chronométrée comme le vrai examen ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. Every chapter has its own practice button that runs only the questions belonging to it. That is the fastest way to fix a weak spot the mock test has shown you.",
+     "fr": "Oui. Chaque chapitre possède son propre bouton de pratique qui ne lance que les questions qui lui appartiennent. C'est la façon la plus rapide de corriger une faiblesse révélée par l'examen blanc."
+    },
+    "q": {
+     "en": "Can I work on a single chapter without touching the others?",
+     "fr": "Puis-je travailler un seul chapitre sans toucher aux autres ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Road signs look the same across Canada, but the written rules and the licensing steps belong to each province. Everything on this page is written for Alberta, so check the local guide if you drive elsewhere.",
+     "fr": "Les panneaux routiers se ressemblent partout au Canada, mais les règles écrites et les étapes du permis relèvent de chaque province. Tout ce qui se trouve sur cette page est écrit pour l'Alberta : consultez le guide local si vous conduisez ailleurs."
+    },
+    "q": {
+     "en": "Do these rules apply in other provinces too?",
+     "fr": "Ces règles s'appliquent-elles aussi dans d'autres provinces ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. They are original questions we wrote to cover the same ground, and this site is unofficial practice with no government affiliation. The real test draws its own thirty questions, so understand the reasoning rather than memorising our wording.",
+     "fr": "Non. Ce sont des questions originales que nous avons rédigées pour couvrir la même matière, et ce site propose une pratique non officielle sans affiliation gouvernementale. Le vrai examen tire ses propres trente questions : comprenez donc le raisonnement plutôt que de mémoriser nos formulations."
+    },
+    "q": {
+     "en": "Are these the exact questions used on the Alberta test?",
+     "fr": "Ces questions sont-elles exactement celles utilisées à l'examen albertain ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Eight chapters divide the material, beginning with graduated licensing and ending with emergencies and collisions.",
+    "fr": "Huit chapitres divisent la matière, du permis par étapes jusqu'aux urgences et aux collisions."
+   },
+   {
+    "en": "Each question can be opened on its own to reveal the correct answer and a short explanation of the reasoning.",
+    "fr": "Chaque question peut être ouverte séparément pour révéler la bonne réponse et une courte explication du raisonnement."
+   },
+   {
+    "en": "A practice button under every chapter runs only the questions from that chapter, so you can work on one topic alone.",
+    "fr": "Un bouton de pratique sous chaque chapitre ne lance que les questions de ce chapitre, ce qui permet de travailler un seul sujet."
+   },
+   {
+    "en": "Sixty rules questions sit behind the chapters in total, all of them written from scratch for this site.",
+    "fr": "Soixante questions sur les règles se cachent derrière les chapitres au total, toutes rédigées de zéro pour ce site."
+   },
+   {
+    "en": "Nothing on this page is timed or marked, so you can stop in the middle of a chapter and come back later.",
+    "fr": "Rien sur cette page n'est chronométré ni noté : vous pouvez donc vous arrêter au milieu d'un chapitre et revenir plus tard."
+   },
+   {
+    "en": "A closing panel gathers the numbers worth memorising, such as following distances, passing distances and zone speed limits.",
+    "fr": "Un panneau final réunit les chiffres à mémoriser, comme les distances à respecter derrière un véhicule, les distances de dépassement et les vitesses des zones particulières."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "alberta-class-7-mock-test.html",
+    {
+     "en": "Test the chapters under the real thirty-minute clock",
+     "fr": "Testez les chapitres sous le vrai chronomètre de trente minutes"
+    }
+   ],
+   [
+    "alberta-road-signs.html",
+    {
+     "en": "Switch to the pictures and learn the sign families",
+     "fr": "Passez aux images et apprenez les familles de panneaux"
+    }
+   ],
+   [
+    "alberta-class-7-practice-test.html",
+    {
+     "en": "Head back to the Alberta Class 7 practice overview",
+     "fr": "Revenez à l'aperçu de la pratique classe 7 de l'Alberta"
+    }
+   ],
+   [
+    "bc-class-7l-practice-test.html",
+    {
+     "en": "See how British Columbia runs its Class 7L test",
+     "fr": "Voyez comment la Colombie-Britannique organise son examen classe 7L"
+    }
+   ]
+  ]
+ },
+ "bc-class-7l-mock-test.html": {
+  "about": [
+   {
+    "en": "This page runs a full mock version of the British Columbia Class 7L knowledge test. Fifty questions appear, twenty-five on road signs and twenty-five on the rules of the road, with a forty-five-minute timer running across the whole thing. Questions are picked at random, so a second run is never the same test as the first.",
+    "fr": "Cette page fait passer une version blanche complète de l'examen théorique de classe 7L de la Colombie-Britannique. Cinquante questions défilent, vingt-cinq sur les panneaux et vingt-cinq sur le code de la route, avec un chronomètre de quarante-cinq minutes pour l'ensemble. Les questions sont tirées au hasard : un deuxième essai n'est jamais le même examen que le premier."
+   },
+   {
+    "en": "The pass mark is forty out of fifty, counted across the whole test the way British Columbia counts it. There is no separate target to reach in each half, so a strong score on signs genuinely helps cover a weaker score on rules. That is a real difference from Ontario, where each half stands or falls alone.",
+    "fr": "Le seuil de réussite est de quarante sur cinquante, calculé sur tout l'examen comme le fait la Colombie-Britannique. Aucun seuil distinct n'est exigé dans chaque moitié : un bon résultat sur les panneaux aide donc réellement à couvrir un résultat plus faible sur les règles. C'est une vraie différence avec l'Ontario, où chaque moitié tient ou tombe toute seule."
+   },
+   {
+    "en": "This is unofficial practice, written in our own words from the free ICBC guide Learn to Drive Smart. We are not affiliated with ICBC or the Government of British Columbia. Test yourself here, then go back to the guide for whatever keeps catching you out.",
+    "fr": "Il s'agit d'une pratique non officielle, rédigée dans nos propres mots à partir du guide gratuit d'ICBC, Learn to Drive Smart. Nous n'avons aucun lien avec ICBC ni avec le gouvernement de la Colombie-Britannique. Testez-vous ici, puis retournez au guide pour ce qui vous fait encore trébucher."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Forty-five minutes for fifty questions is a little under a minute each, which is comfortable once you have studied.",
+    "fr": "Quarante-cinq minutes pour cinquante questions donnent un peu moins d'une minute chacune, ce qui est confortable après avoir étudié."
+   },
+   {
+    "en": "Because the score is added across the whole test, one shaky topic will not sink you on its own if the rest is solid.",
+    "fr": "Comme la note s'additionne sur tout l'examen, un sujet mal maîtrisé ne vous coule pas à lui seul si le reste tient bon."
+   },
+   {
+    "en": "Ten wrong answers is the most you can afford, so guessing quickly whenever a question looks hard is expensive.",
+    "fr": "Dix mauvaises réponses, c'est le maximum permis : deviner à la hâte dès qu'une question paraît difficile coûte cher."
+   },
+   {
+    "en": "When two answers both sound sensible, the safer and more patient one is usually the one the official guide supports.",
+    "fr": "Quand deux réponses semblent toutes deux sensées, la plus prudente et la plus patiente est habituellement celle qu'appuie le guide officiel."
+   },
+   {
+    "en": "Running the mock test several times brings up questions that the earlier runs never happened to select.",
+    "fr": "Refaire l'examen blanc plusieurs fois fait apparaître des questions que les essais précédents n'avaient jamais tirées."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No. It is unofficial practice written from the free Learn to Drive Smart guide. We have no connection to ICBC or the Government of British Columbia, and a pass here does not give you a learner licence.",
+     "fr": "Non. C'est une pratique non officielle rédigée à partir du guide gratuit Learn to Drive Smart. Nous n'avons aucun lien avec ICBC ni avec le gouvernement de la Colombie-Britannique, et réussir ici ne donne aucun permis d'apprenti."
+    },
+    "q": {
+     "en": "Is this the official ICBC knowledge test?",
+     "fr": "S'agit-il de l'examen théorique officiel d'ICBC ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Forty correct out of fifty, exactly like the real Class 7L test. The score is added across all fifty questions rather than half by half, so there is no separate target for signs and rules.",
+     "fr": "Quarante bonnes réponses sur cinquante, exactement comme au vrai examen de classe 7L. La note s'additionne sur les cinquante questions plutôt que moitié par moitié : il n'y a donc pas de cible distincte pour les panneaux et les règles."
+    },
+    "q": {
+     "en": "What score do I need to pass this mock test?",
+     "fr": "Quelle note faut-il pour réussir cet examen blanc ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The test stops wherever you are and takes you to the result screen. Anything you never reached counts as wrong, so keep moving instead of stalling on one difficult question.",
+     "fr": "L'examen s'arrête où vous en êtes et vous amène à l'écran de résultat. Les questions non atteintes comptent comme des erreurs : avancez plutôt que de bloquer sur une question difficile."
+    },
+    "q": {
+     "en": "What happens when the forty-five minutes run out?",
+     "fr": "Que se passe-t-il quand les quarante-cinq minutes sont écoulées ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. The result screen lists every missed question with the answer you picked, the correct answer and a short explanation. That list is the fastest guide to what you should study next.",
+     "fr": "Oui. L'écran de résultat liste chaque question manquée avec la réponse choisie, la bonne réponse et une courte explication. Cette liste est le meilleur guide de ce qu'il faut réviser ensuite."
+    },
+    "q": {
+     "en": "Can I see the questions I got wrong?",
+     "fr": "Puis-je voir les questions que j'ai ratées ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No account, no email and no download. The test starts in your browser as soon as the page opens, and you may come back and run it as often as you like.",
+     "fr": "Aucun compte, aucun courriel, aucun téléchargement. L'examen démarre dans votre navigateur dès l'ouverture de la page, et vous pouvez revenir le refaire aussi souvent que vous voulez."
+    },
+    "q": {
+     "en": "Do I need to sign up before starting?",
+     "fr": "Dois-je m'inscrire avant de commencer ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Fifty questions run in one sitting, split evenly between road signs and the rules of the road.",
+    "fr": "Cinquante questions défilent d'un seul trait, réparties également entre les panneaux et le code de la route."
+   },
+   {
+    "en": "A forty-five-minute timer counts down, and when it reaches zero the test stops and your result appears.",
+    "fr": "Un chronomètre de quarante-cinq minutes défile, et lorsqu'il atteint zéro l'examen s'arrête et votre résultat apparaît."
+   },
+   {
+    "en": "Every answer is marked the moment you tap it, with a short explanation of why that choice is the right one.",
+    "fr": "Chaque réponse est corrigée dès que vous la touchez, avec une courte explication de la raison pour laquelle ce choix est le bon."
+   },
+   {
+    "en": "The result screen shows PASS or TRY AGAIN against the forty-out-of-fifty mark used in British Columbia.",
+    "fr": "L'écran de résultat affiche RÉUSSI ou À REPRENDRE selon le seuil de quarante sur cinquante utilisé en Colombie-Britannique."
+   },
+   {
+    "en": "Each question you missed is listed at the end with the answer you chose, the correct answer and the reason.",
+    "fr": "Chaque question manquée est listée à la fin avec votre réponse, la bonne réponse et l'explication."
+   },
+   {
+    "en": "The questions are drawn at random from a bank of one hundred and twenty, so the mix changes on every run.",
+    "fr": "Les questions sont tirées au hasard dans une banque de cent vingt, si bien que le mélange change à chaque essai."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "bc-road-signs.html",
+    {
+     "en": "Look at every British Columbia sign, one family at a time",
+     "fr": "Observez chaque panneau de la Colombie-Britannique, une famille à la fois"
+    }
+   ],
+   [
+    "bc-rules-of-the-road.html",
+    {
+     "en": "Read the British Columbia rules with no clock running",
+     "fr": "Lisez les règles de la Colombie-Britannique sans chronomètre"
+    }
+   ],
+   [
+    "bc-class-7l-practice-test.html",
+    {
+     "en": "Go back to the British Columbia Class 7L practice hub",
+     "fr": "Revenez au carrefour de pratique pour la classe 7L de la Colombie-Britannique"
+    }
+   ],
+   [
+    "ontario-g1-practice-test.html",
+    {
+     "en": "Compare the Ontario G1 test and its stricter pass mark",
+     "fr": "Comparez avec l'examen G1 de l'Ontario et son seuil plus sévère"
+    }
+   ]
+  ]
+ },
+ "bc-class-7l-practice-test.html": {
+  "about": [
+   {
+    "en": "This page is the starting point for British Columbia Class 7L practice on our site. It explains what the real knowledge test looks like, then sends you on to the three tools we built for it: a full timed mock test, a road sign study page and a rules of the road study page. Everything is free and opens straight in your browser.",
+    "fr": "Cette page est le point de départ de la pratique pour la classe 7L de la Colombie-Britannique sur notre site. Elle explique à quoi ressemble le vrai examen théorique, puis vous dirige vers les trois outils que nous avons bâtis : un examen blanc chronométré, une page d'étude des panneaux et une page d'étude du code de la route. Tout est gratuit et s'ouvre directement dans votre navigateur."
+   },
+   {
+    "en": "The real Class 7L knowledge test asks fifty multiple-choice questions and you need forty of them right to pass, inside forty-five minutes. British Columbia adds your score across the whole test instead of judging each half on its own, so a strong result on signs really can carry a weaker result on rules. You sit the test at an ICBC driver licensing office, where you also have a vision screening and show your identification.",
+    "fr": "Le vrai examen théorique de classe 7L pose cinquante questions à choix multiples et il faut en réussir quarante, en quarante-cinq minutes. La Colombie-Britannique additionne votre note sur l'ensemble de l'examen au lieu de juger chaque moitié séparément : un bon résultat sur les panneaux peut donc vraiment compenser un résultat plus faible sur les règles. Vous passez l'examen dans un bureau de permis d'ICBC, où l'on vérifie aussi votre vue et vos pièces d'identité."
+   },
+   {
+    "en": "This is unofficial practice, written in our own words. We are not affiliated with ICBC or the Government of British Columbia, and nothing you do here counts toward a real licence. Use these pages beside the free official study guide, Learn to Drive Smart, which is what the real test is built on.",
+    "fr": "Il s'agit d'une pratique non officielle, rédigée dans nos propres mots. Nous n'avons aucun lien avec ICBC ni avec le gouvernement de la Colombie-Britannique, et rien ici ne compte pour l'obtention d'un vrai permis. Servez-vous de ces pages à côté du guide officiel gratuit Learn to Drive Smart, sur lequel repose le vrai examen."
+   }
+  ],
+  "facts": [
+   {
+    "en": "British Columbia adds your score across the whole test, which is gentler than provinces that make you reach a mark in each half separately.",
+    "fr": "La Colombie-Britannique additionne la note sur tout l'examen, ce qui est plus indulgent que les provinces qui exigent un seuil dans chaque moitié."
+   },
+   {
+    "en": "Most people lose marks on the signs rather than the rules, simply because there are many signs and several of them look alike.",
+    "fr": "La plupart des gens perdent des points sur les panneaux plutôt que sur les règles, tout simplement parce qu'ils sont nombreux et que plusieurs se ressemblent."
+   },
+   {
+    "en": "Shape and colour carry the meaning: a red circle with a slash forbids something, a yellow diamond warns you, and an orange sign means road work.",
+    "fr": "La forme et la couleur portent le sens : un cercle rouge barré interdit quelque chose, un losange jaune vous avertit, et un panneau orange annonce des travaux."
+   },
+   {
+    "en": "Bring your identification and expect a vision screening, because the knowledge test is only one part of what happens at the licensing office.",
+    "fr": "Apportez vos pièces d'identité et attendez-vous à un examen de la vue, car le test théorique n'est qu'une partie de la visite au bureau de permis."
+   },
+   {
+    "en": "Passing three practice runs in a row tells you more than passing once, because the questions are different every time.",
+    "fr": "Réussir trois essais d'affilée en dit plus que réussir une seule fois, car les questions changent à chaque tour."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "There are fifty multiple-choice questions and you need forty correct to pass, with forty-five minutes on the clock. Our mock test copies all three of those numbers so the pace feels familiar on the day.",
+     "fr": "Il y a cinquante questions à choix multiples, il faut en réussir quarante, et vous disposez de quarante-cinq minutes. Notre examen blanc reprend ces trois chiffres pour que le rythme vous soit familier le jour venu."
+    },
+    "q": {
+     "en": "How many questions are on the real BC Class 7L knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique de classe 7L en Colombie-Britannique ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. British Columbia counts the whole test together, so forty correct out of fifty is a pass no matter which section those answers came from. That is different from Ontario, where each half is judged on its own.",
+     "fr": "Non. La Colombie-Britannique compte l'examen d'un seul bloc : quarante bonnes réponses sur cinquante suffisent, peu importe la section d'où elles viennent. C'est différent de l'Ontario, où chaque moitié est jugée à part."
+    },
+    "q": {
+     "en": "Do I have to pass the signs and the rules separately?",
+     "fr": "Dois-je réussir séparément la partie panneaux et la partie règles ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Not at all. We are an independent free practice site with no link to ICBC or the Government of British Columbia. The official free study guide is called Learn to Drive Smart, and we recommend reading it right through.",
+     "fr": "Pas du tout. Nous sommes un site de pratique gratuit et indépendant, sans lien avec ICBC ni avec le gouvernement de la Colombie-Britannique. Le guide officiel gratuit s'appelle Learn to Drive Smart, et nous vous conseillons de le lire au complet."
+    },
+    "q": {
+     "en": "Is this website connected to ICBC?",
+     "fr": "Ce site web est-il lié à ICBC ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The bank holds one hundred and twenty original questions, sixty on road signs and sixty on the rules of the road. We wrote every one of them ourselves, and each carries a short explanation of the answer.",
+     "fr": "La banque contient cent vingt questions originales, soixante sur les panneaux et soixante sur le code de la route. Nous les avons toutes rédigées nous-mêmes, et chacune est accompagnée d'une courte explication."
+    },
+    "q": {
+     "en": "How many practice questions does this site have for British Columbia?",
+     "fr": "Combien de questions de pratique ce site propose-t-il pour la Colombie-Britannique ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. There is nothing to pay, nothing to install and no email address to hand over. You can close the tab whenever you like and pick things up again later.",
+     "fr": "Non. Il n'y a rien à payer, rien à installer et aucune adresse courriel à fournir. Vous pouvez fermer l'onglet quand vous voulez et reprendre plus tard."
+    },
+    "q": {
+     "en": "Does any of this cost money or need an account?",
+     "fr": "Est-ce que tout cela coûte de l'argent ou exige un compte ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "A short summary near the top sets out the fifty-question format, the pass mark of forty and the forty-five minutes you are given.",
+    "fr": "Un résumé en haut de la page présente le format de cinquante questions, le seuil de réussite de quarante et les quarante-cinq minutes accordées."
+   },
+   {
+    "en": "One card takes you to the full mock test, with its timer and the real pass mark.",
+    "fr": "Une première carte vous mène à l'examen blanc complet, avec son chronomètre et le vrai seuil de réussite."
+   },
+   {
+    "en": "A second card opens the road sign study page, where the signs are sorted into groups.",
+    "fr": "Une deuxième carte ouvre la page d'étude des panneaux, où les panneaux sont classés par groupes."
+   },
+   {
+    "en": "A third card opens the rules of the road study page, which is arranged chapter by chapter.",
+    "fr": "Une troisième carte ouvre la page d'étude du code de la route, organisée chapitre par chapitre."
+   },
+   {
+    "en": "A longer section shares advice on studying signs in small batches and reading shape and colour before words.",
+    "fr": "Une section plus longue donne des conseils : étudier les panneaux par petits groupes et lire la forme et la couleur avant les mots."
+   },
+   {
+    "en": "A clear notice at the foot of the page states that this is unofficial practice and points to the free official guide.",
+    "fr": "Un avis clair au bas de la page précise qu'il s'agit d'une pratique non officielle et renvoie au guide officiel gratuit."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "bc-class-7l-mock-test.html",
+    {
+     "en": "Sit the timed fifty-question British Columbia mock test",
+     "fr": "Passez l'examen blanc chronométré de cinquante questions de la Colombie-Britannique"
+    }
+   ],
+   [
+    "bc-road-signs.html",
+    {
+     "en": "Study every British Columbia road sign, group by group",
+     "fr": "Étudiez chaque panneau routier de la Colombie-Britannique, groupe par groupe"
+    }
+   ],
+   [
+    "bc-rules-of-the-road.html",
+    {
+     "en": "Work through the British Columbia rules chapter by chapter",
+     "fr": "Parcourez les règles de la Colombie-Britannique chapitre par chapitre"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "Start from the Canada driving test practice hub",
+     "fr": "Partez du carrefour de pratique pour l'examen de conduite au Canada"
+    }
+   ]
+  ]
+ },
+ "bc-road-signs.html": {
+  "about": [
+   {
+    "en": "The sign questions are the part of the Class 7L test you can study with your eyes. This page draws every sign as a clean graphic and sorts them into six groups, with the name written underneath so the picture and the meaning settle in together. Nothing on this page is timed.",
+    "fr": "Les questions sur les panneaux forment la partie de l'examen de classe 7L que l'on peut étudier avec les yeux. Cette page dessine chaque panneau en graphique net et les classe en six groupes, avec le nom écrit en dessous pour que l'image et le sens s'installent ensemble. Rien n'est chronométré sur cette page."
+   },
+   {
+    "en": "Pick a group from the row of buttons, look through the gallery, then press the practice button below it to answer questions on that group alone. Each answer is marked straight away with a short explanation. Working through one group at a time is far kinder to your memory than swallowing every sign at once.",
+    "fr": "Choisissez un groupe dans la rangée de boutons, parcourez la galerie, puis appuyez sur le bouton de pratique en dessous pour répondre à des questions sur ce seul groupe. Chaque réponse est corrigée aussitôt avec une courte explication. Travailler un groupe à la fois est bien plus doux pour la mémoire que d'avaler tous les panneaux d'un coup."
+   },
+   {
+    "en": "Canadian signs are broadly the same from one province to another, so what you learn here still serves you if you move. This is unofficial practice and we are not affiliated with ICBC or the Government of British Columbia. The free official guide is Learn to Drive Smart.",
+    "fr": "Les panneaux canadiens sont dans l'ensemble les mêmes d'une province à l'autre : ce que vous apprenez ici vous sert encore si vous déménagez. Il s'agit d'une pratique non officielle et nous n'avons aucun lien avec ICBC ni avec le gouvernement de la Colombie-Britannique. Le guide officiel gratuit est Learn to Drive Smart."
+   }
+  ],
+  "facts": [
+   {
+    "en": "A red circle with a line through it always forbids something, while a green circle tells you the action is allowed.",
+    "fr": "Un cercle rouge barré interdit toujours quelque chose, tandis qu'un cercle vert indique que l'action est permise."
+   },
+   {
+    "en": "A yellow diamond warns you about what lies ahead, and an orange diamond means people are working on the road.",
+    "fr": "Un losange jaune vous avertit de ce qui vient, et un losange orange signale des personnes qui travaillent sur la route."
+   },
+   {
+    "en": "Green and blue signs are the helpful ones, pointing you toward directions, services and useful places.",
+    "fr": "Les panneaux verts et bleus sont les serviables : ils vous orientent vers des directions, des services et des lieux utiles."
+   },
+   {
+    "en": "Learn the families first and you can often work out a sign you have never seen before from its shape and colour alone.",
+    "fr": "Apprenez d'abord les familles et vous pourrez souvent deviner un panneau jamais vu, rien qu'à sa forme et à sa couleur."
+   },
+   {
+    "en": "Signs about school zones, playgrounds and crossings come up often, because getting them wrong puts people on foot at risk.",
+    "fr": "Les panneaux de zones scolaires, de terrains de jeu et de passages reviennent souvent, car s'y tromper met en danger les personnes à pied."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "You do not have to recite them, but you should recognise them. Learn the six families and what each shape and colour means first, and the individual signs fall into place much more easily.",
+     "fr": "Vous n'avez pas à les réciter, mais vous devez les reconnaître. Apprenez d'abord les six familles et le sens de chaque forme et de chaque couleur : les panneaux individuels se placent ensuite beaucoup plus facilement."
+    },
+    "q": {
+     "en": "Do I have to memorise all eighty signs?",
+     "fr": "Dois-je mémoriser les quatre-vingts panneaux ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. There is no clock at all here, so you can stay with one group of signs as long as you want and practise it as many times as you like. The forty-five-minute timer only appears on the mock test.",
+     "fr": "Non. Il n'y a aucun chronomètre ici : vous pouvez rester sur un groupe de panneaux aussi longtemps que vous voulez et le pratiquer autant de fois qu'il vous plaira. Le chronomètre de quarante-cinq minutes n'apparaît que dans l'examen blanc."
+    },
+    "q": {
+     "en": "Is this study page timed like the mock test?",
+     "fr": "Cette page d'étude est-elle chronométrée comme l'examen blanc ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The great majority are shared right across Canada, because shapes and colours follow one national pattern. A few local signs vary, but learning these families prepares you almost anywhere in the country.",
+     "fr": "La grande majorité sont communs à tout le Canada, car les formes et les couleurs suivent un même modèle national. Quelques panneaux locaux varient, mais apprendre ces familles vous prépare presque partout au pays."
+    },
+    "q": {
+     "en": "Are British Columbia road signs different from those in other provinces?",
+     "fr": "Les panneaux routiers de la Colombie-Britannique diffèrent-ils de ceux des autres provinces ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Choose the group at the top of the page, then press the practice button under its gallery. The questions that follow come only from that group, and each one ends with a short explanation.",
+     "fr": "Choisissez le groupe en haut de la page, puis appuyez sur le bouton de pratique sous sa galerie. Les questions qui suivent proviennent uniquement de ce groupe, et chacune se termine par une courte explication."
+    },
+    "q": {
+     "en": "How do I practise only the signs in one group?",
+     "fr": "Comment pratiquer seulement les panneaux d'un groupe ?"
+    }
+   },
+   {
+    "a": {
+     "en": "We wrote all of them ourselves, using the free Learn to Drive Smart guide as our reference. There are sixty sign questions in our British Columbia bank, and this page draws its practice from them.",
+     "fr": "Nous les avons toutes rédigées nous-mêmes, en nous appuyant sur le guide gratuit Learn to Drive Smart. Notre banque pour la Colombie-Britannique compte soixante questions sur les panneaux, et cette page y puise sa pratique."
+    },
+    "q": {
+     "en": "Where do the sign questions come from?",
+     "fr": "D'où viennent les questions sur les panneaux ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "The signs are split into six groups: regulatory, warning, temporary, information, traffic lights and road markings.",
+    "fr": "Les panneaux sont répartis en six groupes : prescription, avertissement, travaux, information, feux de circulation et marques sur la chaussée."
+   },
+   {
+    "en": "Eighty signs are drawn on the page, each one shown with its proper name below the picture.",
+    "fr": "Quatre-vingts panneaux sont dessinés sur la page, chacun accompagné de son nom exact sous l'image."
+   },
+   {
+    "en": "A row of buttons across the top switches between the groups, and the page opens on the regulatory group.",
+    "fr": "Une rangée de boutons en haut permet de passer d'un groupe à l'autre, et la page s'ouvre sur les panneaux de prescription."
+   },
+   {
+    "en": "A short note above each gallery explains what that whole family of signs is there to do.",
+    "fr": "Une courte note au-dessus de chaque galerie explique à quoi sert toute cette famille de panneaux."
+   },
+   {
+    "en": "A practice button under each gallery quizzes you on the signs in that group only.",
+    "fr": "Un bouton de pratique sous chaque galerie vous interroge uniquement sur les panneaux de ce groupe."
+   },
+   {
+    "en": "There is no timer anywhere on this page, so you can sit with one sign for as long as you want.",
+    "fr": "Aucun chronomètre n'apparaît sur cette page : vous pouvez rester sur un panneau aussi longtemps que vous le souhaitez."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "bc-class-7l-mock-test.html",
+    {
+     "en": "Try the full British Columbia test format with the timer on",
+     "fr": "Essayez le format complet de l'examen de la Colombie-Britannique, chronomètre en marche"
+    }
+   ],
+   [
+    "bc-rules-of-the-road.html",
+    {
+     "en": "Move on to the rules half of the Class 7L test",
+     "fr": "Passez à la moitié règles de l'examen de classe 7L"
+    }
+   ],
+   [
+    "bc-class-7l-practice-test.html",
+    {
+     "en": "See all the British Columbia practice tools on one page",
+     "fr": "Voyez tous les outils de pratique de la Colombie-Britannique sur une seule page"
+    }
+   ],
+   [
+    "ontario-g1-study-guide.html",
+    {
+     "en": "Read the Ontario G1 study guide as well",
+     "fr": "Lisez aussi le guide d'étude G1 de l'Ontario"
+    }
+   ]
+  ]
+ },
+ "bc-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "This page covers the rules half of the British Columbia Class 7L test, arranged by topic instead of arriving in one pile. Eight chapters run from the graduated licensing programme through to what to do after a collision, and you open any of them from the row of buttons at the top. Nothing here is timed.",
+    "fr": "Cette page couvre la moitié règles de l'examen de classe 7L de la Colombie-Britannique, classée par sujet plutôt que présentée en bloc. Huit chapitres vont du programme de permis par étapes jusqu'à la conduite à tenir après une collision, et vous ouvrez celui que vous voulez avec la rangée de boutons du haut. Rien n'est chronométré ici."
+   },
+   {
+    "en": "Inside a chapter, every question sits in a panel you can open. Opening one reveals the correct answer with a short explanation, so you can read your way through a chapter before you test yourself on it. Below the list, an untimed practice run puts the same questions to you one at a time.",
+    "fr": "Dans un chapitre, chaque question se trouve dans un panneau que vous pouvez ouvrir. L'ouvrir révèle la bonne réponse et une courte explication : vous pouvez donc lire tout le chapitre avant de vous tester. Sous la liste, une pratique sans chronomètre vous repose les mêmes questions une à une."
+   },
+   {
+    "en": "The questions are ours, written from the free ICBC guide Learn to Drive Smart. We are not affiliated with ICBC or the Government of British Columbia, so treat this as practice and keep the official guide beside you. It is free to read and it is what the real test is drawn from.",
+    "fr": "Les questions sont les nôtres, rédigées à partir du guide gratuit d'ICBC, Learn to Drive Smart. Nous n'avons aucun lien avec ICBC ni avec le gouvernement de la Colombie-Britannique : voyez ceci comme de la pratique et gardez le guide officiel à portée de main. Il est gratuit et c'est de lui que provient le vrai examen."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Two seconds of space behind the vehicle ahead is the minimum on a dry road, and you want more than that when it is wet or icy.",
+    "fr": "Deux secondes d'espace derrière le véhicule qui précède, c'est le minimum sur chaussée sèche, et il en faut davantage sur route mouillée ou glacée."
+   },
+   {
+    "en": "Leave a metre of room when you pass someone riding a bicycle.",
+    "fr": "Laissez un mètre de dégagement lorsque vous dépassez une personne à vélo."
+   },
+   {
+    "en": "Slow down and move over when an emergency vehicle is stopped at the roadside with its lights flashing.",
+    "fr": "Ralentissez et déplacez-vous quand un véhicule d'urgence est immobilisé au bord de la route, gyrophares allumés."
+   },
+   {
+    "en": "Unless a sign says otherwise, the limit is fifty kilometres an hour inside a city or town and eighty outside one.",
+    "fr": "Sauf indication contraire d'un panneau, la limite est de cinquante kilomètres à l'heure en ville ou en village et de quatre-vingts à l'extérieur."
+   },
+   {
+    "en": "School zones and playground zones drop to thirty kilometres an hour during the hours posted on their signs.",
+    "fr": "Les zones scolaires et les zones de terrain de jeu descendent à trente kilomètres à l'heure pendant les heures affichées sur leurs panneaux."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Sixty, spread across the eight chapters, and every one of them was written by us with an explanation attached. They are the same rules questions the mock test draws from.",
+     "fr": "Soixante, réparties dans les huit chapitres, toutes rédigées par nous et accompagnées d'une explication. Ce sont les mêmes questions de règles que l'examen blanc utilise."
+    },
+    "q": {
+     "en": "How many rules questions are on this page?",
+     "fr": "Combien de questions sur les règles cette page contient-elle ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes, and that is exactly what the page is built for. Choose a chapter at the top, read through its questions, practise it, then come back another day for the next one.",
+     "fr": "Oui, et c'est précisément l'objectif de la page. Choisissez un chapitre en haut, lisez ses questions, pratiquez-le, puis revenez un autre jour pour le suivant."
+    },
+    "q": {
+     "en": "Can I study one chapter at a time?",
+     "fr": "Puis-je étudier un chapitre à la fois ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. Study here is deliberately untimed so you can read slowly and think. The forty-five-minute clock belongs to the mock test, where the pressure is part of the point.",
+     "fr": "Non. L'étude est volontairement sans chronomètre pour que vous puissiez lire lentement et réfléchir. Le compte à rebours de quarante-cinq minutes appartient à l'examen blanc, où la pression fait partie de l'exercice."
+    },
+    "q": {
+     "en": "Is there a timer on the rules study page?",
+     "fr": "Y a-t-il un chronomètre sur la page d'étude des règles ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Every question carries a short explanation in plain language, both when you open it to read and when you practise. Understanding the reason serves you far better on test day than memorising a letter.",
+     "fr": "Chaque question porte une courte explication en langage simple, aussi bien à la lecture qu'à la pratique. Comprendre la raison vous sert bien plus le jour de l'examen que de mémoriser une lettre."
+    },
+    "q": {
+     "en": "Will I be told why an answer is right?",
+     "fr": "Va-t-on m'expliquer pourquoi une réponse est la bonne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. You still have to sit the real knowledge test at an ICBC driver licensing office, along with a vision screening and your identification. This site is unofficial practice with no connection to ICBC or the Government of British Columbia.",
+     "fr": "Non. Vous devez tout de même passer le vrai examen théorique dans un bureau de permis d'ICBC, avec un examen de la vue et vos pièces d'identité. Ce site offre une pratique non officielle, sans lien avec ICBC ni avec le gouvernement de la Colombie-Britannique."
+    },
+    "q": {
+     "en": "Is passing here enough to get my learner licence?",
+     "fr": "Réussir ici suffit-il pour obtenir mon permis d'apprenti ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "The first four chapters cover licensing and the graduated programme, safe driving, sharing the road and driving conditions.",
+    "fr": "Les quatre premiers chapitres portent sur le permis et le programme par étapes, la conduite sécuritaire, le partage de la route et les conditions de conduite."
+   },
+   {
+    "en": "The last four chapters cover keeping your licence, impaired driving, looking after your vehicle, and emergencies and collisions.",
+    "fr": "Les quatre derniers chapitres portent sur la conservation du permis, la conduite avec facultés affaiblies, l'entretien du véhicule, et les urgences et collisions."
+   },
+   {
+    "en": "Buttons along the top move you between chapters, and the page opens on the licensing chapter.",
+    "fr": "Des boutons en haut de la page font passer d'un chapitre à l'autre, et la page s'ouvre sur le chapitre du permis."
+   },
+   {
+    "en": "Each question can be opened on the spot to show the correct answer and the reasoning behind it.",
+    "fr": "Chaque question peut être ouverte sur place pour afficher la bonne réponse et le raisonnement qui la soutient."
+   },
+   {
+    "en": "A practice run under each chapter asks those same questions again, one by one, and marks you as you go.",
+    "fr": "Une pratique sous chaque chapitre repose les mêmes questions une par une et vous corrige au fur et à mesure."
+   },
+   {
+    "en": "A closing section gathers the following distances, passing gaps and speed limits that are worth learning by heart.",
+    "fr": "Une section finale rassemble les distances de suivi, les écarts de dépassement et les limites de vitesse qu'il vaut la peine d'apprendre par coeur."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "bc-road-signs.html",
+    {
+     "en": "Switch to the signs half and study the pictures",
+     "fr": "Passez à la moitié panneaux et étudiez les images"
+    }
+   ],
+   [
+    "bc-class-7l-mock-test.html",
+    {
+     "en": "Put both halves together in the timed mock test",
+     "fr": "Réunissez les deux moitiés dans l'examen blanc chronométré"
+    }
+   ],
+   [
+    "bc-class-7l-practice-test.html",
+    {
+     "en": "Return to the British Columbia Class 7L overview",
+     "fr": "Retournez à la présentation de la classe 7L de la Colombie-Britannique"
+    }
+   ],
+   [
+    "how-to-get-a-drivers-licence-in-canada.html",
+    {
+     "en": "Read how the steps to a driver's licence work in Canada",
+     "fr": "Découvrez les étapes pour obtenir un permis de conduire au Canada"
+    }
+   ]
+  ]
+ },
  "body-quiz.html": {
   "about": [
    {
@@ -2139,98 +3315,116 @@
  "color-match.html": {
   "about": [
    {
-    "en": "Color Match is a quick brain teaser built on one small piece of mischief. A colour word appears on screen, but the letters are printed in a different colour, and you must tap the colour you see rather than the word you read.",
-    "fr": "Color Match est un petit casse-tête rapide bâti sur une seule espièglerie. Un nom de couleur apparaît à l'écran, mais les lettres sont imprimées dans une autre couleur, et vous devez toucher la couleur que vous voyez plutôt que le mot que vous lisez."
+    "en": "Color Match gives you the name of a colour and asks you to make that colour yourself. The name appears on its own, with no sample to copy, so everything rests on the picture you hold in your head. When you are ready you lock in your answer and the real colour appears beside yours.",
+    "fr": "Color Match vous donne le nom d'une couleur et vous demande de fabriquer cette couleur vous-même. Le nom apparaît seul, sans échantillon à copier : tout repose donc sur l'image que vous avez en tête. Quand vous êtes prêt, vous validez votre réponse et la vraie couleur apparaît à côté de la vôtre."
    },
    {
-    "en": "A timer bar sits above the word and it is deliberately short. Every correct tap hands a little time back and every wrong tap takes a bigger slice away, so a strong run is a chain of fast, confident choices.",
-    "fr": "Une barre de temps se trouve au-dessus du mot, et elle est volontairement courte. Chaque bonne réponse vous rend un peu de temps et chaque erreur vous en enlève davantage : une belle série repose donc sur des choix rapides et sûrs."
+    "en": "Three controls sit under the name and they all steer the same colour. There are red, green and blue sliders with a number beside each one, a colour picker swatch, and a colour wheel you drag on with its own lightness slider. Move any one of them and the other two follow, which quietly teaches how a colour is built on a screen.",
+    "fr": "Trois outils se trouvent sous le nom et ils commandent tous la même couleur. Il y a des curseurs rouge, vert et bleu avec un chiffre à côté de chacun, une pastille de sélecteur de couleur, et une roue des couleurs sur laquelle on glisse, avec son propre curseur de clarté. Bougez l'un d'eux et les deux autres suivent, ce qui enseigne tranquillement comment une couleur se construit à l'écran."
    },
    {
-    "en": "Anyone who can read colour names can play, from a child in early school years to a grandparent. A round ends quickly, which makes this a good warm-up before a longer puzzle or a way to fill three spare minutes.",
-    "fr": "Toute personne capable de lire des noms de couleurs peut jouer, de l'enfant du primaire jusqu'aux grands-parents. Une partie se termine vite, ce qui en fait un bon échauffement avant un casse-tête plus long ou une façon d'occuper trois minutes."
+    "en": "Three levels change how hard the names are. Easy uses everyday colours, medium uses less common ones, and hard uses detailed and unusual names with a short friendly sentence explaining what each one is. A round is eight colours from start to finish, which suits a short break as well as a long evening.",
+    "fr": "Trois niveaux font varier la difficulté des noms. Le niveau facile utilise des couleurs de tous les jours, le moyen des couleurs moins courantes, et le difficile des noms précis et inhabituels accompagnés d'une courte phrase amicale qui explique de quoi il s'agit. Une manche compte huit couleurs du début à la fin, ce qui convient autant à une courte pause qu'à une longue soirée."
    }
   ],
   "facts": [
    {
-    "en": "This puzzle is a version of the Stroop effect: naming the ink colour of a mismatched colour word reliably takes people longer.",
-    "fr": "Ce casse-tête est une version de l'effet Stroop : nommer la couleur de l'encre d'un mot qui ne concorde pas prend systématiquement plus de temps."
+    "en": "The sliders mix light rather than paint, which is why red and green together give yellow instead of brown.",
+    "fr": "Les curseurs mélangent de la lumière et non de la peinture : voilà pourquoi le rouge et le vert ensemble donnent du jaune plutôt que du brun."
    },
    {
-    "en": "Look at the shape of the letters rather than reading them. Softening your focus makes the written word much less bossy.",
-    "fr": "Regardez la forme des lettres plutôt que de les lire. En adoucissant votre mise au point, le mot écrit devient beaucoup moins autoritaire."
+    "en": "Finding the family of the colour on the wheel first, then adjusting the lightness, is usually faster than pushing three sliders at once.",
+    "fr": "Trouver d'abord la famille de la couleur sur la roue, puis ajuster la clarté, va généralement plus vite que de pousser trois curseurs à la fois."
    },
    {
-    "en": "Speed pays here, because a correct tap refunds time while hesitation simply burns it with nothing gained in return.",
-    "fr": "La vitesse est payante ici, car une bonne réponse redonne du temps alors que l'hésitation le brûle sans rien vous rapporter."
+    "en": "Pale names such as cream and ivory sit high on all three sliders, and the whole trick is knowing which one to pull down.",
+    "fr": "Les noms pâles comme crème et ivoire se situent haut sur les trois curseurs, et tout le truc consiste à savoir lequel baisser."
    },
    {
-    "en": "Resting your phone flat and using two thumbs shortens the reach to the four buttons and shaves time off each answer.",
-    "fr": "Poser votre téléphone à plat et utiliser deux pouces raccourcit la distance jusqu'aux quatre boutons et gagne du temps à chaque réponse."
+    "en": "Earthy names lean on plenty of red, a middling amount of green and very little blue.",
+    "fr": "Les noms terreux reposent sur beaucoup de rouge, une quantité moyenne de vert et très peu de bleu."
+   },
+   {
+    "en": "Chasing a perfect hundred is not the point, because landing close on an unusual name at the hard level is already a fine result.",
+    "fr": "Viser cent sur cent n'est pas le but, car s'approcher d'un nom inhabituel au niveau difficile est déjà un beau résultat."
    }
   ],
   "faq": [
    {
     "a": {
-     "en": "No installation at all. The whole game runs inside the web page you are already on, so it works on a phone, tablet or laptop with nothing to download.",
-     "fr": "Aucune installation. Le jeu entier fonctionne dans la page web où vous êtes déjà : il tourne sur un téléphone, une tablette ou un portable, sans rien à télécharger."
+     "en": "No. Any one of them can set the whole colour by itself, because they are three windows onto the same value. Use whichever feels natural to you and leave the others alone.",
+     "fr": "Non. Chacun d'eux peut régler toute la couleur à lui seul, car ce sont trois fenêtres sur une même valeur. Servez-vous de celui qui vous semble naturel et laissez les autres tranquilles."
     },
     "q": {
-     "en": "Do I need to install an app to play Color Match?",
-     "fr": "Dois-je installer une application pour jouer à Color Match ?"
+     "en": "Do I have to use all three controls?",
+     "fr": "Dois-je utiliser les trois outils ?"
     }
    },
    {
     "a": {
-     "en": "Any child who can read six colour names will manage, though the short timer feels rushed at first. Playing together and calling the colour out loud helps a beginner.",
-     "fr": "Tout enfant capable de lire six noms de couleurs s'en sortira, même si le court chronomètre semble pressant au début. Jouer ensemble et nommer la couleur à voix haute aide un débutant."
+     "en": "It measures how far your colour sits from the real one and turns that distance into a number, where an exact match gives one hundred. The stars beside it tell you the same thing at a glance.",
+     "fr": "Elle mesure la distance entre votre couleur et la vraie, puis transforme cet écart en chiffre, une correspondance exacte valant cent. Les étoiles à côté vous disent la même chose d'un coup d'oeil."
     },
     "q": {
-     "en": "Is this game suitable for young children?",
-     "fr": "Ce jeu convient-il aux jeunes enfants ?"
+     "en": "What does the score out of one hundred mean?",
+     "fr": "Que signifie la note sur cent ?"
     }
    },
    {
     "a": {
-     "en": "It stays on the device you played on, inside your browser's own storage. Clearing your browsing data or switching to another phone sets the trophy back to zero.",
-     "fr": "Il reste sur l'appareil utilisé, dans la mémoire de votre navigateur. Effacer vos données de navigation ou changer de téléphone remet le trophée à zéro."
+     "en": "Yes. Everything answers to touch as well as to a mouse, including dragging around the colour wheel, so a phone or a tablet works just as well as a laptop.",
+     "fr": "Oui. Tout répond au toucher comme à la souris, y compris le glissement sur la roue des couleurs : un téléphone ou une tablette fonctionne donc aussi bien qu'un portable."
     },
     "q": {
-     "en": "Where is my best score kept?",
-     "fr": "Où mon meilleur score est-il conservé ?"
+     "en": "Does the game work on a phone?",
+     "fr": "Le jeu fonctionne-t-il sur un téléphone ?"
     }
    },
    {
     "a": {
-     "en": "That depends entirely on you. The bar starts with eight seconds and each correct answer stretches it, so a sharp player keeps going while a hesitant round ends in moments.",
-     "fr": "Cela dépend entièrement de vous. La barre commence à huit secondes et chaque bonne réponse l'allonge : un joueur affûté poursuit longtemps, tandis qu'un tour hésitant se termine en quelques instants."
+     "en": "The colour names become detailed and unusual, the sort you meet in an artist's paint box rather than in a box of crayons. Each answer also comes with one short friendly sentence explaining what that colour is, so the level teaches while it tests.",
+     "fr": "Les noms de couleurs deviennent précis et inhabituels, du genre que l'on croise dans la boîte de peinture d'un artiste plutôt que dans une boîte de crayons. Chaque réponse s'accompagne aussi d'une courte phrase amicale qui explique de quoi il s'agit : le niveau enseigne donc en même temps qu'il teste."
     },
     "q": {
-     "en": "How long does a single game last?",
-     "fr": "Combien de temps dure une seule partie ?"
+     "en": "What is different about the hard level?",
+     "fr": "Qu'est-ce qui change au niveau difficile ?"
+    }
+   },
+   {
+    "a": {
+     "en": "There is one set of controls, so taking turns works best. Mixing one colour each and comparing scores at the end of the round is a good way to share it, and so is crowding around one screen and arguing about the sliders.",
+     "fr": "Il n'y a qu'un seul jeu de commandes : jouer à tour de rôle fonctionne donc mieux. Mélanger une couleur chacun et comparer les résultats à la fin de la manche est une belle façon de partager, tout comme se rassembler devant l'écran et débattre des curseurs."
+    },
+    "q": {
+     "en": "Can two people play at once?",
+     "fr": "Deux personnes peuvent-elles jouer en même temps ?"
     }
    }
   ],
   "inside": [
    {
-    "en": "Six colours are in play — red, blue, green, orange, purple and yellow — with four shown as buttons each round.",
-    "fr": "Six couleurs sont en jeu — rouge, bleu, vert, orange, mauve et jaune — dont quatre apparaissent en boutons à chaque tour."
+    "en": "You choose easy, medium or hard on the start screen, and each round then runs for eight colours.",
+    "fr": "Vous choisissez le niveau facile, moyen ou difficile à l'écran de départ, puis chaque manche se déroule sur huit couleurs."
    },
    {
-    "en": "The word is almost always printed in a colour that does not match its name, which is what makes it hard.",
-    "fr": "Le mot est presque toujours imprimé dans une couleur qui ne correspond pas à son nom, et c'est ce qui rend le jeu difficile."
+    "en": "Red, green and blue sliders each show their own number, so you can see exactly what you are mixing.",
+    "fr": "Les curseurs rouge, vert et bleu affichent chacun leur valeur, pour voir exactement ce que vous mélangez."
    },
    {
-    "en": "A star counter shows your current score and a trophy counter keeps your best, saved in your own browser.",
-    "fr": "Un compteur étoile affiche votre score actuel et un compteur trophée conserve votre record, enregistré dans votre propre navigateur."
+    "en": "A colour picker swatch opens the picker built into your device and feeds the result straight back into the game.",
+    "fr": "Une pastille de sélecteur ouvre le sélecteur de couleur de votre appareil et renvoie le résultat directement dans le jeu."
    },
    {
-    "en": "The bar begins at eight seconds; a right answer adds a fraction back and a wrong one costs noticeably more.",
-    "fr": "La barre démarre à huit secondes : une bonne réponse en rajoute une fraction, une erreur en coûte nettement plus."
+    "en": "A colour wheel lets you drag to find the shade, with a separate lightness slider standing beside it.",
+    "fr": "Une roue des couleurs vous laisse glisser pour trouver la teinte, avec un curseur de clarté distinct juste à côté."
    },
    {
-    "en": "A green tick or red cross flashes under the word, then the Start button becomes Play again when time expires.",
-    "fr": "Un crochet vert ou une croix rouge clignote sous le mot, puis le bouton de départ devient un bouton de reprise à la fin du temps."
+    "en": "Locking in an answer gives you a score out of one hundred, a star rating, and both hex codes side by side.",
+    "fr": "Valider une réponse vous donne une note sur cent, un nombre d'étoiles et les deux codes hexadécimaux côte à côte."
+   },
+   {
+    "en": "The end of a round shows your average, and from there you can play again or switch to another level.",
+    "fr": "La fin d'une manche affiche votre moyenne, et de là vous pouvez rejouer ou passer à un autre niveau."
    }
   ],
   "kind": "game",
@@ -2238,15 +3432,15 @@
    [
     "games.html",
     {
-     "en": "Browse the full collection of free family games",
-     "fr": "Parcourez toute la collection de jeux familiaux gratuits"
+     "en": "See every family game gathered on one page",
+     "fr": "Voyez tous les jeux de famille réunis sur une seule page"
     }
    ],
    [
-    "math-race.html",
+    "word-illusions.html",
     {
-     "en": "Race the clock with quick mental arithmetic instead",
-     "fr": "Affrontez le chronomètre avec du calcul mental rapide"
+     "en": "Tap the colour of the letters, not the word you read",
+     "fr": "Touchez la couleur des lettres, pas le mot que vous lisez"
     }
    ],
    [
@@ -2394,139 +3588,6 @@
     {
      "en": "See every board, word and party game on the site",
      "fr": "Voyez tous les jeux de plateau, de mots et de groupe du site"
-    }
-   ]
-  ]
- },
- "word-groups.html": {
-  "about": [
-   {
-    "en": "Word Groups puts sixteen words in front of you and hides four themes among them. Choose the four words you believe belong together, press Submit, and watch the group lock into place with its own colour if you were right.",
-    "fr": "Groupes de mots place seize mots devant vous et y cache quatre thèmes. Choisissez les quatre mots qui vous semblent aller ensemble, appuyez sur Soumettre et regardez le groupe se verrouiller dans sa propre couleur si vous aviez raison."
-   },
-   {
-    "en": "The difficulty comes from overlap. A word can look at home in two separate themes, and the puzzles are arranged so the obvious foursome is often not the intended one. Beginning with the group you are surest about is the safest habit.",
-    "fr": "La difficulté vient des chevauchements. Un mot peut sembler à sa place dans deux thèmes distincts, et les grilles sont bâties pour que le quatuor évident ne soit souvent pas le bon. Commencer par le groupe dont vous êtes le plus certain reste l'habitude la plus sûre."
-   },
-   {
-    "en": "You have four lives. Each wrong guess costs one, and when the last is gone the puzzle reveals the answers rather than leaving you wondering. Several themes are Canadian, so families here start with a small home advantage.",
-    "fr": "Vous disposez de quatre vies. Chaque mauvaise proposition en coûte une, et lorsque la dernière disparaît, la grille dévoile les réponses au lieu de vous laisser dans le doute. Plusieurs thèmes sont canadiens : les familles d'ici partent donc avec un petit avantage."
-   }
-  ],
-  "facts": [
-   {
-    "en": "Always solve the group you are most certain of first. Every locked group removes four tiles and makes what remains far easier to read.",
-    "fr": "Résolvez toujours en premier le groupe dont vous êtes le plus certain. Chaque groupe verrouillé retire quatre tuiles et rend le reste bien plus lisible."
-   },
-   {
-    "en": "If one word could belong to two themes, set it aside until you have solved the theme it does not belong to.",
-    "fr": "Si un mot pourrait appartenir à deux thèmes, mettez-le de côté jusqu'à ce que vous ayez résolu celui auquel il n'appartient pas."
-   },
-   {
-    "en": "Wide-sounding themes such as winter things are usually the trap, because half the grid could plausibly qualify for them.",
-    "fr": "Les thèmes qui sonnent large, comme les choses d'hiver, sont généralement le piège, car la moitié de la grille pourrait s'y rattacher."
-   },
-   {
-    "en": "Say your four words aloud with the theme name attached before submitting. If one sounds forced, it almost certainly is.",
-    "fr": "Dites vos quatre mots à voix haute en y accolant le nom du thème avant de soumettre. Si l'un d'eux sonne forcé, c'est presque toujours le cas."
-   },
-   {
-    "en": "Reordering the tiles with Shuffle costs nothing and can dissolve a wrong pattern your eyes have stopped questioning.",
-    "fr": "Réorganiser les tuiles avec le mélange ne coûte rien et peut dissoudre un schéma erroné que vos yeux ne remettent plus en question."
-   }
-  ],
-  "faq": [
-   {
-    "a": {
-     "en": "The page holds several complete puzzles and picks one at random each time. Pressing New Puzzle deals another, so a family can play a few rounds without meeting the same words at once.",
-     "fr": "La page contient plusieurs grilles complètes et en choisit une au hasard chaque fois. Le bouton de nouvelle grille en distribue une autre, de sorte qu'une famille peut enchaîner quelques parties sans revoir aussitôt les mêmes mots."
-    },
-    "q": {
-     "en": "How many different puzzles can I get here?",
-     "fr": "Combien de grilles différentes puis-je obtenir ici ?"
-    }
-   },
-   {
-    "a": {
-     "en": "The game stops accepting guesses and shows the remaining groups with their theme names, so you finish knowing the answer. A new puzzle can be started immediately afterwards.",
-     "fr": "Le jeu cesse d'accepter les propositions et affiche les groupes restants avec le nom de leur thème, afin que vous connaissiez la réponse. Une nouvelle grille peut être lancée aussitôt après."
-    },
-    "q": {
-     "en": "What happens when I lose my last life?",
-     "fr": "Que se passe-t-il lorsque je perds ma dernière vie ?"
-    }
-   },
-   {
-    "a": {
-     "en": "The vocabulary is simple enough for most school-age readers and the themes are everyday ones. Younger players do better with an adult reading the tiles aloud and talking through the choices.",
-     "fr": "Le vocabulaire est assez simple pour la plupart des lecteurs d'âge scolaire et les thèmes sont du quotidien. Les plus jeunes s'en sortent mieux quand un adulte lit les tuiles à voix haute et discute des choix."
-    },
-    "q": {
-     "en": "Is this a good puzzle for children?",
-     "fr": "Ce casse-tête convient-il aux enfants ?"
-    }
-   },
-   {
-    "a": {
-     "en": "Yes. Nothing is committed until you press Submit. Tap any selected tile a second time to deselect it, and swap words around as often as you like beforehand.",
-     "fr": "Oui. Rien n'est engagé tant que vous n'appuyez pas sur Soumettre. Touchez une seconde fois une tuile sélectionnée pour la désélectionner, et échangez les mots aussi souvent que vous le voulez avant."
-    },
-    "q": {
-     "en": "Can I change my mind after tapping a tile?",
-     "fr": "Puis-je changer d'avis après avoir touché une tuile ?"
-    }
-   }
-  ],
-  "inside": [
-   {
-    "en": "Sixteen tiles fill the grid and exactly four of them belong to each of the four hidden themes.",
-    "fr": "Seize tuiles remplissent la grille et exactement quatre d'entre elles appartiennent à chacun des quatre thèmes cachés."
-   },
-   {
-    "en": "Tap up to four tiles to select them, tap a chosen tile again to release it, then press Submit.",
-    "fr": "Touchez jusqu'à quatre tuiles pour les sélectionner, touchez de nouveau une tuile choisie pour la libérer, puis appuyez sur Soumettre."
-   },
-   {
-    "en": "When three of your four words are correct, the game tells you that you were one away.",
-    "fr": "Lorsque trois de vos quatre mots sont bons, le jeu vous annonce qu'il ne vous manquait qu'un seul mot."
-   },
-   {
-    "en": "A row of hearts shows your remaining lives, and the grid shakes briefly whenever a guess misses.",
-    "fr": "Une rangée de coeurs indique les vies qu'il vous reste, et la grille tremble brièvement à chaque proposition ratée."
-   },
-   {
-    "en": "Themes range from Canadian animals, provinces, hockey words and coins to everyday sets like fruits and feelings.",
-    "fr": "Les thèmes vont des animaux canadiens, des provinces, du vocabulaire du hockey et des pièces de monnaie à des ensembles quotidiens comme les fruits et les émotions."
-   }
-  ],
-  "kind": "game",
-  "related": [
-   [
-    "word-master.html",
-    {
-     "en": "Guess the hidden five-letter word in Word Master",
-     "fr": "Devinez le mot caché de cinq lettres dans Word Master"
-    }
-   ],
-   [
-    "crossword.html",
-    {
-     "en": "Fill in a Canada-themed crossword grid from the clues",
-     "fr": "Remplissez une grille de mots croisés sur le Canada à partir des indices"
-    }
-   ],
-   [
-    "daily.html",
-    {
-     "en": "Add today's daily quiz and scrambled word to your routine",
-     "fr": "Ajoutez le quiz du jour et le mot mêlé quotidien à votre routine"
-    }
-   ],
-   [
-    "games.html",
-    {
-     "en": "Find more word puzzles in the family games list",
-     "fr": "Trouvez d'autres jeux de mots dans la liste des jeux familiaux"
     }
    ]
   ]
@@ -2789,6 +3850,139 @@
     {
      "en": "Turn these Canada facts into quiz answers",
      "fr": "Transformez ces faits sur le Canada en réponses de quiz"
+    }
+   ]
+  ]
+ },
+ "cube-twist.html": {
+  "about": [
+   {
+    "en": "The Cube Twist puzzle on this page is a real 3D cube drawn right in your browser. You can turn its faces, spin it around to look at the back, and try to bring every side back to one solid colour. Nothing to download, nothing to install.",
+    "fr": "Le casse-tête Cube Twist de cette page est un vrai cube en 3D dessiné directement dans votre navigateur. Vous pouvez tourner ses faces, le faire pivoter pour voir l'arrière et essayer de ramener chaque côté à une seule couleur. Rien à télécharger, rien à installer."
+   },
+   {
+    "en": "Solving a cube for the first time takes patience, and that is the point. Kids who like puzzles, teenagers who want a party trick, and adults who owned a plastic cube years ago all end up here for the same quiet satisfaction of the last twist.",
+    "fr": "Résoudre un cube pour la première fois demande de la patience, et c'est justement l'intérêt. Les enfants qui aiment les casse-tête, les ados qui veulent un tour à montrer et les adultes qui ont eu un cube en plastique il y a longtemps viennent tous chercher la même satisfaction tranquille du dernier quart de tour."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The middle square of each face never moves, no matter how you turn the cube. That square tells you which colour that whole side must become.",
+    "fr": "Le carré du centre de chaque face ne bouge jamais, peu importe vos rotations. C'est lui qui indique la couleur que tout ce côté doit prendre."
+   },
+   {
+    "en": "There are eight corner pieces and twelve edge pieces. A corner always stays a corner, so a piece with three colours can never sit on an edge.",
+    "fr": "Il y a huit pièces de coin et douze pièces d'arête. Un coin reste toujours un coin : une pièce à trois couleurs ne peut jamais se retrouver sur une arête."
+   },
+   {
+    "en": "Most solvers work layer by layer: the bottom cross first, then the bottom corners, then the middle band, leaving the top face for last.",
+    "fr": "La plupart des gens travaillent couche par couche : la croix du bas d'abord, puis les coins du bas, ensuite la bande du milieu, et la face du dessus en dernier."
+   },
+   {
+    "en": "Turning the same face four times brings it back to where it started, which is a handy way to undo a mistake without panicking.",
+    "fr": "Tourner la même face quatre fois la ramène exactement là où elle était : une façon simple de défaire une erreur sans paniquer."
+   },
+   {
+    "en": "Speedcubers count moves as well as seconds, so a slow, tidy solution that uses fewer turns is still an impressive result.",
+    "fr": "Les adeptes de vitesse comptent les mouvements autant que les secondes : une solution lente mais soignée, avec moins de rotations, reste impressionnante."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Not at all. Plenty of people simply scramble the cube and keep turning faces until things look better. If you want to go further, finishing one whole layer before touching the rest is the usual next step.",
+     "fr": "Pas du tout. Beaucoup de gens brassent le cube et tournent les faces jusqu'à ce que ça s'améliore. Pour aller plus loin, la suite habituelle est de terminer une couche complète avant de toucher au reste."
+    },
+    "q": {
+     "en": "Do I need to know a solving method to enjoy this?",
+     "fr": "Faut-il connaître une méthode de résolution pour s'amuser ici ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. Drag with the mouse the same way you would swipe, or click the six letter buttons instead. The keyboard letters U, D, L, R, F and B work too, with Shift for a reverse turn.",
+     "fr": "Oui. Glissez avec la souris comme vous glisseriez le doigt, ou cliquez plutôt sur les six boutons-lettres. Les touches U, D, L, R, F et B fonctionnent aussi, avec Maj pour inverser une rotation."
+    },
+    "q": {
+     "en": "Can I play with a mouse instead of a finger?",
+     "fr": "Puis-je jouer avec la souris plutôt qu'avec le doigt ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. The timer and the move counter belong to the puzzle in front of you and reset whenever you scramble again, so every attempt begins clean and nothing is stored.",
+     "fr": "Non. Le chronomètre et le compteur appartiennent au casse-tête en cours et repartent à zéro à chaque nouveau brassage : chaque tentative commence à neuf et rien n'est conservé."
+    },
+    "q": {
+     "en": "Does the page save my best time?",
+     "fr": "Est-ce que la page conserve mon meilleur temps ?"
+    }
+   },
+   {
+    "a": {
+     "en": "You can keep twisting for as long as you like, or use the reset to put every face back in order and start a fresh scramble. There is no penalty and no time limit anywhere.",
+     "fr": "Vous pouvez continuer à tourner aussi longtemps que vous voulez, ou utiliser la remise à zéro pour tout remettre en ordre et repartir avec un nouveau brassage. Aucune pénalité, aucune limite de temps."
+    },
+    "q": {
+     "en": "What happens if I get stuck halfway through?",
+     "fr": "Que faire si je reste bloqué à mi-chemin ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "The scramble button mixes the cube with twenty-five random turns, so no two puzzles ever start the same way.",
+    "fr": "Le bouton de brassage mélange le cube avec vingt-cinq rotations au hasard, donc deux départs ne se ressemblent jamais."
+   },
+   {
+    "en": "On a phone or tablet, swipe straight across the cube and the row under your finger turns that way.",
+    "fr": "Sur un téléphone ou une tablette, glissez le doigt en ligne droite sur le cube et la rangée touchée tourne dans ce sens."
+   },
+   {
+    "en": "Six letter buttons turn each face: U for up, D for down, then L, R, F and B.",
+    "fr": "Six boutons-lettres font tourner chaque face : U pour le haut, D pour le bas, puis L, R, F et B."
+   },
+   {
+    "en": "Tick the reverse box to send any face the opposite way, or hold Shift with the keyboard letters.",
+    "fr": "Cochez la case d'inversion pour envoyer une face dans l'autre sens, ou gardez la touche Maj enfoncée avec les lettres du clavier."
+   },
+   {
+    "en": "A move counter and a timer run while you work, and one button puts the cube back to solved.",
+    "fr": "Un compteur de mouvements et un chronomètre avancent pendant que vous jouez, et un bouton remet le cube à l'état résolu."
+   },
+   {
+    "en": "Arrow buttons tilt your view, and a reset returns the cube to its starting angle.",
+    "fr": "Des boutons flèches inclinent votre vue, et une remise à zéro replace le cube à son angle de départ."
+   }
+  ],
+  "kind": "game",
+  "related": [
+   [
+    "games.html",
+    {
+     "en": "See every family game gathered on one page",
+     "fr": "Voyez tous les jeux de famille réunis sur une seule page"
+    }
+   ],
+   [
+    "sliding-puzzle.html",
+    {
+     "en": "Slide numbered tiles into order in the classic tile puzzle",
+     "fr": "Glissez les tuiles numérotées dans l'ordre dans le casse-tête classique"
+    }
+   ],
+   [
+    "sudoku.html",
+    {
+     "en": "Fill the grid with numbers in a game of Sudoku",
+     "fr": "Remplissez la grille de chiffres dans une partie de sudoku"
+    }
+   ],
+   [
+    "minesweeper.html",
+    {
+     "en": "Clear the field without touching a hidden mine",
+     "fr": "Déminez le terrain sans toucher une mine cachée"
     }
    ]
   ]
@@ -5506,149 +6700,149 @@
    ]
   ]
  },
- "tile-tap.html": {
+ "ontario-g1-study-guide.html": {
   "about": [
    {
-    "en": "Tile Tap turns simple tapping into music. Coloured tiles slide down four columns towards a red line near the bottom of the screen, and every tile you catch at the right moment plays the next note of a real melody.",
-    "fr": "Tile Tap transforme de simples touches en musique. Des tuiles colorées glissent dans quatre colonnes vers une ligne rouge au bas de l'écran, et chaque tuile attrapée au bon moment joue la note suivante d'une vraie mélodie."
+    "en": "This page is a written study guide for the Ontario G1 knowledge test, meant to be read before you start answering practice questions. It goes through road signs and the rules of the road in plain language, section by section, with headings so you can stop and come back later. Nothing here is timed and nothing is scored, because the job of this page is to explain rather than to test.",
+    "fr": "Cette page est un guide d'étude écrit pour l'examen théorique G1 de l'Ontario, à lire avant de commencer les questions de pratique. Elle parcourt les panneaux routiers et le code de la route en mots simples, section par section, avec des titres pour pouvoir vous arrêter et revenir plus tard. Rien n'est chronométré ni noté ici, car le rôle de cette page est d'expliquer et non de vous tester."
    },
    {
-    "en": "Because the notes only sound when you hit them, the song is genuinely yours to play. Catch a run of tiles cleanly and the tune flows; drift off the beat and it stumbles, which makes the rhythm something you feel rather than count.",
-    "fr": "Comme les notes ne sonnent que lorsque vous les touchez, la chanson est vraiment la vôtre. Enchaînez les tuiles proprement et la mélodie coule ; perdez le rythme et elle trébuche, ce qui fait sentir la mesure plutôt que la compter."
+    "en": "The guide follows the shape of the real test. The G1 knowledge test asks forty questions, twenty about road signs and twenty about the rules of the road, and you need at least sixteen correct in each half. The two halves are marked on their own, so a strong score on signs cannot rescue a weak score on rules, and this page gives both sides the same amount of room.",
+    "fr": "Le guide suit la forme du véritable examen. L'examen théorique G1 pose quarante questions, vingt sur les panneaux routiers et vingt sur le code de la route, et il faut au moins seize bonnes réponses dans chaque moitié. Les deux moitiés sont notées séparément : un bon résultat sur les panneaux ne rachète donc pas un faible résultat sur les règles, et cette page accorde autant de place aux deux."
    },
    {
-    "en": "It suits a short break, a long car ride or a family contest for the best combo. Children who have never touched a piano still hear a familiar tune come out of their own tapping, which is a lovely first taste of playing music.",
-    "fr": "Il convient à une courte pause, à un long trajet en voiture ou à un concours familial du meilleur enchaînement. Des enfants qui n'ont jamais touché un piano entendent une mélodie connue naître de leurs doigts : un beau premier goût de la musique."
+    "en": "This is unofficial study help written in our own words. We are not connected to the Ministry of Transportation, ServiceOntario or DriveTest, and reading this page does not register you for anything. The free MTO Driver's Handbook is still the book your real test is built from, so treat this guide as a companion to it.",
+    "fr": "Il s'agit d'une aide à l'étude non officielle, rédigée dans nos propres mots. Nous n'avons aucun lien avec le ministère des Transports, ServiceOntario ou DriveTest, et lire cette page ne vous inscrit à rien. Le Guide de l'automobiliste gratuit du MTO demeure le livre sur lequel repose votre vrai examen : voyez donc ce guide-ci comme un compagnon."
    }
   ],
   "facts": [
    {
-    "en": "Tapping an empty column costs you nothing. Only a tile that slips past the red line breaks your combo, so tap without fear.",
-    "fr": "Toucher une colonne vide ne coûte rien. Seule une tuile qui franchit la ligne rouge brise votre enchaînement : touchez donc sans crainte."
+    "en": "Every road sign carries its message twice, once in its shape and once in its colour, so learning both lets you read a sign you have never seen before.",
+    "fr": "Chaque panneau routier livre son message deux fois, par sa forme et par sa couleur : en apprenant les deux, vous pouvez déchiffrer un panneau que vous n'avez jamais vu."
    },
    {
-    "en": "Rest your fingers on D, F, J and K before you start. Moving a hand in the middle of a song is what usually causes the first miss.",
-    "fr": "Posez vos doigts sur D, F, J et K avant de commencer. Déplacer une main au milieu d'une chanson est la cause habituelle de la première tuile manquée."
+    "en": "The two halves of the test are counted separately, so spreading your study evenly across signs and rules is safer than leaning on a favourite subject.",
+    "fr": "Les deux moitiés de l'examen sont comptées séparément : répartir votre étude également entre les panneaux et les règles est donc plus sûr que de miser sur votre sujet préféré."
    },
    {
-    "en": "Watch the red line rather than the top of the screen. Players who follow each tile all the way down tend to tap far too early.",
-    "fr": "Regardez la ligne rouge plutôt que le haut de l'écran. Les joueurs qui suivent chaque tuile depuis le sommet touchent presque toujours trop tôt."
+    "en": "Sixteen correct out of twenty is eighty percent, which leaves room for only four mistakes on each side of the test.",
+    "fr": "Seize bonnes réponses sur vingt représentent quatre-vingts pour cent, ce qui ne laisse la place qu'à quatre erreurs de chaque côté de l'examen."
    },
    {
-    "en": "Start with Hot Cross Buns or Mary Had a Lamb. Their notes are slow and evenly spaced, which builds a steady sense of the beat.",
-    "fr": "Commencez par Hot Cross Buns ou Mary Had a Lamb. Leurs notes sont lentes et régulières, ce qui installe un bon sens de la pulsation."
+    "en": "Reading a guide once is rarely enough on its own, and most people remember far more once they answer questions on what they have just read.",
+    "fr": "Lire un guide une seule fois suffit rarement, et la plupart des gens retiennent beaucoup plus après avoir répondu à des questions sur ce qu'ils viennent de lire."
    },
    {
-    "en": "Happy Birthday and Row Your Boat mix long notes with quick short ones, so save them until your timing feels comfortable.",
-    "fr": "Happy Birthday et Row Your Boat mêlent des notes longues et des notes très brèves : gardez-les pour le moment où votre synchronisation sera assurée."
+    "en": "The free MTO Driver's Handbook is where the real questions come from, so anything left unclear here is worth looking up there.",
+    "fr": "Les vraies questions proviennent du Guide de l'automobiliste gratuit du MTO : tout ce qui reste flou ici mérite donc d'y être vérifié."
    }
   ],
   "faq": [
    {
     "a": {
-     "en": "Not at all. The falling tiles tell you when to tap and the note is produced for you. Plenty of players finish a whole song without ever having seen a printed note.",
-     "fr": "Pas du tout. Les tuiles qui tombent indiquent le moment de toucher et la note est produite pour vous. Bien des joueurs terminent une chanson entière sans avoir jamais vu une partition."
+     "en": "No. This is a free unofficial summary written in our own words to explain the ideas quickly. The official handbook is published by Ontario's Ministry of Transportation and costs nothing to read, and we are not connected to that ministry, to ServiceOntario or to DriveTest.",
+     "fr": "Non. Ceci est un résumé gratuit et non officiel, rédigé dans nos propres mots pour expliquer rapidement les notions. Le guide officiel est publié par le ministère des Transports de l'Ontario et sa lecture est gratuite ; nous n'avons aucun lien avec ce ministère, ni avec ServiceOntario ou DriveTest."
     },
     "q": {
-     "en": "Do I need to read music to play Tile Tap?",
-     "fr": "Faut-il savoir lire la musique pour jouer à Tile Tap ?"
+     "en": "Is this the official Ontario driver's handbook?",
+     "fr": "S'agit-il du guide de l'automobiliste officiel de l'Ontario ?"
     }
    },
    {
     "a": {
-     "en": "The game creates its own notes through the browser, so check that the volume is up and the phone is not on silent. Some devices only begin producing sound after your very first tap.",
-     "fr": "Le jeu crée ses propres notes dans le navigateur : vérifiez que le volume est monté et que le téléphone n'est pas en mode silencieux. Certains appareils ne produisent du son qu'après votre tout premier contact."
+     "en": "Most people get through it in well under an hour at a steady pace. Reading it once from top to bottom gives you the whole map, and after that you can jump straight back to a single section whenever a practice question catches you out.",
+     "fr": "La plupart des gens en viennent à bout en bien moins d'une heure à un rythme régulier. Une première lecture du début à la fin vous donne la carte complète ; ensuite, vous pouvez revenir directement à une seule section chaque fois qu'une question de pratique vous prend en défaut."
     },
     "q": {
-     "en": "Why can I not hear any notes on my device?",
-     "fr": "Pourquoi n'entends-je aucune note sur mon appareil ?"
+     "en": "How long does the whole guide take to read?",
+     "fr": "Combien de temps faut-il pour lire tout le guide ?"
     }
    },
    {
     "a": {
-     "en": "It is free and there is nothing to install. The game runs inside the page itself, with no account to open, no download and no purchase waiting behind a later song.",
-     "fr": "Il est gratuit et il n'y a rien à installer. Le jeu fonctionne dans la page même, sans compte à ouvrir, sans téléchargement et sans achat caché derrière une chanson."
+     "en": "Read it first. Questions teach you much more once the ideas already have somewhere to land, and the guide is written to be read in one sitting. After that, alternate between practising and coming back here for whatever keeps tripping you up.",
+     "fr": "Lisez-le d'abord. Les questions vous apprennent bien davantage quand les notions ont déjà un point d'ancrage, et le guide est écrit pour être lu d'un seul trait. Ensuite, alternez entre la pratique et un retour ici pour ce qui continue de vous faire trébucher."
     },
     "q": {
-     "en": "Is the game free, and does anything need installing?",
-     "fr": "Le jeu est-il gratuit et faut-il installer quelque chose ?"
+     "en": "Should I read this before or after doing practice questions?",
+     "fr": "Dois-je lire ceci avant ou après les questions de pratique ?"
     }
    },
    {
     "a": {
-     "en": "Only a tile that falls past the red line without being tapped. Tapping a column that holds nothing is simply ignored, so nervous extra taps will never spoil a good run.",
-     "fr": "Seulement une tuile qui dépasse la ligne rouge sans avoir été touchée. Toucher une colonne vide est simplement ignoré, donc les touches nerveuses ne gâchent jamais une bonne série."
+     "en": "Yes. Road signs and the rules of the road each get their own sections, which matters because the test scores the two halves separately. You have to reach sixteen out of twenty on each side on its own.",
+     "fr": "Oui. Les panneaux routiers et le code de la route ont chacun leurs propres sections, ce qui compte puisque l'examen note les deux moitiés séparément. Il faut atteindre seize sur vingt de chaque côté, indépendamment."
     },
     "q": {
-     "en": "What exactly counts as a missed tile?",
-     "fr": "Qu'est-ce qui compte exactement comme une tuile manquée ?"
+     "en": "Does the guide cover both halves of the test?",
+     "fr": "Le guide couvre-t-il les deux moitiés de l'examen ?"
     }
    },
    {
     "a": {
-     "en": "Yes, with a little patience. The tiles fall at one steady speed, and a missed tile only resets the combo instead of ending the round, so the song always runs through to its last note.",
-     "fr": "Oui, avec un peu de patience. Les tuiles tombent à vitesse constante et une tuile manquée ne fait que remettre l'enchaînement à zéro : la chanson se rend toujours jusqu'à sa dernière note."
+     "en": "No. There is no sign-up, no email address and nothing to download. The whole guide opens in your browser, so you can read it on a phone during a bus ride or on a laptop at home.",
+     "fr": "Non. Aucune inscription, aucune adresse courriel et rien à télécharger. Le guide complet s'ouvre dans votre navigateur : vous pouvez donc le lire sur un téléphone dans l'autobus ou sur un portable à la maison."
     },
     "q": {
-     "en": "Can younger children manage this game?",
-     "fr": "Les jeunes enfants peuvent-ils y arriver ?"
+     "en": "Do I need an account to read this page?",
+     "fr": "Faut-il un compte pour lire cette page ?"
     }
    }
   ],
   "inside": [
    {
-    "en": "Eleven public-domain tunes are ready to pick, among them Twinkle Twinkle, Ode to Joy, Jingle Bells and Frère Jacques.",
-    "fr": "Onze mélodies du domaine public sont proposées, dont Twinkle Twinkle, l'Ode à la joie, Jingle Bells et Frère Jacques."
+    "en": "The guide opens by explaining what the G1 test actually is and who needs to sit it.",
+    "fr": "Le guide commence par expliquer ce qu'est vraiment l'examen G1 et qui doit le passer."
    },
    {
-    "en": "On a computer the four columns are played with the D, F, J and K keys, sitting right under your fingers.",
-    "fr": "Sur un ordinateur, les quatre colonnes se jouent avec les touches D, F, J et K, placées juste sous vos doigts."
+    "en": "A section on graduated licensing describes the three stages, G1, G2 and full G, and what each one allows.",
+    "fr": "Une section sur le permis graduel décrit les trois étapes, G1, G2 et permis G complet, et ce que chacune permet."
    },
    {
-    "en": "On a phone or a tablet you simply tap the column the tile is falling in, with no keyboard needed at all.",
-    "fr": "Sur un téléphone ou une tablette, il suffit de toucher la colonne où tombe la tuile, sans aucun clavier."
+    "en": "The road sign chapter teaches shapes first, from the eight-sided stop sign to the diamond warning sign.",
+    "fr": "Le chapitre sur les panneaux enseigne d'abord les formes, de l'octogone du panneau d'arrêt au losange d'avertissement."
    },
    {
-    "en": "A tile counts when it reaches the red line, and hitting it plays that note through your speaker straight away.",
-    "fr": "Une tuile compte lorsqu'elle atteint la ligne rouge, et la toucher fait aussitôt jouer cette note dans votre haut-parleur."
+    "en": "A second sign chapter explains what each colour means, including red, green, blue, yellow and orange.",
+    "fr": "Un second chapitre sur les panneaux explique le sens de chaque couleur, dont le rouge, le vert, le bleu, le jaune et l'orange."
    },
    {
-    "en": "The scoreboard tracks your score and your best combo, and each combo step quietly adds a little more per note.",
-    "fr": "Le tableau affiche votre pointage et votre meilleur enchaînement, et chaque palier d'enchaînement ajoute discrètement un peu plus par note."
+    "en": "The rules chapter covers safe driving, sharing the road, bad weather, demerit points, distraction and collisions.",
+    "fr": "Le chapitre des règles couvre la conduite sécuritaire, le partage de la route, le mauvais temps, les points d'inaptitude, la distraction et les collisions."
    },
    {
-    "en": "At the end you see how many notes you hit out of the total, plus a message matched to your accuracy.",
-    "fr": "À la fin, vous voyez combien de notes vous avez réussies sur le total, avec un message adapté à votre précision."
+    "en": "A list of numbers worth learning by heart and a short set of test-day tips close the guide.",
+    "fr": "Une liste de chiffres à retenir par coeur et quelques conseils pour le jour de l'examen closent le guide."
    }
   ],
-  "kind": "game",
+  "kind": "page",
   "related": [
    [
-    "games.html",
+    "ontario-g1-practice-test.html",
     {
-     "en": "Browse the whole family games collection",
-     "fr": "Parcourez toute la collection de jeux pour la famille"
+     "en": "Answer practice questions with an explanation every time",
+     "fr": "Répondez à des questions de pratique avec une explication à chaque fois"
     }
    ],
    [
-    "memory.html",
+    "ontario-g1-mock-test.html",
     {
-     "en": "Test your recall in the Memory Match game",
-     "fr": "Testez votre mémoire dans le jeu Paires de mémoire"
+     "en": "Sit the full forty-question mock test against the clock",
+     "fr": "Passez l'examen blanc complet de quarante questions contre la montre"
     }
    ],
    [
-    "typing-test.html",
+    "ontario-g1-road-signs.html",
     {
-     "en": "Find out how fast your fingers really are in the typing test",
-     "fr": "Découvrez la vitesse réelle de vos doigts dans le test de frappe"
+     "en": "Study every Ontario road sign, one group at a time",
+     "fr": "Étudiez chaque panneau routier de l'Ontario, un groupe à la fois"
     }
    ],
    [
-    "whack-a-beaver.html",
+    "ontario-g1-rules-of-the-road.html",
     {
-     "en": "Try another quick reaction game with Whack-a-Beaver",
-     "fr": "Essayez un autre jeu de réflexes avec Tape-le-castor"
+     "en": "Work through the rules of the road chapter by chapter",
+     "fr": "Travaillez le code de la route chapitre par chapitre"
     }
    ]
   ]
@@ -5935,139 +7129,6 @@
     {
      "en": "Find out how English and French work as official languages",
      "fr": "Découvrez comment l'anglais et le français fonctionnent comme langues officielles"
-    }
-   ]
-  ]
- },
- "cube-twist.html": {
-  "about": [
-   {
-    "en": "The Cube Twist puzzle on this page is a real 3D cube drawn right in your browser. You can turn its faces, spin it around to look at the back, and try to bring every side back to one solid colour. Nothing to download, nothing to install.",
-    "fr": "Le casse-tête Cube Twist de cette page est un vrai cube en 3D dessiné directement dans votre navigateur. Vous pouvez tourner ses faces, le faire pivoter pour voir l'arrière et essayer de ramener chaque côté à une seule couleur. Rien à télécharger, rien à installer."
-   },
-   {
-    "en": "Solving a cube for the first time takes patience, and that is the point. Kids who like puzzles, teenagers who want a party trick, and adults who owned a plastic cube years ago all end up here for the same quiet satisfaction of the last twist.",
-    "fr": "Résoudre un cube pour la première fois demande de la patience, et c'est justement l'intérêt. Les enfants qui aiment les casse-tête, les ados qui veulent un tour à montrer et les adultes qui ont eu un cube en plastique il y a longtemps viennent tous chercher la même satisfaction tranquille du dernier quart de tour."
-   }
-  ],
-  "facts": [
-   {
-    "en": "The middle square of each face never moves, no matter how you turn the cube. That square tells you which colour that whole side must become.",
-    "fr": "Le carré du centre de chaque face ne bouge jamais, peu importe vos rotations. C'est lui qui indique la couleur que tout ce côté doit prendre."
-   },
-   {
-    "en": "There are eight corner pieces and twelve edge pieces. A corner always stays a corner, so a piece with three colours can never sit on an edge.",
-    "fr": "Il y a huit pièces de coin et douze pièces d'arête. Un coin reste toujours un coin : une pièce à trois couleurs ne peut jamais se retrouver sur une arête."
-   },
-   {
-    "en": "Most solvers work layer by layer: the bottom cross first, then the bottom corners, then the middle band, leaving the top face for last.",
-    "fr": "La plupart des gens travaillent couche par couche : la croix du bas d'abord, puis les coins du bas, ensuite la bande du milieu, et la face du dessus en dernier."
-   },
-   {
-    "en": "Turning the same face four times brings it back to where it started, which is a handy way to undo a mistake without panicking.",
-    "fr": "Tourner la même face quatre fois la ramène exactement là où elle était : une façon simple de défaire une erreur sans paniquer."
-   },
-   {
-    "en": "Speedcubers count moves as well as seconds, so a slow, tidy solution that uses fewer turns is still an impressive result.",
-    "fr": "Les adeptes de vitesse comptent les mouvements autant que les secondes : une solution lente mais soignée, avec moins de rotations, reste impressionnante."
-   }
-  ],
-  "faq": [
-   {
-    "a": {
-     "en": "Not at all. Plenty of people simply scramble the cube and keep turning faces until things look better. If you want to go further, finishing one whole layer before touching the rest is the usual next step.",
-     "fr": "Pas du tout. Beaucoup de gens brassent le cube et tournent les faces jusqu'à ce que ça s'améliore. Pour aller plus loin, la suite habituelle est de terminer une couche complète avant de toucher au reste."
-    },
-    "q": {
-     "en": "Do I need to know a solving method to enjoy this?",
-     "fr": "Faut-il connaître une méthode de résolution pour s'amuser ici ?"
-    }
-   },
-   {
-    "a": {
-     "en": "Yes. Drag with the mouse the same way you would swipe, or click the six letter buttons instead. The keyboard letters U, D, L, R, F and B work too, with Shift for a reverse turn.",
-     "fr": "Oui. Glissez avec la souris comme vous glisseriez le doigt, ou cliquez plutôt sur les six boutons-lettres. Les touches U, D, L, R, F et B fonctionnent aussi, avec Maj pour inverser une rotation."
-    },
-    "q": {
-     "en": "Can I play with a mouse instead of a finger?",
-     "fr": "Puis-je jouer avec la souris plutôt qu'avec le doigt ?"
-    }
-   },
-   {
-    "a": {
-     "en": "No. The timer and the move counter belong to the puzzle in front of you and reset whenever you scramble again, so every attempt begins clean and nothing is stored.",
-     "fr": "Non. Le chronomètre et le compteur appartiennent au casse-tête en cours et repartent à zéro à chaque nouveau brassage : chaque tentative commence à neuf et rien n'est conservé."
-    },
-    "q": {
-     "en": "Does the page save my best time?",
-     "fr": "Est-ce que la page conserve mon meilleur temps ?"
-    }
-   },
-   {
-    "a": {
-     "en": "You can keep twisting for as long as you like, or use the reset to put every face back in order and start a fresh scramble. There is no penalty and no time limit anywhere.",
-     "fr": "Vous pouvez continuer à tourner aussi longtemps que vous voulez, ou utiliser la remise à zéro pour tout remettre en ordre et repartir avec un nouveau brassage. Aucune pénalité, aucune limite de temps."
-    },
-    "q": {
-     "en": "What happens if I get stuck halfway through?",
-     "fr": "Que faire si je reste bloqué à mi-chemin ?"
-    }
-   }
-  ],
-  "inside": [
-   {
-    "en": "The scramble button mixes the cube with twenty-five random turns, so no two puzzles ever start the same way.",
-    "fr": "Le bouton de brassage mélange le cube avec vingt-cinq rotations au hasard, donc deux départs ne se ressemblent jamais."
-   },
-   {
-    "en": "On a phone or tablet, swipe straight across the cube and the row under your finger turns that way.",
-    "fr": "Sur un téléphone ou une tablette, glissez le doigt en ligne droite sur le cube et la rangée touchée tourne dans ce sens."
-   },
-   {
-    "en": "Six letter buttons turn each face: U for up, D for down, then L, R, F and B.",
-    "fr": "Six boutons-lettres font tourner chaque face : U pour le haut, D pour le bas, puis L, R, F et B."
-   },
-   {
-    "en": "Tick the reverse box to send any face the opposite way, or hold Shift with the keyboard letters.",
-    "fr": "Cochez la case d'inversion pour envoyer une face dans l'autre sens, ou gardez la touche Maj enfoncée avec les lettres du clavier."
-   },
-   {
-    "en": "A move counter and a timer run while you work, and one button puts the cube back to solved.",
-    "fr": "Un compteur de mouvements et un chronomètre avancent pendant que vous jouez, et un bouton remet le cube à l'état résolu."
-   },
-   {
-    "en": "Arrow buttons tilt your view, and a reset returns the cube to its starting angle.",
-    "fr": "Des boutons flèches inclinent votre vue, et une remise à zéro replace le cube à son angle de départ."
-   }
-  ],
-  "kind": "game",
-  "related": [
-   [
-    "games.html",
-    {
-     "en": "See every family game gathered on one page",
-     "fr": "Voyez tous les jeux de famille réunis sur une seule page"
-    }
-   ],
-   [
-    "sliding-puzzle.html",
-    {
-     "en": "Slide numbered tiles into order in the classic tile puzzle",
-     "fr": "Glissez les tuiles numérotées dans l'ordre dans le casse-tête classique"
-    }
-   ],
-   [
-    "sudoku.html",
-    {
-     "en": "Fill the grid with numbers in a game of Sudoku",
-     "fr": "Remplissez la grille de chiffres dans une partie de sudoku"
-    }
-   ],
-   [
-    "minesweeper.html",
-    {
-     "en": "Clear the field without touching a hidden mine",
-     "fr": "Déminez le terrain sans toucher une mine cachée"
     }
    ]
   ]
@@ -6588,139 +7649,6 @@
     {
      "en": "Pick another arcade or classic game to try",
      "fr": "Choisissez un autre jeu d'arcade ou un classique à essayer"
-    }
-   ]
-  ]
- },
- "word-hive.html": {
-  "about": [
-   {
-    "en": "Seven letters sit in a honeycomb, one of them in the middle. Your job is to build as many words as you can from those letters, and every word must contain the middle one. A letter may be used more than once in the same word.",
-    "fr": "Sept lettres forment une ruche, dont une au centre. Votre tâche est de créer le plus de mots possible avec ces lettres, et chaque mot doit contenir celle du centre. Une lettre peut servir plusieurs fois dans le même mot."
-   },
-   {
-    "en": "It rewards patience rather than speed. There is no clock, so you can leave the page open, come back later, and add another word when one finally comes to you. Word lovers, crossword solvers and anyone building English vocabulary will find plenty here.",
-    "fr": "Ce jeu récompense la patience plutôt que la vitesse. Sans chronomètre, vous pouvez laisser la page ouverte, revenir plus tard et ajouter un mot quand il vous vient enfin. Les amateurs de mots, les cruciverbistes et quiconque enrichit son vocabulaire anglais y trouveront de quoi faire."
-   }
-  ],
-  "facts": [
-   {
-    "en": "Look for common endings first. Adding -ing, -ed or -er to a short word you already found often produces another word on the list.",
-    "fr": "Cherchez d'abord les terminaisons courantes. Ajouter -ing, -ed ou -er à un mot court déjà trouvé donne souvent un autre mot de la liste."
-   },
-   {
-    "en": "Every puzzle here has at least one pangram, so when your score feels stuck, try hard to use all seven letters at once.",
-    "fr": "Chaque casse-tête contient au moins un pangramme : quand le pointage stagne, forcez-vous à utiliser les sept lettres d'un coup."
-   },
-   {
-    "en": "Repeated letters are allowed, which opens up words that look impossible at first glance, such as doubling a letter in the middle.",
-    "fr": "Les lettres répétées sont permises, ce qui ouvre la porte à des mots qui semblent impossibles au premier regard, comme doubler une lettre au milieu."
-   },
-   {
-    "en": "The shuffle button changes nothing about the puzzle, yet seeing the same letters in a new order genuinely helps the eye spot fresh words.",
-    "fr": "Le bouton de brassage ne change rien au casse-tête, mais revoir les mêmes lettres dans un ordre différent aide vraiment l'oeil à repérer de nouveaux mots."
-   },
-   {
-    "en": "Reaching Genius does not mean you found everything, because that rank arrives well before the full word list is complete.",
-    "fr": "Atteindre le rang de Génie ne veut pas dire que vous avez tout trouvé : ce rang arrive bien avant que la liste de mots soit complète."
-   }
-  ],
-  "faq": [
-   {
-    "a": {
-     "en": "Each puzzle checks against a fixed list of accepted words. Some rare, technical or very new words simply are not on it, and that is no judgement on your vocabulary.",
-     "fr": "Chaque casse-tête vérifie les réponses avec une liste fixe de mots acceptés. Certains mots rares, techniques ou très récents n'y sont tout simplement pas, et ce n'est pas un jugement sur votre vocabulaire."
-    },
-    "q": {
-     "en": "Why was my word rejected when it is a real word?",
-     "fr": "Pourquoi mon mot a-t-il été refusé alors qu'il existe vraiment ?"
-    }
-   },
-   {
-    "a": {
-     "en": "None whatsoever. Take an hour if you want. The letters stay exactly as they are until you ask for a new puzzle, so you can think, walk away and come back.",
-     "fr": "Aucune. Prenez une heure si vous voulez. Les lettres restent telles quelles jusqu'à ce que vous demandiez un nouveau casse-tête : vous pouvez réfléchir, partir et revenir."
-    },
-    "q": {
-     "en": "Is there a time limit on a puzzle?",
-     "fr": "Y a-t-il une limite de temps pour un casse-tête ?"
-    }
-   },
-   {
-    "a": {
-     "en": "The page holds ten letter sets and picks one at random each time you start again, so you may well meet a familiar hive before you have seen them all.",
-     "fr": "La page contient dix groupes de lettres et en choisit un au hasard à chaque nouveau départ : vous pourriez donc revoir une ruche connue avant de les avoir toutes vues."
-    },
-    "q": {
-     "en": "How many different letter sets are there?",
-     "fr": "Combien y a-t-il de groupes de lettres différents ?"
-    }
-   },
-   {
-    "a": {
-     "en": "Older children who read comfortably enjoy it, especially with an adult sitting beside them. Younger ones usually do better with a word scramble, where a hint points at one answer.",
-     "fr": "Les enfants plus vieux qui lisent aisément l'apprécient, surtout avec un adulte à leurs côtés. Les plus jeunes s'en tirent mieux avec un jeu de mots mêlés, où un indice mène à une seule réponse."
-    },
-    "q": {
-     "en": "Can children play this one?",
-     "fr": "Les enfants peuvent-ils y jouer ?"
-    }
-   }
-  ],
-  "inside": [
-   {
-    "en": "Words must be at least four letters long and must include the yellow letter in the centre of the hive.",
-    "fr": "Les mots doivent compter au moins quatre lettres et inclure la lettre jaune au centre de la ruche."
-   },
-   {
-    "en": "Tap the letters or type them, then press Enter, while delete removes a letter and shuffle rearranges the outer six.",
-    "fr": "Touchez les lettres ou tapez-les, puis appuyez sur Entrée ; effacer retire une lettre et brasser réorganise les six lettres du pourtour."
-   },
-   {
-    "en": "A four-letter word scores one point, and any longer word scores one point for every letter it contains.",
-    "fr": "Un mot de quatre lettres vaut un point, et tout mot plus long vaut un point par lettre qu'il contient."
-   },
-   {
-    "en": "Using all seven letters in a single word makes a pangram and adds seven bonus points on top.",
-    "fr": "Utiliser les sept lettres dans un seul mot donne un pangramme et ajoute sept points bonis par-dessus."
-   },
-   {
-    "en": "Your rank climbs through Beginner, Good Start, Nice, Solid, Great and Amazing on the way to Genius.",
-    "fr": "Votre rang grimpe de Débutant à Bon départ, Bien, Solide, Excellent et Épatant, jusqu'à Génie."
-   },
-   {
-    "en": "Found words appear as chips below the hive, and a new puzzle deals a different set of seven letters.",
-    "fr": "Les mots trouvés s'affichent en pastilles sous la ruche, et un nouveau casse-tête distribue un autre groupe de sept lettres."
-   }
-  ],
-  "kind": "game",
-  "related": [
-   [
-    "scramble.html",
-    {
-     "en": "Unscramble Canadian words with a clue to help you",
-     "fr": "Démêlez des mots canadiens à l'aide d'un indice"
-    }
-   ],
-   [
-    "word-master.html",
-    {
-     "en": "Guess the hidden word in a set number of tries",
-     "fr": "Devinez le mot caché en un nombre limité d'essais"
-    }
-   ],
-   [
-    "word-groups.html",
-    {
-     "en": "Sort sixteen words into four secret groups",
-     "fr": "Classez seize mots en quatre groupes secrets"
-    }
-   ],
-   [
-    "crossword.html",
-    {
-     "en": "Fill in a crossword grid clue by clue",
-     "fr": "Remplissez une grille de mots croisés indice par indice"
     }
    ]
   ]
@@ -7527,6 +8455,153 @@
     {
      "en": "Try a full game of chess right in your browser",
      "fr": "Essayez une vraie partie d'échecs dans votre navigateur"
+    }
+   ]
+  ]
+ },
+ "tile-tap.html": {
+  "about": [
+   {
+    "en": "Tile Tap turns simple tapping into music. Coloured tiles slide down four columns towards a red line near the bottom of the screen, and every tile you catch at the right moment plays the next note of a real melody.",
+    "fr": "Tile Tap transforme de simples touches en musique. Des tuiles colorées glissent dans quatre colonnes vers une ligne rouge au bas de l'écran, et chaque tuile attrapée au bon moment joue la note suivante d'une vraie mélodie."
+   },
+   {
+    "en": "Because the notes only sound when you hit them, the song is genuinely yours to play. Catch a run of tiles cleanly and the tune flows; drift off the beat and it stumbles, which makes the rhythm something you feel rather than count.",
+    "fr": "Comme les notes ne sonnent que lorsque vous les touchez, la chanson est vraiment la vôtre. Enchaînez les tuiles proprement et la mélodie coule ; perdez le rythme et elle trébuche, ce qui fait sentir la mesure plutôt que la compter."
+   },
+   {
+    "en": "It suits a short break, a long car ride or a family contest for the best combo. Children who have never touched a piano still hear a familiar tune come out of their own tapping, which is a lovely first taste of playing music.",
+    "fr": "Il convient à une courte pause, à un long trajet en voiture ou à un concours familial du meilleur enchaînement. Des enfants qui n'ont jamais touché un piano entendent une mélodie connue naître de leurs doigts : un beau premier goût de la musique."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Tapping an empty column costs you nothing. Only a tile that slips past the red line breaks your combo, so tap without fear.",
+    "fr": "Toucher une colonne vide ne coûte rien. Seule une tuile qui franchit la ligne rouge brise votre enchaînement : touchez donc sans crainte."
+   },
+   {
+    "en": "Rest your fingers on D, F, J and K before you start. Moving a hand in the middle of a song is what usually causes the first miss.",
+    "fr": "Posez vos doigts sur D, F, J et K avant de commencer. Déplacer une main au milieu d'une chanson est la cause habituelle de la première tuile manquée."
+   },
+   {
+    "en": "Watch the red line rather than the top of the screen. Players who follow each tile all the way down tend to tap far too early.",
+    "fr": "Regardez la ligne rouge plutôt que le haut de l'écran. Les joueurs qui suivent chaque tuile depuis le sommet touchent presque toujours trop tôt."
+   },
+   {
+    "en": "Start with Hot Cross Buns or Mary Had a Lamb. Their notes are slow and evenly spaced, which builds a steady sense of the beat.",
+    "fr": "Commencez par Hot Cross Buns ou Mary Had a Lamb. Leurs notes sont lentes et régulières, ce qui installe un bon sens de la pulsation."
+   },
+   {
+    "en": "Happy Birthday and Row Your Boat mix long notes with quick short ones, so save them until your timing feels comfortable.",
+    "fr": "Happy Birthday et Row Your Boat mêlent des notes longues et des notes très brèves : gardez-les pour le moment où votre synchronisation sera assurée."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Not at all. The falling tiles tell you when to tap and the note is produced for you. Plenty of players finish a whole song without ever having seen a printed note.",
+     "fr": "Pas du tout. Les tuiles qui tombent indiquent le moment de toucher et la note est produite pour vous. Bien des joueurs terminent une chanson entière sans avoir jamais vu une partition."
+    },
+    "q": {
+     "en": "Do I need to read music to play Tile Tap?",
+     "fr": "Faut-il savoir lire la musique pour jouer à Tile Tap ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The game creates its own notes through the browser, so check that the volume is up and the phone is not on silent. Some devices only begin producing sound after your very first tap.",
+     "fr": "Le jeu crée ses propres notes dans le navigateur : vérifiez que le volume est monté et que le téléphone n'est pas en mode silencieux. Certains appareils ne produisent du son qu'après votre tout premier contact."
+    },
+    "q": {
+     "en": "Why can I not hear any notes on my device?",
+     "fr": "Pourquoi n'entends-je aucune note sur mon appareil ?"
+    }
+   },
+   {
+    "a": {
+     "en": "It is free and there is nothing to install. The game runs inside the page itself, with no account to open, no download and no purchase waiting behind a later song.",
+     "fr": "Il est gratuit et il n'y a rien à installer. Le jeu fonctionne dans la page même, sans compte à ouvrir, sans téléchargement et sans achat caché derrière une chanson."
+    },
+    "q": {
+     "en": "Is the game free, and does anything need installing?",
+     "fr": "Le jeu est-il gratuit et faut-il installer quelque chose ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Only a tile that falls past the red line without being tapped. Tapping a column that holds nothing is simply ignored, so nervous extra taps will never spoil a good run.",
+     "fr": "Seulement une tuile qui dépasse la ligne rouge sans avoir été touchée. Toucher une colonne vide est simplement ignoré, donc les touches nerveuses ne gâchent jamais une bonne série."
+    },
+    "q": {
+     "en": "What exactly counts as a missed tile?",
+     "fr": "Qu'est-ce qui compte exactement comme une tuile manquée ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes, with a little patience. The tiles fall at one steady speed, and a missed tile only resets the combo instead of ending the round, so the song always runs through to its last note.",
+     "fr": "Oui, avec un peu de patience. Les tuiles tombent à vitesse constante et une tuile manquée ne fait que remettre l'enchaînement à zéro : la chanson se rend toujours jusqu'à sa dernière note."
+    },
+    "q": {
+     "en": "Can younger children manage this game?",
+     "fr": "Les jeunes enfants peuvent-ils y arriver ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Eleven public-domain tunes are ready to pick, among them Twinkle Twinkle, Ode to Joy, Jingle Bells and Frère Jacques.",
+    "fr": "Onze mélodies du domaine public sont proposées, dont Twinkle Twinkle, l'Ode à la joie, Jingle Bells et Frère Jacques."
+   },
+   {
+    "en": "On a computer the four columns are played with the D, F, J and K keys, sitting right under your fingers.",
+    "fr": "Sur un ordinateur, les quatre colonnes se jouent avec les touches D, F, J et K, placées juste sous vos doigts."
+   },
+   {
+    "en": "On a phone or a tablet you simply tap the column the tile is falling in, with no keyboard needed at all.",
+    "fr": "Sur un téléphone ou une tablette, il suffit de toucher la colonne où tombe la tuile, sans aucun clavier."
+   },
+   {
+    "en": "A tile counts when it reaches the red line, and hitting it plays that note through your speaker straight away.",
+    "fr": "Une tuile compte lorsqu'elle atteint la ligne rouge, et la toucher fait aussitôt jouer cette note dans votre haut-parleur."
+   },
+   {
+    "en": "The scoreboard tracks your score and your best combo, and each combo step quietly adds a little more per note.",
+    "fr": "Le tableau affiche votre pointage et votre meilleur enchaînement, et chaque palier d'enchaînement ajoute discrètement un peu plus par note."
+   },
+   {
+    "en": "At the end you see how many notes you hit out of the total, plus a message matched to your accuracy.",
+    "fr": "À la fin, vous voyez combien de notes vous avez réussies sur le total, avec un message adapté à votre précision."
+   }
+  ],
+  "kind": "game",
+  "related": [
+   [
+    "games.html",
+    {
+     "en": "Browse the whole family games collection",
+     "fr": "Parcourez toute la collection de jeux pour la famille"
+    }
+   ],
+   [
+    "memory.html",
+    {
+     "en": "Test your recall in the Memory Match game",
+     "fr": "Testez votre mémoire dans le jeu Paires de mémoire"
+    }
+   ],
+   [
+    "typing-test.html",
+    {
+     "en": "Find out how fast your fingers really are in the typing test",
+     "fr": "Découvrez la vitesse réelle de vos doigts dans le test de frappe"
+    }
+   ],
+   [
+    "whack-a-beaver.html",
+    {
+     "en": "Try another quick reaction game with Whack-a-Beaver",
+     "fr": "Essayez un autre jeu de réflexes avec Tape-le-castor"
     }
    ]
   ]
@@ -8385,6 +9460,139 @@
    ]
   ]
  },
+ "word-groups.html": {
+  "about": [
+   {
+    "en": "Word Groups puts sixteen words in front of you and hides four themes among them. Choose the four words you believe belong together, press Submit, and watch the group lock into place with its own colour if you were right.",
+    "fr": "Groupes de mots place seize mots devant vous et y cache quatre thèmes. Choisissez les quatre mots qui vous semblent aller ensemble, appuyez sur Soumettre et regardez le groupe se verrouiller dans sa propre couleur si vous aviez raison."
+   },
+   {
+    "en": "The difficulty comes from overlap. A word can look at home in two separate themes, and the puzzles are arranged so the obvious foursome is often not the intended one. Beginning with the group you are surest about is the safest habit.",
+    "fr": "La difficulté vient des chevauchements. Un mot peut sembler à sa place dans deux thèmes distincts, et les grilles sont bâties pour que le quatuor évident ne soit souvent pas le bon. Commencer par le groupe dont vous êtes le plus certain reste l'habitude la plus sûre."
+   },
+   {
+    "en": "You have four lives. Each wrong guess costs one, and when the last is gone the puzzle reveals the answers rather than leaving you wondering. Several themes are Canadian, so families here start with a small home advantage.",
+    "fr": "Vous disposez de quatre vies. Chaque mauvaise proposition en coûte une, et lorsque la dernière disparaît, la grille dévoile les réponses au lieu de vous laisser dans le doute. Plusieurs thèmes sont canadiens : les familles d'ici partent donc avec un petit avantage."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Always solve the group you are most certain of first. Every locked group removes four tiles and makes what remains far easier to read.",
+    "fr": "Résolvez toujours en premier le groupe dont vous êtes le plus certain. Chaque groupe verrouillé retire quatre tuiles et rend le reste bien plus lisible."
+   },
+   {
+    "en": "If one word could belong to two themes, set it aside until you have solved the theme it does not belong to.",
+    "fr": "Si un mot pourrait appartenir à deux thèmes, mettez-le de côté jusqu'à ce que vous ayez résolu celui auquel il n'appartient pas."
+   },
+   {
+    "en": "Wide-sounding themes such as winter things are usually the trap, because half the grid could plausibly qualify for them.",
+    "fr": "Les thèmes qui sonnent large, comme les choses d'hiver, sont généralement le piège, car la moitié de la grille pourrait s'y rattacher."
+   },
+   {
+    "en": "Say your four words aloud with the theme name attached before submitting. If one sounds forced, it almost certainly is.",
+    "fr": "Dites vos quatre mots à voix haute en y accolant le nom du thème avant de soumettre. Si l'un d'eux sonne forcé, c'est presque toujours le cas."
+   },
+   {
+    "en": "Reordering the tiles with Shuffle costs nothing and can dissolve a wrong pattern your eyes have stopped questioning.",
+    "fr": "Réorganiser les tuiles avec le mélange ne coûte rien et peut dissoudre un schéma erroné que vos yeux ne remettent plus en question."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "The page holds several complete puzzles and picks one at random each time. Pressing New Puzzle deals another, so a family can play a few rounds without meeting the same words at once.",
+     "fr": "La page contient plusieurs grilles complètes et en choisit une au hasard chaque fois. Le bouton de nouvelle grille en distribue une autre, de sorte qu'une famille peut enchaîner quelques parties sans revoir aussitôt les mêmes mots."
+    },
+    "q": {
+     "en": "How many different puzzles can I get here?",
+     "fr": "Combien de grilles différentes puis-je obtenir ici ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The game stops accepting guesses and shows the remaining groups with their theme names, so you finish knowing the answer. A new puzzle can be started immediately afterwards.",
+     "fr": "Le jeu cesse d'accepter les propositions et affiche les groupes restants avec le nom de leur thème, afin que vous connaissiez la réponse. Une nouvelle grille peut être lancée aussitôt après."
+    },
+    "q": {
+     "en": "What happens when I lose my last life?",
+     "fr": "Que se passe-t-il lorsque je perds ma dernière vie ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The vocabulary is simple enough for most school-age readers and the themes are everyday ones. Younger players do better with an adult reading the tiles aloud and talking through the choices.",
+     "fr": "Le vocabulaire est assez simple pour la plupart des lecteurs d'âge scolaire et les thèmes sont du quotidien. Les plus jeunes s'en sortent mieux quand un adulte lit les tuiles à voix haute et discute des choix."
+    },
+    "q": {
+     "en": "Is this a good puzzle for children?",
+     "fr": "Ce casse-tête convient-il aux enfants ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. Nothing is committed until you press Submit. Tap any selected tile a second time to deselect it, and swap words around as often as you like beforehand.",
+     "fr": "Oui. Rien n'est engagé tant que vous n'appuyez pas sur Soumettre. Touchez une seconde fois une tuile sélectionnée pour la désélectionner, et échangez les mots aussi souvent que vous le voulez avant."
+    },
+    "q": {
+     "en": "Can I change my mind after tapping a tile?",
+     "fr": "Puis-je changer d'avis après avoir touché une tuile ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Sixteen tiles fill the grid and exactly four of them belong to each of the four hidden themes.",
+    "fr": "Seize tuiles remplissent la grille et exactement quatre d'entre elles appartiennent à chacun des quatre thèmes cachés."
+   },
+   {
+    "en": "Tap up to four tiles to select them, tap a chosen tile again to release it, then press Submit.",
+    "fr": "Touchez jusqu'à quatre tuiles pour les sélectionner, touchez de nouveau une tuile choisie pour la libérer, puis appuyez sur Soumettre."
+   },
+   {
+    "en": "When three of your four words are correct, the game tells you that you were one away.",
+    "fr": "Lorsque trois de vos quatre mots sont bons, le jeu vous annonce qu'il ne vous manquait qu'un seul mot."
+   },
+   {
+    "en": "A row of hearts shows your remaining lives, and the grid shakes briefly whenever a guess misses.",
+    "fr": "Une rangée de coeurs indique les vies qu'il vous reste, et la grille tremble brièvement à chaque proposition ratée."
+   },
+   {
+    "en": "Themes range from Canadian animals, provinces, hockey words and coins to everyday sets like fruits and feelings.",
+    "fr": "Les thèmes vont des animaux canadiens, des provinces, du vocabulaire du hockey et des pièces de monnaie à des ensembles quotidiens comme les fruits et les émotions."
+   }
+  ],
+  "kind": "game",
+  "related": [
+   [
+    "word-master.html",
+    {
+     "en": "Guess the hidden five-letter word in Word Master",
+     "fr": "Devinez le mot caché de cinq lettres dans Word Master"
+    }
+   ],
+   [
+    "crossword.html",
+    {
+     "en": "Fill in a Canada-themed crossword grid from the clues",
+     "fr": "Remplissez une grille de mots croisés sur le Canada à partir des indices"
+    }
+   ],
+   [
+    "daily.html",
+    {
+     "en": "Add today's daily quiz and scrambled word to your routine",
+     "fr": "Ajoutez le quiz du jour et le mot mêlé quotidien à votre routine"
+    }
+   ],
+   [
+    "games.html",
+    {
+     "en": "Find more word puzzles in the family games list",
+     "fr": "Trouvez d'autres jeux de mots dans la liste des jeux familiaux"
+    }
+   ]
+  ]
+ },
  "word-guess.html": {
   "about": [
    {
@@ -8528,6 +9736,286 @@
     {
      "en": "Learn the words Canadians actually use",
      "fr": "Apprenez les mots que les Canadiens utilisent vraiment"
+    }
+   ]
+  ]
+ },
+ "word-hive.html": {
+  "about": [
+   {
+    "en": "Seven letters sit in a honeycomb, one of them in the middle. Your job is to build as many words as you can from those letters, and every word must contain the middle one. A letter may be used more than once in the same word.",
+    "fr": "Sept lettres forment une ruche, dont une au centre. Votre tâche est de créer le plus de mots possible avec ces lettres, et chaque mot doit contenir celle du centre. Une lettre peut servir plusieurs fois dans le même mot."
+   },
+   {
+    "en": "It rewards patience rather than speed. There is no clock, so you can leave the page open, come back later, and add another word when one finally comes to you. Word lovers, crossword solvers and anyone building English vocabulary will find plenty here.",
+    "fr": "Ce jeu récompense la patience plutôt que la vitesse. Sans chronomètre, vous pouvez laisser la page ouverte, revenir plus tard et ajouter un mot quand il vous vient enfin. Les amateurs de mots, les cruciverbistes et quiconque enrichit son vocabulaire anglais y trouveront de quoi faire."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Look for common endings first. Adding -ing, -ed or -er to a short word you already found often produces another word on the list.",
+    "fr": "Cherchez d'abord les terminaisons courantes. Ajouter -ing, -ed ou -er à un mot court déjà trouvé donne souvent un autre mot de la liste."
+   },
+   {
+    "en": "Every puzzle here has at least one pangram, so when your score feels stuck, try hard to use all seven letters at once.",
+    "fr": "Chaque casse-tête contient au moins un pangramme : quand le pointage stagne, forcez-vous à utiliser les sept lettres d'un coup."
+   },
+   {
+    "en": "Repeated letters are allowed, which opens up words that look impossible at first glance, such as doubling a letter in the middle.",
+    "fr": "Les lettres répétées sont permises, ce qui ouvre la porte à des mots qui semblent impossibles au premier regard, comme doubler une lettre au milieu."
+   },
+   {
+    "en": "The shuffle button changes nothing about the puzzle, yet seeing the same letters in a new order genuinely helps the eye spot fresh words.",
+    "fr": "Le bouton de brassage ne change rien au casse-tête, mais revoir les mêmes lettres dans un ordre différent aide vraiment l'oeil à repérer de nouveaux mots."
+   },
+   {
+    "en": "Reaching Genius does not mean you found everything, because that rank arrives well before the full word list is complete.",
+    "fr": "Atteindre le rang de Génie ne veut pas dire que vous avez tout trouvé : ce rang arrive bien avant que la liste de mots soit complète."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Each puzzle checks against a fixed list of accepted words. Some rare, technical or very new words simply are not on it, and that is no judgement on your vocabulary.",
+     "fr": "Chaque casse-tête vérifie les réponses avec une liste fixe de mots acceptés. Certains mots rares, techniques ou très récents n'y sont tout simplement pas, et ce n'est pas un jugement sur votre vocabulaire."
+    },
+    "q": {
+     "en": "Why was my word rejected when it is a real word?",
+     "fr": "Pourquoi mon mot a-t-il été refusé alors qu'il existe vraiment ?"
+    }
+   },
+   {
+    "a": {
+     "en": "None whatsoever. Take an hour if you want. The letters stay exactly as they are until you ask for a new puzzle, so you can think, walk away and come back.",
+     "fr": "Aucune. Prenez une heure si vous voulez. Les lettres restent telles quelles jusqu'à ce que vous demandiez un nouveau casse-tête : vous pouvez réfléchir, partir et revenir."
+    },
+    "q": {
+     "en": "Is there a time limit on a puzzle?",
+     "fr": "Y a-t-il une limite de temps pour un casse-tête ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The page holds ten letter sets and picks one at random each time you start again, so you may well meet a familiar hive before you have seen them all.",
+     "fr": "La page contient dix groupes de lettres et en choisit un au hasard à chaque nouveau départ : vous pourriez donc revoir une ruche connue avant de les avoir toutes vues."
+    },
+    "q": {
+     "en": "How many different letter sets are there?",
+     "fr": "Combien y a-t-il de groupes de lettres différents ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Older children who read comfortably enjoy it, especially with an adult sitting beside them. Younger ones usually do better with a word scramble, where a hint points at one answer.",
+     "fr": "Les enfants plus vieux qui lisent aisément l'apprécient, surtout avec un adulte à leurs côtés. Les plus jeunes s'en tirent mieux avec un jeu de mots mêlés, où un indice mène à une seule réponse."
+    },
+    "q": {
+     "en": "Can children play this one?",
+     "fr": "Les enfants peuvent-ils y jouer ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Words must be at least four letters long and must include the yellow letter in the centre of the hive.",
+    "fr": "Les mots doivent compter au moins quatre lettres et inclure la lettre jaune au centre de la ruche."
+   },
+   {
+    "en": "Tap the letters or type them, then press Enter, while delete removes a letter and shuffle rearranges the outer six.",
+    "fr": "Touchez les lettres ou tapez-les, puis appuyez sur Entrée ; effacer retire une lettre et brasser réorganise les six lettres du pourtour."
+   },
+   {
+    "en": "A four-letter word scores one point, and any longer word scores one point for every letter it contains.",
+    "fr": "Un mot de quatre lettres vaut un point, et tout mot plus long vaut un point par lettre qu'il contient."
+   },
+   {
+    "en": "Using all seven letters in a single word makes a pangram and adds seven bonus points on top.",
+    "fr": "Utiliser les sept lettres dans un seul mot donne un pangramme et ajoute sept points bonis par-dessus."
+   },
+   {
+    "en": "Your rank climbs through Beginner, Good Start, Nice, Solid, Great and Amazing on the way to Genius.",
+    "fr": "Votre rang grimpe de Débutant à Bon départ, Bien, Solide, Excellent et Épatant, jusqu'à Génie."
+   },
+   {
+    "en": "Found words appear as chips below the hive, and a new puzzle deals a different set of seven letters.",
+    "fr": "Les mots trouvés s'affichent en pastilles sous la ruche, et un nouveau casse-tête distribue un autre groupe de sept lettres."
+   }
+  ],
+  "kind": "game",
+  "related": [
+   [
+    "scramble.html",
+    {
+     "en": "Unscramble Canadian words with a clue to help you",
+     "fr": "Démêlez des mots canadiens à l'aide d'un indice"
+    }
+   ],
+   [
+    "word-master.html",
+    {
+     "en": "Guess the hidden word in a set number of tries",
+     "fr": "Devinez le mot caché en un nombre limité d'essais"
+    }
+   ],
+   [
+    "word-groups.html",
+    {
+     "en": "Sort sixteen words into four secret groups",
+     "fr": "Classez seize mots en quatre groupes secrets"
+    }
+   ],
+   [
+    "crossword.html",
+    {
+     "en": "Fill in a crossword grid clue by clue",
+     "fr": "Remplissez une grille de mots croisés indice par indice"
+    }
+   ]
+  ]
+ },
+ "word-illusions.html": {
+  "about": [
+   {
+    "en": "Word Illusions is a quick brain teaser built on one small trick. A colour word appears on the screen, but the letters are printed in a different colour, and your job is to tap the colour of the letters rather than the word you read. This game was called Color Match here once, and it took a new name when a colour-mixing game arrived and claimed the old one.",
+    "fr": "Word Illusions est un petit casse-tête rapide bâti sur une seule astuce. Un nom de couleur apparaît à l'écran, mais les lettres sont imprimées dans une autre couleur, et vous devez toucher la couleur des lettres plutôt que le mot que vous lisez. Ce jeu s'appelait autrefois Color Match ici, et il a changé de nom quand un jeu de mélange de couleurs est venu reprendre l'ancien."
+   },
+   {
+    "en": "A time bar runs down above the word and it is deliberately short. Every correct tap hands a little time back and every wrong tap takes a slice away, so a long run is a chain of fast, confident choices rather than careful ones. When the bar empties the round is over and your score appears.",
+    "fr": "Une barre de temps s'écoule au-dessus du mot, et elle est volontairement courte. Chaque bonne réponse vous rend un peu de temps et chaque erreur vous en retire une tranche : une longue série est donc une suite de choix rapides et assurés plutôt que prudents. Quand la barre se vide, la manche est terminée et votre score s'affiche."
+   },
+   {
+    "en": "Anyone who can read colour names can play, from a child in the early school years to a grandparent. Reading happens by itself while looking takes effort, which is exactly why the game bites harder the faster you go. It is a fair little test of focus and reaction speed, and a round is short enough to fit into a spare few minutes.",
+    "fr": "Toute personne capable de lire des noms de couleurs peut jouer, de l'enfant du primaire jusqu'aux grands-parents. La lecture se fait toute seule alors que regarder demande un effort : voilà pourquoi le jeu mord davantage à mesure que vous accélérez. C'est un joli petit test de concentration et de rapidité, et une manche tient facilement dans quelques minutes libres."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The puzzle is a version of the Stroop effect, in which naming the colour of a mismatched word reliably takes longer than reading it.",
+    "fr": "Le casse-tête est une version de l'effet Stroop, où nommer la couleur d'un mot discordant prend systématiquement plus de temps que de le lire."
+   },
+   {
+    "en": "Letting your eyes go slightly soft, so that you see letter shapes instead of reading them, takes much of the pressure out of the word.",
+    "fr": "Laisser votre regard s'adoucir un peu, pour voir les formes des lettres au lieu de les lire, enlève une bonne part de la pression du mot."
+   },
+   {
+    "en": "Hurrying is rewarded here, since only a correct tap returns time to the bar while a pause costs you with nothing gained.",
+    "fr": "Se dépêcher est payant ici, car seule une bonne réponse redonne du temps à la barre, alors qu'une hésitation vous coûte sans rien vous rapporter."
+   },
+   {
+    "en": "Holding a phone in both hands puts every button within a thumb's reach and shaves a fraction off each answer.",
+    "fr": "Tenir le téléphone à deux mains met chaque bouton à portée de pouce et fait gagner une fraction de seconde à chaque réponse."
+   },
+   {
+    "en": "Focus and rest matter, because the same player scores lower when tired than after a good night's sleep.",
+    "fr": "La concentration et le repos comptent, car un même joueur obtient un score plus faible fatigué qu'après une bonne nuit de sommeil."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Always the colour the letters are printed in, never the word they spell. That sounds easy until the word red arrives in blue letters and your eyes insist on reading it first.",
+     "fr": "Toujours la couleur dans laquelle les lettres sont imprimées, jamais le mot qu'elles forment. Cela semble facile jusqu'à ce que le mot rouge arrive en lettres bleues et que vos yeux s'obstinent à le lire d'abord."
+    },
+    "q": {
+     "en": "Do I tap the word or the colour?",
+     "fr": "Dois-je toucher le mot ou la couleur ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Reading is automatic for anyone who reads well, so the meaning of the word arrives before you have decided to look at the colour. Beating the word takes deliberate effort, and effort takes time the bar will not give you.",
+     "fr": "La lecture est automatique chez quiconque lit bien : le sens du mot arrive donc avant même que vous ayez décidé de regarder la couleur. Devancer le mot demande un effort volontaire, et l'effort prend du temps que la barre ne vous accorde pas."
+    },
+    "q": {
+     "en": "Why is this so hard when the rule is so simple?",
+     "fr": "Pourquoi est-ce si difficile alors que la règle est si simple ?"
+    }
+   },
+   {
+    "a": {
+     "en": "It sits in your own browser on the device you played on and never leaves it. Clearing your browsing data or moving to another phone starts the record again from zero.",
+     "fr": "Il se trouve dans votre propre navigateur, sur l'appareil utilisé, et n'en sort jamais. Effacer vos données de navigation ou changer de téléphone remet le record à zéro."
+    },
+    "q": {
+     "en": "Where is my best score stored?",
+     "fr": "Où mon meilleur score est-il rangé ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Nothing at all. The game runs inside this page, so a phone, tablet or laptop with a browser is enough, and there is no account and no email address to hand over.",
+     "fr": "Rien du tout. Le jeu fonctionne dans cette page : un téléphone, une tablette ou un portable avec un navigateur suffit, et il n'y a ni compte ni adresse courriel à fournir."
+    },
+    "q": {
+     "en": "Is there anything to install?",
+     "fr": "Y a-t-il quelque chose à installer ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Any child who can read the six colour names can join in, though the short timer feels rushed at first. Sitting beside a younger child and calling the colour out loud together makes it far friendlier.",
+     "fr": "Tout enfant capable de lire les six noms de couleurs peut participer, même si le court chronomètre semble pressant au début. S'asseoir à côté d'un plus jeune et nommer la couleur à voix haute ensemble rend le jeu bien plus accueillant."
+    },
+    "q": {
+     "en": "Is the game suitable for children?",
+     "fr": "Le jeu convient-il aux enfants ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Each round puts four buttons on the screen, drawn from six colours: red, blue, green, orange, purple and yellow.",
+    "fr": "Chaque tour place quatre boutons à l'écran, tirés de six couleurs : rouge, bleu, vert, orange, mauve et jaune."
+   },
+   {
+    "en": "The word you read and the colour of the letters almost never agree, and that mismatch is the whole puzzle.",
+    "fr": "Le mot que vous lisez et la couleur des lettres ne concordent presque jamais, et c'est là tout le casse-tête."
+   },
+   {
+    "en": "A time bar counts down at the top of the game and the round ends the moment it empties.",
+    "fr": "Une barre de temps défile en haut du jeu, et la manche se termine dès qu'elle se vide."
+   },
+   {
+    "en": "A correct tap puts a small amount of time back on the bar, while a wrong tap removes a larger amount.",
+    "fr": "Une bonne réponse remet un peu de temps sur la barre, tandis qu'une erreur en enlève davantage."
+   },
+   {
+    "en": "Your score climbs with every correct answer and stays visible while you play.",
+    "fr": "Votre score monte à chaque bonne réponse et reste visible pendant la partie."
+   },
+   {
+    "en": "Your best score is remembered on the device you played on, so there is always something to beat.",
+    "fr": "Votre meilleur score est conservé sur l'appareil utilisé, il y a donc toujours un record à battre."
+   }
+  ],
+  "kind": "game",
+  "related": [
+   [
+    "games.html",
+    {
+     "en": "Browse the full collection of free family games",
+     "fr": "Parcourez toute la collection de jeux familiaux gratuits"
+    }
+   ],
+   [
+    "color-match.html",
+    {
+     "en": "Mix a colour from its name and see how close you get",
+     "fr": "Fabriquez une couleur à partir de son nom et voyez si vous approchez"
+    }
+   ],
+   [
+    "typing-test.html",
+    {
+     "en": "Measure how fast and how accurately you type",
+     "fr": "Mesurez votre vitesse et votre précision au clavier"
+    }
+   ],
+   [
+    "math-race.html",
+    {
+     "en": "Race the clock with quick mental arithmetic instead",
+     "fr": "Affrontez le chronomètre avec du calcul mental rapide"
     }
    ]
   ]

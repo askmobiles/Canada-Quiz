@@ -1,83 +1,83 @@
 {
  "ai-quiz.html": [
   {
-   "a": "Mouse",
-   "e": "Input devices send information into a computer; output devices send information back to you.",
-   "q": "Which device is an input device?"
+   "a": "Universal Serial Bus",
+   "e": "USB became a shared standard so one shape of plug could connect many kinds of device.",
+   "q": "What does USB stand for on a computer port?"
   },
   {
-   "a": "Hold a conversation in text",
-   "e": "A chatbot reads what you type and produces a reply that fits the conversation.",
-   "q": "What is a chatbot designed to do?"
+   "a": "Software that suggests items you may like",
+   "e": "It compares your choices with other people's choices to guess what you might enjoy.",
+   "q": "What is a recommendation system?"
   },
   {
-   "a": "The domain name",
-   "e": "The part after @ names the mail system that looks after that person's inbox.",
-   "q": "In an email address, what comes after the @ symbol?"
+   "a": "A clickable connection to another page",
+   "e": "Hyperlinks are what make the Web a web, joining pages to one another with a click.",
+   "q": "What is a hyperlink?"
   },
   {
-   "a": "The places are too dangerous for people",
-   "e": "Machines can be replaced, so they take on jobs that would risk a human life.",
-   "q": "Why are robots often sent into volcanoes or deep water?"
+   "a": "Lift a load more easily",
+   "e": "A rope around a grooved wheel changes the direction of your pull, making lifting easier.",
+   "q": "What does a pulley help you do?"
   },
   {
-   "a": "A note for humans that the computer ignores",
-   "e": "Comments explain why the code does something, which helps whoever reads it later.",
-   "q": "What is a comment in source code?"
+   "a": "COBOL",
+   "e": "She pushed for languages written in English-like words instead of pure numbers.",
+   "q": "Grace Hopper helped create which early programming language?"
   }
  ],
  "body-quiz.html": [
   {
-   "a": "A tendon",
-   "e": "Tendons are tough cords that pull on bones whenever a muscle tightens.",
-   "q": "What connects a muscle to a bone?"
+   "a": "Hinge joint",
+   "e": "A hinge joint bends one way like a door hinge, and that is how your elbow works.",
+   "q": "What kind of joint is your elbow?"
   },
   {
-   "a": "The beat of blood in an artery",
-   "e": "Each heartbeat pushes a wave of blood along your arteries, and that is your pulse.",
-   "q": "What is a pulse?"
+   "a": "Atria",
+   "e": "The atria are the two upper rooms of the heart, and they receive blood coming in.",
+   "q": "What are the two upper chambers of the heart called?"
   },
   {
-   "a": "The cochlea",
-   "e": "The cochlea is a coiled tube of fluid that turns vibrations into nerve signals.",
-   "q": "Which snail-shaped part of the inner ear helps you hear?"
+   "a": "Hemispheres",
+   "e": "The brain has two hemispheres joined by a thick bridge of nerve fibres.",
+   "q": "What are the left and right halves of the brain called?"
   },
   {
-   "a": "Iron",
-   "e": "Iron is part of hemoglobin, the substance in blood that holds on to oxygen.",
-   "q": "Which mineral in spinach and red meat helps blood carry oxygen?"
+   "a": "Fat",
+   "e": "Fats store energy and help the body take in vitamins A, D, E and K.",
+   "q": "What is the main nutrient in nuts, butter and olive oil?"
   },
   {
-   "a": "Skin",
-   "e": "Unbroken skin is a tough wall that most germs simply cannot cross.",
-   "q": "Which body covering forms a barrier that keeps germs out?"
+   "a": "The body's defence against germs",
+   "e": "The immune system is a team of cells and proteins that guards the whole body.",
+   "q": "What is the immune system?"
   }
  ],
  "canada-quiz.html": [
   {
-   "a": "The United States",
-   "e": "Loyalists left the United States after its revolution and settled in Canada.",
-   "q": "The Loyalists who moved north to Canada in the 1780s came from where?"
+   "a": "Nova Scotia",
+   "e": "Halifax became Britain's main naval base on Canada's Atlantic coast.",
+   "q": "Halifax, founded in 1749, is in which province?"
   },
   {
-   "a": "First Nations",
-   "e": "Canada and many First Nations signed the numbered treaties about land and promises.",
-   "q": "The numbered treaties of the 1870s were agreements between Canada and whom?"
+   "a": "A warning",
+   "e": "Laura Secord walked about 30 km to warn British and Indigenous troops of an attack.",
+   "q": "Laura Secord became famous in 1813 for walking far to deliver what?"
   },
   {
-   "a": "Lester B. Pearson",
-   "e": "Lester B. Pearson won the Nobel Peace Prize in 1957 and later became prime minister.",
-   "q": "Which Canadian won the Nobel Peace Prize for the idea of UN peacekeeping?"
+   "a": "Residential schools",
+   "e": "In 2008 Canada formally apologized for the residential school system and began reconciliation work.",
+   "q": "In 2008, Canada gave a formal apology to Indigenous Peoples about what?"
   },
   {
-   "a": "July 1",
-   "e": "Canada Day is July 1, the day Confederation happened in 1867.",
-   "q": "Canada Day is celebrated on which date each year?"
+   "a": "Coffee with two creams and two sugars",
+   "e": "A double-double means two creams and two sugars, a phrase heard across Canada.",
+   "q": "At a Canadian coffee shop, what is a 'double-double'?"
   },
   {
-   "a": "New Brunswick",
-   "e": "New Brunswick is Canada's only officially bilingual province.",
-   "q": "Which province is officially bilingual in English and French?"
+   "a": "Saskatchewan",
+   "e": "Saskatchewan sits between Alberta and Manitoba on the Canadian prairies.",
+   "q": "Which province lies directly east of Alberta?"
   }
  ],
  "daily.html": [
@@ -87,78 +87,78 @@
    "q": "What is the capital city of Canada?"
   },
   {
-   "a": "11",
+   "a": "Toronto",
    "e": "",
-   "q": "How many players are on a soccer team on the field?"
+   "q": "Which Canadian city is home to the CN Tower?"
   },
   {
-   "a": "The Sahara",
+   "a": "6",
    "e": "",
-   "q": "What is the largest hot desert in the world?"
-  },
-  {
-   "a": "Hello",
-   "e": "",
-   "q": "What does the French word bonjour mean?"
+   "q": "How many players from one team are on the ice in hockey?"
   },
   {
    "a": "Lake Superior",
    "e": "",
    "q": "Which of the Great Lakes has the largest surface area?"
+  },
+  {
+   "a": "The Nile",
+   "e": "",
+   "q": "Which great river flows north through Egypt?"
   }
  ],
  "earth-quiz.html": [
   {
-   "a": "Metamorphic rock",
-   "e": "Heat and pressure squeeze one rock into a brand new one called metamorphic rock.",
-   "q": "Marble and slate are examples of which kind of rock?"
+   "a": "A geologist",
+   "e": "Geologists read rock layers the way we read pages, to learn Earth's story.",
+   "q": "What do we call a scientist who studies rocks and the Earth?"
   },
   {
-   "a": "A barometer",
-   "e": "Falling pressure on a barometer often warns that a storm is on the way.",
-   "q": "Which instrument measures air pressure?"
+   "a": "Water vapour in the air",
+   "e": "High humidity means lots of water vapour in the air, which makes days feel sticky.",
+   "q": "What does humidity measure?"
   },
   {
-   "a": "An estuary",
-   "e": "An estuary is part fresh and part salty, and it feeds huge numbers of birds and fish.",
-   "q": "What do we call the place where a river meets the sea and the water mixes?"
+   "a": "About nine tenths",
+   "e": "Only a small tip shows above water, so sailors watch icebergs very carefully.",
+   "q": "Roughly how much of an iceberg floats below the surface?"
   },
   {
-   "a": "The boreal forest",
-   "e": "The boreal forest stretches right across Canada and stores huge amounts of carbon.",
-   "q": "What is the vast northern Canadian forest of spruce and fir called?"
+   "a": "Butterflies",
+   "e": "Butterflies sip nectar and carry dusty pollen from bloom to bloom on their bodies.",
+   "q": "Besides bees, which of these often carries pollen between flowers?"
   },
   {
-   "a": "It breaks down naturally",
-   "e": "Biodegradable things are broken down by tiny living creatures until nothing is left.",
-   "q": "What does 'biodegradable' mean?"
+   "a": "The item can be recycled",
+   "e": "The looping arrows show the item can be collected and made into something new.",
+   "q": "What does the triangle made of three chasing arrows mean?"
   }
  ],
  "entertainment-quiz.html": [
   {
-   "a": "Gotham City",
-   "e": "Batman protects the made-up city of Gotham, while Superman's city is called Metropolis.",
-   "q": "What is the name of Batman's home city?"
+   "a": "It grows longer",
+   "e": "In the story by Carlo Collodi, the wooden puppet's nose grows each time he lies.",
+   "q": "What happens to Pinocchio's nose when he tells a lie?"
   },
   {
-   "a": "Austria",
-   "e": "Mozart was born in Salzburg, Austria, in 1756 and began composing as a small child.",
-   "q": "Which country was the composer Mozart born in?"
+   "a": "Calixa Lavallée",
+   "e": "Calixa Lavallée wrote the music in 1880, and Robert Stanley Weir added English words later.",
+   "q": "Who composed the music for 'O Canada'?"
   },
   {
-   "a": "Grass",
-   "e": "Wimbledon is the only one of the four big tennis tournaments played on grass.",
-   "q": "What surface are the tennis courts at Wimbledon made of?"
+   "a": "A shuttlecock",
+   "e": "Badminton uses a light shuttlecock instead of a ball.",
+   "q": "In badminton, what do players hit over the net?"
   },
   {
-   "a": "Spain",
-   "e": "Paella began in the Valencia region of Spain and is cooked in a wide flat pan.",
-   "q": "Which country does the rice dish paella come from?"
+   "a": "Soybeans",
+   "e": "Tofu is made by pressing soy milk into soft white blocks.",
+   "q": "What is tofu made from?"
   },
   {
-   "a": "Donkey Kong",
-   "e": "Donkey Kong came out in 1981 and gave Mario his very first appearance.",
-   "q": "Which arcade game has a big gorilla rolling barrels down ramps?"
+   "a": "Poké Ball",
+   "e": "A Poké Ball opens when it hits and keeps the Pokémon safely inside.",
+   "q": "In the Pokémon games, what do trainers throw to catch a Pokémon?"
   }
  ],
  "fun-quiz.html": [
@@ -168,24 +168,24 @@
    "q": "What sweet syrup is Canada world-famous for?"
   },
   {
-   "a": "Early spring",
-   "e": "Sap runs in early spring when nights are cold and days are mild.",
-   "q": "When is maple sap collected from the trees?"
+   "a": "11",
+   "e": "The stylized maple leaf on the flag has 11 points.",
+   "q": "How many points does the maple leaf on Canada's flag have?"
   },
   {
-   "a": "Wayne Gretzky",
-   "e": "Wayne Gretzky earned the nickname 'The Great One' for his record scoring.",
-   "q": "Which Canadian hockey player is nicknamed 'The Great One'?"
-  },
-  {
-   "a": "The Canada goose",
-   "e": "Flocks of Canada geese honk loudly as they fly in a V each spring and fall.",
-   "q": "Which large black-necked bird flies in a V shape over Canada?"
+   "a": "Vancouver",
+   "e": "The steam clock in Vancouver's Gastown whistles and puffs on the hour.",
+   "q": "In which city can you see the Gastown steam clock?"
   },
   {
    "a": "Paddies",
    "e": "Rice plants grow well with their roots standing in shallow water.",
    "q": "Rice is usually grown in flooded fields called what?"
+  },
+  {
+   "a": "Strong and great",
+   "e": "Skookum comes from Chinook Jargon, an old trading language of the Pacific coast, and means powerful or excellent.",
+   "q": "In British Columbia slang, something 'skookum' is what?"
   }
  ],
  "gk-quiz.html": [
@@ -195,105 +195,105 @@
    "q": "What is the capital city of France?"
   },
   {
-   "a": "The mitochondria",
-   "e": "They break sugar down using oxygen to make ATP, the small energy carrier every cell spends.",
-   "q": "Which part of a cell releases the energy stored in food?"
+   "a": "Why winds and storms curve as they travel",
+   "e": "Earth keeps turning underneath the moving air, so a straight path looks bent from the ground.",
+   "q": "What does the Coriolis effect explain?"
   },
   {
-   "a": "The ostrich",
-   "e": "An ostrich is far too heavy to fly, so it escapes danger by running very fast.",
-   "q": "Which is the largest bird in the world?"
+   "a": "The reticulated python",
+   "e": "A reticulated python from Southeast Asia can stretch out longer than a small car.",
+   "q": "Which snake grows the longest of all snakes?"
   },
   {
-   "a": "6",
-   "e": "Usually 6 players are on the ice, including the goalie.",
-   "q": "How many players are on the ice for one hockey team (usually)?"
+   "a": "Eleven",
+   "e": "Cricket teams field eleven players, the same number as a soccer team.",
+   "q": "How many players are on a cricket team on the field?"
   },
   {
-   "a": "The piano",
-   "e": "Pressing a piano key makes a small hammer inside hit a string, so it is both string and percussion.",
-   "q": "Which instrument has black and white keys?"
+   "a": "An orchestra",
+   "e": "An orchestra brings all four instrument families together under one conductor.",
+   "q": "What do we call a large group of musicians who play strings, brass, woodwind and percussion together?"
   }
  ],
  "money-quiz.html": [
   {
-   "a": "10",
-   "e": "Ten coins worth 10 cents each add up to 100 cents, which is one dollar.",
-   "q": "How many ten-cent coins make one dollar?"
+   "a": "4",
+   "e": "Four bills worth five dollars each add up to twenty dollars.",
+   "q": "How many $5 bills make $20?"
   },
   {
-   "a": "An amount you plan to save",
-   "e": "A goal gives your saving a purpose, like a bike, so it is easier to keep going.",
-   "q": "What is a savings goal?"
+   "a": "Saving part of your allowance",
+   "e": "Savings grow when you set money aside before you start spending it.",
+   "q": "Which of these makes your savings grow?"
   },
   {
-   "a": "Proving what you paid for",
-   "e": "A receipt is your proof of purchase if you return an item or want to check a price.",
-   "q": "What is a receipt for?"
+   "a": "Money taken out of an account",
+   "e": "Withdrawing means taking some of your own money back out of the bank.",
+   "q": "What is a withdrawal?"
   },
   {
-   "a": "$36",
-   "e": "Twelve dollars for each of three hours adds up to thirty-six dollars.",
-   "q": "Ravi earns $12 an hour and works 3 hours. How much does he earn?"
+   "a": "A summary of skills and jobs",
+   "e": "A résumé lists your skills, your schooling and your past jobs when you apply for work.",
+   "q": "What is a résumé?"
   },
   {
    "a": "$9",
-   "e": "Twelve dollars minus the three-dollar coupon leaves nine dollars to pay.",
-   "q": "A book costs $12 and a coupon takes $3 off. How much do you pay?"
+   "e": "Half of eighteen dollars is nine dollars.",
+   "q": "A board game costs $18 and is half price. How much do you pay?"
   }
  ],
  "science-quiz.html": [
   {
-   "a": "Eight",
-   "e": "There are eight planets, from Mercury out to Neptune.",
-   "q": "How many planets are in our solar system?"
+   "a": "It reflects sunlight",
+   "e": "The Moon makes no light of its own; it bounces sunlight back to us.",
+   "q": "Why does the Moon appear to shine?"
   },
   {
-   "a": "Nocturnal",
-   "e": "Nocturnal animals such as owls and raccoons sleep by day and hunt at night.",
-   "q": "What do we call an animal that is active at night?"
+   "a": "Pine",
+   "e": "Pines are evergreens, so they stay green while maples and birches lose their leaves.",
+   "q": "Which tree keeps its green needles all winter?"
   },
   {
-   "a": "Carrying oxygen",
-   "e": "Red blood cells carry oxygen from your lungs to the rest of your body.",
-   "q": "What is the main job of red blood cells?"
+   "a": "Five",
+   "e": "The five classic senses are sight, hearing, smell, taste and touch.",
+   "q": "How many senses do people traditionally count?"
   },
   {
-   "a": "Friction",
-   "e": "Friction happens when two surfaces rub together and resist moving.",
-   "q": "What force slows down a sliding object?"
+   "a": "Vibrations",
+   "e": "Sound is made by vibrations travelling through air, water or solids.",
+   "q": "What makes sound?"
   },
   {
-   "a": "Winter",
-   "e": "In winter Canada tilts away from the Sun, so daylight hours are shortest.",
-   "q": "Which season has the shortest days in Canada?"
+   "a": "Barometer",
+   "e": "When a barometer reading falls, clouds and rain are often on the way.",
+   "q": "Which instrument measures air pressure?"
   }
  ],
  "world-quiz.html": [
   {
-   "a": "Greece",
-   "e": "Greece's flag has blue and white stripes with a white cross.",
-   "q": "🇬🇷"
+   "a": "Nigeria",
+   "e": "Nigeria's flag has green, white, and green vertical stripes.",
+   "q": "🇳🇬"
   },
   {
-   "a": "Nairobi",
-   "e": "Nairobi is the capital of Kenya, in East Africa.",
-   "q": "What is the capital of Kenya?"
+   "a": "Wellington",
+   "e": "Wellington is the capital of New Zealand, not Auckland.",
+   "q": "What is the capital of New Zealand?"
   },
   {
-   "a": "Jordan",
-   "e": "Petra is an ancient city carved right into pink rock.",
-   "q": "In which country is Petra?"
+   "a": "Chile",
+   "e": "The Moai stand on Easter Island, which belongs to Chile.",
+   "q": "Where are the giant Moai stone statues?"
   },
   {
-   "a": "24",
-   "e": "The world is split into 24 main time zones, one for each hour of the day.",
-   "q": "How many main time zones does the world have?"
+   "a": "Greenland",
+   "e": "Greenland is the largest island on Earth and most of it is covered in ice.",
+   "q": "What is the largest island in the world?"
   },
   {
-   "a": "Mexico",
-   "e": "Piñatas filled with treats are a birthday tradition in Mexico.",
-   "q": "In which country did the party piñata become a tradition?"
+   "a": "Denmark",
+   "e": "A carpenter in Denmark named his toy company after words meaning 'play well'.",
+   "q": "The Lego brick was invented in which country?"
   }
  ]
 }

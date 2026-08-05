@@ -5,26 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Word Master — Guess the 5-Letter Word | Family Games</title>
 <meta name="description" content="Word Master — a free 5-letter word guessing game. You get 6 tries. Green means right letter and spot, yellow means right letter wrong spot. Fun brain game for all ages.">
-<link rel="stylesheet" href="css/style.css?v=20260804b">
+<link rel="stylesheet" href="css/style.css?v=20260805a">
 <style>
-  .wm-wrap{max-width:400px;margin:0 auto;text-align:center}
-  .wm-board{display:grid;grid-template-rows:repeat(6,1fr);gap:6px;justify-content:center;margin:14px auto}
+  .wm-wrap{max-width:560px;margin:0 auto;text-align:center}
+  .wm-board{display:grid;grid-template-rows:repeat(6,1fr);gap:6px;width:100%;max-width:344px;margin:14px auto}
   .wm-row{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
-  .wm-tile{width:52px;height:52px;max-width:16vw;max-height:16vw;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;text-transform:uppercase;border:2px solid var(--line);border-radius:8px;color:var(--ink);background:#fff}
+  .wm-tile{aspect-ratio:1;min-height:46px;display:flex;align-items:center;justify-content:center;font-size:clamp(22px,7.2vw,30px);font-weight:800;text-transform:uppercase;border:2px solid var(--line);border-radius:9px;color:var(--ink);background:#fff}
   .wm-tile.filled{border-color:#b9c0c9}
   .wm-tile.green{background:#2a9d8f;border-color:#2a9d8f;color:#fff}
   .wm-tile.yellow{background:#ffb703;border-color:#ffb703;color:#3d3000}
   .wm-tile.grey{background:#9aa0a8;border-color:#9aa0a8;color:#fff}
-  .wm-keyboard{max-width:480px;margin:14px auto 0}
-  .wm-krow{display:flex;justify-content:center;gap:5px;margin-bottom:6px}
-  .wm-key{min-width:28px;flex:1;max-width:42px;height:48px;border:none;border-radius:7px;background:#e6e8ec;font-weight:800;font-size:15px;cursor:pointer;text-transform:uppercase;color:var(--ink)}
-  .wm-key.wide{max-width:64px;font-size:12px}
+  .wm-keyboard{max-width:560px;width:100%;margin:16px auto 0}
+  .wm-krow{display:flex;justify-content:center;gap:6px;margin-bottom:7px}
+  .wm-key{flex:1 1 0;min-width:0;max-width:52px;height:60px;padding:0;border:none;border-radius:9px;background:#e6e8ec;font-weight:800;font-size:22px;cursor:pointer;text-transform:uppercase;color:var(--ink);-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  .wm-key.wide{flex:1.7 1 0;max-width:88px;font-size:13px;letter-spacing:.3px}
   .wm-key.green{background:#2a9d8f;color:#fff}
   .wm-key.yellow{background:#ffb703;color:#3d3000}
   .wm-key.grey{background:#9aa0a8;color:#fff}
   .wm-msg{font-weight:800;min-height:24px;margin:8px 0}
   .shake{animation:sh .3s}
   @keyframes sh{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+  @media (max-width:430px){ .wm-krow{gap:4px} .wm-key{height:56px;font-size:20px;border-radius:8px} .wm-key.wide{font-size:11px;letter-spacing:0} }
 </style>
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -62,7 +63,7 @@
   <div class="panel">
     <div class="wm-wrap">
       <div class="wm-board" id="board"></div>
-      <p class="wm-msg" id="msg"></p>
+      <p class="wm-msg" id="msg" data-no-i18n></p>
       <div class="wm-keyboard" id="keyboard"></div>
       <div style="margin-top:12px">
         <button class="btn" onclick="newGame()">New Word</button>
@@ -116,7 +117,7 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <details class="footer-map">
-      <summary>All pages <span class="fm-count">(91)</span></summary>
+      <summary>All pages <span class="fm-count">(101)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <div class="fm-h">Quizzes</div>
@@ -141,6 +142,15 @@
         <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
         <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
         <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+        <a href="ontario-g1-study-guide.html">Ontario G1 Study Guide</a>
+        <a href="bc-class-7l-practice-test.html">BC Class 7L Practice Test</a>
+        <a href="bc-class-7l-mock-test.html">BC Class 7L Mock Test</a>
+        <a href="bc-road-signs.html">BC Road Signs</a>
+        <a href="bc-rules-of-the-road.html">BC Rules of the Road</a>
+        <a href="alberta-class-7-practice-test.html">Alberta Class 7 Practice Test</a>
+        <a href="alberta-class-7-mock-test.html">Alberta Class 7 Mock Test</a>
+        <a href="alberta-road-signs.html">Alberta Road Signs</a>
+        <a href="alberta-rules-of-the-road.html">Alberta Rules of the Road</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Brain &amp; Puzzle Games</div>
@@ -159,6 +169,7 @@
         <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
+        <a href="word-illusions.html">Word Illusions</a>
         <a href="math-race.html">Math Race</a>
         <a href="times-tables.html">Times Tables Champion</a>
         <a href="canada-map.html">Map of Canada</a>
@@ -238,7 +249,11 @@
 </footer>
 
 <script>
-const WORDS = ["APPLE","BEACH","BRAIN","BREAD","BRICK","BRUSH","CANOE","CHAIR","CHESS","CLOUD","CRANE","DANCE","DREAM","EAGLE","EARTH","FLAME","FLUTE","FROST","GHOST","GLASS","GRAPE","GREEN","HEART","HONEY","HORSE","HOUSE","IGLOO","JELLY","JUICE","KOALA","LEMON","LIGHT","MAGIC","MANGO","MAPLE","MOOSE","MOUSE","MUSIC","NIGHT","OCEAN","OTTER","PAINT","PANDA","PEACH","PEARL","PIANO","PIZZA","PLANT","PLATE","POINT","PRIZE","QUEEN","QUILT","RADIO","RIVER","ROBOT","ROUND","SHARK","SHEEP","SHINE","SHOES","SKATE","SMILE","SNAKE","SNOWY","SPACE","SPICE","SPOON","STARE","STONE","STORM","SUGAR","SUNNY","SWEET","TABLE","TIGER","TOAST","TOWER","TRAIN","TREAT","TRUCK","TULIP","VOICE","WATER","WHALE","WHEAT","WHEEL","WITCH","WORLD","ZEBRA","GOOSE","BERRY","CLOWN","CROWN","DAISY","FAIRY","GIANT","GLOVE","GRASS","HAPPY","JEANS","KNIFE","MELON","MONEY","MOTOR","NURSE","OLIVE","ONION","PARTY","PENNY","PILOT","PUPPY","ROBIN","SALAD","SCARF","SHELL","SKUNK","SLOTH","SNAIL","SPARK","STORE","SWORD","TEETH","THUMB","TRUST","WAGON","WINDY","YOUTH"];
+const EN_WORDS = ["APPLE","BEACH","BRAIN","BREAD","BRICK","BRUSH","CANOE","CHAIR","CHESS","CLOUD","CRANE","DANCE","DREAM","EAGLE","EARTH","FLAME","FLUTE","FROST","GHOST","GLASS","GRAPE","GREEN","HEART","HONEY","HORSE","HOUSE","IGLOO","JELLY","JUICE","KOALA","LEMON","LIGHT","MAGIC","MANGO","MAPLE","MOOSE","MOUSE","MUSIC","NIGHT","OCEAN","OTTER","PAINT","PANDA","PEACH","PEARL","PIANO","PIZZA","PLANT","PLATE","POINT","PRIZE","QUEEN","QUILT","RADIO","RIVER","ROBOT","ROUND","SHARK","SHEEP","SHINE","SHOES","SKATE","SMILE","SNAKE","SNOWY","SPACE","SPICE","SPOON","STARE","STONE","STORM","SUGAR","SUNNY","SWEET","TABLE","TIGER","TOAST","TOWER","TRAIN","TREAT","TRUCK","TULIP","VOICE","WATER","WHALE","WHEAT","WHEEL","WITCH","WORLD","ZEBRA","GOOSE","BERRY","CLOWN","CROWN","DAISY","FAIRY","GIANT","GLOVE","GRASS","HAPPY","JEANS","KNIFE","MELON","MONEY","MOTOR","NURSE","OLIVE","ONION","PARTY","PENNY","PILOT","PUPPY","ROBIN","SALAD","SCARF","SHELL","SKUNK","SLOTH","SNAIL","SPARK","STORE","SWORD","TEETH","THUMB","TRUST","WAGON","WINDY","YOUTH"];
+const FR_WORDS = ["AMOUR","ANGLE","ARBRE","AVION","AVRIL","BALLE","BARBE","BILLE","BLANC","BOTTE","BOULE","BRAVO","BRUIT","CADRE","CANOT","CARTE","CHANT","CHIEN","CHOSE","CIBLE","CLAIR","COLLE","CORDE","COURS","CRABE","CRAIE","CROIX","DANSE","DENTS","DOIGT","DOUCE","DOUZE","DROIT","FERME","FILLE","FLEUR","FOIRE","FROID","FRUIT","GANTS","GARDE","GENOU","GLACE","GOMME","GRAIN","GRAND","GUIDE","HERBE","HEURE","HIVER","IMAGE","JAMBE","JAUNE","JEUDI","JOUER","JOUES","JOURS","LAINE","LAMPE","LANCE","LARGE","LIGNE","LIONS","LIVRE","LOUPE","LUNDI","MAINS","MARDI","MARIN","MERCI","MERLE","MOULE","NAGER","NEIGE","NOIRE","NUAGE","NUITS","OMBRE","ONCLE","ORAGE","OUTIL","PAGES","PAINS","PALME","PANDA","PARCS","PATTE","PERLE","PETIT","PHOTO","PIANO","PIEDS","PILES","PLAGE","PLUIE","POIRE","POMME","PONTS","PORTE","POULE","PRUNE","RADIO","ROCHE","RONDE","ROUGE","ROUTE","RUCHE","SABLE","SALON","SALUT","SAUCE","SAUTE","SAVON","SEIZE","SIROP","SOUPE","SPORT","SUCRE","TABLE","TAPIS","TASSE","TERRE","TIGRE","TOILE","TOITS","TRAIN","TROIS","USINE","VACHE","VAGUE","VALSE","VENTS","VERRE","VERTE","VESTE","VILLE","VOILE","VOLER","VOTRE"];
+const FR = /\/fr\//.test(location.pathname);
+function T(en, fr){ return FR ? fr : en; }
+const WORDS = FR ? FR_WORDS : EN_WORDS;
 const ROWS=6, COLS=5;
 let answer='', row=0, col=0, grid=[], over=false;
 const keyState={}; // letter -> best state
@@ -287,7 +302,7 @@ function renderRow(){
   for(let c=0;c<COLS;c++){ const t=tileEl(row,c); t.textContent=grid[row][c]; t.classList.toggle('filled', grid[row][c]!==''); }
 }
 function submitGuess(){
-  if(col<COLS){ msgShake('Not enough letters'); return; }
+  if(col<COLS){ msgShake(T('Not enough letters','Pas assez de lettres')); return; }
   const guess=grid[row].join('');
   // score with duplicate handling
   const res=Array(COLS).fill('grey');
@@ -303,9 +318,9 @@ function submitGuess(){
     if(!keyState[ch] || rank[res[c]]>rank[keyState[ch]]) keyState[ch]=res[c];
   }
   buildKeyboard();
-  if(guess===answer){ over=true; document.getElementById('msg').style.color='#2a9d8f'; document.getElementById('msg').textContent='🎉 You got it in '+(row+1)+'/'+ROWS+'!'; return; }
+  if(guess===answer){ over=true; document.getElementById('msg').style.color='#2a9d8f'; document.getElementById('msg').textContent=T('🎉 You got it in ','🎉 Trouvé en ')+(row+1)+'/'+ROWS+'!'; return; }
   row++; col=0;
-  if(row>=ROWS){ over=true; document.getElementById('msg').style.color='#e63946'; document.getElementById('msg').textContent='😅 Out of tries! The word was '+answer+'.'; }
+  if(row>=ROWS){ over=true; document.getElementById('msg').style.color='#e63946'; document.getElementById('msg').textContent=T('😅 Out of tries! The word was ','😅 Plus d\'essais ! Le mot était ')+answer+'.'; }
 }
 function msgShake(text){
   const m=document.getElementById('msg'); m.style.color='#e63946'; m.textContent=text;
@@ -318,9 +333,9 @@ document.addEventListener('keydown',e=>{
 });
 newGame();
 </script>
-  <script src="js/game-fullscreen.js?v=20260804b"></script>
-  <script src="js/site.js?v=20260804b"></script>
-  <script src="js/analytics.js?v=20260804b"></script>
-  <script src="js/ads.js?v=20260804b" defer></script>
+  <script src="js/game-fullscreen.js?v=20260805a"></script>
+  <script src="js/site.js?v=20260805a"></script>
+  <script src="js/analytics.js?v=20260805a"></script>
+  <script src="js/ads.js?v=20260805a" defer></script>
 </body>
 </html>

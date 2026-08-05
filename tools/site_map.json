@@ -78,6 +78,42 @@
     [
      "ontario-g1-rules-of-the-road.html",
      "Ontario Rules of the Road"
+    ],
+    [
+     "ontario-g1-study-guide.html",
+     "Ontario G1 Study Guide"
+    ],
+    [
+     "bc-class-7l-practice-test.html",
+     "BC Class 7L Practice Test"
+    ],
+    [
+     "bc-class-7l-mock-test.html",
+     "BC Class 7L Mock Test"
+    ],
+    [
+     "bc-road-signs.html",
+     "BC Road Signs"
+    ],
+    [
+     "bc-rules-of-the-road.html",
+     "BC Rules of the Road"
+    ],
+    [
+     "alberta-class-7-practice-test.html",
+     "Alberta Class 7 Practice Test"
+    ],
+    [
+     "alberta-class-7-mock-test.html",
+     "Alberta Class 7 Mock Test"
+    ],
+    [
+     "alberta-road-signs.html",
+     "Alberta Road Signs"
+    ],
+    [
+     "alberta-rules-of-the-road.html",
+     "Alberta Rules of the Road"
     ]
    ],
    "title": "Driving Test Practice"
@@ -143,6 +179,10 @@
     [
      "color-match.html",
      "Color Match"
+    ],
+    [
+     "word-illusions.html",
+     "Word Illusions"
     ],
     [
      "math-race.html",

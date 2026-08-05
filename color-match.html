@@ -3,20 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Color Match — Brain Reaction Game | Family Games</title>
-<meta name="description" content="Color Match brain game. Tap the colour of the word, not the word itself! A fun, fast Stroop-style reaction game for all ages. No signup.">
-<link rel="stylesheet" href="css/style.css?v=20260804b">
+<title>Color Match — Mix the Colour Guessing Game | Family Games</title>
+<meta name="description" content="See a colour name and mix it yourself with sliders, a picker and a colour wheel. Get scored out of 100 on how close you got. Free, no signup, works on phone and tablet.">
+<link rel="stylesheet" href="css/style.css?v=20260805a">
 <style>
-  .cm-wrap{max-width:440px;margin:0 auto;text-align:center}
-  .cm-word{font-size:clamp(38px,13vw,64px);font-weight:900;margin:18px 0;min-height:70px;text-transform:uppercase;letter-spacing:1px}
-  .cm-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:340px;margin:12px auto}
-  .cm-opts button{padding:18px 0;font-size:19px;font-weight:900;border:none;border-radius:14px;color:#fff;cursor:pointer;text-transform:uppercase;box-shadow:0 3px 0 rgba(0,0,0,.15)}
-  .cm-opts button:active{transform:translateY(2px)}
-  .cm-hud{display:flex;justify-content:center;gap:12px;margin:4px 0;font-weight:800}
-  .cm-hud .box{background:#eef1f5;border-radius:10px;padding:8px 16px}
-  .cm-bar{height:12px;background:#eee;border-radius:999px;overflow:hidden;max-width:340px;margin:8px auto}
-  .cm-bar span{display:block;height:100%;background:var(--blue);width:100%;transition:width .1s linear}
-  .cm-q{font-weight:800;color:#6a7683;margin-bottom:4px}
+  .cm-wrap{max-width:640px;margin:0 auto}
+  .cm-screen{display:none}
+  .cm-screen.cm-on{display:block}
+  .cm-h{font-weight:800;margin:14px 0 6px;font-size:.95rem;color:var(--muted)}
+  .cm-h:first-child{margin-top:0}
+  .cm-lvl{display:block;width:100%;min-height:56px;margin:8px 0;padding:14px 16px;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;font-family:inherit;font-size:1rem;font-weight:800;text-align:left;line-height:1.3;cursor:pointer}
+  .cm-lvl:hover{border-color:var(--blue);background:#f7fbff}
+  .cm-lvl:active{transform:translateY(2px)}
+  .cm-hud{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+  .cm-chip{display:inline-block;padding:8px 14px;border-radius:999px;background:#f5f2ec;border:2px solid var(--line);font-weight:800;font-size:.95rem}
+  .cm-chip b{font-variant-numeric:tabular-nums;font-weight:900}
+  .cm-top{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:stretch}
+  .cm-target{border:2px solid var(--line);border-radius:16px;background:#faf7f1;padding:12px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:132px}
+  .cm-lead{font-size:.78rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .cm-name{font-size:clamp(1.25rem,6.4vw,2rem);font-weight:900;line-height:1.15;margin-top:6px;word-break:break-word}
+  .cm-yourbox{border:2px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;min-height:132px}
+  .cm-sw{flex:1;min-height:80px;border-radius:12px;border:1px solid rgba(0,0,0,.18);background:#808080}
+  .cm-swlab{font-size:.78rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;text-align:center}
+  .cm-hex{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:800;font-size:.9rem;text-align:center;margin-top:6px}
+  .cm-ctrls{margin-top:14px}
+  .cm-row{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .cm-row .cm-k{width:22px;font-weight:900;font-size:1.05rem;text-align:center;flex:none}
+  .cm-row .cm-v{width:44px;flex:none;text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+  .cm-row input[type=range]{flex:1;min-width:0;height:48px}
+  input[type=range]{accent-color:var(--red);cursor:pointer}
+  .cm-pickrow{display:flex;align-items:center;gap:12px;margin:6px 0}
+  .cm-pickrow input[type=color]{width:84px;height:52px;min-height:48px;padding:2px;border:2px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer}
+  .cm-wheelbox{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:6px}
+  #cmWheel{width:200px;height:200px;border-radius:50%;touch-action:none;cursor:crosshair;box-shadow:0 3px 10px rgba(43,45,66,.14)}
+  .cm-lightcol{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .cm-vert{-webkit-appearance:slider-vertical;appearance:slider-vertical;writing-mode:vertical-lr;direction:rtl;width:34px;height:170px;min-height:48px}
+  .cm-lightlab{font-size:.72rem;font-weight:800;color:var(--muted);text-align:center;line-height:1.2}
+  .cm-hint{font-size:.82rem;color:var(--muted);text-align:center;margin:8px 0 0}
+  .cm-full{width:100%;margin-top:12px}
+  .cm-wrap [hidden]{display:none!important}
+  .cm-res{margin-top:14px;border:2px solid var(--line);border-radius:16px;padding:14px;background:#f8fbff}
+  .cm-cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .cm-cmp .cm-sw{min-height:70px}
+  .cm-pct{text-align:center;font-weight:900;font-size:clamp(1.8rem,9vw,2.6rem);margin:10px 0 0;font-variant-numeric:tabular-nums}
+  .cm-stars{text-align:center;font-size:1.6rem;letter-spacing:4px;color:#e8a400;margin:2px 0 0}
+  .cm-fact{text-align:center;font-size:.92rem;color:#33475b;margin:8px 0 0;line-height:1.5}
+  .cm-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+  .cm-stat{background:#f8f5ef;border:2px solid var(--line);border-radius:14px;padding:10px;text-align:center}
+  .cm-stat b{display:block;font-size:1.7rem;line-height:1.1;font-variant-numeric:tabular-nums}
+  .cm-stat span{font-size:.78rem;color:var(--muted);font-weight:800}
+  .cm-list{margin:10px 0 0}
+  .cm-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border:2px solid var(--line);border-radius:12px;margin-bottom:6px;background:var(--card)}
+  .cm-dot{width:26px;height:26px;border-radius:8px;border:1px solid rgba(0,0,0,.18);flex:none}
+  .cm-item .cm-nm{flex:1;font-weight:800;font-size:.92rem;min-width:0}
+  .cm-item .cm-sc{font-weight:900;font-variant-numeric:tabular-nums}
+  @media (max-width:430px){
+    .cm-top{grid-template-columns:1fr}
+    #cmWheel{width:168px;height:168px}
+    .cm-vert{height:150px}
+  }
 </style>
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -45,58 +90,139 @@
 <main class="container">
   <section class="hero" style="padding:26px 20px 6px">
     <h1>🎨 Color Match</h1>
-    <p>Tap the COLOUR of the word — not what it says!</p>
+    <p>Read the colour name, then mix it yourself and see how close you got.</p>
   </section>
-  <details class="howto"><summary>📖 How to play</summary><p>A colour word appears — but it's printed in a different colour! Your job is to tap the button that matches the <b>colour of the letters</b>, not the word you read. For example, if the word "RED" is printed in blue, you tap BLUE. It's trickier than it sounds! Answer as many as you can before time runs out. Every right answer adds a little time.</p></details>
+  <details class="howto"><summary>📖 How to play</summary><p>You are given the <b>name</b> of a colour, but not the colour itself. Mix what you think it looks like using any of the three tools: the <b>red, green and blue sliders</b>, the <b>colour picker</b>, or the <b>colour wheel</b> with its lightness slider. All three tools control the same colour, so moving one updates the others. When you are happy, press <b>Submit</b>. The real colour appears beside yours and you get a score out of 100 plus a star rating. Each round is 8 colours, and the summary at the end shows your average.</p></details>
   <div class="panel">
-    <div class="cm-wrap">
-      <div class="cm-hud">
-        <div class="box">⭐ <span id="score">0</span></div>
-        <div class="box">🏆 Best: <span id="best">0</span></div>
+    <div class="cm-wrap" id="cmWrap" data-no-i18n>
+
+      <div class="cm-screen cm-on" id="cmStart">
+        <div class="cm-h" id="cmLvlHead">Choose a level</div>
+        <button type="button" class="cm-lvl" data-lvl="easy" id="cmLvlEasy">🙂 Easy — colours everyone knows</button>
+        <button type="button" class="cm-lvl" data-lvl="medium" id="cmLvlMedium">🎨 Medium — everyday colour names</button>
+        <button type="button" class="cm-lvl" data-lvl="hard" id="cmLvlHard">🧠 Hard — rare and tricky colours</button>
+        <p class="cm-hint" id="cmStartNote">Every round has 8 colours.</p>
       </div>
-      <div class="cm-bar"><span id="bar"></span></div>
-      <div class="cm-q" id="prompt">Tap the COLOUR of the word</div>
-      <div class="cm-word" id="word">Ready?</div>
-      <div class="cm-opts" id="opts"></div>
-      <p class="center" id="msg" style="font-weight:800;min-height:22px"></p>
-      <div class="center">
-        <button class="btn btn-lg" id="startBtn" onclick="startGame()">▶ Start</button>
-        <a class="btn btn-ghost" href="games.html">All Games</a>
+
+      <div class="cm-screen" id="cmPlay">
+        <div class="cm-hud">
+          <span class="cm-chip"><span id="cmKColour">Colour</span> <b id="cmIdx">1 / 8</b></span>
+          <span class="cm-chip"><span id="cmKScore">Score</span> <b id="cmScore">0</b></span>
+        </div>
+
+        <div class="cm-top">
+          <div class="cm-target">
+            <div class="cm-lead" id="cmLead">Make this colour</div>
+            <div class="cm-name" id="cmName">&nbsp;</div>
+          </div>
+          <div class="cm-yourbox">
+            <div class="cm-swlab" id="cmYourLab">Your colour</div>
+            <div class="cm-sw" id="cmYourSw"></div>
+            <div class="cm-hex" id="cmYourHex">#808080</div>
+          </div>
+        </div>
+
+        <div class="cm-ctrls">
+          <div class="cm-h" id="cmRgbHead">RGB sliders</div>
+          <div class="cm-row"><span class="cm-k" id="cmKR">R</span><input type="range" id="cmR" min="0" max="255" value="128"><span class="cm-v" id="cmRV">128</span></div>
+          <div class="cm-row"><span class="cm-k" id="cmKG">G</span><input type="range" id="cmG" min="0" max="255" value="128"><span class="cm-v" id="cmGV">128</span></div>
+          <div class="cm-row"><span class="cm-k" id="cmKB">B</span><input type="range" id="cmB" min="0" max="255" value="128"><span class="cm-v" id="cmBV">128</span></div>
+
+          <div class="cm-h" id="cmPickHead">Colour picker</div>
+          <div class="cm-pickrow">
+            <input type="color" id="cmPick" value="#808080">
+            <span class="cm-hint" id="cmPickNote" style="margin:0;text-align:left">Tap the square to open your device picker.</span>
+          </div>
+
+          <div class="cm-h" id="cmWheelHead">Colour wheel</div>
+          <div class="cm-wheelbox">
+            <canvas id="cmWheel" width="220" height="220" role="img" aria-label="Colour wheel"></canvas>
+            <div class="cm-lightcol">
+              <input type="range" class="cm-vert" id="cmL" min="0" max="100" value="50" aria-label="Lightness">
+              <span class="cm-lightlab" id="cmLightLab">Lightness</span>
+              <span class="cm-v" id="cmLV" style="width:auto">50</span>
+            </div>
+          </div>
+          <p class="cm-hint" id="cmWheelNote">Tap or drag on the wheel to set the shade.</p>
+        </div>
+
+        <button class="btn btn-green btn-lg cm-full" id="cmSubmit">Submit</button>
+
+        <div class="cm-res" id="cmRes" hidden>
+          <div class="cm-cmp">
+            <div>
+              <div class="cm-swlab" id="cmYourLab2">Your colour</div>
+              <div class="cm-sw" id="cmResYour"></div>
+              <div class="cm-hex" id="cmResYourHex">#808080</div>
+            </div>
+            <div>
+              <div class="cm-swlab" id="cmTargetLab">Target colour</div>
+              <div class="cm-sw" id="cmResTarget"></div>
+              <div class="cm-hex" id="cmResTargetHex">#808080</div>
+            </div>
+          </div>
+          <p class="cm-pct"><b id="cmPct">0</b><span id="cmPctSym">%</span></p>
+          <p class="cm-stars" id="cmStars">☆☆☆</p>
+          <p class="cm-fact" id="cmFact" hidden></p>
+        </div>
+
+        <button class="btn btn-lg cm-full" id="cmNext" hidden>Next colour</button>
+        <button class="btn btn-ghost cm-full" id="cmQuit">Change level</button>
       </div>
+
+      <div class="cm-screen" id="cmEnd">
+        <p class="cm-pct" id="cmEndTitle" style="font-size:1.4rem">Round finished!</p>
+        <div class="cm-stats">
+          <div class="cm-stat"><b id="cmEndTotal">0</b><span id="cmEndTotalLab">Total score</span></div>
+          <div class="cm-stat"><b id="cmEndAvg">0</b><span id="cmEndAvgLab">Average match</span></div>
+        </div>
+        <p class="cm-stars" id="cmEndStars">☆☆☆</p>
+        <div class="cm-list" id="cmEndList"></div>
+        <button class="btn btn-green btn-lg cm-full" id="cmAgain">Play again</button>
+        <button class="btn btn-ghost cm-full" id="cmChange">Change level</button>
+      </div>
+
     </div>
+  </div>
+  <div style="margin-top:14px" class="center">
+    <a class="btn btn-ghost" href="games.html">All Games</a>
   </div>
 <!--PAGEDOC-->
 <section class="pagedoc">
   <h2>About this game</h2>
-  <p>Color Match is a quick brain teaser built on one small piece of mischief. A colour word appears on screen, but the letters are printed in a different colour, and you must tap the colour you see rather than the word you read.</p>
-  <p>A timer bar sits above the word and it is deliberately short. Every correct tap hands a little time back and every wrong tap takes a bigger slice away, so a strong run is a chain of fast, confident choices.</p>
-  <p>Anyone who can read colour names can play, from a child in early school years to a grandparent. A round ends quickly, which makes this a good warm-up before a longer puzzle or a way to fill three spare minutes.</p>
+  <p>Color Match gives you the name of a colour and asks you to make that colour yourself. The name appears on its own, with no sample to copy, so everything rests on the picture you hold in your head. When you are ready you lock in your answer and the real colour appears beside yours.</p>
+  <p>Three controls sit under the name and they all steer the same colour. There are red, green and blue sliders with a number beside each one, a colour picker swatch, and a colour wheel you drag on with its own lightness slider. Move any one of them and the other two follow, which quietly teaches how a colour is built on a screen.</p>
+  <p>Three levels change how hard the names are. Easy uses everyday colours, medium uses less common ones, and hard uses detailed and unusual names with a short friendly sentence explaining what each one is. A round is eight colours from start to finish, which suits a short break as well as a long evening.</p>
   <h2>How it works</h2>
   <ul>
-    <li>Six colours are in play — red, blue, green, orange, purple and yellow — with four shown as buttons each round.</li>
-    <li>The word is almost always printed in a colour that does not match its name, which is what makes it hard.</li>
-    <li>A star counter shows your current score and a trophy counter keeps your best, saved in your own browser.</li>
-    <li>The bar begins at eight seconds; a right answer adds a fraction back and a wrong one costs noticeably more.</li>
-    <li>A green tick or red cross flashes under the word, then the Start button becomes Play again when time expires.</li>
+    <li>You choose easy, medium or hard on the start screen, and each round then runs for eight colours.</li>
+    <li>Red, green and blue sliders each show their own number, so you can see exactly what you are mixing.</li>
+    <li>A colour picker swatch opens the picker built into your device and feeds the result straight back into the game.</li>
+    <li>A colour wheel lets you drag to find the shade, with a separate lightness slider standing beside it.</li>
+    <li>Locking in an answer gives you a score out of one hundred, a star rating, and both hex codes side by side.</li>
+    <li>The end of a round shows your average, and from there you can play again or switch to another level.</li>
   </ul>
   <h2>Tips for playing</h2>
   <ul>
-    <li>This puzzle is a version of the Stroop effect: naming the ink colour of a mismatched colour word reliably takes people longer.</li>
-    <li>Look at the shape of the letters rather than reading them. Softening your focus makes the written word much less bossy.</li>
-    <li>Speed pays here, because a correct tap refunds time while hesitation simply burns it with nothing gained in return.</li>
-    <li>Resting your phone flat and using two thumbs shortens the reach to the four buttons and shaves time off each answer.</li>
+    <li>The sliders mix light rather than paint, which is why red and green together give yellow instead of brown.</li>
+    <li>Finding the family of the colour on the wheel first, then adjusting the lightness, is usually faster than pushing three sliders at once.</li>
+    <li>Pale names such as cream and ivory sit high on all three sliders, and the whole trick is knowing which one to pull down.</li>
+    <li>Earthy names lean on plenty of red, a middling amount of green and very little blue.</li>
+    <li>Chasing a perfect hundred is not the point, because landing close on an unusual name at the hard level is already a fine result.</li>
   </ul>
   <h2>Common questions</h2>
-  <h3>Do I need to install an app to play Color Match?</h3>
-  <p>No installation at all. The whole game runs inside the web page you are already on, so it works on a phone, tablet or laptop with nothing to download.</p>
-  <h3>Is this game suitable for young children?</h3>
-  <p>Any child who can read six colour names will manage, though the short timer feels rushed at first. Playing together and calling the colour out loud helps a beginner.</p>
-  <h3>Where is my best score kept?</h3>
-  <p>It stays on the device you played on, inside your browser's own storage. Clearing your browsing data or switching to another phone sets the trophy back to zero.</p>
-  <h3>How long does a single game last?</h3>
-  <p>That depends entirely on you. The bar starts with eight seconds and each correct answer stretches it, so a sharp player keeps going while a hesitant round ends in moments.</p>
+  <h3>Do I have to use all three controls?</h3>
+  <p>No. Any one of them can set the whole colour by itself, because they are three windows onto the same value. Use whichever feels natural to you and leave the others alone.</p>
+  <h3>What does the score out of one hundred mean?</h3>
+  <p>It measures how far your colour sits from the real one and turns that distance into a number, where an exact match gives one hundred. The stars beside it tell you the same thing at a glance.</p>
+  <h3>Does the game work on a phone?</h3>
+  <p>Yes. Everything answers to touch as well as to a mouse, including dragging around the colour wheel, so a phone or a tablet works just as well as a laptop.</p>
+  <h3>What is different about the hard level?</h3>
+  <p>The colour names become detailed and unusual, the sort you meet in an artist's paint box rather than in a box of crayons. Each answer also comes with one short friendly sentence explaining what that colour is, so the level teaches while it tests.</p>
+  <h3>Can two people play at once?</h3>
+  <p>There is one set of controls, so taking turns works best. Mixing one colour each and comparing scores at the end of the round is a good way to share it, and so is crowding around one screen and arguing about the sliders.</p>
   <h2>More to explore</h2>
-  <p class="pd-rel"><a href="games.html">Browse the full collection of free family games</a> · <a href="math-race.html">Race the clock with quick mental arithmetic instead</a> · <a href="memory.html">Give your memory a workout with the card matching game</a> · <a href="daily.html">Take today's five-question challenge and start a streak</a></p>
+  <p class="pd-rel"><a href="games.html">See every family game gathered on one page</a> · <a href="word-illusions.html">Tap the colour of the letters, not the word you read</a> · <a href="memory.html">Give your memory a workout with the card matching game</a> · <a href="daily.html">Take today's five-question challenge and start a streak</a></p>
 </section>
 <!--/PAGEDOC-->
 </main>
@@ -106,7 +232,7 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <details class="footer-map">
-      <summary>All pages <span class="fm-count">(91)</span></summary>
+      <summary>All pages <span class="fm-count">(101)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <div class="fm-h">Quizzes</div>
@@ -131,6 +257,15 @@
         <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
         <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
         <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+        <a href="ontario-g1-study-guide.html">Ontario G1 Study Guide</a>
+        <a href="bc-class-7l-practice-test.html">BC Class 7L Practice Test</a>
+        <a href="bc-class-7l-mock-test.html">BC Class 7L Mock Test</a>
+        <a href="bc-road-signs.html">BC Road Signs</a>
+        <a href="bc-rules-of-the-road.html">BC Rules of the Road</a>
+        <a href="alberta-class-7-practice-test.html">Alberta Class 7 Practice Test</a>
+        <a href="alberta-class-7-mock-test.html">Alberta Class 7 Mock Test</a>
+        <a href="alberta-road-signs.html">Alberta Road Signs</a>
+        <a href="alberta-rules-of-the-road.html">Alberta Rules of the Road</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Brain &amp; Puzzle Games</div>
@@ -149,6 +284,7 @@
         <a href="cube-twist.html">Cube Twist</a>
         <a href="typing-test.html">Typing Speed Test</a>
         <a href="color-match.html">Color Match</a>
+        <a href="word-illusions.html">Word Illusions</a>
         <a href="math-race.html">Math Race</a>
         <a href="times-tables.html">Times Tables Champion</a>
         <a href="canada-map.html">Map of Canada</a>
@@ -227,70 +363,498 @@
   </div>
 </footer>
 <script>
-const COLORS=[
-  {name:'Red',hex:'#e63946'},{name:'Blue',hex:'#4895ef'},{name:'Green',hex:'#2a9d8f'},
-  {name:'Orange',hex:'#f4845f'},{name:'Purple',hex:'#8e7dbe'},{name:'Yellow',hex:'#f0a800'}
-];
-let score=0, best=0, running=false, inkColor=null, timeLeft=0, timer=null, TIME=8;
-try{ best=parseInt(localStorage.getItem('cm_best')||'0',10)||0; }catch(e){}
-document.getElementById('best').textContent=best;
-function startGame(){
-  score=0; running=true; timeLeft=TIME;
-  document.getElementById('score').textContent='0';
-  document.getElementById('msg').textContent='';
-  document.getElementById('startBtn').style.display='none';
-  nextRound(); runTimer();
-}
-function runTimer(){
-  clearInterval(timer);
-  timer=setInterval(()=>{
-    timeLeft-=0.1;
-    document.getElementById('bar').style.width=Math.max(0,timeLeft/TIME*100)+'%';
-    if(timeLeft<=0){ endGame(); }
-  },100);
-}
-function nextRound(){
-  const wordC=COLORS[Math.floor(Math.random()*COLORS.length)];
-  let inkC=COLORS[Math.floor(Math.random()*COLORS.length)];
-  // usually different from the word for the classic effect
-  if(Math.random()<0.8){ while(inkC.name===wordC.name) inkC=COLORS[Math.floor(Math.random()*COLORS.length)]; }
-  inkColor=inkC;
-  const w=document.getElementById('word'); w.textContent=wordC.name; w.style.color=inkC.hex;
-  // build 4 options incl the correct ink colour
-  const opts=[inkC];
-  const pool=COLORS.filter(c=>c.name!==inkC.name).sort(()=>Math.random()-0.5);
-  while(opts.length<4) opts.push(pool.pop());
-  opts.sort(()=>Math.random()-0.5);
-  const box=document.getElementById('opts'); box.innerHTML='';
-  opts.forEach(c=>{ const b=document.createElement('button'); b.textContent=c.name; b.style.background=c.hex; b.onclick=()=>pick(c); box.appendChild(b); });
-}
-function pick(c){
-  if(!running) return;
-  if(c.name===inkColor.name){
-    score++; document.getElementById('score').textContent=score;
-    timeLeft=Math.min(TIME, timeLeft+0.7); // reward time
-    flash('✔',' #2a9d8f'); nextRound();
-  } else {
-    timeLeft-=1.5; flash('✖','#e63946');
-    if(timeLeft<=0) endGame();
+(function(){
+  'use strict';
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr){ return FR ? fr : en; }
+  function $(id){ return document.getElementById(id); }
+
+  /* ---------------- the colours ---------------- */
+  var EASY = [
+    {name:'red', fr:'rouge', hex:'#FF0000'},
+    {name:'green', fr:'vert', hex:'#008000'},
+    {name:'blue', fr:'bleu', hex:'#0000FF'},
+    {name:'yellow', fr:'jaune', hex:'#FFFF00'},
+    {name:'orange', fr:'orange', hex:'#FFA500'},
+    {name:'purple', fr:'violet', hex:'#800080'},
+    {name:'pink', fr:'rose', hex:'#FFC0CB'},
+    {name:'brown', fr:'brun', hex:'#A52A2A'},
+    {name:'black', fr:'noir', hex:'#000000'},
+    {name:'white', fr:'blanc', hex:'#FFFFFF'},
+    {name:'grey', fr:'gris', hex:'#808080'},
+    {name:'cyan', fr:'cyan', hex:'#00FFFF'},
+    {name:'magenta', fr:'magenta', hex:'#FF00FF'},
+    {name:'lime', fr:'vert lime', hex:'#00FF00'},
+    {name:'navy', fr:'bleu marine', hex:'#000080'},
+    {name:'teal', fr:'bleu sarcelle', hex:'#008080'},
+    {name:'gold', fr:'or', hex:'#FFD700'},
+    {name:'silver', fr:'argent', hex:'#C0C0C0'},
+    {name:'maroon', fr:'marron', hex:'#800000'},
+    {name:'olive', fr:'olive', hex:'#808000'},
+    {name:'dark green', fr:'vert foncé', hex:'#006400'},
+    {name:'light blue', fr:'bleu clair', hex:'#ADD8E6'}
+  ];
+  var MEDIUM = [
+    {name:'turquoise', fr:'turquoise', hex:'#40E0D0'},
+    {name:'coral', fr:'corail', hex:'#FF7F50'},
+    {name:'salmon', fr:'saumon', hex:'#FA8072'},
+    {name:'lavender', fr:'lavande', hex:'#E6E6FA'},
+    {name:'beige', fr:'beige', hex:'#F5F5DC'},
+    {name:'crimson', fr:'cramoisi', hex:'#DC143C'},
+    {name:'indigo', fr:'indigo', hex:'#4B0082'},
+    {name:'khaki', fr:'kaki', hex:'#F0E68C'},
+    {name:'mint green', fr:'vert menthe', hex:'#98FF98'},
+    {name:'peach', fr:'pêche', hex:'#FFE5B4'},
+    {name:'plum', fr:'prune', hex:'#DDA0DD'},
+    {name:'ivory', fr:'ivoire', hex:'#FFFFF0'},
+    {name:'tan', fr:'havane', hex:'#D2B48C'},
+    {name:'aquamarine', fr:'aigue-marine', hex:'#7FFFD4'},
+    {name:'raspberry', fr:'framboise', hex:'#E30B5C'},
+    {name:'mustard', fr:'moutarde', hex:'#FFDB58'},
+    {name:'charcoal', fr:'anthracite', hex:'#36454F'},
+    {name:'sky blue', fr:'bleu ciel', hex:'#87CEEB'},
+    {name:'forest green', fr:'vert forêt', hex:'#228B22'},
+    {name:'burgundy', fr:'bordeaux', hex:'#800020'},
+    {name:'lilac', fr:'lilas', hex:'#C8A2C8'},
+    {name:'apricot', fr:'abricot', hex:'#FBCEB1'},
+    {name:'chocolate', fr:'chocolat', hex:'#7B3F00'},
+    {name:'cream', fr:'crème', hex:'#FFFDD0'},
+    {name:'emerald', fr:'émeraude', hex:'#50C878'},
+    {name:'jade', fr:'jade', hex:'#00A86B'},
+    {name:'amber', fr:'ambre', hex:'#FFBF00'},
+    {name:'copper', fr:'cuivre', hex:'#B87333'},
+    {name:'bronze', fr:'bronze', hex:'#CD7F32'},
+    {name:'ruby', fr:'rubis', hex:'#E0115F'},
+    {name:'sapphire', fr:'saphir', hex:'#0F52BA'},
+    {name:'slate grey', fr:'gris ardoise', hex:'#708090'},
+    {name:'steel blue', fr:'bleu acier', hex:'#4682B4'},
+    {name:'sea green', fr:'vert marin', hex:'#2E8B57'},
+    {name:'lemon', fr:'citron', hex:'#FFF700'},
+    {name:'cherry', fr:'cerise', hex:'#D2042D'},
+    {name:'sand', fr:'sable', hex:'#C2B280'}
+  ];
+  var HARD = [
+    {name:'vermilion', fr:'vermillon', hex:'#E34234',
+     fact:'Vermilion is a fiery orange-red that painters once made by grinding a mineral called cinnabar.',
+     factFr:'Le vermillon est un rouge orangé éclatant que les peintres obtenaient en broyant un minéral appelé cinabre.'},
+    {name:'chartreuse', fr:'chartreuse', hex:'#7FFF00',
+     fact:'Chartreuse is a vivid yellow-green named after the Chartreuse mountains in south-eastern France.',
+     factFr:'Le chartreuse est un vert-jaune très vif nommé d\'après les montagnes de la Chartreuse, dans le sud-est de la France.'},
+    {name:'ochre', fr:'ocre', hex:'#CC7722',
+     fact:'Ochre is an earthy yellow-brown clay, one of the oldest colours ever used in cave paintings.',
+     factFr:'L\'ocre est une argile jaune-brun, l\'une des plus anciennes couleurs utilisées dans les peintures rupestres.'},
+    {name:'cerulean', fr:'céruléen', hex:'#007BA7',
+     fact:'Cerulean is the calm blue of a clear sky, and its name comes from caelum, the Latin word for sky.',
+     factFr:'Le céruléen est le bleu paisible d\'un ciel dégagé ; son nom vient de caelum, le mot latin pour ciel.'},
+    {name:'puce', fr:'puce', hex:'#722F37',
+     fact:'Puce is a dark brownish red that was extremely fashionable in France in the 1700s.',
+     factFr:'La couleur puce est un rouge brun foncé qui était très à la mode en France au 18e siècle.'},
+    {name:'mauve', fr:'mauve', hex:'#E0B0FF',
+     fact:'Mauve is a pale purple named after the mallow flower, and it was the first colour ever made in a laboratory.',
+     factFr:'Le mauve est un violet pâle nommé d\'après la fleur de mauve ; ce fut la première couleur fabriquée en laboratoire.'},
+    {name:'saffron', fr:'safran', hex:'#F4C430',
+     fact:'Saffron is a warm golden yellow taken from the tiny threads inside a crocus flower.',
+     factFr:'Le safran est un jaune doré chaud tiré des minuscules filaments d\'une fleur de crocus.'},
+    {name:'viridian', fr:'viridien', hex:'#40826D',
+     fact:'Viridian is a deep blue-green much loved by landscape painters for its cool shadows.',
+     factFr:'Le viridien est un vert-bleu profond que les paysagistes adorent pour ses ombres froides.'},
+    {name:'sienna', fr:'terre de Sienne', hex:'#A0522D',
+     fact:'Sienna is a reddish earth brown named after the Italian city of Siena, where the clay was dug.',
+     factFr:'La terre de Sienne est un brun rougeâtre nommé d\'après la ville italienne de Sienne, où l\'on extrayait cette argile.'},
+    {name:'umber', fr:'terre d\'ombre', hex:'#635147',
+     fact:'Umber is a dark earthy brown, and roasting the clay makes the deeper shade called burnt umber.',
+     factFr:'La terre d\'ombre est un brun terreux foncé ; en chauffant l\'argile on obtient la teinte plus profonde dite ombre brûlée.'},
+    {name:'celadon', fr:'céladon', hex:'#ACE1AF',
+     fact:'Celadon is the soft pale green of old Chinese and Korean glazed pottery.',
+     factFr:'Le céladon est le vert pâle et doux des anciennes poteries émaillées de Chine et de Corée.'},
+    {name:'taupe', fr:'taupe', hex:'#483C32',
+     fact:'Taupe is a grey-brown named after the French word for a mole, the little animal that digs tunnels.',
+     factFr:'Le taupe est un brun grisâtre qui porte le nom du petit animal qui creuse des galeries sous terre.'},
+    {name:'fuchsia', fr:'fuchsia', hex:'#FF00FF',
+     fact:'Fuchsia is a vivid pinkish purple named after the drooping flowers of the fuchsia plant.',
+     factFr:'Le fuchsia est un violet rosé très vif nommé d\'après les fleurs retombantes de la plante du même nom.'},
+    {name:'periwinkle', fr:'pervenche', hex:'#CCCCFF',
+     fact:'Periwinkle is a pale blue-violet named after a small trailing plant with star-shaped flowers.',
+     factFr:'La pervenche est un bleu-violet pâle nommé d\'après une petite plante rampante aux fleurs étoilées.'},
+    {name:'gamboge', fr:'gomme-gutte', hex:'#E49B0F',
+     fact:'Gamboge is a deep golden yellow made from tree resin and long used for artists\' paints.',
+     factFr:'La gomme-gutte est un jaune doré profond tiré d\'une résine d\'arbre, longtemps utilisée en peinture.'},
+    {name:'heliotrope', fr:'héliotrope', hex:'#DF73FF',
+     fact:'Heliotrope is a bright pinkish purple named after a flower that turns to follow the sun.',
+     factFr:'L\'héliotrope est un violet rosé lumineux nommé d\'après une fleur qui se tourne vers le soleil.'},
+    {name:'cinnabar', fr:'cinabre', hex:'#E44D2E',
+     fact:'Cinnabar is a brilliant red-orange named after the mineral that gives the pigment its colour.',
+     factFr:'Le cinabre est un rouge orangé brillant nommé d\'après le minéral qui donne sa couleur au pigment.'},
+    {name:'malachite', fr:'malachite', hex:'#0BDA51',
+     fact:'Malachite is a rich green named after a banded green stone found in copper mines.',
+     factFr:'La malachite est un vert riche nommé d\'après une pierre verte rubanée que l\'on trouve dans les mines de cuivre.'},
+    {name:'wisteria', fr:'glycine', hex:'#C9A0DC',
+     fact:'Wisteria is a gentle light purple named after the long hanging flowers of the wisteria vine.',
+     factFr:'La glycine est un violet clair et doux nommé d\'après les longues grappes de fleurs de cette plante grimpante.'},
+    {name:'aubergine', fr:'aubergine', hex:'#3B0910',
+     fact:'Aubergine is a very dark purple, the colour of the shiny skin of an eggplant.',
+     factFr:'L\'aubergine est un violet très foncé, la couleur de la peau brillante du légume.'},
+    {name:'alabaster', fr:'albâtre', hex:'#EDEAE0',
+     fact:'Alabaster is an off-white with a warm tint, named after a soft stone carved into lamps and statues.',
+     factFr:'L\'albâtre est un blanc cassé légèrement chaud, nommé d\'après une pierre tendre sculptée en lampes et en statues.'},
+    {name:'verdigris', fr:'vert-de-gris', hex:'#43B3AE',
+     fact:'Verdigris is the blue-green crust that forms on copper roofs and statues as they weather.',
+     factFr:'Le vert-de-gris est la croûte bleu-vert qui se forme sur les toits et les statues de cuivre avec le temps.'},
+    {name:'amaranth', fr:'amarante', hex:'#E52B50',
+     fact:'Amaranth is a deep pinkish red named after a plant whose flowers keep their colour when dried.',
+     factFr:'L\'amarante est un rouge rosé profond nommé d\'après une plante dont les fleurs gardent leur couleur en séchant.'},
+    {name:'isabelline', fr:'isabelle', hex:'#F4F0EC',
+     fact:'Isabelline is a pale creamy grey, a shade often used to describe the feathers of certain birds.',
+     factFr:'L\'isabelle est un gris crème très pâle, une teinte souvent utilisée pour décrire le plumage de certains oiseaux.'},
+    {name:'feldgrau', fr:'gris feldgrau', hex:'#4D5D53',
+     fact:'Feldgrau is German for field grey, a muted grey-green with a hint of moss in it.',
+     factFr:'Feldgrau signifie gris des champs en allemand, un gris-vert discret avec une pointe de mousse.'},
+    {name:'byzantium', fr:'byzantin', hex:'#702963',
+     fact:'Byzantium is a deep royal purple named after the ancient city that later became Istanbul.',
+     factFr:'Le byzantin est un violet royal profond nommé d\'après la cité antique devenue plus tard Istanbul.'},
+    {name:'cobalt blue', fr:'bleu de cobalt', hex:'#0047AB',
+     fact:'Cobalt blue is an intense pure blue made from a metal first used to colour glass and pottery.',
+     factFr:'Le bleu de cobalt est un bleu pur et intense tiré d\'un métal d\'abord utilisé pour colorer le verre et la poterie.'},
+    {name:'carmine', fr:'carmin', hex:'#960018',
+     fact:'Carmine is a strong deep red that has been used to dye cloth for hundreds of years.',
+     factFr:'Le carmin est un rouge profond et puissant utilisé pour teindre les tissus depuis des centaines d\'années.'},
+    {name:'russet', fr:'roux', hex:'#80461B',
+     fact:'Russet is a reddish brown, the colour of dry autumn leaves and old apple skins.',
+     factFr:'Le roux est un brun rougeâtre, la couleur des feuilles sèches d\'automne et de la peau des vieilles pommes.'},
+    {name:'glaucous', fr:'glauque', hex:'#6082B4',
+     fact:'Glaucous is a dusty blue-grey, like the powdery bloom on a fresh blueberry.',
+     factFr:'Le glauque est un bleu-gris poudreux, comme la fine pellicule sur un bleuet fraîchement cueilli.'},
+    {name:'citrine', fr:'citrine', hex:'#E4D00A',
+     fact:'Citrine is a sunny lemon yellow named after a quartz crystal of the same colour.',
+     factFr:'La citrine est un jaune citron ensoleillé nommé d\'après un cristal de quartz de la même couleur.'},
+    {name:'bistre', fr:'bistre', hex:'#3D2B1F',
+     fact:'Bistre is a smoky dark brown that artists of long ago made from soot for their ink drawings.',
+     factFr:'Le bistre est un brun foncé fumé que les artistes d\'autrefois tiraient de la suie pour leurs dessins à l\'encre.'},
+    {name:'phthalo green', fr:'vert phtalo', hex:'#123524',
+     fact:'Phthalo green is an extremely deep blue-green that stains everything it touches in the paint box.',
+     factFr:'Le vert phtalo est un vert-bleu extrêmement profond qui tache tout ce qu\'il touche dans la boîte de peinture.'},
+    {name:'tyrian purple', fr:'pourpre de Tyr', hex:'#66023C',
+     fact:'Tyrian purple is a dark reddish purple that was once so rare that only royalty wore it.',
+     factFr:'La pourpre de Tyr est un violet rougeâtre foncé jadis si rare que seuls les rois la portaient.'},
+    {name:'xanadu', fr:'xanadu', hex:'#738678',
+     fact:'Xanadu is a soft grey-green named after the colour of the leaves of a common houseplant.',
+     factFr:'Le xanadu est un vert-gris doux nommé d\'après la couleur des feuilles d\'une plante d\'intérieur courante.'},
+    {name:'oxblood', fr:'sang de boeuf', hex:'#4A0000',
+     fact:'Oxblood is a very dark brownish red, a classic colour for leather shoes and book covers.',
+     factFr:'Le sang de boeuf est un rouge brun très foncé, une couleur classique pour les chaussures en cuir et les reliures.'}
+  ];
+  var BANK = { easy:EASY, medium:MEDIUM, hard:HARD };
+  var ROUND = 8;
+
+  /* ---------------- colour maths ---------------- */
+  function clamp(n, lo, hi){ return n < lo ? lo : (n > hi ? hi : n); }
+  function hex2rgb(h){
+    var s = String(h).replace('#', '');
+    return { r:parseInt(s.slice(0,2),16), g:parseInt(s.slice(2,4),16), b:parseInt(s.slice(4,6),16) };
   }
-}
-function flash(sym,col){ const m=document.getElementById('msg'); m.style.color=col; m.textContent=sym; clearTimeout(flash._t); flash._t=setTimeout(()=>{ if(m.textContent===sym)m.textContent=''; },300); }
-function endGame(){
-  running=false; clearInterval(timer);
-  document.getElementById('bar').style.width='0%';
-  if(score>best){ best=score; try{localStorage.setItem('cm_best',best);}catch(e){} document.getElementById('best').textContent=best; }
-  document.getElementById('word').textContent='⏰ Time!';
-  document.getElementById('word').style.color='var(--ink)';
-  document.getElementById('opts').innerHTML='';
-  document.getElementById('msg').style.color='#5f6b7a';
-  document.getElementById('msg').textContent='You scored '+score+(score>=best&&score>0?' — new best! 🎉':'')+'.';
-  const sb=document.getElementById('startBtn'); sb.style.display='inline-block'; sb.textContent='▶ Play again';
-}
+  function two(n){ var s = Math.round(clamp(n,0,255)).toString(16).toUpperCase(); return s.length < 2 ? '0'+s : s; }
+  function rgb2hex(r, g, b){ return '#' + two(r) + two(g) + two(b); }
+  function rgb2css(c){ return 'rgb(' + Math.round(c.r) + ',' + Math.round(c.g) + ',' + Math.round(c.b) + ')'; }
+  function rgb2hsl(r, g, b){
+    r /= 255; g /= 255; b /= 255;
+    var mx = Math.max(r,g,b), mn = Math.min(r,g,b), d = mx - mn, h = 0, s = 0, l = (mx+mn)/2;
+    if(d){
+      s = l > 0.5 ? d/(2-mx-mn) : d/(mx+mn);
+      if(mx === r) h = ((g-b)/d) % 6;
+      else if(mx === g) h = (b-r)/d + 2;
+      else h = (r-g)/d + 4;
+      h *= 60; if(h < 0) h += 360;
+    }
+    return { h:h, s:s*100, l:l*100 };
+  }
+  function hsl2rgb(h, s, l){
+    h = ((h % 360) + 360) % 360; s = clamp(s,0,100)/100; l = clamp(l,0,100)/100;
+    var c = (1 - Math.abs(2*l - 1)) * s, x = c * (1 - Math.abs((h/60) % 2 - 1)), m = l - c/2, r, g, b;
+    if(h < 60){ r=c; g=x; b=0; }
+    else if(h < 120){ r=x; g=c; b=0; }
+    else if(h < 180){ r=0; g=c; b=x; }
+    else if(h < 240){ r=0; g=x; b=c; }
+    else if(h < 300){ r=x; g=0; b=c; }
+    else { r=c; g=0; b=x; }
+    return { r:Math.round((r+m)*255), g:Math.round((g+m)*255), b:Math.round((b+m)*255) };
+  }
+  /* how close two colours are, 0 to 100, with extra weight on green because
+     the eye notices a change in green most. Identical colours give 100. */
+  var MAXD = Math.sqrt(9) * 255;
+  function closeness(a, b){
+    var dr = a.r - b.r, dg = a.g - b.g, db = a.b - b.b;
+    var d = Math.sqrt(2*dr*dr + 4*dg*dg + 3*db*db);
+    var ratio = 1 - d/MAXD;
+    if(ratio < 0) ratio = 0;
+    return Math.round(100 * ratio * ratio);
+  }
+  function starText(p){
+    var n = p >= 90 ? 3 : (p >= 75 ? 2 : (p >= 50 ? 1 : 0)), s = '', i;
+    for(i = 0; i < 3; i++) s += (i < n ? '★' : '☆');
+    return s;
+  }
+
+  /* ---------------- the pieces of the page ---------------- */
+  var elStart = $('cmStart'), elPlay = $('cmPlay'), elEnd = $('cmEnd');
+  var elName = $('cmName'), elIdx = $('cmIdx'), elScore = $('cmScore');
+  var elYourSw = $('cmYourSw'), elYourHex = $('cmYourHex');
+  var inR = $('cmR'), inG = $('cmG'), inB = $('cmB'), inL = $('cmL'), inPick = $('cmPick');
+  var outR = $('cmRV'), outG = $('cmGV'), outB = $('cmBV'), outL = $('cmLV');
+  var cv = $('cmWheel');
+  var elRes = $('cmRes'), elResYour = $('cmResYour'), elResYourHex = $('cmResYourHex');
+  var elResTarget = $('cmResTarget'), elResTargetHex = $('cmResTargetHex');
+  var elPct = $('cmPct'), elStars = $('cmStars'), elFact = $('cmFact');
+  var btnSubmit = $('cmSubmit'), btnNext = $('cmNext'), btnQuit = $('cmQuit');
+  var elEndTotal = $('cmEndTotal'), elEndAvg = $('cmEndAvg'), elEndStars = $('cmEndStars'), elEndList = $('cmEndList');
+  if(!elStart || !elPlay || !elEnd || !cv || !inR || !inPick) return;
+
+  /* every word this game puts on the screen goes through T() */
+  function label(el, en, fr){ if(el) el.textContent = T(en, fr); }
+  function setLabels(){
+    label($('cmLvlHead'), 'Choose a level', 'Choisis un niveau');
+    label($('cmLvlEasy'), '🙂 Easy — colours everyone knows', '🙂 Facile — des couleurs que tout le monde connaît');
+    label($('cmLvlMedium'), '🎨 Medium — everyday colour names', '🎨 Moyen — des noms de couleurs courants');
+    label($('cmLvlHard'), '🧠 Hard — rare and tricky colours', '🧠 Difficile — des couleurs rares et délicates');
+    label($('cmStartNote'), 'Every round has 8 colours.', 'Chaque manche compte 8 couleurs.');
+    label($('cmKColour'), 'Colour', 'Couleur');
+    label($('cmKScore'), 'Score', 'Score');
+    label($('cmLead'), 'Make this colour', 'Fabrique cette couleur');
+    label($('cmYourLab'), 'Your colour', 'Ta couleur');
+    label($('cmYourLab2'), 'Your colour', 'Ta couleur');
+    label($('cmTargetLab'), 'Target colour', 'Couleur cible');
+    label($('cmRgbHead'), 'RGB sliders', 'Curseurs RVB');
+    label($('cmKR'), 'R', 'R');
+    label($('cmKG'), 'G', 'V');
+    label($('cmKB'), 'B', 'B');
+    label($('cmPickHead'), 'Colour picker', 'Sélecteur de couleur');
+    label($('cmPickNote'), 'Tap the square to open your own colour picker.', 'Touche le carré pour ouvrir ton sélecteur de couleur.');
+    label($('cmWheelHead'), 'Colour wheel', 'Roue des couleurs');
+    label($('cmLightLab'), 'Lightness', 'Clarté');
+    label($('cmWheelNote'), 'Tap or drag on the wheel to set the shade.', 'Touche ou glisse sur la roue pour choisir la teinte.');
+    label(btnSubmit, 'Submit', 'Valider');
+    label(btnNext, 'Next colour', 'Couleur suivante');
+    label(btnQuit, 'Change level', 'Changer de niveau');
+    label($('cmPctSym'), '%', ' %');
+    label($('cmEndTitle'), 'Round finished!', 'Manche terminée !');
+    label($('cmEndTotalLab'), 'Total score', 'Score total');
+    label($('cmEndAvgLab'), 'Average match', 'Correspondance moyenne');
+    label($('cmAgain'), 'Play again', 'Rejouer');
+    label($('cmChange'), 'Change level', 'Changer de niveau');
+    inR.setAttribute('aria-label', T('Red', 'Rouge'));
+    inG.setAttribute('aria-label', T('Green', 'Vert'));
+    inB.setAttribute('aria-label', T('Blue', 'Bleu'));
+    inL.setAttribute('aria-label', T('Lightness', 'Clarté'));
+    inPick.setAttribute('aria-label', T('Colour picker', 'Sélecteur de couleur'));
+    cv.setAttribute('aria-label', T('Colour wheel', 'Roue des couleurs'));
+  }
+
+  /* ---------------- one live colour, shared by all three controls ---------------- */
+  var cur = { r:128, g:128, b:128 };
+  var hue = 0, sat = 0, lig = 50, locked = false;
+
+  function syncHslFromRgb(){
+    var t = rgb2hsl(cur.r, cur.g, cur.b);
+    lig = t.l; sat = t.s;
+    if(t.s > 0.5) hue = t.h;      /* a grey has no hue, so keep the old one */
+  }
+  function setRgb(r, g, b){
+    cur = { r:clamp(Math.round(r),0,255), g:clamp(Math.round(g),0,255), b:clamp(Math.round(b),0,255) };
+    syncHslFromRgb();
+    render();
+  }
+  function setHsl(h, s, l){
+    hue = h; sat = clamp(s,0,100); lig = clamp(l,0,100);
+    cur = hsl2rgb(hue, sat, lig);
+    render();
+  }
+  function render(){
+    var hx = rgb2hex(cur.r, cur.g, cur.b);
+    inR.value = cur.r; inG.value = cur.g; inB.value = cur.b;
+    outR.textContent = cur.r; outG.textContent = cur.g; outB.textContent = cur.b;
+    inPick.value = hx.toLowerCase();
+    inL.value = Math.round(lig);
+    outL.textContent = Math.round(lig);
+    elYourSw.style.background = rgb2css(cur);
+    elYourHex.textContent = hx;
+    drawWheel();
+  }
+
+  /* ---------------- the colour wheel ---------------- */
+  var ctx = cv.getContext('2d');
+  var off = document.createElement('canvas');
+  off.width = cv.width; off.height = cv.height;
+  var octx = off.getContext('2d');
+  var R = cv.width / 2, builtFor = -1;
+
+  function buildWheel(L){
+    var W = cv.width, img = octx.createImageData(W, W), d = img.data, x, y;
+    for(y = 0; y < W; y++){
+      for(x = 0; x < W; x++){
+        var dx = x - R + 0.5, dy = y - R + 0.5;
+        var dist = Math.sqrt(dx*dx + dy*dy), i = (y*W + x) * 4;
+        if(dist > R){ d[i+3] = 0; continue; }
+        var h = (Math.atan2(dy, dx) * 180 / Math.PI + 360) % 360;
+        var c = hsl2rgb(h, Math.min(1, dist/(R-2)) * 100, L);
+        d[i] = c.r; d[i+1] = c.g; d[i+2] = c.b;
+        d[i+3] = dist > R - 1 ? Math.round(255 * (R - dist)) : 255;
+      }
+    }
+    octx.putImageData(img, 0, 0);
+    builtFor = L;
+  }
+  function drawWheel(){
+    var L = Math.round(lig);
+    if(L !== builtFor) buildWheel(L);
+    ctx.clearRect(0, 0, cv.width, cv.height);
+    ctx.drawImage(off, 0, 0);
+    var rr = Math.min(1, sat/100) * (R - 2);
+    var mx = R + Math.cos(hue * Math.PI/180) * rr;
+    var my = R + Math.sin(hue * Math.PI/180) * rr;
+    ctx.beginPath(); ctx.arc(mx, my, 8, 0, Math.PI*2);
+    ctx.lineWidth = 3; ctx.strokeStyle = '#ffffff'; ctx.stroke();
+    ctx.beginPath(); ctx.arc(mx, my, 10.5, 0, Math.PI*2);
+    ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(0,0,0,.55)'; ctx.stroke();
+  }
+  function wheelPick(clientX, clientY){
+    if(locked) return;
+    var b = cv.getBoundingClientRect();
+    if(!b.width || !b.height) return;
+    var x = (clientX - b.left) * (cv.width / b.width);
+    var y = (clientY - b.top) * (cv.height / b.height);
+    var dx = x - R, dy = y - R, dist = Math.sqrt(dx*dx + dy*dy);
+    var h = (Math.atan2(dy, dx) * 180 / Math.PI + 360) % 360;
+    setHsl(h, Math.min(1, dist/(R-2)) * 100, lig);
+  }
+  var dragging = false;
+  cv.addEventListener('mousedown', function(e){ dragging = true; wheelPick(e.clientX, e.clientY); e.preventDefault(); });
+  window.addEventListener('mousemove', function(e){ if(dragging) wheelPick(e.clientX, e.clientY); });
+  window.addEventListener('mouseup', function(){ dragging = false; });
+  cv.addEventListener('touchstart', function(e){
+    if(!e.touches.length) return;
+    dragging = true; wheelPick(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault();
+  }, { passive:false });
+  cv.addEventListener('touchmove', function(e){
+    if(!dragging || !e.touches.length) return;
+    wheelPick(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault();
+  }, { passive:false });
+  cv.addEventListener('touchend', function(){ dragging = false; });
+  cv.addEventListener('touchcancel', function(){ dragging = false; });
+
+  /* ---------------- sliders and picker ---------------- */
+  function fromSliders(){ if(!locked) setRgb(+inR.value, +inG.value, +inB.value); }
+  function fromPicker(){ if(!locked){ var c = hex2rgb(inPick.value); setRgb(c.r, c.g, c.b); } }
+  inR.addEventListener('input', fromSliders);
+  inG.addEventListener('input', fromSliders);
+  inB.addEventListener('input', fromSliders);
+  inPick.addEventListener('input', fromPicker);
+  inPick.addEventListener('change', fromPicker);
+  inL.addEventListener('input', function(){ if(!locked) setHsl(hue, sat, +inL.value); });
+
+  function lock(on){
+    locked = on;
+    [inR, inG, inB, inL, inPick].forEach(function(el){ el.disabled = on; });
+    cv.style.opacity = on ? '.55' : '';
+    cv.style.cursor = on ? 'default' : 'crosshair';
+  }
+
+  /* ---------------- the round ---------------- */
+  var level = 'easy', queue = [], idx = 0, total = 0, results = [];
+
+  function shuffle(a){
+    var i, j, t;
+    for(i = a.length - 1; i > 0; i--){ j = Math.floor(Math.random()*(i+1)); t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  function show(which){
+    elStart.classList.toggle('cm-on', which === 'start');
+    elPlay.classList.toggle('cm-on', which === 'play');
+    elEnd.classList.toggle('cm-on', which === 'end');
+  }
+  function startRound(lv){
+    level = BANK[lv] ? lv : 'easy';
+    queue = shuffle(BANK[level].slice()).slice(0, ROUND);
+    idx = 0; total = 0; results = [];
+    elScore.textContent = '0';
+    show('play');
+    loadColour();
+  }
+  function loadColour(){
+    var c = queue[idx];
+    elName.textContent = FR ? c.fr : c.name;
+    elIdx.textContent = (idx + 1) + ' / ' + queue.length;
+    elRes.hidden = true;
+    elFact.hidden = true;
+    btnNext.hidden = true;
+    btnSubmit.hidden = false;
+    lock(false);
+    hue = 0; sat = 0; lig = 50;
+    cur = { r:128, g:128, b:128 };
+    render();
+  }
+  function submit(){
+    var c = queue[idx], goal = hex2rgb(c.hex);
+    var mine = rgb2hex(cur.r, cur.g, cur.b);
+    var pct = closeness(cur, goal);
+    total += pct;
+    results.push({ name:FR ? c.fr : c.name, mine:mine, goal:c.hex, pct:pct });
+    elResYour.style.background = rgb2css(cur);
+    elResYourHex.textContent = mine;
+    elResTarget.style.background = c.hex;
+    elResTargetHex.textContent = c.hex.toUpperCase();
+    elPct.textContent = pct;
+    elStars.textContent = starText(pct);
+    if(level === 'hard' && c.fact){
+      elFact.textContent = T(c.fact, c.factFr);
+      elFact.hidden = false;
+    }
+    elScore.textContent = total;
+    elRes.hidden = false;
+    lock(true);
+    btnSubmit.hidden = true;
+    btnNext.hidden = false;
+    if(idx + 1 >= queue.length) label(btnNext, 'See my results', 'Voir mes résultats');
+    else label(btnNext, 'Next colour', 'Couleur suivante');
+  }
+  function next(){
+    idx++;
+    if(idx >= queue.length) finish();
+    else loadColour();
+  }
+  function finish(){
+    var avg = Math.round(total / (results.length || 1));
+    elEndTotal.textContent = total;
+    elEndAvg.textContent = avg;
+    elEndStars.textContent = starText(avg);
+    elEndList.innerHTML = '';
+    results.forEach(function(r){
+      var row = document.createElement('div'); row.className = 'cm-item';
+      var d1 = document.createElement('span'); d1.className = 'cm-dot'; d1.style.background = r.goal;
+      var d2 = document.createElement('span'); d2.className = 'cm-dot'; d2.style.background = r.mine;
+      var nm = document.createElement('span'); nm.className = 'cm-nm'; nm.textContent = r.name;
+      var sc = document.createElement('span'); sc.className = 'cm-sc'; sc.textContent = FR ? (r.pct + ' %') : (r.pct + '%');
+      row.appendChild(d1); row.appendChild(d2); row.appendChild(nm); row.appendChild(sc);
+      elEndList.appendChild(row);
+    });
+    show('end');
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.cm-lvl'), function(b){
+    b.addEventListener('click', function(){ startRound(b.getAttribute('data-lvl')); });
+  });
+  btnSubmit.addEventListener('click', submit);
+  btnNext.addEventListener('click', next);
+  btnQuit.addEventListener('click', function(){ show('start'); });
+  $('cmAgain').addEventListener('click', function(){ startRound(level); });
+  $('cmChange').addEventListener('click', function(){ show('start'); });
+
+  setLabels();
+  render();
+
+})();
 </script>
-  <script src="js/game-fullscreen.js?v=20260804b"></script>
-  <script src="js/site.js?v=20260804b"></script>
-  <script src="js/analytics.js?v=20260804b"></script>
-  <script src="js/ads.js?v=20260804b" defer></script>
+  <script src="js/game-fullscreen.js?v=20260805a"></script>
+  <script src="js/site.js?v=20260805a"></script>
+  <script src="js/analytics.js?v=20260805a"></script>
+  <script src="js/ads.js?v=20260805a" defer></script>
 </body>
 </html>
