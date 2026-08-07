@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz mondial — Drapeaux, capitales et géographie | Canada Quiz</title>
 <meta name="description" content="Quiz gratuit sur le monde — testez vos connaissances sur les drapeaux du monde, les capitales, les monuments célèbres et la géographie mondiale. Amusant pour toute la famille. Sans inscription.">
-<link rel="stylesheet" href="../css/style.css?v=20260805a">
+<link rel="stylesheet" href="../css/style.css?v=20260807b">
 <style>.flagq{font-size:80px;text-align:center;margin:6px 0}</style>
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
@@ -276,26 +276,26 @@
 <script>
 const BANK = {
   "Flags of the World": { emoji:"🚩", color:"blue", flag:true, q:[
-   {q:"🇯🇵",options:["China","Japan","South Korea","Thailand"],answer:1,explain:"Japan's flag is a red circle (the sun) on white."},
-   {q:"🇧🇷",options:["Argentina","Mexico","Brazil","Portugal"],answer:2,explain:"Brazil's flag is green with a yellow diamond and blue globe."},
-   {q:"🇫🇷",options:["Italy","France","Netherlands","Russia"],answer:1,explain:"France's flag has three vertical stripes: blue, white, red."},
-   {q:"🇨🇦",options:["USA","United Kingdom","Canada","Australia"],answer:2,explain:"Canada's flag has a red maple leaf on white."},
+   {q:"🇯🇵",options:["Japan","South Korea","Thailand","China"],answer:0,explain:"Japan's flag is a red circle (the sun) on white."},
+   {q:"🇧🇷",options:["Mexico","Brazil","Portugal","Argentina"],answer:1,explain:"Brazil's flag is green with a yellow diamond and blue globe."},
+   {q:"🇫🇷",options:["Russia","Italy","France","Netherlands"],answer:2,explain:"France's flag has three vertical stripes: blue, white, red."},
+   {q:"🇨🇦",options:["Australia","USA","United Kingdom","Canada"],answer:3,explain:"Canada's flag has a red maple leaf on white."},
    {q:"🇮🇳",options:["India","Pakistan","Bangladesh","Sri Lanka"],answer:0,explain:"India's flag is orange, white, and green with a blue wheel."},
-   {q:"🇩🇪",options:["Belgium","Spain","Germany","Austria"],answer:2,explain:"Germany's flag has black, red, and gold horizontal stripes."},
-   {q:"🇮🇹",options:["Ireland","Italy","Mexico","Hungary"],answer:1,explain:"Italy's flag is green, white, and red vertical stripes."},
-   {q:"🇦🇺",options:["New Zealand","United Kingdom","Australia","Fiji"],answer:2,explain:"Australia's flag has the Union Jack and the Southern Cross stars."},
-   {q:"🇲🇽",options:["Italy","Mexico","Spain","Portugal"],answer:1,explain:"Mexico's flag is green, white, red with an eagle in the middle."},
-   {q:"🇬🇧",options:["United Kingdom","USA","France","Norway"],answer:0,explain:"The United Kingdom's flag is called the Union Jack."},
-   {q:"🇺🇸",options:["Liberia","USA","Malaysia","Chile"],answer:1,explain:"The USA flag has 50 stars and 13 stripes."},
-   {q:"🇿🇦",options:["Kenya","Nigeria","South Africa","Ghana"],answer:2,explain:"South Africa's flag has six colours in a Y shape."},
-   {q:"🇨🇭",options:["Turkey","Switzerland","Austria","Poland"],answer:1,explain:"Switzerland's flag is a white cross on a red square."},
-   {q:"🇰🇷",options:["Vietnam","Philippines","South Korea","Nepal"],answer:2,explain:"South Korea's flag has a red and blue circle in the middle."},
-   {q:"🇬🇷",options:["Greece","Uruguay","Finland","Israel"],answer:0,explain:"Greece's flag has blue and white stripes with a white cross."},
+   {q:"🇩🇪",options:["Spain","Germany","Austria","Belgium"],answer:1,explain:"Germany's flag has black, red, and gold horizontal stripes."},
+   {q:"🇮🇹",options:["Hungary","Ireland","Italy","Mexico"],answer:2,explain:"Italy's flag is green, white, and red vertical stripes."},
+   {q:"🇦🇺",options:["Fiji","New Zealand","United Kingdom","Australia"],answer:3,explain:"Australia's flag has the Union Jack and the Southern Cross stars."},
+   {q:"🇲🇽",options:["Mexico","Spain","Portugal","Italy"],answer:0,explain:"Mexico's flag is green, white, red with an eagle in the middle."},
+   {q:"🇬🇧",options:["Norway","United Kingdom","USA","France"],answer:1,explain:"The United Kingdom's flag is called the Union Jack."},
+   {q:"🇺🇸",options:["Chile","Liberia","USA","Malaysia"],answer:2,explain:"The USA flag has 50 stars and 13 stripes."},
+   {q:"🇿🇦",options:["Ghana","Kenya","Nigeria","South Africa"],answer:3,explain:"South Africa's flag has six colours in a Y shape."},
+   {q:"🇨🇭",options:["Switzerland","Austria","Poland","Turkey"],answer:0,explain:"Switzerland's flag is a white cross on a red square."},
+   {q:"🇰🇷",options:["Philippines","South Korea","Nepal","Vietnam"],answer:1,explain:"South Korea's flag has a red and blue circle in the middle."},
+   {q:"🇬🇷",options:["Finland","Israel","Greece","Uruguay"],answer:2,explain:"Greece's flag has blue and white stripes with a white cross."},
    {q:"🇯🇲",options:["Ghana","Ethiopia","Guyana","Jamaica"],answer:3,explain:"Jamaica's flag has a gold diagonal cross with green and black triangles."},
-   {q:"🇦🇷",options:["Ecuador","Chile","Argentina","Colombia"],answer:2,explain:"Argentina's flag is light blue and white with a golden sun."},
-   {q:"🇮🇪",options:["Italy","Hungary","Nigeria","Ireland"],answer:3,explain:"Ireland's flag has green, white, and orange vertical stripes."},
-   {q:"🇸🇪",options:["Norway","Sweden","Denmark","Iceland"],answer:1,explain:"Sweden's flag is blue with a yellow cross."},
-   {q:"🇳🇬",options:["Nigeria","Kenya","Ghana","Senegal"],answer:0,explain:"Nigeria's flag has green, white, and green vertical stripes."}
+   {q:"🇦🇷",options:["Argentina","Colombia","Ecuador","Chile"],answer:0,explain:"Argentina's flag is light blue and white with a golden sun."},
+   {q:"🇮🇪",options:["Nigeria","Ireland","Italy","Hungary"],answer:1,explain:"Ireland's flag has green, white, and orange vertical stripes."},
+   {q:"🇸🇪",options:["Iceland","Norway","Sweden","Denmark"],answer:2,explain:"Sweden's flag is blue with a yellow cross."},
+   {q:"🇳🇬",options:["Kenya","Ghana","Senegal","Nigeria"],answer:3,explain:"Nigeria's flag has green, white, and green vertical stripes."}
   ,
    {q:"🇵🇹",flag:true,options:["Portugal","Spain","Greece","Italy"],answer:0,explain:"Portugal's flag is green and red, with a shield over a golden sphere."},
    {q:"🇳🇱",flag:true,options:["Belgium","Netherlands","Luxembourg","Denmark"],answer:1,explain:"The Dutch flag has three stripes: red on top, then white, then blue."},
@@ -310,76 +310,76 @@ const BANK = {
    /* +50 Flags of the World */
    {q:"🇪🇬",options:["Morocco","Egypt","Tunisia","Algeria"],answer:1,explain:"The flag of Egypt has red, white and black stripes with a golden eagle in the middle.",flag:true},
    {q:"🇵🇭",options:["Indonesia","Malaysia","Philippines","Thailand"],answer:2,explain:"The flag of the Philippines shows a golden sun with eight rays and three small stars.",flag:true},
-   {q:"🇪🇸",options:["Spain","Portugal","Colombia","Italy"],answer:0,explain:"Spain uses red and yellow, with a wide yellow band across the middle of the flag.",flag:true},
-   {q:"🇵🇪",options:["Chile","Ecuador","Peru","Uruguay"],answer:2,explain:"Peru uses red and white stripes, the same two colours you see on the Canadian flag. 🍁",flag:true},
-   {q:"🇬🇭",options:["Senegal","Cameroon","Kenya","Ghana"],answer:3,explain:"Ghana chose red, gold and green with a black star that stands for African freedom.",flag:true},
-   {q:"🇫🇮",options:["Finland","Iceland","Sweden","Estonia"],answer:0,explain:"The blue cross on the flag of Finland is said to stand for the country's lakes and snow.",flag:true},
-   {q:"🇳🇿",options:["Fiji","New Zealand","Samoa","Australia"],answer:1,explain:"New Zealand shows four red stars, while the very similar Australian flag has six white ones.",flag:true},
-   {q:"🇱🇧",options:["Cyprus","Oman","Jordan","Lebanon"],answer:3,explain:"The green tree in the middle of this flag is a cedar, a tree that grows in the mountains of Lebanon. 🌲",flag:true},
+   {q:"🇪🇸",options:["Portugal","Colombia","Italy","Spain"],answer:3,explain:"Spain uses red and yellow, with a wide yellow band across the middle of the flag.",flag:true},
+   {q:"🇵🇪",options:["Peru","Uruguay","Chile","Ecuador"],answer:0,explain:"Peru uses red and white stripes, the same two colours you see on the Canadian flag. 🍁",flag:true},
+   {q:"🇬🇭",options:["Kenya","Ghana","Senegal","Cameroon"],answer:1,explain:"Ghana chose red, gold and green with a black star that stands for African freedom.",flag:true},
+   {q:"🇫🇮",options:["Sweden","Estonia","Finland","Iceland"],answer:2,explain:"The blue cross on the flag of Finland is said to stand for the country's lakes and snow.",flag:true},
+   {q:"🇳🇿",options:["Samoa","Australia","Fiji","New Zealand"],answer:3,explain:"New Zealand shows four red stars, while the very similar Australian flag has six white ones.",flag:true},
+   {q:"🇱🇧",options:["Lebanon","Cyprus","Oman","Jordan"],answer:0,explain:"The green tree in the middle of this flag is a cedar, a tree that grows in the mountains of Lebanon. 🌲",flag:true},
    {q:"🇧🇩",options:["Sri Lanka","Bangladesh","Nepal","Pakistan"],answer:1,explain:"Bangladesh uses a red circle on green, and the circle sits a little to the left of centre.",flag:true}
   ]},
   "Capital Cities": { emoji:"🏙️", color:"green", q:[
-   {q:"What is the capital of France?",options:["Lyon","Paris","Nice","Marseille"],answer:1,explain:"Paris is the capital and largest city of France."},
-   {q:"What is the capital of Canada?",options:["Toronto","Vancouver","Ottawa","Montreal"],answer:2,explain:"Ottawa, in Ontario, is Canada's capital."},
-   {q:"What is the capital of Japan?",options:["Osaka","Kyoto","Tokyo","Nagoya"],answer:2,explain:"Tokyo is the capital of Japan."},
-   {q:"What is the capital of Italy?",options:["Milan","Venice","Rome","Naples"],answer:2,explain:"Rome is the capital of Italy."},
+   {q:"What is the capital of France?",options:["Marseille","Lyon","Paris","Nice"],answer:2,explain:"Paris is the capital and largest city of France."},
+   {q:"What is the capital of Canada?",options:["Montreal","Toronto","Vancouver","Ottawa"],answer:3,explain:"Ottawa, in Ontario, is Canada's capital."},
+   {q:"What is the capital of Japan?",options:["Tokyo","Nagoya","Osaka","Kyoto"],answer:0,explain:"Tokyo is the capital of Japan."},
+   {q:"What is the capital of Italy?",options:["Venice","Rome","Naples","Milan"],answer:1,explain:"Rome is the capital of Italy."},
    {q:"What is the capital of Australia?",options:["Sydney","Melbourne","Canberra","Perth"],answer:2,explain:"Canberra is Australia's capital, not Sydney!"},
-   {q:"What is the capital of Egypt?",options:["Cairo","Alexandria","Giza","Luxor"],answer:0,explain:"Cairo is the capital of Egypt."},
-   {q:"What is the capital of Brazil?",options:["Rio de Janeiro","São Paulo","Brasília","Salvador"],answer:2,explain:"Brasília is the capital of Brazil."},
+   {q:"What is the capital of Egypt?",options:["Alexandria","Giza","Luxor","Cairo"],answer:3,explain:"Cairo is the capital of Egypt."},
+   {q:"What is the capital of Brazil?",options:["Brasília","Salvador","Rio de Janeiro","São Paulo"],answer:0,explain:"Brasília is the capital of Brazil."},
    {q:"What is the capital of the United Kingdom?",options:["Manchester","London","Liverpool","Glasgow"],answer:1,explain:"London is the capital of the UK."},
    {q:"What is the capital of Germany?",options:["Munich","Hamburg","Berlin","Frankfurt"],answer:2,explain:"Berlin is the capital of Germany."},
-   {q:"What is the capital of India?",options:["Mumbai","New Delhi","Kolkata","Chennai"],answer:1,explain:"New Delhi is the capital of India."},
-   {q:"What is the capital of the USA?",options:["New York","Los Angeles","Washington, D.C.","Chicago"],answer:2,explain:"Washington, D.C. is the capital of the USA."},
+   {q:"What is the capital of India?",options:["Kolkata","Chennai","Mumbai","New Delhi"],answer:3,explain:"New Delhi is the capital of India."},
+   {q:"What is the capital of the USA?",options:["Washington, D.C.","Chicago","New York","Los Angeles"],answer:0,explain:"Washington, D.C. is the capital of the USA."},
    {q:"What is the capital of China?",options:["Shanghai","Beijing","Hong Kong","Guangzhou"],answer:1,explain:"Beijing is the capital of China."},
-   {q:"What is the capital of Spain?",options:["Barcelona","Madrid","Seville","Valencia"],answer:1,explain:"Madrid is the capital and largest city of Spain."},
-   {q:"What is the capital of Russia?",options:["Moscow","Saint Petersburg","Kazan","Sochi"],answer:0,explain:"Moscow is the capital of Russia and its biggest city."},
-   {q:"What is the capital of Kenya?",options:["Mombasa","Kisumu","Nairobi","Nakuru"],answer:2,explain:"Nairobi is the capital of Kenya, in East Africa."},
+   {q:"What is the capital of Spain?",options:["Valencia","Barcelona","Madrid","Seville"],answer:2,explain:"Madrid is the capital and largest city of Spain."},
+   {q:"What is the capital of Russia?",options:["Saint Petersburg","Kazan","Sochi","Moscow"],answer:3,explain:"Moscow is the capital of Russia and its biggest city."},
+   {q:"What is the capital of Kenya?",options:["Nairobi","Nakuru","Mombasa","Kisumu"],answer:0,explain:"Nairobi is the capital of Kenya, in East Africa."},
    {q:"What is the capital of Mexico?",options:["Cancún","Mexico City","Guadalajara","Monterrey"],answer:1,explain:"Mexico City is the capital of Mexico and sits high in the mountains."},
-   {q:"What is the capital of Argentina?",options:["Córdoba","Rosario","Mendoza","Buenos Aires"],answer:3,explain:"Buenos Aires is the capital of Argentina."},
-   {q:"What is the capital of South Korea?",options:["Busan","Incheon","Seoul","Daegu"],answer:2,explain:"Seoul is the capital of South Korea."},
-   {q:"What is the capital of Turkey?",options:["Istanbul","Izmir","Antalya","Ankara"],answer:3,explain:"Ankara is the capital of Turkey, not Istanbul."},
-   {q:"What is the capital of New Zealand?",options:["Wellington","Auckland","Christchurch","Dunedin"],answer:0,explain:"Wellington is the capital of New Zealand, not Auckland."}
+   {q:"What is the capital of Argentina?",options:["Rosario","Mendoza","Buenos Aires","Córdoba"],answer:2,explain:"Buenos Aires is the capital of Argentina."},
+   {q:"What is the capital of South Korea?",options:["Daegu","Busan","Incheon","Seoul"],answer:3,explain:"Seoul is the capital of South Korea."},
+   {q:"What is the capital of Turkey?",options:["Ankara","Istanbul","Izmir","Antalya"],answer:0,explain:"Ankara is the capital of Turkey, not Istanbul."},
+   {q:"What is the capital of New Zealand?",options:["Dunedin","Wellington","Auckland","Christchurch"],answer:1,explain:"Wellington is the capital of New Zealand, not Auckland."}
   ,
-   {q:"What is the capital of Portugal?",options:["Porto","Lisbon","Madrid","Seville"],answer:1,explain:"Lisbon sits on the Tagus River near the Atlantic Ocean."},
-   {q:"What is the capital of Norway?",options:["Bergen","Stockholm","Oslo","Helsinki"],answer:2,explain:"Oslo is Norway's largest city and sits at the end of a long fjord."},
-   {q:"What is the capital of Peru?",options:["Quito","Bogotá","La Paz","Lima"],answer:3,explain:"Lima was founded in 1535 and sits near Peru's Pacific coast."},
-   {q:"What is the capital of Greece?",options:["Athens","Sparta","Thessaloniki","Corinth"],answer:0,explain:"Athens is one of the world's oldest cities, lived in for over 3,000 years."},
-   {q:"What is the capital of Poland?",options:["Kraków","Warsaw","Gdańsk","Prague"],answer:1,explain:"Warsaw stands on the Vistula River in the centre of Poland."},
-   {q:"What is the capital of Thailand?",options:["Hanoi","Jakarta","Bangkok","Manila"],answer:2,explain:"Bangkok grew beside the Chao Phraya River and is Thailand's biggest city."},
-   {q:"What is the capital of Cuba?",options:["Kingston","San Juan","Nassau","Havana"],answer:3,explain:"Havana sits on Cuba's north coast and was founded by Spanish settlers."},
-   {q:"What is the capital of Austria?",options:["Vienna","Salzburg","Munich","Zurich"],answer:0,explain:"Vienna sits on the Danube River and is famous for classical music."},
-   {q:"What is the capital of Chile?",options:["Valparaíso","Santiago","Montevideo","Asunción"],answer:1,explain:"Santiago lies in a valley with the Andes Mountains rising to the east."}
+   {q:"What is the capital of Portugal?",options:["Seville","Porto","Lisbon","Madrid"],answer:2,explain:"Lisbon sits on the Tagus River near the Atlantic Ocean."},
+   {q:"What is the capital of Norway?",options:["Helsinki","Bergen","Stockholm","Oslo"],answer:3,explain:"Oslo is Norway's largest city and sits at the end of a long fjord."},
+   {q:"What is the capital of Peru?",options:["Lima","Quito","Bogotá","La Paz"],answer:0,explain:"Lima was founded in 1535 and sits near Peru's Pacific coast."},
+   {q:"What is the capital of Greece?",options:["Corinth","Athens","Sparta","Thessaloniki"],answer:1,explain:"Athens is one of the world's oldest cities, lived in for over 3,000 years."},
+   {q:"What is the capital of Poland?",options:["Prague","Kraków","Warsaw","Gdańsk"],answer:2,explain:"Warsaw stands on the Vistula River in the centre of Poland."},
+   {q:"What is the capital of Thailand?",options:["Manila","Hanoi","Jakarta","Bangkok"],answer:3,explain:"Bangkok grew beside the Chao Phraya River and is Thailand's biggest city."},
+   {q:"What is the capital of Cuba?",options:["Havana","Kingston","San Juan","Nassau"],answer:0,explain:"Havana sits on Cuba's north coast and was founded by Spanish settlers."},
+   {q:"What is the capital of Austria?",options:["Zurich","Vienna","Salzburg","Munich"],answer:1,explain:"Vienna sits on the Danube River and is famous for classical music."},
+   {q:"What is the capital of Chile?",options:["Asunción","Valparaíso","Santiago","Montevideo"],answer:2,explain:"Santiago lies in a valley with the Andes Mountains rising to the east."}
   ,
    /* +50 Capital Cities */
-   {q:"What is the capital of the Philippines?",options:["Jakarta","Kuala Lumpur","Manila","Singapore"],answer:2,explain:"Manila stands beside a wide bay on the island of Luzon."},
-   {q:"What is the capital of Nigeria?",options:["Lagos","Abuja","Kano","Accra"],answer:1,explain:"Abuja was built near the centre of the country and became the capital in 1991."},
-   {q:"What is the capital of Vietnam?",options:["Hanoi","Ho Chi Minh City","Da Nang","Hue"],answer:0,explain:"Hanoi lies in the north of Vietnam and is more than a thousand years old."},
-   {q:"What is the capital of Colombia?",options:["Medellin","Cali","Cartagena","Bogota"],answer:3,explain:"Bogota sits high in the Andes Mountains, about 2,600 metres above sea level."},
-   {q:"What is the capital of Ethiopia?",options:["Nairobi","Addis Ababa","Khartoum","Asmara"],answer:1,explain:"Addis Ababa is one of the highest capital cities in the world and its name means new flower."},
-   {q:"What is the capital of Pakistan?",options:["Karachi","Lahore","Islamabad","Peshawar"],answer:2,explain:"Islamabad was planned and built in the 1960s to serve as the capital."},
-   {q:"What is the capital of Ireland?",options:["Dublin","Cork","Galway","Limerick"],answer:0,explain:"Dublin grew up where the River Liffey meets the Irish Sea."},
+   {q:"What is the capital of the Philippines?",options:["Singapore","Jakarta","Kuala Lumpur","Manila"],answer:3,explain:"Manila stands beside a wide bay on the island of Luzon."},
+   {q:"What is the capital of Nigeria?",options:["Abuja","Kano","Accra","Lagos"],answer:0,explain:"Abuja was built near the centre of the country and became the capital in 1991."},
+   {q:"What is the capital of Vietnam?",options:["Hue","Hanoi","Ho Chi Minh City","Da Nang"],answer:1,explain:"Hanoi lies in the north of Vietnam and is more than a thousand years old."},
+   {q:"What is the capital of Colombia?",options:["Cali","Cartagena","Bogota","Medellin"],answer:2,explain:"Bogota sits high in the Andes Mountains, about 2,600 metres above sea level."},
+   {q:"What is the capital of Ethiopia?",options:["Khartoum","Asmara","Nairobi","Addis Ababa"],answer:3,explain:"Addis Ababa is one of the highest capital cities in the world and its name means new flower."},
+   {q:"What is the capital of Pakistan?",options:["Islamabad","Peshawar","Karachi","Lahore"],answer:0,explain:"Islamabad was planned and built in the 1960s to serve as the capital."},
+   {q:"What is the capital of Ireland?",options:["Limerick","Dublin","Cork","Galway"],answer:1,explain:"Dublin grew up where the River Liffey meets the Irish Sea."},
    {q:"What is the capital of Morocco?",options:["Casablanca","Marrakesh","Rabat","Fes"],answer:2,explain:"Rabat sits on the Atlantic coast, while Casablanca is the country's largest city."},
-   {q:"What is the capital of Jamaica?",options:["Kingston","Montego Bay","Port Antonio","Ocho Rios"],answer:0,explain:"Kingston, on the south coast, has one of the largest natural harbours in the world."}
+   {q:"What is the capital of Jamaica?",options:["Montego Bay","Port Antonio","Ocho Rios","Kingston"],answer:3,explain:"Kingston, on the south coast, has one of the largest natural harbours in the world."}
   ]},
   "Famous Landmarks": { emoji:"🗽", color:"orange", q:[
-   {q:"In which country is the Eiffel Tower?",options:["Italy","France","Spain","Belgium"],answer:1,explain:"The Eiffel Tower is in Paris, France."},
-   {q:"In which country is the Great Wall?",options:["Japan","India","China","Mongolia"],answer:2,explain:"The Great Wall of China is thousands of kilometres long."},
+   {q:"In which country is the Eiffel Tower?",options:["France","Spain","Belgium","Italy"],answer:0,explain:"The Eiffel Tower is in Paris, France."},
+   {q:"In which country is the Great Wall?",options:["India","China","Mongolia","Japan"],answer:1,explain:"The Great Wall of China is thousands of kilometres long."},
    {q:"Where is the Statue of Liberty?",options:["France","Canada","USA","UK"],answer:2,explain:"The Statue of Liberty stands in New York, USA."},
-   {q:"In which country are the Pyramids of Giza?",options:["Mexico","Egypt","Peru","Iraq"],answer:1,explain:"The famous pyramids are in Egypt."},
+   {q:"In which country are the Pyramids of Giza?",options:["Peru","Iraq","Mexico","Egypt"],answer:3,explain:"The famous pyramids are in Egypt."},
    {q:"Where is the Taj Mahal?",options:["India","Pakistan","Iran","Turkey"],answer:0,explain:"The Taj Mahal is a beautiful marble tomb in India."},
    {q:"In which country is the CN Tower?",options:["USA","Canada","Australia","UK"],answer:1,explain:"The CN Tower is in Toronto, Canada."},
-   {q:"Where is the Colosseum?",options:["Greece","Italy","Spain","Egypt"],answer:1,explain:"The ancient Colosseum is in Rome, Italy."},
-   {q:"In which country is Machu Picchu?",options:["Mexico","Brazil","Peru","Chile"],answer:2,explain:"Machu Picchu is an ancient city high in the mountains of Peru."},
-   {q:"Where is Big Ben?",options:["USA","France","United Kingdom","Germany"],answer:2,explain:"Big Ben is the famous clock tower in London, UK."},
+   {q:"Where is the Colosseum?",options:["Egypt","Greece","Italy","Spain"],answer:2,explain:"The ancient Colosseum is in Rome, Italy."},
+   {q:"In which country is Machu Picchu?",options:["Chile","Mexico","Brazil","Peru"],answer:3,explain:"Machu Picchu is an ancient city high in the mountains of Peru."},
+   {q:"Where is Big Ben?",options:["United Kingdom","Germany","USA","France"],answer:0,explain:"Big Ben is the famous clock tower in London, UK."},
    {q:"In which country is the Sydney Opera House?",options:["New Zealand","Australia","UK","Canada"],answer:1,explain:"The Sydney Opera House is in Australia."},
-   {q:"In which country is Christ the Redeemer?",options:["Argentina","Portugal","Peru","Brazil"],answer:3,explain:"The huge Christ the Redeemer statue stands above Rio de Janeiro."},
-   {q:"Where is the Leaning Tower of Pisa?",options:["Spain","Greece","Italy","France"],answer:2,explain:"The famous tilting tower stands in the city of Pisa."},
-   {q:"In which city is the Burj Khalifa?",options:["Doha","Dubai","Riyadh","Cairo"],answer:1,explain:"The Burj Khalifa in Dubai is one of the tallest buildings on Earth."},
+   {q:"In which country is Christ the Redeemer?",options:["Portugal","Peru","Brazil","Argentina"],answer:2,explain:"The huge Christ the Redeemer statue stands above Rio de Janeiro."},
+   {q:"Where is the Leaning Tower of Pisa?",options:["France","Spain","Greece","Italy"],answer:3,explain:"The famous tilting tower stands in the city of Pisa."},
+   {q:"In which city is the Burj Khalifa?",options:["Dubai","Riyadh","Cairo","Doha"],answer:0,explain:"The Burj Khalifa in Dubai is one of the tallest buildings on Earth."},
    {q:"In which country is Petra?",options:["Egypt","Jordan","Israel","Morocco"],answer:1,explain:"Petra is an ancient city carved right into pink rock."},
-   {q:"Where is Angkor Wat?",options:["Thailand","Vietnam","Laos","Cambodia"],answer:3,explain:"Angkor Wat is a giant ancient temple in the middle of the jungle."},
-   {q:"In which country is the Parthenon?",options:["Greece","Turkey","Italy","Cyprus"],answer:0,explain:"The Parthenon is an ancient temple on a hill above Athens."},
-   {q:"In which country is Chichen Itza?",options:["Guatemala","Belize","Mexico","Honduras"],answer:2,explain:"Chichen Itza is a large Maya pyramid site with a famous step pyramid."},
-   {q:"Where are the giant Moai stone statues?",options:["Chile","Peru","Fiji","New Zealand"],answer:0,explain:"The Moai stand on Easter Island, which belongs to Chile."}
+   {q:"Where is Angkor Wat?",options:["Vietnam","Laos","Cambodia","Thailand"],answer:2,explain:"Angkor Wat is a giant ancient temple in the middle of the jungle."},
+   {q:"In which country is the Parthenon?",options:["Turkey","Italy","Cyprus","Greece"],answer:3,explain:"The Parthenon is an ancient temple on a hill above Athens."},
+   {q:"In which country is Chichen Itza?",options:["Mexico","Honduras","Guatemala","Belize"],answer:0,explain:"Chichen Itza is a large Maya pyramid site with a famous step pyramid."},
+   {q:"Where are the giant Moai stone statues?",options:["New Zealand","Chile","Peru","Fiji"],answer:1,explain:"The Moai stand on Easter Island, which belongs to Chile."}
   ,
    {q:"Stonehenge, a ring of giant standing stones, is in which country?",options:["Ireland","Scotland","England","Wales"],answer:2,explain:"Stonehenge was built about 5,000 years ago on Salisbury Plain."},
    {q:"In which country are four presidents' faces carved into Mount Rushmore?",options:["Canada","Mexico","Brazil","United States"],answer:3,explain:"The giant faces were carved into a granite cliff in South Dakota."},
@@ -391,34 +391,34 @@ const BANK = {
    {q:"The Terracotta Army of clay soldiers was found in which country?",options:["Japan","China","Mongolia","Vietnam"],answer:1,explain:"Thousands of life-size clay soldiers were buried to guard an emperor's tomb."}
   ,
    /* +50 Famous Landmarks */
-   {q:"In which country is Table Mountain, a mountain with a flat top above a large city?",options:["Kenya","South Africa","Namibia","Tanzania"],answer:1,explain:"Table Mountain rises above Cape Town and often wears a tablecloth of cloud on top."},
-   {q:"The old stone ruins called Great Zimbabwe are in which country?",options:["Zambia","Mozambique","Zimbabwe","Botswana"],answer:2,explain:"Great Zimbabwe was a large stone city built about 900 years ago, and the country took its name from it."},
-   {q:"In which city can you see the Little Mermaid statue beside the harbour?",options:["Oslo","Stockholm","Helsinki","Copenhagen"],answer:3,explain:"The small bronze statue sits on a rock in Copenhagen and comes from a well known fairy tale."},
-   {q:"The Atomium, a giant model made of nine shiny metal balls, is in which country?",options:["Belgium","the Netherlands","Luxembourg","France"],answer:0,explain:"The Atomium was built in Brussels for a world fair in 1958 and copies the shape of a tiny iron crystal."},
-   {q:"In which country is Borobudur, a huge stone temple covered with carvings?",options:["Indonesia","Malaysia","Cambodia","Sri Lanka"],answer:0,explain:"Borobudur was built on the island of Java more than 1,200 years ago from about two million blocks of stone."},
-   {q:"Ha Long Bay, filled with tall limestone islands, is in which country?",options:["Thailand","the Philippines","Vietnam","China"],answer:2,explain:"Ha Long Bay in the north of Vietnam has about 1,600 rocky islands rising straight out of the water."},
-   {q:"The Nazca Lines, giant drawings marked on the desert ground, are in which country?",options:["Bolivia","Peru","Mexico","Chile"],answer:1,explain:"The Nazca Lines were scraped into the desert of Peru about 2,000 years ago and are easiest to see from the air."},
-   {q:"The Great Barrier Reef lies off the coast of which country?",options:["Indonesia","New Zealand","Fiji","Australia"],answer:3,explain:"The reef stretches more than 2,000 kilometres along the northeast coast and shelters thousands of sea animals. 🐠"}
+   {q:"In which country is Table Mountain, a mountain with a flat top above a large city?",options:["Tanzania","Kenya","South Africa","Namibia"],answer:2,explain:"Table Mountain rises above Cape Town and often wears a tablecloth of cloud on top."},
+   {q:"The old stone ruins called Great Zimbabwe are in which country?",options:["Botswana","Zambia","Mozambique","Zimbabwe"],answer:3,explain:"Great Zimbabwe was a large stone city built about 900 years ago, and the country took its name from it."},
+   {q:"In which city can you see the Little Mermaid statue beside the harbour?",options:["Copenhagen","Oslo","Stockholm","Helsinki"],answer:0,explain:"The small bronze statue sits on a rock in Copenhagen and comes from a well known fairy tale."},
+   {q:"The Atomium, a giant model made of nine shiny metal balls, is in which country?",options:["France","Belgium","the Netherlands","Luxembourg"],answer:1,explain:"The Atomium was built in Brussels for a world fair in 1958 and copies the shape of a tiny iron crystal."},
+   {q:"In which country is Borobudur, a huge stone temple covered with carvings?",options:["Cambodia","Sri Lanka","Indonesia","Malaysia"],answer:2,explain:"Borobudur was built on the island of Java more than 1,200 years ago from about two million blocks of stone."},
+   {q:"Ha Long Bay, filled with tall limestone islands, is in which country?",options:["China","Thailand","the Philippines","Vietnam"],answer:3,explain:"Ha Long Bay in the north of Vietnam has about 1,600 rocky islands rising straight out of the water."},
+   {q:"The Nazca Lines, giant drawings marked on the desert ground, are in which country?",options:["Peru","Mexico","Chile","Bolivia"],answer:0,explain:"The Nazca Lines were scraped into the desert of Peru about 2,000 years ago and are easiest to see from the air."},
+   {q:"The Great Barrier Reef lies off the coast of which country?",options:["Fiji","Australia","Indonesia","New Zealand"],answer:1,explain:"The reef stretches more than 2,000 kilometres along the northeast coast and shelters thousands of sea animals. 🐠"}
   ]},
   "World Geography": { emoji:"🗺️", color:"purple", q:[
    {q:"What is the largest ocean on Earth?",options:["Atlantic","Indian","Pacific","Arctic"],answer:2,explain:"The Pacific is the biggest and deepest ocean."},
-   {q:"What is the longest river in the world?",options:["Amazon","Nile","Yangtze","Mississippi"],answer:1,explain:"The Nile in Africa is usually called the longest river."},
-   {q:"Which is the largest continent?",options:["Africa","Asia","Europe","North America"],answer:1,explain:"Asia is the largest continent by area and people."},
-   {q:"What is the tallest mountain in the world?",options:["K2","Mount Kilimanjaro","Mount Everest","Mont Blanc"],answer:2,explain:"Mount Everest is the highest mountain above sea level."},
-   {q:"Which is the largest country by land area?",options:["Canada","China","USA","Russia"],answer:3,explain:"Russia is the largest country in the world; Canada is second."},
+   {q:"What is the longest river in the world?",options:["Yangtze","Mississippi","Amazon","Nile"],answer:3,explain:"The Nile in Africa is usually called the longest river."},
+   {q:"Which is the largest continent?",options:["Asia","Europe","North America","Africa"],answer:0,explain:"Asia is the largest continent by area and people."},
+   {q:"What is the tallest mountain in the world?",options:["Mount Kilimanjaro","Mount Everest","Mont Blanc","K2"],answer:1,explain:"Mount Everest is the highest mountain above sea level."},
+   {q:"Which is the largest country by land area?",options:["China","USA","Russia","Canada"],answer:2,explain:"Russia is the largest country in the world; Canada is second."},
    {q:"How many continents are there?",options:["5","6","7","8"],answer:2,explain:"There are seven continents on Earth."},
-   {q:"Which desert is the largest hot desert?",options:["Gobi","Sahara","Kalahari","Arabian"],answer:1,explain:"The Sahara in Africa is the largest hot desert."},
+   {q:"Which desert is the largest hot desert?",options:["Kalahari","Arabian","Gobi","Sahara"],answer:3,explain:"The Sahara in Africa is the largest hot desert."},
    {q:"What is the smallest ocean?",options:["Arctic","Indian","Atlantic","Southern"],answer:0,explain:"The Arctic Ocean is the smallest and shallowest."},
-   {q:"On which continent is the Amazon Rainforest?",options:["Africa","Asia","South America","Australia"],answer:2,explain:"The Amazon Rainforest is mostly in South America."},
-   {q:"Which country has the most people?",options:["India","China","USA","Indonesia"],answer:0,explain:"India is now the most populous country in the world."},
-   {q:"Which imaginary line divides Earth into north and south?",options:["The Prime Meridian","The equator","The Arctic Circle","The Tropic of Cancer"],answer:1,explain:"The equator is an imaginary line right around the middle of Earth."},
-   {q:"Which continent has no permanent residents?",options:["Africa","Australia","Antarctica","South America"],answer:2,explain:"Antarctica is so cold that only scientists stay, and only for a while."},
-   {q:"On which continent is most of Egypt?",options:["Europe","Asia","Australia","Africa"],answer:3,explain:"Egypt is in the northeast of Africa, with a small part in Asia."},
+   {q:"On which continent is the Amazon Rainforest?",options:["Asia","South America","Australia","Africa"],answer:1,explain:"The Amazon Rainforest is mostly in South America."},
+   {q:"Which country has the most people?",options:["USA","Indonesia","India","China"],answer:2,explain:"India is now the most populous country in the world."},
+   {q:"Which imaginary line divides Earth into north and south?",options:["The Arctic Circle","The Tropic of Cancer","The Prime Meridian","The equator"],answer:3,explain:"The equator is an imaginary line right around the middle of Earth."},
+   {q:"Which continent has no permanent residents?",options:["Antarctica","South America","Africa","Australia"],answer:0,explain:"Antarctica is so cold that only scientists stay, and only for a while."},
+   {q:"On which continent is most of Egypt?",options:["Australia","Africa","Europe","Asia"],answer:1,explain:"Egypt is in the northeast of Africa, with a small part in Asia."},
    {q:"How many main time zones does the world have?",options:["12","24","36","48"],answer:1,explain:"The world is split into 24 main time zones, one for each hour of the day."},
-   {q:"Which country is made of thousands of islands, including Java?",options:["Indonesia","Philippines","Malaysia","Thailand"],answer:0,explain:"Indonesia is spread over thousands of islands in Southeast Asia."},
+   {q:"Which country is made of thousands of islands, including Java?",options:["Malaysia","Thailand","Indonesia","Philippines"],answer:2,explain:"Indonesia is spread over thousands of islands in Southeast Asia."},
    {q:"Which country is named after the equator?",options:["Panama","Colombia","Peru","Ecuador"],answer:3,explain:"Ecuador means 'equator' in Spanish, and the line runs through the country."},
    {q:"Which two continents does Russia sit in?",options:["Europe and Asia","Asia and Africa","Europe and Africa","Asia and Australia"],answer:0,explain:"Russia stretches across both Europe and Asia."},
-   {q:"What is the largest island in the world?",options:["Madagascar","Borneo","Greenland","New Guinea"],answer:2,explain:"Greenland is the largest island on Earth and most of it is covered in ice."}
+   {q:"What is the largest island in the world?",options:["Borneo","Greenland","New Guinea","Madagascar"],answer:1,explain:"Greenland is the largest island on Earth and most of it is covered in ice."}
   ,
    {q:"Which continent has the most countries?",options:["Europe","Asia","Africa","South America"],answer:2,explain:"Africa is made up of 54 countries, more than any other continent."},
    {q:"Which imaginary line sits at 23.5 degrees north of the equator?",options:["Equator","Tropic of Capricorn","Arctic Circle","Tropic of Cancer"],answer:3,explain:"The Tropic of Cancer marks how far north the Sun can shine straight overhead."},
@@ -431,27 +431,27 @@ const BANK = {
   ,
    /* +50 World Geography */
    {q:"Which is the smallest continent?",options:["Europe","Antarctica","Australia","South America"],answer:2,explain:"Australia is the smallest continent and the only one that is also a single country."},
-   {q:"Which country has the longest coastline in the world?",options:["Russia","Canada","Australia","Indonesia"],answer:1,explain:"Canada has over 200,000 kilometres of coast because of its many northern islands. 🌊"},
+   {q:"Which country has the longest coastline in the world?",options:["Australia","Indonesia","Russia","Canada"],answer:3,explain:"Canada has over 200,000 kilometres of coast because of its many northern islands. 🌊"},
    {q:"Which is the largest country in Africa by land area?",options:["Algeria","Sudan","Egypt","Nigeria"],answer:0,explain:"Algeria is the biggest country in Africa, and much of it is covered by the Sahara Desert."},
-   {q:"Which small country is completely surrounded by South Africa?",options:["Botswana","Zimbabwe","Namibia","Lesotho"],answer:3,explain:"Lesotho is a country of high mountains with South African land on every side."},
-   {q:"Which continent has the most people living on it?",options:["Africa","Asia","Europe","North America"],answer:1,explain:"More than half of all the people in the world live in Asia."},
-   {q:"The island of Hispaniola is shared by Haiti and which other country?",options:["Jamaica","Cuba","the Dominican Republic","Trinidad and Tobago"],answer:2,explain:"Haiti takes the western side of the island and the Dominican Republic takes the eastern side."},
-   {q:"Which is the driest desert in the world?",options:["the Gobi Desert","the Atacama Desert","the Kalahari Desert","the Arabian Desert"],answer:1,explain:"The Atacama Desert in Chile is so dry that rain has almost never been recorded in some spots."},
-   {q:"Which is the largest country in South America?",options:["Argentina","Peru","Colombia","Brazil"],answer:3,explain:"Brazil covers almost half of South America and touches ten neighbouring countries."}
+   {q:"Which small country is completely surrounded by South Africa?",options:["Namibia","Lesotho","Botswana","Zimbabwe"],answer:1,explain:"Lesotho is a country of high mountains with South African land on every side."},
+   {q:"Which continent has the most people living on it?",options:["North America","Africa","Asia","Europe"],answer:2,explain:"More than half of all the people in the world live in Asia."},
+   {q:"The island of Hispaniola is shared by Haiti and which other country?",options:["Trinidad and Tobago","Jamaica","Cuba","the Dominican Republic"],answer:3,explain:"Haiti takes the western side of the island and the Dominican Republic takes the eastern side."},
+   {q:"Which is the driest desert in the world?",options:["the Atacama Desert","the Kalahari Desert","the Arabian Desert","the Gobi Desert"],answer:0,explain:"The Atacama Desert in Chile is so dry that rain has almost never been recorded in some spots."},
+   {q:"Which is the largest country in South America?",options:["Colombia","Brazil","Argentina","Peru"],answer:1,explain:"Brazil covers almost half of South America and touches ten neighbouring countries."}
   ]},
   "Countries & Cultures": { emoji:"🌍", color:"red", q:[
-   {q:"Which country is famous for inventing pizza?",options:["Greece","Italy","Spain","France"],answer:1,explain:"Pizza as we know it comes from the city of Naples in Italy."},
-   {q:"Which language do people speak in Brazil?",options:["Spanish","Portuguese","French","Italian"],answer:1,explain:"Brazil speaks Portuguese, while most of South America speaks Spanish."},
+   {q:"Which country is famous for inventing pizza?",options:["France","Greece","Italy","Spain"],answer:2,explain:"Pizza as we know it comes from the city of Naples in Italy."},
+   {q:"Which language do people speak in Brazil?",options:["French","Italian","Spanish","Portuguese"],answer:3,explain:"Brazil speaks Portuguese, while most of South America speaks Spanish."},
    {q:"In which country did the festival of lights, Diwali, begin?",options:["India","Japan","Egypt","Greece"],answer:0,explain:"Diwali is a festival of lights that began in India."},
-   {q:"Which country's traditional art of paper folding is called origami?",options:["China","Korea","Japan","Vietnam"],answer:2,explain:"Origami is the Japanese art of folding paper into shapes."},
-   {q:"Which country is the home of the tango dance?",options:["Spain","Mexico","Cuba","Argentina"],answer:3,explain:"The tango began in the city of Buenos Aires."},
-   {q:"Which country is the home of the Māori people?",options:["Australia","New Zealand","Fiji","Samoa"],answer:1,explain:"The Māori are the Indigenous people of New Zealand."},
-   {q:"In which country is the kilt traditional clothing?",options:["Ireland","Wales","Scotland","Norway"],answer:2,explain:"The kilt is a traditional pleated garment from Scotland."},
-   {q:"In which country did the Olympic Games begin?",options:["Italy","Egypt","Turkey","Greece"],answer:3,explain:"The very first Olympic Games were held in ancient Greece."},
-   {q:"Which country produces most of the world's maple syrup?",options:["Canada","Sweden","Russia","Norway"],answer:0,explain:"Most of the world's maple syrup is made in Canada. 🍁"},
-   {q:"Which country is famous for windmills and wooden shoes?",options:["Belgium","Denmark","Netherlands","Germany"],answer:2,explain:"Windmills and wooden shoes are old traditions in the Netherlands."},
+   {q:"Which country's traditional art of paper folding is called origami?",options:["Korea","Japan","Vietnam","China"],answer:1,explain:"Origami is the Japanese art of folding paper into shapes."},
+   {q:"Which country is the home of the tango dance?",options:["Mexico","Cuba","Argentina","Spain"],answer:2,explain:"The tango began in the city of Buenos Aires."},
+   {q:"Which country is the home of the Māori people?",options:["Fiji","Samoa","Australia","New Zealand"],answer:3,explain:"The Māori are the Indigenous people of New Zealand."},
+   {q:"In which country is the kilt traditional clothing?",options:["Scotland","Norway","Ireland","Wales"],answer:0,explain:"The kilt is a traditional pleated garment from Scotland."},
+   {q:"In which country did the Olympic Games begin?",options:["Turkey","Greece","Italy","Egypt"],answer:1,explain:"The very first Olympic Games were held in ancient Greece."},
+   {q:"Which country produces most of the world's maple syrup?",options:["Russia","Norway","Canada","Sweden"],answer:2,explain:"Most of the world's maple syrup is made in Canada. 🍁"},
+   {q:"Which country is famous for windmills and wooden shoes?",options:["Germany","Belgium","Denmark","Netherlands"],answer:3,explain:"Windmills and wooden shoes are old traditions in the Netherlands."},
    {q:"In which country did the party piñata become a tradition?",options:["Mexico","Spain","Peru","Cuba"],answer:0,explain:"Piñatas filled with treats are a birthday tradition in Mexico."},
-   {q:"In which country did the dragon dance begin?",options:["Japan","India","Korea","China"],answer:3,explain:"The dragon dance is a Chinese tradition at Lunar New Year."}
+   {q:"In which country did the dragon dance begin?",options:["Korea","China","Japan","India"],answer:1,explain:"The dragon dance is a Chinese tradition at Lunar New Year."}
   ,
    {q:"Flamenco dancing and guitar music come from which country?",options:["Italy","Portugal","Spain","Mexico"],answer:2,explain:"Flamenco grew in the Andalusia region of southern Spain."},
    {q:"In which country is the sauna a national tradition?",options:["Norway","Sweden","Iceland","Finland"],answer:3,explain:"Finland has millions of saunas, small hot rooms where people relax."},
@@ -463,26 +463,26 @@ const BANK = {
    {q:"The didgeridoo, a long wooden wind instrument, comes from which country?",options:["New Zealand","Australia","Papua New Guinea","Fiji"],answer:1,explain:"Aboriginal Australians have played the didgeridoo for thousands of years."}
   ,
    /* +50 Countries & Cultures */
-   {q:"Swahili, a language in which hello is jambo, is widely spoken in which country?",options:["Ghana","Morocco","Senegal","Kenya"],answer:3,explain:"Swahili is used every day in Kenya and in several neighbouring countries of East Africa."},
-   {q:"Pho, a noodle soup served with fresh herbs, is a famous dish from which country?",options:["Vietnam","Japan","South Korea","Malaysia"],answer:0,explain:"Pho is made with a slowly cooked broth, flat rice noodles and a pile of fresh herbs on top. 🍜"},
-   {q:"Songkran, a New Year festival where people splash water on each other, is celebrated in which country?",options:["India","Indonesia","Nepal","Thailand"],answer:3,explain:"Songkran takes place in April in Thailand, and pouring water over someone is a wish for good luck."},
-   {q:"Tagine, a stew cooked slowly in a pot with a cone-shaped lid, comes from which country?",options:["Morocco","Egypt","Turkey","Greece"],answer:0,explain:"The clay pot is also called a tagine, and its tall lid keeps the steam inside so the food stays soft."},
-   {q:"Tagalog is one of the main languages of which country?",options:["Malaysia","Indonesia","Singapore","the Philippines"],answer:3,explain:"The national language of the Philippines is Filipino, which is built on Tagalog."},
-   {q:"Which money is shared by many European countries, such as France and Spain?",options:["the franc","the euro","the krona","the lira"],answer:1,explain:"About twenty European countries use the euro, so the same coins work in each of them."},
-   {q:"Potatoes were first grown by farmers in which part of the world?",options:["West Africa","Northern Europe","South America","Southeast Asia"],answer:2,explain:"Farmers in the Andes Mountains grew potatoes thousands of years ago, and hundreds of kinds still grow there. 🥔"},
-   {q:"Reggae music grew up on which Caribbean island?",options:["Jamaica","Cuba","Barbados","Trinidad"],answer:0,explain:"Reggae began in Jamaica in the 1960s and its slow off-beat rhythm is now played all over the world. 🎵"}
+   {q:"Swahili, a language in which hello is jambo, is widely spoken in which country?",options:["Morocco","Senegal","Kenya","Ghana"],answer:2,explain:"Swahili is used every day in Kenya and in several neighbouring countries of East Africa."},
+   {q:"Pho, a noodle soup served with fresh herbs, is a famous dish from which country?",options:["Japan","South Korea","Malaysia","Vietnam"],answer:3,explain:"Pho is made with a slowly cooked broth, flat rice noodles and a pile of fresh herbs on top. 🍜"},
+   {q:"Songkran, a New Year festival where people splash water on each other, is celebrated in which country?",options:["Thailand","India","Indonesia","Nepal"],answer:0,explain:"Songkran takes place in April in Thailand, and pouring water over someone is a wish for good luck."},
+   {q:"Tagine, a stew cooked slowly in a pot with a cone-shaped lid, comes from which country?",options:["Greece","Morocco","Egypt","Turkey"],answer:1,explain:"The clay pot is also called a tagine, and its tall lid keeps the steam inside so the food stays soft."},
+   {q:"Tagalog is one of the main languages of which country?",options:["Indonesia","Singapore","the Philippines","Malaysia"],answer:2,explain:"The national language of the Philippines is Filipino, which is built on Tagalog."},
+   {q:"Which money is shared by many European countries, such as France and Spain?",options:["the krona","the lira","the franc","the euro"],answer:3,explain:"About twenty European countries use the euro, so the same coins work in each of them."},
+   {q:"Potatoes were first grown by farmers in which part of the world?",options:["South America","Southeast Asia","West Africa","Northern Europe"],answer:0,explain:"Farmers in the Andes Mountains grew potatoes thousands of years ago, and hundreds of kinds still grow there. 🥔"},
+   {q:"Reggae music grew up on which Caribbean island?",options:["Trinidad","Jamaica","Cuba","Barbados"],answer:1,explain:"Reggae began in Jamaica in the 1960s and its slow off-beat rhythm is now played all over the world. 🎵"}
   ]},
   "Rivers, Mountains & Oceans": { emoji:"🏔️", color:"blue", q:[
    {q:"Which river flows through the Amazon Rainforest?",options:["Congo River","Nile River","Amazon River","Mekong River"],answer:2,explain:"The Amazon River winds through the rainforest in South America."},
    {q:"On which continent are the Andes Mountains?",options:["Africa","Asia","Europe","South America"],answer:3,explain:"The Andes run all the way down the west side of South America."},
-   {q:"Which ocean lies between Africa and Australia?",options:["Atlantic Ocean","Indian Ocean","Pacific Ocean","Arctic Ocean"],answer:1,explain:"The Indian Ocean sits between Africa, southern Asia and Australia."},
-   {q:"In which mountain range is Mount Everest?",options:["The Alps","The Andes","The Rockies","The Himalayas"],answer:3,explain:"Mount Everest rises in the Himalayas, on the border of Nepal and China."},
-   {q:"Which river flows through London?",options:["The Seine","The Rhine","The Danube","The Thames"],answer:3,explain:"The Thames flows right through the middle of London, England."},
-   {q:"Which ocean is on Canada's east coast?",options:["Pacific Ocean","Arctic Ocean","Atlantic Ocean","Indian Ocean"],answer:2,explain:"The Atlantic Ocean washes Canada's east coast. 🌊"},
-   {q:"Which mountains separate France and Spain?",options:["The Alps","The Pyrenees","The Apennines","The Carpathians"],answer:1,explain:"The Pyrenees form a natural wall between France and Spain."},
-   {q:"Which river flows north through Germany to the North Sea?",options:["The Rhine","The Volga","The Loire","The Po"],answer:0,explain:"The Rhine is a busy river that crosses Germany on its way to the sea."},
-   {q:"What is the deepest known place in the ocean?",options:["The Mariana Trench","The Bermuda Triangle","The Ring of Fire","The Great Barrier Reef"],answer:0,explain:"The Mariana Trench in the Pacific Ocean is the deepest spot we know of."},
-   {q:"Which is the highest mountain in Africa?",options:["Mount Kenya","Table Mountain","Mount Kilimanjaro","Mount Elgon"],answer:2,explain:"Mount Kilimanjaro in Tanzania is the highest peak in Africa."},
+   {q:"Which ocean lies between Africa and Australia?",options:["Indian Ocean","Pacific Ocean","Arctic Ocean","Atlantic Ocean"],answer:0,explain:"The Indian Ocean sits between Africa, southern Asia and Australia."},
+   {q:"In which mountain range is Mount Everest?",options:["The Rockies","The Himalayas","The Alps","The Andes"],answer:1,explain:"Mount Everest rises in the Himalayas, on the border of Nepal and China."},
+   {q:"Which river flows through London?",options:["The Rhine","The Danube","The Thames","The Seine"],answer:2,explain:"The Thames flows right through the middle of London, England."},
+   {q:"Which ocean is on Canada's east coast?",options:["Indian Ocean","Pacific Ocean","Arctic Ocean","Atlantic Ocean"],answer:3,explain:"The Atlantic Ocean washes Canada's east coast. 🌊"},
+   {q:"Which mountains separate France and Spain?",options:["The Pyrenees","The Apennines","The Carpathians","The Alps"],answer:0,explain:"The Pyrenees form a natural wall between France and Spain."},
+   {q:"Which river flows north through Germany to the North Sea?",options:["The Po","The Rhine","The Volga","The Loire"],answer:1,explain:"The Rhine is a busy river that crosses Germany on its way to the sea."},
+   {q:"What is the deepest known place in the ocean?",options:["The Ring of Fire","The Great Barrier Reef","The Mariana Trench","The Bermuda Triangle"],answer:2,explain:"The Mariana Trench in the Pacific Ocean is the deepest spot we know of."},
+   {q:"Which is the highest mountain in Africa?",options:["Mount Elgon","Mount Kenya","Table Mountain","Mount Kilimanjaro"],answer:3,explain:"Mount Kilimanjaro in Tanzania is the highest peak in Africa."},
    {q:"Which sea lies between Europe and Africa?",options:["The Mediterranean Sea","The Red Sea","The Black Sea","The Baltic Sea"],answer:0,explain:"The Mediterranean Sea lies between southern Europe and North Africa."},
    {q:"Which mountain range runs down western North America?",options:["The Appalachians","The Rockies","The Andes","The Alps"],answer:1,explain:"The Rocky Mountains stretch from Canada down through the United States."}
   ,
@@ -496,14 +496,14 @@ const BANK = {
    {q:"Which waterfall has the longest drop in the world?",options:["Niagara Falls","Angel Falls","Victoria Falls","Iguazu Falls"],answer:1,explain:"Angel Falls in Venezuela drops 979 metres from a flat-topped mountain."}
   ,
    /* +50 Rivers, Mountains & Oceans */
-   {q:"Which mountain range crosses Switzerland, Austria and northern Italy?",options:["the Alps","the Carpathians","the Apennines","the Ural Mountains"],answer:0,explain:"The Alps are the best known mountains of Europe, and many rivers start in their snow and ice. ⛰️"},
-   {q:"The Ring of Fire, a belt with many volcanoes, goes around which ocean?",options:["the Atlantic Ocean","the Indian Ocean","the Pacific Ocean","the Arctic Ocean"],answer:2,explain:"Most of the world's volcanoes and earthquakes happen along the edges of the Pacific Ocean."},
-   {q:"Which is the largest lake in Africa?",options:["Lake Chad","Lake Tanganyika","Lake Victoria","Lake Malawi"],answer:2,explain:"Lake Victoria touches Uganda, Kenya and Tanzania, and fishing boats work on it every day."},
+   {q:"Which mountain range crosses Switzerland, Austria and northern Italy?",options:["the Apennines","the Ural Mountains","the Alps","the Carpathians"],answer:2,explain:"The Alps are the best known mountains of Europe, and many rivers start in their snow and ice. ⛰️"},
+   {q:"The Ring of Fire, a belt with many volcanoes, goes around which ocean?",options:["the Arctic Ocean","the Atlantic Ocean","the Indian Ocean","the Pacific Ocean"],answer:3,explain:"Most of the world's volcanoes and earthquakes happen along the edges of the Pacific Ocean."},
+   {q:"Which is the largest lake in Africa?",options:["Lake Victoria","Lake Malawi","Lake Chad","Lake Tanganyika"],answer:0,explain:"Lake Victoria touches Uganda, Kenya and Tanzania, and fishing boats work on it every day."},
    {q:"Which is the highest mountain in Japan?",options:["Mount Aso","Mount Fuji","Mount Haku","Mount Kita"],answer:1,explain:"Mount Fuji is a volcano with a wide cone shape and stands about 3,776 metres tall."},
-   {q:"Which long river flows through Southeast Asia and ends in a delta in Vietnam?",options:["the Yangtze","the Ganges","the Irrawaddy","the Mekong"],answer:3,explain:"The Mekong runs through six countries and gives millions of people fish and water for rice fields."},
-   {q:"Victoria Falls, a very wide waterfall, sits between Zambia and which country?",options:["Zimbabwe","Malawi","Angola","Mozambique"],answer:0,explain:"The falls throw up so much spray that people nearby call them the smoke that thunders."},
-   {q:"Which is the highest mountain in North America?",options:["Mount Logan","Mount Whitney","Denali","Mount Robson"],answer:2,explain:"Denali in Alaska reaches about 6,190 metres, while Mount Logan in Yukon is the highest in Canada."},
-   {q:"Which is the largest freshwater lake in the world by surface area?",options:["Lake Huron","Lake Michigan","Lake Baikal","Lake Superior"],answer:3,explain:"Lake Superior is one of the Great Lakes and shares its shoreline with Ontario, Canada."}
+   {q:"Which long river flows through Southeast Asia and ends in a delta in Vietnam?",options:["the Ganges","the Irrawaddy","the Mekong","the Yangtze"],answer:2,explain:"The Mekong runs through six countries and gives millions of people fish and water for rice fields."},
+   {q:"Victoria Falls, a very wide waterfall, sits between Zambia and which country?",options:["Malawi","Angola","Mozambique","Zimbabwe"],answer:3,explain:"The falls throw up so much spray that people nearby call them the smoke that thunders."},
+   {q:"Which is the highest mountain in North America?",options:["Denali","Mount Robson","Mount Logan","Mount Whitney"],answer:0,explain:"Denali in Alaska reaches about 6,190 metres, while Mount Logan in Yukon is the highest in Canada."},
+   {q:"Which is the largest freshwater lake in the world by surface area?",options:["Lake Baikal","Lake Superior","Lake Huron","Lake Michigan"],answer:1,explain:"Lake Superior is one of the Great Lakes and shares its shoreline with Ontario, Canada."}
   ]}
 };
 
@@ -595,9 +595,9 @@ function backToCats(){
 }
 buildCats();
 </script>
-  <script src="../js/game-fullscreen.js?v=20260805a"></script>
-  <script src="../js/site.js?v=20260805a"></script>
-  <script src="../js/analytics.js?v=20260805a"></script>
-  <script src="../js/ads.js?v=20260805a" defer></script>
+  <script src="../js/game-fullscreen.js?v=20260807b"></script>
+  <script src="../js/site.js?v=20260807b"></script>
+  <script src="../js/analytics.js?v=20260807b"></script>
+  <script src="../js/ads.js?v=20260807b" defer></script>
 </body>
 </html>

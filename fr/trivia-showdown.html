@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Duel de connaissances — Jeu de fête en famille à 2 équipes | Canada Quiz</title>
 <meta name="description" content="Duel de culture générale — un jeu de société gratuit à 2 équipes pour les familles. Jouez à tour de rôle, répondez aux questions et voyez quelle équipe gagne. Sans inscription.">
-<link rel="stylesheet" href="../css/style.css?v=20260805a">
+<link rel="stylesheet" href="../css/style.css?v=20260807b">
 <style>
   .ts-wrap{max-width:560px;margin:0 auto;text-align:center}
   .ts-teams{display:flex;gap:12px;justify-content:center;margin:10px 0}
@@ -248,88 +248,88 @@
 </footer>
 <script>
 const BANK=[
- {q:"What is the capital of Canada?",o:["Toronto","Ottawa","Montreal","Calgary"],a:1},
+ {q:"What is the capital of Canada?",o:["Ottawa","Montreal","Calgary","Toronto"],a:0},
  {q:"How many legs does a spider have?",o:["6","8","10","12"],a:1},
  {q:"Which planet is the Red Planet?",o:["Venus","Mars","Jupiter","Saturn"],a:1},
  {q:"What is the largest ocean?",o:["Atlantic","Indian","Pacific","Arctic"],a:2},
- {q:"What animal is Canada's national symbol?",o:["Bear","Beaver","Eagle","Wolf"],a:1},
- {q:"How many days are in a leap year?",o:["365","366","364","360"],a:1},
+ {q:"What animal is Canada's national symbol?",o:["Eagle","Wolf","Bear","Beaver"],a:3},
+ {q:"How many days are in a leap year?",o:["366","364","360","365"],a:0},
  {q:"What do bees make?",o:["Milk","Honey","Silk","Web"],a:1},
- {q:"Which is the tallest animal?",o:["Elephant","Giraffe","Horse","Camel"],a:1},
- {q:"What is 7 x 6?",o:["36","42","48","40"],a:1},
- {q:"Which ocean animal is the biggest?",o:["Shark","Blue whale","Octopus","Dolphin"],a:1},
- {q:"What color do you get mixing blue and yellow?",o:["Green","Purple","Orange","Brown"],a:0},
+ {q:"Which is the tallest animal?",o:["Camel","Elephant","Giraffe","Horse"],a:2},
+ {q:"What is 7 x 6?",o:["48","40","36","42"],a:3},
+ {q:"Which ocean animal is the biggest?",o:["Blue whale","Octopus","Dolphin","Shark"],a:0},
+ {q:"What color do you get mixing blue and yellow?",o:["Brown","Green","Purple","Orange"],a:1},
  {q:"How many continents are there?",o:["5","6","7","8"],a:2},
- {q:"What is frozen water called?",o:["Steam","Ice","Fog","Cloud"],a:1},
- {q:"Which bird cannot fly?",o:["Robin","Penguin","Eagle","Owl"],a:1},
- {q:"What is the coldest season?",o:["Spring","Summer","Winter","Fall"],a:2},
+ {q:"What is frozen water called?",o:["Cloud","Steam","Ice","Fog"],a:2},
+ {q:"Which bird cannot fly?",o:["Eagle","Owl","Robin","Penguin"],a:3},
+ {q:"What is the coldest season?",o:["Winter","Fall","Spring","Summer"],a:0},
  {q:"What is the main language in Quebec?",o:["English","French","Spanish","Italian"],a:1},
  {q:"How many sides does a triangle have?",o:["3","4","5","6"],a:0},
  {q:"Which planet do we live on?",o:["Mars","Venus","Earth","Mercury"],a:2},
- {q:"What is a baby cat called?",o:["Puppy","Kitten","Cub","Calf"],a:1},
- {q:"What is the fastest land animal?",o:["Lion","Cheetah","Horse","Deer"],a:1},
+ {q:"What is a baby cat called?",o:["Cub","Calf","Puppy","Kitten"],a:3},
+ {q:"What is the fastest land animal?",o:["Cheetah","Horse","Deer","Lion"],a:0},
  {q:"How many players on a hockey team are on the ice?",o:["5","6","7","8"],a:1},
  {q:"What is 100 minus 25?",o:["65","70","75","80"],a:2},
- {q:"Which is a Canadian coin worth $1?",o:["Penny","Dime","Loonie","Nickel"],a:2},
- {q:"What do plants need to grow?",o:["Sunlight","Candy","Toys","Darkness"],a:0},
- {q:"What is the hardest natural material?",o:["Gold","Iron","Diamond","Wood"],a:2},
+ {q:"Which is a Canadian coin worth $1?",o:["Dime","Loonie","Nickel","Penny"],a:1},
+ {q:"What do plants need to grow?",o:["Toys","Darkness","Sunlight","Candy"],a:2},
+ {q:"What is the hardest natural material?",o:["Wood","Gold","Iron","Diamond"],a:3},
  {q:"How many colors in a rainbow?",o:["5","6","7","8"],a:2},
- {q:"Which season comes after winter?",o:["Summer","Spring","Fall","Autumn"],a:1},
- {q:"What is the biggest planet?",o:["Earth","Mars","Jupiter","Venus"],a:2},
- {q:"What do cows drink when they are babies?",o:["Water","Milk","Juice","Soda"],a:1},
+ {q:"Which season comes after winter?",o:["Spring","Fall","Autumn","Summer"],a:0},
+ {q:"What is the biggest planet?",o:["Mars","Jupiter","Venus","Earth"],a:1},
+ {q:"What do cows drink when they are babies?",o:["Soda","Water","Milk","Juice"],a:2},
  {q:"What is 9 + 8?",o:["16","17","18","19"],a:1}
 ,
    /* +50 BANK */
-   {q:"How many wheels does a bicycle have?",o:["One","Three","Two","Four"],a:2},
+   {q:"How many wheels does a bicycle have?",o:["Four","One","Three","Two"],a:3},
    {q:"What colour is a ripe banana?",o:["Yellow","Green","Blue","Purple"],a:0},
    {q:"How many fingers are on one hand?",o:["Three","Five","Four","Six"],a:1},
-   {q:"What is a baby sheep called?",o:["A calf","A cub","A foal","A lamb"],a:3},
-   {q:"What is 5 times 5?",o:["20","30","25","35"],a:2},
-   {q:"How many months are in a year?",o:["Ten","Eleven","Thirteen","Twelve"],a:3},
-   {q:"Which animal has a long trunk?",o:["A rhino","A hippo","A camel","An elephant"],a:3},
+   {q:"What is a baby sheep called?",o:["A cub","A foal","A lamb","A calf"],a:2},
+   {q:"What is 5 times 5?",o:["35","20","30","25"],a:3},
+   {q:"How many months are in a year?",o:["Twelve","Ten","Eleven","Thirteen"],a:0},
+   {q:"Which animal has a long trunk?",o:["A camel","An elephant","A rhino","A hippo"],a:1},
    {q:"What is the opposite of hot?",o:["Loud","Fast","Cold","Heavy"],a:2},
-   {q:"Which food comes from a hen?",o:["Eggs","Cheese","Bread","Butter"],a:0},
-   {q:"What is 20 plus 30?",o:["40","45","60","50"],a:3},
-   {q:"What colour is a stop sign?",o:["Green","Blue","Red","Black"],a:2},
-   {q:"How many letters are in the word Canada?",o:["Five","Six","Seven","Eight"],a:1},
-   {q:"What do you use to cut paper?",o:["Scissors","A spoon","A comb","A brush"],a:0},
-   {q:"Which is the biggest wild cat?",o:["A lynx","A tiger","A leopard","A cheetah"],a:1},
-   {q:"Which body part do you hear with?",o:["Your nose","Your hands","Your knees","Your ears"],a:3},
+   {q:"Which food comes from a hen?",o:["Cheese","Bread","Butter","Eggs"],a:3},
+   {q:"What is 20 plus 30?",o:["50","40","45","60"],a:0},
+   {q:"What colour is a stop sign?",o:["Blue","Red","Black","Green"],a:1},
+   {q:"How many letters are in the word Canada?",o:["Eight","Five","Six","Seven"],a:2},
+   {q:"What do you use to cut paper?",o:["A spoon","A comb","A brush","Scissors"],a:3},
+   {q:"Which is the biggest wild cat?",o:["A tiger","A leopard","A cheetah","A lynx"],a:0},
+   {q:"Which body part do you hear with?",o:["Your knees","Your ears","Your nose","Your hands"],a:1},
    {q:"What is 15 minus 7?",o:["Six","Seven","Eight","Nine"],a:2},
    {q:"What colour do you get mixing red and white?",o:["Grey","Orange","Brown","Pink"],a:3},
    {q:"How many sides does a square have?",o:["Four","Three","Five","Six"],a:0},
-   {q:"Which small animal carries its shell on its back?",o:["A mouse","A frog","A worm","A snail"],a:3},
-   {q:"Which meal do people eat in the morning?",o:["Dinner","Breakfast","Supper","Lunch"],a:1},
-   {q:"What is a young frog called?",o:["A puppy","A tadpole","A kitten","A piglet"],a:1},
+   {q:"Which small animal carries its shell on its back?",o:["A worm","A snail","A mouse","A frog"],a:1},
+   {q:"Which meal do people eat in the morning?",o:["Lunch","Dinner","Breakfast","Supper"],a:2},
+   {q:"What is a young frog called?",o:["A kitten","A piglet","A puppy","A tadpole"],a:3},
    {q:"Which bird can copy human speech?",o:["A parrot","A robin","A pigeon","A duck"],a:0},
-   {q:"How many days are in September?",o:["30","28","29","31"],a:0},
+   {q:"How many days are in September?",o:["31","30","28","29"],a:1},
    {q:"What is 3 times 9?",o:["21","24","27","29"],a:2},
-   {q:"Which vegetable often makes people cry when it is cut?",o:["A carrot","An onion","A potato","A pepper"],a:1},
-   {q:"Which animal has black and white stripes?",o:["A zebra","A giraffe","A donkey","A camel"],a:0},
+   {q:"Which vegetable often makes people cry when it is cut?",o:["A pepper","A carrot","An onion","A potato"],a:2},
+   {q:"Which animal has black and white stripes?",o:["A giraffe","A donkey","A camel","A zebra"],a:3},
    {q:"How many strings does a guitar usually have?",o:["Six","Four","Five","Seven"],a:0},
-   {q:"What is the middle light on a traffic light?",o:["Green","Red","Blue","Yellow"],a:3},
-   {q:"Which sport uses a bat, a ball and four bases?",o:["Baseball","Soccer","Tennis","Rugby"],a:0},
-   {q:"What is a house built from blocks of snow called?",o:["A tent","A cabin","An igloo","A lodge"],a:2},
+   {q:"What is the middle light on a traffic light?",o:["Blue","Yellow","Green","Red"],a:1},
+   {q:"Which sport uses a bat, a ball and four bases?",o:["Tennis","Rugby","Baseball","Soccer"],a:2},
+   {q:"What is a house built from blocks of snow called?",o:["A lodge","A tent","A cabin","An igloo"],a:3},
    {q:"Which is the largest bear in Canada?",o:["The polar bear","The black bear","The brown bear","The grizzly bear"],a:0},
    {q:"What is half of 60?",o:["20","30","25","35"],a:1},
    {q:"Which joint helps you bend your leg?",o:["The elbow","The wrist","The knee","The shoulder"],a:2},
-   {q:"What do we call a group of fish swimming together?",o:["A herd","A school","A flock","A pack"],a:1},
-   {q:"What colour is the maple leaf on Canada's flag?",o:["Green","Red","Gold","Brown"],a:1},
-   {q:"How many quarters make one dollar?",o:["Two","Three","Five","Four"],a:3},
+   {q:"What do we call a group of fish swimming together?",o:["A flock","A pack","A herd","A school"],a:3},
+   {q:"What colour is the maple leaf on Canada's flag?",o:["Red","Gold","Brown","Green"],a:0},
+   {q:"How many quarters make one dollar?",o:["Five","Four","Two","Three"],a:1},
    {q:"What sound does a dog make?",o:["A moo","A neigh","A bark","A bleat"],a:2},
    {q:"What is 8 times 8?",o:["56","62","64","72"],a:2},
-   {q:"Which animal gives us wool?",o:["A goat","A cow","A sheep","A pig"],a:2},
-   {q:"What is a bird's home called?",o:["A den","A burrow","A hive","A nest"],a:3},
-   {q:"Which fruit is yellow and very sour?",o:["A peach","A plum","A lemon","A pear"],a:2},
-   {q:"How many hours are in one day?",o:["12","24","18","36"],a:1},
+   {q:"Which animal gives us wool?",o:["A pig","A goat","A cow","A sheep"],a:3},
+   {q:"What is a bird's home called?",o:["A nest","A den","A burrow","A hive"],a:0},
+   {q:"Which fruit is yellow and very sour?",o:["A plum","A lemon","A pear","A peach"],a:1},
+   {q:"How many hours are in one day?",o:["36","12","24","18"],a:2},
    {q:"What do we call the very top of a mountain?",o:["The base","The valley","The slope","The peak"],a:3},
    {q:"What colour is the sky on a clear day?",o:["Blue","Pink","Grey","Green"],a:0},
    {q:"What is 6 plus 7?",o:["11","13","12","14"],a:1},
-   {q:"Which animal is often called man's best friend?",o:["The dog","The cat","The horse","The rabbit"],a:0},
-   {q:"What do we call frozen balls of rain?",o:["Fog","Hail","Dew","Mist"],a:1},
-   {q:"Which drink is made from squeezed oranges?",o:["Tea","Orange juice","Coffee","Milk"],a:1},
-   {q:"How many wings does a bird have?",o:["One","Three","Four","Two"],a:3},
-   {q:"Which sense do you use with your nose?",o:["Smell","Sight","Hearing","Touch"],a:0}
+   {q:"Which animal is often called man's best friend?",o:["The horse","The rabbit","The dog","The cat"],a:2},
+   {q:"What do we call frozen balls of rain?",o:["Dew","Mist","Fog","Hail"],a:3},
+   {q:"Which drink is made from squeezed oranges?",o:["Orange juice","Coffee","Milk","Tea"],a:0},
+   {q:"How many wings does a bird have?",o:["Four","Two","One","Three"],a:1},
+   {q:"Which sense do you use with your nose?",o:["Hearing","Touch","Smell","Sight"],a:2}
   ];
 let qs=[], idx=0, turn=0, scores=[0,0], answered=false;
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
@@ -377,9 +377,9 @@ function finish(){
 }
 restart();
 </script>
-  <script src="../js/game-fullscreen.js?v=20260805a"></script>
-  <script src="../js/site.js?v=20260805a"></script>
-  <script src="../js/analytics.js?v=20260805a"></script>
-  <script src="../js/ads.js?v=20260805a" defer></script>
+  <script src="../js/game-fullscreen.js?v=20260807b"></script>
+  <script src="../js/site.js?v=20260807b"></script>
+  <script src="../js/analytics.js?v=20260807b"></script>
+  <script src="../js/ads.js?v=20260807b" defer></script>
 </body>
 </html>

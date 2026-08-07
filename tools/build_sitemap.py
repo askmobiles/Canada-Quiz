@@ -72,10 +72,17 @@ def main():
         if f.endswith(".html") and f not in SKIP
     )
 
-    rows = [url("", "", "fr/index.html")]          # the bare domain
+    # the home page is listed ONCE, at the bare URL — /index.html is the same
+    # page and listing both makes Google report a duplicate
+    rows = [url("", "", "fr/")]                    # https://canada-quiz.com/
+    rows.append(url("fr/", "", "fr/"))             # https://canada-quiz.com/fr/
     for f in pages:
+        if f == "index.html":
+            continue
         rows.append(url(f, f, "fr/" + f))
     for f in pages:
+        if f == "index.html":
+            continue
         if os.path.exists(os.path.join(ROOT, "fr", f)):
             rows.append(url("fr/" + f, f, "fr/" + f))
         else:

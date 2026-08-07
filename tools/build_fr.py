@@ -182,11 +182,14 @@ def convert(src, page):
     # canonical + hreflang for the French URL
     s = re.sub(r'^[ \t]*<link rel="canonical"[^\n]*\n', "", s, flags=re.M)
     s = re.sub(r'^[ \t]*<link rel="alternate" hreflang=[^\n]*\n', "", s, flags=re.M)
-    head = ('<link rel="canonical" href="%sfr/%s">\n'
+    # /fr/ and /  are the real home-page URLs — never /fr/index.html or /index.html
+    en_url = "" if page == "index.html" else page
+    fr_url = "fr/" if page == "index.html" else "fr/" + page
+    head = ('<link rel="canonical" href="%s%s">\n'
             '<link rel="alternate" hreflang="en" href="%s%s">\n'
-            '<link rel="alternate" hreflang="fr" href="%sfr/%s">\n'
+            '<link rel="alternate" hreflang="fr" href="%s%s">\n'
             '<link rel="alternate" hreflang="x-default" href="%s%s">\n'
-            % (SITE, page, SITE, page, SITE, page, SITE, page))
+            % (SITE, fr_url, SITE, en_url, SITE, fr_url, SITE, en_url))
     s = s.replace("</head>", head + "</head>", 1)
     return s
 

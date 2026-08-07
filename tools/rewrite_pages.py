@@ -24,7 +24,7 @@ SITE = "https://canada-quiz.com/"
 # new page looks broken. Changing ?v=... makes it a new address, so everyone gets
 # the fresh file. (This bit us on 27 Jul 2026 — new hero HTML + old cached CSS.)
 # ---------------------------------------------------------------------------
-ASSET_VER = "20260805a"
+ASSET_VER = "20260807b"
 
 # The full A-to-Z page list shown at the bottom of every page.
 # Add a new page to tools/site_map.json and re-run this script.
@@ -164,12 +164,17 @@ def main():
         s = ADS_HEAD_RE.sub("", s)   # AdSense moves out of <head> (see js/ads.js)
         s = ADS_TAIL_RE.sub("", s)   # re-added below, so the ?v= stamp stays fresh
 
+        # the home page lives at the bare URL, not at /index.html —
+        # keeping them identical stops Google seeing two copies of the home page
+        en_url = "" if page == "index.html" else page
+        fr_url = "fr/" if page == "index.html" else "fr/" + page
+
         head_add = (
             ICON_BLOCK + "\n"
-            + '<link rel="canonical" href="%s%s">\n' % (SITE, page)
-            + '<link rel="alternate" hreflang="en" href="%s%s">\n' % (SITE, page)
-            + '<link rel="alternate" hreflang="fr" href="%sfr/%s">\n' % (SITE, page)
-            + '<link rel="alternate" hreflang="x-default" href="%s%s">\n' % (SITE, page)
+            + '<link rel="canonical" href="%s%s">\n' % (SITE, en_url)
+            + '<link rel="alternate" hreflang="en" href="%s%s">\n' % (SITE, en_url)
+            + '<link rel="alternate" hreflang="fr" href="%s%s">\n' % (SITE, fr_url)
+            + '<link rel="alternate" hreflang="x-default" href="%s%s">\n' % (SITE, en_url)
         )
         s = fix_viewport(s)
 
