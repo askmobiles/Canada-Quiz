@@ -197,11 +197,11 @@
  },
  "fr/about.html": {
   "date": "2026-08-08",
-  "hash": "44be22ddef901a74380407cfa56ae824c96420c8"
+  "hash": "49cf9e934236595c207c52677c2405dd9a045d1b"
  },
  "fr/ai-quiz.html": {
   "date": "2026-08-08",
-  "hash": "4386d415d2c86979efda1123471440c2f5444b07"
+  "hash": "f175cee369652b59e0af0c8730004688e1d92822"
  },
  "fr/alberta-class-7-mock-test.html": {
   "date": "2026-08-08",
@@ -241,7 +241,7 @@
  },
  "fr/body-quiz.html": {
   "date": "2026-08-08",
-  "hash": "46656ce3b34280b28531acd886562fe2e6fd3c72"
+  "hash": "5a0d5392c41da0a300d0a195191e0b22fe111608"
  },
  "fr/canada-geography-coast-to-coast.html": {
   "date": "2026-08-08",
@@ -249,7 +249,7 @@
  },
  "fr/canada-map.html": {
   "date": "2026-08-08",
-  "hash": "83facd7920172c52dad451c8519250b11960f94e"
+  "hash": "26e7592db1294fca0134f268a8d738978f832e90"
  },
  "fr/canada-provinces-and-territories-explained.html": {
   "date": "2026-08-08",
@@ -313,11 +313,11 @@
  },
  "fr/chess.html": {
   "date": "2026-08-08",
-  "hash": "b5123a83553e8bac734e7a2272c9b2e7d9c26757"
+  "hash": "49a5048b9701a7f671fbf71a393a95e785a22dfe"
  },
  "fr/citizenship.html": {
   "date": "2026-08-08",
-  "hash": "c6125e57ebfdeeb8d8270cef708e9927b058db0c"
+  "hash": "61fe565138aa4569ac40a5572c6d642fdc19d156"
  },
  "fr/color-match.html": {
   "date": "2026-08-08",
@@ -325,7 +325,7 @@
  },
  "fr/connect4.html": {
   "date": "2026-08-08",
-  "hash": "893e11bb80aeed4ba9bc27c8caca86f236c65c32"
+  "hash": "f6b6acd7a594eb69e1eb25df58d0f06f7d42e6ff"
  },
  "fr/contact.html": {
   "date": "2026-08-08",
@@ -353,7 +353,7 @@
  },
  "fr/earth-quiz.html": {
   "date": "2026-08-08",
-  "hash": "9a7c190c4a9dc18fe0eaa0e8a9ca63f237c9b9f6"
+  "hash": "734c4cb4ead7963e1b7d149859231c7d285fa867"
  },
  "fr/entertainment-quiz.html": {
   "date": "2026-08-08",
@@ -365,7 +365,7 @@
  },
  "fr/flags-game.html": {
   "date": "2026-08-08",
-  "hash": "a0f7fc0648690780deebacbd0a80c3bb232170a0"
+  "hash": "8ddbcb0ba996ed0f9a8e6727e31ec1502b950f12"
  },
  "fr/fun-quiz.html": {
   "date": "2026-08-08",
@@ -409,7 +409,7 @@
  },
  "fr/index.html": {
   "date": "2026-08-08",
-  "hash": "145d596ea356193dcd47795c1c9d549f9fca7247"
+  "hash": "8800716444b55cd1f723ca65bfca395e306cc80a"
  },
  "fr/indigenous-peoples-of-canada.html": {
   "date": "2026-08-08",
@@ -421,7 +421,7 @@
  },
  "fr/math-race.html": {
   "date": "2026-08-08",
-  "hash": "0cf1e7913b19f21cef07f1ab232288aaf7b7fbe3"
+  "hash": "b6ba5b5d912b7fb5233ba670936f9654f7fbaf17"
  },
  "fr/memory.html": {
   "date": "2026-08-08",
@@ -433,7 +433,7 @@
  },
  "fr/money-quiz.html": {
   "date": "2026-08-08",
-  "hash": "3333cddf4c64e1716a52de9a8ae82eecb668f8bf"
+  "hash": "b0ddbe6dc30afeaa9e1a17e37b711320ec1b6456"
  },
  "fr/newcomer-first-year-in-canada-checklist.html": {
   "date": "2026-08-08",
@@ -469,7 +469,7 @@
  },
  "fr/quizzes.html": {
   "date": "2026-08-08",
-  "hash": "aaae03c4dd6854a9dca76ded7f9285041dffaab1"
+  "hash": "935468a3299207a12cd5a0751a662114a3f1c5ab"
  },
  "fr/rights-and-responsibilities-of-canadian-citizens.html": {
   "date": "2026-08-08",
@@ -505,7 +505,7 @@
  },
  "fr/tag.html": {
   "date": "2026-08-08",
-  "hash": "3beb0507114ee0d45ae9cd99e6a73eee0e0ad79b"
+  "hash": "c4d6a5ae949f1eb232ef20b56d159bd084485a2a"
  },
  "fr/terms.html": {
   "date": "2026-08-08",
@@ -529,7 +529,7 @@
  },
  "fr/times-tables.html": {
   "date": "2026-08-08",
-  "hash": "17c96e885ce33efcd9c788627249ee0a5b91c0d3"
+  "hash": "1171e4b74d42f9f6fc8b401c8566fbf7f2322e8e"
  },
  "fr/top-answers.html": {
   "date": "2026-08-08",
@@ -629,7 +629,7 @@
  },
  "index.html": {
   "date": "2026-08-08",
-  "hash": "364a736a87927fddf130c54c7b457ba589c64170"
+  "hash": "66975b4029666cede0dfc5f195adbebc266080de"
  },
  "indigenous-peoples-of-canada.html": {
   "date": "2026-08-08",
