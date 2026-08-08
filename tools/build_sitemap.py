@@ -12,16 +12,81 @@ is generated, so a page can never be silently left out again.
 
 Run it last, after rewrite_pages.py and build_fr.py:
 
+    python3 tools/make_samples.py    # only when a question bank changed
+    python3 tools/make_quiz_ld.py    # only when a question bank changed
+    python3 tools/build_content.py
     python3 tools/make_dict.py
     python3 tools/rewrite_pages.py
     python3 tools/build_fr.py
     python3 tools/build_sitemap.py
 """
-import io, json, os, re
+import datetime, hashlib, io, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://canada-quiz.com/"
 OUT = os.path.join(ROOT, "sitemap.xml")
+
+
+# ---------------------------------------------------------------------------
+# <lastmod> — Google uses this to decide what is worth re-crawling. It ignores
+# <changefreq> entirely.
+#
+# The date must be HONEST. Every build rewrites all 202 pages (the ?v= cache
+# stamp changes), so a plain file timestamp would tell Google "everything
+# changed" every single time, and it would stop trusting the dates.
+#
+# So we hash the part of the page a reader actually sees — <main> plus the
+# title and description — and keep the date in tools/lastmod.json. The date
+# only moves when that hash moves.
+# ---------------------------------------------------------------------------
+LASTMOD_DB = os.path.join(ROOT, "tools", "lastmod.json")
+MAIN_RE = re.compile(r"<main.*?</main>", re.S)
+TITLE_RE = re.compile(r"<title>.*?</title>", re.S)
+DESC_RE = re.compile(r'<meta name="description"[^>]*>', re.S)
+
+
+def content_hash(path):
+    try:
+        s = io.open(path, encoding="utf-8").read()
+    except OSError:
+        return None
+    parts = MAIN_RE.findall(s) + TITLE_RE.findall(s) + DESC_RE.findall(s)
+    body = "".join(parts) or s
+    # the cache stamp changes on every build and is not real content
+    body = re.sub(r"\?v=[0-9a-z]+", "", body)
+    return hashlib.sha1(body.encode("utf-8")).hexdigest()
+
+
+def load_lastmod():
+    try:
+        return json.load(io.open(LASTMOD_DB, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def save_lastmod(db):
+    json.dump(db, io.open(LASTMOD_DB, "w", encoding="utf-8"),
+              ensure_ascii=False, indent=1, sort_keys=True)
+
+
+DB = load_lastmod()
+TODAY = datetime.date.today().isoformat()
+_moved = []
+
+
+def lastmod_for(relpath):
+    """relpath is like "games.html" or "fr/games.html"."""
+    h = content_hash(os.path.join(ROOT, relpath))
+    if h is None:
+        return None
+    rec = DB.get(relpath)
+    if not rec or rec.get("hash") != h:
+        DB[relpath] = {"hash": h, "date": TODAY}
+        if rec:
+            _moved.append(relpath)
+        return TODAY
+    return rec["date"]
+
 
 # Pages that must never be listed (thank-you pages, redirects, drafts).
 SKIP = {"404.html", "google-verify.html"}
@@ -56,14 +121,21 @@ BLOG = load_blog()
 
 
 def url(loc, en, fr):
-    return (
-        '  <url><loc>%s%s</loc><changefreq>%s</changefreq>'
-        '<xhtml:link rel="alternate" hreflang="en" href="%s%s"/>'
-        '<xhtml:link rel="alternate" hreflang="fr" href="%s%s"/>'
-        '<xhtml:link rel="alternate" hreflang="x-default" href="%s%s"/></url>'
-        % (SITE, loc, freq_for(os.path.basename(en) or "index.html"),
-           SITE, en, SITE, fr, SITE, en)
-    )
+    # loc is the URL path: "" is the home page, "fr/" the French home page.
+    # Map it back to the file that actually sits on disk.
+    lm = lastmod_for("index.html" if loc == "" else
+                     "fr/index.html" if loc == "fr/" else loc)
+    lm_tag = "<lastmod>%s</lastmod>" % lm if lm else ""
+    # NOTE: % binds tighter than +, so the whole template must be built FIRST
+    # and formatted after. Formatting mid-concatenation only fills the last
+    # literal and raises "not all arguments converted".
+    template = ('  <url><loc>%s%s</loc>' + lm_tag +
+                '<changefreq>%s</changefreq>'
+                '<xhtml:link rel="alternate" hreflang="en" href="%s%s"/>'
+                '<xhtml:link rel="alternate" hreflang="fr" href="%s%s"/>'
+                '<xhtml:link rel="alternate" hreflang="x-default" href="%s%s"/></url>')
+    return template % (SITE, loc, freq_for(os.path.basename(en) or "index.html"),
+                       SITE, en, SITE, fr, SITE, en)
 
 
 def main():
@@ -93,8 +165,11 @@ def main():
            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
            + "\n".join(rows) + "\n</urlset>\n")
     io.open(OUT, "w", encoding="utf-8").write(xml)
+    save_lastmod(DB)
     print("wrote sitemap.xml — %d URLs (%d English pages + %d French + home)"
           % (len(rows), len(pages), len(rows) - len(pages) - 1))
+    if _moved:
+        print("  lastmod moved to %s on %d page(s)" % (TODAY, len(_moved)))
 
 
 if __name__ == "__main__":

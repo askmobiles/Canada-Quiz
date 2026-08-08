@@ -19,6 +19,9 @@ Anything the games and quizzes print while you play is translated live in the
 browser by js/site.js, using the same dictionary — so nothing is missed.
 """
 import glob, html, json, os, re, sys
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import schema_ld
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FRDIR = os.path.join(ROOT, "fr")
@@ -191,6 +194,11 @@ def convert(src, page):
             '<link rel="alternate" hreflang="x-default" href="%s%s">\n'
             % (SITE, fr_url, SITE, en_url, SITE, fr_url, SITE, en_url))
     s = s.replace("</head>", head + "</head>", 1)
+
+    # --- structured data: rebuild it in French ---------------------------
+    # The English block is inside a <script>, so the translator never touches it.
+    # Leaving it would put English text and English URLs on a French page.
+    s = schema_ld.inject(page, s, "fr")
     return s
 
 

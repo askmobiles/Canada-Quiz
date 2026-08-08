@@ -12,6 +12,9 @@ It only touches the .html files in the site root.
 """
 import glob, json, os, re, sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import schema_ld
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://canada-quiz.com/"
 
@@ -24,7 +27,7 @@ SITE = "https://canada-quiz.com/"
 # new page looks broken. Changing ?v=... makes it a new address, so everyone gets
 # the fresh file. (This bit us on 27 Jul 2026 — new hero HTML + old cached CSS.)
 # ---------------------------------------------------------------------------
-ASSET_VER = "20260807b"
+ASSET_VER = "20260807c"
 
 # The full A-to-Z page list shown at the bottom of every page.
 # Add a new page to tools/site_map.json and re-run this script.
@@ -216,6 +219,11 @@ def main():
         # sees new questions or new road signs.
         s = re.sub(r'(<script src="js/[A-Za-z0-9_./-]+\.js)(\?[^"]*)?(")',
                    r'\g<1>?v=%s\g<3>' % ASSET_VER, s)
+
+        # --- structured data (JSON-LD) --------------------------------------
+        # Regenerated every run from tools/schema_ld.py, so it always matches
+        # the page's real title, description and question bank.
+        s = schema_ld.inject(page, s, "en")
 
         if s != orig:
             open(path, "w", encoding="utf-8").write(s)

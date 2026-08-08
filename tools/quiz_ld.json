@@ -1,0 +1,988 @@
+{
+ "ai-quiz.html": [
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Computer Power Utility",
+    "Central Processing Unit",
+    "Central Program Update",
+    "Common Printing Unit"
+   ],
+   "q": "What does CPU stand for in a computer?"
+  },
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "The processor",
+    "The screen",
+    "The keyboard",
+    "The speaker"
+   ],
+   "q": "Which part of a computer is often called its brain?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Storing files forever",
+    "Holding work in progress",
+    "Cooling the machine",
+    "Printing documents"
+   ],
+   "q": "What is RAM used for in a computer?"
+  }
+ ],
+ "alberta-class-7-mock-test.html": [
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "De 22 h à 4 h",
+     "De 23 h à 6 h",
+     "De 1 h à 6 h",
+     "De minuit à 5 h"
+    ],
+    "q": "Pendant quelles heures un apprenti de classe 7 en Alberta n'a-t-il pas le droit de conduire ?"
+   },
+   "o": [
+    "10 p.m. to 4 a.m.",
+    "11 p.m. to 6 a.m.",
+    "1 a.m. to 6 a.m.",
+    "Midnight to 5 a.m."
+   ],
+   "q": "During which hours may a Class 7 learner in Alberta not drive at all?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Un seul passager est permis en tout temps",
+     "Vous ne pouvez pas transporter plus de personnes qu'il y a de ceintures",
+     "Aucun passager de moins de 16 ans n'est permis",
+     "Les passagers ne sont permis que pendant le jour"
+    ],
+    "q": "Quelle est la règle sur les passagers pour un apprenti ou un conducteur probatoire en Alberta ?"
+   },
+   "o": [
+    "Only one passenger is allowed at any time",
+    "You may not carry more people than there are seat belts",
+    "No passengers under 16 years old are allowed",
+    "Passengers are allowed only during daylight hours"
+   ],
+   "q": "What is the passenger rule for an Alberta learner or probationary driver?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "6 mois",
+     "1 an",
+     "2 ans",
+     "3 ans"
+    ],
+    "q": "Combien de temps dure au minimum l'étape probatoire de classe 5-GDL en Alberta ?"
+   },
+   "o": [
+    "6 months",
+    "1 year",
+    "2 years",
+    "3 years"
+   ],
+   "q": "How long does the Class 5-GDL probationary stage last in Alberta at a minimum?"
+  }
+ ],
+ "alberta-class-7-practice-test.html": [
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "q": "Quel est l'âge minimum pour obtenir un permis d'apprenti de classe 7 en Alberta ?"
+   },
+   "o": [
+    "12",
+    "14",
+    "16",
+    "18"
+   ],
+   "q": "What is the youngest age you can get a Class 7 learner's licence in Alberta?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "3 mois",
+     "6 mois",
+     "12 mois",
+     "24 mois"
+    ],
+    "q": "Combien de temps devez-vous détenir un permis d'apprenti de classe 7 en Alberta avant de passer l'examen routier de base ?"
+   },
+   "o": [
+    "3 months",
+    "6 months",
+    "12 months",
+    "24 months"
+   ],
+   "q": "How long must you hold a Class 7 learner's licence in Alberta before you can take the basic road test?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Un conducteur titulaire d'un permis complet de classe 5 âgé de 18 ans ou plus",
+     "Tout adulte qui a un permis depuis un an",
+     "Un conducteur de classe 5-GDL âgé de 18 ans ou plus",
+     "Tout passager âgé de plus de 16 ans"
+    ],
+    "q": "Qui peut s'asseoir à côté de vous quand vous conduisez avec un permis d'apprenti de classe 7 en Alberta ?"
+   },
+   "o": [
+    "A fully licensed Class 5 driver who is 18 or older",
+    "Any adult who has held a licence for one year",
+    "A Class 5-GDL driver who is 18 or older",
+    "Any passenger over the age of 16"
+   ],
+   "q": "Who is allowed to sit beside you while you drive with an Alberta Class 7 learner's licence?"
+  }
+ ],
+ "alberta-rules-of-the-road.html": [
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Un cours de perfectionnement dans une école de conduite",
+     "Un deuxième examen écrit sur le code de la route",
+     "Une lettre d'appui d'un moniteur de conduite",
+     "Aucune suspension ni point d'inaptitude durant la dernière année"
+    ],
+    "q": "En plus de terminer la période probatoire, qu'exige l'Alberta avant de vous accorder un permis complet de classe 5 ?"
+   },
+   "o": [
+    "A refresher course at a driving school",
+    "A second written test on the rules of the road",
+    "A letter of support from a driving instructor",
+    "No suspensions or demerit points in the last year"
+   ],
+   "q": "Besides finishing the probationary time, what does Alberta ask of you before you can hold a full Class 5 licence?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Non, l'accompagnateur doit détenir un permis complet",
+     "Oui, du moment qu'il a plus de 18 ans",
+     "Oui, si l'apprenti est un membre de sa famille",
+     "Oui, mais seulement pendant le jour"
+    ],
+    "q": "Un conducteur de classe 5-GDL en Alberta peut-il servir d'accompagnateur pour un apprenti ?"
+   },
+   "o": [
+    "No, the supervisor must hold a full licence",
+    "Yes, as long as they are over 18 years old",
+    "Yes, if the learner is a member of their family",
+    "Yes, but only during daylight hours"
+   ],
+   "q": "May a Class 5-GDL driver in Alberta act as the supervising driver for a learner?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "6",
+     "8",
+     "10",
+     "15"
+    ],
+    "q": "Combien de points d'inaptitude entraînent la suspension du permis d'un conducteur albertain au permis graduel ?"
+   },
+   "o": [
+    "6",
+    "8",
+    "10",
+    "15"
+   ],
+   "q": "How many demerit points will suspend the licence of an Alberta graduated licensing driver?"
+  }
+ ],
+ "bc-class-7l-mock-test.html": [
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "N'importe quel permis, même un permis N de novice",
+     "Un permis d'apprenti détenu depuis au moins deux ans",
+     "Un permis de n'importe quelle province ou de n'importe quel pays",
+     "Un permis valide de classe 1 à 5"
+    ],
+    "q": "Quel type de permis votre superviseur doit-il détenir lorsque vous pratiquez avec un permis d'apprenti de la Colombie-Britannique ?"
+   },
+   "o": [
+    "Any licence at all, including a novice N licence",
+    "A learner licence held for at least two years",
+    "A licence from any province or any country",
+    "A valid Class 1 to 5 driver's licence"
+   ],
+   "q": "What kind of driver's licence must your supervisor hold when you practise on a British Columbia learner licence?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Un an avec le L, puis environ deux ans avec le N",
+     "Six mois avec le L, puis un an avec le N",
+     "Trois mois avec le L, puis six mois avec le N",
+     "Deux ans avec le L, puis six mois avec le N"
+    ],
+    "q": "Dans le programme de permis progressif de la Colombie-Britannique, combien de temps durent au minimum les deux étapes ?"
+   },
+   "o": [
+    "One year with the L, then about two years with the N",
+    "Six months with the L, then one year with the N",
+    "Three months with the L, then six months with the N",
+    "Two years with the L, then six months with the N"
+   ],
+   "q": "In British Columbia's graduated licensing program, how long do the two stages last at a minimum?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Un panneau L rouge à l'arrière du véhicule",
+     "Un panneau N vert à l'arrière du véhicule",
+     "Un triangle jaune sur le pare-chocs arrière",
+     "Aucun panneau n'est nécessaire à cette étape"
+    ],
+    "q": "Après avoir réussi le premier examen de conduite en Colombie-Britannique, quel panneau un conducteur novice doit-il afficher ?"
+   },
+   "o": [
+    "A red L sign on the back of the vehicle",
+    "A green N sign on the back of the vehicle",
+    "A yellow triangle on the rear bumper",
+    "No sign at all is needed at this stage"
+   ],
+   "q": "After passing the first road test in British Columbia, what sign must a novice driver display?"
+  }
+ ],
+ "bc-class-7l-practice-test.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Non, les apprentis et les novices ne peuvent utiliser aucun appareil électronique",
+     "Oui, parce que le mains libres est permis à tous les conducteurs",
+     "Oui, mais seulement sur les routes affichées à 50 km/h ou moins",
+     "Oui, si l'appel dure moins d'une minute"
+    ],
+    "q": "Un apprenti de la Colombie-Britannique veut répondre à un appel avec un haut-parleur mains libres. Est-ce permis ?"
+   },
+   "o": [
+    "No, learner and novice drivers may not use any electronic device",
+    "Yes, because hands-free is allowed for every driver",
+    "Yes, but only on roads posted at 50 km/h or less",
+    "Yes, if the call lasts less than one minute"
+   ],
+   "q": "A learner in British Columbia wants to answer a call using a hands-free speaker. Is that allowed?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Un panneau N vert collé dans le pare-brise",
+     "Un panneau L rouge à l'arrière du véhicule",
+     "Un panneau jaune d'élève conducteur sur le toit",
+     "Un panneau L rouge sur la portière du conducteur"
+    ],
+    "q": "Quel panneau un apprenti de classe 7L doit-il afficher sur son véhicule en Colombie-Britannique ?"
+   },
+   "o": [
+    "A green N sign taped inside the windshield",
+    "A red L sign on the back of the vehicle",
+    "A yellow student driver sign on the roof",
+    "A red L sign on the driver's door"
+   ],
+   "q": "What sign must a Class 7L learner display on their vehicle in British Columbia?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "C'est permis si le superviseur conduit une partie du trajet",
+     "C'est permis en ville mais pas sur les autoroutes",
+     "Les apprentis ne peuvent pas conduire entre minuit et 5 h",
+     "C'est permis tant qu'aucun autre passager n'est présent"
+    ],
+    "q": "Un apprenti de la Colombie-Britannique veut rentrer de chez un ami à 1 h du matin avec un superviseur en règle. Que dit la loi ?"
+   },
+   "o": [
+    "It is allowed if the supervisor drives part of the way",
+    "It is allowed on city streets but not on highways",
+    "Learners may not drive between midnight and 5 a.m.",
+    "It is allowed as long as no other passengers are along"
+   ],
+   "q": "A learner in British Columbia wants to drive home from a friend's house at 1 a.m. with a proper supervisor. What does the law say?"
+  }
+ ],
+ "bc-rules-of-the-road.html": [
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Autant de passagers que vous voulez, à toute heure",
+     "Seulement des passagers qui détiennent eux-mêmes un permis complet",
+     "Un passager, sauf si tous sont de la famille immédiate ou si un superviseur qualifié vous accompagne",
+     "Seulement des passagers plus âgés que le conducteur"
+    ],
+    "q": "Vous avez un permis N de novice en Colombie-Britannique. Qui peut monter avec vous ?"
+   },
+   "o": [
+    "Any number of passengers, at any time of day",
+    "Only passengers who hold a full licence themselves",
+    "One passenger, unless everyone with you is immediate family or a qualified supervisor is along",
+    "Only passengers who are older than the driver"
+   ],
+   "q": "You have a novice N licence in British Columbia. Who may ride with you?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Suivre un cours de conduite payant et un cours de premiers soins",
+     "Réussir d'abord un examen de conduite dans des rues tranquilles",
+     "Posséder un véhicule immatriculé à son nom",
+     "Réussir un examen théorique et un examen de la vue"
+    ],
+    "q": "Que doit faire un nouveau conducteur en Colombie-Britannique avant d'obtenir un permis d'apprenti ?"
+   },
+   "o": [
+    "Complete a paid driving course and a first aid course",
+    "Pass a road test on quiet streets first",
+    "Own a vehicle registered in their own name",
+    "Pass a knowledge test and a vision screening"
+   ],
+   "q": "What must a new driver in British Columbia do before being given a learner licence?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "80 km/h",
+     "60 km/h",
+     "90 km/h",
+     "100 km/h"
+    ],
+    "q": "Vous roulez sur une route à l'extérieur de toute ville ou village en Colombie-Britannique et aucun panneau n'indique la vitesse. Quelle est la vitesse maximale ?"
+   },
+   "o": [
+    "80 km/h",
+    "60 km/h",
+    "90 km/h",
+    "100 km/h"
+   ],
+   "q": "You are driving on a road outside any city or town in British Columbia and there is no speed limit sign. What is the maximum speed?"
+  }
+ ],
+ "body-quiz.html": [
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "Femur",
+    "Humerus",
+    "Tibia",
+    "Ulna"
+   ],
+   "q": "Which bone is the longest in the human body?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Sternum",
+    "Patella",
+    "Clavicle",
+    "Scapula"
+   ],
+   "q": "What is the medical name for your kneecap?"
+  },
+  {
+   "a": 2,
+   "fr": null,
+   "o": [
+    "Lower leg",
+    "Neck",
+    "Upper arm",
+    "Foot"
+   ],
+   "q": "In which part of the body is the humerus bone?"
+  }
+ ],
+ "canada-quiz.html": [
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "New France",
+    "Upper Canada",
+    "British Columbia",
+    "New England"
+   ],
+   "q": "In the 1700s, the French colony in Canada was called what?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Spain and Portugal",
+    "Britain and France",
+    "Germany and Italy",
+    "Russia and Sweden"
+   ],
+   "q": "Which two European countries fought for control of Canada in the 1700s?"
+  },
+  {
+   "a": 2,
+   "fr": null,
+   "o": [
+    "Montreal",
+    "Toronto",
+    "Quebec City",
+    "Halifax"
+   ],
+   "q": "The 1759 Battle of the Plains of Abraham was fought near which city?"
+  }
+ ],
+ "citizenship.html": [
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "10 out of 20",
+    "15 out of 20",
+    "18 out of 20",
+    "20 out of 20"
+   ],
+   "q": "How many correct answers do you need to pass the real Canadian citizenship test?"
+  },
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "30 minutes",
+    "60 minutes",
+    "No time limit",
+    "10 minutes"
+   ],
+   "q": "How much time do you have to complete the real citizenship test?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "The Citizen's Almanac",
+    "Discover Canada",
+    "The Canada Handbook",
+    "A Guide to Voting"
+   ],
+   "q": "Which official guide should you study to prepare for the citizenship test?"
+  }
+ ],
+ "daily.html": [
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "Ottawa",
+    "Vancouver",
+    "Montreal",
+    "Toronto"
+   ],
+   "q": "What is the capital city of Canada?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Jupiter",
+    "Mars",
+    "Saturn",
+    "Venus"
+   ],
+   "q": "Which planet is known as the Red Planet?"
+  },
+  {
+   "a": 2,
+   "fr": null,
+   "o": [
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "q": "How many continents are there on Earth?"
+  }
+ ],
+ "earth-quiz.html": [
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "The mantle",
+    "The valley",
+    "The ridge",
+    "The basin"
+   ],
+   "q": "What is the thick layer of hot rock between Earth's crust and its core called?"
+  },
+  {
+   "a": 2,
+   "fr": null,
+   "o": [
+    "Copper",
+    "Silver",
+    "Iron",
+    "Tin"
+   ],
+   "q": "Earth's centre is made mostly of which metal?"
+  },
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "Tectonic plates",
+    "Sand dunes",
+    "Coral banks",
+    "Ice sheets"
+   ],
+   "q": "What are the huge moving slabs of rock that Earth's surface is broken into called?"
+  }
+ ],
+ "entertainment-quiz.html": [
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "The Lion King",
+    "Zootopia",
+    "Tarzan",
+    "Madagascar"
+   ],
+   "q": "In which movie does a young lion named Simba grow up to be king?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Dolphin",
+    "Clownfish",
+    "Turtle",
+    "Shark"
+   ],
+   "q": "What kind of animal is Nemo in Finding Nemo?"
+  },
+  {
+   "a": 2,
+   "fr": null,
+   "o": [
+    "Hans",
+    "Sven",
+    "Olaf",
+    "Kristoff"
+   ],
+   "q": "In Frozen, what is the name of the snowman?"
+  }
+ ],
+ "fun-quiz.html": [
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "Maple syrup",
+    "Honey",
+    "Corn syrup",
+    "Agave"
+   ],
+   "q": "What sweet syrup is Canada world-famous for?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Nachos",
+    "Poutine",
+    "Tacos",
+    "Pierogi"
+   ],
+   "q": "Which fast food is a classic Canadian dish: fries, cheese curds, and gravy?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Moose",
+    "Beaver",
+    "Loon",
+    "Bear"
+   ],
+   "q": "What animal is on the Canadian 5-cent coin (the nickel)?"
+  }
+ ],
+ "gk-quiz.html": [
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "Paris",
+    "Rome",
+    "Madrid",
+    "London"
+   ],
+   "q": "What is the capital city of France?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Indian",
+    "Pacific",
+    "Arctic",
+    "Atlantic"
+   ],
+   "q": "Which is the largest ocean on Earth?"
+  },
+  {
+   "a": 2,
+   "fr": null,
+   "o": [
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "q": "How many continents are there in the world?"
+  }
+ ],
+ "money-quiz.html": [
+  {
+   "a": 2,
+   "fr": null,
+   "o": [
+    "10",
+    "50",
+    "100",
+    "1000"
+   ],
+   "q": "How many cents make one Canadian dollar?"
+  },
+  {
+   "a": 3,
+   "fr": null,
+   "o": [
+    "The twenty-five-cent coin",
+    "The five-cent coin",
+    "The ten-cent coin",
+    "The one-cent coin"
+   ],
+   "q": "Canada stopped making which coin in 2012?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "1 cent",
+    "5 cents",
+    "10 cents",
+    "25 cents"
+   ],
+   "q": "When you pay with cash in Canada, the total is rounded to the nearest what?"
+  }
+ ],
+ "ontario-g1-mock-test.html": [
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "22 h et 6 h",
+     "23 h et 4 h",
+     "Le coucher et le lever du soleil",
+     "Minuit et 5 h"
+    ],
+    "q": "Avec un permis G1, vous n'avez pas le droit de conduire entre quelles heures ?"
+   },
+   "o": [
+    "10 p.m. and 6 a.m.",
+    "11 p.m. and 4 a.m.",
+    "Sunset and sunrise",
+    "Midnight and 5 a.m."
+   ],
+   "q": "With a G1 licence, you are not allowed to drive between which hours?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Toute route dont la limite de vitesse dépasse 60 km/h",
+     "Les autoroutes rapides de la série 400 et certaines voies rapides nommées, sauf si un moniteur de conduite agréé est assis à côté de vous",
+     "Toutes les routes à l'extérieur de votre ville ou village",
+     "Toute route après la tombée de la nuit, peu importe qui vous accompagne"
+    ],
+    "q": "Sur quelles routes un conducteur G1 n'a-t-il pas le droit de circuler ?"
+   },
+   "o": [
+    "Any road with a speed limit over 60 km/h",
+    "High-speed 400-series highways and certain named expressways, unless a licensed driving instructor is beside you",
+    "Every road outside your own city or town",
+    "Any road after dark, no matter who is with you"
+   ],
+   "q": "Which roads is a G1 driver not allowed to drive on?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "6 mois",
+     "3 mois",
+     "12 mois, ou 8 mois avec un cours de conduite reconnu",
+     "24 mois"
+    ],
+    "q": "Combien de temps devez-vous normalement détenir un permis G1 avant votre premier examen sur route ?"
+   },
+   "o": [
+    "6 months",
+    "3 months",
+    "12 months, or 8 months with an approved driver education course",
+    "24 months"
+   ],
+   "q": "How long must you normally hold a G1 licence before your first road test?"
+  }
+ ],
+ "ontario-g1-practice-test.html": [
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Zéro, comme votre propre limite",
+     "Sous 0,08",
+     "Sous 0,05",
+     "Aucune limite ne s'applique à lui"
+    ],
+    "q": "Pendant que vous conduisez avec un permis G1, quel taux d'alcool l'accompagnateur assis à côté de vous peut-il avoir dans le sang ?"
+   },
+   "o": [
+    "Zero, the same as your own limit",
+    "Below .08",
+    "Below .05",
+    "No limit applies to them"
+   ],
+   "q": "While you drive with a G1 licence, how much alcohol may the accompanying driver beside you have in their blood?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Deux ans",
+     "Au moins quatre ans",
+     "Un an",
+     "Dix ans"
+    ],
+    "q": "Le conducteur qui vous accompagne lorsque vous conduisez avec un permis G1 doit avoir combien d'années d'expérience de conduite ?"
+   },
+   "o": [
+    "Two years",
+    "At least four years",
+    "One year",
+    "Ten years"
+   ],
+   "q": "The driver who rides with you while you drive on a G1 licence must have how many years of driving experience?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Sur le siège du passager avant",
+     "N'importe où dans le véhicule",
+     "Juste derrière vous",
+     "Sur la banquette arrière"
+    ],
+    "q": "Où doit s'asseoir votre accompagnateur pendant que vous conduisez avec un permis G1 ?"
+   },
+   "o": [
+    "In the front passenger seat",
+    "Anywhere in the vehicle",
+    "Directly behind you",
+    "In the back seat"
+   ],
+   "q": "Where must your accompanying driver sit while you drive with a G1 licence?"
+  }
+ ],
+ "ontario-g1-rules-of-the-road.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Au moins 12 mois",
+     "Au moins 3 mois",
+     "Au moins 6 mois",
+     "Au moins 18 mois"
+    ],
+    "q": "Combien de temps devez-vous détenir un permis G2 avant de pouvoir passer le deuxième examen sur route ?"
+   },
+   "o": [
+    "At least 12 months",
+    "At least 3 months",
+    "At least 6 months",
+    "At least 18 months"
+   ],
+   "q": "How long must you hold a G2 licence before you may take the second road test?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Deux ans",
+     "Trois ans",
+     "Il n'y a aucune limite de temps",
+     "Cinq ans"
+    ],
+    "q": "Combien de temps avez-vous pour terminer tout le processus de délivrance graduelle des permis et obtenir le permis G complet ?"
+   },
+   "o": [
+    "Two years",
+    "Three years",
+    "There is no time limit",
+    "Five years"
+   ],
+   "q": "How long do you have to finish the whole graduated licensing process and earn a full G licence?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Trois",
+     "Un seul",
+     "Aucun",
+     "Autant qu'il y a de ceintures de sécurité"
+    ],
+    "q": "Pendant ses six premiers mois, un conducteur G2 de 19 ans ou moins peut transporter combien de passagers de 19 ans ou moins entre minuit et 5 h ?"
+   },
+   "o": [
+    "Three",
+    "Only one",
+    "None",
+    "As many as there are seat belts"
+   ],
+   "q": "In their first six months, a G2 driver aged 19 or under may carry how many passengers aged 19 or under between midnight and 5 a.m.?"
+  }
+ ],
+ "science-quiz.html": [
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "Mercury",
+    "Mars",
+    "Earth",
+    "Venus"
+   ],
+   "q": "Which planet is closest to the Sun?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Venus",
+    "Mars",
+    "Saturn",
+    "Jupiter"
+   ],
+   "q": "Which planet is known as the Red Planet?"
+  },
+  {
+   "a": 2,
+   "fr": null,
+   "o": [
+    "Saturn",
+    "Neptune",
+    "Jupiter",
+    "Uranus"
+   ],
+   "q": "What is the largest planet in our solar system?"
+  }
+ ],
+ "trivia-showdown.html": [
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "Ottawa",
+    "Montreal",
+    "Calgary",
+    "Toronto"
+   ],
+   "q": "What is the capital of Canada?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "6",
+    "8",
+    "10",
+    "12"
+   ],
+   "q": "How many legs does a spider have?"
+  },
+  {
+   "a": 1,
+   "fr": null,
+   "o": [
+    "Venus",
+    "Mars",
+    "Jupiter",
+    "Saturn"
+   ],
+   "q": "Which planet is the Red Planet?"
+  }
+ ],
+ "world-quiz.html": [
+  {
+   "a": 2,
+   "fr": null,
+   "o": [
+    "Marseille",
+    "Lyon",
+    "Paris",
+    "Nice"
+   ],
+   "q": "What is the capital of France?"
+  },
+  {
+   "a": 3,
+   "fr": null,
+   "o": [
+    "Montreal",
+    "Toronto",
+    "Vancouver",
+    "Ottawa"
+   ],
+   "q": "What is the capital of Canada?"
+  },
+  {
+   "a": 0,
+   "fr": null,
+   "o": [
+    "Tokyo",
+    "Nagoya",
+    "Osaka",
+    "Kyoto"
+   ],
+   "q": "What is the capital of Japan?"
+  }
+ ]
+}
