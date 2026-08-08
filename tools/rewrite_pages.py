@@ -14,6 +14,7 @@ import glob, json, os, re, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import schema_ld
+import asset_ver
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://canada-quiz.com/"
@@ -27,7 +28,9 @@ SITE = "https://canada-quiz.com/"
 # new page looks broken. Changing ?v=... makes it a new address, so everyone gets
 # the fresh file. (This bit us on 27 Jul 2026 — new hero HTML + old cached CSS.)
 # ---------------------------------------------------------------------------
-ASSET_VER = "20260807d"
+# Kept only so old build notes still resolve; the real stamps are per-file
+# hashes from tools/asset_ver.py. Nothing in this script reads this value.
+ASSET_VER = "per-file-hash"
 
 # The full A-to-Z page list shown at the bottom of every page.
 # Add a new page to tools/site_map.json and re-run this script.
@@ -151,6 +154,12 @@ def fix_viewport(s):
 
 
 def main():
+    # js/site.js loads js/i18n-fr.js itself, so that ?v= is written in here
+    # first. Do it BEFORE site.js is hashed, or the pages would point at a
+    # site.js whose bytes no longer match its own stamp.
+    if asset_ver.stamp_i18n_into_site_js():
+        print("js/site.js: dictionary stamp ->", asset_ver.ver("js/i18n-fr.js"))
+
     files = sorted(f for f in glob.glob(os.path.join(ROOT, "*.html")))
     changed = 0
     for path in files:
@@ -198,27 +207,31 @@ def main():
         if re.search(r'<script src="js/analytics\.js(\?[^"]*)?"></script>', s):
             s = re.sub(r'<script src="js/analytics\.js(\?[^"]*)?"></script>',
                        '<script src="js/site.js?v=%s"></script>\n'
-                       '  <script src="js/analytics.js?v=%s"></script>' % (ASSET_VER, ASSET_VER),
+                       '  <script src="js/analytics.js?v=%s"></script>'
+                       % (asset_ver.ver("js/site.js"), asset_ver.ver("js/analytics.js")),
                        s, count=1)
         else:
             s = s.replace("</body>",
-                          '  <script src="js/site.js?v=%s"></script>\n</body>' % ASSET_VER, 1)
+                          '  <script src="js/site.js?v=%s"></script>\n</body>'
+                          % asset_ver.ver("js/site.js"), 1)
 
         # --- ads.js: loads AdSense AFTER the page is readable -----------------
         s = s.replace("</body>",
-                      '  <script src="js/ads.js?v=%s" defer></script>\n</body>' % ASSET_VER, 1)
+                      '  <script src="js/ads.js?v=%s" defer></script>\n</body>'
+                      % asset_ver.ver("js/ads.js"), 1)
 
-        # --- cache stamp on the stylesheet ----------------------------------
-        s = re.sub(r'(<link rel="stylesheet" href="css/style\.css)(\?[^"]*)?(")',
-                   r'\g<1>?v=%s\g<3>' % ASSET_VER, s)
+        # --- cache stamp: A HASH OF EACH FILE, not one shared version --------
+        # Each ?v= is the first 8 hex of that file's SHA-1 (tools/asset_ver.py).
+        # Two things follow, and both matter:
+        #   * editing one JS file rewrites only the pages that load it, instead
+        #     of all 202 pages every single build;
+        #   * a changed file can never keep a stale stamp, because the stamp IS
+        #     the file. No more remembering to bump a constant by hand.
+        s = re.sub(r'(<link rel="stylesheet" href="(css/[A-Za-z0-9_./-]+\.css))(\?[^"]*)?(")',
+                   lambda m: '%s?v=%s%s' % (m.group(1), asset_ver.ver(m.group(2)), m.group(4)), s)
 
-        # --- cache stamp on EVERY other local script -------------------------
-        # js/fun-questions.js, js/citizenship-questions.js, js/driving-engine.js,
-        # js/driving/signs.js, js/driving/on.js, js/game-fullscreen.js ...
-        # Without this a returning visitor keeps an old cached copy and never
-        # sees new questions or new road signs.
-        s = re.sub(r'(<script src="js/[A-Za-z0-9_./-]+\.js)(\?[^"]*)?(")',
-                   r'\g<1>?v=%s\g<3>' % ASSET_VER, s)
+        s = re.sub(r'(<script src="(js/[A-Za-z0-9_./-]+\.js))(\?[^"]*)?(")',
+                   lambda m: '%s?v=%s%s' % (m.group(1), asset_ver.ver(m.group(2)), m.group(4)), s)
 
         # --- structured data (JSON-LD) --------------------------------------
         # Regenerated every run from tools/schema_ld.py, so it always matches

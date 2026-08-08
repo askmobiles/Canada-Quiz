@@ -14,6 +14,9 @@ Run it last, after rewrite_pages.py and build_fr.py:
 
     python3 tools/make_samples.py    # only when a question bank changed
     python3 tools/make_quiz_ld.py    # only when a question bank changed
+
+Cache stamps are per-file hashes now (tools/asset_ver.py) — there is no
+ASSET_VER to bump by hand any more.
     python3 tools/build_content.py
     python3 tools/make_dict.py
     python3 tools/rewrite_pages.py
