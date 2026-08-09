@@ -5659,6 +5659,78 @@
    ]
   ]
  },
+ "lights-out.html": {
+  "about": [
+   {
+    "en": "Lights Out is a logic puzzle that looks like nothing and then keeps you up. Every square is a light. Tap one and it switches, and so do the squares directly above, below, left and right of it. The goal is a completely dark board.",
+    "fr": "Lights Out est un casse-tête logique qui n'a l'air de rien et vous tient ensuite éveillé. Chaque case est une lumière. Touchez-en une et elle change d'état, tout comme les cases juste au-dessus, en dessous, à gauche et à droite. Le but : un plateau entièrement éteint."
+   },
+   {
+    "en": "Two facts make it fair rather than frustrating. Tapping the same square twice undoes itself completely, so you can never wreck a puzzle. And the order of your taps makes no difference at all — only which squares you tapped, and whether you tapped each an odd or an even number of times.",
+    "fr": "Deux règles le rendent équitable plutôt que frustrant. Toucher deux fois la même case annule complètement l'effet : vous ne pouvez jamais gâcher un casse-tête. Et l'ordre de vos touches n'a aucune importance : seules comptent les cases touchées, et le fait de les avoir touchées un nombre pair ou impair de fois."
+   },
+   {
+    "en": "Every puzzle is created by starting from a dark board and pressing random squares, so a solution always exists — you are never given something impossible. Three sizes: three by three to learn on, four by four to think about, and the classic five by five, which is genuinely difficult. Your fewest moves at each size is remembered in your browser.",
+    "fr": "Chaque casse-tête est créé à partir d'un plateau éteint sur lequel on appuie au hasard : une solution existe donc toujours et on ne vous propose jamais l'impossible. Trois tailles : trois sur trois pour apprendre, quatre sur quatre pour réfléchir, et le classique cinq sur cinq, vraiment difficile. Votre meilleur nombre de coups à chaque taille est conservé dans votre navigateur."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Because order does not matter, no square ever needs to be tapped more than once in a solution. That alone cuts the search enormously.",
+    "fr": "Comme l'ordre ne compte pas, aucune case n'a jamais besoin d'être touchée plus d'une fois dans une solution. Cela réduit énormément la recherche."
+   },
+   {
+    "en": "A common method is to clear the board row by row from the top, tapping the row below whichever lights are still on. On a five by five board this leaves a bottom row that tells you what to do first.",
+    "fr": "Une méthode courante consiste à nettoyer le plateau rangée par rangée depuis le haut, en touchant la rangée sous les lumières encore allumées. Sur un plateau cinq sur cinq, la rangée du bas vous indique alors par quoi il fallait commencer."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Not here. Every board is made by scrambling a solved one, so it can always be unscrambled. On a randomly filled five by five board that would not be true.",
+     "fr": "Pas ici. Chaque plateau est créé en mélangeant un plateau résolu : il peut donc toujours être remis en ordre. Sur un plateau cinq sur cinq rempli au hasard, ce ne serait pas vrai."
+    },
+    "q": {
+     "en": "Can a puzzle be impossible?",
+     "fr": "Un casse-tête peut-il être impossible ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Only for your own record. Finishing is finishing, but your best is saved so you can try to beat it.",
+     "fr": "Seulement pour votre propre record. Terminer, c'est terminer, mais votre meilleur résultat est enregistré pour que vous puissiez le battre."
+    },
+    "q": {
+     "en": "Does the number of moves matter?",
+     "fr": "Le nombre de coups compte-t-il ?"
+    }
+   }
+  ],
+  "kind": "game",
+  "related": [
+   [
+    "sudoku.html",
+    {
+     "en": "Sudoku",
+     "fr": "Sudoku"
+    }
+   ],
+   [
+    "minesweeper.html",
+    {
+     "en": "Minesweeper",
+     "fr": "Démineur"
+    }
+   ],
+   [
+    "sliding-puzzle.html",
+    {
+     "en": "Sliding Puzzle",
+     "fr": "Taquin"
+    }
+   ]
+  ]
+ },
  "manitoba-class-5-mock-test.html": {
   "about": [
    {
@@ -5998,6 +6070,78 @@
     {
      "en": "Back to the Manitoba hub",
      "fr": "Retour au centre du Manitoba"
+    }
+   ]
+  ]
+ },
+ "maple-says.html": {
+  "about": [
+   {
+    "en": "Maple Says is a memory game. The board plays a pattern of colours one at a time, and you tap the same colours back in the same order. Get it right and the pattern grows by one and plays again.",
+    "fr": "Maple Says est un jeu de mémoire. Le plateau joue une suite de couleurs une à une, et vous reproduisez les mêmes couleurs dans le même ordre. Si c'est juste, la suite s'allonge d'une couleur et rejoue."
+   },
+   {
+    "en": "Each colour has its own musical note, and that turns out to matter. Most people start by trying to memorise squares and then discover they are actually remembering a little tune. The tune is far easier to hold in your head, which is why the game is a genuine memory exercise rather than a test of concentration.",
+    "fr": "Chaque couleur a sa propre note de musique, et cela change tout. La plupart des gens essaient d'abord de mémoriser des cases, puis découvrent qu'ils retiennent en fait un petit air. L'air se retient bien plus facilement, et c'est pourquoi ce jeu est un véritable exercice de mémoire plutôt qu'un test de concentration."
+   },
+   {
+    "en": "Three speeds. Easy flashes slowly, gives you three lives and lets you replay the pattern as often as you like. Medium is quicker with two lives. Hard is fast, gives one life and no replay, so a single slip ends the round. Sound can be switched off and the pattern still flashes exactly the same.",
+    "fr": "Trois vitesses. Facile clignote lentement, donne trois vies et permet de revoir la suite autant de fois que vous voulez. Moyen est plus rapide avec deux vies. Difficile est rapide, donne une seule vie et aucune reprise : une seule erreur met fin à la manche. Le son peut être coupé, et la suite clignote exactement de la même façon."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Most adults manage somewhere between seven and nine before it falls apart, which lines up with how much short-term memory usually holds.",
+    "fr": "La plupart des adultes atteignent entre sept et neuf avant de flancher, ce qui correspond à ce que la mémoire à court terme retient habituellement."
+   },
+   {
+    "en": "Saying the colours out loud, or humming the notes, reliably beats staring at the board. Sound and speech use a different part of memory than vision.",
+    "fr": "Dire les couleurs à voix haute, ou fredonner les notes, fonctionne bien mieux que fixer le plateau. Le son et la parole sollicitent une autre partie de la mémoire que la vue."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No, and it does not matter. Every pattern is shown by the pads lighting up, so the game works perfectly with no sound at all.",
+     "fr": "Non, et cela n'a aucune importance. Chaque suite est montrée par l'illumination des cases : le jeu fonctionne parfaitement sans aucun son."
+    },
+    "q": {
+     "en": "Is there any sound if I am on silent?",
+     "fr": "Y a-t-il du son si mon appareil est en mode silencieux ?"
+    }
+   },
+   {
+    "a": {
+     "en": "That is what makes it hard. Easy gives three lives and unlimited replays so younger players can enjoy it; hard gives one life and no replay.",
+     "fr": "C'est précisément ce qui le rend difficile. Facile donne trois vies et des reprises illimitées pour que les plus jeunes s'amusent ; difficile donne une vie et aucune reprise."
+    },
+    "q": {
+     "en": "Why do I get fewer lives on hard?",
+     "fr": "Pourquoi ai-je moins de vies en difficile ?"
+    }
+   }
+  ],
+  "kind": "game",
+  "related": [
+   [
+    "memory.html",
+    {
+     "en": "Memory Match",
+     "fr": "Jeu de mémoire"
+    }
+   ],
+   [
+    "color-match.html",
+    {
+     "en": "Color Match",
+     "fr": "Match de couleurs"
+    }
+   ],
+   [
+    "tile-tap.html",
+    {
+     "en": "Tile Tap",
+     "fr": "Tape-tuiles"
     }
    ]
   ]
@@ -7672,6 +7816,82 @@
     {
      "en": "Back to the Quebec hub",
      "fr": "Retour au centre du Québec"
+    }
+   ]
+  ]
+ },
+ "reversi.html": {
+  "about": [
+   {
+    "en": "Reversi, sold for many years as Othello, is a board game with one rule and a great deal of depth. You place a piece so that it traps a straight line of your opponent's pieces between it and another piece of your own, and every trapped piece flips to your colour. That is the whole game.",
+    "fr": "Le Reversi, vendu pendant des années sous le nom d'Othello, est un jeu de plateau qui tient en une règle et cache une grande profondeur. Vous posez une pièce de façon à encercler une ligne droite de pièces adverses entre elle et une autre de vos pièces, et toutes les pièces encerclées passent à votre couleur. C'est tout le jeu."
+   },
+   {
+    "en": "The pale dots on the board show every square you are allowed to play, so nobody has to hunt for legal moves. If you have no move at all your turn is skipped automatically, which is part of the real rules and catches people out.",
+    "fr": "Les points pâles sur le plateau indiquent toutes les cases où vous pouvez jouer : personne n'a à chercher les coups permis. Si vous n'avez aucun coup possible, votre tour est sauté automatiquement, ce qui fait partie des vraies règles et surprend bien des joueurs."
+   },
+   {
+    "en": "You can play against a friend on the same phone or tablet, or against the computer at three strengths. Easy simply grabs the most pieces it can see this turn, which is the classic beginner mistake and makes it beatable. Medium thinks two moves ahead and values corners. Hard searches five moves ahead and will punish you for handing it a corner.",
+    "fr": "Vous pouvez jouer contre un ami sur le même téléphone ou la même tablette, ou contre l'ordinateur à trois niveaux. Facile prend simplement le plus de pièces possible ce tour-ci, l'erreur classique du débutant, ce qui le rend battable. Moyen réfléchit à deux coups d'avance et accorde de la valeur aux coins. Difficile explore cinq coups d'avance et vous punira si vous lui offrez un coin."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Having the most pieces in the middle of the game means very little. Strong players are often behind on count for most of the game and win at the end.",
+    "fr": "Avoir le plus de pièces au milieu de la partie ne veut pas dire grand-chose. Les bons joueurs sont souvent en retard au compte pendant presque toute la partie et gagnent à la fin."
+   },
+   {
+    "en": "Corners can never be flipped, because there is no square beyond them to trap against. That single fact is most of the strategy.",
+    "fr": "Les coins ne peuvent jamais être retournés, puisqu'il n'y a aucune case au-delà pour encercler. Ce seul fait résume l'essentiel de la stratégie."
+   },
+   {
+    "en": "The square diagonally next to a corner is the most dangerous on the board. Playing there usually hands your opponent the corner.",
+    "fr": "La case en diagonale d'un coin est la plus dangereuse du plateau. Y jouer offre généralement le coin à votre adversaire."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Almost. Othello is a commercial version of Reversi with a fixed starting position and a standard board. What you play here is the Othello form, which is what almost everyone means by Reversi today.",
+     "fr": "Presque. L'Othello est une version commerciale du Reversi avec une position de départ fixe et un plateau standard. Ce que vous jouez ici est la forme Othello, c'est-à-dire ce que presque tout le monde entend aujourd'hui par Reversi."
+    },
+    "q": {
+     "en": "Is Reversi the same as Othello?",
+     "fr": "Le Reversi et l'Othello sont-ils la même chose ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Because you had no legal move. If you cannot trap any line, the rules say you pass and the other player goes again. The game only ends when neither side can move.",
+     "fr": "Parce que vous n'aviez aucun coup permis. Si vous ne pouvez encercler aucune ligne, les règles veulent que vous passiez et que l'adversaire rejoue. La partie ne se termine que lorsque plus personne ne peut jouer."
+    },
+    "q": {
+     "en": "Why was my turn skipped?",
+     "fr": "Pourquoi mon tour a-t-il été sauté ?"
+    }
+   }
+  ],
+  "kind": "game",
+  "related": [
+   [
+    "chess.html",
+    {
+     "en": "Chess",
+     "fr": "Échecs"
+    }
+   ],
+   [
+    "checkers.html",
+    {
+     "en": "Checkers",
+     "fr": "Dames"
+    }
+   ],
+   [
+    "connect4.html",
+    {
+     "en": "Connect 4",
+     "fr": "Puissance 4"
     }
    ]
   ]

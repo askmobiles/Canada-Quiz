@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reversi (Othello) — Play Free Against the Computer | Family Games</title>
+<meta name="description" content="Play Reversi, also called Othello, free against the computer on easy, medium or hard — or against a friend on one device. Legal moves are shown. No signup.">
+<link rel="stylesheet" href="css/style.css?v=61960d1f">
+<style>
+  .rv-wrap{max-width:560px;margin:0 auto}
+  .rv-screen{display:none}.rv-screen.on{display:block}
+  .rv-h{font-weight:800;margin:14px 0 6px;font-size:.95rem;color:var(--muted)}
+  .rv-h:first-child{margin-top:0}
+  .rv-opt{display:block;width:100%;min-height:56px;margin:8px 0;padding:14px 16px;
+    border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;
+    font-family:inherit;font-size:1rem;font-weight:800;text-align:left;line-height:1.3;cursor:pointer}
+  .rv-opt:hover{border-color:var(--blue);background:#f7fbff}
+  .rv-opt:active{transform:translateY(2px)}
+  .rv-opt small{display:block;font-weight:600;font-size:.8rem;color:var(--muted);margin-top:3px}
+  .rv-opt:hover small{color:var(--muted)}
+  .rv-hud{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 12px}
+  .rv-chip{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;
+    background:#f5f2ec;border:2px solid var(--line);font-weight:800;font-size:.95rem}
+  .rv-chip.turn{border-color:var(--red-aa);background:#fff3f3}
+  .rv-chip b{font-variant-numeric:tabular-nums;font-weight:900}
+  .rv-dot{width:18px;height:18px;border-radius:50%;display:inline-block;flex:0 0 auto}
+  .rv-dot.b{background:#1c1533;border:2px solid #1c1533}
+  .rv-dot.w{background:#fff;border:2px solid #8d86a3}
+  .rv-board{width:100%;max-width:min(94vw,460px);margin:0 auto;aspect-ratio:1/1;
+    display:grid;grid-template-columns:repeat(8,1fr);gap:2px;padding:8px;border-radius:14px;
+    background:#1c7c54;box-shadow:0 3px 14px rgba(0,0,0,.18)}
+  .rv-sq{position:relative;background:#239a66;border-radius:4px;padding:0;border:0;
+    cursor:default;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;
+    justify-content:center;min-width:0;min-height:0}
+  .rv-sq.playable{cursor:pointer}
+  .rv-sq.playable:hover{background:#2bb47a}
+  .rv-sq:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+  .rv-pc{width:82%;height:82%;border-radius:50%;transition:transform .18s ease}
+  .rv-pc.b{background:radial-gradient(circle at 32% 28%,#4a4266,#120e24)}
+  .rv-pc.w{background:radial-gradient(circle at 32% 28%,#fff,#cfc9dd)}
+  .rv-pc.flip{transform:scale(.1)}
+  .rv-hint{width:26%;height:26%;border-radius:50%;background:rgba(255,255,255,.42)}
+  .rv-last{position:absolute;inset:6%;border:3px solid #ffd34d;border-radius:50%;pointer-events:none}
+  .rv-msg{text-align:center;font-weight:800;margin:12px 0 2px;min-height:1.4em}
+  .rv-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .rv-res{text-align:center}
+  .rv-res .big{font-size:2.6rem;line-height:1.1;margin:6px 0}
+  @media(max-width:420px){.rv-chip{font-size:.85rem;padding:6px 11px}.rv-board{gap:1.5px;padding:6px}}
+</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/reversi.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/reversi.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/reversi.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/reversi.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"Action & Classic Games","item":"https://canada-quiz.com/games.html"},{"@type":"ListItem","position":3,"name":"Reversi (Othello)","item":"https://canada-quiz.com/reversi.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/reversi.html#webpage","url":"https://canada-quiz.com/reversi.html","name":"Reversi (Othello) — Play Free Against the Computer | Family Games","description":"Play Reversi, also called Othello, free against the computer on easy, medium or hard — or against a friend on one device. Legal moves are shown. No signup.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>⚫⚪ Reversi</h1>
+    <p>Trap a line of your opponent's pieces and they all flip to your colour. Also known as Othello.</p>
+  </section>
+  <details class="howto"><summary>📖 How to play</summary><p>Take turns placing a piece on the board. Your move must <b>trap</b> at least one straight line of the other colour between the piece you just played and another piece of your own — across, down or diagonally. Every trapped piece flips to your colour. The small pale dots show you where you are allowed to play. If you have no legal move your turn is skipped automatically. When neither player can move the game ends, and whoever has more pieces on the board wins. A minute to learn and a lifetime to master — the corners are worth far more than they look.</p></details>
+
+  <div class="panel" data-fs-host>
+    <div class="rv-wrap" id="rvWrap" data-no-i18n>
+
+      <div class="rv-screen on" id="rvStart">
+        <div class="rv-h" id="rvWhoHead">Who is playing?</div>
+        <button type="button" class="rv-opt" data-mode="ai" id="rvOptAi">🤖 Against the computer</button>
+        <button type="button" class="rv-opt" data-mode="two" id="rvOptTwo">👫 Two players on this device</button>
+        <div class="rv-h" id="rvLvlHead">Computer strength</div>
+        <button type="button" class="rv-opt" data-lvl="easy" id="rvLvlE">🙂 Easy<small></small></button>
+        <button type="button" class="rv-opt" data-lvl="medium" id="rvLvlM">🎯 Medium<small></small></button>
+        <button type="button" class="rv-opt" data-lvl="hard" id="rvLvlH">🔥 Hard<small></small></button>
+      </div>
+
+      <div class="rv-screen" id="rvGame">
+        <div class="rv-hud">
+          <span class="rv-chip" id="rvChipB"><span class="rv-dot b"></span><span id="rvNameB">You</span> <b id="rvScoreB">2</b></span>
+          <span class="rv-chip" id="rvChipW"><span class="rv-dot w"></span><span id="rvNameW">Computer</span> <b id="rvScoreW">2</b></span>
+        </div>
+        <div class="rv-board" id="rvBoard" role="grid" aria-label="Reversi board"></div>
+        <p class="rv-msg" id="rvMsg"></p>
+        <div class="rv-btns">
+          <button type="button" class="btn btn-ghost" id="rvUndo">Undo</button>
+          <button type="button" class="btn btn-ghost" id="rvQuit">New game</button>
+        </div>
+      </div>
+
+      <div class="rv-screen" id="rvOver">
+        <div class="rv-res">
+          <div class="big" id="rvOverIcon">🏆</div>
+          <h2 id="rvOverTitle" style="margin:.2em 0">You win!</h2>
+          <p id="rvOverScore" style="font-weight:800;font-size:1.15rem"></p>
+          <p class="muted" id="rvOverNote"></p>
+          <div class="rv-btns">
+            <button type="button" class="btn btn-lg" id="rvAgain">Play again</button>
+            <button type="button" class="btn btn-ghost btn-lg" id="rvChange">Change level</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ad-slot"><span class="ad-label">Advertisement</span></div>
+<!--PAGEDOC-->
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Reversi, sold for many years as Othello, is a board game with one rule and a great deal of depth. You place a piece so that it traps a straight line of your opponent's pieces between it and another piece of your own, and every trapped piece flips to your colour. That is the whole game.</p>
+  <p>The pale dots on the board show every square you are allowed to play, so nobody has to hunt for legal moves. If you have no move at all your turn is skipped automatically, which is part of the real rules and catches people out.</p>
+  <p>You can play against a friend on the same phone or tablet, or against the computer at three strengths. Easy simply grabs the most pieces it can see this turn, which is the classic beginner mistake and makes it beatable. Medium thinks two moves ahead and values corners. Hard searches five moves ahead and will punish you for handing it a corner.</p>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Having the most pieces in the middle of the game means very little. Strong players are often behind on count for most of the game and win at the end.</li>
+    <li>Corners can never be flipped, because there is no square beyond them to trap against. That single fact is most of the strategy.</li>
+    <li>The square diagonally next to a corner is the most dangerous on the board. Playing there usually hands your opponent the corner.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Is Reversi the same as Othello?</h3>
+  <p>Almost. Othello is a commercial version of Reversi with a fixed starting position and a standard board. What you play here is the Othello form, which is what almost everyone means by Reversi today.</p>
+  <h3>Why was my turn skipped?</h3>
+  <p>Because you had no legal move. If you cannot trap any line, the rules say you pass and the other player goes again. The game only ends when neither side can move.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="chess.html">Chess</a> · <a href="checkers.html">Checkers</a> · <a href="connect4.html">Connect 4</a></p>
+</section>
+<!--/PAGEDOC-->
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <details class="footer-map">
+      <summary>All pages <span class="fm-count">(118)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <div class="fm-h">Quizzes</div>
+        <a href="quizzes.html">All Quizzes</a>
+        <a href="gk-quiz.html">General Knowledge</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Fun Canada Quiz</a>
+        <a href="province-quiz.html">Which Province Are You?</a>
+        <a href="world-quiz.html">World Quiz</a>
+        <a href="science-quiz.html">Science &amp; Space</a>
+        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
+        <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Driving Test Practice</div>
+        <a href="driving-test.html">Canada Driving Test</a>
+        <a href="ontario-g1-practice-test.html">Ontario G1 Practice Test</a>
+        <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
+        <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
+        <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+        <a href="ontario-g1-study-guide.html">Ontario G1 Study Guide</a>
+        <a href="bc-class-7l-practice-test.html">BC Class 7L Practice Test</a>
+        <a href="bc-class-7l-mock-test.html">BC Class 7L Mock Test</a>
+        <a href="bc-road-signs.html">BC Road Signs</a>
+        <a href="bc-rules-of-the-road.html">BC Rules of the Road</a>
+        <a href="alberta-class-7-practice-test.html">Alberta Class 7 Practice Test</a>
+        <a href="alberta-class-7-mock-test.html">Alberta Class 7 Mock Test</a>
+        <a href="alberta-road-signs.html">Alberta Road Signs</a>
+        <a href="alberta-rules-of-the-road.html">Alberta Rules of the Road</a>
+        <a href="quebec-class-5-practice-test.html">Quebec Class 5 Practice Test</a>
+        <a href="quebec-class-5-mock-test.html">Quebec Class 5 Mock Test</a>
+        <a href="quebec-road-signs.html">Quebec Road Signs</a>
+        <a href="quebec-rules-of-the-road.html">Quebec Rules of the Road</a>
+        <a href="manitoba-class-5-practice-test.html">Manitoba Class 5 Practice Test</a>
+        <a href="manitoba-class-5-mock-test.html">Manitoba Class 5 Mock Test</a>
+        <a href="manitoba-road-signs.html">Manitoba Road Signs</a>
+        <a href="manitoba-rules-of-the-road.html">Manitoba Rules of the Road</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Brain &amp; Puzzle Games</div>
+        <a href="game-2048.html">2048</a>
+        <a href="color-match.html">Color Match</a>
+        <a href="crossword.html">Crossword</a>
+        <a href="cube-twist.html">Cube Twist</a>
+        <a href="flags-game.html">Flags of the World</a>
+        <a href="lights-out.html">Lights Out</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="maple-says.html">Maple Says</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="memory.html">Memory Match</a>
+        <a href="minesweeper.html">Minesweeper</a>
+        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="typing-test.html">Typing Speed Test</a>
+        <a href="word-groups.html">Word Groups</a>
+        <a href="word-guess.html">Word Guess</a>
+        <a href="word-hive.html">Word Hive</a>
+        <a href="word-illusions.html">Word Illusions</a>
+        <a href="word-master.html">Word Master</a>
+        <a href="scramble.html">Word Scramble</a>
+        <a href="word-search.html">Word Search</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Action &amp; Classic Games</div>
+        <a href="checkers.html">Checkers</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
+        <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="snake.html">Maple Snake</a>
+        <a href="reversi.html">Reversi</a>
+        <a href="tag.html">Tag</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="tile-tap.html">Tile Tap</a>
+        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Party Games</div>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposter</a>
+        <a href="would-you-rather.html">Would You Rather?</a>
+        <a href="trivia-showdown.html">Trivia Showdown</a>
+        <a href="hold-to-head.html">Hold to Head</a>
+        <a href="top-answers.html">Top Answers</a>
+        <a href="categories-game.html">Categories</a>
+        <a href="story-maker.html">Story Maker</a>
+        <a href="draw-it.html">Draw It</a>
+        <a href="spin-wheel.html">Spin the Wheel</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Blog</div>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
+        <a href="rare-canadian-history-stories.html">15 Rare Canadian History Stories</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
+        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
+        <a href="blog.html">All Articles</a>
+        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
+        <a href="canada-usa-trade-history.html">Canada and the USA: Trade History</a>
+        <a href="canadas-biggest-cities.html">Canada's Biggest Cities</a>
+        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
+        <a href="canadas-national-parks.html">Canada's National Parks</a>
+        <a href="canada-population-timeline.html">Canada's Population Timeline</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Canadian Food &amp; Maple Syrup</a>
+        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
+        <a href="canadian-inventions.html">Canadian Inventions</a>
+        <a href="canadian-money-explained.html">Canadian Money Explained</a>
+        <a href="canadian-slang-words.html">Canadian Slang</a>
+        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
+        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
+        <a href="newcomer-first-year-in-canada-checklist.html">First Year in Canada Checklist</a>
+        <a href="how-to-get-a-drivers-licence-in-canada.html">Getting a Driver's Licence</a>
+        <a href="hockey-in-canada.html">Hockey in Canada</a>
+        <a href="how-canada-was-built.html">How Canada Was Built</a>
+        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
+        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
+        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
+        <a href="prime-ministers-of-canada.html">Prime Ministers of Canada</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
+        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
+        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
+        <a href="what-is-confederation.html">What Is Confederation?</a>
+        <a href="winter-in-canada.html">Winter in Canada</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">The Site</div>
+        <a href="about.html">About Us</a>
+        <a href="games.html">All Family Games</a>
+        <a href="contact.html">Contact</a>
+        <a href="daily.html">Daily Challenge</a>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="sources.html">Sources and Credits</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr) { return FR ? fr : en; }
+
+  var B = 1, W = 2, N = 8;
+  var board, turn, mode = "ai", level = "medium", human = B, history = [], last = -1, over = false;
+  var thinkTimer = null;   // the computer's pending move, so Undo can cancel it
+
+  /* Corner squares are worth far more than edges, which are worth more than the
+     squares beside a corner — those hand the corner to your opponent. This
+     table is what makes the computer feel like it understands the game rather
+     than just counting pieces. */
+  var WEIGHT = [
+    120, -20, 20,  5,  5, 20, -20, 120,
+    -20, -40, -5, -5, -5, -5, -40, -20,
+     20,  -5, 15,  3,  3, 15,  -5,  20,
+      5,  -5,  3,  3,  3,  3,  -5,   5,
+      5,  -5,  3,  3,  3,  3,  -5,   5,
+     20,  -5, 15,  3,  3, 15,  -5,  20,
+    -20, -40, -5, -5, -5, -5, -40, -20,
+    120, -20, 20,  5,  5, 20, -20, 120
+  ];
+  var DIRS = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
+
+  function fresh() {
+    var b = new Array(64).fill(0);
+    b[27] = W; b[28] = B; b[35] = B; b[36] = W;
+    return b;
+  }
+  function other(p) { return p === B ? W : B; }
+
+  function gains(b, idx, p) {
+    var r = (idx / N) | 0, c = idx % N, out = [];
+    if (b[idx]) return out;
+    for (var d = 0; d < 8; d++) {
+      var dr = DIRS[d][0], dc = DIRS[d][1], rr = r + dr, cc = c + dc, run = [];
+      while (rr >= 0 && rr < N && cc >= 0 && cc < N) {
+        var i = rr * N + cc;
+        if (b[i] === other(p)) { run.push(i); rr += dr; cc += dc; continue; }
+        if (b[i] === p && run.length) out = out.concat(run);
+        break;
+      }
+    }
+    return out;
+  }
+  function legal(b, p) {
+    var out = [];
+    for (var i = 0; i < 64; i++) if (!b[i] && gains(b, i, p).length) out.push(i);
+    return out;
+  }
+  function apply(b, idx, p) {
+    var nb = b.slice(), f = gains(b, idx, p);
+    nb[idx] = p;
+    for (var i = 0; i < f.length; i++) nb[f[i]] = p;
+    return nb;
+  }
+  function count(b, p) { var n = 0; for (var i = 0; i < 64; i++) if (b[i] === p) n++; return n; }
+
+  /* ------------------------------------------------------------- computer */
+  function score(b, p) {
+    var me = 0, you = 0, i;
+    for (i = 0; i < 64; i++) {
+      if (b[i] === p) me += WEIGHT[i];
+      else if (b[i] === other(p)) you += WEIGHT[i];
+    }
+    // late in the game raw piece count is what actually decides it
+    var filled = count(b, B) + count(b, W);
+    var mob = legal(b, p).length - legal(b, other(p)).length;
+    if (filled > 52) return (count(b, p) - count(b, other(p))) * 40 + (me - you);
+    return (me - you) + mob * 12;
+  }
+
+  function best(b, p, depth, alpha, beta) {
+    var moves = legal(b, p);
+    if (!depth || !moves.length) {
+      if (!moves.length && legal(b, other(p)).length) {
+        // must pass — keep searching from the opponent's side
+        if (depth) return -best(b, other(p), depth - 1, -beta, -alpha);
+      }
+      return score(b, p);
+    }
+    var v = -1e9;
+    for (var i = 0; i < moves.length; i++) {
+      var s = -best(apply(b, moves[i], p), other(p), depth - 1, -beta, -alpha);
+      if (s > v) v = s;
+      if (v > alpha) alpha = v;
+      if (alpha >= beta) break;
+    }
+    return v;
+  }
+
+  function pick(b, p) {
+    var moves = legal(b, p);
+    if (!moves.length) return -1;
+    if (level === "easy") {
+      // takes the most pieces it can see this turn, and nothing more — which
+      // is exactly the mistake beginners make, so it feels human
+      var bestN = -1, out = moves[0];
+      for (var i = 0; i < moves.length; i++) {
+        var n = gains(b, moves[i], p).length;
+        if (n > bestN) { bestN = n; out = moves[i]; }
+      }
+      return Math.random() < 0.25 ? moves[(Math.random() * moves.length) | 0] : out;
+    }
+    var depth = level === "medium" ? 2 : 5;
+    var v = -1e9, choice = moves[0];
+    for (var j = 0; j < moves.length; j++) {
+      var s = -best(apply(b, moves[j], p), other(p), depth - 1, -1e9, 1e9);
+      if (s > v) { v = s; choice = moves[j]; }
+    }
+    return choice;
+  }
+
+  /* ----------------------------------------------------------------- view */
+  var elBoard = document.getElementById("rvBoard");
+  var elMsg = document.getElementById("rvMsg");
+  var cells = [];
+
+  function buildBoard() {
+    elBoard.innerHTML = "";
+    cells = [];
+    for (var i = 0; i < 64; i++) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "rv-sq";
+      b.setAttribute("data-i", i);
+      b.setAttribute("aria-label", T("Row ", "Rangée ") + (((i / N) | 0) + 1) +
+                     T(", column ", ", colonne ") + ((i % N) + 1));
+      elBoard.appendChild(b);
+      cells.push(b);
+    }
+  }
+
+  function draw() {
+    var moves = over ? [] : legal(board, turn);
+    var canPlay = (mode === "two") || (turn === human);
+    for (var i = 0; i < 64; i++) {
+      var c = cells[i];
+      c.innerHTML = "";
+      c.className = "rv-sq";
+      if (board[i]) {
+        var d = document.createElement("div");
+        d.className = "rv-pc " + (board[i] === B ? "b" : "w");
+        c.appendChild(d);
+      } else if (canPlay && moves.indexOf(i) > -1) {
+        var h = document.createElement("div");
+        h.className = "rv-hint";
+        c.appendChild(h);
+        c.classList.add("playable");
+      }
+      if (i === last) {
+        var m = document.createElement("div");
+        m.className = "rv-last";
+        c.appendChild(m);
+      }
+    }
+    document.getElementById("rvScoreB").textContent = count(board, B);
+    document.getElementById("rvScoreW").textContent = count(board, W);
+    document.getElementById("rvChipB").classList.toggle("turn", !over && turn === B);
+    document.getElementById("rvChipW").classList.toggle("turn", !over && turn === W);
+  }
+
+  function names() {
+    document.getElementById("rvNameB").textContent =
+      mode === "two" ? T("Black", "Noir") : T("You", "Vous");
+    document.getElementById("rvNameW").textContent =
+      mode === "two" ? T("White", "Blanc") : T("Computer", "Ordinateur");
+  }
+
+  function show(id) {
+    ["rvStart", "rvGame", "rvOver"].forEach(function (s) {
+      document.getElementById(s).classList.toggle("on", s === id);
+    });
+  }
+
+  function turnText() {
+    if (mode === "two") {
+      return turn === B ? T("Black to play", "Aux noirs de jouer")
+                        : T("White to play", "Aux blancs de jouer");
+    }
+    return turn === human ? T("Your turn", "À votre tour")
+                          : T("Computer thinking…", "L'ordinateur réfléchit…");
+  }
+
+  function finish() {
+    over = true;
+    draw();
+    var nb = count(board, B), nw = count(board, W);
+    var icon = "🤝", title = T("A tie!", "Égalité !");
+    if (nb !== nw) {
+      var winner = nb > nw ? B : W;
+      if (mode === "two") {
+        icon = winner === B ? "⚫" : "⚪";
+        title = winner === B ? T("Black wins!", "Les noirs gagnent !")
+                             : T("White wins!", "Les blancs gagnent !");
+      } else if (winner === human) {
+        icon = "🏆"; title = T("You win!", "Vous gagnez !");
+      } else {
+        icon = "🤖"; title = T("The computer wins", "L'ordinateur gagne");
+      }
+    }
+    document.getElementById("rvOverIcon").textContent = icon;
+    document.getElementById("rvOverTitle").textContent = title;
+    document.getElementById("rvOverScore").textContent = nb + " – " + nw;
+    document.getElementById("rvOverNote").textContent =
+      (mode === "ai" && level !== "hard")
+        ? T("Try the next level up.", "Essayez le niveau suivant.")
+        : T("Corners win games. Take them when you can.",
+            "Les coins font gagner. Prenez-les quand vous le pouvez.");
+    show("rvOver");
+  }
+
+  function step() {
+    if (legal(board, turn).length) { elMsg.textContent = turnText(); return; }
+    if (legal(board, other(turn)).length) {
+      turn = other(turn);
+      elMsg.textContent = T("No move available — turn skipped.",
+                            "Aucun coup possible : tour sauté.");
+      draw();
+      maybeComputer();
+      return;
+    }
+    finish();
+  }
+
+  function maybeComputer() {
+    if (over || mode !== "ai" || turn === human) return;
+    elMsg.textContent = turnText();
+    clearTimeout(thinkTimer);
+    thinkTimer = setTimeout(function () {
+      thinkTimer = null;
+      if (over) return;
+      var m = pick(board, turn);
+      if (m < 0) { step(); return; }
+      history.push({ b: board.slice(), t: turn, l: last });
+      board = apply(board, m, turn);
+      last = m;
+      turn = other(turn);
+      draw();
+      step();
+    }, level === "hard" ? 260 : 420);
+  }
+
+  function play(i) {
+    if (over) return;
+    if (mode === "ai" && turn !== human) return;
+    if (!gains(board, i, turn).length) return;
+    history.push({ b: board.slice(), t: turn, l: last });
+    board = apply(board, i, turn);
+    last = i;
+    turn = other(turn);
+    draw();
+    step();
+    maybeComputer();
+  }
+
+  elBoard.addEventListener("click", function (e) {
+    var t = e.target.closest(".rv-sq");
+    if (t) play(parseInt(t.getAttribute("data-i"), 10));
+  });
+
+  document.getElementById("rvUndo").addEventListener("click", function () {
+    // The computer answers on a timer. Without this, tapping Undo while it is
+    // still "thinking" lets its move land afterwards and eats the undo.
+    clearTimeout(thinkTimer);
+    thinkTimer = null;
+    if (!history.length) return;
+    // in a computer game step back past its reply as well
+    var steps = (mode === "ai" && history.length > 1) ? 2 : 1;
+    while (steps-- && history.length) {
+      var h = history.pop();
+      board = h.b; turn = h.t; last = h.l;
+    }
+    over = false;
+    draw();
+    step();
+  });
+
+  function start() {
+    clearTimeout(thinkTimer); thinkTimer = null;
+    board = fresh(); turn = B; history = []; last = -1; over = false;
+    human = B;
+    names();
+    show("rvGame");
+    draw();
+    step();
+    maybeComputer();
+  }
+
+  document.getElementById("rvQuit").addEventListener("click", function () {
+    clearTimeout(thinkTimer); thinkTimer = null; over = true; show("rvStart");
+  });
+  document.getElementById("rvAgain").addEventListener("click", start);
+  document.getElementById("rvChange").addEventListener("click", function () { show("rvStart"); });
+
+  document.getElementById("rvOptTwo").addEventListener("click", function () {
+    mode = "two"; start();
+  });
+  document.getElementById("rvOptAi").addEventListener("click", function () {
+    document.getElementById("rvLvlHead").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+  [["rvLvlE", "easy"], ["rvLvlM", "medium"], ["rvLvlH", "hard"]].forEach(function (p) {
+    document.getElementById(p[0]).addEventListener("click", function () {
+      mode = "ai"; level = p[1]; start();
+    });
+  });
+
+  /* ------------------------------------------------------- text, both langs */
+  document.getElementById("rvWhoHead").textContent = T("Who is playing?", "Qui joue ?");
+  document.getElementById("rvLvlHead").textContent = T("Computer strength", "Force de l'ordinateur");
+  document.getElementById("rvOptAi").textContent = T("🤖 Against the computer", "🤖 Contre l'ordinateur");
+  document.getElementById("rvOptTwo").textContent =
+    T("👫 Two players on this device", "👫 Deux joueurs sur cet appareil");
+  function lvlLabel(id, main, note) {
+    var b = document.getElementById(id);
+    b.innerHTML = "";
+    b.appendChild(document.createTextNode(main));
+    var s = document.createElement("small");
+    s.textContent = note;
+    b.appendChild(s);
+  }
+  lvlLabel("rvLvlE", T("🙂 Easy", "🙂 Facile"),
+    T("Grabs whatever it can this turn. Good for learning.",
+      "Prend tout ce qu'il peut ce tour-ci. Idéal pour apprendre."));
+  lvlLabel("rvLvlM", T("🎯 Medium", "🎯 Moyen"),
+    T("Thinks a couple of moves ahead and likes corners.",
+      "Réfléchit à quelques coups d'avance et aime les coins."));
+  lvlLabel("rvLvlH", T("🔥 Hard", "🔥 Difficile"),
+    T("Looks five moves ahead. It will punish a bad corner.",
+      "Regarde cinq coups d'avance. Il punira une erreur de coin."));
+  document.getElementById("rvUndo").textContent = T("Undo", "Annuler");
+  document.getElementById("rvQuit").textContent = T("New game", "Nouvelle partie");
+  document.getElementById("rvAgain").textContent = T("Play again", "Rejouer");
+  document.getElementById("rvChange").textContent = T("Change level", "Changer de niveau");
+
+  buildBoard();
+  names();
+})();
+</script>
+  <script src="js/game-fullscreen.js?v=dd5e3201" defer></script>
+  <script src="js/site.js?v=1981f38e"></script>
+  <script src="js/analytics.js?v=d95c4f47"></script>
+  <script src="js/ads.js?v=00e703ff" defer></script>
+</body>
+</html>

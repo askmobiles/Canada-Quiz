@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lights Out — Free Logic Puzzle, Easy Medium and Hard | Family Games</title>
+<meta name="description" content="Turn off every light. Tapping a light flips it and its neighbours. Three sizes from easy to hard, every puzzle solvable, and your best score is remembered. Free.">
+<link rel="stylesheet" href="css/style.css?v=61960d1f">
+<style>
+  .lo-wrap{max-width:520px;margin:0 auto}
+  .lo-screen{display:none}.lo-screen.on{display:block}
+  .lo-h{font-weight:800;margin:14px 0 6px;font-size:.95rem;color:var(--muted)}
+  .lo-h:first-child{margin-top:0}
+  .lo-opt{display:block;width:100%;min-height:60px;margin:8px 0;padding:14px 16px;
+    border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;
+    font-family:inherit;font-size:1rem;font-weight:800;text-align:left;line-height:1.3;cursor:pointer}
+  .lo-opt:hover{border-color:var(--orange,#d97706);background:#fffaf2}
+  .lo-opt:active{transform:translateY(2px)}
+  .lo-opt small{display:block;font-weight:600;font-size:.8rem;color:var(--muted);margin-top:3px}
+  .lo-hud{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 14px}
+  .lo-chip{display:inline-block;padding:8px 14px;border-radius:999px;background:#f5f2ec;
+    border:2px solid var(--line);font-weight:800;font-size:.95rem}
+  .lo-chip b{font-variant-numeric:tabular-nums;font-weight:900}
+  .lo-grid{display:grid;gap:10px;width:100%;max-width:min(92vw,420px);margin:0 auto;
+    aspect-ratio:1/1}
+  .lo-cell{border:0;padding:0;border-radius:14px;cursor:pointer;min-width:0;min-height:0;
+    -webkit-tap-highlight-color:transparent;transition:background .16s ease,box-shadow .16s ease;
+    background:#2b2547;box-shadow:inset 0 2px 6px rgba(0,0,0,.45)}
+  .lo-cell.lit{background:radial-gradient(circle at 34% 28%,#ffe9a3,#f5b301);
+    box-shadow:0 0 16px rgba(245,179,1,.6),inset 0 -3px 8px rgba(0,0,0,.15)}
+  .lo-cell:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  .lo-cell:active{transform:scale(.96)}
+  .lo-msg{text-align:center;font-weight:800;margin:14px 0 2px;min-height:1.4em}
+  .lo-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .lo-res{text-align:center}
+  .lo-res .big{font-size:2.8rem;line-height:1.1;margin:6px 0}
+  .lo-best{font-weight:800;color:var(--muted);font-size:.95rem}
+</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/lights-out.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/lights-out.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/lights-out.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/lights-out.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"Brain & Puzzle Games","item":"https://canada-quiz.com/games.html"},{"@type":"ListItem","position":3,"name":"Lights Out","item":"https://canada-quiz.com/lights-out.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/lights-out.html#webpage","url":"https://canada-quiz.com/lights-out.html","name":"Lights Out — Free Logic Puzzle, Easy Medium and Hard | Family Games","description":"Turn off every light. Tapping a light flips it and its neighbours. Three sizes from easy to hard, every puzzle solvable, and your best score is remembered. Free.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>💡 Lights Out</h1>
+    <p>Turn every light off. Sounds easy — tapping one light also flips the ones beside it.</p>
+  </section>
+  <details class="howto"><summary>📖 How to play</summary><p>Tap any square. That square switches on or off, and so do the squares directly <b>above, below, left and right</b> of it. Your job is to get the whole board dark. Two things are worth knowing. First, tapping the same square twice puts everything back exactly as it was, so nothing is ever ruined. Second, the order of your taps does not matter at all — only which squares you tap, and whether you tap each one an odd or an even number of times. Every puzzle here is built by scrambling a solved board, so a solution always exists.</p></details>
+
+  <div class="panel" data-fs-host>
+    <div class="lo-wrap" id="loWrap" data-no-i18n>
+
+      <div class="lo-screen on" id="loStart">
+        <div class="lo-h" id="loPick">Choose a size</div>
+        <button type="button" class="lo-opt" data-lvl="easy" id="loE">🙂 Easy<small></small></button>
+        <button type="button" class="lo-opt" data-lvl="medium" id="loM">🎯 Medium<small></small></button>
+        <button type="button" class="lo-opt" data-lvl="hard" id="loH">🔥 Hard<small></small></button>
+        <p class="lo-best" id="loBests" style="text-align:center;margin-top:14px"></p>
+      </div>
+
+      <div class="lo-screen" id="loGame">
+        <div class="lo-hud">
+          <span class="lo-chip"><span id="loMovesLbl">Moves</span> <b id="loMoves">0</b></span>
+          <span class="lo-chip"><span id="loLitLbl">Lights on</span> <b id="loLit">0</b></span>
+          <span class="lo-chip"><span id="loBestLbl">Best</span> <b id="loBest">—</b></span>
+        </div>
+        <div class="lo-grid" id="loGrid" role="group" aria-label="Lights Out board"></div>
+        <p class="lo-msg" id="loMsg"></p>
+        <div class="lo-btns">
+          <button type="button" class="btn btn-ghost" id="loRestart">Restart puzzle</button>
+          <button type="button" class="btn btn-ghost" id="loNew">New puzzle</button>
+          <button type="button" class="btn btn-ghost" id="loQuit">Change size</button>
+        </div>
+      </div>
+
+      <div class="lo-screen" id="loOver">
+        <div class="lo-res">
+          <div class="big">🌙</div>
+          <h2 id="loWinTitle" style="margin:.2em 0">All lights out!</h2>
+          <p id="loWinLine" style="font-weight:800;font-size:1.15rem"></p>
+          <p class="muted" id="loWinNote"></p>
+          <div class="lo-btns">
+            <button type="button" class="btn btn-lg" id="loAgain">Next puzzle</button>
+            <button type="button" class="btn btn-ghost btn-lg" id="loChange">Change size</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ad-slot"><span class="ad-label">Advertisement</span></div>
+<!--PAGEDOC-->
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this game</h2>
+  <p>Lights Out is a logic puzzle that looks like nothing and then keeps you up. Every square is a light. Tap one and it switches, and so do the squares directly above, below, left and right of it. The goal is a completely dark board.</p>
+  <p>Two facts make it fair rather than frustrating. Tapping the same square twice undoes itself completely, so you can never wreck a puzzle. And the order of your taps makes no difference at all — only which squares you tapped, and whether you tapped each an odd or an even number of times.</p>
+  <p>Every puzzle is created by starting from a dark board and pressing random squares, so a solution always exists — you are never given something impossible. Three sizes: three by three to learn on, four by four to think about, and the classic five by five, which is genuinely difficult. Your fewest moves at each size is remembered in your browser.</p>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>Because order does not matter, no square ever needs to be tapped more than once in a solution. That alone cuts the search enormously.</li>
+    <li>A common method is to clear the board row by row from the top, tapping the row below whichever lights are still on. On a five by five board this leaves a bottom row that tells you what to do first.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Can a puzzle be impossible?</h3>
+  <p>Not here. Every board is made by scrambling a solved one, so it can always be unscrambled. On a randomly filled five by five board that would not be true.</p>
+  <h3>Does the number of moves matter?</h3>
+  <p>Only for your own record. Finishing is finishing, but your best is saved so you can try to beat it.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="sudoku.html">Sudoku</a> · <a href="minesweeper.html">Minesweeper</a> · <a href="sliding-puzzle.html">Sliding Puzzle</a></p>
+</section>
+<!--/PAGEDOC-->
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <details class="footer-map">
+      <summary>All pages <span class="fm-count">(118)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <div class="fm-h">Quizzes</div>
+        <a href="quizzes.html">All Quizzes</a>
+        <a href="gk-quiz.html">General Knowledge</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Fun Canada Quiz</a>
+        <a href="province-quiz.html">Which Province Are You?</a>
+        <a href="world-quiz.html">World Quiz</a>
+        <a href="science-quiz.html">Science &amp; Space</a>
+        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
+        <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Driving Test Practice</div>
+        <a href="driving-test.html">Canada Driving Test</a>
+        <a href="ontario-g1-practice-test.html">Ontario G1 Practice Test</a>
+        <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
+        <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
+        <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+        <a href="ontario-g1-study-guide.html">Ontario G1 Study Guide</a>
+        <a href="bc-class-7l-practice-test.html">BC Class 7L Practice Test</a>
+        <a href="bc-class-7l-mock-test.html">BC Class 7L Mock Test</a>
+        <a href="bc-road-signs.html">BC Road Signs</a>
+        <a href="bc-rules-of-the-road.html">BC Rules of the Road</a>
+        <a href="alberta-class-7-practice-test.html">Alberta Class 7 Practice Test</a>
+        <a href="alberta-class-7-mock-test.html">Alberta Class 7 Mock Test</a>
+        <a href="alberta-road-signs.html">Alberta Road Signs</a>
+        <a href="alberta-rules-of-the-road.html">Alberta Rules of the Road</a>
+        <a href="quebec-class-5-practice-test.html">Quebec Class 5 Practice Test</a>
+        <a href="quebec-class-5-mock-test.html">Quebec Class 5 Mock Test</a>
+        <a href="quebec-road-signs.html">Quebec Road Signs</a>
+        <a href="quebec-rules-of-the-road.html">Quebec Rules of the Road</a>
+        <a href="manitoba-class-5-practice-test.html">Manitoba Class 5 Practice Test</a>
+        <a href="manitoba-class-5-mock-test.html">Manitoba Class 5 Mock Test</a>
+        <a href="manitoba-road-signs.html">Manitoba Road Signs</a>
+        <a href="manitoba-rules-of-the-road.html">Manitoba Rules of the Road</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Brain &amp; Puzzle Games</div>
+        <a href="game-2048.html">2048</a>
+        <a href="color-match.html">Color Match</a>
+        <a href="crossword.html">Crossword</a>
+        <a href="cube-twist.html">Cube Twist</a>
+        <a href="flags-game.html">Flags of the World</a>
+        <a href="lights-out.html">Lights Out</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="maple-says.html">Maple Says</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="memory.html">Memory Match</a>
+        <a href="minesweeper.html">Minesweeper</a>
+        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="typing-test.html">Typing Speed Test</a>
+        <a href="word-groups.html">Word Groups</a>
+        <a href="word-guess.html">Word Guess</a>
+        <a href="word-hive.html">Word Hive</a>
+        <a href="word-illusions.html">Word Illusions</a>
+        <a href="word-master.html">Word Master</a>
+        <a href="scramble.html">Word Scramble</a>
+        <a href="word-search.html">Word Search</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Action &amp; Classic Games</div>
+        <a href="checkers.html">Checkers</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
+        <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="snake.html">Maple Snake</a>
+        <a href="reversi.html">Reversi</a>
+        <a href="tag.html">Tag</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="tile-tap.html">Tile Tap</a>
+        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Party Games</div>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposter</a>
+        <a href="would-you-rather.html">Would You Rather?</a>
+        <a href="trivia-showdown.html">Trivia Showdown</a>
+        <a href="hold-to-head.html">Hold to Head</a>
+        <a href="top-answers.html">Top Answers</a>
+        <a href="categories-game.html">Categories</a>
+        <a href="story-maker.html">Story Maker</a>
+        <a href="draw-it.html">Draw It</a>
+        <a href="spin-wheel.html">Spin the Wheel</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Blog</div>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
+        <a href="rare-canadian-history-stories.html">15 Rare Canadian History Stories</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
+        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
+        <a href="blog.html">All Articles</a>
+        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
+        <a href="canada-usa-trade-history.html">Canada and the USA: Trade History</a>
+        <a href="canadas-biggest-cities.html">Canada's Biggest Cities</a>
+        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
+        <a href="canadas-national-parks.html">Canada's National Parks</a>
+        <a href="canada-population-timeline.html">Canada's Population Timeline</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Canadian Food &amp; Maple Syrup</a>
+        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
+        <a href="canadian-inventions.html">Canadian Inventions</a>
+        <a href="canadian-money-explained.html">Canadian Money Explained</a>
+        <a href="canadian-slang-words.html">Canadian Slang</a>
+        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
+        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
+        <a href="newcomer-first-year-in-canada-checklist.html">First Year in Canada Checklist</a>
+        <a href="how-to-get-a-drivers-licence-in-canada.html">Getting a Driver's Licence</a>
+        <a href="hockey-in-canada.html">Hockey in Canada</a>
+        <a href="how-canada-was-built.html">How Canada Was Built</a>
+        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
+        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
+        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
+        <a href="prime-ministers-of-canada.html">Prime Ministers of Canada</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
+        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
+        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
+        <a href="what-is-confederation.html">What Is Confederation?</a>
+        <a href="winter-in-canada.html">Winter in Canada</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">The Site</div>
+        <a href="about.html">About Us</a>
+        <a href="games.html">All Family Games</a>
+        <a href="contact.html">Contact</a>
+        <a href="daily.html">Daily Challenge</a>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="sources.html">Sources and Credits</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr) { return FR ? fr : en; }
+
+  var LEVELS = {
+    easy:   { n: 3, scramble: 4 },
+    medium: { n: 4, scramble: 7 },
+    hard:   { n: 5, scramble: 12 }
+  };
+  var KEY = "cq_lightsout_best";
+  var level = "easy", n = 3, cells = [], state = [], startState = [], moves = 0, won = false;
+
+  function bests() {
+    try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return {}; }
+  }
+  function saveBest(lvl, m) {
+    try {
+      var b = bests();
+      if (!b[lvl] || m < b[lvl]) { b[lvl] = m; localStorage.setItem(KEY, JSON.stringify(b)); return true; }
+    } catch (e) {}
+    return false;
+  }
+
+  /* Build every puzzle by starting from a solved board and pressing random
+     squares. Anything reachable that way is reachable back — so unlike a
+     random fill, every puzzle here is guaranteed to have a solution. */
+  function make() {
+    var i;
+    state = new Array(n * n).fill(0);
+    var presses = LEVELS[level].scramble;
+    var seen = {};
+    while (presses > 0) {
+      var k = (Math.random() * n * n) | 0;
+      // pressing the same square twice cancels out, so avoid a wasted scramble
+      if (seen[k]) continue;
+      seen[k] = 1;
+      pressRaw(k);
+      presses--;
+      if (Object.keys(seen).length >= n * n) break;
+    }
+    if (isDark()) { make(); return; }   // never hand the player a solved board
+    startState = state.slice();
+    moves = 0;
+    won = false;
+  }
+
+  function pressRaw(k) {
+    var r = (k / n) | 0, c = k % n;
+    var hit = [[r, c], [r - 1, c], [r + 1, c], [r, c - 1], [r, c + 1]];
+    for (var i = 0; i < hit.length; i++) {
+      var rr = hit[i][0], cc = hit[i][1];
+      if (rr < 0 || rr >= n || cc < 0 || cc >= n) continue;
+      state[rr * n + cc] ^= 1;
+    }
+  }
+  function isDark() {
+    for (var i = 0; i < state.length; i++) if (state[i]) return false;
+    return true;
+  }
+  function litCount() {
+    var c = 0;
+    for (var i = 0; i < state.length; i++) if (state[i]) c++;
+    return c;
+  }
+
+  var elGrid = document.getElementById("loGrid");
+  function build() {
+    elGrid.innerHTML = "";
+    elGrid.style.gridTemplateColumns = "repeat(" + n + ",1fr)";
+    cells = [];
+    for (var i = 0; i < n * n; i++) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "lo-cell";
+      b.setAttribute("data-i", i);
+      b.setAttribute("aria-label", T("Light ", "Lumière ") + (i + 1));
+      elGrid.appendChild(b);
+      cells.push(b);
+    }
+  }
+  function draw() {
+    for (var i = 0; i < cells.length; i++) {
+      var on = !!state[i];
+      cells[i].classList.toggle("lit", on);
+      cells[i].setAttribute("aria-pressed", on ? "true" : "false");
+    }
+    document.getElementById("loMoves").textContent = moves;
+    document.getElementById("loLit").textContent = litCount();
+    var b = bests()[level];
+    document.getElementById("loBest").textContent = b ? b : "—";
+  }
+
+  function show(id) {
+    ["loStart", "loGame", "loOver"].forEach(function (s) {
+      document.getElementById(s).classList.toggle("on", s === id);
+    });
+  }
+
+  function finish() {
+    won = true;
+    var improved = saveBest(level, moves);
+    document.getElementById("loWinLine").textContent =
+      T("Solved in ", "Résolu en ") + moves + T(" moves", " coups");
+    document.getElementById("loWinNote").textContent = improved
+      ? T("That is your best yet at this size.", "C'est votre meilleur résultat à cette taille.")
+      : T("Fewer taps next time — the order never matters, only which squares.",
+          "Moins de touches la prochaine fois : l'ordre ne compte jamais, seulement les cases.");
+    show("loOver");
+  }
+
+  elGrid.addEventListener("click", function (e) {
+    var t = e.target.closest(".lo-cell");
+    if (!t || won) return;
+    pressRaw(parseInt(t.getAttribute("data-i"), 10));
+    moves++;
+    draw();
+    if (isDark()) setTimeout(finish, 260);
+  });
+
+  function startLevel(lvl) {
+    level = lvl;
+    n = LEVELS[lvl].n;
+    build();
+    make();
+    draw();
+    document.getElementById("loMsg").textContent =
+      T("Turn every light off.", "Éteignez toutes les lumières.");
+    show("loGame");
+  }
+
+  document.getElementById("loRestart").addEventListener("click", function () {
+    state = startState.slice(); moves = 0; won = false; draw();
+  });
+  document.getElementById("loNew").addEventListener("click", function () {
+    make(); draw();
+  });
+  document.getElementById("loQuit").addEventListener("click", function () { show("loStart"); refreshBests(); });
+  document.getElementById("loAgain").addEventListener("click", function () { make(); draw(); show("loGame"); });
+  document.getElementById("loChange").addEventListener("click", function () { show("loStart"); refreshBests(); });
+  [["loE", "easy"], ["loM", "medium"], ["loH", "hard"]].forEach(function (p) {
+    document.getElementById(p[0]).addEventListener("click", function () { startLevel(p[1]); });
+  });
+
+  function refreshBests() {
+    var b = bests();
+    var parts = [];
+    [["easy", T("Easy", "Facile")], ["medium", T("Medium", "Moyen")], ["hard", T("Hard", "Difficile")]]
+      .forEach(function (p) { if (b[p[0]]) parts.push(p[1] + " " + b[p[0]]); });
+    document.getElementById("loBests").textContent = parts.length
+      ? T("Your best: ", "Vos records : ") + parts.join(" · ")
+      : "";
+  }
+
+  /* --------------------------------------------------------------- labels */
+  document.getElementById("loPick").textContent = T("Choose a size", "Choisissez une taille");
+  function label(id, main, note) {
+    var b = document.getElementById(id);
+    b.innerHTML = "";
+    b.appendChild(document.createTextNode(main));
+    var s = document.createElement("small");
+    s.textContent = note;
+    b.appendChild(s);
+  }
+  label("loE", T("🙂 Easy — 3 by 3", "🙂 Facile — 3 sur 3"),
+    T("Nine lights. A good place to see how it works.",
+      "Neuf lumières. Idéal pour comprendre le principe."));
+  label("loM", T("🎯 Medium — 4 by 4", "🎯 Moyen — 4 sur 4"),
+    T("Sixteen lights. You will need to plan a little.",
+      "Seize lumières. Il faudra planifier un peu."));
+  label("loH", T("🔥 Hard — 5 by 5", "🔥 Difficile — 5 sur 5"),
+    T("Twenty-five lights. The classic puzzle, and genuinely tough.",
+      "Vingt-cinq lumières. Le casse-tête classique, vraiment coriace."));
+  document.getElementById("loMovesLbl").textContent = T("Moves", "Coups");
+  document.getElementById("loLitLbl").textContent = T("Lights on", "Allumées");
+  document.getElementById("loBestLbl").textContent = T("Best", "Record");
+  document.getElementById("loRestart").textContent = T("Restart puzzle", "Recommencer");
+  document.getElementById("loNew").textContent = T("New puzzle", "Nouveau casse-tête");
+  document.getElementById("loQuit").textContent = T("Change size", "Changer de taille");
+  document.getElementById("loAgain").textContent = T("Next puzzle", "Casse-tête suivant");
+  document.getElementById("loChange").textContent = T("Change size", "Changer de taille");
+  document.getElementById("loWinTitle").textContent = T("All lights out!", "Toutes éteintes !");
+  refreshBests();
+})();
+</script>
+  <script src="js/game-fullscreen.js?v=dd5e3201" defer></script>
+  <script src="js/site.js?v=1981f38e"></script>
+  <script src="js/analytics.js?v=d95c4f47"></script>
+  <script src="js/ads.js?v=00e703ff" defer></script>
+</body>
+</html>

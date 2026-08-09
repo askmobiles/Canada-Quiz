@@ -153,36 +153,44 @@
   {
    "links": [
     [
-     "word-master.html",
-     "Word Master"
+     "game-2048.html",
+     "2048"
     ],
     [
-     "word-search.html",
-     "Word Search"
-    ],
-    [
-     "word-guess.html",
-     "Word Guess"
-    ],
-    [
-     "scramble.html",
-     "Word Scramble"
-    ],
-    [
-     "word-hive.html",
-     "Word Hive"
+     "color-match.html",
+     "Color Match"
     ],
     [
      "crossword.html",
      "Crossword"
     ],
     [
-     "word-groups.html",
-     "Word Groups"
+     "cube-twist.html",
+     "Cube Twist"
     ],
     [
-     "sudoku.html",
-     "Sudoku"
+     "flags-game.html",
+     "Flags of the World"
+    ],
+    [
+     "lights-out.html",
+     "Lights Out"
+    ],
+    [
+     "canada-map.html",
+     "Map of Canada"
+    ],
+    [
+     "maple-says.html",
+     "Maple Says"
+    ],
+    [
+     "math-race.html",
+     "Math Race"
+    ],
+    [
+     "memory.html",
+     "Memory Match"
     ],
     [
      "minesweeper.html",
@@ -193,44 +201,44 @@
      "Sliding Puzzle"
     ],
     [
-     "game-2048.html",
-     "2048"
-    ],
-    [
-     "memory.html",
-     "Memory Match"
-    ],
-    [
-     "cube-twist.html",
-     "Cube Twist"
-    ],
-    [
-     "typing-test.html",
-     "Typing Speed Test"
-    ],
-    [
-     "color-match.html",
-     "Color Match"
-    ],
-    [
-     "word-illusions.html",
-     "Word Illusions"
-    ],
-    [
-     "math-race.html",
-     "Math Race"
+     "sudoku.html",
+     "Sudoku"
     ],
     [
      "times-tables.html",
      "Times Tables Champion"
     ],
     [
-     "canada-map.html",
-     "Map of Canada"
+     "typing-test.html",
+     "Typing Speed Test"
     ],
     [
-     "flags-game.html",
-     "Flags of the World"
+     "word-groups.html",
+     "Word Groups"
+    ],
+    [
+     "word-guess.html",
+     "Word Guess"
+    ],
+    [
+     "word-hive.html",
+     "Word Hive"
+    ],
+    [
+     "word-illusions.html",
+     "Word Illusions"
+    ],
+    [
+     "word-master.html",
+     "Word Master"
+    ],
+    [
+     "scramble.html",
+     "Word Scramble"
+    ],
+    [
+     "word-search.html",
+     "Word Search"
     ]
    ],
    "title": "Brain &amp; Puzzle Games"
@@ -238,32 +246,8 @@
   {
    "links": [
     [
-     "snake.html",
-     "Maple Snake"
-    ],
-    [
-     "whack-a-beaver.html",
-     "Whack-a-Beaver"
-    ],
-    [
-     "tile-tap.html",
-     "Tile Tap"
-    ],
-    [
-     "tictactoe.html",
-     "Tic-Tac-Toe"
-    ],
-    [
      "checkers.html",
      "Checkers"
-    ],
-    [
-     "inukshuk.html",
-     "Inukshuk Builder"
-    ],
-    [
-     "tag.html",
-     "Tag"
     ],
     [
      "chess.html",
@@ -272,6 +256,34 @@
     [
      "connect4.html",
      "Connect 4"
+    ],
+    [
+     "inukshuk.html",
+     "Inukshuk Builder"
+    ],
+    [
+     "snake.html",
+     "Maple Snake"
+    ],
+    [
+     "reversi.html",
+     "Reversi"
+    ],
+    [
+     "tag.html",
+     "Tag"
+    ],
+    [
+     "tictactoe.html",
+     "Tic-Tac-Toe"
+    ],
+    [
+     "tile-tap.html",
+     "Tile Tap"
+    ],
+    [
+     "whack-a-beaver.html",
+     "Whack-a-Beaver"
     ]
    ],
    "title": "Action &amp; Classic Games"

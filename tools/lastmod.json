@@ -392,8 +392,8 @@
   "hash": "5cb6ba27f3a7d618a0894e07618c94bb91c8bd8a"
  },
  "fr/games.html": {
-  "date": "2026-08-08",
-  "hash": "c301b0d4282425d87370adcb62c614b592afd319"
+  "date": "2026-08-09",
+  "hash": "8d5f43fc5df74e505b21b93d3a61ea023f362534"
  },
  "fr/gk-quiz.html": {
   "date": "2026-08-08",
@@ -439,6 +439,10 @@
   "date": "2026-08-08",
   "hash": "04746e2e8f5a96d2933da55d894946e746d3653d"
  },
+ "fr/lights-out.html": {
+  "date": "2026-08-09",
+  "hash": "0d137b32ba025671cf7a166796e68b4b7199d4d9"
+ },
  "fr/manitoba-class-5-mock-test.html": {
   "date": "2026-08-09",
   "hash": "20c3e87af01816b81cbc40dabb503e325a3f6776"
@@ -454,6 +458,10 @@
  "fr/manitoba-rules-of-the-road.html": {
   "date": "2026-08-09",
   "hash": "656f5b58433b97bc68dff43b14fc21352947c4b6"
+ },
+ "fr/maple-says.html": {
+  "date": "2026-08-09",
+  "hash": "9269e9744fb3f6dde851c92a6e2a9bd71e85690b"
  },
  "fr/math-race.html": {
   "date": "2026-08-08",
@@ -497,7 +505,7 @@
  },
  "fr/prime-ministers-of-canada.html": {
   "date": "2026-08-09",
-  "hash": "2391558f0e50531c6a8679dbcb804f41567edf52"
+  "hash": "8969a5a6dba4d36f16aabe4ee3083ffbb4464d8b"
  },
  "fr/privacy.html": {
   "date": "2026-08-09",
@@ -529,7 +537,11 @@
  },
  "fr/rare-canadian-history-stories.html": {
   "date": "2026-08-09",
-  "hash": "f496707bffb1baf50d323df7b3b7e558e0d9dd71"
+  "hash": "6448cd131e24d8ee3b9a82f10139a2c567169468"
+ },
+ "fr/reversi.html": {
+  "date": "2026-08-09",
+  "hash": "49702f0cbc1b930f7f5faaaf0d0850492bdfb85b"
  },
  "fr/rights-and-responsibilities-of-canadian-citizens.html": {
   "date": "2026-08-08",
@@ -660,8 +672,8 @@
   "hash": "b6156b041e3a9dc7650199d6bac0f74edb314a52"
  },
  "games.html": {
-  "date": "2026-08-08",
-  "hash": "30946e1b7e170b91d1dec91115b3d83ea2601cde"
+  "date": "2026-08-09",
+  "hash": "17edc5471f637c75164fdf1c8aee42d0ab5d3e37"
  },
  "gk-quiz.html": {
   "date": "2026-08-08",
@@ -707,6 +719,10 @@
   "date": "2026-08-08",
   "hash": "0be3af31c53c6382988bac432eb6af0514b4fc6e"
  },
+ "lights-out.html": {
+  "date": "2026-08-09",
+  "hash": "6818d6668a47c0ea74599b25b32077525a5ae585"
+ },
  "manitoba-class-5-mock-test.html": {
   "date": "2026-08-09",
   "hash": "2717907e22264df0b3ee2fd30c78e1899f9a5364"
@@ -722,6 +738,10 @@
  "manitoba-rules-of-the-road.html": {
   "date": "2026-08-09",
   "hash": "67a7a59fcdd82a4a02e84040e7f556cdf0251ff8"
+ },
+ "maple-says.html": {
+  "date": "2026-08-09",
+  "hash": "450ecad12dcc9f263de46871fd90109ffbbecb3c"
  },
  "math-race.html": {
   "date": "2026-08-08",
@@ -765,7 +785,7 @@
  },
  "prime-ministers-of-canada.html": {
   "date": "2026-08-09",
-  "hash": "51a6271ae9d6f764699f94b998229dd11ccbf68c"
+  "hash": "4d12fc845a0d4d168d83b99362e087cf08502c20"
  },
  "privacy.html": {
   "date": "2026-08-08",
@@ -797,7 +817,11 @@
  },
  "rare-canadian-history-stories.html": {
   "date": "2026-08-09",
-  "hash": "2167cca4f491111d7833eb792709bd0b6e3716b7"
+  "hash": "20e8a8ebf17bdd868288f7826f251ca26de0cbf4"
+ },
+ "reversi.html": {
+  "date": "2026-08-09",
+  "hash": "eae7847f72d039301cb309dee49c9ca66b3a84d2"
  },
  "rights-and-responsibilities-of-canadian-citizens.html": {
   "date": "2026-08-08",

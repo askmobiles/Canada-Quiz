@@ -234,7 +234,9 @@ def main():
         # on the games. Any page that shows answer options, or that runs the
         # driving engine, is a quiz and deserves the same thing.
         looks_like_a_quiz = ('class="options"' in s or 'id="opts"' in s
-                             or 'driving-engine.js' in s)
+                             or 'driving-engine.js' in s
+                             # a page that names its own play area is a game
+                             or 'data-fs-host' in s)
         if looks_like_a_quiz and 'js/game-fullscreen.js' not in s:
             s = s.replace("</body>",
                           '  <script src="js/game-fullscreen.js" defer></script>\n</body>', 1)

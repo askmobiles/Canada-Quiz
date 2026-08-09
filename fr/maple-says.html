@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maple Says — Memory Sequence Game, Easy Medium and Hard | Family Games</title>
+<meta name="description" content="Watch the pattern, then repeat it. Each round adds one more. Three speeds from easy to hard, with sound you can turn off. Free, no signup, great on a tablet.">
+<link rel="stylesheet" href="../css/style.css?v=61960d1f">
+<style>
+  .ms-wrap{max-width:520px;margin:0 auto}
+  .ms-screen{display:none}.ms-screen.on{display:block}
+  .ms-h{font-weight:800;margin:14px 0 6px;font-size:.95rem;color:var(--muted)}
+  .ms-h:first-child{margin-top:0}
+  .ms-opt{display:block;width:100%;min-height:60px;margin:8px 0;padding:14px 16px;
+    border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;
+    font-family:inherit;font-size:1rem;font-weight:800;text-align:left;line-height:1.3;cursor:pointer}
+  .ms-opt:hover{border-color:var(--red-aa);background:#fff7f7}
+  .ms-opt:active{transform:translateY(2px)}
+  .ms-opt small{display:block;font-weight:600;font-size:.8rem;color:var(--muted);margin-top:3px}
+  .ms-hud{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 14px}
+  .ms-chip{display:inline-block;padding:8px 14px;border-radius:999px;background:#f5f2ec;
+    border:2px solid var(--line);font-weight:800;font-size:.95rem}
+  .ms-chip b{font-variant-numeric:tabular-nums;font-weight:900}
+  .ms-pads{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;
+    max-width:min(90vw,400px);margin:0 auto;aspect-ratio:1/1}
+  .ms-pad{border:0;border-radius:20px;min-width:0;min-height:0;cursor:pointer;
+    -webkit-tap-highlight-color:transparent;position:relative;
+    display:flex;align-items:center;justify-content:center;font-size:2.2rem;
+    filter:brightness(.62) saturate(.85);transition:filter .12s ease,transform .12s ease}
+  .ms-pad.live{filter:brightness(1.25) saturate(1.1);transform:scale(1.03)}
+  .ms-pad:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+  .ms-pad[disabled]{cursor:default}
+  .ms-p0{background:#c8102e}.ms-p1{background:#1c7c54}
+  .ms-p2{background:#2b5fa8}.ms-p3{background:#d99a06}
+  .ms-msg{text-align:center;font-weight:800;margin:16px 0 2px;min-height:1.5em;font-size:1.05rem}
+  .ms-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .ms-res{text-align:center}
+  .ms-res .big{font-size:2.8rem;line-height:1.1;margin:6px 0}
+  .ms-toggle{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:12px;
+    font-weight:700;color:var(--muted);font-size:.92rem}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/maple-says.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/maple-says.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/maple-says.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/maple-says.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://canada-quiz.com/fr/"},{"@type":"ListItem","position":2,"name":"Jeux de réflexion et casse-tête","item":"https://canada-quiz.com/fr/games.html"},{"@type":"ListItem","position":3,"name":"Maple Says","item":"https://canada-quiz.com/fr/maple-says.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/fr/maple-says.html#webpage","url":"https://canada-quiz.com/fr/maple-says.html","name":"Maple Says — Memory Sequence Game, Easy Medium and Hard | Family Games","description":"Watch the pattern, then repeat it. Each round adds one more. Three speeds from easy to hard, with sound you can turn off. Free, no signup, great on a tablet.","inLanguage":"fr-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/fr/","name":"Canada Quiz et jeux amusants en famille"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🍁 Maple Says</h1>
+    <p>Watch the pattern, then tap it back. One more colour every round — how far can you get?</p>
+  </section>
+  <details class="howto"><summary>📖 Comment jouer</summary><p>The board plays a pattern of colours, one at a time. When it finishes, tap the same colours back in the <b>same order</b>. Get it right and the pattern grows by one and plays again. Get it wrong and the round ends. Each colour has its own note, so after a while you start remembering the tune rather than the squares — that is the trick most people discover, and it is worth far more than staring hard. Turn the sound off if you need to, and the pattern still flashes exactly the same way.</p></details>
+
+  <div class="panel" data-fs-host>
+    <div class="ms-wrap" id="msWrap" data-no-i18n>
+
+      <div class="ms-screen on" id="msStart">
+        <div class="ms-h" id="msPick">Choose a speed</div>
+        <button type="button" class="ms-opt" data-lvl="easy" id="msE">🙂 Facile<small></small></button>
+        <button type="button" class="ms-opt" data-lvl="medium" id="msM">🎯 Moyen<small></small></button>
+        <button type="button" class="ms-opt" data-lvl="hard" id="msH">🔥 Difficile<small></small></button>
+        <p id="msBests" style="text-align:center;margin-top:14px;font-weight:800;color:var(--muted);font-size:.95rem"></p>
+      </div>
+
+      <div class="ms-screen" id="msGame">
+        <div class="ms-hud">
+          <span class="ms-chip"><span id="msRoundLbl">Ronde</span> <b id="msRound">1</b></span>
+          <span class="ms-chip"><span id="msLivesLbl">Lives</span> <b id="msLives">3</b></span>
+          <span class="ms-chip"><span id="msBestLbl">Meilleur</span> <b id="msBest">—</b></span>
+        </div>
+        <div class="ms-pads" id="msPads">
+          <button type="button" class="ms-pad ms-p0" data-p="0" aria-label="Red pad">🍁</button>
+          <button type="button" class="ms-pad ms-p1" data-p="1" aria-label="Green pad">🌲</button>
+          <button type="button" class="ms-pad ms-p2" data-p="2" aria-label="Blue pad">🌊</button>
+          <button type="button" class="ms-pad ms-p3" data-p="3" aria-label="Yellow pad">⭐</button>
+        </div>
+        <p class="ms-msg" id="msMsg"></p>
+        <div class="ms-toggle">
+          <label><input type="checkbox" id="msSound" checked> <span id="msSoundLbl">Son</span></label>
+        </div>
+        <div class="ms-btns">
+          <button type="button" class="btn btn-ghost" id="msReplay">Play pattern again</button>
+          <button type="button" class="btn btn-ghost" id="msQuit">Change speed</button>
+        </div>
+      </div>
+
+      <div class="ms-screen" id="msOver">
+        <div class="ms-res">
+          <div class="big" id="msOverIcon">🍁</div>
+          <h2 id="msOverTitle" style="margin:.2em 0">Round over</h2>
+          <p id="msOverLine" style="font-weight:800;font-size:1.15rem"></p>
+          <p class="muted" id="msOverNote"></p>
+          <div class="ms-btns">
+            <button type="button" class="btn btn-lg" id="msAgain">Rejouer</button>
+            <button type="button" class="btn btn-ghost btn-lg" id="msChange">Change speed</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ad-slot"><span class="ad-label">Publicité</span></div>
+<!--PAGEDOC-->
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de ce jeu</h2>
+  <p>Maple Says est un jeu de mémoire. Le plateau joue une suite de couleurs une à une, et vous reproduisez les mêmes couleurs dans le même ordre. Si c'est juste, la suite s'allonge d'une couleur et rejoue.</p>
+  <p>Chaque couleur a sa propre note de musique, et cela change tout. La plupart des gens essaient d'abord de mémoriser des cases, puis découvrent qu'ils retiennent en fait un petit air. L'air se retient bien plus facilement, et c'est pourquoi ce jeu est un véritable exercice de mémoire plutôt qu'un test de concentration.</p>
+  <p>Trois vitesses. Facile clignote lentement, donne trois vies et permet de revoir la suite autant de fois que vous voulez. Moyen est plus rapide avec deux vies. Difficile est rapide, donne une seule vie et aucune reprise : une seule erreur met fin à la manche. Le son peut être coupé, et la suite clignote exactement de la même façon.</p>
+  <h2>Conseils pour jouer</h2>
+  <ul>
+    <li>La plupart des adultes atteignent entre sept et neuf avant de flancher, ce qui correspond à ce que la mémoire à court terme retient habituellement.</li>
+    <li>Dire les couleurs à voix haute, ou fredonner les notes, fonctionne bien mieux que fixer le plateau. Le son et la parole sollicitent une autre partie de la mémoire que la vue.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>Y a-t-il du son si mon appareil est en mode silencieux ?</h3>
+  <p>Non, et cela n'a aucune importance. Chaque suite est montrée par l'illumination des cases : le jeu fonctionne parfaitement sans aucun son.</p>
+  <h3>Pourquoi ai-je moins de vies en difficile ?</h3>
+  <p>C'est précisément ce qui le rend difficile. Facile donne trois vies et des reprises illimitées pour que les plus jeunes s'amusent ; difficile donne une vie et aucune reprise.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="memory.html">Jeu de mémoire</a> · <a href="color-match.html">Trouve la couleur</a> · <a href="tile-tap.html">Tile Tap</a></p>
+</section>
+<!--/PAGEDOC-->
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <details class="footer-map">
+      <summary>Toutes les pages <span class="fm-count">(118)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <div class="fm-h">Quiz</div>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="gk-quiz.html">Culture générale</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
+        <a href="science-quiz.html">Sciences et espace</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">IA &amp; technologie</a>
+        <a href="body-quiz.html">Corps humain &amp; santé</a>
+        <a href="money-quiz.html">L'argent expliqué aux enfants</a>
+        <a href="earth-quiz.html">Terre &amp; environnement</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Pratique de l'examen de conduite</div>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+        <a href="ontario-g1-study-guide.html">Guide d'étude G1 Ontario</a>
+        <a href="bc-class-7l-practice-test.html">Test pratique C.-B. classe 7L</a>
+        <a href="bc-class-7l-mock-test.html">Examen blanc C.-B. classe 7L</a>
+        <a href="bc-road-signs.html">Panneaux routiers de la C.-B.</a>
+        <a href="bc-rules-of-the-road.html">Code de la route de la C.-B.</a>
+        <a href="alberta-class-7-practice-test.html">Test pratique Alberta classe 7</a>
+        <a href="alberta-class-7-mock-test.html">Examen blanc Alberta classe 7</a>
+        <a href="alberta-road-signs.html">Panneaux routiers de l'Alberta</a>
+        <a href="alberta-rules-of-the-road.html">Code de la route de l'Alberta</a>
+        <a href="quebec-class-5-practice-test.html">Test pratique classe 5 du Québec</a>
+        <a href="quebec-class-5-mock-test.html">Examen blanc classe 5 du Québec</a>
+        <a href="quebec-road-signs.html">Panneaux routiers du Québec</a>
+        <a href="quebec-rules-of-the-road.html">Code de la route du Québec</a>
+        <a href="manitoba-class-5-practice-test.html">Test pratique classe 5 du Manitoba</a>
+        <a href="manitoba-class-5-mock-test.html">Examen blanc classe 5 du Manitoba</a>
+        <a href="manitoba-road-signs.html">Panneaux routiers du Manitoba</a>
+        <a href="manitoba-rules-of-the-road.html">Code de la route du Manitoba</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de réflexion et casse-têtes</div>
+        <a href="game-2048.html">2048</a>
+        <a href="color-match.html">Trouve la couleur</a>
+        <a href="crossword.html">Mots croisés</a>
+        <a href="cube-twist.html">Cube Twist</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
+        <a href="lights-out.html">Lights Out</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="maple-says.html">Maple Says</a>
+        <a href="math-race.html">Course de maths</a>
+        <a href="memory.html">Jeu de mémoire</a>
+        <a href="minesweeper.html">Démineur</a>
+        <a href="sliding-puzzle.html">Taquin</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="times-tables.html">Champion des tables de multiplication</a>
+        <a href="typing-test.html">Test de vitesse de frappe</a>
+        <a href="word-groups.html">Groupes de mots</a>
+        <a href="word-guess.html">Devine le mot</a>
+        <a href="word-hive.html">Ruche de mots</a>
+        <a href="word-illusions.html">Illusions de mots</a>
+        <a href="word-master.html">Maître des mots</a>
+        <a href="scramble.html">Mots brouillés</a>
+        <a href="word-search.html">Mots cachés</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux d'action et jeux classiques</div>
+        <a href="checkers.html">Dames</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Puissance 4</a>
+        <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="snake.html">Serpent érable</a>
+        <a href="reversi.html">Reversi</a>
+        <a href="tag.html">Tague</a>
+        <a href="tictactoe.html">Tic-tac-toe</a>
+        <a href="tile-tap.html">Tile Tap</a>
+        <a href="whack-a-beaver.html">Tape-le-castor</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de groupe</div>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="categories-game.html">Catégories</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="draw-it.html">Dessine-le</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Blogue</div>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
+        <a href="rare-canadian-history-stories.html">15 histoires canadiennes méconnues</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
+        <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
+        <a href="blog.html">Tous les articles</a>
+        <a href="canadas-animals-and-wildlife.html">Animaux et faune</a>
+        <a href="canada-usa-trade-history.html">Le Canada et les États-Unis : histoire commerciale</a>
+        <a href="canadas-biggest-cities.html">Les plus grandes villes du Canada</a>
+        <a href="canada-geography-coast-to-coast.html">La géographie du Canada</a>
+        <a href="canadas-national-parks.html">Les parcs nationaux du Canada</a>
+        <a href="canada-population-timeline.html">Chronologie de la population du Canada</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Cuisine canadienne &amp; sirop d'érable</a>
+        <a href="canadian-holidays-explained.html">Les fêtes canadiennes</a>
+        <a href="canadian-inventions.html">Inventions canadiennes</a>
+        <a href="canadian-money-explained.html">L'argent canadien expliqué</a>
+        <a href="canadian-slang-words.html">L'argot canadien</a>
+        <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="newcomer-first-year-in-canada-checklist.html">Aide-mémoire pour la première année au Canada</a>
+        <a href="how-to-get-a-drivers-licence-in-canada.html">Obtenir son permis de conduire</a>
+        <a href="hockey-in-canada.html">Le hockey au Canada</a>
+        <a href="how-canada-was-built.html">Comment le Canada s'est bâti</a>
+        <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
+        <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
+        <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
+        <a href="prime-ministers-of-canada.html">Premiers ministres du Canada</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
+        <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
+        <a href="winter-in-canada.html">L'hiver au Canada</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Le site</div>
+        <a href="about.html">À propos</a>
+        <a href="games.html">Tous les jeux en famille</a>
+        <a href="contact.html">Contact</a>
+        <a href="daily.html">Défi du jour</a>
+        <a href="index.html">Accueil</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="sources.html">Sources et crédits</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr) { return FR ? fr : en; }
+
+  var LEVELS = {
+    easy:   { on: 620, gap: 300, lives: 3, replay: true },
+    medium: { on: 420, gap: 180, lives: 2, replay: true },
+    hard:   { on: 280, gap: 110, lives: 1, replay: false }
+  };
+  var KEY = "cq_maplesays_best";
+  var NOTE = [329.63, 261.63, 392.00, 440.00];   // E4, C4, G4, A4 — pleasant together
+
+  var level = "easy", seq = [], step = 0, lives = 3, busy = false, playing = false;
+  var pads = [].slice.call(document.querySelectorAll(".ms-pad"));
+
+  /* ---------------------------------------------------------------- sound */
+  var actx = null;
+  function beep(i, ms) {
+    if (!document.getElementById("msSound").checked) return;
+    try {
+      if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+      if (actx.state === "suspended") actx.resume();
+      var o = actx.createOscillator(), g = actx.createGain();
+      o.type = "sine";
+      o.frequency.value = NOTE[i];
+      g.gain.setValueAtTime(0.0001, actx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.22, actx.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, actx.currentTime + ms / 1000);
+      o.connect(g); g.connect(actx.destination);
+      o.start(); o.stop(actx.currentTime + ms / 1000 + 0.02);
+    } catch (e) {}
+  }
+  function buzz() {
+    if (!document.getElementById("msSound").checked) return;
+    try {
+      if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+      var o = actx.createOscillator(), g = actx.createGain();
+      o.type = "square";
+      o.frequency.value = 110;
+      g.gain.setValueAtTime(0.14, actx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, actx.currentTime + 0.45);
+      o.connect(g); g.connect(actx.destination);
+      o.start(); o.stop(actx.currentTime + 0.47);
+    } catch (e) {}
+  }
+
+  /* ----------------------------------------------------------------- best */
+  function bests() {
+    try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return {}; }
+  }
+  function saveBest(r) {
+    try {
+      var b = bests();
+      if (!b[level] || r > b[level]) { b[level] = r; localStorage.setItem(KEY, JSON.stringify(b)); return true; }
+    } catch (e) {}
+    return false;
+  }
+
+  function flash(i, ms) {
+    pads[i].classList.add("live");
+    beep(i, ms);
+    setTimeout(function () { pads[i].classList.remove("live"); }, ms);
+  }
+
+  function setEnabled(on) {
+    pads.forEach(function (p) { p.disabled = !on; });
+  }
+
+  function playSeq() {
+    busy = true;
+    setEnabled(false);
+    document.getElementById("msMsg").textContent = T("Watch…", "Regardez…");
+    var L = LEVELS[level], i = 0;
+    (function next() {
+      if (i >= seq.length) {
+        busy = false;
+        setEnabled(true);
+        step = 0;
+        document.getElementById("msMsg").textContent = T("Your turn", "À votre tour");
+        return;
+      }
+      flash(seq[i], L.on);
+      i++;
+      setTimeout(next, L.on + L.gap);
+    })();
+  }
+
+  function nextRound() {
+    seq.push((Math.random() * 4) | 0);
+    document.getElementById("msRound").textContent = seq.length;
+    setTimeout(playSeq, 620);
+  }
+
+  function show(id) {
+    ["msStart", "msGame", "msOver"].forEach(function (s) {
+      document.getElementById(s).classList.toggle("on", s === id);
+    });
+  }
+
+  function gameOver() {
+    playing = false;
+    setEnabled(false);
+    var reached = Math.max(0, seq.length - 1);
+    var improved = saveBest(reached);
+    document.getElementById("msOverIcon").textContent = reached >= 10 ? "🏆" : "🍁";
+    document.getElementById("msOverTitle").textContent =
+      reached >= 10 ? T("Excellent memory!", "Excellente mémoire !") : T("Round over", "Manche terminée");
+    document.getElementById("msOverLine").textContent =
+      T("You reached round ", "Vous avez atteint la manche ") + reached;
+    document.getElementById("msOverNote").textContent = improved
+      ? T("A new best at this speed.", "Un nouveau record à cette vitesse.")
+      : T("Try humming the notes — the tune is easier to hold than the squares.",
+          "Essayez de fredonner les notes : l'air se retient mieux que les cases.");
+    show("msOver");
+  }
+
+  function tap(i) {
+    if (busy || !playing) return;
+    flash(i, 200);
+    if (seq[step] === i) {
+      step++;
+      if (step >= seq.length) {
+        document.getElementById("msMsg").textContent = T("Correct!", "Exact !");
+        nextRound();
+      }
+      return;
+    }
+    buzz();
+    lives--;
+    document.getElementById("msLives").textContent = lives;
+    if (lives <= 0) { setTimeout(gameOver, 500); return; }
+    document.getElementById("msMsg").textContent =
+      T("Not quite — watch again.", "Presque : regardez encore.");
+    setTimeout(playSeq, 900);
+  }
+
+  document.getElementById("msPads").addEventListener("click", function (e) {
+    var t = e.target.closest(".ms-pad");
+    if (t) tap(parseInt(t.getAttribute("data-p"), 10));
+  });
+
+  function startLevel(lvl) {
+    level = lvl;
+    seq = []; step = 0; playing = true;
+    lives = LEVELS[lvl].lives;
+    document.getElementById("msLives").textContent = lives;
+    document.getElementById("msRound").textContent = 0;
+    var b = bests()[level];
+    document.getElementById("msBest").textContent = b ? b : "—";
+    document.getElementById("msReplay").style.display = LEVELS[lvl].replay ? "" : "none";
+    show("msGame");
+    nextRound();
+  }
+
+  document.getElementById("msReplay").addEventListener("click", function () {
+    if (!busy && playing && LEVELS[level].replay) playSeq();
+  });
+  document.getElementById("msQuit").addEventListener("click", function () {
+    playing = false; show("msStart"); refreshBests();
+  });
+  document.getElementById("msAgain").addEventListener("click", function () { startLevel(level); });
+  document.getElementById("msChange").addEventListener("click", function () { show("msStart"); refreshBests(); });
+  [["msE", "easy"], ["msM", "medium"], ["msH", "hard"]].forEach(function (p) {
+    document.getElementById(p[0]).addEventListener("click", function () { startLevel(p[1]); });
+  });
+
+  function refreshBests() {
+    var b = bests(), parts = [];
+    [["easy", T("Easy", "Facile")], ["medium", T("Medium", "Moyen")], ["hard", T("Hard", "Difficile")]]
+      .forEach(function (p) { if (b[p[0]]) parts.push(p[1] + " " + b[p[0]]); });
+    document.getElementById("msBests").textContent = parts.length
+      ? T("Your best round: ", "Votre meilleure manche : ") + parts.join(" · ")
+      : "";
+  }
+
+  /* --------------------------------------------------------------- labels */
+  document.getElementById("msPick").textContent = T("Choose a speed", "Choisissez une vitesse");
+  function label(id, main, note) {
+    var b = document.getElementById(id);
+    b.innerHTML = "";
+    b.appendChild(document.createTextNode(main));
+    var s = document.createElement("small");
+    s.textContent = note;
+    b.appendChild(s);
+  }
+  label("msE", T("🙂 Easy", "🙂 Facile"),
+    T("Slow flashes, three lives, and you can replay the pattern.",
+      "Flashs lents, trois vies, et vous pouvez revoir la séquence."));
+  label("msM", T("🎯 Medium", "🎯 Moyen"),
+    T("Quicker, two lives. Still replayable.",
+      "Plus rapide, deux vies. Séquence encore revoyable."));
+  label("msH", T("🔥 Hard", "🔥 Difficile"),
+    T("Fast, one life, no replay. One slip ends it.",
+      "Rapide, une vie, aucune reprise. Une erreur et c'est fini."));
+  document.getElementById("msRoundLbl").textContent = T("Round", "Manche");
+  document.getElementById("msLivesLbl").textContent = T("Lives", "Vies");
+  document.getElementById("msBestLbl").textContent = T("Best", "Record");
+  document.getElementById("msSoundLbl").textContent = T("Sound", "Son");
+  document.getElementById("msReplay").textContent = T("Play pattern again", "Revoir la séquence");
+  document.getElementById("msQuit").textContent = T("Change speed", "Changer de vitesse");
+  document.getElementById("msAgain").textContent = T("Play again", "Rejouer");
+  document.getElementById("msChange").textContent = T("Change speed", "Changer de vitesse");
+  pads[0].setAttribute("aria-label", T("Red pad", "Case rouge"));
+  pads[1].setAttribute("aria-label", T("Green pad", "Case verte"));
+  pads[2].setAttribute("aria-label", T("Blue pad", "Case bleue"));
+  pads[3].setAttribute("aria-label", T("Yellow pad", "Case jaune"));
+  refreshBests();
+})();
+</script>
+  <script src="../js/game-fullscreen.js?v=dd5e3201" defer></script>
+  <script src="../js/site.js?v=1981f38e"></script>
+  <script src="../js/analytics.js?v=d95c4f47"></script>
+  <script src="../js/ads.js?v=00e703ff" defer></script>
+</body>
+</html>
