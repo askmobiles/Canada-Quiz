@@ -20,7 +20,7 @@
 
    Using both is fine, and is what I would do.
    ============================================================ */
-var GA4_ID = "";              // <-- paste your G-XXXXXXXXXX here
+var GA4_ID = "G-8XMJNC7TQ5";              // <-- paste your G-XXXXXXXXXX here
 var CF_BEACON_TOKEN = "";     // <-- paste your Cloudflare token here
 
 (function () {

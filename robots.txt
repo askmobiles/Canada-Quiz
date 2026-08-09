@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /my-stats.html
 Sitemap: https://canada-quiz.com/sitemap.xml

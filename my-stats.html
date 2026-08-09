@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Canada Quiz — owner dashboard</title>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<style>
+  :root { --ink:#1c1533; --line:#e3ddf2; --muted:#6b6383; }
+  * { box-sizing:border-box }
+  body { margin:0; background:#f7f5fc; color:var(--ink);
+         font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif }
+  .wrap { max-width:860px; margin:0 auto; padding:26px 18px 70px }
+  h1 { font-size:26px; margin:0 0 4px }
+  h2 { font-size:18px; margin:30px 0 10px }
+  .sub { color:var(--muted); margin:0 0 22px }
+  .note { background:#fff8e6; border:1px solid #f0dca0; border-radius:12px;
+          padding:12px 14px; font-size:14.5px; margin:0 0 24px }
+  .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)) }
+  a.card { display:block; background:#fff; border:1px solid var(--line); border-radius:14px;
+           padding:15px 16px; text-decoration:none; color:inherit; transition:.12s }
+  a.card:hover { border-color:#b9a8ea; transform:translateY(-1px) }
+  a.card b { display:block; font-size:16px; margin-bottom:3px }
+  a.card span { color:var(--muted); font-size:13.5px }
+  .panel { background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 18px }
+  table { width:100%; border-collapse:collapse; font-size:14.5px }
+  td { padding:5px 4px; border-bottom:1px solid #f0edf8 }
+  td.n { text-align:right; font-weight:700; width:70px }
+  ol { padding-left:20px } ol li { margin:7px 0 }
+  code { background:#efeaf9; padding:1px 6px; border-radius:5px; font-size:13.5px }
+  .foot { margin-top:34px; color:var(--muted); font-size:13.5px }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Canada Quiz — owner dashboard</h1>
+  <p class="sub">Everything about the site, in one place. Bookmark this page.</p>
+
+  <p class="note"><strong>Read this once.</strong> This page is hidden from Google and is not
+  linked anywhere on the site, but it is not password-protected — a static site has no way to
+  do that. It is safe anyway, because it holds <em>no</em> numbers and <em>no</em> passwords.
+  It is only a set of shortcuts. Every dashboard below still asks for your own Google or
+  Cloudflare login before it shows you anything.</p>
+
+  <h2>Your visitor numbers</h2>
+  <div class="grid">
+    <a class="card" target="_blank" rel="noopener"
+       href="https://analytics.google.com/analytics/web/#/p549192991/realtime/overview">
+      <b>Who is on the site right now</b>
+      <span>Google Analytics · Realtime. Open this first — it proves tracking is working.</span></a>
+
+    <a class="card" target="_blank" rel="noopener"
+       href="https://analytics.google.com/analytics/web/#/p549192991/reports/intelligenthome">
+      <b>Visitors, day by day</b>
+      <span>Google Analytics · Reports. Top pages, English vs French, where people come from.</span></a>
+
+    <a class="card" target="_blank" rel="noopener"
+       href="https://search.google.com/search-console">
+      <b>How Google sees the site</b>
+      <span>Search Console. Which searches find you, and which pages are indexed.</span></a>
+
+    <a class="card" target="_blank" rel="noopener"
+       href="https://dash.cloudflare.com/">
+      <b>Cloudflare</b>
+      <span>DNS, and Web Analytics if you switch it on. Also shows attacks and caching.</span></a>
+
+    <a class="card" target="_blank" rel="noopener"
+       href="https://www.google.com/adsense/">
+      <b>AdSense earnings</b>
+      <span>Money, plus its own page-view count as a second opinion.</span></a>
+
+    <a class="card" target="_blank" rel="noopener"
+       href="https://github.com/askmobiles/Canada-Quiz">
+      <b>The code on GitHub</b>
+      <span>Every version of the site. Check here that your last push went through.</span></a>
+  </div>
+
+  <h2>Reading Google Analytics without getting lost</h2>
+  <div class="panel">
+    <ol>
+      <li><strong>Is anyone here now?</strong> Realtime. Open the site on your phone and you
+        should appear within about thirty seconds.</li>
+      <li><strong>Which pages are working?</strong> Reports → Engagement → <em>Pages and
+        screens</em>. This is the one that tells you what to build more of.</li>
+      <li><strong>Who finishes a quiz?</strong> Reports → Engagement → <em>Events</em>, and look
+        for <code>quiz_complete</code>. Click it to see the score and pass rate. A page with many
+        visits but few completions is a page that needs fixing.</li>
+      <li><strong>Where do people come from?</strong> Reports → Acquisition → <em>Traffic
+        acquisition</em>. "Organic Search" is the number that matters for the plan.</li>
+    </ol>
+    <p style="margin-bottom:0"><strong>Events I set up for you:</strong>
+      <code>quiz_start</code> · <code>quiz_answer</code> · <code>quiz_complete</code>
+      (with score, percent, pass or fail) · <code>engaged_15s</code> ·
+      <code>button_click</code>. New quizzes are covered automatically.</p>
+  </div>
+
+  <h2>Your own visits, on this device only</h2>
+  <div class="panel">
+    <p class="sub" style="margin:0 0 10px">Counted in this browser, sent nowhere. Useful for
+      checking a page opens, not for real traffic.</p>
+    <div id="local">Nothing recorded in this browser yet.</div>
+  </div>
+
+  <p class="foot">
+    A note worth knowing: your own visits are counted in Analytics too, which makes a quiet site
+    look busier than it is. Once real traffic starts, ask me and I will show you how to exclude
+    your own address. &nbsp;·&nbsp; Property <code>G-8XMJNC7TQ5</code>.
+    &nbsp;·&nbsp; <a href="index.html">Back to the site</a>
+  </p>
+
+</div>
+
+<script>
+/* Reads the counter that js/analytics.js keeps in this browser. Nothing leaves
+   the device. Same data as visiting any page with ?mystats on the end. */
+(function () {
+  var host = document.getElementById("local");
+  var d;
+  try { d = JSON.parse(localStorage.getItem("cq_local_stats") || "{}"); }
+  catch (e) { host.textContent = "This browser is blocking local storage."; return; }
+
+  var keys = Object.keys(d).filter(function (k) { return k.charAt(0) !== "_"; })
+                           .sort(function (a, b) { return d[b] - d[a]; });
+  if (!keys.length) return;
+
+  var rows = keys.slice(0, 25).map(function (k) {
+    return "<tr><td>" + k.replace(/[<>&]/g, "") + "</td><td class='n'>" + d[k] + "</td></tr>";
+  }).join("");
+
+  host.innerHTML =
+    "<p style='margin:0 0 8px'><strong>" + (d._total || 0) + "</strong> page opens since " +
+    (d._first || "—") + (keys.length > 25 ? " · showing the top 25" : "") + "</p>" +
+    "<table>" + rows + "</table>";
+})();
+</script>
+</body>
+</html>

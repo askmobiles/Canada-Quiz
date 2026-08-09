@@ -21,6 +21,7 @@ browser by js/site.js, using the same dictionary — so nothing is missed.
 import glob, html, json, os, re, sys
 import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import private_pages
 import schema_ld
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -204,7 +205,8 @@ def convert(src, page):
 
 def main():
     os.makedirs(FRDIR, exist_ok=True)
-    pages = sorted(os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "*.html")))
+    pages = sorted(os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "*.html"))
+                   if os.path.basename(p) not in private_pages.PRIVATE)
     for page in pages:
         src = open(os.path.join(ROOT, page), encoding="utf-8").read()
         open(os.path.join(FRDIR, page), "w", encoding="utf-8").write(convert(src, page))

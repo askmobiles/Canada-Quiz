@@ -13,6 +13,7 @@ It only touches the .html files in the site root.
 import glob, json, os, re, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import private_pages
 import schema_ld
 import asset_ver
 
@@ -160,7 +161,10 @@ def main():
     if asset_ver.stamp_i18n_into_site_js():
         print("js/site.js: dictionary stamp ->", asset_ver.ver("js/i18n-fr.js"))
 
-    files = sorted(f for f in glob.glob(os.path.join(ROOT, "*.html")))
+    # private_pages.PRIVATE are hand-written owner-only pages: no shared
+    # header/footer, no analytics, no ads. Left exactly as written.
+    files = sorted(f for f in glob.glob(os.path.join(ROOT, "*.html"))
+                   if os.path.basename(f) not in private_pages.PRIVATE)
     changed = 0
     for path in files:
         page = os.path.basename(path)

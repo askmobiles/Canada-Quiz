@@ -25,6 +25,8 @@ ASSET_VER to bump by hand any more.
 """
 import datetime, hashlib, io, json, os, re
 
+import private_pages
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://canada-quiz.com/"
 OUT = os.path.join(ROOT, "sitemap.xml")
@@ -92,7 +94,7 @@ def lastmod_for(relpath):
 
 
 # Pages that must never be listed (thank-you pages, redirects, drafts).
-SKIP = {"404.html", "google-verify.html"}
+SKIP = {"404.html", "google-verify.html"} | private_pages.PRIVATE
 
 # How often each kind of page really changes.
 DAILY = {"daily.html"}
