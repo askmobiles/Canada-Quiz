@@ -328,6 +328,10 @@
      "10 Tips to Pass the Test"
     ],
     [
+     "rare-canadian-history-stories.html",
+     "15 Rare Canadian History Stories"
+    ],
+    [
      "20-fun-facts-about-canada-for-kids.html",
      "20 Fun Facts for Kids"
     ],
@@ -342,6 +346,10 @@
     [
      "canadas-animals-and-wildlife.html",
      "Animals and Wildlife"
+    ],
+    [
+     "canada-usa-trade-history.html",
+     "Canada and the USA: Trade History"
     ],
     [
      "canadas-biggest-cities.html",
@@ -453,28 +461,32 @@
   {
    "links": [
     [
-     "index.html",
-     "Home"
-    ],
-    [
-     "daily.html",
-     "Daily Challenge"
+     "about.html",
+     "About Us"
     ],
     [
      "games.html",
      "All Family Games"
     ],
     [
-     "about.html",
-     "About Us"
-    ],
-    [
      "contact.html",
      "Contact"
     ],
     [
+     "daily.html",
+     "Daily Challenge"
+    ],
+    [
+     "index.html",
+     "Home"
+    ],
+    [
      "privacy.html",
      "Privacy Policy"
+    ],
+    [
+     "sources.html",
+     "Sources and Credits"
     ],
     [
      "terms.html",

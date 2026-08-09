@@ -79,6 +79,10 @@
   "date": "2026-08-08",
   "hash": "208b239bef40a4779df90a58cd36b496e02f22a0"
  },
+ "canada-usa-trade-history.html": {
+  "date": "2026-08-09",
+  "hash": "ca7aa31136a29fcaee77d86f87062bc65d593786"
+ },
  "canadas-animals-and-wildlife.html": {
   "date": "2026-08-08",
   "hash": "9733070a244cc322e8d111283da0bb875252680a"
@@ -196,8 +200,8 @@
   "hash": "38276ff4f6b59301f130b8ae47b7ac12e2f7e4d9"
  },
  "fr/a-short-history-of-canada.html": {
-  "date": "2026-08-08",
-  "hash": "7a24e5f70a5e47ac9034a622334213b9271bb810"
+  "date": "2026-08-09",
+  "hash": "4bea2c5adda211c75836267023b840bc74df52a2"
  },
  "fr/about.html": {
   "date": "2026-08-08",
@@ -267,6 +271,10 @@
   "date": "2026-08-08",
   "hash": "1a90c87405a0243b86314a5a473e2e481c6556c1"
  },
+ "fr/canada-usa-trade-history.html": {
+  "date": "2026-08-09",
+  "hash": "b036424c212778eb6c745605ef2287e393ec1c8c"
+ },
  "fr/canadas-animals-and-wildlife.html": {
   "date": "2026-08-08",
   "hash": "f021102a19b8c0083d452f3b77790646031ba1bd"
@@ -296,8 +304,8 @@
   "hash": "91735a4760bd68d5edb7051ea11bda082058632d"
  },
  "fr/canadian-money-explained.html": {
-  "date": "2026-08-08",
-  "hash": "691c083a2e1dfc55547e4f84d3df0251e26de574"
+  "date": "2026-08-09",
+  "hash": "a20313a5dba25b90dee63db38aa0ccaf3a7769b7"
  },
  "fr/canadian-slang-words.html": {
   "date": "2026-08-08",
@@ -492,8 +500,8 @@
   "hash": "2391558f0e50531c6a8679dbcb804f41567edf52"
  },
  "fr/privacy.html": {
-  "date": "2026-08-08",
-  "hash": "021a5b8ff70191d94aa8671634cf3e73d5c2ab8f"
+  "date": "2026-08-09",
+  "hash": "77f3025a28e2a03971238638b729ed4f87e12007"
  },
  "fr/province-quiz.html": {
   "date": "2026-08-08",
@@ -519,6 +527,10 @@
   "date": "2026-08-08",
   "hash": "935468a3299207a12cd5a0751a662114a3f1c5ab"
  },
+ "fr/rare-canadian-history-stories.html": {
+  "date": "2026-08-09",
+  "hash": "f496707bffb1baf50d323df7b3b7e558e0d9dd71"
+ },
  "fr/rights-and-responsibilities-of-canadian-citizens.html": {
   "date": "2026-08-08",
   "hash": "567992538e51b8e3acd00b92407a487fa3823a61"
@@ -538,6 +550,10 @@
  "fr/snake.html": {
   "date": "2026-08-08",
   "hash": "c10aac3301bb0ceca6815af1d5c10aa77a846331"
+ },
+ "fr/sources.html": {
+  "date": "2026-08-09",
+  "hash": "bcbdcb238a75c87ab49caf4c7fbd28bfb92468b0"
  },
  "fr/spin-wheel.html": {
   "date": "2026-08-08",
@@ -779,6 +795,10 @@
   "date": "2026-08-08",
   "hash": "29f5718b3ae976187c78cd1e7a25e9cda2e8de98"
  },
+ "rare-canadian-history-stories.html": {
+  "date": "2026-08-09",
+  "hash": "2167cca4f491111d7833eb792709bd0b6e3716b7"
+ },
  "rights-and-responsibilities-of-canadian-citizens.html": {
   "date": "2026-08-08",
   "hash": "b960460ccc5b9610970c0a5609626345640864ec"
@@ -798,6 +818,10 @@
  "snake.html": {
   "date": "2026-08-08",
   "hash": "dd2a3aa83bd4dbf4ea3a7569ea48f1a8cf7abf1a"
+ },
+ "sources.html": {
+  "date": "2026-08-09",
+  "hash": "a389929d9cc697caa608977fc722d0c05c413dd6"
  },
  "spin-wheel.html": {
   "date": "2026-08-08",

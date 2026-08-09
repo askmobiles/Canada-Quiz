@@ -50,6 +50,7 @@ FOOTER_LINKS = [
     ("index.html",   "Home"),
     ("about.html",   "About"),
     ("contact.html", "Contact"),
+    ("sources.html", "Sources"),
     ("privacy.html", "Privacy Policy"),
     ("terms.html",   "Terms &amp; Conditions"),
 ]
