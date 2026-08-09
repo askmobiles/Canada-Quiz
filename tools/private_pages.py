@@ -11,6 +11,4 @@ here is:
 
 Keep this list tiny. Everything else on a public site should be public.
 """
-PRIVATE = {
-    "my-stats.html",
-}
+PRIVATE = set()   # my-stats.html lived here 9 Aug 2026; removed at Eesan's request
