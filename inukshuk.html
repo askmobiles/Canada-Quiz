@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inukshuk Builder — Stack the Stones | Family Games</title>
 <meta name="description" content="Inukshuk Builder — a free, original Canadian stacking game. Tap to stack the stones and build the tallest Inukshuk you can. Fun for kids and adults, plays on phone and computer.">
-<link rel="stylesheet" href="css/style.css?v=61960d1f">
+<link rel="stylesheet" href="css/style.css?v=864b2243">
 <style>
   .game-wrap{max-width:400px;margin:0 auto;text-align:center}
   canvas{width:100%;height:auto;border-radius:16px;box-shadow:var(--shadow);cursor:pointer;touch-action:manipulation;background:#0b1030}
   .stat-row{display:flex;gap:10px;justify-content:center;margin:10px 0}
+  .stage{position:relative;border-radius:16px;line-height:0}
+  .stage canvas{display:block}
 </style>
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -51,7 +53,7 @@
         <span class="pill" id="score">Height: 0</span>
         <span class="pill" id="best">Best: 0</span>
       </div>
-      <canvas id="c" width="360" height="560" aria-label="Inukshuk stacking game"></canvas>
+      <div class="stage" id="stage"><canvas id="c" width="360" height="560" aria-label="Inukshuk stacking game"></canvas></div>
       <p class="muted" id="msg" style="min-height:22px">Tap the picture or press Space to drop the stone</p>
       <button class="btn btn-lg" id="dropBtn">Drop Stone</button>
       <button class="btn btn-ghost" onclick="reset()">New Game</button>
@@ -106,7 +108,7 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <details class="footer-map">
-      <summary>All pages <span class="fm-count">(118)</span></summary>
+      <summary>All pages <span class="fm-count">(124)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <div class="fm-h">Quizzes</div>
@@ -123,6 +125,11 @@
         <a href="body-quiz.html">Human Body &amp; Health</a>
         <a href="money-quiz.html">Money Skills for Kids</a>
         <a href="earth-quiz.html">Earth &amp; Environment</a>
+        <a href="which-canadian-animal-quiz.html">Which Canadian Animal?</a>
+        <a href="which-canadian-food-quiz.html">Which Canadian Food?</a>
+        <a href="which-canadian-city-quiz.html">Which Canadian City?</a>
+        <a href="which-winter-sport-quiz.html">Which Winter Sport?</a>
+        <a href="which-national-park-quiz.html">Which National Park?</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Driving Test Practice</div>
@@ -199,6 +206,7 @@
         <a href="story-maker.html">Story Maker</a>
         <a href="draw-it.html">Draw It</a>
         <a href="spin-wheel.html">Spin the Wheel</a>
+        <a href="hide-and-find.html">Hide &amp; Find</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Blog</div>
@@ -261,6 +269,7 @@ let tower, moving, speed, score, best=0, running, camY, camTarget, debris, stars
 
 function initStars(){ stars=[]; for(let i=0;i<40;i++) stars.push({x:Math.random()*W, y:Math.random()*H*0.6, r:Math.random()*1.5+0.4, a:Math.random()*0.6+0.2}); }
 function reset(){
+  if(window.CQEnd) CQEnd.hide();
   const baseW=170, baseX=(W-baseW)/2;
   tower=[{x:baseX,w:baseW}];
   speed=2.0; score=0; running=true; camY=0; camTarget=0; debris=[];
@@ -301,7 +310,22 @@ function drop(){
 }
 function levelTopY(levelFromBottom){ return (H-GROUND) - (levelFromBottom+1)*BH + camY; }
 function gameOver(){
-  document.getElementById('msg').textContent='🏔️ Your Inukshuk is '+score+' stones tall! Tap New Game to try again.';
+  var FR=/\/fr\//.test(location.pathname);
+  function T(en,fr){ return FR?fr:en; }
+  document.getElementById('msg').textContent = T('🏔️ Your Inukshuk is '+score+' stones tall!',
+                                                 '🏔️ Votre inukshuk fait '+score+' pierres de haut !');
+  var beat = (score>0 && score>=best);
+  if(window.CQEnd) CQEnd.show('#stage',{
+    icon: beat ? '🎉' : '🗿',
+    title: beat ? T('New best!','Nouveau record !') : T('Game over','Partie terminée'),
+    sub: T('Your Inukshuk reached '+score+' '+(score===1?'stone':'stones')+' tall.',
+           'Votre inukshuk a atteint '+score+' '+(score===1?'pierre':'pierres')+' de haut.'),
+    tone: beat ? 'win' : 'lose',
+    actions: [
+      { label: T('New game','Nouvelle partie'), fn: reset, cls:'btn-lg' },
+      { label: T('All games','Tous les jeux'), href: FR?'games.html':'games.html', cls:'btn-ghost' }
+    ]
+  });
 }
 function roundRect(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
 function drawStone(x,y,w,h,i,glow){
@@ -357,7 +381,8 @@ document.addEventListener('keydown', e=>{ if(e.code==='Space'){ e.preventDefault
 reset();
 </script>
   <script src="js/game-fullscreen.js?v=dd5e3201"></script>
-  <script src="js/site.js?v=36765ba9"></script>
+  <script src="js/endcard.js?v=992bffb0"></script>
+  <script src="js/site.js?v=1b925d9c"></script>
   <script src="js/analytics.js?v=d95c4f47"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
 </body>

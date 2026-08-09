@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://canada-quiz.com/fr/connect4.html">
 <meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
-<link rel="stylesheet" href="../css/style.css?v=61960d1f">
+<link rel="stylesheet" href="../css/style.css?v=864b2243">
 <style>
 .c4-modes{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:420px;margin:0 auto 12px}
 .c4-mode{font-size:13px;line-height:1.15;padding:9px 6px;min-height:44px;white-space:normal}
@@ -153,7 +153,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(118)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(124)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <div class="fm-h">Quiz</div>
@@ -170,6 +170,11 @@
         <a href="body-quiz.html">Corps humain &amp; santé</a>
         <a href="money-quiz.html">L'argent expliqué aux enfants</a>
         <a href="earth-quiz.html">Terre &amp; environnement</a>
+        <a href="which-canadian-animal-quiz.html">Which Canadian Animal?</a>
+        <a href="which-canadian-food-quiz.html">Which Canadian Food?</a>
+        <a href="which-canadian-city-quiz.html">Which Canadian City?</a>
+        <a href="which-winter-sport-quiz.html">Which Winter Sport?</a>
+        <a href="which-national-park-quiz.html">Which National Park?</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Pratique de l'examen de conduite</div>
@@ -246,6 +251,7 @@
         <a href="story-maker.html">Créateur d'histoires</a>
         <a href="draw-it.html">Dessine-le</a>
         <a href="spin-wheel.html">Tourne la roue</a>
+        <a href="hide-and-find.html">Hide &amp; Find</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Blogue</div>
@@ -523,9 +529,24 @@
     else if(p===YEL) starter=RED;
     else starter=(starter===RED?YEL:RED);
     updateUI();
+    if(window.CQEnd){
+      var youWon=(p===RED), tie=(p===0);
+      CQEnd.show('#c4-board',{
+        icon: tie?'🤝':(mode==='2p'?'🎉':(youWon?'🎉':'😅')),
+        title: tie ? T("It's a draw!",'Partie nulle !')
+             : (mode==='2p' ? (p===RED?T('Red wins!','Les rouges gagnent !'):T('Yellow wins!','Les jaunes gagnent !'))
+                            : (youWon?T('You win!','Vous gagnez !'):T('Computer wins',"L'ordinateur gagne"))),
+        sub: tie ? T('The board is full.','La grille est pleine.')
+                 : T('Four in a row.','Quatre alignés.'),
+        tone: tie?'draw':((mode==='2p'||youWon)?'win':'lose'),
+        actions:[{label:T('New game','Nouvelle partie'),fn:function(){newGame(false);},cls:'btn-lg'},
+                 {label:T('All games','Tous les jeux'),href:'games.html',cls:'btn-ghost'}]
+      });
+    }
   }
 
   function newGame(resetStarter){
+    if(window.CQEnd) CQEnd.hide();
     if(aiTimer){ clearTimeout(aiTimer); aiTimer=0; }
     ghostIdx=-1;
     for(var i=0;i<42;i++){
@@ -724,7 +745,8 @@
 })();
 </script>
   <script src="../js/game-fullscreen.js?v=dd5e3201"></script>
-  <script src="../js/site.js?v=36765ba9"></script>
+  <script src="../js/endcard.js?v=992bffb0"></script>
+  <script src="../js/site.js?v=1b925d9c"></script>
   <script src="../js/analytics.js?v=d95c4f47"></script>
   <script src="../js/ads.js?v=00e703ff" defer></script>
 </body>

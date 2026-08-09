@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which Canadian Food Are You? | Canada Quiz</title>
+<meta name="description" content="Answer seven questions about how you eat, rest and travel, and find the Canadian dish that fits. A free personality quiz — no signup, works on a phone.">
+<link rel="stylesheet" href="../css/style.css?v=864b2243">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/which-canadian-food-quiz.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/which-canadian-food-quiz.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/which-canadian-food-quiz.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/which-canadian-food-quiz.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://canada-quiz.com/fr/"},{"@type":"ListItem","position":2,"name":"Quiz","item":"https://canada-quiz.com/fr/quizzes.html"},{"@type":"ListItem","position":3,"name":"Which Canadian Food Are You?","item":"https://canada-quiz.com/fr/which-canadian-food-quiz.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/fr/which-canadian-food-quiz.html#webpage","url":"https://canada-quiz.com/fr/which-canadian-food-quiz.html","name":"Which Canadian Food Are You? | Canada Quiz","description":"Answer seven questions about how you eat, rest and travel, and find the Canadian dish that fits. A free personality quiz — no signup, works on a phone.","inLanguage":"fr-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/fr/","name":"Canada Quiz et jeux amusants en famille"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="start" class="panel center">
+    <div style="font-size:46px">🍁</div>
+    <h1>Which Canadian Food Are You?</h1>
+    <p class="muted" style="max-width:560px;margin:0 auto">Answer seven questions about how you eat, rest and travel, and find the Canadian dish that fits.</p>
+    <details class="howto"><summary>📖 Comment jouer</summary><p>Tap the choice that feels most like you. There are seven questions, no right answers and nothing to study. At the end you get one result, plus the one that came second, and a button to run the whole thing again.</p></details>
+    <p style="margin-top:18px"><button class="btn btn-lg" type="button" id="startBtn">Commencer le quiz</button></p>
+  </section>
+
+  <section id="quiz" class="panel" style="display:none" data-no-i18n>
+    <div class="center"><span class="pill" id="counter"></span></div>
+    <div class="progress"><span id="bar"></span></div>
+    <h2 id="qtext"></h2>
+    <div class="options" id="opts"></div>
+  </section>
+
+  <section id="result" class="panel center" style="display:none" data-no-i18n>
+    <div class="result-big" id="r-emoji">🍁</div>
+    <p class="muted" id="r-lead"></p>
+    <h2 id="r-name" style="color:var(--red);font-size:clamp(1.8rem,6vw,2.8rem);font-weight:800;margin:0"></h2>
+    <p id="r-desc" style="max-width:520px;margin:0 auto 16px"></p>
+    <p class="muted" id="r-second" style="font-size:14px"></p>
+    <div>
+      <button class="btn btn-lg" type="button" id="againBtn"></button>
+      <a class="btn btn-ghost btn-lg" href="quizzes.html" id="moreLink">Plus de quiz</a>
+    </div>
+  </section>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de ce quiz</h2>
+  <p>Sept questions rapides sur votre façon de manger, de vous reposer et de voyager, et un plat canadien à la fin. C’est un quiz de personnalité et non un test de cuisine : rien ne peut être faux.</p>
+  <p>Derrière l’amusement se cache un petit tour du pays. La poutine et la tourtière viennent du Québec, la tartelette au beurre de l’Ontario, le carré Nanaimo de la Colombie-Britannique, et le sirop d’érable de l’érablière à la fin de l’hiver.</p>
+  <p>Cela prend environ une minute, c’est gratuit et sans inscription. Les familles y jouent ensemble et se disputent joyeusement pour savoir qui a eu quel plat.</p>
+  <h2>Ce que contient ce quiz</h2>
+  <ul>
+    <li>Sept questions, quatre choix chacune, avec une barre de progression en haut.</li>
+    <li>Sept plats possibles : la poutine, le sirop d’érable, la tartelette au beurre, la tourtière, le carré Nanaimo, le bagel de Montréal et les croustilles au ketchup.</li>
+    <li>Chaque résultat vient avec une courte description du caractère qui va avec le plat, plutôt qu’une recette.</li>
+    <li>Un bouton Recommencer relance tout aussitôt.</li>
+    <li>Rien n’est enregistré et aucun compte n’est requis.</li>
+  </ul>
+  <h2>Bon à savoir</h2>
+  <ul>
+    <li>Il faut environ quarante litres d’eau d’érable pour obtenir un litre de sirop.</li>
+    <li>Le Québec produit la grande majorité du sirop d’érable du monde.</li>
+    <li>La poutine est née dans le Québec rural à la fin des années 1950 et se vend aujourd’hui d’un océan à l’autre.</li>
+    <li>Le carré Nanaimo tient son nom de la ville de Nanaimo, sur l’île de Vancouver, et ne demande aucune cuisson.</li>
+    <li>Les bagels de Montréal sont pochés dans une eau miellée et cuits au four à bois, ce qui les rend plus sucrés et plus denses que ceux de New York.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>Est-ce un quiz de cuisine ?</h3>
+  <p>Non. Il porte sur vos habitudes, pas sur vos talents de cuisinier. Chaque choix ajoute simplement des points à différents plats.</p>
+  <h3>Combien de temps cela prend-il ?</h3>
+  <p>Environ une minute, sept questions, une touche chacune.</p>
+  <h3>Puis-je obtenir un autre plat ?</h3>
+  <p>Oui. Appuyez sur Recommencer, changez deux réponses et les totaux bougent.</p>
+  <h3>Ces plats sont-ils vraiment canadiens ?</h3>
+  <p>Les sept sont fortement associés au Canada et la plupart y sont nés. La nourriture voyage, alors plusieurs ont des cousins ailleurs, mais ce sont les versions avec lesquelles les Canadiens ont grandi.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="canadian-food-poutine-maple-syrup.html">Lisez sur la cuisine canadienne et le sirop d’érable</a> · <a href="province-quiz.html">Découvrez quelle province correspond à votre personnalité</a> · <a href="fun-quiz.html">Essayez le quiz amusant sur le Canada</a> · <a href="quizzes.html">Voyez tous les quiz du site au même endroit</a></p>
+</section>
+<!--/PAGEDOC-->
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <details class="footer-map">
+      <summary>Toutes les pages <span class="fm-count">(124)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <div class="fm-h">Quiz</div>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="gk-quiz.html">Culture générale</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
+        <a href="science-quiz.html">Sciences et espace</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">IA &amp; technologie</a>
+        <a href="body-quiz.html">Corps humain &amp; santé</a>
+        <a href="money-quiz.html">L'argent expliqué aux enfants</a>
+        <a href="earth-quiz.html">Terre &amp; environnement</a>
+        <a href="which-canadian-animal-quiz.html">Which Canadian Animal?</a>
+        <a href="which-canadian-food-quiz.html">Which Canadian Food?</a>
+        <a href="which-canadian-city-quiz.html">Which Canadian City?</a>
+        <a href="which-winter-sport-quiz.html">Which Winter Sport?</a>
+        <a href="which-national-park-quiz.html">Which National Park?</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Pratique de l'examen de conduite</div>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+        <a href="ontario-g1-study-guide.html">Guide d'étude G1 Ontario</a>
+        <a href="bc-class-7l-practice-test.html">Test pratique C.-B. classe 7L</a>
+        <a href="bc-class-7l-mock-test.html">Examen blanc C.-B. classe 7L</a>
+        <a href="bc-road-signs.html">Panneaux routiers de la C.-B.</a>
+        <a href="bc-rules-of-the-road.html">Code de la route de la C.-B.</a>
+        <a href="alberta-class-7-practice-test.html">Test pratique Alberta classe 7</a>
+        <a href="alberta-class-7-mock-test.html">Examen blanc Alberta classe 7</a>
+        <a href="alberta-road-signs.html">Panneaux routiers de l'Alberta</a>
+        <a href="alberta-rules-of-the-road.html">Code de la route de l'Alberta</a>
+        <a href="quebec-class-5-practice-test.html">Test pratique classe 5 du Québec</a>
+        <a href="quebec-class-5-mock-test.html">Examen blanc classe 5 du Québec</a>
+        <a href="quebec-road-signs.html">Panneaux routiers du Québec</a>
+        <a href="quebec-rules-of-the-road.html">Code de la route du Québec</a>
+        <a href="manitoba-class-5-practice-test.html">Test pratique classe 5 du Manitoba</a>
+        <a href="manitoba-class-5-mock-test.html">Examen blanc classe 5 du Manitoba</a>
+        <a href="manitoba-road-signs.html">Panneaux routiers du Manitoba</a>
+        <a href="manitoba-rules-of-the-road.html">Code de la route du Manitoba</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de réflexion et casse-têtes</div>
+        <a href="game-2048.html">2048</a>
+        <a href="color-match.html">Trouve la couleur</a>
+        <a href="crossword.html">Mots croisés</a>
+        <a href="cube-twist.html">Cube Twist</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
+        <a href="lights-out.html">Lights Out</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="maple-says.html">Maple Says</a>
+        <a href="math-race.html">Course de maths</a>
+        <a href="memory.html">Jeu de mémoire</a>
+        <a href="minesweeper.html">Démineur</a>
+        <a href="sliding-puzzle.html">Taquin</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="times-tables.html">Champion des tables de multiplication</a>
+        <a href="typing-test.html">Test de vitesse de frappe</a>
+        <a href="word-groups.html">Groupes de mots</a>
+        <a href="word-guess.html">Devine le mot</a>
+        <a href="word-hive.html">Ruche de mots</a>
+        <a href="word-illusions.html">Illusions de mots</a>
+        <a href="word-master.html">Maître des mots</a>
+        <a href="scramble.html">Mots brouillés</a>
+        <a href="word-search.html">Mots cachés</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux d'action et jeux classiques</div>
+        <a href="checkers.html">Dames</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Puissance 4</a>
+        <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="snake.html">Serpent érable</a>
+        <a href="reversi.html">Reversi</a>
+        <a href="tag.html">Tague</a>
+        <a href="tictactoe.html">Tic-tac-toe</a>
+        <a href="tile-tap.html">Tile Tap</a>
+        <a href="whack-a-beaver.html">Tape-le-castor</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de groupe</div>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="categories-game.html">Catégories</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="draw-it.html">Dessine-le</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
+        <a href="hide-and-find.html">Hide &amp; Find</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Blogue</div>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
+        <a href="rare-canadian-history-stories.html">15 histoires canadiennes méconnues</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
+        <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
+        <a href="blog.html">Tous les articles</a>
+        <a href="canadas-animals-and-wildlife.html">Animaux et faune</a>
+        <a href="canada-usa-trade-history.html">Le Canada et les États-Unis : histoire commerciale</a>
+        <a href="canadas-biggest-cities.html">Les plus grandes villes du Canada</a>
+        <a href="canada-geography-coast-to-coast.html">La géographie du Canada</a>
+        <a href="canadas-national-parks.html">Les parcs nationaux du Canada</a>
+        <a href="canada-population-timeline.html">Chronologie de la population du Canada</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Cuisine canadienne &amp; sirop d'érable</a>
+        <a href="canadian-holidays-explained.html">Les fêtes canadiennes</a>
+        <a href="canadian-inventions.html">Inventions canadiennes</a>
+        <a href="canadian-money-explained.html">L'argent canadien expliqué</a>
+        <a href="canadian-slang-words.html">L'argot canadien</a>
+        <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="newcomer-first-year-in-canada-checklist.html">Aide-mémoire pour la première année au Canada</a>
+        <a href="how-to-get-a-drivers-licence-in-canada.html">Obtenir son permis de conduire</a>
+        <a href="hockey-in-canada.html">Le hockey au Canada</a>
+        <a href="how-canada-was-built.html">Comment le Canada s'est bâti</a>
+        <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
+        <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
+        <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
+        <a href="prime-ministers-of-canada.html">Premiers ministres du Canada</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
+        <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
+        <a href="winter-in-canada.html">L'hiver au Canada</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Le site</div>
+        <a href="about.html">À propos</a>
+        <a href="games.html">Tous les jeux en famille</a>
+        <a href="contact.html">Contact</a>
+        <a href="daily.html">Défi du jour</a>
+        <a href="index.html">Accueil</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="sources.html">Sources et crédits</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var FR=/\/fr\//.test(location.pathname);
+  function T(en,fr){ return FR?fr:en; }
+  function $(id){ return document.getElementById(id); }
+
+  var R={
+ "poutine": {
+  "e": "🍟",
+  "ne": "Poutine",
+  "nf": "La poutine",
+  "de": "Warm, generous and best shared late at night. You are what people want after a long day, and nobody has ever complained about too much of you.",
+  "df": "Chaleureux, généreux et meilleur partagé tard le soir. Vous êtes ce qu’on veut après une longue journée, et personne ne s’est jamais plaint d’en avoir trop."
+ },
+ "maple": {
+  "e": "🍁",
+  "ne": "Maple Syrup",
+  "nf": "Le sirop d’érable",
+  "de": "Slow to make and impossible to fake. You take your time, and what comes out at the end is worth the wait.",
+  "df": "Long à faire et impossible à imiter. Vous prenez votre temps, et ce qui en ressort vaut l’attente."
+ },
+ "buttertart": {
+  "e": "🥧",
+  "ne": "Butter Tart",
+  "nf": "La tartelette au beurre",
+  "de": "Small, sweet and quietly divisive. Everyone has an opinion about you, and you have never once changed to suit them.",
+  "df": "Petite, sucrée et discrètement clivante. Tout le monde a un avis sur vous, et vous n’avez jamais changé pour leur plaire."
+ },
+ "tourtiere": {
+  "e": "🥟",
+  "ne": "Tourtière",
+  "nf": "La tourtière",
+  "de": "A tradition on legs. You are the reason the family still gathers, and you have the recipe written down somewhere safe.",
+  "df": "Une tradition sur pattes. C’est grâce à vous que la famille se réunit encore, et vous avez la recette écrite en lieu sûr."
+ },
+ "nanaimo": {
+  "e": "🍫",
+  "ne": "Nanaimo Bar",
+  "nf": "Le carré Nanaimo",
+  "de": "Three layers and no baking required. You look complicated and turn out to be the easiest person in the room.",
+  "df": "Trois étages et aucune cuisson. Vous avez l’air compliqué et vous êtes la personne la plus simple de la pièce."
+ },
+ "bagel": {
+  "e": "🥯",
+  "ne": "Montreal Bagel",
+  "nf": "Le bagel de Montréal",
+  "de": "Small, chewy, wood-fired and a little bit proud of it. You do one thing extremely well and see no reason to do anything else.",
+  "df": "Petit, moelleux, cuit au four à bois et un peu fier de l’être. Vous faites une chose très bien et ne voyez pas pourquoi en faire une autre."
+ },
+ "chips": {
+  "e": "🥔",
+  "ne": "Ketchup Chips",
+  "nf": "Les croustilles au ketchup",
+  "de": "Bright, loud and hard to explain to visitors. People either love you immediately or need a minute, and both are fine.",
+  "df": "Éclatant, bruyant et difficile à expliquer aux visiteurs. Les gens vous adorent tout de suite ou ont besoin d’une minute, et les deux vous vont."
+ }
+};
+  var Q=[
+ {
+  "en": "It is nine at night and you are hungry. You want…",
+  "fr": "Il est vingt et une heures et vous avez faim. Vous voulez…",
+  "a": [
+   {
+    "en": "Something hot and enormous",
+    "fr": "Quelque chose de chaud et d’énorme",
+    "s": {
+     "poutine": 2
+    }
+   },
+   {
+    "en": "Something sweet and small",
+    "fr": "Quelque chose de sucré et de petit",
+    "s": {
+     "buttertart": 2,
+     "nanaimo": 1
+    }
+   },
+   {
+    "en": "Whatever is in the freezer from Sunday",
+    "fr": "Ce qui reste au congélateur depuis dimanche",
+    "s": {
+     "tourtiere": 2
+    }
+   },
+   {
+    "en": "A bag of something crunchy",
+    "fr": "Un sac de quelque chose de croustillant",
+    "s": {
+     "chips": 2
+    }
+   }
+  ]
+ },
+ {
+  "en": "Pick a breakfast:",
+  "fr": "Choisissez un déjeuner :",
+  "a": [
+   {
+    "en": "Pancakes with real syrup",
+    "fr": "Des crêpes avec du vrai sirop",
+    "s": {
+     "maple": 2
+    }
+   },
+   {
+    "en": "A bagel and coffee",
+    "fr": "Un bagel et un café",
+    "s": {
+     "bagel": 2
+    }
+   },
+   {
+    "en": "Leftovers, standing up",
+    "fr": "Des restes, debout",
+    "s": {
+     "poutine": 1,
+     "chips": 1
+    }
+   },
+   {
+    "en": "Something you baked yesterday",
+    "fr": "Quelque chose que vous avez cuisiné hier",
+    "s": {
+     "buttertart": 1,
+     "tourtiere": 1
+    }
+   }
+  ]
+ },
+ {
+  "en": "How do you feel about recipes?",
+  "fr": "Que pensez-vous des recettes ?",
+  "a": [
+   {
+    "en": "Follow them exactly",
+    "fr": "Les suivre à la lettre",
+    "s": {
+     "nanaimo": 2,
+     "tourtiere": 1
+    }
+   },
+   {
+    "en": "Read one, then ignore it",
+    "fr": "En lire une, puis l’ignorer",
+    "s": {
+     "chips": 2,
+     "poutine": 1
+    }
+   },
+   {
+    "en": "It is my grandmother's, and it is not written down",
+    "fr": "C’est celle de ma grand-mère, et elle n’est pas écrite",
+    "s": {
+     "tourtiere": 2
+    }
+   },
+   {
+    "en": "The fewer steps the better",
+    "fr": "Moins il y a d’étapes, mieux c’est",
+    "s": {
+     "bagel": 1,
+     "maple": 1
+    }
+   }
+  ]
+ },
+ {
+  "en": "Choose a season:",
+  "fr": "Choisissez une saison :",
+  "a": [
+   {
+    "en": "Late winter, when the sap runs",
+    "fr": "La fin de l’hiver, quand la sève coule",
+    "s": {
+     "maple": 2
+    }
+   },
+   {
+    "en": "Deep winter, snow to the windows",
+    "fr": "Le coeur de l’hiver, la neige aux fenêtres",
+    "s": {
+     "tourtiere": 2,
+     "poutine": 1
+    }
+   },
+   {
+    "en": "Summer, out on a dock",
+    "fr": "L’été, sur un quai",
+    "s": {
+     "chips": 2,
+     "nanaimo": 1
+    }
+   },
+   {
+    "en": "Fall, everything gold",
+    "fr": "L’automne, tout en or",
+    "s": {
+     "buttertart": 2
+    }
+   }
+  ]
+ },
+ {
+  "en": "Your friends describe you as…",
+  "fr": "Vos amis vous décrivent comme…",
+  "a": [
+   {
+    "en": "Comforting",
+    "fr": "Réconfortant",
+    "s": {
+     "poutine": 2,
+     "tourtiere": 1
+    }
+   },
+   {
+    "en": "Patient",
+    "fr": "Patient",
+    "s": {
+     "maple": 2
+    }
+   },
+   {
+    "en": "An acquired taste",
+    "fr": "Un goût qui s’apprend",
+    "s": {
+     "chips": 2,
+     "buttertart": 1
+    }
+   },
+   {
+    "en": "Surprisingly simple",
+    "fr": "Étonnamment simple",
+    "s": {
+     "nanaimo": 2,
+     "bagel": 1
+    }
+   }
+  ]
+ },
+ {
+  "en": "Pick a place to eat:",
+  "fr": "Choisissez un endroit où manger :",
+  "a": [
+   {
+    "en": "Standing outside in the cold",
+    "fr": "Debout dehors dans le froid",
+    "s": {
+     "poutine": 2,
+     "chips": 1
+    }
+   },
+   {
+    "en": "At the family table",
+    "fr": "À la table familiale",
+    "s": {
+     "tourtiere": 2
+    }
+   },
+   {
+    "en": "A little shop that only sells one thing",
+    "fr": "Une petite boutique qui ne vend qu’une chose",
+    "s": {
+     "bagel": 2
+    }
+   },
+   {
+    "en": "A cabin in the woods",
+    "fr": "Un chalet dans le bois",
+    "s": {
+     "maple": 2,
+     "nanaimo": 1
+    }
+   }
+  ]
+ },
+ {
+  "en": "Somebody says they have never tried you. You…",
+  "fr": "Quelqu’un dit ne vous avoir jamais goûté. Vous…",
+  "a": [
+   {
+    "en": "Hand them a full plate",
+    "fr": "Lui tendez une assiette pleine",
+    "s": {
+     "poutine": 2
+    }
+   },
+   {
+    "en": "Tell them the whole history first",
+    "fr": "Lui racontez d’abord toute l’histoire",
+    "s": {
+     "maple": 1,
+     "tourtiere": 1
+    }
+   },
+   {
+    "en": "Warn them, then watch",
+    "fr": "Le prévenez, puis regardez",
+    "s": {
+     "chips": 2
+    }
+   },
+   {
+    "en": "Say nothing and let them find out",
+    "fr": "Ne dites rien et le laissez découvrir",
+    "s": {
+     "buttertart": 1,
+     "bagel": 1
+    }
+   }
+  ]
+ }
+];
+
+  var idx=0, scores={}, keys=[];
+  for (var k in R) keys.push(k);
+
+  function start(){
+    idx=0; scores={};
+    for (var i=0;i<keys.length;i++) scores[keys[i]]=0;
+    $('start').style.display='none';
+    $('result').style.display='none';
+    $('quiz').style.display='block';
+    show();
+    window.scrollTo(0,0);
+  }
+
+  function show(){
+    var q=Q[idx];
+    $('counter').textContent=T('Question ','Question ')+(idx+1)+T(' of ',' sur ')+Q.length;
+    $('bar').style.width=(idx/Q.length*100)+'%';
+    $('qtext').textContent=FR?q.fr:q.en;
+    var box=$('opts'); box.innerHTML='';
+    q.a.forEach(function(opt){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='option';
+      b.textContent=FR?opt.fr:opt.en;
+      b.addEventListener('click',function(){
+        for(var kk in opt.s) scores[kk]+=opt.s[kk];
+        idx++;
+        if(idx<Q.length){ show(); window.scrollTo(0,0); } else result();
+      });
+      box.appendChild(b);
+    });
+  }
+
+  function result(){
+    $('quiz').style.display='none';
+    $('result').style.display='block';
+    var order=keys.slice().sort(function(a,b){ return scores[b]-scores[a]; });
+    var best=R[order[0]], second=R[order[1]];
+    $('r-emoji').textContent=best.e;
+    $('r-lead').textContent=T('You are most like…','Vous ressemblez surtout à…');
+    $('r-name').textContent=FR?best.nf:best.ne;
+    $('r-desc').textContent=FR?best.df:best.de;
+    $('r-second').textContent=second
+      ? T('Runner-up: ','Deuxième : ')+(FR?second.nf:second.ne)
+      : '';
+    window.scrollTo(0,0);
+  }
+
+  function labels(){
+    $('startBtn').textContent=T('Start Quiz','Commencer le quiz');
+    $('againBtn').textContent=T('Try again','Recommencer');
+    $('moreLink').textContent=T('More quizzes','Plus de quiz');
+  }
+
+  $('startBtn').addEventListener('click',start);
+  $('againBtn').addEventListener('click',start);
+  labels();
+})();
+</script>
+  <script src="../js/site.js?v=1b925d9c"></script>
+  <script src="../js/analytics.js?v=d95c4f47"></script>
+  <script src="../js/ads.js?v=00e703ff" defer></script>
+  <script src="../js/game-fullscreen.js?v=dd5e3201" defer></script>
+</body>
+</html>

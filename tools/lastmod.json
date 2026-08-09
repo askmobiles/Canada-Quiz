@@ -393,11 +393,15 @@
  },
  "fr/games.html": {
   "date": "2026-08-09",
-  "hash": "8d5f43fc5df74e505b21b93d3a61ea023f362534"
+  "hash": "00bd546fb7a8bfa1292cbc6abdeac917066a8396"
  },
  "fr/gk-quiz.html": {
   "date": "2026-08-08",
   "hash": "0127adcb098a638053a80c0446d21592fae49071"
+ },
+ "fr/hide-and-find.html": {
+  "date": "2026-08-09",
+  "hash": "b06de5b6c690d6ea74ad7cb1d0a1bcd0b699e061"
  },
  "fr/hockey-in-canada.html": {
   "date": "2026-08-08",
@@ -436,8 +440,8 @@
   "hash": "f264a1562a2455edc6a9086c64d5b84353eb3756"
  },
  "fr/inukshuk.html": {
-  "date": "2026-08-08",
-  "hash": "04746e2e8f5a96d2933da55d894946e746d3653d"
+  "date": "2026-08-09",
+  "hash": "7a2e1860fa13ba85e47ff30f9e77768d09000180"
  },
  "fr/lights-out.html": {
   "date": "2026-08-09",
@@ -532,8 +536,8 @@
   "hash": "c46568cb0f556625d308fd56050520a20833a2a4"
  },
  "fr/quizzes.html": {
-  "date": "2026-08-08",
-  "hash": "935468a3299207a12cd5a0751a662114a3f1c5ab"
+  "date": "2026-08-09",
+  "hash": "1ec1a7a62785b0b0d103dd50c969742d3d59227d"
  },
  "fr/rare-canadian-history-stories.html": {
   "date": "2026-08-09",
@@ -560,8 +564,8 @@
   "hash": "7c2fc679d123ce0dc050154dcefe7260acce53f2"
  },
  "fr/snake.html": {
-  "date": "2026-08-08",
-  "hash": "c10aac3301bb0ceca6815af1d5c10aa77a846331"
+  "date": "2026-08-09",
+  "hash": "3cd24dd5b4ca78e93fed776fe35954e01fdfc093"
  },
  "fr/sources.html": {
   "date": "2026-08-09",
@@ -608,8 +612,8 @@
   "hash": "1171e4b74d42f9f6fc8b401c8566fbf7f2322e8e"
  },
  "fr/top-answers.html": {
-  "date": "2026-08-08",
-  "hash": "7cb0e6ca646546068a862ddf024b33c7d88ffcae"
+  "date": "2026-08-09",
+  "hash": "70addea2e0f7823a6ec16c18869316cc83f589fb"
  },
  "fr/trivia-showdown.html": {
   "date": "2026-08-08",
@@ -626,6 +630,26 @@
  "fr/what-is-confederation.html": {
   "date": "2026-08-08",
   "hash": "bd310b3d00b1028ea563446a3949fa59bbbe4647"
+ },
+ "fr/which-canadian-animal-quiz.html": {
+  "date": "2026-08-09",
+  "hash": "b6b1d45b6372f682c3c77a269ec1f963739f015b"
+ },
+ "fr/which-canadian-city-quiz.html": {
+  "date": "2026-08-09",
+  "hash": "569a4eb7d8aa3c70e4071b7b15303aace4ef707c"
+ },
+ "fr/which-canadian-food-quiz.html": {
+  "date": "2026-08-09",
+  "hash": "ba04add3bf7d264d6ca98129e9c29f24aae3d53a"
+ },
+ "fr/which-national-park-quiz.html": {
+  "date": "2026-08-09",
+  "hash": "cc80cbeab0008fda23340e3f6bc295834b8a41e9"
+ },
+ "fr/which-winter-sport-quiz.html": {
+  "date": "2026-08-09",
+  "hash": "6dd8aa6a4c74fa7b3794ed34cb6fbbeabc514e4f"
  },
  "fr/winter-in-canada.html": {
   "date": "2026-08-08",
@@ -673,11 +697,15 @@
  },
  "games.html": {
   "date": "2026-08-09",
-  "hash": "17edc5471f637c75164fdf1c8aee42d0ab5d3e37"
+  "hash": "8d107af671f90502ffe1ee3ae65331ebf1c9c901"
  },
  "gk-quiz.html": {
   "date": "2026-08-08",
   "hash": "894a98ab9cb18e4039259770afab4808a1c1d8c5"
+ },
+ "hide-and-find.html": {
+  "date": "2026-08-09",
+  "hash": "ca0a073378c5cf5450e1364ded4a2ea7dccfc01e"
  },
  "hockey-in-canada.html": {
   "date": "2026-08-08",
@@ -716,8 +744,8 @@
   "hash": "9896e9b57d43cb06894bb35f8c31e5f64fbeecc4"
  },
  "inukshuk.html": {
-  "date": "2026-08-08",
-  "hash": "0be3af31c53c6382988bac432eb6af0514b4fc6e"
+  "date": "2026-08-09",
+  "hash": "4855c4bac887e7515593a924637ff409909b870a"
  },
  "lights-out.html": {
   "date": "2026-08-09",
@@ -812,8 +840,8 @@
   "hash": "ba58076453a9e138e82eac0771da4e8ebcb93d25"
  },
  "quizzes.html": {
-  "date": "2026-08-08",
-  "hash": "29f5718b3ae976187c78cd1e7a25e9cda2e8de98"
+  "date": "2026-08-09",
+  "hash": "5c789eafff376d60aa96d2ae9951344ffc487bed"
  },
  "rare-canadian-history-stories.html": {
   "date": "2026-08-09",
@@ -840,8 +868,8 @@
   "hash": "485e18feb0584584ec918eadd2fdee7e86920884"
  },
  "snake.html": {
-  "date": "2026-08-08",
-  "hash": "dd2a3aa83bd4dbf4ea3a7569ea48f1a8cf7abf1a"
+  "date": "2026-08-09",
+  "hash": "2b93d15958e48193099b65d79527fd1d341bf41e"
  },
  "sources.html": {
   "date": "2026-08-09",
@@ -888,8 +916,8 @@
   "hash": "125d9fd8bc64918cb4a37da32e878a6daaca057b"
  },
  "top-answers.html": {
-  "date": "2026-08-08",
-  "hash": "e6b181d0bf764568ab681058c5aeab9826fe4236"
+  "date": "2026-08-09",
+  "hash": "e771ad0987716a9412dc4b5495abe7562d20db8b"
  },
  "trivia-showdown.html": {
   "date": "2026-08-08",
@@ -906,6 +934,26 @@
  "what-is-confederation.html": {
   "date": "2026-08-08",
   "hash": "b90dfe9d05e38b8b0646c95e98a50c3f457b542d"
+ },
+ "which-canadian-animal-quiz.html": {
+  "date": "2026-08-09",
+  "hash": "6b126ca69f8329a94f5e0d40a1cb80d9d57a9d52"
+ },
+ "which-canadian-city-quiz.html": {
+  "date": "2026-08-09",
+  "hash": "2e4c781d20df15da4ce773a516cf413707f75164"
+ },
+ "which-canadian-food-quiz.html": {
+  "date": "2026-08-09",
+  "hash": "a2ab3bd7a3474c590ee8a0db29b7cf1c5eeba7f4"
+ },
+ "which-national-park-quiz.html": {
+  "date": "2026-08-09",
+  "hash": "d67ad34b22f7842567b08f4f9819a874c4f7a006"
+ },
+ "which-winter-sport-quiz.html": {
+  "date": "2026-08-09",
+  "hash": "985f07a49aa7e6e5ba388c13a52d78e152b94bb8"
  },
  "winter-in-canada.html": {
   "date": "2026-08-08",

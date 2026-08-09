@@ -53,6 +53,26 @@
     [
      "earth-quiz.html",
      "Earth &amp; Environment"
+    ],
+    [
+     "which-canadian-animal-quiz.html",
+     "Which Canadian Animal?"
+    ],
+    [
+     "which-canadian-food-quiz.html",
+     "Which Canadian Food?"
+    ],
+    [
+     "which-canadian-city-quiz.html",
+     "Which Canadian City?"
+    ],
+    [
+     "which-winter-sport-quiz.html",
+     "Which Winter Sport?"
+    ],
+    [
+     "which-national-park-quiz.html",
+     "Which National Park?"
     ]
    ],
    "title": "Quizzes"
@@ -329,6 +349,10 @@
     [
      "spin-wheel.html",
      "Spin the Wheel"
+    ],
+    [
+     "hide-and-find.html",
+     "Hide &amp; Find"
     ]
    ],
    "title": "Party Games"

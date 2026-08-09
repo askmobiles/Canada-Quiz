@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hide &amp; Find — Two-Player Hidden Object Game | Canada Quiz</title>
+<meta name="description" content="Hide &amp; Find — a free two-player hidden object game. One player hides five things in a busy scene while the other looks away, then swaps and hunts for them. Three scenes, easy, medium and hard.">
+<link rel="stylesheet" href="../css/style.css?v=864b2243">
+<style>
+  .hf-wrap{max-width:540px;margin:0 auto;text-align:center}
+  .hf-pick{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:6px 0}
+  .hf-pick button{border:2px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;
+    padding:7px 13px;font-weight:800;font-size:13.5px;cursor:pointer;line-height:1.2}
+  .hf-pick button.on{background:var(--blue-dark,#1e4f8a);color:#fff;border-color:var(--blue-dark,#1e4f8a)}
+  .hf-hud{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:8px 0;min-height:30px}
+  .hf-hud .box{background:#eef1f5;border-radius:9px;padding:5px 11px;font-weight:800;font-size:14px;
+    min-width:88px;box-sizing:border-box;font-variant-numeric:tabular-nums}
+  .hf-stage{position:relative;width:100%;aspect-ratio:3/4;max-height:70vh;margin:10px auto;
+    border-radius:16px;overflow:hidden;box-shadow:var(--shadow);touch-action:manipulation;
+    user-select:none;-webkit-user-select:none;cursor:crosshair}
+  .hf-bit{position:absolute;transform:translate(-50%,-50%);line-height:1;pointer-events:none;
+    filter:saturate(.92)}
+  .hf-obj{position:absolute;transform:translate(-50%,-50%);line-height:1;pointer-events:none;z-index:4}
+  .hf-obj.found{z-index:6}
+  .hf-obj.found::after{content:"";position:absolute;inset:-58%;border:3px solid #1c7c54;
+    border-radius:50%;background:rgba(255,255,255,.55)}
+  .hf-ping{position:absolute;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;
+    border:3px solid #c8102e;z-index:7;pointer-events:none;animation:hfPing .7s ease-out forwards}
+  .hf-ping.good{border-color:#1c7c54}
+  @keyframes hfPing{from{opacity:.9;transform:scale(.4)}to{opacity:0;transform:scale(1.5)}}
+  .hf-cover{position:absolute;inset:0;z-index:9;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:10px;padding:22px;box-sizing:border-box;
+    text-align:center;background:linear-gradient(160deg,#1b2a4a,#2b4a6f);color:#fff}
+  .hf-cover h3{margin:0;font-size:22px;color:#fff}
+  .hf-cover p{margin:0;font-size:15px;line-height:1.5;color:#e6eefb;max-width:330px}
+  .hf-list{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0 0}
+  .hf-chip{display:inline-flex;align-items:center;gap:5px;background:#eef1f5;border-radius:999px;
+    padding:5px 11px;font-weight:800;font-size:13.5px}
+  .hf-chip.next{background:#fff3cd;box-shadow:0 0 0 2px #d97706 inset}
+  .hf-chip.done{background:#e7f7f2;color:#1f7a6f;text-decoration:line-through;opacity:.75}
+  .hf-say{font-weight:800;min-height:22px;margin:8px 0 0}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="canonical" href="https://canada-quiz.com/fr/hide-and-find.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/hide-and-find.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/hide-and-find.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/hide-and-find.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://canada-quiz.com/fr/"},{"@type":"ListItem","position":2,"name":"Jeux de groupe","item":"https://canada-quiz.com/fr/games.html"},{"@type":"ListItem","position":3,"name":"Hide & Find","item":"https://canada-quiz.com/fr/hide-and-find.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/fr/hide-and-find.html#webpage","url":"https://canada-quiz.com/fr/hide-and-find.html","name":"Hide & Find — Two-Player Hidden Object Game | Canada Quiz","description":"Hide & Find — a free two-player hidden object game. One player hides five things in a busy scene while the other looks away, then swaps and hunts for them. Three scenes, easy, medium and hard.","inLanguage":"fr-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/fr/","name":"Canada Quiz et jeux amusants en famille"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🔍 Hide &amp; Find</h1>
+    <p>One player hides five things in a busy scene. The other has to find them.</p>
+  </section>
+
+  <details class="howto"><summary>📖 Comment jouer</summary><p>This one needs two players and one screen. Player 1 picks a scene, and Player 2 looks away. Player 1 taps five places in the picture to hide five objects, then passes the device over. Player 2 taps the picture to hunt for them, and the clock and the miss counter are running the whole time. When all five are found, swap roles and see who did it faster. Easy makes the objects big, hard makes them tiny and fills the scene with things that look almost the same.</p></details>
+
+  <div class="panel">
+    <div class="hf-wrap" data-fs-host data-no-i18n>
+      <div class="hf-pick" id="scenePick"></div>
+      <div class="hf-pick" id="levelPick"></div>
+      <div class="hf-hud">
+        <div class="box" id="hudA">—</div>
+        <div class="box" id="hudB">—</div>
+        <div class="box" id="hudC">—</div>
+      </div>
+      <div class="hf-stage" id="stage"></div>
+      <div class="hf-list" id="list"></div>
+      <p class="hf-say muted" id="say"></p>
+      <div class="center" style="margin-top:10px">
+        <button class="btn btn-ghost" type="button" id="undoBtn"></button>
+        <button class="btn btn-ghost" type="button" id="randomBtn"></button>
+        <button class="btn btn-ghost" type="button" id="hintBtn"></button>
+      </div>
+      <div class="center" style="margin-top:8px">
+        <button class="btn btn-lg" type="button" id="mainBtn"></button>
+        <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+      </div>
+    </div>
+  </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de ce jeu</h2>
+  <p>Cache-cache est un jeu d’objets cachés pour deux personnes qui partagent un écran, et la particularité est que personne n’a préparé le casse-tête à l’avance. Un joueur cache les cinq objets où il veut pendant que l’autre ne regarde pas : chaque manche est donc conçue par quelqu’un qui sait exactement comment être agaçant.</p>
+  <p>L’image en dessous est volontairement encombrée. Des centaines de petits dessins sont éparpillés dans un aréna de hockey, un camping au bord du lac ou une rue de ville en hiver, et les cinq objets cachés s’y trouvent, de la même taille que le reste.</p>
+  <p>Un chronomètre et un compteur d’erreurs tournent pendant que le second joueur cherche, ce qui en fait un concours équitable : cacher, trouver, changer de rôle, puis comparer les deux temps.</p>
+  <h2>Comment ça marche</h2>
+  <ul>
+    <li>Trois scènes où se cacher : un aréna de hockey, un camping au bord d’un lac et une rue de ville en hiver, chacune avec ses propres objets qui traînent.</li>
+    <li>Cinq objets par manche, et la scène décide lesquels. L’aréna cache une clé, une feuille d’érable, un castor, un foulard et un cadeau.</li>
+    <li>Facile, moyen et difficile changent deux choses à la fois : la taille des objets cachés et la quantité d’objets entassés autour.</li>
+    <li>Le mode difficile parsème aussi la scène de sosies : des feuilles mortes près de la feuille d’érable, un bas près de la mitaine, de sorte qu’un coup d’oeil rapide ne suffit plus.</li>
+    <li>Un écran de protection couvre l’image entre les deux tours, pour que celui qui cache passe l’appareil sans que le chercheur aperçoive quoi que ce soit.</li>
+    <li>Un bouton dé cache les cinq objets pour vous, ce qui est pratique quand une seule personne est là et veut simplement chercher.</li>
+  </ul>
+  <h2>Conseils pour jouer</h2>
+  <ul>
+    <li>Cachez près d’un objet de la même couleur plutôt que dans un coin vide. L’espace vide est le premier endroit qu’on regarde, parce qu’il est le plus facile à balayer.</li>
+    <li>Les bords et les coins semblent astucieux et ne le sont presque jamais. La plupart des chercheurs balaient d’abord le contour, justement parce qu’il a l’air d’une cachette.</li>
+    <li>Comme chercheur, cherchez un objet à la fois. Garder les cinq formes en tête en même temps est ce qui rend un tableau facile impossible.</li>
+    <li>Balayez par bandes plutôt que de sauter partout. De gauche à droite, une bande à la fois, vaut mieux que de laisser l’oeil errer.</li>
+    <li>Une mauvaise touche coûte une erreur mais ne termine jamais la manche : tenter sa chance sur une forme suspecte en vaut souvent la peine.</li>
+    <li>Jouez les deux rôles avant de décider qui gagne. Bien cacher est un talent en soi, et le score le plus juste reste les deux temps de recherche côte à côte.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>Peut-on y jouer seul ?</h3>
+  <p>Oui. Appuyez sur le bouton dé et les cinq objets sont cachés au hasard pour vous, puis cherchez-les vous-même. On perd la malice d’un joueur qui cache, mais le chronomètre tourne et la recherche est la même.</p>
+  <h3>Comment le second joueur évite-t-il de voir les cachettes ?</h3>
+  <p>Un écran plein couvre l’image dès que le cinquième objet est placé, et il ne se lève que lorsque le second joueur appuie sur le bouton. Passez l’appareil pendant que l’écran est en place.</p>
+  <h3>Qu’est-ce qui change exactement en mode difficile ?</h3>
+  <p>Les objets rétrécissent à environ la moitié de la taille facile, la scène contient à peu près trois fois plus d’objets, il n’y a aucun indice, et des sosies des objets cachés sont volontairement mêlés à la scène.</p>
+  <h3>La scène est-elle la même chaque fois ?</h3>
+  <p>Non. Les objets sont éparpillés de nouveau au début de chaque manche : la même scène n’a jamais deux fois la même allure et personne ne peut mémoriser une bonne cachette.</p>
+  <h3>À partir de quel âge peut-on jouer ?</h3>
+  <p>En mode facile, les objets sont grands et il n’y a rien à lire au-delà des cinq noms illustrés : un enfant de cinq ans s’en sort. Le mode difficile convient aux plus grands et aux adultes qui aiment chercher pour vrai.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="games.html">Voyez tous les jeux de famille rassemblés au même endroit</a> · <a href="memory.html">Retournez les cartes et souvenez-vous de chaque paire</a> · <a href="word-search.html">Cherchez des mots cachés dans une grille de lettres</a> · <a href="imposter.html">Faites circuler un téléphone et démasquez l'imposteur caché</a></p>
+</section>
+<!--/PAGEDOC-->
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <details class="footer-map">
+      <summary>Toutes les pages <span class="fm-count">(124)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <div class="fm-h">Quiz</div>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="gk-quiz.html">Culture générale</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
+        <a href="science-quiz.html">Sciences et espace</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">IA &amp; technologie</a>
+        <a href="body-quiz.html">Corps humain &amp; santé</a>
+        <a href="money-quiz.html">L'argent expliqué aux enfants</a>
+        <a href="earth-quiz.html">Terre &amp; environnement</a>
+        <a href="which-canadian-animal-quiz.html">Which Canadian Animal?</a>
+        <a href="which-canadian-food-quiz.html">Which Canadian Food?</a>
+        <a href="which-canadian-city-quiz.html">Which Canadian City?</a>
+        <a href="which-winter-sport-quiz.html">Which Winter Sport?</a>
+        <a href="which-national-park-quiz.html">Which National Park?</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Pratique de l'examen de conduite</div>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+        <a href="ontario-g1-study-guide.html">Guide d'étude G1 Ontario</a>
+        <a href="bc-class-7l-practice-test.html">Test pratique C.-B. classe 7L</a>
+        <a href="bc-class-7l-mock-test.html">Examen blanc C.-B. classe 7L</a>
+        <a href="bc-road-signs.html">Panneaux routiers de la C.-B.</a>
+        <a href="bc-rules-of-the-road.html">Code de la route de la C.-B.</a>
+        <a href="alberta-class-7-practice-test.html">Test pratique Alberta classe 7</a>
+        <a href="alberta-class-7-mock-test.html">Examen blanc Alberta classe 7</a>
+        <a href="alberta-road-signs.html">Panneaux routiers de l'Alberta</a>
+        <a href="alberta-rules-of-the-road.html">Code de la route de l'Alberta</a>
+        <a href="quebec-class-5-practice-test.html">Test pratique classe 5 du Québec</a>
+        <a href="quebec-class-5-mock-test.html">Examen blanc classe 5 du Québec</a>
+        <a href="quebec-road-signs.html">Panneaux routiers du Québec</a>
+        <a href="quebec-rules-of-the-road.html">Code de la route du Québec</a>
+        <a href="manitoba-class-5-practice-test.html">Test pratique classe 5 du Manitoba</a>
+        <a href="manitoba-class-5-mock-test.html">Examen blanc classe 5 du Manitoba</a>
+        <a href="manitoba-road-signs.html">Panneaux routiers du Manitoba</a>
+        <a href="manitoba-rules-of-the-road.html">Code de la route du Manitoba</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de réflexion et casse-têtes</div>
+        <a href="game-2048.html">2048</a>
+        <a href="color-match.html">Trouve la couleur</a>
+        <a href="crossword.html">Mots croisés</a>
+        <a href="cube-twist.html">Cube Twist</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
+        <a href="lights-out.html">Lights Out</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="maple-says.html">Maple Says</a>
+        <a href="math-race.html">Course de maths</a>
+        <a href="memory.html">Jeu de mémoire</a>
+        <a href="minesweeper.html">Démineur</a>
+        <a href="sliding-puzzle.html">Taquin</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="times-tables.html">Champion des tables de multiplication</a>
+        <a href="typing-test.html">Test de vitesse de frappe</a>
+        <a href="word-groups.html">Groupes de mots</a>
+        <a href="word-guess.html">Devine le mot</a>
+        <a href="word-hive.html">Ruche de mots</a>
+        <a href="word-illusions.html">Illusions de mots</a>
+        <a href="word-master.html">Maître des mots</a>
+        <a href="scramble.html">Mots brouillés</a>
+        <a href="word-search.html">Mots cachés</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux d'action et jeux classiques</div>
+        <a href="checkers.html">Dames</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Puissance 4</a>
+        <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="snake.html">Serpent érable</a>
+        <a href="reversi.html">Reversi</a>
+        <a href="tag.html">Tague</a>
+        <a href="tictactoe.html">Tic-tac-toe</a>
+        <a href="tile-tap.html">Tile Tap</a>
+        <a href="whack-a-beaver.html">Tape-le-castor</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de groupe</div>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="categories-game.html">Catégories</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="draw-it.html">Dessine-le</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
+        <a href="hide-and-find.html">Hide &amp; Find</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Blogue</div>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
+        <a href="rare-canadian-history-stories.html">15 histoires canadiennes méconnues</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
+        <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
+        <a href="blog.html">Tous les articles</a>
+        <a href="canadas-animals-and-wildlife.html">Animaux et faune</a>
+        <a href="canada-usa-trade-history.html">Le Canada et les États-Unis : histoire commerciale</a>
+        <a href="canadas-biggest-cities.html">Les plus grandes villes du Canada</a>
+        <a href="canada-geography-coast-to-coast.html">La géographie du Canada</a>
+        <a href="canadas-national-parks.html">Les parcs nationaux du Canada</a>
+        <a href="canada-population-timeline.html">Chronologie de la population du Canada</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Cuisine canadienne &amp; sirop d'érable</a>
+        <a href="canadian-holidays-explained.html">Les fêtes canadiennes</a>
+        <a href="canadian-inventions.html">Inventions canadiennes</a>
+        <a href="canadian-money-explained.html">L'argent canadien expliqué</a>
+        <a href="canadian-slang-words.html">L'argot canadien</a>
+        <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="newcomer-first-year-in-canada-checklist.html">Aide-mémoire pour la première année au Canada</a>
+        <a href="how-to-get-a-drivers-licence-in-canada.html">Obtenir son permis de conduire</a>
+        <a href="hockey-in-canada.html">Le hockey au Canada</a>
+        <a href="how-canada-was-built.html">Comment le Canada s'est bâti</a>
+        <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
+        <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
+        <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
+        <a href="prime-ministers-of-canada.html">Premiers ministres du Canada</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
+        <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
+        <a href="winter-in-canada.html">L'hiver au Canada</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Le site</div>
+        <a href="about.html">À propos</a>
+        <a href="games.html">Tous les jeux en famille</a>
+        <a href="contact.html">Contact</a>
+        <a href="daily.html">Défi du jour</a>
+        <a href="index.html">Accueil</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="sources.html">Sources et crédits</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr) { return FR ? fr : en; }
+  function $(id) { return document.getElementById(id); }
+
+  /* ---------------------------------------------------------------- scenes --
+     Every scene is a bag of clutter emoji plus five things that can be hidden
+     in it. On hard the clutter also gets look-alikes of the hidden objects,
+     which is what makes hard genuinely hard rather than merely small.        */
+  var SCENES = [
+    { id: "rink", name: ["Hockey arena", "Aréna de hockey"], emoji: "🏒",
+      bg: "linear-gradient(160deg,#eaf3fb 0%,#cfe4f5 55%,#bcd9f0 100%)",
+      clutter: ["🏒","🥅","⛸️","🎽","📣","🥤","🍿","🎺","🚩","🧢","⏱️","🎫","🧊","🔔","👕","🥁","🎈","🧃","🪑","🧹"],
+      objects: [
+        { e: "🔑", n: ["a key", "une clé"],           look: "🗝️" },
+        { e: "🍁", n: ["a maple leaf", "une feuille d’érable"], look: "🍂" },
+        { e: "🦫", n: ["a beaver", "un castor"],      look: "🦦" },
+        { e: "🧣", n: ["a scarf", "un foulard"],      look: "🧶" },
+        { e: "🎁", n: ["a present", "un cadeau"],     look: "📦" }
+      ] },
+    { id: "camp", name: ["Campsite by the lake", "Camping au bord du lac"], emoji: "🏕️",
+      bg: "linear-gradient(160deg,#eaf7ec 0%,#cfead6 55%,#b8dfc4 100%)",
+      clutter: ["🌲","🌳","⛺","🛶","🔥","🐟","🦆","🍄","🪵","🎣","🪨","🌿","🧺","🥾","🐦","🌻","🥫","🔦","🍁","🦌"],
+      objects: [
+        { e: "🧭", n: ["a compass", "une boussole"],  look: "⌚" },
+        { e: "🐸", n: ["a frog", "une grenouille"],   look: "🐢" },
+        { e: "🍩", n: ["a doughnut", "un beigne"],    look: "🥯" },
+        { e: "🪁", n: ["a kite", "un cerf-volant"],   look: "🪂" },
+        { e: "🔔", n: ["a bell", "une cloche"],       look: "🛎️" }
+      ] },
+    { id: "city", name: ["Winter city street", "Rue de ville en hiver"], emoji: "🏙️",
+      bg: "linear-gradient(160deg,#f4f2fc 0%,#e0dbf3 55%,#cdc6ea 100%)",
+      clutter: ["🏢","🚗","🚌","❄️","☕","🚦","🏬","🧊","🚕","🛍️","🪧","🚏","🌨️","🚲","🐕","🧥","📮","🕰️","🚧","🏪"],
+      objects: [
+        { e: "🐿️", n: ["a squirrel", "un écureuil"],  look: "🐀" },
+        { e: "🎈", n: ["a balloon", "un ballon"],     look: "🪀" },
+        { e: "🧤", n: ["a mitten", "une mitaine"],    look: "🧦" },
+        { e: "🎩", n: ["a top hat", "un haut-de-forme"], look: "👒" },
+        { e: "🍁", n: ["a maple leaf", "une feuille d’érable"], look: "🍂" }
+      ] }
+  ];
+
+  var LEVELS = {
+    easy:   { size: 38, clutter: 70,  hints: 3, look: false, label: ["Easy", "Facile"] },
+    medium: { size: 28, clutter: 145, hints: 1, look: false, label: ["Medium", "Moyen"] },
+    hard:   { size: 21, clutter: 225, hints: 0, look: true,  label: ["Hard", "Difficile"] }
+  };
+
+  /* ------------------------------------------------------------------ state */
+  var sceneIx = 0, level = "medium";
+  var phase = "setup";            /* setup | hide | pass | seek | done */
+  var placed = [];                /* {x,y,obj,el,found} in % of the stage */
+  var nextIx = 0, misses = 0, secs = 0, tick = null, hintsLeft = 0;
+  var hider = 1;                  /* which player is hiding this round */
+  var stage = $("stage");
+
+  function scene() { return SCENES[sceneIx]; }
+  function cfg() { return LEVELS[level]; }
+  function rnd(a, b) { return a + Math.random() * (b - a); }
+
+  /* ---------------------------------------------------------------- drawing */
+  function drawClutter() {
+    var s = scene(), c = cfg(), i, bits = s.clutter.slice();
+    if (c.look) {
+      for (i = 0; i < s.objects.length; i++) {
+        /* three look-alikes each, so a quick glance is not enough */
+        bits.push(s.objects[i].look, s.objects[i].look, s.objects[i].look);
+      }
+    }
+    stage.innerHTML = "";
+    stage.style.background = s.bg;
+    var frag = document.createDocumentFragment();
+    for (i = 0; i < c.clutter; i++) {
+      var b = document.createElement("span");
+      b.className = "hf-bit";
+      b.textContent = bits[Math.floor(Math.random() * bits.length)];
+      b.style.left = rnd(1, 99).toFixed(2) + "%";
+      b.style.top = rnd(1, 99).toFixed(2) + "%";
+      b.style.fontSize = (c.size * rnd(0.75, 1.35)).toFixed(1) + "px";
+      b.style.transform = "translate(-50%,-50%) rotate(" + rnd(-38, 38).toFixed(1) + "deg)";
+      b.style.opacity = rnd(0.78, 1).toFixed(2);
+      frag.appendChild(b);
+    }
+    stage.appendChild(frag);
+  }
+
+  function drawObject(p) {
+    var el = document.createElement("span");
+    el.className = "hf-obj";
+    el.textContent = p.obj.e;
+    el.style.left = p.x + "%";
+    el.style.top = p.y + "%";
+    el.style.fontSize = cfg().size + "px";
+    stage.appendChild(el);
+    p.el = el;
+  }
+
+  function ping(x, y, good) {
+    var d = document.createElement("span");
+    d.className = "hf-ping" + (good ? " good" : "");
+    d.style.left = x + "%";
+    d.style.top = y + "%";
+    stage.appendChild(d);
+    setTimeout(function () { if (d.parentNode) d.parentNode.removeChild(d); }, 700);
+  }
+
+  function cover(title, text, btnLabel, fn) {
+    var c = document.createElement("div");
+    c.className = "hf-cover";
+    var h = document.createElement("h3"); h.textContent = title;
+    var p = document.createElement("p"); p.textContent = text;
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "btn btn-lg"; b.textContent = btnLabel;
+    b.addEventListener("click", function (e) { e.stopPropagation(); c.remove(); fn(); });
+    c.appendChild(h); c.appendChild(p); c.appendChild(b);
+    c.addEventListener("click", function (e) { e.stopPropagation(); });
+    stage.appendChild(c);
+  }
+
+  /* -------------------------------------------------------------------- hud */
+  function mmss(n) { var m = Math.floor(n / 60), s = n % 60; return m + ":" + (s < 10 ? "0" : "") + s; }
+
+  function paintHud() {
+    if (phase === "hide" || phase === "setup") {
+      $("hudA").textContent = T("Player ", "Joueur ") + hider + T(" is hiding", " cache");
+      $("hudB").textContent = T("Hidden: ", "Cachés : ") + placed.length + "/5";
+      $("hudC").textContent = scene().emoji + " " + scene().name[FR ? 1 : 0];
+    } else {
+      $("hudA").textContent = "⏱ " + mmss(secs);
+      $("hudB").textContent = T("Found: ", "Trouvés : ") + found() + "/5";
+      $("hudC").textContent = T("Misses: ", "Erreurs : ") + misses;
+    }
+  }
+
+  function found() {
+    var n = 0, i;
+    for (i = 0; i < placed.length; i++) if (placed[i].found) n++;
+    return n;
+  }
+
+  function paintList() {
+    var box = $("list"); box.innerHTML = "";
+    var objs = scene().objects, i;
+    for (i = 0; i < objs.length; i++) {
+      var chip = document.createElement("span");
+      chip.className = "hf-chip";
+      if (phase === "hide" && i === placed.length) chip.className += " next";
+      if (phase === "seek" && placed[i] && placed[i].found) chip.className += " done";
+      if (phase === "hide" && i < placed.length) chip.className += " done";
+      chip.textContent = objs[i].e + " " + objs[i].n[FR ? 1 : 0];
+      box.appendChild(chip);
+    }
+  }
+
+  function say(t) { $("say").textContent = t || ""; }
+
+  function paintButtons() {
+    var hiding = (phase === "hide");
+    $("undoBtn").style.display = hiding ? "" : "none";
+    $("randomBtn").style.display = hiding ? "" : "none";
+    $("hintBtn").style.display = (phase === "seek") ? "" : "none";
+    $("undoBtn").textContent = T("↩ Undo", "↩ Annuler");
+    $("randomBtn").textContent = T("🎲 Hide them for me", "🎲 Cacher pour moi");
+    $("hintBtn").textContent = T("💡 Hint (", "💡 Indice (") + hintsLeft + ")";
+    $("hintBtn").disabled = hintsLeft <= 0;
+    if (phase === "setup") $("mainBtn").textContent = T("Start hiding", "Commencer à cacher");
+    else if (phase === "hide") $("mainBtn").textContent = placed.length === 5
+      ? T("Done — pass the device", "Terminé — passez l’appareil")
+      : T("Tap the picture to hide", "Touchez l’image pour cacher");
+    else if (phase === "seek") $("mainBtn").textContent = T("Give up and show them", "Abandonner et tout montrer");
+    else $("mainBtn").textContent = T("Play again", "Rejouer");
+    $("mainBtn").disabled = (phase === "hide" && placed.length < 5);
+  }
+
+  function paintAll() { paintHud(); paintList(); paintButtons(); }
+
+  /* ------------------------------------------------------------------ picks */
+  function buildPicks() {
+    var box = $("scenePick"); box.innerHTML = "";
+    SCENES.forEach(function (s, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = (i === sceneIx ? "on" : "");
+      b.textContent = s.emoji + " " + s.name[FR ? 1 : 0];
+      b.addEventListener("click", function () { sceneIx = i; buildPicks(); toSetup(); });
+      box.appendChild(b);
+    });
+    var sur = document.createElement("button");
+    sur.type = "button";
+    sur.textContent = T("🎲 Surprise scene", "🎲 Scène surprise");
+    sur.addEventListener("click", function () {
+      sceneIx = Math.floor(Math.random() * SCENES.length); buildPicks(); toSetup();
+    });
+    box.appendChild(sur);
+
+    var lb = $("levelPick"); lb.innerHTML = "";
+    ["easy", "medium", "hard"].forEach(function (k) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = (k === level ? "on" : "");
+      b.textContent = LEVELS[k].label[FR ? 1 : 0];
+      b.addEventListener("click", function () { level = k; buildPicks(); toSetup(); });
+      lb.appendChild(b);
+    });
+  }
+
+  /* ----------------------------------------------------------------- phases */
+  function toSetup() {
+    if (window.CQEnd) CQEnd.hide();
+    phase = "setup";
+    placed = []; nextIx = 0; misses = 0; secs = 0;
+    hintsLeft = cfg().hints;
+    clearInterval(tick); tick = null;
+    drawClutter();
+    cover(T("Ready?", "Prêt ?"),
+          T("Player " + hider + " hides five things. Everybody else, look away now.",
+            "Le joueur " + hider + " cache cinq objets. Les autres, ne regardez pas."),
+          T("Start hiding", "Commencer à cacher"), startHide);
+    say(T("Pick a scene and a level, then start.", "Choisissez une scène et un niveau, puis commencez."));
+    paintAll();
+  }
+
+  function startHide() {
+    phase = "hide";
+    placed = [];
+    drawClutter();
+    say(T("Tap five places in the picture.", "Touchez cinq endroits dans l’image."));
+    paintAll();
+  }
+
+  function placeAt(x, y) {
+    var c = cfg(), r = stage.getBoundingClientRect(), i;
+    x = Math.max(6, Math.min(94, x));
+    y = Math.max(5, Math.min(95, y));
+    /* keep the five apart so two never sit on top of each other */
+    for (i = 0; i < placed.length; i++) {
+      var dx = (x - placed[i].x) / 100 * r.width;
+      var dy = (y - placed[i].y) / 100 * r.height;
+      if (Math.sqrt(dx * dx + dy * dy) < c.size * 1.7) {
+        say(T("Too close to one you already hid — try another spot.",
+              "Trop près d’un objet déjà caché — essayez ailleurs."));
+        return;
+      }
+    }
+    var p = { x: x, y: y, obj: scene().objects[placed.length], found: false };
+    placed.push(p);
+    drawObject(p);
+    say(placed.length === 5
+      ? T("All five are hidden. Pass the device over.", "Les cinq sont cachés. Passez l’appareil.")
+      : T("Hidden! " + (5 - placed.length) + " to go.", "Caché ! Encore " + (5 - placed.length) + "."));
+    paintAll();
+  }
+
+  function hideRandomly() {
+    placed = [];
+    drawClutter();
+    var guard = 0;
+    while (placed.length < 5 && guard++ < 500) placeAt(rnd(8, 92), rnd(7, 93));
+    say(T("Hidden for you. Pass the device over.", "Caché pour vous. Passez l’appareil."));
+    paintAll();
+  }
+
+  function toPass() {
+    phase = "pass";
+    /* the objects stay in the DOM but the cover hides the whole picture */
+    cover(T("Pass the device", "Passez l’appareil"),
+          T("Player " + (hider === 1 ? 2 : 1) + ", it is your turn. Find all five as fast as you can.",
+            "Joueur " + (hider === 1 ? 2 : 1) + ", à vous. Trouvez les cinq le plus vite possible."),
+          T("I’m ready — start looking", "Je suis prêt — commencer à chercher"), startSeek);
+    say("");
+    paintAll();
+  }
+
+  function startSeek() {
+    phase = "seek";
+    misses = 0; secs = 0;
+    hintsLeft = cfg().hints;
+    clearInterval(tick);
+    tick = setInterval(function () { secs++; paintHud(); }, 1000);
+    say(T("Tap what you spot. A wrong tap counts as a miss.",
+          "Touchez ce que vous repérez. Une mauvaise touche compte comme une erreur."));
+    paintAll();
+  }
+
+  function finish(gaveUp) {
+    phase = "done";
+    clearInterval(tick); tick = null;
+    var i;
+    for (i = 0; i < placed.length; i++) {
+      if (!placed[i].found) placed[i].el.classList.add("found");
+    }
+    paintAll();
+    var all = found() === 5 && !gaveUp;
+    if (window.CQEnd) {
+      CQEnd.show("#stage", {
+        icon: all ? "🎉" : "🙈",
+        title: all ? T("All five found!", "Les cinq sont trouvés !")
+                   : T("Here they were", "Les voici"),
+        sub: all
+          ? T("Time " + mmss(secs) + " with " + misses + " " + (misses === 1 ? "miss" : "misses") + ".",
+              "Temps " + mmss(secs) + " avec " + misses + " " + (misses === 1 ? "erreur" : "erreurs") + ".")
+          : T("Found " + found() + " of 5 in " + mmss(secs) + ".",
+              found() + " trouvés sur 5 en " + mmss(secs) + "."),
+        tone: all ? "win" : "lose",
+        actions: [
+          { label: T("Swap roles", "Changer de rôle"), fn: swap, cls: "btn-lg" },
+          { label: T("Same roles again", "Mêmes rôles"), fn: toSetup, cls: "btn-ghost" }
+        ]
+      });
+    }
+  }
+
+  function swap() { hider = hider === 1 ? 2 : 1; toSetup(); }
+
+  /* ------------------------------------------------------------------ input */
+  stage.addEventListener("click", function (e) {
+    var r = stage.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width * 100;
+    var y = (e.clientY - r.top) / r.height * 100;
+    if (phase === "hide") {
+      if (placed.length >= 5) { say(T("All five are hidden already.", "Les cinq sont déjà cachés.")); return; }
+      placeAt(x, y);
+      return;
+    }
+    if (phase !== "seek") return;
+
+    var c = cfg(), best = -1, bestD = 1e9, i;
+    for (i = 0; i < placed.length; i++) {
+      if (placed[i].found) continue;
+      var dx = (x - placed[i].x) / 100 * r.width;
+      var dy = (y - placed[i].y) / 100 * r.height;
+      var d = Math.sqrt(dx * dx + dy * dy);
+      if (d < bestD) { bestD = d; best = i; }
+    }
+    if (best >= 0 && bestD <= c.size * 0.95) {
+      placed[best].found = true;
+      placed[best].el.classList.add("found");
+      ping(placed[best].x, placed[best].y, true);
+      say(T("Found " + placed[best].obj.n[0] + "!", "Trouvé : " + placed[best].obj.n[1] + " !"));
+      paintAll();
+      if (found() === 5) finish(false);
+    } else {
+      misses++;
+      ping(x, y, false);
+      say(T("Nothing there.", "Rien ici."));
+      paintHud();
+    }
+  });
+
+  $("undoBtn").addEventListener("click", function () {
+    if (phase !== "hide" || !placed.length) return;
+    var p = placed.pop();
+    if (p.el && p.el.parentNode) p.el.parentNode.removeChild(p.el);
+    say(T("Removed the last one.", "Dernier objet retiré."));
+    paintAll();
+  });
+
+  $("randomBtn").addEventListener("click", function () {
+    if (phase !== "hide") return;
+    hideRandomly();
+  });
+
+  $("hintBtn").addEventListener("click", function () {
+    if (phase !== "seek" || hintsLeft <= 0) return;
+    var i;
+    for (i = 0; i < placed.length; i++) {
+      if (!placed[i].found) {
+        hintsLeft--;
+        ping(placed[i].x, placed[i].y, false);
+        say(T("Somewhere around there.", "Quelque part par là."));
+        paintButtons();
+        return;
+      }
+    }
+  });
+
+  $("mainBtn").addEventListener("click", function () {
+    if (phase === "setup") startHide();
+    else if (phase === "hide" && placed.length === 5) toPass();
+    else if (phase === "seek") finish(true);
+    else if (phase === "done") swap();
+  });
+
+  buildPicks();
+  toSetup();
+})();
+</script>
+  <script src="../js/game-fullscreen.js?v=dd5e3201" defer></script>
+  <script src="../js/endcard.js?v=992bffb0"></script>
+  <script src="../js/site.js?v=1b925d9c"></script>
+  <script src="../js/analytics.js?v=d95c4f47"></script>
+  <script src="../js/ads.js?v=00e703ff" defer></script>
+</body>
+</html>

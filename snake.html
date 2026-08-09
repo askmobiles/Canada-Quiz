@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maple Snake — Family Games</title>
 <meta name="description" content="Free Canada-themed snake arcade game. Eat the maple leaves and grow! Works on phone and computer.">
-<link rel="stylesheet" href="css/style.css?v=61960d1f">
+<link rel="stylesheet" href="css/style.css?v=864b2243">
 <style>
   .game-wrap{max-width:420px;margin:0 auto;text-align:center}
   canvas{background:#fff;border:3px solid var(--red);border-radius:12px;width:100%;height:auto;touch-action:none}
@@ -54,7 +54,7 @@
         <span class="pill" id="score">Score: 0</span>
         <span class="pill" id="best">Best: 0</span>
       </div>
-      <canvas id="c" width="400" height="400"></canvas>
+      <div class="cq-stage" id="stage"><canvas id="c" width="400" height="400"></canvas></div>
       <p class="muted" id="hint">Press an arrow key or a button to start</p>
       <div class="dpad">
         <button class="d-up" onclick="setDir(0,-1)">⬆️</button>
@@ -108,7 +108,7 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <details class="footer-map">
-      <summary>All pages <span class="fm-count">(118)</span></summary>
+      <summary>All pages <span class="fm-count">(124)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <div class="fm-h">Quizzes</div>
@@ -125,6 +125,11 @@
         <a href="body-quiz.html">Human Body &amp; Health</a>
         <a href="money-quiz.html">Money Skills for Kids</a>
         <a href="earth-quiz.html">Earth &amp; Environment</a>
+        <a href="which-canadian-animal-quiz.html">Which Canadian Animal?</a>
+        <a href="which-canadian-food-quiz.html">Which Canadian Food?</a>
+        <a href="which-canadian-city-quiz.html">Which Canadian City?</a>
+        <a href="which-winter-sport-quiz.html">Which Winter Sport?</a>
+        <a href="which-national-park-quiz.html">Which National Park?</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Driving Test Practice</div>
@@ -201,6 +206,7 @@
         <a href="story-maker.html">Story Maker</a>
         <a href="draw-it.html">Draw It</a>
         <a href="spin-wheel.html">Spin the Wheel</a>
+        <a href="hide-and-find.html">Hide &amp; Find</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Blog</div>
@@ -262,6 +268,7 @@ const N=20, CELL=cv.width/N;
 let snake, dir, nextDir, food, score, best=0, loopId=null, running=false, speed=140;
 
 function resetGame(){
+  if(window.CQEnd) CQEnd.hide();
   snake=[{x:10,y:10},{x:9,y:10},{x:8,y:10}];
   dir={x:1,y:0}; nextDir={x:1,y:0};
   score=0; running=false; speed=140;
@@ -318,7 +325,17 @@ function draw(){
 }
 function gameOver(){
   running=false; clearInterval(loopId);
-  document.getElementById('hint').textContent='💥 Game over! Score: '+score+'. Press New Game.';
+  var T=window.CQEnd?CQEnd.T:function(a){return a;};
+  document.getElementById('hint').textContent=T('💥 Game over! Score: '+score,
+                                                '💥 Partie terminée ! Score : '+score);
+  if(window.CQEnd) CQEnd.show('#stage',{
+    icon:'💥',
+    title:(score>0&&score>=best)?T('New best!','Nouveau record !'):T('Game over','Partie terminée'),
+    sub:T('You scored '+score+'.','Vous avez marqué '+score+' points.'),
+    tone:(score>0&&score>=best)?'win':'lose',
+    actions:[{label:T('New game','Nouvelle partie'),fn:resetGame,cls:'btn-lg'},
+             {label:T('All games','Tous les jeux'),href:'games.html',cls:'btn-ghost'}]
+  });
 }
 document.addEventListener('keydown',e=>{
   const map={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0],w:[0,-1],s:[0,1],a:[-1,0],d:[1,0]};
@@ -335,7 +352,8 @@ cv.addEventListener('touchend',e=>{
 resetGame();
 </script>
   <script src="js/game-fullscreen.js?v=dd5e3201"></script>
-  <script src="js/site.js?v=36765ba9"></script>
+  <script src="js/endcard.js?v=992bffb0"></script>
+  <script src="js/site.js?v=1b925d9c"></script>
   <script src="js/analytics.js?v=d95c4f47"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
 </body>

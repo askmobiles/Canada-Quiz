@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dames — Jouez contre l'ordinateur ou un ami | Jeux en famille</title>
 <meta name="description" content="Jouez aux dames gratuitement — contre l&#x27;ordinateur ou un ami sur un même appareil. Règles complètes, avec prises et promotions en dame. Téléphone, tablette et ordinateur.">
-<link rel="stylesheet" href="../css/style.css?v=61960d1f">
+<link rel="stylesheet" href="../css/style.css?v=864b2243">
 <style>
   .ck-wrap{max-width:440px;margin:0 auto;text-align:center}
   .ck-board{display:grid;grid-template-columns:repeat(8,1fr);width:100%;max-width:400px;margin:12px auto;border:3px solid var(--ink);border-radius:8px;overflow:hidden;touch-action:manipulation}
@@ -108,7 +108,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(118)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(124)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <div class="fm-h">Quiz</div>
@@ -125,6 +125,11 @@
         <a href="body-quiz.html">Corps humain &amp; santé</a>
         <a href="money-quiz.html">L'argent expliqué aux enfants</a>
         <a href="earth-quiz.html">Terre &amp; environnement</a>
+        <a href="which-canadian-animal-quiz.html">Which Canadian Animal?</a>
+        <a href="which-canadian-food-quiz.html">Which Canadian Food?</a>
+        <a href="which-canadian-city-quiz.html">Which Canadian City?</a>
+        <a href="which-winter-sport-quiz.html">Which Winter Sport?</a>
+        <a href="which-national-park-quiz.html">Which National Park?</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Pratique de l'examen de conduite</div>
@@ -201,6 +206,7 @@
         <a href="story-maker.html">Créateur d'histoires</a>
         <a href="draw-it.html">Dessine-le</a>
         <a href="spin-wheel.html">Tourne la roue</a>
+        <a href="hide-and-find.html">Hide &amp; Find</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Blogue</div>
@@ -266,6 +272,7 @@ function king(v){return Math.abs(v)===2;}
 function dirs(v){ if(king(v)) return [[-1,-1],[-1,1],[1,-1],[1,1]]; return v>0?[[-1,-1],[-1,1]]:[[1,-1],[1,1]]; }
 
 function newGame(){
+  if(window.CQEnd) CQEnd.hide();
   buildModes();
   board=new Array(64).fill(0);
   for(let r=0;r<8;r++)for(let c=0;c<8;c++){
@@ -376,6 +383,17 @@ function checkEndOrContinue(){
     const winner=(-turn);
     if(mode==='friend') setHud((winner===1?'🔴 Red':'🔵 Blue')+' wins! 🎉');
     else setHud(winner===1?'🎉 You win! Great job!':'😅 Computer wins. Try again!');
+    if(window.CQEnd){ var T=CQEnd.T; var youWon=(winner===1);
+      CQEnd.show('#board',{
+        icon: (mode==='friend')?'🎉':(youWon?'🎉':'😅'),
+        title: (mode==='friend') ? (winner===1?T('Red wins!','Les rouges gagnent !'):T('Blue wins!','Les bleus gagnent !'))
+                                 : (youWon?T('You win!','Vous gagnez !'):T('Computer wins','L\'ordinateur gagne')),
+        sub: T('No moves left for the other side.',
+               "L'autre camp n'a plus de coup possible."),
+        tone: (mode==='friend')?'win':(youWon?'win':'lose'),
+        actions:[{label:T('New game','Nouvelle partie'),fn:newGame,cls:'btn-lg'},
+                 {label:T('All games','Tous les jeux'),href:'games.html',cls:'btn-ghost'}]
+      }); }
     return;
   }
   if(mode==='cpu' && turn===-1){ busy=true; setHud('Computer is thinking…'); setTimeout(cpuMove, 550); }
@@ -402,7 +420,8 @@ function setHud(t){ document.getElementById('hud').textContent=t; }
 newGame();
 </script>
   <script src="../js/game-fullscreen.js?v=dd5e3201"></script>
-  <script src="../js/site.js?v=36765ba9"></script>
+  <script src="../js/endcard.js?v=992bffb0"></script>
+  <script src="../js/site.js?v=1b925d9c"></script>
   <script src="../js/analytics.js?v=d95c4f47"></script>
   <script src="../js/ads.js?v=00e703ff" defer></script>
 </body>

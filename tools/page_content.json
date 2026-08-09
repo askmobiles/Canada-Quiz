@@ -5063,6 +5063,157 @@
    ]
   ]
  },
+ "hide-and-find.html": {
+  "about": [
+   {
+    "en": "Hide and Find is a hidden object game for two people sharing one screen, and the twist is that nobody wrote the puzzle in advance. One player hides the five objects wherever they like while the other looks away, so every round is made by a person who knows exactly how to be annoying.",
+    "fr": "Cache-cache est un jeu d’objets cachés pour deux personnes qui partagent un écran, et la particularité est que personne n’a préparé le casse-tête à l’avance. Un joueur cache les cinq objets où il veut pendant que l’autre ne regarde pas : chaque manche est donc conçue par quelqu’un qui sait exactement comment être agaçant."
+   },
+   {
+    "en": "The picture underneath is deliberately crowded. Hundreds of small drawings are scattered across a hockey arena, a campsite by the lake, or a city street in winter, and the five hidden things sit among them at the same size as everything else.",
+    "fr": "L’image en dessous est volontairement encombrée. Des centaines de petits dessins sont éparpillés dans un aréna de hockey, un camping au bord du lac ou une rue de ville en hiver, et les cinq objets cachés s’y trouvent, de la même taille que le reste."
+   },
+   {
+    "en": "A clock and a miss counter run while the second player hunts, which turns the whole thing into a fair contest: hide, find, swap roles, and compare the two times.",
+    "fr": "Un chronomètre et un compteur d’erreurs tournent pendant que le second joueur cherche, ce qui en fait un concours équitable : cacher, trouver, changer de rôle, puis comparer les deux temps."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Hide near an object of the same colour rather than in an empty corner. Empty space is the first place a seeker looks, because it is the easiest to scan.",
+    "fr": "Cachez près d’un objet de la même couleur plutôt que dans un coin vide. L’espace vide est le premier endroit qu’on regarde, parce qu’il est le plus facile à balayer."
+   },
+   {
+    "en": "Edges and corners feel clever and almost never are. Most seekers sweep the border first precisely because it feels like a hiding place.",
+    "fr": "Les bords et les coins semblent astucieux et ne le sont presque jamais. La plupart des chercheurs balaient d’abord le contour, justement parce qu’il a l’air d’une cachette."
+   },
+   {
+    "en": "As the seeker, hunt one object at a time. Holding all five shapes in your head at once is what makes an easy board feel impossible.",
+    "fr": "Comme chercheur, cherchez un objet à la fois. Garder les cinq formes en tête en même temps est ce qui rend un tableau facile impossible."
+   },
+   {
+    "en": "Sweep in strips rather than jumping around. Left to right, one band at a time, beats letting your eye wander wherever it likes.",
+    "fr": "Balayez par bandes plutôt que de sauter partout. De gauche à droite, une bande à la fois, vaut mieux que de laisser l’oeil errer."
+   },
+   {
+    "en": "A wrong tap costs a miss but never ends the round, so guessing at a suspicious shape is usually worth it.",
+    "fr": "Une mauvaise touche coûte une erreur mais ne termine jamais la manche : tenter sa chance sur une forme suspecte en vaut souvent la peine."
+   },
+   {
+    "en": "Play both roles before deciding who won. Hiding well is a skill of its own, and the fairest score is the two hunting times side by side.",
+    "fr": "Jouez les deux rôles avant de décider qui gagne. Bien cacher est un talent en soi, et le score le plus juste reste les deux temps de recherche côte à côte."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Yes. Press the dice button and the five objects are hidden for you at random, then hunt for them yourself. It loses the mischief of a human hider, but the clock still runs and the hunt is the same.",
+     "fr": "Oui. Appuyez sur le bouton dé et les cinq objets sont cachés au hasard pour vous, puis cherchez-les vous-même. On perd la malice d’un joueur qui cache, mais le chronomètre tourne et la recherche est la même."
+    },
+    "q": {
+     "en": "Can one person play this alone?",
+     "fr": "Peut-on y jouer seul ?"
+    }
+   },
+   {
+    "a": {
+     "en": "A full screen cover drops over the picture the moment the fifth object is placed, and it only lifts when the second player presses the ready button. Hand the device over while the cover is up.",
+     "fr": "Un écran plein couvre l’image dès que le cinquième objet est placé, et il ne se lève que lorsque le second joueur appuie sur le bouton. Passez l’appareil pendant que l’écran est en place."
+    },
+    "q": {
+     "en": "How does the second player avoid seeing where things were hidden?",
+     "fr": "Comment le second joueur évite-t-il de voir les cachettes ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The objects shrink to about half the easy size, the scene holds roughly three times as much clutter, there are no hints, and copies of things that look like the hidden objects are mixed into the scene on purpose.",
+     "fr": "Les objets rétrécissent à environ la moitié de la taille facile, la scène contient à peu près trois fois plus d’objets, il n’y a aucun indice, et des sosies des objets cachés sont volontairement mêlés à la scène."
+    },
+    "q": {
+     "en": "What exactly changes on hard?",
+     "fr": "Qu’est-ce qui change exactement en mode difficile ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. The clutter is scattered again from scratch at the start of every round, so the same scene never looks twice the same and nobody can memorise a good spot.",
+     "fr": "Non. Les objets sont éparpillés de nouveau au début de chaque manche : la même scène n’a jamais deux fois la même allure et personne ne peut mémoriser une bonne cachette."
+    },
+    "q": {
+     "en": "Is the scene the same every time?",
+     "fr": "La scène est-elle la même chaque fois ?"
+    }
+   },
+   {
+    "a": {
+     "en": "On easy the objects are large and there is no reading beyond the five picture names, so a five-year-old manages it. Hard suits older children and adults who like a proper search.",
+     "fr": "En mode facile, les objets sont grands et il n’y a rien à lire au-delà des cinq noms illustrés : un enfant de cinq ans s’en sort. Le mode difficile convient aux plus grands et aux adultes qui aiment chercher pour vrai."
+    },
+    "q": {
+     "en": "How young can a player be?",
+     "fr": "À partir de quel âge peut-on jouer ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Three scenes to hide in: a hockey arena, a campsite beside a lake, and a city street in winter, each with its own set of things lying around.",
+    "fr": "Trois scènes où se cacher : un aréna de hockey, un camping au bord d’un lac et une rue de ville en hiver, chacune avec ses propres objets qui traînent."
+   },
+   {
+    "en": "Five objects a round, and the scene decides which ones. The arena hides a key, a maple leaf, a beaver, a scarf and a present.",
+    "fr": "Cinq objets par manche, et la scène décide lesquels. L’aréna cache une clé, une feuille d’érable, un castor, un foulard et un cadeau."
+   },
+   {
+    "en": "Easy, medium and hard change two things at once: how big the hidden objects are, and how much clutter is piled around them.",
+    "fr": "Facile, moyen et difficile changent deux choses à la fois : la taille des objets cachés et la quantité d’objets entassés autour."
+   },
+   {
+    "en": "Hard also scatters look-alikes through the scene — dead leaves next to the maple leaf, a sock next to the mitten — so a quick glance is no longer enough.",
+    "fr": "Le mode difficile parsème aussi la scène de sosies : des feuilles mortes près de la feuille d’érable, un bas près de la mitaine, de sorte qu’un coup d’oeil rapide ne suffit plus."
+   },
+   {
+    "en": "A cover screen sits over the picture between the two turns, so the hider can pass the device across without the seeker catching a glimpse.",
+    "fr": "Un écran de protection couvre l’image entre les deux tours, pour que celui qui cache passe l’appareil sans que le chercheur aperçoive quoi que ce soit."
+   },
+   {
+    "en": "A dice button hides all five for you, which is what you want when only one person is around and you just fancy a hunt.",
+    "fr": "Un bouton dé cache les cinq objets pour vous, ce qui est pratique quand une seule personne est là et veut simplement chercher."
+   }
+  ],
+  "kind": "game",
+  "related": [
+   [
+    "games.html",
+    {
+     "en": "See every family game gathered in one place",
+     "fr": "Voyez tous les jeux de famille rassemblés au même endroit"
+    }
+   ],
+   [
+    "memory.html",
+    {
+     "en": "Turn the cards over and remember where each pair was",
+     "fr": "Retournez les cartes et souvenez-vous de chaque paire"
+    }
+   ],
+   [
+    "word-search.html",
+    {
+     "en": "Hunt for hidden words in a grid of letters",
+     "fr": "Cherchez des mots cachés dans une grille de lettres"
+    }
+   ],
+   [
+    "imposter.html",
+    {
+     "en": "Pass one phone around and unmask the hidden imposter",
+     "fr": "Faites circuler un téléphone et démasquez l’imposteur caché"
+    }
+   ]
+  ]
+ },
  "hold-to-head.html": {
   "about": [
    {
@@ -9652,75 +9803,89 @@
  "top-answers.html": {
   "about": [
    {
-    "en": "Top Answers is a game-show style party game for two teams. A question appears, five hidden answers sit on the board, and each one is worth points according to how popular it is. The board fills the middle of the screen so a whole room can follow along.",
-    "fr": "Top Answers est un jeu de fête à la manière d'un jeu télévisé, pour deux équipes. Une question apparaît, cinq réponses cachées attendent sur le tableau, et chacune vaut des points selon sa popularité. Le tableau occupe le centre de l'écran pour que toute la pièce suive."
+    "en": "Top Answers is a game-show style party game for two teams. A question appears, five hidden answer cards sit on the board, and each one carries points according to how popular the answer is. The board fills the middle of the screen so a whole room can follow along.",
+    "fr": "Top Answers est un jeu de fête à la manière d’un jeu télévisé, pour deux équipes. Une question apparaît, cinq cartes-réponses cachées attendent sur le tableau, et chacune vaut des points selon la popularité de la réponse. Le tableau occupe le centre de l’écran pour que toute la pièce suive."
    },
    {
-    "en": "One person acts as the host. Read the question out loud, listen to the team's guess, then tap the matching row to reveal it. If they miss, hand the turn over with the switch button.",
-    "fr": "Une personne joue l'animateur. Elle lit la question à voix haute, écoute la réponse de l'équipe, puis touche la ligne correspondante pour la dévoiler. En cas d'erreur, elle passe le tour avec le bouton de changement."
+    "en": "One person acts as the host, and the host does two separate things. Tapping a card flips it over so everyone sees the answer and what it is worth. Tapping Red or Blue on that card then hands those points to the team that actually said it. Keeping the two apart means the host can reveal a card safely, argue about it, and only award the points once the room agrees.",
+    "fr": "Une personne joue l’animateur, et l’animateur fait deux choses distinctes. Toucher une carte la retourne pour que tout le monde voie la réponse et sa valeur. Toucher ensuite Rouge ou Bleu sur cette carte donne les points à l’équipe qui l’a vraiment dite. Séparer les deux gestes permet de révéler une carte sans risque, d’en discuter, et de n’accorder les points qu’une fois la pièce d’accord."
    },
    {
     "en": "It is made for a room full of people rather than one player alone — family evenings, classrooms, birthday parties, or any time you need something loud and quick to explain. One shared screen is enough.",
-    "fr": "Il est fait pour une pièce pleine de monde plutôt que pour un joueur seul : soirées en famille, salles de classe, fêtes d'anniversaire ou tout moment où il faut quelque chose de bruyant et facile à expliquer. Un seul écran partagé suffit."
+    "fr": "Il est fait pour une pièce pleine de monde plutôt que pour un joueur seul : soirées en famille, salles de classe, fêtes d’anniversaire, ou chaque fois qu’il faut quelque chose de bruyant et vite expliqué. Un seul écran partagé suffit."
    }
   ],
   "facts": [
    {
-    "en": "The easier boards ask for a pizza topping, a farm animal, something Canadian, or something you keep in the fridge.",
-    "fr": "Les tableaux plus faciles demandent une garniture à pizza, un animal de la ferme, quelque chose de canadien ou quelque chose qu'on garde au frigo."
+    "en": "Flip first, argue second. Because flipping does not score anything, the host can safely reveal a card while the room decides whether the team really said it.",
+    "fr": "Retournez d’abord, discutez ensuite. Comme retourner ne compte aucun point, l’animateur peut révéler une carte pendant que la pièce décide si l’équipe l’a vraiment dite."
    },
    {
     "en": "The top answer is usually the most obvious one. Teams that overthink and reach for something clever often score the fewest points.",
-    "fr": "La meilleure réponse est souvent la plus évidente. Les équipes qui réfléchissent trop et cherchent une réponse maligne récoltent souvent le moins de points."
+    "fr": "La première réponse est presque toujours la plus évidente. Les équipes qui réfléchissent trop et cherchent une réponse originale marquent souvent le moins de points."
    },
    {
     "en": "Points are far from equal. On most boards the first answer is worth three or four times the last one, so guessing order matters.",
-    "fr": "Les points sont loin d'être égaux. Sur la plupart des tableaux, la première réponse vaut trois ou quatre fois la dernière : l'ordre des propositions compte."
+    "fr": "Les points sont loin d’être égaux. Sur la plupart des tableaux, la première réponse vaut trois ou quatre fois la dernière : l’ordre des réponses compte."
    },
    {
     "en": "Set your own time limit, maybe ten seconds per guess. The game has no timer, and a fast pace keeps the room laughing.",
-    "fr": "Fixez votre propre limite de temps, disons dix secondes par proposition. Le jeu n'a pas de chrono, et un rythme rapide garde la pièce joyeuse."
+    "fr": "Fixez votre propre limite de temps, dix secondes par réponse par exemple. Le jeu n’a pas de minuterie, et un rythme rapide garde la pièce de bonne humeur."
+   },
+   {
+    "en": "Choose a category that suits the room. The harder set asks about planets, oceans and inventions, while the food and animal boards work with very young children.",
+    "fr": "Choisissez une catégorie qui convient à la pièce. La série difficile parle de planètes, d’océans et d’inventions, tandis que les tableaux sur la nourriture et les animaux conviennent aux tout-petits."
    },
    {
     "en": "Playing host is a real job. Reading the question with a little drama makes an ordinary answer feel like a jackpot.",
-    "fr": "Animer est un vrai rôle. Lire la question avec un brin de théâtre transforme une réponse ordinaire en gros lot."
+    "fr": "Animer est un vrai rôle. Lire la question avec un peu de théâtre transforme une réponse ordinaire en gros lot."
    }
   ],
   "faq": [
    {
     "a": {
      "en": "Three is enough: two guessers and someone to tap the screen. It gets much better with bigger teams, because the arguments about which answer to say are half the fun.",
-     "fr": "Trois suffisent : deux personnes qui devinent et une qui touche l'écran. C'est bien meilleur avec de grandes équipes, car les discussions sur la réponse à donner font la moitié du plaisir."
+     "fr": "Trois suffisent : deux personnes qui devinent et une qui touche l’écran. C’est bien meilleur avec de grandes équipes, car les discussions sur la réponse à donner font la moitié du plaisir."
     },
     "q": {
      "en": "How many people do I need for a game?",
-     "fr": "Combien de personnes faut-il pour une partie ?"
+     "fr": "Combien de personnes faut-il pour jouer ?"
     }
    },
    {
     "a": {
-     "en": "The page does it for you. Every revealed answer adds its points to whichever team is highlighted, so check that the right team is active before you tap a row.",
-     "fr": "La page le fait pour vous. Chaque réponse dévoilée ajoute ses points à l'équipe mise en évidence : vérifiez que la bonne équipe est active avant de toucher une ligne."
+     "en": "Flipping only reveals what is written on the card and how much it is worth. Awarding is the separate tap on Red or Blue that moves those points onto a team’s score. A card can stay flipped and unawarded all round.",
+     "fr": "Retourner ne fait que révéler ce qui est écrit sur la carte et sa valeur. Attribuer est le geste séparé, sur Rouge ou Bleu, qui ajoute ces points au score d’une équipe. Une carte peut rester retournée sans être attribuée de toute la manche."
     },
     "q": {
-     "en": "Who keeps track of the score?",
-     "fr": "Qui tient le pointage ?"
+     "en": "What is the difference between flipping a card and awarding it?",
+     "fr": "Quelle est la différence entre retourner une carte et l’attribuer ?"
     }
    },
    {
     "a": {
-     "en": "Nothing is lost. Press the switch button and let the other side try. Only answers printed on the board can be revealed, and only those carry points.",
-     "fr": "Rien n'est perdu. Appuyez sur le bouton de changement et laissez l'autre côté essayer. Seules les réponses inscrites au tableau peuvent être dévoilées et rapporter des points."
+     "en": "Yes. Tap the other team and the points move across, or tap the same team again, or Nobody, and they come off the board entirely. The score corrects itself instantly.",
+     "fr": "Oui. Touchez l’autre équipe et les points changent de côté, ou touchez la même équipe de nouveau, ou Personne, et ils sont retirés. Le score se corrige aussitôt."
+    },
+    "q": {
+     "en": "I gave the points to the wrong team. Can I undo it?",
+     "fr": "J’ai donné les points à la mauvaise équipe. Puis-je annuler ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Nothing is lost. Press the switch button and let the other side try. Only answers printed on the cards carry points.",
+     "fr": "Rien n’est perdu. Appuyez sur le bouton de changement et laissez l’autre équipe essayer. Seules les réponses inscrites sur les cartes valent des points."
     },
     "q": {
      "en": "What happens if a team says something that is not on the board?",
-     "fr": "Que se passe-t-il si une équipe dit une réponse absente du tableau ?"
+     "fr": "Que se passe-t-il si une équipe dit quelque chose qui n’est pas sur le tableau ?"
     }
    },
    {
     "a": {
-     "en": "Most boards ask for everyday things a young child can name, like a farm animal or a red fruit. Put a child on each team so nobody feels left behind on the advanced boards.",
-     "fr": "La plupart des tableaux demandent des choses du quotidien qu'un jeune enfant sait nommer, comme un animal de la ferme ou un fruit rouge. Mettez un enfant dans chaque équipe pour que personne ne se sente perdu."
+     "en": "Most boards ask for everyday things a young child can name, like a farm animal or a red fruit. The harder category is the one to skip with a very young room.",
+     "fr": "La plupart des tableaux demandent des choses de tous les jours qu’un jeune enfant peut nommer, comme un animal de la ferme ou un fruit rouge. La catégorie difficile est celle à éviter avec un très jeune public."
     },
     "q": {
      "en": "Are the questions suitable for children?",
@@ -9730,24 +9895,28 @@
   ],
   "inside": [
    {
-    "en": "Two teams, red and blue, keep their scores side by side at the top, and the team whose turn it is lights up.",
-    "fr": "Deux équipes, la rouge et la bleue, gardent leurs pointages côte à côte en haut, et l'équipe dont c'est le tour s'illumine."
+    "en": "Twelve categories sit above the board — food, Canada, animals, the house, school, sports, travel, jobs, holidays, the body, nature and a harder set — plus a mixed pile that draws on all of them.",
+    "fr": "Douze catégories se trouvent au-dessus du tableau : la nourriture, le Canada, les animaux, la maison, l’école, le sport, les voyages, les métiers, les fêtes, le corps, la nature et une série plus difficile, en plus d’un mélange qui puise dans toutes."
    },
    {
-    "en": "Each question hides five answers; tapping a row reveals both the answer and the points it carries.",
-    "fr": "Chaque question cache cinq réponses ; toucher une ligne révèle à la fois la réponse et les points qu'elle rapporte."
+    "en": "Seventy-two boards in total, each with five answers, so an evening never runs out and the same board rarely comes back twice.",
+    "fr": "Soixante-douze tableaux en tout, chacun avec cinq réponses, de sorte qu’une soirée ne s’épuise jamais et que le même tableau revient rarement deux fois."
    },
    {
-    "en": "The switch team button passes the turn over when a team guesses wrong or runs out of ideas.",
-    "fr": "Le bouton de changement d'équipe passe le tour quand une équipe se trompe ou n'a plus d'idées."
+    "en": "Tapping a card flips it face up and shows the answer with its points. Nothing is scored yet at that moment.",
+    "fr": "Toucher une carte la retourne face visible et montre la réponse avec ses points. Rien n’est encore compté à ce moment-là."
    },
    {
-    "en": "Next question moves to a fresh board, and the questions are shuffled so no two evenings run in the same order.",
-    "fr": "Le bouton de question suivante amène un nouveau tableau, et les questions sont brassées : deux soirées ne suivront jamais le même ordre."
+    "en": "Red, Blue and Nobody appear on every flipped card. Red or Blue gives that card’s points to a team, and tapping the same team again takes them straight back, so a mistake costs nothing.",
+    "fr": "Rouge, Bleu et Personne apparaissent sur chaque carte retournée. Rouge ou Bleu donne les points de la carte à une équipe, et toucher la même équipe de nouveau les reprend aussitôt : une erreur ne coûte rien."
    },
    {
-    "en": "Four boards are marked advanced and cover planets, European countries, musical instruments and jobs that help people.",
-    "fr": "Quatre tableaux sont marqués avancés et portent sur les planètes, les pays d'Europe, les instruments de musique et les métiers qui aident les gens."
+    "en": "Flip the rest turns over every card still face down, which is how you close a round once both teams have run dry.",
+    "fr": "Retourner le reste met à l’endroit toutes les cartes encore cachées, ce qui permet de clore une manche quand les deux équipes sèchent."
+   },
+   {
+    "en": "Scores carry from board to board, and Reset scores wipes them when a new match starts.",
+    "fr": "Les points se cumulent d’un tableau à l’autre, et Remettre les points à zéro les efface quand une nouvelle partie commence."
    }
   ],
   "kind": "game",
@@ -10362,6 +10531,671 @@
     {
      "en": "Meet all ten provinces and the three territories",
      "fr": "Faites connaissance avec les dix provinces et les trois territoires"
+    }
+   ]
+  ]
+ },
+ "which-canadian-animal-quiz.html": {
+  "about": [
+   {
+    "en": "Seven light questions, one animal at the end. This is a personality quiz rather than a nature test, so nothing here is right or wrong and there is nothing to revise.",
+    "fr": "Sept questions légères, un animal à la fin. C’est un quiz de personnalité et non un test de sciences naturelles : rien n’est bon ou mauvais et il n’y a rien à réviser."
+   },
+   {
+    "en": "The questions ask where you would spend an afternoon, how you get through a Canadian winter, what you do at a party and what people thank you for. Each answer quietly adds points to different animals, and the highest total is your result.",
+    "fr": "Les questions portent sur l’endroit où vous passeriez un après-midi, sur votre façon de traverser un hiver canadien, sur ce que vous faites dans une fête et sur ce dont on vous remercie. Chaque réponse ajoute discrètement des points à différents animaux, et le total le plus élevé devient votre résultat."
+   },
+   {
+    "en": "It takes about a minute and it is made for sharing. Families play it together and compare results, and it is a friendly way for newcomers to meet the animals they will keep seeing on coins, flags and road signs.",
+    "fr": "Cela prend environ une minute et c’est fait pour être partagé. Les familles y jouent ensemble et comparent leurs résultats, et c’est une façon sympathique pour les nouveaux arrivants de rencontrer les animaux qu’ils reverront sur les pièces, les drapeaux et les panneaux."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The beaver has been an official emblem of Canada since 1975 and appears on the five-cent coin.",
+    "fr": "Le castor est un emblème officiel du Canada depuis 1975 et figure sur la pièce de cinq cents."
+   },
+   {
+    "en": "The common loon is on the one-dollar coin, which is where the nickname loonie comes from.",
+    "fr": "Le plongeon huard figure sur la pièce de un dollar, d’où vient le surnom huard."
+   },
+   {
+    "en": "A bull moose can stand about two metres at the shoulder, making it the tallest land animal in the country.",
+    "fr": "Un orignal mâle peut mesurer environ deux mètres au garrot, ce qui en fait le plus grand animal terrestre du pays."
+   },
+   {
+    "en": "The snowy owl is the official bird of Quebec and hunts in daylight, unlike most other owls.",
+    "fr": "Le harfang des neiges est l’oiseau officiel du Québec et chasse le jour, contrairement à la plupart des autres hiboux."
+   },
+   {
+    "en": "Orcas live in family groups that stay together for life, and the same pods return to the British Columbia coast year after year.",
+    "fr": "Les épaulards vivent en groupes familiaux qui restent unis toute leur vie, et les mêmes bandes reviennent sur la côte de la Colombie-Britannique année après année."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No. Every choice adds points to different animals, so no answer can be wrong. Two people can pick opposite things and both get a result that suits them.",
+     "fr": "Non. Chaque choix ajoute des points à différents animaux : aucune réponse ne peut être mauvaise. Deux personnes peuvent choisir le contraire et obtenir chacune un résultat qui leur convient."
+    },
+    "q": {
+     "en": "Is there a right answer in this quiz?",
+     "fr": "Y a-t-il une bonne réponse dans ce quiz ?"
+    }
+   },
+   {
+    "a": {
+     "en": "About a minute. Seven questions, one tap each, so it fits into a coffee break.",
+     "fr": "Environ une minute. Sept questions, une touche chacune : cela tient dans une pause-café."
+    },
+    "q": {
+     "en": "How long does it take?",
+     "fr": "Combien de temps cela prend-il ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. Press Try again and change two answers and the totals shift. Many people run it twice on purpose to see which animal comes second.",
+     "fr": "Oui. Appuyez sur Recommencer, changez deux réponses et les totaux bougent. Beaucoup le font deux fois exprès, pour voir quel animal arrive deuxième."
+    },
+    "q": {
+     "en": "Can I get a different animal next time?",
+     "fr": "Puis-je obtenir un autre animal la prochaine fois ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. There is no signup and nothing is stored. Close the page and the result is gone.",
+     "fr": "Non. Il n’y a aucune inscription et rien n’est conservé. Fermez la page et le résultat disparaît."
+    },
+    "q": {
+     "en": "Do I need an account?",
+     "fr": "Faut-il un compte ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Seven questions, four choices each, with a progress bar so you can see how far along you are.",
+    "fr": "Sept questions, quatre choix chacune, avec une barre de progression pour voir où vous en êtes."
+   },
+   {
+    "en": "Seven possible results: the beaver, the moose, the loon, the polar bear, the orca, the snowy owl and the Canada goose.",
+    "fr": "Sept résultats possibles : le castor, l’orignal, le huard, l’ours polaire, l’épaulard, le harfang des neiges et la bernache du Canada."
+   },
+   {
+    "en": "Every result comes with a short description of the character behind it, not just the name of an animal.",
+    "fr": "Chaque résultat vient avec une courte description du caractère qui va avec, et pas seulement le nom d’un animal."
+   },
+   {
+    "en": "A Try again button restarts the quiz at once, so you can see how one different answer changes the outcome.",
+    "fr": "Un bouton Recommencer relance le quiz aussitôt, pour voir comment une seule réponse différente change le résultat."
+   },
+   {
+    "en": "The whole thing runs in the page with no signup, no account and nothing saved anywhere.",
+    "fr": "Tout fonctionne dans la page, sans inscription, sans compte et sans rien qui soit enregistré."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "canadas-animals-and-wildlife.html",
+    {
+     "en": "Read about the animals that live across Canada",
+     "fr": "Découvrez les animaux qui vivent partout au Canada"
+    }
+   ],
+   [
+    "province-quiz.html",
+    {
+     "en": "Find out which province matches your personality",
+     "fr": "Découvrez quelle province correspond à votre personnalité"
+    }
+   ],
+   [
+    "quizzes.html",
+    {
+     "en": "See every quiz on the site in one place",
+     "fr": "Voyez tous les quiz du site au même endroit"
+    }
+   ],
+   [
+    "fun-quiz.html",
+    {
+     "en": "Try the light-hearted Canada quiz",
+     "fr": "Essayez le quiz amusant sur le Canada"
+    }
+   ]
+  ]
+ },
+ "which-canadian-city-quiz.html": {
+  "about": [
+   {
+    "en": "Seven practical questions — winter, rent, commute, how far wilderness should be — and one Canadian city at the end. It is a personality quiz, not advice, so treat the answer as a conversation starter rather than a plan.",
+    "fr": "Sept questions pratiques — l’hiver, le loyer, le trajet, la distance jusqu’à la nature — et une ville canadienne à la fin. C’est un quiz de personnalité et non un conseil : voyez la réponse comme un sujet de discussion plutôt qu’un plan."
+   },
+   {
+    "en": "The questions are the ones people actually argue about when they think of moving, which is why the quiz works as well for someone who has lived here all their life as for a newcomer choosing a first city.",
+    "fr": "Les questions sont celles dont les gens débattent vraiment quand ils pensent déménager, ce qui explique pourquoi le quiz fonctionne aussi bien pour une personne née ici que pour un nouvel arrivant qui choisit sa première ville."
+   },
+   {
+    "en": "Seven cities appear as results, spread from the Pacific to the Atlantic, and each one comes with a short description of the life that goes with it.",
+    "fr": "Sept villes peuvent sortir, du Pacifique à l’Atlantique, et chacune vient avec une courte description de la vie qui va avec."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Toronto is the largest city in Canada and one of the most linguistically varied cities in the world.",
+    "fr": "Toronto est la plus grande ville du Canada et l’une des villes les plus variées du monde sur le plan des langues."
+   },
+   {
+    "en": "Montreal sits on an island in the St. Lawrence River and is the largest mainly French-speaking city in the Americas.",
+    "fr": "Montréal est située sur une île du fleuve Saint-Laurent et constitue la plus grande ville principalement francophone des Amériques."
+   },
+   {
+    "en": "Vancouver has the mildest winters of any large Canadian city, which is also why it rains so much.",
+    "fr": "Vancouver a les hivers les plus doux de toutes les grandes villes canadiennes, ce qui explique aussi pourquoi il y pleut tant."
+   },
+   {
+    "en": "Calgary sits about a thousand metres above sea level and is roughly an hour and a half from Banff National Park.",
+    "fr": "Calgary se trouve à environ mille mètres d’altitude et à à peu près une heure et demie du parc national Banff."
+   },
+   {
+    "en": "St. John's is one of the oldest European-founded settlements in North America and its harbour is reached through a narrow gap in the cliffs.",
+    "fr": "Saint-Jean est l’un des plus anciens établissements fondés par des Européens en Amérique du Nord, et on accède à son port par une étroite ouverture dans les falaises."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No. It is a game. Moving depends on work, family, immigration status, housing and a dozen other things this quiz knows nothing about.",
+     "fr": "Non. C’est un jeu. Un déménagement dépend du travail, de la famille, du statut d’immigration, du logement et d’une dizaine d’autres choses que ce quiz ignore."
+    },
+    "q": {
+     "en": "Should I actually move because of this?",
+     "fr": "Devrais-je vraiment déménager à cause de ceci ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Seven results keep it quick. The seven were picked to cover very different climates and lifestyles from coast to coast rather than to rank anywhere.",
+     "fr": "Sept résultats gardent le quiz rapide. Les sept ont été choisis pour couvrir des climats et des modes de vie très différents d’un océan à l’autre, et non pour classer qui que ce soit."
+    },
+    "q": {
+     "en": "Why is my city not one of the answers?",
+     "fr": "Pourquoi ma ville n’est-elle pas parmi les réponses ?"
+    }
+   },
+   {
+    "a": {
+     "en": "About a minute.",
+     "fr": "Environ une minute."
+    },
+    "q": {
+     "en": "How long does it take?",
+     "fr": "Combien de temps cela prend-il ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. Change two answers and the totals shift, which is half the fun of running it twice.",
+     "fr": "Oui. Changez deux réponses et les totaux bougent, ce qui fait la moitié du plaisir de le refaire."
+    },
+    "q": {
+     "en": "Can I get a different city?",
+     "fr": "Puis-je obtenir une autre ville ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Seven questions with four choices each and a progress bar.",
+    "fr": "Sept questions à quatre choix chacune, avec une barre de progression."
+   },
+   {
+    "en": "Seven results: Toronto, Montreal, Vancouver, Calgary, Halifax, Winnipeg and St. John's.",
+    "fr": "Sept résultats : Toronto, Montréal, Vancouver, Calgary, Halifax, Winnipeg et Saint-Jean."
+   },
+   {
+    "en": "The questions cover winter, weekends, rent, commuting, wilderness, small talk and what you want more of.",
+    "fr": "Les questions portent sur l’hiver, les fins de semaine, le loyer, le trajet, la nature, les conversations avec des inconnus et ce dont vous voulez plus."
+   },
+   {
+    "en": "A Try again button restarts it at once.",
+    "fr": "Un bouton Recommencer le relance aussitôt."
+   },
+   {
+    "en": "No signup, nothing saved, works on a phone.",
+    "fr": "Aucune inscription, rien d’enregistré, fonctionne sur un téléphone."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "canadas-biggest-cities.html",
+    {
+     "en": "Read about Canada's biggest cities",
+     "fr": "Lisez sur les plus grandes villes du Canada"
+    }
+   ],
+   [
+    "province-quiz.html",
+    {
+     "en": "Find out which province matches your personality",
+     "fr": "Découvrez quelle province correspond à votre personnalité"
+    }
+   ],
+   [
+    "canada-geography-coast-to-coast.html",
+    {
+     "en": "Explore Canada's geography from coast to coast",
+     "fr": "Explorez la géographie du Canada d’un océan à l’autre"
+    }
+   ],
+   [
+    "quizzes.html",
+    {
+     "en": "See every quiz on the site in one place",
+     "fr": "Voyez tous les quiz du site au même endroit"
+    }
+   ]
+  ]
+ },
+ "which-canadian-food-quiz.html": {
+  "about": [
+   {
+    "en": "Seven quick questions about how you eat, rest and travel, and one Canadian dish at the end. It is a personality quiz rather than a food test, so there is nothing to get wrong.",
+    "fr": "Sept questions rapides sur votre façon de manger, de vous reposer et de voyager, et un plat canadien à la fin. C’est un quiz de personnalité et non un test de cuisine : rien ne peut être faux."
+   },
+   {
+    "en": "Behind the fun there is a small tour of the country. Poutine and tourtière come from Quebec, the butter tart from Ontario, the Nanaimo bar from British Columbia, and maple syrup from the sugar bush in late winter.",
+    "fr": "Derrière l’amusement se cache un petit tour du pays. La poutine et la tourtière viennent du Québec, la tartelette au beurre de l’Ontario, le carré Nanaimo de la Colombie-Britannique, et le sirop d’érable de l’érablière à la fin de l’hiver."
+   },
+   {
+    "en": "It takes about a minute, it is free, and there is no signup. Families run it together and argue happily about who got which dish.",
+    "fr": "Cela prend environ une minute, c’est gratuit et sans inscription. Les familles y jouent ensemble et se disputent joyeusement pour savoir qui a eu quel plat."
+   }
+  ],
+  "facts": [
+   {
+    "en": "It takes roughly forty litres of maple sap to boil down into one litre of syrup.",
+    "fr": "Il faut environ quarante litres d’eau d’érable pour obtenir un litre de sirop."
+   },
+   {
+    "en": "Quebec produces the large majority of the world's maple syrup.",
+    "fr": "Le Québec produit la grande majorité du sirop d’érable du monde."
+   },
+   {
+    "en": "Poutine grew up in rural Quebec in the late 1950s and is now sold coast to coast.",
+    "fr": "La poutine est née dans le Québec rural à la fin des années 1950 et se vend aujourd’hui d’un océan à l’autre."
+   },
+   {
+    "en": "The Nanaimo bar is named after the city of Nanaimo on Vancouver Island and needs no baking.",
+    "fr": "Le carré Nanaimo tient son nom de la ville de Nanaimo, sur l’île de Vancouver, et ne demande aucune cuisson."
+   },
+   {
+    "en": "Montreal bagels are boiled in honey water and baked in a wood-fired oven, which makes them sweeter and denser than the New York kind.",
+    "fr": "Les bagels de Montréal sont pochés dans une eau miellée et cuits au four à bois, ce qui les rend plus sucrés et plus denses que ceux de New York."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No. It asks about your habits, not your kitchen skills. Every choice simply adds points to different dishes.",
+     "fr": "Non. Il porte sur vos habitudes, pas sur vos talents de cuisinier. Chaque choix ajoute simplement des points à différents plats."
+    },
+    "q": {
+     "en": "Is this a cooking quiz?",
+     "fr": "Est-ce un quiz de cuisine ?"
+    }
+   },
+   {
+    "a": {
+     "en": "About a minute, seven questions, one tap each.",
+     "fr": "Environ une minute, sept questions, une touche chacune."
+    },
+    "q": {
+     "en": "How long does it take?",
+     "fr": "Combien de temps cela prend-il ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. Press Try again and change a couple of answers and the totals move.",
+     "fr": "Oui. Appuyez sur Recommencer, changez deux réponses et les totaux bougent."
+    },
+    "q": {
+     "en": "Can I get a different dish?",
+     "fr": "Puis-je obtenir un autre plat ?"
+    }
+   },
+   {
+    "a": {
+     "en": "All seven are strongly associated with Canada and most were created here. Food travels, so several have relatives elsewhere, but these are the versions Canadians grew up with.",
+     "fr": "Les sept sont fortement associés au Canada et la plupart y sont nés. La nourriture voyage, alors plusieurs ont des cousins ailleurs, mais ce sont les versions avec lesquelles les Canadiens ont grandi."
+    },
+    "q": {
+     "en": "Are these all really Canadian?",
+     "fr": "Ces plats sont-ils vraiment canadiens ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Seven questions, four choices each, with a progress bar across the top.",
+    "fr": "Sept questions, quatre choix chacune, avec une barre de progression en haut."
+   },
+   {
+    "en": "Seven possible dishes: poutine, maple syrup, the butter tart, tourtière, the Nanaimo bar, the Montreal bagel and ketchup chips.",
+    "fr": "Sept plats possibles : la poutine, le sirop d’érable, la tartelette au beurre, la tourtière, le carré Nanaimo, le bagel de Montréal et les croustilles au ketchup."
+   },
+   {
+    "en": "Each result has a short description of the character behind the dish rather than a recipe.",
+    "fr": "Chaque résultat vient avec une courte description du caractère qui va avec le plat, plutôt qu’une recette."
+   },
+   {
+    "en": "A Try again button restarts everything instantly.",
+    "fr": "Un bouton Recommencer relance tout aussitôt."
+   },
+   {
+    "en": "Nothing is saved and no account is needed.",
+    "fr": "Rien n’est enregistré et aucun compte n’est requis."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "canadian-food-poutine-maple-syrup.html",
+    {
+     "en": "Read about Canadian food and maple syrup",
+     "fr": "Lisez sur la cuisine canadienne et le sirop d’érable"
+    }
+   ],
+   [
+    "province-quiz.html",
+    {
+     "en": "Find out which province matches your personality",
+     "fr": "Découvrez quelle province correspond à votre personnalité"
+    }
+   ],
+   [
+    "fun-quiz.html",
+    {
+     "en": "Try the light-hearted Canada quiz",
+     "fr": "Essayez le quiz amusant sur le Canada"
+    }
+   ],
+   [
+    "quizzes.html",
+    {
+     "en": "See every quiz on the site in one place",
+     "fr": "Voyez tous les quiz du site au même endroit"
+    }
+   ]
+  ]
+ },
+ "which-national-park-quiz.html": {
+  "about": [
+   {
+    "en": "Seven questions about views, crowds, weather and how far you are willing to walk, and one Canadian national park at the end. There is nothing to revise and nothing to get wrong.",
+    "fr": "Sept questions sur les vues, la foule, la météo et la distance que vous êtes prêt à marcher, et un parc national canadien à la fin. Rien à réviser et rien à rater."
+   },
+   {
+    "en": "The seven parks were picked to be as different from each other as the country allows: the Rockies, the Pacific rainforest, a Newfoundland fjord, the highest tides in the world, a forest island on the prairie, and a granite valley in the Arctic.",
+    "fr": "Les sept parcs ont été choisis pour être aussi différents que le pays le permet : les Rocheuses, la forêt pluviale du Pacifique, un fjord de Terre-Neuve, les plus hautes marées du monde, une île de forêt dans la prairie et une vallée de granite dans l’Arctique."
+   },
+   {
+    "en": "It takes about a minute, and it doubles as a gentle introduction to how much of Canada is set aside as parkland.",
+    "fr": "Cela prend environ une minute, et sert aussi de douce introduction à l’étendue du territoire canadien mis en réserve."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Banff, founded in 1885, was Canada's first national park and the third in the world.",
+    "fr": "Banff, créé en 1885, a été le premier parc national du Canada et le troisième au monde."
+   },
+   {
+    "en": "Jasper is the largest national park in the Rocky Mountains and is also a dark-sky preserve.",
+    "fr": "Jasper est le plus grand parc national des Rocheuses et constitue aussi une réserve de ciel étoilé."
+   },
+   {
+    "en": "Gros Morne is a UNESCO World Heritage Site because its Tablelands expose rock from the Earth's mantle at the surface.",
+    "fr": "Le Gros-Morne est inscrit au patrimoine mondial de l’UNESCO parce que ses Tablelands exposent en surface de la roche du manteau terrestre."
+   },
+   {
+    "en": "The Bay of Fundy, beside Fundy National Park, has the highest tides recorded anywhere on Earth.",
+    "fr": "La baie de Fundy, à côté du parc national Fundy, connaît les plus hautes marées jamais mesurées sur Terre."
+   },
+   {
+    "en": "Auyuittuq is on Baffin Island in Nunavut, and its name comes from Inuktitut for the land that never melts.",
+    "fr": "Auyuittuq se trouve sur l’île de Baffin, au Nunavut, et son nom vient de l’inuktitut et signifie la terre qui ne fond jamais."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No, there are dozens. These seven were chosen because they are as unlike each other as possible, which makes for a better quiz.",
+     "fr": "Non, il y en a des dizaines. Ces sept ont été choisis parce qu’ils sont aussi différents que possible les uns des autres, ce qui fait un meilleur quiz."
+    },
+    "q": {
+     "en": "Are these the only national parks in Canada?",
+     "fr": "Sont-ce les seuls parcs nationaux du Canada ?"
+    }
+   },
+   {
+    "a": {
+     "en": "About a minute, seven questions.",
+     "fr": "Environ une minute, sept questions."
+    },
+    "q": {
+     "en": "How long does it take?",
+     "fr": "Combien de temps cela prend-il ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. It is a personality quiz. Check the official park pages for fees, seasons, permits and safety before planning a visit.",
+     "fr": "Non. C’est un quiz de personnalité. Consultez les pages officielles des parcs pour les frais, les saisons, les permis et la sécurité avant de planifier une visite."
+    },
+    "q": {
+     "en": "Is this a travel guide?",
+     "fr": "Est-ce un guide de voyage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. Change two answers and the totals move.",
+     "fr": "Oui. Changez deux réponses et les totaux bougent."
+    },
+    "q": {
+     "en": "Can I get a different park?",
+     "fr": "Puis-je obtenir un autre parc ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Seven questions, four choices each, with a progress bar.",
+    "fr": "Sept questions, quatre choix chacune, avec une barre de progression."
+   },
+   {
+    "en": "Seven results: Banff, Jasper, Gros Morne, Pacific Rim, Fundy, Riding Mountain and Auyuittuq.",
+    "fr": "Sept résultats : Banff, Jasper, le Gros-Morne, Pacific Rim, Fundy, le Mont-Riding et Auyuittuq."
+   },
+   {
+    "en": "Each result describes the character of the place rather than listing its facilities.",
+    "fr": "Chaque résultat décrit le caractère du lieu plutôt que d’énumérer ses services."
+   },
+   {
+    "en": "A Try again button restarts the quiz instantly.",
+    "fr": "Un bouton Recommencer relance le quiz aussitôt."
+   },
+   {
+    "en": "Free, no signup, and it works on a phone.",
+    "fr": "Gratuit, sans inscription, et cela fonctionne sur un téléphone."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "canadas-national-parks.html",
+    {
+     "en": "Read about Canada's national parks",
+     "fr": "Lisez sur les parcs nationaux du Canada"
+    }
+   ],
+   [
+    "canada-geography-coast-to-coast.html",
+    {
+     "en": "Explore Canada's geography from coast to coast",
+     "fr": "Explorez la géographie du Canada d’un océan à l’autre"
+    }
+   ],
+   [
+    "province-quiz.html",
+    {
+     "en": "Find out which province matches your personality",
+     "fr": "Découvrez quelle province correspond à votre personnalité"
+    }
+   ],
+   [
+    "quizzes.html",
+    {
+     "en": "See every quiz on the site in one place",
+     "fr": "Voyez tous les quiz du site au même endroit"
+    }
+   ]
+  ]
+ },
+ "which-winter-sport-quiz.html": {
+  "about": [
+   {
+    "en": "Seven questions about cold mornings, gear budgets and how much you mind falling over, and one winter sport at the end. There is nothing to get right, so nobody has to have played any of them.",
+    "fr": "Sept questions sur les matins froids, le budget d’équipement et votre tolérance aux chutes, et un sport d’hiver à la fin. Rien n’est à réussir : personne n’a besoin d’avoir déjà pratiqué l’un d’eux."
+   },
+   {
+    "en": "The seven results deliberately mix the expensive with the free. Downhill skiing needs a lift ticket, tobogganing needs a hill and a plastic sled, and both count as a proper Canadian winter.",
+    "fr": "Les sept résultats mêlent volontairement le coûteux et le gratuit. Le ski alpin exige un billet de remontée, la glissade exige une côte et une luge de plastique, et les deux comptent comme un vrai hiver canadien."
+   },
+   {
+    "en": "It takes about a minute and works well as a family game in February, when everybody has an opinion about the cold.",
+    "fr": "Cela prend environ une minute et fonctionne bien comme jeu de famille en février, quand tout le monde a un avis sur le froid."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Curling arrived in Canada with Scottish soldiers in the late 1700s and the country now has more curlers than anywhere else.",
+    "fr": "Le curling est arrivé au Canada avec des soldats écossais à la fin des années 1700, et le pays compte aujourd’hui plus de joueurs que partout ailleurs."
+   },
+   {
+    "en": "Ice hockey and lacrosse are both recognised in Canadian law as national sports, hockey for winter and lacrosse for summer.",
+    "fr": "Le hockey sur glace et la crosse sont tous deux reconnus par la loi canadienne comme sports nationaux, le hockey pour l’hiver et la crosse pour l’été."
+   },
+   {
+    "en": "Snowshoes were developed by Indigenous peoples across the North long before Europeans arrived, and the modern shape still copies them.",
+    "fr": "Les raquettes ont été mises au point par les peuples autochtones du Nord bien avant l’arrivée des Européens, et la forme moderne les copie encore."
+   },
+   {
+    "en": "Canada has hosted the Winter Olympics twice, in Calgary in 1988 and in Vancouver in 2010.",
+    "fr": "Le Canada a accueilli les Jeux olympiques d’hiver deux fois, à Calgary en 1988 et à Vancouver en 2010."
+   },
+   {
+    "en": "The Rideau Canal Skateway in Ottawa freezes into one of the largest naturally frozen skating surfaces anywhere, when the winter is cold enough.",
+    "fr": "La patinoire du canal Rideau, à Ottawa, gèle pour former l’une des plus grandes surfaces de patinage naturelles au monde, quand l’hiver est assez froid."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Not at all. The questions are about how you like to spend a cold day, not about skill.",
+     "fr": "Pas du tout. Les questions portent sur votre façon de passer une journée froide, pas sur vos aptitudes."
+    },
+    "q": {
+     "en": "Do I need to have played these sports?",
+     "fr": "Faut-il avoir pratiqué ces sports ?"
+    }
+   },
+   {
+    "a": {
+     "en": "About a minute, seven questions.",
+     "fr": "Environ une minute, sept questions."
+    },
+    "q": {
+     "en": "How long does it take?",
+     "fr": "Combien de temps cela prend-il ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. Tobogganing is free and takes nine seconds, and it counts exactly as much as anything else here.",
+     "fr": "Non. La glissade est gratuite et dure neuf secondes, et elle compte tout autant que le reste."
+    },
+    "q": {
+     "en": "Is any result better than another?",
+     "fr": "Un résultat est-il meilleur qu’un autre ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes, change a couple of answers and press Try again.",
+     "fr": "Oui, changez deux réponses et appuyez sur Recommencer."
+    },
+    "q": {
+     "en": "Can I get a different sport?",
+     "fr": "Puis-je obtenir un autre sport ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Seven questions, four choices each, with a progress bar.",
+    "fr": "Sept questions, quatre choix chacune, avec une barre de progression."
+   },
+   {
+    "en": "Seven results: hockey, figure skating, downhill skiing, snowboarding, curling, snowshoeing and tobogganing.",
+    "fr": "Sept résultats : le hockey, le patinage artistique, le ski alpin, la planche à neige, le curling, la raquette et la glissade."
+   },
+   {
+    "en": "Each result describes the temperament behind the sport, not the rules of it.",
+    "fr": "Chaque résultat décrit le tempérament derrière le sport, pas ses règles."
+   },
+   {
+    "en": "A Try again button restarts the quiz instantly.",
+    "fr": "Un bouton Recommencer relance le quiz aussitôt."
+   },
+   {
+    "en": "Free, no signup, and it fits on a phone screen.",
+    "fr": "Gratuit, sans inscription, et cela tient sur un écran de téléphone."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "hockey-in-canada.html",
+    {
+     "en": "Read about hockey in Canada",
+     "fr": "Lisez sur le hockey au Canada"
+    }
+   ],
+   [
+    "winter-in-canada.html",
+    {
+     "en": "Read about winter in Canada",
+     "fr": "Lisez sur l’hiver au Canada"
+    }
+   ],
+   [
+    "province-quiz.html",
+    {
+     "en": "Find out which province matches your personality",
+     "fr": "Découvrez quelle province correspond à votre personnalité"
+    }
+   ],
+   [
+    "quizzes.html",
+    {
+     "en": "See every quiz on the site in one place",
+     "fr": "Voyez tous les quiz du site au même endroit"
     }
    ]
   ]

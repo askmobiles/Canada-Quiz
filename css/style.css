@@ -382,3 +382,8 @@ main li a:not(.btn):hover{text-decoration:underline}
 .cq-fig svg{display:block;width:100%;height:auto}
 .cq-fig figcaption{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.55}
 @media(max-width:520px){.cq-table{font-size:13px}.cq-table th,.cq-table td{padding:6px 7px}}
+
+/* wrapper used by games so the shared end-of-game card (js/endcard.js) can sit
+   in the middle of a <canvas>, which cannot hold child elements itself */
+.cq-stage{position:relative;line-height:0;border-radius:14px}
+.cq-stage>canvas{display:block}

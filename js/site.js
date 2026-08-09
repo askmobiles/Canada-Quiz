@@ -178,7 +178,13 @@
         /* keep the original spacing around the words */
         var lead = v.slice(0, v.length - v.replace(/^\s+/, "").length);
         var trail = v.slice(v.replace(/\s+$/, "").length);
-        node.nodeValue = lead + fr + trail;
+        var out = lead + fr + trail;
+        /* Writing nodeValue fires a characterData mutation even when the text
+           does not change, and the observer below translates whatever changed.
+           A phrase that is already French — "Coups : 0" looks up to itself —
+           therefore looped forever and froze the tab. Only write a real
+           change. This is what locked up New Game on the French Memory page. */
+        if (out !== v) node.nodeValue = out;
       }
       return;
     }
@@ -225,7 +231,7 @@
     var s = document.createElement("script");
     /* the ?v= stamp must match ASSET_VER in tools/rewrite_pages.py, so a new
        dictionary is never served from the visitor's old saved copy */
-    s.src = BASE + "js/i18n-fr.js?v=4cc4c995";
+    s.src = BASE + "js/i18n-fr.js?v=5d5d4592";
     s.onload = function () { DICT = window.CQ_FR || null; done(); };
     s.onerror = function () { done(); };
     document.head.appendChild(s);

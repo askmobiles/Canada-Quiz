@@ -5,22 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meilleures réponses — Jeu de fête façon jeu télévisé | Canada Quiz</title>
 <meta name="description" content="Meilleures réponses — un jeu de société gratuit de style jeu télévisé. Deux équipes devinent les réponses les plus populaires pour gagner des points. Le plaisir d&#x27;un jeu télévisé pour la famille.">
-<link rel="stylesheet" href="../css/style.css?v=61960d1f">
+<link rel="stylesheet" href="../css/style.css?v=864b2243">
 <style>
-  .ta-wrap{max-width:560px;margin:0 auto;text-align:center}
+  .ta-wrap{max-width:600px;margin:0 auto;text-align:center}
+  .ta-cats{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:2px 0 12px}
+  .ta-cat{border:2px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;
+    padding:6px 12px;font-weight:800;font-size:13.5px;cursor:pointer;line-height:1.2}
+  .ta-cat.on{background:var(--blue-dark,#1e4f8a);color:#fff;border-color:var(--blue-dark,#1e4f8a)}
   .ta-teams{display:flex;gap:12px;justify-content:center;margin:8px 0}
-  .ta-team{flex:1;max-width:200px;border-radius:14px;padding:8px;font-weight:800;border:3px solid transparent}
+  .ta-team{flex:1;max-width:210px;border-radius:14px;padding:8px;font-weight:800;
+    border:3px solid transparent}
   .ta-team.t1{background:#fdeef0}.ta-team.t2{background:#eaf2fe}
   .ta-team.active{border-color:#2a9d8f}
   .ta-team .sc{font-size:30px;font-weight:900}
   .ta-team.t1 .sc{color:#e63946}.ta-team.t2 .sc{color:#1471df}
   .ta-board{margin:12px 0}
-  .ta-row{display:flex;justify-content:space-between;align-items:center;background:#eef1f5;border-radius:10px;padding:12px 16px;margin:7px 0;cursor:pointer;font-weight:800;min-height:22px}
-  .ta-row.hidden{color:#5f6b7a}
-  .ta-row.shown{background:#e7f7f2;color:#1f7a6f}
-  .ta-row .pts{background:#238277;color:#fff;border-radius:8px;padding:2px 10px;font-size:14px}
-  .ta-row.hidden .txt::before{content:'❔ tap to reveal'}
-  .ta-row.hidden .pts{visibility:hidden}
+  .ta-row{background:#eef1f5;border-radius:12px;margin:8px 0;overflow:hidden;
+    transition:background .15s}
+  .ta-main{display:flex;justify-content:space-between;align-items:center;gap:10px;
+    padding:13px 14px;cursor:pointer;font-weight:800;min-height:24px;text-align:left}
+  .ta-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;
+    border-radius:50%;background:#fff;color:#5f6b7a;font-size:14px;flex:none}
+  .ta-txt{flex:1}
+  .ta-pts{background:#238277;color:#fff;border-radius:8px;padding:3px 11px;font-size:14px;flex:none}
+  .ta-row.down .ta-txt{color:#5f6b7a;font-weight:700}
+  .ta-row.down .ta-pts{visibility:hidden}
+  .ta-row.up{background:#e7f7f2}
+  .ta-row.up .ta-txt{color:#1f7a6f}
+  .ta-row.aw1{background:#fdeef0}.ta-row.aw1 .ta-txt{color:#b3121f}
+  .ta-row.aw2{background:#eaf2fe}.ta-row.aw2 .ta-txt{color:#1258b0}
+  .ta-award{display:none;gap:6px;padding:0 14px 12px;flex-wrap:wrap;align-items:center}
+  .ta-row.up .ta-award{display:flex}
+  .ta-award .lbl{font-size:13px;color:#5f6b7a;font-weight:700;margin-right:2px}
+  .ta-aw{border:2px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;
+    font-weight:800;font-size:13.5px;cursor:pointer;color:var(--ink);line-height:1.2}
+  .ta-aw.a1.on{background:#e63946;border-color:#e63946;color:#fff}
+  .ta-aw.a2.on{background:#1471df;border-color:#1471df;color:#fff}
+  .ta-aw.a0.on{background:#5f6b7a;border-color:#5f6b7a;color:#fff}
+  .ta-hint{font-size:13.5px;color:#5f6b7a;margin:4px 0 0}
+  .ta-done{font-weight:800;color:#1f7a6f;min-height:20px;margin:8px 0 0}
 </style>
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
@@ -52,56 +75,65 @@
     <h1>📋 Meilleures réponses</h1>
     <p>Deux équipes devinent les réponses les plus populaires. Le plaisir d'un jeu télévisé !</p>
   </section>
-  <details class="howto"><summary>📖 Comment jouer</summary><p>Deux équipes jouent à tour de rôle. Lisez la question à voix haute. L'équipe donne une réponse — si elle figure sur le tableau, touchez cette rangée pour la révéler, et les points vont à cette équipe ! Si elle se trompe ou manque d'idées, c'est au tour de l'autre équipe. Quand toutes les réponses sont trouvées, appuyez sur Question suivante. L'équipe avec le plus de points à la fin gagne. Une personne peut être l'animateur qui touche pour révéler.</p></details>
+  <details class="howto"><summary>📖 Comment jouer</summary><p>Pick a category, then read the question out loud. A team shouts an answer. The host taps that card to flip it over and see whether it was on the board and what it is worth. If the team really said it, tap Red or Blue on that card and the points go to them; tap Nobody to leave the points unclaimed. Flip all the rest at the end of the round, press Next question, and the team with the most points after your last board wins.</p></details>
   <div class="panel">
-    <div class="ta-wrap">
+    <div class="ta-wrap" data-fs-host>
+      <div class="ta-cats" id="cats" data-no-i18n></div>
       <div class="ta-teams">
         <div class="ta-team t1" id="team1"><div>🔴 Rouge</div><div class="sc" id="s1">0</div></div>
         <div class="ta-team t2" id="team2"><div>🔵 Bleu</div><div class="sc" id="s2">0</div></div>
       </div>
-      <p class="muted" id="turn" style="font-weight:800"></p>
-      <h2 id="question" style="font-size:19px;min-height:24px"></h2>
-      <div class="ta-board" id="board"></div>
-      <div class="center" style="margin-bottom:8px">
-        <button class="btn btn-ghost" onclick="turnSwitch()">🔄 Changer d'équipe</button>
+      <p class="muted" id="turn" style="font-weight:800" data-no-i18n></p>
+      <h2 id="question" style="font-size:19px;min-height:24px" data-no-i18n></h2>
+      <div class="ta-board" id="board" data-no-i18n></div>
+      <p class="ta-done" id="done" data-no-i18n></p>
+      <div class="center" style="margin:10px 0 8px">
+        <button class="btn btn-ghost" id="flipAll" type="button" data-no-i18n></button>
+        <button class="btn btn-ghost" id="switchBtn" type="button" data-no-i18n></button>
       </div>
       <div class="center">
-        <button class="btn" onclick="nextQ()">Question suivante →</button>
+        <button class="btn" id="nextBtn" type="button" data-no-i18n></button>
+        <button class="btn btn-ghost" id="resetBtn" type="button" data-no-i18n></button>
         <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
       </div>
+      <p class="ta-hint" id="hint" data-no-i18n></p>
     </div>
   </div>
 <!--PAGEDOC-->
 <section class="pagedoc">
   <h2>À propos de ce jeu</h2>
-  <p>Top Answers est un jeu de fête à la manière d'un jeu télévisé, pour deux équipes. Une question apparaît, cinq réponses cachées attendent sur le tableau, et chacune vaut des points selon sa popularité. Le tableau occupe le centre de l'écran pour que toute la pièce suive.</p>
-  <p>Une personne joue l'animateur. Elle lit la question à voix haute, écoute la réponse de l'équipe, puis touche la ligne correspondante pour la dévoiler. En cas d'erreur, elle passe le tour avec le bouton de changement.</p>
+  <p>Top Answers est un jeu de fête à la manière d’un jeu télévisé, pour deux équipes. Une question apparaît, cinq cartes-réponses cachées attendent sur le tableau, et chacune vaut des points selon la popularité de la réponse. Le tableau occupe le centre de l’écran pour que toute la pièce suive.</p>
+  <p>Une personne joue l’animateur, et l’animateur fait deux choses distinctes. Toucher une carte la retourne pour que tout le monde voie la réponse et sa valeur. Toucher ensuite Rouge ou Bleu sur cette carte donne les points à l’équipe qui l’a vraiment dite. Séparer les deux gestes permet de révéler une carte sans risque, d’en discuter, et de n’accorder les points qu’une fois la pièce d’accord.</p>
   <p>Il est fait pour une pièce pleine de monde plutôt que pour un joueur seul : soirées en famille, salles de classe, fêtes d'anniversaire ou tout moment où il faut quelque chose de bruyant et facile à expliquer. Un seul écran partagé suffit.</p>
   <h2>Comment ça marche</h2>
   <ul>
-    <li>Deux équipes, la rouge et la bleue, gardent leurs pointages côte à côte en haut, et l'équipe dont c'est le tour s'illumine.</li>
-    <li>Chaque question cache cinq réponses ; toucher une ligne révèle à la fois la réponse et les points qu'elle rapporte.</li>
-    <li>Le bouton de changement d'équipe passe le tour quand une équipe se trompe ou n'a plus d'idées.</li>
-    <li>Le bouton de question suivante amène un nouveau tableau, et les questions sont brassées : deux soirées ne suivront jamais le même ordre.</li>
-    <li>Quatre tableaux sont marqués avancés et portent sur les planètes, les pays d'Europe, les instruments de musique et les métiers qui aident les gens.</li>
+    <li>Douze catégories se trouvent au-dessus du tableau : la nourriture, le Canada, les animaux, la maison, l’école, le sport, les voyages, les métiers, les fêtes, le corps, la nature et une série plus difficile, en plus d’un mélange qui puise dans toutes.</li>
+    <li>Soixante-douze tableaux en tout, chacun avec cinq réponses, de sorte qu’une soirée ne s’épuise jamais et que le même tableau revient rarement deux fois.</li>
+    <li>Toucher une carte la retourne face visible et montre la réponse avec ses points. Rien n’est encore compté à ce moment-là.</li>
+    <li>Rouge, Bleu et Personne apparaissent sur chaque carte retournée. Rouge ou Bleu donne les points de la carte à une équipe, et toucher la même équipe de nouveau les reprend aussitôt : une erreur ne coûte rien.</li>
+    <li>Retourner le reste met à l’endroit toutes les cartes encore cachées, ce qui permet de clore une manche quand les deux équipes sèchent.</li>
+    <li>Les points se cumulent d’un tableau à l’autre, et Remettre les points à zéro les efface quand une nouvelle partie commence.</li>
   </ul>
   <h2>Conseils pour jouer</h2>
   <ul>
-    <li>Les tableaux plus faciles demandent une garniture à pizza, un animal de la ferme, quelque chose de canadien ou quelque chose qu'on garde au frigo.</li>
+    <li>Retournez d’abord, discutez ensuite. Comme retourner ne compte aucun point, l’animateur peut révéler une carte pendant que la pièce décide si l’équipe l’a vraiment dite.</li>
     <li>La meilleure réponse est souvent la plus évidente. Les équipes qui réfléchissent trop et cherchent une réponse maligne récoltent souvent le moins de points.</li>
     <li>Les points sont loin d'être égaux. Sur la plupart des tableaux, la première réponse vaut trois ou quatre fois la dernière : l'ordre des propositions compte.</li>
     <li>Fixez votre propre limite de temps, disons dix secondes par proposition. Le jeu n'a pas de chrono, et un rythme rapide garde la pièce joyeuse.</li>
+    <li>Choisissez une catégorie qui convient à la pièce. La série difficile parle de planètes, d’océans et d’inventions, tandis que les tableaux sur la nourriture et les animaux conviennent aux tout-petits.</li>
     <li>Animer est un vrai rôle. Lire la question avec un brin de théâtre transforme une réponse ordinaire en gros lot.</li>
   </ul>
   <h2>Questions fréquentes</h2>
   <h3>Combien de personnes faut-il pour une partie ?</h3>
   <p>Trois suffisent : deux personnes qui devinent et une qui touche l'écran. C'est bien meilleur avec de grandes équipes, car les discussions sur la réponse à donner font la moitié du plaisir.</p>
-  <h3>Qui tient le pointage ?</h3>
-  <p>La page le fait pour vous. Chaque réponse dévoilée ajoute ses points à l'équipe mise en évidence : vérifiez que la bonne équipe est active avant de toucher une ligne.</p>
+  <h3>Quelle est la différence entre retourner une carte et l’attribuer ?</h3>
+  <p>Retourner ne fait que révéler ce qui est écrit sur la carte et sa valeur. Attribuer est le geste séparé, sur Rouge ou Bleu, qui ajoute ces points au score d’une équipe. Une carte peut rester retournée sans être attribuée de toute la manche.</p>
+  <h3>J’ai donné les points à la mauvaise équipe. Puis-je annuler ?</h3>
+  <p>Oui. Touchez l’autre équipe et les points changent de côté, ou touchez la même équipe de nouveau, ou Personne, et ils sont retirés. Le score se corrige aussitôt.</p>
   <h3>Que se passe-t-il si une équipe dit une réponse absente du tableau ?</h3>
-  <p>Rien n'est perdu. Appuyez sur le bouton de changement et laissez l'autre côté essayer. Seules les réponses inscrites au tableau peuvent être dévoilées et rapporter des points.</p>
+  <p>Rien n’est perdu. Appuyez sur le bouton de changement et laissez l’autre équipe essayer. Seules les réponses inscrites sur les cartes valent des points.</p>
   <h3>Les questions conviennent-elles aux enfants ?</h3>
-  <p>La plupart des tableaux demandent des choses du quotidien qu'un jeune enfant sait nommer, comme un animal de la ferme ou un fruit rouge. Mettez un enfant dans chaque équipe pour que personne ne se sente perdu.</p>
+  <p>La plupart des tableaux demandent des choses de tous les jours qu’un jeune enfant peut nommer, comme un animal de la ferme ou un fruit rouge. La catégorie difficile est celle à éviter avec un très jeune public.</p>
   <h2>À découvrir aussi</h2>
   <p class="pd-rel"><a href="games.html">Voyez tous les jeux de fête rassemblés au même endroit</a> · <a href="trivia-showdown.html">Défiez une autre équipe dans un match de quiz à deux camps</a> · <a href="imposter.html">Faites circuler un téléphone et démasquez l'imposteur caché</a> · <a href="hold-to-head.html">Tenez le téléphone sur votre front et devinez le mot</a></p>
 </section>
@@ -113,7 +145,7 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <details class="footer-map">
-      <summary>Toutes les pages <span class="fm-count">(118)</span></summary>
+      <summary>Toutes les pages <span class="fm-count">(124)</span></summary>
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <div class="fm-h">Quiz</div>
@@ -130,6 +162,11 @@
         <a href="body-quiz.html">Corps humain &amp; santé</a>
         <a href="money-quiz.html">L'argent expliqué aux enfants</a>
         <a href="earth-quiz.html">Terre &amp; environnement</a>
+        <a href="which-canadian-animal-quiz.html">Which Canadian Animal?</a>
+        <a href="which-canadian-food-quiz.html">Which Canadian Food?</a>
+        <a href="which-canadian-city-quiz.html">Which Canadian City?</a>
+        <a href="which-winter-sport-quiz.html">Which Winter Sport?</a>
+        <a href="which-national-park-quiz.html">Which National Park?</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Pratique de l'examen de conduite</div>
@@ -206,6 +243,7 @@
         <a href="story-maker.html">Créateur d'histoires</a>
         <a href="draw-it.html">Dessine-le</a>
         <a href="spin-wheel.html">Tourne la roue</a>
+        <a href="hide-and-find.html">Hide &amp; Find</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Blogue</div>
@@ -261,52 +299,253 @@
   </div>
 </footer>
 <script>
-const QUESTIONS=[
- {q:"Name a popular pizza topping",a:[["Pepperoni",40],["Cheese",25],["Mushroom",15],["Pineapple",12],["Onion",8]]},
- {q:"Name something you find at a beach",a:[["Sand",35],["Water",25],["Seashell",18],["Umbrella",12],["Crab",10]]},
- {q:"Name a farm animal",a:[["Cow",34],["Pig",26],["Chicken",18],["Horse",14],["Sheep",8]]},
- {q:"Name something Canadian",a:[["Maple syrup",34],["Hockey",26],["Beaver",16],["Poutine",14],["Snow",10]]},
- {q:"Name a fruit that is red",a:[["Apple",38],["Strawberry",26],["Cherry",18],["Raspberry",10],["Watermelon",8]]},
- {q:"Name something you keep in a fridge",a:[["Milk",32],["Eggs",24],["Cheese",18],["Juice",14],["Butter",12]]},
- {q:"Name a sport played with a ball",a:[["Soccer",32],["Basketball",26],["Baseball",18],["Tennis",14],["Volleyball",10]]},
- {q:"Name something that flies",a:[["Bird",34],["Airplane",26],["Butterfly",16],["Bee",14],["Kite",10]]},
- {q:"⭐ Advanced: Name a planet in our solar system",a:[["Earth",30],["Mars",24],["Jupiter",18],["Saturn",16],["Venus",12]]},
- {q:"⭐ Advanced: Name a country in Europe",a:[["France",28],["Italy",24],["Germany",20],["Spain",16],["England",12]]},
- {q:"⭐ Advanced: Name a musical instrument",a:[["Guitar",30],["Piano",26],["Drums",18],["Violin",14],["Flute",12]]},
- {q:"⭐ Advanced: Name a job that helps people",a:[["Doctor",32],["Teacher",24],["Firefighter",18],["Nurse",16],["Police officer",10]]}
+(function(){
+  var FR=/\/fr\//.test(location.pathname);
+  function T(s){ var p=String(s).split('|'); return FR?(p[1]||p[0]):p[0]; }
+  function $(id){ return document.getElementById(id); }
+
+var CATS=[
+{id:"food",n:"Food & Drink|Manger et boire",e:"🍕",q:[
+ {q:"Name a popular pizza topping|Nommez une garniture de pizza populaire",a:[["Pepperoni|Pepperoni",40],["Cheese|Fromage",24],["Mushrooms|Champignons",15],["Pineapple|Ananas",12],["Onion|Oignon",9]]},
+ {q:"Name something you keep in the fridge|Nommez quelque chose qu'on garde dans le frigo",a:[["Milk|Du lait",32],["Eggs|Des oeufs",24],["Cheese|Du fromage",18],["Juice|Du jus",14],["Butter|Du beurre",12]]},
+ {q:"Name a breakfast food|Nommez un aliment du déjeuner",a:[["Eggs|Des oeufs",30],["Toast|Des rôties",24],["Cereal|Des céréales",19],["Pancakes|Des crêpes",15],["Bacon|Du bacon",12]]},
+ {q:"Name a fruit that is red|Nommez un fruit rouge",a:[["Apple|Pomme",38],["Strawberry|Fraise",26],["Cherry|Cerise",18],["Raspberry|Framboise",10],["Watermelon|Melon d'eau",8]]},
+ {q:"Name a drink you order at a coffee shop|Nommez une boisson qu'on commande au café",a:[["Coffee|Un café",36],["Tea|Un thé",22],["Hot chocolate|Un chocolat chaud",17],["Latte|Un latté",15],["Iced coffee|Un café glacé",10]]},
+ {q:"Name a vegetable children complain about|Nommez un légume dont les enfants se plaignent",a:[["Broccoli|Le brocoli",34],["Brussels sprouts|Les choux de Bruxelles",22],["Spinach|Les épinards",18],["Peas|Les pois",14],["Cauliflower|Le chou-fleur",12]]},
+]},
+{id:"canada",n:"Canada|Le Canada",e:"🍁",q:[
+ {q:"Name something Canadian|Nommez quelque chose de canadien",a:[["Maple syrup|Le sirop d'érable",34],["Hockey|Le hockey",26],["Beaver|Le castor",16],["Poutine|La poutine",14],["Snow|La neige",10]]},
+ {q:"Name a Canadian province|Nommez une province canadienne",a:[["Ontario|L'Ontario",30],["Quebec|Le Québec",26],["British Columbia|La Colombie-Britannique",18],["Alberta|L'Alberta",15],["Nova Scotia|La Nouvelle-Écosse",11]]},
+ {q:"Name something pictured on Canadian money|Nommez quelque chose illustré sur l'argent canadien",a:[["A king or a queen|Un roi ou une reine",26],["A maple leaf|Une feuille d'érable",24],["A loon|Un huard",20],["A polar bear|Un ours polaire",18],["A caribou|Un caribou",12]]},
+ {q:"Name a big Canadian city|Nommez une grande ville canadienne",a:[["Toronto|Toronto",34],["Montreal|Montréal",26],["Vancouver|Vancouver",18],["Calgary|Calgary",12],["Ottawa|Ottawa",10]]},
+ {q:"Name a Canadian animal|Nommez un animal canadien",a:[["Beaver|Le castor",30],["Moose|L'orignal",25],["Polar bear|L'ours polaire",18],["Canada goose|La bernache du Canada",15],["Loon|Le huard",12]]},
+ {q:"Name something you need for a Canadian winter|Nommez quelque chose qu'il faut pour un hiver canadien",a:[["A coat|Un manteau",30],["Boots|Des bottes",24],["Mittens|Des mitaines",18],["A toque|Une tuque",16],["A shovel|Une pelle",12]]},
+]},
+{id:"animals",n:"Animals|Les animaux",e:"🐻",q:[
+ {q:"Name a farm animal|Nommez un animal de la ferme",a:[["Cow|La vache",34],["Pig|Le cochon",26],["Chicken|La poule",18],["Horse|Le cheval",14],["Sheep|Le mouton",8]]},
+ {q:"Name a pet people keep at home|Nommez un animal de compagnie",a:[["Dog|Un chien",40],["Cat|Un chat",32],["Fish|Un poisson",12],["Hamster|Un hamster",9],["Bird|Un oiseau",7]]},
+ {q:"Name an animal you see at the zoo|Nommez un animal qu'on voit au zoo",a:[["Lion|Le lion",30],["Elephant|L'éléphant",26],["Monkey|Le singe",18],["Giraffe|La girafe",15],["Zebra|Le zèbre",11]]},
+ {q:"Name something that flies|Nommez quelque chose qui vole",a:[["A bird|Un oiseau",34],["An airplane|Un avion",26],["A butterfly|Un papillon",16],["A bee|Une abeille",14],["A kite|Un cerf-volant",10]]},
+ {q:"Name an animal that lives in water|Nommez un animal qui vit dans l'eau",a:[["Fish|Le poisson",34],["Whale|La baleine",24],["Dolphin|Le dauphin",18],["Shark|Le requin",14],["Turtle|La tortue",10]]},
+ {q:"Name an animal with stripes or spots|Nommez un animal à rayures ou à taches",a:[["Zebra|Le zèbre",30],["Tiger|Le tigre",26],["Leopard|Le léopard",18],["Giraffe|La girafe",15],["Ladybug|La coccinelle",11]]},
+]},
+{id:"house",n:"Around the House|À la maison",e:"🏠",q:[
+ {q:"Name a room in a house|Nommez une pièce de la maison",a:[["Kitchen|La cuisine",30],["Bedroom|La chambre",26],["Bathroom|La salle de bain",20],["Living room|Le salon",16],["Basement|Le sous-sol",8]]},
+ {q:"Name something you find in a kitchen|Nommez quelque chose qu'on trouve dans la cuisine",a:[["Fridge|Un frigo",28],["Stove|Une cuisinière",24],["Sink|Un évier",18],["Microwave|Un micro-ondes",16],["Table|Une table",14]]},
+ {q:"Name a chore nobody enjoys|Nommez une tâche que personne n'aime faire",a:[["Dishes|La vaisselle",30],["Laundry|Le lavage",24],["Cleaning the bathroom|Nettoyer la salle de bain",20],["Taking out the garbage|Sortir les poubelles",14],["Vacuuming|Passer l'aspirateur",12]]},
+ {q:"Name something you plug in|Nommez quelque chose qu'on branche",a:[["A phone|Un téléphone",30],["A TV|Une télé",24],["A lamp|Une lampe",18],["A toaster|Un grille-pain",16],["A computer|Un ordinateur",12]]},
+ {q:"Name something you keep in your pocket|Nommez quelque chose qu'on garde dans sa poche",a:[["A phone|Un téléphone",34],["Keys|Des clés",26],["A wallet|Un portefeuille",18],["Coins|De la monnaie",12],["A tissue|Un mouchoir",10]]},
+ {q:"Name something noisy inside a house|Nommez quelque chose de bruyant dans une maison",a:[["A vacuum|Un aspirateur",28],["A blender|Un mélangeur",22],["An alarm clock|Un réveil",20],["A barking dog|Un chien qui jappe",18],["A washing machine|Une laveuse",12]]},
+]},
+{id:"school",n:"School & Learning|L'école",e:"🎒",q:[
+ {q:"Name a school subject|Nommez une matière scolaire",a:[["Math|Les mathématiques",32],["Science|Les sciences",24],["English|L'anglais",18],["History|L'histoire",15],["Art|Les arts plastiques",11]]},
+ {q:"Name something in a pencil case|Nommez quelque chose dans un étui à crayons",a:[["A pencil|Un crayon",34],["An eraser|Une efface",24],["A pen|Un stylo",18],["A ruler|Une règle",14],["A sharpener|Un taille-crayon",10]]},
+ {q:"Name something children do at recess|Nommez quelque chose que les enfants font à la récréation",a:[["Play tag|Jouer à la tag",28],["Run around|Courir",24],["Play soccer|Jouer au soccer",20],["Use the swings|Se balancer",16],["Talk with friends|Jaser avec des amis",12]]},
+ {q:"Name a reason a student arrives late|Nommez une raison d'arriver en retard à l'école",a:[["Slept in|Avoir dormi trop tard",34],["Missed the bus|Avoir manqué l'autobus",26],["Traffic|La circulation",16],["Bad weather|Le mauvais temps",14],["Lost something|Avoir perdu quelque chose",10]]},
+ {q:"Name something a teacher says every day|Nommez quelque chose qu'un enseignant dit chaque jour",a:[["Sit down|Assoyez-vous",28],["Quiet please|Silence s'il vous plaît",24],["Open your book|Ouvrez votre livre",20],["Hand in your homework|Remettez vos devoirs",16],["Good morning|Bonjour",12]]},
+ {q:"Name something you pack in a school bag|Nommez quelque chose qu'on met dans un sac d'école",a:[["Books|Des livres",30],["Lunch|Un dîner",26],["A pencil case|Un étui à crayons",18],["A water bottle|Une bouteille d'eau",15],["Homework|Des devoirs",11]]},
+]},
+{id:"sports",n:"Sports & Games|Sports et jeux",e:"⚽",q:[
+ {q:"Name a sport played with a ball|Nommez un sport qui se joue avec une balle ou un ballon",a:[["Soccer|Le soccer",32],["Basketball|Le basketball",26],["Baseball|Le baseball",18],["Tennis|Le tennis",14],["Volleyball|Le volleyball",10]]},
+ {q:"Name a winter sport|Nommez un sport d'hiver",a:[["Hockey|Le hockey",36],["Skiing|Le ski",24],["Skating|Le patin",18],["Snowboarding|La planche à neige",12],["Curling|Le curling",10]]},
+ {q:"Name something you wear to play hockey|Nommez quelque chose qu'on porte pour jouer au hockey",a:[["A helmet|Un casque",30],["Skates|Des patins",26],["Gloves|Des gants",18],["Pads|Des jambières",15],["A jersey|Un chandail",11]]},
+ {q:"Name a board game families play|Nommez un jeu de société auquel les familles jouent",a:[["Monopoly|Monopoly",30],["Checkers|Les dames",22],["Chess|Les échecs",20],["Snakes and Ladders|Serpents et échelles",16],["Scrabble|Scrabble",12]]},
+ {q:"Name something at a playground|Nommez quelque chose dans un parc pour enfants",a:[["A slide|Une glissade",30],["Swings|Des balançoires",28],["Monkey bars|Une échelle horizontale",18],["A sandbox|Un carré de sable",14],["A climbing frame|Une structure à grimper",10]]},
+ {q:"Name a way to get around without a car|Nommez une façon de se déplacer sans auto",a:[["Walking|La marche",32],["A bike|Le vélo",26],["The bus|L'autobus",18],["Running|La course",14],["A skateboard|La planche à roulettes",10]]},
+]},
+{id:"travel",n:"Travel & Places|Voyages et lieux",e:"✈️",q:[
+ {q:"Name something you find at a beach|Nommez quelque chose qu'on trouve à la plage",a:[["Sand|Du sable",35],["Water|De l'eau",25],["A seashell|Un coquillage",18],["An umbrella|Un parasol",12],["A crab|Un crabe",10]]},
+ {q:"Name something you pack in a suitcase|Nommez quelque chose qu'on met dans une valise",a:[["Clothes|Des vêtements",34],["A toothbrush|Une brosse à dents",24],["Shoes|Des souliers",18],["A phone charger|Un chargeur",14],["A passport|Un passeport",10]]},
+ {q:"Name something you see at an airport|Nommez quelque chose qu'on voit à l'aéroport",a:[["Airplanes|Des avions",32],["Luggage|Des bagages",24],["The security line|La file de sécurité",18],["A boarding gate|Une porte d'embarquement",15],["A duty-free shop|Une boutique hors taxes",11]]},
+ {q:"Name a place to go on a day off|Nommez un endroit où aller un jour de congé",a:[["A park|Un parc",28],["The mall|Un centre commercial",24],["The beach|La plage",20],["The movies|Le cinéma",16],["A restaurant|Un restaurant",12]]},
+ {q:"Name something you do on a long car ride|Nommez quelque chose qu'on fait pendant un long trajet en auto",a:[["Listen to music|Écouter de la musique",30],["Sleep|Dormir",24],["Play a game|Jouer à un jeu",18],["Eat snacks|Manger des collations",16],["Look out the window|Regarder par la fenêtre",12]]},
+ {q:"Name something you see in a big city|Nommez quelque chose qu'on voit dans une grande ville",a:[["Tall buildings|De grands édifices",30],["Traffic|La circulation",24],["Buses|Des autobus",18],["Crowds|Des foules",16],["Street lights|Des lampadaires",12]]},
+]},
+{id:"jobs",n:"Jobs & People|Métiers et gens",e:"👩‍🚒",q:[
+ {q:"Name a job that helps people|Nommez un métier qui aide les gens",a:[["Doctor|Médecin",32],["Teacher|Enseignant",24],["Firefighter|Pompier",18],["Nurse|Infirmière",16],["Police officer|Policier",10]]},
+ {q:"Name a job that needs a uniform|Nommez un métier qui demande un uniforme",a:[["Police officer|Policier",28],["Nurse|Infirmière",24],["Firefighter|Pompier",20],["Pilot|Pilote",16],["Chef|Chef cuisinier",12]]},
+ {q:"Name a job children dream about|Nommez un métier dont les enfants rêvent",a:[["Astronaut|Astronaute",28],["Pro athlete|Athlète professionnel",24],["Singer|Chanteur",20],["Veterinarian|Vétérinaire",16],["Video maker|Vidéaste",12]]},
+ {q:"Name a tool a worker carries|Nommez un outil qu'un travailleur transporte",a:[["A hammer|Un marteau",30],["A screwdriver|Un tournevis",24],["A wrench|Une clé",18],["A drill|Une perceuse",16],["A tape measure|Un ruban à mesurer",12]]},
+ {q:"Name someone you see in a hospital|Nommez quelqu'un qu'on voit à l'hôpital",a:[["A doctor|Un médecin",34],["A nurse|Une infirmière",28],["A patient|Un patient",16],["A visitor|Un visiteur",12],["A cleaner|Un préposé à l'entretien",10]]},
+ {q:"Name a job people do at night|Nommez un métier qu'on fait la nuit",a:[["Security guard|Agent de sécurité",28],["Nurse|Infirmière",24],["Taxi driver|Chauffeur de taxi",20],["Baker|Boulanger",16],["Cleaner|Préposé à l'entretien",12]]},
+]},
+{id:"seasons",n:"Holidays & Seasons|Fêtes et saisons",e:"🎉",q:[
+ {q:"Name something people do on Canada Day|Nommez quelque chose qu'on fait à la fête du Canada",a:[["Watch fireworks|Regarder les feux d'artifice",34],["Have a barbecue|Faire un barbecue",24],["Go to a parade|Aller à un défilé",18],["Wear red and white|Porter du rouge et blanc",14],["Sing the anthem|Chanter l'hymne national",10]]},
+ {q:"Name something you see in winter|Nommez quelque chose qu'on voit en hiver",a:[["Snow|De la neige",40],["Ice|De la glace",22],["A snowman|Un bonhomme de neige",16],["Icicles|Des glaçons",12],["Shovels|Des pelles",10]]},
+ {q:"Name a holiday families celebrate|Nommez une fête que les familles célèbrent",a:[["Christmas|Noël",36],["Thanksgiving|L'Action de grâce",22],["Halloween|L'Halloween",18],["Easter|Pâques",14],["New Year|Le jour de l'An",10]]},
+ {q:"Name something you do in summer|Nommez quelque chose qu'on fait en été",a:[["Swim|Se baigner",32],["Go camping|Camper",22],["Barbecue|Faire un barbecue",18],["Ride a bike|Faire du vélo",16],["Go to the beach|Aller à la plage",12]]},
+ {q:"Name a gift people give|Nommez un cadeau qu'on offre",a:[["A toy|Un jouet",26],["A gift card|Une carte-cadeau",24],["Clothes|Des vêtements",20],["Chocolate|Du chocolat",18],["Flowers|Des fleurs",12]]},
+ {q:"Name something you see in the fall|Nommez quelque chose qu'on voit en automne",a:[["Coloured leaves|Des feuilles colorées",34],["Pumpkins|Des citrouilles",24],["Rain|De la pluie",16],["Geese flying|Des oies qui volent",14],["Apples|Des pommes",12]]},
+]},
+{id:"body",n:"Body & Health|Le corps et la santé",e:"💪",q:[
+ {q:"Name a part of the face|Nommez une partie du visage",a:[["Eyes|Les yeux",30],["Nose|Le nez",26],["Mouth|La bouche",20],["Ears|Les oreilles",14],["Chin|Le menton",10]]},
+ {q:"Name something you do every morning|Nommez quelque chose qu'on fait chaque matin",a:[["Brush your teeth|Se brosser les dents",30],["Eat breakfast|Déjeuner",26],["Get dressed|S'habiller",18],["Wash your face|Se laver le visage",14],["Check your phone|Regarder son téléphone",12]]},
+ {q:"Name a way to stay healthy|Nommez une façon de rester en santé",a:[["Exercise|Faire de l'exercice",32],["Eat well|Bien manger",26],["Sleep enough|Dormir assez",18],["Drink water|Boire de l'eau",14],["See a doctor|Voir un médecin",10]]},
+ {q:"Name a reason someone stays home sick|Nommez une raison de rester à la maison malade",a:[["A cold|Un rhume",30],["The flu|La grippe",26],["A fever|De la fièvre",18],["A sore throat|Un mal de gorge",14],["A headache|Un mal de tête",12]]},
+ {q:"Name something you wear on your feet|Nommez quelque chose qu'on porte aux pieds",a:[["Shoes|Des souliers",34],["Socks|Des bas",26],["Boots|Des bottes",18],["Sandals|Des sandales",12],["Slippers|Des pantoufles",10]]},
+ {q:"Name something that helps you fall asleep|Nommez quelque chose qui aide à s'endormir",a:[["A pillow|Un oreiller",28],["A quiet room|Une chambre tranquille",24],["A warm blanket|Une couverture chaude",20],["Soft music|De la musique douce",16],["A warm drink|Une boisson chaude",12]]},
+]},
+{id:"nature",n:"Nature & Weather|Nature et météo",e:"🌤️",q:[
+ {q:"Name a kind of weather|Nommez un type de temps",a:[["Rain|La pluie",30],["Snow|La neige",26],["Sunshine|Le soleil",20],["Wind|Le vent",14],["Fog|Le brouillard",10]]},
+ {q:"Name something you see in the sky|Nommez quelque chose qu'on voit dans le ciel",a:[["Clouds|Des nuages",30],["The sun|Le soleil",26],["The moon|La lune",20],["Stars|Des étoiles",14],["Birds|Des oiseaux",10]]},
+ {q:"Name a tree or a plant|Nommez un arbre ou une plante",a:[["Maple|L'érable",30],["Pine|Le pin",24],["Oak|Le chêne",18],["Rose|La rose",16],["Grass|Le gazon",12]]},
+ {q:"Name something you find in a forest|Nommez quelque chose qu'on trouve en forêt",a:[["Trees|Des arbres",34],["Birds|Des oiseaux",22],["Mushrooms|Des champignons",16],["A stream|Un ruisseau",16],["Deer|Des chevreuils",12]]},
+ {q:"Name a place where you find water|Nommez un endroit où il y a de l'eau",a:[["A lake|Un lac",30],["A river|Une rivière",26],["The ocean|L'océan",20],["Rain|La pluie",14],["A pond|Un étang",10]]},
+ {q:"Name something loud you hear outside|Nommez quelque chose de bruyant qu'on entend dehors",a:[["Thunder|Le tonnerre",30],["Sirens|Des sirènes",24],["Traffic|La circulation",20],["A lawn mower|Une tondeuse",16],["Fireworks|Des feux d'artifice",10]]},
+]},
+{id:"advanced",n:"Harder Boards|Plus difficile",e:"⭐",q:[
+ {q:"Name a planet in our solar system|Nommez une planète du système solaire",a:[["Earth|La Terre",30],["Mars|Mars",24],["Jupiter|Jupiter",18],["Saturn|Saturne",16],["Venus|Vénus",12]]},
+ {q:"Name a country in Europe|Nommez un pays d'Europe",a:[["France|La France",28],["Italy|L'Italie",24],["Germany|L'Allemagne",20],["Spain|L'Espagne",16],["England|L'Angleterre",12]]},
+ {q:"Name a musical instrument|Nommez un instrument de musique",a:[["Guitar|La guitare",30],["Piano|Le piano",26],["Drums|La batterie",18],["Violin|Le violon",14],["Flute|La flûte",12]]},
+ {q:"Name one of the world's oceans|Nommez un océan du monde",a:[["Pacific|Le Pacifique",30],["Atlantic|L'Atlantique",28],["Indian|L'océan Indien",18],["Arctic|L'Arctique",14],["Southern|L'océan Austral",10]]},
+ {q:"Name a language spoken in Canada|Nommez une langue parlée au Canada",a:[["English|L'anglais",34],["French|Le français",30],["Mandarin|Le mandarin",14],["Punjabi|Le pendjabi",12],["Spanish|L'espagnol",10]]},
+ {q:"Name something invented in Canada|Nommez quelque chose inventé au Canada",a:[["Basketball|Le basketball",26],["Insulin|L'insuline",24],["The telephone|Le téléphone",20],["Standard time zones|Les fuseaux horaires",16],["The snowmobile|La motoneige",14]]},
+]},
 ];
-let order=[], qi=0, turn=0, scores=[0,0];
-function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
-function setTurn(){
-  document.getElementById('team1').classList.toggle('active',turn===0);
-  document.getElementById('team2').classList.toggle('active',turn===1);
-  document.getElementById('turn').innerHTML=(turn===0?'🔴 Red team':'🔵 Blue team')+"'s turn to guess";
-  document.getElementById('turn').style.color=turn===0?'#c1121f':'#1471df';
-}
-function turnSwitch(){ turn=turn===0?1:0; setTurn(); }
-function showQ(){
-  const item=QUESTIONS[order[qi]];
-  document.getElementById('question').textContent='Q'+(qi+1)+': '+item.q;
-  const board=document.getElementById('board'); board.innerHTML='';
-  item.a.forEach((ans,i)=>{
-    const row=document.createElement('div'); row.className='ta-row hidden';
-    row.innerHTML='<span class="txt"></span><span class="pts">'+ans[1]+'</span>';
-    row.onclick=()=>{
-      if(!row.classList.contains('hidden')) return;
-      row.classList.remove('hidden'); row.classList.add('shown');
-      row.querySelector('.txt').textContent=ans[0];
-      scores[turn]+=ans[1];
-      document.getElementById(turn===0?'s1':'s2').textContent=scores[turn];
-    };
-    board.appendChild(row);
+
+  var MIX={id:'mix',n:'Mixed \u2014 all questions|M\u00e9lange \u2014 toutes les questions',e:'\ud83c\udfb2'};
+  var cat='mix', order=[], qi=0, scores=[0,0], turn=0, rows=[], board=null;
+
+  function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t; } return a; }
+
+  function pool(){
+    var out=[], i, k;
+    for(i=0;i<CATS.length;i++){
+      if(cat!=='mix' && CATS[i].id!==cat) continue;
+      for(k=0;k<CATS[i].q.length;k++) out.push(CATS[i].q[k]);
+    }
+    return out;
+  }
+
+  function buildCats(){
+    var box=$('cats'); box.innerHTML='';
+    var list=[MIX].concat(CATS);
+    list.forEach(function(c){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='ta-cat'+(c.id===cat?' on':'');
+      b.textContent=c.e+' '+T(c.n);
+      b.addEventListener('click',function(){ cat=c.id; buildCats(); newRound(true); });
+      box.appendChild(b);
+    });
+  }
+
+  function setTurn(){
+    $('team1').classList.toggle('active',turn===0);
+    $('team2').classList.toggle('active',turn===1);
+    $('turn').textContent = (turn===0 ? T('\ud83d\udd34 Red team\u2019s turn to guess|\u00c0 l\u2019\u00e9quipe rouge de deviner')
+                                      : T('\ud83d\udd35 Blue team\u2019s turn to guess|\u00c0 l\u2019\u00e9quipe bleue de deviner'));
+    $('turn').style.color = turn===0?'#c1121f':'#1471df';
+  }
+
+  function paintScores(){ $('s1').textContent=scores[0]; $('s2').textContent=scores[1]; }
+
+  function award(r, who){
+    if(!r.up) return;
+    if(r.aw===who) who=0;                       /* tapping the same team takes it back */
+    if(r.aw===1) scores[0]-=r.pts;
+    else if(r.aw===2) scores[1]-=r.pts;
+    r.aw=who;
+    if(who===1) scores[0]+=r.pts;
+    else if(who===2) scores[1]+=r.pts;
+    if(who===1) turn=0; else if(who===2) turn=1;
+    paintRow(r); paintScores(); setTurn();
+  }
+
+  function paintRow(r){
+    r.el.className='ta-row '+(r.up?'up':'down')+(r.aw===1?' aw1':'')+(r.aw===2?' aw2':'');
+    r.txt.textContent = r.up ? T(r.text)
+      : T('\u2753 Tap to flip this card|\u2753 Touchez pour retourner cette carte');
+    r.b1.classList.toggle('on', r.aw===1);
+    r.b2.classList.toggle('on', r.aw===2);
+    r.b0.classList.toggle('on', r.aw===0);
+    checkDone();
+  }
+
+  function checkDone(){
+    var left=0, i;
+    for(i=0;i<rows.length;i++) if(!rows[i].up) left++;
+    $('done').textContent = left ? '' :
+      T('\u2714 All five are flipped \u2014 press Next question.|\u2714 Les cinq cartes sont retourn\u00e9es \u2014 appuyez sur Question suivante.');
+  }
+
+  function flip(r){
+    if(r.up) return;
+    r.up=true; paintRow(r);
+  }
+
+  function showQ(){
+    var item=order[qi];
+    $('question').textContent='Q'+(qi+1)+'/'+order.length+': '+T(item.q);
+    board=$('board'); board.innerHTML=''; rows=[];
+    item.a.forEach(function(ans,i){
+      var el=document.createElement('div');
+      var main=document.createElement('div'); main.className='ta-main';
+      var num=document.createElement('span'); num.className='ta-num'; num.textContent=String(i+1);
+      var txt=document.createElement('span'); txt.className='ta-txt';
+      var pts=document.createElement('span'); pts.className='ta-pts'; pts.textContent=ans[1];
+      main.appendChild(num); main.appendChild(txt); main.appendChild(pts);
+
+      var aw=document.createElement('div'); aw.className='ta-award';
+      var lbl=document.createElement('span'); lbl.className='lbl';
+      lbl.textContent=T('Who said it?|Qui l\u2019a dit ?');
+      var b1=document.createElement('button'); b1.type='button'; b1.className='ta-aw a1';
+      b1.textContent=T('\ud83d\udd34 Red +|\ud83d\udd34 Rouge +')+ans[1];
+      var b2=document.createElement('button'); b2.type='button'; b2.className='ta-aw a2';
+      b2.textContent=T('\ud83d\udd35 Blue +|\ud83d\udd35 Bleu +')+ans[1];
+      var b0=document.createElement('button'); b0.type='button'; b0.className='ta-aw a0 on';
+      b0.textContent=T('Nobody|Personne');
+      aw.appendChild(lbl); aw.appendChild(b1); aw.appendChild(b2); aw.appendChild(b0);
+
+      el.appendChild(main); el.appendChild(aw);
+      var r={el:el, txt:txt, b1:b1, b2:b2, b0:b0, text:ans[0], pts:ans[1], up:false, aw:0};
+      main.addEventListener('click', function(){ flip(r); });
+      b1.addEventListener('click', function(e){ e.stopPropagation(); award(r,1); });
+      b2.addEventListener('click', function(e){ e.stopPropagation(); award(r,2); });
+      b0.addEventListener('click', function(e){ e.stopPropagation(); award(r,0); });
+      rows.push(r);
+      board.appendChild(el);
+      paintRow(r);
+    });
+    $('done').textContent='';
+    setTurn();
+  }
+
+  function newRound(reshuffle){
+    if(reshuffle||!order.length){ order=shuffle(pool().slice()); qi=0; }
+    showQ();
+  }
+
+  function labels(){
+    $('flipAll').textContent   = T('\ud83d\udd0e Flip the rest|\ud83d\udd0e Retourner le reste');
+    $('switchBtn').textContent = T('\ud83d\udd04 Switch team|\ud83d\udd04 Changer d\u2019\u00e9quipe');
+    $('nextBtn').textContent   = T('Next question \u2192|Question suivante \u2192');
+    $('resetBtn').textContent  = T('Reset scores|Remettre les points \u00e0 z\u00e9ro');
+    $('hint').textContent = T(
+      'Host: tap a card to flip it, then tap Red or Blue to give that card\u2019s points to the team that said it.|'
+    + 'Animateur : touchez une carte pour la retourner, puis touchez Rouge ou Bleu pour donner les points \u00e0 l\u2019\u00e9quipe qui l\u2019a dit.');
+  }
+
+  $('flipAll').addEventListener('click', function(){ rows.forEach(flip); });
+  $('switchBtn').addEventListener('click', function(){ turn=turn===0?1:0; setTurn(); });
+  $('nextBtn').addEventListener('click', function(){
+    qi++;
+    if(qi>=order.length){ order=shuffle(order); qi=0; }
+    showQ();
+    var w=document.querySelector('.ta-wrap');
+    if(w && w.scrollIntoView) w.scrollIntoView({block:'start'});
   });
-  setTurn();
-}
-function nextQ(){ qi=(qi+1)%order.length; if(qi===0) order=shuffle(order); showQ(); window.scrollTo(0,0); }
-order=shuffle(QUESTIONS.map((_,i)=>i)); showQ();
+  $('resetBtn').addEventListener('click', function(){
+    scores=[0,0]; paintScores();
+    rows.forEach(function(r){ r.aw=0; paintRow(r); });
+  });
+
+  labels(); buildCats(); paintScores(); newRound(true);
+})();
 </script>
   <script src="../js/game-fullscreen.js?v=dd5e3201"></script>
-  <script src="../js/site.js?v=36765ba9"></script>
+  <script src="../js/site.js?v=1b925d9c"></script>
   <script src="../js/analytics.js?v=d95c4f47"></script>
   <script src="../js/ads.js?v=00e703ff" defer></script>
 </body>

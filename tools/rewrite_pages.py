@@ -217,8 +217,18 @@ def main():
         # analytics.js if its hand-written source already had the tag, so 100
         # of 218 pages — every driving test, every blog article — were
         # invisible in the stats. Adding a new page can no longer miss it.
-        for _js in ("site", "analytics", "ads"):
+        for _js in ("site", "analytics", "ads", "endcard"):
             s = re.sub(r'[ \t]*<script src="js/%s\.js(\?[^"]*)?"[^>]*></script>\n?' % _js, "", s)
+
+        # js/endcard.js draws the shared "game over" card in the MIDDLE of the
+        # play area instead of under it. Only the pages that actually call it
+        # load it, so it costs nothing on an article. A page opts in simply by
+        # using CQEnd.show(...) in its own script — no list to keep in sync.
+        if "CQEnd." in s:
+            s = s.replace("</body>",
+                          '  <script src="js/endcard.js?v=%s"></script>\n</body>'
+                          % asset_ver.ver("js/endcard.js"), 1)
+
         s = s.replace(
             "</body>",
             '  <script src="js/site.js?v=%s"></script>\n'
