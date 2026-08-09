@@ -225,7 +225,7 @@
     var s = document.createElement("script");
     /* the ?v= stamp must match ASSET_VER in tools/rewrite_pages.py, so a new
        dictionary is never served from the visitor's old saved copy */
-    s.src = BASE + "js/i18n-fr.js?v=c264c3ec";
+    s.src = BASE + "js/i18n-fr.js?v=cdb4ae55";
     s.onload = function () { DICT = window.CQ_FR || null; done(); };
     s.onerror = function () { done(); };
     document.head.appendChild(s);

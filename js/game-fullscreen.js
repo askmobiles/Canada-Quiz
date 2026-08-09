@@ -32,11 +32,21 @@
     + '@media (max-width:900px){.fs-btn{display:block}}'
     + 'html.fs-touch .fs-btn{display:block}'
     // --- play mode --------------------------------------------------------
+    // Everything that is NOT the game gets hidden. .pagedoc is the written
+    // summary block under each page; it was added after this file was written,
+    // so in play mode it kept rendering behind the game and showed through —
+    // "About this game" text sitting under the spinning wheel. Any page-level
+    // block added in future should be added to this list too.
     + 'body.play-mode .site-header,body.play-mode .site-footer,body.play-mode .hero,'
-    + 'body.play-mode .howto,body.play-mode .ad-slot,body.play-mode .ad-label{display:none!important}'
+    + 'body.play-mode .howto,body.play-mode .ad-slot,body.play-mode .ad-label,'
+    + 'body.play-mode .pagedoc,body.play-mode .cq-fig,body.play-mode .cq-sources'
+    + '{display:none!important}'
     + 'body.play-mode{overflow:hidden;overscroll-behavior:none;position:fixed;inset:0;width:100%;'
+    + 'background:var(--bg,#fdfaf3);'
     + '-webkit-text-size-adjust:100%;-webkit-user-select:none;user-select:none;'
     + '-webkit-touch-callout:none;touch-action:manipulation}'
+    // an opaque backdrop, so nothing at all can show through from behind
+    + 'body.play-mode .pm-host{background:var(--bg,#fdfaf3)!important}'
     + 'body.play-mode .pm-host{position:fixed!important;inset:0!important;margin:0!important;'
     + 'border-radius:0!important;max-width:none!important;width:100%!important;height:100%!important;'
     + 'overflow:auto!important;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;z-index:9998;'
@@ -56,6 +66,7 @@
     // comfortable tap targets on touch while playing
     + '@media (hover:none) and (pointer:coarse){body.play-mode .pm-host button,'
     + 'body.play-mode .pm-host .btn{min-height:46px}}'
+    + 'body.play-mode .pm-veiled{display:none!important}'
     + 'body.play-mode .fs-btn{display:none!important}'
     + 'body.play-mode .fs-exit{display:block}';
 
@@ -71,9 +82,19 @@
   } catch (e) {}
 
   function host() {
-    return document.querySelector('[data-fs-host]')
-        || document.querySelector('.panel')
-        || document.querySelector('main');
+    var marked = document.querySelector('[data-fs-host]');
+    if (marked) return marked;
+
+    // A quiz is not one panel — the question screen and the result screen are
+    // separate siblings, and the result appears only at the end. If we pinned
+    // play mode to the first .panel, the result screen would be stranded
+    // behind it. So for quizzes we take the whole <main> and rely on the CSS
+    // above to hide the article text around it.
+    if (document.querySelector('.options, #dq-opts, #dq-po')) {
+      var m = document.querySelector('main');
+      if (m) return m;
+    }
+    return document.querySelector('.panel') || document.querySelector('main');
   }
 
   var enterBtn = document.createElement('button');
@@ -229,9 +250,31 @@
   }
 
   // ---------------------------------------------------------- enter / exit
+  /* Hide everything on the page that is not the game.
+     Naming the blocks one by one in CSS was never going to hold: the driving
+     pages have several sibling panels of explanation, and a page can grow a
+     new section any time. So instead we walk the real page and hide every
+     top-level block that does not contain the game. Nothing can show through
+     behind the play screen, whatever a page is made of. */
+  function veil(h) {
+    if (!h) return;
+    var main = document.querySelector('main') || document.body;
+    var kids = main.children, i, el;
+    for (i = 0; i < kids.length; i++) {
+      el = kids[i];
+      if (el === h || el.contains(h) || h.contains(el)) continue;
+      el.classList.add('pm-veiled');
+    }
+  }
+  function unveil() {
+    var v = document.querySelectorAll('.pm-veiled'), i;
+    for (i = 0; i < v.length; i++) v[i].classList.remove('pm-veiled');
+  }
+
   function enter() {
     var h = host();
     if (h) h.classList.add('pm-host');
+    veil(h);
     document.body.classList.add('play-mode');
     vpLock();
     var p = nativeOn();
@@ -242,6 +285,7 @@
   }
   function exit() {
     document.body.classList.remove('play-mode');
+    unveil();
     var h = document.querySelector('.pm-host');
     if (h) { h.style.zoom = ''; h.classList.remove('pm-host'); }
     orientUnlock();

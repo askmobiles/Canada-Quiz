@@ -228,6 +228,17 @@ def main():
                asset_ver.ver("js/analytics.js"),
                asset_ver.ver("js/ads.js")), 1)
 
+        # --- full-screen play mode on every quiz, not just the games ---------
+        # js/game-fullscreen.js gives a phone or tablet an app-like screen with
+        # the header, footer, ads and article text out of the way. It was only
+        # on the games. Any page that shows answer options, or that runs the
+        # driving engine, is a quiz and deserves the same thing.
+        looks_like_a_quiz = ('class="options"' in s or 'id="opts"' in s
+                             or 'driving-engine.js' in s)
+        if looks_like_a_quiz and 'js/game-fullscreen.js' not in s:
+            s = s.replace("</body>",
+                          '  <script src="js/game-fullscreen.js" defer></script>\n</body>', 1)
+
         # --- cache stamp: A HASH OF EACH FILE, not one shared version --------
         # Each ?v= is the first 8 hex of that file's SHA-1 (tools/asset_ver.py).
         # Two things follow, and both matter:
