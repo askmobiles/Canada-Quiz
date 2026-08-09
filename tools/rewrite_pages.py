@@ -202,23 +202,26 @@ def main():
             print("!! no footer in", page)
         s = FOOTER_RE.sub(lambda m: footer_html(), s, count=1)
 
-        # --- site.js --------------------------------------------------------
-        s = re.sub(r'[ \t]*<script src="js/site\.js(\?[^"]*)?"></script>\n?', "", s)
-        if re.search(r'<script src="js/analytics\.js(\?[^"]*)?"></script>', s):
-            s = re.sub(r'<script src="js/analytics\.js(\?[^"]*)?"></script>',
-                       '<script src="js/site.js?v=%s"></script>\n'
-                       '  <script src="js/analytics.js?v=%s"></script>'
-                       % (asset_ver.ver("js/site.js"), asset_ver.ver("js/analytics.js")),
-                       s, count=1)
-        else:
-            s = s.replace("</body>",
-                          '  <script src="js/site.js?v=%s"></script>\n</body>'
-                          % asset_ver.ver("js/site.js"), 1)
-
-        # --- ads.js: loads AdSense AFTER the page is readable -----------------
-        s = s.replace("</body>",
-                      '  <script src="js/ads.js?v=%s" defer></script>\n</body>'
-                      % asset_ver.ver("js/ads.js"), 1)
+        # --- the three site-wide scripts, on EVERY page, in a fixed order -----
+        # site.js      draws the header/footer and runs the French dictionary
+        # analytics.js visitor tracking — must be on every page or the numbers lie
+        # ads.js       loads AdSense AFTER the page is readable
+        #
+        # These are stripped and re-added every build rather than left wherever
+        # a page happened to have them. Before this, a page only got
+        # analytics.js if its hand-written source already had the tag, so 100
+        # of 218 pages — every driving test, every blog article — were
+        # invisible in the stats. Adding a new page can no longer miss it.
+        for _js in ("site", "analytics", "ads"):
+            s = re.sub(r'[ \t]*<script src="js/%s\.js(\?[^"]*)?"[^>]*></script>\n?' % _js, "", s)
+        s = s.replace(
+            "</body>",
+            '  <script src="js/site.js?v=%s"></script>\n'
+            '  <script src="js/analytics.js?v=%s"></script>\n'
+            '  <script src="js/ads.js?v=%s" defer></script>\n</body>'
+            % (asset_ver.ver("js/site.js"),
+               asset_ver.ver("js/analytics.js"),
+               asset_ver.ver("js/ads.js")), 1)
 
         # --- cache stamp: A HASH OF EACH FILE, not one shared version --------
         # Each ?v= is the first 8 hex of that file's SHA-1 (tools/asset_ver.py).

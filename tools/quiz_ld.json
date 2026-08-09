@@ -668,6 +668,183 @@
    "q": "How many continents are there in the world?"
   }
  ],
+ "manitoba-class-5-mock-test.html": [
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Sur la banquette arrière",
+     "Sur le siège du passager avant",
+     "N'importe où dans le véhicule",
+     "Juste derrière le conducteur"
+    ],
+    "q": "Où doit s'asseoir le superviseur d'un apprenti manitobain ?"
+   },
+   "o": [
+    "In the back seat",
+    "In the front passenger seat",
+    "Anywhere in the vehicle",
+    "Directly behind the driver"
+   ],
+   "q": "Where must a Manitoba learner's supervising driver sit?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Seulement à l'avant",
+     "Aucun passager",
+     "À l'arrière, jusqu'au nombre de ceintures fonctionnelles",
+     "N'importe où, sans limite"
+    ],
+    "q": "Où les passagers peuvent-ils s'asseoir dans le véhicule d'un apprenti manitobain ?"
+   },
+   "o": [
+    "Only in the front",
+    "No passengers at all",
+    "In the rear, up to the number of working seatbelts",
+    "Anywhere, with no limit"
+   ],
+   "q": "Where may passengers sit in a Manitoba learner's vehicle?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Moins de 0,05",
+     "Moins de 0,08",
+     "Aucune règle pour les apprentis",
+     "Aucune"
+    ],
+    "q": "Quelle quantité d'alcool ou de drogue un apprenti manitobain peut-il avoir dans l'organisme ?"
+   },
+   "o": [
+    "Under .05",
+    "Under .08",
+    "No rule applies to learners",
+    "None at all"
+   ],
+   "q": "How much alcohol or drugs may a Manitoba learner have in their system?"
+  }
+ ],
+ "manitoba-class-5-practice-test.html": [
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "17 ans",
+     "15 ans",
+     "16 ans, ou 15 ans et demi si inscrit à un cours de conduite au secondaire",
+     "18 ans"
+    ],
+    "q": "Quel est l'âge minimal pour un permis d'apprenti classe 5 au Manitoba ?"
+   },
+   "o": [
+    "17",
+    "15",
+    "16, or 15 and a half if enrolled in a high school driver education course",
+    "18"
+   ],
+   "q": "What is the minimum age for a Manitoba Class 5 Learner licence?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Trois mois",
+     "Douze mois",
+     "Il n'y a pas de minimum",
+     "Au moins neuf mois"
+    ],
+    "q": "Combien de temps un apprenti manitobain doit-il rester à l'étape apprenti ?"
+   },
+   "o": [
+    "Three months",
+    "Twelve months",
+    "There is no minimum",
+    "At least nine months"
+   ],
+   "q": "How long must a Manitoba learner stay in the learner stage?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Un permis complet depuis au moins 36 mois",
+     "Un an",
+     "Six mois",
+     "Aucune exigence"
+    ],
+    "q": "Quelle expérience de conduite le superviseur d'un apprenti manitobain doit-il avoir ?"
+   },
+   "o": [
+    "A full licence for at least 36 months",
+    "One year",
+    "Six months",
+    "No requirement"
+   ],
+   "q": "How much driving experience must a Manitoba learner's supervising driver have?"
+  }
+ ],
+ "manitoba-rules-of-the-road.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Remorquer un autre véhicule",
+     "Conduire dans une rue de ville",
+     "Transporter un passager à l'arrière",
+     "Conduire le jour"
+    ],
+    "q": "Que ne peut PAS faire un apprenti conducteur manitobain ?"
+   },
+   "o": [
+    "Tow another vehicle",
+    "Drive on a city street",
+    "Carry a rear-seat passenger",
+    "Drive in daylight"
+   ],
+   "q": "Which of these may a Manitoba learner NOT do?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Aucune limite de temps",
+     "30 minutes",
+     "15 minutes",
+     "60 minutes"
+    ],
+    "q": "Combien de temps avez-vous pour terminer l'examen théorique manitobain ?"
+   },
+   "o": [
+    "No time limit",
+    "30 minutes",
+    "15 minutes",
+    "60 minutes"
+   ],
+   "q": "How long do you have to complete the Manitoba knowledge test?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "La géographie, la météo et les cartes",
+     "Seulement les panneaux",
+     "Les lois de la circulation, les pratiques de conduite sécuritaire et la reconnaissance des panneaux",
+     "La mécanique, les premiers soins et l'assurance"
+    ],
+    "q": "Quels trois domaines l'examen théorique manitobain couvre-t-il ?"
+   },
+   "o": [
+    "Geography, weather and maps",
+    "Only road signs",
+    "Traffic laws, safe driving practices and road sign recognition",
+    "Mechanics, first aid and insurance"
+   ],
+   "q": "Which three areas does the Manitoba knowledge test cover?"
+  }
+ ],
  "money-quiz.html": [
   {
    "a": 2,
@@ -878,6 +1055,183 @@
     "As many as there are seat belts"
    ],
    "q": "In their first six months, a G2 driver aged 19 or under may carry how many passengers aged 19 or under between midnight and 5 a.m.?"
+  }
+ ],
+ "quebec-class-5-mock-test.html": [
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "18 ans",
+     "16 ans",
+     "15 ans",
+     "17 ans"
+    ],
+    "q": "Quel est l'âge minimal pour détenir un permis d'apprenti conducteur au Québec ?"
+   },
+   "o": [
+    "18",
+    "16",
+    "15",
+    "17"
+   ],
+   "q": "What is the minimum age to hold a learner's licence in Quebec?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "6 mois",
+     "24 mois",
+     "Au moins 12 mois",
+     "3 mois"
+    ],
+    "q": "Combien de temps devez-vous détenir un permis d'apprenti au Québec avant l'examen sur route ?"
+   },
+   "o": [
+    "6 months",
+    "24 months",
+    "At least 12 months",
+    "3 months"
+   ],
+   "q": "How long must you hold a Quebec learner's licence before the road test?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Quinze points",
+     "Huit points",
+     "Il n'y a aucune limite",
+     "Quatre points"
+    ],
+    "q": "Quelle marge de points d'inaptitude s'applique à un apprenti conducteur au Québec ?"
+   },
+   "o": [
+    "Fifteen points",
+    "Eight points",
+    "There is no limit",
+    "Four points"
+   ],
+   "q": "What demerit point bracket applies to a Quebec learner driver?"
+  }
+ ],
+ "quebec-class-5-practice-test.html": [
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Moins de 0,08",
+     "Aucune limite ne s'applique",
+     "Zéro",
+     "Moins de 0,05"
+    ],
+    "q": "Quel taux d'alcool un titulaire de permis d'apprenti conducteur au Québec peut-il avoir dans le sang ?"
+   },
+   "o": [
+    "Under .08",
+    "No limit applies",
+    "Zero",
+    "Under .05"
+   ],
+   "q": "How much alcohol may a Quebec learner's licence holder have in their blood?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Un parent seulement",
+     "Toute personne de plus de 18 ans",
+     "N'importe quel titulaire de permis",
+     "Une personne détenant un permis québécois de classe 5 valide avec au moins deux ans d'expérience"
+    ],
+    "q": "Qui peut accompagner un apprenti conducteur au Québec ?"
+   },
+   "o": [
+    "A parent only",
+    "Anyone over 18",
+    "Anyone with a licence",
+    "A holder of a valid Quebec Class 5 licence with at least two years of experience"
+   ],
+   "q": "Who may accompany a Quebec learner driver?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Minuit et 5 h",
+     "22 h et 6 h",
+     "1 h et 4 h",
+     "Il n'y a aucune restriction"
+    ],
+    "q": "Entre quelles heures un apprenti conducteur québécois ne peut-il pas conduire ?"
+   },
+   "o": [
+    "Midnight and 5 a.m.",
+    "10 p.m. and 6 a.m.",
+    "1 a.m. and 4 a.m.",
+    "There is no restriction"
+   ],
+   "q": "Between which hours may a Quebec learner not drive?"
+  }
+ ],
+ "quebec-rules-of-the-road.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Votre permis, le certificat d'immatriculation et la preuve d'assurance",
+     "Seulement votre permis",
+     "Seulement l'immatriculation",
+     "Rien, les dossiers sont électroniques"
+    ],
+    "q": "Que devez-vous avoir avec vous chaque fois que vous conduisez au Québec ?"
+   },
+   "o": [
+    "Your licence, the registration certificate and proof of insurance",
+    "Only your licence",
+    "Only the registration",
+    "Nothing, records are electronic"
+   ],
+   "q": "What must you carry with you whenever you drive in Quebec?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "80 km/h",
+     "50 km/h",
+     "30 km/h",
+     "60 km/h"
+    ],
+    "q": "Quelle est la limite de vitesse par défaut dans une rue de ville au Québec sans panneau ?"
+   },
+   "o": [
+    "80 km/h",
+    "50 km/h",
+    "30 km/h",
+    "60 km/h"
+   ],
+   "q": "What is the default speed limit on a Quebec city street with no posted sign?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Une demi-seconde",
+     "Dix mètres à toute vitesse",
+     "Deux secondes",
+     "Une longueur de voiture"
+    ],
+    "q": "Quelle est la distance de suivi normale par bonnes conditions ?"
+   },
+   "o": [
+    "Half a second",
+    "Ten metres at any speed",
+    "Two seconds",
+    "One car length"
+   ],
+   "q": "What is the standard following distance in good conditions?"
   }
  ],
  "science-quiz.html": [

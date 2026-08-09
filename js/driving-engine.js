@@ -527,6 +527,18 @@
     signHTML: signHTML,
     mock: mock,
     studySigns: studySigns,
-    studyRules: studyRules
+    studyRules: studyRules,
+
+    /* A short untimed warm-up, drawn from the whole bank, that starts the
+       moment the page opens. This goes at the top of the *-practice-test
+       pages: someone who searched "G1 practice test" can answer a question
+       within a second of landing, instead of reading first and clicking
+       through to the timed test. autoOpen is true so the page does NOT
+       scroll itself on load. */
+    quickPractice: function (sel, n) {
+      var box = document.querySelector(sel);
+      if (!box || !window.CQ_DRIVE_Q) return;
+      practice(box, shuffle(window.CQ_DRIVE_Q).slice(0, n || 10), true);
+    }
   };
 })();

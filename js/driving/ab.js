@@ -1,5 +1,5 @@
 /* canada-quiz.com — Alberta Class 7 practice data
-   Test format, and 160 original bilingual questions (80 road signs + 80 rules).
+   Test format, and 170 original bilingual questions (80 road signs + 90 rules).
    All wording is our own. Free practice site, not affiliated with any government.
    The quiz code lives in js/driving-engine.js and never changes per province. */
 window.CQ_DRIVE_Q = [];
@@ -765,6 +765,196 @@ window.CQ_DRIVE_Q = [];
        a:["Aucune raison n'est donnée","Les nouveaux conducteurs ont plus d'accidents : le système repère tôt les habitudes risquées","Pour percevoir plus d'argent","Parce que leurs véhicules sont plus vieux"],
        e:"Le permis par étapes repose sur des données : des restrictions et une limite de points plus serrée tant que l'expérience est faible, puis tous les privilèges une fois acquise." },
   c:1 }
+
+);
+
+/* canada-quiz.com — ALBERTA Class 7 practice, set D (rules of the road)
+   Facts checked against alberta.ca in August 2026.
+   Not affiliated with the Government of Alberta or any registry agent. */
+
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"abr71", sec:"rules", topic:"safe",
+  en:{ q:"What is the default speed limit on an Alberta city street with no posted sign?",
+       a:["50 km/h","30 km/h","60 km/h","80 km/h"],
+       e:"Inside a city, town or village the default is 50 km/h. On a rural highway with no sign it is 80 km/h." },
+  fr:{ q:"Quelle est la limite de vitesse par défaut dans une rue de ville en Alberta sans panneau ?",
+       a:["50 km/h","30 km/h","60 km/h","80 km/h"],
+       e:"À l'intérieur d'une ville ou d'un village, la limite par défaut est de 50 km/h. Sur une route rurale sans panneau, elle est de 80 km/h." },
+  c:0 },
+
+{ id:"abr72", sec:"rules", topic:"safe",
+  en:{ q:"What is the speed limit in an Alberta playground zone during the posted hours?",
+       a:["20 km/h","30 km/h","50 km/h","40 km/h"],
+       e:"30 km/h. Playground zones run from 8:30 a.m. to one hour after sunset, every day of the year — not only on school days." },
+  fr:{ q:"Quelle est la limite de vitesse dans une zone de terrain de jeu en Alberta pendant les heures affichées ?",
+       a:["20 km/h","30 km/h","50 km/h","40 km/h"],
+       e:"30 km/h. Les zones de terrain de jeu s'appliquent de 8 h 30 jusqu'à une heure après le coucher du soleil, tous les jours de l'année, et non seulement les jours d'école." },
+  c:1 },
+
+{ id:"abr73", sec:"rules", topic:"safe",
+  en:{ q:"How fast may you drive past a stopped emergency vehicle with flashing lights in Alberta?",
+       a:["80 km/h","There is no rule","60 km/h, or the posted limit if it is lower","The posted limit"],
+       e:"Slow to 60 km/h, or to the posted limit if it is under 60, and move over a lane when the road has more than one lane your way." },
+  fr:{ q:"À quelle vitesse pouvez-vous passer un véhicule d'urgence arrêté avec gyrophares en Alberta ?",
+       a:["80 km/h","Il n'y a aucune règle","60 km/h, ou la limite affichée si elle est plus basse","La limite affichée"],
+       e:"Ralentissez à 60 km/h, ou à la limite affichée si elle est inférieure à 60, et changez de voie lorsque la route compte plus d'une voie dans votre sens." },
+  c:2 },
+
+{ id:"abr74", sec:"rules", topic:"safe",
+  en:{ q:"How much extra following distance should you leave on a slippery Alberta road?",
+       a:["The same as always","Half as much","One car length","At least double the usual two seconds"],
+       e:"Four seconds or more on snow and ice. Stopping distance can grow several times over, and the extra space is the only thing that buys you time." },
+  fr:{ q:"Quelle distance de suivi supplémentaire laisser sur une route glissante en Alberta ?",
+       a:["La même que d'habitude","La moitié","Une longueur de voiture","Au moins le double des deux secondes habituelles"],
+       e:"Quatre secondes ou plus sur la neige et la glace. La distance de freinage peut être plusieurs fois plus longue, et cet espace est la seule chose qui vous donne du temps." },
+  c:3 },
+
+{ id:"abr75", sec:"rules", topic:"sharing",
+  en:{ q:"You approach an Alberta school bus with flashing amber lights. What does that mean?",
+       a:["It is about to stop — slow down and prepare to stop","It is starting to move","Pass quickly now","Ignore it, only red matters"],
+       e:"Amber is the warning that red is coming. Slow down and be ready, because once the red lights flash you must be fully stopped." },
+  fr:{ q:"Vous approchez un autobus scolaire albertain aux feux ambre clignotants. Que signifie ce signal ?",
+       a:["Il va s'arrêter — ralentissez et préparez-vous à arrêter","Il repart","Dépassez vite maintenant","Ignorez-le, seul le rouge compte"],
+       e:"L'ambre annonce le rouge. Ralentissez et soyez prêt, car dès que les feux rouges clignotent vous devez être complètement arrêté." },
+  c:0 },
+
+{ id:"abr76", sec:"rules", topic:"sharing",
+  en:{ q:"What is the safest way to share an Alberta highway with a long line of trucks?",
+       a:["Follow closely to save fuel","Pass one at a time, leaving a gap before pulling back in","Pass the whole line at once","Sit between two of them"],
+       e:"Passing several trucks in one move leaves you exposed for a long time with nowhere to go. Take them one at a time and re-establish your gap between each." },
+  fr:{ q:"Quelle est la façon la plus sécuritaire de partager une route albertaine avec une file de camions ?",
+       a:["Suivre de près pour économiser du carburant","Les dépasser un à la fois, en laissant un espace avant de vous rabattre","Dépasser toute la file d'un coup","Rester entre deux d'entre eux"],
+       e:"Dépasser plusieurs camions d'un coup vous expose longtemps sans échappatoire. Prenez-les un à la fois et rétablissez votre espace entre chacun." },
+  c:1 },
+
+{ id:"abr77", sec:"rules", topic:"sharing",
+  en:{ q:"An Alberta road has a marked bike lane. What must you do before turning right across it?",
+       a:["Sound your horn","Nothing, cars have priority","Signal, check the lane and yield to any cyclist","Turn quickly before they arrive"],
+       e:"A cyclist going straight in the bike lane has the right of way over your turn. Signal early, shoulder-check, and let them clear before you cross." },
+  fr:{ q:"Une route albertaine a une piste cyclable marquée. Que devez-vous faire avant de tourner à droite en la traversant ?",
+       a:["Klaxonner","Rien, les voitures ont la priorité","Signaler, vérifier la piste et céder le passage aux cyclistes","Tourner vite avant leur arrivée"],
+       e:"Un cycliste qui va tout droit dans la piste a la priorité sur votre virage. Signalez tôt, vérifiez par-dessus l'épaule et laissez-le passer avant de traverser." },
+  c:2 },
+
+{ id:"abr78", sec:"rules", topic:"conditions",
+  en:{ q:"You are caught in an Alberta whiteout and cannot see the road. What is safest?",
+       a:["Stop in your lane with hazards on","Speed up to get clear","Follow the tail lights ahead closely","Slow down, and if you must stop, get right off the road with lights on"],
+       e:"Stopping in a travel lane invites a rear-end collision from someone who cannot see either. Get well off the road, keep your lights on and stay belted in." },
+  fr:{ q:"Vous êtes pris dans une poudrerie en Alberta et ne voyez plus la route. Quelle est la conduite la plus sûre ?",
+       a:["Vous arrêter dans votre voie avec les feux de détresse","Accélérer pour en sortir","Suivre de près les feux arrière devant","Ralentir et, s'il faut arrêter, quitter complètement la route avec les feux allumés"],
+       e:"S'arrêter dans une voie invite une collision arrière par quelqu'un qui ne voit pas davantage. Quittez bien la route, gardez vos feux allumés et restez attaché." },
+  c:3 },
+
+{ id:"abr79", sec:"rules", topic:"conditions",
+  en:{ q:"Why is following tail lights closely in a whiteout dangerous?",
+       a:["The car ahead may stop suddenly, and you cannot see far enough to react",
+          "It uses more fuel","It is illegal to follow lights","It drains your battery"],
+       e:"You are borrowing someone else's eyes and they may be lost too. If they stop or leave the road, you follow them into it." },
+  fr:{ q:"Pourquoi est-il dangereux de suivre de près des feux arrière dans une poudrerie ?",
+       a:["La voiture devant peut s'arrêter brusquement et vous ne voyez pas assez loin pour réagir",
+          "Cela consomme plus de carburant","Il est illégal de suivre des feux","Cela vide votre batterie"],
+       e:"Vous empruntez les yeux de quelqu'un d'autre, et cette personne est peut-être perdue aussi. Si elle s'arrête ou quitte la route, vous la suivez." },
+  c:0 },
+
+{ id:"abr80", sec:"rules", topic:"conditions",
+  en:{ q:"Alberta winters are very cold. What does that do to your tires?",
+       a:["Tires get softer","Tire pressure drops, so check it more often","Pressure rises","Nothing changes"],
+       e:"Air contracts as it cools, so pressure falls in winter. Under-inflated tires grip worse, wear faster and can overheat once you reach highway speed." },
+  fr:{ q:"Les hivers albertains sont très froids. Quel effet cela a-t-il sur vos pneus ?",
+       a:["Les pneus ramollissent","La pression baisse, il faut donc la vérifier plus souvent","La pression monte","Rien ne change"],
+       e:"L'air se contracte en refroidissant, donc la pression baisse en hiver. Des pneus sous-gonflés adhèrent moins bien, s'usent plus vite et peuvent surchauffer à vitesse d'autoroute." },
+  c:1 },
+
+{ id:"abr81", sec:"rules", topic:"licensing",
+  en:{ q:"What happens if an Alberta Class 7 learner is caught driving alone?",
+       a:["A warning only","A parking ticket","It is an offence — the licence conditions were broken","Nothing, if the trip was short"],
+       e:"The supervisor requirement is a condition of the licence, not a suggestion. Breaking it can bring a fine, demerit points and a suspension." },
+  fr:{ q:"Qu'arrive-t-il si un apprenti de classe 7 en Alberta est intercepté en conduisant seul ?",
+       a:["Un simple avertissement","Une contravention de stationnement","C'est une infraction — les conditions du permis ont été violées","Rien, si le trajet était court"],
+       e:"L'obligation d'être accompagné est une condition du permis, pas une suggestion. L'enfreindre peut entraîner une amende, des points d'inaptitude et une suspension." },
+  c:2 },
+
+{ id:"abr82", sec:"rules", topic:"licensing",
+  en:{ q:"What must an Alberta learner do before they can take the Class 5-GDL road test?",
+       a:["Wait three months","Nothing, book any time","Take a written test again","Hold the Class 7 licence for at least one year"],
+       e:"You must hold the learner licence for a minimum of one year. Passing the road test then moves you into the probationary Class 5-GDL stage." },
+  fr:{ q:"Que doit faire un apprenti albertain avant de passer l'examen sur route de classe 5-GDL ?",
+       a:["Attendre trois mois","Rien, réserver quand il veut","Repasser un examen écrit","Détenir le permis de classe 7 pendant au moins un an"],
+       e:"Vous devez détenir le permis d'apprenti pendant au moins un an. Réussir l'examen sur route vous fait ensuite passer à l'étape probatoire classe 5-GDL." },
+  c:3 },
+
+{ id:"abr83", sec:"rules", topic:"licence",
+  en:{ q:"How long does an Alberta suspension last the first time a learner reaches 8 demerit points?",
+       a:["One month","One week","Six months","One year"],
+       e:"A one-month suspension. Points stay on your record for two years from the offence date, so a second suspension can follow quickly." },
+  fr:{ q:"Combien de temps dure une suspension en Alberta la première fois qu'un apprenti atteint 8 points d'inaptitude ?",
+       a:["Un mois","Une semaine","Six mois","Un an"],
+       e:"Une suspension d'un mois. Les points restent au dossier deux ans à partir de la date de l'infraction, donc une deuxième suspension peut suivre rapidement." },
+  c:0 },
+
+{ id:"abr84", sec:"rules", topic:"licence",
+  en:{ q:"Which document proves your Alberta vehicle is insured?",
+       a:["The driver's licence","The pink insurance card issued by your insurer","The registration","The bill of sale"],
+       e:"Carry the insurance card, the registration certificate and your licence whenever you drive. An officer may ask for all three." },
+  fr:{ q:"Quel document prouve que votre véhicule albertain est assuré ?",
+       a:["Le permis de conduire","La carte d'assurance rose émise par votre assureur","Le certificat d'immatriculation","Le contrat de vente"],
+       e:"Ayez sur vous la carte d'assurance, le certificat d'immatriculation et votre permis chaque fois que vous conduisez. Un agent peut exiger les trois." },
+  c:1 },
+
+{ id:"abr85", sec:"rules", topic:"impaired",
+  en:{ q:"An Alberta driver refuses a roadside breath test. What happens?",
+       a:["A small fine","A warning","Refusing carries the same penalties as failing the test","Nothing, it is voluntary"],
+       e:"Refusing a lawful demand is a criminal offence with the same consequences as blowing over. There is no advantage to saying no." },
+  fr:{ q:"Un conducteur albertain refuse un test d'haleine sur place. Que se passe-t-il ?",
+       a:["Une petite amende","Un avertissement","Le refus entraîne les mêmes sanctions que l'échec du test","Rien, c'est volontaire"],
+       e:"Refuser un ordre légal est une infraction criminelle avec les mêmes conséquences qu'un échec. Il n'y a aucun avantage à refuser." },
+  c:2 },
+
+{ id:"abr86", sec:"rules", topic:"impaired",
+  en:{ q:"A friend has been drinking and wants to drive home in Alberta. What is the right thing to do?",
+       a:["Let them drive slowly","Follow behind them","Give them coffee first","Take their keys and arrange another ride"],
+       e:"Nothing sobers a person up but time. Arranging a ride is a small inconvenience next to a collision or a criminal record." },
+  fr:{ q:"Un ami a bu et veut rentrer en voiture en Alberta. Quelle est la bonne chose à faire ?",
+       a:["Le laisser conduire lentement","Le suivre en voiture","Lui donner un café d'abord","Prendre ses clés et organiser un autre transport"],
+       e:"Rien ne dégrise une personne sauf le temps. Organiser un transport est un petit inconvénient comparé à une collision ou à un casier judiciaire." },
+  c:3 },
+
+{ id:"abr87", sec:"rules", topic:"vehicle",
+  en:{ q:"Why should you carry an emergency kit in an Alberta vehicle in winter?",
+       a:["Help can be far away and the cold is dangerous","It improves fuel economy","It is required for insurance","It reduces tire wear"],
+       e:"On a rural highway you may wait a long time. A blanket, warm clothes, a shovel, food, water and a charged phone are the basics." },
+  fr:{ q:"Pourquoi transporter une trousse d'urgence dans un véhicule albertain en hiver ?",
+       a:["Les secours peuvent être loin et le froid est dangereux","Cela améliore la consommation","C'est exigé par l'assurance","Cela réduit l'usure des pneus"],
+       e:"Sur une route rurale, l'attente peut être longue. Une couverture, des vêtements chauds, une pelle, de la nourriture, de l'eau et un téléphone chargé sont l'essentiel." },
+  c:0 },
+
+{ id:"abr88", sec:"rules", topic:"vehicle",
+  en:{ q:"Your windshield washer fluid freezes in an Alberta winter. What went wrong?",
+       a:["The wipers are worn","Summer fluid was used instead of winter-rated fluid","The tank is too full","The pump is broken"],
+       e:"Summer fluid freezes solid and can crack the reservoir. Use winter fluid rated well below the coldest night you expect." },
+  fr:{ q:"Votre liquide lave-glace gèle pendant un hiver albertain. Qu'est-ce qui a mal tourné ?",
+       a:["Les essuie-glaces sont usés","Du liquide d'été a été utilisé au lieu d'un liquide d'hiver","Le réservoir est trop plein","La pompe est brisée"],
+       e:"Le liquide d'été gèle complètement et peut fissurer le réservoir. Utilisez un liquide d'hiver conçu pour bien en dessous de la nuit la plus froide prévue." },
+  c:1 },
+
+{ id:"abr89", sec:"rules", topic:"collisions",
+  en:{ q:"When must an Alberta collision be reported to police?",
+       a:["Never, insurers handle it","Only on highways","When there are injuries, or damage over the reporting limit","Only when a vehicle is written off"],
+       e:"Report any injury immediately, and any collision over the damage threshold. Never leave the scene before exchanging information." },
+  fr:{ q:"Quand une collision doit-elle être signalée à la police en Alberta ?",
+       a:["Jamais, les assureurs s'en occupent","Seulement sur les autoroutes","S'il y a des blessés, ou des dommages dépassant le seuil de déclaration","Seulement si un véhicule est une perte totale"],
+       e:"Signalez immédiatement toute blessure, et toute collision dépassant le seuil de dommages. Ne quittez jamais les lieux avant d'avoir échangé les renseignements." },
+  c:2 },
+
+{ id:"abr90", sec:"rules", topic:"collisions",
+  en:{ q:"Your engine catches fire while driving in Alberta. What should you do?",
+       a:["Open the hood to look","Keep driving to a garage","Pour water on it","Pull over, switch off, get everyone well away and call 911"],
+       e:"Get people away from the vehicle first — a fire can spread fast. Opening the hood feeds it oxygen, and a burning car is replaceable." },
+  fr:{ q:"Votre moteur prend feu pendant que vous conduisez en Alberta. Que devez-vous faire ?",
+       a:["Ouvrir le capot pour regarder","Continuer jusqu'à un garage","Y verser de l'eau","Vous ranger, couper le contact, éloigner tout le monde et appeler le 911"],
+       e:"Éloignez d'abord les gens du véhicule : un incendie se propage vite. Ouvrir le capot l'alimente en oxygène, et une voiture qui brûle se remplace." },
+  c:3 }
 
 );
 

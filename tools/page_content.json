@@ -5659,6 +5659,349 @@
    ]
   ]
  },
+ "manitoba-class-5-mock-test.html": {
+  "about": [
+   {
+    "en": "This is the timed Manitoba practice exam. It draws a fresh set of questions each time you start, shows a short explanation after every answer, and lets you review your mistakes at the end. Nothing is saved and no account is needed.",
+    "fr": "Voici l'examen pratique chronométré du Manitoba. Il tire un nouvel ensemble de questions à chaque démarrage, affiche une courte explication après chaque réponse et vous laisse revoir vos erreurs à la fin. Rien n'est enregistré et aucun compte n'est requis."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Manitoba Public Insurance gives you thirty minutes for the knowledge test, and it covers three areas: traffic laws, safe driving practices and road sign recognition. The test is taken on a computer and it is not open book.",
+    "fr": "Manitoba Public Insurance vous accorde trente minutes pour l'examen théorique, qui couvre trois domaines : les lois de la circulation, les pratiques de conduite sécuritaire et la reconnaissance des panneaux. L'examen se fait à l'ordinateur, à livre fermé."
+   },
+   {
+    "en": "Sign recognition is the part most people underestimate. There are many signs and several of them look alike at a glance.",
+    "fr": "La reconnaissance des panneaux est la partie que l'on sous-estime le plus. Il y en a beaucoup et plusieurs se ressemblent au premier coup d'œil."
+   },
+   {
+    "en": "The real test is taken on a computer and it is not open book — phones and other devices are not allowed in the room.",
+    "fr": "Le vrai examen se fait à l'ordinateur, à livre fermé : les téléphones et autres appareils ne sont pas admis dans la salle."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "As often as you like. Each attempt draws a different set, so repeating it tests what you know rather than what order you memorised.",
+     "fr": "Aussi souvent que vous le voulez. Chaque tentative tire un ensemble différent : recommencer teste ce que vous savez plutôt que l'ordre mémorisé."
+    },
+    "q": {
+     "en": "Can I retake this test?",
+     "fr": "Puis-je refaire ce test ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Because the real test has one. Practising against the clock makes the pace feel ordinary on the day instead of stressful.",
+     "fr": "Parce que le vrai examen en a un. Pratiquer contre la montre rend le rythme ordinaire le jour venu plutôt que stressant."
+    },
+    "q": {
+     "en": "Why is there a timer?",
+     "fr": "Pourquoi y a-t-il un chronomètre ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "A start screen explains the format before you begin.",
+    "fr": "Un écran d'accueil explique le format avant de commencer."
+   },
+   {
+    "en": "Each question shows one sign or one situation, four answers, and your running score.",
+    "fr": "Chaque question présente un panneau ou une situation, quatre réponses et votre pointage."
+   },
+   {
+    "en": "A result screen shows your score and lets you review every question you missed.",
+    "fr": "Un écran de résultat affiche votre note et vous laisse revoir chaque question manquée."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "manitoba-class-5-practice-test.html",
+    {
+     "en": "Back to the Manitoba hub",
+     "fr": "Retour au centre du Manitoba"
+    }
+   ],
+   [
+    "manitoba-road-signs.html",
+    {
+     "en": "Study the signs first",
+     "fr": "Étudiez d'abord les panneaux"
+    }
+   ],
+   [
+    "manitoba-rules-of-the-road.html",
+    {
+     "en": "Study the rules by subject",
+     "fr": "Étudiez le code par sujet"
+    }
+   ]
+  ]
+ },
+ "manitoba-class-5-practice-test.html": {
+  "about": [
+   {
+    "en": "This page is the starting point for Manitoba Class 5 learner practice on our site. It explains what Manitoba Public Insurance asks of you, then sends you to the three tools we built: a timed mock test, a road sign study page and a rules of the road study page. Everything is free, works in English or French, and needs no account.",
+    "fr": "Cette page est le point de départ de la pratique de la classe 5 au Manitoba sur notre site. Elle explique ce que Manitoba Public Insurance attend de vous, puis vous dirige vers les trois outils que nous avons créés : un examen blanc chronométré, une page d'étude des panneaux et une page d'étude du code. Tout est gratuit, en français ou en anglais, et sans compte."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Manitoba Public Insurance gives you thirty minutes for the knowledge test, and it covers three areas: traffic laws, safe driving practices and road sign recognition. The test is taken on a computer and it is not open book.",
+    "fr": "Manitoba Public Insurance vous accorde trente minutes pour l'examen théorique, qui couvre trois domaines : les lois de la circulation, les pratiques de conduite sécuritaire et la reconnaissance des panneaux. L'examen se fait à l'ordinateur, à livre fermé."
+   },
+   {
+    "en": "The learner stage lasts a minimum of nine months before you can move to the intermediate stage.",
+    "fr": "L'étape apprenti dure au minimum neuf mois avant de pouvoir passer à l'étape intermédiaire."
+   },
+   {
+    "en": "Your supervising driver must have held a full licence for at least thirty-six months, must be under .05 blood alcohol, and sits in the front passenger seat.",
+    "fr": "Votre superviseur doit détenir un permis complet depuis au moins trente-six mois, être sous 0,05 d'alcoolémie, et s'asseoir sur le siège du passager avant."
+   },
+   {
+    "en": "Because the supervisor takes the front seat, any other passengers ride in the rear — one for each working seatbelt.",
+    "fr": "Comme le superviseur occupe le siège avant, les autres passagers prennent place à l'arrière, un par ceinture fonctionnelle."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Manitoba Public Insurance publishes the thirty-minute limit and the three subject areas, but not the exact question count or pass mark. Rather than invent one, our mock test uses a clearly stated approximation and the real thirty-minute clock.",
+     "fr": "Manitoba Public Insurance publie la limite de trente minutes et les trois domaines, mais pas le nombre exact de questions ni le seuil de réussite. Plutôt que d'en inventer un, notre examen blanc utilise une approximation clairement indiquée et le vrai chronomètre de trente minutes."
+    },
+    "q": {
+     "en": "How many questions are on the real Manitoba test?",
+     "fr": "Combien de questions comporte le vrai examen manitobain ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Sixteen, or fifteen and a half if you are enrolled in a high school driver education course.",
+     "fr": "Seize ans, ou quinze ans et demi si vous êtes inscrit à un cours de conduite au secondaire."
+    },
+    "q": {
+     "en": "What is the minimum age in Manitoba?",
+     "fr": "Quel est l'âge minimal au Manitoba ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. Every question here is written in our own words from the free Manitoba Driver's Handbook. This is an unofficial practice site with no connection to MPI or the Province of Manitoba.",
+     "fr": "Non. Chaque question est rédigée dans nos propres mots à partir du guide gratuit du conducteur du Manitoba. Il s'agit d'un site de pratique non officiel, sans lien avec MPI ni la Province du Manitoba."
+    },
+    "q": {
+     "en": "Are these the real MPI questions?",
+     "fr": "Ce sont les vraies questions de MPI ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "A short summary sets out the thirty-minute limit and the three subject areas the test covers.",
+    "fr": "Un résumé présente la limite de trente minutes et les trois domaines couverts par l'examen."
+   },
+   {
+    "en": "One card takes you to the timed mock test, which draws a fresh set every time.",
+    "fr": "Une carte vous mène à l'examen blanc chronométré, qui tire un nouvel ensemble chaque fois."
+   },
+   {
+    "en": "A second card opens the sign gallery with per-group practice.",
+    "fr": "Une deuxième carte ouvre la galerie de panneaux avec pratique par groupe."
+   },
+   {
+    "en": "A third card opens the rules pages, grouped by subject.",
+    "fr": "Une troisième carte ouvre les pages du code, regroupées par sujet."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "manitoba-class-5-mock-test.html",
+    {
+     "en": "Sit the timed Manitoba mock test",
+     "fr": "Passez l'examen blanc chronométré du Manitoba"
+    }
+   ],
+   [
+    "manitoba-road-signs.html",
+    {
+     "en": "Study every Manitoba road sign",
+     "fr": "Étudiez chaque panneau du Manitoba"
+    }
+   ],
+   [
+    "manitoba-rules-of-the-road.html",
+    {
+     "en": "Work through the Manitoba rules by subject",
+     "fr": "Parcourez le code du Manitoba par sujet"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See every province we cover",
+     "fr": "Voyez toutes les provinces que nous couvrons"
+    }
+   ]
+  ]
+ },
+ "manitoba-road-signs.html": {
+  "about": [
+   {
+    "en": "Every road sign we use for the Manitoba practice test is on this page, drawn by us and sorted into groups. Study a group, then press the button underneath to practise only the questions that use those signs. Sign recognition is one of the three areas the real test covers, and it is the one people most often lose marks on.",
+    "fr": "Tous les panneaux que nous utilisons pour la pratique du Manitoba se trouvent sur cette page, dessinés par nous et classés en groupes. Étudiez un groupe, puis appuyez sur le bouton en dessous pour pratiquer uniquement les questions qui l'utilisent. La reconnaissance des panneaux est l'un des trois domaines du vrai examen, et celui où l'on perd le plus de points."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Shape and colour carry meaning before you read a word: a red octagon means stop, a yellow diamond warns, and a red circle with a slash forbids.",
+    "fr": "La forme et la couleur ont un sens avant la lecture : un octogone rouge signifie arrêt, un losange jaune avertit, et un cercle rouge barré interdit."
+   },
+   {
+    "en": "Manitoba's rural highways carry many crossbuck railway signs with no gates or lights, so recognising them matters more here than in a city.",
+    "fr": "Les routes rurales manitobaines comptent de nombreuses croix de Saint-André sans barrière ni feux : les reconnaître compte donc plus ici qu'en ville."
+   },
+   {
+    "en": "The orange slow-moving vehicle triangle is common on prairie roads and marks anything travelling at 40 km/h or less.",
+    "fr": "Le triangle orange de véhicule lent est courant sur les routes des Prairies et signale tout véhicule roulant à 40 km/h ou moins."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "They are our own drawings of the standard Canadian shapes and colours, made to stay sharp on a phone. Use them to learn the meanings, and check the Manitoba Driver's Handbook for the official artwork.",
+     "fr": "Ce sont nos propres dessins des formes et couleurs canadiennes normalisées, faits pour rester nets sur un téléphone. Servez-vous-en pour apprendre les significations et consultez le guide du conducteur du Manitoba pour les illustrations officielles."
+    },
+    "q": {
+     "en": "Are these the exact signs used in Manitoba?",
+     "fr": "Ce sont les panneaux exacts utilisés au Manitoba ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Signs are grouped so lookalikes sit together and the differences become obvious.",
+    "fr": "Les panneaux sont groupés pour que les sosies se côtoient et que les différences sautent aux yeux."
+   },
+   {
+    "en": "Under every group is a practice button that runs only the questions using those signs.",
+    "fr": "Sous chaque groupe se trouve un bouton de pratique qui lance uniquement les questions utilisant ces panneaux."
+   },
+   {
+    "en": "Every drawing scales cleanly, so a sign reads just as well on a phone as on a laptop.",
+    "fr": "Chaque dessin se redimensionne proprement : un panneau se lit aussi bien sur téléphone que sur portable."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "manitoba-class-5-mock-test.html",
+    {
+     "en": "Try the timed Manitoba mock test",
+     "fr": "Essayez l'examen blanc chronométré du Manitoba"
+    }
+   ],
+   [
+    "manitoba-rules-of-the-road.html",
+    {
+     "en": "Study the Manitoba rules",
+     "fr": "Étudiez le code du Manitoba"
+    }
+   ],
+   [
+    "manitoba-class-5-practice-test.html",
+    {
+     "en": "Back to the Manitoba hub",
+     "fr": "Retour au centre du Manitoba"
+    }
+   ]
+  ]
+ },
+ "manitoba-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "The rules half of the Manitoba practice test, grouped by subject so you can work through one topic at a time. Each answer comes with a short explanation, because understanding why a rule exists is what makes it stay with you when you are actually driving.",
+    "fr": "La moitié code de la pratique du Manitoba, regroupée par sujet pour avancer un thème à la fois. Chaque réponse s'accompagne d'une courte explication, car comprendre pourquoi une règle existe est ce qui la fait retenir au volant."
+   }
+  ],
+  "facts": [
+   {
+    "en": "A Manitoba learner may not tow another vehicle, may not drive a Class 3 farm truck, and may not operate an off-road vehicle on a highway.",
+    "fr": "Un apprenti manitobain ne peut pas remorquer un véhicule, ni conduire un camion agricole de classe 3, ni utiliser un véhicule hors route sur une voie publique."
+   },
+   {
+    "en": "Zero alcohol and zero drugs apply to the learner for the whole graduated licensing programme, while the supervising driver must stay under .05.",
+    "fr": "Zéro alcool et zéro drogue s'appliquent à l'apprenti pendant tout le programme de permis par étapes, tandis que le superviseur doit rester sous 0,05."
+   },
+   {
+    "en": "Ground blizzards can drop visibility to nothing in seconds on open prairie. If you must stop, get right off the road and keep your lights on.",
+    "fr": "Les poudreries peuvent faire tomber la visibilité à zéro en quelques secondes en plaine. Si vous devez arrêter, quittez complètement la route et gardez vos feux allumés."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "A minimum of nine months, not counting any interruption to the licence.",
+     "fr": "Un minimum de neuf mois, sans compter les interruptions du permis."
+    },
+    "q": {
+     "en": "How long is the learner stage in Manitoba?",
+     "fr": "Combien de temps dure l'étape apprenti au Manitoba ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The supervising driver takes the front passenger seat. Everyone else rides in the rear, one person for each working seatbelt.",
+     "fr": "Le superviseur occupe le siège du passager avant. Tous les autres prennent place à l'arrière, une personne par ceinture fonctionnelle."
+    },
+    "q": {
+     "en": "Where do passengers sit?",
+     "fr": "Où les passagers s'assoient-ils ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Questions are grouped by subject — graduated licensing, safe driving, sharing the road, conditions, impaired driving, your vehicle and emergencies.",
+    "fr": "Les questions sont regroupées par sujet : permis par étapes, conduite sécuritaire, partage de la route, conditions, facultés affaiblies, votre véhicule et urgences."
+   },
+   {
+    "en": "Each answer is marked the moment you tap it, with the reason underneath.",
+    "fr": "Chaque réponse est corrigée dès que vous la touchez, avec la raison en dessous."
+   },
+   {
+    "en": "You can leave a topic and come back without losing your place in the others.",
+    "fr": "Vous pouvez quitter un thème et y revenir sans perdre votre place dans les autres."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "manitoba-class-5-mock-test.html",
+    {
+     "en": "Sit the full Manitoba mock test",
+     "fr": "Passez l'examen blanc complet du Manitoba"
+    }
+   ],
+   [
+    "manitoba-road-signs.html",
+    {
+     "en": "Study every Manitoba sign",
+     "fr": "Étudiez chaque panneau du Manitoba"
+    }
+   ],
+   [
+    "manitoba-class-5-practice-test.html",
+    {
+     "en": "Back to the Manitoba hub",
+     "fr": "Retour au centre du Manitoba"
+    }
+   ]
+  ]
+ },
  "math-race.html": {
   "about": [
    {
@@ -6986,6 +7329,349 @@
     {
      "en": "Test what you really know about Canada",
      "fr": "Vérifiez ce que vous savez vraiment sur le Canada"
+    }
+   ]
+  ]
+ },
+ "quebec-class-5-mock-test.html": {
+  "about": [
+   {
+    "en": "This is the timed Quebec practice exam. It draws a fresh set of questions each time you start, shows a short explanation after every answer, and lets you review what you got wrong at the end. Nothing is saved and no account is needed — close the page and your attempt disappears with it.",
+    "fr": "Voici l'examen pratique chronométré du Québec. Il tire un nouvel ensemble de questions à chaque démarrage, affiche une courte explication après chaque réponse et vous laisse revoir vos erreurs à la fin. Rien n'est enregistré et aucun compte n'est requis : fermez la page et votre tentative disparaît avec elle."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The SAAQ knowledge test is divided into three parts — the Highway Safety Code, road signs and signals, and driving behaviours — and you must reach 75% in each part separately, not just overall.",
+    "fr": "Le test de connaissances de la SAAQ comporte trois parties — le Code de la sécurité routière, les panneaux et signaux, et les comportements de conduite — et il faut atteindre 75 % dans chaque partie séparément, et non seulement au total."
+   },
+   {
+    "en": "The SAAQ does not publish exactly how many questions its test contains, so our mock uses a fair and clearly stated approximation rather than pretending to a number nobody has confirmed.",
+    "fr": "La SAAQ ne publie pas le nombre exact de questions de son test ; notre examen blanc utilise donc une approximation raisonnable et clairement indiquée plutôt que d'inventer un chiffre."
+   },
+   {
+    "en": "Reading the explanation after a wrong answer is worth more than repeating the test. The reason sticks; the letter does not.",
+    "fr": "Lire l'explication après une mauvaise réponse vaut plus que de refaire le test. La raison reste en mémoire ; la lettre non."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "As many times as you like. Each attempt draws a different set from the bank, so repeating it tests your knowledge rather than your memory of the order.",
+     "fr": "Autant de fois que vous le voulez. Chaque tentative tire un ensemble différent, donc recommencer teste vos connaissances plutôt que votre mémoire de l'ordre."
+    },
+    "q": {
+     "en": "Can I take this test more than once?",
+     "fr": "Puis-je passer ce test plus d'une fois ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The clock is there to build the habit of answering at a steady pace. Practise with it running so the pressure feels ordinary on the day.",
+     "fr": "Le chronomètre est là pour prendre l'habitude de répondre à un rythme régulier. Pratiquez avec lui en marche pour que la pression semble ordinaire le jour venu."
+    },
+    "q": {
+     "en": "Does the timer match the real test?",
+     "fr": "Le chronomètre correspond-il au vrai test ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "A start screen explains the format before you begin.",
+    "fr": "Un écran d'accueil explique le format avant de commencer."
+   },
+   {
+    "en": "Each question shows one road sign or one situation, with four answers and a running score.",
+    "fr": "Chaque question présente un panneau ou une situation, avec quatre réponses et un pointage en cours."
+   },
+   {
+    "en": "A result screen tells you whether you passed and lets you review every question you missed.",
+    "fr": "Un écran de résultat indique si vous avez réussi et vous laisse revoir chaque question manquée."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "quebec-class-5-practice-test.html",
+    {
+     "en": "Back to the Quebec practice hub",
+     "fr": "Retour au centre de pratique du Québec"
+    }
+   ],
+   [
+    "quebec-road-signs.html",
+    {
+     "en": "Study the signs first",
+     "fr": "Étudiez d'abord les panneaux"
+    }
+   ],
+   [
+    "quebec-rules-of-the-road.html",
+    {
+     "en": "Study the rules by subject",
+     "fr": "Étudiez le code par sujet"
+    }
+   ]
+  ]
+ },
+ "quebec-class-5-practice-test.html": {
+  "about": [
+   {
+    "en": "This page is the starting point for Quebec Class 5 learner's licence practice on our site. It explains how the SAAQ knowledge test is built, then sends you to the three tools we made for it: a timed mock test, a road sign study page and a rules of the road study page. Everything is free, works in English or French, and opens straight in your browser with no account.",
+    "fr": "Cette page est le point de départ de la pratique du permis d'apprenti de classe 5 au Québec sur notre site. Elle explique comment le test de connaissances de la SAAQ est construit, puis vous dirige vers les trois outils que nous avons créés : un examen blanc chronométré, une page d'étude des panneaux et une page d'étude du code. Tout est gratuit, en français ou en anglais, et s'ouvre directement dans votre navigateur sans compte."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The SAAQ knowledge test is divided into three parts — the Highway Safety Code, road signs and signals, and driving behaviours — and you must reach 75% in each part separately, not just overall.",
+    "fr": "Le test de connaissances de la SAAQ comporte trois parties — le Code de la sécurité routière, les panneaux et signaux, et les comportements de conduite — et il faut atteindre 75 % dans chaque partie séparément, et non seulement au total."
+   },
+   {
+    "en": "Quebec stop signs read ARRÊT rather than STOP, but the shape, the colour and the rule are exactly the same as everywhere else in Canada.",
+    "fr": "Les panneaux d'arrêt du Québec indiquent ARRÊT plutôt que STOP, mais la forme, la couleur et la règle sont exactement les mêmes que partout ailleurs au Canada."
+   },
+   {
+    "en": "A right turn on a red light is allowed in most of Quebec after a complete stop, but it is forbidden everywhere on the island of Montreal.",
+    "fr": "Le virage à droite au feu rouge est permis dans la plus grande partie du Québec après un arrêt complet, mais il est interdit partout sur l'île de Montréal."
+   },
+   {
+    "en": "Quebec is the only province where winter tires are required by law on passenger vehicles, from 1 December to 15 March.",
+    "fr": "Le Québec est la seule province où les pneus d'hiver sont obligatoires par la loi sur les véhicules de promenade, du 1er décembre au 15 mars."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "You need 75% in each of the three sections, and a section you fail can be retaken after at least 28 days. Our mock test mirrors that idea by scoring the signs half and the rules half separately.",
+     "fr": "Il faut 75 % dans chacune des trois sections, et une section échouée peut être reprise après au moins 28 jours. Notre examen blanc reprend cette idée en notant séparément la moitié panneaux et la moitié code."
+    },
+    "q": {
+     "en": "How is the Quebec knowledge test scored?",
+     "fr": "Comment le test de connaissances du Québec est-il noté ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Someone who holds a valid Quebec Class 5 licence and has at least two years of driving experience. They sit in the front passenger seat, and you may not drive between midnight and 5 a.m.",
+     "fr": "Une personne détenant un permis québécois de classe 5 valide et ayant au moins deux ans d'expérience. Elle prend place sur le siège du passager avant, et vous ne pouvez pas conduire entre minuit et 5 h."
+    },
+    "q": {
+     "en": "Who may sit beside me while I practise?",
+     "fr": "Qui peut s'asseoir à côté de moi pendant que je pratique ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. Every question here is written in our own words from the free information the SAAQ publishes. This is an unofficial practice site with no connection to the SAAQ or the Gouvernement du Québec.",
+     "fr": "Non. Chaque question ici est rédigée dans nos propres mots à partir de l'information gratuite publiée par la SAAQ. Il s'agit d'un site de pratique non officiel, sans lien avec la SAAQ ni le gouvernement du Québec."
+    },
+    "q": {
+     "en": "Are these the real questions from the SAAQ?",
+     "fr": "Ces questions sont-elles celles de la SAAQ ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "A short summary at the top sets out the three-section format and the 75% you need in each one.",
+    "fr": "Un résumé en haut présente le format en trois sections et le seuil de 75 % exigé dans chacune."
+   },
+   {
+    "en": "One card takes you to the timed mock test, which draws a fresh set of questions every time.",
+    "fr": "Une carte vous mène à l'examen blanc chronométré, qui tire un nouvel ensemble de questions chaque fois."
+   },
+   {
+    "en": "A second card opens the sign gallery, where you can study a group of signs and then practise only the questions that use them.",
+    "fr": "Une deuxième carte ouvre la galerie de panneaux, où vous pouvez étudier un groupe puis pratiquer uniquement les questions qui l'utilisent."
+   },
+   {
+    "en": "A third card opens the rules pages, grouped by subject so you can work through one topic at a time.",
+    "fr": "Une troisième carte ouvre les pages du code, regroupées par sujet pour avancer un thème à la fois."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "quebec-class-5-mock-test.html",
+    {
+     "en": "Sit the timed Quebec mock test",
+     "fr": "Passez l'examen blanc chronométré du Québec"
+    }
+   ],
+   [
+    "quebec-road-signs.html",
+    {
+     "en": "Study every Quebec road sign, group by group",
+     "fr": "Étudiez chaque panneau du Québec, groupe par groupe"
+    }
+   ],
+   [
+    "quebec-rules-of-the-road.html",
+    {
+     "en": "Work through the Quebec rules by subject",
+     "fr": "Parcourez le code de la route du Québec par sujet"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See every province we cover",
+     "fr": "Voyez toutes les provinces que nous couvrons"
+    }
+   ]
+  ]
+ },
+ "quebec-road-signs.html": {
+  "about": [
+   {
+    "en": "Every road sign we use for the Quebec practice test is on this page, drawn by us and sorted into groups. Study a group, then press the button underneath it to practise only the questions that use those signs. It is a faster way to fix the ones you keep confusing than shuffling the whole bank.",
+    "fr": "Tous les panneaux que nous utilisons pour la pratique du Québec se trouvent sur cette page, dessinés par nous et classés en groupes. Étudiez un groupe, puis appuyez sur le bouton en dessous pour pratiquer uniquement les questions qui l'utilisent. C'est plus rapide que de brasser toute la banque pour corriger ceux que vous confondez."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Sign shape and colour carry meaning before you read a word. A red octagon means stop, a yellow diamond warns of something ahead, and a red circle with a slash forbids what is drawn inside it.",
+    "fr": "La forme et la couleur d'un panneau ont un sens avant même la lecture. Un octogone rouge signifie arrêt, un losange jaune annonce un danger, et un cercle rouge barré interdit ce qui est illustré."
+   },
+   {
+    "en": "Orange always means temporary. Work zones, detours and flag persons all use it, and fines can double where workers are present.",
+    "fr": "L'orange signifie toujours temporaire. Zones de travaux, détours et signaleurs l'utilisent, et les amendes peuvent doubler en présence de travailleurs."
+   },
+   {
+    "en": "Blue signs inform rather than order — hospital, fuel, food, accessible parking.",
+    "fr": "Les panneaux bleus informent plutôt qu'ils n'ordonnent : hôpital, carburant, restauration, stationnement accessible."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "They are our own drawings of the standard Canadian shapes and colours, made so they stay sharp on a phone. Use them to learn the meanings, and check the SAAQ's own guides for the official artwork.",
+     "fr": "Ce sont nos propres dessins des formes et couleurs canadiennes normalisées, faits pour rester nets sur un téléphone. Servez-vous-en pour apprendre les significations et consultez les guides de la SAAQ pour les illustrations officielles."
+    },
+    "q": {
+     "en": "Are these the exact signs used in Quebec?",
+     "fr": "Ce sont les panneaux exacts utilisés au Québec ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "The signs are grouped so that lookalikes sit together and the differences become obvious.",
+    "fr": "Les panneaux sont groupés pour que les sosies se côtoient et que les différences sautent aux yeux."
+   },
+   {
+    "en": "Under every group is a practice button that runs only the questions using those signs.",
+    "fr": "Sous chaque groupe se trouve un bouton de pratique qui lance uniquement les questions utilisant ces panneaux."
+   },
+   {
+    "en": "Every drawing scales cleanly, so a sign is just as readable on a phone as on a laptop.",
+    "fr": "Chaque dessin se redimensionne proprement : un panneau est aussi lisible sur téléphone que sur portable."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "quebec-class-5-mock-test.html",
+    {
+     "en": "Try the timed Quebec mock test",
+     "fr": "Essayez l'examen blanc chronométré du Québec"
+    }
+   ],
+   [
+    "quebec-rules-of-the-road.html",
+    {
+     "en": "Study the Quebec rules",
+     "fr": "Étudiez le code de la route du Québec"
+    }
+   ],
+   [
+    "quebec-class-5-practice-test.html",
+    {
+     "en": "Back to the Quebec hub",
+     "fr": "Retour au centre du Québec"
+    }
+   ]
+  ]
+ },
+ "quebec-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "The rules half of the Quebec practice test, grouped by subject so you can work through one topic at a time instead of jumping between unrelated questions. Each answer comes with a short explanation, because understanding why a rule exists is what makes it stay with you.",
+    "fr": "La moitié code de la pratique du Québec, regroupée par sujet pour avancer un thème à la fois plutôt que de sauter d'une question sans lien à l'autre. Chaque réponse s'accompagne d'une courte explication, car comprendre pourquoi une règle existe est ce qui la fait retenir."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The zero-alcohol rule applies for the whole learning period, and to every driver aged 21 and under no matter which licence they hold.",
+    "fr": "La règle du zéro alcool s'applique pendant toute la période d'apprentissage, et à tout conducteur de 21 ans ou moins peu importe son permis."
+   },
+   {
+    "en": "A learner in Quebec sits in the four-demerit-point bracket, which is far tighter than an experienced driver's allowance.",
+    "fr": "Un apprenti au Québec se trouve dans la marge de quatre points d'inaptitude, bien plus serrée que celle d'un conducteur expérimenté."
+   },
+   {
+    "en": "When passing a cyclist you must leave 1.5 metres where the limit is over 50 km/h, and one metre where it is 50 or under.",
+    "fr": "En dépassant un cycliste, vous devez laisser 1,5 mètre là où la limite dépasse 50 km/h, et un mètre là où elle est de 50 ou moins."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "At least twelve months before the road test. The learner's licence itself is valid for eighteen months.",
+     "fr": "Au moins douze mois avant l'examen sur route. Le permis d'apprenti est lui-même valide pendant dix-huit mois."
+    },
+    "q": {
+     "en": "How long must I hold the learner's licence?",
+     "fr": "Combien de temps dois-je détenir le permis d'apprenti ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Not in your hand. Holding a phone or any portable screen while driving is prohibited, even stopped at a light. Hands-free use is permitted.",
+     "fr": "Pas en main. Tenir un téléphone ou tout écran portatif en conduisant est interdit, même à l'arrêt à un feu. L'usage mains libres est permis."
+    },
+    "q": {
+     "en": "Can I use a phone while driving in Quebec?",
+     "fr": "Puis-je utiliser un téléphone au volant au Québec ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Questions are grouped by subject — licensing rules, safe driving, sharing the road, conditions, impaired driving, your vehicle and emergencies.",
+    "fr": "Les questions sont regroupées par sujet : règles du permis, conduite sécuritaire, partage de la route, conditions, facultés affaiblies, votre véhicule et urgences."
+   },
+   {
+    "en": "Each answer is marked the moment you tap it, with the reason underneath.",
+    "fr": "Chaque réponse est corrigée dès que vous la touchez, avec la raison en dessous."
+   },
+   {
+    "en": "You can leave a topic and come back to it without losing your place in the others.",
+    "fr": "Vous pouvez quitter un thème et y revenir sans perdre votre place dans les autres."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "quebec-class-5-mock-test.html",
+    {
+     "en": "Sit the full Quebec mock test",
+     "fr": "Passez l'examen blanc complet du Québec"
+    }
+   ],
+   [
+    "quebec-road-signs.html",
+    {
+     "en": "Study every Quebec sign",
+     "fr": "Étudiez chaque panneau du Québec"
+    }
+   ],
+   [
+    "quebec-class-5-practice-test.html",
+    {
+     "en": "Back to the Quebec hub",
+     "fr": "Retour au centre du Québec"
     }
    ]
   ]

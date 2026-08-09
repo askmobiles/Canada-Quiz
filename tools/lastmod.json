@@ -25,7 +25,7 @@
  },
  "alberta-class-7-practice-test.html": {
   "date": "2026-08-08",
-  "hash": "de0b8334680ae0cf0bacbaf5b8f1d49e97693809"
+  "hash": "f4cd82dc6cac850d958a415802f8d53b5ff9f5b0"
  },
  "alberta-road-signs.html": {
   "date": "2026-08-08",
@@ -41,7 +41,7 @@
  },
  "bc-class-7l-practice-test.html": {
   "date": "2026-08-08",
-  "hash": "840fbf671570faaa29a06133053f499540ceff74"
+  "hash": "6d095c330d7c51925803237d7943e60a116fd967"
  },
  "bc-road-signs.html": {
   "date": "2026-08-08",
@@ -165,7 +165,7 @@
  },
  "driving-test.html": {
   "date": "2026-08-08",
-  "hash": "1d133ab501986329d2849c9d5c92f75eb07340e6"
+  "hash": "bb5456e6dcc7fe24e21e57b97c7875a6c2020df5"
  },
  "earth-quiz.html": {
   "date": "2026-08-08",
@@ -209,7 +209,7 @@
  },
  "fr/alberta-class-7-practice-test.html": {
   "date": "2026-08-08",
-  "hash": "82a313b3d15616735dae785858d7f97c2399b30c"
+  "hash": "a23bf68efabf467359dafc23d3a53e572f04f9bc"
  },
  "fr/alberta-road-signs.html": {
   "date": "2026-08-08",
@@ -225,7 +225,7 @@
  },
  "fr/bc-class-7l-practice-test.html": {
   "date": "2026-08-08",
-  "hash": "7222305c09183fe19cda316ef818369737cb89e4"
+  "hash": "3653baaf2121946b142c54172a0ed86fd25cc33e"
  },
  "fr/bc-road-signs.html": {
   "date": "2026-08-08",
@@ -245,7 +245,7 @@
  },
  "fr/canada-geography-coast-to-coast.html": {
   "date": "2026-08-08",
-  "hash": "d6a8bb1d7e9fa1abff1fabcbfba8d2f25fc107e1"
+  "hash": "d505ffb4c4f8e5c723a41d387cbf886255e0c127"
  },
  "fr/canada-map.html": {
   "date": "2026-08-08",
@@ -349,7 +349,7 @@
  },
  "fr/driving-test.html": {
   "date": "2026-08-08",
-  "hash": "dd9bbcfd5b320506e55d63df38cd8f151918aa6c"
+  "hash": "7416e3683d09212b3f9c54451f6e6b1cdb354af4"
  },
  "fr/earth-quiz.html": {
   "date": "2026-08-08",
@@ -419,6 +419,22 @@
   "date": "2026-08-08",
   "hash": "04746e2e8f5a96d2933da55d894946e746d3653d"
  },
+ "fr/manitoba-class-5-mock-test.html": {
+  "date": "2026-08-08",
+  "hash": "944161c75e3b111fed56827139e8f1f650e28a9b"
+ },
+ "fr/manitoba-class-5-practice-test.html": {
+  "date": "2026-08-08",
+  "hash": "a0d73375145cebf552793238eb8e5c6390bb5523"
+ },
+ "fr/manitoba-road-signs.html": {
+  "date": "2026-08-08",
+  "hash": "2af030cf3b60370046c961d7f68df6168b17dea3"
+ },
+ "fr/manitoba-rules-of-the-road.html": {
+  "date": "2026-08-08",
+  "hash": "6e24edacf21ffc9bbb6892841ed671895e100087"
+ },
  "fr/math-race.html": {
   "date": "2026-08-08",
   "hash": "b6ba5b5d912b7fb5233ba670936f9654f7fbaf17"
@@ -445,7 +461,7 @@
  },
  "fr/ontario-g1-practice-test.html": {
   "date": "2026-08-08",
-  "hash": "9ea6738486cd7f8fe9edd70bfda21b8800d81840"
+  "hash": "a1a4722696057087785b1d829b1ab09e13952f36"
  },
  "fr/ontario-g1-road-signs.html": {
   "date": "2026-08-08",
@@ -466,6 +482,22 @@
  "fr/province-quiz.html": {
   "date": "2026-08-08",
   "hash": "d2af7987a4c7778f8aaab6d697ebbf6842d3adb0"
+ },
+ "fr/quebec-class-5-mock-test.html": {
+  "date": "2026-08-08",
+  "hash": "4fe8e1c50bbce8992d171a9c9462ffc7781981da"
+ },
+ "fr/quebec-class-5-practice-test.html": {
+  "date": "2026-08-08",
+  "hash": "14b21ce03b941c754ac38ab465f987e843b7021a"
+ },
+ "fr/quebec-road-signs.html": {
+  "date": "2026-08-08",
+  "hash": "540d866d8ef1149455724ccbcabd2b8ba2d1d3dd"
+ },
+ "fr/quebec-rules-of-the-road.html": {
+  "date": "2026-08-08",
+  "hash": "28f89e7d6619e0e26ace5d3058a915212db18cb4"
  },
  "fr/quizzes.html": {
   "date": "2026-08-08",
@@ -639,6 +671,22 @@
   "date": "2026-08-08",
   "hash": "0be3af31c53c6382988bac432eb6af0514b4fc6e"
  },
+ "manitoba-class-5-mock-test.html": {
+  "date": "2026-08-08",
+  "hash": "b1b66d018082275bc07bca2cd8f9964c87045be7"
+ },
+ "manitoba-class-5-practice-test.html": {
+  "date": "2026-08-08",
+  "hash": "d945c84d9127db4d2ec25c9381981dfee56b3a5d"
+ },
+ "manitoba-road-signs.html": {
+  "date": "2026-08-08",
+  "hash": "b0c31c4ccb597c6be7a36f1cc1f5a9829d646826"
+ },
+ "manitoba-rules-of-the-road.html": {
+  "date": "2026-08-08",
+  "hash": "0d2641b7425c53db315360d1066ce9eb8e884bdf"
+ },
  "math-race.html": {
   "date": "2026-08-08",
   "hash": "46a68057700070847a653377c6847a6c52c38560"
@@ -665,7 +713,7 @@
  },
  "ontario-g1-practice-test.html": {
   "date": "2026-08-08",
-  "hash": "f7de263eebbb0eae3861113a869af1cb1cead32e"
+  "hash": "9ce8c224fc88b52a2551c587afa7749fb3f3ea64"
  },
  "ontario-g1-road-signs.html": {
   "date": "2026-08-08",
@@ -686,6 +734,22 @@
  "province-quiz.html": {
   "date": "2026-08-08",
   "hash": "99df0aad178f7f697f2ab4301cba7eb85ab3850f"
+ },
+ "quebec-class-5-mock-test.html": {
+  "date": "2026-08-08",
+  "hash": "30dc3ccb4340bfd632e9c8bd334176348ce49946"
+ },
+ "quebec-class-5-practice-test.html": {
+  "date": "2026-08-08",
+  "hash": "c0a952fe9d3c630177962ff1242780a13be4d515"
+ },
+ "quebec-road-signs.html": {
+  "date": "2026-08-08",
+  "hash": "e23168a17e266811cda3b32d16d3e04a4ae02d19"
+ },
+ "quebec-rules-of-the-road.html": {
+  "date": "2026-08-08",
+  "hash": "c643f72663a05b23e2e834b88a9d771b34f354d5"
  },
  "quizzes.html": {
   "date": "2026-08-08",

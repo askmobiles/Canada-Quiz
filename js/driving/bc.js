@@ -1,5 +1,5 @@
 /* canada-quiz.com — British Columbia Class 7L practice data
-   Test format, and 160 original bilingual questions (80 road signs + 80 rules).
+   Test format, and 170 original bilingual questions (80 road signs + 90 rules).
    All wording is our own. Free practice site, not affiliated with any government.
    The quiz code lives in js/driving-engine.js and never changes per province. */
 window.CQ_DRIVE_Q = [];
@@ -765,6 +765,194 @@ window.CQ_DRIVE_Q = [];
        a:["Remplacer les cours de conduite","Permettre aux nouveaux conducteurs d'acquérir de l'expérience dans des conditions moins risquées avant d'obtenir tous les privilèges","Percevoir des droits","Limiter le nombre de conducteurs"],
        e:"Chaque étape lève une restriction seulement après que vous avez montré que vous maîtrisez la précédente. Le taux d'accidents des nouveaux conducteurs baisse fortement avec ce système." },
   c:1 }
+
+);
+
+/* canada-quiz.com — BRITISH COLUMBIA Class 7L practice, set D (rules of the road)
+   Facts checked against icbc.com and bclaws in August 2026.
+   Not affiliated with ICBC or the Government of British Columbia. */
+
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"bcr71", sec:"rules", topic:"safe",
+  en:{ q:"What is the speed limit in a BC city or town where no sign is posted?",
+       a:["50 km/h","30 km/h","60 km/h","80 km/h"],
+       e:"Inside a municipality the default is 50 km/h. Outside it, the default rises to 80 km/h unless a sign says otherwise." },
+  fr:{ q:"Quelle est la limite de vitesse dans une ville de la C.-B. où aucun panneau n'est affiché ?",
+       a:["50 km/h","30 km/h","60 km/h","80 km/h"],
+       e:"À l'intérieur d'une municipalité, la limite par défaut est de 50 km/h. À l'extérieur, elle passe à 80 km/h sauf indication contraire." },
+  c:0 },
+
+{ id:"bcr72", sec:"rules", topic:"safe",
+  en:{ q:"What is the speed limit when passing a stopped emergency vehicle with flashing lights on a BC road posted at 80 km/h or more?",
+       a:["No change","70 km/h","40 km/h","50 km/h"],
+       e:"Slow to 70 km/h where the limit is 80 or above, and to 40 km/h where it is under 80. Move over a lane as well when you safely can." },
+  fr:{ q:"Quelle vitesse faut-il respecter en dépassant un véhicule d'urgence arrêté avec gyrophares sur une route de la C.-B. affichée à 80 km/h ou plus ?",
+       a:["Aucun changement","70 km/h","40 km/h","50 km/h"],
+       e:"Ralentissez à 70 km/h là où la limite est de 80 ou plus, et à 40 km/h là où elle est sous 80. Changez aussi de voie lorsque c'est sécuritaire." },
+  c:1 },
+
+{ id:"bcr73", sec:"rules", topic:"safe",
+  en:{ q:"Where the limit is under 80 km/h, how slow must you go past a stopped emergency or maintenance vehicle?",
+       a:["30 km/h","The posted limit is fine","40 km/h","60 km/h"],
+       e:"40 km/h. The rule covers police, fire, ambulance, tow trucks and highway maintenance vehicles displaying flashing lights." },
+  fr:{ q:"Là où la limite est sous 80 km/h, à quelle vitesse devez-vous passer un véhicule d'urgence ou d'entretien arrêté ?",
+       a:["30 km/h","La limite affichée suffit","40 km/h","60 km/h"],
+       e:"40 km/h. La règle vise la police, les pompiers, les ambulances, les dépanneuses et les véhicules d'entretien routier avec gyrophares." },
+  c:2 },
+
+{ id:"bcr74", sec:"rules", topic:"sharing",
+  en:{ q:"A pedestrian steps into a marked crosswalk ahead of you in BC. What must you do?",
+       a:["Pass behind them quickly","Sound your horn","Continue if your light is green","Yield and let them finish crossing"],
+       e:"Drivers must yield to pedestrians in a crosswalk, marked or unmarked. Never pass a vehicle that has stopped at a crosswalk — it may be stopped for someone you cannot see." },
+  fr:{ q:"Un piéton s'engage sur un passage marqué devant vous en C.-B. Que devez-vous faire ?",
+       a:["Passer vite derrière lui","Klaxonner","Continuer si votre feu est vert","Céder le passage et le laisser finir de traverser"],
+       e:"Les conducteurs doivent céder le passage aux piétons dans un passage, marqué ou non. Ne dépassez jamais un véhicule arrêté à un passage : il s'est peut-être arrêté pour quelqu'un que vous ne voyez pas." },
+  c:3 },
+
+{ id:"bcr75", sec:"rules", topic:"sharing",
+  en:{ q:"What should you do before opening your door on a BC street with a bike lane?",
+       a:["Check your mirror and look over your shoulder","Open slowly, that is enough","Nothing, cyclists must avoid doors","Sound your horn first"],
+       e:"A cyclist hit by an opening door can be thrown into moving traffic. Some drivers use the far hand to open, which turns your body and forces you to look." },
+  fr:{ q:"Que devez-vous faire avant d'ouvrir votre portière dans une rue de la C.-B. avec une piste cyclable ?",
+       a:["Vérifier votre rétroviseur et regarder par-dessus votre épaule","Ouvrir lentement, cela suffit","Rien, les cyclistes doivent éviter les portières","Klaxonner d'abord"],
+       e:"Un cycliste heurté par une portière peut être projeté dans la circulation. Certains conducteurs ouvrent avec la main opposée : le corps pivote et le regard suit." },
+  c:0 },
+
+{ id:"bcr76", sec:"rules", topic:"conditions",
+  en:{ q:"You are driving a long descent in the BC mountains. How should you control your speed?",
+       a:["Use the parking brake","Shift to a lower gear and let the engine hold you back","Ride the brakes the whole way","Coast in neutral"],
+       e:"Constant braking heats the brakes until they fade and stop working. A lower gear does the work for you and keeps the brakes fresh for when you need them." },
+  fr:{ q:"Vous descendez une longue pente dans les montagnes de la C.-B. Comment contrôler votre vitesse ?",
+       a:["Utiliser le frein de stationnement","Rétrograder et laisser le moteur vous retenir","Freiner sans arrêt tout le long","Rouler au point mort"],
+       e:"Un freinage constant chauffe les freins jusqu'à ce qu'ils deviennent inefficaces. Un rapport inférieur fait le travail et garde les freins disponibles." },
+  c:1 },
+
+{ id:"bcr77", sec:"rules", topic:"conditions",
+  en:{ q:"Coastal BC gets heavy rain. When should you turn your headlights on?",
+       a:["Only in fog","Only on the highway","Whenever you use your wipers","Only after dark"],
+       e:"Lights make you visible to others, which matters more than how well you can see. Daytime running lights do not light your tail lights, so use full headlights in rain." },
+  fr:{ q:"La côte de la C.-B. reçoit beaucoup de pluie. Quand devez-vous allumer vos phares ?",
+       a:["Seulement dans le brouillard","Seulement sur l'autoroute","Dès que vous utilisez vos essuie-glaces","Seulement après la tombée du jour"],
+       e:"Les feux vous rendent visible aux autres, ce qui compte plus que votre propre visibilité. Les feux de jour n'allument pas les feux arrière : utilisez les phares complets sous la pluie." },
+  c:2 },
+
+{ id:"bcr78", sec:"rules", topic:"conditions",
+  en:{ q:"What does a flashing green light at a BC intersection mean?",
+       a:["Turn left before oncoming traffic","Stop and proceed when clear","The light is broken","The light is pedestrian-controlled — be ready for it to change"],
+       e:"This differs from Ontario. In BC a flashing green means the signal is controlled by a pedestrian push button, so it can change quickly when someone presses it." },
+  fr:{ q:"Que signifie un feu vert clignotant à une intersection en C.-B. ?",
+       a:["Tournez à gauche avant la circulation inverse","Arrêtez puis repartez quand c'est libre","Le feu est défectueux","Le feu est commandé par les piétons — soyez prêt à le voir changer"],
+       e:"C'est différent de l'Ontario. En C.-B., un vert clignotant signifie que le feu est commandé par un bouton pour piétons : il peut changer rapidement." },
+  c:3 },
+
+{ id:"bcr79", sec:"rules", topic:"licence",
+  en:{ q:"How long must you normally hold a BC Class 7L licence before the first road test?",
+       a:["12 months","3 months","6 months","24 months"],
+       e:"Twelve months in the learner stage. Passing the first road test moves you to Class 7N, where you display a green N." },
+  fr:{ q:"Combien de temps devez-vous normalement détenir un permis classe 7L en C.-B. avant le premier examen sur route ?",
+       a:["12 mois","3 mois","6 mois","24 mois"],
+       e:"Douze mois à l'étape apprenti. Réussir le premier examen sur route vous fait passer à la classe 7N, où vous affichez un N vert." },
+  c:0 },
+
+{ id:"bcr80", sec:"rules", topic:"licence",
+  en:{ q:"What does the green N sign on a BC vehicle tell other drivers?",
+       a:["The vehicle is new","The driver is in the novice stage of graduated licensing","The vehicle runs on electricity","The driver is a student"],
+       e:"N stands for novice. That driver has passed one road test but still has restrictions, including zero alcohol and a passenger limit." },
+  fr:{ q:"Que signale le N vert sur un véhicule en C.-B. aux autres conducteurs ?",
+       a:["Le véhicule est neuf","Le conducteur est à l'étape novice du permis par étapes","Le véhicule roule à l'électricité","Le conducteur est un étudiant"],
+       e:"N signifie novice. Ce conducteur a réussi un examen sur route mais garde des restrictions, dont zéro alcool et une limite de passagers." },
+  c:1 },
+
+{ id:"bcr81", sec:"rules", topic:"impaired",
+  en:{ q:"What is an immediate roadside prohibition in BC?",
+       a:["A warning letter","A vehicle inspection order","A licence suspension issued on the spot for impaired driving","A parking ticket"],
+       e:"BC police can suspend your licence and impound your vehicle at the roadside. It applies at a blood alcohol level well below the criminal limit." },
+  fr:{ q:"Qu'est-ce qu'une interdiction immédiate de conduire en C.-B. ?",
+       a:["Une lettre d'avertissement","Un ordre d'inspection du véhicule","Une suspension de permis imposée sur place pour conduite avec facultés affaiblies","Une contravention de stationnement"],
+       e:"La police de la C.-B. peut suspendre votre permis et saisir votre véhicule sur place. Cela s'applique à un taux d'alcool bien inférieur à la limite criminelle." },
+  c:2 },
+
+{ id:"bcr82", sec:"rules", topic:"impaired",
+  en:{ q:"You are tired on a long BC highway drive. What actually helps?",
+       a:["Opening the window","Turning up the radio","Drinking coffee and continuing","Stopping to rest or sleep"],
+       e:"Only rest fixes fatigue. Air and music mask the symptoms for a few minutes while your reaction time stays as slow as an impaired driver's." },
+  fr:{ q:"Vous êtes fatigué sur une longue route de la C.-B. Qu'est-ce qui aide vraiment ?",
+       a:["Ouvrir la fenêtre","Monter le volume de la radio","Boire un café et continuer","Vous arrêter pour vous reposer ou dormir"],
+       e:"Seul le repos corrige la fatigue. L'air et la musique masquent les symptômes quelques minutes pendant que vos réflexes restent aussi lents que ceux d'un conducteur aux facultés affaiblies." },
+  c:3 },
+
+{ id:"bcr83", sec:"rules", topic:"vehicle",
+  en:{ q:"What must you do before driving away with snow on your BC vehicle?",
+       a:["Clear all windows, lights, mirrors and the roof","Clear the windshield only","Nothing, it blows off","Clear the front windows only"],
+       e:"Snow left on the roof slides onto your windshield the first time you brake, or flies into the car behind you at speed." },
+  fr:{ q:"Que devez-vous faire avant de partir avec de la neige sur votre véhicule en C.-B. ?",
+       a:["Dégager toutes les vitres, les feux, les rétroviseurs et le toit","Dégager seulement le pare-brise","Rien, elle s'envolera","Dégager seulement les vitres avant"],
+       e:"La neige laissée sur le toit glisse sur votre pare-brise au premier freinage, ou s'envole vers la voiture derrière vous à vitesse." },
+  c:0 },
+
+{ id:"bcr84", sec:"rules", topic:"vehicle",
+  en:{ q:"How can you tell whether a tire has enough tread left?",
+       a:["Count the years since purchase","Check the wear bars moulded into the grooves","Look at the colour","Feel the temperature"],
+       e:"Every tire has raised wear bars between the grooves. When the tread wears down level with them, the tire is finished and must be replaced." },
+  fr:{ q:"Comment savoir s'il reste assez de bande de roulement sur un pneu ?",
+       a:["Compter les années depuis l'achat","Vérifier les témoins d'usure moulés dans les rainures","Regarder la couleur","Toucher la température"],
+       e:"Chaque pneu a des témoins d'usure entre les rainures. Quand la sculpture est au même niveau qu'eux, le pneu est fini et doit être remplacé." },
+  c:1 },
+
+{ id:"bcr85", sec:"rules", topic:"collisions",
+  en:{ q:"You are in a collision in BC and someone is injured. What must you do?",
+       a:["Move the cars and continue","Call your insurer first","Stop, call for help, and give your information","Exchange numbers and leave"],
+       e:"Stopping is a legal duty. Call 911 for any injury, then give your name, address, licence and insurance details to the others involved." },
+  fr:{ q:"Vous êtes impliqué dans une collision en C.-B. et quelqu'un est blessé. Que devez-vous faire ?",
+       a:["Déplacer les voitures et continuer","Appeler d'abord votre assureur","Vous arrêter, appeler à l'aide et donner vos renseignements","Échanger des numéros et partir"],
+       e:"S'arrêter est une obligation légale. Appelez le 911 pour toute blessure, puis donnez vos nom, adresse, permis et renseignements d'assurance aux autres personnes en cause." },
+  c:2 },
+
+{ id:"bcr86", sec:"rules", topic:"collisions",
+  en:{ q:"Your vehicle skids on a wet BC road. What should you do with the accelerator?",
+       a:["Press it harder","Nothing, keep it steady","Pump it","Ease off it smoothly"],
+       e:"Easing off returns grip to the tires. Braking or accelerating hard during a skid makes it worse — smooth inputs and eyes on your escape path are what recover the car." },
+  fr:{ q:"Votre véhicule dérape sur une route mouillée de la C.-B. Que faire avec l'accélérateur ?",
+       a:["Appuyer plus fort","Rien, le garder stable","Le pomper","Le relâcher doucement"],
+       e:"Relâcher redonne de l'adhérence aux pneus. Freiner ou accélérer brusquement pendant un dérapage aggrave la situation : des gestes doux et le regard vers la sortie récupèrent la voiture." },
+  c:3 },
+
+{ id:"bcr87", sec:"rules", topic:"sharing",
+  en:{ q:"A BC transit bus signals to pull out from a stop. What must you do?",
+       a:["Yield to it where the sign requires","Speed up to pass","Sound your horn","Stop completely"],
+       e:"On roads posted at 60 km/h or less, you must yield to a bus signalling to re-enter traffic. Slow down and let it in." },
+  fr:{ q:"Un autobus de transport en commun en C.-B. signale qu'il quitte un arrêt. Que devez-vous faire ?",
+       a:["Lui céder le passage là où le panneau l'exige","Accélérer pour le dépasser","Klaxonner","Vous arrêter complètement"],
+       e:"Sur les routes affichées à 60 km/h ou moins, vous devez céder le passage à un autobus qui signale sa rentrée dans la circulation. Ralentissez et laissez-le passer." },
+  c:0 },
+
+{ id:"bcr88", sec:"rules", topic:"safe",
+  en:{ q:"What is the correct way to enter a BC highway from an on-ramp?",
+       a:["Use the shoulder until there is room","Match the speed of traffic, then merge into a gap","Stop at the end of the ramp","Enter slowly and let others adjust"],
+       e:"Use the acceleration lane to reach highway speed, check your blind spot, signal and merge. Stopping on a ramp is dangerous because traffic behind expects you to be moving." },
+  fr:{ q:"Quelle est la bonne façon d'entrer sur une autoroute de la C.-B. depuis une bretelle ?",
+       a:["Utiliser l'accotement jusqu'à avoir de la place","Ajuster votre vitesse à celle de la circulation, puis vous insérer dans un espace","Vous arrêter au bout de la bretelle","Entrer lentement et laisser les autres s'ajuster"],
+       e:"Servez-vous de la voie d'accélération pour atteindre la vitesse de l'autoroute, vérifiez votre angle mort, signalez et insérez-vous. S'arrêter sur une bretelle est dangereux." },
+  c:1 },
+
+{ id:"bcr89", sec:"rules", topic:"safe",
+  en:{ q:"Which lane should you normally use on a BC multi-lane highway?",
+       a:["The middle lane","Any lane you like","The right lane, keeping left for passing","The left lane"],
+       e:"Keep right except to pass. Sitting in the left lane forces others to pass on your right, which is where their blind spot is worst." },
+  fr:{ q:"Quelle voie devez-vous normalement utiliser sur une autoroute à voies multiples en C.-B. ?",
+       a:["La voie du milieu","N'importe quelle voie","La voie de droite, en gardant la gauche pour dépasser","La voie de gauche"],
+       e:"Tenez la droite sauf pour dépasser. Rester dans la voie de gauche force les autres à vous dépasser par la droite, là où leur angle mort est le pire." },
+  c:2 },
+
+{ id:"bcr90", sec:"rules", topic:"licensing",
+  en:{ q:"May a BC learner drive alone to a nearby store?",
+       a:["Yes, for short trips","Yes, during daylight","Yes, if under 5 km","No, a qualified supervisor must always be in the front passenger seat"],
+       e:"There is no exception for short or local trips. Driving without your supervisor is driving without a valid licence for that vehicle." },
+  fr:{ q:"Un apprenti conducteur de la C.-B. peut-il conduire seul jusqu'au magasin du coin ?",
+       a:["Oui, pour de courts trajets","Oui, en plein jour","Oui, si c'est à moins de 5 km","Non, un superviseur qualifié doit toujours être sur le siège du passager avant"],
+       e:"Il n'y a aucune exception pour les trajets courts ou locaux. Conduire sans votre superviseur revient à conduire sans permis valide pour ce véhicule." },
+  c:3 }
 
 );
 

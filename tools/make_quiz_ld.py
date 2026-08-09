@@ -81,7 +81,9 @@ out['fun-quiz.html'] = fun.filter(q => q.q.endsWith('?') && new Set(q.options).s
 const DRIVE = {
   on: ['ontario-g1-practice-test.html', 'ontario-g1-mock-test.html', 'ontario-g1-rules-of-the-road.html'],
   bc: ['bc-class-7l-practice-test.html', 'bc-class-7l-mock-test.html', 'bc-rules-of-the-road.html'],
-  ab: ['alberta-class-7-practice-test.html', 'alberta-class-7-mock-test.html', 'alberta-rules-of-the-road.html']
+  ab: ['alberta-class-7-practice-test.html', 'alberta-class-7-mock-test.html', 'alberta-rules-of-the-road.html'],
+  qc: ['quebec-class-5-practice-test.html', 'quebec-class-5-mock-test.html', 'quebec-rules-of-the-road.html'],
+  mb: ['manitoba-class-5-practice-test.html', 'manitoba-class-5-mock-test.html', 'manitoba-rules-of-the-road.html']
 };
 for (const [prov, pages] of Object.entries(DRIVE)) {
   const Q = load(ROOT + '/js/driving/' + prov + '.js', 'CQ_DRIVE_Q');
