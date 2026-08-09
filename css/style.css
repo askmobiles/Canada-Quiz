@@ -365,3 +365,20 @@ main li a:not(.btn):hover{text-decoration:underline}
 .pagedoc .sq-e{margin:0;color:var(--muted)}
 .pagedoc .pd-rel{margin:0}
 @media(max-width:520px){.pagedoc{padding:18px 15px 22px;margin-top:20px}}
+
+/* ---- Long reference articles: tables, callouts, source lists, charts ----- */
+.cq-table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 10px}
+.cq-table th{text-align:left;padding:8px 10px;background:var(--red-dark);color:#fff;
+  font-weight:700;font-size:13.5px;white-space:nowrap}
+.cq-table td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.cq-table tbody tr:nth-child(even){background:rgba(0,0,0,.025)}
+.cq-table tbody tr:hover{background:rgba(0,0,0,.05)}
+.cq-callout{background:#fff8e6;border:1px solid #f0dca0;border-left:5px solid #e3b737;
+  border-radius:10px;padding:12px 15px;margin:14px 0;font-size:15px;line-height:1.6}
+.cq-sources{padding-left:22px;font-size:14px}
+.cq-sources li{margin:0 0 6px;word-break:break-word}
+.cq-fig{margin:18px 0;padding:14px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius)}
+.cq-fig svg{display:block;width:100%;height:auto}
+.cq-fig figcaption{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.55}
+@media(max-width:520px){.cq-table{font-size:13px}.cq-table th,.cq-table td{padding:6px 7px}}

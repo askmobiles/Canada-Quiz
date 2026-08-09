@@ -74,6 +74,20 @@ SECTION_FR = {
     "The Site": "Le site",
 }
 
+# The landing page each section crumb points at. Google's breadcrumb spec
+# requires an "item" URL on every element EXCEPT the last one; Search Console
+# reported 'Missing field "item"' on 8 Aug 2026 because the middle crumb
+# ("Blog", "Driving Test Practice", …) was a bare name with nowhere to go.
+SECTION_PAGE = {
+    "Quizzes": "quizzes.html",
+    "Driving Test Practice": "driving-test.html",
+    "Brain & Puzzle Games": "games.html",
+    "Action & Classic Games": "games.html",
+    "Party Games": "games.html",
+    "Blog": "blog.html",
+    "The Site": "about.html",
+}
+
 _section = {}
 for _g in _site_map["groups"]:
     _title = _g["title"].replace("&amp;", "&")
@@ -131,9 +145,15 @@ def build(page, html, lang="en"):
         crumbs = [{"@type": "ListItem", "position": 1,
                    "name": "Home" if lang == "en" else "Accueil", "item": home}]
         sec = _section.get(page)
-        if sec:
-            crumbs.append({"@type": "ListItem", "position": 2,
-                           "name": sec[0] if lang == "en" else sec[1]})
+        landing = SECTION_PAGE.get(sec[0]) if sec else None
+        # On the section's own landing page (blog.html inside "Blog") the middle
+        # crumb would just repeat the last one, so skip it there.
+        if sec and landing != page:
+            crumb = {"@type": "ListItem", "position": 2,
+                     "name": sec[0] if lang == "en" else sec[1]}
+            if landing:
+                crumb["item"] = _url(landing, lang)
+            crumbs.append(crumb)
         crumbs.append({"@type": "ListItem", "position": len(crumbs) + 1,
                        "name": name.split(" — ")[0].split(" | ")[0] or page,
                        "item": url})

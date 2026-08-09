@@ -67,6 +67,10 @@
   "date": "2026-08-08",
   "hash": "5df45f46aa994140f9a79364fffb1ced295864d2"
  },
+ "canada-population-timeline.html": {
+  "date": "2026-08-09",
+  "hash": "216cd30f4d1f9c9732c7ba9d0294a08277ba997f"
+ },
  "canada-provinces-and-territories-explained.html": {
   "date": "2026-08-08",
   "hash": "7157d0c7d09da224e25385aaf42e367468a70df8"
@@ -251,6 +255,10 @@
   "date": "2026-08-08",
   "hash": "26e7592db1294fca0134f268a8d738978f832e90"
  },
+ "fr/canada-population-timeline.html": {
+  "date": "2026-08-09",
+  "hash": "859ee9d4b4d77f3a722937008685c77bddf0822b"
+ },
  "fr/canada-provinces-and-territories-explained.html": {
   "date": "2026-08-08",
   "hash": "988f90a3a15bd2b4b367f08da85ff09dd20aa479"
@@ -272,8 +280,8 @@
   "hash": "da05e7593e5fc34aa96d0924bde178d7449eaa68"
  },
  "fr/canadas-two-official-languages.html": {
-  "date": "2026-08-08",
-  "hash": "a1797fb34921e779518e0f5bbbf0ebc611267bbf"
+  "date": "2026-08-09",
+  "hash": "ccb38473f80568f8c7bfb46953be98e0eb623339"
  },
  "fr/canadian-food-poutine-maple-syrup.html": {
   "date": "2026-08-08",
@@ -348,8 +356,8 @@
   "hash": "9d7c859e5f106ef741effcb7a1cb38d459eb1e18"
  },
  "fr/driving-test.html": {
-  "date": "2026-08-08",
-  "hash": "7416e3683d09212b3f9c54451f6e6b1cdb354af4"
+  "date": "2026-08-09",
+  "hash": "981fc046e4bf6b010b21036c3485b0cd1630191a"
  },
  "fr/earth-quiz.html": {
   "date": "2026-08-08",
@@ -391,6 +399,10 @@
   "date": "2026-08-08",
   "hash": "78db8f9b1a92a15206d803161eaf07da985cea9e"
  },
+ "fr/how-canada-was-built.html": {
+  "date": "2026-08-09",
+  "hash": "845b9e05a68995057e2c4348f3d94368114defde"
+ },
  "fr/how-canadas-government-works.html": {
   "date": "2026-08-08",
   "hash": "629d4f6e32604fcdba5e2c88baf515d041e7ec31"
@@ -400,8 +412,8 @@
   "hash": "4a4808a52f18973470c87dea9de04b4e7d57e2fe"
  },
  "fr/how-to-prepare-for-the-canadian-citizenship-test.html": {
-  "date": "2026-08-08",
-  "hash": "1199ed0e92180a648ddc0f99eccc6697fc0252e4"
+  "date": "2026-08-09",
+  "hash": "96fdba0059072ed083379003560ac306c2ad8ba4"
  },
  "fr/imposter.html": {
   "date": "2026-08-08",
@@ -452,8 +464,8 @@
   "hash": "b0ddbe6dc30afeaa9e1a17e37b711320ec1b6456"
  },
  "fr/newcomer-first-year-in-canada-checklist.html": {
-  "date": "2026-08-08",
-  "hash": "0e3fcf9557f6eb3375c181ebf2bd34b99a226af8"
+  "date": "2026-08-09",
+  "hash": "7924532d6499e12746223858f85a21c0f1e6aa56"
  },
  "fr/ontario-g1-mock-test.html": {
   "date": "2026-08-08",
@@ -474,6 +486,10 @@
  "fr/ontario-g1-study-guide.html": {
   "date": "2026-08-08",
   "hash": "5e1831e6fe816b62f15b65f3f2cf8061adc8bb23"
+ },
+ "fr/prime-ministers-of-canada.html": {
+  "date": "2026-08-09",
+  "hash": "2391558f0e50531c6a8679dbcb804f41567edf52"
  },
  "fr/privacy.html": {
   "date": "2026-08-08",
@@ -643,6 +659,10 @@
   "date": "2026-08-08",
   "hash": "27b6caa295a8bbc7ef820573fd2fdbeca43481b8"
  },
+ "how-canada-was-built.html": {
+  "date": "2026-08-09",
+  "hash": "0ac511856c09cd48739839e982541fb9871e7193"
+ },
  "how-canadas-government-works.html": {
   "date": "2026-08-08",
   "hash": "252bfe94278e4608e4d9c17a870fd98805a57180"
@@ -726,6 +746,10 @@
  "ontario-g1-study-guide.html": {
   "date": "2026-08-08",
   "hash": "dc60fe5a0bd9d6df7c33affa82b952cdad682994"
+ },
+ "prime-ministers-of-canada.html": {
+  "date": "2026-08-09",
+  "hash": "51a6271ae9d6f764699f94b998229dd11ccbf68c"
  },
  "privacy.html": {
   "date": "2026-08-08",
