@@ -179,9 +179,10 @@
       });
 
     el.appendChild(wrap);
-    if (btns.firstChild && btns.firstChild.focus) {
-      try { btns.firstChild.focus({ preventScroll: true }); } catch (err) { }
-    }
+    // No auto-focus. Moving focus to a button inside a full-screen page is one
+    // more thing that can make Safari believe the visitor is about to type,
+    // which is what produced its "fake keyboard" warning. The card is
+    // announced through aria-live instead, which costs nothing.
     return wrap;
   }
 

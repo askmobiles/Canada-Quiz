@@ -112,7 +112,25 @@
   exitBtn.textContent = '✕';
 
   // ---------------------------------------------------------------- native
+  // iPhone and iPad are deliberately left OUT of native fullscreen.
+  //
+  // Safari has an anti-phishing rule: the moment a page in NATIVE fullscreen
+  // sees a key press, it throws up "It looks like you are typing while in full
+  // screen — canada-quiz.com may be showing a fake keyboard to trick you into
+  // disclosing personal or financial information." An iPad in a keyboard case
+  // triggers that on any keystroke, and it landed on a family playing
+  // Minesweeper. Nothing was wrong with the page, but a visitor reading that
+  // sentence has no way to know it, and a quiz site cannot afford it.
+  //
+  // The CSS play mode below already hides the header, footer, article and ads
+  // and pins the game to the screen, so on an iPad we simply keep Safari's own
+  // slim toolbar and lose nothing that matters. Android and desktop have no
+  // such warning and still get true fullscreen.
+  var IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+            (/Macintosh/.test(navigator.userAgent) && (navigator.maxTouchPoints || 0) > 1);
+
   function nativeOn() {
+    if (IOS) return null;
     var el = document.documentElement;
     try {
       if (el.requestFullscreen) return el.requestFullscreen({ navigationUI: 'hide' });
@@ -217,8 +235,19 @@
       h.style.zoom = '';
       if (document.querySelector('canvas')) return;
       if (!(window.CSS && CSS.supports && CSS.supports('zoom', '1.2'))) return;
+
+      // TV mode (js/tv-mode.js) means somebody is watching this from a couch
+      // rather than holding the tablet, so fill the height instead of stopping
+      // politely at 1.6, and do it on a phone too — a mirrored phone is still
+      // a big screen at the other end. Scaling with zoom, rather than with
+      // font-size rules, is what stops "bigger" ever making something smaller.
+      var tv = document.body.classList.contains('tv-mode');
+      var CAP = tv ? 2.6 : 1.6;
+      var FLOOR = tv ? 1.04 : 1.12;
+
       var availH = h.clientHeight;
-      if (!availH || (h.clientWidth < 700 && availH < 700)) return;  // phones already fill up
+      if (!availH) return;
+      if (!tv && h.clientWidth < 700 && availH < 700) return;  // phones already fill up
 
       var kids = [], i;
       for (i = 0; i < h.children.length; i++) {
@@ -234,16 +263,21 @@
       var contentH = bottom - top;
       if (contentH < 40) return;
 
-      var z = Math.min(availH / (contentH + 30), 1.6);
-      if (z < 1.12) return;                     // not enough spare room to bother
+      var z = Math.min(availH / (contentH + 30), CAP);
+      // In TV mode always give at least a quarter more, even where the page
+      // already fills the height. Someone across the room needs the text
+      // bigger more than they need to avoid a scroll, and the width guard
+      // below still eases back if that pushes the board off the side.
+      if (tv && z < 1.25) z = 1.25;
+      if (z < FLOOR) return;                    // not enough spare room to bother
       h.style.zoom = z;
       // if scaling up pushed the board off the side, ease back until it fits
       var guard = 0;
-      while (h.scrollWidth > h.clientWidth + 2 && z > 1.06 && guard++ < 14) {
+      while (h.scrollWidth > h.clientWidth + 2 && z > 1.02 && guard++ < 34) {
         z -= 0.05;
         h.style.zoom = z;
       }
-      if (z <= 1.06) h.style.zoom = '';
+      if (z <= 1.02) h.style.zoom = '';
     } catch (e) {
       if (h) h.style.zoom = '';
     }

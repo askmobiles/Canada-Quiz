@@ -251,6 +251,19 @@ def main():
             s = s.replace("</body>",
                           '  <script src="js/game-fullscreen.js" defer></script>\n</body>', 1)
 
+        # js/tv-mode.js rides along with it: the "Play on TV" button and the
+        # big-text TV mode only make sense where there is a play screen.
+        # The test is "does this page have a play screen", NOT looks_like_a_quiz.
+        # 27 party and puzzle pages — charades, imposter, would-you-rather,
+        # story-maker, snake, memory and the rest — carry game-fullscreen.js
+        # from when it was added by hand and do not match the quiz sniffer, and
+        # those are exactly the games a family would want on a television.
+        s = re.sub(r'[ \t]*<script src="js/tv-mode\.js(\?[^"]*)?"[^>]*></script>\n?', "", s)
+        if "js/game-fullscreen.js" in s:
+            s = s.replace("</body>",
+                          '  <script src="js/tv-mode.js?v=%s" defer></script>\n</body>'
+                          % asset_ver.ver("js/tv-mode.js"), 1)
+
         # --- cache stamp: A HASH OF EACH FILE, not one shared version --------
         # Each ?v= is the first 8 hex of that file's SHA-1 (tools/asset_ver.py).
         # Two things follow, and both matter:
