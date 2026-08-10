@@ -126,11 +126,17 @@
   // and pins the game to the screen, so on an iPad we simply keep Safari's own
   // slim toolbar and lose nothing that matters. Android and desktop have no
   // such warning and still get true fullscreen.
-  var IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-            (/Macintosh/.test(navigator.userAgent) && (navigator.maxTouchPoints || 0) > 1);
+  // The rule belongs to WebKit, not to iOS, so the test has to be "is this an
+  // Apple browser", not "is this an iPad". Safari on a Mac shows the very same
+  // warning, and every browser on iOS — Chrome and Firefox included — is
+  // WebKit underneath and behaves the same way. navigator.vendor is "Apple
+  // Computer, Inc." for all of them and for nothing else.
+  var APPLE = (navigator.vendor || "").indexOf("Apple") === 0 ||
+              /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+              (/Macintosh/.test(navigator.userAgent) && (navigator.maxTouchPoints || 0) > 1);
 
   function nativeOn() {
-    if (IOS) return null;
+    if (APPLE) return null;
     var el = document.documentElement;
     try {
       if (el.requestFullscreen) return el.requestFullscreen({ navigationUI: 'hide' });
@@ -233,7 +239,7 @@
     try {
       if (!h) return;
       h.style.zoom = '';
-      if (document.querySelector('canvas')) return;
+      if (document.querySelector('canvas')) { fitCanvas(h); return; }
       if (!(window.CSS && CSS.supports && CSS.supports('zoom', '1.2'))) return;
 
       // TV mode (js/tv-mode.js) means somebody is watching this from a couch
@@ -243,11 +249,20 @@
       // font-size rules, is what stops "bigger" ever making something smaller.
       var tv = document.body.classList.contains('tv-mode');
       var CAP = tv ? 2.6 : 1.6;
-      var FLOOR = tv ? 1.04 : 1.12;
+      /* Shrinking was the missing half. fitZoom only ever scaled a game UP,
+         so a board taller than the screen simply ran off the bottom and the
+         player had to scroll to find the buttons. It may now go down to 0.72,
+         which is still comfortably readable and brings a 1,200px panel onto
+         an 844px phone. */
+      /* ...but never in TV mode. Shrinking to fit and "make it big enough to
+         read from the couch" pull in opposite directions, and on Hide & Find
+         they collided: the fit pass eased the zoom to 0.93 and turning TV
+         mode ON made the buttons SMALLER than leaving it off. A floor of 1
+         there means TV mode can only ever help. */
+      var MIN = tv ? 1 : 0.72;
 
       var availH = h.clientHeight;
       if (!availH) return;
-      if (!tv && h.clientWidth < 700 && availH < 700) return;  // phones already fill up
 
       var kids = [], i;
       for (i = 0; i < h.children.length; i++) {
@@ -263,23 +278,73 @@
       var contentH = bottom - top;
       if (contentH < 40) return;
 
-      var z = Math.min(availH / (contentH + 30), CAP);
+      var z = availH / (contentH + 30);
       // In TV mode always give at least a quarter more, even where the page
       // already fills the height. Someone across the room needs the text
-      // bigger more than they need to avoid a scroll, and the width guard
-      // below still eases back if that pushes the board off the side.
+      // bigger more than they need to avoid a scroll, and the guard below
+      // still eases back if that pushes the game off the screen.
       if (tv && z < 1.25) z = 1.25;
-      if (z < FLOOR) return;                    // not enough spare room to bother
+      if (z > CAP) z = CAP;
+      if (z < MIN) z = MIN;
+      if (z > 0.98 && z < 1.12 && !tv) { h.style.zoom = ''; return; }  // near enough
       h.style.zoom = z;
-      // if scaling up pushed the board off the side, ease back until it fits
+
+      /* Ease back until nothing runs off the side OR the bottom. The old
+         version only checked the width, so scaling a page up could wrap a
+         line of text, make the content taller, and push the buttons off the
+         bottom — which is why several pages sat at zoom 1.6 and still needed
+         scrolling. */
       var guard = 0;
-      while (h.scrollWidth > h.clientWidth + 2 && z > 1.02 && guard++ < 34) {
-        z -= 0.05;
+      while (guard++ < 40 && z > MIN &&
+             (h.scrollWidth > h.clientWidth + 2 || h.scrollHeight > h.clientHeight + 2)) {
+        /* clamp on the way down, not on the way in. Subtracting first and
+           testing afterwards overshot the floor by one step, which is how
+           TV mode still ended at 0.97 after the floor was raised to 1. */
+        z = Math.max(MIN, z - 0.04);
         h.style.zoom = z;
+        if (z <= MIN) break;
       }
-      if (z <= 1.02) h.style.zoom = '';
+      if (z > 0.99 && z < 1.02) h.style.zoom = '';
     } catch (e) {
       if (h) h.style.zoom = '';
+    }
+  }
+
+  /* Canvas games are left out of the zoom, because they work out their own
+     pointer positions and a zoomed canvas is a good way to break aiming. They
+     still have to fit, though — Inukshuk ran 440px off an iPad in landscape.
+     So instead of scaling the page, cap how tall the picture may be. With
+     width:auto and max-width:100% the browser keeps the aspect ratio, so the
+     picture just gets smaller and the buttons underneath come into view. */
+  function fitCanvas(h) {
+    var c = h.querySelector('canvas') || document.querySelector('canvas');
+    if (!c) return;
+    c.style.maxHeight = '';
+    c.style.width = '';
+    var over = h.scrollHeight - h.clientHeight;
+    if (over <= 8) return;
+    var now = c.getBoundingClientRect().height;
+    if (!now) return;
+    var want = Math.max(150, now - over - 12);
+    c.style.maxHeight = Math.round(want) + 'px';
+    c.style.width = 'auto';
+    c.style.marginLeft = 'auto';
+    c.style.marginRight = 'auto';
+    /* one correction pass, in case the shorter picture re-flowed something */
+    var still = h.scrollHeight - h.clientHeight;
+    if (still > 8) {
+      want = Math.max(150, want - still - 6);
+      c.style.maxHeight = Math.round(want) + 'px';
+    }
+  }
+
+  function unfitCanvas() {
+    var all = document.querySelectorAll('canvas'), i;
+    for (i = 0; i < all.length; i++) {
+      all[i].style.maxHeight = '';
+      all[i].style.width = '';
+      all[i].style.marginLeft = '';
+      all[i].style.marginRight = '';
     }
   }
 
@@ -298,6 +363,45 @@
       el = kids[i];
       if (el === h || el.contains(h) || h.contains(el)) continue;
       el.classList.add('pm-veiled');
+    }
+    if (h === main) veilInsideMain(main);
+  }
+
+  /* When the host IS <main> — which is every quiz and every driving page,
+     because their question screen and result screen are separate siblings —
+     the loop above hides nothing at all, because everything is inside the
+     host. So play mode was pinning the whole document to the screen: the
+     hero, the ad slot, the "study the rules" panels, the grid of links.
+     ontario-g1-practice-test.html ran 2,969px past the bottom of an iPhone,
+     and the last button a player could reach by scrolling was "Read the
+     guide". That is what Eesan meant by having to move up and down to find
+     the buttons.
+
+     So go one level deeper and keep only the blocks that are actually the
+     quiz. If that leaves nothing to press, put everything back — a page
+     with no controls is far worse than a page you have to scroll. */
+  var KEEP = '.options,#opts,#dq-opts,#dq-po,.progress,.result-big,' +
+             'canvas,.board,[data-fs-host],input,select';
+  var KEEP_IDS = { start: 1, quiz: 1, result: 1, play: 1, game: 1 };
+
+  function veilInsideMain(main) {
+    var kids = main.children, i, el, hidden = [];
+    for (i = 0; i < kids.length; i++) {
+      el = kids[i];
+      if (el.nodeType !== 1) continue;
+      if (KEEP_IDS[el.id]) continue;
+      if (el.querySelector && el.querySelector(KEEP)) continue;
+      if (el.matches && el.matches(KEEP)) continue;
+      el.classList.add('pm-veiled');
+      hidden.push(el);
+    }
+    /* safety net: is anything left that a player can press? */
+    var live = main.querySelectorAll('button, .btn, a.btn, input, select'), j, any = false;
+    for (j = 0; j < live.length; j++) {
+      if (live[j].offsetParent !== null) { any = true; break; }
+    }
+    if (!any) {
+      for (i = 0; i < hidden.length; i++) hidden[i].classList.remove('pm-veiled');
     }
   }
   function unveil() {
@@ -322,6 +426,7 @@
     unveil();
     var h = document.querySelector('.pm-host');
     if (h) { h.style.zoom = ''; h.classList.remove('pm-host'); }
+    unfitCanvas();
     orientUnlock();
     wakeOff();
     nativeOff();
@@ -331,6 +436,21 @@
 
   enterBtn.addEventListener('click', enter);
   exitBtn.addEventListener('click', exit);
+
+  // Safety net for every other browser. Word Search, Scramble, Sudoku, the
+  // typing test and the crossword all take typed answers, and a browser that
+  // ever grows the same anti-phishing rule would fire it the moment a letter
+  // is typed. So the instant a text field inside the game is focused, we drop
+  // out of NATIVE fullscreen and stay in the CSS play screen. The player sees
+  // the game exactly as before; the browser simply no longer has a reason to
+  // interrupt them.
+  document.addEventListener('focusin', function (e) {
+    if (!document.body.classList.contains('play-mode')) return;
+    var n = e.target && e.target.tagName;
+    if (n !== 'INPUT' && n !== 'TEXTAREA' &&
+        !(e.target && e.target.isContentEditable)) return;
+    if (document.fullscreenElement || document.webkitFullscreenElement) nativeOff();
+  });
 
   // turning the tablet sideways changes how much room there is
   var refit = null;

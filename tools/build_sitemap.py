@@ -94,7 +94,7 @@ def lastmod_for(relpath):
 
 
 # Pages that must never be listed (thank-you pages, redirects, drafts).
-SKIP = {"404.html", "google-verify.html"} | private_pages.PRIVATE
+SKIP = {"404.html", "google-verify.html", "offline.html"} | private_pages.PRIVATE
 
 # How often each kind of page really changes.
 DAILY = {"daily.html"}

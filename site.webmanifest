@@ -2,13 +2,89 @@
   "name": "Canada Quiz & Family Fun Games",
   "short_name": "Canada Quiz",
   "description": "Free quizzes, family games and Canada citizenship test practice. No signup.",
-  "start_url": "/index.html",
+  "start_url": "/index.html?src=app",
   "display": "standalone",
   "background_color": "#fdfbf7",
   "theme_color": "#e63946",
   "icons": [
-    { "src": "brand/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "brand/icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "brand/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "id": "/",
+  "scope": "/",
+  "lang": "en-CA",
+  "dir": "ltr",
+  "orientation": "any",
+  "categories": [
+    "games",
+    "education",
+    "entertainment"
+  ],
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "browser"
+  ],
+  "shortcuts": [
+    {
+      "name": "Citizenship Test Practice",
+      "short_name": "Citizenship",
+      "url": "/citizenship.html",
+      "icons": [
+        {
+          "src": "brand/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Family Games",
+      "short_name": "Games",
+      "url": "/games.html",
+      "icons": [
+        {
+          "src": "brand/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Quizzes",
+      "short_name": "Quizzes",
+      "url": "/quizzes.html",
+      "icons": [
+        {
+          "src": "brand/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Daily Challenge",
+      "short_name": "Daily",
+      "url": "/daily.html",
+      "icons": [
+        {
+          "src": "brand/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
   ]
 }

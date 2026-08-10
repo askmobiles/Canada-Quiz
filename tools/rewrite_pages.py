@@ -118,8 +118,23 @@ def footer_html():
 ICON_BLOCK = (
     '<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">\n'
     '<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">\n'
-    '<link rel="manifest" href="site.webmanifest">'
+    '<link rel="manifest" href="site.webmanifest">\n'
+    # --- installable web app -------------------------------------------
+    # theme-color paints the phone's status bar to match the site, and the
+    # apple-* lines are what iOS reads when somebody chooses Add to Home
+    # Screen: without them the icon appears but the app still opens inside
+    # Safari, with the address bar, which defeats the point.
+    '<meta name="theme-color" content="#c8102e">\n'
+    '<meta name="mobile-web-app-capable" content="yes">\n'
+    '<meta name="apple-mobile-web-app-capable" content="yes">\n'
+    '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">\n'
+    '<meta name="apple-mobile-web-app-title" content="Canada Quiz">'
 )
+
+PWA_META_RE = re.compile(
+    r'[ \t]*<meta name="(?:theme-color|mobile-web-app-capable|'
+    r'apple-mobile-web-app-capable|apple-mobile-web-app-status-bar-style|'
+    r'apple-mobile-web-app-title)"[^>]*>\n?')
 
 # these <link> tags always sit alone on their own line, so match line-by-line
 # (the old favicon was an inline SVG full of ">" characters)
@@ -173,6 +188,7 @@ def main():
         orig = s
 
         # --- head: icons, canonical, hreflang -------------------------------
+        s = PWA_META_RE.sub("", s)
         s = OLD_ICON.sub("", s)
         s = OLD_APPLE.sub("", s)
         s = OLD_MANIFEST.sub("", s)
@@ -217,7 +233,7 @@ def main():
         # analytics.js if its hand-written source already had the tag, so 100
         # of 218 pages — every driving test, every blog article — were
         # invisible in the stats. Adding a new page can no longer miss it.
-        for _js in ("site", "analytics", "ads", "endcard"):
+        for _js in ("site", "analytics", "ads", "endcard", "pwa"):
             s = re.sub(r'[ \t]*<script src="js/%s\.js(\?[^"]*)?"[^>]*></script>\n?' % _js, "", s)
 
         # js/endcard.js draws the shared "game over" card in the MIDDLE of the
@@ -233,10 +249,14 @@ def main():
             "</body>",
             '  <script src="js/site.js?v=%s"></script>\n'
             '  <script src="js/analytics.js?v=%s"></script>\n'
-            '  <script src="js/ads.js?v=%s" defer></script>\n</body>'
+            '  <script src="js/ads.js?v=%s" defer></script>\n'
+            # js/pwa.js registers the service worker, offers the Install
+            # button and tells a visitor when a new build has downloaded.
+            '  <script src="js/pwa.js?v=%s" defer></script>\n</body>'
             % (asset_ver.ver("js/site.js"),
                asset_ver.ver("js/analytics.js"),
-               asset_ver.ver("js/ads.js")), 1)
+               asset_ver.ver("js/ads.js"),
+               asset_ver.ver("js/pwa.js")), 1)
 
         # --- full-screen play mode on every quiz, not just the games ---------
         # js/game-fullscreen.js gives a phone or tablet an app-like screen with
