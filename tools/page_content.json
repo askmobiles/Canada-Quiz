@@ -8190,6 +8190,578 @@
    ]
   ]
  },
+ "saskatchewan-class-7-mock-test.html": {
+  "about": [
+   {
+    "en": "A timed practice exam for the Saskatchewan Class 7 knowledge test: thirty questions in thirty minutes, road signs and rules mixed together, drawn at random from our sixty so no two runs are the same.",
+    "fr": "Un examen pratique chronométré pour l'examen théorique de classe 7 de la Saskatchewan : trente questions en trente minutes, panneaux et code mêlés, tirés au hasard parmi nos soixante pour qu'aucune tentative ne se ressemble."
+   },
+   {
+    "en": "SGI does not publish how many questions the test has, what the pass mark is, or how long you get. Other practice sites state those numbers confidently and contradict each other. We would rather tell you what is actually published than invent a number that decides whether somebody books a test.",
+    "fr": "SGI ne publie ni le nombre de questions, ni la note de passage, ni la durée. D'autres sites de pratique affichent ces chiffres avec assurance et se contredisent entre eux. Nous préférons vous dire ce qui est réellement publié plutôt qu'inventer un chiffre dont dépend la décision de réserver un examen."
+   },
+   {
+    "en": "At the end you get a score, a clear pass or try again, and a list of every question you missed with its explanation. Reading that list is where most of the learning happens.",
+    "fr": "À la fin, vous obtenez un score, une mention claire de réussite ou d'échec, et la liste de chaque question manquée avec son explication. C'est en lisant cette liste qu'on apprend le plus."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Time yourself honestly. Rushing the last five questions is the commonest way to lose marks you already knew.",
+    "fr": "Chronométrez-vous honnêtement. Bâcler les cinq dernières questions est la façon la plus courante de perdre des points déjà acquis."
+   },
+   {
+    "en": "A passed written result at SGI is valid for one year, so do not sit it long before you are ready to go on.",
+    "fr": "Un résultat écrit réussi chez SGI est valide un an : ne le passez pas longtemps avant d'être prêt à continuer."
+   },
+   {
+    "en": "Because the two real tests are marked apart, note whether your misses cluster in signs or in rules.",
+    "fr": "Comme les deux vrais examens sont corrigés à part, notez si vos erreurs se concentrent dans les panneaux ou dans le code."
+   },
+   {
+    "en": "Phones are not allowed in the test area, so practise without one beside you.",
+    "fr": "Les téléphones ne sont pas permis dans la salle d'examen : pratiquez sans en avoir un à côté de vous."
+   },
+   {
+    "en": "Run it more than once. A single good score can be luck; three in a row is readiness.",
+    "fr": "Faites-le plus d'une fois. Un seul bon résultat peut être de la chance ; trois de suite, c'est de la préparation."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "SGI does not publish that number, and we are not going to invent one. What SGI does state is that the test comes in two parts, Basic and Sign, that they are marked separately, and that you rewrite only the part you fail.",
+     "fr": "SGI ne publie pas ce nombre, et nous n'allons pas l'inventer. Ce que SGI indique, c'est que l'examen comporte deux parties, Base et Panneaux, qu'elles sont corrigées séparément et que vous ne reprenez que la partie échouée."
+    },
+    "q": {
+     "en": "How many questions are on the real Saskatchewan knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique de la Saskatchewan ?"
+    }
+   },
+   {
+    "a": {
+     "en": "SGI does not publish a pass mark either. Our mock test uses a practice standard of our own so you have something to aim at, and we label it as ours rather than pretending it is the official one.",
+     "fr": "SGI ne publie pas non plus de note de passage. Notre examen blanc utilise une norme de pratique qui nous est propre, pour vous donner une cible, et nous l'indiquons clairement plutôt que de la faire passer pour l'officielle."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. SGI allows one attempt per day. A passed written result stays valid for one year.",
+     "fr": "Non. SGI permet une tentative par jour. Un résultat écrit réussi reste valide un an."
+    },
+    "q": {
+     "en": "Can I take the test more than once in a day?",
+     "fr": "Puis-je passer l'examen plus d'une fois par jour ?"
+    }
+   },
+   {
+    "a": {
+     "en": "In the front passenger seat, at all hours. They need a Class 5 or better licence from Canada or the United States, held for at least 365 days within the past three years.",
+     "fr": "Sur le siège avant du passager, à toute heure. Il lui faut un permis de classe 5 ou mieux du Canada ou des États-Unis, détenu au moins 365 jours au cours des trois dernières années."
+    },
+    "q": {
+     "en": "Where must my supervising driver sit?",
+     "fr": "Où doit s'asseoir mon accompagnateur ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. New drivers may not use a cellphone at all, hand-held or hands-free. Hands-free is legal for fully licensed drivers, not at the learner or novice stages.",
+     "fr": "Non. Les nouveaux conducteurs ne peuvent utiliser aucun cellulaire, ni tenu en main ni mains libres. Le mains libres est légal pour les conducteurs pleinement licenciés, pas aux étapes apprenti ou novice."
+    },
+    "q": {
+     "en": "Can I use a hands-free phone as a new driver?",
+     "fr": "Puis-je utiliser un téléphone mains libres comme nouveau conducteur ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty questions with a thirty-minute timer, our own stated practice standard.",
+    "fr": "Trente questions avec un chronomètre de trente minutes, notre propre norme de pratique."
+   },
+   {
+    "en": "Signs and rules mixed, the way they come at you on the day.",
+    "fr": "Panneaux et code mêlés, comme le jour de l'examen."
+   },
+   {
+    "en": "A different selection every run, drawn at random from the full bank.",
+    "fr": "Une sélection différente à chaque tentative, tirée au hasard de la banque complète."
+   },
+   {
+    "en": "A review list at the end of every question you got wrong, with the explanation.",
+    "fr": "Une liste de révision à la fin, avec chaque question manquée et son explication."
+   },
+   {
+    "en": "No signup, no account, nothing saved about you.",
+    "fr": "Aucune inscription, aucun compte, rien d'enregistré à votre sujet."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "saskatchewan-class-7-mock-test.html",
+    {
+     "en": "Take the timed Saskatchewan mock test",
+     "fr": "Passez l'examen blanc chronométré de la Saskatchewan"
+    }
+   ],
+   [
+    "saskatchewan-road-signs.html",
+    {
+     "en": "Study every road sign for the Sign test",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "saskatchewan-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road for the Basic test",
+     "fr": "Étudiez le code de la route pour l'examen de base"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "saskatchewan-class-7-practice-test.html": {
+  "about": [
+   {
+    "en": "SGI divides the Saskatchewan knowledge test into two parts that are marked separately: a Basic test on driving situations and the rules of the road, and a Sign test on sign identification. If you fail one, you rewrite only that one. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "SGI divise l'examen théorique de la Saskatchewan en deux parties corrigées séparément : un examen de base sur les situations de conduite et le code de la route, et un examen sur l'identification des panneaux. Si vous en échouez une, vous ne reprenez que celle-là. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "SGI does not publish how many questions the test has, what the pass mark is, or how long you get. Other practice sites state those numbers confidently and contradict each other. We would rather tell you what is actually published than invent a number that decides whether somebody books a test.",
+    "fr": "SGI ne publie ni le nombre de questions, ni la note de passage, ni la durée. D'autres sites de pratique affichent ces chiffres avec assurance et se contredisent entre eux. Nous préférons vous dire ce qui est réellement publié plutôt qu'inventer un chiffre dont dépend la décision de réserver un examen."
+   },
+   {
+    "en": "The page starts with a ten-question warm-up mixing signs and rules, then points you at the three tools built for this licence: a timed mock test, a road sign study page and a rules of the road study page. Everything is free, works in English or French, and opens straight in your browser with no account.",
+    "fr": "La page commence par un échauffement de dix questions mêlant panneaux et code, puis vous dirige vers les trois outils créés pour ce permis : un examen blanc chronométré, une page d'étude des panneaux et une page d'étude du code. Tout est gratuit, en français ou en anglais, et s'ouvre directement dans votre navigateur sans compte."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Study the signs and the rules separately. Because SGI marks them separately, being strong at one does not carry you through the other.",
+    "fr": "Étudiez les panneaux et le code séparément. Comme SGI les corrige séparément, être fort dans l'un ne vous porte pas dans l'autre."
+   },
+   {
+    "en": "You may write only once a day, so it is worth being ready rather than treating the first attempt as a look at the paper.",
+    "fr": "Vous ne pouvez écrire qu'une fois par jour : mieux vaut être prêt que de traiter la première tentative comme un coup d'oeil."
+   },
+   {
+    "en": "If a question's wording confuses you, ask the examiner what it means. You are allowed to, and people sit there guessing instead.",
+    "fr": "Si la formulation d'une question vous embrouille, demandez à l'examinateur ce qu'elle signifie. C'est permis, et bien des gens devinent plutôt que de demander."
+   },
+   {
+    "en": "Zero alcohol means zero, right through the learner stage and both novice stages, not merely under the legal limit.",
+    "fr": "Zéro alcool veut dire zéro, pendant toute l'étape apprenti et les deux étapes novices, et non simplement sous la limite légale."
+   },
+   {
+    "en": "No cellphone at all as a new driver. Hands-free is legal for fully licensed drivers and not for you.",
+    "fr": "Aucun cellulaire comme nouveau conducteur. Le mains libres est légal pour les conducteurs pleinement licenciés, pas pour vous."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "SGI does not publish that number, and we are not going to invent one. What SGI does state is that the test comes in two parts, Basic and Sign, that they are marked separately, and that you rewrite only the part you fail.",
+     "fr": "SGI ne publie pas ce nombre, et nous n'allons pas l'inventer. Ce que SGI indique, c'est que l'examen comporte deux parties, Base et Panneaux, qu'elles sont corrigées séparément et que vous ne reprenez que la partie échouée."
+    },
+    "q": {
+     "en": "How many questions are on the real Saskatchewan knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique de la Saskatchewan ?"
+    }
+   },
+   {
+    "a": {
+     "en": "SGI does not publish a pass mark either. Our mock test uses a practice standard of our own so you have something to aim at, and we label it as ours rather than pretending it is the official one.",
+     "fr": "SGI ne publie pas non plus de note de passage. Notre examen blanc utilise une norme de pratique qui nous est propre, pour vous donner une cible, et nous l'indiquons clairement plutôt que de la faire passer pour l'officielle."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. SGI allows one attempt per day. A passed written result stays valid for one year.",
+     "fr": "Non. SGI permet une tentative par jour. Un résultat écrit réussi reste valide un an."
+    },
+    "q": {
+     "en": "Can I take the test more than once in a day?",
+     "fr": "Puis-je passer l'examen plus d'une fois par jour ?"
+    }
+   },
+   {
+    "a": {
+     "en": "In the front passenger seat, at all hours. They need a Class 5 or better licence from Canada or the United States, held for at least 365 days within the past three years.",
+     "fr": "Sur le siège avant du passager, à toute heure. Il lui faut un permis de classe 5 ou mieux du Canada ou des États-Unis, détenu au moins 365 jours au cours des trois dernières années."
+    },
+    "q": {
+     "en": "Where must my supervising driver sit?",
+     "fr": "Où doit s'asseoir mon accompagnateur ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. New drivers may not use a cellphone at all, hand-held or hands-free. Hands-free is legal for fully licensed drivers, not at the learner or novice stages.",
+     "fr": "Non. Les nouveaux conducteurs ne peuvent utiliser aucun cellulaire, ni tenu en main ni mains libres. Le mains libres est légal pour les conducteurs pleinement licenciés, pas aux étapes apprenti ou novice."
+    },
+    "q": {
+     "en": "Can I use a hands-free phone as a new driver?",
+     "fr": "Puis-je utiliser un téléphone mains libres comme nouveau conducteur ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Sixty original questions written for Saskatchewan: thirty on road signs and thirty on the rules of the road.",
+    "fr": "Soixante questions originales écrites pour la Saskatchewan : trente sur les panneaux et trente sur le code de la route."
+   },
+   {
+    "en": "A ten-question warm-up on this page that you can restart as often as you like.",
+    "fr": "Un échauffement de dix questions sur cette page, que vous pouvez recommencer autant de fois que vous voulez."
+   },
+   {
+    "en": "An explanation on every answer, so a wrong guess teaches you something instead of just costing a mark.",
+    "fr": "Une explication sur chaque réponse, pour qu'une erreur vous apprenne quelque chose au lieu de seulement coûter un point."
+   },
+   {
+    "en": "The graduated licence explained stage by stage: nine months at Class 7, six at Novice 1, twelve at Novice 2.",
+    "fr": "Le permis par étapes expliqué étape par étape : neuf mois en classe 7, six en Novice 1, douze en Novice 2."
+   },
+   {
+    "en": "The Saskatchewan-specific numbers gathered in one place — the five-metre school bus rule and the 60 km/h passing speed.",
+    "fr": "Les chiffres propres à la Saskatchewan rassemblés au même endroit : la règle des cinq mètres pour l'autobus scolaire et la vitesse de 60 km/h pour dépasser."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "saskatchewan-class-7-mock-test.html",
+    {
+     "en": "Take the timed Saskatchewan mock test",
+     "fr": "Passez l'examen blanc chronométré de la Saskatchewan"
+    }
+   ],
+   [
+    "saskatchewan-road-signs.html",
+    {
+     "en": "Study every road sign for the Sign test",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "saskatchewan-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road for the Basic test",
+     "fr": "Étudiez le code de la route pour l'examen de base"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "saskatchewan-road-signs.html": {
+  "about": [
+   {
+    "en": "This page is SGI's Sign test: road sign identification, on its own, grouped by type. The pictures are drawn in code rather than photographed, so they load instantly and stay sharp on any screen.",
+    "fr": "Cette page correspond à l'examen sur les panneaux de SGI : l'identification des panneaux, à part, regroupée par type. Les images sont dessinées en code plutôt que photographiées : elles s'affichent instantanément et restent nettes sur tout écran."
+   },
+   {
+    "en": "SGI divides the Saskatchewan knowledge test into two parts that are marked separately: a Basic test on driving situations and the rules of the road, and a Sign test on sign identification. If you fail one, you rewrite only that one. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "SGI divise l'examen théorique de la Saskatchewan en deux parties corrigées séparément : un examen de base sur les situations de conduite et le code de la route, et un examen sur l'identification des panneaux. Si vous en échouez une, vous ne reprenez que celle-là. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "Look at a group first, then practise that group with real test questions. There is no timer, because recognition comes from repetition rather than pressure.",
+    "fr": "Regardez d'abord un groupe, puis exercez-vous sur ce groupe avec de vraies questions d'examen. Il n'y a pas de chronomètre : la reconnaissance vient de la répétition, pas de la pression."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Shape and colour carry the meaning. A red circle with a slash forbids; a green circle permits.",
+    "fr": "La forme et la couleur portent le sens. Un cercle rouge barré interdit ; un cercle vert permet."
+   },
+   {
+    "en": "A yellow diamond warns about the road ahead. An orange diamond means road work and people on foot nearby.",
+    "fr": "Un losange jaune avertit de ce qui vient. Un losange orange signale des travaux et des gens à pied tout près."
+   },
+   {
+    "en": "A flashing red light is a stop sign. Come to a complete stop, then go when it is safe.",
+    "fr": "Un feu rouge clignotant est un panneau d'arrêt. Arrêtez complètement, puis repartez quand c'est sécuritaire."
+   },
+   {
+    "en": "A traffic control person's directions override the signs and the lights, every time.",
+    "fr": "Les directives d'un signaleur ont priorité sur les panneaux et les feux, chaque fois."
+   },
+   {
+    "en": "Deer and moose signs mark places where animals actually cross, not general countryside decoration.",
+    "fr": "Les panneaux de chevreuils et d'orignaux marquent des endroits où les animaux traversent vraiment, ce ne sont pas des décorations de campagne."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "SGI does not publish that number, and we are not going to invent one. What SGI does state is that the test comes in two parts, Basic and Sign, that they are marked separately, and that you rewrite only the part you fail.",
+     "fr": "SGI ne publie pas ce nombre, et nous n'allons pas l'inventer. Ce que SGI indique, c'est que l'examen comporte deux parties, Base et Panneaux, qu'elles sont corrigées séparément et que vous ne reprenez que la partie échouée."
+    },
+    "q": {
+     "en": "How many questions are on the real Saskatchewan knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique de la Saskatchewan ?"
+    }
+   },
+   {
+    "a": {
+     "en": "SGI does not publish a pass mark either. Our mock test uses a practice standard of our own so you have something to aim at, and we label it as ours rather than pretending it is the official one.",
+     "fr": "SGI ne publie pas non plus de note de passage. Notre examen blanc utilise une norme de pratique qui nous est propre, pour vous donner une cible, et nous l'indiquons clairement plutôt que de la faire passer pour l'officielle."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. SGI allows one attempt per day. A passed written result stays valid for one year.",
+     "fr": "Non. SGI permet une tentative par jour. Un résultat écrit réussi reste valide un an."
+    },
+    "q": {
+     "en": "Can I take the test more than once in a day?",
+     "fr": "Puis-je passer l'examen plus d'une fois par jour ?"
+    }
+   },
+   {
+    "a": {
+     "en": "In the front passenger seat, at all hours. They need a Class 5 or better licence from Canada or the United States, held for at least 365 days within the past three years.",
+     "fr": "Sur le siège avant du passager, à toute heure. Il lui faut un permis de classe 5 ou mieux du Canada ou des États-Unis, détenu au moins 365 jours au cours des trois dernières années."
+    },
+    "q": {
+     "en": "Where must my supervising driver sit?",
+     "fr": "Où doit s'asseoir mon accompagnateur ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. New drivers may not use a cellphone at all, hand-held or hands-free. Hands-free is legal for fully licensed drivers, not at the learner or novice stages.",
+     "fr": "Non. Les nouveaux conducteurs ne peuvent utiliser aucun cellulaire, ni tenu en main ni mains libres. Le mains libres est légal pour les conducteurs pleinement licenciés, pas aux étapes apprenti ou novice."
+    },
+    "q": {
+     "en": "Can I use a hands-free phone as a new driver?",
+     "fr": "Puis-je utiliser un téléphone mains libres comme nouveau conducteur ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Every sign grouped by type: regulatory, warning, temporary work zone, information and lane markings.",
+    "fr": "Chaque panneau regroupé par type : prescription, avertissement, zone de travaux, information et marquage."
+   },
+   {
+    "en": "Thirty sign questions written for Saskatchewan, with an explanation on every answer.",
+    "fr": "Trente questions sur les panneaux écrites pour la Saskatchewan, avec une explication sur chaque réponse."
+   },
+   {
+    "en": "Practice for one group at a time, so you can fix a weak area instead of rereading everything.",
+    "fr": "Pratique par groupe, pour corriger une faiblesse au lieu de tout relire."
+   },
+   {
+    "en": "Signs are national, so what you learn here works in any province you drive in later.",
+    "fr": "Les panneaux sont nationaux : ce que vous apprenez ici vaut dans toute province où vous conduirez plus tard."
+   },
+   {
+    "en": "No timer and no signup.",
+    "fr": "Aucun chronomètre et aucune inscription."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "saskatchewan-class-7-mock-test.html",
+    {
+     "en": "Take the timed Saskatchewan mock test",
+     "fr": "Passez l'examen blanc chronométré de la Saskatchewan"
+    }
+   ],
+   [
+    "saskatchewan-road-signs.html",
+    {
+     "en": "Study every road sign for the Sign test",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "saskatchewan-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road for the Basic test",
+     "fr": "Étudiez le code de la route pour l'examen de base"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "saskatchewan-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "This page is SGI's Basic test: driving situations and the rules of the road, chapter by chapter. Open any question to see the answer and a short explanation, then practise the whole chapter.",
+    "fr": "Cette page correspond à l'examen de base de SGI : les situations de conduite et le code de la route, chapitre par chapitre. Ouvrez une question pour voir la réponse et une courte explication, puis exercez-vous sur tout le chapitre."
+   },
+   {
+    "en": "SGI divides the Saskatchewan knowledge test into two parts that are marked separately: a Basic test on driving situations and the rules of the road, and a Sign test on sign identification. If you fail one, you rewrite only that one. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "SGI divise l'examen théorique de la Saskatchewan en deux parties corrigées séparément : un examen de base sur les situations de conduite et le code de la route, et un examen sur l'identification des panneaux. Si vous en échouez une, vous ne reprenez que celle-là. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "It also gathers the numbers that are specific to Saskatchewan, along with the winter and grid road driving that a knowledge test in this province genuinely has to cover.",
+    "fr": "Elle rassemble aussi les chiffres propres à la Saskatchewan, ainsi que la conduite hivernale et sur routes de gravier qu'un examen théorique dans cette province doit réellement couvrir."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Bridges and overpasses freeze before the road either side of them, because cold air passes underneath as well as over.",
+    "fr": "Les ponts et les viaducs gèlent avant la route de part et d'autre, car l'air froid passe aussi en dessous."
+   },
+   {
+    "en": "High beams make blowing snow worse. The light bounces back off the snow in the air.",
+    "fr": "Les feux de route empirent la poudrerie. La lumière est renvoyée par la neige en suspension."
+   },
+   {
+    "en": "Never follow the tail lights ahead as a guide in a whiteout. That is how chain collisions start.",
+    "fr": "Ne suivez jamais les feux arrière comme guide en cas de blanchiment. C'est ainsi que commencent les carambolages."
+   },
+   {
+    "en": "Clear the snow off the roof too. A slab leaving your roof at speed can blind the driver behind you.",
+    "fr": "Déneigez aussi le toit. Une plaque qui s'envole à vitesse peut aveugler le conducteur derrière vous."
+   },
+   {
+    "en": "A combine at 25 km/h closes on you very fast at highway speed, and is usually wider than its lane.",
+    "fr": "Une moissonneuse à 25 km/h se rapproche très vite à vitesse d'autoroute, et déborde souvent de sa voie."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "SGI does not publish that number, and we are not going to invent one. What SGI does state is that the test comes in two parts, Basic and Sign, that they are marked separately, and that you rewrite only the part you fail.",
+     "fr": "SGI ne publie pas ce nombre, et nous n'allons pas l'inventer. Ce que SGI indique, c'est que l'examen comporte deux parties, Base et Panneaux, qu'elles sont corrigées séparément et que vous ne reprenez que la partie échouée."
+    },
+    "q": {
+     "en": "How many questions are on the real Saskatchewan knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique de la Saskatchewan ?"
+    }
+   },
+   {
+    "a": {
+     "en": "SGI does not publish a pass mark either. Our mock test uses a practice standard of our own so you have something to aim at, and we label it as ours rather than pretending it is the official one.",
+     "fr": "SGI ne publie pas non plus de note de passage. Notre examen blanc utilise une norme de pratique qui nous est propre, pour vous donner une cible, et nous l'indiquons clairement plutôt que de la faire passer pour l'officielle."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. SGI allows one attempt per day. A passed written result stays valid for one year.",
+     "fr": "Non. SGI permet une tentative par jour. Un résultat écrit réussi reste valide un an."
+    },
+    "q": {
+     "en": "Can I take the test more than once in a day?",
+     "fr": "Puis-je passer l'examen plus d'une fois par jour ?"
+    }
+   },
+   {
+    "a": {
+     "en": "In the front passenger seat, at all hours. They need a Class 5 or better licence from Canada or the United States, held for at least 365 days within the past three years.",
+     "fr": "Sur le siège avant du passager, à toute heure. Il lui faut un permis de classe 5 ou mieux du Canada ou des États-Unis, détenu au moins 365 jours au cours des trois dernières années."
+    },
+    "q": {
+     "en": "Where must my supervising driver sit?",
+     "fr": "Où doit s'asseoir mon accompagnateur ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. New drivers may not use a cellphone at all, hand-held or hands-free. Hands-free is legal for fully licensed drivers, not at the learner or novice stages.",
+     "fr": "Non. Les nouveaux conducteurs ne peuvent utiliser aucun cellulaire, ni tenu en main ni mains libres. Le mains libres est légal pour les conducteurs pleinement licenciés, pas aux étapes apprenti ou novice."
+    },
+    "q": {
+     "en": "Can I use a hands-free phone as a new driver?",
+     "fr": "Puis-je utiliser un téléphone mains libres comme nouveau conducteur ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty rules questions grouped by chapter, with an explanation on every answer.",
+    "fr": "Trente questions de code regroupées par chapitre, avec une explication sur chaque réponse."
+   },
+   {
+    "en": "The graduated licence in full: nine months at Class 7, six at Novice 1, twelve at Novice 2.",
+    "fr": "Le permis par étapes au complet : neuf mois en classe 7, six en Novice 1, douze en Novice 2."
+   },
+   {
+    "en": "The five-metre school bus rule, and how it differs on a divided highway.",
+    "fr": "La règle des cinq mètres pour l'autobus scolaire, et sa différence sur une route divisée."
+   },
+   {
+    "en": "The 60 km/h speed for passing a stopped emergency vehicle or tow truck with its lights on.",
+    "fr": "La vitesse de 60 km/h pour dépasser un véhicule d'urgence ou une dépanneuse arrêté, gyrophares allumés."
+   },
+   {
+    "en": "Winter driving and gravel grid roads, which is most of the province's road network.",
+    "fr": "La conduite hivernale et les routes de gravier en quadrillé, qui forment l'essentiel du réseau routier de la province."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "saskatchewan-class-7-mock-test.html",
+    {
+     "en": "Take the timed Saskatchewan mock test",
+     "fr": "Passez l'examen blanc chronométré de la Saskatchewan"
+    }
+   ],
+   [
+    "saskatchewan-road-signs.html",
+    {
+     "en": "Study every road sign for the Sign test",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "saskatchewan-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road for the Basic test",
+     "fr": "Étudiez le code de la route pour l'examen de base"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
  "science-quiz.html": {
   "about": [
    {
