@@ -271,6 +271,15 @@ def main():
             s = s.replace("</body>",
                           '  <script src="js/game-fullscreen.js" defer></script>\n</body>', 1)
 
+        # js/read-aloud.js reads the question and the answers out loud for a
+        # child who cannot read yet. Quizzes only — a page with answer options
+        # or the driving engine. It is silent until somebody turns it on.
+        s = re.sub(r'[ \t]*<script src="js/read-aloud\.js(\?[^"]*)?"[^>]*></script>\n?', "", s)
+        if 'class="options"' in s or "driving-engine.js" in s:
+            s = s.replace("</body>",
+                          '  <script src="js/read-aloud.js?v=%s" defer></script>\n</body>'
+                          % asset_ver.ver("js/read-aloud.js"), 1)
+
         # js/tv-mode.js rides along with it: the "Play on TV" button and the
         # big-text TV mode only make sense where there is a play screen.
         # The test is "does this page have a play screen", NOT looks_like_a_quiz.
