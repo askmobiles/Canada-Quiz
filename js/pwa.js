@@ -87,7 +87,20 @@
     + "text-align:left}"
     + ".pwa-tip b{display:block;margin-bottom:4px;font-size:15.5px}"
     + ".pwa-tip .row{display:flex;gap:8px;margin-top:10px}"
-    + ".pwa-tip .row .btn{flex:1 1 auto;font-size:14px;padding:9px 14px}";
+    + ".pwa-tip .row .btn{flex:1 1 auto;font-size:14px;padding:9px 14px}"
+    /* The app's own Back button. Bottom LEFT on purpose: Full screen sits at
+       bottom right and Play on TV sits just above it, so the left corner is the
+       only one free, and on a phone it is the easiest corner for a thumb. */
+    + ".app-back{position:fixed;z-index:10000;background:#4b3f72;color:#fff;border:none;"
+    + "left:calc(12px + env(safe-area-inset-left,0px));"
+    + "bottom:calc(12px + env(safe-area-inset-bottom,0px));"
+    + "border-radius:999px;padding:13px 20px;font-weight:800;font-size:15px;"
+    + "font-family:inherit;cursor:pointer;line-height:1;"
+    + "box-shadow:0 6px 20px rgba(0,0,0,.28)}"
+    + ".app-back:hover{background:#3b3159}"
+    + ".app-back:focus-visible{outline:3px solid #ffb703;outline-offset:2px}"
+    /* Play mode already has its own red Exit button in the top corner. */
+    + "body.play-mode .app-back{display:none}";
   var st = document.createElement("style");
   st.textContent = css;
   document.head.appendChild(st);
@@ -117,6 +130,61 @@
     row.appendChild(go); row.appendChild(no);
     box.appendChild(b); box.appendChild(p); box.appendChild(row);
     document.body.appendChild(box);
+  }
+
+  /* ------------------------------------------------------- back button */
+  /* An installed app has no address bar, and no address bar means no Back
+     button. Android still has its hardware back gesture; an iPhone or iPad has
+     nothing at all. Eesan hit exactly this — once you tap into a game inside
+     the installed app there is no way back to the menu except closing it. So
+     when we are running as an app, we draw our own Back button.
+
+     It is NOT shown in a normal browser tab, where the browser's own Back
+     button already exists and a second one would just be clutter. */
+  var appMode = standalone ||
+                (window.matchMedia && (matchMedia("(display-mode: fullscreen)").matches ||
+                                       matchMedia("(display-mode: minimal-ui)").matches));
+
+  function homeHref() { return BASE + "index.html"; }
+
+  function isHome() {
+    var f = location.pathname.split("/").pop();
+    return f === "" || f === "index.html";
+  }
+
+  function cameFromUs() {
+    /* history.length is NOT the test to use. It counts entries we did not put
+       there — the launcher's blank page, or the search result the visitor came
+       from — so trusting it sends Back out of the app entirely, to a blank
+       screen. The referrer is the honest answer: it is set only when a link on
+       another page brought us here, and it tells us whose page that was. */
+    var r = document.referrer;
+    if (!r) return false;
+    try { return new URL(r).origin === location.origin; } catch (e) { return false; }
+  }
+
+  function goBack() {
+    if (!cameFromUs()) { location.href = homeHref(); return; }
+    var here = location.href;
+    history.back();
+    /* No event fires for "back did nothing", so watch the URL and go home. */
+    setTimeout(function () {
+      if (location.href === here) location.href = homeHref();
+    }, 600);
+  }
+
+  function mountBack() {
+    if (!appMode || isHome()) return;
+    if (document.querySelector(".app-back")) return;
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "app-back";
+    b.setAttribute("data-no-i18n", "");
+    b.textContent = T("← Back", "← Retour");
+    b.setAttribute("aria-label", T("Go back to the previous page",
+                                   "Revenir à la page précédente"));
+    b.addEventListener("click", goBack);
+    document.body.appendChild(b);
   }
 
   /* --------------------------------------------------------- install UI */
@@ -209,6 +277,7 @@
   // itself before adding anything, so simply trying again after site.js has
   // had its turn is both safe and enough.
   function mountLater() {
+    mountBack();
     mountButton();
     setTimeout(mountButton, 0);
     setTimeout(mountButton, 400);

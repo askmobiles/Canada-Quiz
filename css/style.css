@@ -387,3 +387,27 @@ main li a:not(.btn):hover{text-decoration:underline}
    in the middle of a <canvas>, which cannot hold child elements itself */
 .cq-stage{position:relative;line-height:0;border-radius:14px}
 .cq-stage>canvas{display:block}
+
+/* ---- all-pages.html: the full site index -------------------------------
+   Two or three columns of links with the question count beside each quiz.
+   The count is a separate span so it can wrap under a long label on a phone
+   instead of pushing the link off the screen. */
+.idx-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2px 22px;margin-top:6px}
+.idx-cols a{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  flex-wrap:wrap;padding:8px 10px;border-radius:9px;font-weight:700;font-size:15px;
+  line-height:1.35;color:var(--ink,#22203a);text-decoration:none}
+.idx-cols a:hover{background:#f3effa;text-decoration:none}
+.idx-cols a:focus-visible{outline:3px solid #ffb703;outline-offset:1px}
+.idx-n{font-weight:700;font-size:12.5px;color:#5d5876;background:#efeaf7;
+  border-radius:999px;padding:2px 9px;white-space:nowrap}
+.idx-cols a:hover .idx-n{background:#fff}
+@media (max-width:560px){
+  .idx-cols{grid-template-columns:1fr;gap:0}
+  .idx-cols a{font-size:14.5px;padding:9px 8px}
+}
+
+/* A wide comparison table on a narrow phone: scroll it sideways rather than
+   squeezing thirteen rows of text into 320px. */
+.cq-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px -4px 10px;padding:0 4px}
+.cq-scroll .cq-table{min-width:720px}

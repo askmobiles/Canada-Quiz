@@ -35,6 +35,10 @@
   "date": "2026-08-08",
   "hash": "1c2699dba41879df411c0b80dce7f33a0eea9848"
  },
+ "all-pages.html": {
+  "date": "2026-08-11",
+  "hash": "c646a6c6c4475bce0a9b142d6bce9fc38f6908ae"
+ },
  "bc-class-7l-mock-test.html": {
   "date": "2026-08-08",
   "hash": "671b42c3a357518f3d241fcd468e230ab60ec9f6"
@@ -58,6 +62,10 @@
  "body-quiz.html": {
   "date": "2026-08-08",
   "hash": "5db3fa2f21f4d95aa967c97940c1264488fab207"
+ },
+ "canada-driving-test-by-province.html": {
+  "date": "2026-08-11",
+  "hash": "aea3c53c84341645d2ad81d1a3ac3e1f986d3247"
  },
  "canada-geography-coast-to-coast.html": {
   "date": "2026-08-08",
@@ -173,7 +181,7 @@
  },
  "driving-test.html": {
   "date": "2026-08-11",
-  "hash": "9d830c79f7ce28334b89750821b2e7217a9dbfb9"
+  "hash": "45fdce328cf167ed81e69d7da5e4c787b8d39d23"
  },
  "earth-quiz.html": {
   "date": "2026-08-08",
@@ -227,6 +235,10 @@
   "date": "2026-08-08",
   "hash": "4468890e90b9cb229d095a2203e64653783333c7"
  },
+ "fr/all-pages.html": {
+  "date": "2026-08-11",
+  "hash": "eea52cb6e6cdb98ce0252da7c8c854d27eb06d7d"
+ },
  "fr/bc-class-7l-mock-test.html": {
   "date": "2026-08-08",
   "hash": "d58459ccf8a13d1a9436be542c02bcb3f63dabe5"
@@ -251,6 +263,10 @@
   "date": "2026-08-08",
   "hash": "5a0d5392c41da0a300d0a195191e0b22fe111608"
  },
+ "fr/canada-driving-test-by-province.html": {
+  "date": "2026-08-11",
+  "hash": "c4a54bd5ed6d0606302ab71c33d975f033606437"
+ },
  "fr/canada-geography-coast-to-coast.html": {
   "date": "2026-08-08",
   "hash": "d505ffb4c4f8e5c723a41d387cbf886255e0c127"
@@ -261,15 +277,15 @@
  },
  "fr/canada-population-timeline.html": {
   "date": "2026-08-11",
-  "hash": "ff48db701369111e27304e6c43bd8c4f6df0bad5"
+  "hash": "30541eed073566d66d0584d265e1f7a10f2cacd0"
  },
  "fr/canada-provinces-and-territories-explained.html": {
   "date": "2026-08-08",
   "hash": "988f90a3a15bd2b4b367f08da85ff09dd20aa479"
  },
  "fr/canada-quiz.html": {
-  "date": "2026-08-08",
-  "hash": "1a90c87405a0243b86314a5a473e2e481c6556c1"
+  "date": "2026-08-11",
+  "hash": "d67e936cbfcaa148866ba38c5eb02f262e54eca8"
  },
  "fr/canada-usa-trade-history.html": {
   "date": "2026-08-11",
@@ -365,7 +381,7 @@
  },
  "fr/driving-test.html": {
   "date": "2026-08-11",
-  "hash": "99598917cdf8746794bfd6e297b360a186686a24"
+  "hash": "06bd43e2a99670c80425da6d64e285c29018b6c2"
  },
  "fr/earth-quiz.html": {
   "date": "2026-08-08",
@@ -393,15 +409,15 @@
  },
  "fr/games.html": {
   "date": "2026-08-11",
-  "hash": "50ab9a4a1401df49840955a680fe8a7a29fb09b4"
+  "hash": "6e7a5f7ac06ea408766c5099155b59de61b01bb7"
  },
  "fr/gk-quiz.html": {
-  "date": "2026-08-08",
-  "hash": "0127adcb098a638053a80c0446d21592fae49071"
+  "date": "2026-08-11",
+  "hash": "94c2950b9e6358af1cb7937d9bc4a02a1f61ed84"
  },
  "fr/hide-and-find.html": {
   "date": "2026-08-11",
-  "hash": "4f8cb597335ad34f3e10d510a75e7b67287294b0"
+  "hash": "541d1c7a12ac6e161adb02ed589f0c3e69b1865d"
  },
  "fr/hockey-in-canada.html": {
   "date": "2026-08-08",
@@ -413,7 +429,7 @@
  },
  "fr/how-canada-was-built.html": {
   "date": "2026-08-11",
-  "hash": "15a2fcc49330b47c569920f4e70d182718d49bd4"
+  "hash": "7d55734fcdaa0f7e25c8e52f7cf8c98e782dc6be"
  },
  "fr/how-canadas-government-works.html": {
   "date": "2026-08-08",
@@ -445,27 +461,27 @@
  },
  "fr/lights-out.html": {
   "date": "2026-08-11",
-  "hash": "96140e4b8941bbc6b21e07d18045e90ec642fb2c"
+  "hash": "e9e4adbce9eaa0926b93ec065b2cd43342fc0c74"
  },
  "fr/manitoba-class-5-mock-test.html": {
   "date": "2026-08-11",
-  "hash": "5b83e60258152b093af6abe489ffcb575f56806d"
+  "hash": "4fb43c0fd84bc5129ee5904872a299498a55dd61"
  },
  "fr/manitoba-class-5-practice-test.html": {
   "date": "2026-08-11",
-  "hash": "0fa7517ae8e426d134346304ab574c705feba4c9"
+  "hash": "06bf418e6f004f8d42955b96467b64e6b207acd7"
  },
  "fr/manitoba-road-signs.html": {
   "date": "2026-08-11",
-  "hash": "54ee18876dc86de03e1bead152e521a4849bf992"
+  "hash": "aebec0db9e225f141446c50fcaf425eec4465525"
  },
  "fr/manitoba-rules-of-the-road.html": {
   "date": "2026-08-11",
-  "hash": "2f04cbf3c9c1424459631871495c0f61eee850d4"
+  "hash": "3f0a22a069d81d0523fc5bf43e39adb541333c03"
  },
  "fr/maple-says.html": {
   "date": "2026-08-11",
-  "hash": "c87aad609c2a83852097bfb23a37d1054d5ad87e"
+  "hash": "e8800cac51b48b866b7589f67d007a5ac183d553"
  },
  "fr/math-race.html": {
   "date": "2026-08-08",
@@ -488,12 +504,12 @@
   "hash": "7924532d6499e12746223858f85a21c0f1e6aa56"
  },
  "fr/ontario-g1-mock-test.html": {
-  "date": "2026-08-08",
-  "hash": "b969d73de5260994ca0473f58b672a09877aae71"
+  "date": "2026-08-11",
+  "hash": "c00610966c9d4242b74d2618737b12e4c2baa301"
  },
  "fr/ontario-g1-practice-test.html": {
-  "date": "2026-08-08",
-  "hash": "a1a4722696057087785b1d829b1ab09e13952f36"
+  "date": "2026-08-11",
+  "hash": "a6a08c0a227c3e95afe122cf1bb22b9cc61c63a9"
  },
  "fr/ontario-g1-road-signs.html": {
   "date": "2026-08-08",
@@ -504,12 +520,12 @@
   "hash": "175b92bf084c6cd6ea81af41b39b5da525f05d87"
  },
  "fr/ontario-g1-study-guide.html": {
-  "date": "2026-08-08",
-  "hash": "5e1831e6fe816b62f15b65f3f2cf8061adc8bb23"
+  "date": "2026-08-11",
+  "hash": "6ec10faf3cb69d000d0a6ab7a7581907ae136218"
  },
  "fr/prime-ministers-of-canada.html": {
   "date": "2026-08-11",
-  "hash": "2e0afaa80c51c6d45ab2bdd0fddc75212bad517c"
+  "hash": "cc747fbc39b8b60089b372097ce87df35e8e50ac"
  },
  "fr/privacy.html": {
   "date": "2026-08-09",
@@ -521,23 +537,23 @@
  },
  "fr/quebec-class-5-mock-test.html": {
   "date": "2026-08-11",
-  "hash": "dd487889c207619d679d0bcaba1266c20d0010c8"
+  "hash": "d9569d1e68ab367e6ed22535a59ef384921cf309"
  },
  "fr/quebec-class-5-practice-test.html": {
   "date": "2026-08-11",
-  "hash": "12a059e6ecc16b3f99f84ccffde551b12940c084"
+  "hash": "3ba867432a6bf974d50b43507965d697989cbb34"
  },
  "fr/quebec-road-signs.html": {
   "date": "2026-08-11",
-  "hash": "9823334ae77592202cf55afc144d99220437bed5"
+  "hash": "990040a41a4d5cc4a6fca04914b0f50dca6cc04a"
  },
  "fr/quebec-rules-of-the-road.html": {
   "date": "2026-08-11",
-  "hash": "a1c6354c0db3f1aec38bee0fcdf38e057d4a7d91"
+  "hash": "cb2f162017a972901de9b674d7c440d8e1e2b9db"
  },
  "fr/quizzes.html": {
   "date": "2026-08-11",
-  "hash": "c4910ad4604d322eea2483f195a53ca543868472"
+  "hash": "beaef94e858f348590763e4ca2913339c7d2be6e"
  },
  "fr/rare-canadian-history-stories.html": {
   "date": "2026-08-11",
@@ -545,7 +561,7 @@
  },
  "fr/reversi.html": {
   "date": "2026-08-11",
-  "hash": "5af3769e92b016b06e901a93d3725be3537950f2"
+  "hash": "f15635482173f7f748845ef5f1330701c3baa843"
  },
  "fr/rights-and-responsibilities-of-canadian-citizens.html": {
   "date": "2026-08-08",
@@ -553,19 +569,19 @@
  },
  "fr/saskatchewan-class-7-mock-test.html": {
   "date": "2026-08-11",
-  "hash": "6621a3f5911eebbd9faa33131d8002228de3a0fb"
+  "hash": "6c237dedb4e5c82c42905fe1ae6d18527f6439c6"
  },
  "fr/saskatchewan-class-7-practice-test.html": {
   "date": "2026-08-11",
-  "hash": "93f4842c5c35c5f1eef246ae9c08c449e2fb2963"
+  "hash": "e4270b52b3a9d043a984c80f568c1e765df5226c"
  },
  "fr/saskatchewan-road-signs.html": {
   "date": "2026-08-11",
-  "hash": "ec7da377fe43a49de7aae1beddac919fdcf20934"
+  "hash": "4a2b6b71731e8c9f1a0c32572fde55a2e9aa8904"
  },
  "fr/saskatchewan-rules-of-the-road.html": {
   "date": "2026-08-11",
-  "hash": "9d88d8456a8c6312c8ed0cfa1320a2d9a81ea84a"
+  "hash": "ae3473ba658390877f34b5f7e44c56762d3c91c8"
  },
  "fr/science-quiz.html": {
   "date": "2026-08-08",
@@ -628,8 +644,8 @@
   "hash": "1171e4b74d42f9f6fc8b401c8566fbf7f2322e8e"
  },
  "fr/top-answers.html": {
-  "date": "2026-08-09",
-  "hash": "70addea2e0f7823a6ec16c18869316cc83f589fb"
+  "date": "2026-08-11",
+  "hash": "a3d0af007ad127a06768e336c21a3ffc6d8c1f61"
  },
  "fr/trivia-showdown.html": {
   "date": "2026-08-08",
@@ -649,23 +665,23 @@
  },
  "fr/which-canadian-animal-quiz.html": {
   "date": "2026-08-11",
-  "hash": "e361b745a74f4671a1185c277098ffe1e988980a"
+  "hash": "0b70620abc7b7170c45b5fc8391d65e25bd15a84"
  },
  "fr/which-canadian-city-quiz.html": {
   "date": "2026-08-11",
-  "hash": "3247084572bf4ee7fd8edfd7f5f473c089c2b0e1"
+  "hash": "60b0af44ceff9b5541277dd120eedcdba1b28856"
  },
  "fr/which-canadian-food-quiz.html": {
   "date": "2026-08-11",
-  "hash": "c654f0b62dcd6f1129739cb9490681379ea07bcf"
+  "hash": "7bfb331220e55a8d5189d3d05a0b1158aaedbb9f"
  },
  "fr/which-national-park-quiz.html": {
   "date": "2026-08-11",
-  "hash": "ac0baf1ccb1139e4625e1386bb4420ef17ce80de"
+  "hash": "915837d9b6b30033dda54649660eaf990cf88a5b"
  },
  "fr/which-winter-sport-quiz.html": {
   "date": "2026-08-11",
-  "hash": "68490b6da8cb13e2f6501dcd19eb0c55f17dc567"
+  "hash": "c5eb71f0278b5544a02144c82011c894cfd66d5d"
  },
  "fr/winter-in-canada.html": {
   "date": "2026-08-08",
@@ -716,8 +732,8 @@
   "hash": "8d107af671f90502ffe1ee3ae65331ebf1c9c901"
  },
  "gk-quiz.html": {
-  "date": "2026-08-08",
-  "hash": "894a98ab9cb18e4039259770afab4808a1c1d8c5"
+  "date": "2026-08-11",
+  "hash": "f9c0567c2b8b302451e3ce9eedcbaf179dfa9989"
  },
  "hide-and-find.html": {
   "date": "2026-08-09",
@@ -808,12 +824,12 @@
   "hash": "0b7ed8c34c6954920a831af2dea56d18d3d97e1b"
  },
  "ontario-g1-mock-test.html": {
-  "date": "2026-08-08",
-  "hash": "88f9274086a97720478f59ada844f2e26b6ee86f"
+  "date": "2026-08-11",
+  "hash": "8749149dc166aa308dbe144f1138bb5639b6da60"
  },
  "ontario-g1-practice-test.html": {
-  "date": "2026-08-08",
-  "hash": "9ce8c224fc88b52a2551c587afa7749fb3f3ea64"
+  "date": "2026-08-11",
+  "hash": "1b57063910b4bb0674371cab86a7b81741a62231"
  },
  "ontario-g1-road-signs.html": {
   "date": "2026-08-08",
@@ -824,8 +840,8 @@
   "hash": "7c4029c1c9b29bc5fdbd42bc36a84f762a17df29"
  },
  "ontario-g1-study-guide.html": {
-  "date": "2026-08-08",
-  "hash": "dc60fe5a0bd9d6df7c33affa82b952cdad682994"
+  "date": "2026-08-11",
+  "hash": "cebdd246a3846facc7fdefe57e893c5ecd101a75"
  },
  "prime-ministers-of-canada.html": {
   "date": "2026-08-09",
@@ -873,19 +889,19 @@
  },
  "saskatchewan-class-7-mock-test.html": {
   "date": "2026-08-11",
-  "hash": "44c6bb5aa2d36da5b65b496955d2aba80de66372"
+  "hash": "5e11bd8591d4d4f66d8b35e8633981b87d500d3d"
  },
  "saskatchewan-class-7-practice-test.html": {
   "date": "2026-08-11",
-  "hash": "98403777648b9a57891263987ca7bf8f04705221"
+  "hash": "50ef97ffcabadba825d4aebaa6cd285a9ff58bd4"
  },
  "saskatchewan-road-signs.html": {
   "date": "2026-08-11",
-  "hash": "221734d89a1c0036c3577eaf101802918ed67215"
+  "hash": "05b522f12e037d5f9458c09a66c3fc390788cff8"
  },
  "saskatchewan-rules-of-the-road.html": {
   "date": "2026-08-11",
-  "hash": "6c2736911099ac216f0bb205e4fef708644e6c98"
+  "hash": "2d72a4f65b4025ce1727c6c0268c3f04cbd2cb9c"
  },
  "science-quiz.html": {
   "date": "2026-08-08",

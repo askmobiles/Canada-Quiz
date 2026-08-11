@@ -885,6 +885,19 @@
    ]
   ]
  },
+ "all-pages.html": {
+  "about": [
+   {
+    "en": "This page is the full index of Canada Quiz. Every quiz, every family game, every driving test practice page and every article is listed here under the category it belongs to, with the number of questions shown beside each quiz.",
+    "fr": "Cette page est l'index complet de Canada Quiz. Chaque questionnaire, chaque jeu de famille, chaque page de pratique pour l'examen de conduite et chaque article y est classé par catégorie, avec le nombre de questions indiqué à côté de chaque questionnaire."
+   },
+   {
+    "en": "It exists because the menu at the top of the site only has room for seven links, and the site has well over a hundred pages. If you know roughly what you are looking for but not what it is called, this is the fastest way to find it.",
+    "fr": "Elle existe parce que le menu en haut du site n'a de place que pour sept liens, alors que le site compte bien plus d'une centaine de pages. Si vous savez à peu près ce que vous cherchez sans en connaître le nom, c'est le moyen le plus rapide de le trouver."
+   }
+  ],
+  "related": []
+ },
  "bc-class-7l-mock-test.html": {
   "about": [
    {
@@ -1616,6 +1629,34 @@
     {
      "en": "Go back to the Canada Quiz home page",
      "fr": "Retournez à la page d'accueil de Canada Quiz"
+    }
+   ]
+  ]
+ },
+ "canada-driving-test-by-province.html": {
+  "about": [
+   {
+    "en": "This page is a single reference for the written driving test in every Canadian province and territory. It exists because driving rules are provincial, so a newcomer who reads one guide and then moves house finds that half of it no longer applies.",
+    "fr": "Cette page est une référence unique sur l'examen théorique de conduite dans chaque province et territoire du Canada. Elle existe parce que les règles de conduite sont provinciales : un nouvel arrivant qui lit un guide puis déménage découvre que la moitié ne s'applique plus."
+   },
+   {
+    "en": "The comparison table is the fastest way to see where you stand. The sections underneath cover the one thing in each province that most often catches people by surprise, from Alberta letting fourteen-year-olds write the test to Nunavut's licence for driving only near home.",
+    "fr": "Le tableau comparatif est le moyen le plus rapide de vous situer. Les sections en dessous portent sur ce qui surprend le plus souvent dans chaque province, de l'Alberta qui laisse les jeunes de quatorze ans passer l'examen jusqu'au permis du Nunavut pour conduire uniquement près de chez soi."
+   }
+  ],
+  "related": [
+   [
+    "driving-test.html",
+    {
+     "en": "Driving test practice for every province",
+     "fr": "Pratique de l'examen de conduite pour chaque province"
+    }
+   ],
+   [
+    "how-to-get-a-drivers-licence-in-canada.html",
+    {
+     "en": "How to get a driver's licence in Canada",
+     "fr": "Comment obtenir un permis de conduire au Canada"
     }
    ]
   ]

@@ -47,6 +47,7 @@
     { href: "index.html",   label: "Home" },
     { href: "about.html",   label: "About" },
     { href: "contact.html", label: "Contact" },
+    { href: "all-pages.html", label: "All Pages" },
     { href: "privacy.html", label: "Privacy Policy" },
     { href: "terms.html",   label: "Terms & Conditions" }
   ];
@@ -231,7 +232,7 @@
     var s = document.createElement("script");
     /* the ?v= stamp must match ASSET_VER in tools/rewrite_pages.py, so a new
        dictionary is never served from the visitor's old saved copy */
-    s.src = BASE + "js/i18n-fr.js?v=b8ee6cfc";
+    s.src = BASE + "js/i18n-fr.js?v=427a7741";
     s.onload = function () { DICT = window.CQ_FR || null; done(); };
     s.onerror = function () { done(); };
     document.head.appendChild(s);
