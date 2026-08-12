@@ -898,6 +898,27 @@
   ],
   "related": []
  },
+ "animals-on-canadian-money-for-kids.html": {
+  "about": [
+   {
+    "en": "This story is about the animals on Canadian coins, and why the one dollar coin shows a loon instead of the canoe that was planned for it.",
+    "fr": "Cette histoire parle des animaux sur les pièces canadiennes, et explique pourquoi la pièce d'un dollar montre un huard plutôt que le canot prévu au départ."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
+    }
+   ]
+  ]
+ },
  "bc-class-7l-mock-test.html": {
   "about": [
    {
@@ -4564,6 +4585,27 @@
    ]
   ]
  },
+ "first-nations-inuit-and-metis-for-kids.html": {
+  "about": [
+   {
+    "en": "This page introduces the First Nations, Inuit and Métis peoples of Canada in the present tense: how many nations there are, how many languages are spoken today, and why the 30th of September matters.",
+    "fr": "Cette page présente les Premières Nations, les Inuit et les Métis du Canada au présent : combien il y a de nations, combien de langues sont parlées aujourd'hui, et pourquoi le 30 septembre est important."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
+    }
+   ]
+  ]
+ },
  "flags-game.html": {
   "about": [
    {
@@ -4696,6 +4738,19 @@
     }
    ]
   ]
+ },
+ "for-kids.html": {
+  "about": [
+   {
+    "en": "This page gathers twelve true Canadian stories written for children aged six to nine. Each one has a picture drawn for this site, short sentences, and three questions at the end.",
+    "fr": "Cette page réunit douze histoires canadiennes vraies écrites pour les enfants de six à neuf ans. Chacune a une image dessinée pour ce site, des phrases courtes et trois questions à la fin."
+   },
+   {
+    "en": "They were written because everything else on this site is taught through written paragraphs, which locks out the youngest readers. These pages work with the Read aloud button, so a child who cannot read yet can still take part.",
+    "fr": "Elles ont été écrites parce que tout le reste du site s'enseigne par des paragraphes écrits, ce qui exclut les plus jeunes lecteurs. Ces pages fonctionnent avec le bouton de lecture à voix haute : un enfant qui ne sait pas encore lire peut donc participer."
+   }
+  ],
+  "related": []
  },
  "fun-quiz.html": {
   "about": [
@@ -5406,6 +5461,27 @@
    ]
   ]
  },
+ "how-canada-chose-its-flag-for-kids.html": {
+  "about": [
+   {
+    "en": "This story tells how Canada chose its flag: thousands of drawings sent in by ordinary people, six months of arguing in Parliament, and a first raising on the 15th of February 1965.",
+    "fr": "Cette histoire raconte comment le Canada a choisi son drapeau : des milliers de dessins envoyés par des gens ordinaires, six mois de débats au Parlement, et une première montée du drapeau le 15 février 1965."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
+    }
+   ]
+  ]
+ },
  "imposter.html": {
   "about": [
    {
@@ -5696,6 +5772,27 @@
     {
      "en": "Browse all the short articles about Canada",
      "fr": "Parcourez tous les courts articles sur le Canada"
+    }
+   ]
+  ]
+ },
+ "insulin-discovered-in-canada-for-kids.html": {
+  "about": [
+   {
+    "en": "This story is about the discovery of insulin at the University of Toronto in 1921 and 1922, the fourteen-year-old boy it first saved, and why the discoverers sold the rights for a dollar each.",
+    "fr": "Cette histoire parle de la découverte de l'insuline à l'Université de Toronto en 1921 et 1922, du garçon de quatorze ans qu'elle a sauvé en premier, et de la raison pour laquelle ses découvreurs ont vendu les droits un dollar chacun."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
     }
    ]
   ]
@@ -9863,6 +9960,69 @@
    ]
   ]
  },
+ "terry-fox-marathon-of-hope-for-kids.html": {
+  "about": [
+   {
+    "en": "This story tells how Terry Fox ran 5,373 kilometres across Canada in 1980, almost a marathon every day for 143 days, to raise money for cancer research.",
+    "fr": "Cette histoire raconte comment Terry Fox a parcouru 5 373 kilomètres à travers le Canada en 1980, presque un marathon par jour pendant 143 jours, pour amasser de l'argent pour la recherche sur le cancer."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
+    }
+   ]
+  ]
+ },
+ "the-bluenose-ship-on-the-dime-for-kids.html": {
+  "about": [
+   {
+    "en": "This story is about the Bluenose, a working fishing schooner from Lunenburg, Nova Scotia, that went undefeated in racing for seventeen years and has been on the ten cent coin since 1937.",
+    "fr": "Cette histoire parle du Bluenose, une véritable goélette de pêche de Lunenburg, en Nouvelle-Écosse, restée invaincue en course pendant dix-sept ans et présente sur la pièce de dix cents depuis 1937."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
+    }
+   ]
+  ]
+ },
+ "the-railway-across-canada-for-kids.html": {
+  "about": [
+   {
+    "en": "This story tells how the railway was built from one side of Canada to the other, who did the most dangerous part of the work, and the apology Canada made in 2006.",
+    "fr": "Cette histoire raconte comment le chemin de fer a été bâti d'un bout à l'autre du Canada, qui a fait la partie la plus dangereuse du travail, et les excuses présentées par le Canada en 2006."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
+    }
+   ]
+  ]
+ },
  "the-story-of-the-canadian-flag.html": {
   "about": [
    {
@@ -10858,6 +11018,48 @@
    ]
   ]
  },
+ "ufo-landing-pad-st-paul-alberta-for-kids.html": {
+  "about": [
+   {
+    "en": "This story is about the town of St. Paul, Alberta, which celebrated Canada's hundredth birthday in 1967 by building a landing pad for flying saucers. It is still there.",
+    "fr": "Cette histoire parle de la ville de St. Paul, en Alberta, qui a célébré les cent ans du Canada en 1967 en bâtissant une piste d'atterrissage pour soucoupes volantes. Elle est toujours là."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
+    }
+   ]
+  ]
+ },
+ "voyageurs-and-the-fur-trade-for-kids.html": {
+  "about": [
+   {
+    "en": "This story is about the voyageurs of the fur trade, who paddled huge birchbark canoes fourteen to sixteen hours a day and carried about eighty kilograms on their backs over the portages.",
+    "fr": "Cette histoire parle des voyageurs de la traite des fourrures, qui pagayaient d'immenses canots d'écorce quatorze à seize heures par jour et portaient environ quatre-vingts kilos sur le dos lors des portages."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
+    }
+   ]
+  ]
+ },
  "whack-a-beaver.html": {
   "about": [
    {
@@ -11001,6 +11203,27 @@
     {
      "en": "Tap the falling tiles in time in Tile Tap",
      "fr": "Tapez les tuiles qui tombent en rythme dans Tile Tap"
+    }
+   ]
+  ]
+ },
+ "what-canada-day-really-is-for-kids.html": {
+  "about": [
+   {
+    "en": "This story explains what happened on the 1st of July 1867, which four provinces joined first, and why the holiday was called Dominion Day until 1982.",
+    "fr": "Cette histoire explique ce qui s'est passé le 1er juillet 1867, quelles quatre provinces se sont unies les premières, et pourquoi la fête s'est appelée le jour de la Confédération jusqu'en 1982."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
     }
    ]
   ]
@@ -11809,6 +12032,27 @@
     {
      "en": "See every quiz on the site in one place",
      "fr": "Voyez tous les quiz du site au même endroit"
+    }
+   ]
+  ]
+ },
+ "winnie-the-bear-from-winnipeg-for-kids.html": {
+  "about": [
+   {
+    "en": "This story tells how a bear cub bought at a railway station in White River, Ontario, in 1914 ended up in the London Zoo and gave her name to the most famous teddy bear in the world.",
+    "fr": "Cette histoire raconte comment une ourse achetée dans une gare de White River, en Ontario, en 1914, s'est retrouvée au zoo de Londres et a donné son nom au plus célèbre ourson en peluche du monde."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
     }
    ]
   ]
@@ -12814,6 +13058,27 @@
     {
      "en": "Learn the provinces with the map of Canada game",
      "fr": "Apprenez les provinces avec le jeu de la carte du Canada"
+    }
+   ]
+  ]
+ },
+ "worlds-longest-beaver-dam-for-kids.html": {
+  "about": [
+   {
+    "en": "This story is about a dam roughly 850 metres long in Wood Buffalo National Park, built by beavers over many years and spotted by a scientist in satellite pictures in 2007.",
+    "fr": "Cette histoire parle d'un barrage d'environ 850 mètres, dans le parc national Wood Buffalo, bâti par des castors pendant des années et repéré par un scientifique sur des images satellites en 2007."
+   },
+   {
+    "en": "It is written in short sentences for children aged six to nine, with a picture drawn for this site and three questions at the end. Tap the Read aloud button and the page will read the questions out loud.",
+    "fr": "Elle est écrite en phrases courtes pour les enfants de six à neuf ans, avec une image dessinée pour ce site et trois questions à la fin. Touchez le bouton de lecture à voix haute et la page lira les questions à haute voix."
+   }
+  ],
+  "related": [
+   [
+    "for-kids.html",
+    {
+     "en": "More true Canada stories for kids",
+     "fr": "D'autres histoires vraies du Canada pour les enfants"
     }
    ]
   ]

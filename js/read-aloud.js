@@ -195,7 +195,81 @@
     mo.observe(panel, { childList: true, subtree: true, characterData: true });
   }
 
+  /* ------------------------------------------------- reading a whole story */
+  /* The For Kids pages are the reason this file exists at all: a six-year-old
+     cannot read the story, only the pictures. This reads the story itself,
+     paragraph by paragraph, and highlights the one being read so a child can
+     follow along with a finger — which is how children learn to read. */
+  var storyOn = false, storyIdx = 0, storyParas = [], storyBtn = null;
+
+  function storyLabel() {
+    return storyOn ? T("⏹ Stop reading", "⏹ Arrêter la lecture")
+                   : T("🔊 Read the story to me", "🔊 Lis-moi l'histoire");
+  }
+
+  function clearMark() {
+    for (var i = 0; i < storyParas.length; i++) storyParas[i].classList.remove("ra-now");
+  }
+
+  function stopStory() {
+    storyOn = false;
+    clearMark();
+    stop();
+    if (storyBtn) {
+      storyBtn.textContent = storyLabel();
+      storyBtn.setAttribute("aria-pressed", "false");
+    }
+  }
+
+  function speakPara() {
+    if (!storyOn) return;
+    clearMark();
+    if (storyIdx >= storyParas.length) { stopStory(); return; }
+    var el = storyParas[storyIdx];
+    el.classList.add("ra-now");
+    /* keep the highlighted paragraph on screen without yanking the page */
+    try { el.scrollIntoView({ block: "center", behavior: "smooth" }); } catch (e) { }
+    var u = new SpeechSynthesisUtterance((el.textContent || "").replace(/\s+/g, " ").trim());
+    u.lang = LANG;
+    var v = pickVoice();
+    if (v) u.voice = v;
+    u.rate = 0.9;
+    u.onend = function () { storyIdx++; speakPara(); };
+    /* If the voice dies mid-sentence, stop cleanly rather than hanging on a
+       highlighted paragraph that is not being read. */
+    u.onerror = stopStory;
+    try { window.speechSynthesis.speak(u); } catch (e) { stopStory(); }
+  }
+
+  function mountStory() {
+    var story = document.querySelector(".kid-story");
+    if (!story || document.querySelector(".ra-story")) return;
+    storyParas = [];
+    var lede = document.querySelector(".kid-lede");
+    if (lede) storyParas.push(lede);
+    var ps = story.querySelectorAll("p, .kid-wow");
+    for (var i = 0; i < ps.length; i++) storyParas.push(ps[i]);
+    if (!storyParas.length) return;
+
+    storyBtn = document.createElement("button");
+    storyBtn.type = "button";
+    storyBtn.className = "ra-btn ra-story btn btn-ghost";
+    storyBtn.setAttribute("data-no-i18n", "");
+    storyBtn.setAttribute("aria-pressed", "false");
+    storyBtn.textContent = storyLabel();
+    storyBtn.addEventListener("click", function () {
+      if (storyOn) { stopStory(); return; }
+      storyOn = true;
+      storyIdx = 0;
+      storyBtn.textContent = storyLabel();
+      storyBtn.setAttribute("aria-pressed", "true");
+      speakPara();
+    });
+    story.insertBefore(storyBtn, story.firstChild);
+  }
+
   function start() {
+    mountStory();
     var boxes = document.querySelectorAll(OPTS);
     if (!boxes.length) return;
     /* one button, on the first answer area — pages have only one at a time */
@@ -205,6 +279,10 @@
   }
 
   var css = ".ra-btn{display:block;margin:0 auto 12px;font-size:14px;padding:8px 16px}" +
+            ".ra-story{margin-bottom:16px}" +
+            /* the paragraph being read, so a child can follow with a finger */
+            ".ra-now{background:#fff3c4;border-radius:10px;box-shadow:0 0 0 8px #fff3c4}" +
+            "@media(prefers-reduced-motion:reduce){.ra-now{transition:none}}" +
             "@media(max-width:520px){.ra-btn{width:100%;box-sizing:border-box}}";
   var st = document.createElement("style");
   st.textContent = css;
@@ -213,9 +291,9 @@
   /* stop talking when the page is hidden — nobody wants a phone in a bag
      reading a quiz to a pocket */
   document.addEventListener("visibilitychange", function () {
-    if (document.hidden) stop();
+    if (document.hidden) stopStory();
   });
-  window.addEventListener("pagehide", stop);
+  window.addEventListener("pagehide", stopStory);
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", start);
