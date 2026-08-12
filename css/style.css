@@ -439,3 +439,21 @@ main li a:not(.btn):hover{text-decoration:underline}
   .kid-story p{margin-bottom:14px}
   .kid-art img{border-radius:12px}
 }
+
+/* ---- The menu on a small phone ------------------------------------------
+   Eight sections do not fit on one row at 320px, in either language, and the
+   French labels are longer than the English ones. Two things follow.
+
+   First, tighten the links so the menu wraps into as few rows as possible.
+   Second, and more important: stop the header sticking to the top below
+   560px. A three-row menu that never scrolls away eats 40% of a small phone
+   screen on every page. Above that width it stays sticky, where it costs one
+   short row and is genuinely useful. */
+@media (max-width:560px){
+  .site-header{position:static}
+  .site-header .container{gap:6px}
+  .nav{gap:2px}
+  .nav a{padding:6px 8px;font-size:13px}
+  html.lang-fr .nav a{font-size:12.5px;padding:6px 7px}
+  .lang-btn{padding:6px 10px;font-size:13px}
+}

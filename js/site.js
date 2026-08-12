@@ -37,6 +37,11 @@
     { href: "index.html",       label: "Home" },
     { href: "quizzes.html",     label: "Quizzes" },
     { href: "games.html",       label: "Family Games" },
+    /* For Kids sits beside Family Games because that is what a parent is
+       looking for when they land on either one. It was missing from the menu
+       when the section shipped, and a section nobody can reach from the menu
+       may as well not exist. */
+    { href: "for-kids.html",    label: "For Kids" },
     { href: "citizenship.html", label: "Citizenship" },
     { href: "driving-test.html", label: "Driving Test" },
     { href: "daily.html",       label: "Daily" },
