@@ -457,3 +457,9 @@ main li a:not(.btn):hover{text-decoration:underline}
   html.lang-fr .nav a{font-size:12.5px;padding:6px 7px}
   .lang-btn{padding:6px 10px;font-size:13px}
 }
+
+/* Words to know: the small glossary at the foot of a long kids' story. */
+.kw-list{margin:6px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.kw{background:#f6f2fc;border-radius:12px;padding:12px 14px}
+.kw dt{font-weight:800;font-size:16.5px;margin:0 0 3px;color:var(--red-dark)}
+.kw dd{margin:0;font-size:15.5px;line-height:1.6}

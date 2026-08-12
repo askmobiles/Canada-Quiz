@@ -242,13 +242,20 @@
   }
 
   function mountStory() {
-    var story = document.querySelector(".kid-story");
-    if (!story || document.querySelector(".ra-story")) return;
+    var blocks = document.querySelectorAll(".kid-story");
+    if (!blocks.length || document.querySelector(".ra-story")) return;
     storyParas = [];
     var lede = document.querySelector(".kid-lede");
     if (lede) storyParas.push(lede);
-    var ps = story.querySelectorAll("p, .kid-wow");
-    for (var i = 0; i < ps.length; i++) storyParas.push(ps[i]);
+    /* The long stories are several .kid-story sections, not one. Reading only
+       the first meant a child heard a quarter of the story and then silence.
+       Headings are read too: they are how a child hears the story turn. */
+    for (var b = 0; b < blocks.length; b++) {
+      var ps = blocks[b].querySelectorAll("h2, h3, p, .kid-wow");
+      for (var i = 0; i < ps.length; i++) storyParas.push(ps[i]);
+    }
+    var wow = document.querySelector(".kid-wow");
+    if (wow && storyParas.indexOf(wow) < 0) storyParas.push(wow);
     if (!storyParas.length) return;
 
     storyBtn = document.createElement("button");
@@ -265,7 +272,7 @@
       storyBtn.setAttribute("aria-pressed", "true");
       speakPara();
     });
-    story.insertBefore(storyBtn, story.firstChild);
+    blocks[0].insertBefore(storyBtn, blocks[0].firstChild);
   }
 
   function start() {
