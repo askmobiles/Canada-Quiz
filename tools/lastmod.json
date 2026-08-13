@@ -41,7 +41,7 @@
  },
  "all-pages.html": {
   "date": "2026-08-13",
-  "hash": "42748c89ac3e94e4214bcdc2445f35916e36c86e"
+  "hash": "e0145d59dc6f1f6ed78028178abee549208613b7"
  },
  "animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-13",
@@ -98,6 +98,10 @@
  "canada-usa-trade-history.html": {
   "date": "2026-08-09",
   "hash": "ca7aa31136a29fcaee77d86f87062bc65d593786"
+ },
+ "canadarm-canadas-robot-arm-in-space-for-kids.html": {
+  "date": "2026-08-13",
+  "hash": "b016d38ea6b562da47f858b003a6b975666af856"
  },
  "canadas-animals-and-wildlife.html": {
   "date": "2026-08-08",
@@ -217,7 +221,7 @@
  },
  "for-kids.html": {
   "date": "2026-08-13",
-  "hash": "53d59a54f611731e7e4ccd6cbbb01a27b5c46199"
+  "hash": "606e592032ea304388d865d29e366340dac7b9ec"
  },
  "fr/10-tips-to-pass-your-citizenship-test.html": {
   "date": "2026-08-08",
@@ -261,7 +265,7 @@
  },
  "fr/all-pages.html": {
   "date": "2026-08-13",
-  "hash": "55c5d851746fc5060bc514ae305f7878b0e3c25d"
+  "hash": "8f348b89c2eda11e7eb996deae0b1ee0c8c61a01"
  },
  "fr/animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-13",
@@ -293,7 +297,7 @@
  },
  "fr/canada-driving-test-by-province.html": {
   "date": "2026-08-13",
-  "hash": "aa3b5e13d76af160e9b1bb6d6bd1e9b2a88e019b"
+  "hash": "d39765fe91d87c57a167ba1cc1e68cb8de3db81e"
  },
  "fr/canada-geography-coast-to-coast.html": {
   "date": "2026-08-08",
@@ -305,7 +309,7 @@
  },
  "fr/canada-population-timeline.html": {
   "date": "2026-08-13",
-  "hash": "30541eed073566d66d0584d265e1f7a10f2cacd0"
+  "hash": "486ab58618ae3b865a3120606066d59c7ccdb04a"
  },
  "fr/canada-provinces-and-territories-explained.html": {
   "date": "2026-08-08",
@@ -313,11 +317,15 @@
  },
  "fr/canada-quiz.html": {
   "date": "2026-08-13",
-  "hash": "d67e936cbfcaa148866ba38c5eb02f262e54eca8"
+  "hash": "b79e8ddfe99df7a8242fe14ef6d991bd827e464b"
  },
  "fr/canada-usa-trade-history.html": {
   "date": "2026-08-11",
   "hash": "8e4c7aedd2c058f1b9f3783e6afcdd821299c95f"
+ },
+ "fr/canadarm-canadas-robot-arm-in-space-for-kids.html": {
+  "date": "2026-08-13",
+  "hash": "857a42eb7860912d5ee13cccb7d6ef6332cb4ece"
  },
  "fr/canadas-animals-and-wildlife.html": {
   "date": "2026-08-08",
@@ -333,7 +341,7 @@
  },
  "fr/canadas-two-official-languages.html": {
   "date": "2026-08-13",
-  "hash": "ccb38473f80568f8c7bfb46953be98e0eb623339"
+  "hash": "a1797fb34921e779518e0f5bbbf0ebc611267bbf"
  },
  "fr/canadian-food-poutine-maple-syrup.html": {
   "date": "2026-08-08",
@@ -413,7 +421,7 @@
  },
  "fr/driving-test.html": {
   "date": "2026-08-13",
-  "hash": "10b24dc431641b131ee33bd4236325e2e0dba2af"
+  "hash": "6990640e5ff1bb4945fa7e4bd2d66a8214aa7f38"
  },
  "fr/earth-quiz.html": {
   "date": "2026-08-08",
@@ -437,7 +445,7 @@
  },
  "fr/for-kids.html": {
   "date": "2026-08-13",
-  "hash": "2c1f081dd3d3e2a7ed2209b0dc01835802529dea"
+  "hash": "6909475505af53691620bf9df3de5360260e857b"
  },
  "fr/fun-quiz.html": {
   "date": "2026-08-08",
@@ -473,7 +481,7 @@
  },
  "fr/how-canada-was-built.html": {
   "date": "2026-08-13",
-  "hash": "7d55734fcdaa0f7e25c8e52f7cf8c98e782dc6be"
+  "hash": "c4a35e285cc860ff609a34e1b01576ceea45da63"
  },
  "fr/how-canadas-government-works.html": {
   "date": "2026-08-08",
@@ -707,6 +715,10 @@
   "date": "2026-08-12",
   "hash": "53edfcd7bc923176a53061804a44abf0d5244b5f"
  },
+ "fr/the-narwhal-and-the-frozen-north-for-kids.html": {
+  "date": "2026-08-13",
+  "hash": "d2f2d8fccf35fac8bcb1778b21923fb8ceb1a82b"
+ },
  "fr/the-northern-lights-for-kids.html": {
   "date": "2026-08-13",
   "hash": "f6bd67021ff56185e21c185d74b188df06848668"
@@ -722,6 +734,10 @@
  "fr/the-story-of-the-canadian-flag.html": {
   "date": "2026-08-08",
   "hash": "91719db82dfa9af0628fdbaddf476f6a4f0ad9ac"
+ },
+ "fr/the-wild-horses-of-sable-island-for-kids.html": {
+  "date": "2026-08-13",
+  "hash": "dd319d8b5cc714c1874b9b7dc5659719d5d7d6df"
  },
  "fr/tictactoe.html": {
   "date": "2026-08-08",
@@ -1099,6 +1115,10 @@
   "date": "2026-08-08",
   "hash": "77b6b97930f06241c02e2c57c854f2ca1c7203f7"
  },
+ "the-narwhal-and-the-frozen-north-for-kids.html": {
+  "date": "2026-08-13",
+  "hash": "6ad5025c9935c1c5f7d4b86e9434a243e3a111f7"
+ },
  "the-northern-lights-for-kids.html": {
   "date": "2026-08-13",
   "hash": "7816e74a82006e3a9063714331305a30af5ae07c"
@@ -1114,6 +1134,10 @@
  "the-story-of-the-canadian-flag.html": {
   "date": "2026-08-08",
   "hash": "1dcd565d1a42eeb3e41971fa3fe677447243dc2b"
+ },
+ "the-wild-horses-of-sable-island-for-kids.html": {
+  "date": "2026-08-13",
+  "hash": "da5b31dada54aebfd5adc97541ca37204f191551"
  },
  "tictactoe.html": {
   "date": "2026-08-08",
