@@ -83,6 +83,10 @@ https://api.indexnow.org/indexnow?url=https://canada-quiz.com/memory.html&key=30
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/minesweeper.html&key=30f9c20874dcdd5786a1b505c5204a17
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/money-quiz.html&key=30f9c20874dcdd5786a1b505c5204a17
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/newcomer-first-year-in-canada-checklist.html&key=30f9c20874dcdd5786a1b505c5204a17
+https://api.indexnow.org/indexnow?url=https://canada-quiz.com/nova-scotia-class-7-mock-test.html&key=30f9c20874dcdd5786a1b505c5204a17
+https://api.indexnow.org/indexnow?url=https://canada-quiz.com/nova-scotia-class-7-practice-test.html&key=30f9c20874dcdd5786a1b505c5204a17
+https://api.indexnow.org/indexnow?url=https://canada-quiz.com/nova-scotia-road-signs.html&key=30f9c20874dcdd5786a1b505c5204a17
+https://api.indexnow.org/indexnow?url=https://canada-quiz.com/nova-scotia-rules-of-the-road.html&key=30f9c20874dcdd5786a1b505c5204a17
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/ontario-g1-mock-test.html&key=30f9c20874dcdd5786a1b505c5204a17
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/ontario-g1-practice-test.html&key=30f9c20874dcdd5786a1b505c5204a17
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/ontario-g1-road-signs.html&key=30f9c20874dcdd5786a1b505c5204a17
@@ -231,6 +235,10 @@ https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/memory.html&key
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/minesweeper.html&key=30f9c20874dcdd5786a1b505c5204a17
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/money-quiz.html&key=30f9c20874dcdd5786a1b505c5204a17
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/newcomer-first-year-in-canada-checklist.html&key=30f9c20874dcdd5786a1b505c5204a17
+https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/nova-scotia-class-7-mock-test.html&key=30f9c20874dcdd5786a1b505c5204a17
+https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/nova-scotia-class-7-practice-test.html&key=30f9c20874dcdd5786a1b505c5204a17
+https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/nova-scotia-road-signs.html&key=30f9c20874dcdd5786a1b505c5204a17
+https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/nova-scotia-rules-of-the-road.html&key=30f9c20874dcdd5786a1b505c5204a17
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/ontario-g1-mock-test.html&key=30f9c20874dcdd5786a1b505c5204a17
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/ontario-g1-practice-test.html&key=30f9c20874dcdd5786a1b505c5204a17
 https://api.indexnow.org/indexnow?url=https://canada-quiz.com/fr/ontario-g1-road-signs.html&key=30f9c20874dcdd5786a1b505c5204a17

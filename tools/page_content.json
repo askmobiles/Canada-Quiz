@@ -7098,6 +7098,386 @@
    ]
   ]
  },
+ "nova-scotia-class-7-mock-test.html": {
+  "about": [
+   {
+    "en": "Nova Scotia splits its knowledge test into two parts that are scored separately: a Rules of the Road test and a Road Sign Recognition test. Each has twenty multiple-choice questions, each needs sixteen right, and each is allowed thirty minutes. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "La Nouvelle-Écosse divise son examen théorique en deux parties notées séparément : un examen sur le code de la route et un examen de reconnaissance des panneaux. Chacun compte vingt questions à choix multiple, exige seize bonnes réponses et accorde trente minutes. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "Nova Scotia publishes its whole test format, which is unusual. Several other provinces publish none of it, and on those pages we say so rather than invent a number. Here we did not have to: the numbers on this page are the province's own.",
+    "fr": "La Nouvelle-Écosse publie tout le format de son examen, ce qui est rare. Plusieurs autres provinces n'en publient rien, et sur ces pages nous le disons plutôt que d'inventer un chiffre. Ici, nous n'avons pas eu à le faire : les chiffres de cette page sont ceux de la province."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Forty in total, in two tests of twenty. One is on the rules of the road and one is on road sign recognition, and you need sixteen right on each.",
+     "fr": "Quarante au total, en deux examens de vingt. L'un porte sur le code de la route et l'autre sur la reconnaissance des panneaux, et il faut seize bonnes réponses à chacun."
+    },
+    "q": {
+     "en": "How many questions are on the real Nova Scotia knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique de la Nouvelle-Écosse ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Thirty minutes for each of the two tests.",
+     "fr": "Trente minutes pour chacun des deux examens."
+    },
+    "q": {
+     "en": "How long do I get?",
+     "fr": "Combien de temps ai-je ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes, with a desktop or laptop and a webcam. A phone or tablet will not work. You can also sit it in person at an Access Nova Scotia office. It costs $15.03.",
+     "fr": "Oui, avec un ordinateur de bureau ou portable et une caméra. Un téléphone ou une tablette ne conviennent pas. Vous pouvez aussi le passer en personne dans un bureau d'Access Nova Scotia. Il coûte 15,03 $."
+    },
+    "q": {
+     "en": "Can I take it online?",
+     "fr": "Puis-je le passer en ligne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Twelve full months before the road test, or nine if you finish an approved driver-training course.",
+     "fr": "Douze mois complets avant l'examen pratique, ou neuf si vous terminez un cours de conduite reconnu."
+    },
+    "q": {
+     "en": "How long must I hold the learner's licence?",
+     "fr": "Combien de temps dois-je détenir le permis d'apprenti ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Someone with a valid licence for the vehicle and at least two years of driving experience, who is not in the graduated programme themselves. They sit in the front passenger seat.",
+     "fr": "Une personne détenant un permis valide pour le véhicule et au moins deux ans d'expérience, qui n'est pas elle-même dans le programme par étapes. Elle s'assoit à la place du passager avant."
+    },
+    "q": {
+     "en": "Who can sit beside me while I practise?",
+     "fr": "Qui peut s'asseoir à côté de moi pendant que je pratique ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "nova-scotia-class-7-mock-test.html",
+    {
+     "en": "Take the timed Nova Scotia mock test",
+     "fr": "Passez l'examen blanc chronométré de la Nouvelle-Écosse"
+    }
+   ],
+   [
+    "nova-scotia-road-signs.html",
+    {
+     "en": "Study every road sign for the sign test",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "nova-scotia-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road",
+     "fr": "Étudiez le code de la route"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "nova-scotia-class-7-practice-test.html": {
+  "about": [
+   {
+    "en": "Nova Scotia splits its knowledge test into two parts that are scored separately: a Rules of the Road test and a Road Sign Recognition test. Each has twenty multiple-choice questions, each needs sixteen right, and each is allowed thirty minutes. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "La Nouvelle-Écosse divise son examen théorique en deux parties notées séparément : un examen sur le code de la route et un examen de reconnaissance des panneaux. Chacun compte vingt questions à choix multiple, exige seize bonnes réponses et accorde trente minutes. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "Nova Scotia publishes its whole test format, which is unusual. Several other provinces publish none of it, and on those pages we say so rather than invent a number. Here we did not have to: the numbers on this page are the province's own.",
+    "fr": "La Nouvelle-Écosse publie tout le format de son examen, ce qui est rare. Plusieurs autres provinces n'en publient rien, et sur ces pages nous le disons plutôt que d'inventer un chiffre. Ici, nous n'avons pas eu à le faire : les chiffres de cette page sont ceux de la province."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Forty in total, in two tests of twenty. One is on the rules of the road and one is on road sign recognition, and you need sixteen right on each.",
+     "fr": "Quarante au total, en deux examens de vingt. L'un porte sur le code de la route et l'autre sur la reconnaissance des panneaux, et il faut seize bonnes réponses à chacun."
+    },
+    "q": {
+     "en": "How many questions are on the real Nova Scotia knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique de la Nouvelle-Écosse ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Thirty minutes for each of the two tests.",
+     "fr": "Trente minutes pour chacun des deux examens."
+    },
+    "q": {
+     "en": "How long do I get?",
+     "fr": "Combien de temps ai-je ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes, with a desktop or laptop and a webcam. A phone or tablet will not work. You can also sit it in person at an Access Nova Scotia office. It costs $15.03.",
+     "fr": "Oui, avec un ordinateur de bureau ou portable et une caméra. Un téléphone ou une tablette ne conviennent pas. Vous pouvez aussi le passer en personne dans un bureau d'Access Nova Scotia. Il coûte 15,03 $."
+    },
+    "q": {
+     "en": "Can I take it online?",
+     "fr": "Puis-je le passer en ligne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Twelve full months before the road test, or nine if you finish an approved driver-training course.",
+     "fr": "Douze mois complets avant l'examen pratique, ou neuf si vous terminez un cours de conduite reconnu."
+    },
+    "q": {
+     "en": "How long must I hold the learner's licence?",
+     "fr": "Combien de temps dois-je détenir le permis d'apprenti ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Someone with a valid licence for the vehicle and at least two years of driving experience, who is not in the graduated programme themselves. They sit in the front passenger seat.",
+     "fr": "Une personne détenant un permis valide pour le véhicule et au moins deux ans d'expérience, qui n'est pas elle-même dans le programme par étapes. Elle s'assoit à la place du passager avant."
+    },
+    "q": {
+     "en": "Who can sit beside me while I practise?",
+     "fr": "Qui peut s'asseoir à côté de moi pendant que je pratique ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "nova-scotia-class-7-mock-test.html",
+    {
+     "en": "Take the timed Nova Scotia mock test",
+     "fr": "Passez l'examen blanc chronométré de la Nouvelle-Écosse"
+    }
+   ],
+   [
+    "nova-scotia-road-signs.html",
+    {
+     "en": "Study every road sign for the sign test",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "nova-scotia-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road",
+     "fr": "Étudiez le code de la route"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "nova-scotia-road-signs.html": {
+  "about": [
+   {
+    "en": "Nova Scotia splits its knowledge test into two parts that are scored separately: a Rules of the Road test and a Road Sign Recognition test. Each has twenty multiple-choice questions, each needs sixteen right, and each is allowed thirty minutes. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "La Nouvelle-Écosse divise son examen théorique en deux parties notées séparément : un examen sur le code de la route et un examen de reconnaissance des panneaux. Chacun compte vingt questions à choix multiple, exige seize bonnes réponses et accorde trente minutes. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "Nova Scotia publishes its whole test format, which is unusual. Several other provinces publish none of it, and on those pages we say so rather than invent a number. Here we did not have to: the numbers on this page are the province's own.",
+    "fr": "La Nouvelle-Écosse publie tout le format de son examen, ce qui est rare. Plusieurs autres provinces n'en publient rien, et sur ces pages nous le disons plutôt que d'inventer un chiffre. Ici, nous n'avons pas eu à le faire : les chiffres de cette page sont ceux de la province."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Forty in total, in two tests of twenty. One is on the rules of the road and one is on road sign recognition, and you need sixteen right on each.",
+     "fr": "Quarante au total, en deux examens de vingt. L'un porte sur le code de la route et l'autre sur la reconnaissance des panneaux, et il faut seize bonnes réponses à chacun."
+    },
+    "q": {
+     "en": "How many questions are on the real Nova Scotia knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique de la Nouvelle-Écosse ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Thirty minutes for each of the two tests.",
+     "fr": "Trente minutes pour chacun des deux examens."
+    },
+    "q": {
+     "en": "How long do I get?",
+     "fr": "Combien de temps ai-je ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes, with a desktop or laptop and a webcam. A phone or tablet will not work. You can also sit it in person at an Access Nova Scotia office. It costs $15.03.",
+     "fr": "Oui, avec un ordinateur de bureau ou portable et une caméra. Un téléphone ou une tablette ne conviennent pas. Vous pouvez aussi le passer en personne dans un bureau d'Access Nova Scotia. Il coûte 15,03 $."
+    },
+    "q": {
+     "en": "Can I take it online?",
+     "fr": "Puis-je le passer en ligne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Twelve full months before the road test, or nine if you finish an approved driver-training course.",
+     "fr": "Douze mois complets avant l'examen pratique, ou neuf si vous terminez un cours de conduite reconnu."
+    },
+    "q": {
+     "en": "How long must I hold the learner's licence?",
+     "fr": "Combien de temps dois-je détenir le permis d'apprenti ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Someone with a valid licence for the vehicle and at least two years of driving experience, who is not in the graduated programme themselves. They sit in the front passenger seat.",
+     "fr": "Une personne détenant un permis valide pour le véhicule et au moins deux ans d'expérience, qui n'est pas elle-même dans le programme par étapes. Elle s'assoit à la place du passager avant."
+    },
+    "q": {
+     "en": "Who can sit beside me while I practise?",
+     "fr": "Qui peut s'asseoir à côté de moi pendant que je pratique ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "nova-scotia-class-7-mock-test.html",
+    {
+     "en": "Take the timed Nova Scotia mock test",
+     "fr": "Passez l'examen blanc chronométré de la Nouvelle-Écosse"
+    }
+   ],
+   [
+    "nova-scotia-road-signs.html",
+    {
+     "en": "Study every road sign for the sign test",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "nova-scotia-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road",
+     "fr": "Étudiez le code de la route"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "nova-scotia-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "Nova Scotia splits its knowledge test into two parts that are scored separately: a Rules of the Road test and a Road Sign Recognition test. Each has twenty multiple-choice questions, each needs sixteen right, and each is allowed thirty minutes. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "La Nouvelle-Écosse divise son examen théorique en deux parties notées séparément : un examen sur le code de la route et un examen de reconnaissance des panneaux. Chacun compte vingt questions à choix multiple, exige seize bonnes réponses et accorde trente minutes. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "Nova Scotia publishes its whole test format, which is unusual. Several other provinces publish none of it, and on those pages we say so rather than invent a number. Here we did not have to: the numbers on this page are the province's own.",
+    "fr": "La Nouvelle-Écosse publie tout le format de son examen, ce qui est rare. Plusieurs autres provinces n'en publient rien, et sur ces pages nous le disons plutôt que d'inventer un chiffre. Ici, nous n'avons pas eu à le faire : les chiffres de cette page sont ceux de la province."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Forty in total, in two tests of twenty. One is on the rules of the road and one is on road sign recognition, and you need sixteen right on each.",
+     "fr": "Quarante au total, en deux examens de vingt. L'un porte sur le code de la route et l'autre sur la reconnaissance des panneaux, et il faut seize bonnes réponses à chacun."
+    },
+    "q": {
+     "en": "How many questions are on the real Nova Scotia knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique de la Nouvelle-Écosse ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Thirty minutes for each of the two tests.",
+     "fr": "Trente minutes pour chacun des deux examens."
+    },
+    "q": {
+     "en": "How long do I get?",
+     "fr": "Combien de temps ai-je ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes, with a desktop or laptop and a webcam. A phone or tablet will not work. You can also sit it in person at an Access Nova Scotia office. It costs $15.03.",
+     "fr": "Oui, avec un ordinateur de bureau ou portable et une caméra. Un téléphone ou une tablette ne conviennent pas. Vous pouvez aussi le passer en personne dans un bureau d'Access Nova Scotia. Il coûte 15,03 $."
+    },
+    "q": {
+     "en": "Can I take it online?",
+     "fr": "Puis-je le passer en ligne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Twelve full months before the road test, or nine if you finish an approved driver-training course.",
+     "fr": "Douze mois complets avant l'examen pratique, ou neuf si vous terminez un cours de conduite reconnu."
+    },
+    "q": {
+     "en": "How long must I hold the learner's licence?",
+     "fr": "Combien de temps dois-je détenir le permis d'apprenti ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Someone with a valid licence for the vehicle and at least two years of driving experience, who is not in the graduated programme themselves. They sit in the front passenger seat.",
+     "fr": "Une personne détenant un permis valide pour le véhicule et au moins deux ans d'expérience, qui n'est pas elle-même dans le programme par étapes. Elle s'assoit à la place du passager avant."
+    },
+    "q": {
+     "en": "Who can sit beside me while I practise?",
+     "fr": "Qui peut s'asseoir à côté de moi pendant que je pratique ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "nova-scotia-class-7-mock-test.html",
+    {
+     "en": "Take the timed Nova Scotia mock test",
+     "fr": "Passez l'examen blanc chronométré de la Nouvelle-Écosse"
+    }
+   ],
+   [
+    "nova-scotia-road-signs.html",
+    {
+     "en": "Study every road sign for the sign test",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "nova-scotia-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road",
+     "fr": "Étudiez le code de la route"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
  "ontario-g1-mock-test.html": {
   "about": [
    {
