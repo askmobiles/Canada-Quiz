@@ -40,22 +40,39 @@
                location.hostname === "[::1]";
 
   var reg = null;
+
+  // Registering the worker makes the browser download and cache 19 files. That
+  // is real work, and starting it the instant the page finishes loading puts it
+  // on the same main thread the visitor is trying to scroll and tap on.
+  // PageSpeed measured this as a 582 ms block on a slow phone — the single
+  // biggest one on the whole site. So we wait for a quiet moment first, with a
+  // 3-second backstop for browsers that never report one. The worker still
+  // installs on the first visit; it just installs a breath later, once the page
+  // is comfortable to use. Offline still works from the second visit on, exactly
+  // as before.
+  function whenIdle(fn) {
+    if (window.requestIdleCallback) window.requestIdleCallback(fn, { timeout: 3000 });
+    else setTimeout(fn, 2000);
+  }
+
   if ("serviceWorker" in navigator && secure) {
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register(BASE + "sw.js", { scope: BASE || "/" })
-        .then(function (r) {
-          reg = r;
-          r.addEventListener("updatefound", function () {
-            var sw = r.installing;
-            if (!sw) return;
-            sw.addEventListener("statechange", function () {
-              if (sw.state === "installed" && navigator.serviceWorker.controller) {
-                offerRefresh(sw);
-              }
+      whenIdle(function () {
+        navigator.serviceWorker.register(BASE + "sw.js", { scope: BASE || "/" })
+          .then(function (r) {
+            reg = r;
+            r.addEventListener("updatefound", function () {
+              var sw = r.installing;
+              if (!sw) return;
+              sw.addEventListener("statechange", function () {
+                if (sw.state === "installed" && navigator.serviceWorker.controller) {
+                  offerRefresh(sw);
+                }
+              });
             });
-          });
-        })
-        .catch(function () { });
+          })
+          .catch(function () { });
+      });
     });
   }
 

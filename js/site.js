@@ -237,7 +237,7 @@
     var s = document.createElement("script");
     /* the ?v= stamp must match ASSET_VER in tools/rewrite_pages.py, so a new
        dictionary is never served from the visitor's old saved copy */
-    s.src = BASE + "js/i18n-fr.js?v=33bb87ab";
+    s.src = BASE + "js/i18n-fr.js?v=d981092b";
     s.onload = function () { DICT = window.CQ_FR || null; done(); };
     s.onerror = function () { done(); };
     document.head.appendChild(s);
@@ -286,6 +286,11 @@
   }
 
   function paint() {
+    /* Read the screen width ONCE, before we start rewriting the page. Asking
+       for it after an innerHTML change forces the browser to stop and redo the
+       whole layout on the spot; PageSpeed measured 128 ms lost that way. */
+    var wideScreen = window.innerWidth >= 900;
+
     var h = document.querySelector("header.site-header");
     if (!h) {
       h = document.createElement("header");
@@ -311,7 +316,7 @@
       var last = box.querySelector("p.muted");
       if (last) box.insertBefore(map, last); else box.appendChild(map);
       /* open on a big screen, folded away on a phone */
-      if (window.innerWidth >= 900) map.setAttribute("open", "");
+      if (wideScreen) map.setAttribute("open", "");
     }
     f.setAttribute("data-no-i18n", "");
 

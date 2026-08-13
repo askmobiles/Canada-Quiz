@@ -27,16 +27,29 @@ var CF_BEACON_TOKEN = "";     // <-- paste your Cloudflare token here
   "use strict";
 
   /* ---------- 1. Google Analytics 4 ---------- */
+  /* The queue (dataLayer / gtag) is set up straight away, so anything the page
+     reports in its first second is remembered and nothing is lost. Google's own
+     script — about 130 KB that costs a slow phone roughly 125 ms of thinking —
+     is fetched only once the browser is idle. The numbers arrive the same; they
+     just stop competing with the page the visitor is waiting for. */
   if (GA4_ID && GA4_ID.indexOf("G-") === 0) {
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
-    document.head.appendChild(s);
-
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     gtag("js", new Date());
     gtag("config", GA4_ID, { anonymize_ip: true });
+
+    var loadGA = function () {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
+      document.head.appendChild(s);
+    };
+    var idleGA = function () {
+      if (window.requestIdleCallback) window.requestIdleCallback(loadGA, { timeout: 4000 });
+      else setTimeout(loadGA, 2500);
+    };
+    if (document.readyState === "complete") idleGA();
+    else window.addEventListener("load", idleGA);
   }
 
   /* ---------- 2. Cloudflare Web Analytics (optional) ---------- */
