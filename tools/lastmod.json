@@ -40,8 +40,8 @@
   "hash": "1c2699dba41879df411c0b80dce7f33a0eea9848"
  },
  "all-pages.html": {
-  "date": "2026-08-13",
-  "hash": "e0145d59dc6f1f6ed78028178abee549208613b7"
+  "date": "2026-08-14",
+  "hash": "345a191856b7e8389a08d82e96d2337c53dd89b0"
  },
  "animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-13",
@@ -143,6 +143,10 @@
   "date": "2026-08-08",
   "hash": "29623402c77349a0abe92fd229c7abbf6df8ff1a"
  },
+ "carrom.html": {
+  "date": "2026-08-14",
+  "hash": "9029784155a62c1ee253953e4cdf7f28855d1b94"
+ },
  "categories-game.html": {
   "date": "2026-08-08",
   "hash": "e887c6ed7f41e822195e61e2c09411432b22e827"
@@ -196,8 +200,8 @@
   "hash": "aede0b5e494a5e962498d7d72309d6db3766c982"
  },
  "driving-test.html": {
-  "date": "2026-08-13",
-  "hash": "148fa6112047784ebc5a2e1219ca7bac4611bfa0"
+  "date": "2026-08-14",
+  "hash": "5deb595d5c4bd5878785851c95b8b36797c440ba"
  },
  "earth-quiz.html": {
   "date": "2026-08-08",
@@ -264,8 +268,8 @@
   "hash": "4468890e90b9cb229d095a2203e64653783333c7"
  },
  "fr/all-pages.html": {
-  "date": "2026-08-13",
-  "hash": "8f348b89c2eda11e7eb996deae0b1ee0c8c61a01"
+  "date": "2026-08-14",
+  "hash": "37f1826693fc99a58fc68e1775be854dadeb80b4"
  },
  "fr/animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-13",
@@ -367,6 +371,10 @@
   "date": "2026-08-08",
   "hash": "5bf9398e4263f575bc229232ac129d1aba8e349a"
  },
+ "fr/carrom.html": {
+  "date": "2026-08-14",
+  "hash": "a9779f8517a1821104844a2bec7f6dbb69e4a7e1"
+ },
  "fr/categories-game.html": {
   "date": "2026-08-08",
   "hash": "1d04a207f5fb16186d068a95405a0086436466ec"
@@ -420,8 +428,8 @@
   "hash": "9d7c859e5f106ef741effcb7a1cb38d459eb1e18"
  },
  "fr/driving-test.html": {
-  "date": "2026-08-13",
-  "hash": "6990640e5ff1bb4945fa7e4bd2d66a8214aa7f38"
+  "date": "2026-08-14",
+  "hash": "15ef0e1978f83b32ccd5995138b85993fd7be9d6"
  },
  "fr/earth-quiz.html": {
   "date": "2026-08-08",
@@ -456,8 +464,8 @@
   "hash": "5cb6ba27f3a7d618a0894e07618c94bb91c8bd8a"
  },
  "fr/games.html": {
-  "date": "2026-08-11",
-  "hash": "6e7a5f7ac06ea408766c5099155b59de61b01bb7"
+  "date": "2026-08-14",
+  "hash": "e17c45f77d5b1349b4904a01df073b297df2ddff"
  },
  "fr/gk-quiz.html": {
   "date": "2026-08-11",
@@ -559,6 +567,22 @@
   "date": "2026-08-08",
   "hash": "b0ddbe6dc30afeaa9e1a17e37b711320ec1b6456"
  },
+ "fr/new-brunswick-class-7-mock-test.html": {
+  "date": "2026-08-14",
+  "hash": "4ea8a7e3fad4abd4a0b8874311897224f4cc55c4"
+ },
+ "fr/new-brunswick-class-7-practice-test.html": {
+  "date": "2026-08-14",
+  "hash": "90587231024842d1e092274f9a8a63bd9aff5556"
+ },
+ "fr/new-brunswick-road-signs.html": {
+  "date": "2026-08-14",
+  "hash": "389608037ab001624be4ae45fdef49c6a59c2354"
+ },
+ "fr/new-brunswick-rules-of-the-road.html": {
+  "date": "2026-08-14",
+  "hash": "7e3e1efe65ae53dcb911979d31921cadfc87bc7f"
+ },
  "fr/newcomer-first-year-in-canada-checklist.html": {
   "date": "2026-08-09",
   "hash": "7924532d6499e12746223858f85a21c0f1e6aa56"
@@ -636,8 +660,8 @@
   "hash": "1af6b515cbede6c7ed1bcb33ed80fb60fcb2d0ca"
  },
  "fr/reversi.html": {
-  "date": "2026-08-11",
-  "hash": "f15635482173f7f748845ef5f1330701c3baa843"
+  "date": "2026-08-14",
+  "hash": "71e84e1d875f4d086258cd79d7ffd6f1bc6b98cd"
  },
  "fr/rights-and-responsibilities-of-canadian-citizens.html": {
   "date": "2026-08-08",
@@ -856,8 +880,8 @@
   "hash": "b6156b041e3a9dc7650199d6bac0f74edb314a52"
  },
  "games.html": {
-  "date": "2026-08-09",
-  "hash": "8d107af671f90502ffe1ee3ae65331ebf1c9c901"
+  "date": "2026-08-14",
+  "hash": "d5a97a4e9f35553a734bd0c0dab4d9dbb65eb110"
  },
  "gk-quiz.html": {
   "date": "2026-08-11",
@@ -958,6 +982,22 @@
  "money-quiz.html": {
   "date": "2026-08-08",
   "hash": "1abf335c2800412666067d34b0f33a2611bd1f0f"
+ },
+ "new-brunswick-class-7-mock-test.html": {
+  "date": "2026-08-14",
+  "hash": "6e2f153496869b3372f68ffe7912e66844e02d95"
+ },
+ "new-brunswick-class-7-practice-test.html": {
+  "date": "2026-08-14",
+  "hash": "5a4d1f84ae69134723f9c3c93b25e4efe70f6cc2"
+ },
+ "new-brunswick-road-signs.html": {
+  "date": "2026-08-14",
+  "hash": "20af09a36a16dd1d195e8a6ffe764aeb878bcef6"
+ },
+ "new-brunswick-rules-of-the-road.html": {
+  "date": "2026-08-14",
+  "hash": "059f429b01542302b62279104246ac7cd99d2986"
  },
  "newcomer-first-year-in-canada-checklist.html": {
   "date": "2026-08-08",

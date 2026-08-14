@@ -2709,6 +2709,87 @@
    ]
   ]
  },
+ "carrom.html": {
+  "about": [
+   {
+    "en": "Carrom is a board game played across South Asia and wherever families from there have settled. A smooth board, four corner pockets, small flat discs called men, and a heavier disc called the striker that you flick with one finger. This version plays on a phone, a tablet or a computer, with no signup and nothing to install.",
+    "fr": "Le carrom est un jeu de plateau pratiqué dans toute l'Asie du Sud et partout où des familles de cette région se sont installées. Un plateau lisse, quatre trous dans les coins, de petits disques plats appelés pions, et un disque plus lourd, le palet, qu'on lance d'un doigt. Cette version fonctionne sur téléphone, tablette ou ordinateur, sans inscription et sans rien à installer."
+   },
+   {
+    "en": "One player takes on the computer. Two, three or four players share one screen and pass it around, with no computer involved. Every man is worth a point, the red queen is worth three, and the highest score when the board is empty wins.",
+    "fr": "À un joueur, vous affrontez l'ordinateur. À deux, trois ou quatre joueurs, vous partagez un seul écran que vous vous passez, sans ordinateur. Chaque pion vaut un point, la reine rouge en vaut trois, et le meilleur pointage l'emporte quand le plateau est vide."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Yes. Choose 4 players before you start and each person gets their own side of the board. Pass the phone along when your turn ends. The computer only joins in when one person is playing alone.",
+     "fr": "Oui. Choisissez 4 joueurs avant de commencer et chaque personne obtient son propre côté du plateau. Passez le téléphone quand votre tour se termine. L'ordinateur ne participe que lorsqu'une seule personne joue."
+    },
+    "q": {
+     "en": "Can four people play carrom on one phone?",
+     "fr": "Quatre personnes peuvent-elles jouer au carrom sur un seul téléphone ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Move your striker along your line with the slider, then press on the board and pull backwards like a slingshot. The further you pull, the harder the shot. Let go to fire.",
+     "fr": "Déplacez votre palet le long de votre ligne avec la glissière, puis appuyez sur le plateau et tirez vers l'arrière comme un lance-pierre. Plus vous tirez loin, plus le coup est fort. Relâchez pour tirer."
+    },
+    "q": {
+     "en": "How do I shoot?",
+     "fr": "Comment tirer ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The red disc is the queen and she is worth three points instead of one. She starts in the middle of the board.",
+     "fr": "Le disque rouge est la reine et elle vaut trois points au lieu d'un. Elle commence au centre du plateau."
+    },
+    "q": {
+     "en": "What is the red disc worth?",
+     "fr": "Que vaut le disque rouge ?"
+    }
+   },
+   {
+    "a": {
+     "en": "You lose one point and one pocketed man goes back to the middle of the board. Your turn then passes to the next player.",
+     "fr": "Vous perdez un point et un pion empoché retourne au centre du plateau. Votre tour passe ensuite au joueur suivant."
+    },
+    "q": {
+     "en": "What happens if my striker goes in a pocket?",
+     "fr": "Que se passe-t-il si mon palet tombe dans un trou ?"
+    }
+   },
+   {
+    "a": {
+     "en": "It aims properly at the easiest pocket and it goes for the queen when it can, but it misses on purpose now and then. A careful player beats it.",
+     "fr": "Il vise correctement le trou le plus facile et cherche la reine quand il le peut, mais il rate volontairement de temps en temps. Un joueur attentif le bat."
+    },
+    "q": {
+     "en": "Is the carrom computer hard to beat?",
+     "fr": "L'ordinateur est-il difficile à battre au carrom ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "checkers.html",
+    {
+     "en": "Try checkers for another board game on one screen",
+     "fr": "Essayez les dames, un autre jeu de plateau sur un seul écran"
+    }
+   ],
+   [
+    "games.html",
+    {
+     "en": "See every family game on the site",
+     "fr": "Voyez tous les jeux en famille du site"
+    }
+   ]
+  ]
+ },
  "categories-game.html": {
   "about": [
    {
@@ -7115,6 +7196,426 @@
     {
      "en": "Browse every quiz on the site in one place",
      "fr": "Parcourez tous les quiz du site au même endroit"
+    }
+   ]
+  ]
+ },
+ "new-brunswick-class-7-mock-test.html": {
+  "about": [
+   {
+    "en": "New Brunswick sets two separate written exams for a new car driver: a Road Sign Recognition Exam and a Rules of the Road Knowledge Exam. Both are multiple choice and both are offered in English and French, in person at a Service New Brunswick centre or online at home. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "Le Nouveau-Brunswick impose deux examens écrits distincts au nouveau conducteur automobile : un examen de reconnaissance des panneaux et un examen théorique sur le code de la route. Les deux sont à choix multiple et offerts en anglais et en français, en personne dans un centre de Services Nouveau-Brunswick ou en ligne à la maison. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "New Brunswick does not publish how many questions either exam asks, or what the pass mark is. We looked on gnb.ca and on Service New Brunswick's pages, in both languages, and neither number is there. So the numbers on our mock test are ours, and the pages say so. The one timing the province does publish, 30 minutes for the online exam, is the clock we use.",
+    "fr": "Le Nouveau-Brunswick ne publie ni le nombre de questions de ces examens ni la note de passage. Nous avons cherché sur gnb.ca et sur les pages de Services Nouveau-Brunswick, dans les deux langues, et ni l'un ni l'autre ne s'y trouve. Les nombres de notre examen blanc sont donc les nôtres, et les pages le disent. Le seul temps publié par la province, 30 minutes pour l'examen en ligne, est le chronomètre que nous utilisons."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "New Brunswick does not publish a number, and neither does Service New Brunswick. There are two exams — one on road signs and one on the rules of the road — but no government page states how many questions either one asks. Any site that gives you a figure is guessing.",
+     "fr": "Le Nouveau-Brunswick ne publie aucun nombre, et Services Nouveau-Brunswick non plus. Il y a deux examens — un sur les panneaux et un sur le code de la route — mais aucune page gouvernementale n'indique combien de questions chacun pose. Tout site qui vous donne un chiffre le devine."
+    },
+    "q": {
+     "en": "How many questions are on the New Brunswick written exam?",
+     "fr": "Combien de questions compte l'examen écrit du Nouveau-Brunswick ?"
+    }
+   },
+   {
+    "a": {
+     "en": "It is not published either. Practice sites commonly say eighty percent, but that figure does not appear on any New Brunswick government page, so this site will not state it as fact. Study the handbook properly and the question stops mattering.",
+     "fr": "Elle n'est pas publiée non plus. Les sites de pratique disent souvent quatre-vingts pour cent, mais ce chiffre ne figure sur aucune page du gouvernement du Nouveau-Brunswick ; ce site ne l'affirmera donc pas. Étudiez le manuel sérieusement et la question ne se pose plus."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. New Brunswick was the first province in Canada to offer it, on a desktop or laptop with a camera. You get 30 minutes, and you cannot use a phone, wear earbuds or leave your seat. You can also sit it in person at a Service New Brunswick centre.",
+     "fr": "Oui. Le Nouveau-Brunswick a été la première province canadienne à l'offrir, sur un ordinateur de bureau ou portable muni d'une caméra. Vous avez 30 minutes, et vous ne pouvez pas utiliser de téléphone, porter des écouteurs ni quitter votre siège. Vous pouvez aussi le passer en personne dans un centre de Services Nouveau-Brunswick."
+    },
+    "q": {
+     "en": "Can I take the exam online?",
+     "fr": "Puis-je passer l'examen en ligne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. New Brunswick is Canada's only officially bilingual province and testing is available in both official languages. The driver's handbook is published in both as well.",
+     "fr": "Oui. Le Nouveau-Brunswick est la seule province officiellement bilingue du Canada et les examens sont offerts dans les deux langues officielles. Le manuel du conducteur est aussi publié dans les deux."
+    },
+    "q": {
+     "en": "Is the exam available in French?",
+     "fr": "L'examen est-il offert en français ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Somebody holding a Class 5 licence or better with at least three years of driving experience, sitting in the front passenger seat. At Level 1 you cannot drive alone and you cannot carry any other passenger.",
+     "fr": "Une personne détenant un permis de classe 5 ou mieux avec au moins trois ans d'expérience de conduite, assise à la place du passager avant. Au niveau 1, vous ne pouvez pas conduire seul ni transporter d'autre passager."
+    },
+    "q": {
+     "en": "Who can supervise me while I drive on a Level 1 licence?",
+     "fr": "Qui peut m'accompagner quand je conduis avec un permis de niveau 1 ?"
+    }
+   },
+   {
+    "a": {
+     "en": "At least 24 months: 12 at Level 1, or 8 with a recognized driving school, then a road test, then 12 more at Level 2. New Brunswick states no further road test is needed for the Class 5 upgrade, but you must apply for it.",
+     "fr": "Au moins 24 mois : 12 au niveau 1, ou 8 avec une école de conduite reconnue, puis un examen pratique, puis 12 de plus au niveau 2. Le Nouveau-Brunswick indique qu'aucun autre examen pratique n'est exigé pour la classe 5, mais vous devez en faire la demande."
+    },
+    "q": {
+     "en": "How long before I get a full licence?",
+     "fr": "Combien de temps avant d'obtenir un permis complet ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "new-brunswick-class-7-mock-test.html",
+    {
+     "en": "Take the timed New Brunswick mock test",
+     "fr": "Passez l'examen blanc chronométré du Nouveau-Brunswick"
+    }
+   ],
+   [
+    "new-brunswick-road-signs.html",
+    {
+     "en": "Study every road sign for the sign exam",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "new-brunswick-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road",
+     "fr": "Étudiez le code de la route"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "new-brunswick-class-7-practice-test.html": {
+  "about": [
+   {
+    "en": "New Brunswick sets two separate written exams for a new car driver: a Road Sign Recognition Exam and a Rules of the Road Knowledge Exam. Both are multiple choice and both are offered in English and French, in person at a Service New Brunswick centre or online at home. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "Le Nouveau-Brunswick impose deux examens écrits distincts au nouveau conducteur automobile : un examen de reconnaissance des panneaux et un examen théorique sur le code de la route. Les deux sont à choix multiple et offerts en anglais et en français, en personne dans un centre de Services Nouveau-Brunswick ou en ligne à la maison. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "New Brunswick does not publish how many questions either exam asks, or what the pass mark is. We looked on gnb.ca and on Service New Brunswick's pages, in both languages, and neither number is there. So the numbers on our mock test are ours, and the pages say so. The one timing the province does publish, 30 minutes for the online exam, is the clock we use.",
+    "fr": "Le Nouveau-Brunswick ne publie ni le nombre de questions de ces examens ni la note de passage. Nous avons cherché sur gnb.ca et sur les pages de Services Nouveau-Brunswick, dans les deux langues, et ni l'un ni l'autre ne s'y trouve. Les nombres de notre examen blanc sont donc les nôtres, et les pages le disent. Le seul temps publié par la province, 30 minutes pour l'examen en ligne, est le chronomètre que nous utilisons."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "New Brunswick does not publish a number, and neither does Service New Brunswick. There are two exams — one on road signs and one on the rules of the road — but no government page states how many questions either one asks. Any site that gives you a figure is guessing.",
+     "fr": "Le Nouveau-Brunswick ne publie aucun nombre, et Services Nouveau-Brunswick non plus. Il y a deux examens — un sur les panneaux et un sur le code de la route — mais aucune page gouvernementale n'indique combien de questions chacun pose. Tout site qui vous donne un chiffre le devine."
+    },
+    "q": {
+     "en": "How many questions are on the New Brunswick written exam?",
+     "fr": "Combien de questions compte l'examen écrit du Nouveau-Brunswick ?"
+    }
+   },
+   {
+    "a": {
+     "en": "It is not published either. Practice sites commonly say eighty percent, but that figure does not appear on any New Brunswick government page, so this site will not state it as fact. Study the handbook properly and the question stops mattering.",
+     "fr": "Elle n'est pas publiée non plus. Les sites de pratique disent souvent quatre-vingts pour cent, mais ce chiffre ne figure sur aucune page du gouvernement du Nouveau-Brunswick ; ce site ne l'affirmera donc pas. Étudiez le manuel sérieusement et la question ne se pose plus."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. New Brunswick was the first province in Canada to offer it, on a desktop or laptop with a camera. You get 30 minutes, and you cannot use a phone, wear earbuds or leave your seat. You can also sit it in person at a Service New Brunswick centre.",
+     "fr": "Oui. Le Nouveau-Brunswick a été la première province canadienne à l'offrir, sur un ordinateur de bureau ou portable muni d'une caméra. Vous avez 30 minutes, et vous ne pouvez pas utiliser de téléphone, porter des écouteurs ni quitter votre siège. Vous pouvez aussi le passer en personne dans un centre de Services Nouveau-Brunswick."
+    },
+    "q": {
+     "en": "Can I take the exam online?",
+     "fr": "Puis-je passer l'examen en ligne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. New Brunswick is Canada's only officially bilingual province and testing is available in both official languages. The driver's handbook is published in both as well.",
+     "fr": "Oui. Le Nouveau-Brunswick est la seule province officiellement bilingue du Canada et les examens sont offerts dans les deux langues officielles. Le manuel du conducteur est aussi publié dans les deux."
+    },
+    "q": {
+     "en": "Is the exam available in French?",
+     "fr": "L'examen est-il offert en français ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Somebody holding a Class 5 licence or better with at least three years of driving experience, sitting in the front passenger seat. At Level 1 you cannot drive alone and you cannot carry any other passenger.",
+     "fr": "Une personne détenant un permis de classe 5 ou mieux avec au moins trois ans d'expérience de conduite, assise à la place du passager avant. Au niveau 1, vous ne pouvez pas conduire seul ni transporter d'autre passager."
+    },
+    "q": {
+     "en": "Who can supervise me while I drive on a Level 1 licence?",
+     "fr": "Qui peut m'accompagner quand je conduis avec un permis de niveau 1 ?"
+    }
+   },
+   {
+    "a": {
+     "en": "At least 24 months: 12 at Level 1, or 8 with a recognized driving school, then a road test, then 12 more at Level 2. New Brunswick states no further road test is needed for the Class 5 upgrade, but you must apply for it.",
+     "fr": "Au moins 24 mois : 12 au niveau 1, ou 8 avec une école de conduite reconnue, puis un examen pratique, puis 12 de plus au niveau 2. Le Nouveau-Brunswick indique qu'aucun autre examen pratique n'est exigé pour la classe 5, mais vous devez en faire la demande."
+    },
+    "q": {
+     "en": "How long before I get a full licence?",
+     "fr": "Combien de temps avant d'obtenir un permis complet ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "new-brunswick-class-7-mock-test.html",
+    {
+     "en": "Take the timed New Brunswick mock test",
+     "fr": "Passez l'examen blanc chronométré du Nouveau-Brunswick"
+    }
+   ],
+   [
+    "new-brunswick-road-signs.html",
+    {
+     "en": "Study every road sign for the sign exam",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "new-brunswick-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road",
+     "fr": "Étudiez le code de la route"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "new-brunswick-road-signs.html": {
+  "about": [
+   {
+    "en": "New Brunswick sets two separate written exams for a new car driver: a Road Sign Recognition Exam and a Rules of the Road Knowledge Exam. Both are multiple choice and both are offered in English and French, in person at a Service New Brunswick centre or online at home. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "Le Nouveau-Brunswick impose deux examens écrits distincts au nouveau conducteur automobile : un examen de reconnaissance des panneaux et un examen théorique sur le code de la route. Les deux sont à choix multiple et offerts en anglais et en français, en personne dans un centre de Services Nouveau-Brunswick ou en ligne à la maison. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "New Brunswick does not publish how many questions either exam asks, or what the pass mark is. We looked on gnb.ca and on Service New Brunswick's pages, in both languages, and neither number is there. So the numbers on our mock test are ours, and the pages say so. The one timing the province does publish, 30 minutes for the online exam, is the clock we use.",
+    "fr": "Le Nouveau-Brunswick ne publie ni le nombre de questions de ces examens ni la note de passage. Nous avons cherché sur gnb.ca et sur les pages de Services Nouveau-Brunswick, dans les deux langues, et ni l'un ni l'autre ne s'y trouve. Les nombres de notre examen blanc sont donc les nôtres, et les pages le disent. Le seul temps publié par la province, 30 minutes pour l'examen en ligne, est le chronomètre que nous utilisons."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "New Brunswick does not publish a number, and neither does Service New Brunswick. There are two exams — one on road signs and one on the rules of the road — but no government page states how many questions either one asks. Any site that gives you a figure is guessing.",
+     "fr": "Le Nouveau-Brunswick ne publie aucun nombre, et Services Nouveau-Brunswick non plus. Il y a deux examens — un sur les panneaux et un sur le code de la route — mais aucune page gouvernementale n'indique combien de questions chacun pose. Tout site qui vous donne un chiffre le devine."
+    },
+    "q": {
+     "en": "How many questions are on the New Brunswick written exam?",
+     "fr": "Combien de questions compte l'examen écrit du Nouveau-Brunswick ?"
+    }
+   },
+   {
+    "a": {
+     "en": "It is not published either. Practice sites commonly say eighty percent, but that figure does not appear on any New Brunswick government page, so this site will not state it as fact. Study the handbook properly and the question stops mattering.",
+     "fr": "Elle n'est pas publiée non plus. Les sites de pratique disent souvent quatre-vingts pour cent, mais ce chiffre ne figure sur aucune page du gouvernement du Nouveau-Brunswick ; ce site ne l'affirmera donc pas. Étudiez le manuel sérieusement et la question ne se pose plus."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. New Brunswick was the first province in Canada to offer it, on a desktop or laptop with a camera. You get 30 minutes, and you cannot use a phone, wear earbuds or leave your seat. You can also sit it in person at a Service New Brunswick centre.",
+     "fr": "Oui. Le Nouveau-Brunswick a été la première province canadienne à l'offrir, sur un ordinateur de bureau ou portable muni d'une caméra. Vous avez 30 minutes, et vous ne pouvez pas utiliser de téléphone, porter des écouteurs ni quitter votre siège. Vous pouvez aussi le passer en personne dans un centre de Services Nouveau-Brunswick."
+    },
+    "q": {
+     "en": "Can I take the exam online?",
+     "fr": "Puis-je passer l'examen en ligne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. New Brunswick is Canada's only officially bilingual province and testing is available in both official languages. The driver's handbook is published in both as well.",
+     "fr": "Oui. Le Nouveau-Brunswick est la seule province officiellement bilingue du Canada et les examens sont offerts dans les deux langues officielles. Le manuel du conducteur est aussi publié dans les deux."
+    },
+    "q": {
+     "en": "Is the exam available in French?",
+     "fr": "L'examen est-il offert en français ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Somebody holding a Class 5 licence or better with at least three years of driving experience, sitting in the front passenger seat. At Level 1 you cannot drive alone and you cannot carry any other passenger.",
+     "fr": "Une personne détenant un permis de classe 5 ou mieux avec au moins trois ans d'expérience de conduite, assise à la place du passager avant. Au niveau 1, vous ne pouvez pas conduire seul ni transporter d'autre passager."
+    },
+    "q": {
+     "en": "Who can supervise me while I drive on a Level 1 licence?",
+     "fr": "Qui peut m'accompagner quand je conduis avec un permis de niveau 1 ?"
+    }
+   },
+   {
+    "a": {
+     "en": "At least 24 months: 12 at Level 1, or 8 with a recognized driving school, then a road test, then 12 more at Level 2. New Brunswick states no further road test is needed for the Class 5 upgrade, but you must apply for it.",
+     "fr": "Au moins 24 mois : 12 au niveau 1, ou 8 avec une école de conduite reconnue, puis un examen pratique, puis 12 de plus au niveau 2. Le Nouveau-Brunswick indique qu'aucun autre examen pratique n'est exigé pour la classe 5, mais vous devez en faire la demande."
+    },
+    "q": {
+     "en": "How long before I get a full licence?",
+     "fr": "Combien de temps avant d'obtenir un permis complet ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "new-brunswick-class-7-mock-test.html",
+    {
+     "en": "Take the timed New Brunswick mock test",
+     "fr": "Passez l'examen blanc chronométré du Nouveau-Brunswick"
+    }
+   ],
+   [
+    "new-brunswick-road-signs.html",
+    {
+     "en": "Study every road sign for the sign exam",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "new-brunswick-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road",
+     "fr": "Étudiez le code de la route"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "new-brunswick-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "New Brunswick sets two separate written exams for a new car driver: a Road Sign Recognition Exam and a Rules of the Road Knowledge Exam. Both are multiple choice and both are offered in English and French, in person at a Service New Brunswick centre or online at home. That is why this site keeps signs and rules as two separate study pages.",
+    "fr": "Le Nouveau-Brunswick impose deux examens écrits distincts au nouveau conducteur automobile : un examen de reconnaissance des panneaux et un examen théorique sur le code de la route. Les deux sont à choix multiple et offerts en anglais et en français, en personne dans un centre de Services Nouveau-Brunswick ou en ligne à la maison. C'est pourquoi ce site garde les panneaux et le code sur deux pages d'étude distinctes."
+   },
+   {
+    "en": "New Brunswick does not publish how many questions either exam asks, or what the pass mark is. We looked on gnb.ca and on Service New Brunswick's pages, in both languages, and neither number is there. So the numbers on our mock test are ours, and the pages say so. The one timing the province does publish, 30 minutes for the online exam, is the clock we use.",
+    "fr": "Le Nouveau-Brunswick ne publie ni le nombre de questions de ces examens ni la note de passage. Nous avons cherché sur gnb.ca et sur les pages de Services Nouveau-Brunswick, dans les deux langues, et ni l'un ni l'autre ne s'y trouve. Les nombres de notre examen blanc sont donc les nôtres, et les pages le disent. Le seul temps publié par la province, 30 minutes pour l'examen en ligne, est le chronomètre que nous utilisons."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "New Brunswick does not publish a number, and neither does Service New Brunswick. There are two exams — one on road signs and one on the rules of the road — but no government page states how many questions either one asks. Any site that gives you a figure is guessing.",
+     "fr": "Le Nouveau-Brunswick ne publie aucun nombre, et Services Nouveau-Brunswick non plus. Il y a deux examens — un sur les panneaux et un sur le code de la route — mais aucune page gouvernementale n'indique combien de questions chacun pose. Tout site qui vous donne un chiffre le devine."
+    },
+    "q": {
+     "en": "How many questions are on the New Brunswick written exam?",
+     "fr": "Combien de questions compte l'examen écrit du Nouveau-Brunswick ?"
+    }
+   },
+   {
+    "a": {
+     "en": "It is not published either. Practice sites commonly say eighty percent, but that figure does not appear on any New Brunswick government page, so this site will not state it as fact. Study the handbook properly and the question stops mattering.",
+     "fr": "Elle n'est pas publiée non plus. Les sites de pratique disent souvent quatre-vingts pour cent, mais ce chiffre ne figure sur aucune page du gouvernement du Nouveau-Brunswick ; ce site ne l'affirmera donc pas. Étudiez le manuel sérieusement et la question ne se pose plus."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. New Brunswick was the first province in Canada to offer it, on a desktop or laptop with a camera. You get 30 minutes, and you cannot use a phone, wear earbuds or leave your seat. You can also sit it in person at a Service New Brunswick centre.",
+     "fr": "Oui. Le Nouveau-Brunswick a été la première province canadienne à l'offrir, sur un ordinateur de bureau ou portable muni d'une caméra. Vous avez 30 minutes, et vous ne pouvez pas utiliser de téléphone, porter des écouteurs ni quitter votre siège. Vous pouvez aussi le passer en personne dans un centre de Services Nouveau-Brunswick."
+    },
+    "q": {
+     "en": "Can I take the exam online?",
+     "fr": "Puis-je passer l'examen en ligne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. New Brunswick is Canada's only officially bilingual province and testing is available in both official languages. The driver's handbook is published in both as well.",
+     "fr": "Oui. Le Nouveau-Brunswick est la seule province officiellement bilingue du Canada et les examens sont offerts dans les deux langues officielles. Le manuel du conducteur est aussi publié dans les deux."
+    },
+    "q": {
+     "en": "Is the exam available in French?",
+     "fr": "L'examen est-il offert en français ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Somebody holding a Class 5 licence or better with at least three years of driving experience, sitting in the front passenger seat. At Level 1 you cannot drive alone and you cannot carry any other passenger.",
+     "fr": "Une personne détenant un permis de classe 5 ou mieux avec au moins trois ans d'expérience de conduite, assise à la place du passager avant. Au niveau 1, vous ne pouvez pas conduire seul ni transporter d'autre passager."
+    },
+    "q": {
+     "en": "Who can supervise me while I drive on a Level 1 licence?",
+     "fr": "Qui peut m'accompagner quand je conduis avec un permis de niveau 1 ?"
+    }
+   },
+   {
+    "a": {
+     "en": "At least 24 months: 12 at Level 1, or 8 with a recognized driving school, then a road test, then 12 more at Level 2. New Brunswick states no further road test is needed for the Class 5 upgrade, but you must apply for it.",
+     "fr": "Au moins 24 mois : 12 au niveau 1, ou 8 avec une école de conduite reconnue, puis un examen pratique, puis 12 de plus au niveau 2. Le Nouveau-Brunswick indique qu'aucun autre examen pratique n'est exigé pour la classe 5, mais vous devez en faire la demande."
+    },
+    "q": {
+     "en": "How long before I get a full licence?",
+     "fr": "Combien de temps avant d'obtenir un permis complet ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "new-brunswick-class-7-mock-test.html",
+    {
+     "en": "Take the timed New Brunswick mock test",
+     "fr": "Passez l'examen blanc chronométré du Nouveau-Brunswick"
+    }
+   ],
+   [
+    "new-brunswick-road-signs.html",
+    {
+     "en": "Study every road sign for the sign exam",
+     "fr": "Étudiez tous les panneaux pour l'examen sur les panneaux"
+    }
+   ],
+   [
+    "new-brunswick-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road",
+     "fr": "Étudiez le code de la route"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
     }
    ]
   ]

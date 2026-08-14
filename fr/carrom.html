@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrom — jouez à 1 à 4 joueurs, gratuit | Jeux en famille</title>
+<meta name="description" content="Jouez au carrom gratuitement sur tout téléphone ou tablette. Un joueur contre l&#x27;ordinateur, ou deux, trois ou quatre joueurs qui se passent un seul écran. Lancez le palet, empochez les pions, prenez la reine.">
+<link rel="stylesheet" href="../css/style.css?v=a008388b">
+<style>
+  .cr-wrap{max-width:560px;margin:0 auto;text-align:center}
+  .cr-board{width:100%;max-width:520px;margin:10px auto;display:block;border-radius:10px;
+            box-shadow:0 6px 18px rgba(0,0,0,.18);touch-action:none;cursor:pointer}
+  .cr-hud{font-weight:800;min-height:26px;margin:8px 0 2px;font-size:17px}
+  .cr-msg{min-height:22px;margin:0 0 6px;color:var(--muted);font-weight:700}
+  .cr-scores{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0}
+  .cr-sc{border:2px solid var(--line);border-radius:999px;padding:5px 12px;font-weight:800;font-size:14px;
+         background:#fff;color:var(--ink);display:flex;align-items:center;gap:6px}
+  .cr-sc .dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+  .cr-sc.on{border-color:var(--blue);box-shadow:0 0 0 3px rgba(72,149,239,.2)}
+  .cr-pick{display:inline-flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:6px 0 2px}
+  .cr-pick button{padding:9px 15px;border:2px solid var(--line);background:#fff;border-radius:999px;
+                  font-weight:800;cursor:pointer;color:var(--ink);font-size:15px}
+  .cr-pick button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .cr-slide{width:86%;max-width:400px;margin:6px auto 0;display:block}
+  .cr-note{font-size:13.5px;color:var(--muted);margin:4px 0 0}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#c8102e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Canada Quiz">
+<link rel="canonical" href="https://canada-quiz.com/fr/carrom.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/carrom.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/carrom.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/carrom.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://canada-quiz.com/fr/"},{"@type":"ListItem","position":2,"name":"Jeux d'action et classiques","item":"https://canada-quiz.com/fr/games.html"},{"@type":"ListItem","position":3,"name":"Carrom","item":"https://canada-quiz.com/fr/carrom.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/fr/carrom.html#webpage","url":"https://canada-quiz.com/fr/carrom.html","name":"Carrom — jouez à 1 à 4 joueurs, gratuit | Jeux en famille","description":"Jouez au carrom gratuitement sur tout téléphone ou tablette. Un joueur contre l&#x27;ordinateur, ou deux, trois ou quatre joueurs qui se passent un seul écran. Lancez le palet, empochez les pions, prenez la reine.","inLanguage":"fr-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/fr/","name":"Canada Quiz et jeux amusants en famille"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="for-kids.html">Pour les enfants</a>
+      <a href="citizenship.html">Citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🎯 Carrom</h1>
+    <p>Lancez le palet, empochez les pions et prenez la reine rouge. Jouez seul contre l'ordinateur, ou passez un seul écran entre quatre personnes au maximum.</p>
+    <details class="howto"><summary>📖 Comment jouer</summary>
+      <p>Faites glisser la barre sous le plateau pour déplacer votre palet le long de votre ligne. Appuyez ensuite sur le plateau et tirez vers l'arrière, comme un lance-pierre : plus vous tirez loin, plus le coup est fort. Relâchez pour tirer.</p>
+      <p>Chaque pion empoché vaut 1 point, et la reine rouge en vaut 3. Empochez quelque chose et vous rejouez. Si votre palet tombe dans un trou, vous perdez un point et un pion retourne au centre.</p>
+      <p>Quand le plateau est vide, le meilleur pointage l'emporte.</p>
+    </details>
+  </section>
+
+  <div class="panel center" data-fs-host>
+    <div class="cr-wrap">
+
+      <div class="cr-pick" id="cr-pick" role="group" aria-label="Nombre de joueurs">
+        <button type="button" data-n="1">1 joueur</button>
+        <button type="button" data-n="2">2 joueurs</button>
+        <button type="button" data-n="3">3 joueurs</button>
+        <button type="button" data-n="4">4 joueurs</button>
+      </div>
+      <p class="cr-note" id="cr-note">À un joueur, vous affrontez l'ordinateur. À deux, trois ou quatre, vous partagez un seul écran — sans ordinateur.</p>
+
+      <div class="cr-scores" id="cr-scores"></div>
+
+      <div class="cr-hud" id="cr-hud">Joueur 1</div>
+      <p class="cr-msg" id="cr-msg">Tirez vers l'arrière depuis le plateau et relâchez pour tirer.</p>
+
+      <canvas class="cr-board" id="cr-canvas" width="800" height="800"
+              aria-label="Plateau de carrom"></canvas>
+
+      <label class="cr-note" for="cr-pos">Déplacez votre palet</label>
+      <input class="cr-slide" id="cr-pos" type="range" min="0" max="100" value="50"
+             aria-label="Déplacez votre palet le long de la ligne">
+
+      <div style="margin-top:14px">
+        <button class="btn" id="cr-new" type="button">Nouvelle partie</button>
+        <a class="btn btn-ghost" href="games.html">Tous les jeux</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="panel">
+    <h2>Le carrom en une minute</h2>
+    <p>Le carrom se joue partout en Inde, au Sri Lanka, au Bangladesh, au Pakistan et au Népal, et partout où des familles de ces pays se sont installées — ce qui fait bien des tables de cuisine au Canada. On l'appelle parfois le billard au doigt, et la description est juste : un plateau de bois lisse, quatre trous dans les coins, et de petits disques plats qu'on lance d'un doigt.</p>
+    <p>Un vrai plateau compte neuf pions blancs, neuf pions noirs et un disque rouge appelé la reine. À l'écran, tous les pions valent la même chose : n'importe qui peut donc jouer sans apprendre à qui appartient quelle couleur — pratique dans une famille où l'un joue depuis toujours et l'autre n'a jamais touché à un plateau.</p>
+    <p>Le seul élément du vrai carrom que nous avons gardé est la reine. C'est la rouge au centre, elle vaut trois points, et tout le monde la veut.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Jouer à un, deux, trois ou quatre</h2>
+    <p>Choisissez le nombre de joueurs avant de commencer. À un joueur, vous affrontez l'ordinateur, qui joue ses propres coups après les vôtres. À deux, trois ou quatre joueurs, personne n'affronte l'ordinateur : vous passez simplement le téléphone ou la tablette à la personne suivante quand votre tour se termine.</p>
+    <p>Chaque joueur tire depuis son propre côté du plateau. À deux joueurs, ce sont le bas et le haut ; à trois ou quatre, les côtés s'ajoutent, et le plateau vous indique quelle ligne est active en l'éclairant.</p>
+    <p>Comme le pointage se fait par points plutôt que par couleur, une partie à trois joueurs fonctionne aussi bien qu'une partie à quatre, ce qui n'est pas le cas sur un vrai plateau.</p>
+  </section>
+
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de cette page</h2>
+  <p>Le carrom est un jeu de plateau pratiqué dans toute l'Asie du Sud et partout où des familles de cette région se sont installées. Un plateau lisse, quatre trous dans les coins, de petits disques plats appelés pions, et un disque plus lourd, le palet, qu'on lance d'un doigt. Cette version fonctionne sur téléphone, tablette ou ordinateur, sans inscription et sans rien à installer.</p>
+  <p>À un joueur, vous affrontez l'ordinateur. À deux, trois ou quatre joueurs, vous partagez un seul écran que vous vous passez, sans ordinateur. Chaque pion vaut un point, la reine rouge en vaut trois, et le meilleur pointage l'emporte quand le plateau est vide.</p>
+  <h2>Questions fréquentes</h2>
+  <h3>Quatre personnes peuvent-elles jouer au carrom sur un seul téléphone ?</h3>
+  <p>Oui. Choisissez 4 joueurs avant de commencer et chaque personne obtient son propre côté du plateau. Passez le téléphone quand votre tour se termine. L'ordinateur ne participe que lorsqu'une seule personne joue.</p>
+  <h3>Comment tirer ?</h3>
+  <p>Déplacez votre palet le long de votre ligne avec la glissière, puis appuyez sur le plateau et tirez vers l'arrière comme un lance-pierre. Plus vous tirez loin, plus le coup est fort. Relâchez pour tirer.</p>
+  <h3>Que vaut le disque rouge ?</h3>
+  <p>Le disque rouge est la reine et elle vaut trois points au lieu d'un. Elle commence au centre du plateau.</p>
+  <h3>Que se passe-t-il si mon palet tombe dans un trou ?</h3>
+  <p>Vous perdez un point et un pion empoché retourne au centre du plateau. Votre tour passe ensuite au joueur suivant.</p>
+  <h3>L'ordinateur est-il difficile à battre au carrom ?</h3>
+  <p>Il vise correctement le trou le plus facile et cherche la reine quand il le peut, mais il rate volontairement de temps en temps. Un joueur attentif le bat.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="checkers.html">Essayez les dames, un autre jeu de plateau sur un seul écran</a> · <a href="games.html">Voyez tous les jeux en famille du site</a></p>
+</section>
+<!--/PAGEDOC-->
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <details class="footer-map">
+      <summary>Toutes les pages <span class="fm-count">(161)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <div class="fm-h">Quiz</div>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="gk-quiz.html">Culture générale</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
+        <a href="science-quiz.html">Sciences et espace</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">IA &amp; technologie</a>
+        <a href="body-quiz.html">Corps humain &amp; santé</a>
+        <a href="money-quiz.html">L'argent expliqué aux enfants</a>
+        <a href="earth-quiz.html">Terre &amp; environnement</a>
+        <a href="which-canadian-animal-quiz.html">Quel animal canadien ?</a>
+        <a href="which-canadian-food-quiz.html">Quel plat canadien ?</a>
+        <a href="which-canadian-city-quiz.html">Quelle ville canadienne ?</a>
+        <a href="which-winter-sport-quiz.html">Quel sport d'hiver ?</a>
+        <a href="which-national-park-quiz.html">Quel parc national ?</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Pour les enfants</div>
+        <a href="for-kids.html">Toutes les histoires pour enfants</a>
+        <a href="winnie-the-bear-from-winnipeg-for-kids.html">Winnie the Bear</a>
+        <a href="worlds-longest-beaver-dam-for-kids.html">The Longest Beaver Dam</a>
+        <a href="ufo-landing-pad-st-paul-alberta-for-kids.html">The UFO Landing Pad</a>
+        <a href="terry-fox-marathon-of-hope-for-kids.html">Terry Fox</a>
+        <a href="how-canada-chose-its-flag-for-kids.html">How the Flag Was Chosen</a>
+        <a href="insulin-discovered-in-canada-for-kids.html">The Discovery of Insulin</a>
+        <a href="animals-on-canadian-money-for-kids.html">Animals on Our Money</a>
+        <a href="the-bluenose-ship-on-the-dime-for-kids.html">Le Bluenose</a>
+        <a href="the-railway-across-canada-for-kids.html">The Railway Across Canada</a>
+        <a href="voyageurs-and-the-fur-trade-for-kids.html">The Voyageurs</a>
+        <a href="what-canada-day-really-is-for-kids.html">What Canada Day Is</a>
+        <a href="first-nations-inuit-and-metis-for-kids.html">Les Premières Nations, les Inuit et les Métis</a>
+        <a href="the-stanley-cup-story-for-kids.html">La coupe Stanley</a>
+        <a href="the-northern-lights-for-kids.html">The Northern Lights</a>
+        <a href="churchill-polar-bear-capital-for-kids.html">The Polar Bear Town</a>
+        <a href="maple-syrup-and-the-great-robbery-for-kids.html">Maple Syrup and the Robbery</a>
+        <a href="a-canadian-invented-basketball-for-kids.html">Who Invented Basketball</a>
+        <a href="the-dinosaurs-of-alberta-for-kids.html">The Dinosaurs of Alberta</a>
+        <a href="canadarm-canadas-robot-arm-in-space-for-kids.html">Canada's Arm in Space</a>
+        <a href="the-narwhal-and-the-frozen-north-for-kids.html">The Narwhal</a>
+        <a href="the-wild-horses-of-sable-island-for-kids.html">Sable Island Horses</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Pratique de l'examen de conduite</div>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="canada-driving-test-by-province.html">Every Province Compared</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+        <a href="ontario-g1-study-guide.html">Guide d'étude G1 Ontario</a>
+        <a href="bc-class-7l-practice-test.html">Test pratique C.-B. classe 7L</a>
+        <a href="bc-class-7l-mock-test.html">Examen blanc C.-B. classe 7L</a>
+        <a href="bc-road-signs.html">Panneaux routiers de la C.-B.</a>
+        <a href="bc-rules-of-the-road.html">Code de la route de la C.-B.</a>
+        <a href="alberta-class-7-practice-test.html">Test pratique Alberta classe 7</a>
+        <a href="alberta-class-7-mock-test.html">Examen blanc Alberta classe 7</a>
+        <a href="alberta-road-signs.html">Panneaux routiers de l'Alberta</a>
+        <a href="alberta-rules-of-the-road.html">Code de la route de l'Alberta</a>
+        <a href="quebec-class-5-practice-test.html">Test pratique classe 5 du Québec</a>
+        <a href="quebec-class-5-mock-test.html">Examen blanc classe 5 du Québec</a>
+        <a href="quebec-road-signs.html">Panneaux routiers du Québec</a>
+        <a href="quebec-rules-of-the-road.html">Code de la route du Québec</a>
+        <a href="manitoba-class-5-practice-test.html">Test pratique classe 5 du Manitoba</a>
+        <a href="manitoba-class-5-mock-test.html">Examen blanc classe 5 du Manitoba</a>
+        <a href="manitoba-road-signs.html">Panneaux routiers du Manitoba</a>
+        <a href="manitoba-rules-of-the-road.html">Code de la route du Manitoba</a>
+        <a href="saskatchewan-class-7-practice-test.html">Test pratique classe 7 de la Saskatchewan</a>
+        <a href="saskatchewan-class-7-mock-test.html">Examen blanc classe 7 de la Saskatchewan</a>
+        <a href="saskatchewan-road-signs.html">Panneaux routiers de la Saskatchewan</a>
+        <a href="saskatchewan-rules-of-the-road.html">Règles de la route de la Saskatchewan</a>
+        <a href="nova-scotia-class-7-practice-test.html">Test pratique classe 7 de la Nouvelle-Écosse</a>
+        <a href="nova-scotia-class-7-mock-test.html">Examen blanc classe 7 de la Nouvelle-Écosse</a>
+        <a href="nova-scotia-road-signs.html">Panneaux routiers de la Nouvelle-Écosse</a>
+        <a href="nova-scotia-rules-of-the-road.html">Code de la route de la Nouvelle-Écosse</a>
+        <a href="new-brunswick-class-7-practice-test.html">Test pratique classe 7 du Nouveau-Brunswick</a>
+        <a href="new-brunswick-class-7-mock-test.html">Examen blanc classe 7 du Nouveau-Brunswick</a>
+        <a href="new-brunswick-road-signs.html">Panneaux routiers du Nouveau-Brunswick</a>
+        <a href="new-brunswick-rules-of-the-road.html">Code de la route du Nouveau-Brunswick</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de réflexion et casse-têtes</div>
+        <a href="game-2048.html">2048</a>
+        <a href="color-match.html">Trouve la couleur</a>
+        <a href="crossword.html">Mots croisés</a>
+        <a href="cube-twist.html">Cube Twist</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
+        <a href="lights-out.html">Lights Out</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="maple-says.html">Maple Says</a>
+        <a href="math-race.html">Course de maths</a>
+        <a href="memory.html">Jeu de mémoire</a>
+        <a href="minesweeper.html">Démineur</a>
+        <a href="sliding-puzzle.html">Taquin</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="times-tables.html">Champion des tables de multiplication</a>
+        <a href="typing-test.html">Test de vitesse de frappe</a>
+        <a href="word-groups.html">Groupes de mots</a>
+        <a href="word-guess.html">Devine le mot</a>
+        <a href="word-hive.html">Ruche de mots</a>
+        <a href="word-illusions.html">Illusions de mots</a>
+        <a href="word-master.html">Maître des mots</a>
+        <a href="scramble.html">Mots brouillés</a>
+        <a href="word-search.html">Mots cachés</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux d'action et jeux classiques</div>
+        <a href="checkers.html">Dames</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Puissance 4</a>
+        <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="snake.html">Serpent érable</a>
+        <a href="reversi.html">Reversi</a>
+        <a href="tag.html">Tague</a>
+        <a href="tictactoe.html">Tic-tac-toe</a>
+        <a href="tile-tap.html">Tile Tap</a>
+        <a href="whack-a-beaver.html">Tape-le-castor</a>
+        <a href="carrom.html">Carrom</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de groupe</div>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="categories-game.html">Catégories</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="draw-it.html">Dessine-le</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
+        <a href="hide-and-find.html">Cache-cache</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Blogue</div>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
+        <a href="rare-canadian-history-stories.html">15 histoires canadiennes méconnues</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
+        <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
+        <a href="blog.html">Tous les articles</a>
+        <a href="canadas-animals-and-wildlife.html">Animaux et faune</a>
+        <a href="canada-usa-trade-history.html">Le Canada et les États-Unis : histoire commerciale</a>
+        <a href="canadas-biggest-cities.html">Les plus grandes villes du Canada</a>
+        <a href="canada-geography-coast-to-coast.html">La géographie du Canada</a>
+        <a href="canadas-national-parks.html">Les parcs nationaux du Canada</a>
+        <a href="canada-population-timeline.html">Chronologie de la population du Canada</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Cuisine canadienne &amp; sirop d'érable</a>
+        <a href="canadian-holidays-explained.html">Les fêtes canadiennes</a>
+        <a href="canadian-inventions.html">Inventions canadiennes</a>
+        <a href="canadian-money-explained.html">L'argent canadien expliqué</a>
+        <a href="canadian-slang-words.html">L'argot canadien</a>
+        <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="newcomer-first-year-in-canada-checklist.html">Aide-mémoire pour la première année au Canada</a>
+        <a href="how-to-get-a-drivers-licence-in-canada.html">Obtenir son permis de conduire</a>
+        <a href="hockey-in-canada.html">Le hockey au Canada</a>
+        <a href="how-canada-was-built.html">Comment le Canada s'est bâti</a>
+        <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
+        <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
+        <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
+        <a href="prime-ministers-of-canada.html">Premiers ministres du Canada</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
+        <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
+        <a href="winter-in-canada.html">L'hiver au Canada</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Le site</div>
+        <a href="about.html">À propos</a>
+        <a href="games.html">Tous les jeux en famille</a>
+        <a href="all-pages.html">Toutes les pages</a>
+        <a href="contact.html">Contact</a>
+        <a href="daily.html">Défi du jour</a>
+        <a href="index.html">Accueil</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="sources.html">Sources et crédits</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var cv = document.getElementById("cr-canvas");
+  var ctx = cv.getContext("2d");
+  var hud = document.getElementById("cr-hud");
+  var msg = document.getElementById("cr-msg");
+  var scoreBox = document.getElementById("cr-scores");
+  var slider = document.getElementById("cr-pos");
+  var pick = document.getElementById("cr-pick");
+
+  /* ------------------------------------------------------------- the board */
+  var W = 800;                    /* the board is drawn in its own 800x800    */
+  var EDGE = 56;                  /* wooden frame                              */
+  var IN0 = EDGE, IN1 = W - EDGE; /* the playing surface                       */
+  var POCKET = 46;                /* pocket radius                             */
+  var MR = 19;                    /* a carrom man                              */
+  var SR = 25;                    /* the striker, a little bigger and heavier  */
+  var POCKETS = [
+    { x: IN0 + 14, y: IN0 + 14 }, { x: IN1 - 14, y: IN0 + 14 },
+    { x: IN0 + 14, y: IN1 - 14 }, { x: IN1 - 14, y: IN1 - 14 }
+  ];
+
+  /* Each seat has a baseline. Two players face each other; three and four
+     bring in the sides. dir is the way that player shoots. */
+  var SEATS = [
+    { id: 0, line: "bottom", colour: "#e63946" },
+    { id: 1, line: "top",    colour: "#4895ef" },
+    { id: 2, line: "left",   colour: "#2a9d8f" },
+    { id: 3, line: "right",  colour: "#ffb703" }
+  ];
+  var BASE = 118;                 /* how far the baseline sits from the edge  */
+  var HALF = 190;                 /* how far along it the striker may slide   */
+
+  function baseline(seat) {
+    var mid = W / 2;
+    if (seat.line === "bottom") return { ax: mid - HALF, ay: IN1 - BASE, bx: mid + HALF, by: IN1 - BASE, nx: 0, ny: -1 };
+    if (seat.line === "top")    return { ax: mid - HALF, ay: IN0 + BASE, bx: mid + HALF, by: IN0 + BASE, nx: 0, ny: 1 };
+    if (seat.line === "left")   return { ax: IN0 + BASE, ay: mid - HALF, bx: IN0 + BASE, by: mid + HALF, nx: 1, ny: 0 };
+    return { ax: IN1 - BASE, ay: mid - HALF, bx: IN1 - BASE, by: mid + HALF, nx: -1, ny: 0 };
+  }
+
+  /* --------------------------------------------------------------- state */
+  var players = 1, seats = [], scores = [], turn = 0, bot = false;
+  var men = [], striker = null;
+  var moving = false, aiming = false, aimX = 0, aimY = 0;
+  var shotBy = -1, pocketedThisShot = 0, foulThisShot = false;
+  var over = false, botTimer = null;
+
+  function T(en) { return en; }   /* site.js translates the DOM, not this file */
+
+  function newGame(n) {
+    players = n;
+    bot = (n === 1);
+    var count = bot ? 2 : n;
+    seats = SEATS.slice(0, count);
+    scores = [];
+    for (var i = 0; i < count; i++) scores.push(0);
+    turn = 0;
+    over = false;
+    layout();
+    placeStriker();
+    drawScores();
+    say(bot ? "Pull back from the board and let go to shoot."
+            : "Pass the screen around. Pull back and let go to shoot.");
+    setHud();
+    draw();
+  }
+
+  function layout() {
+    men = [];
+    /* The real arrangement: the queen in the middle, a ring of six, then a
+       ring of twelve. Nine white and nine black, exactly as on a wooden board. */
+    men.push(mk(W / 2, W / 2, "queen"));
+    ring(6, 2 * MR + 2, 0);
+    ring(12, 4 * MR + 4, Math.PI / 12);
+    function ring(n, r, off) {
+      for (var i = 0; i < n; i++) {
+        var a = off + i * (Math.PI * 2 / n);
+        men.push(mk(W / 2 + Math.cos(a) * r, W / 2 + Math.sin(a) * r,
+                    i % 2 ? "black" : "white"));
+      }
+    }
+  }
+
+  function mk(x, y, kind) {
+    return { x: x, y: y, vx: 0, vy: 0, r: MR, kind: kind, live: true, m: 1 };
+  }
+
+  function placeStriker() {
+    var b = baseline(seats[turn]);
+    var t = (+slider.value) / 100;
+    striker = {
+      x: b.ax + (b.bx - b.ax) * t, y: b.ay + (b.by - b.ay) * t,
+      vx: 0, vy: 0, r: SR, kind: "striker", live: true, m: 1.6
+    };
+    nudgeStrikerClear();
+  }
+
+  /* If a man has come to rest on the baseline, the striker must not start on
+     top of it. Slide it along the line until it fits, then give up gracefully. */
+  function nudgeStrikerClear() {
+    var b = baseline(seats[turn]);
+    for (var step = 0; step < 40; step++) {
+      var clash = false;
+      for (var i = 0; i < men.length; i++) {
+        var m = men[i];
+        if (!m.live) continue;
+        var dx = m.x - striker.x, dy = m.y - striker.y;
+        if (dx * dx + dy * dy < (m.r + striker.r + 1) * (m.r + striker.r + 1)) { clash = true; break; }
+      }
+      if (!clash) return;
+      var t = (+slider.value) / 100 + (step % 2 ? 1 : -1) * (0.04 * (step + 1));
+      t = Math.max(0, Math.min(1, t));
+      striker.x = b.ax + (b.bx - b.ax) * t;
+      striker.y = b.ay + (b.by - b.ay) * t;
+    }
+  }
+
+  /* -------------------------------------------------------------- physics */
+  var FRICTION = 0.988;
+  var STOP = 0.055;
+  var WALL_BOUNCE = 0.62;
+
+  function all() {
+    var a = men.slice();
+    if (striker && striker.live) a.push(striker);
+    return a;
+  }
+
+  function simulate() {
+    var list = all();
+    /* small steps, because a fast striker can otherwise jump a man entirely */
+    for (var s = 0; s < 6; s++) {
+      for (var i = 0; i < list.length; i++) {
+        var p = list[i];
+        if (!p.live) continue;
+        p.x += p.vx / 6;
+        p.y += p.vy / 6;
+      }
+      collide(list);
+      walls(list);
+    }
+    for (var k = 0; k < list.length; k++) {
+      var q = list[k];
+      if (!q.live) continue;
+      q.vx *= FRICTION; q.vy *= FRICTION;
+      if (Math.abs(q.vx) < STOP && Math.abs(q.vy) < STOP) { q.vx = 0; q.vy = 0; }
+    }
+    pockets(list);
+    for (var j = 0; j < list.length; j++) if (list[j].live && (list[j].vx || list[j].vy)) return true;
+    return false;
+  }
+
+  function collide(list) {
+    for (var i = 0; i < list.length; i++) {
+      var a = list[i];
+      if (!a.live) continue;
+      for (var j = i + 1; j < list.length; j++) {
+        var b = list[j];
+        if (!b.live) continue;
+        var dx = b.x - a.x, dy = b.y - a.y;
+        var d2 = dx * dx + dy * dy, rr = a.r + b.r;
+        if (d2 >= rr * rr || d2 === 0) continue;
+        var d = Math.sqrt(d2);
+        var nx = dx / d, ny = dy / d;
+        /* push them apart so they never stick together */
+        var overlap = (rr - d) / 2 + 0.05;
+        a.x -= nx * overlap; a.y -= ny * overlap;
+        b.x += nx * overlap; b.y += ny * overlap;
+        /* elastic bounce along the line between the centres */
+        var rvx = b.vx - a.vx, rvy = b.vy - a.vy;
+        var sep = rvx * nx + rvy * ny;
+        if (sep > 0) continue;
+        var imp = -(1.9) * sep / (1 / a.m + 1 / b.m);
+        a.vx -= imp * nx / a.m; a.vy -= imp * ny / a.m;
+        b.vx += imp * nx / b.m; b.vy += imp * ny / b.m;
+      }
+    }
+  }
+
+  function walls(list) {
+    for (var i = 0; i < list.length; i++) {
+      var p = list[i];
+      if (!p.live) continue;
+      if (p.x - p.r < IN0) { p.x = IN0 + p.r; p.vx = -p.vx * WALL_BOUNCE; }
+      if (p.x + p.r > IN1) { p.x = IN1 - p.r; p.vx = -p.vx * WALL_BOUNCE; }
+      if (p.y - p.r < IN0) { p.y = IN0 + p.r; p.vy = -p.vy * WALL_BOUNCE; }
+      if (p.y + p.r > IN1) { p.y = IN1 - p.r; p.vy = -p.vy * WALL_BOUNCE; }
+    }
+  }
+
+  function pockets(list) {
+    for (var i = 0; i < list.length; i++) {
+      var p = list[i];
+      if (!p.live) continue;
+      for (var k = 0; k < POCKETS.length; k++) {
+        var dx = p.x - POCKETS[k].x, dy = p.y - POCKETS[k].y;
+        if (dx * dx + dy * dy < (POCKET - 8) * (POCKET - 8)) {
+          p.live = false; p.vx = 0; p.vy = 0;
+          if (p.kind === "striker") foulThisShot = true;
+          else { pocketedThisShot += (p.kind === "queen" ? 3 : 1); }
+          break;
+        }
+      }
+    }
+  }
+
+  /* ---------------------------------------------------------------- turns */
+  function endShot() {
+    moving = false;
+    if (foulThisShot) {
+      scores[shotBy] = Math.max(0, scores[shotBy] - 1);
+      returnOneMan();
+      say("Your striker went in. One point off, and a man goes back to the middle.");
+    } else if (pocketedThisShot) {
+      scores[shotBy] += pocketedThisShot;
+      say(pocketedThisShot >= 3 ? "The queen! Three points, and shoot again."
+                                : "Pocketed! Shoot again.");
+    } else {
+      say("Nothing pocketed. Next player.");
+    }
+    drawScores();
+
+    var again = pocketedThisShot > 0 && !foulThisShot;
+    var live = 0;
+    for (var i = 0; i < men.length; i++) if (men[i].live) live++;
+    if (!live) { finish(); return; }
+
+    if (!again) turn = (turn + 1) % seats.length;
+    pocketedThisShot = 0; foulThisShot = false;
+    placeStriker();
+    setHud();
+    draw();
+    maybeBot();
+  }
+
+  /* A foul puts one pocketed man back. It goes to the middle if the middle is
+     free, and otherwise to the first free spot spiralling outwards — never on
+     top of another piece, which would wedge the board. */
+  function returnOneMan() {
+    for (var i = 0; i < men.length; i++) {
+      if (men[i].live) continue;
+      var spot = freeSpot();
+      if (!spot) return;
+      men[i].x = spot.x; men[i].y = spot.y;
+      men[i].vx = 0; men[i].vy = 0; men[i].live = true;
+      return;
+    }
+  }
+
+  function freeSpot() {
+    for (var r = 0; r < 200; r += MR) {
+      var steps = r === 0 ? 1 : Math.max(6, Math.round(r / 6));
+      for (var s = 0; s < steps; s++) {
+        var a = s * (Math.PI * 2 / steps);
+        var x = W / 2 + Math.cos(a) * r, y = W / 2 + Math.sin(a) * r;
+        if (x < IN0 + MR || x > IN1 - MR || y < IN0 + MR || y > IN1 - MR) continue;
+        var ok = true;
+        for (var i = 0; i < men.length; i++) {
+          var m = men[i];
+          if (!m.live) continue;
+          var dx = m.x - x, dy = m.y - y;
+          if (dx * dx + dy * dy < (MR * 2 + 2) * (MR * 2 + 2)) { ok = false; break; }
+        }
+        if (ok) return { x: x, y: y };
+      }
+    }
+    return null;
+  }
+
+  function finish() {
+    over = true;
+    var best = 0;
+    for (var i = 1; i < scores.length; i++) if (scores[i] > scores[best]) best = i;
+    var tie = false;
+    for (var j = 0; j < scores.length; j++) if (j !== best && scores[j] === scores[best]) tie = true;
+    hud.textContent = tie ? "It is a draw!" : (name(best) + " wins!");
+    say("Board cleared. Press New Game to play again.");
+    draw();
+  }
+
+  function name(i) {
+    if (bot && i === 1) return "Computer";
+    return "Player " + (i + 1);
+  }
+
+  function setHud() {
+    if (over) return;
+    hud.textContent = name(turn);
+    drawScores();
+  }
+
+  function say(s) { msg.textContent = s; }
+
+  function drawScores() {
+    scoreBox.innerHTML = "";
+    for (var i = 0; i < scores.length; i++) {
+      var d = document.createElement("div");
+      d.className = "cr-sc" + (i === turn && !over ? " on" : "");
+      var dot = document.createElement("span");
+      dot.className = "dot";
+      dot.style.background = seats[i].colour;
+      dot.setAttribute("aria-hidden", "true");
+      d.appendChild(dot);
+      d.appendChild(document.createTextNode(name(i) + ": " + scores[i]));
+      scoreBox.appendChild(d);
+    }
+  }
+
+  /* ---------------------------------------------------------------- input */
+  function pos(e) {
+    var r = cv.getBoundingClientRect();
+    return { x: (e.clientX - r.left) / r.width * W, y: (e.clientY - r.top) / r.height * W };
+  }
+
+  cv.addEventListener("pointerdown", function (e) {
+    if (moving || over || (bot && turn === 1)) return;
+    e.preventDefault();
+    aiming = true;
+    var p = pos(e);
+    aimX = p.x; aimY = p.y;
+    try { cv.setPointerCapture(e.pointerId); } catch (err) { }
+    draw();
+  });
+
+  cv.addEventListener("pointermove", function (e) {
+    if (!aiming) return;
+    e.preventDefault();
+    var p = pos(e);
+    aimX = p.x; aimY = p.y;
+    draw();
+  });
+
+  function release(e) {
+    if (!aiming) return;
+    aiming = false;
+    e.preventDefault();
+    /* Slingshot: the shot goes the OPPOSITE way to the pull, and the longer
+       the pull the harder the shot. */
+    var dx = striker.x - aimX, dy = striker.y - aimY;
+    var d = Math.sqrt(dx * dx + dy * dy);
+    if (d < 14) { draw(); return; }
+    var power = Math.min(d, 260) / 260 * 30;
+    striker.vx = dx / d * power;
+    striker.vy = dy / d * power;
+    shotBy = turn;
+    pocketedThisShot = 0; foulThisShot = false;
+    moving = true;
+    say("");
+    tick();
+  }
+  cv.addEventListener("pointerup", release);
+  cv.addEventListener("pointercancel", function () { aiming = false; draw(); });
+
+  slider.addEventListener("input", function () {
+    if (moving || over) return;
+    placeStriker();
+    draw();
+  });
+
+  pick.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("button[data-n]") : null;
+    if (!b) return;
+    var btns = pick.querySelectorAll("button");
+    for (var i = 0; i < btns.length; i++) btns[i].classList.remove("on");
+    b.classList.add("on");
+    clearTimeout(botTimer);
+    newGame(+b.getAttribute("data-n"));
+  });
+
+  document.getElementById("cr-new").addEventListener("click", function () {
+    clearTimeout(botTimer);
+    newGame(players);
+  });
+
+  /* ------------------------------------------------------------------ bot */
+  function maybeBot() {
+    if (!bot || turn !== 1 || over) return;
+    botTimer = setTimeout(botShoot, 850);
+  }
+
+  function botShoot() {
+    if (over || turn !== 1) return;
+    /* Pick the man with the clearest run at a pocket, then aim the striker at
+       the point just behind it. It misses a little on purpose — a computer that
+       never misses is not a game, it is a demonstration. */
+    var b = baseline(seats[1]);
+    var best = null, bestScore = -1;
+    for (var i = 0; i < men.length; i++) {
+      var m = men[i];
+      if (!m.live) continue;
+      for (var k = 0; k < POCKETS.length; k++) {
+        var px = POCKETS[k].x - m.x, py = POCKETS[k].y - m.y;
+        var pd = Math.sqrt(px * px + py * py);
+        if (!pd) continue;
+        /* the spot the striker must hit to send this man at that pocket */
+        var hx = m.x - px / pd * (MR + SR), hy = m.y - py / pd * (MR + SR);
+        var t = alongLine(b, hx, hy);
+        var sx = b.ax + (b.bx - b.ax) * t, sy = b.ay + (b.by - b.ay) * t;
+        var dx = hx - sx, dy = hy - sy;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (!dist) continue;
+        /* prefer a short trip for the striker, a short trip to the pocket, and
+           the queen above everything */
+        var sc = 900 - dist * 0.45 - pd * 0.5 + (m.kind === "queen" ? 260 : 0);
+        if (sc > bestScore) { bestScore = sc; best = { t: t, hx: hx, hy: hy, sx: sx, sy: sy }; }
+      }
+    }
+    if (!best) { turn = 0; setHud(); draw(); return; }
+
+    slider.value = Math.round(best.t * 100);
+    placeStriker();
+    var dx = best.hx - striker.x, dy = best.hy - striker.y;
+    var d = Math.sqrt(dx * dx + dy * dy) || 1;
+    var wobble = (Math.random() - 0.5) * 0.16;
+    var ang = Math.atan2(dy, dx) + wobble;
+    var power = Math.min(26, 13 + d / 34);
+    striker.vx = Math.cos(ang) * power;
+    striker.vy = Math.sin(ang) * power;
+    shotBy = 1;
+    pocketedThisShot = 0; foulThisShot = false;
+    moving = true;
+    draw();
+    tick();
+  }
+
+  function alongLine(b, x, y) {
+    var vx = b.bx - b.ax, vy = b.by - b.ay;
+    var len2 = vx * vx + vy * vy;
+    if (!len2) return 0.5;
+    var t = ((x - b.ax) * vx + (y - b.ay) * vy) / len2;
+    return Math.max(0, Math.min(1, t));
+  }
+
+  /* ----------------------------------------------------------------- loop */
+  function tick() {
+    var busy = simulate();
+    draw();
+    if (busy) requestAnimationFrame(tick);
+    else endShot();
+  }
+
+  /* ---------------------------------------------------------------- paint */
+  function draw() {
+    ctx.clearRect(0, 0, W, W);
+
+    /* frame */
+    ctx.fillStyle = "#8a5a33";
+    round(0, 0, W, W, 16); ctx.fill();
+    ctx.fillStyle = "#f0dcae";
+    ctx.fillRect(IN0, IN0, IN1 - IN0, IN1 - IN0);
+
+    /* the double border line of a real board */
+    ctx.strokeStyle = "#b98f4e"; ctx.lineWidth = 4;
+    ctx.strokeRect(IN0 + 26, IN0 + 26, IN1 - IN0 - 52, IN1 - IN0 - 52);
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(IN0 + 34, IN0 + 34, IN1 - IN0 - 68, IN1 - IN0 - 68);
+
+    /* the centre circle and the arrows */
+    ctx.strokeStyle = "#c8a06a"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(W / 2, W / 2, 96, 0, Math.PI * 2); ctx.stroke();
+    ctx.beginPath(); ctx.arc(W / 2, W / 2, 30, 0, Math.PI * 2); ctx.stroke();
+
+    /* baselines — the live one is lit in that player's colour */
+    for (var s = 0; s < seats.length; s++) {
+      var b = baseline(seats[s]);
+      var live = (s === turn && !over);
+      ctx.strokeStyle = live ? seats[s].colour : "rgba(160,130,90,.55)";
+      ctx.lineWidth = live ? 7 : 4;
+      ctx.beginPath(); ctx.moveTo(b.ax, b.ay); ctx.lineTo(b.bx, b.by); ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(b.ax, b.ay, live ? 7 : 5, 0, Math.PI * 2);
+      ctx.arc(b.bx, b.by, live ? 7 : 5, 0, Math.PI * 2);
+      ctx.fillStyle = ctx.strokeStyle; ctx.fill();
+    }
+
+    /* pockets */
+    for (var k = 0; k < POCKETS.length; k++) {
+      ctx.fillStyle = "#2b2d42";
+      ctx.beginPath(); ctx.arc(POCKETS[k].x, POCKETS[k].y, POCKET, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = "rgba(255,255,255,.35)"; ctx.lineWidth = 3; ctx.stroke();
+    }
+
+    /* the men */
+    for (var i = 0; i < men.length; i++) {
+      var m = men[i];
+      if (!m.live) continue;
+      disc(m.x, m.y, m.r,
+           m.kind === "queen" ? "#e63946" : m.kind === "white" ? "#fff8ec" : "#3a3550",
+           m.kind === "queen" ? "#a1121f" : m.kind === "white" ? "#d8c9ad" : "#221f33");
+    }
+
+    /* the striker, and the aim line while you are pulling back */
+    if (striker && striker.live) {
+      if (aiming) {
+        var dx = striker.x - aimX, dy = striker.y - aimY;
+        var d = Math.sqrt(dx * dx + dy * dy);
+        if (d > 8) {
+          var pw = Math.min(d, 260) / 260;
+          ctx.save();
+          ctx.setLineDash([12, 10]);
+          ctx.strokeStyle = seats[turn].colour;
+          ctx.lineWidth = 5;
+          ctx.beginPath();
+          ctx.moveTo(striker.x, striker.y);
+          ctx.lineTo(striker.x + dx / d * (60 + pw * 250), striker.y + dy / d * (60 + pw * 250));
+          ctx.stroke();
+          ctx.restore();
+          /* the pull-back handle, so a child can see what the finger is doing */
+          ctx.globalAlpha = 0.5;
+          disc(aimX, aimY, 14, "#ffffff", "#8a8a8a");
+          ctx.globalAlpha = 1;
+        }
+      }
+      disc(striker.x, striker.y, striker.r, "#ffd166", "#c99a1f");
+      ctx.strokeStyle = "rgba(0,0,0,.25)"; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(striker.x, striker.y, striker.r - 7, 0, Math.PI * 2); ctx.stroke();
+    }
+  }
+
+  function disc(x, y, r, fill, edge) {
+    var g = ctx.createRadialGradient(x - r * 0.35, y - r * 0.4, r * 0.2, x, y, r);
+    g.addColorStop(0, "#ffffff");
+    g.addColorStop(0.35, fill);
+    g.addColorStop(1, fill);
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = edge; ctx.lineWidth = 2.5; ctx.stroke();
+  }
+
+  function round(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  /* ----------------------------------------------------------------- go */
+  pick.querySelector('button[data-n="1"]').classList.add("on");
+  newGame(1);
+})();
+</script>
+  <script src="../js/game-fullscreen.js?v=c56db4e5"></script>
+  <script src="../js/site.js?v=601c6791"></script>
+  <script src="../js/analytics.js?v=d06ceb69"></script>
+  <script src="../js/ads.js?v=00e703ff" defer></script>
+  <script src="../js/pwa.js?v=56adaa04" defer></script>
+  <script src="../js/tv-mode.js?v=4ebd9ddf" defer></script>
+</body>
+</html>

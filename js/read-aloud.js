@@ -72,21 +72,72 @@
     try { window.speechSynthesis.cancel(); } catch (e) { }
   }
 
-  function say(text) {
-    if (!on || !text) return;
-    text = text.replace(/\s+/g, " ").trim();
-    if (!text || text === lastSaid) return;
-    lastSaid = text;
-    stop();
+  /* ------------------------------------------------- cutting text into bites
+
+     Safari on an iPad and an iPhone will not read a long utterance. Hand it a
+     whole paragraph and it stays silent — no error, no sound, and onend often
+     never fires either, so a reader that chains one paragraph to the next just
+     stops. Eesan hit exactly this: on an iPad the story reader spoke the
+     headings and skipped every paragraph, because headings are short and
+     paragraphs are not. On Android and on a computer the same page read fine,
+     which is why it looked like an iPad problem rather than a code problem.
+
+     Safari also cuts speech off at roughly fifteen seconds. Both problems go
+     away if we never hand it more than a sentence or two at a time, so every
+     piece of text is cut into bites of about 140 characters, splitting at a
+     full stop where there is one, then at a comma, then at a space. At the
+     reading speed used here a bite of that size takes about ten seconds, which
+     is comfortably under the cut-off. */
+  var MAX = 140;
+
+  function bites(text) {
+    text = String(text || "").replace(/\s+/g, " ").trim();
+    var out = [];
+    while (text.length > MAX) {
+      var head = text.slice(0, MAX + 1);
+      var cut = Math.max(head.lastIndexOf(". "), head.lastIndexOf("! "),
+                         head.lastIndexOf("? "), head.lastIndexOf("; "),
+                         head.lastIndexOf(" : "));
+      if (cut > 50) cut += 1;
+      else {
+        cut = Math.max(head.lastIndexOf(", "), head.lastIndexOf(" — "));
+        if (cut > 50) cut += 1;
+        else {
+          cut = head.lastIndexOf(" ");
+          if (cut < 30) cut = MAX;          /* one enormous word: cut it anyway */
+        }
+      }
+      out.push(text.slice(0, cut).trim());
+      text = text.slice(cut).trim();
+    }
+    if (text) out.push(text);
+    return out;
+  }
+
+  function utter(text) {
     var u = new SpeechSynthesisUtterance(text);
     u.lang = LANG;
     var v = pickVoice();
     if (v) u.voice = v;
     /* A little slower than default. These are children, and the sentences
        carry the fact being taught. */
-    u.rate = 0.92;
+    u.rate = 0.9;
     u.pitch = 1;
-    try { window.speechSynthesis.speak(u); } catch (e) { }
+    return u;
+  }
+
+  function say(text) {
+    if (!on || !text) return;
+    text = text.replace(/\s+/g, " ").trim();
+    if (!text || text === lastSaid) return;
+    lastSaid = text;
+    stop();
+    /* A question plus four answers is easily past the limit on its own, so the
+       quiz reader is cut into bites too. The browser plays a queue in order. */
+    var parts = bites(text);
+    for (var i = 0; i < parts.length; i++) {
+      try { window.speechSynthesis.speak(utter(parts[i])); } catch (e) { return; }
+    }
   }
 
   /* --------------------------------------------------------- what to read */
@@ -211,9 +262,12 @@
     for (var i = 0; i < storyParas.length; i++) storyParas[i].classList.remove("ra-now");
   }
 
+  var storyPoll = null;
+
   function stopStory() {
     storyOn = false;
     clearMark();
+    if (storyPoll) { clearInterval(storyPoll); storyPoll = null; }
     stop();
     if (storyBtn) {
       storyBtn.textContent = storyLabel();
@@ -223,22 +277,50 @@
 
   function speakPara() {
     if (!storyOn) return;
+    if (storyPoll) { clearInterval(storyPoll); storyPoll = null; }
     clearMark();
     if (storyIdx >= storyParas.length) { stopStory(); return; }
+
     var el = storyParas[storyIdx];
     el.classList.add("ra-now");
     /* keep the highlighted paragraph on screen without yanking the page */
     try { el.scrollIntoView({ block: "center", behavior: "smooth" }); } catch (e) { }
-    var u = new SpeechSynthesisUtterance((el.textContent || "").replace(/\s+/g, " ").trim());
-    u.lang = LANG;
-    var v = pickVoice();
-    if (v) u.voice = v;
-    u.rate = 0.9;
-    u.onend = function () { storyIdx++; speakPara(); };
-    /* If the voice dies mid-sentence, stop cleanly rather than hanging on a
-       highlighted paragraph that is not being read. */
-    u.onerror = stopStory;
-    try { window.speechSynthesis.speak(u); } catch (e) { stopStory(); }
+
+    var parts = bites(el.textContent);
+    if (!parts.length) { storyIdx++; speakPara(); return; }
+
+    /* Move on once, however we find out the paragraph has finished. */
+    var moved = false;
+    function next() {
+      if (moved || !storyOn) return;
+      moved = true;
+      if (storyPoll) { clearInterval(storyPoll); storyPoll = null; }
+      storyIdx++;
+      speakPara();
+    }
+
+    for (var i = 0; i < parts.length; i++) {
+      var u = utter(parts[i]);
+      if (i === parts.length - 1) u.onend = next;
+      /* One bite failing must not end the story. Before this, a single error
+         stopped the reader dead half way down the page. */
+      u.onerror = function () { if (!window.speechSynthesis.speaking) next(); };
+      try { window.speechSynthesis.speak(u); } catch (e) { next(); return; }
+    }
+
+    /* The safety net. On Safari onend sometimes never arrives at all, and a
+       child is left looking at a highlighted paragraph in silence. So we also
+       watch the speech engine itself: once it says it is neither speaking nor
+       holding anything in its queue, the paragraph is over and we move on. The
+       first second is ignored because the engine reports "not speaking" for a
+       moment right after being asked to start. */
+    var began = Date.now();
+    storyPoll = setInterval(function () {
+      if (!storyOn) { clearInterval(storyPoll); storyPoll = null; return; }
+      if (Date.now() - began < 1200) return;
+      var s = window.speechSynthesis;
+      if (!s.speaking && !s.pending) next();
+    }, 400);
   }
 
   function mountStory() {

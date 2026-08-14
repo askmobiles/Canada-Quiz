@@ -41,6 +41,11 @@ NAV = [
     ("index.html",       "Home"),
     ("quizzes.html",     "Quizzes"),
     ("games.html",       "Family Games"),
+    # For Kids was added to the menu in js/site.js but never here, so the menu
+    # written into the HTML was one item short of the menu visitors actually
+    # see. That HTML menu is what a search engine reads, and what shows before
+    # any JavaScript runs, so a whole section of the site was invisible to both.
+    ("for-kids.html",    "For Kids"),
     ("citizenship.html", "Citizenship"),
     ("driving-test.html",  "Driving Test"),
     ("daily.html",       "Daily"),
