@@ -1,3 +1,15 @@
+# Files that live in this folder but must NEVER reach GitHub.
+#
+# This folder is the repository. Anything committed here is published twice:
+# to a PUBLIC repo, and to canada-quiz.com itself, because GitHub Pages serves
+# the repo. So "private" here means "listed below" — nothing else.
+#
+# _private/   plans, notes, session history, standing instructions. Eesan's
+#             working material. The repo carries the site and nothing else.
+# _to_delete/ files moved aside for deletion; the bridge cannot delete directly
+# _upd/       staging area for an update being prepared
+# *.zip       the delivery zips — the site is already here, unzipped
+_private/
 _to_delete/
 _upd/
 *.zip
