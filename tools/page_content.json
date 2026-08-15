@@ -1528,6 +1528,104 @@
    ]
   ]
  },
+ "beginner-driver-education-ontario.html": {
+  "about": [
+   {
+    "en": "Ontario's Beginner Driver Education course is approved by the Ministry of Transportation and is optional. Finishing one lets you take your first road test after eight months with a G1 licence instead of twelve. An insurance discount is common but is not required by law and is not guaranteed.",
+    "fr": "Le cours d'éducation au volant pour débutants de l'Ontario est approuvé par le ministère des Transports et il est facultatif. Le terminer permet de passer son premier examen pratique après huit mois avec un permis G1 au lieu de douze. Un rabais d'assurance est courant, mais il n'est pas exigé par la loi et n'est pas garanti."
+   },
+   {
+    "en": "This page gives no discount percentage and no course price, because no government or regulator publishes either. It also lists what every other province offers, including the two where the course is not optional.",
+    "fr": "Cette page ne donne aucun pourcentage de rabais ni aucun prix de cours, parce qu'aucun gouvernement ni organisme de réglementation ne publie l'un ou l'autre. Elle présente aussi ce qu'offre chaque autre province, y compris les deux où le cours n'est pas facultatif."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Often, but not always, and no law requires it. Ontario's own page says an insurer may give a discount and that finishing a course does not guarantee one. Ask your insurer before you pay for the course.",
+     "fr": "Souvent, mais pas toujours, et aucune loi ne l'exige. La page officielle de l'Ontario indique qu'un assureur peut accorder un rabais et que terminer un cours n'en garantit aucun. Interrogez votre assureur avant de payer le cours."
+    },
+    "q": {
+     "en": "Does driving school lower your insurance in Ontario?",
+     "fr": "Une école de conduite fait-elle baisser l'assurance en Ontario ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No government or regulator publishes a figure, so we will not print one. The numbers you see online come from driving schools and brokers. Your own insurer is the only reliable answer.",
+     "fr": "Aucun gouvernement ni organisme de réglementation ne publie de chiffre, alors nous n'en donnerons aucun. Les nombres vus en ligne proviennent d'écoles de conduite et de courtiers. Votre propre assureur est la seule réponse fiable."
+    },
+    "q": {
+     "en": "How much is the discount?",
+     "fr": "De combien est le rabais ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Four months sooner. Eight months after getting your G1 instead of twelve, if you finish a government-approved course.",
+     "fr": "Quatre mois plus tôt. Huit mois après l'obtention du permis G1 au lieu de douze, si vous terminez un cours approuvé par le gouvernement."
+    },
+    "q": {
+     "en": "How much sooner can I take the road test?",
+     "fr": "Combien de temps plus tôt puis-je passer l'examen pratique ?"
+    }
+   },
+   {
+    "a": {
+     "en": "At least 40 hours: 20 in the classroom or online, 10 in the car, and 10 flexible hours the school can use as it chooses. The old rule that fixed those last ten hours as homework was replaced in 2022.",
+     "fr": "Au moins 40 heures : 20 en classe ou en ligne, 10 en voiture et 10 heures flexibles que l'école utilise à sa guise. L'ancienne règle qui fixait ces dix dernières heures comme devoirs a été remplacée en 2022."
+    },
+    "q": {
+     "en": "How long is the course?",
+     "fr": "Combien de temps dure le cours ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. Ontario encourages it but does not require it. It is required in Quebec, and in Saskatchewan you cannot move up from a Class 7 licence without it.",
+     "fr": "Non. L'Ontario l'encourage sans l'exiger. Il est obligatoire au Québec, et en Saskatchewan on ne peut pas dépasser un permis de classe 7 sans lui."
+    },
+    "q": {
+     "en": "Is the course mandatory in Ontario?",
+     "fr": "Le cours est-il obligatoire en Ontario ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Ontario publishes the list of government-approved schools on its own website and as a downloadable open data file. A school that is not on the list has no authority to train new drivers.",
+     "fr": "L'Ontario publie la liste des écoles approuvées par le gouvernement sur son propre site et sous forme de fichier de données ouvertes téléchargeable. Une école qui n'y figure pas n'a aucune autorité pour former de nouveaux conducteurs."
+    },
+    "q": {
+     "en": "How do I know a school is really approved?",
+     "fr": "Comment savoir si une école est vraiment approuvée ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "ontario-g1-practice-test.html",
+    {
+     "en": "Practise the Ontario G1 knowledge test free",
+     "fr": "Pratiquez gratuitement l'examen théorique G1 de l'Ontario"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test in every province",
+     "fr": "Comparez l'examen écrit de chaque province"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
  "body-quiz.html": {
   "about": [
    {
@@ -2572,6 +2670,87 @@
     {
      "en": "Discover the Canadian words you will hear in conversation",
      "fr": "Découvrez les mots canadiens que vous entendrez en conversation"
+    }
+   ]
+  ]
+ },
+ "canadian-citizenship-test-what-to-expect.html": {
+  "about": [
+   {
+    "en": "The Canadian citizenship test is 20 questions in 45 minutes, and you need at least 15 right. It is taken by applicants aged 18 to 54, in English or French, and every question comes from the free government study guide Discover Canada.",
+    "fr": "L'examen de citoyenneté canadienne compte 20 questions en 45 minutes, et il faut au moins 15 bonnes réponses. Il est passé par les demandeurs de 18 à 54 ans, en anglais ou en français, et chaque question provient du guide d'étude gratuit du gouvernement, Découvrir le Canada."
+   },
+   {
+    "en": "This page states the 45-minute limit from the government's current test page, notes that an older official video page still says 30, and publishes no question-bank size or pass rate because no official source gives either.",
+    "fr": "Cette page indique la limite de 45 minutes tirée de la page d'examen actuelle du gouvernement, signale qu'une ancienne page vidéo officielle indique encore 30, et ne publie ni nombre total de questions ni taux de réussite, faute de source officielle."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "45 minutes for 20 questions, counting down without a pause, with a warning at five minutes. Older pages saying 30 minutes are out of date.",
+     "fr": "45 minutes pour 20 questions, en compte à rebours sans pause, avec un avertissement à cinq minutes. Les pages indiquant 30 minutes ne sont plus à jour."
+    },
+    "q": {
+     "en": "How long is the Canadian citizenship test?",
+     "fr": "Combien de temps dure l'examen de citoyenneté canadienne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "At least 15 of the 20.",
+     "fr": "Au moins 15 des 20."
+    },
+    "q": {
+     "en": "How many questions do I need right to pass?",
+     "fr": "Combien de bonnes réponses faut-il pour réussir ?"
+    }
+   },
+   {
+    "a": {
+     "en": "You get three chances inside one 30-day window. If all three go badly you are invited to a hearing with a citizenship official lasting 30 to 90 minutes.",
+     "fr": "Vous avez trois chances à l'intérieur d'une période de 30 jours. Si les trois échouent, vous êtes convoqué à une entrevue avec un agent de la citoyenneté, d'une durée de 30 à 90 minutes."
+    },
+    "q": {
+     "en": "What happens if I fail the citizenship test?",
+     "fr": "Que se passe-t-il si j'échoue à l'examen de citoyenneté ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Applicants who are between 18 and 54 years old on the day they sign the application.",
+     "fr": "Les demandeurs âgés de 18 à 54 ans le jour où ils signent leur demande."
+    },
+    "q": {
+     "en": "Who has to take the test?",
+     "fr": "Qui doit passer l'examen ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. Language is a separate requirement proven with documents beforehand, at Canadian Language Benchmarks level 4 in speaking and listening.",
+     "fr": "Non. La langue est une exigence distincte, prouvée par documents à l'avance, au niveau 4 des Niveaux de compétence linguistique canadiens en expression et compréhension orales."
+    },
+    "q": {
+     "en": "Does the citizenship test check my English or French?",
+     "fr": "L'examen de citoyenneté évalue-t-il mon anglais ou mon français ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "citizenship.html",
+    {
+     "en": "Practise the citizenship test free",
+     "fr": "Pratiquez gratuitement l'examen de citoyenneté"
+    }
+   ],
+   [
+    "blog.html",
+    {
+     "en": "Read more articles about Canada",
+     "fr": "Lisez d'autres articles sur le Canada"
     }
    ]
   ]
@@ -4725,6 +4904,94 @@
     {
      "en": "Browse every quiz gathered in one place",
      "fr": "Parcourez tous les quiz réunis au même endroit"
+    }
+   ]
+  ]
+ },
+ "exchange-foreign-drivers-licence-canada.html": {
+  "about": [
+   {
+    "en": "Ontario lets drivers from a specific list of countries exchange a foreign licence with no knowledge or road test. Whether you get a full G or a G2 depends on your years of experience, not on your country. New residents have only 60 days to switch.",
+    "fr": "L'Ontario permet aux conducteurs d'une liste précise de pays d'échanger un permis étranger sans examen théorique ni pratique. Obtenir un permis G complet ou un G2 dépend de vos années d'expérience, pas de votre pays. Les nouveaux résidents n'ont que 60 jours pour faire le changement."
+   },
+   {
+    "en": "If your country is not on the list you can still claim up to 12 months of driving experience with a letter from the licensing authority. This page also explains why an international driving permit must be obtained before you leave home.",
+    "fr": "Si votre pays ne figure pas sur la liste, vous pouvez tout de même faire créditer jusqu'à 12 mois d'expérience avec une lettre de l'autorité de délivrance. Cette page explique aussi pourquoi un permis de conduire international doit être obtenu avant de quitter votre pays."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "A new resident has 60 days. That is the shortest grace period of the provinces on this page — British Columbia and Saskatchewan give 90 days, Nova Scotia 180 and Quebec six months.",
+     "fr": "Un nouveau résident dispose de 60 jours. C'est le délai le plus court parmi les provinces de cette page : la Colombie-Britannique et la Saskatchewan accordent 90 jours, la Nouvelle-Écosse 180 et le Québec six mois."
+    },
+    "q": {
+     "en": "How long can I drive in Ontario on my foreign licence?",
+     "fr": "Combien de temps puis-je conduire en Ontario avec mon permis étranger ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Two years or more of experience in the last three years gets a full G with no road test. Less than that gets a G2. The country decides whether you may exchange at all; your experience decides which licence.",
+     "fr": "Deux ans d'expérience ou plus au cours des trois dernières années donnent un G complet sans examen pratique. Moins que cela donne un G2. Le pays détermine si vous pouvez échanger ; votre expérience détermine quel permis."
+    },
+    "q": {
+     "en": "Will I get a full G licence or a G2?",
+     "fr": "Vais-je obtenir un permis G complet ou un G2 ?"
+    }
+   },
+   {
+    "a": {
+     "en": "You enter graduated licensing, but you can be credited up to 12 months of experience with a letter or abstract from the licensing authority issued in the last six months.",
+     "fr": "Vous entrez dans le système de permis par étapes, mais vous pouvez faire créditer jusqu'à 12 mois d'expérience avec une lettre ou un relevé de l'autorité de délivrance émis dans les six derniers mois."
+    },
+    "q": {
+     "en": "What if my country has no agreement with Ontario?",
+     "fr": "Et si mon pays n'a pas d'entente avec l'Ontario ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. It must be obtained in the country that issued your licence, before you travel. It is a translation of your licence, not a licence in itself.",
+     "fr": "Non. Il doit être obtenu dans le pays qui a délivré votre permis, avant de partir. C'est une traduction de votre permis, et non un permis en soi."
+    },
+    "q": {
+     "en": "Can I get an international driving permit after I arrive in Canada?",
+     "fr": "Puis-je obtenir un permis de conduire international après mon arrivée au Canada ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Most Ontario insurers will consider a letter of experience, but that is company practice, not a rule set by the regulator. Ask your broker, and get the letter before you leave your old country.",
+     "fr": "La plupart des assureurs ontariens examineront une lettre d'expérience, mais c'est une pratique d'entreprise, pas une règle de l'organisme de réglementation. Demandez à votre courtier, et obtenez la lettre avant de quitter votre pays."
+    },
+    "q": {
+     "en": "Does my driving experience abroad lower my insurance?",
+     "fr": "Mon expérience de conduite à l'étranger fait-elle baisser mon assurance ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "ontario-g1-practice-test.html",
+    {
+     "en": "Practise the Ontario G1 test free",
+     "fr": "Pratiquez gratuitement l'examen G1 de l'Ontario"
+    }
+   ],
+   [
+    "beginner-driver-education-ontario.html",
+    {
+     "en": "Driving school and your insurance",
+     "fr": "L'école de conduite et votre assurance"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
     }
    ]
   ]
@@ -13123,6 +13390,77 @@
     {
      "en": "More true Canada stories for kids",
      "fr": "D'autres histoires vraies du Canada pour les enfants"
+    }
+   ]
+  ]
+ },
+ "winter-tires-canada-law-by-province.html": {
+  "about": [
+   {
+    "en": "Quebec is the only province where winter tires are required everywhere, from 1 December to 15 March, and only the three-peaked mountain and snowflake marking qualifies. British Columbia requires them on signed routes from 1 October, and accepts M+S.",
+    "fr": "Le Québec est la seule province où les pneus d'hiver sont exigés partout, du 1er décembre au 15 mars, et seul le marquage de la montagne à trois pics et du flocon est admis. La Colombie-Britannique les exige sur les routes signalisées à partir du 1er octobre et accepte le M+S."
+   },
+   {
+    "en": "Ontario does not require winter tires, but every insurer there is required to offer a discount for them. This page gives no percentage, because no official source publishes one.",
+    "fr": "L'Ontario n'exige pas les pneus d'hiver, mais chaque assureur y est tenu d'offrir un rabais pour ceux-ci. Cette page ne donne aucun pourcentage, car aucune source officielle n'en publie."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Quebec province-wide from 1 December to 15 March, and British Columbia on signed routes from 1 October. Nowhere else in Canada requires them.",
+     "fr": "Le Québec dans toute la province du 1er décembre au 15 mars, et la Colombie-Britannique sur les routes signalisées à partir du 1er octobre. Nulle part ailleurs au Canada ils ne sont exigés."
+    },
+    "q": {
+     "en": "Which provinces require winter tires by law?",
+     "fr": "Quelles provinces exigent les pneus d'hiver par la loi ?"
+    }
+   },
+   {
+    "a": {
+     "en": "In British Columbia yes, as the legal minimum. In Quebec no — only the three-peaked mountain and snowflake symbol or legal studs qualify.",
+     "fr": "En Colombie-Britannique, oui, comme minimum légal. Au Québec, non : seuls le symbole de la montagne à trois pics et du flocon ou des crampons légaux sont admis."
+    },
+    "q": {
+     "en": "Do all-season M+S tires count as winter tires?",
+     "fr": "Les pneus quatre saisons M+S comptent-ils comme des pneus d'hiver ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes, on the insurer. Every company must offer a discount. The size of it and the conditions are set by each company, and no official source publishes a percentage.",
+     "fr": "Oui, pour l'assureur. Chaque compagnie doit offrir un rabais. Son ampleur et les conditions sont fixées par chaque compagnie, et aucune source officielle ne publie de pourcentage."
+    },
+    "q": {
+     "en": "Is the winter tire insurance discount mandatory in Ontario?",
+     "fr": "Le rabais d'assurance pour pneus d'hiver est-il obligatoire en Ontario ?"
+    }
+   },
+   {
+    "a": {
+     "en": "In Quebec there is a clear offence for driving a vehicle covered in snow or ice that may come off. Ontario has no roof-clearing offence, only obstructed-view charges. For other provinces we could not confirm one.",
+     "fr": "Au Québec, il existe une infraction claire pour la conduite d'un véhicule couvert de neige ou de glace susceptible de s'en détacher. L'Ontario n'a aucune infraction de déneigement du toit, seulement des accusations pour vue obstruée. Pour les autres provinces, nous n'avons pu en confirmer aucune."
+    },
+    "q": {
+     "en": "Is it illegal to drive with snow on your roof?",
+     "fr": "Est-il illégal de conduire avec de la neige sur le toit ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "beginner-driver-education-ontario.html",
+    {
+     "en": "Driving school and your insurance",
+     "fr": "L'école de conduite et votre assurance"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
     }
    ]
   ]

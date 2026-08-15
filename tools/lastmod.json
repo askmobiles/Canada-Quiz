@@ -40,8 +40,8 @@
   "hash": "1c2699dba41879df411c0b80dce7f33a0eea9848"
  },
  "all-pages.html": {
-  "date": "2026-08-14",
-  "hash": "345a191856b7e8389a08d82e96d2337c53dd89b0"
+  "date": "2026-08-15",
+  "hash": "4c8bc38d7fce5fe5c7b6c4d76d4ee2e7bb0869f4"
  },
  "animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-13",
@@ -63,9 +63,13 @@
   "date": "2026-08-08",
   "hash": "94031c12d2573ce853f38d09e36693292cda6f8c"
  },
+ "beginner-driver-education-ontario.html": {
+  "date": "2026-08-15",
+  "hash": "161f9d6af17099c26a03b06165ff3b77bdf7cad4"
+ },
  "blog.html": {
-  "date": "2026-08-09",
-  "hash": "560b682d3ce281d967d767d9fd86b2895d4974e5"
+  "date": "2026-08-15",
+  "hash": "1e07ebc4359b6f816ccf6b63c887bf59221c5a43"
  },
  "body-quiz.html": {
   "date": "2026-08-08",
@@ -118,6 +122,10 @@
  "canadas-two-official-languages.html": {
   "date": "2026-08-08",
   "hash": "c9ee0b3e498ced7520b4a354fe3d6ffcb568af02"
+ },
+ "canadian-citizenship-test-what-to-expect.html": {
+  "date": "2026-08-15",
+  "hash": "d60ef08ff775bb6ed56ace5647c823b809090fe8"
  },
  "canadian-food-poutine-maple-syrup.html": {
   "date": "2026-08-08",
@@ -201,7 +209,7 @@
  },
  "driving-test.html": {
   "date": "2026-08-14",
-  "hash": "5deb595d5c4bd5878785851c95b8b36797c440ba"
+  "hash": "c04e17968b5139323dd6360d1e131db090437106"
  },
  "earth-quiz.html": {
   "date": "2026-08-08",
@@ -210,6 +218,10 @@
  "entertainment-quiz.html": {
   "date": "2026-08-08",
   "hash": "76d3b2b50fd78bff157d2d7261db53f5bdf14d3c"
+ },
+ "exchange-foreign-drivers-licence-canada.html": {
+  "date": "2026-08-15",
+  "hash": "a936027abe92a1e3e2f17708c3f89ebc31879f7b"
  },
  "famous-canadians-in-history.html": {
   "date": "2026-08-08",
@@ -268,8 +280,8 @@
   "hash": "4468890e90b9cb229d095a2203e64653783333c7"
  },
  "fr/all-pages.html": {
-  "date": "2026-08-14",
-  "hash": "37f1826693fc99a58fc68e1775be854dadeb80b4"
+  "date": "2026-08-15",
+  "hash": "10549cdc99675c27d04423290ead738e09986516"
  },
  "fr/animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-13",
@@ -291,17 +303,21 @@
   "date": "2026-08-08",
   "hash": "e96322b937572fd84e36164e16e539a0c037e8c6"
  },
+ "fr/beginner-driver-education-ontario.html": {
+  "date": "2026-08-15",
+  "hash": "c0b905f1ceb3a29d36bc1fbba51fb862aede2810"
+ },
  "fr/blog.html": {
-  "date": "2026-08-09",
-  "hash": "1434ff1ff1d672d9bf042443242e3539163b5b6a"
+  "date": "2026-08-15",
+  "hash": "f0d4a9074564898bd1e0a1e22343cc5306b850dc"
  },
  "fr/body-quiz.html": {
   "date": "2026-08-08",
   "hash": "5a0d5392c41da0a300d0a195191e0b22fe111608"
  },
  "fr/canada-driving-test-by-province.html": {
-  "date": "2026-08-13",
-  "hash": "d39765fe91d87c57a167ba1cc1e68cb8de3db81e"
+  "date": "2026-08-14",
+  "hash": "25e5556241a1c4259bb5b97fddc94322a48aa898"
  },
  "fr/canada-geography-coast-to-coast.html": {
   "date": "2026-08-08",
@@ -312,16 +328,16 @@
   "hash": "26e7592db1294fca0134f268a8d738978f832e90"
  },
  "fr/canada-population-timeline.html": {
-  "date": "2026-08-13",
-  "hash": "486ab58618ae3b865a3120606066d59c7ccdb04a"
+  "date": "2026-08-14",
+  "hash": "30541eed073566d66d0584d265e1f7a10f2cacd0"
  },
  "fr/canada-provinces-and-territories-explained.html": {
   "date": "2026-08-08",
   "hash": "988f90a3a15bd2b4b367f08da85ff09dd20aa479"
  },
  "fr/canada-quiz.html": {
-  "date": "2026-08-13",
-  "hash": "b79e8ddfe99df7a8242fe14ef6d991bd827e464b"
+  "date": "2026-08-14",
+  "hash": "d67e936cbfcaa148866ba38c5eb02f262e54eca8"
  },
  "fr/canada-usa-trade-history.html": {
   "date": "2026-08-11",
@@ -344,8 +360,12 @@
   "hash": "da05e7593e5fc34aa96d0924bde178d7449eaa68"
  },
  "fr/canadas-two-official-languages.html": {
-  "date": "2026-08-13",
-  "hash": "a1797fb34921e779518e0f5bbbf0ebc611267bbf"
+  "date": "2026-08-14",
+  "hash": "ccb38473f80568f8c7bfb46953be98e0eb623339"
+ },
+ "fr/canadian-citizenship-test-what-to-expect.html": {
+  "date": "2026-08-15",
+  "hash": "0e15ebd36c306477305495ad88247327bfc1916a"
  },
  "fr/canadian-food-poutine-maple-syrup.html": {
   "date": "2026-08-08",
@@ -429,7 +449,7 @@
  },
  "fr/driving-test.html": {
   "date": "2026-08-14",
-  "hash": "15ef0e1978f83b32ccd5995138b85993fd7be9d6"
+  "hash": "eb52dfa335770dca0a13fbba5704a116dad456b2"
  },
  "fr/earth-quiz.html": {
   "date": "2026-08-08",
@@ -438,6 +458,10 @@
  "fr/entertainment-quiz.html": {
   "date": "2026-08-08",
   "hash": "16a8e9f61a79e4e1e75d289bb8d92b823c05e957"
+ },
+ "fr/exchange-foreign-drivers-licence-canada.html": {
+  "date": "2026-08-15",
+  "hash": "b2cade6923da03b6b1e1f1cdcd31f8c49eef5193"
  },
  "fr/famous-canadians-in-history.html": {
   "date": "2026-08-08",
@@ -488,8 +512,8 @@
   "hash": "f1a979776633c172f58ea5bfc7685916bb65477d"
  },
  "fr/how-canada-was-built.html": {
-  "date": "2026-08-13",
-  "hash": "c4a35e285cc860ff609a34e1b01576ceea45da63"
+  "date": "2026-08-14",
+  "hash": "abde7977094e40a0ac1f4e8b48ce3082981428b0"
  },
  "fr/how-canadas-government-works.html": {
   "date": "2026-08-08",
@@ -784,8 +808,8 @@
   "hash": "a30fbf83f2374e80c5f41bee86ad5a975cb9ef13"
  },
  "fr/typing-test.html": {
-  "date": "2026-08-08",
-  "hash": "27dc362c773f37419ed15273d51e64281bbcbfae"
+  "date": "2026-08-15",
+  "hash": "fd41e752dbe86047cab21a2c04a6bd5a895668fc"
  },
  "fr/ufo-landing-pad-st-paul-alberta-for-kids.html": {
   "date": "2026-08-13",
@@ -834,6 +858,10 @@
  "fr/winter-in-canada.html": {
   "date": "2026-08-08",
   "hash": "0c65e74285656f90d282a1d0504c57149cf6538f"
+ },
+ "fr/winter-tires-canada-law-by-province.html": {
+  "date": "2026-08-15",
+  "hash": "17ad2a03ed27f7c32b8562278a4f9d36e1be3694"
  },
  "fr/word-groups.html": {
   "date": "2026-08-08",
@@ -1250,6 +1278,10 @@
  "winter-in-canada.html": {
   "date": "2026-08-08",
   "hash": "309b4fa048f9f8d21e9e29de44e45e35c4a2668b"
+ },
+ "winter-tires-canada-law-by-province.html": {
+  "date": "2026-08-15",
+  "hash": "bebc0cbbeb4271aaf8453741e331629c8b850ac2"
  },
  "word-groups.html": {
   "date": "2026-08-08",
