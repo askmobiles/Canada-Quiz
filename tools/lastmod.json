@@ -41,7 +41,7 @@
  },
  "all-pages.html": {
   "date": "2026-08-15",
-  "hash": "4c8bc38d7fce5fe5c7b6c4d76d4ee2e7bb0869f4"
+  "hash": "aa0b46ae232e2271c469ca419f57491f611de33a"
  },
  "animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-13",
@@ -69,11 +69,19 @@
  },
  "blog.html": {
   "date": "2026-08-15",
-  "hash": "1e07ebc4359b6f816ccf6b63c887bf59221c5a43"
+  "hash": "dbe778045a0734bd7a55eed4b0f5c634f75ac48c"
  },
  "body-quiz.html": {
   "date": "2026-08-08",
   "hash": "5db3fa2f21f4d95aa967c97940c1264488fab207"
+ },
+ "brain-trainer.html": {
+  "date": "2026-08-15",
+  "hash": "7a95ed7f0fe28e41a7a4b82b0ecc265e910a4ca4"
+ },
+ "can-canada-feed-itself.html": {
+  "date": "2026-08-15",
+  "hash": "d0eac42eb625a355e9db2f9658b06683186a108a"
  },
  "canada-driving-test-by-province.html": {
   "date": "2026-08-13",
@@ -142,6 +150,10 @@
  "canadian-money-explained.html": {
   "date": "2026-08-08",
   "hash": "e43761a592b647dfd13b2a232423a9c190b5e8c5"
+ },
+ "canadian-personal-tax-basics.html": {
+  "date": "2026-08-15",
+  "hash": "096d8e77fbf1b57debc2ea5e8189a3309f3b079e"
  },
  "canadian-slang-words.html": {
   "date": "2026-08-08",
@@ -227,6 +239,10 @@
   "date": "2026-08-08",
   "hash": "274d87cb210c5298a02097d1b1ce7b0814e74340"
  },
+ "farming-in-canada-the-real-picture.html": {
+  "date": "2026-08-15",
+  "hash": "1e0cb8ed5f9a2642d5253fb47ab99db515dc9b9b"
+ },
  "first-nations-inuit-and-metis-for-kids.html": {
   "date": "2026-08-13",
   "hash": "3d6a6472cfa6546d854c8ef4f5989c3236dfe73e"
@@ -281,7 +297,7 @@
  },
  "fr/all-pages.html": {
   "date": "2026-08-15",
-  "hash": "10549cdc99675c27d04423290ead738e09986516"
+  "hash": "c94b30b11e5f8c645665dd15e4a7a1d8b2020550"
  },
  "fr/animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-13",
@@ -309,11 +325,19 @@
  },
  "fr/blog.html": {
   "date": "2026-08-15",
-  "hash": "f0d4a9074564898bd1e0a1e22343cc5306b850dc"
+  "hash": "b26cde1ed9c380064848d1911dde09f7e6a3352a"
  },
  "fr/body-quiz.html": {
   "date": "2026-08-08",
   "hash": "5a0d5392c41da0a300d0a195191e0b22fe111608"
+ },
+ "fr/brain-trainer.html": {
+  "date": "2026-08-15",
+  "hash": "e66e54f7d2b9a04733ef76cf80c3412aa1f75220"
+ },
+ "fr/can-canada-feed-itself.html": {
+  "date": "2026-08-15",
+  "hash": "7d83e3d4c46c2fe4245cd8d827ac1b59f1240a1d"
  },
  "fr/canada-driving-test-by-province.html": {
   "date": "2026-08-14",
@@ -382,6 +406,10 @@
  "fr/canadian-money-explained.html": {
   "date": "2026-08-09",
   "hash": "a20313a5dba25b90dee63db38aa0ccaf3a7769b7"
+ },
+ "fr/canadian-personal-tax-basics.html": {
+  "date": "2026-08-15",
+  "hash": "1396cd7813b98d407474cdc761314cde50ca24e6"
  },
  "fr/canadian-slang-words.html": {
   "date": "2026-08-08",
@@ -467,6 +495,10 @@
   "date": "2026-08-08",
   "hash": "6b2362ed792722b888ee7455fc3ab22f3f6a6635"
  },
+ "fr/farming-in-canada-the-real-picture.html": {
+  "date": "2026-08-15",
+  "hash": "7fe176e651916a976692cb3de258a8c7c2ca8411"
+ },
  "fr/first-nations-inuit-and-metis-for-kids.html": {
   "date": "2026-08-13",
   "hash": "7a8207eb17acdc56ddecd81566d36694220605a9"
@@ -488,8 +520,8 @@
   "hash": "5cb6ba27f3a7d618a0894e07618c94bb91c8bd8a"
  },
  "fr/games.html": {
-  "date": "2026-08-14",
-  "hash": "e17c45f77d5b1349b4904a01df073b297df2ddff"
+  "date": "2026-08-15",
+  "hash": "6da6a03a164b43783b26ebba0efe1af9d85e5e31"
  },
  "fr/gk-quiz.html": {
   "date": "2026-08-11",
@@ -523,6 +555,10 @@
   "date": "2026-08-08",
   "hash": "4a4808a52f18973470c87dea9de04b4e7d57e2fe"
  },
+ "fr/how-to-incorporate-a-business-in-canada.html": {
+  "date": "2026-08-15",
+  "hash": "ac128303068b61b79d414a7e0f3fcef4bd176f48"
+ },
  "fr/how-to-prepare-for-the-canadian-citizenship-test.html": {
   "date": "2026-08-09",
   "hash": "96fdba0059072ed083379003560ac306c2ad8ba4"
@@ -531,9 +567,13 @@
   "date": "2026-08-08",
   "hash": "950f621ac38e0c35a9d1df0001ac0e01907cdc5d"
  },
+ "fr/incorporation-vs-sole-proprietor-canada.html": {
+  "date": "2026-08-15",
+  "hash": "d163031b4202d8bcd6c2ea3b8f3f090620fdf67d"
+ },
  "fr/index.html": {
-  "date": "2026-08-11",
-  "hash": "7706748d9573000d66fe0e63483920a3a8f8b5a7"
+  "date": "2026-08-15",
+  "hash": "55fbf7a911addd744f7f781696e264911f980e7d"
  },
  "fr/indigenous-peoples-of-canada.html": {
   "date": "2026-08-08",
@@ -899,6 +939,10 @@
   "date": "2026-08-08",
   "hash": "b8ac1084bc1f58de71931f402f7a3c118dedf8e1"
  },
+ "fr/young-canadians-and-farming.html": {
+  "date": "2026-08-15",
+  "hash": "1ac2b9af013851cd23914e97d5be2d2c99594357"
+ },
  "fun-quiz.html": {
   "date": "2026-08-08",
   "hash": "9f12238402e0171f0903ddcac7f4e6bda82f4f07"
@@ -908,8 +952,8 @@
   "hash": "b6156b041e3a9dc7650199d6bac0f74edb314a52"
  },
  "games.html": {
-  "date": "2026-08-14",
-  "hash": "d5a97a4e9f35553a734bd0c0dab4d9dbb65eb110"
+  "date": "2026-08-15",
+  "hash": "df1a054d46cf2bef8b98a5b32dff4decfe53ec9b"
  },
  "gk-quiz.html": {
   "date": "2026-08-11",
@@ -943,6 +987,10 @@
   "date": "2026-08-08",
   "hash": "f0799d0bc49963750345141b72f22da7c510f9f2"
  },
+ "how-to-incorporate-a-business-in-canada.html": {
+  "date": "2026-08-15",
+  "hash": "44239e5b6663966f789cc9b38a4256cc35fc666e"
+ },
  "how-to-prepare-for-the-canadian-citizenship-test.html": {
   "date": "2026-08-08",
   "hash": "c4cc6516ce4daf693eb5b29d64d3764a224b59f9"
@@ -951,9 +999,13 @@
   "date": "2026-08-08",
   "hash": "d6d078aa25cc51e97596af24dd0d193aadb26ee7"
  },
+ "incorporation-vs-sole-proprietor-canada.html": {
+  "date": "2026-08-15",
+  "hash": "b7591d63f74b1dcda831b3349bcf8afa444fef41"
+ },
  "index.html": {
-  "date": "2026-08-11",
-  "hash": "77281bd9037d6111f052432a2fb3e999ef50a54c"
+  "date": "2026-08-15",
+  "hash": "f5871a33d1f980142eeaf0d7e11fb58f2af0ef80"
  },
  "indigenous-peoples-of-canada.html": {
   "date": "2026-08-08",
@@ -1318,5 +1370,9 @@
  "would-you-rather.html": {
   "date": "2026-08-08",
   "hash": "3a85f997883349f452550e4350b4710575821965"
+ },
+ "young-canadians-and-farming.html": {
+  "date": "2026-08-15",
+  "hash": "bbd4dcedd7917273c09229e5e5e50db5365c0ec2"
  }
 }

@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brain Trainer — 4 Free Memory and Focus Exercises</title>
+<meta name="description" content="Four short brain exercises: memory chain, word trap, number span and switch trail. They get harder as you get better. Free, no signup, phone and tablet.">
+<link rel="stylesheet" href="css/style.css?v=a008388b">
+<style>
+  .bt-wrap{max-width:560px;margin:0 auto}
+  .bt-screen{display:none}.bt-screen.on{display:block}
+  .bt-menu{display:grid;gap:10px}
+  .bt-card{display:flex;gap:14px;align-items:center;width:100%;padding:14px 16px;
+    border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:16px;
+    font-family:inherit;text-align:left;cursor:pointer}
+  .bt-card:hover{border-color:var(--red-aa);background:#fff7f7}
+  .bt-card:active{transform:translateY(2px)}
+  .bt-card .ico{font-size:2rem;line-height:1;flex:0 0 auto}
+  .bt-card .ttl{font-weight:900;font-size:1.05rem}
+  .bt-card .sub{font-weight:600;font-size:.85rem;color:var(--muted);margin-top:2px;line-height:1.35}
+  .bt-card .pb{margin-left:auto;flex:0 0 auto;text-align:right;font-weight:900;
+    font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+  .bt-hud{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 16px}
+  .bt-chip{display:inline-block;padding:8px 14px;border-radius:999px;background:#f5f2ec;
+    border:2px solid var(--line);font-weight:800;font-size:.92rem}
+  .bt-chip b{font-variant-numeric:tabular-nums;font-weight:900}
+  .bt-msg{text-align:center;font-weight:800;margin:14px 0 2px;min-height:1.6em;font-size:1.02rem}
+  .bt-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+  .bt-stage{position:relative;margin:0 auto;width:100%;max-width:min(88vw,380px)}
+
+  /* memory chain */
+  .bt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;aspect-ratio:1/1}
+  .bt-cell{border:2px solid var(--line);border-radius:16px;background:#f5f2ec;min-width:0;min-height:0;
+    transition:background .1s ease,transform .1s ease}
+  .bt-cell.live{background:#c8102e;border-color:#c8102e;transform:scale(1.04)}
+  .bt-cell.good{background:#1c7c54;border-color:#1c7c54}
+  .bt-cell.bad{background:#8a1020;border-color:#8a1020}
+
+  /* word trap */
+  .bt-word{text-align:center;font-weight:900;font-size:clamp(2.6rem,15vw,4.4rem);
+    line-height:1.15;margin:18px 0 22px;letter-spacing:.02em;min-height:1.2em}
+  .bt-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .bt-opt{padding:16px 10px;border:2px solid var(--line);background:var(--card);color:var(--ink);
+    border-radius:14px;font-family:inherit;font-size:1.05rem;font-weight:800;cursor:pointer;
+    -webkit-tap-highlight-color:transparent}
+  .bt-opt:active{transform:translateY(2px)}
+  .bt-opt.hit{background:#e6f4ec;border-color:#1c7c54}
+  .bt-opt.miss{background:#fdecef;border-color:#c8102e}
+
+  /* number span */
+  .bt-digit{text-align:center;font-weight:900;font-size:clamp(3.4rem,22vw,6rem);line-height:1.1;
+    min-height:1.15em;font-variant-numeric:tabular-nums;margin:10px 0 16px}
+  .bt-entry{text-align:center;font-weight:900;font-size:2rem;letter-spacing:.28em;
+    min-height:1.4em;font-variant-numeric:tabular-nums;margin-bottom:12px;word-break:break-all}
+  .bt-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .bt-key{padding:16px 0;border:2px solid var(--line);background:var(--card);color:var(--ink);
+    border-radius:14px;font-family:inherit;font-size:1.4rem;font-weight:900;cursor:pointer;
+    font-variant-numeric:tabular-nums;-webkit-tap-highlight-color:transparent}
+  .bt-key:active{transform:translateY(2px)}
+  .bt-key.wide{grid-column:span 1;font-size:1rem}
+
+  /* switch trail */
+  .bt-trail{position:relative;width:100%;aspect-ratio:1/1;border:2px solid var(--line);
+    border-radius:16px;background:#faf8f4;overflow:hidden}
+  .bt-node{position:absolute;width:17%;aspect-ratio:1/1;border-radius:50%;border:2px solid var(--line);
+    background:var(--card);color:var(--ink);font-family:inherit;font-weight:900;
+    font-size:clamp(.85rem,4.2vw,1.15rem);cursor:pointer;display:flex;align-items:center;
+    justify-content:center;padding:0;-webkit-tap-highlight-color:transparent}
+  .bt-node.done{background:#1c7c54;border-color:#1c7c54;color:#fff;opacity:.55}
+  .bt-node.wrong{background:#c8102e;border-color:#c8102e;color:#fff}
+
+  .bt-res{text-align:center}
+  .bt-res .big{font-size:3rem;line-height:1.1;margin:8px 0;font-weight:900}
+  .bt-res .sub{color:var(--muted);font-weight:700}
+  .bt-bar{height:12px;border-radius:999px;background:#eee7db;overflow:hidden;margin:14px 0 6px}
+  .bt-bar span{display:block;height:100%;background:#1c7c54;width:0;transition:width .5s ease}
+  .bt-note{color:var(--muted);font-size:.88rem;font-weight:600;text-align:center;margin-top:14px;line-height:1.5}
+  @media (prefers-reduced-motion:reduce){
+    .bt-cell,.bt-card,.bt-opt,.bt-key,.bt-bar span{transition:none}
+  }
+</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#c8102e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Canada Quiz">
+<link rel="canonical" href="https://canada-quiz.com/brain-trainer.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/brain-trainer.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/brain-trainer.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/brain-trainer.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"Brain & Puzzle Games","item":"https://canada-quiz.com/games.html"},{"@type":"ListItem","position":3,"name":"Brain Trainer","item":"https://canada-quiz.com/brain-trainer.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/brain-trainer.html#webpage","url":"https://canada-quiz.com/brain-trainer.html","name":"Brain Trainer — 4 Free Memory and Focus Exercises","description":"Four short brain exercises: memory chain, word trap, number span and switch trail. They get harder as you get better. Free, no signup, phone and tablet.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="for-kids.html">For Kids</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🧠 Brain Trainer</h1>
+    <p>Four short exercises for memory, attention and mental switching. Each one gets harder as you get better, so it stays worth doing.</p>
+  </section>
+
+  <details class="howto"><summary>📖 How this works</summary><p>Pick an exercise and play one round — most take about a minute. Each exercise starts easy and moves up a level when you do well, so the difficulty follows you instead of sitting still. Your best score for each one is saved on this device only; there is no account and nothing is sent anywhere. Doing a little every day beats one long session, and the honest note at the bottom of this page explains what these exercises can and cannot do for you.</p></details>
+
+  <div class="panel" data-fs-host>
+    <div class="bt-wrap" id="btWrap" data-no-i18n>
+
+      <!-- ============ menu ============ -->
+      <div class="bt-screen on" id="btMenu">
+        <div class="bt-menu">
+          <button type="button" class="bt-card" data-go="nback">
+            <span class="ico" aria-hidden="true">🍁</span>
+            <span><span class="ttl" id="btT1">Memory Chain</span><span class="sub" id="btS1">Hold what you just saw while new things keep arriving.</span></span>
+            <span class="pb" id="btP1"></span>
+          </button>
+          <button type="button" class="bt-card" data-go="stroop">
+            <span class="ico" aria-hidden="true">🎨</span>
+            <span><span class="ttl" id="btT2">Word Trap</span><span class="sub" id="btS2">Name the colour of the ink, not the word. Harder than it sounds.</span></span>
+            <span class="pb" id="btP2"></span>
+          </button>
+          <button type="button" class="bt-card" data-go="span">
+            <span class="ico" aria-hidden="true">🔢</span>
+            <span><span class="ttl" id="btT3">Number Span</span><span class="sub" id="btS3">Repeat the digits back. Later rounds ask for them backwards.</span></span>
+            <span class="pb" id="btP3"></span>
+          </button>
+          <button type="button" class="bt-card" data-go="trail">
+            <span class="ico" aria-hidden="true">🔀</span>
+            <span><span class="ttl" id="btT4">Switch Trail</span><span class="sub" id="btS4">1, A, 2, B, 3, C — keep switching between two trains of thought.</span></span>
+            <span class="pb" id="btP4"></span>
+          </button>
+          <button type="button" class="bt-card" data-go="workout" style="border-color:#1c7c54;background:#f2faf5">
+            <span class="ico" aria-hidden="true">🏅</span>
+            <span><span class="ttl" id="btT5">Full Workout</span><span class="sub" id="btS5">All four in a row, then one score out of 100. About five minutes.</span></span>
+            <span class="pb" id="btP5"></span>
+          </button>
+        </div>
+        <p class="bt-note" id="btMenuNote">Scores are kept on this device only. No account, no sign-up.</p>
+      </div>
+
+      <!-- ============ brief ============ -->
+      <div class="bt-screen" id="btBrief">
+        <h2 style="text-align:center;margin:0 0 4px" id="btBriefTtl"></h2>
+        <p style="text-align:center;color:var(--muted);font-weight:700;margin:0 0 14px" id="btBriefLvl"></p>
+        <div class="panel" style="background:#faf8f4;padding:16px;margin:0">
+          <p style="margin:0 0 8px;font-weight:800" id="btBriefH"></p>
+          <p style="margin:0;line-height:1.55" id="btBriefP"></p>
+        </div>
+        <div class="bt-btns">
+          <button type="button" class="btn btn-green btn-lg" id="btGo">Start</button>
+          <button type="button" class="btn btn-ghost" data-back>Back</button>
+        </div>
+      </div>
+
+      <!-- ============ play ============ -->
+      <div class="bt-screen" id="btPlay">
+        <div class="bt-hud">
+          <span class="bt-chip"><span id="btL1">Level</span> <b id="btV1">1</b></span>
+          <span class="bt-chip"><span id="btL2">Score</span> <b id="btV2">0</b></span>
+          <span class="bt-chip"><span id="btL3">Left</span> <b id="btV3">—</b></span>
+        </div>
+
+        <div class="bt-stage">
+          <!-- memory chain -->
+          <div id="btNB" style="display:none">
+            <div class="bt-grid" id="btGrid" aria-hidden="true"></div>
+            <div class="bt-btns" style="margin-top:14px">
+              <button type="button" class="btn btn-blue btn-lg" id="btMatch" style="min-width:180px">Match</button>
+            </div>
+          </div>
+          <!-- word trap -->
+          <div id="btST" style="display:none">
+            <div class="bt-word" id="btWord">&nbsp;</div>
+            <div class="bt-opts" id="btOpts"></div>
+          </div>
+          <!-- number span -->
+          <div id="btSP" style="display:none">
+            <div class="bt-digit" id="btDigit">&nbsp;</div>
+            <div class="bt-entry" id="btEntry">&nbsp;</div>
+            <div class="bt-pad" id="btPad" style="display:none"></div>
+          </div>
+          <!-- switch trail -->
+          <div id="btTR" style="display:none">
+            <div class="bt-trail" id="btTrail"></div>
+          </div>
+        </div>
+
+        <p class="bt-msg" id="btMsg"></p>
+        <div class="bt-btns">
+          <button type="button" class="btn btn-ghost" data-back id="btQuit">Stop</button>
+        </div>
+      </div>
+
+      <!-- ============ result ============ -->
+      <div class="bt-screen" id="btDone">
+        <div class="bt-res">
+          <p style="margin:0;font-weight:800;color:var(--muted)" id="btDoneTtl"></p>
+          <p class="big" id="btDoneBig">—</p>
+          <p class="sub" id="btDoneSub"></p>
+          <div class="bt-bar"><span id="btDoneBar"></span></div>
+          <p class="sub" id="btDoneLvl" style="font-size:.9rem"></p>
+        </div>
+        <div class="bt-btns">
+          <button type="button" class="btn btn-green btn-lg" id="btAgain">Play again</button>
+          <button type="button" class="btn btn-ghost" data-back>Back to the list</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="panel">
+    <h2>What these exercises are actually training</h2>
+    <p><b>Memory Chain</b> is a version of the n-back task. A leaf lights up somewhere on the grid every couple of seconds and you say whether it matches the one from a few steps back. It is hard because you have to keep updating what you are holding in mind rather than just holding it still.</p>
+    <p><b>Word Trap</b> is the Stroop task, first published by John Ridley Stroop in 1935. Reading is so automatic in a fluent reader that the word fights the colour, and the small delay while you push the reading aside is the thing being measured.</p>
+    <p><b>Number Span</b> is digit span, one of the oldest measures in psychology. Forward span is straight short-term memory. Backward span asks you to hold the digits and rearrange them at the same time, which is why almost everyone scores lower on it.</p>
+    <p><b>Switch Trail</b> is based on Trail Making Test B: alternate 1, A, 2, B, 3, C. The cost of jumping between two sequences is called the switch cost, and it is the reason doing two things at once feels slower than doing them one after the other.</p>
+    <h2>An honest note</h2>
+    <p>Practising a brain game reliably makes you better at that game. Whether it makes you sharper at anything else is much less certain — the research on transfer to everyday thinking is mixed at best, and the large commercial claims made for brain training in the past have not held up well. Play these because they are a good few minutes, not because a website promised you a bigger brain. If you want something with better evidence behind it, sleep, exercise, and learning a genuinely new skill all have a stronger record than any puzzle.</p>
+    <p>These exercises are not a medical or cognitive assessment. If you are worried about memory or concentration for yourself or someone in your family, that is a conversation for a doctor, not a website.</p>
+  </section>
+
+  <section class="panel">
+    <h2>More games like this</h2>
+    <p>Want something simpler? Try <a href="maple-says.html">Maple Says</a>.</p>
+    <p>For arithmetic against the clock there is <a href="math-race.html">Math Race</a>.</p>
+    <p>The classic card-pairs game is <a href="memory.html">Memory Match</a>.</p>
+    <p>A different kind of speed is measured by the <a href="typing-test.html">Typing Speed Test</a>.</p>
+    <p>Everything else is on the <a href="games.html">family games page</a>.</p>
+  </section>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>Common questions</h2>
+  <h3>Do brain training games really make you smarter?</h3>
+  <p>Practice reliably makes you better at the exercise you practised. Whether that carries over to everyday thinking is much less certain, and the evidence for transfer is mixed. Play these because a few focused minutes are enjoyable, not because a website promised more.</p>
+  <h3>What is the n-back exercise?</h3>
+  <p>Something lights up one after another, and you say whether the current one matches the one from n steps earlier. It is demanding because you have to keep updating what you hold in mind, not simply hold it.</p>
+  <h3>Why is it so hard to name the ink colour instead of the word?</h3>
+  <p>Reading is automatic for a fluent reader, so the word is understood before you choose to look at the colour. The pause while you push the reading aside is the Stroop effect, described by John Ridley Stroop in 1935.</p>
+  <h3>Is anything saved or sent anywhere?</h3>
+  <p>Your best scores are kept in this browser on this device and nowhere else. There is no account, no sign-up and nothing to fill in. Clearing your browser data clears the scores.</p>
+</section>
+<!--/PAGEDOC-->
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <details class="footer-map">
+      <summary>All pages <span class="fm-count">(172)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <div class="fm-h">Quizzes</div>
+        <a href="quizzes.html">All Quizzes</a>
+        <a href="gk-quiz.html">General Knowledge</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Fun Canada Quiz</a>
+        <a href="province-quiz.html">Which Province Are You?</a>
+        <a href="world-quiz.html">World Quiz</a>
+        <a href="science-quiz.html">Science &amp; Space</a>
+        <a href="entertainment-quiz.html">Movies, Music &amp; Sports</a>
+        <a href="citizenship.html">Citizenship Test Practice</a>
+        <a href="ai-quiz.html">AI &amp; Technology</a>
+        <a href="body-quiz.html">Human Body &amp; Health</a>
+        <a href="money-quiz.html">Money Skills for Kids</a>
+        <a href="earth-quiz.html">Earth &amp; Environment</a>
+        <a href="which-canadian-animal-quiz.html">Which Canadian Animal?</a>
+        <a href="which-canadian-food-quiz.html">Which Canadian Food?</a>
+        <a href="which-canadian-city-quiz.html">Which Canadian City?</a>
+        <a href="which-winter-sport-quiz.html">Which Winter Sport?</a>
+        <a href="which-national-park-quiz.html">Which National Park?</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">For Kids</div>
+        <a href="for-kids.html">All Kids Stories</a>
+        <a href="winnie-the-bear-from-winnipeg-for-kids.html">Winnie the Bear</a>
+        <a href="worlds-longest-beaver-dam-for-kids.html">The Longest Beaver Dam</a>
+        <a href="ufo-landing-pad-st-paul-alberta-for-kids.html">The UFO Landing Pad</a>
+        <a href="terry-fox-marathon-of-hope-for-kids.html">Terry Fox</a>
+        <a href="how-canada-chose-its-flag-for-kids.html">How the Flag Was Chosen</a>
+        <a href="insulin-discovered-in-canada-for-kids.html">The Discovery of Insulin</a>
+        <a href="animals-on-canadian-money-for-kids.html">Animals on Our Money</a>
+        <a href="the-bluenose-ship-on-the-dime-for-kids.html">The Bluenose</a>
+        <a href="the-railway-across-canada-for-kids.html">The Railway Across Canada</a>
+        <a href="voyageurs-and-the-fur-trade-for-kids.html">The Voyageurs</a>
+        <a href="what-canada-day-really-is-for-kids.html">What Canada Day Is</a>
+        <a href="first-nations-inuit-and-metis-for-kids.html">First Nations, Inuit and Métis</a>
+        <a href="the-stanley-cup-story-for-kids.html">The Stanley Cup</a>
+        <a href="the-northern-lights-for-kids.html">The Northern Lights</a>
+        <a href="churchill-polar-bear-capital-for-kids.html">The Polar Bear Town</a>
+        <a href="maple-syrup-and-the-great-robbery-for-kids.html">Maple Syrup and the Robbery</a>
+        <a href="a-canadian-invented-basketball-for-kids.html">Who Invented Basketball</a>
+        <a href="the-dinosaurs-of-alberta-for-kids.html">The Dinosaurs of Alberta</a>
+        <a href="canadarm-canadas-robot-arm-in-space-for-kids.html">Canada's Arm in Space</a>
+        <a href="the-narwhal-and-the-frozen-north-for-kids.html">The Narwhal</a>
+        <a href="the-wild-horses-of-sable-island-for-kids.html">Sable Island Horses</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Driving Test Practice</div>
+        <a href="driving-test.html">Canada Driving Test</a>
+        <a href="canada-driving-test-by-province.html">Every Province Compared</a>
+        <a href="ontario-g1-practice-test.html">Ontario G1 Practice Test</a>
+        <a href="ontario-g1-mock-test.html">Ontario G1 Mock Test</a>
+        <a href="ontario-g1-road-signs.html">Ontario Road Signs</a>
+        <a href="ontario-g1-rules-of-the-road.html">Ontario Rules of the Road</a>
+        <a href="ontario-g1-study-guide.html">Ontario G1 Study Guide</a>
+        <a href="bc-class-7l-practice-test.html">BC Class 7L Practice Test</a>
+        <a href="bc-class-7l-mock-test.html">BC Class 7L Mock Test</a>
+        <a href="bc-road-signs.html">BC Road Signs</a>
+        <a href="bc-rules-of-the-road.html">BC Rules of the Road</a>
+        <a href="alberta-class-7-practice-test.html">Alberta Class 7 Practice Test</a>
+        <a href="alberta-class-7-mock-test.html">Alberta Class 7 Mock Test</a>
+        <a href="alberta-road-signs.html">Alberta Road Signs</a>
+        <a href="alberta-rules-of-the-road.html">Alberta Rules of the Road</a>
+        <a href="quebec-class-5-practice-test.html">Quebec Class 5 Practice Test</a>
+        <a href="quebec-class-5-mock-test.html">Quebec Class 5 Mock Test</a>
+        <a href="quebec-road-signs.html">Quebec Road Signs</a>
+        <a href="quebec-rules-of-the-road.html">Quebec Rules of the Road</a>
+        <a href="manitoba-class-5-practice-test.html">Manitoba Class 5 Practice Test</a>
+        <a href="manitoba-class-5-mock-test.html">Manitoba Class 5 Mock Test</a>
+        <a href="manitoba-road-signs.html">Manitoba Road Signs</a>
+        <a href="manitoba-rules-of-the-road.html">Manitoba Rules of the Road</a>
+        <a href="saskatchewan-class-7-practice-test.html">Saskatchewan Class 7 Practice Test</a>
+        <a href="saskatchewan-class-7-mock-test.html">Saskatchewan Class 7 Mock Test</a>
+        <a href="saskatchewan-road-signs.html">Saskatchewan Road Signs</a>
+        <a href="saskatchewan-rules-of-the-road.html">Saskatchewan Rules of the Road</a>
+        <a href="nova-scotia-class-7-practice-test.html">Nova Scotia Class 7 Practice Test</a>
+        <a href="nova-scotia-class-7-mock-test.html">Nova Scotia Class 7 Mock Test</a>
+        <a href="nova-scotia-road-signs.html">Nova Scotia Road Signs</a>
+        <a href="nova-scotia-rules-of-the-road.html">Nova Scotia Rules of the Road</a>
+        <a href="new-brunswick-class-7-practice-test.html">New Brunswick Class 7 Practice Test</a>
+        <a href="new-brunswick-class-7-mock-test.html">New Brunswick Class 7 Mock Test</a>
+        <a href="new-brunswick-road-signs.html">New Brunswick Road Signs</a>
+        <a href="new-brunswick-rules-of-the-road.html">New Brunswick Rules of the Road</a>
+        <a href="beginner-driver-education-ontario.html">Beginner Driver Education in Ontario</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Brain &amp; Puzzle Games</div>
+        <a href="game-2048.html">2048</a>
+        <a href="brain-trainer.html">Brain Trainer</a>
+        <a href="color-match.html">Color Match</a>
+        <a href="crossword.html">Crossword</a>
+        <a href="cube-twist.html">Cube Twist</a>
+        <a href="flags-game.html">Flags of the World</a>
+        <a href="lights-out.html">Lights Out</a>
+        <a href="canada-map.html">Map of Canada</a>
+        <a href="maple-says.html">Maple Says</a>
+        <a href="math-race.html">Math Race</a>
+        <a href="memory.html">Memory Match</a>
+        <a href="minesweeper.html">Minesweeper</a>
+        <a href="sliding-puzzle.html">Sliding Puzzle</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="times-tables.html">Times Tables Champion</a>
+        <a href="typing-test.html">Typing Speed Test</a>
+        <a href="word-groups.html">Word Groups</a>
+        <a href="word-guess.html">Word Guess</a>
+        <a href="word-hive.html">Word Hive</a>
+        <a href="word-illusions.html">Word Illusions</a>
+        <a href="word-master.html">Word Master</a>
+        <a href="scramble.html">Word Scramble</a>
+        <a href="word-search.html">Word Search</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Action &amp; Classic Games</div>
+        <a href="checkers.html">Checkers</a>
+        <a href="chess.html">Chess</a>
+        <a href="connect4.html">Connect 4</a>
+        <a href="inukshuk.html">Inukshuk Builder</a>
+        <a href="snake.html">Maple Snake</a>
+        <a href="reversi.html">Reversi</a>
+        <a href="tag.html">Tag</a>
+        <a href="tictactoe.html">Tic-Tac-Toe</a>
+        <a href="tile-tap.html">Tile Tap</a>
+        <a href="whack-a-beaver.html">Whack-a-Beaver</a>
+        <a href="carrom.html">Carrom</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Party Games</div>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposter</a>
+        <a href="would-you-rather.html">Would You Rather?</a>
+        <a href="trivia-showdown.html">Trivia Showdown</a>
+        <a href="hold-to-head.html">Hold to Head</a>
+        <a href="top-answers.html">Top Answers</a>
+        <a href="categories-game.html">Categories</a>
+        <a href="story-maker.html">Story Maker</a>
+        <a href="draw-it.html">Draw It</a>
+        <a href="spin-wheel.html">Spin the Wheel</a>
+        <a href="hide-and-find.html">Hide &amp; Find</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Blog</div>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 Tips to Pass the Test</a>
+        <a href="rare-canadian-history-stories.html">15 Rare Canadian History Stories</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 Fun Facts for Kids</a>
+        <a href="a-short-history-of-canada.html">A Short History of Canada</a>
+        <a href="blog.html">All Articles</a>
+        <a href="canadas-animals-and-wildlife.html">Animals and Wildlife</a>
+        <a href="canada-usa-trade-history.html">Canada and the USA: Trade History</a>
+        <a href="canadas-biggest-cities.html">Canada's Biggest Cities</a>
+        <a href="canada-geography-coast-to-coast.html">Canada's Geography</a>
+        <a href="canadas-national-parks.html">Canada's National Parks</a>
+        <a href="canada-population-timeline.html">Canada's Population Timeline</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Canadian Food &amp; Maple Syrup</a>
+        <a href="canadian-holidays-explained.html">Canadian Holidays</a>
+        <a href="canadian-inventions.html">Canadian Inventions</a>
+        <a href="canadian-money-explained.html">Canadian Money Explained</a>
+        <a href="canadian-slang-words.html">Canadian Slang</a>
+        <a href="canadian-symbols-explained.html">Canadian Symbols Explained</a>
+        <a href="famous-canadians-in-history.html">Famous Canadians in History</a>
+        <a href="newcomer-first-year-in-canada-checklist.html">First Year in Canada Checklist</a>
+        <a href="how-to-get-a-drivers-licence-in-canada.html">Getting a Driver's Licence</a>
+        <a href="hockey-in-canada.html">Hockey in Canada</a>
+        <a href="how-canada-was-built.html">How Canada Was Built</a>
+        <a href="how-canadas-government-works.html">How Canada's Government Works</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">How to Prepare for the Citizenship Test</a>
+        <a href="indigenous-peoples-of-canada.html">Indigenous Peoples of Canada</a>
+        <a href="canadas-two-official-languages.html">Our Two Official Languages</a>
+        <a href="prime-ministers-of-canada.html">Prime Ministers of Canada</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces and Territories</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Rights and Responsibilities</a>
+        <a href="the-history-of-canada-day.html">The History of Canada Day</a>
+        <a href="the-story-of-the-canadian-flag.html">The Story of the Canadian Flag</a>
+        <a href="what-is-confederation.html">What Is Confederation?</a>
+        <a href="winter-in-canada.html">Winter in Canada</a>
+        <a href="canadian-citizenship-test-what-to-expect.html">What the Citizenship Test Is Really Like</a>
+        <a href="exchange-foreign-drivers-licence-canada.html">Exchange a Foreign Driver's Licence in Canada</a>
+        <a href="winter-tires-canada-law-by-province.html">Winter Tire Law in Canada</a>
+        <a href="canadian-personal-tax-basics.html">How Personal Income Tax Works in Canada</a>
+        <a href="how-to-incorporate-a-business-in-canada.html">How to Incorporate a Business in Canada</a>
+        <a href="incorporation-vs-sole-proprietor-canada.html">Should a Small Business Incorporate?</a>
+        <a href="farming-in-canada-the-real-picture.html">Farming in Canada, in Honest Numbers</a>
+        <a href="can-canada-feed-itself.html">Could Canada Feed Every Canadian?</a>
+        <a href="young-canadians-and-farming.html">Do Young Canadians Want to Farm?</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">The Site</div>
+        <a href="about.html">About Us</a>
+        <a href="games.html">All Family Games</a>
+        <a href="all-pages.html">All Pages</a>
+        <a href="contact.html">Contact</a>
+        <a href="daily.html">Daily Challenge</a>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="sources.html">Sources and Credits</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr) { return FR ? fr : en; }
+
+  /* ---------------------------------------------------------------- storage */
+  var KEY = "cq_brain_v1";
+  function load() {
+    try { return JSON.parse(localStorage.getItem(KEY) || "{}") || {}; }
+    catch (e) { return {}; }
+  }
+  function save(d) { try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} }
+  var DB = load();
+  function best(k) { return DB[k] || null; }
+  function setBest(k, v) {
+    if (DB[k] == null || v > DB[k]) { DB[k] = v; save(DB); return true; }
+    return false;
+  }
+  function lvl(k) { return DB["lvl_" + k] || 1; }
+  function setLvl(k, v) { DB["lvl_" + k] = Math.max(1, Math.min(12, v)); save(DB); }
+
+  /* ------------------------------------------------------------------- dom */
+  function $(id) { return document.getElementById(id); }
+  var SCREENS = ["btMenu", "btBrief", "btPlay", "btDone"];
+  function show(id) {
+    SCREENS.forEach(function (s) { $(s).classList.toggle("on", s === id); });
+    if (id !== "btPlay") stopAll();
+  }
+  function setText(id, s) { var e = $(id); if (e) e.textContent = s; }
+
+  /* every timer this page starts, so leaving a game never leaves one running */
+  var timers = [];
+  function later(fn, ms) { var t = setTimeout(fn, ms); timers.push(t); return t; }
+  function every(fn, ms) { var t = setInterval(fn, ms); timers.push(t); return t; }
+  function clearTimers() {
+    timers.forEach(function (t) { clearTimeout(t); clearInterval(t); });
+    timers = [];
+  }
+
+  /* ------------------------------------------------------------- exercises */
+  var GAMES = {
+    nback: {
+      icon: "🍁",
+      name: T("Memory Chain", "Chaîne de mémoire"),
+      unit: T("hits", "bonnes réponses"),
+      brief: function (n) {
+        return {
+          h: T("Say when it repeats", "Dites quand ça se répète"),
+          p: T("A leaf lights up somewhere on the grid. Press Match when the square is the same one that lit up " +
+               n + " step" + (n > 1 ? "s" : "") + " ago. Ignore everything else.",
+               "Une feuille s'allume quelque part sur la grille. Appuyez sur Correspond lorsque la case est la même qu'il y a " +
+               n + " étape" + (n > 1 ? "s" : "") + ". Ignorez tout le reste."),
+          lvl: T("Level " + n + " — matching " + n + " step" + (n > 1 ? "s" : "") + " back",
+                 "Niveau " + n + " — correspondance à " + n + " étape" + (n > 1 ? "s" : "") + " en arrière")
+        };
+      }
+    },
+    stroop: {
+      icon: "🎨",
+      name: T("Word Trap", "Piège des mots"),
+      unit: T("points", "points"),
+      brief: function () {
+        return {
+          h: T("The ink, not the word", "L'encre, pas le mot"),
+          p: T("A colour word appears, printed in a different colour. Tap the colour it is PRINTED IN. " +
+               "Forty-five seconds. A wrong tap costs you a point.",
+               "Un mot de couleur apparaît, imprimé dans une autre couleur. Touchez la couleur DE L'ENCRE. " +
+               "Quarante-cinq secondes. Une erreur coûte un point."),
+          lvl: T("45 seconds", "45 secondes")
+        };
+      }
+    },
+    span: {
+      icon: "🔢",
+      name: T("Number Span", "Suite de chiffres"),
+      unit: T("digits", "chiffres"),
+      brief: function () {
+        return {
+          h: T("Repeat the digits", "Répétez les chiffres"),
+          p: T("Digits appear one at a time. Type them back in the same order. Every correct round adds a digit. " +
+               "From round six you have to type them BACKWARDS.",
+               "Les chiffres apparaissent un à un. Tapez-les dans le même ordre. Chaque réussite ajoute un chiffre. " +
+               "À partir de la sixième manche, tapez-les À L'ENVERS."),
+          lvl: T("Starts at 3 digits", "Commence à 3 chiffres")
+        };
+      }
+    },
+    trail: {
+      icon: "🔀",
+      name: T("Switch Trail", "Piste alternée"),
+      unit: T("seconds", "secondes"),
+      brief: function (n) {
+        return {
+          h: T("1, A, 2, B, 3, C…", "1, A, 2, B, 3, C…"),
+          p: T("Tap the numbers and letters alternately, in order, as fast as you can. " +
+               "A wrong tap adds two seconds. Lower time wins.",
+               "Touchez les chiffres et les lettres en alternance, dans l'ordre, le plus vite possible. " +
+               "Une erreur ajoute deux secondes. Le temps le plus bas gagne."),
+          lvl: T("Level " + n + " — " + (n * 2 + 6) + " targets", "Niveau " + n + " — " + (n * 2 + 6) + " cibles")
+        };
+      }
+    }
+  };
+
+  /* ==================================================== 1. MEMORY CHAIN (n-back) */
+  var nb = null;
+  function nbStart(n, trials, done) {
+    var seq = [], i, last = -1;
+    var total = trials + n;
+    for (i = 0; i < total; i++) {
+      var v;
+      if (i >= n && Math.random() < 0.3) v = seq[i - n];
+      else {
+        do { v = Math.floor(Math.random() * 9); }
+        while (i >= n && v === seq[i - n] && Math.random() < 0.8);
+      }
+      seq.push(v);
+    }
+    var g = $("btGrid");
+    g.innerHTML = "";
+    for (i = 0; i < 9; i++) {
+      var c = document.createElement("div");
+      c.className = "bt-cell";
+      g.appendChild(c);
+    }
+    var cells = g.children;
+    nb = { n: n, seq: seq, i: -1, hits: 0, miss: 0, fa: 0, chances: 0,
+           answered: false, done: done, total: total, live: true };
+    setText("btL1", T("Level", "Niveau"));
+    setText("btV1", String(n));
+    setText("btL2", T("Hits", "Bonnes"));
+    setText("btV2", "0");
+    setText("btL3", T("Left", "Restant"));
+    setText("btV3", String(total));
+    setText("btMsg", "");
+
+    function step() {
+      if (!nb || !nb.live) return;
+      /* Score the trial that just finished. Every match opportunity is counted
+         HERE and only here. Counting it a second time inside nbTap gave each
+         answered match two chances, so a flawless round reported 4 out of 8 and
+         could never reach the accuracy needed to level you up. */
+      if (nb.i >= nb.n) {
+        var wasMatch = nb.seq[nb.i] === nb.seq[nb.i - nb.n];
+        if (wasMatch) { nb.chances++; if (!nb.answered) nb.miss++; }
+      }
+      nb.i++;
+      nb.answered = false;
+      if (nb.i >= nb.total) { nbEnd(); return; }
+      setText("btV3", String(nb.total - nb.i));
+      var c = cells[nb.seq[nb.i]];
+      c.classList.add("live");
+      later(function () { c.classList.remove("live"); }, 700);
+      later(step, 2000);
+    }
+    later(step, 700);
+  }
+  function nbTap() {
+    if (!nb || !nb.live || nb.i < 0 || nb.answered) return;
+    nb.answered = true;
+    var cell = $("btGrid").children[nb.seq[nb.i]];
+    if (nb.i >= nb.n && nb.seq[nb.i] === nb.seq[nb.i - nb.n]) {
+      nb.hits++;
+      cell.classList.add("good");
+      later(function () { cell.classList.remove("good"); }, 380);
+      setText("btV2", String(nb.hits));
+      setText("btMsg", T("Yes", "Oui"));
+    } else {
+      nb.fa++;
+      cell.classList.add("bad");
+      later(function () { cell.classList.remove("bad"); }, 380);
+      setText("btMsg", T("No match there", "Pas de correspondance"));
+    }
+    later(function () { setText("btMsg", ""); }, 700);
+  }
+  function nbEnd() {
+    if (!nb) return;
+    var r = nb, n = r.n;
+    nb = null;
+    var acc = r.chances ? r.hits / r.chances : 0;
+    var pen = r.fa * 0.5;
+    var score = Math.max(0, Math.round((r.hits - pen) * 10) / 10);
+    var up = acc >= 0.8 && r.fa <= 2;
+    var down = acc < 0.4 || r.fa > 5;
+    setLvl("nback", n + (up ? 1 : down ? -1 : 0));
+    r.done({
+      key: "nback",
+      value: score,
+      big: r.hits + "/" + r.chances,
+      sub: T(r.fa + " false alarm" + (r.fa === 1 ? "" : "s"),
+             r.fa + " fausse" + (r.fa === 1 ? "" : "s") + " alerte" + (r.fa === 1 ? "" : "s")),
+      pct: Math.round(acc * 100),
+      moved: up ? 1 : down ? -1 : 0,
+      newLevel: lvl("nback"),
+      norm: Math.max(0, Math.min(1, (n - 1 + acc) / 4))
+    });
+  }
+
+  /* =========================================================== 2. WORD TRAP */
+  var COLS = [
+    { en: "RED", fr: "ROUGE", hex: "#c8102e" },
+    { en: "GREEN", fr: "VERT", hex: "#1c7c54" },
+    { en: "BLUE", fr: "BLEU", hex: "#2b5fa8" },
+    { en: "YELLOW", fr: "JAUNE", hex: "#c98a00" }
+  ];
+  var st = null;
+  function stStart(seconds, done) {
+    st = { score: 0, right: 0, wrong: 0, left: seconds, done: done, live: true, times: [], t0: 0 };
+    setText("btL1", T("Correct", "Bonnes"));
+    setText("btV1", "0");
+    setText("btL2", T("Score", "Score"));
+    setText("btV2", "0");
+    setText("btL3", T("Time", "Temps"));
+    setText("btV3", seconds + "s");
+    setText("btMsg", "");
+    var opts = $("btOpts");
+    opts.innerHTML = "";
+    COLS.forEach(function (c, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "bt-opt";
+      b.textContent = FR ? c.fr : c.en;
+      b.setAttribute("data-i", String(i));
+      opts.appendChild(b);
+    });
+    every(function () {
+      if (!st || !st.live) return;
+      st.left--;
+      setText("btV3", st.left + "s");
+      if (st.left <= 0) stEnd();
+    }, 1000);
+    stNext();
+  }
+  function stNext() {
+    if (!st || !st.live) return;
+    var w = Math.floor(Math.random() * 4), ink;
+    /* 70% conflicting — the conflict is the whole exercise */
+    if (Math.random() < 0.7) { do { ink = Math.floor(Math.random() * 4); } while (ink === w); }
+    else ink = w;
+    st.ink = ink;
+    var e = $("btWord");
+    e.textContent = FR ? COLS[w].fr : COLS[w].en;
+    e.style.color = COLS[ink].hex;
+    st.t0 = Date.now();
+  }
+  function stTap(i) {
+    if (!st || !st.live) return;
+    var b = $("btOpts").children[i];
+    if (i === st.ink) {
+      st.right++; st.score++;
+      st.times.push(Date.now() - st.t0);
+      b.classList.add("hit");
+    } else {
+      st.wrong++; st.score = Math.max(0, st.score - 1);
+      b.classList.add("miss");
+    }
+    later(function () { b.classList.remove("hit", "miss"); }, 200);
+    setText("btV1", String(st.right));
+    setText("btV2", String(st.score));
+    stNext();
+  }
+  function stEnd() {
+    if (!st) return;
+    var r = st;
+    st = null;
+    clearTimers();
+    var avg = r.times.length
+      ? Math.round(r.times.reduce(function (a, b) { return a + b; }, 0) / r.times.length)
+      : 0;
+    r.done({
+      key: "stroop",
+      value: r.score,
+      big: String(r.score),
+      sub: T(r.right + " right, " + r.wrong + " wrong" + (avg ? " · " + avg + " ms each" : ""),
+             r.right + " bonnes, " + r.wrong + " erreurs" + (avg ? " · " + avg + " ms chacune" : "")),
+      pct: r.right + r.wrong ? Math.round(100 * r.right / (r.right + r.wrong)) : 0,
+      moved: 0,
+      norm: Math.max(0, Math.min(1, r.score / 45))
+    });
+  }
+
+  /* ========================================================= 3. NUMBER SPAN */
+  var sp = null;
+  function spStart(done) {
+    sp = { len: 3, round: 1, fails: 0, seq: [], entry: "", back: false, best: 0,
+           done: done, live: true, phase: "show" };
+    setText("btL1", T("Round", "Manche"));
+    setText("btL2", T("Digits", "Chiffres"));
+    setText("btL3", T("Lives", "Vies"));
+    spRound();
+  }
+  function spRound() {
+    if (!sp || !sp.live) return;
+    sp.back = sp.round >= 6;
+    sp.seq = [];
+    var last = -1;
+    for (var i = 0; i < sp.len; i++) {
+      var d;
+      do { d = 1 + Math.floor(Math.random() * 9); } while (d === last);
+      sp.seq.push(d); last = d;
+    }
+    sp.entry = "";
+    sp.phase = "show";
+    setText("btV1", String(sp.round));
+    setText("btV2", String(sp.len));
+    setText("btV3", String(2 - sp.fails));
+    setText("btEntry", " ");
+    $("btPad").style.display = "none";
+    setText("btMsg", sp.back
+      ? T("Watch — then type them BACKWARDS", "Regardez — puis tapez À L'ENVERS")
+      : T("Watch", "Regardez"));
+    var i2 = 0;
+    function tick() {
+      if (!sp || !sp.live) return;
+      if (i2 >= sp.seq.length) {
+        setText("btDigit", " ");
+        later(spAsk, 350);
+        return;
+      }
+      setText("btDigit", String(sp.seq[i2]));
+      i2++;
+      later(function () {
+        if (!sp || !sp.live) return;
+        setText("btDigit", " ");
+        later(tick, 220);
+      }, 780);
+    }
+    later(tick, 600);
+  }
+  function spAsk() {
+    if (!sp || !sp.live) return;
+    sp.phase = "type";
+    setText("btMsg", sp.back
+      ? T("Now type them backwards", "Tapez-les à l'envers")
+      : T("Now type them", "Tapez-les maintenant"));
+    var pad = $("btPad");
+    pad.style.display = "";
+    if (pad.children.length === 0) {
+      for (var k = 1; k <= 9; k++) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "bt-key";
+        b.textContent = String(k);
+        b.setAttribute("data-d", String(k));
+        pad.appendChild(b);
+      }
+      var back = document.createElement("button");
+      back.type = "button";
+      back.className = "bt-key wide";
+      back.id = "btDel";
+      back.textContent = "⌫";
+      back.setAttribute("aria-label", "Delete");
+      var sp2 = document.createElement("span");
+      var ok = document.createElement("button");
+      ok.type = "button";
+      ok.className = "bt-key wide";
+      ok.id = "btOk";
+      ok.textContent = "OK";
+      pad.appendChild(back); pad.appendChild(sp2); pad.appendChild(ok);
+    }
+    setText("btEntry", " ");
+  }
+  function spKey(d) {
+    if (!sp || !sp.live || sp.phase !== "type") return;
+    if (sp.entry.length >= sp.seq.length) return;
+    sp.entry += String(d);
+    setText("btEntry", sp.entry || " ");
+    if (sp.entry.length === sp.seq.length) later(spCheck, 220);
+  }
+  function spDel() {
+    if (!sp || !sp.live || sp.phase !== "type") return;
+    sp.entry = sp.entry.slice(0, -1);
+    setText("btEntry", sp.entry || " ");
+  }
+  function spCheck() {
+    if (!sp || !sp.live || sp.phase !== "type") return;
+    sp.phase = "wait";
+    var want = sp.seq.slice();
+    if (sp.back) want.reverse();
+    var ok = sp.entry === want.join("");
+    if (ok) {
+      sp.best = sp.len;
+      setText("btMsg", T("Correct", "Exact"));
+      sp.round++;
+      sp.len++;
+      later(spRound, 800);
+    } else {
+      sp.fails++;
+      setText("btMsg", T("It was " + want.join(" "), "C'était " + want.join(" ")));
+      setText("btV3", String(Math.max(0, 2 - sp.fails)));
+      if (sp.fails >= 2) later(spEnd, 1600);
+      else later(spRound, 1600);
+    }
+  }
+  function spEnd() {
+    if (!sp) return;
+    var r = sp;
+    sp = null;
+    $("btPad").style.display = "none";
+    r.done({
+      key: "span",
+      value: r.best,
+      big: String(r.best),
+      sub: T("longest run remembered" + (r.round > 6 ? ", including backwards rounds" : ""),
+             "plus longue suite retenue" + (r.round > 6 ? ", manches à l'envers comprises" : "")),
+      pct: Math.min(100, Math.round(r.best / 9 * 100)),
+      moved: 0,
+      norm: Math.max(0, Math.min(1, (r.best - 2) / 7))
+    });
+  }
+
+  /* ======================================================== 4. SWITCH TRAIL */
+  var tr = null;
+  var LETTERS = "ABCDEFGHIJ".split("");
+  function trStart(level, done) {
+    var pairs = level + 3;                 /* 4 pairs at level 1 → 8 targets */
+    var order = [];
+    for (var i = 0; i < pairs; i++) { order.push(String(i + 1)); order.push(LETTERS[i]); }
+    /* scatter with a minimum separation so nothing overlaps */
+    var pts = [], tries = 0;
+    while (pts.length < order.length && tries < 4000) {
+      tries++;
+      var p = { x: 6 + Math.random() * 77, y: 6 + Math.random() * 77 };
+      var okp = true;
+      for (var j = 0; j < pts.length; j++) {
+        var dx = pts[j].x - p.x, dy = pts[j].y - p.y;
+        if (dx * dx + dy * dy < 400) { okp = false; break; }
+      }
+      if (okp) pts.push(p);
+    }
+    while (pts.length < order.length) pts.push({ x: 6 + Math.random() * 77, y: 6 + Math.random() * 77 });
+
+    var box = $("btTrail");
+    box.innerHTML = "";
+    order.forEach(function (label, k) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "bt-node";
+      b.textContent = label;
+      b.style.left = pts[k].x + "%";
+      b.style.top = pts[k].y + "%";
+      b.setAttribute("data-k", String(k));
+      box.appendChild(b);
+    });
+    tr = { order: order, at: 0, wrong: 0, t0: Date.now(), done: done, live: true, level: level };
+    setText("btL1", T("Next", "Suivant"));
+    setText("btV1", order[0]);
+    setText("btL2", T("Time", "Temps"));
+    setText("btV2", "0.0");
+    setText("btL3", T("Wrong", "Erreurs"));
+    setText("btV3", "0");
+    setText("btMsg", T("Go", "Partez"));
+    every(function () {
+      if (!tr || !tr.live) return;
+      setText("btV2", ((Date.now() - tr.t0) / 1000).toFixed(1));
+    }, 100);
+  }
+  function trTap(k) {
+    if (!tr || !tr.live) return;
+    var nodes = $("btTrail").children;
+    var b = nodes[k];
+    if (k === tr.at) {
+      b.classList.add("done");
+      b.disabled = true;
+      tr.at++;
+      if (tr.at >= tr.order.length) { trEnd(); return; }
+      setText("btV1", tr.order[tr.at]);
+      setText("btMsg", "");
+    } else {
+      tr.wrong++;
+      setText("btV3", String(tr.wrong));
+      b.classList.add("wrong");
+      later(function () { b.classList.remove("wrong"); }, 260);
+      setText("btMsg", T("Not that one — you want " + tr.order[tr.at],
+                         "Pas celui-là — cherchez " + tr.order[tr.at]));
+    }
+  }
+  function trEnd() {
+    if (!tr) return;
+    var r = tr;
+    tr = null;
+    clearTimers();
+    var raw = (Date.now() - r.t0) / 1000;
+    var total = Math.round((raw + r.wrong * 2) * 10) / 10;
+    var per = total / r.order.length;
+    var up = per < 1.4 && r.wrong <= 1;
+    var down = per > 2.8 || r.wrong > 4;
+    setLvl("trail", r.level + (up ? 1 : down ? -1 : 0));
+    r.done({
+      key: "trail",
+      value: -total,                        /* stored negative: higher is better */
+      display: total.toFixed(1) + "s",
+      big: total.toFixed(1) + "s",
+      sub: T(r.order.length + " targets · " + r.wrong + " wrong tap" + (r.wrong === 1 ? "" : "s") +
+             (r.wrong ? " (+" + (r.wrong * 2) + "s)" : ""),
+             r.order.length + " cibles · " + r.wrong + " erreur" + (r.wrong === 1 ? "" : "s") +
+             (r.wrong ? " (+" + (r.wrong * 2) + " s)" : "")),
+      pct: Math.max(0, Math.min(100, Math.round(100 - (per - 1) * 45))),
+      moved: up ? 1 : down ? -1 : 0,
+      newLevel: lvl("trail"),
+      norm: Math.max(0, Math.min(1, (2.6 - per) / 1.6))
+    });
+  }
+
+  function stopAll() {
+    clearTimers();
+    if (nb) nb.live = false;
+    if (st) st.live = false;
+    if (sp) sp.live = false;
+    if (tr) tr.live = false;
+    nb = st = sp = tr = null;
+  }
+
+  /* ------------------------------------------------------------- the shell */
+  var current = null, workout = null;
+
+  function showPane(which) {
+    ["btNB", "btST", "btSP", "btTR"].forEach(function (id) { $(id).style.display = "none"; });
+    if (which) $(which).style.display = "";
+  }
+
+  function openBrief(key) {
+    current = key;
+    var g = GAMES[key];
+    var n = key === "nback" ? lvl("nback") : key === "trail" ? lvl("trail") : 1;
+    var b = g.brief(n);
+    setText("btBriefTtl", g.icon + " " + g.name);
+    setText("btBriefLvl", b.lvl);
+    setText("btBriefH", b.h);
+    setText("btBriefP", b.p);
+    $("btGo").textContent = T("Start", "Commencer");
+    show("btBrief");
+  }
+
+  function begin(key, done) {
+    show("btPlay");
+    setText("btMsg", "");
+    if (key === "nback") { showPane("btNB"); nbStart(lvl("nback"), 20, done); }
+    else if (key === "stroop") { showPane("btST"); stStart(45, done); }
+    else if (key === "span") { showPane("btSP"); spStart(done); }
+    else if (key === "trail") { showPane("btTR"); trStart(lvl("trail"), done); }
+  }
+
+  function finish(res) {
+    clearTimers();
+    if (workout) { workoutNext(res); return; }
+    var isBest = setBest("best_" + res.key, res.value);
+    var g = GAMES[res.key];
+    setText("btDoneTtl", g.icon + " " + g.name);
+    setText("btDoneBig", res.big);
+    setText("btDoneSub", res.sub);
+    $("btDoneBar").style.width = res.pct + "%";
+    var line = [];
+    if (isBest) line.push(T("New personal best", "Nouveau record personnel"));
+    if (res.moved > 0) line.push(T("Level up — next round is harder", "Niveau supérieur — la prochaine manche sera plus difficile"));
+    else if (res.moved < 0) line.push(T("Dropped a level to keep it fair", "Un niveau plus bas pour rester juste"));
+    setText("btDoneLvl", line.join(" · "));
+    show("btDone");
+    paintMenu();
+  }
+
+  /* ----------------------------------------------------------- full workout */
+  var ORDER = ["nback", "stroop", "span", "trail"];
+  function workoutStart() {
+    workout = { i: 0, parts: [] };
+    workoutRun();
+  }
+  function workoutRun() {
+    var key = ORDER[workout.i];
+    var g = GAMES[key];
+    setText("btBriefTtl", g.icon + " " + g.name);
+    setText("btBriefLvl", T("Workout — exercise " + (workout.i + 1) + " of 4",
+                            "Entraînement — exercice " + (workout.i + 1) + " sur 4"));
+    var n = key === "nback" ? lvl("nback") : key === "trail" ? lvl("trail") : 1;
+    var b = g.brief(n);
+    setText("btBriefH", b.h);
+    setText("btBriefP", b.p);
+    $("btGo").textContent = T("Start", "Commencer");
+    current = key;
+    show("btBrief");
+  }
+  function workoutNext(res) {
+    workout.parts.push(res);
+    setBest("best_" + res.key, res.value);
+    workout.i++;
+    if (workout.i < ORDER.length) { workoutRun(); return; }
+    var score = Math.round(workout.parts.reduce(function (a, p) { return a + p.norm; }, 0) / 4 * 100);
+    var parts = workout.parts;
+    workout = null;
+    var isBest = setBest("best_workout", score);
+    setText("btDoneTtl", T("🏅 Full Workout", "🏅 Entraînement complet"));
+    setText("btDoneBig", score + "/100");
+    setText("btDoneSub", parts.map(function (p) {
+      return GAMES[p.key].icon + " " + (p.display || p.big);
+    }).join("   "));
+    $("btDoneBar").style.width = score + "%";
+    setText("btDoneLvl", isBest ? T("New personal best", "Nouveau record personnel") : "");
+    show("btDone");
+    paintMenu();
+  }
+
+  /* -------------------------------------------------------------- the menu */
+  function paintMenu() {
+    var L = T("Best", "Record"), N = T("Level", "Niveau");
+    function line(key, fmt) {
+      var v = best("best_" + key);
+      var out = v == null ? T("not played yet", "jamais joué") : L + " " + fmt(v);
+      if (key === "nback" || key === "trail") out += " · " + N + " " + lvl(key);
+      return out;
+    }
+    setText("btP1", line("nback", function (v) { return v + ""; }));
+    setText("btP2", line("stroop", function (v) { return v + ""; }));
+    setText("btP3", line("span", function (v) { return v + ""; }));
+    setText("btP4", line("trail", function (v) { return (-v).toFixed(1) + "s"; }));
+    setText("btP5", line("workout", function (v) { return v + "/100"; }));
+
+    if (FR) {
+      setText("btT1", "Chaîne de mémoire");
+      setText("btS1", "Gardez en tête ce que vous venez de voir pendant que d'autres choses arrivent.");
+      setText("btT2", "Piège des mots");
+      setText("btS2", "Nommez la couleur de l'encre, pas le mot. Plus dur qu'il n'y paraît.");
+      setText("btT3", "Suite de chiffres");
+      setText("btS3", "Répétez les chiffres. Plus tard, il faut les dire à l'envers.");
+      setText("btT4", "Piste alternée");
+      setText("btS4", "1, A, 2, B, 3, C — passez sans cesse d'une série à l'autre.");
+      setText("btT5", "Entraînement complet");
+      setText("btS5", "Les quatre à la suite, puis une note sur 100. Environ cinq minutes.");
+      setText("btMenuNote", "Les scores restent sur cet appareil. Aucun compte, aucune inscription.");
+      $("btAgain").textContent = "Rejouer";
+      $("btQuit").textContent = "Arrêter";
+      [].forEach.call(document.querySelectorAll("#btWrap [data-back]"), function (b) {
+        b.textContent = b.id === "btQuit" ? "Arrêter" : "Retour";
+      });
+      $("btMatch").textContent = "Correspond";
+    }
+  }
+
+  /* --------------------------------------------------------------- wiring */
+  $("btWrap").addEventListener("click", function (e) {
+    var t = e.target.closest ? e.target.closest("button") : null;
+    if (!t) return;
+    if (t.hasAttribute("data-go")) {
+      var k = t.getAttribute("data-go");
+      if (k === "workout") workoutStart(); else openBrief(k);
+      return;
+    }
+    if (t.hasAttribute("data-back")) { workout = null; stopAll(); show("btMenu"); paintMenu(); return; }
+    if (t.id === "btGo") { begin(current, finish); return; }
+    if (t.id === "btAgain") {
+      if (current) { openBrief(current); } else { show("btMenu"); }
+      return;
+    }
+    if (t.id === "btMatch") { nbTap(); return; }
+    if (t.hasAttribute("data-i")) { stTap(+t.getAttribute("data-i")); return; }
+    if (t.hasAttribute("data-d")) { spKey(+t.getAttribute("data-d")); return; }
+    if (t.id === "btDel") { spDel(); return; }
+    if (t.id === "btOk") { if (sp && sp.entry.length) spCheck(); return; }
+    if (t.hasAttribute("data-k")) { trTap(+t.getAttribute("data-k")); return; }
+  });
+
+  /* keyboard, because on a laptop these are much better with keys */
+  document.addEventListener("keydown", function (e) {
+    if (!$("btPlay").classList.contains("on")) return;
+    var k = e.key;
+    if (nb && (k === " " || k === "Enter")) { e.preventDefault(); nbTap(); return; }
+    if (st && /^[1-4]$/.test(k)) { e.preventDefault(); stTap(+k - 1); return; }
+    if (sp) {
+      if (/^[1-9]$/.test(k)) { e.preventDefault(); spKey(+k); return; }
+      if (k === "Backspace") { e.preventDefault(); spDel(); return; }
+      if (k === "Enter" && sp.entry.length) { e.preventDefault(); spCheck(); return; }
+    }
+  });
+
+  /* leaving the tab mid-round would otherwise score you on rounds you never saw */
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden && $("btPlay").classList.contains("on")) {
+      stopAll(); workout = null; show("btMenu"); paintMenu();
+    }
+  });
+
+  paintMenu();
+})();
+</script>
+  <script src="js/game-fullscreen.js?v=c56db4e5" defer></script>
+  <script src="js/site.js?v=07b56427"></script>
+  <script src="js/analytics.js?v=d06ceb69"></script>
+  <script src="js/ads.js?v=00e703ff" defer></script>
+  <script src="js/pwa.js?v=56adaa04" defer></script>
+  <script src="js/tv-mode.js?v=4ebd9ddf" defer></script>
+</body>
+</html>

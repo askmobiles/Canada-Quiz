@@ -13,8 +13,21 @@ What each page gets:
   * WebPage                          — every page (name, description, language)
   * Quiz with real practice problems — every page listed in tools/quiz_ld.json
 
-Blog articles already carry a hand-written Article block; we leave it alone and
-add the breadcrumb and WebPage around it.
+  * Article                          — every Blog page with no hand-written one
+
+WHY THE ARTICLE BLOCK IS GENERATED. The 33 older blog posts each carry a
+hand-written Article block. Every article built after them quietly shipped
+without one — nine of them, found by a test in August 2026 — because
+"remember to paste the block into each new builder" is a rule that works right
+up until somebody forgets. Generating it from the Blog group of site_map.json
+means a new article gets the markup by existing. Hand-written blocks are left
+exactly as they are.
+
+datePublished comes from tools/published.json, a registry that only ever gains
+entries, so the date never moves; an article that claims to be published today
+on every crawl is telling Google the opposite of what that field means.
+dateModified comes from tools/lastmod.json, which changes only when the visible
+title, description or body changes.
 
 The whole block sits between MARK_OPEN and MARK_CLOSE so a rebuild replaces it
 cleanly instead of stacking copies.
@@ -32,6 +45,21 @@ MARK_CLOSE = "<!--/LD-->"
 BLOCK_RE = re.compile(re.escape(MARK_OPEN) + r".*?" + re.escape(MARK_CLOSE) + r"\n?", re.S)
 
 _quiz = json.load(io.open(os.path.join(ROOT, "tools", "quiz_ld.json"), encoding="utf-8"))
+
+
+def _load_json(name, default):
+    try:
+        return json.load(io.open(os.path.join(ROOT, "tools", name), encoding="utf-8"))
+    except (OSError, ValueError):
+        return default
+
+
+_published = _load_json("published.json", {})
+_lastmod = _load_json("lastmod.json", {})
+
+# A page that wrote its own Article block keeps it; we must not emit a second.
+HAND_WRITTEN_ARTICLE = re.compile(
+    r'"@type"\s*:\s*"(?:Article|BlogPosting|NewsArticle)"')
 
 
 def _load_fr_dict():
@@ -172,6 +200,31 @@ def build(page, html, lang="en"):
         "publisher": org,
         "primaryImageOfPage": {"@type": "ImageObject", "url": SOCIAL},
     })
+
+    # ------------------------------------------------------------- Article
+    # Blog posts only, and only when the page did not write its own block.
+    # Check the html with any previously generated block removed, so a rebuild
+    # does not mistake our own last output for a hand-written one.
+    if (_section.get(page, ("", ""))[0] == "Blog" and page != "blog.html"
+            and not HAND_WRITTEN_ARTICLE.search(BLOCK_RE.sub("", html))):
+        pub = _published.get(page)
+        mod = (_lastmod.get(page) or {}).get("date")
+        art = {
+            "@type": "Article",
+            "headline": name.split(" | ")[0][:110],
+            "description": desc,
+            "inLanguage": lang_tag,
+            "author": {"@type": "Organization", "name": HOME_NAME[lang]},
+            "publisher": org,
+            "mainEntityOfPage": url,
+            "image": SOCIAL,
+            "isAccessibleForFree": True,
+        }
+        if pub:
+            art["datePublished"] = pub
+        if mod and mod != pub:
+            art["dateModified"] = mod
+        nodes.append(art)
 
     qs = _quiz.get(page)
     if qs:

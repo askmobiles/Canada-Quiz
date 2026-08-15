@@ -1773,6 +1773,121 @@
    ]
   ]
  },
+ "brain-trainer.html": {
+  "faq": [
+   {
+    "a": {
+     "en": "Practice reliably makes you better at the exercise you practised. Whether that carries over to everyday thinking is much less certain, and the evidence for transfer is mixed. Play these because a few focused minutes are enjoyable, not because a website promised more.",
+     "fr": "La pratique vous rend fiablement meilleur à l'exercice pratiqué. Savoir si cela se transfère à la pensée de tous les jours est beaucoup moins certain, et les preuves sont partagées. Jouez parce que quelques minutes de concentration font du bien, pas parce qu'un site web a promis davantage."
+    },
+    "q": {
+     "en": "Do brain training games really make you smarter?",
+     "fr": "Les jeux d'entraînement cérébral rendent-ils vraiment plus intelligent ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Something lights up one after another, and you say whether the current one matches the one from n steps earlier. It is demanding because you have to keep updating what you hold in mind, not simply hold it.",
+     "fr": "Des éléments s'allument l'un après l'autre et vous dites si celui-ci correspond à celui d'il y a n étapes. C'est exigeant parce qu'il faut sans cesse mettre à jour ce que l'on garde en tête, pas seulement le retenir."
+    },
+    "q": {
+     "en": "What is the n-back exercise?",
+     "fr": "Qu'est-ce que l'exercice n-back ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Reading is automatic for a fluent reader, so the word is understood before you choose to look at the colour. The pause while you push the reading aside is the Stroop effect, described by John Ridley Stroop in 1935.",
+     "fr": "La lecture est automatique chez un lecteur habile : le mot est compris avant même que vous choisissiez de regarder la couleur. La pause pendant laquelle vous écartez la lecture est l'effet Stroop, décrit par John Ridley Stroop en 1935."
+    },
+    "q": {
+     "en": "Why is it so hard to name the ink colour instead of the word?",
+     "fr": "Pourquoi est-il si difficile de nommer la couleur de l'encre plutôt que le mot ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Your best scores are kept in this browser on this device and nowhere else. There is no account, no sign-up and nothing to fill in. Clearing your browser data clears the scores.",
+     "fr": "Vos meilleurs scores restent dans ce navigateur, sur cet appareil, et nulle part ailleurs. Aucun compte, aucune inscription, rien à remplir. Effacer les données du navigateur efface les scores."
+    },
+    "q": {
+     "en": "Is anything saved or sent anywhere?",
+     "fr": "Est-ce que quelque chose est enregistré ou envoyé quelque part ?"
+    }
+   }
+  ]
+ },
+ "can-canada-feed-itself.html": {
+  "about": [
+   {
+    "en": "Canada is a clear net food exporter — $58.4 billion of farm, fishing and intermediate food exports against $33.5 billion of imports in 2025. But only about 5% of Canada's land is dependable cropland suitable for long-term annual crop production.",
+    "fr": "Le Canada est nettement un exportateur net d'aliments — 58,4 milliards de dollars d'exportations agricoles, de la pêche et alimentaires intermédiaires contre 33,5 milliards d'importations en 2025. Mais seulement 5 % environ du territoire canadien est une terre sûre convenant à la production annuelle à long terme."
+   },
+   {
+    "en": "Canada exports most of its wheat, canola, pulses and soybeans while fresh fruit, beef and poultry imports all rose in 2025. There is no federal food self-sufficiency target.",
+    "fr": "Le Canada exporte la majeure partie de son blé, de son canola, de ses légumineuses et de son soya, tandis que les importations de fruits frais, de boeuf et de volaille ont toutes augmenté en 2025. Il n'existe aucune cible fédérale d'autosuffisance alimentaire."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Yes, clearly. In 2025 Canada exported $58.4 billion of farm, fishing and intermediate food products and imported $33.5 billion — a surplus of nearly $25 billion.",
+     "fr": "Oui, nettement. En 2025, le Canada a exporté pour 58,4 milliards de dollars de produits agricoles, de la pêche et alimentaires intermédiaires et en a importé pour 33,5 milliards — un excédent de près de 25 milliards."
+    },
+    "q": {
+     "en": "Is Canada a net exporter of food?",
+     "fr": "Le Canada est-il un exportateur net d'aliments ?"
+    }
+   },
+   {
+    "a": {
+     "en": "About 7% of Canada's land area is farmland, and only about 5% of the country is dependable land suitable for long-term annual crop production. Canada is huge, but most of it cannot be planted.",
+     "fr": "Environ 7 % du territoire canadien est constitué de terres agricoles, et seulement 5 % environ du pays est une terre sûre convenant à la production annuelle à long terme. Le Canada est immense, mais l'essentiel n'est pas cultivable."
+    },
+    "q": {
+     "en": "How much of Canada can actually grow food?",
+     "fr": "Quelle part du Canada peut réellement produire des aliments ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. Agriculture and Agri-Food Canada's own briefing material says Canada ranked ninth in 2024 and has not ranked higher than seventh since 2020.",
+     "fr": "Non. Les documents d'information d'Agriculture et Agroalimentaire Canada indiquent que le Canada s'est classé neuvième en 2024 et n'a pas fait mieux que septième depuis 2020."
+    },
+    "q": {
+     "en": "Is Canada a top five agricultural exporter?",
+     "fr": "Le Canada est-il parmi les cinq premiers exportateurs agricoles ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. There is a Food Policy for Canada launched in 2019 focused on access and resilience, but no percentage self-sufficiency target exists.",
+     "fr": "Non. Il existe une Politique alimentaire pour le Canada lancée en 2019, axée sur l'accès et la résilience, mais aucune cible chiffrée d'autosuffisance n'existe."
+    },
+    "q": {
+     "en": "Does Canada have a food self-sufficiency target?",
+     "fr": "Le Canada a-t-il une cible d'autosuffisance alimentaire ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "farming-in-canada-the-real-picture.html",
+    {
+     "en": "Farming in Canada, in honest numbers",
+     "fr": "L'agriculture au Canada, en chiffres honnêtes"
+    }
+   ],
+   [
+    "young-canadians-and-farming.html",
+    {
+     "en": "Do young Canadians want to farm?",
+     "fr": "Les jeunes Canadiens veulent-ils devenir agriculteurs ?"
+    }
+   ]
+  ]
+ },
  "canada-driving-test-by-province.html": {
   "about": [
    {
@@ -2884,6 +2999,97 @@
     {
      "en": "See the full list of articles about life in Canada",
      "fr": "Consultez la liste complète des articles sur la vie au Canada"
+    }
+   ]
+  ]
+ },
+ "canadian-personal-tax-basics.html": {
+  "about": [
+   {
+    "en": "Canadian federal tax brackets are marginal, so a higher rate applies only to income above each threshold. For the 2026 tax year the lowest federal rate is 14 percent and the basic personal amount is $16,452. Provincial tax is separate and added on top.",
+    "fr": "Les tranches d'imposition fédérales canadiennes sont marginales : un taux plus élevé ne s'applique qu'au revenu dépassant chaque seuil. Pour l'année d'imposition 2026, le taux fédéral le plus bas est de 14 pour cent et le montant personnel de base est de 16 452 $. L'impôt provincial est distinct et s'y ajoute."
+   },
+   {
+    "en": "The page covers what a newcomer must report in their first year, why filing keeps benefit payments coming, RRSP and TFSA limits, the CRA's free filing options, and the CRA's own list of things it will never do — useful against scam calls.",
+    "fr": "La page traite de ce qu'un nouvel arrivant doit déclarer la première année, pourquoi produire une déclaration maintient les prestations, les plafonds REER et CELI, les options de production gratuites de l'ARC, et la liste de l'ARC des choses qu'elle ne fera jamais — utile contre les appels frauduleux."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "14 percent for the 2026 tax year, and 14.5 percent for 2025. It was cut from 15 percent effective 1 July 2025, so 2025 is a blended year. Sites still saying 15 percent are out of date.",
+     "fr": "14 pour cent pour l'année d'imposition 2026, et 14,5 pour cent pour 2025. Il est passé de 15 pour cent le 1er juillet 2025, ce qui fait de 2025 une année mixte. Les sites indiquant encore 15 pour cent ne sont pas à jour."
+    },
+    "q": {
+     "en": "What is the lowest federal tax rate in Canada?",
+     "fr": "Quel est le taux d'imposition fédéral le plus bas au Canada ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. Only the dollars above the threshold are taxed at the higher rate. Earning more never reduces your take-home pay.",
+     "fr": "Non. Seuls les dollars au-dessus du seuil sont imposés au taux supérieur. Gagner plus ne réduit jamais votre paie nette."
+    },
+    "q": {
+     "en": "Does a raise into a higher bracket cost me money?",
+     "fr": "Une augmentation qui me fait changer de tranche me coûte-t-elle de l'argent ?"
+    }
+   },
+   {
+    "a": {
+     "en": "For the 2025 tax year, self-employed people and their spouses had until 15 June 2026 to file — but any balance owing was still due 30 April 2026. The extension is for filing only.",
+     "fr": "Pour l'année d'imposition 2025, les travailleurs autonomes et leur conjoint avaient jusqu'au 15 juin 2026 pour produire — mais tout solde dû restait exigible le 30 avril 2026. Le report vise uniquement la production."
+    },
+    "q": {
+     "en": "When is the tax deadline for self-employed people?",
+     "fr": "Quelle est la date limite pour les travailleurs autonomes ?"
+    }
+   },
+   {
+    "a": {
+     "en": "You must if you owe tax, want a refund, or want to start or continue benefit payments — which covers almost everyone. You report world income only for the part of the year you were a resident.",
+     "fr": "Vous le devez si vous avez de l'impôt à payer, voulez un remboursement, ou voulez commencer ou continuer à recevoir des prestations — ce qui vise presque tout le monde. Vous déclarez le revenu mondial uniquement pour la partie de l'année où vous étiez résident."
+    },
+    "q": {
+     "en": "Do I have to file taxes in my first year in Canada?",
+     "fr": "Dois-je produire une déclaration ma première année au Canada ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. It was renamed the Canada Groceries and Essentials Benefit in July 2026. The eligibility and calculation are unchanged, and filing your return still gets you considered automatically.",
+     "fr": "Non. Il a été renommé Allocation canadienne pour l'épicerie et les produits essentiels en juillet 2026. L'admissibilité et le calcul sont inchangés, et produire votre déclaration vous fait toujours considérer automatiquement."
+    },
+    "q": {
+     "en": "Is the GST/HST credit still called that?",
+     "fr": "Le crédit pour la TPS/TVH porte-t-il encore ce nom ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Not to the CRA. It runs a free service called SimpleFile for simple situations, there are free volunteer tax clinics, and certified software includes free options.",
+     "fr": "Pas auprès de l'ARC. Elle offre un service gratuit appelé Déclarer simplement pour les situations simples, il existe des comptoirs d'impôts bénévoles gratuits, et les logiciels homologués comprennent des options gratuites."
+    },
+    "q": {
+     "en": "Does it cost money to file a tax return?",
+     "fr": "Faut-il payer pour produire une déclaration ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "how-to-incorporate-a-business-in-canada.html",
+    {
+     "en": "How to incorporate a business in Canada",
+     "fr": "Comment constituer une entreprise en société au Canada"
+    }
+   ],
+   [
+    "blog.html",
+    {
+     "en": "Read more articles about Canada",
+     "fr": "Lisez d'autres articles sur le Canada"
     }
    ]
   ]
@@ -4996,6 +5202,77 @@
    ]
   ]
  },
+ "farming-in-canada-the-real-picture.html": {
+  "about": [
+   {
+    "en": "Canada had 189,874 farms and 262,455 farm operators at the 2021 Census of Agriculture, on an average of 809 acres each. Farm cash receipts reached $102.2 billion in 2025, but operating expenses took $83.0 billion of that.",
+    "fr": "Le Canada comptait 189 874 fermes et 262 455 producteurs au Recensement de l'agriculture de 2021, sur une moyenne de 809 acres chacune. Les recettes monétaires agricoles ont atteint 102,2 milliards de dollars en 2025, mais les dépenses d'exploitation en ont absorbé 83,0 milliards."
+   },
+   {
+    "en": "Statistics Canada publishes no average farmer's income. It publishes farm family income: $216,021 total in 2023, of which only $99,233 came from farming and 54.1% came from off the farm.",
+    "fr": "Statistique Canada ne publie aucun revenu moyen d'agriculteur. Il publie le revenu des familles agricoles : 216 021 $ au total en 2023, dont seulement 99 233 $ provenaient de l'agriculture et 54,1 % de l'extérieur de la ferme."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "There is no published figure for an average farmer's income. Statistics Canada publishes farm family income, which averaged $216,021 in 2023 — but only $99,233 of that came from farming, with 54.1% coming from off-farm sources.",
+     "fr": "Aucun chiffre publié n'existe pour le revenu moyen d'un agriculteur. Statistique Canada publie le revenu des familles agricoles, en moyenne 216 021 $ en 2023 — mais seulement 99 233 $ provenaient de l'agriculture, 54,1 % venant de l'extérieur de la ferme."
+    },
+    "q": {
+     "en": "How much does a Canadian farmer earn?",
+     "fr": "Combien gagne un agriculteur canadien ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Almost half do. 47.7% of farm operators reported off-farm employment in 2020, and two thirds of those worked full-time hours elsewhere.",
+     "fr": "Près de la moitié, oui. 47,7 % des producteurs ont déclaré un emploi hors ferme en 2020, et les deux tiers d'entre eux travaillaient à temps plein ailleurs."
+    },
+    "q": {
+     "en": "Do most Canadian farmers have another job?",
+     "fr": "La plupart des agriculteurs canadiens ont-ils un autre emploi ?"
+    }
+   },
+   {
+    "a": {
+     "en": "809 acres in 2021. Statistics Canada puts the American average at 445 acres, the British at 210 and the Japanese at about 10.",
+     "fr": "809 acres en 2021. Statistique Canada situe la moyenne américaine à 445 acres, la britannique à 210 et la japonaise à environ 10."
+    },
+    "q": {
+     "en": "How big is the average Canadian farm?",
+     "fr": "Quelle est la taille de la ferme canadienne moyenne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Four business risk management programs: AgriStability for large income drops, AgriInvest for small ones, AgriInsurance for production losses from natural hazards, and AgriRecovery as a framework for one-off disaster help.",
+     "fr": "Quatre programmes de gestion des risques : Agri-stabilité pour les fortes baisses de revenu, Agri-investissement pour les petites, Agri-protection pour les pertes de production dues aux risques naturels, et Agri-relance comme cadre d'aide ponctuelle en cas de catastrophe."
+    },
+    "q": {
+     "en": "What help does the government give farmers?",
+     "fr": "Quelle aide le gouvernement donne-t-il aux agriculteurs ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "can-canada-feed-itself.html",
+    {
+     "en": "Could Canada feed every Canadian?",
+     "fr": "Le Canada pourrait-il nourrir tous les Canadiens ?"
+    }
+   ],
+   [
+    "young-canadians-and-farming.html",
+    {
+     "en": "Do young Canadians want to farm?",
+     "fr": "Les jeunes Canadiens veulent-ils devenir agriculteurs ?"
+    }
+   ]
+  ]
+ },
  "first-nations-inuit-and-metis-for-kids.html": {
   "about": [
    {
@@ -5893,6 +6170,87 @@
    ]
   ]
  },
+ "how-to-incorporate-a-business-in-canada.html": {
+  "about": [
+   {
+    "en": "Incorporating federally through Corporations Canada costs $200 online and is processed in one business day. Ontario is $300 and British Columbia about $380. Federal incorporation protects your name across Canada; you must still register in each province where you operate.",
+    "fr": "La constitution fédérale auprès de Corporations Canada coûte 200 $ en ligne et se traite en un jour ouvrable. L'Ontario coûte 300 $ et la Colombie-Britannique environ 380 $. La constitution fédérale protège votre nom partout au Canada ; vous devez tout de même vous enregistrer dans chaque province où vous exercez."
+   },
+   {
+    "en": "Two ongoing obligations catch people out: the annual return to Corporations Canada, which is not a tax return and can lead to dissolution if skipped, and the T2 corporate tax return, which is due six months after year end while the tax itself is due at two or three months.",
+    "fr": "Deux obligations continues prennent les gens au dépourvu : la déclaration annuelle à Corporations Canada, qui n'est pas une déclaration de revenus et peut mener à la dissolution si elle est omise, et la déclaration T2, due six mois après la fin de l'exercice alors que l'impôt est dû à deux ou trois mois."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Federally, $200 online through Corporations Canada, processed in one business day. Ontario charges $300 and British Columbia about $380 including name approval. Provincial registration fees may be on top.",
+     "fr": "Au fédéral, 200 $ en ligne auprès de Corporations Canada, traité en un jour ouvrable. L'Ontario demande 300 $ et la Colombie-Britannique environ 380 $ avec l'approbation du nom. Des frais d'enregistrement provinciaux peuvent s'y ajouter."
+    },
+    "q": {
+     "en": "How much does it cost to incorporate in Canada?",
+     "fr": "Combien coûte la constitution en société au Canada ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. At least 25 percent of directors must be resident Canadians, and with fewer than four directors at least one must be. Ontario and British Columbia have no residency requirement.",
+     "fr": "Oui. Au moins 25 pour cent des administrateurs doivent être des résidents canadiens, et avec moins de quatre administrateurs, au moins un doit l'être. L'Ontario et la Colombie-Britannique n'ont aucune exigence de résidence."
+    },
+    "q": {
+     "en": "Do I need a Canadian director to incorporate federally?",
+     "fr": "Faut-il un administrateur canadien pour se constituer au fédéral ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. They are separate filings to separate departments. The federal annual return costs $12 online, is due within 60 days of your anniversary date, and skipping it can get your corporation dissolved.",
+     "fr": "Non. Ce sont des déclarations distinctes auprès d'organismes distincts. La déclaration annuelle fédérale coûte 12 $ en ligne, est due dans les 60 jours suivant la date anniversaire, et l'omettre peut entraîner la dissolution de votre société."
+    },
+    "q": {
+     "en": "Is the annual return the same as a tax return?",
+     "fr": "La déclaration annuelle est-elle la même chose qu'une déclaration de revenus ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. The CRA requires a T2 return for every tax year from all corporations, including inactive ones, even when no tax is payable.",
+     "fr": "Oui. L'ARC exige une déclaration T2 pour chaque année d'imposition de toutes les sociétés, y compris inactives, même sans impôt à payer."
+    },
+    "q": {
+     "en": "Does an inactive corporation still have to file taxes?",
+     "fr": "Une société inactive doit-elle quand même produire une déclaration ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. Registration is different from incorporation. You incorporate once but register in every province and territory where you carry on business.",
+     "fr": "Oui. L'enregistrement diffère de la constitution. Vous vous constituez une fois, mais vous vous enregistrez dans chaque province et territoire où vous exercez des activités."
+    },
+    "q": {
+     "en": "Do I need to register in my province after incorporating federally?",
+     "fr": "Dois-je m'enregistrer dans ma province après une constitution fédérale ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "incorporation-vs-sole-proprietor-canada.html",
+    {
+     "en": "Should a small business incorporate?",
+     "fr": "Une petite entreprise devrait-elle se constituer en société ?"
+    }
+   ],
+   [
+    "canadian-personal-tax-basics.html",
+    {
+     "en": "How personal income tax works in Canada",
+     "fr": "Comment fonctionne l'impôt des particuliers au Canada"
+    }
+   ]
+  ]
+ },
  "imposter.html": {
   "about": [
    {
@@ -6040,6 +6398,87 @@
     {
      "en": "Find more party games for a group of friends",
      "fr": "Trouvez d'autres jeux de fête pour un groupe d'amis"
+    }
+   ]
+  ]
+ },
+ "incorporation-vs-sole-proprietor-canada.html": {
+  "about": [
+   {
+    "en": "A sole proprietor pays personal income tax on business income and assumes all the risk personally. A corporation is a separate legal person with limited liability and a 9 percent federal small business rate on the first $500,000 of active business income.",
+    "fr": "Un entrepreneur individuel paie l'impôt des particuliers sur le revenu d'entreprise et assume personnellement tous les risques. Une société est une personne morale distincte, à responsabilité limitée, avec un taux fédéral de petite entreprise de 9 pour cent sur les premiers 500 000 $ de revenu d'entreprise exploitée activement."
+   },
+   {
+    "en": "The corporate tax advantage is a deferral rather than a saving — the Department of Finance's own framing — and it is reduced by passive investment income above $50,000, by the tax on split income, by the fact losses cannot offset personal income, and by director liability for payroll and sales tax remittances.",
+    "fr": "L'avantage fiscal des sociétés est un report plutôt qu'une économie — selon la formulation du ministère des Finances — et il est réduit par le revenu de placement passif au-delà de 50 000 $, par l'impôt sur le revenu fractionné, par le fait que les pertes ne peuvent compenser le revenu personnel, et par la responsabilité des administrateurs à l'égard des retenues et des taxes de vente."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "It defers tax rather than saving it. The Department of Finance describes the benefit as a tax deferral advantage: income is taxed lightly inside the company and taxed again personally when you take it out.",
+     "fr": "Elle reporte l'impôt plutôt que de l'économiser. Le ministère des Finances décrit l'avantage comme un report d'impôt : le revenu est faiblement imposé dans la société puis imposé de nouveau personnellement au retrait."
+    },
+    "q": {
+     "en": "Does incorporating save tax?",
+     "fr": "La constitution en société permet-elle d'économiser de l'impôt ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The federal rate after the small business deduction is 9 percent on the first $500,000 of active business income for a Canadian-controlled private corporation, against a 15 percent general federal rate. Provincial corporate tax is added on top.",
+     "fr": "Le taux fédéral après la déduction accordée aux petites entreprises est de 9 pour cent sur les premiers 500 000 $ de revenu d'entreprise exploitée activement d'une société privée sous contrôle canadien, contre un taux fédéral général de 15 pour cent. L'impôt provincial des sociétés s'y ajoute."
+    },
+    "q": {
+     "en": "What is the small business tax rate in Canada?",
+     "fr": "Quel est le taux d'imposition des petites entreprises au Canada ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Not on your personal return. The CRA states that shareholders cannot claim any loss the corporation incurs. A sole proprietor claims losses personally, which matters in early loss-making years.",
+     "fr": "Pas sur votre déclaration personnelle. L'ARC indique que les actionnaires ne peuvent réclamer aucune perte subie par la société. Un entrepreneur individuel réclame les pertes personnellement, ce qui compte les premières années déficitaires."
+    },
+    "q": {
+     "en": "Can I claim business losses if I incorporate?",
+     "fr": "Puis-je réclamer les pertes d'entreprise si je me constitue en société ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. Directors remain personally liable for unremitted payroll source deductions and sales tax, plus penalties and interest, and under the federal act for up to six months of unpaid employee wages. A due diligence defence exists.",
+     "fr": "Non. Les administrateurs demeurent personnellement responsables des retenues à la source et des taxes de vente non versées, majorées des pénalités et intérêts, et en vertu de la loi fédérale, de jusqu'à six mois de salaires impayés. Une défense de diligence raisonnable existe."
+    },
+    "q": {
+     "en": "Does limited liability protect me completely?",
+     "fr": "La responsabilité limitée me protège-t-elle complètement ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. The small supplier threshold is $30,000 over four consecutive calendar quarters and works the same way for sole proprietors and corporations.",
+     "fr": "Non. Le seuil de petit fournisseur est de 30 000 $ sur quatre trimestres civils consécutifs et fonctionne de la même façon pour les entrepreneurs individuels et les sociétés."
+    },
+    "q": {
+     "en": "Does incorporating change the GST/HST registration threshold?",
+     "fr": "La constitution en société change-t-elle le seuil d'inscription à la TPS/TVH ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "how-to-incorporate-a-business-in-canada.html",
+    {
+     "en": "How to incorporate a business in Canada",
+     "fr": "Comment constituer une entreprise en société au Canada"
+    }
+   ],
+   [
+    "canadian-personal-tax-basics.html",
+    {
+     "en": "How personal income tax works in Canada",
+     "fr": "Comment fonctionne l'impôt des particuliers au Canada"
     }
    ]
   ]
@@ -14638,6 +15077,77 @@
     {
      "en": "Let the spinning wheel decide who goes first",
      "fr": "Laissez la roue tourner pour désigner qui commence"
+    }
+   ]
+  ]
+ },
+ "young-canadians-and-farming.html": {
+  "about": [
+   {
+    "en": "At the 2021 Census of Agriculture, 60.5% of Canadian farm operators were 55 or older and only 8.6% were under 35 — down from 9.1% in 2016. Just 12.0% of farms had a written succession plan.",
+    "fr": "Au Recensement de l'agriculture de 2021, 60,5 % des producteurs agricoles canadiens avaient 55 ans ou plus et seulement 8,6 % avaient moins de 35 ans — en baisse par rapport à 9,1 % en 2016. Seules 12,0 % des fermes avaient un plan de relève écrit."
+   },
+   {
+    "en": "The barrier is price. Canadian farmland was valued at $713.3 billion in 2024 against $374.0 billion in 2016, and per-acre values ranged from $2,647 in Saskatchewan to $20,782 in Ontario.",
+    "fr": "L'obstacle, c'est le prix. Les terres agricoles canadiennes étaient évaluées à 713,3 milliards de dollars en 2024 contre 374,0 milliards en 2016, et les valeurs à l'acre allaient de 2 647 $ en Saskatchewan à 20 782 $ en Ontario."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "56.0 years at the 2021 census, up from 55.0 in 2016 and 49.9 in 2001. 60.5% of operators were 55 or older.",
+     "fr": "56,0 ans au recensement de 2021, contre 55,0 en 2016 et 49,9 en 2001. 60,5 % des producteurs avaient 55 ans ou plus."
+    },
+    "q": {
+     "en": "How old is the average Canadian farmer?",
+     "fr": "Quel âge a l'agriculteur canadien moyen ?"
+    }
+   },
+   {
+    "a": {
+     "en": "8.6% of farm operators were under 35 in 2021, down from 9.1% in 2016. Statistics Canada publishes the share rather than a head count.",
+     "fr": "8,6 % des producteurs avaient moins de 35 ans en 2021, contre 9,1 % en 2016. Statistique Canada publie la proportion plutôt qu'un effectif."
+    },
+    "q": {
+     "en": "How many young farmers are there in Canada?",
+     "fr": "Combien y a-t-il de jeunes agriculteurs au Canada ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No survey asks them, so anyone claiming to know their wishes is guessing. What the data shows is cost: an average 809-acre farm at Ontario's 2024 land values is roughly $17 million before any equipment, against a maximum federal loan guarantee of $500,000.",
+     "fr": "Aucune enquête ne le leur demande ; quiconque prétend connaître leurs souhaits devine. Ce que montrent les données, c'est le coût : une ferme moyenne de 809 acres aux valeurs foncières ontariennes de 2024 représente environ 17 millions de dollars avant tout équipement, contre une garantie de prêt fédérale maximale de 500 000 $."
+    },
+    "q": {
+     "en": "Why don't more young people go into farming?",
+     "fr": "Pourquoi plus de jeunes ne se lancent-ils pas en agriculture ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The Canadian Agricultural Loans Act guarantees 95% of a lender's net loss up to $500,000 per farmer, and Farm Credit Canada offers a Young Farmer Loan of up to $2 million for producers under 40 with no loan processing fees.",
+     "fr": "La Loi canadienne sur les prêts agricoles garantit 95 % de la perte nette d'un prêteur jusqu'à 500 000 $ par agriculteur, et Financement agricole Canada offre un prêt Jeunes agriculteurs pouvant atteindre 2 millions de dollars pour les producteurs de moins de 40 ans, sans frais de traitement."
+    },
+    "q": {
+     "en": "What loans exist for young farmers?",
+     "fr": "Quels prêts existent pour les jeunes agriculteurs ?"
+    }
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "farming-in-canada-the-real-picture.html",
+    {
+     "en": "Farming in Canada, in honest numbers",
+     "fr": "L'agriculture au Canada, en chiffres honnêtes"
+    }
+   ],
+   [
+    "can-canada-feed-itself.html",
+    {
+     "en": "Could Canada feed every Canadian?",
+     "fr": "Le Canada pourrait-il nourrir tous les Canadiens ?"
     }
    ]
   ]
