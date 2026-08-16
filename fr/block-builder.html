@@ -3,13 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Block Builder — bac à sable 3D gratuit en blocs</title>
-<meta name="description" content="Creusez, bâtissez et explorez un monde de blocs en 3D aux surfaces lisses. Douze types de blocs, trois styles, sauvegarde automatique. Gratuit.">
+<title>Canada Block World — jeu de construction 3D gratuit</title>
+<meta name="description" content="Bâtissez dans un monde de blocs en 3D : creusez, empilez, explorez. Douze types de blocs, trois styles, couleurs vives, sauvegarde automatique. Gratuit.">
 <link rel="stylesheet" href="../css/style.css?v=a008388b">
 <style>
+  /* Fallback "immersive" mode for iPhone, where Safari will not put an element
+     full screen at all. Pinning the shell to the viewport gets the same result
+     without the Fullscreen API. */
+  .bb-shell.bb-immersive{position:fixed;inset:0;z-index:9999;max-width:none;border-radius:0;
+    border:0;margin:0}
+  .bb-shell.bb-immersive .bb-stage{aspect-ratio:auto;width:100vw;height:100vh;height:100dvh}
+  .bb-shell:fullscreen .bb-stage{aspect-ratio:auto;width:100vw;height:100vh}
+  .bb-shell:-webkit-full-screen .bb-stage{aspect-ratio:auto;width:100vw;height:100vh}
+  .bb-exit{position:absolute;top:10px;left:50%;transform:translateX(-50%);display:none;
+    padding:8px 16px;border-radius:999px;border:2px solid rgba(255,255,255,.5);
+    background:rgba(0,0,0,.42);color:#fff;font-weight:800;font-size:.85rem;cursor:pointer;z-index:6}
+  .bb-shell.bb-immersive .bb-exit,.bb-shell:fullscreen .bb-exit,
+  .bb-shell:-webkit-full-screen .bb-exit{display:block}
   .bb-shell{position:relative;width:100%;max-width:960px;margin:0 auto;border:2px solid var(--line);
     border-radius:16px;overflow:hidden;background:#8fc4e8;touch-action:none;user-select:none;
-    -webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+    -webkit-user-select:none;-webkit-tap-highlight-color:transparent;
+    -webkit-touch-callout:none;overscroll-behavior:contain}
+  .bb-stage{touch-action:none;-webkit-user-select:none;user-select:none}
   .bb-shell canvas{display:block;width:100%;height:100%}
   .bb-stage{position:relative;width:100%;aspect-ratio:4/3}
   @media (max-width:700px){ .bb-stage{aspect-ratio:3/4} }
@@ -36,6 +51,15 @@
   .bb-slot canvas{width:100%;height:100%;display:block}
   .bb-slot.on{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.35);transform:translateY(-3px)}
   @media (max-width:560px){ .bb-slot{width:34px;height:34px} }
+  /* Fingers, not a mouse: bigger targets and further from the screen edge, which
+     on an iPad is where the system swipe gestures live. */
+  @media (pointer:coarse){
+    .bb-slot{width:52px;height:52px}
+    .bb-b{width:70px;height:70px;font-size:1.7rem}
+    .bb-stick{left:20px;bottom:78px;width:120px;height:120px}
+    .bb-knob{width:52px;height:52px;margin:-26px 0 0 -26px}
+    .bb-btns{right:20px;bottom:78px}
+  }
 
   .bb-touch{position:absolute;inset:0;pointer-events:none}
   .bb-stick{position:absolute;left:12px;bottom:64px;width:104px;height:104px;border-radius:50%;
@@ -72,7 +96,7 @@
 <link rel="alternate" hreflang="en" href="https://canada-quiz.com/block-builder.html">
 <link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/block-builder.html">
 <link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/block-builder.html">
-<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://canada-quiz.com/fr/"},{"@type":"ListItem","position":2,"name":"Jeux de réflexion et casse-tête","item":"https://canada-quiz.com/fr/games.html"},{"@type":"ListItem","position":3,"name":"Block Builder","item":"https://canada-quiz.com/fr/block-builder.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/fr/block-builder.html#webpage","url":"https://canada-quiz.com/fr/block-builder.html","name":"Block Builder — bac à sable 3D gratuit en blocs","description":"Creusez, bâtissez et explorez un monde de blocs en 3D aux surfaces lisses. Douze types de blocs, trois styles, sauvegarde automatique. Gratuit.","inLanguage":"fr-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/fr/","name":"Canada Quiz et jeux amusants en famille"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://canada-quiz.com/fr/"},{"@type":"ListItem","position":2,"name":"Jeux de réflexion et casse-tête","item":"https://canada-quiz.com/fr/games.html"},{"@type":"ListItem","position":3,"name":"Canada Block World","item":"https://canada-quiz.com/fr/block-builder.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/fr/block-builder.html#webpage","url":"https://canada-quiz.com/fr/block-builder.html","name":"Canada Block World — jeu de construction 3D gratuit","description":"Bâtissez dans un monde de blocs en 3D : creusez, empilez, explorez. Douze types de blocs, trois styles, couleurs vives, sauvegarde automatique. Gratuit.","inLanguage":"fr-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/fr/","name":"Canada Quiz et jeux amusants en famille"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
 </head>
 <body>
 <header class="site-header">
@@ -93,8 +117,8 @@
 </header>
 <main class="container">
   <section class="hero" style="padding:26px 20px 6px">
-    <h1>🧱 Block Builder</h1>
-    <p>Creusez, bâtissez et parcourez tout un monde fait de blocs — en 3D, aux surfaces lisses et nettes, dans votre navigateur, sans rien installer.</p>
+    <h1>🍁 Canada Block World</h1>
+    <p>Creusez, bâtissez et parcourez tout un monde fait de blocs — en 3D, en couleurs vives, dans votre navigateur, sans rien installer.</p>
   </section>
 
   <details class="howto"><summary>📖 Comment jouer</summary><p>Sur un ordinateur, cliquez une fois sur le monde pour regarder autour avec la souris, puis marchez avec W A S D, sautez avec Espace et montez ou descendez avec Q et E. Le clic gauche casse le bloc visé et le clic droit en pose un. Sur téléphone ou tablette, glissez le levier de gauche pour marcher, glissez n'importe où à droite de l'écran pour regarder autour, et servez-vous des boutons ronds pour sauter, creuser et bâtir. Choisissez le bloc que vous tenez dans la rangée du bas, ou avec la molette ou les touches numérotées pendant que vous jouez. Votre monde s'enregistre tout seul sur cet appareil pendant que vous jouez : vous pouvez fermer la page et y revenir.</p></details>
@@ -117,9 +141,10 @@
           </div>
         </div>
         <div class="bb-bar" id="bbBar"></div>
+        <button type="button" class="bb-exit" id="bbExit">Quitter le plein écran</button>
         <div class="bb-veil" id="bbVeil">
           <div class="card">
-            <h2 id="bbVeilT">Block Builder</h2>
+            <h2 id="bbVeilT">Canada Block World</h2>
             <p id="bbVeilP">Cliquez pour commencer. Déplacez-vous avec W A S D, sautez avec Espace, volez avec Q et E. Clic gauche pour creuser, clic droit pour bâtir. Molette pour changer de bloc.</p>
             <p><button type="button" class="btn btn-green btn-lg" id="bbPlay">Jouer</button></p>
           </div>
@@ -130,7 +155,8 @@
       <button type="button" class="btn btn-ghost" id="bbSave">Enregistrer</button>
       <button type="button" class="btn btn-ghost" id="bbNew">Nouveau monde</button>
       <button type="button" class="btn btn-ghost" id="bbFly">Fly: off</button>
-      <button type="button" class="btn btn-ghost" id="bbStyle">Style : Lisse</button>
+      <button type="button" class="btn btn-ghost" id="bbStyle">Style : Vif</button>
+      <button type="button" class="btn btn-ghost" id="bbFull">Plein écran</button>
     </div>
     <p class="bb-note" id="bbNote">Votre monde est enregistré dans ce navigateur, sur cet appareil seulement. Aucun compte, aucune inscription, rien n'est envoyé nulle part.</p>
   </div>
@@ -178,94 +204,94 @@
       <div class="footer-map-cols">
       <div class="footer-map-col">
         <div class="fm-h">Quiz</div>
-        <a href="quizzes.html">Tous les quiz</a>
-        <a href="gk-quiz.html">Culture générale</a>
-        <a href="canada-quiz.html">Canada Quiz</a>
-        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
-        <a href="province-quiz.html">Quelle province es-tu ?</a>
-        <a href="world-quiz.html">Quiz sur le monde</a>
-        <a href="science-quiz.html">Sciences et espace</a>
-        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
-        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
         <a href="ai-quiz.html">IA &amp; technologie</a>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="earth-quiz.html">Terre &amp; environnement</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="gk-quiz.html">Culture générale</a>
         <a href="body-quiz.html">Corps humain &amp; santé</a>
         <a href="money-quiz.html">L'argent expliqué aux enfants</a>
-        <a href="earth-quiz.html">Terre &amp; environnement</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="science-quiz.html">Sciences et espace</a>
         <a href="which-canadian-animal-quiz.html">Quel animal canadien ?</a>
-        <a href="which-canadian-food-quiz.html">Quel plat canadien ?</a>
         <a href="which-canadian-city-quiz.html">Quelle ville canadienne ?</a>
-        <a href="which-winter-sport-quiz.html">Quel sport d'hiver ?</a>
+        <a href="which-canadian-food-quiz.html">Quel plat canadien ?</a>
         <a href="which-national-park-quiz.html">Quel parc national ?</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="which-winter-sport-quiz.html">Quel sport d'hiver ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Pour les enfants</div>
         <a href="for-kids.html">Toutes les histoires pour enfants</a>
-        <a href="winnie-the-bear-from-winnipeg-for-kids.html">Winnie the Bear</a>
-        <a href="worlds-longest-beaver-dam-for-kids.html">The Longest Beaver Dam</a>
-        <a href="ufo-landing-pad-st-paul-alberta-for-kids.html">The UFO Landing Pad</a>
-        <a href="terry-fox-marathon-of-hope-for-kids.html">Terry Fox</a>
-        <a href="how-canada-chose-its-flag-for-kids.html">How the Flag Was Chosen</a>
-        <a href="insulin-discovered-in-canada-for-kids.html">The Discovery of Insulin</a>
         <a href="animals-on-canadian-money-for-kids.html">Animals on Our Money</a>
-        <a href="the-bluenose-ship-on-the-dime-for-kids.html">Le Bluenose</a>
-        <a href="the-railway-across-canada-for-kids.html">The Railway Across Canada</a>
-        <a href="voyageurs-and-the-fur-trade-for-kids.html">The Voyageurs</a>
-        <a href="what-canada-day-really-is-for-kids.html">What Canada Day Is</a>
+        <a href="canadarm-canadas-robot-arm-in-space-for-kids.html">Canada's Arm in Space</a>
         <a href="first-nations-inuit-and-metis-for-kids.html">Les Premières Nations, les Inuit et les Métis</a>
-        <a href="the-stanley-cup-story-for-kids.html">La coupe Stanley</a>
+        <a href="how-canada-chose-its-flag-for-kids.html">How the Flag Was Chosen</a>
+        <a href="maple-syrup-and-the-great-robbery-for-kids.html">Maple Syrup and the Robbery</a>
+        <a href="the-wild-horses-of-sable-island-for-kids.html">Sable Island Horses</a>
+        <a href="terry-fox-marathon-of-hope-for-kids.html">Terry Fox</a>
+        <a href="the-bluenose-ship-on-the-dime-for-kids.html">Le Bluenose</a>
+        <a href="the-dinosaurs-of-alberta-for-kids.html">The Dinosaurs of Alberta</a>
+        <a href="insulin-discovered-in-canada-for-kids.html">The Discovery of Insulin</a>
+        <a href="worlds-longest-beaver-dam-for-kids.html">The Longest Beaver Dam</a>
+        <a href="the-narwhal-and-the-frozen-north-for-kids.html">The Narwhal</a>
         <a href="the-northern-lights-for-kids.html">The Northern Lights</a>
         <a href="churchill-polar-bear-capital-for-kids.html">The Polar Bear Town</a>
-        <a href="maple-syrup-and-the-great-robbery-for-kids.html">Maple Syrup and the Robbery</a>
+        <a href="the-railway-across-canada-for-kids.html">The Railway Across Canada</a>
+        <a href="the-stanley-cup-story-for-kids.html">La coupe Stanley</a>
+        <a href="ufo-landing-pad-st-paul-alberta-for-kids.html">The UFO Landing Pad</a>
+        <a href="voyageurs-and-the-fur-trade-for-kids.html">The Voyageurs</a>
+        <a href="what-canada-day-really-is-for-kids.html">What Canada Day Is</a>
         <a href="a-canadian-invented-basketball-for-kids.html">Who Invented Basketball</a>
-        <a href="the-dinosaurs-of-alberta-for-kids.html">The Dinosaurs of Alberta</a>
-        <a href="canadarm-canadas-robot-arm-in-space-for-kids.html">Canada's Arm in Space</a>
-        <a href="the-narwhal-and-the-frozen-north-for-kids.html">The Narwhal</a>
-        <a href="the-wild-horses-of-sable-island-for-kids.html">Sable Island Horses</a>
+        <a href="winnie-the-bear-from-winnipeg-for-kids.html">Winnie the Bear</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Pratique de l'examen de conduite</div>
-        <a href="driving-test.html">Examen de conduite au Canada</a>
-        <a href="canada-driving-test-by-province.html">Every Province Compared</a>
-        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
-        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
-        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
-        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
-        <a href="ontario-g1-study-guide.html">Guide d'étude G1 Ontario</a>
-        <a href="bc-class-7l-practice-test.html">Test pratique C.-B. classe 7L</a>
-        <a href="bc-class-7l-mock-test.html">Examen blanc C.-B. classe 7L</a>
-        <a href="bc-road-signs.html">Panneaux routiers de la C.-B.</a>
-        <a href="bc-rules-of-the-road.html">Code de la route de la C.-B.</a>
-        <a href="alberta-class-7-practice-test.html">Test pratique Alberta classe 7</a>
         <a href="alberta-class-7-mock-test.html">Examen blanc Alberta classe 7</a>
+        <a href="alberta-class-7-practice-test.html">Test pratique Alberta classe 7</a>
         <a href="alberta-road-signs.html">Panneaux routiers de l'Alberta</a>
         <a href="alberta-rules-of-the-road.html">Code de la route de l'Alberta</a>
-        <a href="quebec-class-5-practice-test.html">Test pratique classe 5 du Québec</a>
-        <a href="quebec-class-5-mock-test.html">Examen blanc classe 5 du Québec</a>
-        <a href="quebec-road-signs.html">Panneaux routiers du Québec</a>
-        <a href="quebec-rules-of-the-road.html">Code de la route du Québec</a>
-        <a href="manitoba-class-5-practice-test.html">Test pratique classe 5 du Manitoba</a>
+        <a href="bc-class-7l-mock-test.html">Examen blanc C.-B. classe 7L</a>
+        <a href="bc-class-7l-practice-test.html">Test pratique C.-B. classe 7L</a>
+        <a href="bc-road-signs.html">Panneaux routiers de la C.-B.</a>
+        <a href="bc-rules-of-the-road.html">Code de la route de la C.-B.</a>
+        <a href="beginner-driver-education-ontario.html">L'éducation au volant pour débutants en Ontario</a>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="canada-driving-test-by-province.html">Every Province Compared</a>
         <a href="manitoba-class-5-mock-test.html">Examen blanc classe 5 du Manitoba</a>
+        <a href="manitoba-class-5-practice-test.html">Test pratique classe 5 du Manitoba</a>
         <a href="manitoba-road-signs.html">Panneaux routiers du Manitoba</a>
         <a href="manitoba-rules-of-the-road.html">Code de la route du Manitoba</a>
-        <a href="saskatchewan-class-7-practice-test.html">Test pratique classe 7 de la Saskatchewan</a>
-        <a href="saskatchewan-class-7-mock-test.html">Examen blanc classe 7 de la Saskatchewan</a>
-        <a href="saskatchewan-road-signs.html">Panneaux routiers de la Saskatchewan</a>
-        <a href="saskatchewan-rules-of-the-road.html">Règles de la route de la Saskatchewan</a>
-        <a href="nova-scotia-class-7-practice-test.html">Test pratique classe 7 de la Nouvelle-Écosse</a>
-        <a href="nova-scotia-class-7-mock-test.html">Examen blanc classe 7 de la Nouvelle-Écosse</a>
-        <a href="nova-scotia-road-signs.html">Panneaux routiers de la Nouvelle-Écosse</a>
-        <a href="nova-scotia-rules-of-the-road.html">Code de la route de la Nouvelle-Écosse</a>
-        <a href="new-brunswick-class-7-practice-test.html">Test pratique classe 7 du Nouveau-Brunswick</a>
         <a href="new-brunswick-class-7-mock-test.html">Examen blanc classe 7 du Nouveau-Brunswick</a>
+        <a href="new-brunswick-class-7-practice-test.html">Test pratique classe 7 du Nouveau-Brunswick</a>
         <a href="new-brunswick-road-signs.html">Panneaux routiers du Nouveau-Brunswick</a>
         <a href="new-brunswick-rules-of-the-road.html">Code de la route du Nouveau-Brunswick</a>
-        <a href="beginner-driver-education-ontario.html">L'éducation au volant pour débutants en Ontario</a>
+        <a href="nova-scotia-class-7-mock-test.html">Examen blanc classe 7 de la Nouvelle-Écosse</a>
+        <a href="nova-scotia-class-7-practice-test.html">Test pratique classe 7 de la Nouvelle-Écosse</a>
+        <a href="nova-scotia-road-signs.html">Panneaux routiers de la Nouvelle-Écosse</a>
+        <a href="nova-scotia-rules-of-the-road.html">Code de la route de la Nouvelle-Écosse</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-study-guide.html">Guide d'étude G1 Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+        <a href="quebec-class-5-mock-test.html">Examen blanc classe 5 du Québec</a>
+        <a href="quebec-class-5-practice-test.html">Test pratique classe 5 du Québec</a>
+        <a href="quebec-road-signs.html">Panneaux routiers du Québec</a>
+        <a href="quebec-rules-of-the-road.html">Code de la route du Québec</a>
+        <a href="saskatchewan-class-7-mock-test.html">Examen blanc classe 7 de la Saskatchewan</a>
+        <a href="saskatchewan-class-7-practice-test.html">Test pratique classe 7 de la Saskatchewan</a>
+        <a href="saskatchewan-road-signs.html">Panneaux routiers de la Saskatchewan</a>
+        <a href="saskatchewan-rules-of-the-road.html">Règles de la route de la Saskatchewan</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Jeux de réflexion et casse-têtes</div>
         <a href="game-2048.html">2048</a>
-        <a href="block-builder.html">Block Builder</a>
         <a href="brain-trainer.html">Entraîneur cérébral</a>
+        <a href="block-builder.html">Canada Block World</a>
         <a href="color-match.html">Trouve la couleur</a>
         <a href="crossword.html">Mots croisés</a>
         <a href="cube-twist.html">Cube Twist</a>
@@ -290,6 +316,7 @@
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Jeux d'action et jeux classiques</div>
+        <a href="carrom.html">Carrom</a>
         <a href="checkers.html">Dames</a>
         <a href="chess.html">Échecs</a>
         <a href="connect4.html">Puissance 4</a>
@@ -300,21 +327,20 @@
         <a href="tictactoe.html">Tic-tac-toe</a>
         <a href="tile-tap.html">Tape-tuiles</a>
         <a href="whack-a-beaver.html">Tape-le-castor</a>
-        <a href="carrom.html">Carrom</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Jeux de groupe</div>
-        <a href="charades.html">Charades</a>
-        <a href="imposter.html">Imposteur</a>
-        <a href="would-you-rather.html">Préfères-tu ?</a>
-        <a href="trivia-showdown.html">Duel de quiz</a>
-        <a href="hold-to-head.html">Devine sur le front</a>
-        <a href="top-answers.html">Meilleures réponses</a>
         <a href="categories-game.html">Catégories</a>
-        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="charades.html">Charades</a>
         <a href="draw-it.html">Dessine-le</a>
-        <a href="spin-wheel.html">Tourne la roue</a>
         <a href="hide-and-find.html">Cache-cache</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Blogue</div>
@@ -335,31 +361,31 @@
         <a href="canadian-money-explained.html">L'argent canadien expliqué</a>
         <a href="canadian-slang-words.html">L'argot canadien</a>
         <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="can-canada-feed-itself.html">Le Canada pourrait-il nourrir tous les Canadiens ?</a>
+        <a href="young-canadians-and-farming.html">Les jeunes Canadiens veulent-ils devenir agriculteurs ?</a>
+        <a href="exchange-foreign-drivers-licence-canada.html">Échanger un permis de conduire étranger au Canada</a>
         <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="farming-in-canada-the-real-picture.html">L'agriculture au Canada, en chiffres honnêtes</a>
         <a href="newcomer-first-year-in-canada-checklist.html">Aide-mémoire pour la première année au Canada</a>
         <a href="how-to-get-a-drivers-licence-in-canada.html">Obtenir son permis de conduire</a>
         <a href="hockey-in-canada.html">Le hockey au Canada</a>
         <a href="how-canada-was-built.html">Comment le Canada s'est bâti</a>
         <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="canadian-personal-tax-basics.html">Comment fonctionne l'impôt des particuliers au Canada</a>
+        <a href="how-to-incorporate-a-business-in-canada.html">Comment constituer une entreprise en société au Canada</a>
         <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
         <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
         <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
         <a href="prime-ministers-of-canada.html">Premiers ministres du Canada</a>
         <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
         <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="incorporation-vs-sole-proprietor-canada.html">Une petite entreprise devrait-elle se constituer en société ?</a>
         <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
         <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
         <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
-        <a href="winter-in-canada.html">L'hiver au Canada</a>
         <a href="canadian-citizenship-test-what-to-expect.html">L'examen de citoyenneté, tel qu'il est vraiment</a>
-        <a href="exchange-foreign-drivers-licence-canada.html">Échanger un permis de conduire étranger au Canada</a>
+        <a href="winter-in-canada.html">L'hiver au Canada</a>
         <a href="winter-tires-canada-law-by-province.html">Winter Tire Law in Canada</a>
-        <a href="canadian-personal-tax-basics.html">Comment fonctionne l'impôt des particuliers au Canada</a>
-        <a href="how-to-incorporate-a-business-in-canada.html">Comment constituer une entreprise en société au Canada</a>
-        <a href="incorporation-vs-sole-proprietor-canada.html">Une petite entreprise devrait-elle se constituer en société ?</a>
-        <a href="farming-in-canada-the-real-picture.html">L'agriculture au Canada, en chiffres honnêtes</a>
-        <a href="can-canada-feed-itself.html">Le Canada pourrait-il nourrir tous les Canadiens ?</a>
-        <a href="young-canadians-and-farming.html">Les jeunes Canadiens veulent-ils devenir agriculteurs ?</a>
       </div>
       <div class="footer-map-col">
         <div class="fm-h">Le site</div>
@@ -448,16 +474,16 @@
            mortar: "#f5efe7" }
     },
     bright: {
-      label: ["Bright", "Vif"], sky: ["#e6f7ff", "#7fd0f2"], fog: [0.76, 0.90, 0.96],
-      bevel: 0.22, grain: 0,
-      c: { grass: "#6fdc82", grassDark: "#4bbf64", dirt: "#e0a76d", dirtDark: "#c2874f",
-           stone: "#d2dae1", stoneDark: "#b0bac2", sand: "#ffeeb0", sandDark: "#f2d98a",
-           wood: "#cf9455", woodDark: "#a97239", woodTop: "#eeb877", woodTopDark: "#cb975a",
-           leaf: "#63de7c", leafDark: "#3fbb5e", maple: "#ff7f7a", mapleDark: "#e35d5c",
-           plank: "#f7c98d", plankDark: "#d6a76b", glass: "#f2fcff", glassEdge: "#ffffff",
-           water: "#4fd0ea", waterDark: "#2eb0cd", snow: "#ffffff", snowDark: "#eaf4fb",
-           ice: "#b3f0fa", iceDark: "#8adae8", brick: "#ff9c80", brickDark: "#e07a62",
-           mortar: "#fffbf4" }
+      label: ["Bright", "Vif"], sky: ["#dff6ff", "#5ec8f5"], fog: [0.72, 0.89, 0.97],
+      bevel: 0.24, grain: 0,
+      c: { grass: "#57e06b", grassDark: "#2fbf4e", dirt: "#e8a95f", dirtDark: "#c6853f",
+           stone: "#d5dee6", stoneDark: "#adb9c4", sand: "#ffe98f", sandDark: "#f4d264",
+           wood: "#d99748", woodDark: "#ad7028", woodTop: "#f5bd6b", woodTopDark: "#d09a4c",
+           leaf: "#4ee06a", leafDark: "#28bb4c", maple: "#ff6a6a", mapleDark: "#e34246",
+           plank: "#ffcf85", plankDark: "#dda75f", glass: "#f2fdff", glassEdge: "#ffffff",
+           water: "#35d6f0", waterDark: "#12b4d6", snow: "#ffffff", snowDark: "#e6f4fd",
+           ice: "#a8f4ff", iceDark: "#78e0f2", brick: "#ff8f6b", brickDark: "#e56a49",
+           mortar: "#fffdf7" }
     },
     frosty: {
       label: ["Frosty", "Givré"], sky: ["#f4f8fb", "#cfdfe9"], fog: [0.91, 0.94, 0.96],
@@ -482,10 +508,18 @@
     var seed = 7;
     function rnd() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
 
-    /* One material = a soft vertical gradient, a whisper of grain so a large flat
-       wall does not look like dead plastic, and a bevel that lifts the top-left
-       edge and drops the bottom-right. That bevel is what makes a cube read as a
-       solid object rather than a coloured square. */
+    /* A material is a base gradient plus DELIBERATE surface detail — soft blades
+       on grass, rounded pebbles in dirt, facets in stone, ripples in sand, grain
+       in wood. Not random speckle: random speckle at this scale reads as smudge,
+       which is what the first attempt looked like. Everything is drawn at low
+       contrast so a whole wall of one material still reads as one clean surface. */
+    function shade(hex, amt) {
+      var n = parseInt(hex.slice(1), 16);
+      var r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+      function f(v) { return Math.max(0, Math.min(255, Math.round(v + 255 * amt))); }
+      return "rgb(" + f(r) + "," + f(g) + "," + f(b) + ")";
+    }
+
     function mat(i, top, bottom, opts) {
       opts = opts || {};
       var ox = (i % ATLAS_N) * TS, oy = ((i / ATLAS_N) | 0) * TS;
@@ -495,18 +529,6 @@
       var g = x.createLinearGradient(ox, oy, ox + TS * 0.2, oy + TS);
       g.addColorStop(0, top); g.addColorStop(1, bottom);
       x.fillStyle = g; x.fillRect(ox, oy, TS, TS);
-
-      if (TH.grain > 0 && !opts.flat) {
-        for (var n = 0; n < 260; n++) {
-          var r = 6 + rnd() * 26;
-          x.globalAlpha = TH.grain * (0.4 + rnd() * 0.6);
-          x.fillStyle = rnd() > 0.5 ? "#ffffff" : "#000000";
-          x.beginPath();
-          x.arc(ox + rnd() * TS, oy + rnd() * TS, r, 0, 6.2832);
-          x.fill();
-        }
-        x.globalAlpha = 1;
-      }
 
       if (opts.paint) opts.paint(x, ox, oy, C);
 
@@ -525,23 +547,101 @@
       x.restore();
     }
 
-    mat(0, C.grass, C.grassDark);                                        /* grass top */
-    mat(1, C.dirt, C.dirtDark, { paint: function (g, ox, oy, C) {        /* grass side */
-      var band = TS * 0.30;
-      var gr = g.createLinearGradient(ox, oy, ox, oy + band * 1.25);
-      gr.addColorStop(0, C.grass); gr.addColorStop(0.78, C.grassDark);
-      gr.addColorStop(1, "rgba(0,0,0,0)");
-      g.fillStyle = gr; g.fillRect(ox, oy, TS, band * 1.25);
-    } });
-    mat(2, C.dirt, C.dirtDark);                                          /* dirt */
-    mat(3, C.stone, C.stoneDark);                                        /* stone */
-    mat(4, C.sand, C.sandDark);                                          /* sand */
-    mat(5, C.wood, C.woodDark, { paint: function (g, ox, oy, C) {        /* wood side */
-      g.globalAlpha = 0.18; g.fillStyle = C.woodDark;
-      for (var i = 0; i < 5; i++) {
-        var w = TS * (0.02 + (i % 3) * 0.012);
-        g.fillRect(ox + TS * (0.12 + i * 0.19), oy, w, TS);
+    /* ---- reusable detail passes, all low contrast ---- */
+    function blades(g, ox, oy, col, n, len) {
+      g.strokeStyle = col; g.lineCap = "round";
+      for (var k = 0; k < n; k++) {
+        var px = ox + rnd() * TS, py = oy + rnd() * TS;
+        var l = len * (0.6 + rnd() * 0.8), lean = (rnd() - 0.5) * l * 0.5;
+        g.lineWidth = TS * 0.016;
+        g.beginPath(); g.moveTo(px, py); g.lineTo(px + lean, py - l); g.stroke();
       }
+    }
+    function pebbles(g, ox, oy, light, dark, n) {
+      for (var k = 0; k < n; k++) {
+        var px = ox + rnd() * TS, py = oy + rnd() * TS, r = TS * (0.03 + rnd() * 0.055);
+        g.fillStyle = rnd() > 0.5 ? light : dark;
+        g.beginPath();
+        g.ellipse(px, py, r, r * (0.62 + rnd() * 0.3), rnd() * 3.14, 0, 6.2832);
+        g.fill();
+      }
+    }
+    function facets(g, ox, oy, light, dark, n) {
+      for (var k = 0; k < n; k++) {
+        var px = ox + rnd() * TS, py = oy + rnd() * TS, r = TS * (0.10 + rnd() * 0.16);
+        g.fillStyle = rnd() > 0.5 ? light : dark;
+        g.beginPath();
+        var sides = 5 + ((rnd() * 2) | 0), a0 = rnd() * 6.28;
+        for (var s = 0; s < sides; s++) {
+          var an = a0 + s / sides * 6.2832, rr = r * (0.72 + rnd() * 0.5);
+          var vx = px + Math.cos(an) * rr, vy = py + Math.sin(an) * rr;
+          if (s === 0) g.moveTo(vx, vy); else g.lineTo(vx, vy);
+        }
+        g.closePath(); g.fill();
+      }
+    }
+    function ripples(g, ox, oy, col, rows, amp) {
+      g.strokeStyle = col; g.lineWidth = TS * 0.014;
+      for (var r = 0; r < rows; r++) {
+        var y0 = oy + (r + 0.5) * (TS / rows) + (rnd() - 0.5) * TS * 0.03;
+        g.beginPath(); g.moveTo(ox, y0);
+        for (var sx = 0; sx <= TS; sx += TS / 8) {
+          g.lineTo(ox + sx, y0 + Math.sin(sx / TS * 6.28 + r) * amp);
+        }
+        g.stroke();
+      }
+    }
+    function grainLines(g, ox, oy, col, n, vertical) {
+      g.strokeStyle = col; g.lineWidth = TS * 0.012;
+      for (var k = 0; k < n; k++) {
+        var t = (k + 0.5) / n * TS + (rnd() - 0.5) * TS * 0.04;
+        g.beginPath();
+        if (vertical) {
+          g.moveTo(ox + t, oy);
+          for (var yy = 0; yy <= TS; yy += TS / 6) g.lineTo(ox + t + Math.sin(yy / TS * 4 + k) * TS * 0.012, oy + yy);
+        } else {
+          g.moveTo(ox, oy + t);
+          for (var xx = 0; xx <= TS; xx += TS / 6) g.lineTo(ox + xx, oy + t + Math.sin(xx / TS * 4 + k) * TS * 0.012);
+        }
+        g.stroke();
+      }
+    }
+
+    mat(0, C.grass, C.grassDark, { paint: function (g, ox, oy, C) {      /* grass top */
+      g.globalAlpha = 0.5; blades(g, ox, oy, shade(C.grass, 0.06), 90, TS * 0.10);
+      g.globalAlpha = 0.35; blades(g, ox, oy, shade(C.grassDark, -0.05), 60, TS * 0.08);
+      g.globalAlpha = 1;
+    } });
+    mat(1, C.dirt, C.dirtDark, { paint: function (g, ox, oy, C) {        /* grass side */
+      g.globalAlpha = 0.55; pebbles(g, ox, oy, shade(C.dirt, 0.05), shade(C.dirtDark, -0.04), 26);
+      g.globalAlpha = 1;
+      /* an irregular fringe where the grass hangs over the soil, not a ruled line */
+      var band = TS * 0.26;
+      g.fillStyle = C.grass;
+      g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + TS, oy); g.lineTo(ox + TS, oy + band);
+      for (var sx = TS; sx >= 0; sx -= TS / 7) {
+        g.lineTo(ox + sx, oy + band + Math.sin(sx / TS * 9) * TS * 0.05 + rnd() * TS * 0.03);
+      }
+      g.closePath(); g.fill();
+      g.globalAlpha = 0.45; blades(g, ox, oy + band * 0.55, shade(C.grass, 0.07), 26, TS * 0.07);
+      g.globalAlpha = 1;
+    } });
+    mat(2, C.dirt, C.dirtDark, { paint: function (g, ox, oy, C) {        /* dirt */
+      g.globalAlpha = 0.5; pebbles(g, ox, oy, shade(C.dirt, 0.055), shade(C.dirtDark, -0.045), 40);
+      g.globalAlpha = 1;
+    } });
+    mat(3, C.stone, C.stoneDark, { paint: function (g, ox, oy, C) {      /* stone */
+      g.globalAlpha = 0.30; facets(g, ox, oy, shade(C.stone, 0.05), shade(C.stoneDark, -0.05), 16);
+      g.globalAlpha = 1;
+    } });
+    mat(4, C.sand, C.sandDark, { paint: function (g, ox, oy, C) {        /* sand */
+      g.globalAlpha = 0.30; ripples(g, ox, oy, shade(C.sandDark, -0.03), 7, TS * 0.012);
+      g.globalAlpha = 0.22; pebbles(g, ox, oy, shade(C.sand, 0.05), shade(C.sandDark, -0.03), 18);
+      g.globalAlpha = 1;
+    } });
+    mat(5, C.wood, C.woodDark, { paint: function (g, ox, oy, C) {        /* wood side */
+      g.globalAlpha = 0.22; grainLines(g, ox, oy, shade(C.woodDark, -0.05), 7, true);
+      g.globalAlpha = 0.12; grainLines(g, ox, oy, shade(C.wood, 0.06), 5, true);
       g.globalAlpha = 1;
     } });
     mat(6, C.woodTop, C.woodTopDark, { paint: function (g, ox, oy, C) {  /* wood top */
@@ -552,12 +652,32 @@
       }
       g.globalAlpha = 1;
     } });
-    mat(7, C.leaf, C.leafDark);                                          /* leaves */
-    mat(8, C.maple, C.mapleDark);                                        /* maple leaves */
+    mat(7, C.leaf, C.leafDark, { paint: function (g, ox, oy, C) {        /* leaves */
+      g.globalAlpha = 0.42;
+      for (var k = 0; k < 26; k++) {
+        var px = ox + rnd() * TS, py = oy + rnd() * TS, r = TS * (0.06 + rnd() * 0.09);
+        g.fillStyle = rnd() > 0.45 ? shade(C.leaf, 0.06) : shade(C.leafDark, -0.05);
+        g.beginPath(); g.ellipse(px, py, r, r * 0.7, rnd() * 3.14, 0, 6.2832); g.fill();
+      }
+      g.globalAlpha = 1;
+    } });
+    mat(8, C.maple, C.mapleDark, { paint: function (g, ox, oy, C) {      /* maple leaves */
+      g.globalAlpha = 0.42;
+      for (var k = 0; k < 26; k++) {
+        var px = ox + rnd() * TS, py = oy + rnd() * TS, r = TS * (0.06 + rnd() * 0.09);
+        g.fillStyle = rnd() > 0.45 ? shade(C.maple, 0.07) : shade(C.mapleDark, -0.05);
+        g.beginPath(); g.ellipse(px, py, r, r * 0.7, rnd() * 3.14, 0, 6.2832); g.fill();
+      }
+      g.globalAlpha = 1;
+    } });
     mat(9, C.plank, C.plankDark, { paint: function (g, ox, oy, C) {      /* planks */
-      g.globalAlpha = 0.30; g.fillStyle = C.plankDark;
-      g.fillRect(ox, oy + TS * 0.33, TS, TS * 0.015);
-      g.fillRect(ox, oy + TS * 0.66, TS, TS * 0.015);
+      g.globalAlpha = 0.16; grainLines(g, ox, oy, shade(C.plankDark, -0.04), 6, false);
+      g.globalAlpha = 0.45; g.fillStyle = shade(C.plankDark, -0.08);
+      g.fillRect(ox, oy + TS * 0.333, TS, TS * 0.014);
+      g.fillRect(ox, oy + TS * 0.666, TS, TS * 0.014);
+      g.globalAlpha = 0.30; g.fillStyle = shade(C.plank, 0.09);
+      g.fillRect(ox, oy + TS * 0.347, TS, TS * 0.008);
+      g.fillRect(ox, oy + TS * 0.680, TS, TS * 0.008);
       g.globalAlpha = 1;
     } });
     mat(10, C.glass, C.glass, { flat: true, paint: function (g, ox, oy, C) {  /* glass */
@@ -577,9 +697,27 @@
       g.fillStyle = sh; g.fillRect(ox, oy, TS, TS);
       g.globalAlpha = 1;
     } });
-    mat(11, C.water, C.waterDark);                                       /* water */
-    mat(12, C.snow, C.snowDark);                                         /* snow */
-    mat(13, C.ice, C.iceDark);                                           /* ice */
+    mat(11, C.water, C.waterDark, { paint: function (g, ox, oy, C) {     /* water */
+      g.globalAlpha = 0.35; ripples(g, ox, oy, shade(C.water, 0.10), 5, TS * 0.022);
+      g.globalAlpha = 1;
+    } });
+    mat(12, C.snow, C.snowDark, { paint: function (g, ox, oy, C) {       /* snow */
+      g.globalAlpha = 0.55; pebbles(g, ox, oy, "#ffffff", shade(C.snowDark, -0.02), 24);
+      g.globalAlpha = 1;
+    } });
+    mat(13, C.ice, C.iceDark, { paint: function (g, ox, oy, C) {         /* ice */
+      g.globalAlpha = 0.32; g.strokeStyle = "#ffffff"; g.lineWidth = TS * 0.012;
+      for (var k = 0; k < 7; k++) {
+        var px = ox + rnd() * TS, py = oy + rnd() * TS;
+        g.beginPath(); g.moveTo(px, py);
+        for (var s = 0; s < 3; s++) {
+          px += (rnd() - 0.5) * TS * 0.35; py += (rnd() - 0.5) * TS * 0.35;
+          g.lineTo(px, py);
+        }
+        g.stroke();
+      }
+      g.globalAlpha = 1;
+    } });
     mat(14, C.brick, C.brickDark, { paint: function (g, ox, oy, C) {     /* brick */
       g.globalAlpha = 0.85; g.fillStyle = C.mortar;
       var m = TS * 0.035, row = TS / 3;
@@ -603,7 +741,10 @@
     if (saved && THEMES[saved]) return saved;
     if (/[?&]kids=1/.test(location.search)) return "bright";
     if (/for-kids/.test(document.referrer || "")) return "bright";
-    return "smooth";
+    /* Bright is the default for everybody, not only the kids link. This is a
+       family site and the bolder palette is what catches a child's eye; anyone
+       who prefers the muted one is one button away and it is remembered. */
+    return "bright";
   }
   var theme = firstTheme();
   var atlasCanvas = makeAtlas(theme);
@@ -1073,8 +1214,8 @@
     for (var i = 0; i < e.changedTouches.length; i++) {
       var t = e.changedTouches[i];
       if (t.identifier !== look.id) continue;
-      P.yaw += (t.clientX - look.x) * 0.006;
-      P.pitch -= (t.clientY - look.y) * 0.006;
+      P.yaw += (t.clientX - look.x) * 0.0075;
+      P.pitch -= (t.clientY - look.y) * 0.0075;
       P.pitch = Math.max(-1.55, Math.min(1.55, P.pitch));
       look.x = t.clientX; look.y = t.clientY;
       e.preventDefault();
@@ -1144,12 +1285,17 @@
   function start() {
     veil.classList.add("off");
     running = true;
+    /* iPadOS will happily scroll the PAGE while you are dragging to look around,
+       which makes the game feel broken. Lock the page while a round is running
+       and give it back the moment you stop. */
+    document.body.style.overscrollBehavior = "none";
     if (!isTouch() && cv.requestPointerLock) cv.requestPointerLock();
     last = 0;
     requestAnimationFrame(frame);
   }
   function pause() {
     running = false;
+    document.body.style.overscrollBehavior = "";
     veil.classList.remove("off");
     document.getElementById("bbVeilT").textContent = T("Paused", "En pause");
     document.getElementById("bbVeilP").textContent =
@@ -1238,6 +1384,59 @@
     applyTheme(THEME_ORDER[(i + 1) % THEME_ORDER.length]);
   });
 
+  /* ---------------------------------------------------------- full screen
+     Three paths, because the browsers genuinely differ:
+       - the standard API, everywhere modern
+       - the webkit-prefixed one, which is what iPadOS Safari still answers to
+       - a CSS fallback for iPhone Safari, which refuses to put an element full
+         screen at all, so we pin it to the viewport ourselves
+     After any of them the canvas must be resized, or you get the old size
+     stretched across the new one. */
+  var shell = document.getElementById("bbShell");
+  function isFull() {
+    return !!(document.fullscreenElement || document.webkitFullscreenElement) ||
+           shell.classList.contains("bb-immersive");
+  }
+  function enterFull() {
+    var fn = shell.requestFullscreen || shell.webkitRequestFullscreen ||
+             shell.webkitRequestFullScreen;
+    if (fn) {
+      try {
+        var r = fn.call(shell);
+        if (r && r.catch) r.catch(function () { shell.classList.add("bb-immersive"); afterFull(); });
+      } catch (e) { shell.classList.add("bb-immersive"); }
+    } else {
+      shell.classList.add("bb-immersive");
+    }
+    afterFull();
+  }
+  function exitFull() {
+    shell.classList.remove("bb-immersive");
+    var fn = document.exitFullscreen || document.webkitExitFullscreen ||
+             document.webkitCancelFullScreen;
+    if (fn && (document.fullscreenElement || document.webkitFullscreenElement)) {
+      try { fn.call(document); } catch (e) {}
+    }
+    afterFull();
+  }
+  function afterFull() {
+    setTimeout(function () {
+      resize();
+      document.getElementById("bbFull").textContent =
+        isFull() ? T("Leave full screen", "Quitter le plein écran") : T("Full screen", "Plein écran");
+    }, 120);
+  }
+  document.getElementById("bbFull").addEventListener("click", function () {
+    if (isFull()) exitFull(); else enterFull();
+  });
+  document.getElementById("bbExit").addEventListener("click", exitFull);
+  ["fullscreenchange", "webkitfullscreenchange"].forEach(function (ev) {
+    document.addEventListener(ev, afterFull);
+  });
+  /* iPad rotates and the viewport changes size without a resize event firing
+     in time; orientationchange plus a delay is what actually catches it */
+  window.addEventListener("orientationchange", function () { setTimeout(resize, 350); });
+
   function setFly(v) {
     fly = v;
     document.getElementById("bbFly").textContent =
@@ -1309,7 +1508,7 @@
   resize();
 
   if (FR) {
-    document.getElementById("bbVeilT").textContent = "Block Builder";
+    document.getElementById("bbVeilT").textContent = "Canada Block World";
     document.getElementById("bbVeilP").textContent =
       "Cliquez pour commencer. Déplacez-vous avec W A S D, sautez avec Espace, volez avec Q et E. " +
       "Clic gauche pour creuser, clic droit pour bâtir. Molette pour changer de bloc.";
@@ -1329,7 +1528,7 @@
 })();
 </script>
   <script src="../js/game-fullscreen.js?v=c56db4e5" defer></script>
-  <script src="../js/site.js?v=cd6911bf"></script>
+  <script src="../js/site.js?v=07ba9289"></script>
   <script src="../js/analytics.js?v=d06ceb69"></script>
   <script src="../js/ads.js?v=00e703ff" defer></script>
   <script src="../js/pwa.js?v=56adaa04" defer></script>
