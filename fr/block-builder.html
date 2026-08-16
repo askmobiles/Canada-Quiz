@@ -116,13 +116,16 @@
     touch-action:manipulation}
   .bb-m-p{fill:#2b6ea8;stroke:#0a1724;stroke-width:1.4;cursor:pointer}
   .bb-m-p.seen{fill:#6fc2ef}
-  .bb-m-p.done{fill:#d8434f}
   .bb-m-p.here{fill:#ffd23f}
+  /* after .here on purpose: a province whose challenge is finished should read
+     as finished even while you are standing in it */
+  .bb-m-p.done{fill:#e0483f}
   .bb-m-p.sel{fill:#ffd23f;stroke:#fff;stroke-width:3}
   .bb-m-h{fill:rgba(0,0,0,0);cursor:pointer}
   .bb-m-lab text{fill:#fff;font-size:17px;font-weight:800;text-anchor:middle;
     paint-order:stroke;stroke:rgba(0,0,0,.7);stroke-width:3.5;pointer-events:none}
   .bb-m-lead{stroke:rgba(255,255,255,.55);stroke-width:1.3;fill:none}
+  .bb-map-score{margin:0 0 2px;font-size:.8rem;font-weight:800;opacity:.85;flex:0 0 auto}
   .bb-map-name{margin:6px 0 2px;font-size:1.02rem;font-weight:800;flex:0 0 auto}
   .bb-map-desc{margin:0 0 8px;font-size:.86rem;opacity:.9;line-height:1.35;flex:0 0 auto}
   .bb-map-tag{display:inline-block;margin-left:6px;font-size:.72rem;font-weight:800;
@@ -156,6 +159,47 @@
     border-radius:12px;padding:10px 12px}
   .bb-places b{display:block;font-size:.95rem}
   .bb-places span{font-size:.86rem;color:var(--muted,#5b6672)}
+
+
+  /* the NPC prompt, the checklist, and the challenge card */
+  .bb-near{position:absolute;left:50%;bottom:auto;top:52px;transform:translateX(-50%);
+    z-index:5;background:rgba(0,0,0,.55);color:#fff;border:2px solid rgba(255,255,255,.45);
+    border-radius:12px;padding:6px 12px;font-weight:800;font-size:.82rem;pointer-events:auto;
+    cursor:pointer;max-width:80%;text-align:center;line-height:1.3}
+  .bb-near[hidden]{display:none}
+  .bb-list{position:absolute;left:8px;top:44px;z-index:5;background:rgba(0,0,0,.44);
+    color:#fff;border-radius:12px;padding:8px 10px;font-size:.76rem;font-weight:700;
+    line-height:1.55;max-width:62%;pointer-events:none;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+  .bb-list[hidden]{display:none}
+  .bb-list b{display:block;font-size:.8rem;margin-bottom:3px;opacity:.95}
+  .bb-list .tick{color:#8ef0a4}
+  .bb-list .todo{opacity:.9}
+  @media (max-width:560px){ .bb-list{font-size:.68rem;max-width:70%;padding:6px 8px} }
+
+  .bb-chal{position:fixed;inset:0;z-index:10050;background:#0b1620;color:#fff;
+    display:flex;align-items:stretch;justify-content:center;padding:12px;overflow:auto}
+  @supports (height:100dvh){ .bb-chal{height:100dvh} }
+  .bb-chal[hidden]{display:none}
+  .bb-chal-in{width:100%;max-width:560px;margin:auto;text-align:left}
+  .bb-chal h3{margin:0 0 2px;font-size:1.08rem;text-align:center}
+  .bb-chal .who{margin:0 0 10px;text-align:center;font-size:.84rem;opacity:.85;font-weight:700}
+  .bb-chal .say{margin:0 0 12px;font-size:.92rem;line-height:1.55;background:rgba(255,255,255,.07);
+    border-left:3px solid #ffd23f;border-radius:0 10px 10px 0;padding:10px 12px}
+  .bb-chal .ask{margin:0 0 10px;font-size:.95rem;font-weight:800;text-align:center}
+  .bb-chal ul{list-style:none;margin:0 0 12px;padding:0;font-size:.9rem;line-height:1.7}
+  .bb-chal li{display:flex;gap:8px;align-items:baseline}
+  .bb-chal li .mk{flex:0 0 18px;font-weight:800}
+  .bb-chal li.ok .mk{color:#8ef0a4}
+  .bb-chal li.no .mk{opacity:.55}
+  .bb-chal .num{margin-left:auto;opacity:.8;font-variant-numeric:tabular-nums;padding-left:10px}
+  .bb-chal .hint{margin:0 0 12px;font-size:.86rem;opacity:.9;line-height:1.5}
+  .bb-chal .fact{margin:0 0 12px;font-size:.9rem;line-height:1.55;background:rgba(143,240,164,.14);
+    border-left:3px solid #8ef0a4;border-radius:0 10px 10px 0;padding:10px 12px}
+  .bb-chal .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .bb-done{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:6;
+    background:rgba(10,22,32,.92);color:#fff;border:2px solid #8ef0a4;border-radius:16px;
+    padding:16px 22px;text-align:center;font-weight:800;font-size:1.05rem;pointer-events:none}
+  .bb-done[hidden]{display:none}
 
   .bb-veil{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     background:rgba(12,20,30,.72);color:#fff;text-align:center;padding:20px;z-index:5}
@@ -318,6 +362,9 @@
           </span>
           <span class="box" id="bbFps">—</span>
         </div>
+        <div class="bb-list" id="bbList" hidden></div>
+        <button type="button" class="bb-near" id="bbNear" hidden></button>
+        <div class="bb-done" id="bbDone" hidden></div>
         <div class="bb-controls" id="bbTouch">
           <div class="bb-row">
             <div class="bb-stick" id="bbStick"><div class="bb-knob" id="bbKnob"></div></div>
@@ -332,14 +379,29 @@
         <div class="bb-map" id="bbMap" hidden>
           <div class="bb-map-in">
             <h3 id="bbMapT">Où voulez-vous bâtir ?</h3>
+            <p class="bb-map-score" id="bbMapScore"></p>
             <p class="bb-map-help" id="bbMapHelp">Choisissez une province ou un territoire. Chacun est son propre monde avec son propre paysage, et chacun est enregistré séparément.</p>
             <div class="bb-map-fig"><svg viewBox="90 125 790 590" preserveAspectRatio="xMidYMid meet" id="bbMapSvg" role="group" aria-label="Carte du Canada"><g id="bbMapShapes"><path class="bb-m-p" data-r="BC" d="M236.6,347.8L192.3,443.7L219,508.2L215.9,524L219.3,535.9L175.1,518L129.2,495.6L133.7,485.1L128.4,487.5L125.2,481.9L130,483.1L131.5,475L125.6,478.5L121.5,471.9L127.7,459.2L123,463.3L116.8,460.6L110.6,455.4L117,456L111.4,453.3L114.4,447.8L108.4,447.7L104.7,440L112.9,435.3L118.4,437.7L107.7,435.2L108.1,431.8L113.4,424.9L119.8,425.1L121.3,432.6L120.8,423.9L125,422L107,428.9L117.4,413.6L113.9,413.1L113.7,399.1L117.9,398.3L121.6,409.2L117.9,401.4L121.9,397.9L108,400.8L106.2,390.1L116.4,387.1L111.8,380.1L128.2,370.8L120.8,373.6L130,359.3L121.8,343.8L128.9,283.6L107.1,284.1L109.1,262.1L169.6,309.7L233.1,346.2Z"></path><path class="bb-m-p" data-r="AB" d="M261.5,549.7L219.3,535.9L215.9,524L219,508.2L204.2,469.5L199.7,467.5L193.7,438.4L236.6,347.8L312.2,376.6L263.1,544.1Z"></path><path class="bb-m-p" data-r="SK" d="M261.5,549.7L312.2,376.6L375.3,390.8L353.6,570L262.5,550Z"></path><path class="bb-m-p" data-r="MB" d="M483,447.8L424.4,513.5L421.1,576.8L353.6,570L375.3,390.8L433.4,397.5L431.3,411.8L436,424.5L438.1,417.4L446,417.9L452.1,440.8L448.8,447.2L465.6,441.8L480.6,447.4Z"></path><path class="bb-m-p" data-r="ON" d="M421.4,570.5L424.4,513.5L483,447.8L496.9,460.6L515.3,467L517.7,474.3L530.8,468.9L545.3,470.9L551.3,503.8L559.6,512.4L557.9,516.3L570.9,521.7L574.2,527.4L570.8,532.5L576.2,528.2L585,533.3L595.5,589.4L608,605.6L632.2,609.1L636.7,613.9L658.8,606.5L663.5,612.5L647.3,631.8L630.5,640L638.8,638.5L637.4,642.7L629.2,641.8L609,653.2L606.5,659.4L615.3,658L616.9,665.1L602.7,669.3L600.4,672.6L605.1,672.9L588.6,674.3L576.5,688.3L570.9,688L568.8,683.1L576.4,680.8L575,669.8L582.3,662.2L584.4,641L577.8,630.9L582.5,630.1L588.8,639.8L599,640.2L597.8,635L603.1,634.7L596.5,625.4L586.2,617.6L542.2,614.8L535.4,590.7L523.6,590.7L516.7,579L497.9,576.4L497.1,583.1L493.7,585.9L494,579.5L483.1,593.6L461,593.3L444.6,584L426.8,581.2L423.7,571Z"></path><path class="bb-m-p" data-r="QC" d="M731.2,539L716.8,545.3L716,554.9L708,558.2L703.7,596.4L696.8,606L660.3,617.1L671.5,606.4L682.1,583.4L696.9,569.8L706,544.4L728.8,518.4L742.4,512.8L749.9,514.3L752.6,522.3L746,532.6L732.2,537.6ZM668.9,346.3L672.5,358.3L679.8,364.2L676.3,367L687.9,365.2L685.3,377.7L694.3,380.7L700.1,403.7L715.1,413.7L714.8,427.1L697.4,432.6L684.1,427.8L688.3,436.5L680.2,434.2L685.2,439.4L683.5,451.1L695.1,458.4L697.6,467.9L702.4,461.7L707.3,474L719.4,469.4L728.1,475.5L725.6,449.2L731.3,454.1L726.9,460L733.1,465.7L792.6,433.8L797.3,441.6L786,451.2L780.2,474.2L719.2,504.4L716,521.3L707.8,527.3L700.3,546.9L683.8,549.2L697.4,549.4L698.5,556.7L689.9,576.4L662.4,607.3L667.1,609.2L663.5,612.5L658.8,606.5L636.7,613.9L632.2,609.1L608,605.6L595.5,589.4L583,523.2L590.4,527.4L587.6,518.3L591.4,509.3L580.1,482.4L571.3,473.1L587,459.5L593.6,437.7L585.7,418.5L568.9,407.5L571.7,389.9L575.1,390.6L568.7,371.7L564.1,372.6L566.6,359.8L559.7,348.1L563.9,343.5L585.7,345.6L590.8,338.1L605.8,348.5L609.9,346.7L613.8,353.2L625.9,354.2L628.6,350L632.8,364.4L625.5,368.6L633.1,367.8L639.5,376L640.5,383.1L636.2,386.6L649.8,381.1L653.8,390.3L649.8,396.4L654.6,384.4L660.2,390.8L665.7,374.5L670.7,378.7L668.2,346.2Z"></path><path class="bb-m-p" data-r="NB" d="M772.8,557.4L759,578L755.6,576.2L753.1,583.2L743,586.2L734.1,579.4L725.6,558.2L719.4,555.8L711,560L716,554.9L714.4,547.4L734.5,536.8L744.9,539.5L753.9,534.5L751.7,546.9L757.1,545.3L764,555.2L772.6,557.3Z"></path><path class="bb-m-p" data-r="NS" d="M771.1,561.5L772.8,557.4L792.3,555.3L795.8,548.9L810.1,552.5L787.1,575.6L788.6,578.8L780.6,581.1L774.5,603.2L765.1,601.8L761.3,589.5L773.3,569.8L778.9,573.1L784.7,564L768.5,571.7L771.1,562.5ZM804.1,543.2L806.6,546.6L809.6,543.8L809.5,533.3L817.3,536.2L811.4,546.1L802.4,548.4L801,525L807.9,535.5L805.2,540.9Z"></path><path class="bb-m-p" data-r="PE" d="M772,549.4L790.9,540.9L789,550.2L783.1,551.5L781.7,547.6L775.4,552.2L764.6,549.5L765.8,541.3L771.5,549.1Z"></path><path class="bb-m-p" data-r="NL" d="M797.3,441.6L792.6,433.8L733.1,465.7L726.9,460L731.3,454.1L725.6,449.2L728.1,475.5L719.4,469.4L707.3,474L702.4,461.7L697.6,467.9L695.1,458.4L683.5,451.1L685.2,439.4L680.2,434.2L688.3,436.5L684.1,427.8L697.4,432.6L714.8,427.1L715.1,413.7L700.1,403.7L694.3,380.7L685.3,377.7L687.9,365.2L676.3,367L679.8,364.2L672.5,358.3L668.9,346.3L669.8,351.1L673,348.7L685.4,358.5L682.2,362.5L687.5,359.6L693.2,364.1L690.5,371.5L696.7,365.9L694.8,375.1L699.9,370.2L705.7,371.7L704.6,379.8L717.3,382.2L719.4,387.1L709.6,389.9L721.4,392L724,397.3L734.6,395.6L737.8,407.3L743,399.9L746.7,400.2L746.2,407.3L747.9,399.2L767.9,399L750.6,426.5L754.1,431.7L767.8,408.6L764.6,407.9L771.5,405.1L778.1,414.3L782.7,405.8L791.4,408.5L798,417.9L794.5,422.1L800,419.9L803.5,424.4L797.4,441.7ZM811.1,434.2L807.7,437.5L812.3,440.3L815.6,466.1L817.1,455.3L824.3,453.3L821.8,462L831.2,458.4L833.9,465.1L837.5,453.8L847.4,451.2L851.5,467L859,456.9L857.3,470.7L862.7,474.6L865.6,463L868.6,473.2L870,467L873.7,470.6L877.2,484.8L873,488.1L868.1,481.1L865.2,488.4L863,478.5L855.8,475L857.3,483.2L849.8,498.8L852,481.4L846.4,489L840.8,491.8L840.5,485.8L834,494.9L808,507.2L810.9,490L802.6,494.1L806.6,490.9L805.4,482.4L810.1,481.4L804.6,476.9L807.8,473.1L801.7,447.3L805.6,434.1L811.1,433.2Z"></path><path class="bb-m-p" data-r="YT" d="M209,333.7L138.5,287L109.1,262.1L112.7,257.8L100.9,247.7L206.4,139.4L217.6,166L199.3,190.5L209.6,199L201.6,213.8L208.4,218.9L195.7,233.6L200.4,256.5L190.8,282L198,299.3L194.4,310.9L211.3,317.4L209,333.4Z"></path><path class="bb-m-p" data-r="NT" d="M312.2,376.6L259.7,358.1L209,333.7L211.3,317.4L194.3,310.7L198,299.3L190.7,281.7L200.4,256.5L195.7,233.3L208.4,218.9L201.6,213.8L209.6,199L199.3,190.5L217.6,166.1L220.9,173.1L225.3,163.7L234.8,163.6L231.5,169.8L260.9,172.4L238.3,175L230.9,177.7L234,180.7L244.2,175.7L245.8,181.5L254.6,177.4L262.4,177.9L260.7,181L270.7,177.5L271.9,172.3L273.4,196.4L284,187.8L279,199.2L283.7,201.4L289.8,196.9L299.3,206.2L288.3,229.1L321.2,286.2L332.9,290L340.7,304.4L386.2,323.3L375.3,390.8L316.1,377.7ZM337.3,140.6L337.5,144.1L345.5,143.8L349.3,159.3L320.5,168.7L313.4,178.1L299.5,178.7L293.5,158.7L316.6,138.1L317.7,127.8L331.7,131.7L335.6,141.5ZM371.3,174.8L357.7,221.3L342.7,219.5L320.8,208.2L319.6,214L320.9,206.6L350.6,213.9L341.6,204.3L322.1,197.7L321.3,190.3L338.5,189.3L324.4,183.9L327.9,182L322.8,179.3L324.3,174.9L330.7,167.6L352.5,161.7L348.6,173.9L358.8,170.7L364.2,177.1L360.3,183L371.3,174.8Z"></path><path class="bb-m-p" data-r="NU" d="M433.6,396.8L375.3,390.8L386.2,323.3L340.7,304.4L332.9,290L321.2,286.2L288.3,229.1L299.3,206.2L313,224.1L326.2,232.3L327.1,240.3L319.9,240.5L318,245.2L332.8,252.9L348.1,252.5L352.8,263.4L354.9,261L358.4,281.9L359.8,258.6L375.6,249.5L359.6,253L360.7,245.7L375.2,244.2L381.2,259.4L397.7,268.5L413.8,270.1L416.2,264.7L422.7,272.7L424.7,269.6L418.6,267.4L416.6,260L424.1,258.5L429.8,262L427.7,266.3L432.4,263.1L429.2,274.9L434.6,283.4L428.3,282.6L431.9,289.7L435.3,267L447.7,257.9L445.6,251.6L441,254.6L446.9,243.3L433.3,237L431.4,229.4L435.3,226L433.1,214.6L437.8,213.3L440.1,204.3L450.9,213.8L458.7,233.1L454.5,231.8L451.3,241L465.1,244L460.6,247.3L467,263.8L471.9,247.4L478.3,252.6L478.6,268.3L485.3,280.4L493.6,254.8L498,253.3L492.4,236.4L509,236.9L512.2,243.6L517.2,243.8L514.7,249.2L519.2,252.1L512.3,256.7L522.4,277.4L516.1,286.6L511,290.9L502.8,281.7L509,293.7L490.1,290.8L495.6,296.7L487.9,309.7L471.6,301.4L460,301L489.9,314.2L483.4,329L476.5,332.8L469.6,330.4L467.8,338.7L444.1,330.1L445,334.7L454.9,337.7L452.7,339.9L457.3,337.6L463.5,341.7L465.5,347.7L453.4,351.7L456.6,355.4L451.9,356.1L452.1,362.3L447,359L433.9,395.1ZM319.6,214L320.8,208.2L341.6,219.1L357.7,221.3L371.3,174.8L374.5,197.1L379.1,196.3L382,171.5L391.5,180.8L392.7,217.1L406.7,234.2L391.9,235.4L392.6,242.8L398.8,239.2L400.1,244.5L392.8,249.1L380.4,245.2L373.5,234.9L367.4,240.8L342.9,241.7L333.1,239.2L333.8,227.3L319.9,215.3ZM503.8,9.8L510.5,8.9L508.1,15L513.7,8L525.8,14.2L516.1,37.2L524.3,31.1L519.4,52.7L515.4,51.3L517.9,64L508.6,65.3L513.3,70.5L502.8,73.2L511.7,79.2L499.2,81.5L513.4,83.6L508.3,89.1L513.1,91.1L512.1,96.8L505.1,99.7L504.8,110.1L493.7,109L492.9,113L507.6,115.7L509.1,122.3L500.6,130.6L492.6,122.8L494.3,126.8L486.2,124.3L483.4,130.9L477.9,126.8L470.6,130.2L469.8,124.2L470,130L465.9,129L466,123.4L475.7,116.9L471.7,106.2L482.5,113.2L489.2,101.7L482.3,110.9L480.6,93.8L478.7,101.2L477.2,97.3L471.8,100.6L473.6,90.3L489.5,85.1L481,85.8L472.5,65.2L479.5,64.4L491.9,73.6L482.4,62.9L497.5,50.6L492.3,50.3L495.1,41.3L487,56.5L475.7,60.4L472.4,56L479.6,49.1L467.7,58.4L464.3,54L475.1,47.3L463,52.5L467.9,43.8L460.7,46.2L462.1,42.2L457.6,41.4L466.1,34L473.5,35.3L469.4,31.6L473,27.2L487.3,35.5L478.6,27.4L480.8,20.3L486,21.1L482.2,17.7L492.6,22.1L488.2,14.6L498.9,17L496.8,11.1L503.7,9.8ZM449.7,122L450.5,129.8L459.4,126.1L462.2,129L458.9,129.9L467.2,132.1L458.8,133.7L469.2,146.1L470.2,142.7L481.6,146.2L495.4,137.2L507.4,141.5L507.5,156.2L500.3,159.1L492.8,153.2L490.3,160L472.2,161.8L471.6,156.2L467.2,161.1L461.3,156.9L458.4,159.6L452.2,131.4L443.6,132.6L437.9,124.3L442.2,119.1L449.4,122ZM489.7,215.3L494,217.3L494.1,207.7L487.2,201.3L489.5,197.6L495.1,200.1L487.1,189.8L488.1,186L493.6,187.2L487.5,183.4L501.3,171.3L512.9,185.4L512.2,199.8L516,190.2L523.9,198L521.8,190.6L528.1,192.1L522.4,186.8L525,183.7L535.3,183.7L539.4,186.8L537.8,197.6L544.5,190.3L541.3,196.6L544.3,204.1L547.6,193.9L547.6,200.1L549.2,196.6L553.3,200.6L552.7,193.9L561.9,195.7L558.2,206.7L567,200L564,211.7L566.8,209.6L567.9,215.6L571.1,202.4L581.6,205.7L575.6,214.5L581.5,209.5L582.9,213.4L585.5,206.4L592.1,213.4L582.8,220.9L593.7,217.6L598.4,220.6L586.2,226.9L592.9,224.7L594.4,229.2L586,231.1L602.8,231.6L604,237.8L606.6,232.9L608.2,240.1L609.4,235.3L615,239.9L615.3,233.5L616.4,237.4L624.5,237.6L621.1,242.9L631.3,240.2L630.4,248L637.9,240.4L645.5,243.7L640.8,246.2L645.9,248.6L640,250.8L645.9,254.6L642.4,256.4L644.9,262.2L638.6,261.5L644.1,275.4L627.5,268.2L629.4,257.4L623.9,265.7L612.6,259.4L613.1,264.8L608.1,263.6L614.8,270.5L604.5,270.1L625.7,285.8L624.8,282.8L634.1,283.6L638.3,286.9L636,290.4L647.4,295.7L648.9,303.2L641.9,297.1L651,308L647.7,309.3L650,313.7L624.5,305.1L627.1,309.5L617.7,308.1L646.7,322.5L647,328.3L603.2,323.2L598.4,319.8L601.7,316L592.9,314.7L584.1,304.6L579.8,308.6L573.4,303.5L573.8,309.5L554.5,315.9L550.5,310.5L553.8,298L564.5,299.2L568.5,304.6L564.4,298.1L578.1,291.2L569.5,282.1L577.7,260.8L555.1,237.7L546.1,246L548.5,235.3L525.7,218.9L528.7,228.6L513.7,229.1L518.2,234.7L490.7,233.4L486.7,226.8L479.1,231L473.7,227.1L469.7,218.2L482,218.3L467.4,211.2L469.6,184.7L477.2,173.5L487.9,171.9L482.2,189.6L492.6,211.6L488.8,215.8Z"></path></g><g class="bb-m-lead-g"><line class="bb-m-lead" x1="700" y1="600" x2="738" y2="566"></line><line class="bb-m-lead" x1="838" y1="508" x2="780" y2="544"></line><line class="bb-m-lead" x1="844" y1="592" x2="788" y2="576"></line></g><g><circle class="bb-m-h" data-r="PE" cx="777" cy="546" r="15"></circle><circle class="bb-m-h" data-r="NS" cx="783" cy="574" r="17"></circle><circle class="bb-m-h" data-r="NB" cx="742" cy="558" r="17"></circle></g><g class="bb-m-lab"><text x="139" y="432">BC</text><text x="236" y="482">AB</text><text x="316" y="492">SK</text><text x="430" y="472">MB</text><text x="553" y="602">ON</text><text x="648" y="452">QC</text><text x="676" y="606">NB</text><text x="852" y="596">NS</text><text x="846" y="512">PE</text><text x="731" y="402">NL</text><text x="184" y="258">YT</text><text x="264" y="240">NT</text><text x="432" y="288">NU</text></g></svg></div>
             <button type="button" class="bb-free" id="bbFree">Construction libre</button>
-            <p class="bb-map-name" id="bbMapName">Construction libre</p>
+                    <p class="bb-map-name" id="bbMapName">Construction libre</p>
             <p class="bb-map-desc" id="bbMapDesc">Le monde ouvert, tel qu'il a toujours été.</p>
             <p class="bb-map-acts">
               <button type="button" class="btn btn-green btn-lg" id="bbMapGo">Bâtir ici</button>
               <button type="button" class="btn btn-ghost" id="bbMapX">Retour</button>
+            </p>
+          </div>
+        </div>
+        <div class="bb-chal" id="bbChal" hidden>
+          <div class="bb-chal-in">
+            <h3 id="bbChalT">Défi</h3>
+            <p class="who" id="bbChalWho"></p>
+            <p class="say" id="bbChalSay"></p>
+            <p class="ask" id="bbChalAsk"></p>
+            <ul id="bbChalList"></ul>
+            <p class="hint" id="bbChalHint"></p>
+            <p class="fact" id="bbChalFact" hidden></p>
+            <p class="acts">
+              <button type="button" class="btn btn-green btn-lg" id="bbChalGo">Commencer à bâtir</button>
             </p>
           </div>
         </div>
@@ -360,6 +422,7 @@
     <div class="bb-tools">
       <button type="button" class="btn btn-ghost" id="bbSave">Enregistrer</button>
       <button type="button" class="btn btn-ghost" id="bbMapBtn2">Carte du Canada</button>
+      <button type="button" class="btn btn-ghost" id="bbChalBtn">Défi</button>
       <button type="button" class="btn btn-ghost" id="bbNew">Nouveau monde</button>
       <button type="button" class="btn btn-ghost" id="bbFly">Fly: off</button>
       <button type="button" class="btn btn-ghost" id="bbStyle">Style : Vif</button>
@@ -367,6 +430,13 @@
     </div>
     <p class="bb-note" id="bbNote">Votre monde est enregistré dans ce navigateur, sur cet appareil seulement. Aucun compte, aucune inscription, rien n'est envoyé nulle part.</p>
   </div>
+
+  <section class="panel">
+    <h2>Un défi dans chaque province</h2>
+    <p>Quelqu'un vous attend dans chacun des treize mondes, debout à côté d'un carré de terrain balisé. Owen, le guide de sentier, veut une passerelle suspendue au-dessus d'un canyon en Colombie-Britannique. Alice, la productrice de céréales, a besoin d'un élévateur pour son blé dans la prairie saskatchewanaise. Marc, le camionneur des routes de glace, cherche un abri chauffé pour attendre quand un camion tombe en panne à moins quarante. Approchez-vous d'eux et appuyez sur T, ou touchez leur nom, et ils vous diront ce qu'il leur faut.</p>
+    <p>Le jeu vérifie la construction elle-même : rien n'est pris pour acquis. Une liste dans le coin se coche à mesure que vous travaillez : combien de blocs vous avez posés, quelle hauteur atteint l'ouvrage, s'il y a un toit avec la place de se tenir debout dessous, si votre pont a vraiment du vide en dessous. Terminez-le comme il faut et le guide vous apprend quelque chose de vrai sur le lieu réel — et chacun de ces faits a été vérifié auprès d'une source gouvernementale, de Parcs Canada, de l'UNESCO ou d'un musée avant d'être écrit.</p>
+    <p>Il n'y a ni chronomètre, ni pointage, ni rien à perdre. Construction libre n'a aucun défi, pour ceux qui préfèrent simplement bâtir.</p>
+  </section>
 
   <section class="panel">
     <h2>Treize endroits où bâtir</h2>
@@ -1038,7 +1108,7 @@
       be: "River valleys and thick forest.",
       bf: "Des vall\u00e9es fluviales et une for\u00eat dense.",
       seed: 1784, mood: "coast",
-      t: { base:8, amp:13, det:5, sea:12, pw:1, snowAt:29, beach:1, trees:78, maple:0.35, tmin:4, tvar:3, treeMax:24, conifer:1, lakes:0.3 } },
+      t: { base:8, amp:13, det:5, sea:12, pw:1, snowAt:29, beach:1, trees:92, maple:0.35, tmin:4, tvar:3, treeMax:24, conifer:1, lakes:0.3 } },
     { c: "NS", en: "Nova Scotia", fr: "Nouvelle-\u00c9cosse",
       be: "Coastline, beaches and low headlands.",
       bf: "Un littoral, des plages et des caps bas.",
@@ -1090,6 +1160,170 @@
   }
   var region = firstRegion();
 
+  /* ================================================== the build challenges
+     Every brief, fact and hint below was checked against a government, Parks
+     Canada, UNESCO or museum source before it was written. The rules beside
+     them are what the GAME checks: a child who says "done" without building
+     anything does not get a tick, and neither does one who builds a heap.
+     See INSTRUCTIONS in the private folder for the rule language. */
+  var CHALLENGES = [
+    { c: "BC",
+      npc: ["Owen the trail guide", "Owen, le guide de sentier"],
+      build: ["a suspension footbridge", "une passerelle suspendue"],
+      brief: ["Hello! Our river runs deep down in a rocky canyon, and walkers have no safe way across. Could you build me a footbridge that hangs from cables, high above the water? Make it long enough to reach both sides.",
+              "Bonjour ! Notre rivi\u00e8re coule tout au fond d'un canyon rocheux et les promeneurs n'ont aucun moyen s\u00fbr de traverser. Pourriez-vous me construire une passerelle suspendue \u00e0 des c\u00e2bles, bien au-dessus de l'eau ? Faites-la assez longue pour atteindre les deux rives."],
+      hint: ["Build the two towers first, then run the deck between them.",
+             "B\u00e2tissez d'abord les deux tours, puis le tablier entre elles."],
+      fact: ["The Capilano Suspension Bridge in North Vancouver is 137 metres long and hangs 70 metres above the Capilano River.",
+             "Le pont suspendu Capilano, \u00e0 North Vancouver, mesure 137 m\u00e8tres de long et se trouve \u00e0 70 m\u00e8tres au-dessus de la rivi\u00e8re Capilano."],
+      rules: [["posts", 2, 5], ["deck", 8], ["count", 30]] },
+    { c: "AB",
+      npc: ["Dan the fossil digger", "Dan, le chercheur de fossiles"],
+      build: ["a dinosaur dig shelter", "un abri de fouille de dinosaures"],
+      brief: ["We found dinosaur bones in this dry, crumbly rock. Rain and sun can ruin them fast, so I need a simple shelter with a roof right over the dig. Build it tall enough that I can stand up and work underneath.",
+              "Nous avons trouv\u00e9 des os de dinosaures dans cette roche s\u00e8che et friable. La pluie et le soleil peuvent les ab\u00eemer tr\u00e8s vite ; il me faut donc un abri simple, avec un toit juste au-dessus de la fouille. Construisez-le assez haut pour que je puisse travailler debout dessous."],
+      hint: ["Leave one wall open so daylight reaches the bones.",
+             "Laissez un mur ouvert pour que la lumi\u00e8re atteigne les os."],
+      fact: ["Dinosaur Provincial Park in Alberta has produced fossils of more than 44 dinosaur species, from 75 to 77 million years ago.",
+             "Le parc provincial Dinosaur, en Alberta, a livr\u00e9 des fossiles de plus de 44 esp\u00e8ces de dinosaures, vieux de 75 \u00e0 77 millions d'ann\u00e9es."],
+      rules: [["roof", 9], ["tall", 4], ["count", 30]] },
+    { c: "SK",
+      npc: ["Alice the grain farmer", "Alice, l'agricultrice"],
+      build: ["a prairie grain elevator", "un \u00e9l\u00e9vateur \u00e0 grain des Prairies"],
+      brief: ["Our wheat has to wait somewhere before the train comes for it. Please build me a grain elevator: a tall wooden box with a pointed roof, standing right beside the tracks. You will see it from far across the flat fields.",
+              "Notre bl\u00e9 doit attendre quelque part avant que le train vienne le chercher. Construisez-moi un \u00e9l\u00e9vateur \u00e0 grain : une haute bo\u00eete de bois au toit pointu, juste \u00e0 c\u00f4t\u00e9 de la voie ferr\u00e9e. On le verra de tr\u00e8s loin par-dessus les champs plats."],
+      hint: ["Make it narrow and tall, then add a small hut at the bottom.",
+             "Faites-le \u00e9troit et haut, puis ajoutez une petite cabane en bas."],
+      fact: ["More than half of all the land planted with wheat in Canada is in Saskatchewan.",
+             "Plus de la moiti\u00e9 des terres cultiv\u00e9es en bl\u00e9 au Canada se trouvent en Saskatchewan."],
+      rules: [["tall", 10], ["count", 35]] },
+    { c: "MB",
+      npc: ["Ben the park warden", "Ben, le garde de parc"],
+      build: ["a polar-bear watch tower", "une tour d'observation des ours polaires"],
+      brief: ["Polar bears cross this coast every autumn on their way to the sea ice. We watch them from high up, so we stay safe and they stay calm. Build me a tower on legs, with a small platform on top and a ladder going up.",
+              "Chaque automne, des ours polaires traversent cette c\u00f4te pour rejoindre la glace de mer. Nous les observons d'en haut : nous restons en s\u00e9curit\u00e9 et eux restent tranquilles. Construisez-moi une tour sur pilotis, avec une petite plateforme au sommet et une \u00e9chelle pour y monter."],
+      hint: ["Four strong legs, then the platform. Add a railing so no one falls.",
+             "Quatre pieds solides, puis la plateforme. Ajoutez une rampe."],
+      fact: ["Wapusk National Park in Manitoba protects one of the largest polar bear maternity denning areas in the world.",
+             "Le parc national Wapusk, au Manitoba, prot\u00e8ge l'une des plus grandes aires de mise bas des ours polaires au monde."],
+      rules: [["posts", 4, 3], ["tall", 8], ["count", 32]] },
+    { c: "ON",
+      npc: ["Sofia the city guide", "Sofia, la guide touristique"],
+      build: ["a tall observation tower", "une haute tour d'observation"],
+      brief: ["Visitors always ask me where they can see the whole city and the lake at once. Build a very tall tower with a round deck near the top and a slim mast above it. People will line up all day just to look out.",
+              "Les visiteurs me demandent toujours o\u00f9 voir toute la ville et le lac d'un seul coup d'oeil. Construisez une tour tr\u00e8s haute, avec une plateforme ronde pr\u00e8s du sommet et un m\u00e2t mince au-dessus. Les gens feront la file toute la journ\u00e9e pour admirer la vue."],
+      hint: ["Keep the base wide so the tower does not look wobbly.",
+             "Gardez une base large pour que la tour paraisse solide."],
+      fact: ["Toronto's CN Tower is 553 metres tall and opened to the public on 26 June 1976.",
+             "La Tour CN de Toronto mesure 553 m\u00e8tres de haut et a ouvert au public le 26 juin 1976."],
+      rules: [["tall", 14], ["wide", 5], ["count", 40]] },
+    { c: "QC",
+      npc: ["Louise the sugar-bush worker", "Louise, l'ac\u00e9ricultrice"],
+      build: ["a maple sugar shack", "une cabane \u00e0 sucre"],
+      brief: ["At the end of winter, sap runs from our maple trees and we boil it down into syrup. All that steam needs a way out, so my shack needs a long roof with a vent along the top. Build it right among the maples, please.",
+              "\u00c0 la fin de l'hiver, la s\u00e8ve coule de nos \u00e9rables et nous la faisons bouillir pour en faire du sirop. Toute cette vapeur doit pouvoir sortir : ma cabane a donc besoin d'un long toit avec une ouverture sur le dessus. Construisez-la parmi les \u00e9rables, s'il vous pla\u00eet."],
+      hint: ["Add a raised vent along the roof ridge to let the steam out.",
+             "Ajoutez une ouverture sur le fa\u00eete du toit pour la vapeur."],
+      fact: ["About 9 out of every 10 litres of maple syrup made in Canada come from Quebec.",
+             "Environ 9 litres sur 10 du sirop d'\u00e9rable produit au Canada viennent du Qu\u00e9bec."],
+      rules: [["roof", 12], ["use", [5, 6], 15], ["count", 32]] },
+    { c: "NB",
+      npc: ["Margaret the bridge keeper", "Margaret, la gardienne du pont"],
+      build: ["a covered bridge", "un pont couvert"],
+      brief: ["Our river freezes and floods, and an open wooden bridge would rot in only a few years. That is why we cover ours: walls and a roof keep the timbers dry. Build me one long enough to reach the far bank.",
+              "Notre rivi\u00e8re g\u00e8le et d\u00e9borde, et un pont de bois \u00e0 d\u00e9couvert pourrirait en quelques ann\u00e9es \u00e0 peine. C'est pourquoi nous couvrons les n\u00f4tres : des murs et un toit gardent les poutres au sec. Construisez-m'en un assez long pour atteindre l'autre rive."],
+      hint: ["Build the road deck first, then the walls, then the roof.",
+             "B\u00e2tissez d'abord le tablier, puis les murs, puis le toit."],
+      fact: ["The Hartland covered bridge in New Brunswick is 390.75 metres long and is the longest covered bridge in the world.",
+             "Le pont couvert de Hartland, au Nouveau-Brunswick, mesure 390,75 m\u00e8tres et c'est le plus long pont couvert du monde."],
+      rules: [["deck", 7], ["roof", 7], ["count", 35]] },
+    { c: "NS",
+      npc: ["Danny the lobster fisher", "Danny, le p\u00eacheur de homard"],
+      build: ["a fishing wharf", "un quai de p\u00eache"],
+      brief: ["My boat comes in loaded with lobster traps, and I have nowhere to tie it up. Build me a wharf on posts, out over the water, wide enough to stack traps on. A small shed at the end would be perfect.",
+              "Mon bateau rentre charg\u00e9 de casiers \u00e0 homard et je n'ai nulle part o\u00f9 l'amarrer. Construisez-moi un quai sur pilotis, au-dessus de l'eau, assez large pour empiler les casiers. Une petite remise au bout serait parfaite."],
+      hint: ["Set the posts in the water first, then lay planks across the top.",
+             "Plantez d'abord les pilotis dans l'eau, puis posez le plancher."],
+      fact: ["Lobster is Nova Scotia's most valuable seafood export.",
+             "Le homard est le produit de la mer le plus pr\u00e9cieux export\u00e9 par la Nouvelle-\u00c9cosse."],
+      rules: [["deck", 9], ["posts", 3, 2], ["count", 30]] },
+    { c: "PE",
+      npc: ["Rosie the potato farmer", "Rosie, la productrice de pommes de terre"],
+      build: ["a farmhouse", "une maison de ferme"],
+      brief: ["Our fields here are bright red soil, and we grow potatoes in them all summer long. My family needs a farmhouse to live in: two floors, a steep roof, and a porch facing the fields. Paint it white and green if you can.",
+              "Nos champs ont une terre toute rouge et nous y cultivons des pommes de terre tout l'\u00e9t\u00e9. Ma famille a besoin d'une maison de ferme : deux \u00e9tages, un toit pentu et une v\u00e9randa face aux champs. Peignez-la en blanc et vert si vous le pouvez."],
+      hint: ["A steep roof sheds snow: two blocks up for every one across.",
+             "Un toit pentu laisse glisser la neige : deux blocs de haut pour un de large."],
+      fact: ["About one quarter of all the land used to grow potatoes in Canada is on Prince Edward Island.",
+             "Environ le quart des terres consacr\u00e9es \u00e0 la pomme de terre au Canada se trouve \u00e0 l'\u00cele-du-Prince-\u00c9douard."],
+      rules: [["tall", 7], ["roof", 9], ["use", [11], 2], ["count", 35]] },
+    { c: "NL",
+      npc: ["Joe the lighthouse keeper", "Joe, le gardien de phare"],
+      build: ["a lighthouse", "un phare"],
+      brief: ["Fog rolls in fast here, and ships can hit the rocks before they ever see them. I need a tall white tower on the headland, with a bright light room at the very top. Put my little house right beside it.",
+              "Le brouillard arrive vite ici, et les navires peuvent heurter les rochers avant m\u00eame de les voir. Il me faut une haute tour blanche sur le cap, avec une lanterne bien \u00e9clair\u00e9e tout en haut. Placez ma petite maison juste \u00e0 c\u00f4t\u00e9."],
+      hint: ["Build a round tower, then cap it with a glass room and a red roof.",
+             "Faites une tour ronde, puis coiffez-la d'une lanterne vitr\u00e9e."],
+      fact: ["Cape Spear lighthouse near St. John's was first lit in 1836 and is the oldest surviving lighthouse in Newfoundland and Labrador.",
+             "Le phare de Cape Spear, pr\u00e8s de St. John's, a \u00e9t\u00e9 allum\u00e9 pour la premi\u00e8re fois en 1836 et c'est le plus ancien phare encore debout \u00e0 Terre-Neuve-et-Labrador."],
+      rules: [["tall", 12], ["use", [11], 2], ["count", 35]] },
+    { c: "YT",
+      npc: ["Clara the museum guide", "Clara, la guide du mus\u00e9e"],
+      build: ["a gold-rush cabin", "une cabane de la ru\u00e9e vers l'or"],
+      brief: ["Thousands of gold seekers arrived here in 1898, and most of them had to build their own cabin before winter came. Make me one out of logs: small, low, with a stove pipe through the roof. It only has to keep one person warm.",
+              "Des milliers de chercheurs d'or sont arriv\u00e9s ici en 1898, et la plupart ont d\u00fb b\u00e2tir leur propre cabane avant l'hiver. Faites-m'en une en rondins : petite, basse, avec un tuyau de po\u00eale qui traverse le toit. Elle doit seulement garder une personne au chaud."],
+      hint: ["Small is right: low walls, one door, one window, a thick roof.",
+             "Petit, c'est bien : murs bas, une porte, une fen\u00eatre, toit \u00e9pais."],
+      fact: ["Over 100,000 people set out for the Klondike goldfields, and about 30,000 reached Dawson City in the summer of 1898.",
+             "Plus de 100 000 personnes sont parties vers les champs aurif\u00e8res du Klondike, et environ 30 000 ont atteint Dawson au cours de l'\u00e9t\u00e9 1898."],
+      rules: [["roof", 9], ["use", [5], 8], ["count", 26]] },
+    { c: "NT",
+      npc: ["Marc the ice-road driver", "Marc, le camionneur des routes de glace"],
+      build: ["an ice-road shelter", "un abri au bord de la route de glace"],
+      brief: ["In winter we drive trucks across frozen lakes to reach the mines. If a truck breaks down at minus 40, the driver needs somewhere warm to wait for help. Build a small, strong shelter beside the road, with a door that shuts tight.",
+              "L'hiver, nous conduisons des camions sur des lacs gel\u00e9s pour rejoindre les mines. Si un camion tombe en panne par moins 40, le chauffeur a besoin d'un endroit chaud o\u00f9 attendre de l'aide. Construisez un petit abri solide au bord de la route, avec une porte qui ferme bien."],
+      hint: ["Thick walls, tiny window, one door. Warmth beats windows here.",
+             "Murs \u00e9pais, petite fen\u00eatre, une porte : la chaleur avant la vue."],
+      fact: ["The Tibbitt to Contwoyto Winter Road is about 400 kilometres long, and 85 percent of it is built on frozen lakes.",
+             "La route d'hiver de Tibbitt \u00e0 Contwoyto fait environ 400 kilom\u00e8tres, et 85 pour cent de son trac\u00e9 est construit sur des lacs gel\u00e9s."],
+      rules: [["roof", 9], ["use", [10], 5], ["count", 28]] },
+    { c: "NU",
+      npc: ["A local guide", "Un guide local"],
+      build: ["an inuksuk", "un inuksuk"],
+      brief: ["The land here is wide and open, with very few landmarks to steer by. Inuit build inuksuit, stone figures stacked with care, to guide people travelling on the land and to mark special places. Please build one from stone blocks, tall enough to be seen from far away.",
+              "Le territoire ici est vaste et d\u00e9gag\u00e9, avec tr\u00e8s peu de rep\u00e8res pour s'orienter. Les Inuits \u00e9rigent des inuksuit, des figures de pierres empil\u00e9es avec soin, pour guider les voyageurs sur le territoire et marquer des lieux importants. Construisez-en un en blocs de pierre, assez haut pour \u00eatre vu de loin."],
+      hint: ["Use plain stone blocks only, and keep every piece resting on another.",
+             "Utilisez seulement des blocs de pierre, bien appuy\u00e9s les uns sur les autres."],
+      fact: ["An inuksuk stands at the centre of Nunavut's flag; inuksuit are stone monuments that guide people on the land and mark sacred and other special places.",
+             "Un inuksuk se trouve au centre du drapeau du Nunavut ; les inuksuit sont des monuments de pierre qui guident les gens sur le territoire et marquent des lieux sacr\u00e9s ou importants."],
+      rules: [["use", [3], 10], ["only", [3]], ["tall", 5], ["wide", 3]] }
+  ];
+  /* CHAL, not CH: CH is already the chunk size further down, and a second
+     `var CH` quietly replaced this table with the number 8 — the world still
+     meshed, and every challenge silently vanished. */
+  var CHAL = {};
+  CHALLENGES.forEach(function (c) { CHAL[c.c] = c; });
+  var RULE_LABEL = {
+    count: ["Blocks placed", "Blocs pos\u00e9s"],
+    deck: ["Longest run with open air under it", "Plus long tablier avec du vide en dessous"],
+    only: ["Nothing but %s", "Rien que %s"],
+    posts: ["Legs or towers", "Pieds ou tours"],
+    roof: ["Covered floor, with room to stand", "Sol couvert, avec la place de se tenir debout"],
+    tall: ["Height above the ground", "Hauteur au-dessus du sol"],
+    use: ["Blocks of %s", "Blocs de %s"],
+    wide: ["Width across", "Largeur"]
+  };
+  var DONE_KEY = "cq_blocks_done";
+  function doneMap() {
+    try { return JSON.parse(localStorage.getItem(DONE_KEY) || "{}") || {}; }
+    catch (e) { return {}; }
+  }
+  function isDone(code) { return !!doneMap()[code]; }
+  function setDone(code) {
+    try { var d = doneMap(); d[code] = 1; localStorage.setItem(DONE_KEY, JSON.stringify(d)); }
+    catch (e) {}
+  }
+
   /* ============================================================== the world */
   var WX = 64, WY = 40, WZ = 64;                /* width, height, depth in blocks */
   var CH = 8;                                   /* chunk size in x and z */
@@ -1110,8 +1344,13 @@
       return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
     };
   }
-  function generate(seed, R) {
-    R = R || region;
+  /* The height of the ground has to be answerable WITHOUT building the world,
+     because the challenge plot needs to know where the original ground was even
+     in a world the player has since dug a hole in. So the noise field and the
+     height sum come out of generate() and become something either side can ask.
+     The random sequence is untouched: the field still draws its 81 control
+     points first, so every world generates exactly as it did before. */
+  function noiseField(seed) {
     var rnd = mulberry(seed);
     var grid = [], gs = 9;                                  /* control points */
     for (var i = 0; i < gs * gs; i++) grid.push(rnd());
@@ -1125,33 +1364,51 @@
       var b = g(x0, z0 + 1) + (g(x0 + 1, z0 + 1) - g(x0, z0 + 1)) * sx;
       return a + (b - a) * sz;
     }
+    return { rnd: rnd, noise: noise };
+  }
+
+  function heightAt(G, noise, x, z) {
+    var n1 = noise(x, z), n2 = noise(x * 2 % WX, z * 2 % WZ);
+    if (G.pw && G.pw !== 1) n1 = Math.pow(n1, G.pw);
+    var h = G.base + n1 * G.amp + n2 * G.det;
+    if (G.lakes) {
+      /* Lakes have to be CARVED, not left over. Simply setting the sea above
+         the lowest ground gives a wet fringe round the edge of the map and
+         dry everywhere else — nothing that looks like Manitoba. A second
+         reading of the same noise field, taken from somewhere else in it, is
+         uncorrelated enough to act as a basin map: where it runs low, the
+         ground is pulled down below the water line and a lake appears in the
+         middle of the land, with its own beach around it. */
+      var ln = noise((x + 31) % WX, (z + 19) % WZ);
+      if (ln < G.lakes) h -= (G.lakes - ln) * 62;
+    }
+    if (G.isle) {
+      /* An island has to END. Past 45% of the way to the rim the ground is
+         pulled down harder the further out it goes, so the world finishes in
+         open water instead of at a cliff where the array stops. */
+      var cx = WX / 2, cz = WZ / 2;
+      var ux = (x - cx) / cx, uz = (z - cz) / cz;
+      h -= G.isle * Math.max(0, Math.sqrt(ux * ux + uz * uz) - 0.45) * 34;
+    }
+    return Math.max(1, Math.min(WY - 6, Math.round(h)));
+  }
+
+  /* the original ground, from the seed alone — no world, no memory */
+  function heightMap(seed, R) {
+    var f = noiseField(seed), G = R.t, hm = new Int16Array(WX * WZ);
+    for (var x = 0; x < WX; x++) for (var z = 0; z < WZ; z++)
+      hm[z * WX + x] = heightAt(G, f.noise, x, z);
+    return hm;
+  }
+
+  function generate(seed, R) {
+    R = R || region;
+    var field = noiseField(seed), rnd = field.rnd, noise = field.noise;
     world.fill(AIR);
     var G = R.t, sea = G.sea, beach = G.beach || 0;
     var hmap = new Int16Array(WX * WZ);
-    var cx = WX / 2, cz = WZ / 2;
     for (var x = 0; x < WX; x++) for (var z = 0; z < WZ; z++) {
-      var n1 = noise(x, z), n2 = noise(x * 2 % WX, z * 2 % WZ);
-      if (G.pw && G.pw !== 1) n1 = Math.pow(n1, G.pw);
-      var h = G.base + n1 * G.amp + n2 * G.det;
-      if (G.lakes) {
-        /* Lakes have to be CARVED, not left over. Simply setting the sea above
-           the lowest ground gives a wet fringe round the edge of the map and
-           dry everywhere else — nothing that looks like Manitoba. A second
-           reading of the same noise field, taken from somewhere else in it, is
-           uncorrelated enough to act as a basin map: where it runs low, the
-           ground is pulled down below the water line and a lake appears in the
-           middle of the land, with its own beach around it. */
-        var ln = noise((x + 31) % WX, (z + 19) % WZ);
-        if (ln < G.lakes) h -= (G.lakes - ln) * 62;
-      }
-      if (G.isle) {
-        /* An island has to END. Past 45% of the way to the rim the ground is
-           pulled down harder the further out it goes, so the world finishes in
-           open water instead of at a cliff where the array stops. */
-        var ux = (x - cx) / cx, uz = (z - cz) / cz;
-        h -= G.isle * Math.max(0, Math.sqrt(ux * ux + uz * uz) - 0.45) * 34;
-      }
-      h = Math.max(1, Math.min(WY - 6, Math.round(h)));
+      var h = heightAt(G, noise, x, z);
       hmap[z * WX + x] = h;
       var top;
       if (G.allSnow) top = 9;                                  /* snow */
@@ -1174,7 +1431,7 @@
     for (var k = 0; k < (G.rocks || 0); k++) {
       var rx = 2 + Math.floor(rnd() * (WX - 4)), rz = 2 + Math.floor(rnd() * (WZ - 4));
       var rh = hmap[rz * WX + rx];
-      if (rh <= sea) continue;
+      if (rh <= sea || nearPlot(rx, rz, 2)) continue;
       var rr = 1 + Math.floor(rnd() * 2);
       for (var ax = -rr; ax <= rr; ax++) for (var az = -rr; az <= rr; az++)
         for (var ay = 0; ay <= rr; ay++) {
@@ -1188,7 +1445,9 @@
     for (var t = 0; t < (G.trees || 0); t++) {
       var tx = 2 + Math.floor(rnd() * (WX - 4)), tz = 2 + Math.floor(rnd() * (WZ - 4));
       var th = hmap[tz * WX + tx];
-      if (th <= sea + 1 || th >= (G.treeMax || 0)) continue;
+      /* the building plot stays clear. The random numbers are drawn BEFORE this
+         test, so skipping a tree here does not shift a single other tree. */
+      if (th <= sea + 1 || th >= (G.treeMax || 0) || nearPlot(tx, tz, 3)) continue;
       if (get(tx, th, tz) !== 1) continue;
       var leaf = rnd() < (G.maple || 0) ? 8 : 7;
       var tall = G.tmin + Math.floor(rnd() * G.tvar);
@@ -1212,6 +1471,114 @@
       }
     }
     return hmap;
+  }
+
+
+  /* ================================================ the NPC and the plot line
+     Drawn, not built. Making the NPC out of blocks would mean writing into the
+     world, and then a player could dig their guide up, and a world saved before
+     today would have a person appear inside whatever they had already made.
+     A separate little mesh with its own texture avoids all of that: the world
+     is never touched, and the figure can stand on any ground at all. */
+  var ENT_N = 4, ENT_TS = 32;
+  var ENT_TILE = { coat: 0, coatDark: 1, skin: 2, hair: 3, boot: 4, hat: 5,
+                   gold: 6, green: 7, post: 8 };
+  var entTex = null, entMesh = null;
+
+  function makeEntTex() {
+    var c = document.createElement("canvas");
+    c.width = c.height = ENT_TS * ENT_N;
+    var g = c.getContext("2d");
+    var cols = ["#c8102e", "#8d0b20", "#f0c8a0", "#3a2a20",
+                "#4a3728", "#1e4f8a", "#ffd23f", "#3ddc74",
+                "#f5f7fa", "#20303c", "#ffffff", "#ffffff",
+                "#ffffff", "#ffffff", "#ffffff", "#ffffff"];
+    for (var i = 0; i < ENT_N * ENT_N; i++) {
+      g.fillStyle = cols[i];
+      g.fillRect((i % ENT_N) * ENT_TS, ((i / ENT_N) | 0) * ENT_TS, ENT_TS, ENT_TS);
+    }
+    return c;
+  }
+  function entUV(tile) {
+    /* the middle of a solid tile, so nothing can bleed in from its neighbours */
+    return [((tile % ENT_N) + 0.5) / ENT_N, (((tile / ENT_N) | 0) + 0.5) / ENT_N];
+  }
+
+  /* one axis-aligned box, six faces, shaded the same way the world is */
+  function pushBox(V, U, L, x0, y0, z0, x1, y1, z1, tile, yaw, ox, oy, oz) {
+    var uv = entUV(tile);
+    var cs = Math.cos(yaw || 0), sn = Math.sin(yaw || 0);
+    function put(x, y, z, lite) {
+      var rx = x * cs - z * sn, rz = x * sn + z * cs;
+      V.push(rx + ox, y + oy, rz + oz);
+      U.push(uv[0], uv[1]);
+      L.push(lite);
+    }
+    function quad(a, b, c, d, lite) {
+      put(a[0], a[1], a[2], lite); put(b[0], b[1], b[2], lite); put(c[0], c[1], c[2], lite);
+      put(a[0], a[1], a[2], lite); put(c[0], c[1], c[2], lite); put(d[0], d[1], d[2], lite);
+    }
+    quad([x0,y1,z0],[x0,y1,z1],[x1,y1,z1],[x1,y1,z0], 1.00);   /* top */
+    quad([x0,y0,z0],[x1,y0,z0],[x1,y0,z1],[x0,y0,z1], 0.58);   /* bottom */
+    quad([x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1], 0.86);
+    quad([x1,y0,z0],[x0,y0,z0],[x0,y1,z0],[x1,y1,z0], 0.86);
+    quad([x1,y0,z1],[x1,y0,z0],[x1,y1,z0],[x1,y1,z1], 0.74);
+    quad([x0,y0,z0],[x0,y0,z1],[x0,y1,z1],[x0,y1,z0], 0.74);
+  }
+
+  function buildEntities() {
+    entMesh = null;
+    if (!plot || !CHAL[region.c]) return;
+    var V = [], U = [], L = [];
+    var spot = npcSpot();
+    if (!spot) return;
+    /* face the middle of the plot */
+    var yaw = Math.atan2((plot.x0 + PLOT / 2) - spot[0], (plot.z0 + PLOT / 2) - spot[2]);
+    var done = isDone(region.c);
+    var coat = done ? ENT_TILE.green : ENT_TILE.coat;
+    var ox = spot[0], oy = spot[1], oz = spot[2];
+    pushBox(V,U,L, -0.20, 0.00, -0.10, -0.04, 0.75, 0.10, ENT_TILE.boot, yaw, ox,oy,oz);
+    pushBox(V,U,L,  0.04, 0.00, -0.10,  0.20, 0.75, 0.10, ENT_TILE.boot, yaw, ox,oy,oz);
+    pushBox(V,U,L, -0.24, 0.75, -0.13,  0.24, 1.30, 0.13, coat,           yaw, ox,oy,oz);
+    pushBox(V,U,L, -0.36, 0.78, -0.10, -0.24, 1.28, 0.10, ENT_TILE.coatDark, yaw, ox,oy,oz);
+    pushBox(V,U,L,  0.24, 0.78, -0.10,  0.36, 1.28, 0.10, ENT_TILE.coatDark, yaw, ox,oy,oz);
+    pushBox(V,U,L, -0.19, 1.30, -0.16,  0.19, 1.68, 0.16, ENT_TILE.skin,  yaw, ox,oy,oz);
+    pushBox(V,U,L, -0.28, 1.66, -0.26,  0.28, 1.71, 0.26, ENT_TILE.hat,   yaw, ox,oy,oz);
+    pushBox(V,U,L, -0.16, 1.71, -0.14,  0.16, 1.88, 0.14, ENT_TILE.hat,   yaw, ox,oy,oz);
+
+    /* the plot outline: a flat strip on the ground all the way round, and a
+       post at each corner so you can find your site from across the world */
+    var line = done ? ENT_TILE.green : ENT_TILE.gold;
+    var uvL = entUV(line);
+    function strip(x, z) {
+      var i = x - plot.x0, j = z - plot.z0;
+      var y = plotFloor(i, j) + 1.03;
+      var q = [[x, y, z], [x, y, z + 1], [x + 1, y, z + 1], [x + 1, y, z]];
+      [0, 1, 2, 0, 2, 3].forEach(function (k) {
+        V.push(q[k][0], q[k][1], q[k][2]);
+        U.push(uvL[0], uvL[1]);
+        L.push(1.0);
+      });
+    }
+    for (var i = 0; i < PLOT; i++) {
+      strip(plot.x0 + i, plot.z0);
+      strip(plot.x0 + i, plot.z0 + PLOT - 1);
+      strip(plot.x0, plot.z0 + i);
+      strip(plot.x0 + PLOT - 1, plot.z0 + i);
+    }
+    [[0,0],[PLOT-1,0],[0,PLOT-1],[PLOT-1,PLOT-1]].forEach(function (c) {
+      var y = plotFloor(c[0], c[1]) + 1;
+      pushBox(V,U,L, -0.09, 0, -0.09, 0.09, 2.2, 0.09, line, 0,
+              plot.x0 + c[0] + 0.5, y, plot.z0 + c[1] + 0.5);
+    });
+
+    function buf(arr) {
+      var b = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, b);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(arr), gl.STATIC_DRAW);
+      return b;
+    }
+    entMesh = { p: buf(V), u: buf(U), l: buf(L), n: V.length / 3 };
   }
 
   /* =========================================================== the renderer */
@@ -1255,6 +1622,15 @@
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+  var entGlTex = gl.createTexture();
+  gl.bindTexture(gl.TEXTURE_2D, entGlTex);
+  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, makeEntTex());
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+  gl.bindTexture(gl.TEXTURE_2D, tex);
+
   gl.enable(gl.DEPTH_TEST);
   gl.enable(gl.CULL_FACE);
   gl.enable(gl.BLEND);
@@ -1464,6 +1840,7 @@
     set(r.hit[0], r.hit[1], r.hit[2], AIR);
     dirtyAround(r.hit[0], r.hit[2]);
     save(true);
+    if (inPlot(r.hit[0], r.hit[2])) refreshList();
   }
   function put() {
     var r = raycast();
@@ -1475,6 +1852,236 @@
     if (blocked(P.x, P.y, P.z)) { set(b[0], b[1], b[2], AIR); return; }
     dirtyAround(b[0], b[2]);
     save(true);
+    if (inPlot(b[0], b[2])) refreshList();
+  }
+
+
+  /* ========================================================= the building plot
+     A fourteen-by-fourteen square of ground near where you arrive, chosen for
+     being flat and dry — except in Nova Scotia and British Columbia, where the
+     challenge is a wharf and a bridge, so a plot touching water is the RIGHT
+     plot and the score says so.
+
+     Nothing is dug or flattened to make it. The plot is remembered as two
+     numbers, and the ground it started at is recomputed from the seed whenever
+     it is needed, so digging a hole in your own plot does not move the goal
+     posts — the original ground is still the original ground. */
+  var PLOT = 14;
+  var plot = null;
+  var worldSeed = region.seed;
+
+  function inPlot(x, z) {
+    return !!plot && x >= plot.x0 && z >= plot.z0 &&
+           x < plot.x0 + PLOT && z < plot.z0 + PLOT;
+  }
+  /* A trunk standing OUTSIDE the plot still throws its leaves two or three
+     blocks sideways, and those leaves land inside it. The first version kept
+     trunks off the plot and nothing else, so every challenge began with seven
+     blocks already counted and "two towers" already ticked — by a spruce. The
+     margin is what actually keeps the site clear. */
+  function nearPlot(x, z, m) {
+    return !!plot && x >= plot.x0 - m && z >= plot.z0 - m &&
+           x < plot.x0 + PLOT + m && z < plot.z0 + PLOT + m;
+  }
+
+  function pickPlot(R, hm) {
+    if (!CHAL[R.c]) return null;                     /* Free Build has no NPC */
+    var wantWater = (R.c === "NS" || R.c === "BC");
+    var cx = WX >> 1, cz = WZ >> 1, sea = R.t.sea;
+    var best = null, bestScore = -1e9;
+    for (var x0 = cx - 20; x0 <= cx + 20 - PLOT; x0++)
+      for (var z0 = cz - 20; z0 <= cz + 20 - PLOT; z0++) {
+        if (x0 < 3 || z0 < 3 || x0 + PLOT > WX - 3 || z0 + PLOT > WZ - 3) continue;
+        var lo = 9999, hi = -9999, wet = 0;
+        for (var i = 0; i < PLOT; i++) for (var j = 0; j < PLOT; j++) {
+          var h = hm[(z0 + j) * WX + x0 + i];
+          if (h <= sea) { wet++; continue; }          /* roughness of DRY ground */
+          if (h < lo) lo = h;
+          if (h > hi) hi = h;
+        }
+        if (wet > PLOT * PLOT * 0.45) continue;       /* not a plot, a lake */
+        var rough = (lo > hi) ? 30 : (hi - lo);
+        var d = Math.max(Math.abs(x0 + PLOT / 2 - cx), Math.abs(z0 + PLOT / 2 - cz));
+        var score = -rough * 4 - d + (wantWater ? Math.min(wet, 60) * 0.9 : -wet * 1.2);
+        if (score > bestScore) { bestScore = score; best = [x0, z0]; }
+      }
+    if (!best) best = [cx - (PLOT >> 1), cz - (PLOT >> 1)];
+    return { x0: best[0], z0: best[1], floor: floorOf(best[0], best[1], hm, sea) };
+  }
+  /* Over water the floor is the WATERLINE, not the seabed. Measuring from the
+     seabed made Nunavut's ice sheet an eleven-block tower and its whole plot
+     fourteen blocks wide before a child had placed anything: ice sits at sea
+     level, and everything under it was being counted as a build. The surface
+     you actually build up from is the water, so that is where zero is. */
+  function floorOf(x0, z0, hm, sea) {
+    var f = new Int16Array(PLOT * PLOT);
+    for (var i = 0; i < PLOT; i++) for (var j = 0; j < PLOT; j++)
+      f[j * PLOT + i] = Math.max(hm[(z0 + j) * WX + x0 + i], sea);
+    return f;
+  }
+  function plotFloor(i, j) { return plot.floor[j * PLOT + i]; }
+
+  /* Where the NPC stands: on the plot edge nearest the middle of the map, one
+     block outside it, so they are never standing on something you want to build
+     on and never in the way of the thing they asked for. */
+  function npcSpot() {
+    if (!plot) return null;
+    var cx = WX >> 1, cz = WZ >> 1;
+    var mx = plot.x0 + PLOT / 2, mz = plot.z0 + PLOT / 2;
+    var x, z;
+    if (Math.abs(cx - mx) > Math.abs(cz - mz)) {
+      x = (cx > mx) ? plot.x0 + PLOT : plot.x0 - 1;
+      z = Math.round(mz);
+    } else {
+      z = (cz > mz) ? plot.z0 + PLOT : plot.z0 - 1;
+      x = Math.round(mx);
+    }
+    x = Math.max(1, Math.min(WX - 2, x));
+    z = Math.max(1, Math.min(WZ - 2, z));
+    var y = Math.max(topOf(x, z), SEA);
+    return [x + 0.5, y + 1, z + 0.5];
+  }
+
+  /* ================================================== reading what you built
+     One pass over the plot collects everything all seven rules need. Anything
+     sitting above the ORIGINAL ground counts, water never counts, and the
+     natural ground itself never counts — so a hill inside your plot is not a
+     tower and never was. */
+  function scanPlot() {
+    var s = { count: 0, tall: 0, wide: 0, roof: 0, deck: 0, kinds: {},
+              top: new Int16Array(PLOT * PLOT) };
+    if (!plot) return s;
+    var i, j, x, z, y, v, f;
+    var minx = 999, maxx = -999, minz = 999, maxz = -999;
+    for (i = 0; i < PLOT * PLOT; i++) s.top[i] = -1;
+    for (i = 0; i < PLOT; i++) for (j = 0; j < PLOT; j++) {
+      x = plot.x0 + i; z = plot.z0 + j; f = plotFloor(i, j);
+      for (y = f + 1; y < WY; y++) {
+        v = get(x, y, z);
+        if (v === AIR || v === 13) continue;          /* water is not a build */
+        s.count++;
+        s.kinds[v] = (s.kinds[v] || 0) + 1;
+        if (y - f > s.tall) s.tall = y - f;
+        if (i < minx) minx = i;
+        if (i > maxx) maxx = i;
+        if (j < minz) minz = j;
+        if (j > maxz) maxz = j;
+        if (y > s.top[j * PLOT + i]) s.top[j * PLOT + i] = y;
+      }
+    }
+    s.wide = s.count ? Math.max(maxx - minx, maxz - minz) + 1 : 0;
+
+    /* roof: a block overhead with room to stand under it */
+    for (i = 0; i < PLOT; i++) for (j = 0; j < PLOT; j++) {
+      x = plot.x0 + i; z = plot.z0 + j; f = plotFloor(i, j);
+      if (get(x, f + 1, z) !== AIR || get(x, f + 2, z) !== AIR) continue;
+      for (y = f + 3; y < WY; y++) {
+        v = get(x, y, z);
+        if (v === AIR) continue;
+        if (v !== 13) s.roof++;
+        break;
+      }
+    }
+
+    /* deck: a straight run with open air (or water) directly underneath —
+       which is what makes a bridge a bridge and a pile of blocks a pile */
+    function open(x, y, z) { var b = get(x, y, z); return b === AIR || b === 13; }
+    function runAt(y, along) {
+      var bestRun = 0;
+      var outer = along ? PLOT : PLOT;
+      for (var a = 0; a < outer; a++) {
+        var run = 0;
+        for (var b = 0; b < PLOT; b++) {
+          var px = along ? plot.x0 + b : plot.x0 + a;
+          var pz = along ? plot.z0 + a : plot.z0 + b;
+          var fi = along ? b : a, fj = along ? a : b;
+          var blk = get(px, y, pz);
+          var solidBuilt = blk !== AIR && blk !== 13 && y > plotFloor(fi, fj);
+          if (solidBuilt && open(px, y - 1, pz)) { run++; if (run > bestRun) bestRun = run; }
+          else run = 0;
+        }
+      }
+      return bestRun;
+    }
+    for (y = 1; y < WY; y++) {
+      var r = Math.max(runAt(y, true), runAt(y, false));
+      if (r > s.deck) s.deck = r;
+    }
+    return s;
+  }
+
+  /* posts: how many SEPARATE legs or towers reach a given height.
+     Counted one block BELOW the height asked for, not at the top. Counting at
+     the top meant that the moment you laid the platform your four legs became
+     one shape and the tick went out again — which is exactly backwards, since
+     the platform is the thing you were building the legs for. A block at
+     floor+h-1, in a column that reaches floor+h, is a leg. */
+  function postsAtLeast(s, h) {
+    var tallEnough = [], i, j;
+    for (i = 0; i < PLOT; i++) for (j = 0; j < PLOT; j++) {
+      var f = plotFloor(i, j), x = plot.x0 + i, z = plot.z0 + j;
+      var atSlice = get(x, f + Math.max(1, h - 1), z);
+      tallEnough[j * PLOT + i] =
+        (s.top[j * PLOT + i] >= f + h && atSlice !== AIR && atSlice !== 13) ? 1 : 0;
+    }
+    var seen = {}, groups = 0;
+    for (i = 0; i < PLOT; i++) for (j = 0; j < PLOT; j++) {
+      var k = j * PLOT + i;
+      if (!tallEnough[k] || seen[k]) continue;
+      groups++;
+      var stack = [k];
+      seen[k] = 1;
+      while (stack.length) {
+        var c = stack.pop(), ci = c % PLOT, cj = (c / PLOT) | 0;
+        [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]].forEach(function (d) {
+          var ni = ci + d[0], nj = cj + d[1];
+          if (ni < 0 || nj < 0 || ni >= PLOT || nj >= PLOT) return;
+          var nk = nj * PLOT + ni;
+          if (tallEnough[nk] && !seen[nk]) { seen[nk] = 1; stack.push(nk); }
+        });
+      }
+    }
+    return groups;
+  }
+
+  function blockNames(ids) {
+    var n = ids.map(function (id) { return B[id].n[FR ? 1 : 0].toLowerCase(); });
+    if (n.length === 1) return n[0];
+    return n.slice(0, -1).join(", ") + T(" or ", " ou ") + n[n.length - 1];
+  }
+
+  /* Each rule becomes one line: what it asks, where you are, and whether it is
+     ticked. Nothing is taken on trust and nothing is hidden. */
+  function checkRules(code) {
+    var ch = CHAL[code];
+    if (!ch || !plot) return null;
+    var s = scanPlot();
+    var lines = ch.rules.map(function (r) {
+      var kind = r[0], have = 0, need = 0, text = "";
+      var L = RULE_LABEL[kind];
+      if (kind === "count") { have = s.count; need = r[1]; text = L[FR ? 1 : 0]; }
+      else if (kind === "tall") { have = s.tall; need = r[1]; text = L[FR ? 1 : 0]; }
+      else if (kind === "wide") { have = s.wide; need = r[1]; text = L[FR ? 1 : 0]; }
+      else if (kind === "roof") { have = s.roof; need = r[1]; text = L[FR ? 1 : 0]; }
+      else if (kind === "deck") { have = s.deck; need = r[1]; text = L[FR ? 1 : 0]; }
+      else if (kind === "posts") {
+        have = postsAtLeast(s, r[2]); need = r[1];
+        text = L[FR ? 1 : 0] + T(" at least " + r[2] + " tall", " d'au moins " + r[2] + " de haut");
+      } else if (kind === "use") {
+        need = r[2];
+        r[1].forEach(function (id) { have += s.kinds[id] || 0; });
+        text = L[FR ? 1 : 0].replace("%s", blockNames(r[1]));
+      } else if (kind === "only") {
+        var wrong = 0;
+        Object.keys(s.kinds).forEach(function (id) {
+          if (r[1].indexOf(+id) < 0) wrong += s.kinds[id];
+        });
+        return { text: L[FR ? 1 : 0].replace("%s", blockNames(r[1])),
+                 ok: wrong === 0 && s.count > 0, have: wrong, need: 0, kind: kind };
+      }
+      return { text: text, have: have, need: need, ok: have >= need, kind: kind };
+    });
+    return { lines: lines, all: lines.every(function (l) { return l.ok; }), scan: s };
   }
 
   /* =================================================================== save
@@ -1496,7 +2103,8 @@
       }
       out.push(cur, run);
       localStorage.setItem(KEY, JSON.stringify({
-        v: 1, w: [WX, WY, WZ], rle: out,
+        v: 1, w: [WX, WY, WZ], rle: out, sd: worldSeed,
+        pl: plot ? [plot.x0, plot.z0] : null,
         p: [Math.round(P.x * 10) / 10, Math.round(P.y * 10) / 10, Math.round(P.z * 10) / 10,
             Math.round(P.yaw * 100) / 100, Math.round(P.pitch * 100) / 100]
       }));
@@ -1516,8 +2124,37 @@
       }
       if (at !== world.length) return false;
       if (d.p) { P.x = d.p[0]; P.y = d.p[1]; P.z = d.p[2]; P.yaw = d.p[3]; P.pitch = d.p[4]; }
+      worldSeed = (typeof d.sd === "number") ? d.sd : region.seed;
+      if (d.pl) {
+        plot = { x0: d.pl[0], z0: d.pl[1],
+                 floor: floorOf(d.pl[0], d.pl[1], heightMap(worldSeed, region), region.t.sea) };
+      } else {
+        /* A world saved before the challenges existed. Work out where its plot
+           would have been and adopt it — but only clear the trees the generator
+           had put there, and only if nothing ELSE is standing on the plot. If
+           the player has already built something here it is theirs, and a tree
+           in the corner is a far smaller problem than losing it. */
+        plot = pickPlot(region, heightMap(worldSeed, region));
+        if (plot) {
+          var s = scanPlot(), other = 0;
+          Object.keys(s.kinds).forEach(function (id) {
+            if (+id !== 5 && +id !== 7 && +id !== 8) other += s.kinds[id];
+          });
+          if (!other) clearPlotGrowth();
+        }
+      }
       return true;
     } catch (e) { return false; }
+  }
+
+  function clearPlotGrowth() {
+    for (var i = 0; i < PLOT; i++) for (var j = 0; j < PLOT; j++) {
+      var x = plot.x0 + i, z = plot.z0 + j, f = plotFloor(i, j);
+      for (var y = f + 1; y < WY; y++) {
+        var v = get(x, y, z);
+        if (v === 5 || v === 7 || v === 8) set(x, y, z, AIR);
+      }
+    }
   }
 
   /* ================================================================== input */
@@ -1743,6 +2380,15 @@
        what is behind them rather than punching a hole in it */
     var ks = Object.keys(chunks);
     for (var i = 0; i < ks.length; i++) draw(chunks[ks[i]].op);
+    /* the NPC and the plot outline: solid, so before the glass and the water,
+       and drawn with their own flat-colour texture rather than the block atlas */
+    if (entMesh) {
+      gl.bindTexture(gl.TEXTURE_2D, entGlTex);
+      gl.disable(gl.CULL_FACE);          /* the ground strip is a single face */
+      draw(entMesh);
+      gl.enable(gl.CULL_FACE);
+      gl.bindTexture(gl.TEXTURE_2D, tex);
+    }
     gl.depthMask(false);
     for (var j = 0; j < ks.length; j++) draw(chunks[ks[j]].al);
     gl.depthMask(true);
@@ -1754,6 +2400,7 @@
     last = now;
     movePlayer(dt);
     renderFrame();
+    if ((fpsN & 7) === 0) updateNear();
 
     fpsN++; fpsT += dt;
     if (fpsT >= 0.5) {
@@ -1954,10 +2601,73 @@
     P.yaw = bestYaw;
     P.pitch = -0.12;
   }
-  function newWorld(seed) {
+  /* One place that makes a world, so the plot is chosen the same way every
+     time. The plot comes FIRST, from the height map alone, because generate()
+     needs to know where it is in order to keep the trees off it. */
+  function makeWorld(seed) {
+    worldSeed = seed;
+    plot = pickPlot(region, heightMap(seed, region));
     generate(seed, region);
     dropPlayer();
+    standAtPlot();
+  }
+
+  /* The first three seconds again. Landing on the flattest ground somewhere is
+     fine for Free Build, but in a province there is a person waiting and a
+     marked square to build on, and a child who arrives facing the other way has
+     to go looking for both. So: stand just outside the plot, next to the guide,
+     looking straight at the site. */
+  function standAtPlot() {
+    if (!plot) return;
+    var n = npcSpot();
+    if (!n) return;
+    /* Stand INSIDE the plot, a few blocks in from the guide, facing them.
+       Standing outside it sounded right and was wrong: outside is whatever the
+       land happens to be doing, and in British Columbia and Newfoundland that
+       is a cliff — three of the thirteen opened with a child's face pressed
+       against a wall of dirt. Inside is flat, because flat is why it was chosen
+       as the plot. From here the marked square is all around you and the person
+       who wants something built is four blocks away, which is close enough for
+       the prompt to show. */
+    var mx = plot.x0 + PLOT / 2, mz = plot.z0 + PLOT / 2;
+    var dx = mx - n[0], dz = mz - n[2];
+    var len = Math.sqrt(dx * dx + dz * dz) || 1;
+    var best = null, bestScore = -1e9;
+    for (var into = 3; into <= 7; into++) {
+      for (var side = -3; side <= 3; side++) {
+        var px = Math.round(n[0] + dx / len * into - dz / len * side);
+        var pz = Math.round(n[2] + dz / len * into + dx / len * side);
+        if (!inPlot(px, pz)) continue;
+        var t = topOf(px, pz);
+        if (t < SEA || get(px, t + 1, pz) !== AIR || get(px, t + 2, pz) !== AIR) continue;
+        /* can it see the guide from there? */
+        var seen = 0;
+        for (var k = 1; k <= 6; k++) {
+          var f = k / 6;
+          var qx = Math.round(px + (n[0] - px) * f), qz = Math.round(pz + (n[2] - pz) * f);
+          if (solid(get(qx, Math.round(t + 1.7), qz))) break;
+          seen++;
+        }
+        /* Higher is better when the ground is not flat after all: from the top
+           of a step you look down over the plot, from the bottom you look at
+           the step. Ontario and Newfoundland both opened on a wall of grass
+           until this was in. */
+        var score = seen * 10 + t * 1.5 - Math.abs(into - 4) - Math.abs(side);
+        if (score > bestScore) { bestScore = score; best = [px, t, pz]; }
+      }
+    }
+    if (!best) return;                       /* keep the ordinary spawn */
+    P.x = best[0] + 0.5; P.z = best[2] + 0.5; P.y = best[1] + 1.01; P.vy = 0;
+    /* forward is (-sin yaw, -cos yaw), the same convention movePlayer uses */
+    P.yaw = Math.atan2(-(n[0] - P.x), -(n[2] - P.z));
+    P.pitch = -0.05;
+  }
+
+  function newWorld(seed) {
+    makeWorld(seed);
     meshAll();
+    buildEntities();
+    refreshList();
     save(false);
   }
 
@@ -1972,6 +2682,12 @@
   function regionBlurb(r) { return FR ? r.bf : r.be; }
   function labelRegion() {
     document.getElementById("bbWhere").textContent = regionName(region);
+    var cb = document.getElementById("bbChalBtn");
+    if (cb) cb.style.display = CHAL[region.c] ? "" : "none";
+    if (!CHAL[region.c]) {
+      document.getElementById("bbNear").hidden = true;
+      document.getElementById("bbList").hidden = true;
+    }
   }
   function veilText() {
     document.getElementById("bbVeilT").textContent = T("Canada Block World", "Canada Block World");
@@ -1984,12 +2700,19 @@
       var p = shapes[i], c = p.getAttribute("data-r");
       p.classList.toggle("here", c === region.c);
       p.classList.toggle("seen", c !== region.c && hasSave(c));
+      p.classList.toggle("done", isDone(c));
       p.classList.toggle("sel", c === mapSel);
     }
     document.getElementById("bbFree").classList.toggle("on", mapSel === "FREE");
+    var d = doneMap(), n = 0;
+    CHALLENGES.forEach(function (c) { if (d[c.c]) n++; });
+    document.getElementById("bbMapScore").textContent =
+      T(n + " of " + CHALLENGES.length + " challenges finished",
+        n + " défis sur " + CHALLENGES.length + " terminés");
     var r = REG[mapSel] || region;
     var tag = "";
-    if (r.c === region.c) tag = T("you are here", "vous êtes ici");
+    if (isDone(r.c)) tag = T("challenge finished", "défi terminé");
+    else if (r.c === region.c) tag = T("you are here", "vous êtes ici");
     else if (hasSave(r.c)) tag = T("already started", "déjà commencé");
     var nameEl = document.getElementById("bbMapName");
     nameEl.textContent = regionName(r);
@@ -2005,6 +2728,7 @@
   }
   function openMap() {
     if (running) pause();
+    closeChal();
     mapSel = region.c;
     paintMap();
     mapEl.hidden = false;
@@ -2032,8 +2756,10 @@
     KEY = keyFor(r.c);
     SEA = r.t.sea;
     try { localStorage.setItem(REGION_KEY, r.c); } catch (e) {}
-    if (!load()) { generate(r.seed, r); dropPlayer(); save(false); }
+    if (!load()) { makeWorld(r.seed); save(false); }
     meshAll();
+    buildEntities();
+    refreshList(true);
     applyTheme(theme);
     labelRegion();
     veilText();
@@ -2068,6 +2794,129 @@
     }
   });
 
+
+  /* ==================================================== talking, and ticking
+     The checklist is the part that teaches. A card you read once and close
+     tells a child what to build; a list that ticks itself as they place blocks
+     tells them whether they are getting there, which is the thing they actually
+     want to know. It is recomputed after every dig and every block placed —
+     the plot is fourteen by fourteen, so that costs nothing. */
+  var listTimer = null, lastAll = false;
+
+  function challenge() { return CHAL[region.c] || null; }
+
+  function refreshList(now) {
+    if (!now) {
+      clearTimeout(listTimer);
+      listTimer = setTimeout(function () { refreshList(true); }, 160);
+      return;
+    }
+    var el = document.getElementById("bbList");
+    var ch = challenge();
+    if (!ch || !plot) { el.hidden = true; lastAll = false; return; }
+    var res = checkRules(region.c);
+    if (!res) { el.hidden = true; return; }
+    var done = isDone(region.c);
+    var head = done
+      ? T("Done: ", "Terminé : ") + ch.build[FR ? 1 : 0]
+      : T("Build ", "Bâtissez ") + ch.build[FR ? 1 : 0];
+    el.innerHTML = "<b>" + esc(head) + "</b>" + res.lines.map(function (l) {
+      var num = (l.kind === "only") ? "" : " " + l.have + "/" + l.need;
+      return '<div class="' + (l.ok ? "tick" : "todo") + '">' +
+             (l.ok ? "\u2713" : "\u25cb") + " " + esc(l.text) + esc(num) + "</div>";
+    }).join("");
+    el.hidden = false;
+
+    if (res.all && !done) {
+      setDone(region.c);
+      buildEntities();
+      celebrate(ch);
+      paintMapSafe();
+    }
+    lastAll = res.all;
+  }
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function paintMapSafe() { try { paintMap(); } catch (e) {} }
+
+  function celebrate(ch) {
+    var d = document.getElementById("bbDone");
+    d.innerHTML = "\ud83c\udf41 " + esc(T("Challenge complete!", "Défi réussi !")) +
+                  "<div style=\"font-weight:600;font-size:.86rem;margin-top:6px;opacity:.9\">" +
+                  esc(T("Talk to ", "Parlez à ") + ch.npc[FR ? 1 : 0].split(",")[0].split(" the ")[0]) +
+                  "</div>";
+    d.hidden = false;
+    setTimeout(function () { d.hidden = true; }, 3200);
+  }
+
+  /* the prompt over the NPC's head, when you are close enough to talk */
+  function nearNpc() {
+    var spot = npcSpot();
+    if (!spot || !challenge()) return false;
+    var dx = P.x - spot[0], dz = P.z - spot[2], dy = P.y - spot[1];
+    return (dx * dx + dz * dz + dy * dy * 0.4) < 20;      /* about four blocks */
+  }
+  function updateNear() {
+    var el = document.getElementById("bbNear");
+    var ch = challenge();
+    if (!ch || !running || !nearNpc()) { el.hidden = true; return; }
+    el.textContent = ch.npc[FR ? 1 : 0] +
+      (isTouch() ? T(" — tap to talk", " — touchez pour parler")
+                 : T(" — press T to talk", " — appuyez sur T pour parler"));
+    el.hidden = false;
+  }
+
+  /* ---------------------------------------------------------- the card */
+  var chalEl = document.getElementById("bbChal");
+  function openChal() {
+    var ch = challenge();
+    if (!ch) return;
+    if (running) pause();
+    closeMap();
+    var res = checkRules(region.c);
+    var done = isDone(region.c);
+    document.getElementById("bbChalT").textContent = regionName(region);
+    document.getElementById("bbChalWho").textContent = ch.npc[FR ? 1 : 0];
+    document.getElementById("bbChalSay").textContent = ch.brief[FR ? 1 : 0];
+    document.getElementById("bbChalAsk").textContent =
+      T("Build ", "Bâtissez ") + ch.build[FR ? 1 : 0];
+    var ul = document.getElementById("bbChalList");
+    ul.innerHTML = (res ? res.lines : []).map(function (l) {
+      var num = (l.kind === "only") ? "" : l.have + " / " + l.need;
+      return '<li class="' + (l.ok ? "ok" : "no") + '"><span class="mk">' +
+             (l.ok ? "\u2713" : "\u25cb") + '</span><span>' + esc(l.text) +
+             '</span><span class="num">' + esc(num) + "</span></li>";
+    }).join("");
+    document.getElementById("bbChalHint").textContent =
+      T("Hint: ", "Astuce : ") + ch.hint[FR ? 1 : 0];
+    var f = document.getElementById("bbChalFact");
+    if (done) { f.textContent = ch.fact[FR ? 1 : 0]; f.hidden = false; }
+    else { f.hidden = true; }
+    document.getElementById("bbChalGo").textContent =
+      done ? T("Keep building", "Continuer à bâtir") : T("Start building", "Commencer à bâtir");
+    chalEl.hidden = false;
+    shell.classList.add("bb-map-on");
+    document.body.classList.add("bb-map-open");
+  }
+  function closeChal() {
+    chalEl.hidden = true;
+    shell.classList.remove("bb-map-on");
+    document.body.classList.remove("bb-map-open");
+  }
+  document.getElementById("bbNear").addEventListener("click", openChal);
+  document.getElementById("bbChalGo").addEventListener("click", function () {
+    closeChal();
+    start();
+  });
+  document.getElementById("bbChalBtn").addEventListener("click", openChal);
+  document.addEventListener("keydown", function (ev) {
+    if (ev.code === "Escape" && !chalEl.hidden) { closeChal(); ev.preventDefault(); return; }
+    if (ev.code === "KeyT" && challenge() && chalEl.hidden && mapEl.hidden) {
+      openChal(); ev.preventDefault();
+    }
+  });
+
   /* ================================================================== boot */
   document.addEventListener("visibilitychange", function () {
     if (document.hidden && running) pause();
@@ -2081,11 +2930,11 @@
     /* A brand-new world is written straight away, not only after the first dig.
        Otherwise a player who looks around, closes the tab and comes back finds
        their footsteps gone — and the very first save would have been a surprise. */
-    generate(region.seed, region);
-    dropPlayer();
+    makeWorld(region.seed);
     save(false);
   }
   meshAll();
+  buildEntities();
   resize();
 
   if (FR) {
@@ -2133,6 +2982,8 @@
   labelRegion();
   veilText();
   paintMap();
+  buildEntities();
+  refreshList(true);
   document.getElementById("bbPick").textContent = T("Choose a place", "Choisir un endroit");
   if (FR) {
     document.getElementById("bbMapT").textContent = "Où voulez-vous bâtir ?";
@@ -2142,6 +2993,7 @@
     document.getElementById("bbFree").textContent = "Construction libre";
     document.getElementById("bbMapX").textContent = "Retour";
     document.getElementById("bbMapBtn2").textContent = "Carte du Canada";
+    document.getElementById("bbChalBtn").textContent = "Défi";
     document.getElementById("bbMapBtn").setAttribute("aria-label", "Ouvrir la carte");
   }
 
@@ -2155,7 +3007,7 @@
 })();
 </script>
   <script src="../js/game-fullscreen.js?v=c56db4e5" defer></script>
-  <script src="../js/site.js?v=7cb7e820"></script>
+  <script src="../js/site.js?v=01a3ace0"></script>
   <script src="../js/analytics.js?v=d06ceb69"></script>
   <script src="../js/ads.js?v=00e703ff" defer></script>
   <script src="../js/pwa.js?v=56adaa04" defer></script>
