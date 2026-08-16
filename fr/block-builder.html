@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block Builder — bac à sable 3D gratuit en blocs</title>
+<meta name="description" content="Creusez, bâtissez et explorez un monde de blocs en 3D. Douze types de blocs, un paysage canadien, sauvegarde automatique. Gratuit et sans inscription.">
+<link rel="stylesheet" href="../css/style.css?v=a008388b">
+<style>
+  .bb-shell{position:relative;width:100%;max-width:960px;margin:0 auto;border:2px solid var(--line);
+    border-radius:16px;overflow:hidden;background:#8fc4e8;touch-action:none;user-select:none;
+    -webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+  .bb-shell canvas{display:block;width:100%;height:100%;image-rendering:pixelated}
+  .bb-stage{position:relative;width:100%;aspect-ratio:4/3}
+  @media (max-width:700px){ .bb-stage{aspect-ratio:3/4} }
+
+  .bb-cross{position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;
+    pointer-events:none;opacity:.85}
+  .bb-cross:before,.bb-cross:after{content:"";position:absolute;background:#fff;
+    box-shadow:0 0 0 1px rgba(0,0,0,.55)}
+  .bb-cross:before{left:9px;top:0;width:4px;height:22px}
+  .bb-cross:after{top:9px;left:0;height:4px;width:22px}
+
+  .bb-hud{position:absolute;left:0;right:0;top:0;padding:8px 10px;display:flex;gap:8px;
+    justify-content:space-between;align-items:flex-start;pointer-events:none;font-weight:800;
+    font-size:.8rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.7)}
+  .bb-hud .box{background:rgba(0,0,0,.34);border-radius:10px;padding:5px 9px;pointer-events:none}
+
+  .bb-bar{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:flex;gap:5px;
+    background:rgba(0,0,0,.34);padding:6px;border-radius:14px;max-width:96%;flex-wrap:wrap;
+    justify-content:center}
+  .bb-slot{width:42px;height:42px;border-radius:9px;border:2px solid rgba(255,255,255,.35);
+    background:#6b6b6b;cursor:pointer;position:relative;padding:0;overflow:hidden}
+  .bb-slot canvas{width:100%;height:100%;display:block;image-rendering:pixelated}
+  .bb-slot.on{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.35);transform:translateY(-3px)}
+  @media (max-width:560px){ .bb-slot{width:34px;height:34px} }
+
+  .bb-touch{position:absolute;inset:0;pointer-events:none}
+  .bb-stick{position:absolute;left:12px;bottom:64px;width:104px;height:104px;border-radius:50%;
+    background:rgba(0,0,0,.26);border:2px solid rgba(255,255,255,.35);pointer-events:auto}
+  .bb-knob{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;
+    border-radius:50%;background:rgba(255,255,255,.75)}
+  .bb-btns{position:absolute;right:12px;bottom:64px;display:grid;gap:8px;pointer-events:auto}
+  .bb-b{width:60px;height:60px;border-radius:50%;border:2px solid rgba(255,255,255,.45);
+    background:rgba(0,0,0,.34);color:#fff;font-weight:900;font-size:1.5rem;line-height:1;
+    cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center}
+  .bb-b:active{background:rgba(255,255,255,.3)}
+  .bb-b small{font-size:.55rem;font-weight:800;display:block;margin-top:1px}
+
+  .bb-veil{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(12,20,30,.72);color:#fff;text-align:center;padding:20px;z-index:5}
+  .bb-veil.off{display:none}
+  .bb-veil .card{max-width:420px}
+  .bb-veil h2{margin:0 0 8px;font-size:1.4rem}
+  .bb-veil p{margin:0 0 14px;line-height:1.5;font-size:.95rem;opacity:.94}
+  .bb-veil kbd{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);
+    border-radius:5px;padding:1px 6px;font-weight:800;font-size:.85em}
+  .bb-tools{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+  .bb-note{color:var(--muted);font-size:.88rem;font-weight:600;text-align:center;margin-top:12px;line-height:1.55}
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#c8102e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Canada Quiz">
+<link rel="canonical" href="https://canada-quiz.com/fr/block-builder.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/block-builder.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/block-builder.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/block-builder.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://canada-quiz.com/fr/"},{"@type":"ListItem","position":2,"name":"Jeux de réflexion et casse-tête","item":"https://canada-quiz.com/fr/games.html"},{"@type":"ListItem","position":3,"name":"Block Builder","item":"https://canada-quiz.com/fr/block-builder.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/fr/block-builder.html#webpage","url":"https://canada-quiz.com/fr/block-builder.html","name":"Block Builder — bac à sable 3D gratuit en blocs","description":"Creusez, bâtissez et explorez un monde de blocs en 3D. Douze types de blocs, un paysage canadien, sauvegarde automatique. Gratuit et sans inscription.","inLanguage":"fr-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/fr/","name":"Canada Quiz et jeux amusants en famille"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="for-kids.html">Pour les enfants</a>
+      <a href="citizenship.html">citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🧱 Block Builder</h1>
+    <p>Creusez, bâtissez et parcourez tout un monde fait de blocs — en 3D, dans votre navigateur, sans rien installer.</p>
+  </section>
+
+  <details class="howto"><summary>📖 Comment jouer</summary><p>Sur un ordinateur, cliquez une fois sur le monde pour regarder autour avec la souris, puis marchez avec W A S D, sautez avec Espace et montez ou descendez avec Q et E. Le clic gauche casse le bloc visé et le clic droit en pose un. Sur téléphone ou tablette, glissez le levier de gauche pour marcher, glissez n'importe où à droite de l'écran pour regarder autour, et servez-vous des boutons ronds pour sauter, creuser et bâtir. Choisissez le bloc que vous tenez dans la rangée du bas, ou avec la molette ou les touches numérotées pendant que vous jouez. Votre monde s'enregistre tout seul sur cet appareil pendant que vous jouez : vous pouvez fermer la page et y revenir.</p></details>
+
+  <div class="panel" data-fs-host>
+    <div class="bb-shell" id="bbShell" data-no-i18n>
+      <div class="bb-stage" id="bbStage">
+        <canvas id="bbCanvas"></canvas>
+        <div class="bb-cross" id="bbCross"></div>
+        <div class="bb-hud">
+          <span class="box" id="bbHold">Herbe</span>
+          <span class="box" id="bbFps">—</span>
+        </div>
+        <div class="bb-touch" id="bbTouch">
+          <div class="bb-stick" id="bbStick"><div class="bb-knob" id="bbKnob"></div></div>
+          <div class="bb-btns">
+            <button type="button" class="bb-b" id="bbJump" aria-label="Jump">⤒</button>
+            <button type="button" class="bb-b" id="bbDig" aria-label="Break block">⛏<small>DIG</small></button>
+            <button type="button" class="bb-b" id="bbPut" aria-label="Place block">🧱<small>PUT</small></button>
+          </div>
+        </div>
+        <div class="bb-bar" id="bbBar"></div>
+        <div class="bb-veil" id="bbVeil">
+          <div class="card">
+            <h2 id="bbVeilT">Block Builder</h2>
+            <p id="bbVeilP">Cliquez pour commencer. Déplacez-vous avec W A S D, sautez avec Espace, volez avec Q et E. Clic gauche pour creuser, clic droit pour bâtir. Molette pour changer de bloc.</p>
+            <p><button type="button" class="btn btn-green btn-lg" id="bbPlay">Jouer</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bb-tools">
+      <button type="button" class="btn btn-ghost" id="bbSave">Enregistrer</button>
+      <button type="button" class="btn btn-ghost" id="bbNew">Nouveau monde</button>
+      <button type="button" class="btn btn-ghost" id="bbFly">Fly: off</button>
+      <button type="button" class="btn btn-ghost" id="bbStyle">Style : Classique</button>
+    </div>
+    <p class="bb-note" id="bbNote">Votre monde est enregistré dans ce navigateur, sur cet appareil seulement. Aucun compte, aucune inscription, rien n'est envoyé nulle part.</p>
+  </div>
+
+  <section class="panel">
+    <h2>Ce que vous pouvez faire</h2>
+    <p>Le monde est un petit paysage canadien : un relief doux avec de l'herbe et de la pierre en dessous, des rives sablonneuses autour de l'eau, des bouleaux et des érables que vous pouvez couper, et de la neige sur les hauteurs. Tout ce que vous voyez est fait de blocs, et chacun d'eux peut être creusé ou reposé.</p>
+    <p>Vous pouvez changer l'apparence du monde avec le bouton Style en dessous : Classique est naturel, Vif est plus vif avec un contour foncé autour de chaque bloc, et Givré transforme tout le monde en hiver.</p>
+    <p>Douze types de blocs se trouvent dans la barre du bas : herbe, terre, pierre, sable, bois, planches, feuillage, feuilles d'érable rouges, neige, glace, verre et brique. Le verre et la glace laissent passer la lumière : vous pouvez donc bâtir une fenêtre et voir dehors.</p>
+    <p>Il n'y a pas de points de vie, pas de monstres et rien à perdre. C'est un jeu de construction tranquille : faites un chalet, creusez une mine, bâtissez un inukshuk en pierre, ou aplanissez une colline juste pour voir le temps que ça prend. Activer le vol permet aux plus jeunes de passer au-dessus de leur ouvrage sans en tomber.</p>
+    <h2>Est-ce que ça marche sur un téléphone ?</h2>
+    <p>Oui. Les commandes deviennent un levier et des boutons, et le monde est volontairement petit pour rester fluide sur une tablette d'école ou un téléphone plus ancien. Si c'est lent, fermer les autres onglets règle habituellement le problème — un monde en 3D est de loin ce qu'il y a de plus exigeant sur ce site.</p>
+    <p>Il faut WebGL, que tous les navigateurs des dix dernières années prennent en charge. Si un message dit que la 3D n'est pas disponible, c'est en général l'accélération matérielle désactivée dans les réglages du navigateur.</p>
+  </section>
+
+  <section class="panel">
+    <h2>D'autres jeux de construction et casse-tête</h2>
+    <p>Si vous aimez empiler, essayez <a href="inukshuk.html">Construis un inukshuk</a>.</p>
+    <p>Pour réfléchir autrement, il y a <a href="brain-trainer.html">Entraîneur cérébral</a>.</p>
+    <p>Le classique des tuiles coulissantes est <a href="sliding-puzzle.html">Taquin</a>.</p>
+    <p>Tout le reste se trouve sur la <a href="games.html">page des jeux en famille</a>.</p>
+  </section>
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>Questions fréquentes</h2>
+  <h3>Est-ce que c'est Minecraft ?</h3>
+  <p>Non, et il n'y a aucun lien. Minecraft est créé par Mojang et appartient à Microsoft. Ceci est notre propre petit jeu de construction, écrit de zéro, dont chaque texture est dessinée par le code plutôt que copiée.</p>
+  <h3>Faut-il l'installer ?</h3>
+  <p>Non. Il fonctionne directement dans la page où vous êtes déjà. Rien à télécharger, aucun compte, aucune inscription.</p>
+  <h3>Où mon monde est-il enregistré ?</h3>
+  <p>Dans ce navigateur, sur cet appareil, et nulle part ailleurs. Rien n'est envoyé. Effacer les données du navigateur efface le monde, et un autre appareil recommence à zéro.</p>
+  <h3>C'est lent sur mon téléphone. Puis-je y remédier ?</h3>
+  <p>Fermer les autres onglets aide généralement le plus. Un monde en 3D est de loin ce qu'il y a de plus exigeant sur ce site : un téléphone plus ancien sera donc plus lent qu'avec les quiz et les autres jeux.</p>
+</section>
+<!--/PAGEDOC-->
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <details class="footer-map">
+      <summary>Toutes les pages <span class="fm-count">(173)</span></summary>
+      <div class="footer-map-cols">
+      <div class="footer-map-col">
+        <div class="fm-h">Quiz</div>
+        <a href="quizzes.html">Tous les quiz</a>
+        <a href="gk-quiz.html">Culture générale</a>
+        <a href="canada-quiz.html">Canada Quiz</a>
+        <a href="fun-quiz.html">Quiz amusant sur le Canada</a>
+        <a href="province-quiz.html">Quelle province es-tu ?</a>
+        <a href="world-quiz.html">Quiz sur le monde</a>
+        <a href="science-quiz.html">Sciences et espace</a>
+        <a href="entertainment-quiz.html">Cinéma, musique et sport</a>
+        <a href="citizenship.html">Pratique de l'examen de citoyenneté</a>
+        <a href="ai-quiz.html">IA &amp; technologie</a>
+        <a href="body-quiz.html">Corps humain &amp; santé</a>
+        <a href="money-quiz.html">L'argent expliqué aux enfants</a>
+        <a href="earth-quiz.html">Terre &amp; environnement</a>
+        <a href="which-canadian-animal-quiz.html">Quel animal canadien ?</a>
+        <a href="which-canadian-food-quiz.html">Quel plat canadien ?</a>
+        <a href="which-canadian-city-quiz.html">Quelle ville canadienne ?</a>
+        <a href="which-winter-sport-quiz.html">Quel sport d'hiver ?</a>
+        <a href="which-national-park-quiz.html">Quel parc national ?</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Pour les enfants</div>
+        <a href="for-kids.html">Toutes les histoires pour enfants</a>
+        <a href="winnie-the-bear-from-winnipeg-for-kids.html">Winnie the Bear</a>
+        <a href="worlds-longest-beaver-dam-for-kids.html">The Longest Beaver Dam</a>
+        <a href="ufo-landing-pad-st-paul-alberta-for-kids.html">The UFO Landing Pad</a>
+        <a href="terry-fox-marathon-of-hope-for-kids.html">Terry Fox</a>
+        <a href="how-canada-chose-its-flag-for-kids.html">How the Flag Was Chosen</a>
+        <a href="insulin-discovered-in-canada-for-kids.html">The Discovery of Insulin</a>
+        <a href="animals-on-canadian-money-for-kids.html">Animals on Our Money</a>
+        <a href="the-bluenose-ship-on-the-dime-for-kids.html">Le Bluenose</a>
+        <a href="the-railway-across-canada-for-kids.html">The Railway Across Canada</a>
+        <a href="voyageurs-and-the-fur-trade-for-kids.html">The Voyageurs</a>
+        <a href="what-canada-day-really-is-for-kids.html">What Canada Day Is</a>
+        <a href="first-nations-inuit-and-metis-for-kids.html">Les Premières Nations, les Inuit et les Métis</a>
+        <a href="the-stanley-cup-story-for-kids.html">La coupe Stanley</a>
+        <a href="the-northern-lights-for-kids.html">The Northern Lights</a>
+        <a href="churchill-polar-bear-capital-for-kids.html">The Polar Bear Town</a>
+        <a href="maple-syrup-and-the-great-robbery-for-kids.html">Maple Syrup and the Robbery</a>
+        <a href="a-canadian-invented-basketball-for-kids.html">Who Invented Basketball</a>
+        <a href="the-dinosaurs-of-alberta-for-kids.html">The Dinosaurs of Alberta</a>
+        <a href="canadarm-canadas-robot-arm-in-space-for-kids.html">Canada's Arm in Space</a>
+        <a href="the-narwhal-and-the-frozen-north-for-kids.html">The Narwhal</a>
+        <a href="the-wild-horses-of-sable-island-for-kids.html">Sable Island Horses</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Pratique de l'examen de conduite</div>
+        <a href="driving-test.html">Examen de conduite au Canada</a>
+        <a href="canada-driving-test-by-province.html">Every Province Compared</a>
+        <a href="ontario-g1-practice-test.html">Test pratique G1 de l'Ontario</a>
+        <a href="ontario-g1-mock-test.html">Examen blanc G1 de l'Ontario</a>
+        <a href="ontario-g1-road-signs.html">Panneaux routiers de l'Ontario</a>
+        <a href="ontario-g1-rules-of-the-road.html">Code de la route de l'Ontario</a>
+        <a href="ontario-g1-study-guide.html">Guide d'étude G1 Ontario</a>
+        <a href="bc-class-7l-practice-test.html">Test pratique C.-B. classe 7L</a>
+        <a href="bc-class-7l-mock-test.html">Examen blanc C.-B. classe 7L</a>
+        <a href="bc-road-signs.html">Panneaux routiers de la C.-B.</a>
+        <a href="bc-rules-of-the-road.html">Code de la route de la C.-B.</a>
+        <a href="alberta-class-7-practice-test.html">Test pratique Alberta classe 7</a>
+        <a href="alberta-class-7-mock-test.html">Examen blanc Alberta classe 7</a>
+        <a href="alberta-road-signs.html">Panneaux routiers de l'Alberta</a>
+        <a href="alberta-rules-of-the-road.html">Code de la route de l'Alberta</a>
+        <a href="quebec-class-5-practice-test.html">Test pratique classe 5 du Québec</a>
+        <a href="quebec-class-5-mock-test.html">Examen blanc classe 5 du Québec</a>
+        <a href="quebec-road-signs.html">Panneaux routiers du Québec</a>
+        <a href="quebec-rules-of-the-road.html">Code de la route du Québec</a>
+        <a href="manitoba-class-5-practice-test.html">Test pratique classe 5 du Manitoba</a>
+        <a href="manitoba-class-5-mock-test.html">Examen blanc classe 5 du Manitoba</a>
+        <a href="manitoba-road-signs.html">Panneaux routiers du Manitoba</a>
+        <a href="manitoba-rules-of-the-road.html">Code de la route du Manitoba</a>
+        <a href="saskatchewan-class-7-practice-test.html">Test pratique classe 7 de la Saskatchewan</a>
+        <a href="saskatchewan-class-7-mock-test.html">Examen blanc classe 7 de la Saskatchewan</a>
+        <a href="saskatchewan-road-signs.html">Panneaux routiers de la Saskatchewan</a>
+        <a href="saskatchewan-rules-of-the-road.html">Règles de la route de la Saskatchewan</a>
+        <a href="nova-scotia-class-7-practice-test.html">Test pratique classe 7 de la Nouvelle-Écosse</a>
+        <a href="nova-scotia-class-7-mock-test.html">Examen blanc classe 7 de la Nouvelle-Écosse</a>
+        <a href="nova-scotia-road-signs.html">Panneaux routiers de la Nouvelle-Écosse</a>
+        <a href="nova-scotia-rules-of-the-road.html">Code de la route de la Nouvelle-Écosse</a>
+        <a href="new-brunswick-class-7-practice-test.html">Test pratique classe 7 du Nouveau-Brunswick</a>
+        <a href="new-brunswick-class-7-mock-test.html">Examen blanc classe 7 du Nouveau-Brunswick</a>
+        <a href="new-brunswick-road-signs.html">Panneaux routiers du Nouveau-Brunswick</a>
+        <a href="new-brunswick-rules-of-the-road.html">Code de la route du Nouveau-Brunswick</a>
+        <a href="beginner-driver-education-ontario.html">L'éducation au volant pour débutants en Ontario</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de réflexion et casse-têtes</div>
+        <a href="game-2048.html">2048</a>
+        <a href="block-builder.html">Block Builder</a>
+        <a href="brain-trainer.html">Entraîneur cérébral</a>
+        <a href="color-match.html">Trouve la couleur</a>
+        <a href="crossword.html">Mots croisés</a>
+        <a href="cube-twist.html">Cube Twist</a>
+        <a href="flags-game.html">Drapeaux du monde</a>
+        <a href="lights-out.html">Lights Out</a>
+        <a href="canada-map.html">Carte du Canada</a>
+        <a href="maple-says.html">Maple Says</a>
+        <a href="math-race.html">Course de maths</a>
+        <a href="memory.html">Jeu de mémoire</a>
+        <a href="minesweeper.html">Démineur</a>
+        <a href="sliding-puzzle.html">Taquin</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="times-tables.html">Champion des tables de multiplication</a>
+        <a href="typing-test.html">Test de vitesse de frappe</a>
+        <a href="word-groups.html">Groupes de mots</a>
+        <a href="word-guess.html">Devine le mot</a>
+        <a href="word-hive.html">Ruche de mots</a>
+        <a href="word-illusions.html">Illusions de mots</a>
+        <a href="word-master.html">Maître des mots</a>
+        <a href="scramble.html">Mots brouillés</a>
+        <a href="word-search.html">Mots cachés</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux d'action et jeux classiques</div>
+        <a href="checkers.html">Dames</a>
+        <a href="chess.html">Échecs</a>
+        <a href="connect4.html">Puissance 4</a>
+        <a href="inukshuk.html">Construis un inukshuk</a>
+        <a href="snake.html">Serpent érable</a>
+        <a href="reversi.html">Reversi</a>
+        <a href="tag.html">Tague</a>
+        <a href="tictactoe.html">Tic-tac-toe</a>
+        <a href="tile-tap.html">Tape-tuiles</a>
+        <a href="whack-a-beaver.html">Tape-le-castor</a>
+        <a href="carrom.html">Carrom</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Jeux de groupe</div>
+        <a href="charades.html">Charades</a>
+        <a href="imposter.html">Imposteur</a>
+        <a href="would-you-rather.html">Préfères-tu ?</a>
+        <a href="trivia-showdown.html">Duel de quiz</a>
+        <a href="hold-to-head.html">Devine sur le front</a>
+        <a href="top-answers.html">Meilleures réponses</a>
+        <a href="categories-game.html">Catégories</a>
+        <a href="story-maker.html">Créateur d'histoires</a>
+        <a href="draw-it.html">Dessine-le</a>
+        <a href="spin-wheel.html">Tourne la roue</a>
+        <a href="hide-and-find.html">Cache-cache</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Blogue</div>
+        <a href="10-tips-to-pass-your-citizenship-test.html">10 conseils pour réussir l'examen</a>
+        <a href="rare-canadian-history-stories.html">15 histoires canadiennes méconnues</a>
+        <a href="20-fun-facts-about-canada-for-kids.html">20 faits amusants pour les enfants</a>
+        <a href="a-short-history-of-canada.html">Une brève histoire du Canada</a>
+        <a href="blog.html">Tous les articles</a>
+        <a href="canadas-animals-and-wildlife.html">Animaux et faune</a>
+        <a href="canada-usa-trade-history.html">Le Canada et les États-Unis : histoire commerciale</a>
+        <a href="canadas-biggest-cities.html">Les plus grandes villes du Canada</a>
+        <a href="canada-geography-coast-to-coast.html">La géographie du Canada</a>
+        <a href="canadas-national-parks.html">Les parcs nationaux du Canada</a>
+        <a href="canada-population-timeline.html">Chronologie de la population du Canada</a>
+        <a href="canadian-food-poutine-maple-syrup.html">Cuisine canadienne &amp; sirop d'érable</a>
+        <a href="canadian-holidays-explained.html">Les fêtes canadiennes</a>
+        <a href="canadian-inventions.html">Inventions canadiennes</a>
+        <a href="canadian-money-explained.html">L'argent canadien expliqué</a>
+        <a href="canadian-slang-words.html">L'argot canadien</a>
+        <a href="canadian-symbols-explained.html">Les symboles canadiens expliqués</a>
+        <a href="famous-canadians-in-history.html">Des Canadiens célèbres de l'histoire</a>
+        <a href="newcomer-first-year-in-canada-checklist.html">Aide-mémoire pour la première année au Canada</a>
+        <a href="how-to-get-a-drivers-licence-in-canada.html">Obtenir son permis de conduire</a>
+        <a href="hockey-in-canada.html">Le hockey au Canada</a>
+        <a href="how-canada-was-built.html">Comment le Canada s'est bâti</a>
+        <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a>
+        <a href="how-to-prepare-for-the-canadian-citizenship-test.html">Comment se préparer à l'examen de citoyenneté</a>
+        <a href="indigenous-peoples-of-canada.html">Les peuples autochtones du Canada</a>
+        <a href="canadas-two-official-languages.html">Nos deux langues officielles</a>
+        <a href="prime-ministers-of-canada.html">Premiers ministres du Canada</a>
+        <a href="canada-provinces-and-territories-explained.html">Provinces et territoires</a>
+        <a href="rights-and-responsibilities-of-canadian-citizens.html">Droits et responsabilités</a>
+        <a href="the-history-of-canada-day.html">L'histoire de la fête du Canada</a>
+        <a href="the-story-of-the-canadian-flag.html">L'histoire du drapeau canadien</a>
+        <a href="what-is-confederation.html">Qu'est-ce que la Confédération ?</a>
+        <a href="winter-in-canada.html">L'hiver au Canada</a>
+        <a href="canadian-citizenship-test-what-to-expect.html">L'examen de citoyenneté, tel qu'il est vraiment</a>
+        <a href="exchange-foreign-drivers-licence-canada.html">Échanger un permis de conduire étranger au Canada</a>
+        <a href="winter-tires-canada-law-by-province.html">Winter Tire Law in Canada</a>
+        <a href="canadian-personal-tax-basics.html">Comment fonctionne l'impôt des particuliers au Canada</a>
+        <a href="how-to-incorporate-a-business-in-canada.html">Comment constituer une entreprise en société au Canada</a>
+        <a href="incorporation-vs-sole-proprietor-canada.html">Une petite entreprise devrait-elle se constituer en société ?</a>
+        <a href="farming-in-canada-the-real-picture.html">L'agriculture au Canada, en chiffres honnêtes</a>
+        <a href="can-canada-feed-itself.html">Le Canada pourrait-il nourrir tous les Canadiens ?</a>
+        <a href="young-canadians-and-farming.html">Les jeunes Canadiens veulent-ils devenir agriculteurs ?</a>
+      </div>
+      <div class="footer-map-col">
+        <div class="fm-h">Le site</div>
+        <a href="about.html">À propos</a>
+        <a href="games.html">Tous les jeux en famille</a>
+        <a href="all-pages.html">Toutes les pages</a>
+        <a href="contact.html">Contact</a>
+        <a href="daily.html">Défi du jour</a>
+        <a href="index.html">Accueil</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="sources.html">Sources et crédits</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </div>
+      </div>
+    </details>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr) { return FR ? fr : en; }
+
+  var cv = document.getElementById("bbCanvas");
+  var gl = null;
+  try {
+    gl = cv.getContext("webgl", { antialias: false, alpha: false }) ||
+         cv.getContext("experimental-webgl", { antialias: false, alpha: false });
+  } catch (e) { gl = null; }
+
+  if (!gl) {
+    document.getElementById("bbVeilT").textContent = T("3D is not available", "La 3D n'est pas disponible");
+    document.getElementById("bbVeilP").textContent = T(
+      "This game needs WebGL. It is usually hardware acceleration switched off in your browser settings, or a browser that is too old.",
+      "Ce jeu a besoin de WebGL. C'est souvent l'accélération matérielle désactivée dans les réglages du navigateur, ou un navigateur trop ancien.");
+    document.getElementById("bbPlay").style.display = "none";
+    return;
+  }
+
+  /* ===================================================== blocks and textures
+     Every texture is drawn here in code onto one canvas. No image files, so the
+     page has nothing extra to download and nothing that can 404. */
+  var AIR = 0;
+  var B = [
+    null,
+    { n: ["Grass", "Herbe"],        t: [0, 2, 1] },
+    { n: ["Dirt", "Terre"],         t: [2, 2, 2] },
+    { n: ["Stone", "Pierre"],       t: [3, 3, 3] },
+    { n: ["Sand", "Sable"],         t: [4, 4, 4] },
+    { n: ["Wood", "Bois"],          t: [6, 6, 5] },
+    { n: ["Planks", "Planches"],    t: [9, 9, 9] },
+    { n: ["Leaves", "Feuillage"],   t: [7, 7, 7], see: 1 },
+    { n: ["Maple leaves", "Feuilles d'érable"], t: [8, 8, 8], see: 1 },
+    { n: ["Snow", "Neige"],         t: [12, 2, 12] },
+    { n: ["Ice", "Glace"],          t: [13, 13, 13], see: 1 },
+    { n: ["Glass", "Verre"],        t: [10, 10, 10], see: 1 },
+    { n: ["Brick", "Brique"],       t: [14, 14, 14] },
+    { n: ["Water", "Eau"],          t: [11, 11, 11], see: 1, liquid: 1 }
+  ];
+  var HOTBAR = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  function solid(id) { return id !== AIR && !(B[id] && B[id].liquid); }
+  function seeThrough(id) { return id === AIR || (B[id] && B[id].see); }
+
+  var TS = 16, ATLAS_N = 4;                     /* 4x4 tiles of 16x16 */
+
+  /* Three looks, because one look does not suit everybody. "Bright" is the one
+     children get: bolder colours, a dark outline around every block so the edges
+     read clearly on a small screen, and far less speckle, which makes a world
+     built by a six-year-old look deliberate rather than muddy. Every texture is
+     still drawn here in code — swapping a theme is just a different palette and
+     a redraw, so it costs a few milliseconds and no downloads. */
+  var THEMES = {
+    classic: {
+      label: ["Classic", "Classique"], sky: [0.56, 0.77, 0.91], css: "#8fc4e8",
+      speck: 0.55, outline: null,
+      c: { grass: "#5aa02c", grassS: ["#67b132", "#4d8a25", "#72bd39"],
+           dirt: "#8a6742", dirtS: ["#7b5c3b", "#96714b", "#6f5334"],
+           stone: "#8d8d8d", stoneS: ["#808080", "#9a9a9a", "#767676"],
+           sand: "#e0d3a2", sandS: ["#d6c894", "#eadcaf"],
+           woodS: "#6d5136", woodSS: ["#5f4630", "#7a5b3d"], woodRing: "#5a4229",
+           woodT: "#a9865b", woodTS: ["#9b7a52", "#b59066"], woodTRing: "#7d6142",
+           leaf: "#3f7d2b", leafS: ["#356b24", "#4a8f33", "#2e5f20"],
+           maple: "#b3282d", mapleS: ["#9d2226", "#c53238", "#8a1d21"],
+           plank: "#b98d55", plankS: ["#a87f4c", "#c69a61"], plankLine: "#8f6b3f",
+           glass: "#cfe6f2", glassS: ["#c3dced"], glassEdge: "#eaf6ff",
+           water: "#2f6fb5", waterS: ["#2a63a4", "#3a7cc4"],
+           snow: "#f2f7fb", snowS: ["#e6eef5", "#ffffff"],
+           ice: "#9fd4ea", iceS: ["#8fc7e2", "#b2e0f3"],
+           brick: "#9a4b3c", brickS: ["#8a4235", "#a95546"], mortar: "#d6cfc6" }
+    },
+    bright: {
+      label: ["Bright", "Vif"], sky: [0.42, 0.80, 1.00], css: "#6bcbff",
+      speck: 0.86, outline: "rgba(0,0,0,.34)",
+      c: { grass: "#4ecb3c", grassS: ["#63de51", "#3cb42d"],
+           dirt: "#b5793f", dirtS: ["#c58a4d", "#a06833"],
+           stone: "#b9c0c7", stoneS: ["#cad1d8", "#a7aeb5"],
+           sand: "#ffe193", sandS: ["#ffefb8", "#f3cf76"],
+           woodS: "#96602f", woodSS: ["#a86e39", "#835226"], woodRing: "#7a4c24",
+           woodT: "#d09a55", woodTS: ["#e0aa64", "#bd8845"], woodTRing: "#8a5f2c",
+           leaf: "#3fc734", leafS: ["#52dc46", "#2fae26"],
+           maple: "#ff4d5a", mapleS: ["#ff6b76", "#e63946"],
+           plank: "#e6ab63", plankS: ["#f2bb74", "#d09852"], plankLine: "#a97636",
+           glass: "#d9f3ff", glassS: ["#c9ebff"], glassEdge: "#ffffff",
+           water: "#2fa8ff", waterS: ["#4fb8ff", "#1f93e6"],
+           snow: "#ffffff", snowS: ["#f2f8ff"],
+           ice: "#8ef0ff", iceS: ["#a9f5ff", "#6fe2f5"],
+           brick: "#ff7a5c", brickS: ["#ff8f74", "#e8654a"], mortar: "#ffffff" }
+    },
+    frosty: {
+      label: ["Frosty", "Givré"], sky: [0.85, 0.90, 0.95], css: "#d9e6f2",
+      speck: 0.62, outline: null,
+      c: { grass: "#8fb98a", grassS: ["#9dc697", "#7fa87b"],
+           dirt: "#8d8073", dirtS: ["#9a8d80", "#7e7266"],
+           stone: "#a8b0b8", stoneS: ["#b6bec6", "#99a1a9"],
+           sand: "#ded6c4", sandS: ["#e9e2d2", "#cec6b4"],
+           woodS: "#6b5c50", woodSS: ["#79695c", "#5c4e44"], woodRing: "#544740",
+           woodT: "#9b8a7c", woodTS: ["#a99789", "#8a7a6d"], woodTRing: "#6f6156",
+           leaf: "#6f9d78", leafS: ["#7fae87", "#5f8b68"],
+           maple: "#a5555c", mapleS: ["#b46770", "#8e454c"],
+           plank: "#a9998a", plankS: ["#b7a698", "#96877a"], plankLine: "#7f7166",
+           glass: "#e4f0f7", glassS: ["#d6e6f0"], glassEdge: "#ffffff",
+           water: "#5b8fb5", waterS: ["#6b9dc2", "#4d80a6"],
+           snow: "#ffffff", snowS: ["#f4f9ff"],
+           ice: "#c6e9f5", iceS: ["#d6f1fa", "#b2dcec"],
+           brick: "#94706b", brickS: ["#a37f79", "#84625d"], mortar: "#e8e2dc" }
+    }
+  };
+  var THEME_ORDER = ["classic", "bright", "frosty"];
+
+  function makeAtlas(name) {
+    var TH = THEMES[name] || THEMES.classic, C = TH.c;
+    var c = document.createElement("canvas");
+    c.width = c.height = TS * ATLAS_N;
+    var x = c.getContext("2d");
+    var seed = 1;
+    function rnd() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
+    function tile(i, base, spec, fn) {
+      var ox = (i % ATLAS_N) * TS, oy = ((i / ATLAS_N) | 0) * TS;
+      x.fillStyle = base; x.fillRect(ox, oy, TS, TS);
+      for (var p = 0; p < TS * TS; p++) {
+        if (rnd() > TH.speck) continue;
+        x.fillStyle = spec[(rnd() * spec.length) | 0];
+        x.fillRect(ox + (p % TS), oy + ((p / TS) | 0), 1, 1);
+      }
+      if (fn) fn(x, ox, oy);
+      /* the outline goes on last, so nothing a tile draws can cover it */
+      if (TH.outline && i !== 10) {
+        x.strokeStyle = TH.outline; x.lineWidth = 1;
+        x.strokeRect(ox + 0.5, oy + 0.5, TS - 1, TS - 1);
+      }
+    }
+    tile(0, C.grass, C.grassS);                                              /* grass top */
+    tile(1, C.dirt, C.dirtS, function (g, ox, oy) {                          /* grass side */
+      g.fillStyle = C.grass; g.fillRect(ox, oy, TS, 4);
+      g.fillStyle = C.grassS[1] || C.grass;
+      for (var i = 0; i < TS; i += 2) g.fillRect(ox + i, oy + 4, 1, 1 + ((i * 7) % 3));
+    });
+    tile(2, C.dirt, C.dirtS);                                                /* dirt */
+    tile(3, C.stone, C.stoneS);                                              /* stone */
+    tile(4, C.sand, C.sandS);                                                /* sand */
+    tile(5, C.woodS, C.woodSS, function (g, ox, oy) {                        /* wood side */
+      g.fillStyle = C.woodRing;
+      for (var i = 1; i < TS; i += 5) g.fillRect(ox + i, oy, 1, TS);
+    });
+    tile(6, C.woodT, C.woodTS, function (g, ox, oy) {                        /* wood top */
+      g.strokeStyle = C.woodTRing; g.lineWidth = 1;
+      for (var r = 2; r < 8; r += 2) { g.beginPath(); g.arc(ox + 8, oy + 8, r, 0, 6.29); g.stroke(); }
+    });
+    tile(7, C.leaf, C.leafS);                                                /* leaves */
+    tile(8, C.maple, C.mapleS);                                              /* maple leaves */
+    tile(9, C.plank, C.plankS, function (g, ox, oy) {                        /* planks */
+      g.fillStyle = C.plankLine;
+      g.fillRect(ox, oy + 5, TS, 1); g.fillRect(ox, oy + 11, TS, 1);
+    });
+    tile(10, C.glass, C.glassS, function (g, ox, oy) {                       /* glass */
+      g.clearRect(ox + 2, oy + 2, TS - 4, TS - 4);
+      g.fillStyle = C.glassEdge;
+      g.fillRect(ox, oy, TS, 2); g.fillRect(ox, oy, 2, TS);
+      g.fillRect(ox, oy + TS - 2, TS, 2); g.fillRect(ox + TS - 2, oy, 2, TS);
+    });
+    tile(11, C.water, C.waterS);                                             /* water */
+    tile(12, C.snow, C.snowS);                                               /* snow */
+    tile(13, C.ice, C.iceS);                                                 /* ice */
+    tile(14, C.brick, C.brickS, function (g, ox, oy) {                       /* brick */
+      g.fillStyle = C.mortar;
+      g.fillRect(ox, oy + 4, TS, 1); g.fillRect(ox, oy + 9, TS, 1); g.fillRect(ox, oy + 14, TS, 1);
+      g.fillRect(ox + 3, oy, 1, 4); g.fillRect(ox + 11, oy + 5, 1, 4); g.fillRect(ox + 3, oy + 10, 1, 4);
+    });
+    tile(15, "#555", ["#4c4c4c", "#606060"]);
+    return c;
+  }
+
+  /* Which look to start with. A saved choice wins. Otherwise anything arriving
+     from the For Kids section gets Bright, because that is who it is for. */
+  var THEME_KEY = "cq_blocks_theme";
+  function firstTheme() {
+    var saved = null;
+    try { saved = localStorage.getItem(THEME_KEY); } catch (e) {}
+    if (saved && THEMES[saved]) return saved;
+    if (/[?&]kids=1/.test(location.search)) return "bright";
+    if (/for-kids/.test(document.referrer || "")) return "bright";
+    return "classic";
+  }
+  var theme = firstTheme();
+  var atlasCanvas = makeAtlas(theme);
+
+  /* one small canvas per hotbar slot, so the button shows the real texture */
+  function slotIcon(tileIdx) {
+    var c = document.createElement("canvas");
+    c.width = c.height = TS;
+    c.getContext("2d").drawImage(atlasCanvas,
+      (tileIdx % ATLAS_N) * TS, ((tileIdx / ATLAS_N) | 0) * TS, TS, TS, 0, 0, TS, TS);
+    return c;
+  }
+
+  /* ============================================================== the world */
+  var WX = 64, WY = 40, WZ = 64;                /* width, height, depth in blocks */
+  var CH = 8;                                   /* chunk size in x and z */
+  var world = new Uint8Array(WX * WY * WZ);
+  var SEA = 12;
+
+  function idx(x, y, z) { return (y * WZ + z) * WX + x; }
+  function inside(x, y, z) { return x >= 0 && y >= 0 && z >= 0 && x < WX && y < WY && z < WZ; }
+  function get(x, y, z) { return inside(x, y, z) ? world[idx(x, y, z)] : (y < 0 ? 3 : AIR); }
+  function set(x, y, z, v) { if (inside(x, y, z)) world[idx(x, y, z)] = v; }
+
+  /* a small deterministic value-noise, so a seed always gives the same world */
+  function mulberry(a) {
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function generate(seed) {
+    var rnd = mulberry(seed);
+    var grid = [], gs = 9;                                  /* control points */
+    for (var i = 0; i < gs * gs; i++) grid.push(rnd());
+    function noise(x, z) {
+      var fx = x / WX * (gs - 1), fz = z / WZ * (gs - 1);
+      var x0 = Math.floor(fx), z0 = Math.floor(fz);
+      var tx = fx - x0, tz = fz - z0;
+      var sx = tx * tx * (3 - 2 * tx), sz = tz * tz * (3 - 2 * tz);
+      function g(a, b) { return grid[Math.min(gs - 1, b) * gs + Math.min(gs - 1, a)]; }
+      var a = g(x0, z0) + (g(x0 + 1, z0) - g(x0, z0)) * sx;
+      var b = g(x0, z0 + 1) + (g(x0 + 1, z0 + 1) - g(x0, z0 + 1)) * sx;
+      return a + (b - a) * sz;
+    }
+    world.fill(AIR);
+    var hmap = new Int16Array(WX * WZ);
+    for (var x = 0; x < WX; x++) for (var z = 0; z < WZ; z++) {
+      var h = Math.round(6 + noise(x, z) * 16 + noise(x * 2 % WX, z * 2 % WZ) * 4);
+      hmap[z * WX + x] = h;
+      for (var y = 0; y <= h; y++) {
+        var b = 3;                                           /* stone */
+        if (y > h - 4) b = 2;                                /* dirt */
+        if (y === h) b = (h >= 22) ? 9 : (h <= SEA + 1 ? 4 : 1);   /* snow / sand / grass */
+        set(x, y, z, b);
+      }
+      for (var w = h + 1; w <= SEA; w++) set(x, w, z, 13);    /* water */
+    }
+    /* trees: a trunk and a blob of leaves, red maple every so often */
+    for (var t = 0; t < 46; t++) {
+      var tx = 2 + Math.floor(rnd() * (WX - 4)), tz = 2 + Math.floor(rnd() * (WZ - 4));
+      var th = hmap[tz * WX + tx];
+      if (th <= SEA + 1 || th >= 21) continue;
+      if (get(tx, th, tz) !== 1) continue;
+      var maple = rnd() < 0.4 ? 8 : 7;
+      var tall = 4 + Math.floor(rnd() * 3);
+      for (var ty = 1; ty <= tall; ty++) set(tx, th + ty, tz, 5);
+      for (var dx = -2; dx <= 2; dx++) for (var dz = -2; dz <= 2; dz++) for (var dy = 0; dy <= 2; dy++) {
+        var d = Math.abs(dx) + Math.abs(dz) + dy;
+        if (d > 3) continue;
+        var lx = tx + dx, ly = th + tall - 1 + dy, lz = tz + dz;
+        if (get(lx, ly, lz) === AIR) set(lx, ly, lz, maple);
+      }
+    }
+    return hmap;
+  }
+
+  /* =========================================================== the renderer */
+  function sh(type, src) {
+    var s = gl.createShader(type);
+    gl.shaderSource(s, src); gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
+    return s;
+  }
+  var prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER,
+    "attribute vec3 p;attribute vec2 uv;attribute float l;" +
+    "uniform mat4 mvp;varying vec2 vUv;varying float vL;varying float vD;" +
+    "void main(){vec4 q=mvp*vec4(p,1.0);gl_Position=q;vUv=uv;vL=l;vD=q.z;}"));
+  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER,
+    "precision mediump float;uniform sampler2D tex;uniform vec3 fog;" +
+    "varying vec2 vUv;varying float vL;varying float vD;" +
+    "void main(){vec4 c=texture2D(tex,vUv);if(c.a<0.35)discard;" +
+    "float f=clamp((vD-28.0)/34.0,0.0,1.0);" +
+    "gl_FragColor=vec4(mix(c.rgb*vL,fog,f),c.a);}"));
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+  gl.useProgram(prog);
+  var aP = gl.getAttribLocation(prog, "p"),
+      aUV = gl.getAttribLocation(prog, "uv"),
+      aL = gl.getAttribLocation(prog, "l"),
+      uMVP = gl.getUniformLocation(prog, "mvp"),
+      uFog = gl.getUniformLocation(prog, "fog");
+  gl.uniform3f(uFog, THEMES[theme].sky[0], THEMES[theme].sky[1], THEMES[theme].sky[2]);
+
+  var tex = gl.createTexture();
+  gl.bindTexture(gl.TEXTURE_2D, tex);
+  gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, atlasCanvas);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+  gl.enable(gl.DEPTH_TEST);
+  gl.enable(gl.CULL_FACE);
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  gl.clearColor(THEMES[theme].sky[0], THEMES[theme].sky[1], THEMES[theme].sky[2], 1);
+
+  /* face definitions: corner offsets, normal direction, shade */
+  var FACES = [
+    { d: [0, 1, 0], s: 1.00, t: 0, v: [[0,1,0],[0,1,1],[1,1,1],[1,1,0]] },  /* top */
+    { d: [0,-1, 0], s: 0.52, t: 1, v: [[0,0,1],[0,0,0],[1,0,0],[1,0,1]] },  /* bottom */
+    { d: [0, 0,-1], s: 0.72, t: 2, v: [[1,0,0],[0,0,0],[0,1,0],[1,1,0]] },  /* north */
+    { d: [0, 0, 1], s: 0.72, t: 2, v: [[0,0,1],[1,0,1],[1,1,1],[0,1,1]] },  /* south */
+    { d: [-1,0, 0], s: 0.62, t: 2, v: [[0,0,0],[0,0,1],[0,1,1],[0,1,0]] },  /* west */
+    { d: [1, 0, 0], s: 0.62, t: 2, v: [[1,0,1],[1,0,0],[1,1,0],[1,1,1]] }   /* east */
+  ];
+
+  var chunks = {};                     /* key "cx,cz" -> {opaque, alpha} buffers */
+  function ckey(cx, cz) { return cx + "," + cz; }
+
+  function buildChunk(cx, cz) {
+    var op = { p: [], u: [], l: [] }, al = { p: [], u: [], l: [] };
+    var x0 = cx * CH, z0 = cz * CH;
+    for (var x = x0; x < x0 + CH; x++)
+      for (var z = z0; z < z0 + CH; z++)
+        for (var y = 0; y < WY; y++) {
+          var id = get(x, y, z);
+          if (id === AIR) continue;
+          var def = B[id];
+          var into = def.see ? al : op;
+          for (var f = 0; f < 6; f++) {
+            var F = FACES[f];
+            var nx = x + F.d[0], ny = y + F.d[1], nz = z + F.d[2];
+            var nb = get(nx, ny, nz);
+            /* draw a face only when the neighbour lets light past, and never
+               between two blocks of the same see-through type (two panes of
+               glass touching would otherwise draw four wasted faces) */
+            if (!seeThrough(nb)) continue;
+            if (def.see && nb === id) continue;
+            var tile = def.t[F.t];
+            var tx = (tile % ATLAS_N) / ATLAS_N, ty = ((tile / ATLAS_N) | 0) / ATLAS_N;
+            var s = 1 / ATLAS_N, e = 0.001;          /* inset stops tile bleed */
+            var uvq = [[tx + e, ty + s - e], [tx + s - e, ty + s - e],
+                       [tx + s - e, ty + e], [tx + e, ty + e]];
+            var order = [0, 1, 2, 0, 2, 3];
+            for (var k = 0; k < 6; k++) {
+              var vi = order[k], v = F.v[vi];
+              into.p.push(x + v[0], y + v[1], z + v[2]);
+              into.u.push(uvq[vi][0], uvq[vi][1]);
+              into.l.push(F.s);
+            }
+          }
+        }
+    return { op: op, al: al };
+  }
+
+  function upload(part) {
+    if (!part.p.length) return null;
+    function buf(arr, n) {
+      var b = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, b);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(arr), gl.STATIC_DRAW);
+      return b;
+    }
+    return { p: buf(part.p), u: buf(part.u), l: buf(part.l), n: part.p.length / 3 };
+  }
+
+  function meshChunk(cx, cz) {
+    var k = ckey(cx, cz), old = chunks[k];
+    if (old) {
+      [old.op, old.al].forEach(function (m) {
+        if (m) { gl.deleteBuffer(m.p); gl.deleteBuffer(m.u); gl.deleteBuffer(m.l); }
+      });
+    }
+    var built = buildChunk(cx, cz);
+    chunks[k] = { op: upload(built.op), al: upload(built.al) };
+  }
+  function meshAll() {
+    for (var cx = 0; cx < WX / CH; cx++) for (var cz = 0; cz < WZ / CH; cz++) meshChunk(cx, cz);
+  }
+  function dirtyAround(x, z) {
+    var seen = {};
+    for (var dx = -1; dx <= 1; dx++) for (var dz = -1; dz <= 1; dz++) {
+      var cx = Math.floor((x + dx) / CH), cz = Math.floor((z + dz) / CH);
+      if (cx < 0 || cz < 0 || cx >= WX / CH || cz >= WZ / CH) continue;
+      var k = ckey(cx, cz);
+      if (!seen[k]) { seen[k] = 1; meshChunk(cx, cz); }
+    }
+  }
+
+  /* ================================================================= matrix */
+  function perspective(fov, asp, n, f) {
+    var t = 1 / Math.tan(fov / 2);
+    return [t / asp,0,0,0, 0,t,0,0, 0,0,(f + n) / (n - f),-1, 0,0,2 * f * n / (n - f),0];
+  }
+  function lookMatrix(px, py, pz, yaw, pitch) {
+    var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+    /* forward, right, up of the camera */
+    var fx = sy * cp, fy = sp, fz = -cy * cp;
+    var rx = cy, ry = 0, rz = sy;
+    var ux = -sy * sp, uy = cp, uz = cy * sp;
+    return [rx,ux,-fx,0, ry,uy,-fy,0, rz,uz,-fz,0,
+            -(rx*px+ry*py+rz*pz), -(ux*px+uy*py+uz*pz), (fx*px+fy*py+fz*pz), 1];
+  }
+  function mul(a, b) {
+    var o = new Array(16);
+    for (var i = 0; i < 4; i++) for (var j = 0; j < 4; j++) {
+      var s = 0;
+      for (var k = 0; k < 4; k++) s += a[k * 4 + j] * b[i * 4 + k];
+      o[i * 4 + j] = s;
+    }
+    return o;
+  }
+
+  /* ================================================================= player */
+  var P = { x: WX / 2, y: 26, z: WZ / 2, vx: 0, vy: 0, vz: 0, yaw: 0, pitch: 0, ground: false };
+  var EYE = 1.62, RAD = 0.3, TALL = 1.8;
+  var fly = false, held = 1;
+
+  function blocked(x, y, z) {
+    var x0 = Math.floor(x - RAD), x1 = Math.floor(x + RAD);
+    var z0 = Math.floor(z - RAD), z1 = Math.floor(z + RAD);
+    var y0 = Math.floor(y), y1 = Math.floor(y + TALL - 0.001);
+    for (var i = x0; i <= x1; i++) for (var j = y0; j <= y1; j++) for (var k = z0; k <= z1; k++)
+      if (solid(get(i, j, k))) return true;
+    return false;
+  }
+  function movePlayer(dt) {
+    var speed = fly ? 9 : 4.6;
+    var cy = Math.cos(P.yaw), sy = Math.sin(P.yaw);
+    var mx = 0, mz = 0;
+    if (keys.w) { mx += sy; mz -= cy; }
+    if (keys.s) { mx -= sy; mz += cy; }
+    if (keys.a) { mx -= cy; mz -= sy; }
+    if (keys.d) { mx += cy; mz += sy; }
+    if (stick.on) { mx += stick.x * sy + stick.y * cy; mz += -stick.x * cy + stick.y * sy; }
+    var len = Math.hypot(mx, mz);
+    if (len > 0.001) { mx = mx / len * speed; mz = mz / len * speed; } else { mx = mz = 0; }
+
+    if (fly) {
+      P.vy = (keys.q ? 6 : 0) + (keys.e ? -6 : 0);
+    } else {
+      P.vy -= 22 * dt;
+      if (P.vy < -30) P.vy = -30;
+    }
+
+    var nx = P.x + mx * dt;
+    if (!blocked(nx, P.y, P.z)) P.x = nx;
+    var nz = P.z + mz * dt;
+    if (!blocked(P.x, P.y, nz)) P.z = nz;
+    var ny = P.y + P.vy * dt;
+    if (!blocked(P.x, ny, P.z)) { P.y = ny; P.ground = false; }
+    else { if (P.vy < 0) P.ground = true; P.vy = 0; }
+
+    if (P.y < -8) { P.x = WX / 2; P.z = WZ / 2; P.y = 30; P.vy = 0; }
+    P.x = Math.max(RAD, Math.min(WX - RAD, P.x));
+    P.z = Math.max(RAD, Math.min(WZ - RAD, P.z));
+  }
+  function jump() {
+    if (fly) { P.y += 1; return; }
+    if (P.ground) { P.vy = 7.4; P.ground = false; }
+  }
+
+  /* ========================================================= pick a block */
+  function raycast() {
+    var cy = Math.cos(P.yaw), sy = Math.sin(P.yaw), cp = Math.cos(P.pitch), sp = Math.sin(P.pitch);
+    var dx = sy * cp, dy = sp, dz = -cy * cp;
+    var x = P.x, y = P.y + EYE, z = P.z;
+    var px = null;
+    for (var s = 0; s < 120; s++) {                /* 0.05 steps to 6 blocks */
+      x += dx * 0.05; y += dy * 0.05; z += dz * 0.05;
+      var bx = Math.floor(x), by = Math.floor(y), bz = Math.floor(z);
+      var id = get(bx, by, bz);
+      if (id !== AIR && !(B[id] && B[id].liquid)) {
+        return { hit: [bx, by, bz], before: px || [bx, by + 1, bz] };
+      }
+      px = [bx, by, bz];
+    }
+    return null;
+  }
+  function dig() {
+    var r = raycast();
+    if (!r) return;
+    set(r.hit[0], r.hit[1], r.hit[2], AIR);
+    dirtyAround(r.hit[0], r.hit[2]);
+    save(true);
+  }
+  function put() {
+    var r = raycast();
+    if (!r) return;
+    var b = r.before;
+    if (!inside(b[0], b[1], b[2]) || get(b[0], b[1], b[2]) !== AIR) return;
+    /* refuse to build inside your own head */
+    set(b[0], b[1], b[2], held);
+    if (blocked(P.x, P.y, P.z)) { set(b[0], b[1], b[2], AIR); return; }
+    dirtyAround(b[0], b[2]);
+    save(true);
+  }
+
+  /* =================================================================== save
+     Run-length encoded, because a raw world is 163,840 bytes and most of it is
+     long runs of air or stone. Typical saved size is a few kilobytes. */
+  var KEY = "cq_blocks_v1";
+  var saveTimer = null;
+  function save(defer) {
+    if (defer) {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(function () { save(false); }, 1200);
+      return;
+    }
+    try {
+      var out = [], run = 1, cur = world[0];
+      for (var i = 1; i < world.length; i++) {
+        if (world[i] === cur && run < 65000) { run++; continue; }
+        out.push(cur, run); cur = world[i]; run = 1;
+      }
+      out.push(cur, run);
+      localStorage.setItem(KEY, JSON.stringify({
+        v: 1, w: [WX, WY, WZ], rle: out,
+        p: [Math.round(P.x * 10) / 10, Math.round(P.y * 10) / 10, Math.round(P.z * 10) / 10,
+            Math.round(P.yaw * 100) / 100, Math.round(P.pitch * 100) / 100]
+      }));
+    } catch (e) { /* private mode or full: the game still plays, it just forgets */ }
+  }
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return false;
+      var d = JSON.parse(raw);
+      if (!d || d.v !== 1 || !d.rle) return false;
+      if (d.w[0] !== WX || d.w[1] !== WY || d.w[2] !== WZ) return false;
+      var i = 0, at = 0;
+      while (i < d.rle.length && at < world.length) {
+        var val = d.rle[i++], n = d.rle[i++];
+        for (var k = 0; k < n && at < world.length; k++) world[at++] = val;
+      }
+      if (at !== world.length) return false;
+      if (d.p) { P.x = d.p[0]; P.y = d.p[1]; P.z = d.p[2]; P.yaw = d.p[3]; P.pitch = d.p[4]; }
+      return true;
+    } catch (e) { return false; }
+  }
+
+  /* ================================================================== input */
+  var keys = { w: 0, a: 0, s: 0, d: 0, q: 0, e: 0 };
+  var stick = { on: false, x: 0, y: 0, id: null };
+  var locked = false, running = false;
+
+  var KEYMAP = { KeyW: "w", KeyA: "a", KeyS: "s", KeyD: "d", KeyQ: "q", KeyE: "e",
+                 ArrowUp: "w", ArrowDown: "s", ArrowLeft: "a", ArrowRight: "d" };
+  document.addEventListener("keydown", function (ev) {
+    if (!running) return;
+    var k = KEYMAP[ev.code];
+    if (k) { keys[k] = 1; ev.preventDefault(); }
+    if (ev.code === "Space") { jump(); ev.preventDefault(); }
+    if (ev.code === "KeyF") { setFly(!fly); }
+    var n = parseInt(ev.key, 10);
+    if (n >= 1 && n <= 9) pick(n - 1);
+  });
+  document.addEventListener("keyup", function (ev) {
+    var k = KEYMAP[ev.code];
+    if (k) keys[k] = 0;
+  });
+
+  var stage = document.getElementById("bbStage");
+  stage.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+  stage.addEventListener("mousedown", function (e) {
+    if (!locked) return;
+    e.preventDefault();
+    if (e.button === 0) dig(); else if (e.button === 2) put();
+  });
+  document.addEventListener("mousemove", function (e) {
+    if (!locked) return;
+    P.yaw += e.movementX * 0.0025;
+    P.pitch -= e.movementY * 0.0025;
+    P.pitch = Math.max(-1.55, Math.min(1.55, P.pitch));
+  });
+  document.addEventListener("pointerlockchange", function () {
+    locked = document.pointerLockElement === cv;
+    if (!locked && running && !isTouch()) pause();
+  });
+
+  function isTouch() { return matchMedia("(pointer:coarse)").matches; }
+
+  /* touch: left stick walks, dragging the right half looks around */
+  var stickEl = document.getElementById("bbStick"), knob = document.getElementById("bbKnob");
+  function stickAt(t) {
+    var r = stickEl.getBoundingClientRect();
+    var dx = (t.clientX - (r.left + r.width / 2)) / (r.width / 2);
+    var dy = (t.clientY - (r.top + r.height / 2)) / (r.height / 2);
+    var l = Math.hypot(dx, dy);
+    if (l > 1) { dx /= l; dy /= l; }
+    stick.x = dx; stick.y = -dy;
+    knob.style.transform = "translate(" + dx * 30 + "px," + dy * 30 + "px)";
+  }
+  stickEl.addEventListener("touchstart", function (e) {
+    stick.on = true; stick.id = e.changedTouches[0].identifier; stickAt(e.changedTouches[0]);
+    e.preventDefault();
+  }, { passive: false });
+  stickEl.addEventListener("touchmove", function (e) {
+    for (var i = 0; i < e.changedTouches.length; i++)
+      if (e.changedTouches[i].identifier === stick.id) stickAt(e.changedTouches[i]);
+    e.preventDefault();
+  }, { passive: false });
+  function stickEnd(e) {
+    for (var i = 0; i < e.changedTouches.length; i++)
+      if (e.changedTouches[i].identifier === stick.id) {
+        stick.on = false; stick.x = stick.y = 0; stick.id = null;
+        knob.style.transform = "";
+      }
+  }
+  stickEl.addEventListener("touchend", stickEnd);
+  stickEl.addEventListener("touchcancel", stickEnd);
+
+  var look = { id: null, x: 0, y: 0 };
+  stage.addEventListener("touchstart", function (e) {
+    if (!running) return;
+    for (var i = 0; i < e.changedTouches.length; i++) {
+      var t = e.changedTouches[i];
+      if (t.target.closest && t.target.closest(".bb-stick,.bb-btns,.bb-bar,.bb-veil")) continue;
+      if (look.id === null) { look.id = t.identifier; look.x = t.clientX; look.y = t.clientY; }
+    }
+  }, { passive: true });
+  stage.addEventListener("touchmove", function (e) {
+    for (var i = 0; i < e.changedTouches.length; i++) {
+      var t = e.changedTouches[i];
+      if (t.identifier !== look.id) continue;
+      P.yaw += (t.clientX - look.x) * 0.006;
+      P.pitch -= (t.clientY - look.y) * 0.006;
+      P.pitch = Math.max(-1.55, Math.min(1.55, P.pitch));
+      look.x = t.clientX; look.y = t.clientY;
+      e.preventDefault();
+    }
+  }, { passive: false });
+  function lookEnd(e) {
+    for (var i = 0; i < e.changedTouches.length; i++)
+      if (e.changedTouches[i].identifier === look.id) look.id = null;
+  }
+  stage.addEventListener("touchend", lookEnd);
+  stage.addEventListener("touchcancel", lookEnd);
+
+  function hold(btn, fn) {
+    var timer = null;
+    function down(e) { e.preventDefault(); fn(); timer = setInterval(fn, 220); }
+    function up() { clearInterval(timer); timer = null; }
+    btn.addEventListener("touchstart", down, { passive: false });
+    btn.addEventListener("touchend", up);
+    btn.addEventListener("touchcancel", up);
+    btn.addEventListener("mousedown", function (e) { e.preventDefault(); fn(); });
+  }
+  hold(document.getElementById("bbDig"), dig);
+  hold(document.getElementById("bbPut"), put);
+  document.getElementById("bbJump").addEventListener("touchstart", function (e) { e.preventDefault(); jump(); }, { passive: false });
+  document.getElementById("bbJump").addEventListener("mousedown", function (e) { e.preventDefault(); jump(); });
+
+  /* ================================================================ hotbar */
+  var bar = document.getElementById("bbBar");
+  function buildBar() {
+    bar.innerHTML = "";
+    HOTBAR.forEach(function (id, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "bb-slot" + (id === held ? " on" : "");
+      b.setAttribute("data-slot", String(i));
+      b.setAttribute("aria-label", B[id].n[FR ? 1 : 0]);
+      b.title = B[id].n[FR ? 1 : 0];
+      b.appendChild(slotIcon(B[id].t[0]));
+      bar.appendChild(b);
+    });
+  }
+  function pick(i) {
+    if (i < 0 || i >= HOTBAR.length) return;
+    held = HOTBAR[i];
+    [].forEach.call(bar.children, function (c, j) { c.classList.toggle("on", j === i); });
+    document.getElementById("bbHold").textContent = B[held].n[FR ? 1 : 0];
+  }
+  bar.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-slot]") : null;
+    if (b) pick(+b.getAttribute("data-slot"));
+  });
+
+  /* The mouse is CAPTURED while you play on a desktop, so the hotbar sitting
+     there in plain sight cannot actually be clicked — you would have to press
+     Escape first, which nobody thinks to do. Number keys reach the first nine
+     slots; the wheel reaches all twelve and is what a player's hand expects. */
+  stage.addEventListener("wheel", function (e) {
+    if (!running) return;
+    e.preventDefault();
+    var i = HOTBAR.indexOf(held);
+    i = (i + (e.deltaY > 0 ? 1 : -1) + HOTBAR.length) % HOTBAR.length;
+    pick(i);
+  }, { passive: false });
+
+  /* ================================================================== loop */
+  var veil = document.getElementById("bbVeil");
+  function start() {
+    veil.classList.add("off");
+    running = true;
+    if (!isTouch() && cv.requestPointerLock) cv.requestPointerLock();
+    last = 0;
+    requestAnimationFrame(frame);
+  }
+  function pause() {
+    running = false;
+    veil.classList.remove("off");
+    document.getElementById("bbVeilT").textContent = T("Paused", "En pause");
+    document.getElementById("bbVeilP").textContent =
+      T("Your world is saved. Press Play to carry on.", "Votre monde est enregistré. Appuyez sur Jouer pour continuer.");
+    document.getElementById("bbPlay").textContent = T("Play", "Jouer");
+    save(false);
+  }
+  document.getElementById("bbPlay").addEventListener("click", start);
+
+  function resize() {
+    var r = stage.getBoundingClientRect();
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    /* a 3D world on a school tablet: cap the pixels we actually shade */
+    var scale = Math.min(1, 900 / Math.max(1, r.width * dpr));
+    var w = Math.max(1, Math.round(r.width * dpr * scale));
+    var h = Math.max(1, Math.round(r.height * dpr * scale));
+    if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+    gl.viewport(0, 0, cv.width, cv.height);
+  }
+  window.addEventListener("resize", resize);
+
+  var last = 0, fps = 0, fpsT = 0, fpsN = 0;
+  function frame(now) {
+    if (!running) return;
+    var dt = last ? Math.min(0.05, (now - last) / 1000) : 0.016;
+    last = now;
+    movePlayer(dt);
+    resize();
+
+    var mvp = mul(perspective(1.25, cv.width / cv.height, 0.1, 120),
+                  lookMatrix(P.x, P.y + EYE, P.z, P.yaw, P.pitch));
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    gl.uniformMatrix4fv(uMVP, false, new Float32Array(mvp));
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+
+    function draw(m) {
+      if (!m) return;
+      gl.bindBuffer(gl.ARRAY_BUFFER, m.p); gl.enableVertexAttribArray(aP);
+      gl.vertexAttribPointer(aP, 3, gl.FLOAT, false, 0, 0);
+      gl.bindBuffer(gl.ARRAY_BUFFER, m.u); gl.enableVertexAttribArray(aUV);
+      gl.vertexAttribPointer(aUV, 2, gl.FLOAT, false, 0, 0);
+      gl.bindBuffer(gl.ARRAY_BUFFER, m.l); gl.enableVertexAttribArray(aL);
+      gl.vertexAttribPointer(aL, 1, gl.FLOAT, false, 0, 0);
+      gl.drawArrays(gl.TRIANGLES, 0, m.n);
+    }
+    /* solid first, then the see-through blocks, so water and glass blend over
+       what is behind them rather than punching a hole in it */
+    var ks = Object.keys(chunks);
+    for (var i = 0; i < ks.length; i++) draw(chunks[ks[i]].op);
+    gl.depthMask(false);
+    for (var j = 0; j < ks.length; j++) draw(chunks[ks[j]].al);
+    gl.depthMask(true);
+
+    fpsN++; fpsT += dt;
+    if (fpsT >= 0.5) {
+      fps = Math.round(fpsN / fpsT); fpsN = 0; fpsT = 0;
+      document.getElementById("bbFps").textContent = fps + " fps";
+    }
+    requestAnimationFrame(frame);
+  }
+
+  /* ================================================================ buttons */
+  function applyTheme(name) {
+    theme = THEMES[name] ? name : "classic";
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+    var TH = THEMES[theme];
+    atlasCanvas = makeAtlas(theme);
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, atlasCanvas);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+    gl.clearColor(TH.sky[0], TH.sky[1], TH.sky[2], 1);
+    gl.uniform3f(uFog, TH.sky[0], TH.sky[1], TH.sky[2]);
+    document.getElementById("bbShell").style.background = TH.css;
+    /* the UVs did not move, so the meshes are still correct — only the picture
+       on them changed. Rebuilding 64 chunks here would be pure waste. */
+    var i = HOTBAR.indexOf(held);
+    buildBar();
+    pick(i < 0 ? 0 : i);
+    document.getElementById("bbStyle").textContent =
+      T("Style: ", "Style : ") + TH.label[FR ? 1 : 0];
+  }
+  document.getElementById("bbStyle").addEventListener("click", function () {
+    var i = THEME_ORDER.indexOf(theme);
+    applyTheme(THEME_ORDER[(i + 1) % THEME_ORDER.length]);
+  });
+
+  function setFly(v) {
+    fly = v;
+    document.getElementById("bbFly").textContent =
+      T("Fly: ", "Vol : ") + (fly ? T("on", "activé") : T("off", "désactivé"));
+    if (!fly) P.vy = 0;
+  }
+  document.getElementById("bbFly").addEventListener("click", function () { setFly(!fly); });
+  document.getElementById("bbSave").addEventListener("click", function () {
+    save(false);
+    var b = document.getElementById("bbSave");
+    b.textContent = T("Saved", "Enregistré");
+    setTimeout(function () { b.textContent = T("Save", "Enregistrer"); }, 1400);
+  });
+  document.getElementById("bbNew").addEventListener("click", function () {
+    var msg = T("Start a new world? Everything you have built will be lost.",
+                "Commencer un nouveau monde ? Tout ce que vous avez bâti sera perdu.");
+    if (!window.confirm(msg)) return;
+    newWorld(Math.floor(Math.random() * 1e9));
+  });
+
+  function topOf(x, z) {
+    for (var y = WY - 2; y > 0; y--) if (solid(get(x, y, z))) return y;
+    return -1;
+  }
+  function dropPlayer() {
+    /* Spawn on DRY land. The middle of the map is often a lake, and the first
+       version dropped you on the seabed looking at blue — a poor first three
+       seconds. Spiral outwards until a column stands above the water line. */
+    var cx = Math.floor(WX / 2), cz = Math.floor(WZ / 2), best = null;
+    for (var r = 0; r < WX / 2 && !best; r++) {
+      for (var dx = -r; dx <= r && !best; dx++) {
+        for (var dz = -r; dz <= r; dz++) {
+          if (Math.max(Math.abs(dx), Math.abs(dz)) !== r) continue;   /* ring only */
+          var x = cx + dx, z = cz + dz;
+          if (x < 2 || z < 2 || x >= WX - 2 || z >= WZ - 2) continue;
+          var t = topOf(x, z);
+          if (t > SEA && get(x, t + 1, z) === AIR) { best = [x, t, z]; break; }
+        }
+      }
+    }
+    if (!best) best = [cx, Math.max(SEA + 1, topOf(cx, cz)), cz];
+    P.x = best[0] + 0.5; P.z = best[2] + 0.5; P.y = best[1] + 1.01; P.vy = 0;
+  }
+  function newWorld(seed) {
+    generate(seed);
+    dropPlayer();
+    meshAll();
+    save(false);
+  }
+
+  /* ================================================================== boot */
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden && running) pause();
+  });
+
+  buildBar();
+  pick(0);
+  setFly(false);
+  applyTheme(theme);
+  if (!load()) {
+    /* A brand-new world is written straight away, not only after the first dig.
+       Otherwise a player who looks around, closes the tab and comes back finds
+       their footsteps gone — and the very first save would have been a surprise. */
+    generate(20260815);
+    dropPlayer();
+    save(false);
+  }
+  meshAll();
+  resize();
+
+  if (FR) {
+    document.getElementById("bbVeilT").textContent = "Block Builder";
+    document.getElementById("bbVeilP").textContent =
+      "Cliquez pour commencer. Déplacez-vous avec W A S D, sautez avec Espace, volez avec Q et E. " +
+      "Clic gauche pour creuser, clic droit pour bâtir. Molette pour changer de bloc.";
+    document.getElementById("bbPlay").textContent = "Jouer";
+    document.getElementById("bbSave").textContent = "Enregistrer";
+    document.getElementById("bbNew").textContent = "Nouveau monde";
+    document.getElementById("bbNote").textContent =
+      "Votre monde est enregistré dans ce navigateur, sur cet appareil seulement. Aucun compte, aucune inscription, rien n'est envoyé nulle part.";
+  }
+  if (isTouch()) {
+    document.getElementById("bbVeilP").textContent = T(
+      "Tap Play, then use the stick to walk, drag the screen to look around, and the round buttons to jump, dig and build.",
+      "Touchez Jouer, puis servez-vous du levier pour marcher, glissez sur l'écran pour regarder autour, et des boutons ronds pour sauter, creuser et bâtir.");
+  } else {
+    document.getElementById("bbTouch").style.display = "none";
+  }
+})();
+</script>
+  <script src="../js/game-fullscreen.js?v=c56db4e5" defer></script>
+  <script src="../js/site.js?v=b8966ab8"></script>
+  <script src="../js/analytics.js?v=d06ceb69"></script>
+  <script src="../js/ads.js?v=00e703ff" defer></script>
+  <script src="../js/pwa.js?v=56adaa04" defer></script>
+  <script src="../js/tv-mode.js?v=4ebd9ddf" defer></script>
+</body>
+</html>

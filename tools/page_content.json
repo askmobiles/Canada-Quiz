@@ -1626,6 +1626,50 @@
    ]
   ]
  },
+ "block-builder.html": {
+  "faq": [
+   {
+    "a": {
+     "en": "No, and it is not connected to it in any way. Minecraft is made by Mojang and owned by Microsoft. This is our own small block-building game, written from scratch, with every texture drawn in code rather than copied from anywhere.",
+     "fr": "Non, et il n'y a aucun lien. Minecraft est créé par Mojang et appartient à Microsoft. Ceci est notre propre petit jeu de construction, écrit de zéro, dont chaque texture est dessinée par le code plutôt que copiée."
+    },
+    "q": {
+     "en": "Is this Minecraft?",
+     "fr": "Est-ce que c'est Minecraft ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. It runs in the browser page you are already on. There is nothing to download, no account and no sign-up.",
+     "fr": "Non. Il fonctionne directement dans la page où vous êtes déjà. Rien à télécharger, aucun compte, aucune inscription."
+    },
+    "q": {
+     "en": "Does it need to be installed?",
+     "fr": "Faut-il l'installer ?"
+    }
+   },
+   {
+    "a": {
+     "en": "In this browser, on this device, and nowhere else. Nothing is sent anywhere. Clearing your browser data clears the world, and a different device starts fresh.",
+     "fr": "Dans ce navigateur, sur cet appareil, et nulle part ailleurs. Rien n'est envoyé. Effacer les données du navigateur efface le monde, et un autre appareil recommence à zéro."
+    },
+    "q": {
+     "en": "Where is my world saved?",
+     "fr": "Où mon monde est-il enregistré ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Closing other browser tabs usually helps most. A 3D world is by far the most demanding thing on this site, so an older phone will run it more slowly than the quizzes and the other games.",
+     "fr": "Fermer les autres onglets aide généralement le plus. Un monde en 3D est de loin ce qu'il y a de plus exigeant sur ce site : un téléphone plus ancien sera donc plus lent qu'avec les quiz et les autres jeux."
+    },
+    "q": {
+     "en": "It runs slowly on my phone. Can I fix it?",
+     "fr": "C'est lent sur mon téléphone. Puis-je y remédier ?"
+    }
+   }
+  ]
+ },
  "body-quiz.html": {
   "about": [
    {
