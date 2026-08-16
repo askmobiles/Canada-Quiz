@@ -12,6 +12,13 @@
      without the Fullscreen API. */
   .bb-shell.bb-immersive{position:fixed;inset:0;z-index:9999;max-width:none;border-radius:0;
     border:0;margin:0}
+  /* The site has its own full-screen mode (js/game-fullscreen.js) which puts
+     body.play-mode on and stretches the surrounding panel. The shell inside was
+     still obeying its 960px cap and the stage its 4:3 ratio, so the world sat as
+     a small rectangle in the middle of a big empty blue field. Let both fill. */
+  body.play-mode .bb-shell{max-width:none;width:100%;height:100%;border:0;border-radius:0;
+    margin:0;display:flex}
+  body.play-mode .bb-stage{aspect-ratio:auto;width:100%;height:100%;flex:1 1 auto}
   .bb-shell.bb-immersive .bb-stage{aspect-ratio:auto;width:100vw;height:100vh;height:100dvh}
   .bb-shell:fullscreen .bb-stage{aspect-ratio:auto;width:100vw;height:100vh}
   .bb-shell:-webkit-full-screen .bb-stage{aspect-ratio:auto;width:100vw;height:100vh}
@@ -43,36 +50,15 @@
     font-size:.8rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.7)}
   .bb-hud .box{background:rgba(0,0,0,.34);border-radius:10px;padding:5px 9px;pointer-events:none}
 
-  .bb-bar{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:flex;gap:5px;
-    background:rgba(0,0,0,.34);padding:6px;border-radius:14px;max-width:96%;flex-wrap:wrap;
-    justify-content:center}
+  /* A GRID, not a wrapping flex row. Twelve slots at finger size are far wider
+     than a phone, so flex-wrap turned the bar into a four-row pile sitting in
+     the middle of the screen, over the world you are trying to look at. Six per
+     row on a narrow screen puts it back to two tidy rows at the bottom. */
   .bb-slot{width:44px;height:44px;border-radius:12px;border:2px solid rgba(255,255,255,.35);
     background:#6b6b6b;cursor:pointer;position:relative;padding:0;overflow:hidden}
   .bb-slot canvas{width:100%;height:100%;display:block}
   .bb-slot.on{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.35);transform:translateY(-3px)}
   @media (max-width:560px){ .bb-slot{width:34px;height:34px} }
-  /* Fingers, not a mouse: bigger targets and further from the screen edge, which
-     on an iPad is where the system swipe gestures live. */
-  @media (pointer:coarse){
-    .bb-slot{width:52px;height:52px}
-    .bb-b{width:70px;height:70px;font-size:1.7rem}
-    .bb-stick{left:20px;bottom:78px;width:120px;height:120px}
-    .bb-knob{width:52px;height:52px;margin:-26px 0 0 -26px}
-    .bb-btns{right:20px;bottom:78px}
-  }
-
-  .bb-touch{position:absolute;inset:0;pointer-events:none}
-  .bb-stick{position:absolute;left:12px;bottom:64px;width:104px;height:104px;border-radius:50%;
-    background:rgba(0,0,0,.26);border:2px solid rgba(255,255,255,.35);pointer-events:auto}
-  .bb-knob{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;
-    border-radius:50%;background:rgba(255,255,255,.75)}
-  .bb-btns{position:absolute;right:12px;bottom:64px;display:grid;gap:8px;pointer-events:auto}
-  .bb-b{width:60px;height:60px;border-radius:50%;border:2px solid rgba(255,255,255,.45);
-    background:rgba(0,0,0,.34);color:#fff;font-weight:900;font-size:1.5rem;line-height:1;
-    cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center}
-  .bb-b:active{background:rgba(255,255,255,.3)}
-  .bb-b small{font-size:.55rem;font-weight:800;display:block;margin-top:1px}
-
   .bb-veil{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     background:rgba(12,20,30,.72);color:#fff;text-align:center;padding:20px;z-index:5}
   .bb-veil.off{display:none}
@@ -83,6 +69,57 @@
     border-radius:5px;padding:1px 6px;font-weight:800;font-size:.85em}
   .bb-tools{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
   .bb-note{color:var(--muted);font-size:.88rem;font-weight:600;text-align:center;margin-top:12px;line-height:1.55}
+
+  /* ===================================================== the on-screen controls
+     Everything here used to be positioned absolutely with its own bottom offset,
+     and the offsets fought: the thumb stick sat on top of the first two blocks in
+     the hotbar, so tapping them chose nothing, and on a short screen the whole
+     lot fell off the bottom edge. Offsets cannot be made safe at every size.
+     This is a LAYOUT instead — a column pinned to the bottom holding a row
+     (stick on the left, buttons on the right) and the hotbar beneath it. Nothing
+     can overlap anything, at any screen size, because nothing is free to move. */
+  .bb-controls{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;
+    justify-content:flex-end;gap:8px;padding:8px;pointer-events:none}
+  .bb-row{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+  .bb-stick{position:relative;width:104px;height:104px;border-radius:50%;flex:0 0 auto;
+    background:rgba(0,0,0,.26);border:2px solid rgba(255,255,255,.35);pointer-events:auto}
+  .bb-knob{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;
+    border-radius:50%;background:rgba(255,255,255,.75)}
+  .bb-btns{display:grid;gap:8px;pointer-events:auto;flex:0 0 auto}
+  .bb-bar{display:grid;grid-template-columns:repeat(12,auto);gap:5px;justify-content:center;
+    align-self:center;background:rgba(0,0,0,.34);padding:6px;border-radius:14px;
+    max-width:100%;pointer-events:auto}
+  @media (max-width:760px){ .bb-bar{grid-template-columns:repeat(6,auto)} }
+
+  /* Fingers, not a mouse. Apple's minimum is 44px. */
+  @media (pointer:coarse){
+    .bb-slot{width:52px;height:52px}
+    .bb-b{width:70px;height:70px;font-size:1.7rem}
+    .bb-stick{width:120px;height:120px}
+    .bb-knob{width:52px;height:52px;margin:-26px 0 0 -26px}
+  }
+  @media (pointer:coarse) and (max-width:430px){
+    .bb-slot{width:44px;height:44px;border-radius:10px}
+    .bb-b{width:56px;height:56px;font-size:1.35rem}
+    .bb-stick{width:96px;height:96px}
+    .bb-knob{width:44px;height:44px;margin:-22px 0 0 -22px}
+  }
+  /* Sideways on a phone there is almost no height: a fixed 4:3 stage is taller
+     than the screen, and a column of buttons reaches the site header. Let the
+     stage take the height it can have, and lay the buttons out in a row. */
+  @media (pointer:coarse) and (max-height:520px){
+    .bb-stage{aspect-ratio:auto;height:84vh;height:84dvh;min-height:240px}
+    .bb-bar{grid-template-columns:repeat(12,auto);padding:4px;gap:3px}
+    .bb-slot{width:38px;height:38px}
+    .bb-stick{width:84px;height:84px}
+    .bb-knob{width:36px;height:36px;margin:-18px 0 0 -18px}
+    .bb-btns{grid-auto-flow:column;gap:6px}
+    .bb-b{width:50px;height:50px;font-size:1.15rem}
+    /* The SITE has its own floating "Play on TV" button pinned to the bottom
+       right corner of the screen. Sideways on a phone it landed on top of DIG
+       and PUT. Keep our row clear of that corner rather than fighting it. */
+    .bb-controls{padding-right:82px;padding-bottom:6px}
+  }
 </style>
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -121,7 +158,52 @@
     <p>Dig, build and wander a whole world made of blocks — in 3D, in bright colours, in your browser, with nothing to install.</p>
   </section>
 
-  <details class="howto"><summary>📖 How to play</summary><p>On a computer, click the world once to look around with the mouse, then walk with W A S D, jump with Space and fly up or down with Q and E. Left click breaks the block you are pointing at and right click puts one down. On a phone or tablet, drag the left stick to walk, drag anywhere on the right side of the screen to look around, and use the round buttons to jump, dig and build. Pick which block you are holding from the row along the bottom, or with the mouse wheel or the number keys while you play. Your world saves itself on this device as you play, so you can close the page and come back to it.</p></details>
+  <section class="panel">
+    <h2>How to play</h2>
+    <p>Press Play, then look around and start digging. Nothing can hurt you and nothing is timed, so there is no wrong way to do it.</p>
+    <div class="cq-scroll"><table class="cq-table">
+      <caption>On a computer</caption>
+      <tr><th>W A S D</th><td>Walk forward, left, back and right</td></tr>
+      <tr><th>Move the mouse</th><td>Look around. Click the world once first, so the mouse stays in the game</td></tr>
+      <tr><th>Space</th><td>Jump</td></tr>
+      <tr><th>Left click</th><td>Dig out the block you are pointing at</td></tr>
+      <tr><th>Right click</th><td>Put your block down where you are pointing</td></tr>
+      <tr><th>Mouse wheel</th><td>Change which block you are holding</td></tr>
+      <tr><th>1 to 9</th><td>Jump straight to one of the first nine blocks</td></tr>
+      <tr><th>Q and E</th><td>Fly up and down, once you turn flying on</td></tr>
+      <tr><th>Esc</th><td>Pause, and give the mouse back to the page</td></tr>
+    </table></div>
+    <div class="cq-scroll"><table class="cq-table">
+      <caption>On a phone or tablet</caption>
+      <tr><th>Left stick</th><td>Walk. Push it in the direction you want to go</td></tr>
+      <tr><th>Drag the screen</th><td>Look around. Drag anywhere except the stick and the buttons</td></tr>
+      <tr><th>⤒</th><td>Jump</td></tr>
+      <tr><th>⛏ DIG</th><td>Break the block in the middle of the screen. Hold it down to keep digging</td></tr>
+      <tr><th>🧱 PUT</th><td>Place your block. Hold it down to keep building</td></tr>
+      <tr><th>Bottom row</th><td>Tap to choose which block you are holding</td></tr>
+      <tr><th>Full screen</th><td>Worth using on a tablet — the buttons get bigger and easier to hit</td></tr>
+    </table></div>
+    <p>The crosshair in the middle of the screen is what you are pointing at. You can only reach about six blocks, so walk closer if nothing happens.</p>
+  </section>
+
+  <section class="panel">
+    <h2>The twelve blocks, and what each one is good for</h2>
+    <div class="cq-scroll"><table class="cq-table">
+      <tr><th>Grass</th><td>The green surface. Good for lawns and for hiding a hole you dug</td></tr>
+      <tr><th>Dirt</th><td>What is under the grass. Cheap and everywhere, good for filling and shaping ground</td></tr>
+      <tr><th>Stone</th><td>Deeper down. The strongest looking block — walls, towers, an inukshuk</td></tr>
+      <tr><th>Sand</th><td>Found along the water. Good for beaches, paths and floors</td></tr>
+      <tr><th>Wood</th><td>Tree trunks. Use it for posts, pillars and the frame of a cabin</td></tr>
+      <tr><th>Planks</th><td>Cut wood. The best block for floors, walls and docks</td></tr>
+      <tr><th>Leaves</th><td>Green treetops. Plant your own forest, or make a hedge</td></tr>
+      <tr><th>Maple leaves</th><td>Red treetops. A Canadian autumn in one block</td></tr>
+      <tr><th>Snow</th><td>Sits on the high ground. Roofs, snowbanks, a snow fort</td></tr>
+      <tr><th>Ice</th><td>See-through and pale blue. A frozen pond or a window on a winter build</td></tr>
+      <tr><th>Glass</th><td>See-through. Windows you can actually see out of</td></tr>
+      <tr><th>Brick</th><td>Warm red. Chimneys, houses and anything you want to look built rather than dug</td></tr>
+    </table></div>
+    <p>Try this first: dig three blocks into a hillside, put a plank floor down, glass at the front, and a snow roof on top. That is a cabin, and it takes about two minutes.</p>
+  </section>
 
   <div class="panel" data-fs-host>
     <div class="bb-shell" id="bbShell" data-no-i18n>
@@ -132,20 +214,24 @@
           <span class="box" id="bbHold">Grass</span>
           <span class="box" id="bbFps">—</span>
         </div>
-        <div class="bb-touch" id="bbTouch">
-          <div class="bb-stick" id="bbStick"><div class="bb-knob" id="bbKnob"></div></div>
-          <div class="bb-btns">
-            <button type="button" class="bb-b" id="bbJump" aria-label="Jump">⤒</button>
-            <button type="button" class="bb-b" id="bbDig" aria-label="Break block">⛏<small>DIG</small></button>
-            <button type="button" class="bb-b" id="bbPut" aria-label="Place block">🧱<small>PUT</small></button>
+        <div class="bb-controls" id="bbTouch">
+          <div class="bb-row">
+            <div class="bb-stick" id="bbStick"><div class="bb-knob" id="bbKnob"></div></div>
+            <div class="bb-btns">
+              <button type="button" class="bb-b" id="bbJump" aria-label="Jump">⤒</button>
+              <button type="button" class="bb-b" id="bbDig" aria-label="Break block">⛏<small>DIG</small></button>
+              <button type="button" class="bb-b" id="bbPut" aria-label="Place block">🧱<small>PUT</small></button>
+            </div>
           </div>
+          <div class="bb-bar" id="bbBar"></div>
         </div>
-        <div class="bb-bar" id="bbBar"></div>
         <button type="button" class="bb-exit" id="bbExit">Exit full screen</button>
         <div class="bb-veil" id="bbVeil">
           <div class="card">
             <h2 id="bbVeilT">Canada Block World</h2>
-            <p id="bbVeilP">Click to start. Move with W A S D, jump with Space, fly with Q and E. Left click digs, right click builds. Scroll to change block.</p>
+            <p id="bbVeilP">Click to start.</p>
+            <div id="bbKeys" style="text-align:left;max-width:340px;margin:0 auto 14px;
+                 font-size:.9rem;line-height:1.85"></div>
             <p><button type="button" class="btn btn-green btn-lg" id="bbPlay">Play</button></p>
           </div>
         </div>
@@ -1289,6 +1375,9 @@
        which makes the game feel broken. Lock the page while a round is running
        and give it back the moment you stop. */
     document.body.style.overscrollBehavior = "none";
+    /* On a phone the game usually starts below the fold, so half the controls
+       are off the screen when you press Play. Bring it into view. */
+    try { shell.scrollIntoView({ block: "center", behavior: "smooth" }); } catch (e) {}
     if (!isTouch() && cv.requestPointerLock) cv.requestPointerLock();
     last = 0;
     requestAnimationFrame(frame);
@@ -1318,13 +1407,9 @@
   window.addEventListener("resize", resize);
 
   var last = 0, fps = 0, fpsT = 0, fpsN = 0;
-  function frame(now) {
-    if (!running) return;
-    var dt = last ? Math.min(0.05, (now - last) / 1000) : 0.016;
-    last = now;
-    movePlayer(dt);
-    resize();
 
+  function renderFrame() {
+    resize();
     var mvp = mul(perspective(1.25, cv.width / cv.height, 0.1, 120),
                   lookMatrix(P.x, P.y + EYE, P.z, P.yaw, P.pitch));
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
@@ -1349,6 +1434,14 @@
     gl.depthMask(false);
     for (var j = 0; j < ks.length; j++) draw(chunks[ks[j]].al);
     gl.depthMask(true);
+  }
+
+  function frame(now) {
+    if (!running) return;
+    var dt = last ? Math.min(0.05, (now - last) / 1000) : 0.016;
+    last = now;
+    movePlayer(dt);
+    renderFrame();
 
     fpsN++; fpsT += dt;
     if (fpsT >= 0.5) {
@@ -1358,9 +1451,11 @@
     requestAnimationFrame(frame);
   }
 
-  /* ================================================================ buttons */
+  /* Swapping a theme only redraws the texture and the sky. The chunk meshes and
+     their coordinates are untouched, so nothing has to be re-meshed — which is
+     why a style change costs a few milliseconds and no downloads. */
   function applyTheme(name) {
-    theme = THEMES[name] ? name : "classic";
+    theme = THEMES[name] ? name : "smooth";
     try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
     var TH = THEMES[theme];
     atlasCanvas = makeAtlas(theme);
@@ -1371,13 +1466,15 @@
     gl.uniform3f(uFog, TH.fog[0], TH.fog[1], TH.fog[2]);
     document.getElementById("bbShell").style.background =
       "linear-gradient(" + TH.sky[0] + " 0%, " + TH.sky[1] + " 62%, " + TH.sky[1] + " 100%)";
-    /* the UVs did not move, so the meshes are still correct — only the picture
-       on them changed. Rebuilding 64 chunks here would be pure waste. */
     var i = HOTBAR.indexOf(held);
     buildBar();
     pick(i < 0 ? 0 : i);
     document.getElementById("bbStyle").textContent =
       T("Style: ", "Style : ") + TH.label[FR ? 1 : 0];
+    /* Nothing draws while the game is paused, so the canvas kept showing the OLD
+       texture after a style change until you pressed Play. Paint one frame by
+       hand so the change is visible the moment you make it. */
+    if (!running) { try { renderFrame(); } catch (e) {} }
   }
   document.getElementById("bbStyle").addEventListener("click", function () {
     var i = THEME_ORDER.indexOf(theme);
@@ -1419,12 +1516,18 @@
     }
     afterFull();
   }
+  function label() {
+    document.getElementById("bbFull").textContent =
+      isFull() ? T("Leave full screen", "Quitter le plein écran") : T("Full screen", "Plein écran");
+  }
   function afterFull() {
-    setTimeout(function () {
-      resize();
-      document.getElementById("bbFull").textContent =
-        isFull() ? T("Leave full screen", "Quitter le plein écran") : T("Full screen", "Plein écran");
-    }, 120);
+    /* Leaving full screen is asynchronous and the browsers disagree about when
+       document.fullscreenElement clears — reading it once, 120ms later, left the
+       button still saying "Leave full screen" after you had already left. Check
+       again a few times instead of guessing a delay that works everywhere. */
+    [0, 120, 400, 900].forEach(function (ms) {
+      setTimeout(function () { resize(); label(); }, ms);
+    });
   }
   document.getElementById("bbFull").addEventListener("click", function () {
     if (isFull()) exitFull(); else enterFull();
@@ -1518,6 +1621,37 @@
     document.getElementById("bbNote").textContent =
       "Votre monde est enregistré dans ce navigateur, sur cet appareil seulement. Aucun compte, aucune inscription, rien n'est envoyé nulle part.";
   }
+  /* The controls belong ON the start screen. They were one sentence of prose
+     hidden in a paragraph, and a paragraph is not something a child reads before
+     they start pressing things. */
+  function keyRows() {
+    if (isTouch()) {
+      return [[T("Left stick", "Levier gauche"), T("walk", "marcher")],
+              [T("Drag the screen", "Glissez sur l'écran"), T("look around", "regarder autour")],
+              ["⤒", T("jump", "sauter")],
+              ["⛏ DIG", T("break the block you are facing", "casser le bloc devant vous")],
+              ["🧱 PUT", T("place the block you are holding", "poser le bloc que vous tenez")],
+              [T("Row at the bottom", "Rangée du bas"), T("choose your block", "choisir votre bloc")]];
+    }
+    return [["W A S D", T("walk", "marcher")],
+            [T("Move the mouse", "Bougez la souris"), T("look around", "regarder autour")],
+            [T("Space", "Espace"), T("jump", "sauter")],
+            [T("Left click", "Clic gauche"), T("dig out a block", "creuser un bloc")],
+            [T("Right click", "Clic droit"), T("build a block", "poser un bloc")],
+            [T("Mouse wheel", "Molette"), T("change block", "changer de bloc")],
+            ["1 – 9", T("pick a block straight away", "choisir un bloc directement")],
+            ["Q / E", T("fly up and down, when flying is on", "monter et descendre, si le vol est activé")],
+            [T("Esc", "Échap"), T("pause and free the mouse", "pause et libérer la souris")]];
+  }
+  (function () {
+    var host = document.getElementById("bbKeys");
+    host.innerHTML = keyRows().map(function (r) {
+      return '<div style="display:flex;gap:10px;align-items:baseline">' +
+             '<b style="flex:0 0 auto;min-width:112px;opacity:.95">' + r[0] + '</b>' +
+             '<span style="opacity:.85">' + r[1] + '</span></div>';
+    }).join("");
+  })();
+
   if (isTouch()) {
     document.getElementById("bbVeilP").textContent = T(
       "Tap Play, then use the stick to walk, drag the screen to look around, and the round buttons to jump, dig and build.",
@@ -1528,7 +1662,7 @@
 })();
 </script>
   <script src="js/game-fullscreen.js?v=c56db4e5" defer></script>
-  <script src="js/site.js?v=07ba9289"></script>
+  <script src="js/site.js?v=f694a0b3"></script>
   <script src="js/analytics.js?v=d06ceb69"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
   <script src="js/pwa.js?v=56adaa04" defer></script>
