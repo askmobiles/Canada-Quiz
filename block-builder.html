@@ -4,22 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Block Builder — Free 3D Block Building Sandbox</title>
-<meta name="description" content="Dig, build and explore a 3D world of blocks in your browser. Twelve block types, a Canadian landscape, saves as you go. Free, no signup, works on phone.">
+<meta name="description" content="Dig, build and explore a 3D world of blocks with smooth, clean materials. Twelve block types, three styles, saves as you go. Free and no signup.">
 <link rel="stylesheet" href="css/style.css?v=a008388b">
 <style>
   .bb-shell{position:relative;width:100%;max-width:960px;margin:0 auto;border:2px solid var(--line);
     border-radius:16px;overflow:hidden;background:#8fc4e8;touch-action:none;user-select:none;
     -webkit-user-select:none;-webkit-tap-highlight-color:transparent}
-  .bb-shell canvas{display:block;width:100%;height:100%;image-rendering:pixelated}
+  .bb-shell canvas{display:block;width:100%;height:100%}
   .bb-stage{position:relative;width:100%;aspect-ratio:4/3}
   @media (max-width:700px){ .bb-stage{aspect-ratio:3/4} }
 
+  .bb-stage:after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.16) 100%)}
   .bb-cross{position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;
     pointer-events:none;opacity:.85}
   .bb-cross:before,.bb-cross:after{content:"";position:absolute;background:#fff;
     box-shadow:0 0 0 1px rgba(0,0,0,.55)}
-  .bb-cross:before{left:9px;top:0;width:4px;height:22px}
-  .bb-cross:after{top:9px;left:0;height:4px;width:22px}
+  .bb-cross:before{left:10px;top:0;width:2px;height:22px;border-radius:2px}
+  .bb-cross:after{top:10px;left:0;height:2px;width:22px;border-radius:2px}
 
   .bb-hud{position:absolute;left:0;right:0;top:0;padding:8px 10px;display:flex;gap:8px;
     justify-content:space-between;align-items:flex-start;pointer-events:none;font-weight:800;
@@ -29,9 +31,9 @@
   .bb-bar{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:flex;gap:5px;
     background:rgba(0,0,0,.34);padding:6px;border-radius:14px;max-width:96%;flex-wrap:wrap;
     justify-content:center}
-  .bb-slot{width:42px;height:42px;border-radius:9px;border:2px solid rgba(255,255,255,.35);
+  .bb-slot{width:44px;height:44px;border-radius:12px;border:2px solid rgba(255,255,255,.35);
     background:#6b6b6b;cursor:pointer;position:relative;padding:0;overflow:hidden}
-  .bb-slot canvas{width:100%;height:100%;display:block;image-rendering:pixelated}
+  .bb-slot canvas{width:100%;height:100%;display:block}
   .bb-slot.on{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.35);transform:translateY(-3px)}
   @media (max-width:560px){ .bb-slot{width:34px;height:34px} }
 
@@ -70,7 +72,7 @@
 <link rel="alternate" hreflang="en" href="https://canada-quiz.com/block-builder.html">
 <link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/block-builder.html">
 <link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/block-builder.html">
-<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"Brain & Puzzle Games","item":"https://canada-quiz.com/games.html"},{"@type":"ListItem","position":3,"name":"Block Builder","item":"https://canada-quiz.com/block-builder.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/block-builder.html#webpage","url":"https://canada-quiz.com/block-builder.html","name":"Block Builder — Free 3D Block Building Sandbox","description":"Dig, build and explore a 3D world of blocks in your browser. Twelve block types, a Canadian landscape, saves as you go. Free, no signup, works on phone.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"Brain & Puzzle Games","item":"https://canada-quiz.com/games.html"},{"@type":"ListItem","position":3,"name":"Block Builder","item":"https://canada-quiz.com/block-builder.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/block-builder.html#webpage","url":"https://canada-quiz.com/block-builder.html","name":"Block Builder — Free 3D Block Building Sandbox","description":"Dig, build and explore a 3D world of blocks with smooth, clean materials. Twelve block types, three styles, saves as you go. Free and no signup.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
 </head>
 <body>
 <header class="site-header">
@@ -92,7 +94,7 @@
 <main class="container">
   <section class="hero" style="padding:26px 20px 6px">
     <h1>🧱 Block Builder</h1>
-    <p>Dig, build and wander a whole world made of blocks — in 3D, in your browser, with nothing to install.</p>
+    <p>Dig, build and wander a whole world made of blocks — in 3D, with smooth clean surfaces, in your browser, with nothing to install.</p>
   </section>
 
   <details class="howto"><summary>📖 How to play</summary><p>On a computer, click the world once to look around with the mouse, then walk with W A S D, jump with Space and fly up or down with Q and E. Left click breaks the block you are pointing at and right click puts one down. On a phone or tablet, drag the left stick to walk, drag anywhere on the right side of the screen to look around, and use the round buttons to jump, dig and build. Pick which block you are holding from the row along the bottom, or with the mouse wheel or the number keys while you play. Your world saves itself on this device as you play, so you can close the page and come back to it.</p></details>
@@ -128,15 +130,16 @@
       <button type="button" class="btn btn-ghost" id="bbSave">Save</button>
       <button type="button" class="btn btn-ghost" id="bbNew">New world</button>
       <button type="button" class="btn btn-ghost" id="bbFly">Fly: off</button>
-      <button type="button" class="btn btn-ghost" id="bbStyle">Style: Classic</button>
+      <button type="button" class="btn btn-ghost" id="bbStyle">Style: Smooth</button>
     </div>
     <p class="bb-note" id="bbNote">Your world is saved in this browser on this device only. No account, no sign-up, nothing sent anywhere.</p>
   </div>
 
   <section class="panel">
     <h2>What you can do</h2>
+    <p>The surfaces are deliberately smooth rather than pixelated, drawn at high resolution so they stay clean on a big screen, and every corner where two blocks meet is shaded a little darker — which is what makes a world of cubes look solid instead of flat.</p>
     <p>The world is a small Canadian landscape: rolling ground with grass and stone underneath, sandy shores around the water, birch and maple trees you can chop, and snow on the higher ground. Everything you can see is made of blocks, and every one of them can be dug out or put back.</p>
-    <p>You can change how the world looks with the Style button under it: Classic is natural, Bright is bolder with a dark edge around every block, and Frosty turns the whole world to winter.</p>
+    <p>You can change how the world looks with the Style button under it. Smooth is the default: soft matte surfaces in muted colours. Bright is the one for younger builders, with bolder colours and stronger shading. Frosty turns the whole world to winter.</p>
     <p>Twelve block types sit in the bar along the bottom — grass, dirt, stone, sand, wood, planks, leaves, red maple leaves, snow, ice, glass and brick. Glass and ice let the light through, so you can build a window and still see out.</p>
     <p>There is no health, no monsters and nothing to lose. It is a quiet building game: make a cabin, dig a mine, build an inukshuk out of stone, or flatten a hill just to see how long it takes. Turning flying on lets younger builders get above their work without falling off it.</p>
     <h2>Does it work on a phone?</h2>
@@ -386,8 +389,8 @@
   var cv = document.getElementById("bbCanvas");
   var gl = null;
   try {
-    gl = cv.getContext("webgl", { antialias: false, alpha: false }) ||
-         cv.getContext("experimental-webgl", { antialias: false, alpha: false });
+    gl = cv.getContext("webgl", { antialias: true, alpha: true }) ||
+         cv.getContext("experimental-webgl", { antialias: true, alpha: true });
   } catch (e) { gl = null; }
 
   if (!gl) {
@@ -423,132 +426,171 @@
   function solid(id) { return id !== AIR && !(B[id] && B[id].liquid); }
   function seeThrough(id) { return id === AIR || (B[id] && B[id].see); }
 
-  var TS = 16, ATLAS_N = 4;                     /* 4x4 tiles of 16x16 */
+  /* ===================================================== materials
+     NOT pixel art. Each material is a smooth, high-resolution surface drawn with
+     gradients and a soft bevel, then filtered smoothly rather than snapped to
+     hard pixels. 128px per tile means it still looks clean on a 4K screen, and
+     the palette is deliberately muted and modern — nothing here is trying to
+     look like anybody else's blocks. */
+  var TS = 128, ATLAS_N = 4, PAD = 6;           /* 4x4 tiles, 512px atlas */
 
-  /* Three looks, because one look does not suit everybody. "Bright" is the one
-     children get: bolder colours, a dark outline around every block so the edges
-     read clearly on a small screen, and far less speckle, which makes a world
-     built by a six-year-old look deliberate rather than muddy. Every texture is
-     still drawn here in code — swapping a theme is just a different palette and
-     a redraw, so it costs a few milliseconds and no downloads. */
   var THEMES = {
-    classic: {
-      label: ["Classic", "Classique"], sky: [0.56, 0.77, 0.91], css: "#8fc4e8",
-      speck: 0.55, outline: null,
-      c: { grass: "#5aa02c", grassS: ["#67b132", "#4d8a25", "#72bd39"],
-           dirt: "#8a6742", dirtS: ["#7b5c3b", "#96714b", "#6f5334"],
-           stone: "#8d8d8d", stoneS: ["#808080", "#9a9a9a", "#767676"],
-           sand: "#e0d3a2", sandS: ["#d6c894", "#eadcaf"],
-           woodS: "#6d5136", woodSS: ["#5f4630", "#7a5b3d"], woodRing: "#5a4229",
-           woodT: "#a9865b", woodTS: ["#9b7a52", "#b59066"], woodTRing: "#7d6142",
-           leaf: "#3f7d2b", leafS: ["#356b24", "#4a8f33", "#2e5f20"],
-           maple: "#b3282d", mapleS: ["#9d2226", "#c53238", "#8a1d21"],
-           plank: "#b98d55", plankS: ["#a87f4c", "#c69a61"], plankLine: "#8f6b3f",
-           glass: "#cfe6f2", glassS: ["#c3dced"], glassEdge: "#eaf6ff",
-           water: "#2f6fb5", waterS: ["#2a63a4", "#3a7cc4"],
-           snow: "#f2f7fb", snowS: ["#e6eef5", "#ffffff"],
-           ice: "#9fd4ea", iceS: ["#8fc7e2", "#b2e0f3"],
-           brick: "#9a4b3c", brickS: ["#8a4235", "#a95546"], mortar: "#d6cfc6" }
+    smooth: {
+      label: ["Smooth", "Lisse"], sky: ["#e8f4fa", "#a8d5e8"], fog: [0.82, 0.90, 0.94],
+      bevel: 0.14, grain: 0,
+      c: { grass: "#8fc98f", grassDark: "#74b077", dirt: "#c9a382", dirtDark: "#ad8866",
+           stone: "#c2c7cc", stoneDark: "#a4aab0", sand: "#f0e2c4", sandDark: "#dbc9a5",
+           wood: "#b08a63", woodDark: "#8f6c49", woodTop: "#d3b088", woodTopDark: "#b2916b",
+           leaf: "#7fbf86", leafDark: "#63a26c", maple: "#e0776f", mapleDark: "#c25f59",
+           plank: "#dfba8e", plankDark: "#c09b71", glass: "#f0f9fd", glassEdge: "#ffffff",
+           water: "#5fb8cf", waterDark: "#469db5", snow: "#fbfdff", snowDark: "#e6eef5",
+           ice: "#cceef5", iceDark: "#a9d9e4", brick: "#d08b74", brickDark: "#b1705c",
+           mortar: "#f5efe7" }
     },
     bright: {
-      label: ["Bright", "Vif"], sky: [0.42, 0.80, 1.00], css: "#6bcbff",
-      speck: 0.86, outline: "rgba(0,0,0,.34)",
-      c: { grass: "#4ecb3c", grassS: ["#63de51", "#3cb42d"],
-           dirt: "#b5793f", dirtS: ["#c58a4d", "#a06833"],
-           stone: "#b9c0c7", stoneS: ["#cad1d8", "#a7aeb5"],
-           sand: "#ffe193", sandS: ["#ffefb8", "#f3cf76"],
-           woodS: "#96602f", woodSS: ["#a86e39", "#835226"], woodRing: "#7a4c24",
-           woodT: "#d09a55", woodTS: ["#e0aa64", "#bd8845"], woodTRing: "#8a5f2c",
-           leaf: "#3fc734", leafS: ["#52dc46", "#2fae26"],
-           maple: "#ff4d5a", mapleS: ["#ff6b76", "#e63946"],
-           plank: "#e6ab63", plankS: ["#f2bb74", "#d09852"], plankLine: "#a97636",
-           glass: "#d9f3ff", glassS: ["#c9ebff"], glassEdge: "#ffffff",
-           water: "#2fa8ff", waterS: ["#4fb8ff", "#1f93e6"],
-           snow: "#ffffff", snowS: ["#f2f8ff"],
-           ice: "#8ef0ff", iceS: ["#a9f5ff", "#6fe2f5"],
-           brick: "#ff7a5c", brickS: ["#ff8f74", "#e8654a"], mortar: "#ffffff" }
+      label: ["Bright", "Vif"], sky: ["#e6f7ff", "#7fd0f2"], fog: [0.76, 0.90, 0.96],
+      bevel: 0.22, grain: 0,
+      c: { grass: "#6fdc82", grassDark: "#4bbf64", dirt: "#e0a76d", dirtDark: "#c2874f",
+           stone: "#d2dae1", stoneDark: "#b0bac2", sand: "#ffeeb0", sandDark: "#f2d98a",
+           wood: "#cf9455", woodDark: "#a97239", woodTop: "#eeb877", woodTopDark: "#cb975a",
+           leaf: "#63de7c", leafDark: "#3fbb5e", maple: "#ff7f7a", mapleDark: "#e35d5c",
+           plank: "#f7c98d", plankDark: "#d6a76b", glass: "#f2fcff", glassEdge: "#ffffff",
+           water: "#4fd0ea", waterDark: "#2eb0cd", snow: "#ffffff", snowDark: "#eaf4fb",
+           ice: "#b3f0fa", iceDark: "#8adae8", brick: "#ff9c80", brickDark: "#e07a62",
+           mortar: "#fffbf4" }
     },
     frosty: {
-      label: ["Frosty", "Givré"], sky: [0.85, 0.90, 0.95], css: "#d9e6f2",
-      speck: 0.62, outline: null,
-      c: { grass: "#8fb98a", grassS: ["#9dc697", "#7fa87b"],
-           dirt: "#8d8073", dirtS: ["#9a8d80", "#7e7266"],
-           stone: "#a8b0b8", stoneS: ["#b6bec6", "#99a1a9"],
-           sand: "#ded6c4", sandS: ["#e9e2d2", "#cec6b4"],
-           woodS: "#6b5c50", woodSS: ["#79695c", "#5c4e44"], woodRing: "#544740",
-           woodT: "#9b8a7c", woodTS: ["#a99789", "#8a7a6d"], woodTRing: "#6f6156",
-           leaf: "#6f9d78", leafS: ["#7fae87", "#5f8b68"],
-           maple: "#a5555c", mapleS: ["#b46770", "#8e454c"],
-           plank: "#a9998a", plankS: ["#b7a698", "#96877a"], plankLine: "#7f7166",
-           glass: "#e4f0f7", glassS: ["#d6e6f0"], glassEdge: "#ffffff",
-           water: "#5b8fb5", waterS: ["#6b9dc2", "#4d80a6"],
-           snow: "#ffffff", snowS: ["#f4f9ff"],
-           ice: "#c6e9f5", iceS: ["#d6f1fa", "#b2dcec"],
-           brick: "#94706b", brickS: ["#a37f79", "#84625d"], mortar: "#e8e2dc" }
+      label: ["Frosty", "Givré"], sky: ["#f4f8fb", "#cfdfe9"], fog: [0.91, 0.94, 0.96],
+      bevel: 0.11, grain: 0,
+      c: { grass: "#b3c6b2", grassDark: "#98ad98", dirt: "#b3a89b", dirtDark: "#978c80",
+           stone: "#c6ced5", stoneDark: "#a8b1b9", sand: "#e8e0d2", sandDark: "#cfc6b6",
+           wood: "#a29384", woodDark: "#83756a", woodTop: "#c0b1a1", woodTopDark: "#a09384",
+           leaf: "#a3bfab", leafDark: "#87a390", maple: "#c79197", mapleDark: "#a9767d",
+           plank: "#cbbdad", plankDark: "#a99c8e", glass: "#f6fbfe", glassEdge: "#ffffff",
+           water: "#9dc2d6", waterDark: "#7ea6bd", snow: "#ffffff", snowDark: "#eef5fa",
+           ice: "#e0f2f9", iceDark: "#c0dfea", brick: "#b89b96", brickDark: "#9a7f7b",
+           mortar: "#f7f3ee" }
     }
   };
-  var THEME_ORDER = ["classic", "bright", "frosty"];
+  var THEME_ORDER = ["smooth", "bright", "frosty"];
 
   function makeAtlas(name) {
-    var TH = THEMES[name] || THEMES.classic, C = TH.c;
+    var TH = THEMES[name] || THEMES.smooth, C = TH.c;
     var c = document.createElement("canvas");
     c.width = c.height = TS * ATLAS_N;
     var x = c.getContext("2d");
-    var seed = 1;
+    var seed = 7;
     function rnd() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
-    function tile(i, base, spec, fn) {
+
+    /* One material = a soft vertical gradient, a whisper of grain so a large flat
+       wall does not look like dead plastic, and a bevel that lifts the top-left
+       edge and drops the bottom-right. That bevel is what makes a cube read as a
+       solid object rather than a coloured square. */
+    function mat(i, top, bottom, opts) {
+      opts = opts || {};
       var ox = (i % ATLAS_N) * TS, oy = ((i / ATLAS_N) | 0) * TS;
-      x.fillStyle = base; x.fillRect(ox, oy, TS, TS);
-      for (var p = 0; p < TS * TS; p++) {
-        if (rnd() > TH.speck) continue;
-        x.fillStyle = spec[(rnd() * spec.length) | 0];
-        x.fillRect(ox + (p % TS), oy + ((p / TS) | 0), 1, 1);
+      x.save();
+      x.beginPath(); x.rect(ox, oy, TS, TS); x.clip();
+
+      var g = x.createLinearGradient(ox, oy, ox + TS * 0.2, oy + TS);
+      g.addColorStop(0, top); g.addColorStop(1, bottom);
+      x.fillStyle = g; x.fillRect(ox, oy, TS, TS);
+
+      if (TH.grain > 0 && !opts.flat) {
+        for (var n = 0; n < 260; n++) {
+          var r = 6 + rnd() * 26;
+          x.globalAlpha = TH.grain * (0.4 + rnd() * 0.6);
+          x.fillStyle = rnd() > 0.5 ? "#ffffff" : "#000000";
+          x.beginPath();
+          x.arc(ox + rnd() * TS, oy + rnd() * TS, r, 0, 6.2832);
+          x.fill();
+        }
+        x.globalAlpha = 1;
       }
-      if (fn) fn(x, ox, oy);
-      /* the outline goes on last, so nothing a tile draws can cover it */
-      if (TH.outline && i !== 10) {
-        x.strokeStyle = TH.outline; x.lineWidth = 1;
-        x.strokeRect(ox + 0.5, oy + 0.5, TS - 1, TS - 1);
-      }
+
+      if (opts.paint) opts.paint(x, ox, oy, C);
+
+      /* A crisp edge, not a wide soft gradient. A narrow bright line along the
+         top and left and a narrow dark one along the bottom and right reads as a
+         clean machined surface; a broad blur reads as smudge. */
+      var b = TS * 0.045, a = TH.bevel;
+      x.fillStyle = "rgba(255,255,255," + a + ")";
+      x.fillRect(ox, oy, TS, b);
+      x.fillStyle = "rgba(255,255,255," + (a * 0.55) + ")";
+      x.fillRect(ox, oy, b, TS);
+      x.fillStyle = "rgba(0,0,0," + (a * 0.85) + ")";
+      x.fillRect(ox, oy + TS - b, TS, b);
+      x.fillStyle = "rgba(0,0,0," + (a * 0.5) + ")";
+      x.fillRect(ox + TS - b, oy, b, TS);
+      x.restore();
     }
-    tile(0, C.grass, C.grassS);                                              /* grass top */
-    tile(1, C.dirt, C.dirtS, function (g, ox, oy) {                          /* grass side */
-      g.fillStyle = C.grass; g.fillRect(ox, oy, TS, 4);
-      g.fillStyle = C.grassS[1] || C.grass;
-      for (var i = 0; i < TS; i += 2) g.fillRect(ox + i, oy + 4, 1, 1 + ((i * 7) % 3));
-    });
-    tile(2, C.dirt, C.dirtS);                                                /* dirt */
-    tile(3, C.stone, C.stoneS);                                              /* stone */
-    tile(4, C.sand, C.sandS);                                                /* sand */
-    tile(5, C.woodS, C.woodSS, function (g, ox, oy) {                        /* wood side */
-      g.fillStyle = C.woodRing;
-      for (var i = 1; i < TS; i += 5) g.fillRect(ox + i, oy, 1, TS);
-    });
-    tile(6, C.woodT, C.woodTS, function (g, ox, oy) {                        /* wood top */
-      g.strokeStyle = C.woodTRing; g.lineWidth = 1;
-      for (var r = 2; r < 8; r += 2) { g.beginPath(); g.arc(ox + 8, oy + 8, r, 0, 6.29); g.stroke(); }
-    });
-    tile(7, C.leaf, C.leafS);                                                /* leaves */
-    tile(8, C.maple, C.mapleS);                                              /* maple leaves */
-    tile(9, C.plank, C.plankS, function (g, ox, oy) {                        /* planks */
-      g.fillStyle = C.plankLine;
-      g.fillRect(ox, oy + 5, TS, 1); g.fillRect(ox, oy + 11, TS, 1);
-    });
-    tile(10, C.glass, C.glassS, function (g, ox, oy) {                       /* glass */
-      g.clearRect(ox + 2, oy + 2, TS - 4, TS - 4);
-      g.fillStyle = C.glassEdge;
-      g.fillRect(ox, oy, TS, 2); g.fillRect(ox, oy, 2, TS);
-      g.fillRect(ox, oy + TS - 2, TS, 2); g.fillRect(ox + TS - 2, oy, 2, TS);
-    });
-    tile(11, C.water, C.waterS);                                             /* water */
-    tile(12, C.snow, C.snowS);                                               /* snow */
-    tile(13, C.ice, C.iceS);                                                 /* ice */
-    tile(14, C.brick, C.brickS, function (g, ox, oy) {                       /* brick */
-      g.fillStyle = C.mortar;
-      g.fillRect(ox, oy + 4, TS, 1); g.fillRect(ox, oy + 9, TS, 1); g.fillRect(ox, oy + 14, TS, 1);
-      g.fillRect(ox + 3, oy, 1, 4); g.fillRect(ox + 11, oy + 5, 1, 4); g.fillRect(ox + 3, oy + 10, 1, 4);
-    });
-    tile(15, "#555", ["#4c4c4c", "#606060"]);
+
+    mat(0, C.grass, C.grassDark);                                        /* grass top */
+    mat(1, C.dirt, C.dirtDark, { paint: function (g, ox, oy, C) {        /* grass side */
+      var band = TS * 0.30;
+      var gr = g.createLinearGradient(ox, oy, ox, oy + band * 1.25);
+      gr.addColorStop(0, C.grass); gr.addColorStop(0.78, C.grassDark);
+      gr.addColorStop(1, "rgba(0,0,0,0)");
+      g.fillStyle = gr; g.fillRect(ox, oy, TS, band * 1.25);
+    } });
+    mat(2, C.dirt, C.dirtDark);                                          /* dirt */
+    mat(3, C.stone, C.stoneDark);                                        /* stone */
+    mat(4, C.sand, C.sandDark);                                          /* sand */
+    mat(5, C.wood, C.woodDark, { paint: function (g, ox, oy, C) {        /* wood side */
+      g.globalAlpha = 0.18; g.fillStyle = C.woodDark;
+      for (var i = 0; i < 5; i++) {
+        var w = TS * (0.02 + (i % 3) * 0.012);
+        g.fillRect(ox + TS * (0.12 + i * 0.19), oy, w, TS);
+      }
+      g.globalAlpha = 1;
+    } });
+    mat(6, C.woodTop, C.woodTopDark, { paint: function (g, ox, oy, C) {  /* wood top */
+      g.globalAlpha = 0.22; g.strokeStyle = C.woodTopDark;
+      for (var r = TS * 0.10; r < TS * 0.46; r += TS * 0.09) {
+        g.lineWidth = TS * 0.02;
+        g.beginPath(); g.arc(ox + TS / 2, oy + TS / 2, r, 0, 6.2832); g.stroke();
+      }
+      g.globalAlpha = 1;
+    } });
+    mat(7, C.leaf, C.leafDark);                                          /* leaves */
+    mat(8, C.maple, C.mapleDark);                                        /* maple leaves */
+    mat(9, C.plank, C.plankDark, { paint: function (g, ox, oy, C) {      /* planks */
+      g.globalAlpha = 0.30; g.fillStyle = C.plankDark;
+      g.fillRect(ox, oy + TS * 0.33, TS, TS * 0.015);
+      g.fillRect(ox, oy + TS * 0.66, TS, TS * 0.015);
+      g.globalAlpha = 1;
+    } });
+    mat(10, C.glass, C.glass, { flat: true, paint: function (g, ox, oy, C) {  /* glass */
+      g.clearRect(ox, oy, TS, TS);
+      g.globalAlpha = 0.30; g.fillStyle = C.glass;
+      g.fillRect(ox, oy, TS, TS);
+      g.globalAlpha = 0.85; g.fillStyle = C.glassEdge;
+      var e = TS * 0.055;
+      g.fillRect(ox, oy, TS, e); g.fillRect(ox, oy, e, TS);
+      g.fillRect(ox, oy + TS - e, TS, e); g.fillRect(ox + TS - e, oy, e, TS);
+      /* one soft diagonal highlight, the thing that makes glass read as glass */
+      g.globalAlpha = 0.35;
+      var sh = g.createLinearGradient(ox, oy + TS, ox + TS, oy);
+      sh.addColorStop(0.42, "rgba(255,255,255,0)");
+      sh.addColorStop(0.52, "rgba(255,255,255,.9)");
+      sh.addColorStop(0.62, "rgba(255,255,255,0)");
+      g.fillStyle = sh; g.fillRect(ox, oy, TS, TS);
+      g.globalAlpha = 1;
+    } });
+    mat(11, C.water, C.waterDark);                                       /* water */
+    mat(12, C.snow, C.snowDark);                                         /* snow */
+    mat(13, C.ice, C.iceDark);                                           /* ice */
+    mat(14, C.brick, C.brickDark, { paint: function (g, ox, oy, C) {     /* brick */
+      g.globalAlpha = 0.85; g.fillStyle = C.mortar;
+      var m = TS * 0.035, row = TS / 3;
+      for (var r = 1; r < 3; r++) g.fillRect(ox, oy + row * r - m / 2, TS, m);
+      g.fillRect(ox + TS * 0.5 - m / 2, oy, m, row);
+      g.fillRect(ox + TS * 0.25 - m / 2, oy + row, m, row);
+      g.fillRect(ox + TS * 0.75 - m / 2, oy + row, m, row);
+      g.fillRect(ox + TS * 0.5 - m / 2, oy + row * 2, m, row);
+      g.globalAlpha = 1;
+    } });
+    mat(15, "#8a9098", "#6f757c");
     return c;
   }
 
@@ -561,7 +603,7 @@
     if (saved && THEMES[saved]) return saved;
     if (/[?&]kids=1/.test(location.search)) return "bright";
     if (/for-kids/.test(document.referrer || "")) return "bright";
-    return "classic";
+    return "smooth";
   }
   var theme = firstTheme();
   var atlasCanvas = makeAtlas(theme);
@@ -667,31 +709,53 @@
       aL = gl.getAttribLocation(prog, "l"),
       uMVP = gl.getUniformLocation(prog, "mvp"),
       uFog = gl.getUniformLocation(prog, "fog");
-  gl.uniform3f(uFog, THEMES[theme].sky[0], THEMES[theme].sky[1], THEMES[theme].sky[2]);
+  gl.uniform3f(uFog, THEMES[theme].fog[0], THEMES[theme].fog[1], THEMES[theme].fog[2]);
 
   var tex = gl.createTexture();
   gl.bindTexture(gl.TEXTURE_2D, tex);
   gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
   gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, atlasCanvas);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+  /* LINEAR, not NEAREST — this is the whole difference between "pixel game"
+     and a smooth surface. No mipmaps on purpose: with sixteen tiles packed in
+     one atlas, the lower mip levels blend neighbouring tiles into each other
+     and you get coloured haloes along every block edge. At this world size the
+     shimmer mipmaps would have fixed is not worth that. */
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
   gl.enable(gl.DEPTH_TEST);
   gl.enable(gl.CULL_FACE);
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-  gl.clearColor(THEMES[theme].sky[0], THEMES[theme].sky[1], THEMES[theme].sky[2], 1);
+  gl.clearColor(0, 0, 0, 0);   /* the sky is a CSS gradient behind the canvas */
 
   /* face definitions: corner offsets, normal direction, shade */
   var FACES = [
-    { d: [0, 1, 0], s: 1.00, t: 0, v: [[0,1,0],[0,1,1],[1,1,1],[1,1,0]] },  /* top */
-    { d: [0,-1, 0], s: 0.52, t: 1, v: [[0,0,1],[0,0,0],[1,0,0],[1,0,1]] },  /* bottom */
-    { d: [0, 0,-1], s: 0.72, t: 2, v: [[1,0,0],[0,0,0],[0,1,0],[1,1,0]] },  /* north */
-    { d: [0, 0, 1], s: 0.72, t: 2, v: [[0,0,1],[1,0,1],[1,1,1],[0,1,1]] },  /* south */
-    { d: [-1,0, 0], s: 0.62, t: 2, v: [[0,0,0],[0,0,1],[0,1,1],[0,1,0]] },  /* west */
-    { d: [1, 0, 0], s: 0.62, t: 2, v: [[1,0,1],[1,0,0],[1,1,0],[1,1,1]] }   /* east */
+    { d: [0, 1, 0], s: 1.00, t: 0, t1: [1,0,0], t2: [0,0,1], v: [[0,1,0],[0,1,1],[1,1,1],[1,1,0]] },
+    { d: [0,-1, 0], s: 0.52, t: 1, t1: [1,0,0], t2: [0,0,1], v: [[0,0,1],[0,0,0],[1,0,0],[1,0,1]] },
+    { d: [0, 0,-1], s: 0.74, t: 2, t1: [1,0,0], t2: [0,1,0], v: [[1,0,0],[0,0,0],[0,1,0],[1,1,0]] },
+    { d: [0, 0, 1], s: 0.74, t: 2, t1: [1,0,0], t2: [0,1,0], v: [[0,0,1],[1,0,1],[1,1,1],[0,1,1]] },
+    { d: [-1,0, 0], s: 0.64, t: 2, t1: [0,0,1], t2: [0,1,0], v: [[0,0,0],[0,0,1],[0,1,1],[0,1,0]] },
+    { d: [1, 0, 0], s: 0.64, t: 2, t1: [0,0,1], t2: [0,1,0], v: [[1,0,1],[1,0,0],[1,1,0],[1,1,1]] }
   ];
+
+  /* Ambient occlusion. Where two blocks meet, the crease between them should be
+     darker — that single detail is most of what separates a flat toy-looking
+     voxel scene from one that reads as solid. Three neighbours around each
+     corner decide how much light it loses. */
+  var AO_STEPS = [1.00, 0.86, 0.72, 0.58];
+  function cornerAO(bx, by, bz, F, v) {
+    var s1 = (v[0] * F.t1[0] + v[1] * F.t1[1] + v[2] * F.t1[2]) ? 1 : -1;
+    var s2 = (v[0] * F.t2[0] + v[1] * F.t2[1] + v[2] * F.t2[2]) ? 1 : -1;
+    var nx = bx + F.d[0], ny = by + F.d[1], nz = bz + F.d[2];
+    function occ(ax, ay, az) { return solid(get(nx + ax, ny + ay, nz + az)) ? 1 : 0; }
+    var a = occ(F.t1[0] * s1, F.t1[1] * s1, F.t1[2] * s1);
+    var b = occ(F.t2[0] * s2, F.t2[1] * s2, F.t2[2] * s2);
+    var cnr = occ(F.t1[0] * s1 + F.t2[0] * s2, F.t1[1] * s1 + F.t2[1] * s2,
+                  F.t1[2] * s1 + F.t2[2] * s2);
+    return AO_STEPS[(a && b) ? 3 : a + b + cnr];
+  }
 
   var chunks = {};                     /* key "cx,cz" -> {opaque, alpha} buffers */
   function ckey(cx, cz) { return cx + "," + cz; }
@@ -717,15 +781,22 @@
             if (def.see && nb === id) continue;
             var tile = def.t[F.t];
             var tx = (tile % ATLAS_N) / ATLAS_N, ty = ((tile / ATLAS_N) | 0) / ATLAS_N;
-            var s = 1 / ATLAS_N, e = 0.001;          /* inset stops tile bleed */
+            var s = 1 / ATLAS_N, e = (PAD / TS) / ATLAS_N;
+            /* A real gutter, not a hair. NEAREST only ever samples one texel so
+               0.001 was enough; LINEAR blends across the boundary and would pull
+               in the tile next door along every edge. */
             var uvq = [[tx + e, ty + s - e], [tx + s - e, ty + s - e],
                        [tx + s - e, ty + e], [tx + e, ty + e]];
             var order = [0, 1, 2, 0, 2, 3];
+            /* AO is per CORNER, so compute the four once and reuse them across
+               the six indices of the two triangles */
+            var ao = [cornerAO(x, y, z, F, F.v[0]), cornerAO(x, y, z, F, F.v[1]),
+                      cornerAO(x, y, z, F, F.v[2]), cornerAO(x, y, z, F, F.v[3])];
             for (var k = 0; k < 6; k++) {
               var vi = order[k], v = F.v[vi];
               into.p.push(x + v[0], y + v[1], z + v[2]);
               into.u.push(uvq[vi][0], uvq[vi][1]);
-              into.l.push(F.s);
+              into.l.push(F.s * (def.see ? (0.82 + ao[vi] * 0.18) : ao[vi]));
             }
           }
         }
@@ -1149,11 +1220,11 @@
     atlasCanvas = makeAtlas(theme);
     gl.bindTexture(gl.TEXTURE_2D, tex);
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, atlasCanvas);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
-    gl.clearColor(TH.sky[0], TH.sky[1], TH.sky[2], 1);
-    gl.uniform3f(uFog, TH.sky[0], TH.sky[1], TH.sky[2]);
-    document.getElementById("bbShell").style.background = TH.css;
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.uniform3f(uFog, TH.fog[0], TH.fog[1], TH.fog[2]);
+    document.getElementById("bbShell").style.background =
+      "linear-gradient(" + TH.sky[0] + " 0%, " + TH.sky[1] + " 62%, " + TH.sky[1] + " 100%)";
     /* the UVs did not move, so the meshes are still correct — only the picture
        on them changed. Rebuilding 64 chunks here would be pure waste. */
     var i = HOTBAR.indexOf(held);
@@ -1258,7 +1329,7 @@
 })();
 </script>
   <script src="js/game-fullscreen.js?v=c56db4e5" defer></script>
-  <script src="js/site.js?v=b8966ab8"></script>
+  <script src="js/site.js?v=cd6911bf"></script>
   <script src="js/analytics.js?v=d06ceb69"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
   <script src="js/pwa.js?v=56adaa04" defer></script>
