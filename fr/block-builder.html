@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Canada Block World — jeu de construction 3D gratuit</title>
-<meta name="description" content="Bâtissez dans un monde de blocs en 3D : creusez, empilez, explorez. Douze types de blocs, trois styles, couleurs vives, sauvegarde automatique. Gratuit.">
+<meta name="description" content="Bâtissez en 3D dans treize mondes canadiens, un par province et territoire. Creusez, empilez, explorez. Douze blocs, gratuit et sans inscription.">
 <link rel="stylesheet" href="../css/style.css?v=a008388b">
 <style>
   /* Fallback "immersive" mode for iPhone, where Safari will not put an element
@@ -59,6 +59,104 @@
   .bb-slot canvas{width:100%;height:100%;display:block}
   .bb-slot.on{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.35);transform:translateY(-3px)}
   @media (max-width:560px){ .bb-slot{width:34px;height:34px} }
+
+  /* ============================================== the map, and the fourteen worlds
+     The map lives INSIDE the shell so it is still there in full screen, which is
+     where most of the building actually happens. */
+  .bb-badge{background:rgba(0,0,0,.34);border-radius:10px;padding:5px 9px}
+  .bb-hud .bb-mapb{pointer-events:auto;background:rgba(0,0,0,.45);color:#fff;
+    border:2px solid rgba(255,255,255,.45);border-radius:12px;padding:6px 11px;
+    font:inherit;font-weight:800;cursor:pointer;line-height:1}
+  .bb-hud .bb-mapb:hover{background:rgba(0,0,0,.62)}
+  .bb-mid{display:flex;gap:8px;align-items:flex-start}
+
+  /* The overlay must FIT the stage. Letting it grow and scroll put "Build here"
+     below the fold, where on a normal page the site's own sticky header sits on
+     top of it — a button you can see and cannot press. So: a flex column with
+     the words pinned top and bottom, and the map given whatever height is left,
+     scaling itself to fill it. Nothing scrolls, at any stage size. */
+  /* FIXED, not absolute. Pinned to the game the map got whatever height was
+     left over inside the stage — sixty pixels of Canada on a phone — and half
+     of it could be scrolled off the top of the screen, so a tap meant for
+     Quebec hit nothing at all. Pinned to the SCREEN it is a full-screen chooser:
+     it always gets the whole height, and it cannot be scrolled away from.
+     It stays a child of the shell so that it is still there in full screen. */
+  .bb-map{position:fixed;inset:0;z-index:10050;background:#0b1620;color:#fff;
+    display:flex;align-items:stretch;justify-content:center;padding:10px;overflow:hidden}
+  /* The SITE floats its own Play on TV and Full screen buttons in the corners at
+     z-index 10000, and on a phone they landed squarely on top of Build here and
+     Back. Nothing on the map is optional, so those two step aside while it is
+     open and come straight back when it closes. */
+  body.bb-map-open .tv-btn,
+  body.bb-map-open .fs-btn,
+  body.bb-map-open .fs-exit{display:none !important}
+  @supports (height:100dvh){ .bb-map{height:100dvh} }
+  /* the shell clips to its rounded corners, which would clip the map with it */
+  .bb-shell.bb-map-on{overflow:visible}
+  .bb-map[hidden]{display:none}
+  /* height:100% and NOT margin:auto. Centring the column with auto margins made
+     it shrink to the height of its own text, which handed the map its 150px
+     minimum and nothing more — a stamp-sized Canada with empty space above and
+     below it. Filling the height instead gives the map everything left over. */
+  .bb-map-in{width:100%;max-width:620px;height:100%;text-align:center;display:flex;
+    flex-direction:column;justify-content:center;min-height:0;gap:2px}
+  .bb-map h3{margin:0;font-size:1.1rem;flex:0 0 auto}
+  .bb-map .bb-map-help{margin:0 0 4px;font-size:.84rem;line-height:1.4;opacity:.9;flex:0 0 auto}
+  /* The SVG is taken OUT of the flow and pinned to this box. An <svg> with an
+     intrinsic aspect ratio does not reliably honour height:100% inside a flex
+     item, and when it guessed wrong it drew itself straight over the buttons
+     underneath — visible, and impossible to press. Pinned, it is exactly the
+     box, and preserveAspectRatio does the scaling inside it. */
+  /* The drawing is wider than it is tall, so in a tall box it letterboxes and
+     leaves a band of nothing above and below it. Giving the box the drawing's
+     own proportions and centring the column puts that space back. */
+  .bb-map-fig{position:relative;width:100%;aspect-ratio:79/59;flex:0 1 auto;
+    min-height:130px;max-height:100%}
+  .bb-map svg{position:absolute;inset:0;width:100%;height:100%;display:block;
+    touch-action:manipulation}
+  .bb-m-p{fill:#2b6ea8;stroke:#0a1724;stroke-width:1.4;cursor:pointer}
+  .bb-m-p.seen{fill:#6fc2ef}
+  .bb-m-p.done{fill:#d8434f}
+  .bb-m-p.here{fill:#ffd23f}
+  .bb-m-p.sel{fill:#ffd23f;stroke:#fff;stroke-width:3}
+  .bb-m-h{fill:rgba(0,0,0,0);cursor:pointer}
+  .bb-m-lab text{fill:#fff;font-size:17px;font-weight:800;text-anchor:middle;
+    paint-order:stroke;stroke:rgba(0,0,0,.7);stroke-width:3.5;pointer-events:none}
+  .bb-m-lead{stroke:rgba(255,255,255,.55);stroke-width:1.3;fill:none}
+  .bb-map-name{margin:6px 0 2px;font-size:1.02rem;font-weight:800;flex:0 0 auto}
+  .bb-map-desc{margin:0 0 8px;font-size:.86rem;opacity:.9;line-height:1.35;flex:0 0 auto}
+  .bb-map-tag{display:inline-block;margin-left:6px;font-size:.72rem;font-weight:800;
+    background:rgba(255,255,255,.2);border-radius:99px;padding:2px 8px;vertical-align:middle}
+  .bb-map-acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0;flex:0 0 auto}
+  .bb-free{background:none;border:2px solid rgba(255,255,255,.4);color:#fff;border-radius:12px;
+    padding:5px 12px;font:inherit;font-weight:800;font-size:.85rem;cursor:pointer;
+    margin:6px auto 0;flex:0 0 auto}
+  .bb-free.on{background:#ffd23f;color:#12212f;border-color:#ffd23f}
+  /* What goes when the screen is short, in the order it is worth losing. The
+     map and the two buttons are never in that list: those are the whole point.
+     The words around them are, because the map itself is the instruction. */
+  @media (max-height:700px){ .bb-map .bb-map-help{display:none} }
+  @media (max-height:600px){
+    .bb-map-desc{display:none}
+    .bb-map h3{font-size:.98rem}
+    .bb-map-in{gap:0}
+  }
+  @media (max-height:480px){
+    .bb-map h3{display:none}
+    .bb-map-name{margin:2px 0 0;font-size:.94rem}
+    .bb-free{margin:3px auto 0;padding:3px 10px;font-size:.8rem}
+    .bb-map{padding:6px}
+  }
+
+  /* The list under the game is plain HTML on purpose: it is what a search engine
+     reads, and it is what somebody sees if the 3D never starts. */
+  .bb-places{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;
+    margin:14px 0 0;padding:0;list-style:none}
+  .bb-places li{background:var(--card,#fff);border:1px solid var(--line,#dfe4ea);
+    border-radius:12px;padding:10px 12px}
+  .bb-places b{display:block;font-size:.95rem}
+  .bb-places span{font-size:.86rem;color:var(--muted,#5b6672)}
+
   .bb-veil{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     background:rgba(12,20,30,.72);color:#fff;text-align:center;padding:20px;z-index:5}
   .bb-veil.off{display:none}
@@ -129,11 +227,12 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Canada Quiz">
+<meta name="google-adsense-account" content="ca-pub-7256851069341390">
 <link rel="canonical" href="https://canada-quiz.com/fr/block-builder.html">
 <link rel="alternate" hreflang="en" href="https://canada-quiz.com/block-builder.html">
 <link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/block-builder.html">
 <link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/block-builder.html">
-<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://canada-quiz.com/fr/"},{"@type":"ListItem","position":2,"name":"Jeux de réflexion et casse-tête","item":"https://canada-quiz.com/fr/games.html"},{"@type":"ListItem","position":3,"name":"Canada Block World","item":"https://canada-quiz.com/fr/block-builder.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/fr/block-builder.html#webpage","url":"https://canada-quiz.com/fr/block-builder.html","name":"Canada Block World — jeu de construction 3D gratuit","description":"Bâtissez dans un monde de blocs en 3D : creusez, empilez, explorez. Douze types de blocs, trois styles, couleurs vives, sauvegarde automatique. Gratuit.","inLanguage":"fr-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/fr/","name":"Canada Quiz et jeux amusants en famille"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://canada-quiz.com/fr/"},{"@type":"ListItem","position":2,"name":"Jeux de réflexion et casse-tête","item":"https://canada-quiz.com/fr/games.html"},{"@type":"ListItem","position":3,"name":"Canada Block World","item":"https://canada-quiz.com/fr/block-builder.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/fr/block-builder.html#webpage","url":"https://canada-quiz.com/fr/block-builder.html","name":"Canada Block World — jeu de construction 3D gratuit","description":"Bâtissez en 3D dans treize mondes canadiens, un par province et territoire. Creusez, empilez, explorez. Douze blocs, gratuit et sans inscription.","inLanguage":"fr-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/fr/","name":"Canada Quiz et jeux amusants en famille"},"publisher":{"@type":"Organization","name":"ASK Egoods","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
 </head>
 <body>
 <header class="site-header">
@@ -156,6 +255,7 @@
   <section class="hero" style="padding:26px 20px 6px">
     <h1>🍁 Canada Block World</h1>
     <p>Creusez, bâtissez et parcourez tout un monde fait de blocs — en 3D, en couleurs vives, dans votre navigateur, sans rien installer.</p>
+    <p>Ouvrez la carte et choisissez une province ou un territoire : treize mondes, chacun avec son propre paysage, chacun enregistré séparément. Construction libre, le monde ouvert, est toujours là quand vous le voulez.</p>
   </section>
 
   <section class="panel">
@@ -212,6 +312,10 @@
         <div class="bb-cross" id="bbCross"></div>
         <div class="bb-hud">
           <span class="box" id="bbHold">Herbe</span>
+          <span class="bb-mid">
+            <span class="box bb-badge" id="bbWhere">Construction libre</span>
+            <button type="button" class="bb-mapb" id="bbMapBtn" aria-label="Ouvrir la carte">🗺</button>
+          </span>
           <span class="box" id="bbFps">—</span>
         </div>
         <div class="bb-controls" id="bbTouch">
@@ -225,20 +329,37 @@
           </div>
           <div class="bb-bar" id="bbBar"></div>
         </div>
+        <div class="bb-map" id="bbMap" hidden>
+          <div class="bb-map-in">
+            <h3 id="bbMapT">Où voulez-vous bâtir ?</h3>
+            <p class="bb-map-help" id="bbMapHelp">Choisissez une province ou un territoire. Chacun est son propre monde avec son propre paysage, et chacun est enregistré séparément.</p>
+            <div class="bb-map-fig"><svg viewBox="90 125 790 590" preserveAspectRatio="xMidYMid meet" id="bbMapSvg" role="group" aria-label="Carte du Canada"><g id="bbMapShapes"><path class="bb-m-p" data-r="BC" d="M236.6,347.8L192.3,443.7L219,508.2L215.9,524L219.3,535.9L175.1,518L129.2,495.6L133.7,485.1L128.4,487.5L125.2,481.9L130,483.1L131.5,475L125.6,478.5L121.5,471.9L127.7,459.2L123,463.3L116.8,460.6L110.6,455.4L117,456L111.4,453.3L114.4,447.8L108.4,447.7L104.7,440L112.9,435.3L118.4,437.7L107.7,435.2L108.1,431.8L113.4,424.9L119.8,425.1L121.3,432.6L120.8,423.9L125,422L107,428.9L117.4,413.6L113.9,413.1L113.7,399.1L117.9,398.3L121.6,409.2L117.9,401.4L121.9,397.9L108,400.8L106.2,390.1L116.4,387.1L111.8,380.1L128.2,370.8L120.8,373.6L130,359.3L121.8,343.8L128.9,283.6L107.1,284.1L109.1,262.1L169.6,309.7L233.1,346.2Z"></path><path class="bb-m-p" data-r="AB" d="M261.5,549.7L219.3,535.9L215.9,524L219,508.2L204.2,469.5L199.7,467.5L193.7,438.4L236.6,347.8L312.2,376.6L263.1,544.1Z"></path><path class="bb-m-p" data-r="SK" d="M261.5,549.7L312.2,376.6L375.3,390.8L353.6,570L262.5,550Z"></path><path class="bb-m-p" data-r="MB" d="M483,447.8L424.4,513.5L421.1,576.8L353.6,570L375.3,390.8L433.4,397.5L431.3,411.8L436,424.5L438.1,417.4L446,417.9L452.1,440.8L448.8,447.2L465.6,441.8L480.6,447.4Z"></path><path class="bb-m-p" data-r="ON" d="M421.4,570.5L424.4,513.5L483,447.8L496.9,460.6L515.3,467L517.7,474.3L530.8,468.9L545.3,470.9L551.3,503.8L559.6,512.4L557.9,516.3L570.9,521.7L574.2,527.4L570.8,532.5L576.2,528.2L585,533.3L595.5,589.4L608,605.6L632.2,609.1L636.7,613.9L658.8,606.5L663.5,612.5L647.3,631.8L630.5,640L638.8,638.5L637.4,642.7L629.2,641.8L609,653.2L606.5,659.4L615.3,658L616.9,665.1L602.7,669.3L600.4,672.6L605.1,672.9L588.6,674.3L576.5,688.3L570.9,688L568.8,683.1L576.4,680.8L575,669.8L582.3,662.2L584.4,641L577.8,630.9L582.5,630.1L588.8,639.8L599,640.2L597.8,635L603.1,634.7L596.5,625.4L586.2,617.6L542.2,614.8L535.4,590.7L523.6,590.7L516.7,579L497.9,576.4L497.1,583.1L493.7,585.9L494,579.5L483.1,593.6L461,593.3L444.6,584L426.8,581.2L423.7,571Z"></path><path class="bb-m-p" data-r="QC" d="M731.2,539L716.8,545.3L716,554.9L708,558.2L703.7,596.4L696.8,606L660.3,617.1L671.5,606.4L682.1,583.4L696.9,569.8L706,544.4L728.8,518.4L742.4,512.8L749.9,514.3L752.6,522.3L746,532.6L732.2,537.6ZM668.9,346.3L672.5,358.3L679.8,364.2L676.3,367L687.9,365.2L685.3,377.7L694.3,380.7L700.1,403.7L715.1,413.7L714.8,427.1L697.4,432.6L684.1,427.8L688.3,436.5L680.2,434.2L685.2,439.4L683.5,451.1L695.1,458.4L697.6,467.9L702.4,461.7L707.3,474L719.4,469.4L728.1,475.5L725.6,449.2L731.3,454.1L726.9,460L733.1,465.7L792.6,433.8L797.3,441.6L786,451.2L780.2,474.2L719.2,504.4L716,521.3L707.8,527.3L700.3,546.9L683.8,549.2L697.4,549.4L698.5,556.7L689.9,576.4L662.4,607.3L667.1,609.2L663.5,612.5L658.8,606.5L636.7,613.9L632.2,609.1L608,605.6L595.5,589.4L583,523.2L590.4,527.4L587.6,518.3L591.4,509.3L580.1,482.4L571.3,473.1L587,459.5L593.6,437.7L585.7,418.5L568.9,407.5L571.7,389.9L575.1,390.6L568.7,371.7L564.1,372.6L566.6,359.8L559.7,348.1L563.9,343.5L585.7,345.6L590.8,338.1L605.8,348.5L609.9,346.7L613.8,353.2L625.9,354.2L628.6,350L632.8,364.4L625.5,368.6L633.1,367.8L639.5,376L640.5,383.1L636.2,386.6L649.8,381.1L653.8,390.3L649.8,396.4L654.6,384.4L660.2,390.8L665.7,374.5L670.7,378.7L668.2,346.2Z"></path><path class="bb-m-p" data-r="NB" d="M772.8,557.4L759,578L755.6,576.2L753.1,583.2L743,586.2L734.1,579.4L725.6,558.2L719.4,555.8L711,560L716,554.9L714.4,547.4L734.5,536.8L744.9,539.5L753.9,534.5L751.7,546.9L757.1,545.3L764,555.2L772.6,557.3Z"></path><path class="bb-m-p" data-r="NS" d="M771.1,561.5L772.8,557.4L792.3,555.3L795.8,548.9L810.1,552.5L787.1,575.6L788.6,578.8L780.6,581.1L774.5,603.2L765.1,601.8L761.3,589.5L773.3,569.8L778.9,573.1L784.7,564L768.5,571.7L771.1,562.5ZM804.1,543.2L806.6,546.6L809.6,543.8L809.5,533.3L817.3,536.2L811.4,546.1L802.4,548.4L801,525L807.9,535.5L805.2,540.9Z"></path><path class="bb-m-p" data-r="PE" d="M772,549.4L790.9,540.9L789,550.2L783.1,551.5L781.7,547.6L775.4,552.2L764.6,549.5L765.8,541.3L771.5,549.1Z"></path><path class="bb-m-p" data-r="NL" d="M797.3,441.6L792.6,433.8L733.1,465.7L726.9,460L731.3,454.1L725.6,449.2L728.1,475.5L719.4,469.4L707.3,474L702.4,461.7L697.6,467.9L695.1,458.4L683.5,451.1L685.2,439.4L680.2,434.2L688.3,436.5L684.1,427.8L697.4,432.6L714.8,427.1L715.1,413.7L700.1,403.7L694.3,380.7L685.3,377.7L687.9,365.2L676.3,367L679.8,364.2L672.5,358.3L668.9,346.3L669.8,351.1L673,348.7L685.4,358.5L682.2,362.5L687.5,359.6L693.2,364.1L690.5,371.5L696.7,365.9L694.8,375.1L699.9,370.2L705.7,371.7L704.6,379.8L717.3,382.2L719.4,387.1L709.6,389.9L721.4,392L724,397.3L734.6,395.6L737.8,407.3L743,399.9L746.7,400.2L746.2,407.3L747.9,399.2L767.9,399L750.6,426.5L754.1,431.7L767.8,408.6L764.6,407.9L771.5,405.1L778.1,414.3L782.7,405.8L791.4,408.5L798,417.9L794.5,422.1L800,419.9L803.5,424.4L797.4,441.7ZM811.1,434.2L807.7,437.5L812.3,440.3L815.6,466.1L817.1,455.3L824.3,453.3L821.8,462L831.2,458.4L833.9,465.1L837.5,453.8L847.4,451.2L851.5,467L859,456.9L857.3,470.7L862.7,474.6L865.6,463L868.6,473.2L870,467L873.7,470.6L877.2,484.8L873,488.1L868.1,481.1L865.2,488.4L863,478.5L855.8,475L857.3,483.2L849.8,498.8L852,481.4L846.4,489L840.8,491.8L840.5,485.8L834,494.9L808,507.2L810.9,490L802.6,494.1L806.6,490.9L805.4,482.4L810.1,481.4L804.6,476.9L807.8,473.1L801.7,447.3L805.6,434.1L811.1,433.2Z"></path><path class="bb-m-p" data-r="YT" d="M209,333.7L138.5,287L109.1,262.1L112.7,257.8L100.9,247.7L206.4,139.4L217.6,166L199.3,190.5L209.6,199L201.6,213.8L208.4,218.9L195.7,233.6L200.4,256.5L190.8,282L198,299.3L194.4,310.9L211.3,317.4L209,333.4Z"></path><path class="bb-m-p" data-r="NT" d="M312.2,376.6L259.7,358.1L209,333.7L211.3,317.4L194.3,310.7L198,299.3L190.7,281.7L200.4,256.5L195.7,233.3L208.4,218.9L201.6,213.8L209.6,199L199.3,190.5L217.6,166.1L220.9,173.1L225.3,163.7L234.8,163.6L231.5,169.8L260.9,172.4L238.3,175L230.9,177.7L234,180.7L244.2,175.7L245.8,181.5L254.6,177.4L262.4,177.9L260.7,181L270.7,177.5L271.9,172.3L273.4,196.4L284,187.8L279,199.2L283.7,201.4L289.8,196.9L299.3,206.2L288.3,229.1L321.2,286.2L332.9,290L340.7,304.4L386.2,323.3L375.3,390.8L316.1,377.7ZM337.3,140.6L337.5,144.1L345.5,143.8L349.3,159.3L320.5,168.7L313.4,178.1L299.5,178.7L293.5,158.7L316.6,138.1L317.7,127.8L331.7,131.7L335.6,141.5ZM371.3,174.8L357.7,221.3L342.7,219.5L320.8,208.2L319.6,214L320.9,206.6L350.6,213.9L341.6,204.3L322.1,197.7L321.3,190.3L338.5,189.3L324.4,183.9L327.9,182L322.8,179.3L324.3,174.9L330.7,167.6L352.5,161.7L348.6,173.9L358.8,170.7L364.2,177.1L360.3,183L371.3,174.8Z"></path><path class="bb-m-p" data-r="NU" d="M433.6,396.8L375.3,390.8L386.2,323.3L340.7,304.4L332.9,290L321.2,286.2L288.3,229.1L299.3,206.2L313,224.1L326.2,232.3L327.1,240.3L319.9,240.5L318,245.2L332.8,252.9L348.1,252.5L352.8,263.4L354.9,261L358.4,281.9L359.8,258.6L375.6,249.5L359.6,253L360.7,245.7L375.2,244.2L381.2,259.4L397.7,268.5L413.8,270.1L416.2,264.7L422.7,272.7L424.7,269.6L418.6,267.4L416.6,260L424.1,258.5L429.8,262L427.7,266.3L432.4,263.1L429.2,274.9L434.6,283.4L428.3,282.6L431.9,289.7L435.3,267L447.7,257.9L445.6,251.6L441,254.6L446.9,243.3L433.3,237L431.4,229.4L435.3,226L433.1,214.6L437.8,213.3L440.1,204.3L450.9,213.8L458.7,233.1L454.5,231.8L451.3,241L465.1,244L460.6,247.3L467,263.8L471.9,247.4L478.3,252.6L478.6,268.3L485.3,280.4L493.6,254.8L498,253.3L492.4,236.4L509,236.9L512.2,243.6L517.2,243.8L514.7,249.2L519.2,252.1L512.3,256.7L522.4,277.4L516.1,286.6L511,290.9L502.8,281.7L509,293.7L490.1,290.8L495.6,296.7L487.9,309.7L471.6,301.4L460,301L489.9,314.2L483.4,329L476.5,332.8L469.6,330.4L467.8,338.7L444.1,330.1L445,334.7L454.9,337.7L452.7,339.9L457.3,337.6L463.5,341.7L465.5,347.7L453.4,351.7L456.6,355.4L451.9,356.1L452.1,362.3L447,359L433.9,395.1ZM319.6,214L320.8,208.2L341.6,219.1L357.7,221.3L371.3,174.8L374.5,197.1L379.1,196.3L382,171.5L391.5,180.8L392.7,217.1L406.7,234.2L391.9,235.4L392.6,242.8L398.8,239.2L400.1,244.5L392.8,249.1L380.4,245.2L373.5,234.9L367.4,240.8L342.9,241.7L333.1,239.2L333.8,227.3L319.9,215.3ZM503.8,9.8L510.5,8.9L508.1,15L513.7,8L525.8,14.2L516.1,37.2L524.3,31.1L519.4,52.7L515.4,51.3L517.9,64L508.6,65.3L513.3,70.5L502.8,73.2L511.7,79.2L499.2,81.5L513.4,83.6L508.3,89.1L513.1,91.1L512.1,96.8L505.1,99.7L504.8,110.1L493.7,109L492.9,113L507.6,115.7L509.1,122.3L500.6,130.6L492.6,122.8L494.3,126.8L486.2,124.3L483.4,130.9L477.9,126.8L470.6,130.2L469.8,124.2L470,130L465.9,129L466,123.4L475.7,116.9L471.7,106.2L482.5,113.2L489.2,101.7L482.3,110.9L480.6,93.8L478.7,101.2L477.2,97.3L471.8,100.6L473.6,90.3L489.5,85.1L481,85.8L472.5,65.2L479.5,64.4L491.9,73.6L482.4,62.9L497.5,50.6L492.3,50.3L495.1,41.3L487,56.5L475.7,60.4L472.4,56L479.6,49.1L467.7,58.4L464.3,54L475.1,47.3L463,52.5L467.9,43.8L460.7,46.2L462.1,42.2L457.6,41.4L466.1,34L473.5,35.3L469.4,31.6L473,27.2L487.3,35.5L478.6,27.4L480.8,20.3L486,21.1L482.2,17.7L492.6,22.1L488.2,14.6L498.9,17L496.8,11.1L503.7,9.8ZM449.7,122L450.5,129.8L459.4,126.1L462.2,129L458.9,129.9L467.2,132.1L458.8,133.7L469.2,146.1L470.2,142.7L481.6,146.2L495.4,137.2L507.4,141.5L507.5,156.2L500.3,159.1L492.8,153.2L490.3,160L472.2,161.8L471.6,156.2L467.2,161.1L461.3,156.9L458.4,159.6L452.2,131.4L443.6,132.6L437.9,124.3L442.2,119.1L449.4,122ZM489.7,215.3L494,217.3L494.1,207.7L487.2,201.3L489.5,197.6L495.1,200.1L487.1,189.8L488.1,186L493.6,187.2L487.5,183.4L501.3,171.3L512.9,185.4L512.2,199.8L516,190.2L523.9,198L521.8,190.6L528.1,192.1L522.4,186.8L525,183.7L535.3,183.7L539.4,186.8L537.8,197.6L544.5,190.3L541.3,196.6L544.3,204.1L547.6,193.9L547.6,200.1L549.2,196.6L553.3,200.6L552.7,193.9L561.9,195.7L558.2,206.7L567,200L564,211.7L566.8,209.6L567.9,215.6L571.1,202.4L581.6,205.7L575.6,214.5L581.5,209.5L582.9,213.4L585.5,206.4L592.1,213.4L582.8,220.9L593.7,217.6L598.4,220.6L586.2,226.9L592.9,224.7L594.4,229.2L586,231.1L602.8,231.6L604,237.8L606.6,232.9L608.2,240.1L609.4,235.3L615,239.9L615.3,233.5L616.4,237.4L624.5,237.6L621.1,242.9L631.3,240.2L630.4,248L637.9,240.4L645.5,243.7L640.8,246.2L645.9,248.6L640,250.8L645.9,254.6L642.4,256.4L644.9,262.2L638.6,261.5L644.1,275.4L627.5,268.2L629.4,257.4L623.9,265.7L612.6,259.4L613.1,264.8L608.1,263.6L614.8,270.5L604.5,270.1L625.7,285.8L624.8,282.8L634.1,283.6L638.3,286.9L636,290.4L647.4,295.7L648.9,303.2L641.9,297.1L651,308L647.7,309.3L650,313.7L624.5,305.1L627.1,309.5L617.7,308.1L646.7,322.5L647,328.3L603.2,323.2L598.4,319.8L601.7,316L592.9,314.7L584.1,304.6L579.8,308.6L573.4,303.5L573.8,309.5L554.5,315.9L550.5,310.5L553.8,298L564.5,299.2L568.5,304.6L564.4,298.1L578.1,291.2L569.5,282.1L577.7,260.8L555.1,237.7L546.1,246L548.5,235.3L525.7,218.9L528.7,228.6L513.7,229.1L518.2,234.7L490.7,233.4L486.7,226.8L479.1,231L473.7,227.1L469.7,218.2L482,218.3L467.4,211.2L469.6,184.7L477.2,173.5L487.9,171.9L482.2,189.6L492.6,211.6L488.8,215.8Z"></path></g><g class="bb-m-lead-g"><line class="bb-m-lead" x1="700" y1="600" x2="738" y2="566"></line><line class="bb-m-lead" x1="838" y1="508" x2="780" y2="544"></line><line class="bb-m-lead" x1="844" y1="592" x2="788" y2="576"></line></g><g><circle class="bb-m-h" data-r="PE" cx="777" cy="546" r="15"></circle><circle class="bb-m-h" data-r="NS" cx="783" cy="574" r="17"></circle><circle class="bb-m-h" data-r="NB" cx="742" cy="558" r="17"></circle></g><g class="bb-m-lab"><text x="139" y="432">BC</text><text x="236" y="482">AB</text><text x="316" y="492">SK</text><text x="430" y="472">MB</text><text x="553" y="602">ON</text><text x="648" y="452">QC</text><text x="676" y="606">NB</text><text x="852" y="596">NS</text><text x="846" y="512">PE</text><text x="731" y="402">NL</text><text x="184" y="258">YT</text><text x="264" y="240">NT</text><text x="432" y="288">NU</text></g></svg></div>
+            <button type="button" class="bb-free" id="bbFree">Construction libre</button>
+            <p class="bb-map-name" id="bbMapName">Construction libre</p>
+            <p class="bb-map-desc" id="bbMapDesc">Le monde ouvert, tel qu'il a toujours été.</p>
+            <p class="bb-map-acts">
+              <button type="button" class="btn btn-green btn-lg" id="bbMapGo">Bâtir ici</button>
+              <button type="button" class="btn btn-ghost" id="bbMapX">Retour</button>
+            </p>
+          </div>
+        </div>
         <button type="button" class="bb-exit" id="bbExit">Quitter le plein écran</button>
         <div class="bb-veil" id="bbVeil">
           <div class="card">
             <h2 id="bbVeilT">Canada Block World</h2>
+            <p id="bbVeilR" style="margin:-4px 0 10px;font-weight:800;font-size:.95rem;opacity:.95"></p>
             <p id="bbVeilP">Cliquez pour commencer.</p>
             <div id="bbKeys" style="text-align:left;max-width:340px;margin:0 auto 14px;
                  font-size:.9rem;line-height:1.85"></div>
-            <p><button type="button" class="btn btn-green btn-lg" id="bbPlay">Jouer</button></p>
+            <p><button type="button" class="btn btn-green btn-lg" id="bbPlay">Jouer</button>
+               <button type="button" class="bb-free" id="bbPick">Choisir un endroit</button></p>
           </div>
         </div>
       </div>
     </div>
     <div class="bb-tools">
       <button type="button" class="btn btn-ghost" id="bbSave">Enregistrer</button>
+      <button type="button" class="btn btn-ghost" id="bbMapBtn2">Carte du Canada</button>
       <button type="button" class="btn btn-ghost" id="bbNew">Nouveau monde</button>
       <button type="button" class="btn btn-ghost" id="bbFly">Fly: off</button>
       <button type="button" class="btn btn-ghost" id="bbStyle">Style : Vif</button>
@@ -246,6 +367,27 @@
     </div>
     <p class="bb-note" id="bbNote">Votre monde est enregistré dans ce navigateur, sur cet appareil seulement. Aucun compte, aucune inscription, rien n'est envoyé nulle part.</p>
   </div>
+
+  <section class="panel">
+    <h2>Treize endroits où bâtir</h2>
+    <p>Ouvrez la carte avec le bouton carte sur le jeu lui-même, ou avec Carte du Canada en dessous, et choisissez une province ou un territoire. Chacun est un monde distinct avec son propre paysage, et chacun est enregistré séparément — la cabane que vous avez creusée dans une montagne en Colombie-Britannique est donc toujours debout quand vous revenez de la prairie.</p>
+    <ul class="bb-places">
+      <li><b>Colombie-Britannique</b><span>Des montagnes, une forêt haute et de l'eau profonde.</span></li>
+      <li><b>Alberta</b><span>Des badlands secs en bas, des contreforts verts en haut.</span></li>
+      <li><b>Saskatchewan</b><span>Une prairie plate à perte de vue.</span></li>
+      <li><b>Le Manitoba</b><span>Un terrain bas et de très nombreux lacs.</span></li>
+      <li><b>Ontario</b><span>Des lacs, avec une forêt d'érables tout autour.</span></li>
+      <li><b>Québec</b><span>Des collines sous une voûte d'érables rouges.</span></li>
+      <li><b>Nouveau-Brunswick</b><span>Des vallées fluviales et une forêt dense.</span></li>
+      <li><b>Nouvelle-Écosse</b><span>Un littoral, des plages et des caps bas.</span></li>
+      <li><b>Île-du-Prince-Édouard</b><span>Une petite île basse à la terre rouge.</span></li>
+      <li><b>Terre-Neuve-et-Labrador</b><span>De la roche nue, des falaises et de l'eau froide.</span></li>
+      <li><b>Le Yukon</b><span>De hautes montagnes avec de la neige sur les sommets.</span></li>
+      <li><b>Territoires du Nord-Ouest</b><span>Une forêt boréale et des lacs gelés.</span></li>
+      <li><b>Nunavut</b><span>De la neige, de la glace et de la roche arctique nue.</span></li>
+    </ul>
+    <p>Construction libre est toujours là également : le monde ouvert avec lequel le jeu a commencé, inchangé, avec tout ce que vous y avez déjà fait.</p>
+  </section>
 
   <section class="panel">
     <h2>Ce que vous pouvez faire</h2>
@@ -844,11 +986,115 @@
     return c;
   }
 
+  /* ========================================================= fourteen worlds
+     One world per place rather than one enormous Canada. Each is the same
+     64x40x64 box, generated from its own parameters, saved under its own key.
+     Thirteen small worlds cost nothing while you are not standing in them; one
+     giant one would cost everything all the time, on a school tablet.
+
+     The numbers are what make the places differ. BC and YT raise the noise to a
+     power, which widens the valleys and sharpens the peaks. SK has an amplitude
+     of four, so it is properly flat instead of gently rolling. PE and NS and NL
+     subtract an island falloff, so the land ends in water instead of at the wall
+     of the map. The three northern regions freeze their water, and Nunavut skips
+     grass and trees altogether. */
+  var REGIONS = [
+    { c: "FREE", en: "Free Build", fr: "Construction libre",
+      be: "The open world, the way it has always been.",
+      bf: "Le monde ouvert, tel qu'il a toujours \u00e9t\u00e9.",
+      seed: 20260815, mood: null,
+      t: { base:6, amp:16, det:4, sea:12, pw:1, snowAt:22, beach:1, trees:46, maple:0.4, tmin:4, tvar:3, treeMax:21 } },
+    { c: "BC", en: "British Columbia", fr: "Colombie-Britannique",
+      be: "Mountains, tall forest and deep water.",
+      bf: "Des montagnes, une for\u00eat haute et de l'eau profonde.",
+      seed: 1871, mood: "alpine",
+      t: { base:6, amp:30, det:7, sea:11, pw:1.7, snowAt:25, beach:1, trees:130, maple:0.05, tmin:5, tvar:4, treeMax:25, conifer:1, rocks:10, lakes:0.35 } },
+    { c: "AB", en: "Alberta", fr: "Alberta",
+      be: "Dry badlands below, green foothills above.",
+      bf: "Des badlands secs en bas, des contreforts verts en haut.",
+      seed: 1905, mood: "gold",
+      t: { base:8, amp:17, det:6, sea:11, pw:1.3, snowAt:29, beach:1, trees:20, maple:0.1, tmin:4, tvar:3, treeMax:27, rocks:16, lakes:0.2, dryBelow:15 } },
+    { c: "SK", en: "Saskatchewan", fr: "Saskatchewan",
+      be: "Flat prairie as far as you can see.",
+      bf: "Une prairie plate \u00e0 perte de vue.",
+      seed: 1906, mood: "gold",
+      t: { base:10, amp:4, det:2, sea:11, pw:1, snowAt:40, beach:1, trees:8, maple:0.2, tmin:4, tvar:2, treeMax:30, lakes:0.17 } },
+    { c: "MB", en: "Manitoba", fr: "Manitoba",
+      be: "Low land and a great many lakes.",
+      bf: "Un terrain bas et de tr\u00e8s nombreux lacs.",
+      seed: 1870, mood: null,
+      t: { base:10, amp:9, det:4, sea:12, pw:1, snowAt:30, beach:1, trees:70, maple:0.25, tmin:4, tvar:3, treeMax:22, lakes:0.44 } },
+    { c: "ON", en: "Ontario", fr: "Ontario",
+      be: "Lakes, with maple forest all around them.",
+      bf: "Des lacs, avec une for\u00eat d'\u00e9rables tout autour.",
+      seed: 1867, mood: null,
+      t: { base:9, amp:14, det:4, sea:12, pw:1, snowAt:27, beach:1, trees:76, maple:0.55, tmin:4, tvar:3, treeMax:24, lakes:0.44 } },
+    { c: "QC", en: "Quebec", fr: "Qu\u00e9bec",
+      be: "Rolling hills under a red maple canopy.",
+      bf: "Des collines sous une vo\u00fbte d'\u00e9rables rouges.",
+      seed: 1608, mood: null,
+      t: { base:8, amp:17, det:5, sea:12, pw:1.2, snowAt:27, beach:1, trees:80, maple:0.7, tmin:4, tvar:3, treeMax:25, lakes:0.32 } },
+    { c: "NB", en: "New Brunswick", fr: "Nouveau-Brunswick",
+      be: "River valleys and thick forest.",
+      bf: "Des vall\u00e9es fluviales et une for\u00eat dense.",
+      seed: 1784, mood: "coast",
+      t: { base:8, amp:13, det:5, sea:12, pw:1, snowAt:29, beach:1, trees:78, maple:0.35, tmin:4, tvar:3, treeMax:24, conifer:1, lakes:0.3 } },
+    { c: "NS", en: "Nova Scotia", fr: "Nouvelle-\u00c9cosse",
+      be: "Coastline, beaches and low headlands.",
+      bf: "Un littoral, des plages et des caps bas.",
+      seed: 1867, mood: "coast",
+      t: { base:13, amp:10, det:4, sea:12, pw:1, snowAt:30, beach:1, trees:52, maple:0.3, tmin:4, tvar:2, treeMax:22, isle:0.6, lakes:0.24 } },
+    { c: "PE", en: "Prince Edward Island", fr: "\u00cele-du-Prince-\u00c9douard",
+      be: "A small low island with red soil.",
+      bf: "Une petite \u00eele basse \u00e0 la terre rouge.",
+      seed: 1873, mood: "coast",
+      t: { base:14, amp:6, det:2, sea:12, pw:1, snowAt:40, beach:1, trees:22, maple:0.3, tmin:4, tvar:2, treeMax:20, isle:0.95, lakes:0.14, redSoil:1 } },
+    { c: "NL", en: "Newfoundland and Labrador", fr: "Terre-Neuve-et-Labrador",
+      be: "Bare rock, cliffs and cold water.",
+      bf: "De la roche nue, des falaises et de l'eau froide.",
+      seed: 1949, mood: "coast",
+      t: { base:13, amp:17, det:6, sea:12, pw:1.4, snowAt:29, beach:1, trees:34, maple:0.05, tmin:3, tvar:2, treeMax:18, conifer:1, rocks:20, isle:0.5, lakes:0.34, rockAbove:20 } },
+    { c: "YT", en: "Yukon", fr: "Yukon",
+      be: "High mountains with snow on the peaks.",
+      bf: "De hautes montagnes avec de la neige sur les sommets.",
+      seed: 1898, mood: "arctic",
+      t: { base:6, amp:27, det:8, sea:10, pw:1.6, snowAt:20, beach:1, trees:32, maple:0.02, tmin:4, tvar:3, treeMax:20, conifer:1, rocks:12, lakes:0.22 } },
+    { c: "NT", en: "Northwest Territories", fr: "Territoires du Nord-Ouest",
+      be: "Boreal forest and frozen lakes.",
+      bf: "Une for\u00eat bor\u00e9ale et des lacs gel\u00e9s.",
+      seed: 1870, mood: "arctic",
+      t: { base:10, amp:12, det:4, sea:12, pw:1, snowAt:21, beach:1, trees:48, maple:0.02, tmin:3, tvar:3, treeMax:19, conifer:1, rocks:8, lakes:0.42, frozen:1 } },
+    { c: "NU", en: "Nunavut", fr: "Nunavut",
+      be: "Snow, ice and bare arctic rock.",
+      bf: "De la neige, de la glace et de la roche arctique nue.",
+      seed: 1999, mood: "arctic",
+      t: { base:5, amp:11, det:5, sea:12, pw:1.2, snowAt:0, beach:0, trees:0, maple:0, tmin:3, tvar:2, treeMax:0, rocks:26, lakes:0.5, rockAbove:20, frozen:1, allSnow:1 } }
+  ];
+  var REG = {};
+  REGIONS.forEach(function (r) { REG[r.c] = r; });
+
+  /* A wash of colour over the sky and the fog. Not a separate palette per
+     region — that would fight the three styles the player chose from — just a
+     tint mixed into whichever style is on. */
+  var MOODS = { alpine: "#cfe4f2", arctic: "#e2f1ff", gold: "#ffe6ad", coast: "#c9e7ff" };
+
+  var REGION_KEY = "cq_blocks_region";
+  /* Free Build keeps the ORIGINAL key. Anyone who has already built something is
+     still standing in it the next time they open the page, with nothing to
+     migrate and nothing that can go wrong in the migrating. */
+  function keyFor(c) { return c === "FREE" ? "cq_blocks_v1" : "cq_blocks_r_" + c; }
+  function hasSave(c) { try { return !!localStorage.getItem(keyFor(c)); } catch (e) { return false; } }
+  function firstRegion() {
+    try { var s = localStorage.getItem(REGION_KEY); if (s && REG[s]) return REG[s]; } catch (e) {}
+    return REG.FREE;
+  }
+  var region = firstRegion();
+
   /* ============================================================== the world */
   var WX = 64, WY = 40, WZ = 64;                /* width, height, depth in blocks */
   var CH = 8;                                   /* chunk size in x and z */
   var world = new Uint8Array(WX * WY * WZ);
-  var SEA = 12;
+  var SEA = region.t.sea;
 
   function idx(x, y, z) { return (y * WZ + z) * WX + x; }
   function inside(x, y, z) { return x >= 0 && y >= 0 && z >= 0 && x < WX && y < WY && z < WZ; }
@@ -864,7 +1110,8 @@
       return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
     };
   }
-  function generate(seed) {
+  function generate(seed, R) {
+    R = R || region;
     var rnd = mulberry(seed);
     var grid = [], gs = 9;                                  /* control points */
     for (var i = 0; i < gs * gs; i++) grid.push(rnd());
@@ -879,32 +1126,89 @@
       return a + (b - a) * sz;
     }
     world.fill(AIR);
+    var G = R.t, sea = G.sea, beach = G.beach || 0;
     var hmap = new Int16Array(WX * WZ);
+    var cx = WX / 2, cz = WZ / 2;
     for (var x = 0; x < WX; x++) for (var z = 0; z < WZ; z++) {
-      var h = Math.round(6 + noise(x, z) * 16 + noise(x * 2 % WX, z * 2 % WZ) * 4);
+      var n1 = noise(x, z), n2 = noise(x * 2 % WX, z * 2 % WZ);
+      if (G.pw && G.pw !== 1) n1 = Math.pow(n1, G.pw);
+      var h = G.base + n1 * G.amp + n2 * G.det;
+      if (G.lakes) {
+        /* Lakes have to be CARVED, not left over. Simply setting the sea above
+           the lowest ground gives a wet fringe round the edge of the map and
+           dry everywhere else — nothing that looks like Manitoba. A second
+           reading of the same noise field, taken from somewhere else in it, is
+           uncorrelated enough to act as a basin map: where it runs low, the
+           ground is pulled down below the water line and a lake appears in the
+           middle of the land, with its own beach around it. */
+        var ln = noise((x + 31) % WX, (z + 19) % WZ);
+        if (ln < G.lakes) h -= (G.lakes - ln) * 62;
+      }
+      if (G.isle) {
+        /* An island has to END. Past 45% of the way to the rim the ground is
+           pulled down harder the further out it goes, so the world finishes in
+           open water instead of at a cliff where the array stops. */
+        var ux = (x - cx) / cx, uz = (z - cz) / cz;
+        h -= G.isle * Math.max(0, Math.sqrt(ux * ux + uz * uz) - 0.45) * 34;
+      }
+      h = Math.max(1, Math.min(WY - 6, Math.round(h)));
       hmap[z * WX + x] = h;
+      var top;
+      if (G.allSnow) top = 9;                                  /* snow */
+      else if (G.snowAt && h >= G.snowAt) top = 9;
+      else if (h <= sea + beach) top = 4;                      /* sand */
+      else if (G.rockAbove && h >= G.rockAbove) top = 3;       /* bare rock */
+      else if (G.dryBelow && h <= G.dryBelow) top = 4;         /* dry ground */
+      else if (G.redSoil && ((x * 3 + z * 5) % 11 === 0)) top = 2;
+      else top = 1;                                            /* grass */
       for (var y = 0; y <= h; y++) {
-        var b = 3;                                           /* stone */
-        if (y > h - 4) b = 2;                                /* dirt */
-        if (y === h) b = (h >= 22) ? 9 : (h <= SEA + 1 ? 4 : 1);   /* snow / sand / grass */
+        var b = 3;                                             /* stone */
+        if (y > h - 4) b = 2;                                  /* dirt */
+        if (y === h) b = top;
         set(x, y, z, b);
       }
-      for (var w = h + 1; w <= SEA; w++) set(x, w, z, 13);    /* water */
+      for (var w = h + 1; w <= sea; w++) set(x, w, z, 13);      /* water */
+      if (G.frozen && h < sea) set(x, sea, z, 10);              /* ice on top */
     }
-    /* trees: a trunk and a blob of leaves, red maple every so often */
-    for (var t = 0; t < 46; t++) {
+    /* boulders, for the places where bare rock IS the landscape */
+    for (var k = 0; k < (G.rocks || 0); k++) {
+      var rx = 2 + Math.floor(rnd() * (WX - 4)), rz = 2 + Math.floor(rnd() * (WZ - 4));
+      var rh = hmap[rz * WX + rx];
+      if (rh <= sea) continue;
+      var rr = 1 + Math.floor(rnd() * 2);
+      for (var ax = -rr; ax <= rr; ax++) for (var az = -rr; az <= rr; az++)
+        for (var ay = 0; ay <= rr; ay++) {
+          if (Math.abs(ax) + Math.abs(az) + ay > rr + 1) continue;
+          if (get(rx + ax, rh + 1 + ay, rz + az) === AIR) set(rx + ax, rh + 1 + ay, rz + az, 3);
+        }
+    }
+    /* trees: a trunk, then either a round crown or a spruce that narrows as it
+       rises. The spruce is what makes a northern forest read as northern
+       instead of as green blobs with snow behind them. */
+    for (var t = 0; t < (G.trees || 0); t++) {
       var tx = 2 + Math.floor(rnd() * (WX - 4)), tz = 2 + Math.floor(rnd() * (WZ - 4));
       var th = hmap[tz * WX + tx];
-      if (th <= SEA + 1 || th >= 21) continue;
+      if (th <= sea + 1 || th >= (G.treeMax || 0)) continue;
       if (get(tx, th, tz) !== 1) continue;
-      var maple = rnd() < 0.4 ? 8 : 7;
-      var tall = 4 + Math.floor(rnd() * 3);
+      var leaf = rnd() < (G.maple || 0) ? 8 : 7;
+      var tall = G.tmin + Math.floor(rnd() * G.tvar);
       for (var ty = 1; ty <= tall; ty++) set(tx, th + ty, tz, 5);
-      for (var dx = -2; dx <= 2; dx++) for (var dz = -2; dz <= 2; dz++) for (var dy = 0; dy <= 2; dy++) {
-        var d = Math.abs(dx) + Math.abs(dz) + dy;
-        if (d > 3) continue;
-        var lx = tx + dx, ly = th + tall - 1 + dy, lz = tz + dz;
-        if (get(lx, ly, lz) === AIR) set(lx, ly, lz, maple);
+      if (G.conifer) {
+        for (var L = 0; L < 3; L++) {
+          var rad = 2 - L, sy = th + tall - 2 + L;
+          for (var sx = -rad; sx <= rad; sx++) for (var sz = -rad; sz <= rad; sz++) {
+            if (Math.abs(sx) + Math.abs(sz) > rad) continue;
+            if (get(tx + sx, sy, tz + sz) === AIR) set(tx + sx, sy, tz + sz, leaf);
+          }
+        }
+        if (get(tx, th + tall + 1, tz) === AIR) set(tx, th + tall + 1, tz, leaf);
+      } else {
+        for (var dx = -2; dx <= 2; dx++) for (var dz = -2; dz <= 2; dz++) for (var dy = 0; dy <= 2; dy++) {
+          var d = Math.abs(dx) + Math.abs(dz) + dy;
+          if (d > 3) continue;
+          var lx = tx + dx, ly = th + tall - 1 + dy, lz = tz + dz;
+          if (get(lx, ly, lz) === AIR) set(lx, ly, lz, leaf);
+        }
       }
     }
     return hmap;
@@ -1176,7 +1480,7 @@
   /* =================================================================== save
      Run-length encoded, because a raw world is 163,840 bytes and most of it is
      long runs of air or stone. Typical saved size is a few kilobytes. */
-  var KEY = "cq_blocks_v1";
+  var KEY = keyFor(region.c);
   var saveTimer = null;
   function save(defer) {
     if (defer) {
@@ -1384,9 +1688,17 @@
   }
   function pause() {
     running = false;
+    /* GIVE THE MOUSE BACK. Until the map existed the only way to pause on a
+       desktop was to press Escape, which releases the pointer itself, so nothing
+       ever noticed. Pausing from a BUTTON left the cursor still captured by the
+       canvas: the map appeared, and not one thing on it could be clicked. */
+    if (document.pointerLockElement && document.exitPointerLock) {
+      try { document.exitPointerLock(); } catch (e) {}
+    }
     document.body.style.overscrollBehavior = "";
     veil.classList.remove("off");
     document.getElementById("bbVeilT").textContent = T("Paused", "En pause");
+    document.getElementById("bbVeilR").textContent = regionName(region);
     document.getElementById("bbVeilP").textContent =
       T("Your world is saved. Press Play to carry on.", "Votre monde est enregistré. Appuyez sur Jouer pour continuer.");
     document.getElementById("bbPlay").textContent = T("Play", "Jouer");
@@ -1454,6 +1766,24 @@
   /* Swapping a theme only redraws the texture and the sky. The chunk meshes and
      their coordinates are untouched, so nothing has to be re-meshed — which is
      why a style change costs a few milliseconds and no downloads. */
+  /* The style the player chose stays the style; the region only tints it. Two
+     independent palettes fighting each other would have made Frosty in Nunavut
+     and Bright in Nunavut look like the same place. */
+  function mixHex(a, b, t) {
+    var x = parseInt(a.slice(1), 16), y = parseInt(b.slice(1), 16);
+    function ch(sh) { var u = (x >> sh) & 255, v = (y >> sh) & 255; return Math.round(u + (v - u) * t); }
+    return "#" + ((1 << 24) + (ch(16) << 16) + (ch(8) << 8) + ch(0)).toString(16).slice(1);
+  }
+  function regionSky(TH) {
+    var m = region && region.mood && MOODS[region.mood];
+    if (!m) return [TH.sky[0], TH.sky[1], TH.fog];
+    var n = parseInt(m.slice(1), 16);
+    var f = [TH.fog[0] * 0.62 + (((n >> 16) & 255) / 255) * 0.38,
+             TH.fog[1] * 0.62 + (((n >> 8) & 255) / 255) * 0.38,
+             TH.fog[2] * 0.62 + ((n & 255) / 255) * 0.38];
+    return [mixHex(TH.sky[0], m, 0.45), mixHex(TH.sky[1], m, 0.45), f];
+  }
+
   function applyTheme(name) {
     theme = THEMES[name] ? name : "smooth";
     try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
@@ -1463,9 +1793,10 @@
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, atlasCanvas);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-    gl.uniform3f(uFog, TH.fog[0], TH.fog[1], TH.fog[2]);
+    var SKY = regionSky(TH);
+    gl.uniform3f(uFog, SKY[2][0], SKY[2][1], SKY[2][2]);
     document.getElementById("bbShell").style.background =
-      "linear-gradient(" + TH.sky[0] + " 0%, " + TH.sky[1] + " 62%, " + TH.sky[1] + " 100%)";
+      "linear-gradient(" + SKY[0] + " 0%, " + SKY[1] + " 62%, " + SKY[1] + " 100%)";
     var i = HOTBAR.indexOf(held);
     buildBar();
     pick(i < 0 ? 0 : i);
@@ -1554,8 +1885,10 @@
     setTimeout(function () { b.textContent = T("Save", "Enregistrer"); }, 1400);
   });
   document.getElementById("bbNew").addEventListener("click", function () {
-    var msg = T("Start a new world? Everything you have built will be lost.",
-                "Commencer un nouveau monde ? Tout ce que vous avez bâti sera perdu.");
+    var msg = T("Start " + regionName(region) + " again? Everything you have built THERE will be lost. " +
+                "Your other places are not touched.",
+                "Recommencer " + regionName(region) + " ? Tout ce que vous avez bâti LÀ sera perdu. " +
+                "Vos autres endroits ne sont pas touchés.");
     if (!window.confirm(msg)) return;
     newWorld(Math.floor(Math.random() * 1e9));
   });
@@ -1565,30 +1898,175 @@
     return -1;
   }
   function dropPlayer() {
-    /* Spawn on DRY land. The middle of the map is often a lake, and the first
-       version dropped you on the seabed looking at blue — a poor first three
-       seconds. Spiral outwards until a column stands above the water line. */
-    var cx = Math.floor(WX / 2), cz = Math.floor(WZ / 2), best = null;
-    for (var r = 0; r < WX / 2 && !best; r++) {
-      for (var dx = -r; dx <= r && !best; dx++) {
-        for (var dz = -r; dz <= r; dz++) {
-          if (Math.max(Math.abs(dx), Math.abs(dz)) !== r) continue;   /* ring only */
-          var x = cx + dx, z = cz + dz;
-          if (x < 2 || z < 2 || x >= WX - 2 || z >= WZ - 2) continue;
-          var t = topOf(x, z);
-          if (t > SEA && get(x, t + 1, z) === AIR) { best = [x, t, z]; break; }
+    /* The first three seconds decide whether a child stays. The first version
+       only asked for dry land, and dry land in British Columbia is quite often a
+       ledge with a cliff two blocks in front of your face — you arrive looking
+       at dirt. So: search near the middle for the FLATTEST open spot, then turn
+       to face whichever direction has the most room in it. */
+    var cx = Math.floor(WX / 2), cz = Math.floor(WZ / 2);
+    var best = null, bestScore = -1e9, R = 12;
+    for (var x = cx - R; x <= cx + R; x++) for (var z = cz - R; z <= cz + R; z++) {
+      if (x < 4 || z < 4 || x >= WX - 4 || z >= WZ - 4) continue;
+      var t = topOf(x, z);
+      if (t <= SEA || get(x, t + 1, z) !== AIR || get(x, t + 2, z) !== AIR) continue;
+      var rough = 0, ok = true;
+      for (var ax = -2; ax <= 2 && ok; ax++) for (var az = -2; az <= 2; az++) {
+        var u = topOf(x + ax, z + az);
+        if (u < 0) { ok = false; break; }
+        rough += Math.abs(u - t);
+      }
+      if (!ok) continue;
+      var d = Math.max(Math.abs(x - cx), Math.abs(z - cz));
+      var score = -rough - d * 0.7;
+      if (score > bestScore) { bestScore = score; best = [x, t, z]; }
+    }
+    if (!best) {
+      /* nothing flat and dry anywhere near the middle — take the first dry
+         column going outwards, exactly as before */
+      for (var r = 0; r < WX / 2 && !best; r++) {
+        for (var bx = -r; bx <= r && !best; bx++) for (var bz = -r; bz <= r; bz++) {
+          if (Math.max(Math.abs(bx), Math.abs(bz)) !== r) continue;
+          var qx = cx + bx, qz = cz + bz;
+          if (qx < 2 || qz < 2 || qx >= WX - 2 || qz >= WZ - 2) continue;
+          var q = topOf(qx, qz);
+          if (q > SEA && get(qx, q + 1, qz) === AIR) { best = [qx, q, qz]; break; }
         }
       }
     }
     if (!best) best = [cx, Math.max(SEA + 1, topOf(cx, cz)), cz];
     P.x = best[0] + 0.5; P.z = best[2] + 0.5; P.y = best[1] + 1.01; P.vy = 0;
+
+    /* face the open side: sample eight directions and take the one whose ground
+       stays lowest, which is the one you can see furthest along */
+    var bestYaw = 0, bestOpen = -1e9;
+    for (var k = 0; k < 8; k++) {
+      var yaw = k * Math.PI / 4, sum = 0, n = 0;
+      for (var step = 2; step <= 10; step += 2) {
+        var sx = Math.round(best[0] - Math.sin(yaw) * step);
+        var sz = Math.round(best[2] - Math.cos(yaw) * step);
+        if (sx < 0 || sz < 0 || sx >= WX || sz >= WZ) { sum += 6; n++; continue; }
+        sum += Math.max(0, topOf(sx, sz) - best[1]);
+        n++;
+      }
+      var open = -sum / n;
+      if (open > bestOpen) { bestOpen = open; bestYaw = yaw; }
+    }
+    P.yaw = bestYaw;
+    P.pitch = -0.12;
   }
   function newWorld(seed) {
-    generate(seed);
+    generate(seed, region);
     dropPlayer();
     meshAll();
     save(false);
   }
+
+
+  /* ======================================================= the map of Canada
+     Two taps, not one: tap a province to read what it is, tap Build here to go.
+     One tap would mean a finger that lands slightly wrong throws away the world
+     you were standing in, and on a phone a finger lands slightly wrong often. */
+  var mapEl = document.getElementById("bbMap");
+  var mapSel = region.c;
+  function regionName(r) { return FR ? r.fr : r.en; }
+  function regionBlurb(r) { return FR ? r.bf : r.be; }
+  function labelRegion() {
+    document.getElementById("bbWhere").textContent = regionName(region);
+  }
+  function veilText() {
+    document.getElementById("bbVeilT").textContent = T("Canada Block World", "Canada Block World");
+    document.getElementById("bbVeilR").textContent =
+      regionName(region) + " — " + regionBlurb(region);
+  }
+  function paintMap() {
+    var shapes = document.getElementById("bbMapShapes").children;
+    for (var i = 0; i < shapes.length; i++) {
+      var p = shapes[i], c = p.getAttribute("data-r");
+      p.classList.toggle("here", c === region.c);
+      p.classList.toggle("seen", c !== region.c && hasSave(c));
+      p.classList.toggle("sel", c === mapSel);
+    }
+    document.getElementById("bbFree").classList.toggle("on", mapSel === "FREE");
+    var r = REG[mapSel] || region;
+    var tag = "";
+    if (r.c === region.c) tag = T("you are here", "vous êtes ici");
+    else if (hasSave(r.c)) tag = T("already started", "déjà commencé");
+    var nameEl = document.getElementById("bbMapName");
+    nameEl.textContent = regionName(r);
+    if (tag) {
+      var s = document.createElement("span");
+      s.className = "bb-map-tag";
+      s.textContent = tag;
+      nameEl.appendChild(s);
+    }
+    document.getElementById("bbMapDesc").textContent = regionBlurb(r);
+    document.getElementById("bbMapGo").textContent =
+      r.c === region.c ? T("Keep building here", "Continuer ici") : T("Build here", "Bâtir ici");
+  }
+  function openMap() {
+    if (running) pause();
+    mapSel = region.c;
+    paintMap();
+    mapEl.hidden = false;
+    shell.classList.add("bb-map-on");
+    document.body.classList.add("bb-map-open");
+  }
+  function closeMap() {
+    mapEl.hidden = true;
+    shell.classList.remove("bb-map-on");
+    document.body.classList.remove("bb-map-open");
+    /* The Map of Canada button sits UNDER the game. Once the map closes, bring
+       the game itself back into view, or you are left looking at the paragraph
+       below it wondering where the world went. */
+    try { shell.scrollIntoView({ block: "center", behavior: "smooth" }); } catch (e) {}
+  }
+
+  /* Moving house: the world you are leaving is written out BEFORE anything else
+     happens, because the alternative is a child losing an afternoon's building
+     to a mis-tap on the map. */
+  function goRegion(code) {
+    var r = REG[code];
+    if (!r || r.c === region.c) return;
+    save(false);
+    region = r;
+    KEY = keyFor(r.c);
+    SEA = r.t.sea;
+    try { localStorage.setItem(REGION_KEY, r.c); } catch (e) {}
+    if (!load()) { generate(r.seed, r); dropPlayer(); save(false); }
+    meshAll();
+    applyTheme(theme);
+    labelRegion();
+    veilText();
+    if (!running) { try { renderFrame(); } catch (e) {} }
+  }
+
+  document.getElementById("bbMapBtn").addEventListener("click", openMap);
+  document.getElementById("bbMapBtn2").addEventListener("click", openMap);
+  document.getElementById("bbPick").addEventListener("click", openMap);
+  document.getElementById("bbMapX").addEventListener("click", closeMap);
+  document.getElementById("bbFree").addEventListener("click", function () {
+    mapSel = "FREE"; paintMap();
+  });
+  document.getElementById("bbMapSvg").addEventListener("click", function (e) {
+    var t = e.target && e.target.closest ? e.target.closest("[data-r]") : null;
+    if (!t) return;
+    mapSel = t.getAttribute("data-r");
+    paintMap();
+  });
+  document.getElementById("bbMapGo").addEventListener("click", function () {
+    closeMap();
+    if (mapSel !== region.c) goRegion(mapSel);
+    /* this click IS the gesture the browser wants before it will capture the
+       mouse, so starting from here works where starting a moment later does not */
+    start();
+  });
+  document.addEventListener("keydown", function (ev) {
+    if (ev.code === "Escape" && !mapEl.hidden) { closeMap(); ev.preventDefault(); return; }
+    if (ev.code === "KeyM" && (running || !mapEl.hidden)) {
+      if (mapEl.hidden) openMap(); else closeMap();
+      ev.preventDefault();
+    }
+  });
 
   /* ================================================================== boot */
   document.addEventListener("visibilitychange", function () {
@@ -1603,7 +2081,7 @@
     /* A brand-new world is written straight away, not only after the first dig.
        Otherwise a player who looks around, closes the tab and comes back finds
        their footsteps gone — and the very first save would have been a surprise. */
-    generate(20260815);
+    generate(region.seed, region);
     dropPlayer();
     save(false);
   }
@@ -1652,6 +2130,21 @@
     }).join("");
   })();
 
+  labelRegion();
+  veilText();
+  paintMap();
+  document.getElementById("bbPick").textContent = T("Choose a place", "Choisir un endroit");
+  if (FR) {
+    document.getElementById("bbMapT").textContent = "Où voulez-vous bâtir ?";
+    document.getElementById("bbMapHelp").textContent =
+      "Choisissez une province ou un territoire. Chacun est son propre monde avec son propre paysage, " +
+      "et chacun est enregistré séparément.";
+    document.getElementById("bbFree").textContent = "Construction libre";
+    document.getElementById("bbMapX").textContent = "Retour";
+    document.getElementById("bbMapBtn2").textContent = "Carte du Canada";
+    document.getElementById("bbMapBtn").setAttribute("aria-label", "Ouvrir la carte");
+  }
+
   if (isTouch()) {
     document.getElementById("bbVeilP").textContent = T(
       "Tap Play, then use the stick to walk, drag the screen to look around, and the round buttons to jump, dig and build.",
@@ -1662,7 +2155,7 @@
 })();
 </script>
   <script src="../js/game-fullscreen.js?v=c56db4e5" defer></script>
-  <script src="../js/site.js?v=f694a0b3"></script>
+  <script src="../js/site.js?v=7cb7e820"></script>
   <script src="../js/analytics.js?v=d06ceb69"></script>
   <script src="../js/ads.js?v=00e703ff" defer></script>
   <script src="../js/pwa.js?v=56adaa04" defer></script>

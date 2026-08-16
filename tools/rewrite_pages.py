@@ -133,13 +133,23 @@ ICON_BLOCK = (
     '<meta name="mobile-web-app-capable" content="yes">\n'
     '<meta name="apple-mobile-web-app-capable" content="yes">\n'
     '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">\n'
-    '<meta name="apple-mobile-web-app-title" content="Canada Quiz">'
+    '<meta name="apple-mobile-web-app-title" content="Canada Quiz">\n'
+    # --- AdSense site ownership ----------------------------------------
+    # This has to be STATIC HTML, and here is why. js/ads.js deliberately
+    # holds the AdSense script back until the visitor scrolls or touches
+    # something, because loading it up front was the single biggest thing
+    # slowing the site down on a phone. Google's site-verification crawler
+    # does not scroll and does not touch anything, so on our pages it never
+    # sees the script at all — and a site it cannot verify sits on "Getting
+    # ready" indefinitely. This one line is in the markup from the first
+    # byte, costs nothing, and does not undo any of the speed work.
+    '<meta name="google-adsense-account" content="ca-pub-7256851069341390">'
 )
 
 PWA_META_RE = re.compile(
     r'[ \t]*<meta name="(?:theme-color|mobile-web-app-capable|'
     r'apple-mobile-web-app-capable|apple-mobile-web-app-status-bar-style|'
-    r'apple-mobile-web-app-title)"[^>]*>\n?')
+    r'apple-mobile-web-app-title|google-adsense-account)"[^>]*>\n?')
 
 # these <link> tags always sit alone on their own line, so match line-by-line
 # (the old favicon was an inline SVG full of ">" characters)
