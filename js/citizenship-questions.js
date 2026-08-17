@@ -6,7 +6,7 @@
 const CITIZENSHIP_QUESTIONS = [
   // ---------- About the test ----------
   { q:"How many correct answers do you need to pass the real Canadian citizenship test?", options:["10 out of 20","15 out of 20","18 out of 20","20 out of 20"], answer:1, explain:"The real test has 20 questions and you must get at least 15 correct (75%) to pass.", chapter:"About the Test" },
-  { q:"How much time do you have to complete the real citizenship test?", options:["30 minutes","60 minutes","No time limit","10 minutes"],answer:0, explain:"You have 30 minutes to answer the 20 questions.", chapter:"About the Test" },
+  { q:"How much time do you have to complete the real citizenship test?", options:["45 minutes","20 minutes","No time limit","10 minutes"], answer:0, explain:"You are given 45 minutes to answer the 20 questions — a little over two minutes each. Older guides say 30 minutes; that figure is out of date.", chapter:"About the Test" },
   { q:"Which official guide should you study to prepare for the citizenship test?", options:["The Citizen's Almanac","Discover Canada","The Canada Handbook","A Guide to Voting"],answer:1, explain:"The official study guide is called 'Discover Canada: The Rights and Responsibilities of Citizenship'.", chapter:"About the Test" },
 
   // ---------- Rights and Responsibilities ----------
@@ -263,7 +263,7 @@ const CITIZENSHIP_QUESTIONS = [
 
   /* ---------- Added 8 August 2026 — 31 more ----------
      Weighted to the chapters that were still thinnest. */
-  { q:"How long do you have to complete the real Canadian citizenship test?", options:["30 minutes", "45 minutes", "60 minutes", "90 minutes"], answer:0, explain:"Thirty minutes for 20 questions — about 90 seconds each. Most people finish with time to spare, so read each question carefully.", chapter:"About the Test" },
+  { q:"How long do you have to complete the real Canadian citizenship test?", options:["45 minutes","30 minutes","60 minutes","90 minutes"], answer:0, explain:"Forty-five minutes for 20 questions — a little over two minutes each. Most people finish with time to spare, so read each question carefully.", chapter:"About the Test" },
   { q:"In which languages is the citizenship test written?", options:["Any official language of your choice", "English or French", "English only", "French only"], answer:1, explain:"You may take it in either official language. The test checks your knowledge of Canada, and your language ability is assessed separately.", chapter:"About the Test" },
   { q:"What happens if you do not pass the citizenship test on your first try?", options:["You must wait five years", "You must leave Canada", "You are normally given another chance to take it again", "Your application is cancelled"], answer:2, explain:"Not passing the first time is not the end. Applicants are usually offered a second attempt, and sometimes an interview with a citizenship officer.", chapter:"About the Test" },
   { q:"Which age group is required to take the citizenship test?", options:["Everyone, at any age", "Only applicants under 18", "Only applicants over 55", "Applicants aged 18 to 54"], answer:3, explain:"The knowledge and language requirements apply to applicants between 18 and 54 at the time they apply.", chapter:"About the Test" },

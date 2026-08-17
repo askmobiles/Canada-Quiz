@@ -86,22 +86,38 @@ def header_html(page):
     )
 
 
+# The sections a visitor actually wants from the bottom of any page. Twelve
+# links, not a hundred and seventy-nine.
+SECTION_LINKS = [
+    ("quizzes.html", "All Quizzes"),
+    ("citizenship.html", "Citizenship Test Practice"),
+    ("driving-test.html", "Driving Test Practice"),
+    ("canada-driving-test-by-province.html", "Driving Tests by Province"),
+    ("games.html", "Family Games"),
+    ("for-kids.html", "For Kids"),
+    ("canada-quiz.html", "Canada Quiz"),
+    ("gk-quiz.html", "General Knowledge"),
+    ("blog.html", "Blog"),
+    ("daily.html", "Daily Quiz"),
+]
+
+
 def footer_map_html():
-    """The full A-to-Z list of every page, grouped, at the bottom of the site."""
+    """One line per section, and a link to the page that holds the full index.
+
+    This used to print the entire 173-page directory into the footer of every
+    page. Measured on citizenship.html before it was cut: 193 links on the page,
+    179 of them the footer, 5 of them the actual content — and 664 words of
+    footer against 662 words of content. More than half of every page on the
+    site was the same text as every other page, which is what a crawler reads as
+    templated, and the value of any link pointing at the site was divided 193
+    ways instead of about 20. The directory lives on all-pages.html, which is
+    the page whose whole job is being the directory."""
     total = sum(len(g["links"]) for g in SITE_MAP["groups"])
-    cols = []
-    for g in SITE_MAP["groups"]:
-        items = "\n        ".join('<a href="%s">%s</a>' % (h, l) for h, l in g["links"])
-        cols.append('      <div class="footer-map-col">\n'
-                    '        <div class="fm-h">%s</div>\n'
-                    '        %s\n'
-                    '      </div>' % (g["title"], items))
-    return ('    <details class="footer-map">\n'
-            '      <summary>All pages <span class="fm-count">(%d)</span></summary>\n'
-            '      <div class="footer-map-cols">\n'
-            '%s\n'
-            '      </div>\n'
-            '    </details>' % (total, "\n".join(cols)))
+    tops = " · ".join('<a href="%s">%s</a>' % (h, l) for h, l in SECTION_LINKS)
+    return ('    <div class="footer-sections">%s</div>\n'
+            '    <p class="footer-all"><a href="all-pages.html">'
+            'Every page on the site (%d)</a></p>' % (tops, total))
 
 
 def footer_html():

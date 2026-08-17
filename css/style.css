@@ -485,3 +485,49 @@ main li a:not(.btn):hover{text-decoration:underline}
   .cq-pairs .cq-table td{border:0;padding:0;color:var(--muted)}
   .cq-pairs .cq-table tbody tr:nth-child(even){background:none}
 }
+
+
+/* ---- the question bank, written out on the page -------------------------
+   The site had 1,146 questions with an explanation each, and every one of them
+   lived inside a JavaScript file where nothing could read it — not a search
+   engine, not a reviewer, not a person with JavaScript off. The pages that
+   mattered carried about 650 words. This is what they look like on the page.
+   Kept plain and dense on purpose: it is a study list, not a second quiz. */
+.qbank ol.qb{list-style:none;counter-reset:qb;margin:10px 0 22px;padding:0}
+.qbank .qb-item{counter-increment:qb;padding:14px 0;border-bottom:1px solid var(--line)}
+.qbank .qb-item:last-child{border-bottom:0}
+.qbank .qb-q{margin:0 0 8px;font-weight:700;line-height:1.5}
+.qbank .qb-q:before{content:counter(qb) ". ";color:var(--muted);font-weight:800}
+.qbank ul.qb-o{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:4px}
+.qbank ul.qb-o li{padding:5px 10px;border:1px solid var(--line);border-radius:8px;
+  font-size:15px;line-height:1.45;background:var(--card)}
+.qbank ul.qb-o li.qb-ok{border-color:#1f7a6f;background:#eefaf7;font-weight:700}
+.qbank .qb-tick{color:#1f7a6f;font-weight:800;margin-right:7px}
+.qbank .qb-lab{margin-left:8px;font-size:12px;font-weight:800;color:#1f7a6f;
+  text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.qbank .qb-e{margin:0;font-size:14.5px;line-height:1.6;color:var(--muted)}
+.qbank h3{margin:22px 0 4px}
+@media(max-width:520px){
+  .qbank ul.qb-o li{font-size:14.5px;padding:6px 9px}
+  .qbank .qb-lab{display:block;margin:2px 0 0}
+}
+
+
+/* ---- the trimmed footer -------------------------------------------------- */
+.footer-sections{margin:10px auto 6px;max-width:760px;line-height:2;font-size:14px}
+.footer-sections a{color:#f3eefc;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28)}
+.footer-sections a:hover{border-bottom-color:#fff}
+.footer-all{margin:4px 0 10px;font-size:13.5px}
+.footer-all a{color:#e5dcf7}
+
+/* a sign question needs its sign */
+.qbank .qb-haspic{display:flex;gap:14px;align-items:flex-start}
+.qbank .qb-haspic .qb-body{flex:1 1 auto;min-width:0}
+.qbank .qb-sign{flex:0 0 auto;margin:2px 0 0;width:76px;text-align:center}
+.qbank .qb-sign svg{display:block;width:76px;height:76px}
+.qbank .qb-sign figcaption{margin-top:3px;font-size:11.5px;color:var(--muted);line-height:1.25}
+@media(max-width:520px){
+  .qbank .qb-haspic{gap:10px}
+  .qbank .qb-sign,.qbank .qb-sign svg{width:56px}
+  .qbank .qb-sign svg{height:56px}
+}
