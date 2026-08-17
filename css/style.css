@@ -502,6 +502,8 @@ main li a:not(.btn):hover{text-decoration:underline}
 .qbank ul.qb-o li{padding:5px 10px;border:1px solid var(--line);border-radius:8px;
   font-size:15px;line-height:1.45;background:var(--card)}
 .qbank ul.qb-o li.qb-ok{border-color:#1f7a6f;background:#eefaf7;font-weight:700}
+/* the tick used to be a <span> repeated 2,705 times; CSS draws it for free */
+.qbank ul.qb-o li.qb-ok:before{content:"\2713";color:#1f7a6f;font-weight:800;margin-right:7px}
 .qbank .qb-tick{color:#1f7a6f;font-weight:800;margin-right:7px}
 .qbank .qb-lab{margin-left:8px;font-size:12px;font-weight:800;color:#1f7a6f;
   text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
