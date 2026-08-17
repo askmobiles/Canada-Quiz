@@ -319,6 +319,11 @@
   function fitCanvas(h) {
     var c = h.querySelector('canvas') || document.querySelector('canvas');
     if (!c) return;
+    /* Some games are a picture with buttons under them and want to be made
+       smaller until everything fits. A first-person world is not: its controls
+       are drawn ON the canvas, so shrinking the canvas shrinks the game and
+       leaves it floating in the middle of an empty screen. Those opt out. */
+    if (c.hasAttribute('data-fs-fill')) return;
     c.style.maxHeight = '';
     c.style.width = '';
     var over = h.scrollHeight - h.clientHeight;

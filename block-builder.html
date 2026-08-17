@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Canada Block World — Free 3D Building Game for Kids</title>
 <meta name="description" content="Build in 3D across thirteen Canadian worlds, one for every province and territory. Dig, stack, explore. Twelve blocks, saves as you go, free and no signup.">
-<link rel="stylesheet" href="css/style.css?v=a008388b">
+<link rel="stylesheet" href="css/style.css?v=6b0d0533">
 <style>
   /* Fallback "immersive" mode for iPhone, where Safari will not put an element
      full screen at all. Pinning the shell to the viewport gets the same result
@@ -19,6 +19,21 @@
   body.play-mode .bb-shell{max-width:none;width:100%;height:100%;border:0;border-radius:0;
     margin:0;display:flex}
   body.play-mode .bb-stage{aspect-ratio:auto;width:100%;height:100%;flex:1 1 auto}
+  /* The site's play mode makes every child of the host a fixed-size flex item,
+     so a full-height shell plus the tools row plus the note came to more than
+     the screen. The panel overflowed, and game-fullscreen.js then did exactly
+     what it is supposed to do for a canvas game — shrank the picture until it
+     fitted — which left the world as a small rectangle in a big blue field.
+     Let the shell take whatever height is left instead, and it never overflows. */
+  body.play-mode [data-fs-host] > .bb-shell{flex:1 1 auto;height:auto;min-height:0}
+  body.play-mode .bb-note{display:none}
+  /* In play mode the buttons under the game were taking three rows on a phone
+     and a hundred and sixty pixels with them, all of it out of the world. Same
+     buttons, tighter, and still comfortably over the 44px a finger needs. */
+  @media (pointer:coarse){
+    body.play-mode .bb-tools{gap:6px;margin-top:6px}
+    body.play-mode .bb-tools .btn{padding:6px 11px;font-size:.82rem;min-height:44px}
+  }
   .bb-shell.bb-immersive .bb-stage{aspect-ratio:auto;width:100vw;height:100vh;height:100dvh}
   .bb-shell:fullscreen .bb-stage{aspect-ratio:auto;width:100vw;height:100vh}
   .bb-shell:-webkit-full-screen .bb-stage{aspect-ratio:auto;width:100vw;height:100vh}
@@ -305,7 +320,7 @@
   <section class="panel">
     <h2>How to play</h2>
     <p>Press Play, then look around and start digging. Nothing can hurt you and nothing is timed, so there is no wrong way to do it.</p>
-    <div class="cq-scroll"><table class="cq-table">
+    <div class="cq-scroll cq-pairs"><table class="cq-table">
       <caption>On a computer</caption>
       <tr><th>W A S D</th><td>Walk forward, left, back and right</td></tr>
       <tr><th>Move the mouse</th><td>Look around. Click the world once first, so the mouse stays in the game</td></tr>
@@ -317,7 +332,7 @@
       <tr><th>Q and E</th><td>Fly up and down, once you turn flying on</td></tr>
       <tr><th>Esc</th><td>Pause, and give the mouse back to the page</td></tr>
     </table></div>
-    <div class="cq-scroll"><table class="cq-table">
+    <div class="cq-scroll cq-pairs"><table class="cq-table">
       <caption>On a phone or tablet</caption>
       <tr><th>Left stick</th><td>Walk. Push it in the direction you want to go</td></tr>
       <tr><th>Drag the screen</th><td>Look around. Drag anywhere except the stick and the buttons</td></tr>
@@ -332,7 +347,7 @@
 
   <section class="panel">
     <h2>The twelve blocks, and what each one is good for</h2>
-    <div class="cq-scroll"><table class="cq-table">
+    <div class="cq-scroll cq-pairs"><table class="cq-table">
       <tr><th>Grass</th><td>The green surface. Good for lawns and for hiding a hole you dug</td></tr>
       <tr><th>Dirt</th><td>What is under the grass. Cheap and everywhere, good for filling and shaping ground</td></tr>
       <tr><th>Stone</th><td>Deeper down. The strongest looking block — walls, towers, an inukshuk</td></tr>
@@ -352,7 +367,7 @@
   <div class="panel" data-fs-host>
     <div class="bb-shell" id="bbShell" data-no-i18n>
       <div class="bb-stage" id="bbStage">
-        <canvas id="bbCanvas"></canvas>
+        <canvas id="bbCanvas" data-fs-fill></canvas>
         <div class="bb-cross" id="bbCross"></div>
         <div class="bb-hud">
           <span class="box" id="bbHold">Grass</span>
@@ -3006,7 +3021,7 @@
   }
 })();
 </script>
-  <script src="js/game-fullscreen.js?v=c56db4e5" defer></script>
+  <script src="js/game-fullscreen.js?v=4c587f13" defer></script>
   <script src="js/site.js?v=01a3ace0"></script>
   <script src="js/analytics.js?v=d06ceb69"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>

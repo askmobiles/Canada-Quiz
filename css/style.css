@@ -463,3 +463,25 @@ main li a:not(.btn):hover{text-decoration:underline}
 .kw{background:#f6f2fc;border-radius:12px;padding:12px 14px}
 .kw dt{font-weight:800;font-size:16.5px;margin:0 0 3px;color:var(--red-dark)}
 .kw dd{margin:0;font-size:15.5px;line-height:1.6}
+
+
+/* ---- two-column "this key does that" tables -----------------------------
+   .cq-scroll forces a 720px table and lets you swipe it sideways, which is the
+   right answer for a wide comparison table with six columns. It is the wrong
+   answer for a list of pairs: on a phone the whole right-hand column sat off
+   the screen, so every explanation was cut off mid-sentence and the only clue
+   was a thin scrollbar. A pair reads perfectly well stacked, so below 620px
+   these stack: the key on its own line, what it does underneath. */
+.cq-pairs{overflow:visible;margin:6px 0 10px}
+.cq-pairs .cq-table{min-width:0}
+@media(max-width:620px){
+  .cq-pairs .cq-table,.cq-pairs .cq-table tbody,.cq-pairs .cq-table tr,
+  .cq-pairs .cq-table th,.cq-pairs .cq-table td{display:block;width:auto}
+  .cq-pairs .cq-table caption{display:block;text-align:left}
+  .cq-pairs .cq-table tr{border-bottom:1px solid var(--line);padding:8px 0}
+  .cq-pairs .cq-table tr:last-child{border-bottom:0}
+  .cq-pairs .cq-table th{border:0;background:none;color:inherit;padding:0 0 2px;
+    text-align:left;font-weight:800}
+  .cq-pairs .cq-table td{border:0;padding:0;color:var(--muted)}
+  .cq-pairs .cq-table tbody tr:nth-child(even){background:none}
+}
