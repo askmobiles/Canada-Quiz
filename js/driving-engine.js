@@ -184,6 +184,9 @@
     }
 
     function start() {
+  /* the written-out answers are hidden while a test is in progress —
+     otherwise you could scroll past the question and read the key */
+  document.body.classList.add("quiz-live");
       build(); cur = 0; answered = false;
       left = P.minutes * 60;
       host.innerHTML =
@@ -205,7 +208,12 @@
         "</section>";
       host.querySelector("#dq-next").onclick = next;
       host.querySelector("#dq-quit").onclick = function () {
-        if (confirm(T("quitAsk"))) { stopClock(); screenStart(); }
+        if (confirm(T("quitAsk"))) {
+          stopClock();
+          /* quitting ends the test too, so the answers come back */
+          document.body.classList.remove("quiz-live");
+          screenStart();
+        }
       };
       startClock();
       show();
@@ -276,6 +284,7 @@
     }
 
     function finish(ranOut) {
+  document.body.classList.remove("quiz-live");
       var per = {}, all = 0;
       P.sections.forEach(function (s) { per[s.id] = 0; });
       qs.forEach(function (it) {

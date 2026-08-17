@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Canada Citizenship Test Practice — Free Practice Exam</title>
 <meta name="description" content="Free Canadian citizenship test practice. 20 questions, timer, pass at 15/20, with explanations. Based on the Discover Canada guide. No signup.">
-<link rel="stylesheet" href="css/style.css?v=e7602689">
+<link rel="stylesheet" href="css/style.css?v=af9efb03">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
@@ -48,12 +48,12 @@
     <h1>Canada Citizenship Test Practice</h1>
     <p class="muted" style="max-width:600px;margin:0 auto 6px">
       This practice test works just like the real one: <strong>20 questions</strong>,
-      a <strong>30-minute timer</strong>, and you pass with <strong>15 correct or more</strong>.
+      a <strong>45-minute timer</strong>, and you pass with <strong>15 correct or more</strong>.
       After each question you'll see the correct answer and a short explanation.
     </p>
-  <details class="howto"><summary>📖 How to play</summary><p>This works like the real test: 20 questions, a 30-minute timer, and you pass with 15 correct. Tap an answer to lock it in and see the explanation, then move to the next question. At the end you'll see PASS or TRY AGAIN, and you can review the questions you missed.</p></details>
+  <details class="howto"><summary>📖 How to play</summary><p>This works like the real test: 20 questions, a 45-minute timer, and you pass with 15 correct. Tap an answer to lock it in and see the explanation, then move to the next question. At the end you'll see PASS or TRY AGAIN, and you can review the questions you missed.</p></details>
 
-    <p><span class="pill">20 questions</span> &nbsp; <span class="pill">30 minutes</span> &nbsp; <span class="pill">Pass = 15/20</span></p>
+    <p><span class="pill">20 questions</span> &nbsp; <span class="pill">45 minutes</span> &nbsp; <span class="pill">Pass = 15/20</span></p>
     <p style="margin-top:18px">
       <button class="btn btn-lg" onclick="startExam()">Start Practice Test</button>
     </p>
@@ -67,7 +67,7 @@
   <section id="quiz-screen" class="panel" style="display:none">
     <div class="quiz-meta">
       <span class="pill" id="q-counter">Question 1 of 20</span>
-      <span class="timer" id="timer">30:00</span>
+      <span class="timer" id="timer">45:00</span>
     </div>
     <div class="progress"><span id="progress-bar"></span></div>
 
@@ -1481,7 +1481,7 @@
 <script>
 const TOTAL = 20;          // questions per exam
 const PASS_MARK = 15;      // need 15 to pass
-const TIME_LIMIT = 30*60;  // 30 minutes in seconds
+const TIME_LIMIT = 45*60;  // the real test allows 45 minutes, so this does too
 
 let examQuestions = [];
 let current = 0;
@@ -1515,6 +1515,9 @@ function pickFresh(bank, count, key){
 }
 
 function startExam(){
+  /* the written-out answers are hidden while a test is in progress —
+     otherwise you could scroll past the question and read the key */
+  document.body.classList.add("quiz-live");
   examQuestions = pickFresh(CITIZENSHIP_QUESTIONS, Math.min(TOTAL, CITIZENSHIP_QUESTIONS.length), 'cq_cit_seen');
   current = 0; score = 0; wrongList = []; answered = false;
   timeLeft = TIME_LIMIT;
@@ -1609,6 +1612,7 @@ function nextQuestion(){
 }
 
 function finishExam(timeUp){
+  document.body.classList.remove("quiz-live");
   clearInterval(timerId);
   document.getElementById('quiz-screen').style.display = 'none';
   document.getElementById('result-screen').style.display = 'block';

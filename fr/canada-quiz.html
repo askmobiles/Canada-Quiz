@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Canada Quiz — histoire, culture et géographie</title>
 <meta name="description" content="Quiz canadien gratuit pour tous ! Testez vos connaissances sur l&#x27;histoire du Canada, la culture, la géographie, la cuisine et les Canadiens célèbres.">
-<link rel="stylesheet" href="../css/style.css?v=e7602689">
+<link rel="stylesheet" href="../css/style.css?v=af9efb03">
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
@@ -1463,6 +1463,9 @@ function pickFresh(bank, count, key){
   return chosen.map(i=>balanceOpts(bank[i]));
 }
 function startCat(name){
+  /* the written-out answers are hidden while a test is in progress —
+     otherwise you could scroll past the question and read the key */
+  document.body.classList.add("quiz-live");
   catName=name; qs=pickFresh(BANK[name].q, BANK[name].q.length, 'ca_'+name); cur=0; score=0; answered=false;
   document.getElementById('start').style.display='none';
   document.getElementById('result').style.display='none';
@@ -1492,6 +1495,7 @@ function pick(i,btn){
 }
 function nextQ(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0); } else finish(); }
 function finish(){
+  document.body.classList.remove("quiz-live");
   document.getElementById('quiz').style.display='none';
   document.getElementById('result').style.display='block';
   document.getElementById('r-score').textContent='You scored '+score+' / '+qs.length+' in '+catName;

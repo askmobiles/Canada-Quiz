@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://canada-quiz.com/science-quiz.html">
 <meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
-<link rel="stylesheet" href="css/style.css?v=e7602689">
+<link rel="stylesheet" href="css/style.css?v=af9efb03">
 <style>.bigq{font-size:80px;text-align:center;margin:6px 0}</style>
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -1450,6 +1450,9 @@ function buildCats(){
   });
 }
 function startCat(name){
+  /* the written-out answers are hidden while a test is in progress —
+     otherwise you could scroll past the question and read the key */
+  document.body.classList.add("quiz-live");
   curCat=name; const c=BANK[name];
   qs=pickFresh(c.q, Math.min(10,c.q.length), LSKEY+name);
   cur=0; score=0; answered=false;
@@ -1484,6 +1487,7 @@ function pick(i,btn){
 }
 function nextQuestion(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0);} else finish(); }
 function finish(){
+  document.body.classList.remove("quiz-live");
   document.getElementById('quiz-screen').style.display='none';
   document.getElementById('result-screen').style.display='block';
   document.getElementById('result-score').textContent='You scored '+score+' / '+qs.length;

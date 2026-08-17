@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz amusant sur le Canada — À quel point es-tu Canadien ?</title>
 <meta name="description" content="Un quiz amusant et gratuit sur le Canada pour toute la famille. Sirop d&#x27;érable, hockey, poutine, animaux et plus. Sans inscription.">
-<link rel="stylesheet" href="../css/style.css?v=e7602689">
+<link rel="stylesheet" href="../css/style.css?v=af9efb03">
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
@@ -1321,6 +1321,9 @@ function pickFresh(bank, count, key){
 }
 
 function startQuiz(){
+  /* the written-out answers are hidden while a test is in progress —
+     otherwise you could scroll past the question and read the key */
+  document.body.classList.add("quiz-live");
   qs = pickFresh(FUN_QUESTIONS, Math.min(8, FUN_QUESTIONS.length), 'fun_seen');
   cur=0; score=0; answered=false;
   document.getElementById('start-screen').style.display='none';
@@ -1368,6 +1371,7 @@ function nextQuestion(){
   else finish();
 }
 function finish(){
+  document.body.classList.remove("quiz-live");
   document.getElementById('quiz-screen').style.display='none';
   document.getElementById('result-screen').style.display='block';
   document.getElementById('result-score').textContent='You scored '+score+' / '+qs.length;

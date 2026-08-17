@@ -533,3 +533,12 @@ main li a:not(.btn):hover{text-decoration:underline}
   .qbank .qb-sign,.qbank .qb-sign svg{width:56px}
   .qbank .qb-sign svg{height:56px}
 }
+
+/* The written-out answer key is hidden while a test is actually running.
+   It sat directly under the live exam, so a person taking the test could scroll
+   past the question and read the answers — which makes the practice exam
+   pointless. It comes back the moment the test ends, which is when a study list
+   is worth having. */
+body.quiz-live .qbank{display:none}
+body.quiz-live .qbank-note{display:block}
+.qbank-note{display:none;margin:0 0 14px;font-size:14px;color:var(--muted)}

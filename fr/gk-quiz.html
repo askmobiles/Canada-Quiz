@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz de culture générale — facile, moyen et difficile</title>
 <meta name="description" content="Quiz de culture générale gratuit avec 855 questions réparties en trois niveaux : facile pour les enfants, moyen, et difficile pour les adultes.">
-<link rel="stylesheet" href="../css/style.css?v=e7602689">
+<link rel="stylesheet" href="../css/style.css?v=af9efb03">
 <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
@@ -5685,6 +5685,9 @@ function buildCats(){
 }
 
 function startCat(name, label){
+  /* the written-out answers are hidden while a test is in progress —
+     otherwise you could scroll past the question and read the key */
+  document.body.classList.add("quiz-live");
   catName=name; catLabel=label;
   var pool=poolFor(name, level);
   var per=Math.min(PER_ROUND, pool.length);
@@ -5744,6 +5747,7 @@ function pick(i,btn){
 function nextQ(){ cur++; if(cur<qs.length){ showQ(); window.scrollTo(0,0); } else finish(); }
 
 function finish(){
+  document.body.classList.remove("quiz-live");
   document.getElementById("quiz").style.display="none";
   document.getElementById("result").style.display="block";
   document.getElementById("r-score").textContent=T("You scored ","Vous avez obtenu ")+score+" / "+qs.length;
