@@ -13,3 +13,5 @@ _private/
 _to_delete/
 _upd/
 *.zip
+__pycache__/
+*.pyc

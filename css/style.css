@@ -542,3 +542,21 @@ main li a:not(.btn):hover{text-decoration:underline}
 body.quiz-live .qbank{display:none}
 body.quiz-live .qbank-note{display:block}
 .qbank-note{display:none;margin:0 0 14px;font-size:14px;color:var(--muted)}
+.qbank details.qb-acc{border:1px solid var(--line);border-radius:14px;margin:10px 0;background:var(--card)}
+.qbank details.qb-acc summary{cursor:pointer;padding:13px 16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.qbank details.qb-acc summary::-webkit-details-marker{display:none}
+.qbank details.qb-acc summary:after{content:"+";color:var(--red);font-size:22px;font-weight:800;line-height:1;flex:0 0 auto}
+.qbank details.qb-acc[open]>summary:after{content:"\2212"}
+.qbank details.qb-acc[open]>summary{border-bottom:1px solid var(--line)}
+.qbank details.qb-acc summary:hover{background:#fdf6f7;border-radius:14px}
+.qbank details.qb-acc[open]>summary:hover{border-radius:14px 14px 0 0}
+.qbank details.qb-acc summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.qbank h3.qb-acc-t{margin:0;font-size:17px;font-weight:800}
+.qbank .qb-acc-t{margin:0}
+.qbank .qb-acc-n{font-weight:600;font-size:13.5px;color:var(--muted);white-space:nowrap}
+.qbank details.qb-acc ol.qb{padding:0 16px;margin:6px 0 4px}
+.qbank .qb-tools{margin:12px 0 4px}
+.qbank .qb-openall{cursor:pointer;font:inherit;font-size:14px;font-weight:700;color:var(--red-dark);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 15px}
+.qbank .qb-openall:hover{border-color:var(--red);background:#fff0f1}
+.qbank .qb-openall:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+@media print{.qbank details.qb-acc>ol.qb{display:block!important}.qbank .qb-tools{display:none}}

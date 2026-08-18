@@ -353,3 +353,29 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
 })();
+
+/* Question-bank accordions: Open all / Close all */
+(function () {
+  function init() {
+    document.querySelectorAll(".qbank .qb-openall").forEach(function (btn) {
+      var bank = btn.closest(".qbank");
+      if (!bank) return;
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", function () {
+        var accs = bank.querySelectorAll("details.qb-acc");
+        var anyClosed = Array.prototype.some.call(accs, function (d) { return !d.open; });
+        Array.prototype.forEach.call(accs, function (d) { d.open = anyClosed; });
+        btn.textContent = anyClosed ? btn.dataset.close : btn.dataset.open;
+        btn.setAttribute("aria-expanded", anyClosed ? "true" : "false");
+      });
+    });
+    function openTarget() {
+      var el = location.hash && document.querySelector(location.hash);
+      while (el) { if (el.tagName === "DETAILS") el.open = true; el = el.parentElement; }
+    }
+    window.addEventListener("hashchange", openTarget);
+    openTarget();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
