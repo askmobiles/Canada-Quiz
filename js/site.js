@@ -379,3 +379,133 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();
+
+/* Quiz play screen — fun and study personalities.
+   Engine-agnostic by design. Every quiz engine on this site already emits
+   .progress, .quiz-meta, .option, .option.correct/.wrong, .result-big and
+   .score, so this reads those rather than hooking into any single engine.
+   Nothing here modifies quiz logic; it only adds presentation. */
+(function () {
+  var FUN = false, ON = false, streak = 0, best = 0, marks = [], celebrated = false;
+
+  function el(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
+
+  function streakChip(meta) {
+    var c = meta.querySelector(".qz-streak");
+    if (!c) { c = el("span", "qz-streak"); meta.appendChild(c); }
+    return c;
+  }
+  function paintStreak() {
+    if (!FUN) return;
+    var metas = document.querySelectorAll(".quiz-meta");
+    for (var i = 0; i < metas.length; i++) {
+      var c = streakChip(metas[i]);
+      var t = streak > 1 ? "🔥 " + streak + " in a row" : (streak === 1 ? "🔥 1" : "⭐ 0");
+      if (c.textContent === t) continue;
+      c.textContent = t;
+      c.classList.add("qz-pop");
+      (function (x) { setTimeout(function () { x.classList.remove("qz-pop"); }, 260); })(c);
+    }
+  }
+  function paintPct(bar) {
+    var fill = bar.firstElementChild; if (!fill) return;
+    var meta = bar.parentNode && bar.parentNode.querySelector(".quiz-meta");
+    if (!meta) return;
+    var lab = meta.querySelector(".qz-pct");
+    if (!lab) { lab = el("span", "qz-pct"); meta.appendChild(lab); }
+    var w = parseInt(fill.style.width, 10) || 0;
+    var txt = w + "%";
+    /* Only write when the value really changed. Writing textContent is itself a
+       DOM mutation, so an unconditional write here re-triggers the observer that
+       called us and spins forever. */
+    if (lab.textContent !== txt) lab.textContent = txt;
+  }
+  function paintSegs() {
+    if (FUN) return;
+    var bars = document.querySelectorAll(".progress");
+    for (var i = 0; i < bars.length; i++) {
+      var bar = bars[i], row = bar.nextElementSibling;
+      if (!row || !row.classList || !row.classList.contains("qz-segs")) {
+        row = el("div", "qz-segs");
+        bar.parentNode.insertBefore(row, bar.nextSibling);
+      }
+      if (row.childNodes.length === marks.length) continue;
+      row.innerHTML = "";
+      for (var k = 0; k < marks.length; k++) row.appendChild(el("i", marks[k]));
+    }
+  }
+  function watchBars() {
+    var bars = document.querySelectorAll(".progress");
+    for (var i = 0; i < bars.length; i++) {
+      var bar = bars[i];
+      if (bar.__qz || !window.MutationObserver) { paintPct(bar); continue; }
+      bar.__qz = 1;
+      (function (b) {
+        new MutationObserver(function () { paintPct(b); }).observe(b,
+          { attributes: true, subtree: true, attributeFilter: ["style"] });
+      })(bar);
+      paintPct(bar);
+    }
+  }
+  function confetti() {
+    var cols = ["#e63946", "#ffb703", "#2a9d8f", "#4895ef", "#f4845f"], box = el("div", "qz-burst");
+    for (var n = 0; n < 70; n++) {
+      var p = el("i");
+      p.style.left = (n * 1.43) % 100 + "vw";
+      p.style.top = "-20px";
+      p.style.background = cols[n % cols.length];
+      p.style.animationDelay = (n % 6) * 0.09 + "s";
+      box.appendChild(p);
+    }
+    document.body.appendChild(box);
+    setTimeout(function () { if (box.parentNode) box.parentNode.removeChild(box); }, 2400);
+  }
+  function checkResult() {
+    var r = document.querySelector(".result-big");
+    /* Result screen gone again = the visitor started a new round, so clear the
+       run. Resetting on progress-width instead would misfire: some engines leave
+       their bar at 0% throughout, which wiped the history on every mutation. */
+    if (!r || !r.offsetParent) {
+      if (celebrated) { celebrated = false; marks = []; streak = 0; best = 0; paintSegs(); paintStreak(); }
+      return;
+    }
+    if (celebrated) return;
+    celebrated = true;
+    if (!FUN) return;
+    var host = r.parentNode;
+    if (best > 1 && host && !host.querySelector(".qz-best")) {
+      var b = el("span", "qz-best");
+      b.textContent = "🔥 Best streak: " + best + " in a row";
+      var sc = host.querySelector(".score");
+      if (sc && sc.nextSibling) host.insertBefore(b, sc.nextSibling); else host.appendChild(b);
+    }
+    confetti();
+  }
+  function init() {
+    FUN = document.body.classList.contains("qmode-fun");
+    ON = FUN || document.body.classList.contains("qmode-study");
+    if (!ON) return;
+    watchBars(); paintStreak();
+    document.addEventListener("click", function (e) {
+      var opt = e.target && e.target.closest && e.target.closest(".option");
+      if (!opt) return;
+      setTimeout(function () {
+        if (opt.classList.contains("correct")) { streak++; if (streak > best) best = streak; marks.push("ok"); }
+        else if (opt.classList.contains("wrong")) { streak = 0; marks.push("no"); }
+        else return;
+        paintStreak(); paintSegs(); watchBars();
+      }, 30);
+    }, true);
+    if (window.MutationObserver) {
+      var busy = false;
+      new MutationObserver(function () {
+        if (busy) return;
+        busy = true;
+        try { watchBars(); checkResult(); } finally { busy = false; }
+      })
+        .observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
+    }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();

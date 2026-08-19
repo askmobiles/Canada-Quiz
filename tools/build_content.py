@@ -90,6 +90,15 @@ def build_block(page, entry, samples):
         out.append("  </ul>")
 
     sq = samples.get(page, [])
+    # Pages carrying the full question bank already print every question with its
+    # answer and explanation, so a five-question sample repeats content from the
+    # same page. Skip it there; pages without a bank still get their samples.
+    if sq:
+        try:
+            if "<!--QBANK-->" in io.open(os.path.join(ROOT, page), encoding="utf-8").read():
+                sq = []
+        except (OSError, IOError):
+            pass
     if sq:
         out.append("  <h2>%s</h2>" % esc(H("samples")))
         out.append('  <ol class="sq-list">')

@@ -560,3 +560,57 @@ body.quiz-live .qbank-note{display:block}
 .qbank .qb-openall:hover{border-color:var(--red);background:#fff0f1}
 .qbank .qb-openall:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 @media print{.qbank details.qb-acc>ol.qb{display:block!important}.qbank .qb-tools{display:none}}
+
+/* ===== Quiz play screen — two personalities (qmode-fun / qmode-study) ===== */
+.qmode-fun .progress,.qmode-study .progress{height:12px;border-radius:999px;overflow:hidden;position:relative}
+.qmode-fun .progress > span{background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow));position:relative;overflow:hidden}
+.qmode-fun .progress > span:after{content:"";position:absolute;inset:0;
+background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.55),transparent 80%);
+transform:translateX(-100%);animation:qzSheen 1.9s ease-in-out infinite}
+@keyframes qzSheen{to{transform:translateX(100%)}}
+.qmode-study .progress{background:#eef0f3}
+.qmode-study .progress > span{background:linear-gradient(90deg,var(--blue-dark),var(--blue))}
+.qz-pct{font-weight:800;font-size:13px;color:var(--muted);white-space:nowrap}
+.qmode-fun .qz-pct{color:var(--red-dark)}
+.qz-streak{font-weight:900;font-size:13.5px;border-radius:999px;padding:6px 12px;white-space:nowrap;
+background:#ffe8ea;color:var(--red-dark);transition:transform .25s}
+.qz-streak.qz-pop{transform:scale(1.2) rotate(-5deg)}
+.qmode-study .qz-streak{display:none}
+.qmode-fun .option{border-width:2px;box-shadow:0 2px 0 rgba(0,0,0,.05);transition:.18s}
+.qmode-fun .option:hover:not(.disabled){transform:translateY(-2px);box-shadow:0 5px 14px rgba(230,57,70,.16)}
+.qmode-fun .option.correct{animation:qzPop .45s}
+.qmode-fun .option.wrong{animation:qzShake .42s}
+@keyframes qzPop{0%{transform:scale(1)}40%{transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes qzShake{0%,100%{transform:translateX(0)}18%{transform:translateX(-8px)}55%{transform:translateX(8px)}80%{transform:translateX(-3px)}}
+.qmode-study .option{transition:.14s}
+.qmode-study .option:hover:not(.disabled){border-color:var(--blue);background:#f7fbff}
+.qmode-study .option.correct{font-weight:700;color:var(--green-dark)}
+@media (prefers-reduced-motion:reduce){
+.qmode-fun .progress > span:after{animation:none}
+.qmode-fun .option.correct,.qmode-fun .option.wrong{animation:none}
+.qz-streak{transition:none}}
+
+/* ----- Result screens, per mode ----- */
+.qmode-fun .result-big{animation:qzRise .5s cubic-bezier(.2,.8,.3,1)}
+@keyframes qzRise{from{opacity:0;transform:translateY(16px) scale(.9)}to{opacity:1;transform:none}}
+.qmode-fun .score{font-size:30px;color:var(--red-dark)}
+.qz-best{display:inline-block;font-weight:800;font-size:14px;background:#ffe8ea;color:var(--red-dark);
+border-radius:999px;padding:7px 15px;margin:2px 0 6px}
+.qmode-study .qz-best{display:none}
+.qmode-study .result-big.pass{display:inline-block;font-size:15px;letter-spacing:.06em;
+background:#e9faf6;color:var(--green-dark);border-radius:999px;padding:8px 18px;margin:8px 0}
+.qmode-study .result-big.fail{display:inline-block;font-size:15px;letter-spacing:.06em;
+background:#fff2e8;color:#9a5b00;border-radius:999px;padding:8px 18px;margin:8px 0}
+.qmode-study .score{font-size:26px}
+/* study: one segment per answered question, under the bar */
+.qz-segs{display:flex;gap:4px;margin:7px 0 14px}
+.qz-segs i{height:5px;flex:1;min-width:8px;border-radius:99px;background:#e9edf2}
+.qz-segs i.ok{background:var(--green)}
+.qz-segs i.no{background:var(--red)}
+.qmode-fun .qz-segs{display:none}
+.qz-burst{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:60}
+.qz-burst i{position:absolute;width:9px;height:15px;border-radius:2px;animation:qzFall 1.7s linear forwards}
+@keyframes qzFall{to{transform:translateY(108vh) rotate(700deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){
+.qmode-fun .result-big{animation:none}
+.qz-burst{display:none}}
