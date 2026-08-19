@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>General Knowledge Quiz — Easy, Medium &amp; Hard, Free</title>
 <meta name="description" content="Free general knowledge quiz with 855 questions in three levels: easy for kids, medium, and hard for adults.">
-<link rel="stylesheet" href="css/style.css?v=0fad3fad">
+<link rel="stylesheet" href="css/style.css?v=31877ae3">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
@@ -5585,7 +5585,7 @@
   </div>
 </footer>
 
-<script src="js/gk-questions.js?v=3b7cd87f"></script>
+<script src="js/gk-questions.js?v=3b7cd87f" defer></script>
 <script>
 var FR = /\/fr\//.test(location.pathname);
 function T(en, fr){ return FR ? fr : en; }
@@ -5596,7 +5596,8 @@ var LEVELS = [
   {k:"hard",   label:"Hard",   fr:"Difficile", emoji:"🔥"}
 ];
 var PER_ROUND = 10;
-var BANK = window.GK_BANK || {};
+/* the bank script is deferred, so read it when needed, not now */
+function GKB(){ return window.GK_BANK || {}; }
 var level = "easy";
 
 function lvlInfo(k){ for(var i=0;i<LEVELS.length;i++) if(LEVELS[i].k===k) return LEVELS[i]; return LEVELS[0]; }
@@ -5628,10 +5629,10 @@ function subjName(n){ return FR ? (SUBJ_FR[n]||n) : n; }
 function poolFor(name, lvl){
   if(name==="__mix__"){
     var all=[];
-    Object.keys(BANK).forEach(function(n){ all=all.concat(BANK[n][lvl]||[]); });
+    var B=GKB(); Object.keys(B).forEach(function(n){ all=all.concat(B[n][lvl]||[]); });
     return all;
   }
-  return (BANK[name] && BANK[name][lvl]) || [];
+  var B2=GKB(); return (B2[name] && B2[name][lvl]) || [];
 }
 
 var qs=[], cur=0, score=0, answered=false, catName="", catLabel="";
@@ -5668,8 +5669,9 @@ function buildCats(){
   grid.appendChild(makeCard("🎲", T("Mixed","Mélange"),
     mixCount+" "+T("questions","questions")+" — "+T("a bit of everything","un peu de tout"),
     function(){ startCat("__mix__", T("Mixed","Mélange")); }));
-  Object.keys(BANK).forEach(function(name){
-    var c=BANK[name];
+  var B3=GKB();
+  Object.keys(B3).forEach(function(name){
+    var c=B3[name];
     grid.appendChild(makeCard(c.emoji, subjName(name), c[level].length+" "+T("questions","questions"),
       (function(n){ return function(){ startCat(n, subjName(n)); }; })(name)));
   });
@@ -5770,14 +5772,19 @@ function backToStart(){
   window.scrollTo(0,0);
 }
 
-document.querySelectorAll(".lvl-pick .lvl").forEach(function(b){
-  b.addEventListener("click", function(){ setLevel(b.getAttribute("data-lvl")); });
-});
-document.getElementById("again-btn").onclick=function(){ startCat(catName, catLabel); };
-document.getElementById("back-btn").onclick=backToStart;
+function gkBoot(){
+  document.querySelectorAll(".lvl-pick .lvl").forEach(function(b){
+    b.addEventListener("click", function(){ setLevel(b.getAttribute("data-lvl")); });
+  });
+  document.getElementById("again-btn").onclick=function(){ startCat(catName, catLabel); };
+  document.getElementById("back-btn").onclick=backToStart;
 
-var saved=null; try{ saved=localStorage.getItem("gk_level"); }catch(e){}
-setLevel((saved==="medium"||saved==="hard") ? saved : "easy");
+  var saved=null; try{ saved=localStorage.getItem("gk_level"); }catch(e){}
+  setLevel((saved==="medium"||saved==="hard") ? saved : "easy");
+}
+/* deferred scripts finish before DOMContentLoaded, so the bank is ready here */
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", gkBoot);
+else gkBoot();
 </script>
   <script src="js/game-fullscreen.js?v=4c587f13" defer></script>
   <script src="js/site.js?v=e8ae9fb1"></script>
