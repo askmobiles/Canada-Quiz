@@ -233,14 +233,31 @@
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
+  var FRVER = {core:"2e7a7c2a",gk:"2119636b",cit:"b3fbd537",fun:"22e2c8ce",drive:"24f16106",kids:"71e99c45"};
   function loadFrench(done) {
-    var s = document.createElement("script");
-    /* the ?v= stamp must match ASSET_VER in tools/rewrite_pages.py, so a new
-       dictionary is never served from the visitor's old saved copy */
-    s.src = BASE + "js/i18n-fr.js?v=e38cdcc4";
-    s.onload = function () { DICT = window.CQ_FR || null; done(); };
-    s.onerror = function () { done(); };
-    document.head.appendChild(s);
+    /* The dictionary is split into chunks by tools/split_fr.py. Every French
+       page needs "core" (the header, footer and UI strings site.js injects);
+       the question chunks are only needed by pages that actually carry that
+       quiz engine. Deciding from the scripts already on the page means no page
+       has to declare anything, and a new quiz page picks up its chunk on its
+       own. This is why a French driving page fetches 3.7 KB where it used to
+       fetch 3.3 MB. */
+    var want = ["core"];
+    var map = [["gk-questions", "gk"], ["citizenship-questions", "cit"],
+               ["fun-questions", "fun"], ["driving-engine", "drive"],
+               ["kids-quiz", "kids"]];
+    for (var i = 0; i < map.length; i++) {
+      if (document.querySelector('script[src*="' + map[i][0] + '"]')) want.push(map[i][1]);
+    }
+    var left = want.length;
+    function one() { if (--left <= 0) { DICT = window.CQ_FR || null; done(); } }
+    for (var j = 0; j < want.length; j++) {
+      var s = document.createElement("script");
+      s.src = BASE + "js/i18n-fr-" + want[j] + ".js?v=" + FRVER[want[j]];
+      s.onload = one;
+      s.onerror = one;
+      document.head.appendChild(s);
+    }
   }
 
   /* ---------------------------------------------------------------
