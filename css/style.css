@@ -57,7 +57,7 @@ img{max-width:100%}
 .hero p{font-size:clamp(16px,2.6vw,19px);color:var(--muted);max-width:640px;margin:0 auto}
 
 /* Cards grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:28px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:18px;margin:28px 0}
 .card{
   background:var(--card);
   border:1px solid var(--line);
@@ -170,7 +170,7 @@ img{max-width:100%}
 .doc p, .doc li{color:#3d4551}
 
 /* Games */
-.board{display:grid;grid-template-columns:repeat(3,minmax(72px,90px));gap:8px;justify-content:center;margin:20px auto}
+.board{display:grid;grid-template-columns:repeat(3,minmax(min(72px,28vw),90px));gap:8px;justify-content:center;margin:20px auto}
 .cell{
   aspect-ratio:1/1;font-size:clamp(30px,10vw,40px);font-weight:800;
   background:#fff;border:2px solid var(--line);border-radius:14px;cursor:pointer;
@@ -225,7 +225,7 @@ html.lang-fr .nav a{font-size:13.5px;padding:8px 10px}
 .footer-map[open]>summary::after{content:" ▴"}
 .footer-map>summary:hover{background:rgba(255,255,255,.10)}
 .footer-map>summary:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
-.footer-map-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+.footer-map-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));
   gap:14px 22px;padding:12px 4px 6px}
 .footer-map-col h4,.footer-map-col .fm-h{margin:0 0 6px;font-size:13px;text-transform:uppercase;
   letter-spacing:.7px;color:#fff;opacity:.85}
@@ -265,10 +265,10 @@ html.lang-fr .nav a{font-size:13.5px;padding:8px 10px}
 
 .hero-cta{margin:0;display:flex;flex-wrap:wrap;gap:12px}
 
-.hero-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+.hero-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(160px,100%),1fr));
   gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
   box-shadow:var(--shadow);padding:6px 4px;margin:26px 0 12px}
-.strip-item{padding:14px 16px;border-right:1px solid var(--line);text-align:left}
+.strip-item{padding:14px 16px;border-right:1px solid var(--line);text-align:left;min-width:0}
 .strip-item:last-child{border-right:0}
 .strip-item .si-emoji{font-size:24px;line-height:1}
 .strip-item h3{margin:6px 0 4px;font-size:15px;color:var(--ink);line-height:1.2}
@@ -309,7 +309,7 @@ p.hero-ribbon,.hero-ribbon{display:flex;flex-wrap:wrap;justify-content:center;al
 .dq-sign svg{width:110px;height:110px;display:block}
 .dq-sign-lg svg{width:150px;height:150px}
 @media(max-width:520px){.dq-sign-lg svg{width:126px;height:126px}}
-.dq-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:14px;margin-top:16px}
+.dq-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(132px,100%),1fr));gap:14px;margin-top:16px}
 .dq-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 8px;text-align:center}
 .dq-card .dq-sign{margin:0}
 .dq-card .dq-sign svg{width:88px;height:88px}
@@ -321,7 +321,7 @@ details.dq-learn{background:var(--card);border:1px solid var(--line);border-radi
 details.dq-learn summary{cursor:pointer;font-weight:700;color:var(--ink)}
 details.dq-learn[open] summary{margin-bottom:8px}
 details.dq-learn p{margin:6px 0}
-.prov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-top:18px}
+.prov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(210px,100%),1fr));gap:16px;margin-top:18px}
 .prov-soon{filter:saturate(.35);background:#faf8f5}
 .prov-soon .btn{pointer-events:none}
 
@@ -392,7 +392,7 @@ main li a:not(.btn):hover{text-decoration:underline}
    Two or three columns of links with the question count beside each quiz.
    The count is a separate span so it can wrap under a long label on a phone
    instead of pushing the link off the screen. */
-.idx-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+.idx-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));
   gap:2px 22px;margin-top:6px}
 .idx-cols a{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
   flex-wrap:wrap;padding:8px 10px;border-radius:9px;font-weight:700;font-size:15px;
@@ -459,7 +459,7 @@ main li a:not(.btn):hover{text-decoration:underline}
 }
 
 /* Words to know: the small glossary at the foot of a long kids' story. */
-.kw-list{margin:6px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.kw-list{margin:6px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:12px}
 .kw{background:#f6f2fc;border-radius:12px;padding:12px 14px}
 .kw dt{font-weight:800;font-size:16.5px;margin:0 0 3px;color:var(--red-dark)}
 .kw dd{margin:0;font-size:15.5px;line-height:1.6}
@@ -615,3 +615,17 @@ background:#fff2e8;color:#9a5b00;border-radius:999px;padding:8px 18px;margin:8px
 .qmode-fun .result-big{animation:none}
 .qz-burst{display:none}}
 .also p{margin:0;line-height:1.85}
+
+.grid>*,.hero-strip>*,.prov-grid>*,.dq-gallery>*{min-width:0}
+/* Narrow screens and high zoom: let the accordion summary wrap instead of
+   pushing the page sideways. The count chip is nowrap by design, so the row
+   itself has to be allowed to break onto a second line. */
+.qbank details.qb-acc summary{flex-wrap:wrap}
+.qbank .qb-acc-t{min-width:0;overflow-wrap:anywhere}
+@media (max-width:400px){
+  .qbank details.qb-acc ol.qb{padding:0 8px}
+  .qbank details.qb-acc summary{padding:12px 12px}
+  .qbank ul.qb-o li{padding:6px 7px}
+}
+
+@media (max-width:400px){.qbank .qb-lab{white-space:normal}}
