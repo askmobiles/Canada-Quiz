@@ -880,6 +880,891 @@
    "q": "When you pay with cash in Canada, the total is rounded to the nearest what?"
   }
  ],
+ "new-brunswick-class-7-mock-test.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "24 mois",
+     "6 mois",
+     "12 mois",
+     "5 ans"
+    ],
+    "q": "Combien de temps dure au minimum tout le programme progressif ?"
+   },
+   "o": [
+    "24 months",
+    "6 months",
+    "12 months",
+    "5 years"
+   ],
+   "q": "How long does the whole graduated programme take, at a minimum?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Une personne détenant un permis de classe 5 ou mieux et au moins 3 ans d'expérience",
+     "N'importe qui de plus de 16 ans avec un permis",
+     "N'importe quel adulte, avec ou sans permis",
+     "Un autre conducteur de niveau 1"
+    ],
+    "q": "Qui peut s'asseoir à côté d'un conducteur de niveau 1 ?"
+   },
+   "o": [
+    "Someone with a Class 5 or better licence and at least 3 years of driving experience",
+    "Anybody over 16 with a licence",
+    "Any adult, licensed or not",
+    "Another Level 1 driver"
+   ],
+   "q": "Who may sit beside a Level 1 driver?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "À la place du passager avant",
+     "N'importe où dans le véhicule",
+     "Sur la banquette arrière",
+     "Dans un véhicule qui suit"
+    ],
+    "q": "Où doit s'asseoir le conducteur accompagnateur ?"
+   },
+   "o": [
+    "In the front passenger seat",
+    "Anywhere in the vehicle",
+    "In the back seat",
+    "In a following vehicle"
+   ],
+   "q": "Where must the supervising driver sit?"
+  }
+ ],
+ "new-brunswick-class-7-practice-test.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Classe 7 niveau 1",
+     "Classe G1",
+     "Classe 5 apprenti",
+     "Classe L1"
+    ],
+    "q": "Comment s'appelle le permis débutant au Nouveau-Brunswick ?"
+   },
+   "o": [
+    "Class 7 Level 1",
+    "Class G1",
+    "Class 5 Learner",
+    "Class L1"
+   ],
+   "q": "What is the beginner licence called in New Brunswick?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "16 ans",
+     "14 ans",
+     "18 ans",
+     "21 ans"
+    ],
+    "q": "Quel est l'âge minimal pour obtenir un permis de classe 7 niveau 1 ?"
+   },
+   "o": [
+    "16",
+    "14",
+    "18",
+    "21"
+   ],
+   "q": "What is the minimum age to get a Class 7 Level 1 licence?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "12 mois, ou 8 mois avec une école de conduite reconnue",
+     "3 mois, toujours",
+     "24 mois, toujours",
+     "Il n'y a pas de minimum"
+    ],
+    "q": "Combien de temps devez-vous normalement détenir le niveau 1 avant de passer au niveau 2 ?"
+   },
+   "o": [
+    "12 months, or 8 months with a recognized driving school",
+    "3 months, always",
+    "24 months, always",
+    "There is no minimum"
+   ],
+   "q": "How long must you normally hold Level 1 before moving to Level 2?"
+  }
+ ],
+ "new-brunswick-rules-of-the-road.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Non — personne ne peut l'accompagner sauf le conducteur accompagnateur",
+     "Oui, jusqu'à trois",
+     "Oui, s'ils portent tous la ceinture",
+     "Oui, de jour seulement"
+    ],
+    "q": "Un conducteur de niveau 1 peut-il transporter des amis ?"
+   },
+   "o": [
+    "No — nobody may travel with them except the supervising driver",
+    "Yes, up to three",
+    "Yes, if they all wear seatbelts",
+    "Yes, during daylight only"
+   ],
+   "q": "May a Level 1 driver carry friends in the car?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Minuit et 5 h",
+     "22 h et 6 h",
+     "21 h et 7 h",
+     "Il n'y a aucune restriction horaire"
+    ],
+    "q": "Entre quelles heures un conducteur de niveau 1 ne peut-il pas conduire ?"
+   },
+   "o": [
+    "Midnight and 5 a.m.",
+    "10 p.m. and 6 a.m.",
+    "9 p.m. and 7 a.m.",
+    "There is no time restriction"
+   ],
+   "q": "Between which hours may a Level 1 driver not drive?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Aucune",
+     "La même que pour tout conducteur adulte",
+     "Une petite quantité avec un repas",
+     "Toute quantité sous la limite légale des adultes"
+    ],
+    "q": "Quelle quantité d'alcool peut se trouver dans le sang d'un conducteur de niveau 1 ?"
+   },
+   "o": [
+    "None at all",
+    "The same as any adult driver",
+    "A small amount with a meal",
+    "Any amount below the legal adult limit"
+   ],
+   "q": "How much alcohol may be in a Level 1 driver's blood?"
+  }
+ ],
+ "newfoundland-class-5-mock-test.html": [
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Deux ans d'expérience de conduite et une alcoolémie inférieure à 0,05",
+     "Au moins quatre ans d'expérience de conduite et aucune trace d'alcool dans le sang",
+     "N'importe quel permis complet, sans exigence d'expérience",
+     "Dix ans d'expérience de conduite et un dossier sans tache"
+    ],
+    "q": "Quelles conditions le conducteur qui accompagne un apprenti doit-il remplir dans la province ?"
+   },
+   "o": [
+    "Two years of driving experience and a blood alcohol level under 0.05",
+    "At least four years of driving experience and no alcohol at all in their blood",
+    "Any full licence, with no experience requirement",
+    "Ten years of driving experience and a clean record"
+   ],
+   "q": "What must the driver who accompanies a learner in this province meet?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Trois",
+     "Quatre",
+     "Six",
+     "Douze"
+    ],
+    "q": "Combien de points d'inaptitude un conducteur novice peut-il accumuler en un an avant la suspension de son permis ?"
+   },
+   "o": [
+    "Three",
+    "Four",
+    "Six",
+    "Twelve"
+   ],
+   "q": "How many demerit points may a novice driver collect within one year before the licence is suspended?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "70 pour cent",
+     "75 pour cent",
+     "80 pour cent",
+     "85 pour cent"
+    ],
+    "q": "Quelle note Terre-Neuve-et-Labrador exige-t-elle à l'examen théorique ?"
+   },
+   "o": [
+    "70 per cent",
+    "75 per cent",
+    "80 per cent",
+    "85 per cent"
+   ],
+   "q": "What mark does Newfoundland and Labrador require on the written knowledge test?"
+  }
+ ],
+ "newfoundland-class-5-practice-test.html": [
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Trois mois, ou un mois avec un cours de conduite",
+     "Six mois, ou trois mois avec un cours de conduite",
+     "Douze mois, ou huit mois avec un programme d'éducation à la conduite approuvé",
+     "Vingt-quatre mois, sans réduction possible"
+    ],
+    "q": "Combien de temps faut-il détenir un permis de classe 5, niveau I, à Terre-Neuve-et-Labrador avant l'examen sur route ?"
+   },
+   "o": [
+    "Three months, or one month with driver education",
+    "Six months, or three months with driver education",
+    "Twelve months, or eight months with an approved driver education program",
+    "Twenty-four months, with no reduction available"
+   ],
+   "q": "How long must a Class 5 Level I licence be held in Newfoundland and Labrador before the road test?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Autant de personnes qu'il y a de ceintures de sécurité",
+     "Les membres de la famille seulement",
+     "Un ami, en plus du conducteur accompagnateur",
+     "Personne, sauf le conducteur accompagnateur"
+    ],
+    "q": "Qui peut prendre place dans le véhicule avec un conducteur de niveau I ?"
+   },
+   "o": [
+    "As many people as there are seat belts",
+    "Family members only",
+    "One friend, plus the accompanying driver",
+    "Nobody except the accompanying driver"
+   ],
+   "q": "Who may ride in the vehicle with a Level I driver?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Entre minuit et 5 h",
+     "Entre 23 h et 6 h",
+     "Entre 1 h et 4 h",
+     "Il n'y a aucune restriction d'heures"
+    ],
+    "q": "À quelles heures un conducteur de niveau I n'a-t-il pas le droit de conduire ?"
+   },
+   "o": [
+    "Between midnight and 5 a.m.",
+    "Between 11 p.m. and 6 a.m.",
+    "Between 1 a.m. and 4 a.m.",
+    "There is no restriction on hours"
+   ],
+   "q": "At what hours is a Level I driver forbidden to drive?"
+  }
+ ],
+ "newfoundland-rules-of-the-road.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "À l'arrière, en lettres noires d'au moins 5 cm de hauteur sur fond blanc",
+     "Sur le pare-brise, dans n'importe quelle couleur",
+     "Sur les deux portières avant, en lettres d'au moins 10 cm",
+     "N'importe où sur le véhicule, pourvu qu'il soit lisible"
+    ],
+    "q": "Comment le panneau NOVICE DRIVER doit-il être affiché sur le véhicule d'un apprenti ?"
+   },
+   "o": [
+    "On the rear, in black letters at least 5 cm high on a white background",
+    "On the windscreen, in any colour",
+    "On both front doors, at least 10 cm high",
+    "Anywhere on the vehicle, as long as it can be read"
+   ],
+   "q": "How must the NOVICE DRIVER sign be displayed on a learner's vehicle?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Quinze ans, avec une lettre de l'école",
+     "Seize ans, et toute personne de moins de dix-neuf ans a besoin du consentement d'un parent ou tuteur",
+     "Dix-sept ans, sans autre condition",
+     "Dix-huit ans, et personne de plus jeune ne peut faire une demande"
+    ],
+    "q": "Quel est l'âge minimal pour entrer dans le programme de permis par étapes ici, et de quoi une personne de dix-sept ans a-t-elle aussi besoin ?"
+   },
+   "o": [
+    "Fifteen, with a letter from the school",
+    "Sixteen, and anyone under nineteen needs consent from a parent or guardian",
+    "Seventeen, with no further condition",
+    "Eighteen, and nobody younger may apply"
+   ],
+   "q": "What is the minimum age to enter the graduated licensing program here, and what else does a seventeen-year-old need?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Oui, la réussite en ligne suffit",
+     "Oui, à condition d'imprimer le résultat",
+     "Non, vous devez d'abord vous présenter à un rendez-vous pour l'examen de la vue et la vérification de vos documents",
+     "Non, vous devez attendre trente jours"
+    ],
+    "q": "Vous réussissez l'examen théorique en ligne au moyen de MyGovNL. Pouvez-vous commencer à conduire avec un accompagnateur l'après-midi même ?"
+   },
+   "o": [
+    "Yes, the online pass is all that is needed",
+    "Yes, as long as you print the result",
+    "No, you must first attend an appointment for the vision test and to have your documents checked",
+    "No, you must wait thirty days"
+   ],
+   "q": "You pass the knowledge test online through MyGovNL. May you start driving with a supervisor that afternoon?"
+  }
+ ],
+ "nova-scotia-class-7-mock-test.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "16 sur 20",
+     "10 sur 20",
+     "20 sur 20",
+     "12 sur 20"
+    ],
+    "q": "Combien de bonnes réponses faut-il à chaque partie de l'examen néo-écossais ?"
+   },
+   "o": [
+    "16 out of 20",
+    "10 out of 20",
+    "20 out of 20",
+    "12 out of 20"
+   ],
+   "q": "How many questions must you get right on each part of the Nova Scotia test?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "30 minutes",
+     "10 minutes",
+     "2 heures",
+     "Il n'y a pas de limite"
+    ],
+    "q": "Combien de temps avez-vous pour chaque partie de l'examen théorique ?"
+   },
+   "o": [
+    "30 minutes",
+    "10 minutes",
+    "2 hours",
+    "There is no time limit"
+   ],
+   "q": "How long do you get for each part of the knowledge test?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "En ligne avec une caméra, ou en personne à Access Nova Scotia",
+     "En personne seulement",
+     "En ligne seulement",
+     "Dans n'importe quelle école de conduite"
+    ],
+    "q": "Où pouvez-vous passer l'examen théorique en Nouvelle-Écosse ?"
+   },
+   "o": [
+    "Online with a webcam, or in person at Access Nova Scotia",
+    "Only in person",
+    "Only online",
+    "At any driving school"
+   ],
+   "q": "Where can you take the Nova Scotia knowledge test?"
+  }
+ ],
+ "nova-scotia-class-7-practice-test.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Le permis d'apprenti, classe 7",
+     "Le permis de conducteur nouvellement titulaire",
+     "Le permis de conducteur restreint",
+     "Un permis complet de classe 5"
+    ],
+    "q": "Comment s'appelle la première étape du programme de permis par étapes de la Nouvelle-Écosse ?"
+   },
+   "o": [
+    "The Learner's Licence, Class 7",
+    "The Newly Licensed Driver's Licence",
+    "The Restricted Individual licence",
+    "A full Class 5 licence"
+   ],
+   "q": "What is the first stage of Nova Scotia's graduated licensing programme called?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "16 ans",
+     "14 ans",
+     "18 ans",
+     "21 ans"
+    ],
+    "q": "Quel est l'âge minimal pour obtenir un permis d'apprenti en Nouvelle-Écosse ?"
+   },
+   "o": [
+    "16",
+    "14",
+    "18",
+    "21"
+   ],
+   "q": "What is the youngest age you can get a Nova Scotia learner's licence?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Deux examens : le code de la route et la reconnaissance des panneaux",
+     "Un seul long examen",
+     "Trois examens",
+     "Un entretien oral seulement"
+    ],
+    "q": "Comment l'examen théorique de la Nouvelle-Écosse est-il organisé ?"
+   },
+   "o": [
+    "Two tests: Rules of the Road and Road Sign Recognition",
+    "One long test",
+    "Three tests",
+    "A spoken interview only"
+   ],
+   "q": "How is the Nova Scotia knowledge test organised?"
+  }
+ ],
+ "nova-scotia-rules-of-the-road.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Le lendemain",
+     "La même heure",
+     "Après un mois",
+     "Après un an"
+    ],
+    "q": "Vous échouez à l'examen dans un bureau. Quand pouvez-vous réessayer ?"
+   },
+   "o": [
+    "The next day",
+    "The same hour",
+    "After one month",
+    "After one year"
+   ],
+   "q": "You fail the test at an office. When can you try again?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Votre vue",
+     "Votre vitesse de frappe",
+     "Vos notes scolaires",
+     "Votre taille"
+    ],
+    "q": "Qu'est-ce qui est vérifié en plus de vos connaissances avant l'obtention d'un permis d'apprenti ?"
+   },
+   "o": [
+    "Your eyesight",
+    "Your typing speed",
+    "Your school marks",
+    "Your height"
+   ],
+   "q": "What is checked besides your knowledge before you are given a learner's licence?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "12 mois, ou 9 avec un cours de conduite reconnu",
+     "3 mois",
+     "6 mois toujours",
+     "24 mois"
+    ],
+    "q": "Combien de temps faut-il normalement détenir le permis d'apprenti avant l'examen pratique ?"
+   },
+   "o": [
+    "12 months, or 9 with an approved driver-training course",
+    "3 months",
+    "6 months always",
+    "24 months"
+   ],
+   "q": "How long must you normally hold the learner's licence before the road test?"
+  }
+ ],
+ "nunavut-class-7-mock-test.html": [
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Les deux parties, depuis le début",
+     "Rien, la réussite d'une partie emporte l'autre",
+     "Un examen pratique à la place",
+     "Seulement la partie échouée"
+    ],
+    "q": "Vous réussissez la partie sur les panneaux, mais échouez à l'autre. Que devez-vous reprendre ?"
+   },
+   "o": [
+    "Both parts, from the beginning",
+    "Nothing, a pass on one part carries the other",
+    "A road test instead",
+    "Only the part you failed"
+   ],
+   "q": "You pass the sign identification part but fail the other one. What do you have to rewrite?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Aucune, car le Nunavut n'a pas de programme de permis par étapes ; le titulaire d'une classe 7 qui réussit l'examen pratique obtient une classe 5 complète",
+     "Une étape probatoire de six mois avec couvre-feu la nuit",
+     "Deux étapes de novice d'un an chacune",
+     "Un programme en trois étapes se terminant à 18 ans"
+    ],
+    "q": "Par quelles étapes un nouveau conducteur du Nunavut passe-t-il après le permis d'apprenti ?"
+   },
+   "o": [
+    "None, because Nunavut has no graduated licensing programme; a Class 7 holder who passes the road test moves to a full Class 5",
+    "A six-month probationary stage with a night curfew",
+    "Two novice stages of one year each",
+    "A three-stage programme that ends at age 18"
+   ],
+   "q": "Which stages does a new Nunavut driver pass through after the learner licence?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "N'importe quel adulte ayant déjà conduit",
+     "Une personne titulaire d'un permis de conduire valide et autorisée en vertu de la Loi",
+     "N'importe quel passager de 18 ans ou plus",
+     "Personne n'est nécessaire une fois que vous avez assez pratiqué"
+    ],
+    "q": "Qui peut prendre place à côté de vous quand vous conduisez avec un permis de classe 7 ?"
+   },
+   "o": [
+    "Any adult who has driven before",
+    "Someone who holds a valid driver's licence and is authorised under the Act",
+    "Any passenger aged 18 or over",
+    "Nobody is needed once you have practised enough"
+   ],
+   "q": "Who may sit with you while you drive on a Class 7 licence?"
+  }
+ ],
+ "nunavut-class-7-practice-test.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "15 ans",
+     "16 ans",
+     "17 ans",
+     "18 ans"
+    ],
+    "q": "À quel âge minimum pouvez-vous détenir un permis d'apprenti de classe 7 au Nunavut ?"
+   },
+   "o": [
+    "15 years old",
+    "16 years old",
+    "17 years old",
+    "18 years old"
+   ],
+   "q": "What is the youngest age at which you may hold a Class 7 learner licence in Nunavut?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Conduire seul tout véhicule jusqu'à une camionnette",
+     "Conduire tout véhicule de classe 5 ou de classe 6 pendant que vous apprenez à le conduire",
+     "Conduire un autobus de moins de 24 passagers",
+     "Conduire seulement pendant les heures de clarté"
+    ],
+    "q": "Que vous permet un permis de classe 7 ?"
+   },
+   "o": [
+    "Drive alone in anything up to a light truck",
+    "Operate any vehicle in Class 5 or Class 6 while you are learning to operate it",
+    "Drive a bus carrying fewer than 24 passengers",
+    "Drive during daylight hours only"
+   ],
+   "q": "What does a Class 7 licence allow you to do?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Une seule épreuve couvrant tout à la fois",
+     "Deux épreuves écrites des jours différents",
+     "Deux parties à la même séance : le code de la route et la conduite sécuritaire, puis la reconnaissance des panneaux",
+     "Un entretien oral seulement"
+    ],
+    "q": "Comment l'examen théorique du Nunavut est-il composé ?"
+   },
+   "o": [
+    "One paper covering everything at once",
+    "Two papers written on separate days",
+    "Two parts at one sitting: rules of the road and safe driving, and sign identification",
+    "A spoken interview only"
+   ],
+   "q": "How is the Nunavut knowledge test put together?"
+  }
+ ],
+ "nunavut-rules-of-the-road.html": [
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Il faut se rendre à Iqaluit pour chaque service",
+     "Tout se règle par la poste",
+     "Par le programme des agents de liaison gouvernementaux, qui compte un bureau dans chaque communauté",
+     "Seulement lors d'une visite annuelle d'un examinateur"
+    ],
+    "q": "Votre communauté n'a pas de bureau des véhicules automobiles. Comment les services aux conducteurs y sont-ils offerts ?"
+   },
+   "o": [
+    "You must travel to Iqaluit for every service",
+    "Everything is handled by mail",
+    "Through the Government Liaison Officer programme, which has an office in every community",
+    "Only during one yearly visit by an examiner"
+   ],
+   "q": "Your community has no Motor Vehicles Office. How are driver services delivered there?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "L'examinateur peut plutôt vous faire passer l'examen à l'oral",
+     "Une version abrégée de l'examen",
+     "Une réussite fondée seulement sur l'examen pratique",
+     "Un ami peut le remplir à votre place"
+    ],
+    "q": "La lecture de l'examen écrit vous est difficile. Qu'offre le Nunavut ?"
+   },
+   "o": [
+    "The examiner may give you the test out loud instead",
+    "A shorter version of the test",
+    "A pass based on the road test alone",
+    "A friend may write it for you"
+   ],
+   "q": "Reading the written test is difficult for you. What does Nunavut offer?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Un an",
+     "Deux ans",
+     "Trois ans",
+     "Cinq ans"
+    ],
+    "q": "Combien de temps un permis de conduire du Nunavut est-il valide avant son renouvellement ?"
+   },
+   "o": [
+    "One year",
+    "Two years",
+    "Three years",
+    "Five years"
+   ],
+   "q": "How long does a Nunavut driver's licence run before it has to be renewed?"
+  }
+ ],
+ "nwt-class-7-mock-test.html": [
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "N'importe quel conducteur titulaire d'un permis et âgé de 18 ans ou plus",
+     "Toute personne qui détient un permis depuis six mois",
+     "Un conducteur encore inscrit au programme par étapes",
+     "Un conducteur d'au moins 19 ans titulaire d'un permis complet de classe 5 et comptant 24 mois d'expérience"
+    ],
+    "q": "Qui peut vous accompagner comme superviseur pendant que vous conduisez avec un permis de classe 7 ?"
+   },
+   "o": [
+    "Any licensed driver aged 18 or over",
+    "Anyone who has held any licence for six months",
+    "A driver who is still in the graduated programme",
+    "A driver at least 19 years old with a full Class 5 licence and 24 months of experience"
+   ],
+   "q": "Who may act as your supervisor while you drive on a Class 7 licence?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "L'apprenti doit être à zéro ; le superviseur peut être sous 0,08",
+     "Les deux doivent être à zéro",
+     "Les deux peuvent être sous 0,05",
+     "Le superviseur doit être à zéro ; l'apprenti peut être sous 0,05"
+    ],
+    "q": "Quelle quantité d'alcool peut se trouver dans le sang d'un conducteur de classe 7 et de son superviseur ?"
+   },
+   "o": [
+    "The learner must be at zero; the supervisor may be under 0.08",
+    "Both of them must be at zero",
+    "Both of them may be under 0.05",
+    "The supervisor must be at zero; the learner may be under 0.05"
+   ],
+   "q": "How much alcohol may be in the blood of a Class 7 driver and of the supervisor riding with them?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Un passager supplémentaire est permis",
+     "Des passagers supplémentaires sont permis le jour",
+     "Aucun passager autre que le superviseur ne peut être dans le véhicule",
+     "Jusqu'à trois passagers sont permis si chacun boucle sa ceinture de sécurité"
+    ],
+    "q": "Votre cousin demande à monter pendant que vous vous exercez avec votre permis de classe 7, votre superviseur étant déjà à bord. Que permet la loi ?"
+   },
+   "o": [
+    "One extra passenger is allowed",
+    "Extra passengers are allowed during daylight",
+    "No passenger other than the supervisor may be in the vehicle",
+    "Up to three passengers are allowed if everyone is belted"
+   ],
+   "q": "Your cousin asks for a ride while you are practising on your Class 7 licence, with your supervisor already in the vehicle. What does the law allow?"
+  }
+ ],
+ "nwt-class-7-practice-test.html": [
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "À 14 ans, et le garder six mois",
+     "À 15 ans, et le garder au moins un an",
+     "À 16 ans, et le garder trois mois",
+     "À 18 ans, et le garder deux ans"
+    ],
+    "q": "À partir de quel âge peut-on demander un permis d'apprenti de classe 7 aux Territoires du Nord-Ouest, et combien de temps faut-il ensuite le garder ?"
+   },
+   "o": [
+    "At 14, and held for six months",
+    "At 15, and held for at least one year",
+    "At 16, and held for three months",
+    "At 18, and held for two years"
+   ],
+   "q": "What is the earliest a person may apply for a Class 7 learner's licence in the Northwest Territories, and how long must it then be held?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Six mois sans transporter de passager",
+     "Douze mois de conduite de jour seulement",
+     "Douze mois sans aucune suspension avant de pouvoir passer à l'étape suivante",
+     "Trois ans et un deuxième examen théorique"
+    ],
+    "q": "Vous avez réussi l'examen pratique et détenez maintenant un permis de classe 5P. Qu'exige la deuxième étape ?"
+   },
+   "o": [
+    "Six months without carrying a passenger",
+    "Twelve months of driving in daylight only",
+    "Twelve months free of any suspension before you can upgrade",
+    "Three years and a second knowledge examination"
+   ],
+   "q": "You have passed the road test and now hold a Class 5P licence. What does the second stage ask of you?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Deux ans",
+     "Six mois",
+     "Un an",
+     "Quatre ans"
+    ],
+    "q": "En comptant les deux étapes, quelle est la durée minimale du programme des Territoires du Nord-Ouest ?"
+   },
+   "o": [
+    "Two years",
+    "Six months",
+    "One year",
+    "Four years"
+   ],
+   "q": "Counting both graduated stages, what is the shortest time the Northwest Territories programme can take?"
+  }
+ ],
+ "nwt-rules-of-the-road.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Entre 23 h et 6 h",
+     "Entre minuit et 5 h",
+     "Entre 22 h et 7 h",
+     "Il n'y a aucune restriction horaire"
+    ],
+    "q": "Entre quelles heures un conducteur de classe 7 des Territoires du Nord-Ouest ne peut-il pas conduire du tout ?"
+   },
+   "o": [
+    "Between 11 p.m. and 6 a.m.",
+    "Between midnight and 5 a.m.",
+    "Between 10 p.m. and 7 a.m.",
+    "There is no restriction on the hours"
+   ],
+   "q": "Between which hours may a Class 7 driver in the Northwest Territories not drive at all?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Un seul examen de 40 questions couvrant tout",
+     "Un seul examen de 20 questions tirées des deux sujets",
+     "Un examen écrit suivi d'une entrevue orale",
+     "Deux examens distincts de 20 questions : un sur le code de la route et un sur la signalisation routière"
+    ],
+    "q": "Comment les Territoires du Nord-Ouest organisent-ils l'examen théorique pour un permis de classe 7 ?"
+   },
+   "o": [
+    "One test of 40 questions covering everything",
+    "One test of 20 questions drawn from both subjects",
+    "A written test followed by an oral interview",
+    "Two separate tests of 20 questions: one on the rules of the road and one on road signage"
+   ],
+   "q": "How does the Northwest Territories organise the knowledge examination for a Class 7 licence?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Une réussite, car trente et un sur quarante dépasse largement les trois quarts",
+     "Un échec au code de la route, car on ne peut manquer plus de quatre questions par examen",
+     "Une réussite, car seul le total combiné compte",
+     "Un échec aux deux, car les deux résultats sont ramenés à une moyenne"
+    ],
+    "q": "Vous obtenez dix-sept bonnes réponses à l'examen de signalisation et quatorze au code de la route. Quel est le résultat ?"
+   },
+   "o": [
+    "A pass, because thirty-one out of forty is well over three quarters",
+    "A fail on the rules test, because you may miss no more than four questions in each test",
+    "A pass, because only the combined total counts",
+    "A fail on both, because the two results are averaged together"
+   ],
+   "q": "You get seventeen right on the signage test and fourteen right on the rules test. What is the outcome?"
+  }
+ ],
  "ontario-g1-mock-test.html": [
   {
    "a": 3,
@@ -1055,6 +1940,183 @@
     "As many as there are seat belts"
    ],
    "q": "In their first six months, a G2 driver aged 19 or under may carry how many passengers aged 19 or under between midnight and 5 a.m.?"
+  }
+ ],
+ "pei-class-7-mock-test.html": [
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Un certificat de secourisme",
+     "Un examen théorique dans une école privée",
+     "Rien de plus n'est exigé",
+     "Le cours pour conducteurs débutants, sauf s'ils ont suivi une formation privée reconnue"
+    ],
+    "q": "Que doit avoir terminé la plupart des nouveaux conducteurs avant de pouvoir fixer un premier examen de conduite de classe 5 ?"
+   },
+   "o": [
+    "A first-aid certificate",
+    "A written test at a private school",
+    "Nothing extra is required",
+    "The Novice Driver Course, unless they completed certified private driver training"
+   ],
+   "q": "What must most new drivers finish before they are allowed to book a first Class 5 road test?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Un examen de conduite seulement",
+     "Un examen théorique seulement",
+     "Un examen médical organisé par votre propre médecin",
+     "Un examen de la vue et un examen théorique sur le code de la route"
+    ],
+    "q": "Que devez-vous réussir à un bureau d'Accès Î.-P.-É. pour obtenir un permis d'apprenti ?"
+   },
+   "o": [
+    "A road test only",
+    "A written test only",
+    "A medical examination arranged by your own doctor",
+    "A vision test and a written test on the rules of the road"
+   ],
+   "q": "What must you pass at an Access PEI office to be issued an instruction permit?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Dès le lendemain, en payant de nouveau le plein tarif",
+     "Après au moins sept jours, sans frais supplémentaires",
+     "Après trente jours, à tarif réduit",
+     "Seulement après avoir payé un cours"
+    ],
+    "q": "Vous avez échoué à l'examen théorique du permis d'apprenti. Quand pouvez-vous le reprendre et à quel prix ?"
+   },
+   "o": [
+    "The next day, paying the full fee again",
+    "After at least seven days, with no extra fee",
+    "After thirty days, at a reduced fee",
+    "Only after paying for a course"
+   ],
+   "q": "You did not pass the written exam for your instruction permit. When may you try again, and what does it cost?"
+  }
+ ],
+ "pei-class-7-practice-test.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Au moins 365 jours, ou 275 jours avec un cours de conduite reconnu",
+     "Au moins 90 jours",
+     "Au moins six mois pour tout le monde",
+     "Il n'y a aucune durée minimale"
+    ],
+    "q": "Combien de temps un conducteur de l'étape 1 doit-il détenir son permis d'apprenti à l'Île-du-Prince-Édouard avant de passer à l'étape suivante ?"
+   },
+   "o": [
+    "At least 365 days, or 275 days with a certified driver-education course",
+    "At least 90 days",
+    "At least six months for everybody",
+    "There is no minimum period"
+   ],
+   "q": "How long must a Stage 1 driver in Prince Edward Island hold the instruction permit before moving on?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Un an",
+     "Deux ans et 275 jours, avec un cours de conduite reconnu",
+     "Six mois",
+     "Cinq ans"
+    ],
+    "q": "Quel est le temps le plus court possible entre un nouveau permis d'apprenti et la fin du programme de permis progressif ?"
+   },
+   "o": [
+    "One year",
+    "Two years and 275 days, with certified driver education",
+    "Six months",
+    "Five years"
+   ],
+   "q": "What is the shortest possible time from a new instruction permit to the end of the graduated program?"
+  },
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Un triangle vert dans la lunette arrière",
+     "Aucune marque",
+     "Un autocollant jaune portant la lettre L",
+     "Une affiche indiquant APPRENTI À BORD"
+    ],
+    "q": "Qu'un conducteur de l'étape 1 doit-il afficher sur le véhicule ?"
+   },
+   "o": [
+    "A green triangle in the rear window",
+    "No marking at all",
+    "A yellow decal bearing the letter L",
+    "A sign reading LEARNER ON BOARD"
+   ],
+   "q": "What must a Stage 1 driver display on the vehicle?"
+  }
+ ],
+ "pei-rules-of-the-road.html": [
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "La même semaine, selon le jugement de l'examinateur",
+     "Après sept jours",
+     "Pas avant au moins quatorze jours",
+     "Seulement après une autre année complète de conduite"
+    ],
+    "q": "Vous avez échoué à un examen de conduite. Dans quel délai le suivant peut-il avoir lieu ?"
+   },
+   "o": [
+    "The same week, at the examiner's discretion",
+    "After seven days",
+    "Not for at least fourteen days",
+    "Only after another full year of driving"
+   ],
+   "q": "You failed a road test. How soon may the next one be scheduled?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Six mois",
+     "Un an",
+     "Jusqu'à votre dix-huitième anniversaire",
+     "Deux ans"
+    ],
+    "q": "Combien de temps un permis d'apprenti de l'Île-du-Prince-Édouard est-il valide une fois délivré ?"
+   },
+   "o": [
+    "Six months",
+    "One year",
+    "Until your eighteenth birthday",
+    "Two years"
+   ],
+   "q": "How long is a Prince Edward Island instruction permit valid once it has been issued?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Un titulaire d'un permis complet depuis au moins quatre ans, assis sur le siège avant du passager",
+     "Tout conducteur détenteur d'un permis et âgé de plus de dix-huit ans, assis n'importe où",
+     "Un conducteur de l'étape 3 assis à l'arrière",
+     "Un parent, qu'il détienne un permis ou non"
+    ],
+    "q": "Qui peut accompagner un conducteur de l'étape 1 à l'Île-du-Prince-Édouard ?"
+   },
+   "o": [
+    "A fully licensed driver who has held a licence for at least four years and sits in the front passenger seat",
+    "Any licensed driver over eighteen, sitting anywhere in the vehicle",
+    "A Stage 3 driver seated in the back",
+    "A parent, whether or not they hold a licence"
+   ],
+   "q": "Who is allowed to supervise a Stage 1 driver in Prince Edward Island?"
   }
  ],
  "quebec-class-5-mock-test.html": [
@@ -1234,6 +2296,183 @@
    "q": "What is the standard following distance in good conditions?"
   }
  ],
+ "saskatchewan-class-7-mock-test.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "16 ans, ou 15 ans avec un cours de conduite au secondaire",
+     "14 ans",
+     "17 ans",
+     "18 ans"
+    ],
+    "q": "Quel est l'âge minimal pour un permis d'apprenti de classe 7 en Saskatchewan ?"
+   },
+   "o": [
+    "16, or 15 with high school driver education",
+    "14",
+    "17",
+    "18"
+   ],
+   "q": "What is the minimum age for a Class 7 learner licence in Saskatchewan?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Votre accompagnateur et des membres de la famille immédiate",
+     "N'importe qui",
+     "Personne d'autre que vous",
+     "Jusqu'à trois amis"
+    ],
+    "q": "Entre minuit et 5 h avec un permis de classe 7, qui peut se trouver dans votre véhicule ?"
+   },
+   "o": [
+    "Your supervising driver and immediate family members",
+    "Anyone at all",
+    "Nobody but you",
+    "Up to three friends"
+   ],
+   "q": "Between midnight and 5 a.m. on a Class 7 licence, who may be in your vehicle?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Pas plus que le nombre de ceintures de sécurité fonctionnelles",
+     "Autant qu'il en entre",
+     "Un seul",
+     "Six"
+    ],
+    "q": "Combien de passagers peuvent monter avec vous avec un permis de classe 7 ?"
+   },
+   "o": [
+    "No more than the number of working seatbelts",
+    "As many as will fit",
+    "Only one",
+    "Six"
+   ],
+   "q": "How many passengers may ride with you on a Class 7 licence?"
+  }
+ ],
+ "saskatchewan-class-7-practice-test.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Neuf mois",
+     "Trois mois",
+     "Un an",
+     "Six semaines"
+    ],
+    "q": "Combien de temps devez-vous détenir un permis d'apprenti de classe 7 en Saskatchewan avant de passer à l'étape suivante ?"
+   },
+   "o": [
+    "Nine months",
+    "Three months",
+    "One year",
+    "Six weeks"
+   ],
+   "q": "How long must you hold a Class 7 learner licence in Saskatchewan before moving on?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Sur le siège avant du passager, à toute heure",
+     "N'importe où dans le véhicule",
+     "Sur la banquette arrière",
+     "Il n'a pas à être dans le véhicule"
+    ],
+    "q": "Où doit s'asseoir votre accompagnateur pendant que vous conduisez avec un permis de classe 7 ?"
+   },
+   "o": [
+    "In the front passenger seat, at all hours",
+    "Anywhere in the vehicle",
+    "In the back seat",
+    "They do not have to be in the vehicle"
+   ],
+   "q": "Where must your supervising driver sit while you drive on a Class 7 licence?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Une personne titulaire d'un permis de classe 5 ou mieux, détenu au moins 365 jours au cours des trois dernières années",
+     "Tout conducteur licencié de plus de 18 ans",
+     "N'importe quel adulte dans l'auto",
+     "Un moniteur de conduite seulement"
+    ],
+    "q": "Qui peut être votre accompagnateur ?"
+   },
+   "o": [
+    "Someone with a Class 5 or better licence held for at least 365 days in the past three years",
+    "Any licensed driver over 18",
+    "Any adult in the car",
+    "A driving instructor only"
+   ],
+   "q": "Who is allowed to be your supervising driver?"
+  }
+ ],
+ "saskatchewan-rules-of-the-road.html": [
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Vous ne pouvez utiliser aucun cellulaire, ni tenu en main ni mains libres",
+     "Le mains libres est permis",
+     "Vous pouvez l'utiliser à l'arrêt à un feu rouge",
+     "Vous pouvez l'utiliser sur les routes rurales"
+    ],
+    "q": "Qu'est-ce qui est vrai au sujet du cellulaire pour un nouveau conducteur en Saskatchewan ?"
+   },
+   "o": [
+    "You cannot use any cellphone, hand-held or hands-free",
+    "Hands-free is allowed",
+    "You may use one while stopped at a red light",
+    "You may use one on rural roads"
+   ],
+   "q": "Which is true about cellphones for a new driver in Saskatchewan?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Aucune",
+     "Moins de 0,05",
+     "Moins de 0,08",
+     "Un verre est permis"
+    ],
+    "q": "Quelle quantité d'alcool un conducteur apprenti ou novice peut-il avoir dans le sang ?"
+   },
+   "o": [
+    "None at all",
+    "Under 0.05",
+    "Under 0.08",
+    "One drink is allowed"
+   ],
+   "q": "How much alcohol may a learner or novice driver have in their blood?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Six mois pour Novice 1, puis douze mois pour Novice 2",
+     "Trois mois chacune",
+     "Douze mois chacune",
+     "Il n'y a pas d'étapes novices"
+    ],
+    "q": "Après l'étape d'apprenti, combien de temps durent les deux étapes novices ?"
+   },
+   "o": [
+    "Six months for Novice 1, then twelve months for Novice 2",
+    "Three months each",
+    "Twelve months for each",
+    "There are no novice stages"
+   ],
+   "q": "After the learner stage, how long do the two novice stages last?"
+  }
+ ],
  "science-quiz.html": [
   {
    "a": 0,
@@ -1337,6 +2576,183 @@
     "Kyoto"
    ],
    "q": "What is the capital of Japan?"
+  }
+ ],
+ "yukon-class-7-mock-test.html": [
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "Six mois",
+     "Douze mois",
+     "Dix-huit mois",
+     "Trois ans"
+    ],
+    "q": "Combien de temps faut-il détenir l'étape intermédiaire avant de demander un permis complet de classe 5 au Yukon ?"
+   },
+   "o": [
+    "Six months",
+    "Twelve months",
+    "Eighteen months",
+    "Three years"
+   ],
+   "q": "How long must the novice stage be held before you can apply for a full Class 5 licence in Yukon?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Une personne qui détient au moins un permis de classe 5 depuis deux ans ou plus",
+     "Tout adulte titulaire d'un permis valide, peu importe la classe",
+     "Tout conducteur de plus de 25 ans",
+     "Toute personne ayant déjà réussi un examen de conduite"
+    ],
+    "q": "Qui peut prendre place à côté de vous comme accompagnateur pendant que vous détenez un permis d'apprenti du Yukon ?"
+   },
+   "o": [
+    "Someone who has held at least a Class 5 licence for two years or more",
+    "Any adult with a valid licence of any class",
+    "Any driver over the age of 25",
+    "Anyone who has passed a road test at some point"
+   ],
+   "q": "Who is allowed to sit beside you as your co-driver while you hold a Yukon learner licence?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Oui, tant qu'il reste sous la limite criminelle",
+     "Oui, si le trajet est court",
+     "Oui, si vous restez dans des rues tranquilles",
+     "Non, car votre accompagnateur ne doit avoir aucun alcool dans le sang"
+    ],
+    "q": "Votre accompagnateur a bu une bière au souper et se sent tout à fait normal. Peut-il vous accompagner ?"
+   },
+   "o": [
+    "Yes, as long as they stay under the criminal limit",
+    "Yes, if the drive is short",
+    "Yes, if you keep to quiet streets",
+    "No, because your co-driver must have no alcohol in their blood"
+   ],
+   "q": "Your co-driver has had one beer with dinner and feels completely normal. May they supervise you?"
+  }
+ ],
+ "yukon-class-7-practice-test.html": [
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "14 ans",
+     "15 ans",
+     "16 ans",
+     "17 ans"
+    ],
+    "q": "À quel âge minimal pouvez-vous demander un permis d'apprenti au Yukon ?"
+   },
+   "o": [
+    "14",
+    "15",
+    "16",
+    "17"
+   ],
+   "q": "What is the youngest age at which you can apply for a Yukon learner licence?"
+  },
+  {
+   "a": 0,
+   "fr": {
+    "o": [
+     "Au moins six mois de détention du permis d'apprenti et 50 heures de conduite",
+     "Trois mois et 20 heures de conduite",
+     "Une année complète et 100 heures de conduite",
+     "Aucune période minimale, seulement la réussite de l'examen de conduite"
+    ],
+    "q": "Avant qu'un apprenti du Yukon puisse passer à l'étape suivante, qu'exige le programme ?"
+   },
+   "o": [
+    "At least six months holding the learner licence and 50 hours of driving",
+    "Three months and 20 hours of driving",
+    "One full year and 100 hours of driving",
+    "No minimum period, only a passing road test"
+   ],
+   "q": "Before a Yukon learner can move on to the next stage, what does the programme ask for?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Dans n'importe quel carnet que vous tenez vous-même",
+     "Au verso du permis d'apprenti",
+     "Sur un formulaire que seule une école de conduite peut remplir",
+     "Sur le relevé et la déclaration du conducteur du programme par étapes, signés par vous et votre accompagnateur"
+    ],
+    "q": "Où ces heures de pratique sont-elles consignées ?"
+   },
+   "o": [
+    "In any notebook you keep for yourself",
+    "On the back of the learner licence",
+    "On a form that only a driving school may complete",
+    "On the GDL Driver Record and Declaration, signed by you and your co-driver"
+   ],
+   "q": "Where are those practice driving hours written down?"
+  }
+ ],
+ "yukon-rules-of-the-road.html": [
+  {
+   "a": 2,
+   "fr": {
+    "o": [
+     "À toute heure, pourvu que l'accompagnateur soit présent",
+     "De jour seulement",
+     "Entre 5 h et minuit",
+     "Entre 6 h et 22 h"
+    ],
+    "q": "Pendant quelles heures un apprenti du Yukon peut-il conduire ?"
+   },
+   "o": [
+    "Any hour, provided the co-driver is present",
+    "In daylight only",
+    "Between 5 a.m. and midnight",
+    "Between 6 a.m. and 10 p.m."
+   ],
+   "q": "During which hours may a Yukon learner drive?"
+  },
+  {
+   "a": 1,
+   "fr": {
+    "o": [
+     "Aucun",
+     "Un seul, sauf si les passagers supplémentaires sont un parent, un grand-parent, un frère, une soeur ou un enfant",
+     "Deux, sans exception",
+     "Un par ceinture de sécurité fonctionnelle"
+    ],
+    "q": "En plus de votre accompagnateur, combien de passagers un apprenti du Yukon peut-il transporter ?"
+   },
+   "o": [
+    "None at all",
+    "One, unless the additional passengers are a parent, grandparent, brother, sister or child",
+    "Two, with no exceptions",
+    "One for every working seat belt"
+   ],
+   "q": "Apart from your co-driver, how many passengers may a Yukon learner carry?"
+  },
+  {
+   "a": 3,
+   "fr": {
+    "o": [
+     "Tout véhicule pour lequel l'accompagnateur est autorisé",
+     "Tout véhicule de moins de 10 000 kilogrammes",
+     "Une fourgonnette de n'importe quelle taille",
+     "Une automobile ou une camionnette d'au plus 4 000 kilogrammes de poids nominal brut, avec au plus sept places, conducteur compris"
+    ],
+    "q": "Quel type de véhicule un apprenti du Yukon peut-il conduire ?"
+   },
+   "o": [
+    "Any vehicle the co-driver is licensed for",
+    "Any vehicle under 10,000 kilograms",
+    "A passenger van of any size",
+    "A car or light truck up to 4,000 kilograms registered gross vehicle weight, seating no more than seven including the driver"
+   ],
+   "q": "What sort of vehicle may a Yukon learner drive?"
   }
  ]
 }

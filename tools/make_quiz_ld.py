@@ -79,6 +79,14 @@ out['fun-quiz.html'] = fun.filter(q => q.q.endsWith('?') && new Set(q.options).s
 
 // driving — these carry their own French inline
 const DRIVE = {
+  sk: ['saskatchewan-class-7-practice-test.html', 'saskatchewan-class-7-mock-test.html', 'saskatchewan-rules-of-the-road.html'],
+  ns: ['nova-scotia-class-7-practice-test.html', 'nova-scotia-class-7-mock-test.html', 'nova-scotia-rules-of-the-road.html'],
+  nb: ['new-brunswick-class-7-practice-test.html', 'new-brunswick-class-7-mock-test.html', 'new-brunswick-rules-of-the-road.html'],
+  nu: ['nunavut-class-7-practice-test.html', 'nunavut-class-7-mock-test.html', 'nunavut-rules-of-the-road.html'],
+  nt: ['nwt-class-7-practice-test.html', 'nwt-class-7-mock-test.html', 'nwt-rules-of-the-road.html'],
+  yt: ['yukon-class-7-practice-test.html', 'yukon-class-7-mock-test.html', 'yukon-rules-of-the-road.html'],
+  pe: ['pei-class-7-practice-test.html', 'pei-class-7-mock-test.html', 'pei-rules-of-the-road.html'],
+  nl: ['newfoundland-class-5-practice-test.html', 'newfoundland-class-5-mock-test.html', 'newfoundland-rules-of-the-road.html'],
   on: ['ontario-g1-practice-test.html', 'ontario-g1-mock-test.html', 'ontario-g1-rules-of-the-road.html'],
   bc: ['bc-class-7l-practice-test.html', 'bc-class-7l-mock-test.html', 'bc-rules-of-the-road.html'],
   ab: ['alberta-class-7-practice-test.html', 'alberta-class-7-mock-test.html', 'alberta-rules-of-the-road.html'],

@@ -38,7 +38,7 @@ STOP = {"the","and","for","with","your","you","a","of","in","to","is","it","on",
         "pour","avec","que","qui","est","au","aux"}
 MAX_PER_SOURCE = 5     # keep blocks readable
 WANT_INBOUND    = 4    # aim to bring every starved page up to this
-PROV = ["ontario","alberta","bc","quebec","manitoba","saskatchewan","nova-scotia","new-brunswick"]
+PROV = ["ontario", "alberta", "bc", "quebec", "manitoba", "saskatchewan", "nova-scotia", "new-brunswick", "newfoundland", "pei", "yukon", "nwt", "nunavut"]
 
 def toks(name):
     return {t for t in re.split(r"[^a-z0-9]+", name.lower()) if t and t not in STOP and len(t) > 2}

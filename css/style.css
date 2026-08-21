@@ -629,3 +629,10 @@ background:#fff2e8;color:#9a5b00;border-radius:999px;padding:8px 18px;margin:8px
 }
 
 @media (max-width:400px){.qbank .qb-lab{white-space:normal}}
+
+/* A single long word — Newfoundland, Saskatchewan, Territoires — can be wider
+   than the whole viewport at Safari's 200% per-site zoom (a 393px phone then
+   behaves like a ~196px viewport), and a heading cannot shrink below its
+   longest word. break-word only splits a word when there is no other way, so
+   nothing changes at ordinary widths. */
+h1,h2,h3,h4,.card h3,.pill{overflow-wrap:break-word}

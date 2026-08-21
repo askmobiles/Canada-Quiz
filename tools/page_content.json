@@ -3821,8 +3821,8 @@
  "citizenship.html": {
   "about": [
    {
-    "en": "This page is a full practice run of the Canadian citizenship test: twenty multiple-choice questions, a thirty-minute clock, and a pass mark of fifteen correct. It is made for newcomers who want an honest picture of how ready they really are.",
-    "fr": "Cette page est une simulation complète du test de citoyenneté canadienne : vingt questions à choix multiples, un chronomètre de trente minutes et une note de passage de quinze bonnes réponses. Elle s'adresse aux nouveaux arrivants qui veulent savoir honnêtement où ils en sont."
+    "en": "This page is a full practice run of the Canadian citizenship test: twenty multiple-choice questions, a forty-five-minute clock, and a pass mark of fifteen correct. It is made for newcomers who want an honest picture of how ready they really are.",
+    "fr": "Cette page est une simulation complète du test de citoyenneté canadienne : vingt questions à choix multiple, une horloge de quarante-cinq minutes et une note de passage de quinze bonnes réponses. Elle s'adresse aux nouveaux arrivants qui veulent savoir honnêtement où ils en sont."
    },
    {
     "en": "Each answer is marked the moment you tap it, and a short explanation appears underneath so you learn the reason instead of memorising a letter. At the end you see PASS or TRY AGAIN, your score, and every question you missed.",
@@ -3895,12 +3895,12 @@
   ],
   "inside": [
    {
-    "en": "Every attempt draws twenty questions at random from a bank of well over one hundred.",
-    "fr": "Chaque tentative tire au hasard vingt questions dans une banque de bien plus de cent questions."
+    "en": "Every attempt draws twenty questions at random from a bank of more than three hundred.",
+    "fr": "Chaque tentative tire au hasard vingt questions parmi une banque de plus de trois cents."
    },
    {
-    "en": "A thirty-minute countdown runs beside the question counter and closes the exam when it reaches zero.",
-    "fr": "Un compte à rebours de trente minutes défile à côté du compteur de questions et clôt l'examen lorsqu'il atteint zéro."
+    "en": "A forty-five-minute countdown runs beside the question counter and closes the exam when it reaches zero.",
+    "fr": "Un compte à rebours de quarante-cinq minutes s'affiche à côté du compteur de questions et met fin à l'examen lorsqu'il atteint zéro."
    },
    {
     "en": "Topics include Canadian history, government, rights and responsibilities, national symbols, federal elections and the regions.",
@@ -8370,6 +8370,560 @@
    ]
   ]
  },
+ "newfoundland-class-5-mock-test.html": {
+  "about": [
+   {
+    "en": "This is the timed version. Two halves are drawn at random from the Newfoundland and Labrador bank, signs and rules, and each half is scored on its own at the province's published 85 percent.",
+    "fr": "Voici la version chronométrée. Deux moitiés sont tirées au hasard de la banque de Terre-Neuve-et-Labrador, les panneaux et le code, et chaque moitié est notée séparément selon les 85 pour cent publiés par la province."
+   },
+   {
+    "en": "The question count and the timer are ours, not the province's. Newfoundland and Labrador publishes neither, and inventing one would be the kind of confident wrong number this site exists to avoid.",
+    "fr": "Le nombre de questions et le chronomètre sont les nôtres, pas ceux de la province. Terre-Neuve-et-Labrador ne publie ni l'un ni l'autre, et en inventer un serait exactement le genre de chiffre erroné assené avec assurance que ce site cherche à éviter."
+   },
+   {
+    "en": "Because the questions are picked at random each time, every run is a different test. Take it on three separate days before you decide you are ready.",
+    "fr": "Comme les questions sont tirées au hasard à chaque fois, chaque partie est un examen différent. Passez-le à trois jours différents avant de vous déclarer prêt."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Eighty-five percent leaves room for three wrong answers in twenty, which is tighter than most provinces allow.",
+    "fr": "Quatre-vingt-cinq pour cent laisse la place à trois mauvaises réponses sur vingt, ce qui est plus serré que dans la plupart des provinces."
+   },
+   {
+    "en": "The province does not publish a time limit for the real test, so treat the timer here as practice pressure rather than a rule.",
+    "fr": "La province ne publie aucune limite de temps pour le vrai examen : considérez donc le chronomètre ici comme une pression d'entraînement plutôt qu'une règle."
+   },
+   {
+    "en": "The Class 5 Level I licence itself is valid for two years from the day it is issued.",
+    "fr": "Le permis de classe 5 niveau I est valide deux ans à partir du jour de sa délivrance."
+   },
+   {
+    "en": "Passing the written test online does not let you drive until you have attended the vision test appointment.",
+    "fr": "Réussir l'examen écrit en ligne ne vous autorise pas à conduire tant que vous n'avez pas assisté au rendez-vous pour l'examen de la vue."
+   },
+   {
+    "en": "The province does not publish how long a passed written test stays valid.",
+    "fr": "La province ne publie pas la durée de validité d'un examen écrit réussi."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No. It is free practice written for this site. The 85 percent pass mark is the province's; the number of questions and the timer are ours.",
+     "fr": "Non. C'est une pratique gratuite rédigée pour ce site. La note de passage de 85 pour cent vient de la province ; le nombre de questions et le chronomètre viennent de nous."
+    },
+    "q": {
+     "en": "Is this the real Newfoundland and Labrador test?",
+     "fr": "S'agit-il du vrai examen de Terre-Neuve-et-Labrador ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Because it shows you where the weakness is. A total can hide a bad half, and going back to the right study page is the whole point.",
+     "fr": "Parce que cela montre où se trouve la faiblesse. Un total peut masquer une moitié faible, et revenir à la bonne page d'étude est tout l'intérêt."
+    },
+    "q": {
+     "en": "Why are the two halves scored separately?",
+     "fr": "Pourquoi les deux moitiés sont-elles notées séparément ?"
+    }
+   },
+   {
+    "a": {
+     "en": "As often as you like. The questions are drawn at random each time, so the test is different on every run.",
+     "fr": "Aussi souvent que vous voulez. Les questions sont tirées au hasard à chaque fois, si bien que l'examen est différent à chaque partie."
+    },
+    "q": {
+     "en": "Can I take it more than once?",
+     "fr": "Puis-je le passer plus d'une fois ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. There is nothing to install and nothing to sign up for, and there is a full-screen mode for a phone or a tablet.",
+     "fr": "Oui. Il n'y a rien à installer ni aucune inscription, et un mode plein écran est offert pour un téléphone ou une tablette."
+    },
+    "q": {
+     "en": "Does it work on a phone?",
+     "fr": "Est-ce que cela fonctionne sur un téléphone ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Back to the study page for that half — the road signs page or the rules of the road page — and then take this again.",
+     "fr": "Retournez à la page d'étude de cette moitié, celle des panneaux ou celle du code de la route, puis repassez cet examen."
+    },
+    "q": {
+     "en": "Where do I go if I fail a half?",
+     "fr": "Où dois-je aller si j'échoue une moitié ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Twenty road sign questions and twenty rules questions, drawn at random from the sixty-question bank.",
+    "fr": "Vingt questions sur les panneaux et vingt sur le code, tirées au hasard de la banque de soixante questions."
+   },
+   {
+    "en": "Seventeen correct answers needed in each half, which is the province's published 85 percent.",
+    "fr": "Dix-sept bonnes réponses exigées dans chaque moitié, ce qui correspond aux 85 pour cent publiés par la province."
+   },
+   {
+    "en": "A countdown timer, clearly labelled as our practice standard rather than the province's.",
+    "fr": "Un compte à rebours, clairement présenté comme notre norme de pratique plutôt que celle de la province."
+   },
+   {
+    "en": "A short explanation after every answer, right or wrong.",
+    "fr": "Une courte explication après chaque réponse, bonne ou mauvaise."
+   },
+   {
+    "en": "A pass or try again result for each half, scored separately.",
+    "fr": "Un résultat réussi ou à reprendre pour chaque moitié, notée séparément."
+   },
+   {
+    "en": "A list of every question you missed, so you know which page to go back to.",
+    "fr": "La liste de toutes les questions manquées, pour savoir à quelle page revenir."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "newfoundland-class-5-practice-test.html",
+    {
+     "en": "Go back to untimed practice with explanations",
+     "fr": "Revenez à la pratique sans chronomètre avec explications"
+    }
+   ],
+   [
+    "newfoundland-road-signs.html",
+    {
+     "en": "Study the road signs before trying again",
+     "fr": "Étudiez les panneaux avant de réessayer"
+    }
+   ],
+   [
+    "newfoundland-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road before trying again",
+     "fr": "Étudiez le code de la route avant de réessayer"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See the driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite de chaque province"
+    }
+   ]
+  ]
+ },
+ "newfoundland-class-5-practice-test.html": {
+  "about": [
+   {
+    "en": "This page is free practice for the Newfoundland and Labrador Class 5 Level I knowledge test, the written test you sit before you may drive with a supervisor. It covers the three things the province says the test covers: the rules of the road, safe driving practices and road sign recognition.",
+    "fr": "Cette page offre une pratique gratuite pour l'examen théorique classe 5 niveau I de Terre-Neuve-et-Labrador, l'examen écrit que vous passez avant de pouvoir conduire accompagné. Elle couvre les trois sujets que la province dit évaluer : le code de la route, les pratiques de conduite sécuritaire et la reconnaissance des panneaux."
+   },
+   {
+    "en": "The province publishes an 85 percent pass mark and nothing else about the format. It does not say how many questions the test has, how long you get, or how long a pass remains valid. We apply the 85 percent exactly and label the rest as our own practice standard, because a wrong number here decides whether somebody books a test before they are ready.",
+    "fr": "La province publie une note de passage de 85 pour cent et rien d'autre sur le format. Elle n'indique ni le nombre de questions, ni le temps accordé, ni la durée de validité d'une réussite. Nous appliquons exactement les 85 pour cent et présentons le reste comme notre propre norme de pratique, car un chiffre erroné ici décide si quelqu'un réserve un examen avant d'être prêt."
+   },
+   {
+    "en": "Every question was written for this site from the free official Driver's Handbook and the province's own licensing and safety pages, in English and in French. Nothing was copied from a handbook, from a real test, or from another practice site.",
+    "fr": "Chaque question a été rédigée pour ce site à partir du Manuel du conducteur officiel gratuit et des pages de permis et de sécurité de la province, en anglais et en français. Rien n'a été copié d'un manuel, d'un vrai examen ou d'un autre site de pratique."
+   }
+  ],
+  "facts": [
+   {
+    "en": "A mark of 85 percent is required to pass, and that figure is published in three separate places by the province.",
+    "fr": "Une note de 85 pour cent est exigée pour réussir, et ce chiffre est publié à trois endroits distincts par la province."
+   },
+   {
+    "en": "A novice driver is suspended after six demerit points in one year, while an experienced driver has twelve points over two years.",
+    "fr": "Un conducteur novice est suspendu après six points d'inaptitude en un an, alors qu'un conducteur d'expérience en a douze sur deux ans."
+   },
+   {
+    "en": "The default speed limit on a gravel road is 60 km/h, and in an unmarked school zone it is 50, whether or not any sign is present.",
+    "fr": "La limite de vitesse par défaut sur une route de gravier est de 60 km/h, et de 50 dans une zone scolaire sans panneau, qu'un panneau soit présent ou non."
+   },
+   {
+    "en": "More than seventy percent of moose collisions happen between May and October, and the majority of them between dusk and dawn.",
+    "fr": "Plus de soixante-dix pour cent des collisions avec un orignal surviennent entre mai et octobre, et la majorité entre le crépuscule et l'aube."
+   },
+   {
+    "en": "The written test is offered in French and in Ukrainian in person at Motor Registration Division offices, by appointment.",
+    "fr": "L'examen écrit est offert en français et en ukrainien, en personne dans les bureaux de la Division de l'immatriculation des véhicules, sur rendez-vous."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "The province does not publish a number. Several practice sites state one anyway, and none of them cites a government source. Our mock test uses a count of our own and says so.",
+     "fr": "La province ne publie aucun chiffre. Plusieurs sites de pratique en annoncent un tout de même, sans qu'aucun ne cite de source gouvernementale. Notre examen blanc utilise un nombre qui nous est propre, et nous le disons."
+    },
+    "q": {
+     "en": "How many questions are on the real Newfoundland and Labrador knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique de Terre-Neuve-et-Labrador ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Eighty-five percent. That one is official and appears on the graduated licensing page, the licence application page and in the Driver's Handbook.",
+     "fr": "Quatre-vingt-cinq pour cent. Celle-là est officielle et figure sur la page du permis par étapes, sur la page de demande de permis et dans le Manuel du conducteur."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes, through the province's own service account for a Class 5 permit. You still have to attend an appointment afterwards for the vision test and your documents, and you may not drive until you have.",
+     "fr": "Oui, au moyen du compte de service de la province pour un permis de classe 5. Vous devez ensuite vous présenter à un rendez-vous pour l'examen de la vue et vos documents, et vous ne pouvez pas conduire avant de l'avoir fait."
+    },
+    "q": {
+     "en": "Can I write the test online?",
+     "fr": "Puis-je passer l'examen en ligne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Twelve months before the road test, or eight months if you complete an approved Driver Education Program.",
+     "fr": "Douze mois avant l'examen pratique, ou huit mois si vous terminez un programme de formation reconnu."
+    },
+    "q": {
+     "en": "How long must I hold the Level I licence?",
+     "fr": "Combien de temps dois-je détenir le permis de niveau I ?"
+    }
+   },
+   {
+    "a": {
+     "en": "A licensed driver with at least four years of driving experience, who must be at zero blood alcohol. At Level I no other passenger may be in the vehicle at all.",
+     "fr": "Une personne titulaire d'un permis avec au moins quatre ans d'expérience de conduite, dont le taux d'alcool doit être nul. Au niveau I, aucun autre passager ne peut se trouver dans le véhicule."
+    },
+    "q": {
+     "en": "Who can sit beside me while I practise?",
+     "fr": "Qui peut s'asseoir à côté de moi pendant que je pratique ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Sixty questions in total: thirty on road signs and thirty on the rules of the road, each with a short explanation.",
+    "fr": "Soixante questions au total : trente sur les panneaux routiers et trente sur le code de la route, chacune accompagnée d'une courte explication."
+   },
+   {
+    "en": "A quick ten-question practice round at the top of the page, with signs and rules mixed together and no timer.",
+    "fr": "Une série rapide de dix questions en haut de la page, panneaux et code mêlés, sans chronomètre."
+   },
+   {
+    "en": "A timed mock test that applies the province's published 85 percent pass mark to a question count of our own.",
+    "fr": "Un examen blanc chronométré qui applique la note de passage publiée de 85 pour cent à un nombre de questions qui nous est propre."
+   },
+   {
+    "en": "A road signs page where every sign is drawn in code and grouped by type, with practice for each group.",
+    "fr": "Une page de panneaux où chaque panneau est dessiné en code et regroupé par type, avec de la pratique pour chaque groupe."
+   },
+   {
+    "en": "A rules of the road page organised by chapter, covering graduated licensing, moose and wildlife, winter conditions and off-road vehicles.",
+    "fr": "Une page de code de la route organisée par chapitre, couvrant le permis par étapes, les orignaux et la faune, les conditions hivernales et les véhicules hors route."
+   },
+   {
+    "en": "The whole question bank printed on the page, so you can read straight through it without playing.",
+    "fr": "Toute la banque de questions imprimée sur la page, pour la lire d'un bout à l'autre sans jouer."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "newfoundland-class-5-mock-test.html",
+    {
+     "en": "Take the timed Newfoundland mock test",
+     "fr": "Passez l'examen blanc chronométré de Terre-Neuve"
+    }
+   ],
+   [
+    "newfoundland-road-signs.html",
+    {
+     "en": "Study every road sign for the knowledge test",
+     "fr": "Étudiez tous les panneaux pour l'examen théorique"
+    }
+   ],
+   [
+    "newfoundland-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road chapter by chapter",
+     "fr": "Étudiez le code de la route chapitre par chapitre"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test in every province and territory",
+     "fr": "Comparez l'examen théorique de chaque province et territoire"
+    }
+   ]
+  ]
+ },
+ "newfoundland-road-signs.html": {
+  "about": [
+   {
+    "en": "Road sign recognition is one of the three subjects Newfoundland and Labrador says its knowledge test covers, alongside the rules of the road and safe driving practices. This page holds the sign half of our question bank.",
+    "fr": "La reconnaissance des panneaux est l'un des trois sujets que Terre-Neuve-et-Labrador dit évaluer dans son examen théorique, avec le code de la route et les pratiques de conduite sécuritaire. Cette page contient la moitié de notre banque consacrée aux panneaux."
+   },
+   {
+    "en": "Every sign on this page is drawn in code rather than copied from a government publication, so nothing here is anyone else's artwork. Each sign carries its own name as a caption and in its alt text, so the page works with a screen reader too.",
+    "fr": "Chaque panneau de cette page est dessiné en code plutôt que copié d'une publication gouvernementale : rien ici n'est l'illustration d'autrui. Chaque panneau porte son propre nom en légende et dans son texte de remplacement, si bien que la page fonctionne aussi avec un lecteur d'écran."
+   }
+  ],
+  "facts": [
+   {
+    "en": "A red circle with a slash means you must not do the thing shown, and a green circle means you may.",
+    "fr": "Un cercle rouge barré signifie que vous ne devez pas faire ce qui est illustré, et un cercle vert que vous le pouvez."
+   },
+   {
+    "en": "A yellow diamond warns about something ahead, while an orange diamond means road work.",
+    "fr": "Un losange jaune avertit d'un danger devant, tandis qu'un losange orange annonce des travaux."
+   },
+   {
+    "en": "The province publishes that most moose collisions happen on clear nights rather than in bad weather.",
+    "fr": "La province publie que la plupart des collisions avec un orignal surviennent par nuit claire plutôt que par mauvais temps."
+   },
+   {
+    "en": "Signs are the same across Canada, so studying them here also prepares you for a test in another province.",
+    "fr": "Les panneaux sont les mêmes partout au Canada : les étudier ici vous prépare donc aussi à un examen dans une autre province."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "They are our own drawings of the standard Canadian signs used in the province. They are not copied from any official publication.",
+     "fr": "Ce sont nos propres dessins des panneaux canadiens normalisés utilisés dans la province. Ils ne sont copiés d'aucune publication officielle."
+    },
+    "q": {
+     "en": "Are these the real Newfoundland and Labrador signs?",
+     "fr": "S'agit-il des vrais panneaux de Terre-Neuve-et-Labrador ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. The province states that the test asks about the rules of the road, safe driving practices and road sign recognition.",
+     "fr": "Oui. La province indique que l'examen porte sur le code de la route, les pratiques de conduite sécuritaire et la reconnaissance des panneaux."
+    },
+    "q": {
+     "en": "Does the real test include signs?",
+     "fr": "Le vrai examen porte-t-il sur les panneaux ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The province does not say. It describes one test covering three topics, so we keep signs and rules as separate study pages without claiming they are separate tests.",
+     "fr": "La province ne le dit pas. Elle décrit un examen couvrant trois sujets : nous gardons donc les panneaux et le code sur des pages d'étude distinctes sans prétendre qu'il s'agit d'examens distincts."
+    },
+    "q": {
+     "en": "Is sign recognition scored separately?",
+     "fr": "La reconnaissance des panneaux est-elle notée séparément ?"
+    }
+   },
+   {
+    "a": {
+     "en": "All of the ones on this page. They are the families the handbook covers, and once the shapes and colours are automatic the wording matters much less.",
+     "fr": "Tous ceux de cette page. Ce sont les familles que couvre le manuel, et une fois que les formes et les couleurs vous viennent d'instinct, le libellé compte beaucoup moins."
+    },
+    "q": {
+     "en": "How many signs should I learn?",
+     "fr": "Combien de panneaux devrais-je apprendre ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty sign questions covering regulatory, warning, temporary, information, traffic light and pavement marking signs.",
+    "fr": "Trente questions sur les panneaux de prescription, d'avertissement, temporaires, d'information, les feux de circulation et les marques sur la chaussée."
+   },
+   {
+    "en": "Practice for each group of signs, so you can work through one family at a time.",
+    "fr": "De la pratique pour chaque groupe de panneaux, pour travailler une famille à la fois."
+   },
+   {
+    "en": "The moose warning sign, which matters more in this province than in most of the country.",
+    "fr": "Le panneau d'avertissement d'orignal, qui compte plus dans cette province que presque partout ailleurs au pays."
+   },
+   {
+    "en": "The whole sign bank printed below the practice, with the answer marked and explained.",
+    "fr": "Toute la banque de panneaux imprimée sous la pratique, avec la réponse indiquée et expliquée."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "newfoundland-class-5-practice-test.html",
+    {
+     "en": "Practise signs and rules together",
+     "fr": "Pratiquez les panneaux et le code ensemble"
+    }
+   ],
+   [
+    "newfoundland-rules-of-the-road.html",
+    {
+     "en": "Move on to the rules of the road",
+     "fr": "Passez au code de la route"
+    }
+   ],
+   [
+    "newfoundland-class-5-mock-test.html",
+    {
+     "en": "Try the timed mock test",
+     "fr": "Essayez l'examen blanc chronométré"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "Driving test practice for every province",
+     "fr": "Pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "newfoundland-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "The rules of the road and safe driving practices are two of the three subjects Newfoundland and Labrador names for its knowledge test. This page holds the rules half of our question bank, arranged by chapter.",
+    "fr": "Le code de la route et les pratiques de conduite sécuritaire sont deux des trois sujets que Terre-Neuve-et-Labrador nomme pour son examen théorique. Cette page contient la moitié de notre banque consacrée au code, organisée par chapitre."
+   },
+   {
+    "en": "Several of these rules are genuinely local. The default speed on a gravel road, the moose pattern the province publishes, the studded tire window and the off-road vehicle rules are all specific to this province, and all of them come from official sources.",
+    "fr": "Plusieurs de ces règles sont véritablement locales. La vitesse par défaut sur une route de gravier, la tendance des collisions avec les orignaux publiée par la province, la période autorisée pour les pneus à crampons et les règles sur les véhicules hors route sont propres à cette province, et toutes proviennent de sources officielles."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The default limit on a gravel road is 60 km/h, and 50 in an unmarked school zone.",
+    "fr": "La limite par défaut sur une route de gravier est de 60 km/h, et de 50 dans une zone scolaire sans panneau."
+   },
+   {
+    "en": "A novice driver is suspended at six demerit points in one year, with a written warning at three.",
+    "fr": "Un conducteur novice est suspendu à six points d'inaptitude en un an, avec un avertissement écrit à trois."
+   },
+   {
+    "en": "Studded tires are permitted between the first of November and the thirtieth of April.",
+    "fr": "Les pneus à crampons sont permis du premier novembre au trente avril."
+   },
+   {
+    "en": "An off-road vehicle may travel along a highway shoulder to reach a trail for at most one kilometre, at no more than 20 km/h.",
+    "fr": "Un véhicule hors route ne peut circuler sur l'accotement pour rejoindre un sentier que sur un kilomètre au maximum et à 20 km/h au plus."
+   },
+   {
+    "en": "Winter tires are not required by law in this province, although the province encourages them.",
+    "fr": "Les pneus d'hiver ne sont pas obligatoires par la loi dans cette province, même si celle-ci les encourage."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "A novice driver can only accumulate six points within a one-year period before the licence is suspended, and a written warning comes at three.",
+     "fr": "Un conducteur novice ne peut accumuler que six points sur une période d'un an avant la suspension du permis, et un avertissement écrit arrive à trois."
+    },
+    "q": {
+     "en": "What happens if I get demerit points as a new driver?",
+     "fr": "Que se passe-t-il si j'accumule des points d'inaptitude comme nouveau conducteur ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. The province encourages them but does not require them. Studded tires have a season of their own, from November the first to April the thirtieth.",
+     "fr": "Non. La province les encourage sans les imposer. Les pneus à crampons ont leur propre saison, du premier novembre au trente avril."
+    },
+    "q": {
+     "en": "Are winter tires required?",
+     "fr": "Les pneus d'hiver sont-ils obligatoires ?"
+    }
+   },
+   {
+    "a": {
+     "en": "100 km/h on the paved Trans-Canada, 80 on other paved highways, 60 on gravel, and 50 through a community or in an unmarked school zone.",
+     "fr": "100 km/h sur la Transcanadienne pavée, 80 sur les autres routes pavées, 60 sur le gravier, et 50 à la traversée d'une localité ou dans une zone scolaire sans panneau."
+    },
+    "q": {
+     "en": "What is the speed limit if there is no sign?",
+     "fr": "Quelle est la limite de vitesse s'il n'y a aucun panneau ?"
+    }
+   },
+   {
+    "a": {
+     "en": "More than seventy percent happen between May and October, June through August worst of all, and the majority between dusk and dawn.",
+     "fr": "Plus de soixante-dix pour cent surviennent entre mai et octobre, la période de juin à août étant la pire, et la majorité entre le crépuscule et l'aube."
+    },
+    "q": {
+     "en": "When are moose collisions most likely?",
+     "fr": "Quand les collisions avec un orignal sont-elles les plus probables ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Only to cross where there is up to 150 metres of visibility both ways, or along the shoulder to reach a trail for at most one kilometre at 20 km/h. You always yield to highway traffic.",
+     "fr": "Seulement pour traverser là où la visibilité atteint 150 mètres dans les deux directions, ou sur l'accotement pour rejoindre un sentier sur un kilomètre au maximum à 20 km/h. Vous cédez toujours le passage à la circulation."
+    },
+    "q": {
+     "en": "Can I ride an off-road vehicle on the highway?",
+     "fr": "Puis-je circuler en véhicule hors route sur la route ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty rules questions grouped by chapter, each with the answer marked and explained.",
+    "fr": "Trente questions de code regroupées par chapitre, chacune avec la réponse indiquée et expliquée."
+   },
+   {
+    "en": "Graduated licensing, from Level I through Level II to a full Class 5.",
+    "fr": "Le permis par étapes, du niveau I au niveau II jusqu'à la classe 5 complète."
+   },
+   {
+    "en": "The demerit point thresholds, which are far lower for a novice driver than for anybody else.",
+    "fr": "Les seuils de points d'inaptitude, bien plus bas pour un conducteur novice que pour quiconque."
+   },
+   {
+    "en": "Moose collisions, winter conditions and the province's own snow clearing hours.",
+    "fr": "Les collisions avec les orignaux, les conditions hivernales et les heures de déneigement publiées par la province."
+   },
+   {
+    "en": "Off-road vehicle rules, published here in more detail than in most of Canada.",
+    "fr": "Les règles sur les véhicules hors route, publiées ici avec plus de détails que presque partout au Canada."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "newfoundland-road-signs.html",
+    {
+     "en": "Study the road signs half",
+     "fr": "Étudiez la moitié consacrée aux panneaux"
+    }
+   ],
+   [
+    "newfoundland-class-5-practice-test.html",
+    {
+     "en": "Practise signs and rules together",
+     "fr": "Pratiquez les panneaux et le code ensemble"
+    }
+   ],
+   [
+    "newfoundland-class-5-mock-test.html",
+    {
+     "en": "Try the timed mock test",
+     "fr": "Essayez l'examen blanc chronométré"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test across Canada",
+     "fr": "Comparez l'examen théorique partout au Canada"
+    }
+   ]
+  ]
+ },
  "nova-scotia-class-7-mock-test.html": {
   "about": [
    {
@@ -8746,6 +9300,1114 @@
     {
      "en": "See driving test practice for every province",
      "fr": "Voyez la pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "nunavut-class-7-mock-test.html": {
+  "about": [
+   {
+    "en": "This is the timed version. Two parts are drawn at random from the Nunavut bank, sign identification and the rules of the road, and each part is scored on its own, the way the real examination is rewritten one part at a time.",
+    "fr": "Voici la version chronométrée. Deux parties sont tirées au hasard de la banque du Nunavut, la reconnaissance des panneaux et le code de la route, et chaque partie est notée séparément, comme le vrai examen se reprend une partie à la fois."
+   },
+   {
+    "en": "The question count, the pass mark and the timer are ours, not the territory's. Nunavut publishes none of the three, and inventing one would be exactly the kind of confident wrong number this site exists to avoid.",
+    "fr": "Le nombre de questions, la note de passage et le chronomètre sont les nôtres, pas ceux du territoire. Le Nunavut n'en publie aucun des trois, et en inventer un serait exactement le genre de chiffre erroné assené avec assurance que ce site cherche à éviter."
+   },
+   {
+    "en": "Because the questions are picked at random each time, every run is a different test. Take it on three separate days before you decide you are ready.",
+    "fr": "Comme les questions sont tirées au hasard à chaque fois, chaque partie est un examen différent. Passez-le à trois jours différents avant de vous déclarer prêt."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Nunavut publishes no question count, no pass mark and no time limit, so treat every number here as practice pressure rather than a rule.",
+    "fr": "Le Nunavut ne publie ni nombre de questions, ni note de passage, ni limite de temps : considérez donc chaque chiffre ici comme une pression d'entraînement plutôt qu'une règle."
+   },
+   {
+    "en": "In the real examination, failing one part means rewriting only that part, which is why the two halves here are scored separately.",
+    "fr": "Au vrai examen, un échec à une partie n'oblige à reprendre que cette partie, et c'est pourquoi les deux moitiés sont notées séparément ici."
+   },
+   {
+    "en": "The knowledge test is not offered online and there is no online booking page, so you attend a Motor Vehicle service provider in person.",
+    "fr": "L'examen théorique n'est pas offert en ligne et il n'existe aucune page de réservation en ligne : vous vous présentez donc en personne chez un fournisseur de services de véhicules automobiles."
+   },
+   {
+    "en": "A Nunavut licence is issued for five years, and a licence expired more than twelve months cannot be renewed without being examined again.",
+    "fr": "Un permis du Nunavut est délivré pour cinq ans, et un permis expiré depuis plus de douze mois ne peut être renouvelé sans repasser les examens."
+   },
+   {
+    "en": "In 2023 the territory recorded 3,349 knowledge examinations and 1,074 road tests, and issued 774 Class 7 licences.",
+    "fr": "En 2023, le territoire a compté 3 349 examens théoriques et 1 074 examens pratiques, et a délivré 774 permis de classe 7."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No. It is free practice written for this site. The territory publishes no format at all, so the number of questions, the pass mark and the timer are all ours and we label them that way.",
+     "fr": "Non. C'est une pratique gratuite rédigée pour ce site. Le territoire ne publie aucun format : le nombre de questions, la note de passage et le chronomètre viennent donc tous de nous, et nous le disons."
+    },
+    "q": {
+     "en": "Is this the real Nunavut test?",
+     "fr": "S'agit-il du vrai examen du Nunavut ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Because that is how the real examination works. If you fail one part you rewrite only that part, and scoring them apart here shows you which one to study.",
+     "fr": "Parce que c'est ainsi que fonctionne le vrai examen. Si vous échouez à une partie, vous ne reprenez que cette partie, et les noter séparément ici vous montre laquelle étudier."
+    },
+    "q": {
+     "en": "Why are the two parts scored separately?",
+     "fr": "Pourquoi les deux parties sont-elles notées séparément ?"
+    }
+   },
+   {
+    "a": {
+     "en": "As often as you like. The questions are drawn at random each time, so the test is different on every run.",
+     "fr": "Aussi souvent que vous voulez. Les questions sont tirées au hasard à chaque fois, si bien que l'examen est différent à chaque partie."
+    },
+    "q": {
+     "en": "Can I take it more than once?",
+     "fr": "Puis-je le passer plus d'une fois ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. There is nothing to install and nothing to sign up for, and there is a full-screen mode for a phone or a tablet.",
+     "fr": "Oui. Il n'y a rien à installer ni aucune inscription, et un mode plein écran est offert pour un téléphone ou une tablette."
+    },
+    "q": {
+     "en": "Does it work on a phone?",
+     "fr": "Est-ce que cela fonctionne sur un téléphone ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Back to the study page for that part — the road signs page or the rules of the road page — and then take this again.",
+     "fr": "Retournez à la page d'étude de cette partie, celle des panneaux ou celle du code de la route, puis repassez cet examen."
+    },
+    "q": {
+     "en": "Where do I go if I fail a part?",
+     "fr": "Où dois-je aller si j'échoue une partie ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Twenty sign questions and twenty rules questions, drawn at random from the sixty-question bank.",
+    "fr": "Vingt questions sur les panneaux et vingt sur le code, tirées au hasard de la banque de soixante questions."
+   },
+   {
+    "en": "Fifteen correct answers needed in each part, which is our practice standard and not the territory's.",
+    "fr": "Quinze bonnes réponses exigées dans chaque partie, ce qui est notre norme de pratique et non celle du territoire."
+   },
+   {
+    "en": "A forty-minute countdown, clearly labelled as our practice standard rather than a published rule.",
+    "fr": "Un compte à rebours de quarante minutes, clairement présenté comme notre norme de pratique plutôt que comme une règle publiée."
+   },
+   {
+    "en": "A short explanation after every answer, right or wrong.",
+    "fr": "Une courte explication après chaque réponse, bonne ou mauvaise."
+   },
+   {
+    "en": "A pass or try again result for each part, scored separately.",
+    "fr": "Un résultat réussi ou à reprendre pour chaque partie, notée séparément."
+   },
+   {
+    "en": "A list of every question you missed, so you know which page to go back to.",
+    "fr": "La liste de toutes les questions manquées, pour savoir à quelle page revenir."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "nunavut-class-7-practice-test.html",
+    {
+     "en": "Go back to untimed practice with explanations",
+     "fr": "Revenez à la pratique sans chronomètre avec explications"
+    }
+   ],
+   [
+    "nunavut-road-signs.html",
+    {
+     "en": "Study the road signs before trying again",
+     "fr": "Étudiez les panneaux avant de réessayer"
+    }
+   ],
+   [
+    "nunavut-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road before trying again",
+     "fr": "Étudiez le code de la route avant de réessayer"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See the driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite de chaque province"
+    }
+   ]
+  ]
+ },
+ "nunavut-class-7-practice-test.html": {
+  "about": [
+   {
+    "en": "This page is free practice for the Nunavut Class 7 knowledge test, the written examination you pass before you may drive with somebody beside you. The territory describes it as two parts taken at one sitting, sign identification and the rules of the road and safe driving practices, and if you fail one part you rewrite only that part.",
+    "fr": "Cette page offre une pratique gratuite pour l'examen théorique de classe 7 du Nunavut, l'examen écrit que vous réussissez avant de pouvoir conduire accompagné. Le territoire le décrit comme deux parties passées en une seule séance, la reconnaissance des panneaux ainsi que le code de la route et la conduite sécuritaire, et si vous échouez à une partie, vous ne reprenez que cette partie."
+   },
+   {
+    "en": "Nunavut publishes less about its driving test than any other jurisdiction in Canada. There is no published question count, no pass mark, no time limit and no fee. Commercial sites state such figures anyway and cite nothing for them, and at least one prints the minimum age as sixteen when the territory's own manual says fifteen. The numbers on our mock test are a clearly stated practice standard of our own.",
+    "fr": "Le Nunavut publie moins de renseignements sur son examen de conduite que toute autre administration au Canada. Aucun nombre de questions, aucune note de passage, aucune limite de temps et aucuns frais ne sont publiés. Des sites commerciaux annoncent tout de même de tels chiffres sans citer de source, et l'un d'eux au moins indique un âge minimal de seize ans alors que le manuel du territoire dit quinze. Les chiffres de notre examen blanc sont une norme de pratique clairement présentée comme la nôtre."
+   },
+   {
+    "en": "Every question was written for this site from the free Nunavut Driver's Manual and Restricted Driver's Manual, the Service Nunavut driver licensing pages on the territory's own website, and the Traffic Safety Act annual reports tabled in the Legislative Assembly of Nunavut. Nothing was copied from a manual, from a real test, or from another practice site.",
+    "fr": "Chaque question a été rédigée pour ce site à partir du Nunavut Driver's Manual et du Restricted Driver's Manual, tous deux gratuits, des pages de Service Nunavut sur les permis de conduire et des rapports annuels sur la Loi sur la sécurité routière déposés à l'Assemblée législative du Nunavut. Rien n'a été copié d'un manuel, d'un vrai examen ou d'un autre site de pratique."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The Class 7 licence is the learner licence, the minimum age is fifteen, and it permits the operation of any vehicle in Class 5 or 6 while you are learning to operate it.",
+    "fr": "Le permis de classe 7 est le permis d'apprenti, l'âge minimal est de quinze ans, et il autorise la conduite de tout véhicule de classe 5 ou 6 pendant que vous apprenez à le conduire."
+   },
+   {
+    "en": "The examination has two parts taken at one sitting, and failing one part means rewriting only that part.",
+    "fr": "L'examen comporte deux parties passées en une seule séance, et un échec à une partie n'oblige à reprendre que cette partie."
+   },
+   {
+    "en": "Nunavut has no graduated licensing programme: no stages, no probationary period, no curfew and no passenger limit are published anywhere.",
+    "fr": "Le Nunavut n'a aucun programme de permis progressif : ni étapes, ni période probatoire, ni couvre-feu, ni limite de passagers ne sont publiés où que ce soit."
+   },
+   {
+    "en": "There are no road markings anywhere in Nunavut, which means no painted centre line and no lane lines.",
+    "fr": "Il n'y a aucun marquage routier au Nunavut, donc aucune ligne médiane peinte ni aucune ligne de voie."
+   },
+   {
+    "en": "Three Motor Vehicles Offices serve the whole territory, at Iqaluit, Rankin Inlet and Gjoa Haven, and there are Government Liaison Offices in all twenty-five communities.",
+    "fr": "Trois bureaux des véhicules automobiles desservent tout le territoire, à Iqaluit, à Rankin Inlet et à Gjoa Haven, et il y a un bureau de liaison gouvernementale dans les vingt-cinq communautés."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "The territory does not publish a number. Commercial practice sites state one anyway, and none of them cites a government source. Our mock test uses a count of our own and says so.",
+     "fr": "Le territoire ne publie aucun chiffre. Des sites commerciaux de pratique en annoncent un tout de même, sans qu'aucun ne cite de source gouvernementale. Notre examen blanc utilise un nombre qui nous est propre, et nous le disons."
+    },
+    "q": {
+     "en": "How many questions are on the real Nunavut knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique du Nunavut ?"
+    }
+   },
+   {
+    "a": {
+     "en": "That is not published either, and neither is a time limit. The widely repeated eighty percent has no Government of Nunavut source behind it, so the pass mark on our mock test is our own practice standard.",
+     "fr": "Elle n'est pas publiée non plus, pas plus qu'une limite de temps. Les quatre-vingts pour cent souvent répétés ne reposent sur aucune source du gouvernement du Nunavut : la note de passage de notre examen blanc est donc notre propre norme de pratique."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Fifteen for a Class 7 licence, which is what the territory's own manual says. Some practice sites print sixteen, which is the minimum age for a Class 5 licence, not for the learner licence.",
+     "fr": "Quinze ans pour un permis de classe 7, comme l'indique le manuel du territoire lui-même. Certains sites de pratique affichent seize ans, ce qui est l'âge minimal pour un permis de classe 5 et non pour le permis d'apprenti."
+    },
+    "q": {
+     "en": "How old do I have to be?",
+     "fr": "Quel âge faut-il avoir ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. The territory publishes no stages, no stage lengths and no probationary period. What the manual describes is a Class 7 learner licence, then a road test, then a Class 5 licence.",
+     "fr": "Non. Le territoire ne publie ni étapes, ni durées d'étape, ni période probatoire. Ce que décrit le manuel, c'est un permis d'apprenti de classe 7, puis un examen pratique, puis un permis de classe 5."
+    },
+    "q": {
+     "en": "Does Nunavut have graduated licensing?",
+     "fr": "Le Nunavut a-t-il un permis progressif ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Somebody who holds a valid driver's licence and is authorised under the Act, and the examiner may ask to see that licence. Nothing further is published about the accompanying driver, and we are not going to borrow another jurisdiction's rule to fill that in.",
+     "fr": "Une personne qui détient un permis de conduire valide et qui est autorisée en vertu de la Loi, et l'examinateur peut demander à voir ce permis. Rien de plus n'est publié au sujet de l'accompagnateur, et nous n'allons pas emprunter la règle d'une autre administration pour combler ce vide."
+    },
+    "q": {
+     "en": "Who can sit beside me while I practise?",
+     "fr": "Qui peut s'asseoir à côté de moi pendant que je pratique ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Sixty questions in total: thirty on road signs and thirty on the rules of the road, each with a short explanation.",
+    "fr": "Soixante questions au total : trente sur les panneaux routiers et trente sur le code de la route, chacune accompagnée d'une courte explication."
+   },
+   {
+    "en": "A quick ten-question practice round at the top of the page, with signs and rules mixed together and no timer.",
+    "fr": "Une série rapide de dix questions en haut de la page, panneaux et code mêlés, sans chronomètre."
+   },
+   {
+    "en": "A timed mock test built on a practice standard of our own, because the territory publishes no format of its own.",
+    "fr": "Un examen blanc chronométré bâti sur une norme de pratique qui nous est propre, car le territoire ne publie aucun format."
+   },
+   {
+    "en": "A road signs page where every sign is drawn in code and grouped by type, with practice for each group.",
+    "fr": "Une page de panneaux où chaque panneau est dessiné en code et regroupé par type, avec de la pratique pour chaque groupe."
+   },
+   {
+    "en": "A rules of the road page organised by chapter, covering the licence and the test, driving in the communities, gravel roads and dust, winter and cold, and safe and responsible driving.",
+    "fr": "Une page de code de la route organisée par chapitre, couvrant le permis et l'examen, la conduite dans les communautés, les routes de gravier et la poussière, l'hiver et le froid, ainsi que la conduite sécuritaire et responsable."
+   },
+   {
+    "en": "The whole question bank printed on the page, so you can read straight through it without playing.",
+    "fr": "Toute la banque de questions imprimée sur la page, pour la lire d'un bout à l'autre sans jouer."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "nunavut-class-7-mock-test.html",
+    {
+     "en": "Take the timed Nunavut mock test",
+     "fr": "Passez l'examen blanc chronométré du Nunavut"
+    }
+   ],
+   [
+    "nunavut-road-signs.html",
+    {
+     "en": "Study every road sign for the knowledge test",
+     "fr": "Étudiez tous les panneaux pour l'examen théorique"
+    }
+   ],
+   [
+    "nunavut-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road chapter by chapter",
+     "fr": "Étudiez le code de la route chapitre par chapitre"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test in every province and territory",
+     "fr": "Comparez l'examen théorique de chaque province et territoire"
+    }
+   ]
+  ]
+ },
+ "nunavut-road-signs.html": {
+  "about": [
+   {
+    "en": "Sign identification is one of the two parts of the Nunavut examination, alongside the rules of the road and safe driving practices, and the territory scores the two parts separately. This page holds the sign half of our question bank.",
+    "fr": "La reconnaissance des panneaux est l'une des deux parties de l'examen du Nunavut, avec le code de la route et la conduite sécuritaire, et le territoire note les deux parties séparément. Cette page contient la moitié de notre banque consacrée aux panneaux."
+   },
+   {
+    "en": "Every sign on this page is drawn in code rather than copied from a government publication, so nothing here is anyone else's artwork. Each sign carries its own name as a caption and in its alt text, so the page works with a screen reader too.",
+    "fr": "Chaque panneau de cette page est dessiné en code plutôt que copié d'une publication gouvernementale : rien ici n'est l'illustration d'autrui. Chaque panneau porte son propre nom en légende et dans son texte de remplacement, si bien que la page fonctionne aussi avec un lecteur d'écran."
+   }
+  ],
+  "facts": [
+   {
+    "en": "A red circle with a slash means you must not do the thing shown, and a green circle means you may.",
+    "fr": "Un cercle rouge barré signifie que vous ne devez pas faire ce qui est illustré, et un cercle vert que vous le pouvez."
+   },
+   {
+    "en": "A yellow diamond warns about something ahead, while an orange diamond means road work.",
+    "fr": "Un losange jaune avertit d'un danger devant, tandis qu'un losange orange annonce des travaux."
+   },
+   {
+    "en": "There are no road markings anywhere in Nunavut, so a sign is often the only instruction on the road in front of you.",
+    "fr": "Il n'y a aucun marquage routier au Nunavut : un panneau est donc souvent la seule consigne sur la route devant vous."
+   },
+   {
+    "en": "Signs are the same across Canada, so studying them here also prepares you for a test in another province or territory.",
+    "fr": "Les panneaux sont les mêmes partout au Canada : les étudier ici vous prépare donc aussi à un examen dans une autre province ou un autre territoire."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "They are our own drawings of the standard Canadian signs used in the territory. They are not copied from any official publication.",
+     "fr": "Ce sont nos propres dessins des panneaux canadiens normalisés utilisés dans le territoire. Ils ne sont copiés d'aucune publication officielle."
+    },
+    "q": {
+     "en": "Are these the real Nunavut signs?",
+     "fr": "S'agit-il des vrais panneaux du Nunavut ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. The territory states that the examination has two parts, one of which is sign identification, and that a failed part is rewritten on its own.",
+     "fr": "Oui. Le territoire indique que l'examen comporte deux parties, dont la reconnaissance des panneaux, et qu'une partie ratée se reprend seule."
+    },
+    "q": {
+     "en": "Does the real test include signs?",
+     "fr": "Le vrai examen porte-t-il sur les panneaux ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The territory publishes no pass mark and no question count for either part, only that the two parts are scored separately. The numbers on our mock test are our own.",
+     "fr": "Le territoire ne publie ni note de passage ni nombre de questions pour l'une ou l'autre partie, seulement que les deux parties sont notées séparément. Les chiffres de notre examen blanc sont les nôtres."
+    },
+    "q": {
+     "en": "How is the sign part scored?",
+     "fr": "Comment la partie sur les panneaux est-elle notée ?"
+    }
+   },
+   {
+    "a": {
+     "en": "All of the ones on this page. They are the families the manual covers, and once the shapes and colours are automatic the wording matters much less.",
+     "fr": "Tous ceux de cette page. Ce sont les familles que couvre le manuel, et une fois que les formes et les couleurs vous viennent d'instinct, le libellé compte beaucoup moins."
+    },
+    "q": {
+     "en": "How many signs should I learn?",
+     "fr": "Combien de panneaux devrais-je apprendre ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty sign questions covering regulatory, warning, temporary, information, traffic light and pavement marking signs.",
+    "fr": "Trente questions sur les panneaux de prescription, d'avertissement, temporaires, d'information, les feux de circulation et les marques sur la chaussée."
+   },
+   {
+    "en": "Practice for each group of signs, so you can work through one family at a time.",
+    "fr": "De la pratique pour chaque groupe de panneaux, pour travailler une famille à la fois."
+   },
+   {
+    "en": "The signs that matter most on a road with no painted markings on it at all.",
+    "fr": "Les panneaux qui comptent le plus sur une route sans aucun marquage peint."
+   },
+   {
+    "en": "The whole sign bank printed below the practice, with the answer marked and explained.",
+    "fr": "Toute la banque de panneaux imprimée sous la pratique, avec la réponse indiquée et expliquée."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "nunavut-class-7-practice-test.html",
+    {
+     "en": "Practise signs and rules together",
+     "fr": "Pratiquez les panneaux et le code ensemble"
+    }
+   ],
+   [
+    "nunavut-rules-of-the-road.html",
+    {
+     "en": "Move on to the rules of the road",
+     "fr": "Passez au code de la route"
+    }
+   ],
+   [
+    "nunavut-class-7-mock-test.html",
+    {
+     "en": "Try the timed mock test",
+     "fr": "Essayez l'examen blanc chronométré"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "Driving test practice for every province",
+     "fr": "Pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "nunavut-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "The rules of the road and safe driving practices are the second part of the Nunavut examination. This page holds the rules half of our question bank, arranged by chapter, with the answer and a short explanation on every question.",
+    "fr": "Le code de la route et la conduite sécuritaire forment la deuxième partie de l'examen du Nunavut. Cette page contient la moitié de notre banque consacrée au code, organisée par chapitre, avec la réponse et une courte explication à chaque question."
+   },
+   {
+    "en": "Several of these rules are genuinely local. Roads with no markings at all, the basic limits of 50 inside a community and 90 outside it, the guidance on gravel and dust, and the dogs the manual names as a hazard are all specific to the territory, and all of them come from official sources.",
+    "fr": "Plusieurs de ces règles sont véritablement locales. Des routes sans aucun marquage, les limites de base de 50 dans une communauté et de 90 à l'extérieur, les consignes sur le gravier et la poussière, ainsi que les chiens que le manuel nomme comme danger sont propres au territoire, et toutes proviennent de sources officielles."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The basic speed limit is 50 km/h inside communities and 90 km/h outside them, day or night, or as posted.",
+    "fr": "La limite de vitesse de base est de 50 km/h à l'intérieur des communautés et de 90 km/h à l'extérieur, de jour comme de nuit, ou selon l'affichage."
+   },
+   {
+    "en": "Seat belts are required by law for all drivers and passengers, and child car seats for all small children.",
+    "fr": "La ceinture de sécurité est exigée par la loi pour tous les conducteurs et passagers, et les sièges d'auto pour tous les jeunes enfants."
+   },
+   {
+    "en": "Twelve or more demerit points brings a warning letter and an interview, and fifteen or more brings a one-month suspension.",
+    "fr": "Douze points d'inaptitude ou plus entraînent une lettre d'avertissement et une entrevue, et quinze points ou plus entraînent une suspension d'un mois."
+   },
+   {
+    "en": "Do not pass a vehicle that is creating a heavy dust cloud, and do not travel too fast in loose gravel.",
+    "fr": "Ne dépassez pas un véhicule qui soulève un épais nuage de poussière, et ne roulez pas trop vite dans le gravier meuble."
+   },
+   {
+    "en": "A driver's medical examination is required at seventy-five, at eighty, and every two years after eighty.",
+    "fr": "Un examen médical du conducteur est exigé à soixante-quinze ans, à quatre-vingts ans, puis tous les deux ans après quatre-vingts ans."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "50 km/h inside a community and 90 km/h outside one, day or night. In a school or playground zone it is the posted speed, and where nothing is posted, a reasonable and prudent speed.",
+     "fr": "50 km/h à l'intérieur d'une communauté et 90 km/h à l'extérieur, de jour comme de nuit. Dans une zone scolaire ou de terrain de jeu, c'est la vitesse affichée et, si rien n'est affiché, une vitesse raisonnable et prudente."
+    },
+    "q": {
+     "en": "What is the speed limit if there is no sign?",
+     "fr": "Quelle est la limite de vitesse s'il n'y a aucun panneau ?"
+    }
+   },
+   {
+    "a": {
+     "en": "There are none. The territory's own manual states that there are no road markings in Nunavut, so you judge your position from the edges of the road and judge oncoming traffic by eye.",
+     "fr": "Il n'y en a pas. Le manuel du territoire indique lui-même qu'il n'y a aucun marquage routier au Nunavut : vous jugez donc votre position d'après les bords de la route et la circulation en sens inverse à l'oeil."
+    },
+    "q": {
+     "en": "Where are the lane markings?",
+     "fr": "Où sont les marques de voie ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Fifteen or more brings a suspension of one month, and twelve or more brings a warning letter and an interview first. The points attached to each individual offence are not obtainable through any accessible official channel, so we do not list them.",
+     "fr": "Quinze points ou plus entraînent une suspension d'un mois, et douze points ou plus entraînent d'abord une lettre d'avertissement et une entrevue. Le nombre de points rattaché à chaque infraction n'est accessible par aucun canal officiel consultable : nous ne le publions donc pas."
+    },
+    "q": {
+     "en": "How many demerit points before I lose my licence?",
+     "fr": "Combien de points d'inaptitude avant de perdre mon permis ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. All four of the territory's driver manuals are published in English only, even though the Government of Nunavut website is available in Inuktitut, Inuinnaqtun, English and French. Which languages the test itself is offered in is not published.",
+     "fr": "Non. Les quatre manuels du conducteur du territoire sont publiés en anglais seulement, même si le site du gouvernement du Nunavut est offert en inuktitut, en inuinnaqtun, en anglais et en français. Les langues dans lesquelles l'examen lui-même est offert ne sont pas publiées."
+    },
+    "q": {
+     "en": "Is the driver's manual available in French or Inuktitut?",
+     "fr": "Le manuel du conducteur existe-t-il en français ou en inuktitut ?"
+    }
+   },
+   {
+    "a": {
+     "en": "It is a licence for people who will drive only inside the territory, or only within 100 kilometres of their home community, and Nunavut publishes a separate Restricted Driver's Manual for it that is worth looking up.",
+     "fr": "C'est un permis destiné aux personnes qui conduiront seulement à l'intérieur du territoire, ou seulement dans un rayon de 100 kilomètres de leur communauté, et le Nunavut publie à ce sujet un Restricted Driver's Manual distinct qui vaut la peine d'être consulté."
+    },
+    "q": {
+     "en": "What is the restricted licence with a B or G endorsement?",
+     "fr": "Qu'est-ce que le permis restreint avec une mention B ou G ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty rules questions grouped by chapter, each with the answer marked and explained.",
+    "fr": "Trente questions de code regroupées par chapitre, chacune avec la réponse indiquée et expliquée."
+   },
+   {
+    "en": "Your licence and the test, and applying, testing and renewing.",
+    "fr": "Votre permis et l'examen, ainsi que la demande, l'examen et le renouvellement."
+   },
+   {
+    "en": "Driving in the communities, on roads that carry no painted markings at all.",
+    "fr": "La conduite dans les communautés, sur des routes qui ne portent aucun marquage peint."
+   },
+   {
+    "en": "Gravel roads and dust, and the speed and spacing the territory asks for on them.",
+    "fr": "Les routes de gravier et la poussière, avec la vitesse et les distances que le territoire demande d'y respecter."
+   },
+   {
+    "en": "Winter and cold, seat belts and child car seats, and safe and responsible driving.",
+    "fr": "L'hiver et le froid, les ceintures de sécurité et les sièges d'auto, ainsi que la conduite sécuritaire et responsable."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "nunavut-road-signs.html",
+    {
+     "en": "Study the road signs half",
+     "fr": "Étudiez la moitié consacrée aux panneaux"
+    }
+   ],
+   [
+    "nunavut-class-7-practice-test.html",
+    {
+     "en": "Practise signs and rules together",
+     "fr": "Pratiquez les panneaux et le code ensemble"
+    }
+   ],
+   [
+    "nunavut-class-7-mock-test.html",
+    {
+     "en": "Try the timed mock test",
+     "fr": "Essayez l'examen blanc chronométré"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test across Canada",
+     "fr": "Comparez l'examen théorique partout au Canada"
+    }
+   ]
+  ]
+ },
+ "nwt-class-7-mock-test.html": {
+  "about": [
+   {
+    "en": "This is the timed version, and it follows the format the Northwest Territories publishes. Two tests are drawn at random from the territory's bank, road signage and the rules of the road, and each one is scored on its own.",
+    "fr": "Voici la version chronométrée, et elle suit le format publié par les Territoires du Nord-Ouest. Deux examens sont tirés au hasard de la banque du territoire, la signalisation routière et le code de la route, et chacun est noté séparément."
+   },
+   {
+    "en": "The numbers here are the government's own and not a standard of ours. Twenty questions in each test, sixteen right needed in each, and thirty minutes on the clock. The one honest gap is that the published wording gives thirty minutes to the test in the singular, without saying whether it covers one test or both.",
+    "fr": "Les chiffres ici sont ceux du gouvernement et non une norme qui nous serait propre. Vingt questions dans chaque examen, seize bonnes réponses exigées dans chacun et trente minutes au chronomètre. La seule zone d'ombre honnête est que la formulation publiée accorde trente minutes à l'examen au singulier, sans dire si cela vise un examen ou les deux."
+   },
+   {
+    "en": "Because the questions are picked at random each time, every run is a different test. Take it on three separate days before you decide you are ready.",
+    "fr": "Comme les questions sont tirées au hasard à chaque fois, chaque partie est un examen différent. Passez-le à trois jours différents avant de vous déclarer prêt."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Each test passes or fails on its own, so a strong half cannot rescue a weak one.",
+    "fr": "Chaque examen est réussi ou échoué séparément : une moitié solide ne peut donc pas sauver une moitié faible."
+   },
+   {
+    "en": "One examination fee covers both parts, and the fee schedule lists the Class 7 signs test as included.",
+    "fr": "Des frais d'examen uniques couvrent les deux parties, et le barème indique que l'examen de signalisation de classe 7 est compris."
+   },
+   {
+    "en": "We do not quote a fee amount, because the official booking page currently shows two conflicting fee tables under one heading.",
+    "fr": "Nous ne citons aucun montant de frais, car la page de réservation officielle affiche actuellement deux tableaux de frais contradictoires sous un seul titre."
+   },
+   {
+    "en": "Booking is done online or in person, but nothing official says the knowledge test itself can be written online.",
+    "fr": "La réservation se fait en ligne ou en personne, mais rien d'officiel n'indique que l'examen théorique lui-même peut se passer en ligne."
+   },
+   {
+    "en": "If you fail, the official wording is only that a new test must be scheduled, and no waiting period is published.",
+    "fr": "En cas d'échec, la formulation officielle dit seulement qu'un nouvel examen doit être fixé, et aucun délai d'attente n'est publié."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No. It is free practice written for this site. The format is the real one, though: two tests of twenty questions with sixteen right needed in each.",
+     "fr": "Non. C'est une pratique gratuite rédigée pour ce site. Le format, lui, est le vrai : deux examens de vingt questions avec seize bonnes réponses exigées dans chacun."
+    },
+    "q": {
+     "en": "Is this the real Northwest Territories test?",
+     "fr": "S'agit-il du vrai examen des Territoires du Nord-Ouest ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Because that is how the territory scores them. You may not miss more than four questions in each test, so a total out of forty tells you nothing useful.",
+     "fr": "Parce que c'est ainsi que le territoire les note. Vous ne pouvez pas manquer plus de quatre questions dans chaque examen : un total sur quarante ne vous apprend donc rien d'utile."
+    },
+    "q": {
+     "en": "Why are the two tests scored separately?",
+     "fr": "Pourquoi les deux examens sont-ils notés séparément ?"
+    }
+   },
+   {
+    "a": {
+     "en": "As often as you like. The questions are drawn at random each time, so the test is different on every run.",
+     "fr": "Aussi souvent que vous voulez. Les questions sont tirées au hasard à chaque fois, si bien que l'examen est différent à chaque partie."
+    },
+    "q": {
+     "en": "Can I take it more than once?",
+     "fr": "Puis-je le passer plus d'une fois ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. There is nothing to install and nothing to sign up for, and there is a full-screen mode for a phone or a tablet.",
+     "fr": "Oui. Il n'y a rien à installer ni aucune inscription, et un mode plein écran est offert pour un téléphone ou une tablette."
+    },
+    "q": {
+     "en": "Does it work on a phone?",
+     "fr": "Est-ce que cela fonctionne sur un téléphone ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Back to the study page for that test — the road signs page or the rules of the road page — and then take this again.",
+     "fr": "Retournez à la page d'étude de cet examen, celle des panneaux ou celle du code de la route, puis repassez cet examen."
+    },
+    "q": {
+     "en": "Where do I go if I fail one of the two?",
+     "fr": "Où dois-je aller si j'échoue à l'un des deux ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Twenty road signage questions and twenty rules questions, drawn at random from the sixty-question bank.",
+    "fr": "Vingt questions sur la signalisation routière et vingt sur le code, tirées au hasard de la banque de soixante questions."
+   },
+   {
+    "en": "Sixteen correct answers needed in each test, which is the territory's own published pass mark.",
+    "fr": "Seize bonnes réponses exigées dans chaque examen, ce qui correspond à la note de passage publiée par le territoire."
+   },
+   {
+    "en": "A thirty-minute countdown, which is the published figure for the test.",
+    "fr": "Un compte à rebours de trente minutes, soit le chiffre publié pour l'examen."
+   },
+   {
+    "en": "A short explanation after every answer, right or wrong.",
+    "fr": "Une courte explication après chaque réponse, bonne ou mauvaise."
+   },
+   {
+    "en": "A pass or try again result for each test, scored separately, the way the real one is.",
+    "fr": "Un résultat réussi ou à reprendre pour chaque examen, noté séparément, comme dans le vrai examen."
+   },
+   {
+    "en": "A list of every question you missed, so you know which page to go back to.",
+    "fr": "La liste de toutes les questions manquées, pour savoir à quelle page revenir."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "nwt-class-7-practice-test.html",
+    {
+     "en": "Go back to untimed practice with explanations",
+     "fr": "Revenez à la pratique sans chronomètre avec explications"
+    }
+   ],
+   [
+    "nwt-road-signs.html",
+    {
+     "en": "Study the road signs before trying again",
+     "fr": "Étudiez les panneaux avant de réessayer"
+    }
+   ],
+   [
+    "nwt-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road before trying again",
+     "fr": "Étudiez le code de la route avant de réessayer"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See the driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite de chaque province"
+    }
+   ]
+  ]
+ },
+ "nwt-class-7-practice-test.html": {
+  "about": [
+   {
+    "en": "This page is free practice for the Northwest Territories knowledge examination, the written test you pass before you may drive with a supervisor. The territory calls the licence a Class 7 learner's licence, and it is Stage 1 of the graduated driver licensing programme.",
+    "fr": "Cette page offre une pratique gratuite pour l'examen théorique des Territoires du Nord-Ouest, l'examen écrit que vous réussissez avant de pouvoir conduire accompagné. Le territoire appelle ce permis un permis d'apprenti conducteur de classe 7, et il correspond à l'étape 1 du programme de permis par étapes."
+   },
+   {
+    "en": "The Northwest Territories is one of very few places in the country that publishes its whole test format, so almost nothing on this page is a standard of ours. There are two separate tests, twenty questions each, one on the rules of the road and one on road signage, and you may not miss more than four questions in each of them. That is sixteen of twenty on each test rather than a combined score.",
+    "fr": "Les Territoires du Nord-Ouest font partie des très rares endroits au pays à publier tout le format de leur examen : presque rien sur cette page n'est donc une norme qui nous serait propre. Il y a deux examens distincts de vingt questions chacun, l'un sur le code de la route et l'autre sur la signalisation routière, et vous ne pouvez pas manquer plus de quatre questions dans chacun. Cela fait seize bonnes réponses sur vingt par examen plutôt qu'un résultat combiné."
+   },
+   {
+    "en": "Every question was written for this site from the free official Basic Driver's Manual, the licensing and examination pages published by Driver and Vehicle Services, the territory's own driving safety, bison, winter road, school zone and ferry pages, and the Driver's Licence Demerit Point Regulations. Nothing was copied from a manual, from a real test, or from another practice site.",
+    "fr": "Chaque question a été rédigée pour ce site à partir du Manuel du conducteur officiel gratuit, des pages sur les permis et les examens publiées par les Services de l'immatriculation et des permis de conduire, des pages du territoire sur la sécurité routière, les bisons, les routes d'hiver, les zones scolaires et les traversiers, ainsi que du Règlement sur les points d'inaptitude en matière de permis de conduire. Rien n'a été copié d'un manuel, d'un vrai examen ou d'un autre site de pratique."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The knowledge examination is two separate tests of twenty questions, and you may not miss more than four questions in each of them.",
+    "fr": "L'examen théorique se compose de deux examens distincts de vingt questions, et vous ne pouvez pas manquer plus de quatre questions dans chacun."
+   },
+   {
+    "en": "A novice driver is suspended at six or more demerit points, while a full licence holder is not suspended until fifteen.",
+    "fr": "Un conducteur novice est suspendu à six points d'inaptitude ou plus, alors qu'un titulaire de permis complet ne l'est qu'à quinze."
+   },
+   {
+    "en": "The learner and the supervisor must both be at zero blood alcohol, which is a rule most people only half know.",
+    "fr": "L'apprenti conducteur et le superviseur doivent tous deux avoir un taux d'alcool nul, une règle que la plupart des gens ne connaissent qu'à moitié."
+   },
+   {
+    "en": "Headlights on at all times is the law in the Northwest Territories, not merely good practice.",
+    "fr": "Garder les phares allumés en tout temps est la loi dans les Territoires du Nord-Ouest, et non un simple bon usage."
+   },
+   {
+    "en": "A vision screening is required before the licence is issued, but a Class 5, 6 or 7 driver needs no medical report until age 75.",
+    "fr": "Un examen de la vue est exigé avant la délivrance du permis, mais un conducteur de classe 5, 6 ou 7 n'a besoin d'aucun rapport médical avant l'âge de 75 ans."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Twenty on the rules of the road and twenty more on road signage, as two separate tests. The territory publishes that itself, which is unusual and very helpful.",
+     "fr": "Vingt sur le code de la route et vingt autres sur la signalisation routière, en deux examens distincts. Le territoire le publie lui-même, ce qui est inhabituel et fort utile."
+    },
+    "q": {
+     "en": "How many questions are on the real Northwest Territories knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique des Territoires du Nord-Ouest ?"
+    }
+   },
+   {
+    "a": {
+     "en": "You may not miss more than four questions in each test, so sixteen of twenty on each. A commercial site claims you need twenty-five of the questions correct, but twenty-five out of forty can still fail both tests.",
+     "fr": "Vous ne pouvez pas manquer plus de quatre questions dans chaque examen, soit seize sur vingt dans chacun. Un site commercial prétend qu'il faut vingt-cinq bonnes réponses, mais vingt-cinq sur quarante peuvent tout de même échouer aux deux examens."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The published wording is that the test lasts 30 minutes, in the singular. The territory does not say whether that is per test or for both together, so we do not claim either.",
+     "fr": "La formulation publiée dit que l'examen dure 30 minutes, au singulier. Le territoire ne précise pas s'il s'agit de chaque examen ou des deux réunis : nous ne prétendons donc ni l'un ni l'autre."
+    },
+    "q": {
+     "en": "How long do I get?",
+     "fr": "De combien de temps est-ce que je dispose ?"
+    }
+   },
+   {
+    "a": {
+     "en": "At least twelve months. Then the probationary Class 5P is held for twelve suspension-free months, and the territory publishes a minimum of two years to complete both stages.",
+     "fr": "Au moins douze mois. Le permis probatoire de classe 5P est ensuite détenu pendant douze mois sans suspension, et le territoire publie un minimum de deux ans pour franchir les deux étapes."
+    },
+    "q": {
+     "en": "How long must I hold the Class 7 licence?",
+     "fr": "Combien de temps dois-je détenir le permis de classe 7 ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Someone at least nineteen years old who holds a full Class 5 licence and has at least twenty-four months of experience, and time held on a graduated licence does not count. You must both be at zero blood alcohol.",
+     "fr": "Une personne d'au moins dix-neuf ans qui détient un permis complet de classe 5 et compte au moins vingt-quatre mois d'expérience, le temps passé avec un permis par étapes ne comptant pas. Vous devez tous les deux avoir un taux d'alcool nul."
+    },
+    "q": {
+     "en": "Who can sit beside me while I practise?",
+     "fr": "Qui peut s'asseoir à côté de moi pendant que je pratique ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Sixty questions in total: thirty on road signs and thirty on the rules of the road, each with a short explanation.",
+    "fr": "Soixante questions au total : trente sur les panneaux routiers et trente sur le code de la route, chacune accompagnée d'une courte explication."
+   },
+   {
+    "en": "A quick ten-question practice round at the top of the page, with signs and rules mixed together and no timer.",
+    "fr": "Une série rapide de dix questions en haut de la page, panneaux et code mêlés, sans chronomètre."
+   },
+   {
+    "en": "A timed mock test in the territory's own published format, with each test scored separately.",
+    "fr": "Un examen blanc chronométré dans le format publié par le territoire, chaque examen étant noté séparément."
+   },
+   {
+    "en": "A road signs page where every sign is drawn in code and grouped by type, with practice for each group.",
+    "fr": "Une page de panneaux où chaque panneau est dessiné en code et regroupé par type, avec de la pratique pour chaque groupe."
+   },
+   {
+    "en": "A rules of the road page organised by chapter, covering graduated licensing, your supervisor, demerit points, bison, ice roads and the ferries.",
+    "fr": "Une page de code de la route organisée par chapitre, couvrant le permis par étapes, votre superviseur, les points d'inaptitude, les bisons, les routes de glace et les traversiers."
+   },
+   {
+    "en": "The whole question bank printed on the page, so you can read straight through it without playing.",
+    "fr": "Toute la banque de questions imprimée sur la page, pour la lire d'un bout à l'autre sans jouer."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "nwt-class-7-mock-test.html",
+    {
+     "en": "Take the timed NWT mock test",
+     "fr": "Passez l'examen blanc chronométré des T.N.-O."
+    }
+   ],
+   [
+    "nwt-road-signs.html",
+    {
+     "en": "Study every road sign for the signage test",
+     "fr": "Étudiez tous les panneaux pour l'examen de signalisation"
+    }
+   ],
+   [
+    "nwt-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road chapter by chapter",
+     "fr": "Étudiez le code de la route chapitre par chapitre"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test in every province and territory",
+     "fr": "Comparez l'examen théorique de chaque province et territoire"
+    }
+   ]
+  ]
+ },
+ "nwt-road-signs.html": {
+  "about": [
+   {
+    "en": "Road signage is a test of its own in the Northwest Territories. The territory publishes it as a separate test of twenty questions, sitting alongside the twenty-question rules of the road test, and you may not miss more than four questions in it. This page holds the sign half of our question bank.",
+    "fr": "La signalisation routière est un examen à part entière dans les Territoires du Nord-Ouest. Le territoire le publie comme un examen distinct de vingt questions, à côté de l'examen de vingt questions sur le code de la route, et vous ne pouvez pas y manquer plus de quatre questions. Cette page contient la moitié de notre banque consacrée aux panneaux."
+   },
+   {
+    "en": "Every sign on this page is drawn in code rather than copied from a government publication, so nothing here is anyone else's artwork. Each sign carries its own name as a caption and in its alt text, so the page works with a screen reader too.",
+    "fr": "Chaque panneau de cette page est dessiné en code plutôt que copié d'une publication gouvernementale : rien ici n'est l'illustration d'autrui. Chaque panneau porte son propre nom en légende et dans son texte de remplacement, si bien que la page fonctionne aussi avec un lecteur d'écran."
+   }
+  ],
+  "facts": [
+   {
+    "en": "A red circle with a slash means you must not do the thing shown, and a green circle means you may.",
+    "fr": "Un cercle rouge barré signifie que vous ne devez pas faire ce qui est illustré, et un cercle vert que vous le pouvez."
+   },
+   {
+    "en": "A yellow diamond warns about something ahead, while an orange diamond means road work.",
+    "fr": "Un losange jaune avertit d'un danger devant, tandis qu'un losange orange annonce des travaux."
+   },
+   {
+    "en": "School zones in the Northwest Territories are in effect twenty-four hours a day, 365 days a year, and speed fines are doubled inside one.",
+    "fr": "Les zones scolaires des Territoires du Nord-Ouest sont en vigueur vingt-quatre heures sur vingt-quatre, 365 jours par année, et les amendes de vitesse y sont doublées."
+   },
+   {
+    "en": "Signs are the same across Canada, so studying them here also prepares you for a test in another province.",
+    "fr": "Les panneaux sont les mêmes partout au Canada : les étudier ici vous prépare donc aussi à un examen dans une autre province."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "They are our own drawings of the standard Canadian signs used in the territory. They are not copied from any official publication.",
+     "fr": "Ce sont nos propres dessins des panneaux canadiens normalisés utilisés dans le territoire. Ils ne sont copiés d'aucune publication officielle."
+    },
+    "q": {
+     "en": "Are these the real Northwest Territories signs?",
+     "fr": "S'agit-il des vrais panneaux des Territoires du Nord-Ouest ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. The territory publishes twenty multiple-choice questions on the rules of the road and a separate test of twenty questions on road signage.",
+     "fr": "Oui. Le territoire publie vingt questions à choix multiple sur le code de la route et un examen distinct de vingt questions sur la signalisation routière."
+    },
+    "q": {
+     "en": "Is road signage really a separate test?",
+     "fr": "La signalisation routière est-elle vraiment un examen distinct ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes, and each one is scored on its own. You may not miss more than four questions in either test, so passing one does not make up for failing the other.",
+     "fr": "Oui, et chacun est noté séparément. Vous ne pouvez pas manquer plus de quatre questions dans l'un ou l'autre examen : en réussir un ne compense donc pas l'échec de l'autre."
+    },
+    "q": {
+     "en": "Do I have to pass both to get the licence?",
+     "fr": "Dois-je réussir les deux pour obtenir le permis ?"
+    }
+   },
+   {
+    "a": {
+     "en": "All of the ones on this page. They are the families the manual covers, and once the shapes and colours are automatic the wording matters much less.",
+     "fr": "Tous ceux de cette page. Ce sont les familles que couvre le manuel, et une fois que les formes et les couleurs vous viennent d'instinct, le libellé compte beaucoup moins."
+    },
+    "q": {
+     "en": "How many signs should I learn?",
+     "fr": "Combien de panneaux devrais-je apprendre ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty sign questions covering regulatory, warning, temporary, information, traffic light and pavement marking signs.",
+    "fr": "Trente questions sur les panneaux de prescription, d'avertissement, temporaires, d'information, les feux de circulation et les marques sur la chaussée."
+   },
+   {
+    "en": "Practice for each group of signs, so you can work through one family at a time.",
+    "fr": "De la pratique pour chaque groupe de panneaux, pour travailler une famille à la fois."
+   },
+   {
+    "en": "The wildlife warnings and the school bus signs, both of which carry more weight here than the shapes alone suggest.",
+    "fr": "Les avertissements de faune et les panneaux d'autobus scolaire, qui comptent tous deux ici plus que leur forme ne le laisse croire."
+   },
+   {
+    "en": "The whole sign bank printed below the practice, with the answer marked and explained.",
+    "fr": "Toute la banque de panneaux imprimée sous la pratique, avec la réponse indiquée et expliquée."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "nwt-class-7-practice-test.html",
+    {
+     "en": "Practise signs and rules together",
+     "fr": "Pratiquez les panneaux et le code ensemble"
+    }
+   ],
+   [
+    "nwt-rules-of-the-road.html",
+    {
+     "en": "Move on to the rules of the road",
+     "fr": "Passez au code de la route"
+    }
+   ],
+   [
+    "nwt-class-7-mock-test.html",
+    {
+     "en": "Try the timed mock test",
+     "fr": "Essayez l'examen blanc chronométré"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "Driving test practice for every province",
+     "fr": "Pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "nwt-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "The rules of the road are a test of their own in the Northwest Territories, twenty multiple-choice questions with no more than four misses allowed. This page holds the rules half of our question bank, arranged by chapter.",
+    "fr": "Le code de la route est un examen à part entière dans les Territoires du Nord-Ouest, vingt questions à choix multiple avec au plus quatre erreurs permises. Cette page contient la moitié de notre banque consacrée au code, organisée par chapitre."
+   },
+   {
+    "en": "Several of these rules are genuinely northern. Headlights on at all times, the bison advisory for Highways 3, 5 and 7, the reason ice roads carry speed limits, and school zones that run twenty-four hours a day all year are specific to this territory, and all of them come from official sources.",
+    "fr": "Plusieurs de ces règles sont véritablement nordiques. Les phares allumés en tout temps, l'avis sur les bisons pour les routes 3, 5 et 7, la raison pour laquelle les routes de glace ont des limites de vitesse et les zones scolaires en vigueur vingt-quatre heures sur vingt-quatre toute l'année sont propres à ce territoire, et toutes proviennent de sources officielles."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Headlights on at all times is the law in the Northwest Territories.",
+    "fr": "Garder les phares allumés en tout temps est la loi dans les Territoires du Nord-Ouest."
+   },
+   {
+    "en": "A novice driver is suspended at six or more demerit points, twelve points is three months and fifteen points is six months, while a full licence holder is not suspended until fifteen.",
+    "fr": "Un conducteur novice est suspendu à six points d'inaptitude ou plus, douze points valent trois mois et quinze points six mois, alors qu'un titulaire de permis complet ne l'est qu'à quinze."
+   },
+   {
+    "en": "Ice roads and winter roads carry posted speed limits because moving too fast creates waves under the ice that can lead to cracks or failures.",
+    "fr": "Les routes de glace et les routes d'hiver ont des limites de vitesse affichées parce que rouler trop vite crée sous la glace des vagues qui peuvent provoquer des fissures ou des ruptures."
+   },
+   {
+    "en": "Hand-held electronic devices have been illegal for every driver since January 2012, distracted driving carries three demerit points and the fine doubles in a school or construction zone.",
+    "fr": "Les appareils électroniques portatifs sont illégaux pour tout conducteur depuis janvier 2012, la conduite distraite vaut trois points d'inaptitude et l'amende double dans une zone scolaire ou une zone de travaux."
+   },
+   {
+    "en": "There are four ferry crossings and all of them are free, first come and first served, and ice or water levels can stop them with little or no notice.",
+    "fr": "Il y a quatre traversées par traversier, toutes gratuites et selon le principe du premier arrivé, premier servi, et les glaces ou le niveau d'eau peuvent les interrompre avec peu ou pas de préavis."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "At all times. The territory states it as law rather than as advice, which catches out drivers who are used to daytime running lights being enough.",
+     "fr": "En tout temps. Le territoire l'énonce comme une loi et non comme un conseil, ce qui surprend les conducteurs habitués à ce que les feux de jour suffisent."
+    },
+    "q": {
+     "en": "When do I have to turn my headlights on?",
+     "fr": "Quand dois-je allumer mes phares ?"
+    }
+   },
+   {
+    "a": {
+     "en": "A novice driver is suspended at six or more points, twelve points brings three months and fifteen points brings six. A full licence holder is not suspended until fifteen. Points come off twenty-four months after they were added.",
+     "fr": "Un conducteur novice est suspendu à six points ou plus, douze points entraînent trois mois et quinze points six mois. Un titulaire de permis complet ne l'est qu'à quinze. Les points sont retirés vingt-quatre mois après avoir été inscrits."
+    },
+    "q": {
+     "en": "What happens if I get demerit points as a new driver?",
+     "fr": "Que se passe-t-il si j'accumule des points d'inaptitude comme nouveau conducteur ?"
+    }
+   },
+   {
+    "a": {
+     "en": "To protect the road itself. Moving too fast creates waves under the ice that can crack it or make it fail, and a limit helps spread the weight evenly. The territory publishes no numbers, only that the limits are posted.",
+     "fr": "Pour protéger la route elle-même. Rouler trop vite crée sous la glace des vagues qui peuvent la fissurer ou la rompre, et une limite aide à répartir le poids uniformément. Le territoire ne publie aucun chiffre, seulement que les limites sont affichées."
+    },
+    "q": {
+     "en": "Why do ice roads have speed limits?",
+     "fr": "Pourquoi les routes de glace ont-elles des limites de vitesse ?"
+    }
+   },
+   {
+    "a": {
+     "en": "From dusk until dawn, and from August through November. Most incidents happen along Highways 3 and 5, with the greatest risk on Highway 3 between kilometre 21 near Fort Providence and kilometre 70.",
+     "fr": "Du crépuscule à l'aube, et d'août à novembre. La plupart des incidents surviennent le long des routes 3 et 5, le risque le plus élevé se situant sur la route 3 entre le kilomètre 21 près de Fort Providence et le kilomètre 70."
+    },
+    "q": {
+     "en": "When are bison collisions most likely?",
+     "fr": "Quand les collisions avec un bison sont-elles les plus probables ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. The territory publishes that you must stop in both directions when the lights are flashing. It publishes no divided-highway exception, and we do not assert one either way.",
+     "fr": "Oui. Le territoire publie que vous devez vous arrêter dans les deux sens quand les feux clignotent. Il ne publie aucune exception pour les routes divisées, et nous n'en affirmons ni l'existence ni l'absence."
+    },
+    "q": {
+     "en": "Do I stop for a school bus coming the other way?",
+     "fr": "Dois-je m'arrêter pour un autobus scolaire venant en sens inverse ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty rules questions grouped by chapter, each with the answer marked and explained.",
+    "fr": "Trente questions de code regroupées par chapitre, chacune avec la réponse indiquée et expliquée."
+   },
+   {
+    "en": "Graduated licensing, from the Class 7 learner's licence through the probationary Class 5P to a full licence.",
+    "fr": "Le permis par étapes, du permis d'apprenti conducteur de classe 7 au permis probatoire de classe 5P, jusqu'au permis complet."
+   },
+   {
+    "en": "The supervisor rules, including the twenty-four months of experience that time on a graduated licence does not count towards.",
+    "fr": "Les règles du superviseur, dont les vingt-quatre mois d'expérience auxquels le temps passé avec un permis par étapes ne compte pas."
+   },
+   {
+    "en": "The demerit point thresholds, which are far lower for a novice driver than for anybody else.",
+    "fr": "Les seuils de points d'inaptitude, bien plus bas pour un conducteur novice que pour quiconque."
+   },
+   {
+    "en": "Bison, ice roads and winter roads, gravel highways, the ferries and the school bus rule.",
+    "fr": "Les bisons, les routes de glace et les routes d'hiver, les routes de gravier, les traversiers et la règle de l'autobus scolaire."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "nwt-road-signs.html",
+    {
+     "en": "Study the road signage test",
+     "fr": "Étudiez l'examen de signalisation routière"
+    }
+   ],
+   [
+    "nwt-class-7-practice-test.html",
+    {
+     "en": "Practise signs and rules together",
+     "fr": "Pratiquez les panneaux et le code ensemble"
+    }
+   ],
+   [
+    "nwt-class-7-mock-test.html",
+    {
+     "en": "Try the timed mock test",
+     "fr": "Essayez l'examen blanc chronométré"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test across Canada",
+     "fr": "Comparez l'examen théorique partout au Canada"
     }
    ]
   ]
@@ -9334,6 +10996,560 @@
     {
      "en": "Work through the rules of the road chapter by chapter",
      "fr": "Travaillez le code de la route chapitre par chapitre"
+    }
+   ]
+  ]
+ },
+ "pei-class-7-mock-test.html": {
+  "about": [
+   {
+    "en": "This is the timed version. Two halves are drawn at random from the Prince Edward Island bank, signs and rules, and each half is scored on its own.",
+    "fr": "Voici la version chronométrée. Deux moitiés sont tirées au hasard de la banque de l'Île-du-Prince-Édouard, les panneaux et le code, et chaque moitié est notée séparément."
+   },
+   {
+    "en": "The question count, the pass mark and the timer are ours, not the Province's. Prince Edward Island publishes none of the three, and inventing one would be exactly the kind of confident wrong number this site exists to avoid.",
+    "fr": "Le nombre de questions, la note de passage et le chronomètre sont les nôtres, pas ceux de la Province. L'Île-du-Prince-Édouard ne publie aucun des trois, et en inventer un serait exactement le genre de chiffre erroné assené avec assurance que ce site cherche à éviter."
+   },
+   {
+    "en": "Because the questions are picked at random each time, every run is a different test. Take it on three separate days before you decide you are ready.",
+    "fr": "Comme les questions sont tirées au hasard à chaque fois, chaque partie est un examen différent. Passez-le à trois jours différents avant de vous déclarer prêt."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Prince Edward Island publishes no question count, no pass mark and no time limit for its written test, so treat every number here as practice pressure rather than a rule.",
+    "fr": "L'Île-du-Prince-Édouard ne publie ni nombre de questions, ni note de passage, ni limite de temps pour son examen théorique : considérez donc chaque chiffre ici comme une pression d'entraînement plutôt qu'une règle."
+   },
+   {
+    "en": "The instruction permit itself is valid for two years, and the Province publishes a fee of twenty dollars for the permit and another for the permit test.",
+    "fr": "Le permis d'apprentissage est valide deux ans, et la Province publie des frais de vingt dollars pour le permis et d'autant pour l'examen du permis."
+   },
+   {
+    "en": "The Province does not publish how long a passed written test stays valid.",
+    "fr": "La Province ne publie pas la durée de validité d'un examen théorique réussi."
+   },
+   {
+    "en": "A failed written exam carries a published wait of at least seven days, and a failed road test a wait of at least fourteen.",
+    "fr": "Un examen théorique raté entraîne un délai publié d'au moins sept jours, et une épreuve de conduite ratée un délai d'au moins quatorze jours."
+   },
+   {
+    "en": "Stage 1 lasts at least 365 days, or 275 days with a certified driver-education program, and the whole graduated programme takes a minimum of three years.",
+    "fr": "L'étape 1 dure au moins 365 jours, ou 275 jours avec un programme certifié de formation à la conduite, et le programme progressif complet prend au minimum trois ans."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No. It is free practice written for this site. The Province publishes no format at all, so the number of questions, the pass mark and the timer are all ours and we label them that way.",
+     "fr": "Non. C'est une pratique gratuite rédigée pour ce site. La Province ne publie aucun format : le nombre de questions, la note de passage et le chronomètre viennent donc tous de nous, et nous le disons."
+    },
+    "q": {
+     "en": "Is this the real Prince Edward Island test?",
+     "fr": "S'agit-il du vrai examen de l'Île-du-Prince-Édouard ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Because it shows you where the weakness is. A total can hide a bad half, and going back to the right study page is the whole point.",
+     "fr": "Parce que cela montre où se trouve la faiblesse. Un total peut masquer une moitié faible, et revenir à la bonne page d'étude est tout l'intérêt."
+    },
+    "q": {
+     "en": "Why are the two halves scored separately?",
+     "fr": "Pourquoi les deux moitiés sont-elles notées séparément ?"
+    }
+   },
+   {
+    "a": {
+     "en": "As often as you like. The questions are drawn at random each time, so the test is different on every run.",
+     "fr": "Aussi souvent que vous voulez. Les questions sont tirées au hasard à chaque fois, si bien que l'examen est différent à chaque partie."
+    },
+    "q": {
+     "en": "Can I take it more than once?",
+     "fr": "Puis-je le passer plus d'une fois ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. There is nothing to install and nothing to sign up for, and there is a full-screen mode for a phone or a tablet.",
+     "fr": "Oui. Il n'y a rien à installer ni aucune inscription, et un mode plein écran est offert pour un téléphone ou une tablette."
+    },
+    "q": {
+     "en": "Does it work on a phone?",
+     "fr": "Est-ce que cela fonctionne sur un téléphone ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Back to the study page for that half — the road signs page or the rules of the road page — and then take this again.",
+     "fr": "Retournez à la page d'étude de cette moitié, celle des panneaux ou celle du code de la route, puis repassez cet examen."
+    },
+    "q": {
+     "en": "Where do I go if I fail a half?",
+     "fr": "Où dois-je aller si j'échoue une moitié ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Fifteen road sign questions and fifteen rules questions, drawn at random from the sixty-question bank.",
+    "fr": "Quinze questions sur les panneaux et quinze sur le code, tirées au hasard de la banque de soixante questions."
+   },
+   {
+    "en": "Twelve correct answers needed in each half, which is our practice standard and not the Province's.",
+    "fr": "Douze bonnes réponses exigées dans chaque moitié, ce qui est notre norme de pratique et non celle de la Province."
+   },
+   {
+    "en": "A thirty-minute countdown, clearly labelled as our practice standard rather than a published rule.",
+    "fr": "Un compte à rebours de trente minutes, clairement présenté comme notre norme de pratique plutôt que comme une règle publiée."
+   },
+   {
+    "en": "A short explanation after every answer, right or wrong.",
+    "fr": "Une courte explication après chaque réponse, bonne ou mauvaise."
+   },
+   {
+    "en": "A pass or try again result for each half, scored separately.",
+    "fr": "Un résultat réussi ou à reprendre pour chaque moitié, notée séparément."
+   },
+   {
+    "en": "A list of every question you missed, so you know which page to go back to.",
+    "fr": "La liste de toutes les questions manquées, pour savoir à quelle page revenir."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "pei-class-7-practice-test.html",
+    {
+     "en": "Go back to untimed practice with explanations",
+     "fr": "Revenez à la pratique sans chronomètre avec explications"
+    }
+   ],
+   [
+    "pei-road-signs.html",
+    {
+     "en": "Study the road signs before trying again",
+     "fr": "Étudiez les panneaux avant de réessayer"
+    }
+   ],
+   [
+    "pei-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road before trying again",
+     "fr": "Étudiez le code de la route avant de réessayer"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See the driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite de chaque province"
+    }
+   ]
+  ]
+ },
+ "pei-class-7-practice-test.html": {
+  "about": [
+   {
+    "en": "This page is free practice for the Prince Edward Island written driving examination, the test you pass before you may drive with somebody beside you. The Province calls the licence an Instruction Driver's Permit, a Class 7 licence, and it is Stage 1 of the graduated licensing programme, marked by a yellow L decal.",
+    "fr": "Cette page offre une pratique gratuite pour l'examen théorique de conduite de l'Île-du-Prince-Édouard, celui que vous réussissez avant de pouvoir conduire accompagné. La Province appelle ce permis un permis d'apprentissage, un permis de classe 7, et il correspond à l'étape 1 du programme de permis progressif, signalé par une vignette jaune portant un L."
+   },
+   {
+    "en": "Prince Edward Island publishes no question count, no pass mark and no time limit for that test, anywhere. Three commercial practice sites state the same figures as each other, and none of them cites a government source. We are not repeating a number that decides whether somebody books a test, so the numbers on our mock test are a clearly stated practice standard of our own.",
+    "fr": "L'Île-du-Prince-Édouard ne publie nulle part de nombre de questions, de note de passage ni de limite de temps pour cet examen. Trois sites commerciaux de pratique annoncent tous les mêmes chiffres, et aucun ne cite de source gouvernementale. Nous ne répétons pas un chiffre qui décide si quelqu'un réserve un examen : les nombres de notre examen blanc sont donc une norme de pratique clairement présentée comme la nôtre."
+   },
+   {
+    "en": "Every question was written for this site from the free official Driver's Handbook, the licensing and Rules of the Road pages on the Province's own website, and the graduated licensing and demerit point regulations. Nothing was copied from a handbook, from a real test, or from another practice site.",
+    "fr": "Chaque question a été rédigée pour ce site à partir du Guide du conducteur officiel gratuit, des pages sur les permis et le code de la route du site de la Province, ainsi que des règlements sur le permis progressif et les points d'inaptitude. Rien n'a été copié d'un guide, d'un vrai examen ou d'un autre site de pratique."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Any violation carrying demerit points at all suspends a Stage 1 permit for at least thirty days, with no cushion of points to lose first.",
+    "fr": "Toute infraction assortie de points d'inaptitude suspend un permis de l'étape 1 pendant au moins trente jours, sans aucune marge de points à perdre d'abord."
+   },
+   {
+    "en": "The learner must be at zero blood alcohol while the accompanying driver must be under 0.05, which is two different limits in the same front seat.",
+    "fr": "L'apprenti doit avoir un taux d'alcool nul, tandis que la personne qui l'accompagne doit être sous 0,05 : deux limites différentes sur le même siège avant."
+   },
+   {
+    "en": "A Stage 1 driver under 21 may not drive between one and five in the morning.",
+    "fr": "Un conducteur de l'étape 1 âgé de moins de 21 ans ne peut pas conduire entre une heure et cinq heures du matin."
+   },
+   {
+    "en": "The open highway limit is 80 km/h unless a sign says otherwise, and 90 is the highest limit posted anywhere in the province.",
+    "fr": "La limite sur la route ouverte est de 80 km/h sauf indication contraire d'un panneau, et 90 est la limite la plus élevée affichée dans la province."
+   },
+   {
+    "en": "If you fail the instruction permit test the Province publishes a wait of at least seven days before you rewrite it, and no fee to rewrite.",
+    "fr": "Si vous échouez à l'examen du permis d'apprentissage, la Province publie un délai d'au moins sept jours avant la reprise, et aucuns frais pour reprendre."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "The Province does not publish a number anywhere. Several practice sites state one anyway, and none of them cites a government source. Our mock test uses a count of our own and says so.",
+     "fr": "La Province ne publie aucun chiffre, nulle part. Plusieurs sites de pratique en annoncent un tout de même, sans qu'aucun ne cite de source gouvernementale. Notre examen blanc utilise un nombre qui nous est propre, et nous le disons."
+    },
+    "q": {
+     "en": "How many questions are on the real Prince Edward Island written test?",
+     "fr": "Combien de questions compte le vrai examen théorique de l'Île-du-Prince-Édouard ?"
+    }
+   },
+   {
+    "a": {
+     "en": "That is not published either, and neither is a time limit. The pass mark on our mock test is our own practice standard, chosen to be demanding rather than to imitate a figure nobody has sourced.",
+     "fr": "Elle n'est pas publiée non plus, pas plus qu'une limite de temps. La note de passage de notre examen blanc est notre propre norme de pratique, choisie pour être exigeante plutôt que pour imiter un chiffre sans source."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "At an Access PEI office, by contacting a location to book a written knowledge exam appointment. Students in a certified driver-education program write it in class and still attend Access PEI for the vision test. The Province publishes no online version of the knowledge test.",
+     "fr": "Dans un bureau d'Accès Î.-P.-É., en communiquant avec un bureau pour obtenir un rendez-vous d'examen théorique. Les élèves d'un programme certifié de formation à la conduite le passent en classe et se présentent tout de même à Accès Î.-P.-É. pour l'examen de la vue. La Province ne publie aucune version en ligne de l'examen théorique."
+    },
+    "q": {
+     "en": "Where do I write the test?",
+     "fr": "Où puis-je passer l'examen ?"
+    }
+   },
+   {
+    "a": {
+     "en": "You wait at least seven days before rewriting the written exam, and there is no additional fee to rewrite it. After a failed road test the published wait is at least fourteen days.",
+     "fr": "Vous attendez au moins sept jours avant de reprendre l'examen théorique, et la reprise n'entraîne aucuns frais supplémentaires. Après une épreuve de conduite ratée, le délai publié est d'au moins quatorze jours."
+    },
+    "q": {
+     "en": "What happens if I fail?",
+     "fr": "Que se passe-t-il si j'échoue ?"
+    }
+   },
+   {
+    "a": {
+     "en": "A fully licensed driver who has held a licence for at least four years, holds the right class for the vehicle, sits in the front passenger seat and is under 0.05 blood alcohol. Your own blood alcohol must be zero.",
+     "fr": "Une personne pleinement titulaire d'un permis depuis au moins quatre ans, qui détient la bonne classe pour le véhicule, qui s'assoit sur le siège avant du passager et dont le taux d'alcool est sous 0,05. Votre propre taux d'alcool doit être nul."
+    },
+    "q": {
+     "en": "Who can sit beside me while I practise?",
+     "fr": "Qui peut s'asseoir à côté de moi pendant que je pratique ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Sixty questions in total: thirty on road signs and thirty on the rules of the road, each with a short explanation.",
+    "fr": "Soixante questions au total : trente sur les panneaux routiers et trente sur le code de la route, chacune accompagnée d'une courte explication."
+   },
+   {
+    "en": "A quick ten-question practice round at the top of the page, with signs and rules mixed together and no timer.",
+    "fr": "Une série rapide de dix questions en haut de la page, panneaux et code mêlés, sans chronomètre."
+   },
+   {
+    "en": "A timed mock test built on a practice standard of our own, because the Province publishes no format of its own.",
+    "fr": "Un examen blanc chronométré bâti sur une norme de pratique qui nous est propre, car la Province ne publie aucun format."
+   },
+   {
+    "en": "A road signs page where every sign is drawn in code and grouped by type, with practice for each group.",
+    "fr": "Une page de panneaux où chaque panneau est dessiné en code et regroupé par type, avec de la pratique pour chaque groupe."
+   },
+   {
+    "en": "A rules of the road page organised by chapter, covering graduated licensing, the permit and the exams, Stage 1 rules, demerit points, school buses and country roads.",
+    "fr": "Une page de code de la route organisée par chapitre, couvrant le permis progressif, le permis et les examens, les règles de l'étape 1, les points d'inaptitude, les autobus scolaires et les routes de campagne."
+   },
+   {
+    "en": "The whole question bank printed on the page, so you can read straight through it without playing.",
+    "fr": "Toute la banque de questions imprimée sur la page, pour la lire d'un bout à l'autre sans jouer."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "pei-class-7-mock-test.html",
+    {
+     "en": "Take the timed PEI mock test",
+     "fr": "Passez l'examen blanc chronométré de l'Î.-P.-É."
+    }
+   ],
+   [
+    "pei-road-signs.html",
+    {
+     "en": "Study every road sign for the knowledge test",
+     "fr": "Étudiez tous les panneaux pour l'examen théorique"
+    }
+   ],
+   [
+    "pei-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road chapter by chapter",
+     "fr": "Étudiez le code de la route chapitre par chapitre"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test in every province and territory",
+     "fr": "Comparez l'examen théorique de chaque province et territoire"
+    }
+   ]
+  ]
+ },
+ "pei-road-signs.html": {
+  "about": [
+   {
+    "en": "The Province's graduated licensing booklet describes what you sit as the written and road signs test, so sign recognition is part of it. Whether signs are scored as a separate test is not published, so we keep them as a study page without claiming they are a test of their own.",
+    "fr": "Le livret de la Province sur le permis progressif décrit ce que vous passez comme l'examen théorique et des panneaux : la reconnaissance des panneaux en fait donc partie. La Province ne publie pas si les panneaux sont notés séparément : nous en faisons une page d'étude sans prétendre qu'il s'agit d'un examen distinct."
+   },
+   {
+    "en": "Every sign on this page is drawn in code rather than copied from a government publication, so nothing here is anyone else's artwork. Each sign carries its own name as a caption and in its alt text, so the page works with a screen reader too.",
+    "fr": "Chaque panneau de cette page est dessiné en code plutôt que copié d'une publication gouvernementale : rien ici n'est l'illustration d'autrui. Chaque panneau porte son propre nom en légende et dans son texte de remplacement, si bien que la page fonctionne aussi avec un lecteur d'écran."
+   }
+  ],
+  "facts": [
+   {
+    "en": "A red circle with a slash means you must not do the thing shown, and a green circle means you may.",
+    "fr": "Un cercle rouge barré signifie que vous ne devez pas faire ce qui est illustré, et un cercle vert que vous le pouvez."
+   },
+   {
+    "en": "A yellow diamond warns about something ahead, while an orange diamond means road work.",
+    "fr": "Un losange jaune avertit d'un danger devant, tandis qu'un losange orange annonce des travaux."
+   },
+   {
+    "en": "Failing to stop for a school bus with its red lights flashing carries twelve demerit points in this province.",
+    "fr": "Omettre de s'arrêter pour un autobus scolaire dont les feux rouges clignotent vaut douze points d'inaptitude dans cette province."
+   },
+   {
+    "en": "Signs are the same across Canada, so studying them here also prepares you for a test in another province.",
+    "fr": "Les panneaux sont les mêmes partout au Canada : les étudier ici vous prépare donc aussi à un examen dans une autre province."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "They are our own drawings of the standard Canadian signs used in the province. They are not copied from any official publication.",
+     "fr": "Ce sont nos propres dessins des panneaux canadiens normalisés utilisés dans la province. Ils ne sont copiés d'aucune publication officielle."
+    },
+    "q": {
+     "en": "Are these the real Prince Edward Island signs?",
+     "fr": "S'agit-il des vrais panneaux de l'Île-du-Prince-Édouard ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The Province's own graduated licensing booklet speaks of the written and road signs test, so sign content is included. How it is weighted is not published.",
+     "fr": "Le livret de la Province sur le permis progressif parle de l'examen théorique et des panneaux : le contenu sur les panneaux en fait donc partie. La pondération n'est pas publiée."
+    },
+    "q": {
+     "en": "Does the real test include signs?",
+     "fr": "Le vrai examen porte-t-il sur les panneaux ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The Province does not say. We keep signs and rules as separate study pages because that is a better way to learn, not because we know they are separate tests.",
+     "fr": "La Province ne le dit pas. Nous gardons les panneaux et le code sur des pages d'étude distinctes parce que c'est une meilleure façon d'apprendre, et non parce que nous saurions qu'il s'agit d'examens distincts."
+    },
+    "q": {
+     "en": "Is sign recognition scored separately?",
+     "fr": "La reconnaissance des panneaux est-elle notée séparément ?"
+    }
+   },
+   {
+    "a": {
+     "en": "All of the ones on this page. They are the families the handbook covers, and once the shapes and colours are automatic the wording matters much less.",
+     "fr": "Tous ceux de cette page. Ce sont les familles que couvre le guide, et une fois que les formes et les couleurs vous viennent d'instinct, le libellé compte beaucoup moins."
+    },
+    "q": {
+     "en": "How many signs should I learn?",
+     "fr": "Combien de panneaux devrais-je apprendre ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty sign questions covering regulatory, warning, temporary, information, traffic light and pavement marking signs.",
+    "fr": "Trente questions sur les panneaux de prescription, d'avertissement, temporaires, d'information, les feux de circulation et les marques sur la chaussée."
+   },
+   {
+    "en": "Practice for each group of signs, so you can work through one family at a time.",
+    "fr": "De la pratique pour chaque groupe de panneaux, pour travailler une famille à la fois."
+   },
+   {
+    "en": "The school bus signs and the farm machinery warning, both of which matter more on the Island than the shapes alone suggest.",
+    "fr": "Les panneaux d'autobus scolaire et l'avertissement de machinerie agricole, qui comptent tous deux plus sur l'Île que leur forme ne le laisse croire."
+   },
+   {
+    "en": "The whole sign bank printed below the practice, with the answer marked and explained.",
+    "fr": "Toute la banque de panneaux imprimée sous la pratique, avec la réponse indiquée et expliquée."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "pei-class-7-practice-test.html",
+    {
+     "en": "Practise signs and rules together",
+     "fr": "Pratiquez les panneaux et le code ensemble"
+    }
+   ],
+   [
+    "pei-rules-of-the-road.html",
+    {
+     "en": "Move on to the rules of the road",
+     "fr": "Passez au code de la route"
+    }
+   ],
+   [
+    "pei-class-7-mock-test.html",
+    {
+     "en": "Try the timed mock test",
+     "fr": "Essayez l'examen blanc chronométré"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "Driving test practice for every province",
+     "fr": "Pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "pei-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "The written test is based on the driving rules and safety information in the Driver's Handbook, and this page holds the rules half of our question bank, arranged by chapter.",
+    "fr": "L'examen théorique repose sur les règles de conduite et les consignes de sécurité du Guide du conducteur, et cette page contient la moitié de notre banque consacrée au code, organisée par chapitre."
+   },
+   {
+    "en": "Several of these rules are genuinely local. The school bus rule in both directions, the six-metre stopping distance, the sixty in a business district and the suspension a learner faces for any demerit points at all are all specific to this province, and all of them come from official sources.",
+    "fr": "Plusieurs de ces règles sont véritablement locales. L'arrêt obligatoire dans les deux sens pour un autobus scolaire, la distance d'arrêt de six mètres, la limite de soixante dans un quartier commercial et la suspension qu'entraîne pour un apprenti le moindre point d'inaptitude sont propres à cette province, et toutes proviennent de sources officielles."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The open highway limit is 80 km/h unless posted, the highest posted limit anywhere is 90, residential streets are 50 and business districts are 60.",
+    "fr": "La limite sur la route ouverte est de 80 km/h sauf affichage contraire, la limite affichée la plus élevée est de 90, les rues résidentielles sont à 50 et les quartiers commerciaux à 60."
+   },
+   {
+    "en": "Any demerit points at all suspend a Stage 1 permit for at least thirty days, while Stage 2 and Stage 3 go at six points in twelve months or nine in twenty-four, and a full licence holder at twelve.",
+    "fr": "Le moindre point d'inaptitude suspend un permis de l'étape 1 pendant au moins trente jours, alors que les étapes 2 et 3 tombent à six points en douze mois ou neuf en vingt-quatre, et un titulaire de permis complet à douze."
+   },
+   {
+    "en": "Vehicles in both directions stop for a school bus with red lights flashing, not less than six metres from the front or the rear of the bus.",
+    "fr": "Les véhicules des deux sens s'arrêtent pour un autobus scolaire dont les feux rouges clignotent, à au moins six mètres de l'avant ou de l'arrière de l'autobus."
+   },
+   {
+    "en": "Radar detectors are illegal in this province, and riding in the open box of a pickup truck is prohibited.",
+    "fr": "Les détecteurs de radar sont illégaux dans cette province, et il est interdit de voyager dans la boîte ouverte d'une camionnette."
+   },
+   {
+    "en": "When you pass a cyclist the law asks for at least one metre of space, or as near to that as possible.",
+    "fr": "Quand vous dépassez une personne à vélo, la loi demande au moins un mètre d'espace, ou le plus près possible de cette distance."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "80 km/h on the open highway, 50 in residential areas and 60 in business districts. The highest limit posted anywhere in the province is 90, so there is no 100 km/h highway here.",
+     "fr": "80 km/h sur la route ouverte, 50 dans les quartiers résidentiels et 60 dans les quartiers commerciaux. La limite la plus élevée affichée dans la province est de 90 : il n'y a donc aucune route à 100 km/h ici."
+    },
+    "q": {
+     "en": "What is the speed limit if there is no sign?",
+     "fr": "Quelle est la limite de vitesse s'il n'y a aucun panneau ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. Vehicles in both directions must stop when the red lights are flashing, and the Province publishes no exception for a divided highway or a median. Stop not less than six metres from the front or the rear of the bus.",
+     "fr": "Oui. Les véhicules des deux sens doivent s'arrêter quand les feux rouges clignotent, et la Province ne publie aucune exception pour une route divisée ou un terre-plein. Arrêtez-vous à au moins six mètres de l'avant ou de l'arrière de l'autobus."
+    },
+    "q": {
+     "en": "Do I stop for a school bus coming the other way?",
+     "fr": "Dois-je m'arrêter pour un autobus scolaire venant en sens inverse ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Any violation carrying demerit points suspends a Stage 1 permit for at least thirty days. There is no threshold to reach first, which makes this the strictest number in the whole programme.",
+     "fr": "Toute infraction assortie de points d'inaptitude suspend un permis de l'étape 1 pendant au moins trente jours. Il n'y a aucun seuil à atteindre d'abord, ce qui en fait le chiffre le plus sévère de tout le programme."
+    },
+    "q": {
+     "en": "What happens if I get demerit points as a learner?",
+     "fr": "Que se passe-t-il si j'accumule des points d'inaptitude comme apprenti ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The published limit for the accompanying driver is under 0.05, which is lower than the Criminal Code limit but is not zero. Your own limit as a learner is zero, and it stays zero through all three stages.",
+     "fr": "La limite publiée pour la personne qui vous accompagne est de moins de 0,05, ce qui est plus bas que la limite du Code criminel sans être zéro. Votre propre limite comme apprenti est nulle, et elle le reste durant les trois étapes."
+    },
+    "q": {
+     "en": "Can the driver supervising me have had a drink?",
+     "fr": "La personne qui m'accompagne peut-elle avoir bu ?"
+    }
+   },
+   {
+    "a": {
+     "en": "The bridge has its own posted speed and its own wind restrictions on high-sided vehicles, motorcycles and vehicles towing something, but those come from the company that operates the bridge rather than from the Province. No provincial rule restricts a learner from the bridge.",
+     "fr": "Le pont a sa propre vitesse affichée et ses propres restrictions de vent visant les véhicules à parois hautes, les motos et les véhicules qui remorquent quelque chose, mais elles viennent de la société qui exploite le pont et non de la Province. Aucune règle provinciale n'interdit le pont à un apprenti."
+    },
+    "q": {
+     "en": "Are there special rules for the Confederation Bridge?",
+     "fr": "Y a-t-il des règles particulières pour le pont de la Confédération ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty rules questions grouped by chapter, each with the answer marked and explained.",
+    "fr": "Trente questions de code regroupées par chapitre, chacune avec la réponse indiquée et expliquée."
+   },
+   {
+    "en": "Graduated licensing, from the Stage 1 permit through Stage 2 and Stage 3 to a full Class 5.",
+    "fr": "Le permis progressif, du permis de l'étape 1 aux étapes 2 et 3, jusqu'à la classe 5 complète."
+   },
+   {
+    "en": "Your permit and the exams, including the published waits after a failed written exam or road test.",
+    "fr": "Votre permis et les examens, y compris les délais publiés après un examen théorique ou une épreuve de conduite ratés."
+   },
+   {
+    "en": "The demerit point thresholds, which start at any points at all for a Stage 1 driver.",
+    "fr": "Les seuils de points d'inaptitude, qui commencent au moindre point pour un conducteur de l'étape 1."
+   },
+   {
+    "en": "School buses and school zones, speed limits, country roads and farm machinery.",
+    "fr": "Les autobus scolaires et les zones scolaires, les limites de vitesse, les routes de campagne et la machinerie agricole."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "pei-road-signs.html",
+    {
+     "en": "Study the road signs half",
+     "fr": "Étudiez la moitié consacrée aux panneaux"
+    }
+   ],
+   [
+    "pei-class-7-practice-test.html",
+    {
+     "en": "Practise signs and rules together",
+     "fr": "Pratiquez les panneaux et le code ensemble"
+    }
+   ],
+   [
+    "pei-class-7-mock-test.html",
+    {
+     "en": "Try the timed mock test",
+     "fr": "Essayez l'examen blanc chronométré"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test across Canada",
+     "fr": "Comparez l'examen théorique partout au Canada"
     }
    ]
   ]
@@ -15192,6 +17408,578 @@
     {
      "en": "Could Canada feed every Canadian?",
      "fr": "Le Canada pourrait-il nourrir tous les Canadiens ?"
+    }
+   ]
+  ]
+ },
+ "yukon-class-7-mock-test.html": {
+  "about": [
+   {
+    "en": "This is the timed version. Two halves are drawn at random from the Yukon bank, signs and rules, and each half is scored on its own at the territory's published 80 percent.",
+    "fr": "Voici la version chronométrée. Deux moitiés sont tirées au hasard de la banque du Yukon, les panneaux et le code, et chaque moitié est notée séparément selon les 80 pour cent publiés par le territoire."
+   },
+   {
+    "en": "The 80 percent is Yukon's. The question count, the timer and the split into two halves are ours, because the regulations describe one combined test and set no number of questions and no time limit.",
+    "fr": "Les 80 pour cent viennent du Yukon. Le nombre de questions, le chronomètre et la séparation en deux moitiés viennent de nous, car le règlement décrit un seul examen combiné et ne fixe ni nombre de questions ni limite de temps."
+   },
+   {
+    "en": "Because the questions are picked at random each time, every run is a different test. Take it on three separate days before you decide you are ready.",
+    "fr": "Comme les questions sont tirées au hasard à chaque fois, chaque partie est un examen différent. Passez-le à trois jours différents avant de vous déclarer prêt."
+   }
+  ],
+  "facts": [
+   {
+    "en": "Eighty percent leaves room for four wrong answers in twenty, and it is the mark the regulations set for every class of licence.",
+    "fr": "Quatre-vingts pour cent laisse la place à quatre mauvaises réponses sur vingt, et c'est la note que le règlement fixe pour toutes les classes de permis."
+   },
+   {
+    "en": "Yukon publishes no time limit for the real test, so treat the timer here as practice pressure rather than a rule.",
+    "fr": "Le Yukon ne publie aucune limite de temps pour le vrai examen : considérez donc le chronomètre ici comme une pression d'entraînement plutôt qu'une règle."
+   },
+   {
+    "en": "The real test is written in person at a Motor Vehicles office and costs twenty dollars.",
+    "fr": "Le vrai examen se passe en personne dans un bureau des véhicules automobiles et coûte vingt dollars."
+   },
+   {
+    "en": "You are told whether you passed immediately, and a failed attempt can be rewritten as early as the following day.",
+    "fr": "Le résultat vous est communiqué immédiatement, et une tentative ratée peut être reprise dès le lendemain."
+   },
+   {
+    "en": "Yukon does not publish how long a passed knowledge test stays valid.",
+    "fr": "Le Yukon ne publie pas la durée de validité d'un examen théorique réussi."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "No. It is free practice written for this site. The 80 percent pass mark is the territory's; the number of questions, the timer and the split into two halves are ours.",
+     "fr": "Non. C'est une pratique gratuite rédigée pour ce site. La note de passage de 80 pour cent vient du territoire ; le nombre de questions, le chronomètre et la séparation en deux moitiés viennent de nous."
+    },
+    "q": {
+     "en": "Is this the real Yukon test?",
+     "fr": "S'agit-il du vrai examen du Yukon ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Because it shows you where the weakness is. A total can hide a bad half, and going back to the right study page is the whole point. Yukon itself runs one combined test.",
+     "fr": "Parce que cela montre où se trouve la faiblesse. Un total peut masquer une moitié faible, et revenir à la bonne page d'étude est tout l'intérêt. Le Yukon, lui, fait passer un seul examen combiné."
+    },
+    "q": {
+     "en": "Why are the two halves scored separately?",
+     "fr": "Pourquoi les deux moitiés sont-elles notées séparément ?"
+    }
+   },
+   {
+    "a": {
+     "en": "As often as you like. The questions are drawn at random each time, so the test is different on every run.",
+     "fr": "Aussi souvent que vous voulez. Les questions sont tirées au hasard à chaque fois, si bien que l'examen est différent à chaque partie."
+    },
+    "q": {
+     "en": "Can I take it more than once?",
+     "fr": "Puis-je le passer plus d'une fois ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. There is nothing to install and nothing to sign up for, and there is a full-screen mode for a phone or a tablet.",
+     "fr": "Oui. Il n'y a rien à installer ni aucune inscription, et un mode plein écran est offert pour un téléphone ou une tablette."
+    },
+    "q": {
+     "en": "Does it work on a phone?",
+     "fr": "Est-ce que cela fonctionne sur un téléphone ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Back to the study page for that half — the road signs page or the rules of the road page — and then take this again.",
+     "fr": "Retournez à la page d'étude de cette moitié, celle des panneaux ou celle du code de la route, puis repassez cet examen."
+    },
+    "q": {
+     "en": "Where do I go if I fail a half?",
+     "fr": "Où dois-je aller si j'échoue une moitié ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Twenty road sign questions and twenty rules questions, drawn at random from the sixty-question bank.",
+    "fr": "Vingt questions sur les panneaux et vingt sur le code, tirées au hasard de la banque de soixante questions."
+   },
+   {
+    "en": "Sixteen correct answers needed in each half, which is Yukon's published 80 percent.",
+    "fr": "Seize bonnes réponses exigées dans chaque moitié, ce qui correspond aux 80 pour cent publiés par le Yukon."
+   },
+   {
+    "en": "A thirty-minute countdown, clearly labelled as our practice standard rather than the territory's.",
+    "fr": "Un compte à rebours de trente minutes, clairement présenté comme notre norme de pratique plutôt que celle du territoire."
+   },
+   {
+    "en": "A short explanation after every answer, right or wrong.",
+    "fr": "Une courte explication après chaque réponse, bonne ou mauvaise."
+   },
+   {
+    "en": "A pass or try again result for each half, scored separately.",
+    "fr": "Un résultat réussi ou à reprendre pour chaque moitié, notée séparément."
+   },
+   {
+    "en": "A list of every question you missed, so you know which page to go back to.",
+    "fr": "La liste de toutes les questions manquées, pour savoir à quelle page revenir."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "yukon-class-7-practice-test.html",
+    {
+     "en": "Go back to untimed practice with explanations",
+     "fr": "Revenez à la pratique sans chronomètre avec explications"
+    }
+   ],
+   [
+    "yukon-road-signs.html",
+    {
+     "en": "Study the road signs before trying again",
+     "fr": "Étudiez les panneaux avant de réessayer"
+    }
+   ],
+   [
+    "yukon-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road before trying again",
+     "fr": "Étudiez le code de la route avant de réessayer"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "See the driving test practice for every province",
+     "fr": "Voyez la pratique de l'examen de conduite de chaque province"
+    }
+   ]
+  ]
+ },
+ "yukon-class-7-practice-test.html": {
+  "about": [
+   {
+    "en": "This page is free practice for the Yukon written and sign recognition test, the one test you pass before you may drive with a co-driver beside you. Yukon calls the licence a Class 7 learner licence, and it is the first stage of the territory's graduated licensing programme.",
+    "fr": "Cette page offre une pratique gratuite pour l'examen théorique et de reconnaissance des panneaux du Yukon, l'unique examen que vous réussissez avant de pouvoir conduire avec un accompagnateur à vos côtés. Le Yukon appelle ce permis un permis d'apprenti conducteur de classe 7, et il correspond à la première étape du programme de permis par étapes du territoire."
+   },
+   {
+    "en": "Yukon publishes its pass mark, which is more than many places do. The Motor Vehicles Regulations set it at 80 percent and say that mark applies to every class of licence. The same regulations describe one combined written and sign recognition test rather than two separate exams.",
+    "fr": "Le Yukon publie sa note de passage, ce qui est plus que bien des administrations. Le Règlement sur les véhicules automobiles la fixe à 80 pour cent et précise que cette note vaut pour toutes les classes de permis. Le même règlement décrit un seul examen combiné de théorie et de reconnaissance des panneaux plutôt que deux épreuves distinctes."
+   },
+   {
+    "en": "What is not published is the number of questions or a time limit, so the count on our mock test, the timer and our split into a signs half and a rules half are a clearly stated practice standard of our own. A commercial site states that the exam comes in two parts of twenty questions each, and the regulation does not support it.",
+    "fr": "Ce qui n'est pas publié, c'est le nombre de questions ni une limite de temps : le nombre de questions de notre examen blanc, le chronomètre et notre séparation en une moitié panneaux et une moitié code sont donc une norme de pratique clairement présentée comme la nôtre. Un site commercial affirme que l'examen comporte deux parties de vingt questions chacune, et le règlement ne l'appuie pas."
+   },
+   {
+    "en": "Every question was written for this site from the free Yukon Driver's Basic Handbook, the driver licensing and road safety pages on yukon.ca, and the Motor Vehicles Regulations. Nothing was copied from a handbook, from a real test, or from another practice site.",
+    "fr": "Chaque question a été rédigée pour ce site à partir du Yukon Driver's Basic Handbook gratuit, des pages sur les permis de conduire et la sécurité routière de yukon.ca, ainsi que du Règlement sur les véhicules automobiles. Rien n'a été copié d'un guide, d'un vrai examen ou d'un autre site de pratique."
+   }
+  ],
+  "facts": [
+   {
+    "en": "The pass mark is 80 percent, it is set in the Motor Vehicles Regulations, and it applies to every class of licence.",
+    "fr": "La note de passage est de 80 pour cent, elle est fixée par le Règlement sur les véhicules automobiles, et elle vaut pour toutes les classes de permis."
+   },
+   {
+    "en": "The test costs twenty dollars, you are told the result immediately, and you may take it again as early as the following day for another twenty dollars.",
+    "fr": "L'examen coûte vingt dollars, le résultat vous est communiqué immédiatement, et vous pouvez le reprendre dès le lendemain moyennant vingt dollars de plus."
+   },
+   {
+    "en": "A learner licence starts at 15, and the learner stage lasts at least six months with fifty logged driving hours.",
+    "fr": "Le permis d'apprenti conducteur s'obtient dès 15 ans, et l'étape d'apprenti dure au moins six mois avec cinquante heures de conduite consignées."
+   },
+   {
+    "en": "The co-driver must have held at least a Class 5 licence for two years and must have no alcohol in their blood.",
+    "fr": "L'accompagnateur doit détenir au moins un permis de classe 5 depuis deux ans et ne doit avoir aucune trace d'alcool dans le sang."
+   },
+   {
+    "en": "A graduated licensing driver is suspended at seven demerit points, while every other licence holder is suspended at fifteen.",
+    "fr": "Un conducteur du programme de permis par étapes est suspendu à sept points d'inaptitude, alors que tout autre titulaire de permis l'est à quinze."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Yukon does not publish a number. The regulations leave the basic test to the registrar and set no count for it. A commercial site states two parts of twenty questions each, which the regulation does not support, and our mock test uses a count of our own and says so.",
+     "fr": "Le Yukon ne publie aucun chiffre. Le règlement laisse l'examen de base au registraire des véhicules automobiles sans en fixer le nombre de questions. Un site commercial annonce deux parties de vingt questions chacune, ce que le règlement n'appuie pas, et notre examen blanc utilise un nombre qui nous est propre, ce que nous disons."
+    },
+    "q": {
+     "en": "How many questions are on the real Yukon knowledge test?",
+     "fr": "Combien de questions compte le vrai examen théorique du Yukon ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Eighty percent. That one is official: the Motor Vehicles Regulations set it, and the same line says it applies to every class of licence.",
+     "fr": "Quatre-vingts pour cent. Celle-là est officielle : le Règlement sur les véhicules automobiles la fixe, et la même disposition précise qu'elle vaut pour toutes les classes de permis."
+    },
+    "q": {
+     "en": "What is the pass mark?",
+     "fr": "Quelle est la note de passage ?"
+    }
+   },
+   {
+    "a": {
+     "en": "No. The regulations describe one combined written and sign recognition test. We keep signs and rules as two study pages because it is a better way to learn, not because Yukon runs two exams.",
+     "fr": "Non. Le règlement décrit un seul examen combiné de théorie et de reconnaissance des panneaux. Nous gardons les panneaux et le code sur deux pages d'étude parce que c'est une meilleure façon d'apprendre, et non parce que le Yukon ferait passer deux examens."
+    },
+    "q": {
+     "en": "Are signs and rules two separate tests?",
+     "fr": "Les panneaux et le code font-ils l'objet de deux examens distincts ?"
+    }
+   },
+   {
+    "a": {
+     "en": "In person at a Motor Vehicles office. Yukon's online service covers booking a road test, and no official page offers the written test online.",
+     "fr": "En personne dans un bureau des véhicules automobiles. Le service en ligne du Yukon sert à réserver l'examen de conduite, et aucune page officielle n'offre l'examen théorique en ligne."
+    },
+    "q": {
+     "en": "Where do I write the test, and can I write it online?",
+     "fr": "Où puis-je passer l'examen, et puis-je le passer en ligne ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yukon does not publish an answer either way. The handbook and the licensing pages are bilingual, and the Guide de la route du Yukon is an official edition, but no official page says which languages the examination itself is given in. Ask the Motor Vehicles office before you go.",
+     "fr": "Le Yukon ne publie de réponse ni dans un sens ni dans l'autre. Le guide et les pages sur les permis sont bilingues, et le Guide de la route du Yukon est une édition officielle, mais aucune page officielle n'indique dans quelles langues l'examen lui-même est administré. Renseignez-vous auprès du bureau des véhicules automobiles avant de vous déplacer."
+    },
+    "q": {
+     "en": "Can I take the test in French?",
+     "fr": "Puis-je passer l'examen en français ?"
+    }
+   },
+   {
+    "a": {
+     "en": "A co-driver who has held at least a Class 5 licence for two years, who must be with you every time you drive and who must have no alcohol in their blood. Your own blood alcohol must be zero as well.",
+     "fr": "Un accompagnateur qui détient au moins un permis de classe 5 depuis deux ans, qui doit être avec vous chaque fois que vous conduisez et qui ne doit avoir aucune trace d'alcool dans le sang. Votre propre taux d'alcool doit être nul lui aussi."
+    },
+    "q": {
+     "en": "Who can sit beside me while I practise?",
+     "fr": "Qui peut s'asseoir à côté de moi pendant que je pratique ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Sixty questions in total: thirty on road signs and thirty on the rules of the road, each with a short explanation.",
+    "fr": "Soixante questions au total : trente sur les panneaux routiers et trente sur le code de la route, chacune accompagnée d'une courte explication."
+   },
+   {
+    "en": "A quick ten-question practice round at the top of the page, with signs and rules mixed together and no timer.",
+    "fr": "Une série rapide de dix questions en haut de la page, panneaux et code mêlés, sans chronomètre."
+   },
+   {
+    "en": "A timed mock test that applies Yukon's published 80 percent pass mark to a question count of our own.",
+    "fr": "Un examen blanc chronométré qui applique la note de passage publiée de 80 pour cent à un nombre de questions qui nous est propre."
+   },
+   {
+    "en": "A road signs page where every sign is drawn in code and grouped by type, with practice for each group.",
+    "fr": "Une page de panneaux où chaque panneau est dessiné en code et regroupé par type, avec de la pratique pour chaque groupe."
+   },
+   {
+    "en": "A rules of the road page organised by chapter, covering graduated licensing, learner and novice restrictions, demerit points, permafrost highways and winter driving.",
+    "fr": "Une page de code de la route organisée par chapitre, couvrant le permis par étapes, les restrictions des apprentis et des conducteurs intermédiaires, les points d'inaptitude, les routes sur pergélisol et la conduite hivernale."
+   },
+   {
+    "en": "The whole question bank printed on the page, so you can read straight through it without playing.",
+    "fr": "Toute la banque de questions imprimée sur la page, pour la lire d'un bout à l'autre sans jouer."
+   }
+  ],
+  "kind": "quiz",
+  "related": [
+   [
+    "yukon-class-7-mock-test.html",
+    {
+     "en": "Take the timed Yukon mock test",
+     "fr": "Passez l'examen blanc chronométré du Yukon"
+    }
+   ],
+   [
+    "yukon-road-signs.html",
+    {
+     "en": "Study every road sign for the knowledge test",
+     "fr": "Étudiez tous les panneaux pour l'examen théorique"
+    }
+   ],
+   [
+    "yukon-rules-of-the-road.html",
+    {
+     "en": "Study the rules of the road chapter by chapter",
+     "fr": "Étudiez le code de la route chapitre par chapitre"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test in every province and territory",
+     "fr": "Comparez l'examen théorique de chaque province et territoire"
+    }
+   ]
+  ]
+ },
+ "yukon-road-signs.html": {
+  "about": [
+   {
+    "en": "Yukon's regulations describe what you sit as one combined written and sign recognition test, so sign recognition is part of the single exam rather than a test of its own. This page holds the sign half of our question bank.",
+    "fr": "Le règlement du Yukon décrit ce que vous passez comme un seul examen combiné de théorie et de reconnaissance des panneaux : la reconnaissance des panneaux fait donc partie de l'unique examen plutôt que d'en constituer un à part. Cette page contient la moitié de notre banque consacrée aux panneaux."
+   },
+   {
+    "en": "Every sign on this page is drawn in code rather than copied from a government publication, so nothing here is anyone else's artwork. Each sign carries its own name as a caption and in its alt text, so the page works with a screen reader too.",
+    "fr": "Chaque panneau de cette page est dessiné en code plutôt que copié d'une publication gouvernementale : rien ici n'est l'illustration d'autrui. Chaque panneau porte son propre nom en légende et dans son texte de remplacement, si bien que la page fonctionne aussi avec un lecteur d'écran."
+   }
+  ],
+  "facts": [
+   {
+    "en": "A red circle with a slash means you must not do the thing shown, and a green circle means you may.",
+    "fr": "Un cercle rouge barré signifie que vous ne devez pas faire ce qui est illustré, et un cercle vert que vous le pouvez."
+   },
+   {
+    "en": "A yellow diamond warns about something ahead, while an orange diamond means road work.",
+    "fr": "Un losange jaune avertit d'un danger devant, tandis qu'un losange orange annonce des travaux."
+   },
+   {
+    "en": "The handbook shows a regulatory sign meaning that winter tires or chains must be used where it is displayed.",
+    "fr": "Le guide présente un panneau de prescription signifiant que les pneus d'hiver ou les chaînes sont obligatoires là où il est affiché."
+   },
+   {
+    "en": "Yukon states that speed limits are set for optimal road conditions, which is why a posted number is a ceiling and never a target.",
+    "fr": "Le Yukon précise que les limites de vitesse sont fixées pour des conditions routières optimales : un chiffre affiché est donc un plafond, jamais un objectif."
+   },
+   {
+    "en": "Signs are the same across Canada, so studying them here also prepares you for a test in another province.",
+    "fr": "Les panneaux sont les mêmes partout au Canada : les étudier ici vous prépare donc aussi à un examen dans une autre province."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "They are our own drawings of the standard Canadian signs used in the territory. They are not copied from any official publication.",
+     "fr": "Ce sont nos propres dessins des panneaux canadiens normalisés utilisés dans le territoire. Ils ne sont copiés d'aucune publication officielle."
+    },
+    "q": {
+     "en": "Are these the real Yukon signs?",
+     "fr": "S'agit-il des vrais panneaux du Yukon ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Yes. The regulations call it a written and sign recognition test, so sign content is part of the exam. How it is weighted is not published.",
+     "fr": "Oui. Le règlement parle d'un examen de théorie et de reconnaissance des panneaux : le contenu sur les panneaux fait donc partie de l'examen. La pondération n'est pas publiée."
+    },
+    "q": {
+     "en": "Does the real test include signs?",
+     "fr": "Le vrai examen porte-t-il sur les panneaux ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Not as far as Yukon publishes. It describes a single combined test at 80 percent, so we keep signs and rules as separate study pages without claiming they are separate exams.",
+     "fr": "Rien de ce que publie le Yukon ne l'indique. Il décrit un seul examen combiné à 80 pour cent : nous gardons donc les panneaux et le code sur des pages d'étude distinctes sans prétendre qu'il s'agit d'examens distincts."
+    },
+    "q": {
+     "en": "Is sign recognition scored separately?",
+     "fr": "La reconnaissance des panneaux est-elle notée séparément ?"
+    }
+   },
+   {
+    "a": {
+     "en": "All of the ones on this page. They are the families the handbook covers, and once the shapes and colours are automatic the wording matters much less.",
+     "fr": "Tous ceux de cette page. Ce sont les familles que couvre le guide, et une fois que les formes et les couleurs vous viennent d'instinct, le libellé compte beaucoup moins."
+    },
+    "q": {
+     "en": "How many signs should I learn?",
+     "fr": "Combien de panneaux devrais-je apprendre ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty sign questions covering regulatory, warning, temporary, information, traffic light and pavement marking signs.",
+    "fr": "Trente questions sur les panneaux de prescription, d'avertissement, temporaires, d'information, les feux de circulation et les marques sur la chaussée."
+   },
+   {
+    "en": "Practice for each group of signs, so you can work through one family at a time.",
+    "fr": "De la pratique pour chaque groupe de panneaux, pour travailler une famille à la fois."
+   },
+   {
+    "en": "The sign requiring winter tires or chains, which turns advice into law on the stretch where it stands.",
+    "fr": "Le panneau exigeant les pneus d'hiver ou les chaînes, qui transforme un conseil en obligation sur le tronçon où il est planté."
+   },
+   {
+    "en": "The whole sign bank printed below the practice, with the answer marked and explained.",
+    "fr": "Toute la banque de panneaux imprimée sous la pratique, avec la réponse indiquée et expliquée."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "yukon-class-7-practice-test.html",
+    {
+     "en": "Practise signs and rules together",
+     "fr": "Pratiquez les panneaux et le code ensemble"
+    }
+   ],
+   [
+    "yukon-rules-of-the-road.html",
+    {
+     "en": "Move on to the rules of the road",
+     "fr": "Passez au code de la route"
+    }
+   ],
+   [
+    "yukon-class-7-mock-test.html",
+    {
+     "en": "Try the timed mock test",
+     "fr": "Essayez l'examen blanc chronométré"
+    }
+   ],
+   [
+    "driving-test.html",
+    {
+     "en": "Driving test practice for every province",
+     "fr": "Pratique de l'examen de conduite pour chaque province"
+    }
+   ]
+  ]
+ },
+ "yukon-rules-of-the-road.html": {
+  "about": [
+   {
+    "en": "The rules of the road are the other half of the single test Yukon asks you to pass, and this page holds the rules half of our question bank, arranged by chapter.",
+    "fr": "Le code de la route constitue l'autre moitié de l'unique examen que le Yukon vous demande de réussir, et cette page contient la moitié de notre banque consacrée au code, organisée par chapitre."
+   },
+   {
+    "en": "Several of these rules are genuinely local. The daytime low beams for a vehicle without daytime running lights, the divided highway exception to the school bus rule, the permafrost highways and the zero alcohol rule that binds the co-driver as well as the learner are all specific to this territory, and all of them come from official sources.",
+    "fr": "Plusieurs de ces règles sont véritablement locales. Les feux de croisement en plein jour pour un véhicule sans feux de jour, l'exception de la route divisée dans la règle de l'autobus scolaire, les routes sur pergélisol et la tolérance zéro qui lie l'accompagnateur autant que l'apprenti sont propres à ce territoire, et toutes proviennent de sources officielles."
+   }
+  ],
+  "facts": [
+   {
+    "en": "On Yukon roadways you must drive with low beam headlights on during the day if your vehicle has no automatic daytime running lights.",
+    "fr": "Sur les routes du Yukon, vous devez conduire avec les feux de croisement allumés en plein jour si votre véhicule n'a pas de feux de jour automatiques."
+   },
+   {
+    "en": "A graduated licensing driver is suspended at seven demerit points and every other licence holder at fifteen, with a first suspension of one month, three months for a second within a year and six months for a third or more within two years.",
+    "fr": "Un conducteur du programme par étapes est suspendu à sept points d'inaptitude et tout autre titulaire de permis à quinze, la première suspension étant d'un mois, de trois mois pour une deuxième en un an et de six mois pour une troisième ou plus en deux ans."
+   },
+   {
+    "en": "You stop for a school bus with its upper red lights flashing on a street, an undivided highway or a roadway in any direction, and only drivers approaching from the rear must stop where a median physically divides the highway into two separate roadways.",
+    "fr": "Vous vous arrêtez pour un autobus scolaire dont les feux rouges supérieurs clignotent dans une rue, sur une route non divisée ou sur une chaussée, dans un sens comme dans l'autre, et seuls les conducteurs qui arrivent par l'arrière doivent s'arrêter là où un terre-plein sépare physiquement la route en deux chaussées distinctes."
+   },
+   {
+    "en": "In a school zone you reduce your speed to 30 kilometres an hour.",
+    "fr": "Dans une zone scolaire, vous réduisez votre vitesse à 30 kilomètres à l'heure."
+   },
+   {
+    "en": "Distracted driving carries a fine of up to six hundred dollars and three demerit points, and learners and novice drivers may not use any electronic device, hands-free included.",
+    "fr": "La conduite distraite entraîne une amende pouvant atteindre six cents dollars et trois points d'inaptitude, et les apprentis comme les conducteurs intermédiaires ne peuvent utiliser aucun appareil électronique, y compris en mode mains libres."
+   }
+  ],
+  "faq": [
+   {
+    "a": {
+     "en": "Yes, if your vehicle has no automatic daytime running lights. On Yukon roadways you must drive with the low beams on during the day in that case, and it is one of the rules visitors break without knowing it.",
+     "fr": "Oui, si votre véhicule n'a pas de feux de jour automatiques. Sur les routes du Yukon, vous devez alors conduire avec les feux de croisement allumés en plein jour, et c'est l'une des règles que les visiteurs enfreignent sans le savoir."
+    },
+    "q": {
+     "en": "Do I really have to use my headlights during the day?",
+     "fr": "Dois-je vraiment allumer mes phares en plein jour ?"
+    }
+   },
+   {
+    "a": {
+     "en": "On a street, an undivided highway or a roadway, yes, in any direction. Where a median physically divides the highway into two separate roadways, only drivers approaching from the rear must stop. Move off only once the red lights have stopped flashing and the bus begins to move.",
+     "fr": "Dans une rue, sur une route non divisée ou sur une chaussée, oui, dans un sens comme dans l'autre. Là où un terre-plein sépare physiquement la route en deux chaussées distinctes, seuls les conducteurs qui arrivent par l'arrière doivent s'arrêter. Ne repartez que lorsque les feux rouges ont cessé de clignoter et que l'autobus se remet en marche."
+    },
+    "q": {
+     "en": "Do I stop for a school bus coming the other way?",
+     "fr": "Dois-je m'arrêter pour un autobus scolaire venant en sens inverse ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Seven for a driver in the graduated licensing programme, and fifteen for everybody else. A first suspension lasts one month, a second within a year three months, and a third or more within two years six months.",
+     "fr": "Sept pour un conducteur du programme de permis par étapes, et quinze pour tous les autres. Une première suspension dure un mois, une deuxième en un an trois mois, et une troisième ou plus en deux ans six mois."
+    },
+    "q": {
+     "en": "How many demerit points suspend a new driver?",
+     "fr": "Combien de points d'inaptitude suspendent un nouveau conducteur ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Only where the sign requiring winter tires or chains is displayed. Yukon publishes no territory-wide winter tire law and no studded tire dates, so treat any date you read elsewhere as somebody's guess. The territory does ask every vehicle to carry an emergency winter driving kit.",
+     "fr": "Seulement là où le panneau exigeant les pneus d'hiver ou les chaînes est affiché. Le Yukon ne publie aucune loi territoriale sur les pneus d'hiver ni aucune date pour les pneus à crampons : considérez donc toute date lue ailleurs comme une supposition. Le territoire demande en revanche que chaque véhicule ait une trousse d'urgence pour la conduite hivernale."
+    },
+    "q": {
+     "en": "Are winter tires required in Yukon?",
+     "fr": "Les pneus d'hiver sont-ils obligatoires au Yukon ?"
+    }
+   },
+   {
+    "a": {
+     "en": "Those roads sit on permafrost and heave into waves and dips. Slow down, scan well ahead, avoid passing, and do not stop or pull over except in an emergency because the shoulders are unstable. Expect longer stopping distances on gravel, increase your following distance, and tell someone your route, your destination and when you plan to return.",
+     "fr": "Ces routes reposent sur le pergélisol et se déforment en vagues et en creux. Ralentissez, balayez la route loin devant, évitez de dépasser, et ne vous arrêtez pas sur l'accotement sauf en cas d'urgence, car les accotements sont instables. Attendez-vous à des distances de freinage plus longues sur le gravier, augmentez votre distance de suivi, et dites à quelqu'un votre itinéraire, votre destination et le moment où vous comptez rentrer."
+    },
+    "q": {
+     "en": "What should I know before driving the Alaska Highway or the Dempster?",
+     "fr": "Que dois-je savoir avant de rouler sur la route de l'Alaska ou la route de Dempster ?"
+    }
+   }
+  ],
+  "inside": [
+   {
+    "en": "Thirty rules questions grouped by chapter, each with the answer marked and explained.",
+    "fr": "Trente questions de code regroupées par chapitre, chacune avec la réponse indiquée et expliquée."
+   },
+   {
+    "en": "Graduated licensing, from the Class 7 learner licence through the Class 5 Novice licence to a full Class 5.",
+    "fr": "Le permis par étapes, du permis d'apprenti conducteur de classe 7 au permis de classe 5, conducteur intermédiaire, jusqu'à la classe 5 complète."
+   },
+   {
+    "en": "Learner and novice restrictions, including the curfew, the passenger limit, the vehicle size cap and the L sign.",
+    "fr": "Les restrictions des apprentis et des conducteurs intermédiaires, dont le couvre-feu, la limite de passagers, le plafond de taille du véhicule et la vignette L."
+   },
+   {
+    "en": "Demerit points and suspensions, which arrive at seven points for a graduated licensing driver.",
+    "fr": "Les points d'inaptitude et les suspensions, qui arrivent à sept points pour un conducteur du programme par étapes."
+   },
+   {
+    "en": "Northern highways and permafrost, winter driving with the emergency kit, and remote travel with 511Yukon.",
+    "fr": "Les routes nordiques et le pergélisol, la conduite hivernale avec la trousse d'urgence, et les voyages en région éloignée avec 511Yukon."
+   }
+  ],
+  "kind": "page",
+  "related": [
+   [
+    "yukon-road-signs.html",
+    {
+     "en": "Study the road signs half",
+     "fr": "Étudiez la moitié consacrée aux panneaux"
+    }
+   ],
+   [
+    "yukon-class-7-practice-test.html",
+    {
+     "en": "Practise signs and rules together",
+     "fr": "Pratiquez les panneaux et le code ensemble"
+    }
+   ],
+   [
+    "yukon-class-7-mock-test.html",
+    {
+     "en": "Try the timed mock test",
+     "fr": "Essayez l'examen blanc chronométré"
+    }
+   ],
+   [
+    "canada-driving-test-by-province.html",
+    {
+     "en": "Compare the written test across Canada",
+     "fr": "Comparez l'examen théorique partout au Canada"
     }
    ]
   ]

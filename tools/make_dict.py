@@ -32,6 +32,15 @@ KEEP_AS_IS = [
     "Family Play Zone",
     "Discover Canada",
     "AdSense",
+    # Province and territory names spelled the same in French. Without these the
+    # word list turns a standalone "Manitoba" into "Le Manitoba", which looks
+    # wrong as a card heading beside "Ontario" and "Nunavut".
+    "Ontario",
+    "Alberta",
+    "Manitoba",
+    "Saskatchewan",
+    "Yukon",
+    "Nunavut",
 ]
 
 

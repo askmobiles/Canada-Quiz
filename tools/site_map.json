@@ -78,7 +78,6 @@
    "title": "Quizzes"
   },
   {
-   "title": "For Kids",
    "links": [
     [
      "for-kids.html",
@@ -168,7 +167,8 @@
      "winnie-the-bear-from-winnipeg-for-kids.html",
      "Winnie the Bear"
     ]
-   ]
+   ],
+   "title": "For Kids"
   },
   {
    "links": [
@@ -233,6 +233,22 @@
      "Manitoba Rules of the Road"
     ],
     [
+     "nwt-class-7-mock-test.html",
+     "NWT Class 7 Mock Test"
+    ],
+    [
+     "nwt-class-7-practice-test.html",
+     "NWT Class 7 Practice Test"
+    ],
+    [
+     "nwt-road-signs.html",
+     "NWT Road Signs"
+    ],
+    [
+     "nwt-rules-of-the-road.html",
+     "NWT Rules of the Road"
+    ],
+    [
      "new-brunswick-class-7-mock-test.html",
      "New Brunswick Class 7 Mock Test"
     ],
@@ -249,6 +265,22 @@
      "New Brunswick Rules of the Road"
     ],
     [
+     "newfoundland-class-5-mock-test.html",
+     "Newfoundland Class 5 Mock Test"
+    ],
+    [
+     "newfoundland-class-5-practice-test.html",
+     "Newfoundland Class 5 Practice Test"
+    ],
+    [
+     "newfoundland-road-signs.html",
+     "Newfoundland Road Signs"
+    ],
+    [
+     "newfoundland-rules-of-the-road.html",
+     "Newfoundland Rules of the Road"
+    ],
+    [
      "nova-scotia-class-7-mock-test.html",
      "Nova Scotia Class 7 Mock Test"
     ],
@@ -263,6 +295,22 @@
     [
      "nova-scotia-rules-of-the-road.html",
      "Nova Scotia Rules of the Road"
+    ],
+    [
+     "nunavut-class-7-mock-test.html",
+     "Nunavut Class 7 Mock Test"
+    ],
+    [
+     "nunavut-class-7-practice-test.html",
+     "Nunavut Class 7 Practice Test"
+    ],
+    [
+     "nunavut-road-signs.html",
+     "Nunavut Road Signs"
+    ],
+    [
+     "nunavut-rules-of-the-road.html",
+     "Nunavut Rules of the Road"
     ],
     [
      "ontario-g1-mock-test.html",
@@ -283,6 +331,22 @@
     [
      "ontario-g1-rules-of-the-road.html",
      "Ontario Rules of the Road"
+    ],
+    [
+     "pei-class-7-mock-test.html",
+     "PEI Class 7 Mock Test"
+    ],
+    [
+     "pei-class-7-practice-test.html",
+     "PEI Class 7 Practice Test"
+    ],
+    [
+     "pei-road-signs.html",
+     "PEI Road Signs"
+    ],
+    [
+     "pei-rules-of-the-road.html",
+     "PEI Rules of the Road"
     ],
     [
      "quebec-class-5-mock-test.html",
@@ -315,6 +379,22 @@
     [
      "saskatchewan-rules-of-the-road.html",
      "Saskatchewan Rules of the Road"
+    ],
+    [
+     "yukon-class-7-mock-test.html",
+     "Yukon Class 7 Mock Test"
+    ],
+    [
+     "yukon-class-7-practice-test.html",
+     "Yukon Class 7 Practice Test"
+    ],
+    [
+     "yukon-road-signs.html",
+     "Yukon Road Signs"
+    ],
+    [
+     "yukon-rules-of-the-road.html",
+     "Yukon Rules of the Road"
     ]
    ],
    "title": "Driving Test Practice"
