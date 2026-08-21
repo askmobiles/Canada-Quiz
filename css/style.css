@@ -256,7 +256,14 @@ html.lang-fr .nav a{font-size:13.5px;padding:8px 10px}
   border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;
   font-weight:700;font-size:14.5px;color:var(--ink);box-shadow:0 2px 8px rgba(43,45,66,.06)}
 .hero-badges .dot{display:inline-flex;align-items:center;justify-content:center;
-  width:24px;height:24px;border-radius:50%;color:#fff;font-size:13px;line-height:1}
+  width:24px;height:24px;border-radius:50%;color:#fff;font-size:13px;line-height:1;
+  /* Some systems substitute a full-colour emoji font for the plain check, heart
+     and lightning characters. Those glyphs are wider than the circle, and without
+     these three rules they spill out and paint over the first word of the badge —
+     "100% Free" renders as "% Free". flex-shrink:0 keeps the circle its own size,
+     overflow:hidden stops the glyph escaping it, and font-variant-emoji asks for
+     the text form where the browser supports it. */
+  flex:0 0 24px;overflow:hidden;font-variant-emoji:text}
 /* same AA-safe colours as the buttons */
 .hero-badges .d-green{background:#238277} .hero-badges .d-purple{background:#7c68b4}
 .hero-badges .d-yellow{background:var(--yellow);color:#3d3000} .hero-badges .d-red{background:#e32231}
