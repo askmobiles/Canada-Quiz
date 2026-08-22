@@ -233,22 +233,6 @@
      "Manitoba Rules of the Road"
     ],
     [
-     "nwt-class-7-mock-test.html",
-     "NWT Class 7 Mock Test"
-    ],
-    [
-     "nwt-class-7-practice-test.html",
-     "NWT Class 7 Practice Test"
-    ],
-    [
-     "nwt-road-signs.html",
-     "NWT Road Signs"
-    ],
-    [
-     "nwt-rules-of-the-road.html",
-     "NWT Rules of the Road"
-    ],
-    [
      "new-brunswick-class-7-mock-test.html",
      "New Brunswick Class 7 Mock Test"
     ],
@@ -311,6 +295,22 @@
     [
      "nunavut-rules-of-the-road.html",
      "Nunavut Rules of the Road"
+    ],
+    [
+     "nwt-class-7-mock-test.html",
+     "NWT Class 7 Mock Test"
+    ],
+    [
+     "nwt-class-7-practice-test.html",
+     "NWT Class 7 Practice Test"
+    ],
+    [
+     "nwt-road-signs.html",
+     "NWT Road Signs"
+    ],
+    [
+     "nwt-rules-of-the-road.html",
+     "NWT Rules of the Road"
     ],
     [
      "ontario-g1-mock-test.html",
@@ -629,6 +629,10 @@
      "Canada and the USA: Trade History"
     ],
     [
+     "us-tariffs-and-canada-explained.html",
+     "Canada and the USA: What the Tariffs Did"
+    ],
+    [
      "canadas-biggest-cities.html",
      "Canada's Biggest Cities"
     ],
@@ -701,6 +705,10 @@
      "Hockey in Canada"
     ],
     [
+     "how-canada-rebuilds-its-economy.html",
+     "How Canada Rebuilds Its Economy"
+    ],
+    [
      "how-canada-was-built.html",
      "How Canada Was Built"
     ],
@@ -745,6 +753,10 @@
      "Should a Small Business Incorporate?"
     ],
     [
+     "did-us-tariffs-on-canada-work.html",
+     "Tariffs: Who Actually Gains?"
+    ],
+    [
      "canada-diary.html",
      "The Canada Diary"
     ],
@@ -765,12 +777,12 @@
      "What the Citizenship Test Is Really Like"
     ],
     [
-     "winter-tires-canada-law-by-province.html",
-     "Winter Tire Law in Canada"
-    ],
-    [
      "winter-in-canada.html",
      "Winter in Canada"
+    ],
+    [
+     "winter-tires-canada-law-by-province.html",
+     "Winter Tire Law in Canada"
     ]
    ],
    "title": "Blog"

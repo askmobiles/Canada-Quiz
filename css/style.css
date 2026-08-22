@@ -694,7 +694,11 @@ h1,h2,h3,h4,.card h3,.pill{overflow-wrap:break-word}
   border:1px solid var(--line);background:#fff;
   transition:background .3s ease,border-color .3s ease}
 .dwhen{display:inline-block;border-radius:999px;padding:4px 13px;font-size:14px;font-weight:700;
-  margin:0 0 9px;background:#eef6f4;color:#238277}
+  margin:0 0 9px;background:#eef6f4;color:#1c6a60}
+/* #1c6a60 not the site's usual #238277: on this pale green pill that measured
+   4.22, under the 4.5 standard. It only showed once the "All of it" view was
+   opened, because the modern-era notes are hidden on the default Today view —
+   which is why the accessibility run must open every view, not just the first. */
 .dtag{display:inline-block;background:#284673;color:#fff;border-radius:999px;padding:2px 9px;
   font-size:11.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-left:7px;vertical-align:2px}
 .dtitle{margin:0 0 8px;font-size:19px;line-height:1.32}
@@ -768,4 +772,91 @@ h1,h2,h3,h4,.card h3,.pill{overflow-wrap:break-word}
   .dnote{padding:17px 16px 13px}
   .dtitle{font-size:18px}
   .dbody{font-size:16px}
+}
+
+/* --- the diary feature strip on blog.html: one prominent place, not a card
+       lost in the grid. Aged paper, so it looks like what it links to. --- */
+.diary-feature{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  text-decoration:none;color:inherit;margin:0 0 18px;padding:18px 20px;
+  border:1px solid #a97c33;border-radius:16px;
+  background-color:#ecd49b;
+  background-image:
+    radial-gradient(ellipse 96% 90% at 50% 44%, rgba(253,242,210,.80), transparent 76%),
+    radial-gradient(ellipse 18% 40% at 6% 30%, rgba(150,96,22,.16), transparent 70%),
+    radial-gradient(116% 104% at 50% 50%, transparent 52%, rgba(122,74,14,.30) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.026' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='luminanceToAlpha'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.40' intercept='-0.10'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='300' height='300' fill='%238d5a14' filter='url(%23m)'/%3E%3C/svg%3E");
+  background-size:auto,auto,auto,175px 175px;
+  box-shadow:0 2px 12px rgba(110,70,16,.18)}
+.diary-feature:hover{box-shadow:0 4px 18px rgba(110,70,16,.26)}
+.diary-feature-mark{flex:0 0 46px;width:46px;height:46px;overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:26px;line-height:1}
+/* NOTE: no font-variant-emoji here, on purpose. The cards on this site already
+   show colour emoji and they look right. What broke the hero badges was a glyph
+   spilling OUT of a fixed circle — so the guard that matters is the fixed size
+   plus overflow:hidden above, which is kept. Forcing the text form instead gave
+   an empty box on a machine with no emoji font. */
+.diary-feature-text{flex:1 1 300px;min-width:0}
+.diary-feature-kicker{display:block;font-size:11.5px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;color:#6b4508;margin:0 0 3px}
+.diary-feature-title{display:block;font-size:21px;font-weight:800;color:#241602;line-height:1.25;
+  font-family:"DiaryHand","Chalkboard SE","Comic Neue",cursive}
+.diary-feature-blurb{display:block;font-size:15px;color:#2b1c04;margin:5px 0 0;line-height:1.55}
+.diary-feature-go{flex:0 0 auto;background:#238277;color:#fff;border-radius:999px;
+  padding:11px 18px;font-weight:800;font-size:14.5px;min-height:44px;
+  display:inline-flex;align-items:center}
+@media (max-width:560px){
+  .diary-feature{padding:16px}
+  .diary-feature-go{width:100%;justify-content:center}
+}
+
+/* --- the topic icon on a diary note. Decorative: it never carries a fact,
+       and the same information is in the words. Each sits in a FIXED box with
+       overflow:hidden, because you cannot control which font a reader's machine
+       substitutes — that is the hero-badge lesson, applied properly. --- */
+.dicon{float:right;margin:0 0 8px 12px;
+  width:40px;height:40px;flex:0 0 40px;overflow:hidden;border-radius:12px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:20px;line-height:1;border:1px solid rgba(0,0,0,.08)}
+.dicon .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.t-war{background:#fdeced}
+.t-treaty{background:#f3efe4}
+.t-law{background:#eef2fb}
+.t-disaster{background:#fdf0e6}
+.t-explore{background:#eaf4f1}
+.t-land{background:#fdeef0}
+.t-build{background:#eef4f9}
+.t-sport{background:#fff6e0}
+.t-people{background:#f2eefa}
+.t-sea{background:#e9f2f7}
+.t-culture{background:#fbeef6}
+.t-science{background:#fdf7e3}
+/* on the aged papers the tile picks up the paper instead of sitting on it */
+.rd-paper-aged .dnote.e0 .dicon,
+.rd-paper-aged .dnote.e1 .dicon{background:rgba(255,250,232,.55);border-color:rgba(140,96,26,.30)}
+@media (max-width:420px){
+  .dicon{width:34px;height:34px;flex:0 0 34px;font-size:17px;margin-left:9px}
+}
+
+/* ---------------------------------------------------------------------------
+   Article charts (tools/newq/artlib.py).
+   These used to be inline SVG. The problem with SVG text in a chart that is
+   set to width:100% is that the text scales with the box: a 12px label in a
+   720-wide viewBox renders at about 6px on a phone, which is unreadable, and
+   at about 14px on a wide screen. HTML text does not scale, so it is right at
+   every width — and it is real text, so build_fr.py translates it and a screen
+   reader reads it.
+   --------------------------------------------------------------------------- */
+.cq-chart{margin:2px 0 4px}
+.cq-chart .cq-ct{font-weight:800;font-size:15px;color:var(--ink);margin:0 0 12px;line-height:1.35}
+.cq-row{display:grid;grid-template-columns:1fr;gap:3px;margin-bottom:11px}
+.cq-row:last-child{margin-bottom:0}
+.cq-row .cq-name{font-size:13.5px;color:var(--ink);line-height:1.35}
+.cq-track{display:block;background:#f1eef6;border-radius:999px;height:15px;overflow:hidden}
+.cq-bar{display:block;height:100%;border-radius:999px;min-width:3px}
+.cq-row .cq-val{font-size:13px;font-weight:700;color:var(--muted)}
+@media(min-width:560px){
+  .cq-row{grid-template-columns:minmax(120px,240px) 1fr 78px;align-items:center;gap:12px;margin-bottom:9px}
+  .cq-row .cq-val{text-align:right}
 }

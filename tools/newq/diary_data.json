@@ -11,7 +11,8 @@
    "Bien avant le Canada",
    "Des gens vivent ici depuis des milliers d'années. Les archéologues discutent encore de la durée exacte, et la réponse honnête est que les premiers peuples sont arrivés bien avant que quiconque n'écrive quoi que ce soit. Leurs descendants sont ici aujourd'hui. C'est là que commence ce journal, pas en 1867."
   ],
-  "link": "indigenous-peoples-of-canada.html"
+  "link": "indigenous-peoples-of-canada.html",
+  "topic": "treaty"
  },
  {
   "y": 1000,
@@ -25,7 +26,8 @@
    "Les Normands atteignent Terre-Neuve",
    "Il y a environ mille ans, des marins normands ont bâti un petit établissement à L'Anse aux Meadows, à la pointe nord de Terre-Neuve. Ils n'y sont restés que quelques années. C'est le seul site normand confirmé en Amérique du Nord, et cela signifie que des Européens ont atteint cette côte environ cinq cents ans avant Colomb."
   ],
-  "link": "rare-canadian-history-stories.html"
+  "link": "rare-canadian-history-stories.html",
+  "topic": "sea"
  },
  {
   "y": 1497,
@@ -40,7 +42,8 @@
   "fr": [
    "Jean Cabot aperçoit la terre",
    "Naviguant pour l'Angleterre, Jean Cabot atteint la côte est, fort probablement Terre-Neuve ou le Cap-Breton. Il rentre avec la nouvelle d'une mer si remplie de morue qu'on pouvait descendre un panier et le remonter plein. Ce récit a amené les flottes de pêche à travers l'Atlantique pendant les quatre cents années suivantes."
-  ]
+  ],
+  "topic": "sea"
  },
  {
   "y": 1534,
@@ -55,7 +58,8 @@
   "fr": [
    "Le premier échange",
    "Dans la baie des Chaleurs, des Mi'kmaq s'approchent en canot en brandissant des fourrures au bout de bâtons, et les hommes de Cartier les échangent contre des couteaux et des objets de fer. C'est l'un des premiers échanges consignés entre les Français et les peuples autochtones d'ici. Les deux camps avaient déjà fait cela, mais pas l'un avec l'autre."
-  ]
+  ],
+  "topic": "treaty"
  },
  {
   "y": 1534,
@@ -70,7 +74,8 @@
   "fr": [
    "Cartier plante une croix à Gaspé",
    "Jacques Cartier dresse une croix de dix mètres à Gaspé et revendique la terre au nom de la France. Le chef iroquoien Donnacona vient protester, car il avait parfaitement compris ce que signifiait cette croix. La revendication tient malgré tout, et la Nouvelle-France commence."
-  ]
+  ],
+  "topic": "explore"
  },
  {
   "y": 1535,
@@ -83,7 +88,8 @@
   "fr": [
    "Le pays reçoit son nom par erreur",
    "Lors de son deuxième voyage, Cartier se fait indiquer le chemin de Stadaconé, près de la ville de Québec actuelle. Ses guides emploient le mot iroquoien kanata, qui désigne un village. Cartier a cru qu'il désignait tout le pays. Le Canada est un village qui a grandi jusqu'à ce que le nom ne lui aille plus."
-  ]
+  ],
+  "topic": "culture"
  },
  {
   "y": 1576,
@@ -96,7 +102,8 @@
   "fr": [
    "Frobisher cherche un passage",
    "Martin Frobisher atteint l'île de Baffin en cherchant une route vers l'Asie. Il ne trouve aucun passage. Il rapporte en revanche une cargaison de pierres scintillantes dont tout le monde était certain qu'il s'agissait d'or, et qui ne valaient rien. La recherche d'un passage au nord s'est poursuivie trois cents ans de plus."
-  ]
+  ],
+  "topic": "explore"
  },
  {
   "y": 1583,
@@ -111,7 +118,8 @@
   "fr": [
    "L'Angleterre revendique Terre-Neuve",
    "Sir Humphrey Gilbert se tient dans le port de St John's, au milieu d'équipages de pêche de quatre pays qui s'en servaient déjà, et revendique l'île au nom de la reine Élisabeth. Ce fut la première revendication anglaise dans ce qui est aujourd'hui le Canada. Il s'est noyé pendant le voyage de retour."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 1605,
@@ -124,7 +132,8 @@
   "fr": [
    "Le premier hiver qui réussit",
    "Les Français bâtissent une habitation à Port-Royal, dans l'actuelle Nouvelle-Écosse. Les tentatives précédentes s'étaient terminées par le scorbut et la mort. Celle-ci tient bon, en partie parce qu'on y plante des jardins, et en partie parce qu'on rend l'hiver supportable à dessein, par des repas partagés et un petit théâtre."
-  ]
+  ],
+  "topic": "explore"
  },
  {
   "y": 1608,
@@ -139,7 +148,8 @@
   "fr": [
    "Champlain fonde Québec",
    "Samuel de Champlain bâtit un petit poste de traite là où le Saint-Laurent se rétrécit. Des vingt-huit hommes qui passent ce premier hiver avec lui, vingt meurent. Le poste survit. C'est la plus ancienne ville du Canada, et la seule ville fortifiée au nord du Mexique."
-  ]
+  ],
+  "topic": "explore"
  },
  {
   "y": 1609,
@@ -154,7 +164,8 @@
   "fr": [
    "Champlain tire sur les Haudenosaunee",
    "Champlain se joint à ses alliés innus, algonquins et hurons-wendats dans un combat contre les Haudenosaunee, au bord du lac qui porte aujourd'hui son nom. Son arme à feu a décidé de la journée. Elle a aussi lié les Français à un camp dans un conflit qui a marqué les cent cinquante années suivantes."
-  ]
+  ],
+  "topic": "treaty"
  },
  {
   "y": 1610,
@@ -167,7 +178,8 @@
   "fr": [
    "Henry Hudson entre dans la baie",
    "Hudson pénètre dans l'immense mer intérieure qui porte aujourd'hui son nom, convaincu d'avoir trouvé la route de l'Asie. Ce n'était pas le cas. Son équipage se mutine l'été suivant et l'abandonne dans une chaloupe avec son fils et sept autres hommes. On ne les a jamais revus."
-  ]
+  ],
+  "topic": "explore"
  },
  {
   "y": 1610,
@@ -182,7 +194,8 @@
   "fr": [
    "La première colonie anglaise ici",
    "John Guy quitte Bristol avec trente-neuf colons pour fonder Cupids, à Terre-Neuve. Ce fut la première colonie anglaise dans ce qui est aujourd'hui le Canada, et la deuxième en Amérique du Nord. Le village existe toujours, quatre siècles plus tard."
-  ]
+  ],
+  "topic": "explore"
  },
  {
   "y": 1642,
@@ -197,7 +210,8 @@
   "fr": [
    "Fondation de Montréal",
    "Un petit groupe mené par Paul de Chomedey de Maisonneuve et Jeanne Mance débarque dans l'île et fonde Ville-Marie. Ce devait être une mission, non un marché. En l'espace d'une vie, c'était le lieu de traite des fourrures le plus actif d'Amérique du Nord, ce que personne n'avait voulu."
-  ]
+  ],
+  "topic": "land"
  },
  {
   "y": 1663,
@@ -210,7 +224,8 @@
   "fr": [
    "La Nouvelle-France devient colonie royale",
    "Louis XIV retire la colonie des mains d'une compagnie de traite et la gouverne lui-même. Soldats, administrateurs et colons commencent à arriver en nombre pour la première fois. Avant cela, la population française d'ici était plus petite qu'une école secondaire d'aujourd'hui."
-  ]
+  ],
+  "topic": "land"
  },
  {
   "y": 1663,
@@ -223,7 +238,8 @@
   "fr": [
    "Les filles du Roi",
    "Entre 1663 et 1673, environ 800 jeunes femmes traversent l'océan, la traversée payée par le Roi, pour se marier et peupler la Nouvelle-France. La plupart étaient pauvres, beaucoup étaient orphelines. Une très grande part des Canadiens français d'aujourd'hui peut remonter jusqu'à l'une d'elles."
-  ]
+  ],
+  "topic": "people"
  },
  {
   "y": 1670,
@@ -238,7 +254,8 @@
   "fr": [
    "La Compagnie de la Baie d'Hudson obtient sa charte",
    "Le roi Charles II cède par sa signature un territoire qu'il n'avait jamais vu : toutes les terres drainées par les rivières se jetant dans la baie d'Hudson. Cela représente environ le tiers du Canada actuel, remis à une compagnie de fourrures. L'entreprise faisait encore du commerce plus de trois siècles et demi plus tard."
-  ]
+  ],
+  "topic": "explore"
  },
  {
   "y": 1701,
@@ -253,7 +270,8 @@
   "fr": [
    "La Grande Paix de Montréal",
    "Les représentants d'une quarantaine de nations autochtones et les Français signent à Montréal une paix qui met fin à des décennies de guerre. Chaque nation signe le traité de son propre emblème : un castor, une grue, un poisson. Elle a tenu près d'un siècle, plus longtemps que bien des traités conclus depuis."
-  ]
+  ],
+  "topic": "treaty"
  },
  {
   "y": 1713,
@@ -268,7 +286,8 @@
   "fr": [
    "L'Acadie change de mains",
    "Un traité signé dans une ville des Pays-Bas remet à la Grande-Bretagne l'Acadie continentale, Terre-Neuve et les terres de la baie d'Hudson. On n'a pas consulté les Acadiens qui y vivaient, et ils ne sont pas partis. Cet arrangement non réglé a duré quarante-deux ans, puis s'est très mal terminé."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1749,
@@ -281,7 +300,8 @@
   "fr": [
    "Fondation de Halifax",
    "La Grande-Bretagne bâtit une ville fortifiée sur la baie de Chibouctou pour répondre à la forteresse française de Louisbourg. Elle est établie sur des terres mi'kmaq sans achat ni traité de cession, un fait que les tribunaux et le pays examinent encore aujourd'hui."
-  ]
+  ],
+  "topic": "land"
  },
  {
   "y": 1755,
@@ -294,7 +314,8 @@
   "fr": [
    "La déportation des Acadiens",
    "Les autorités britanniques ordonnent le retrait des Acadiens de leurs fermes en Nouvelle-Écosse. Des familles sont séparées, des villages brûlés, des milliers de personnes embarquées sur des navires. Certains aboutissent en Louisiane, où le mot acadien devient peu à peu cajun. D'autres reviennent des années plus tard pour trouver leurs terres occupées."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1755,
@@ -309,7 +330,8 @@
   "fr": [
    "L'ordre de déporter les Acadiens",
    "Le Conseil de la Nouvelle-Écosse décide de chasser les Acadiens de leurs fermes. Environ dix mille personnes furent embarquées sur des navires au cours des années suivantes. On appelle toujours cela le Grand Dérangement, et les descendants de ces familles vivent aujourd'hui en Louisiane, en France et dans les Maritimes."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1758,
@@ -324,7 +346,8 @@
   "fr": [
    "Louisbourg tombe",
    "Après un siège de sept semaines, le gouverneur français rend la forteresse de Louisbourg, au Cap-Breton. Elle avait été bâtie pour garder l'entrée du Saint-Laurent. Une fois tombée, la route de Québec était ouverte, et Québec est tombée l'année suivante."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1759,
@@ -339,7 +362,8 @@
   "fr": [
    "Wolfe est repoussé à Beauport",
    "Six semaines avant les plaines d'Abraham, Wolfe attaque la ligne française à Beauport, en aval de Québec, et il est repoussé avec de lourdes pertes. C'est la bataille dont personne ne se souvient. C'est aussi pourquoi il a pris le risque d'escalader la falaise en septembre."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1759,
@@ -354,7 +378,8 @@
   "fr": [
    "Les plaines d'Abraham",
    "La bataille aux portes de Québec dure environ quinze minutes. Les deux commandants meurent de leurs blessures, Wolfe sur le champ et Montcalm le lendemain matin. Quinze minutes ont décidé quelle langue gouvernerait cette moitié du continent, et le débat n'est jamais tout à fait terminé."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1760,
@@ -369,7 +394,8 @@
   "fr": [
    "Montréal capitule",
    "Un an après la chute de Québec, Montréal capitule sans combat. Les conditions permettent aux habitants de garder leurs biens et leur religion. La Nouvelle-France cesse d'être une possession française, mais la population ne part pas, et c'est toute la raison pour laquelle le Canada a le visage qu'on lui connaît."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1763,
@@ -384,7 +410,8 @@
   "fr": [
    "La France cède le Canada",
    "Le traité qui met fin à la guerre de Sept Ans remet la Nouvelle-France à la Grande-Bretagne. La France conserve deux minuscules îles au large de Terre-Neuve, Saint-Pierre et Miquelon, qui sont françaises encore aujourd'hui. C'est le dernier morceau de la Nouvelle-France encore sur la carte."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1763,
@@ -399,7 +426,8 @@
   "fr": [
    "La Proclamation royale",
    "Le roi établit que les nations autochtones conservaient leurs terres tant qu'elles ne choisissaient pas de les céder, et seulement à la Couronne. On l'appelle parfois la Grande Charte des Indiens. Plus de deux siècles et demi plus tard, elle est encore invoquée devant les tribunaux canadiens, ce qui est rare pour un document."
-  ]
+  ],
+  "topic": "treaty"
  },
  {
   "y": 1774,
@@ -414,7 +442,8 @@
   "fr": [
    "L'Acte de Québec",
    "La Grande-Bretagne avait un choix : forcer la population francophone à devenir anglaise, ou lui laisser sa langue, son droit civil et sa foi catholique. Elle choisit la seconde option. C'est la raison pour laquelle le Canada est bilingue aujourd'hui, et la décision fut prise pour des motifs pratiques, non par générosité."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1775,
@@ -429,7 +458,8 @@
   "fr": [
    "Les Américains attaquent Québec",
    "Une armée américaine monte vers le nord pour entraîner la colonie dans sa révolution et attaque la ville de Québec dans une tempête de neige, la dernière nuit de l'année. L'attaque échoue. Le général Montgomery est tué et Benedict Arnold blessé. Le Canada est resté hors de cette guerre."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1783,
@@ -444,7 +474,8 @@
   "fr": [
    "L'arrivée des Loyalistes",
    "Lorsque les États-Unis obtiennent leur indépendance, des dizaines de milliers de personnes restées fidèles à la Couronne partent vers le nord. Environ 3 000 étaient des Loyalistes noirs, souvent d'anciennes personnes réduites en esclavage à qui l'on avait promis la liberté en échange de leur service. Ils ont fondé des villages qui existent toujours."
-  ]
+  ],
+  "topic": "land"
  },
  {
   "y": 1784,
@@ -459,7 +490,8 @@
   "fr": [
    "Les émeutes de Shelburne",
    "À Shelburne, en Nouvelle-Écosse, une foule de colons loyalistes blancs s'en prend aux maisons de Loyalistes noirs, à qui l'on avait promis des terres et la liberté en échange de leur service et qui avaient reçu bien moins des deux. On parle généralement de la première émeute raciale du Canada. Beaucoup de ces familles sont ensuite parties pour la Sierra Leone."
-  ]
+  ],
+  "topic": "people"
  },
  {
   "y": 1784,
@@ -474,7 +506,8 @@
   "fr": [
    "Création du Nouveau-Brunswick",
    "Tant de Loyalistes s'étaient établis au nord de la baie de Fundy que la Grande-Bretagne divise la colonie en deux et crée le Nouveau-Brunswick. Il fut bâti presque entièrement par des réfugiés, en un seul été, à partir de rien. Saint-Jean est devenue la première ville constituée de ce qui est aujourd'hui le Canada."
-  ]
+  ],
+  "topic": "land"
  },
  {
   "y": 1791,
@@ -487,7 +520,8 @@
   "fr": [
    "Le Haut et le Bas-Canada",
    "La Grande-Bretagne divise la colonie afin que les Loyalistes anglophones et les Canadiens francophones aient chacun leur assemblée et leurs lois. C'est la première fois que l'un ou l'autre groupe élit ici qui que ce soit. Les deux moitiés sont devenues l'Ontario et le Québec."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1793,
@@ -502,7 +536,8 @@
   "fr": [
    "Le Haut-Canada limite l'esclavage",
    "Le lieutenant-gouverneur John Graves Simcoe fait adopter une loi interdisant d'amener toute nouvelle personne au Haut-Canada comme esclave. Elle ne libère personne déjà asservi : c'est donc une demi-mesure. Elle compte tout de même parmi les premières lois du genre dans l'Empire britannique, et la nouvelle a voyagé vers le sud."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1793,
@@ -517,7 +552,8 @@
   "fr": [
    "Le premier à traverser le continent",
    "Alexander Mackenzie atteint le Pacifique à Bella Coola après avoir traversé l'Amérique du Nord par voie de terre. Il mélange du vermillon à de la graisse d'ours et inscrit son nom et la date sur un rocher. Il fut le premier Européen à traverser le continent au nord du Mexique, douze ans avant Lewis et Clark."
-  ]
+  ],
+  "topic": "explore"
  },
  {
   "y": 1812,
@@ -533,7 +569,8 @@
    "La guerre de 1812 commence",
    "Les États-Unis déclarent la guerre et envahissent, s'attendant à un accueil facile. Ils ne l'obtiennent pas. Les soldats britanniques, la milice canadienne et les alliés des Premières Nations les repoussent. Personne ne gagne vraiment cette guerre. Ce qu'elle règle, c'est que ce territoire ne deviendra pas américain."
   ],
-  "link": "canada-usa-trade-history.html"
+  "link": "canada-usa-trade-history.html",
+  "topic": "war"
  },
  {
   "y": 1812,
@@ -548,7 +585,8 @@
   "fr": [
    "L'invasion commence",
    "Une armée américaine commandée par le général Hull traverse la rivière et entre au Haut-Canada à Sandwich, aujourd'hui un quartier de Windsor. Il publie une proclamation annonçant aux habitants qu'on venait les libérer. En un mois il avait battu en retraite, et en août il rendait Détroit."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1812,
@@ -563,7 +601,8 @@
   "fr": [
    "Brock meurt à Queenston Heights",
    "Le général Isaac Brock est abattu en menant une charge sur l'escarpement dominant la rivière Niagara. La bataille est gagnée, en grande partie par les guerriers mohawks de John Norton qui tiennent les hauteurs pendant des heures ensuite. Brock est devenu la grande figure de la guerre, et la part mohawk de l'histoire a mis bien plus longtemps à être racontée."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1813,
@@ -578,7 +617,8 @@
   "fr": [
    "Le Hamilton et le Scourge",
    "Deux goélettes américaines chavirent dans une bourrasque soudaine sur le lac Ontario, en pleine nuit, et coulent en quelques minutes. Plus de cinquante marins se sont noyés. Les deux navires reposent toujours au fond du lac, droits et presque intacts dans l'eau douce et froide."
-  ]
+  ],
+  "topic": "sea"
  },
  {
   "y": 1813,
@@ -593,7 +633,8 @@
   "fr": [
    "Tecumseh est tué",
    "Le chef shawnee Tecumseh meurt à la bataille de la Thames, dans le sud-ouest de l'Ontario actuel. Il avait bâti une alliance de nations pour défendre leurs propres terres et fut le commandant le plus efficace du côté britannique. Son alliance ne lui a pas survécu, et les promesses qu'on lui avait faites non plus."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1814,
@@ -608,7 +649,8 @@
   "fr": [
    "Lundy's Lane",
    "À portée du bruit des chutes Niagara, des troupes britanniques et canadiennes affrontent une armée américaine du soir jusque dans la nuit, tirant parfois à quelques mètres les uns des autres. Près de neuf cents hommes furent tués, blessés ou portés disparus de chaque côté. Ce fut la dernière invasion américaine du Haut-Canada."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1814,
@@ -623,7 +665,8 @@
   "fr": [
    "La guerre se termine la veille de Noël",
    "Le traité de Gand met fin à la guerre de 1812 en laissant la frontière exactement où elle était au départ. Les nouvelles voyageaient par bateau : la plus grande bataille de la guerre eut lieu à La Nouvelle-Orléans deux semaines après la signature de la paix."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1817,
@@ -637,7 +680,8 @@
   "fr": [
    "Les lacs sont démilitarisés",
    "La Grande-Bretagne et les États-Unis conviennent de ne presque plus garder de navires de guerre sur les Grands Lacs. L'entente est toujours en vigueur. C'est l'un des plus anciens traités de désarmement au monde, et une grande part de la raison pour laquelle la frontière au sud est devenue si tranquille."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1821,
@@ -651,7 +695,8 @@
    "Deux compagnies de fourrures n'en font plus qu'une",
    "La Compagnie de la Baie d'Hudson et la Compagnie du Nord-Ouest s'étaient concurrencées si durement que toutes deux frôlaient la ruine, et des hommes en étaient morts. Elles fusionnent. La nouvelle compagnie contrôle le commerce sur presque toute la moitié nord du continent, ce qui a déterminé l'emplacement des villes pendant un siècle."
   ],
-  "link": "voyageurs-and-the-fur-trade-for-kids.html"
+  "link": "voyageurs-and-the-fur-trade-for-kids.html",
+  "topic": "explore"
  },
  {
   "y": 1832,
@@ -664,7 +709,8 @@
   "fr": [
    "Le canal Rideau ouvre",
    "On creuse un canal de Kingston à Bytown, plus tard Ottawa, pour que les bateaux puissent éviter la rive américaine du Saint-Laurent en cas de nouvelle guerre. Des centaines d'ouvriers meurent, surtout des Irlandais, surtout de la malaria. La guerre n'est jamais venue. Le canal est aujourd'hui un site du patrimoine mondial et la plus longue patinoire du monde."
-  ]
+  ],
+  "topic": "build"
  },
  {
   "y": 1833,
@@ -679,7 +725,8 @@
   "fr": [
    "L'Atlantique à la vapeur",
    "Le Royal William quitte Pictou, en Nouvelle-Écosse, à destination de Londres et devient l'un des premiers navires à traverser l'Atlantique essentiellement à la vapeur. Il a dû s'arrêter en route pour nettoyer le sel de ses chaudières, ce qui explique pourquoi la revendication est débattue."
-  ]
+  ],
+  "topic": "sea"
  },
  {
   "y": 1834,
@@ -694,7 +741,8 @@
   "fr": [
    "L'esclavage prend fin dans l'Empire",
    "La Loi sur l'abolition de l'esclavage entre en vigueur et met fin à l'esclavage en Amérique du Nord britannique et dans tout l'Empire. Le Canada souligne aujourd'hui le premier août comme le Jour de l'émancipation. Pendant des décennies ensuite, ce pays fut le terminus nord du chemin de fer clandestin, et des gens ont marché jusqu'ici pour être libres."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1836,
@@ -709,7 +757,8 @@
   "fr": [
    "Le premier chemin de fer",
    "Le Champlain and St Lawrence Railroad est inauguré, reliant sur environ vingt-six kilomètres Laprairie et Saint-Jean, au Bas-Canada. C'était le premier chemin de fer du Canada. La locomotive était si peu fiable que des chevaux ont tiré les voitures pendant une partie de la première saison."
-  ]
+  ],
+  "topic": "build"
  },
  {
   "y": 1837,
@@ -722,7 +771,8 @@
   "fr": [
    "Les rébellions",
    "Des rebelles se soulèvent dans le Haut et le Bas-Canada contre des gouvernements qui répondaient à Londres plutôt qu'aux gens d'ici. Les rébellions échouent et leurs chefs fuient ou sont pendus. Mais la plainte est entendue, et une dizaine d'années plus tard elle donne le gouvernement responsable."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1839,
@@ -735,7 +785,8 @@
   "fr": [
    "Le rapport Durham",
    "Lord Durham est envoyé pour découvrir ce qui avait mal tourné. Il recommande d'accorder à la colonie un véritable gouvernement autonome, ce qui était sage, et d'assimiler les Français, ce qui ne l'était pas et n'a pas eu lieu. Le Canada a retenu la première moitié de son conseil et écarté la seconde en silence."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1841,
@@ -750,7 +801,8 @@
   "fr": [
    "Les deux Canadas sont réunis",
    "Le Haut et le Bas-Canada sont fusionnés en une seule province du Canada, dotée d'une assemblée unique. Le montage devait permettre de mettre en minorité la moitié francophone. Les deux camps ont plutôt appris à gouverner ensemble, en tandem, et c'est cette habitude de travail qui a rendu la Confédération possible."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1848,
@@ -764,7 +816,8 @@
    "Le gouvernement répond au peuple",
    "La Nouvelle-Écosse d'abord, en février, puis la province du Canada quelques semaines plus tard, sous Louis-Hippolyte LaFontaine et Robert Baldwin. Dès lors, un gouvernement devait conserver la confiance de l'assemblée élue, et non la faveur d'un gouverneur. Cela s'est fait sans qu'un seul coup de feu soit tiré."
   ],
-  "link": "how-canadas-government-works.html"
+  "link": "how-canadas-government-works.html",
+  "topic": "law"
  },
  {
   "y": 1849,
@@ -779,7 +832,8 @@
   "fr": [
    "Une foule incendie le Parlement",
    "Une foule en colère contre une loi indemnisant les pertes subies pendant les rébellions met le feu au Parlement, à Montréal. L'édifice brûle entièrement, avec la bibliothèque à l'intérieur. Le Parlement n'a plus jamais siégé à Montréal, ce qui explique en partie pourquoi la capitale a fini par s'établir à Ottawa."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 1857,
@@ -794,7 +848,8 @@
   "fr": [
    "La reine Victoria choisit Ottawa",
    "Invitée à trancher une querelle entre villes rivales, la reine choisit une ville forestière sur la rivière des Outaouais. On a ri. Elle était petite, isolée et froide. C'était justement l'intérêt : elle se trouvait sur la frontière linguistique et assez loin de la frontière américaine pour être défendue."
-  ]
+  ],
+  "topic": "land"
  },
  {
   "y": 1858,
@@ -809,7 +864,8 @@
   "fr": [
    "De l'or, et une nouvelle colonie",
    "Des milliers de prospecteurs remontent le fleuve Fraser à la recherche d'or. La Grande-Bretagne crée en hâte la colonie de la Colombie-Britannique, surtout pour éviter que la région ne soit absorbée par la foule d'Américains qui arrivaient. L'or s'est épuisé. La colonie est restée."
-  ]
+  ],
+  "topic": "explore"
  },
  {
   "y": 1861,
@@ -825,7 +881,8 @@
    "William Lyon Mackenzie meurt",
    "Le premier maire de Toronto, et l'homme qui mena la rébellion de 1837 dans le Haut-Canada, meurt dans la ville qu'il avait autrefois dû fuir. Il avait été condamné à mort, gracié, puis réélu. Son petit-fils, William Lyon Mackenzie King, est devenu le premier ministre le plus longtemps en poste de l'histoire du Canada."
   ],
-  "link": "a-short-history-of-canada.html"
+  "link": "a-short-history-of-canada.html",
+  "topic": "people"
  },
  {
   "y": 1862,
@@ -840,7 +897,8 @@
   "fr": [
    "Billy Barker trouve de l'or",
    "Billy Barker, un marin de Cornouailles qui avait déserté son navire, creuse sous la profondeur que tout le monde jugeait utile et frappe un riche filon à quarante pieds sur le ruisseau Williams. La ville de Barkerville a poussé autour du trou. Il est mort pauvre."
-  ]
+  ],
+  "topic": "explore"
  },
  {
   "y": 1864,
@@ -856,7 +914,8 @@
    "La rencontre qui a lancé un pays",
    "Les colonies maritimes se réunissent à Charlottetown pour discuter d'une union entre elles. Une délégation de la province du Canada demande à y assister et propose quelque chose de beaucoup plus vaste. Il y eut énormément de champagne. Tout le monde est reparti intéressé."
   ],
-  "link": "what-is-confederation.html"
+  "link": "what-is-confederation.html",
+  "topic": "land"
  },
  {
   "y": 1864,
@@ -871,7 +930,8 @@
   "fr": [
    "Soixante-douze résolutions",
    "À Québec, les délégués mettent par écrit ce que serait vraiment le nouveau pays : deux ordres de gouvernement, un Sénat nommé, une Chambre des communes élue. Ces soixante-douze résolutions sont devenues la constitution presque mot pour mot. Aucun électeur n'avait été consulté."
-  ]
+  ],
+  "topic": "land"
  },
  {
   "y": 1866,
@@ -886,7 +946,8 @@
   "fr": [
    "Le câble atlantique touche terre",
    "Le navire câblier Great Eastern atteint Heart's Content, à Terre-Neuve, achevant le premier câble télégraphique transatlantique en état de marche. Un message qui mettait dix jours par bateau prenait désormais quelques minutes. Il est difficile de citer un bond plus grand dans la vitesse des nouvelles."
-  ]
+  ],
+  "topic": "science"
  },
  {
   "y": 1867,
@@ -901,7 +962,8 @@
   "fr": [
    "La loi est signée à Londres",
    "La reine Victoria accorde la sanction royale à l'Acte de l'Amérique du Nord britannique. Le pays qu'il créait n'existerait pas avant trois mois, car la loi fixait au premier juillet la date d'entrée en vigueur. Le Canada a eu un acte de naissance avant d'avoir un anniversaire."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1867,
@@ -917,7 +979,8 @@
    "Le Canada commence",
    "Quatre provinces, l'Ontario, le Québec, le Nouveau-Brunswick et la Nouvelle-Écosse, s'unissent en un seul pays. Il n'y eut ni guerre ni révolution. Tout s'est fait par des documents, des débats et un grand nombre de réunions. C'est une façon très canadienne de fonder un pays, et nous la célébrons encore chaque premier juillet."
   ],
-  "link": "the-history-of-canada-day.html"
+  "link": "the-history-of-canada-day.html",
+  "topic": "land"
  },
  {
   "y": 1867,
@@ -933,7 +996,8 @@
    "La première élection fédérale commence",
    "Le vote commence lors de la première élection générale du Canada. Il ne s'est terminé que le vingt septembre, car les circonscriptions votaient à des jours différents et le scrutin n'était pas secret. Un homme annonçait son choix à voix haute, devant ses voisins et son propriétaire."
   ],
-  "link": "how-canadas-government-works.html"
+  "link": "how-canadas-government-works.html",
+  "topic": "law"
  },
  {
   "y": 1868,
@@ -946,7 +1010,8 @@
   "fr": [
    "Le seul assassinat",
    "Thomas D'Arcy McGee, poète et l'un des hommes qui avaient plaidé la Confédération, est abattu devant sa pension d'Ottawa en avril. Il est le seul homme politique fédéral assassiné de l'histoire du Canada. Le pays qu'il avait contribué à inventer avait neuf mois."
-  ]
+  ],
+  "topic": "people"
  },
  {
   "y": 1870,
@@ -962,7 +1027,8 @@
    "Le Manitoba entre dans la Confédération",
    "Le Manitoba entre dans la Confédération après que les Métis de la Rivière-Rouge, menés par Louis Riel, eurent formé leur propre gouvernement et négocié les conditions. Riel est l'une des figures les plus difficiles de l'histoire canadienne : rebelle pour les uns, fondateur d'une province pour les autres. Les deux descriptions se défendent."
   ],
-  "link": "how-canada-was-built.html"
+  "link": "how-canada-was-built.html",
+  "topic": "treaty"
  },
  {
   "y": 1870,
@@ -978,7 +1044,8 @@
    "Les soldats atteignent la Rivière-Rouge",
    "Une expédition militaire envoyée de l'Ontario prend le Haut-Fort Garry, que Louis Riel et les siens avaient quitté quelques heures plus tôt. Le Manitoba était déjà devenu une province selon leurs conditions. L'expédition n'a rien changé sur le papier et beaucoup sur le terrain, et Riel a passé les quinze années suivantes en exil."
   ],
-  "link": "how-canada-was-built.html"
+  "link": "how-canada-was-built.html",
+  "topic": "treaty"
  },
  {
   "y": 1871,
@@ -994,7 +1061,8 @@
    "La Colombie-Britannique dit oui",
    "La Colombie-Britannique accepte de se joindre au Canada à une condition : un chemin de fer jusqu'au Pacifique en dix ans. Le Canada promet. Il en faudra quatorze, pas dix. Le chemin de fer est tout de même construit, et il relie le pays d'un océan à l'autre."
   ],
-  "link": "how-canada-was-built.html"
+  "link": "how-canada-was-built.html",
+  "topic": "build"
  },
  {
   "y": 1871,
@@ -1010,7 +1078,8 @@
    "Le Traité no 1",
    "Des chefs anishinaabe et cris des Muskegon et la Couronne signent le premier des onze traités numérotés, à Lower Fort Garry, au Manitoba. Ces traités couvrent la majeure partie des terres entre l'Ontario et les Rocheuses. Ce qui fut promis et ce qui fut écrit ne concordaient pas toujours, et ce débat n'est pas clos."
   ],
-  "link": "indigenous-peoples-of-canada.html"
+  "link": "indigenous-peoples-of-canada.html",
+  "topic": "treaty"
  },
  {
   "y": 1871,
@@ -1025,7 +1094,8 @@
   "fr": [
    "Le Traité no 2",
    "Dix-huit jours après le premier, un deuxième traité est signé à un poste de traite sur la rive ouest du lac Manitoba. Ensemble, les deux couvraient le sud du Manitoba. Neuf autres ont suivi au cours des cinquante années suivantes, et à eux tous ils couvrent la majeure partie du pays."
-  ]
+  ],
+  "topic": "treaty"
  },
  {
   "y": 1873,
@@ -1038,7 +1108,8 @@
   "fr": [
    "Création de la Police à cheval du Nord-Ouest",
    "Une police est créée pour établir l'ordre dans les plaines de l'Ouest avant la colonisation, plutôt qu'après. Elle porte du rouge à dessein, parce que l'habit rouge évoquait la Couronne et les promesses des traités plutôt que la cavalerie américaine. Elle est devenue la GRC en 1920."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1873,
@@ -1054,7 +1125,8 @@
    "L'Île-du-Prince-Édouard se joint au Canada",
    "L'Île-du-Prince-Édouard avait dit non en 1867. Six ans plus tard, elle avait construit un chemin de fer qu'elle ne pouvait pas payer, et se joindre au Canada signifiait que le Canada reprenait la dette. La plus petite province est entrée pour des raisons pratiques, et c'est pourtant chez elle qu'eut lieu la réunion où tout a commencé."
   ],
-  "link": "how-canada-was-built.html"
+  "link": "how-canada-was-built.html",
+  "topic": "build"
  },
  {
   "y": 1876,
@@ -1068,7 +1140,8 @@
    "La Loi sur les Indiens",
    "Le Parlement adopte une loi unique plaçant presque tous les aspects de la vie des Premières Nations sous contrôle fédéral, depuis la définition d'un Indien inscrit jusqu'au droit de vendre une récolte. Elle a été modifiée bien des fois et demeure en vigueur. Presque personne ne la défend telle quelle, et la remplacer s'est révélé très difficile."
   ],
-  "link": "indigenous-peoples-of-canada.html"
+  "link": "indigenous-peoples-of-canada.html",
+  "topic": "treaty"
  },
  {
   "y": 1876,
@@ -1084,7 +1157,8 @@
    "Le premier appel interurbain",
    "Alexander Graham Bell réussit le premier appel téléphonique interurbain, sur une ligne entre Brantford et Paris, en Ontario, distantes d'environ treize kilomètres. Il avait fait le travail de réflexion chez sa famille à Brantford l'été précédent."
   ],
-  "link": "canadian-inventions.html"
+  "link": "canadian-inventions.html",
+  "topic": "science"
  },
  {
   "y": 1876,
@@ -1100,7 +1174,8 @@
    "Le Traité no 6 est signé",
    "Des chefs cris des plaines et des bois et la Couronne signent le Traité no 6 près de Fort Carlton. Il couvre une grande partie de la Saskatchewan et de l'Alberta actuelles. C'est le seul traité numéroté contenant une clause du coffre à médicaments, que les tribunaux ont depuis interprétée comme une promesse de soins de santé, et qui ne figure dans aucun autre."
   ],
-  "link": "indigenous-peoples-of-canada.html"
+  "link": "indigenous-peoples-of-canada.html",
+  "topic": "treaty"
  },
  {
   "y": 1880,
@@ -1115,7 +1190,8 @@
   "fr": [
    "La Grande-Bretagne cède l'Arctique",
    "La Grande-Bretagne transfère ses îles arctiques au Canada, ajoutant une immense portion de la carte par un simple acte administratif. Presque personne à Ottawa ne savait ce qui s'y trouvait. Le Canada a passé le siècle suivant à le découvrir, et cherche encore ce qu'il doit aux gens qui y vivaient déjà."
-  ]
+  ],
+  "topic": "land"
  },
  {
   "y": 1884,
@@ -1130,7 +1206,8 @@
    "Un Canadien donne au monde les fuseaux horaires",
    "Sandford Fleming a manqué un train en Irlande parce que l'horaire était ambigu, et il a passé des années ensuite à soutenir que le monde devait être divisé en heures normalisées. L'idée est adoptée lors d'une conférence à Washington. Toutes les horloges du monde suivent aujourd'hui un système défendu par un ingénieur ferroviaire canadien."
   ],
-  "link": "rare-canadian-history-stories.html"
+  "link": "rare-canadian-history-stories.html",
+  "topic": "science"
  },
  {
   "y": 1885,
@@ -1144,7 +1221,8 @@
    "La taxe d'entrée",
    "Le chemin de fer terminé, le Parlement impose aux personnes chinoises un droit à payer simplement pour entrer au pays. Il commence à cinquante dollars et monte à cinq cents, plus que ce que la plupart pouvaient épargner en un an. Il a séparé des familles pendant des décennies. Le Canada a présenté ses excuses en 2006."
   ],
-  "link": "the-railway-across-canada-for-kids.html"
+  "link": "the-railway-across-canada-for-kids.html",
+  "topic": "law"
  },
  {
   "y": 1885,
@@ -1159,7 +1237,8 @@
   "fr": [
    "Big Bear se rend",
    "Mistahimaskwa, le chef cri connu sous le nom de Big Bear, se livre à Fort Carlton. Il avait passé des années à refuser un traité qui, selon lui, laisserait son peuple affamé, et avait tenté d'empêcher les combats de ce printemps-là. Condamné à trois ans, il est mort peu après sa libération."
-  ]
+  ],
+  "topic": "treaty"
  },
  {
   "y": 1885,
@@ -1175,7 +1254,8 @@
    "Le dernier crampon",
    "À Craigellachie, en Colombie-Britannique, Donald Smith enfonce le dernier crampon du chemin de fer Canadien Pacifique. C'était un crampon de fer ordinaire, non d'or. Des milliers d'ouvriers chinois avaient accompli le travail le plus dangereux pour un salaire moindre, et des centaines sont morts."
   ],
-  "link": "the-railway-across-canada-for-kids.html"
+  "link": "the-railway-across-canada-for-kids.html",
+  "topic": "build"
  },
  {
   "y": 1885,
@@ -1190,7 +1270,8 @@
   "fr": [
    "Louis Riel est pendu",
    "Après la résistance du Nord-Ouest, Riel est reconnu coupable de trahison et pendu à Regina. Le jury avait recommandé la clémence. La décision d'aller de l'avant a divisé le pays selon les langues et façonné pour des générations la relation entre le Québec et Ottawa. Une statue de lui se dresse aujourd'hui sur le terrain de l'Assemblée du Manitoba."
-  ]
+  ],
+  "topic": "treaty"
  },
  {
   "y": 1886,
@@ -1205,7 +1286,8 @@
   "fr": [
    "Vancouver brûle",
    "Vancouver était une ville depuis dix semaines lorsqu'un feu de défrichage lui échappe et détruit presque toute l'agglomération en moins d'une heure. Des gens se sont jetés à l'eau pour y survivre. La reconstruction commence la même semaine, et le conseil municipal se réunit le lendemain sous une tente."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 1886,
@@ -1221,7 +1303,8 @@
    "Le premier train atteint le Pacifique",
    "Le premier train de voyageurs du Canadien Pacifique parti de Montréal entre en gare de Port Moody, en Colombie-Britannique. La promesse faite à la province quinze ans plus tôt était enfin tenue. Un trajet qui prenait des mois pouvait désormais se faire en six jours environ."
   ],
-  "link": "the-railway-across-canada-for-kids.html"
+  "link": "the-railway-across-canada-for-kids.html",
+  "topic": "build"
  },
  {
   "y": 1887,
@@ -1235,7 +1318,8 @@
    "Le premier parc national",
    "Le Parlement met en réserve les sources thermales de Banff et les montagnes environnantes, créant le premier parc national du Canada. Le pays en compte aujourd'hui plus de quarante. Le geste n'était pas purement noble : le chemin de fer voulait un endroit où envoyer ses passagers."
   ],
-  "link": "canadas-national-parks.html"
+  "link": "canadas-national-parks.html",
+  "topic": "land"
  },
  {
   "y": 1891,
@@ -1250,7 +1334,8 @@
    "Un Canadien invente le basketball",
    "James Naismith, d'Almonte en Ontario, enseignait au Massachusetts et cherchait un jeu intérieur pour une classe agitée en hiver. Il cloue deux paniers à pêches à une balustrade et rédige treize règles. Quelqu'un devait monter dans une échelle pour récupérer le ballon après chaque panier."
   ],
-  "link": "a-canadian-invented-basketball-for-kids.html"
+  "link": "a-canadian-invented-basketball-for-kids.html",
+  "topic": "sport"
  },
  {
   "y": 1892,
@@ -1265,7 +1350,8 @@
   "fr": [
    "St John's brûle",
    "Un incendie parti d'une écurie se propage dans la ville de bois asséchée et détruit en une seule journée presque tout l'est de St John's. Au moins douze mille personnes perdent leur maison. La ville fut reconstruite en pierre et en brique, ce qui explique son apparence actuelle."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 1893,
@@ -1279,7 +1365,8 @@
    "La coupe Stanley est offerte",
    "Lord Stanley, gouverneur général, achète une coupe d'argent pour une dizaine de guinées et l'offre à la meilleure équipe de hockey du Canada. Il a quitté le pays avant d'avoir vu un seul match disputé pour elle. C'est aujourd'hui le plus ancien trophée disputé par des athlètes professionnels en Amérique du Nord."
   ],
-  "link": "the-stanley-cup-story-for-kids.html"
+  "link": "the-stanley-cup-story-for-kids.html",
+  "topic": "sport"
  },
  {
   "y": 1896,
@@ -1295,7 +1382,8 @@
    "Laurier devient premier ministre",
    "Wilfrid Laurier devient le premier chef de gouvernement francophone. Il gouverne pendant quinze ans, le plus long mandat ininterrompu de l'histoire, et passe l'essentiel de ce temps à maintenir le Canada anglais et le Canada français dans une même conversation. Son visage est sur le billet de cinq dollars."
   ],
-  "link": "prime-ministers-of-canada.html"
+  "link": "prime-ministers-of-canada.html",
+  "topic": "people"
  },
  {
   "y": 1896,
@@ -1311,7 +1399,8 @@
    "De l'or au Klondike",
    "Skookum Jim Mason, Dawson Charlie et George Carmack trouvent de l'or dans le ruisseau Bonanza, au Yukon. En moins de deux ans, des dizaines de milliers de personnes gravissent la piste Chilkoot en transportant chacune une tonne de provisions, parce que la Police montée n'admettait personne avec moins. La plupart n'ont rien trouvé."
   ],
-  "link": "yukon-class-7-practice-test.html"
+  "link": "yukon-class-7-practice-test.html",
+  "topic": "explore"
  },
  {
   "y": 1898,
@@ -1327,7 +1416,8 @@
    "Le Yukon devient un territoire",
    "Tant de gens s'étaient rués vers le nord pour l'or qu'Ottawa découpe un territoire distinct pour les gouverner, surtout afin d'éviter que la région ne passe aux mains des Américains. La ruée vers l'or s'est terminée en quelques années. Le territoire est resté."
   ],
-  "link": "how-canada-was-built.html"
+  "link": "how-canada-was-built.html",
+  "topic": "land"
  },
  {
   "y": 1899,
@@ -1341,7 +1431,8 @@
   "fr": [
    "La première guerre du Canada à l'étranger",
    "Le Canada envoie des volontaires à la guerre d'Afrique du Sud, la première fois que des soldats canadiens partent outre-mer. Laurier a fait un compromis : ils y vont, mais comme volontaires payés par la Grande-Bretagne, non comme engagement national. Plus de 7 000 ont servi et environ 270 sont morts."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1900,
@@ -1356,7 +1447,8 @@
   "fr": [
    "Le chemin de fer du col White est terminé",
    "Le dernier crampon est enfoncé sur la White Pass and Yukon Route, qui relie Skagway à Whitehorse par-dessus les montagnes. Il fut construit en vingt-six mois par des hommes travaillant par des températures atteignant moins soixante. À son ouverture, la ruée vers l'or qui l'avait justifié était presque terminée."
-  ]
+  ],
+  "topic": "build"
  },
  {
   "y": 1904,
@@ -1371,7 +1463,8 @@
   "fr": [
    "L'automobile arrive au Canada",
    "La Ford Motor Company of Canada est fondée à Walkerville, aujourd'hui un quartier de Windsor, en face de Détroit. Elle a lancé l'industrie automobile canadienne, encore aujourd'hui l'un des plus grands employeurs de l'Ontario."
-  ]
+  ],
+  "topic": "build"
  },
  {
   "y": 1906,
@@ -1387,7 +1480,8 @@
    "Le Traité no 10",
    "La Couronne et des communautés dénées et cries signent le Traité no 10 à Île-à-la-Crosse, dans le nord de la Saskatchewan. C'était l'un des derniers des onze traités numérotés, signé quarante ans après le premier. À eux tous, les onze couvrent la majeure partie des terres entre l'Ontario et les Rocheuses."
   ],
-  "link": "indigenous-peoples-of-canada.html"
+  "link": "indigenous-peoples-of-canada.html",
+  "topic": "treaty"
  },
  {
   "y": 1907,
@@ -1402,7 +1496,8 @@
   "fr": [
    "Le pont de Québec s'effondre",
    "La section sud du pont s'effondre dans le Saint-Laurent pendant sa construction. Soixante-seize ouvriers sont tués, dont trente-trois monteurs de charpentes mohawks de Kahnawake. Les calculs de conception étaient insuffisants. L'ingénierie au Canada en fut transformée, et Kahnawake a continué d'envoyer des monteurs bâtir une grande partie de New York."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 1914,
@@ -1418,7 +1513,8 @@
    "L'homme qui a dessiné Superman",
    "Joe Shuster naît à Toronto. Enfant, il livrait le Toronto Daily Star, et des années plus tard, avec son ami Jerry Siegel, il a dessiné le premier Superman. Le journal pour lequel travaille Clark Kent s'appelait le Daily Star avant de devenir le Daily Planet."
   ],
-  "link": "canadian-inventions.html"
+  "link": "canadian-inventions.html",
+  "topic": "culture"
  },
  {
   "y": 1914,
@@ -1433,7 +1529,8 @@
   "fr": [
    "Le Komagata Maru est refoulé",
    "Un navire transportant 376 passagers venus de l'Inde, en majorité sikhs et tous sujets britanniques, était resté deux mois dans le port de Vancouver pendant qu'on leur refusait le droit de débarquer. Il est escorté vers le large. Le Canada a présenté ses excuses à la Chambre des communes en 2016."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1914,
@@ -1449,7 +1546,8 @@
    "Un soldat achète une ourse",
    "À la gare de White River, en Ontario, le lieutenant Harry Colebourn paie vingt dollars pour un ourson noir. Il l'appelle Winnie, en souvenir de Winnipeg. Elle traverse l'océan avec les soldats, aboutit au zoo de Londres et donne son nom à l'ours le plus célèbre du monde."
   ],
-  "link": "winnie-the-bear-from-winnipeg-for-kids.html"
+  "link": "winnie-the-bear-from-winnipeg-for-kids.html",
+  "topic": "culture"
  },
  {
   "y": 1916,
@@ -1464,7 +1562,8 @@
   "fr": [
    "Le feu de Matheson",
    "De petits feux allumés par des colons défrichant la terre et des étincelles de locomotives se rejoignent en une seule tempête de feu qui balaie Matheson et Cochrane, dans le nord de l'Ontario. Plus de deux cents personnes sont mortes. C'est l'incendie de forêt le plus meurtrier de l'histoire du Canada."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 1917,
@@ -1479,7 +1578,8 @@
   "fr": [
    "Tom Thomson part en canot",
    "Le peintre s'éloigne en canot sur le lac Canoe, dans le parc Algonquin. Le canot est retrouvé retourné dans l'après-midi. Il était l'un des plus grands peintres que ce pays ait produits, et ce qui lui est arrivé fait l'objet de débats depuis."
-  ]
+  ],
+  "topic": "people"
  },
  {
   "y": 1917,
@@ -1494,7 +1594,8 @@
   "fr": [
    "On retrouve Tom Thomson",
    "Huit jours après son départ en canot, le corps de Thomson est repêché dans le lac Canoe. Il avait trente-neuf ans. Il n'avait peint que cinq années environ. Les peintres qui allaient former le Groupe des Sept se sont réunis après sa mort et l'ont toujours compté parmi les leurs."
-  ]
+  ],
+  "topic": "people"
  },
  {
   "y": 1917,
@@ -1509,7 +1610,8 @@
   "fr": [
    "La cote 70",
    "Le Corps canadien, sous les ordres d'Arthur Currie, s'empare d'une faible hauteur près de Lens, en France. Currie avait refusé d'attaquer la ville elle-même et avait choisi les hauteurs, puis les a tenues contre vingt et une contre-attaques. Six Canadiens ont reçu la Croix de Victoria. On compte environ 9 200 pertes canadiennes."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1917,
@@ -1524,7 +1626,8 @@
   "fr": [
    "La cote 70 se termine",
    "Onze jours après son début, le combat pour la faible hauteur près de Lens est terminé. Arthur Currie avait choisi la colline plutôt que la ville en contrebas, l'avait prise, puis tenue contre vingt et une contre-attaques. Six Canadiens y ont reçu la Croix de Victoria, et environ 9 200 furent tués ou blessés."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1917,
@@ -1539,7 +1642,8 @@
   "fr": [
    "La conscription devient loi",
    "La Loi du service militaire rend les hommes susceptibles d'être appelés au service outre-mer. Le Canada anglais l'appuyait en grande partie et le Canada français beaucoup moins, et la fracture ainsi ouverte a traversé l'élection suivante et bien au-delà. C'est l'un des moments dont ce pays débat encore."
-  ]
+  ],
+  "topic": "law"
  },
  {
   "y": 1918,
@@ -1554,7 +1658,8 @@
   "fr": [
    "Le jour noir de l'armée allemande",
    "Le Corps canadien mène l'attaque à Amiens et progresse d'une vingtaine de kilomètres en trois jours, ce qui, dans cette guerre, était extraordinaire. Le commandant allemand a parlé du jour noir de l'armée allemande. Les cent jours qui ont suivi ont mis fin à la Première Guerre mondiale."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1918,
@@ -1569,7 +1674,8 @@
   "fr": [
    "Les Canadiens attaquent à la Scarpe",
    "Trois semaines après Amiens, le Corps canadien lance une nouvelle attaque à l'est d'Arras et progresse de plus de cinq kilomètres en une journée. Cela faisait partie des cent jours qui ont mis fin à la guerre. Le Corps a mené l'essentiel des combats les plus durs de cet automne-là, et il l'a payé."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1927,
@@ -1584,7 +1690,8 @@
   "fr": [
    "Le coup de vent d'août",
    "Une tempête surprend la flotte de pêche sur les Grands Bancs. Près d'une centaine d'hommes de la Nouvelle-Écosse et de Terre-Neuve se sont noyés, la plupart venant de petits ports où presque chaque famille a perdu quelqu'un. Lunenburg à elle seule en a perdu plus de quatre-vingts. Les goélettes n'avaient pas de radio."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 1930,
@@ -1599,7 +1706,8 @@
   "fr": [
    "Les premiers Jeux du Commonwealth se terminent",
    "Hamilton, en Ontario, a accueilli les premiers Jeux de l'Empire britannique, devenus les Jeux du Commonwealth. Onze pays y participaient. Hamilton a payé les frais de voyage de plusieurs équipes qui n'avaient pas les moyens de s'y rendre, ce qui explique en grande partie que ces Jeux aient eu lieu."
-  ]
+  ],
+  "topic": "sport"
  },
  {
   "y": 1932,
@@ -1614,7 +1722,8 @@
   "fr": [
    "Le canal Welland ouvre",
    "Le quatrième canal Welland est inauguré, faisant passer les navires de haute mer autour des chutes Niagara, entre le lac Ontario et le lac Érié. Huit écluses élèvent un navire d'une centaine de mètres, à peu près la hauteur des chutes qu'il contourne."
-  ]
+  ],
+  "topic": "build"
  },
  {
   "y": 1940,
@@ -1630,7 +1739,8 @@
    "L'accord d'Ogdensburg",
    "Mackenzie King et Roosevelt signent une entente créant une commission mixte de défense. La Grande-Bretagne combattait seule en Europe, et le Canada s'est tourné vers son voisin pour sa sécurité. La relation de défense signée ce jour-là n'a jamais été défaite."
   ],
-  "link": "canada-usa-trade-history.html"
+  "link": "canada-usa-trade-history.html",
+  "topic": "law"
  },
  {
   "y": 1941,
@@ -1645,7 +1755,8 @@
   "fr": [
    "Le Service féminin de l'Armée canadienne",
    "L'armée crée un corps pour les femmes, et environ 21 000 y ont servi pendant la guerre comme conductrices, commis, mécaniciennes et transmetteuses. Elles étaient payées les deux tiers du salaire d'un homme pour le même travail. Beaucoup ne sont jamais retournées à la cuisine ensuite."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1941,
@@ -1660,7 +1771,8 @@
   "fr": [
    "La Charte de l'Atlantique",
    "Churchill et Roosevelt se rencontrent secrètement à bord de navires de guerre dans la baie de Plaisance, à Terre-Neuve, et publient une déclaration sur les buts de guerre des Alliés. Elle est devenue l'un des fondements des Nations Unies. Terre-Neuve ne faisait pas encore partie du Canada."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1942,
@@ -1675,7 +1787,8 @@
   "fr": [
    "Dieppe",
    "Des 4 963 Canadiens partis pour le port français de Dieppe, 916 ont été tués et 1 946 faits prisonniers. Seuls 2 210 sont revenus en Angleterre, et beaucoup d'entre eux étaient blessés. Tout fut terminé en neuf heures. Ce qu'on a appris ce matin-là a servi deux ans plus tard, le jour J."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1943,
@@ -1690,7 +1803,8 @@
   "fr": [
    "Les Canadiens débarquent en Sicile",
    "Juste après l'aube, la 1re Division d'infanterie canadienne débarque en Sicile. C'est le début de la campagne d'Italie, qui a duré près de deux ans et coûté environ 26 000 pertes canadiennes. Beaucoup de ces hommes n'avaient jamais vu une montagne, et ils ont gravi en combattant un pays qui n'est fait que de cela."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1944,
@@ -1705,7 +1819,8 @@
   "fr": [
    "Trois jours à Saint-Lambert",
    "Le major David Currie tient un village de Normandie pendant trois jours avec une petite troupe, fermant une voie de retraite à l'armée allemande. Il fut le seul Canadien à recevoir la Croix de Victoria durant la campagne de Normandie. Il a dit ensuite qu'il était simplement trop fatigué pour partir."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1944,
@@ -1720,7 +1835,8 @@
   "fr": [
    "Le NCSM Alberni coule",
    "Une torpille lancée par un sous-marin allemand frappe la corvette NCSM Alberni dans la Manche, et elle sombre en une trentaine de secondes. Cinquante-neuf membres d'équipage ont péri. Elle avait passé quatre ans à escorter des convois à travers l'Atlantique, la campagne la plus longue et la moins célébrée que le Canada ait menée."
-  ]
+  ],
+  "topic": "sea"
  },
  {
   "y": 1944,
@@ -1735,7 +1851,8 @@
   "fr": [
    "La traversée de la Seine",
    "La 3e Division d'infanterie canadienne franchit la Seine à Elbeuf pendant que la Première Armée canadienne chasse l'armée allemande de Normandie. Deux mois plus tôt, ces mêmes hommes avaient débarqué sur la plage Juno. Devant eux les attendait la longue tâche, humide et sans gloire, de dégager les ports de la Manche."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1944,
@@ -1750,7 +1867,8 @@
   "fr": [
    "Dans Rouen",
    "Des patrouilles de la 9e Brigade d'infanterie canadienne pénètrent dans Rouen tandis que la Première Armée canadienne remonte vers le nord depuis la Seine. La ville avait été lourdement bombardée et la cathédrale tenait debout, mais blessée. De là, les Canadiens se sont tournés vers les ports de la Manche et le long hiver de l'Escaut."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1945,
@@ -1765,7 +1883,8 @@
   "fr": [
    "La dernière Croix de Victoria",
    "Le lieutenant Robert Hampton Gray, de Trail en Colombie-Britannique, pilote un avion endommagé à travers un feu nourri pour couler un navire de guerre japonais dans la baie d'Onagawa, et il y trouve la mort. Il fut le dernier Canadien à recevoir la Croix de Victoria. La guerre s'est terminée six jours plus tard."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1945,
@@ -1780,7 +1899,8 @@
   "fr": [
    "La guerre se termine",
    "La reddition du Japon est annoncée et la Seconde Guerre mondiale prend fin. Plus d'un million de Canadiens avaient servi, dans un pays d'environ onze millions et demi d'habitants, et plus de 45 000 ne sont pas rentrés."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1949,
@@ -1795,7 +1915,8 @@
   "fr": [
    "Le plus fort séisme jamais enregistré au Canada",
    "Un séisme de magnitude 8,1 frappe au large de Haida Gwaii, en Colombie-Britannique. C'est le plus fort jamais enregistré au Canada depuis le début des relevés. Des vaches furent renversées dans les îles et des cheminées s'écroulèrent sur le continent, mais la côte est peu peuplée et personne n'est mort."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 1953,
@@ -1810,7 +1931,8 @@
   "fr": [
    "Shakespeare sous une tente",
    "Le Festival de Stratford ouvre sa première saison sous une tente, dans une petite ville ferroviaire de l'Ontario, avec Alec Guinness dans Richard III. La ville avait été nommée d'après le lieu de naissance de Shakespeare un siècle plus tôt, un peu par plaisanterie. C'est aujourd'hui l'une des plus grandes compagnies de théâtre classique d'Amérique du Nord."
-  ]
+  ],
+  "topic": "culture"
  },
  {
   "y": 1953,
@@ -1825,7 +1947,8 @@
   "fr": [
    "La guerre de Corée se termine",
    "Un armistice est signé à Panmunjom. Plus de 26 000 Canadiens y avaient servi et 516 y sont morts. On l'appelle parfois la guerre oubliée, ce qui est un mauvais nom pour un conflit qui a coûté tant de vies à ce pays."
-  ]
+  ],
+  "topic": "war"
  },
  {
   "y": 1955,
@@ -1840,7 +1963,8 @@
   "fr": [
    "Le Cap-Breton rejoint le continent",
    "La chaussée de Canso est inaugurée, reliant l'île du Cap-Breton au reste de la Nouvelle-Écosse après vingt-sept mois de travaux et dix millions de tonnes de roc. Le jour de l'ouverture, cent joueurs de cornemuse l'ont traversée en défilant."
-  ]
+  ],
+  "topic": "build"
  },
  {
   "y": 1960,
@@ -1856,7 +1980,8 @@
    "La Déclaration canadienne des droits",
    "La Déclaration des droits de John Diefenbaker reçoit la sanction royale. C'était la première loi fédérale à énoncer les droits des Canadiens en un seul texte. Ce n'était qu'une loi ordinaire, donc on pouvait l'écarter, et cette faiblesse explique en grande partie pourquoi la Charte est arrivée vingt-deux ans plus tard."
   ],
-  "link": "rights-and-responsibilities-of-canadian-citizens.html"
+  "link": "rights-and-responsibilities-of-canadian-citizens.html",
+  "topic": "law"
  },
  {
   "y": 1967,
@@ -1871,7 +1996,8 @@
   "fr": [
    "Naissance du Caribana",
    "Dix Torontois d'origine antillaise lancent un festival en cadeau au Canada pour son centenaire. C'est aujourd'hui l'un des plus grands festivals caribéens d'Amérique du Nord, et il remplit les rues de Toronto chaque été."
-  ]
+  ],
+  "topic": "culture"
  },
  {
   "y": 1974,
@@ -1886,7 +2012,8 @@
   "fr": [
    "Le premier vice-roi autochtone",
    "Ralph Steinhauer, un agriculteur cri de Saddle Lake, devient lieutenant-gouverneur de l'Alberta. Il fut la première personne autochtone à occuper une charge vice-royale au Canada. Il avait passé sa vie de travail à cultiver la terre et à servir sa communauté, et il a pris ce poste dans la province où il avait fait les deux."
-  ]
+  ],
+  "topic": "treaty"
  },
  {
   "y": 1976,
@@ -1901,7 +2028,8 @@
   "fr": [
    "Les Jeux de Montréal s'ouvrent",
    "Les premiers Jeux olympiques tenus au Canada s'ouvrent à Montréal, la coureuse Abby Hoffman portant le drapeau. Le stade n'était pas terminé et il a fallu trente ans pour rembourser la dette. Les gens se souviennent de la quinzaine plutôt que de la facture."
-  ]
+  ],
+  "topic": "sport"
  },
  {
   "y": 1976,
@@ -1916,7 +2044,8 @@
   "fr": [
    "Le premier dix parfait",
    "Aux Jeux de Montréal, la Roumaine Nadia Comaneci obtient le premier 10 parfait de l'histoire de la gymnastique olympique. Le tableau d'affichage n'avait pas été conçu pour l'afficher et a montré 1,00. Elle avait quatorze ans."
-  ]
+  ],
+  "topic": "sport"
  },
  {
   "y": 1977,
@@ -1932,7 +2061,8 @@
    "La loi 101",
    "La Charte de la langue française reçoit la sanction royale au Québec, faisant du français la langue officielle de la province, de ses lieux de travail, de son affichage et de ses écoles. C'est l'une des lois les plus débattues de l'histoire du Canada. C'est aussi la raison pour laquelle des millions de personnes parlent encore français sur ce continent."
   ],
-  "link": "canadas-two-official-languages.html"
+  "link": "canadas-two-official-languages.html",
+  "topic": "law"
  },
  {
   "y": 1983,
@@ -1947,7 +2077,8 @@
   "fr": [
    "Le planeur de Gimli",
    "Un avion d'Air Canada tombe en panne de carburant à 41 000 pieds à cause d'une confusion d'unités lors du passage au système métrique. Le commandant avait piloté des planeurs, le copilote connaissait une base aérienne fermée à Gimli, au Manitoba, et à eux deux ils ont posé un avion de ligne sans moteur sans faire un seul mort."
-  ]
+  ],
+  "topic": "build"
  },
  {
   "y": 1987,
@@ -1962,7 +2093,8 @@
   "fr": [
    "Le vendredi noir d'Edmonton",
    "Une tornade de plus d'un kilomètre de large ravage l'est d'Edmonton un vendredi après-midi, restant au sol près d'une heure. Elle a traversé un parc industriel et un parc de maisons mobiles. L'Alberta a réécrit ensuite son système d'alerte d'urgence."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 1988,
@@ -1978,7 +2110,8 @@
    "La Loi sur le multiculturalisme",
    "La Loi sur le multiculturalisme canadien reçoit la sanction royale, faisant du Canada le premier pays au monde à inscrire le multiculturalisme dans une loi nationale. Elle affirme que le gouvernement reconnaît que les Canadiens viennent de nombreuses origines et que cela fait partie du patrimoine du pays, non d'un problème à gérer."
   ],
-  "link": "canadas-two-official-languages.html"
+  "link": "canadas-two-official-languages.html",
+  "topic": "law"
  },
  {
   "y": 1988,
@@ -1994,7 +2127,8 @@
    "Gretzky est échangé",
    "Wayne Gretzky est échangé des Oilers d'Edmonton aux Kings de Los Angeles. Il a pleuré en conférence de presse. Un député a demandé au gouvernement d'empêcher la transaction. Il a ensuite rendu le hockey populaire dans des endroits qui n'avaient jamais vu de glace."
   ],
-  "link": "hockey-in-canada.html"
+  "link": "hockey-in-canada.html",
+  "topic": "sport"
  },
  {
   "y": 1990,
@@ -2009,7 +2143,8 @@
   "fr": [
    "L'armée à Kanesatake",
    "Environ 4 000 soldats canadiens relèvent la police provinciale autour de Kanesatake et de Kahnawake. L'affrontement avait commencé par un projet d'agrandissement d'un terrain de golf sur des terres que les Mohawks disaient leurs, dont un cimetière. Il a duré soixante-dix-huit jours et a changé la façon dont le pays parle des revendications territoriales."
-  ]
+  ],
+  "topic": "treaty"
  },
  {
   "y": 1990,
@@ -2025,7 +2160,8 @@
    "Les pourparlers cessent à Kanesatake",
    "Le premier ministre du Québec met fin aux négociations et l'armée annonce qu'elle démantèlera les barricades. L'affrontement avait commencé à cause d'un projet d'agrandissement d'un terrain de golf sur des terres que les Mohawks disaient leurs, dont un cimetière. Il s'est terminé un mois plus tard. Le litige territorial lui-même restait non réglé des décennies plus tard."
   ],
-  "link": "indigenous-peoples-of-canada.html"
+  "link": "indigenous-peoples-of-canada.html",
+  "topic": "treaty"
  },
  {
   "y": 1990,
@@ -2041,7 +2177,8 @@
    "Le convoi de Whiskey Trench",
    "Un convoi de femmes, d'enfants et d'aînés mohawks quittant Kahnawake est bombardé de pierres par une foule en traversant un tronçon d'autoroute. Des policiers étaient présents. Des gens furent blessés. C'est l'une des journées les plus difficiles à lire de l'histoire récente du Canada, et elle est consignée."
   ],
-  "link": "indigenous-peoples-of-canada.html"
+  "link": "indigenous-peoples-of-canada.html",
+  "topic": "treaty"
  },
  {
   "y": 1996,
@@ -2056,7 +2193,8 @@
   "fr": [
    "Le déluge du Saguenay",
    "Deux cent soixante millimètres de pluie tombent sur la région du Saguenay en trois jours. Les rivières emportent des quartiers entiers et environ 14 000 personnes doivent quitter leur maison. Une petite maison blanche est restée seule debout dans la boue et est devenue la photographie dont tout le monde se souvient."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 1996,
@@ -2071,7 +2209,8 @@
   "fr": [
    "L'homme le plus rapide du monde",
    "Donovan Bailey remporte le 100 mètres olympique à Atlanta en 9,84 secondes, un record du monde. Il était arrivé de la Jamaïque au Canada tout jeune et travaillait comme courtier en valeurs mobilières tout en s'entraînant. Une semaine plus tard, il menait aussi l'équipe de relais à l'or."
-  ]
+  ],
+  "topic": "sport"
  },
  {
   "y": 1998,
@@ -2087,7 +2226,8 @@
    "Une province peut-elle partir ?",
    "La Cour suprême répond à une question qu'aucun pays n'aime se faire poser. Une province ne peut pas déclarer seule son indépendance. Mais si une majorité claire répond à une question claire, le reste du Canada serait tenu de négocier. Les deux camps y ont trouvé quelque chose."
   ],
-  "link": "how-canadas-government-works.html"
+  "link": "how-canadas-government-works.html",
+  "topic": "law"
  },
  {
   "y": 2000,
@@ -2102,7 +2242,8 @@
   "fr": [
    "La tornade de Pine Lake",
    "Une tornade aux vents proches de 300 kilomètres à l'heure frappe un terrain de camping à Pine Lake, en Alberta, un vendredi soir d'été. Onze personnes sont tuées et plus d'une centaine blessées. L'Alberta se trouve dans la partie du Canada où les tornades sont les plus fréquentes, ce qui étonne ceux qui croient les Prairies simplement plates et tranquilles."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 2003,
@@ -2117,7 +2258,8 @@
   "fr": [
    "Les lumières s'éteignent",
    "Peu après seize heures, le courant est coupé dans tout l'Ontario et dans une grande partie du nord-est des États-Unis. Environ dix millions de Canadiens se retrouvent sans électricité, certains pendant deux jours. On s'en souvient comme d'un moment étonnamment calme, et comme de la nuit où l'on pouvait voir les étoiles au-dessus de Toronto."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 2011,
@@ -2132,7 +2274,8 @@
   "fr": [
    "Jack Layton meurt",
    "Le chef de l'opposition officielle meurt du cancer à 61 ans, trois mois après le meilleur résultat électoral de l'histoire de son parti. Il avait écrit deux jours plus tôt une lettre se terminant par une phrase que le pays a répétée pendant des années : mes amis, l'amour est meilleur que la colère. Il a eu droit à des funérailles d'État."
-  ]
+  ],
+  "topic": "people"
  },
  {
   "y": 2013,
@@ -2147,7 +2290,8 @@
   "fr": [
    "Lac-Mégantic",
    "Un train à la dérive transportant soixante-douze wagons-citernes de pétrole brut dévale une pente et explose au cœur de Lac-Mégantic, au Québec, aux premières heures du matin. Quarante-sept personnes ont péri et le centre-ville a été détruit. Cela a changé la façon dont le Canada transporte le pétrole par rail."
-  ]
+  ],
+  "topic": "disaster"
  },
  {
   "y": 2016,
@@ -2162,7 +2306,8 @@
   "fr": [
    "Penny Oleksiak",
    "À seize ans, Penny Oleksiak remporte le 100 mètres nage libre à Rio et devient la première Canadienne à gagner quatre médailles aux mêmes Jeux d'été. Elle ne s'était mise à la natation de compétition que quelques années plus tôt, parce que sa sœur en faisait."
-  ]
+  ],
+  "topic": "sport"
  },
  {
   "y": 2016,
@@ -2177,7 +2322,8 @@
   "fr": [
    "Deux fois en or",
    "Rosie MacLennan remporte l'or au trampoline à Rio, quatre ans après l'avoir gagné à Londres. Elle est devenue la première Canadienne à défendre avec succès un titre olympique individuel. Elle avait concouru à Londres avec une commotion cérébrale que personne ne connaissait."
-  ]
+  ],
+  "topic": "sport"
  },
  {
   "y": 2021,
@@ -2193,7 +2339,8 @@
    "L'île Kuper",
    "On annonce que plus de 160 sépultures anonymes ont été repérées sur le site de l'ancien pensionnat de l'île Kuper, au large de l'île de Vancouver. Cela survient au cours d'un été marqué par des découvertes semblables partout au pays. Ces enfants y avaient été envoyés par la loi, et on avait dit très peu de choses à leurs familles."
   ],
-  "link": "indigenous-peoples-of-canada.html"
+  "link": "indigenous-peoples-of-canada.html",
+  "topic": "treaty"
  },
  {
   "y": 2021,
@@ -2208,7 +2355,8 @@
   "fr": [
    "L'or du décathlon",
    "Damian Warner, de London en Ontario, remporte le décathlon olympique à Tokyo avec un record olympique. Il s'était entraîné tout l'hiver dans un aréna de hockey non chauffé, parce que la pandémie avait fermé tout le reste."
-  ]
+  ],
+  "topic": "sport"
  },
  {
   "y": 2021,
@@ -2223,6 +2371,7 @@
   "fr": [
    "L'or du soccer à Tokyo",
    "L'équipe féminine du Canada bat la Suède aux tirs de barrage et remporte la première médaille d'or olympique du pays au soccer. L'équipe avait déjà obtenu deux fois le bronze et on le lui rappelait chaque fois. Elle avait dit vouloir changer la couleur de la médaille, et elle l'a fait."
-  ]
+  ],
+  "topic": "sport"
  }
 ]

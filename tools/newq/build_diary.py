@@ -50,6 +50,26 @@ ERA_LABEL = {
 LONG_AGO = {"en": "Thousands of years ago", "fr": "Il y a des milliers d'années"},
 UPCOMING = {"en": "Not yet", "fr": "À venir"}
 
+
+# A small colour icon per note, so a reader scrolling can see at a glance what
+# kind of thing each one is. Decorative only — it never carries a fact.
+# The glyph sits in a FIXED box with overflow:hidden, because you cannot control
+# which font a reader's machine substitutes. That is the hero-badge lesson.
+TOPIC = {
+    "war":     ("\u2694\ufe0f", "War and the people in it",   "Guerre et ceux qui l'ont faite"),
+    "treaty":  ("\U0001FAB6", "Treaties and Indigenous history", "Trait\u00e9s et histoire autochtone"),
+    "law":     ("\u2696\ufe0f", "Law, rights and government",  "Lois, droits et gouvernement"),
+    "disaster":("\U0001F525", "Disaster",                      "Catastrophe"),
+    "explore": ("\U0001F9ED", "Exploration and gold",          "Exploration et or"),
+    "land":    ("\U0001F341", "The land and the map",          "Le territoire et la carte"),
+    "build":   ("\U0001F682", "Built things",                  "Ce qui a \u00e9t\u00e9 b\u00e2ti"),
+    "sport":   ("\U0001F3C5", "Sport",                         "Sport"),
+    "people":  ("\U0001F464", "People",                        "Personnes"),
+    "sea":     ("\u2693", "The sea",                           "La mer"),
+    "culture": ("\U0001F3AD", "Culture and stories",           "Culture et r\u00e9cits"),
+    "science": ("\U0001F4A1", "Discoveries",                   "D\u00e9couvertes"),
+}
+
 MARK_OPEN = "<!--DIARY-->"
 MARK_CLOSE = "<!--/DIARY-->"
 
@@ -105,13 +125,20 @@ def note_html(n, lang):
         label = "Read more on this" if lang == "en" else "En lire plus à ce sujet"
         href = n["link"] if lang == "en" else n["link"]
         link = '\n      <p class="dmore"><a href="%s">%s</a></p>' % (e(href), e(label))
-    return (
+    topic = n.get("topic", "land")
+    glyph, label_en, label_fr = TOPIC.get(topic, TOPIC["land"])
+    label = label_en if lang == "en" else label_fr
+    icon = ('<span class="dicon t-%s" title="%s"><span aria-hidden="true">%s</span>'
+            '<span class="sr-only">%s</span></span>' % (topic, e(label), glyph, e(label)))
+    tpl = (
         '\n    <article class="%s" id="%s" data-era="%d"%s%s>'
+        '\n      ' + icon.replace('%', '%%') +
         '\n      <time class="dwhen"%s>%s</time>%s'
         '\n      <h2 class="dtitle">%s</h2>'
         '\n      <p class="dbody">%s</p>%s'
         '\n      <p class="dsrc">%s %s</p>'
-        '\n    </article>'
+        '\n    </article>')
+    return (tpl
         % (cls, anchor(n), n["era"],
            ' data-m="%d"' % n["m"] if n.get("m") else "",
            ' data-d="%d"' % n["d"] if n.get("d") else "",
