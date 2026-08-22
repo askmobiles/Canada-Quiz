@@ -8,7 +8,7 @@ The site used to carry one global stamp, ASSET_VER, on every css/js link. Two
 problems came from that:
 
 1. Every build changed the stamp on all 202 pages, so a one-line edit produced a
-   202-file diff in GitHub Desktop. (Eesan asked about this more than once:
+   202-file diff in GitHub Desktop. (The owner asked about this more than once:
    "why evey time 135 page need to update?")
 
 2. Worse — the stamp was bumped BY HAND. On 7 Aug 2026 three JS files were

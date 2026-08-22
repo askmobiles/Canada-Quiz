@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 """Article 2 of 3 — when a tariff goes on, who actually gains?
 
-Written from a Canadian point of view, which Eesan asked for on 22 August, and
-written against nobody, which he asked for in the same sentence. That is not a
+Written from a Canadian point of view and written against nobody. That is not a
 softening: it is easier to be accurate when you are not trying to score. No
-individual official is named on this page. Governments and departments are named
-because they are the ones who publish.
+individual official is named on this page. Governments and departments are
+named, because they are the ones who publish.
 
 The rule this page is built on: quote what is claimed, print what was
 measured, and where the measurements disagree say so instead of picking a

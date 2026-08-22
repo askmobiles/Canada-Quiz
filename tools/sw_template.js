@@ -10,7 +10,7 @@
        live on other domains and are passed straight through, so nothing about
        ads or stats changes and nothing of theirs is ever stored here.
 
-     * Pages (navigations) are NETWORK FIRST. When Eesan pushes a new build,
+     * Pages (navigations) are NETWORK FIRST. When the owner pushes a new build,
        anyone online sees it on the next tap — a cached page can never get
        stuck in front of a fresh one. Offline, the saved copy is served, and
        if that page was never visited, offline.html is.

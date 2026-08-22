@@ -3,7 +3,7 @@
 Never insert a card with a plain string replace. The Saskatchewan build did that:
 it added the real card and left the "Coming soon" placeholder sitting right
 underneath, so the page advertised Saskatchewan twice, once as ready to practise
-and once as not built yet. Eesan found it on his phone.
+and once as not built yet. The owner found it on his phone.
 
 place_card() deletes the placeholder itself and refuses to finish if the
 province ends up appearing anything other than exactly once in the grid.

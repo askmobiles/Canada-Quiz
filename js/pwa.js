@@ -152,7 +152,7 @@
   /* ------------------------------------------------------- back button */
   /* An installed app has no address bar, and no address bar means no Back
      button. Android still has its hardware back gesture; an iPhone or iPad has
-     nothing at all. Eesan hit exactly this — once you tap into a game inside
+     nothing at all. The owner hit exactly this — once you tap into a game inside
      the installed app there is no way back to the menu except closing it. So
      when we are running as an app, we draw our own Back button.
 

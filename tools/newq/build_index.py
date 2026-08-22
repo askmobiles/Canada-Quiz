@@ -9,7 +9,7 @@ Two things go stale the moment a page or a question is added, and both are
 visible claims: the "N pages" and "N questions" chips at the top, and the
 Driving Test Practice list. A page that says 172 pages while the footer says 193
 is exactly the kind of small wrong number an AdSense reviewer treats as
-careless, and it is the kind Eesan spots on his phone.
+careless, and it is the kind the owner spots on his phone.
 
 What this does:
   * rebuilds the Driving Test Practice list from tools/site_map.json, so a new

@@ -10,7 +10,7 @@
        live on other domains and are passed straight through, so nothing about
        ads or stats changes and nothing of theirs is ever stored here.
 
-     * Pages (navigations) are NETWORK FIRST. When Eesan pushes a new build,
+     * Pages (navigations) are NETWORK FIRST. When the owner pushes a new build,
        anyone online sees it on the next tap — a cached page can never get
        stuck in front of a fresh one. Offline, the saved copy is served, and
        if that page was never visited, offline.html is.
@@ -25,7 +25,7 @@
      * The runtime cache is capped, so a tablet never fills up with 250 pages
        and a 2.4 MB French dictionary it will not read again.
 */
-var VERSION = "17a7553d2b6f";
+var VERSION = "416d4793cb14";
 var SHELL = "cq-shell-" + VERSION;
 var RUNTIME = "cq-run-" + VERSION;
 var MAX_RUNTIME = 220;
@@ -41,10 +41,10 @@ var PRECACHE = [
   "daily.html",
   "css/style.css?v=0e3cc3ad",
   "js/site.js?v=e8ae9fb1",
-  "js/game-fullscreen.js?v=4c587f13",
+  "js/game-fullscreen.js?v=29d5dc34",
   "js/endcard.js?v=e6598278",
   "js/tv-mode.js?v=4ebd9ddf",
-  "js/pwa.js?v=56adaa04",
+  "js/pwa.js?v=e7218fe1",
   "brand/logo-horizontal-white.svg",
   "brand/favicon.svg",
   "brand/icon-192.png",

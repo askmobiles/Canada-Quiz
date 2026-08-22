@@ -379,7 +379,7 @@
      hero, the ad slot, the "study the rules" panels, the grid of links.
      ontario-g1-practice-test.html ran 2,969px past the bottom of an iPhone,
      and the last button a player could reach by scrolling was "Read the
-     guide". That is what Eesan meant by having to move up and down to find
+     guide". That is what the owner meant by having to move up and down to find
      the buttons.
 
      So go one level deeper and keep only the blocks that are actually the

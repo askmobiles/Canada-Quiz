@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Pages that belong to Eesan, not to visitors.
+"""Pages that belong to the owner, not to visitors.
 
 Imported by rewrite_pages.py, build_fr.py and build_sitemap.py. A page listed
 here is:
@@ -11,4 +11,4 @@ here is:
 
 Keep this list tiny. Everything else on a public site should be public.
 """
-PRIVATE = set()   # my-stats.html lived here 9 Aug 2026; removed at Eesan's request
+PRIVATE = set()   # my-stats.html lived here 9 Aug 2026; removed at the owner's request

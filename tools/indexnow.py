@@ -25,7 +25,7 @@ WHAT THIS SCRIPT DOES
     tools/indexnow_links.txt      one clickable link per URL, for small batches
 
   Sending is left to a person on purpose. Submitting a site to a search engine
-  is an action taken in Eesan's name, and a build script should not be doing
+  is an action taken in the owner's name, and a build script should not be doing
   that on its own.
 
 WHICH TO USE
