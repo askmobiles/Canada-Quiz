@@ -643,3 +643,129 @@ background:#fff2e8;color:#9a5b00;border-radius:999px;padding:8px 18px;margin:8px
    longest word. break-word only splits a word when there is no other way, so
    nothing changes at ordinary widths. */
 h1,h2,h3,h4,.card h3,.pill{overflow-wrap:break-word}
+
+/* ==========================================================================
+   THE CANADA DIARY  —  canada-diary.html
+   The paper ages as the reader walks back in time. The FRAME ages; the WORDS
+   stay dark and readable at every era. Charm never beats readability.
+   Everything here is drawn by the browser: no image files, nothing licensed.
+   ========================================================================== */
+
+@font-face{font-family:"DiaryHand";src:url(../fonts/comic-neue-regular.woff2) format("woff2");
+  font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"DiaryHand";src:url(../fonts/comic-neue-bold.woff2) format("woff2");
+  font-weight:700;font-style:normal;font-display:swap}
+
+.diary .d-count{color:var(--muted);font-size:14.5px;margin:0 0 14px}
+.diary .d-foot{color:var(--muted);font-size:13.5px;margin:22px 0 0;line-height:1.6}
+
+/* --- reader settings --- */
+.d-tools{margin:0 0 14px}
+.d-readbtn{min-height:44px}
+.d-readpanel{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:10px 0 0;background:#fff}
+.d-rowlabel{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:8px 0 6px}
+.d-rowlabel:first-child{margin-top:0}
+.d-row{display:flex;flex-wrap:wrap;gap:7px}
+.d-opt{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink,#2b2d42);
+  border-radius:10px;padding:10px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;min-height:44px}
+.d-opt[aria-pressed="true"]{background:#238277;border-color:#238277;color:#fff}
+
+/* --- the pickers --- */
+.d-tabs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 10px}
+.d-tab{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink,#2b2d42);
+  border-radius:999px;padding:11px 17px;font:inherit;font-size:14.5px;font-weight:700;cursor:pointer;min-height:46px}
+.d-tab[aria-selected="true"]{background:#2b2d42;border-color:#2b2d42;color:#fff}
+.d-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.d-chip{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink,#2b2d42);
+  border-radius:9px;padding:9px 12px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;min-height:44px}
+.d-chip[aria-pressed="true"]{background:#238277;border-color:#238277;color:#fff}
+.d-said{color:var(--muted);font-size:14px;margin:0 0 4px}
+.d-empty{background:#fff8f8;border:1px solid #f6d5d8;border-radius:14px;padding:15px 17px;margin:0 0 16px}
+.d-empty p{margin:0 0 5px}
+.d-empty p:last-child{margin:0;color:var(--muted);font-size:14.5px}
+
+/* --- headings between eras --- */
+.dera{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+  margin:26px 0 10px;font-weight:800}
+.dera:first-child{margin-top:6px}
+
+/* --- one note --- */
+.dnote{border-radius:14px;padding:20px 20px 15px;overflow:hidden;margin:0 0 11px;
+  border:1px solid var(--line);background:#fff;
+  transition:background .3s ease,border-color .3s ease}
+.dwhen{display:inline-block;border-radius:999px;padding:4px 13px;font-size:14px;font-weight:700;
+  margin:0 0 9px;background:#eef6f4;color:#238277}
+.dtag{display:inline-block;background:#284673;color:#fff;border-radius:999px;padding:2px 9px;
+  font-size:11.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-left:7px;vertical-align:2px}
+.dtitle{margin:0 0 8px;font-size:19px;line-height:1.32}
+.dbody{margin:0;font-size:16.5px;line-height:1.7}
+.dmore{margin:10px 0 0;font-size:15px}
+.dsrc{margin:12px 0 0;padding:9px 0 0;border-top:1px solid var(--line);
+  font-size:13px;color:var(--muted);line-height:1.5}
+
+/* ---- the aged papers. Text colours are measured, not guessed:
+        the worst contrast across all five eras is 5.9 against 4.5 required. ---- */
+.rd-paper-aged .dnote.e0,
+.rd-paper-aged .dnote.e1{
+  background-color:#ecd49b;border-color:#a97c33;
+  background-image:
+    radial-gradient(ellipse 96% 88% at 50% 42%, rgba(253,242,210,.78), transparent 76%),
+    radial-gradient(ellipse 22% 34% at 8% 26%, rgba(150,96,22,.18), transparent 68%),
+    radial-gradient(ellipse 5% 12% at 88% 82%, rgba(140,86,18,.22), transparent 76%),
+    linear-gradient(to bottom, transparent 46%, rgba(132,84,20,.15) 49.3%, rgba(255,248,222,.5) 50.6%, transparent 54%),
+    radial-gradient(116% 102% at 50% 50%, transparent 50%, rgba(122,74,14,.34) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.026' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='luminanceToAlpha'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.48' intercept='-0.09'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='300' height='300' fill='%238d5a14' filter='url(%23m)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+  background-size:auto,auto,auto,auto,auto,175px 175px,140px 140px;
+  box-shadow:0 2px 12px rgba(110,70,16,.20)}
+.rd-paper-aged .dnote.e0 .dwhen,
+.rd-paper-aged .dnote.e1 .dwhen{background:rgba(238,208,144,.92);color:#4a3204}
+.rd-paper-aged .dnote.e0 .dtitle,
+.rd-paper-aged .dnote.e1 .dtitle{color:#201301}
+.rd-paper-aged .dnote.e0 .dbody,
+.rd-paper-aged .dnote.e1 .dbody{color:#221502}
+.rd-paper-aged .dnote.e0 .dsrc,
+.rd-paper-aged .dnote.e1 .dsrc{color:#5a3a05;border-top-color:rgba(150,108,36,.26)}
+.rd-paper-aged .dnote.e0 .dmore a,
+.rd-paper-aged .dnote.e1 .dmore a{color:#6a3c06}
+
+/* 1900-1949 — newspaper */
+.rd-paper-aged .dnote.e2{background:#f3f1ea;border-color:#dad6c9}
+.rd-paper-aged .dnote.e2 .dtitle{color:#2c2a26;font-family:Georgia,"Times New Roman",serif}
+.rd-paper-aged .dnote.e2 .dbody{color:#35332e}
+.rd-paper-aged .dnote.e2 .dwhen{background:#e3dfd2;color:#55503f}
+/* 1950-1999 — typewriter */
+.rd-paper-aged .dnote.e3{background:#faf9f5;border-color:#e0ded2}
+.rd-paper-aged .dnote.e3 .dtitle{color:#26262b;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:17px}
+.rd-paper-aged .dnote.e3 .dwhen{background:#ebe9db;color:#575540;font-family:ui-monospace,Menlo,monospace}
+/* 2000-today — the site's own plain card. A note from 2008 is not an old
+   document, so it does not pretend to be one. */
+
+/* not yet happened */
+.dnote.fut{background:#eef3fb;border-color:#c4d5ef}
+.dnote.fut .dtitle{color:#1f2f4a}
+.dnote.fut .dbody{color:#2a3a55}
+.dnote.fut .dwhen{background:#d9e5f8;color:#284673}
+
+/* --- the writing --- */
+.rd-hand-friendly .dnote.e0,.rd-hand-friendly .dnote.e1{
+  font-family:"DiaryHand","Chalkboard SE","Comic Neue",cursive}
+.rd-hand-friendly .dnote.e0 .dtitle,.rd-hand-friendly .dnote.e1 .dtitle{font-size:22px}
+.rd-hand-friendly .dnote.e0 .dbody,.rd-hand-friendly .dnote.e1 .dbody{font-size:18px;line-height:1.78}
+.rd-hand-book .dnote.e0,.rd-hand-book .dnote.e1{font-family:Georgia,"Times New Roman",serif;font-style:italic}
+/* rd-hand-plain adds nothing: the site's own font, for anyone who finds
+   handwriting tiring. It is an option, not a downgrade. */
+
+/* --- text size --- */
+.rd-size-big .dbody{font-size:20px;line-height:1.85}
+.rd-size-big .dtitle{font-size:23px}
+.rd-size-big .dwhen{font-size:15px}
+
+/* --- filtering. The notes are always in the page; CSS hides them. --- */
+.dnote[hidden],.dera[hidden]{display:none}
+
+@media (max-width:520px){
+  .dnote{padding:17px 16px 13px}
+  .dtitle{font-size:18px}
+  .dbody{font-size:16px}
+}

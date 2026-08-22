@@ -1,0 +1,12 @@
+Comic Neue is used on canada-quiz.com for the Canada Diary.
+
+Comic Neue (c) Craig Rozynski, released under the SIL Open Font License, Version 1.1.
+The full licence text is available at https://openfontlicense.org
+
+The two files here are SUBSETS of the original, cut down to the Latin letters,
+the full set of French accented characters and the punctuation this site uses.
+Subsetting is permitted by the licence. The font is not sold, and it is not the
+site's own work.
+
+Font Software: comic-neue-regular.woff2, comic-neue-bold.woff2
+Reserved Font Name: none claimed.

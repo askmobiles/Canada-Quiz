@@ -1932,6 +1932,26 @@
    ]
   ]
  },
+ "canada-diary.html": {
+  "about": [
+   {
+    "en": "The Canada Diary is a running record of this country, one short note at a time. It opens on today's date, so the page is different every morning. From there you can look back through history, month by month or era by era, or forward to dates that have not arrived yet.",
+    "fr": "Le journal du Canada est un registre continu de ce pays, une courte note à la fois. Il s'ouvre à la date d'aujourd'hui, si bien que la page change chaque matin. De là, vous pouvez remonter dans l'histoire, mois par mois ou époque par époque, ou regarder vers des dates qui ne sont pas encore arrivées."
+   },
+   {
+    "en": "Every note names where it came from. Most rest on Parks Canada, Veterans Affairs Canada, Library and Archives Canada, the Justice Laws website or a provincial government; the rest on museums, universities and The Canadian Encyclopedia, which is a charity rather than a government body. Nothing here is invented.",
+    "fr": "Chaque note indique d'où elle vient. La plupart s'appuient sur Parcs Canada, Anciens Combattants Canada, Bibliothèque et Archives Canada, le site des lois de la justice ou un gouvernement provincial ; les autres sur des musées, des universités et l'Encyclopédie canadienne, qui est un organisme de bienfaisance et non un organisme gouvernemental. Rien ici n'est inventé."
+   },
+   {
+    "en": "Where no official record gives an exact day, the day is left empty rather than guessed. Saying plainly what is not known is the same rule the driving pages follow, and it is the reason this site can be trusted on the things it does know.",
+    "fr": "Lorsqu'aucun document officiel ne donne de date exacte, la journée est laissée vide plutôt que devinée. Dire clairement ce que l'on ignore, c'est la règle que suivent aussi les pages sur la conduite, et c'est pourquoi on peut faire confiance à ce site sur ce qu'il sait."
+   },
+   {
+    "en": "The look of a note changes with its age. The oldest notes sit on aged paper in a handwritten face; the newest sit on the site's ordinary white card. A note from this century is not an old document, so it does not pretend to be one. If any of that makes reading harder, the Reading button lets you turn it off.",
+    "fr": "L'apparence d'une note change avec son âge. Les plus anciennes reposent sur du papier vieilli, dans une écriture manuscrite ; les plus récentes sur la carte blanche ordinaire du site. Une note de ce siècle n'est pas un vieux document et ne fait pas semblant de l'être. Si cela nuit à votre lecture, le bouton Lecture vous permet de tout désactiver."
+   }
+  ]
+ },
  "canada-driving-test-by-province.html": {
   "about": [
    {
