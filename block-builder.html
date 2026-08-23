@@ -109,6 +109,35 @@
   /* the shell clips to its rounded corners, which would clip the map with it */
   .bb-shell.bb-map-on{overflow:visible}
   .bb-map[hidden]{display:none}
+
+  /* ---- the block box. Sits inside the game shell, not fixed to the viewport,
+     so it stays put in full screen and in TV mode the same way the map does. */
+  .bb-inv{position:absolute;inset:0;z-index:10040;display:flex;align-items:center;
+    justify-content:center;background:rgba(6,14,22,.82);padding:14px;
+    -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  .bb-inv[hidden]{display:none}
+  .bb-inv-in{width:100%;max-width:520px;max-height:100%;overflow:auto;text-align:center;
+    background:#12212e;color:#fff;border-radius:16px;padding:16px 14px 14px;
+    box-shadow:0 18px 50px rgba(0,0,0,.5)}
+  .bb-inv h3{margin:0 0 2px;font-size:1.05rem}
+  .bb-inv-help{margin:0 0 12px;font-size:.84rem;opacity:.85;line-height:1.4}
+  .bb-inv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));
+    gap:10px;margin:0 0 14px}
+  .bb-inv-item{display:flex;flex-direction:column;align-items:center;gap:6px;
+    background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.16);
+    border-radius:14px;padding:9px 6px;color:#fff;cursor:pointer;font:inherit;
+    min-height:44px}
+  .bb-inv-item:hover{background:rgba(255,255,255,.14)}
+  .bb-inv-item:focus-visible{outline:3px solid #ffd166;outline-offset:2px}
+  .bb-inv-item.on{border-color:#fff;background:rgba(255,255,255,.20)}
+  .bb-inv-item canvas{width:52px;height:52px;display:block;border-radius:9px}
+  .bb-inv-name{font-size:.8rem;font-weight:700;line-height:1.2}
+  /* the on-screen game controls would sit on top of the panel otherwise */
+  .bb-shell.bb-inv-on .bb-controls{display:none}
+  @media (max-width:420px){
+    .bb-inv-grid{grid-template-columns:repeat(auto-fit,minmax(72px,1fr));gap:8px}
+    .bb-inv-item canvas{width:44px;height:44px}
+  }
   /* height:100% and NOT margin:auto. Centring the column with auto margins made
      it shrink to the height of its own text, which handed the map its 150px
      minimum and nothing more — a stamp-sized Canada with empty space above and
@@ -329,6 +358,7 @@
       <tr><th>Right click</th><td>Put your block down where you are pointing</td></tr>
       <tr><th>Mouse wheel</th><td>Change which block you are holding</td></tr>
       <tr><th>1 to 9</th><td>Jump straight to one of the first nine blocks</td></tr>
+      <tr><th>I</th><td>Open the block box, where every block is shown big with its name</td></tr>
       <tr><th>Q and E</th><td>Fly up and down, once you turn flying on</td></tr>
       <tr><th>Esc</th><td>Pause, and give the mouse back to the page</td></tr>
     </table></div>
@@ -340,6 +370,7 @@
       <tr><th>⛏ DIG</th><td>Break the block in the middle of the screen. Hold it down to keep digging</td></tr>
       <tr><th>🧱 PUT</th><td>Place your block. Hold it down to keep building</td></tr>
       <tr><th>Bottom row</th><td>Tap to choose which block you are holding</td></tr>
+      <tr><th>🧰</th><td>Open the block box — every block shown big, with its name under it</td></tr>
       <tr><th>Full screen</th><td>Worth using on a tablet — the buttons get bigger and easier to hit</td></tr>
     </table></div>
     <p>The crosshair in the middle of the screen is what you are pointing at. You can only reach about six blocks, so walk closer if nothing happens.</p>
@@ -374,12 +405,25 @@
           <span class="bb-mid">
             <span class="box bb-badge" id="bbWhere">Free Build</span>
             <button type="button" class="bb-mapb" id="bbMapBtn" aria-label="Open the map">🗺</button>
+            <button type="button" class="bb-mapb" id="bbInvBtn" aria-label="Open the block box">🧰</button>
           </span>
           <span class="box" id="bbFps">—</span>
         </div>
         <div class="bb-list" id="bbList" hidden></div>
         <button type="button" class="bb-near" id="bbNear" hidden></button>
         <div class="bb-done" id="bbDone" hidden></div>
+        <!-- The block box. The twelve slots in the bar are 34px on a phone,
+             which is smaller than a fingertip and gives no names. This is the
+             same twelve, big, with the name written under each one. -->
+        <div class="bb-inv" id="bbInv" hidden role="dialog" aria-modal="true"
+             aria-labelledby="bbInvH">
+          <div class="bb-inv-in">
+            <h3 id="bbInvH">Block box</h3>
+            <p class="bb-inv-help" id="bbInvHelp">Choose a block to build with.</p>
+            <div class="bb-inv-grid" id="bbInvGrid"></div>
+            <button type="button" class="btn" id="bbInvClose">Close</button>
+          </div>
+        </div>
         <div class="bb-controls" id="bbTouch">
           <div class="bb-row">
             <div class="bb-stick" id="bbStick"><div class="bb-knob" id="bbKnob"></div></div>
@@ -557,7 +601,13 @@
     { n: ["Maple leaves", "Feuilles d'érable"], t: [8, 8, 8], see: 1 },
     { n: ["Snow", "Neige"],         t: [12, 2, 12] },
     { n: ["Ice", "Glace"],          t: [13, 13, 13], see: 1 },
-    { n: ["Glass", "Verre"],        t: [10, 10, 10], see: 1 },
+    /* blend:1 means the TEXTURE really is translucent, which is a different
+       question from see:1. see:1 says "neighbours still draw their faces
+       against me" — true of leaves, ice and water too. But mat() paints those
+       over an OPAQUE base, so their texture alpha is 1 and putting them in the
+       blended pass bought nothing and cost correctness. Glass is the one
+       material that clears its tile first, so it is the one that must blend. */
+    { n: ["Glass", "Verre"],        t: [10, 10, 10], see: 1, blend: 1 },
     { n: ["Brick", "Brique"],       t: [14, 14, 14] },
     { n: ["Water", "Eau"],          t: [11, 11, 11], see: 1, liquid: 1 }
   ];
@@ -1491,7 +1541,17 @@
           var id = get(x, y, z);
           if (id === AIR) continue;
           var def = B[id];
-          var into = def.see ? al : op;
+          /* THE LEAVES-IN-FRONT-OF-WATER BUG, 23 August 2026.
+             This used to read  def.see ? al : op,  which put leaves, maple
+             leaves, ice and water into the blended pass. That pass runs with
+             depthMask(false), so nothing in it writes depth and the result
+             depends purely on the order things happen to be drawn in. Leaves
+             standing in front of water were drawn first and the water was then
+             painted straight over them, which is why the same tree looked right
+             from one angle and washed out from another. They are opaque
+             textures, so they belong in the opaque pass, where the depth buffer
+             settles it. */
+          var into = def.blend ? al : op;
           for (var f = 0; f < 6; f++) {
             var F = FACES[f];
             var nx = x + F.d[0], ny = y + F.d[1], nz = z + F.d[2];
@@ -1584,7 +1644,11 @@
   }
 
   /* ================================================================= player */
-  var P = { x: WX / 2, y: 26, z: WZ / 2, vx: 0, vy: 0, vz: 0, yaw: 0, pitch: 0, ground: false };
+  /* mx and mz are the SMOOTHED horizontal velocity — see movePlayer. vx and vz
+     were declared here and never used; they are left alone rather than removed,
+     because something else may read them. */
+  var P = { x: WX / 2, y: 26, z: WZ / 2, vx: 0, vy: 0, vz: 0, mx: 0, mz: 0,
+            yaw: 0, pitch: 0, ground: false };
   var EYE = 1.62, RAD = 0.3, TALL = 1.8;
   var fly = false, held = 1;
 
@@ -1616,6 +1680,32 @@
     var len = Math.hypot(mx, mz);
     if (len > 0.001) { mx = mx / len * speed; mz = mz / len * speed; } else { mx = mz = 0; }
 
+    /* SMOOTH MOVEMENT.
+       mx and mz above are where you are ASKING to go. Before 23 August they
+       were used directly, so walking switched on and off in a single frame:
+       full speed on the first frame of a key press, dead stop on the last.
+       That reads as twitchy, and on a touch stick, where your thumb is always
+       drifting, it reads as juddery.
+
+       Now they are a target, and the real velocity eases toward it. The easing
+       is exponential and framerate-independent — 1 - e^(-rate*dt) — so it
+       behaves identically at 30 fps and 120 fps. A plain "v += (t-v) * 0.2"
+       would not: it would accelerate twice as fast on a 120 Hz iPad as on a
+       60 Hz laptop.
+
+       Rates are deliberately different: quick on the ground so the game still
+       feels responsive, slower in the air so you cannot change direction
+       mid-jump like a helicopter, and quickest of all when stopping, because a
+       slow stop feels like ice rather than like smoothness. */
+    var accel = P.ground ? 14 : 4.5, brake = P.ground ? 18 : 5;
+    var wants = (mx !== 0 || mz !== 0);
+    var rate = wants ? accel : brake;
+    var k = 1 - Math.exp(-rate * dt);
+    P.mx += (mx - P.mx) * k;
+    P.mz += (mz - P.mz) * k;
+    if (!wants && Math.hypot(P.mx, P.mz) < 0.02) { P.mx = 0; P.mz = 0; }
+    mx = P.mx; mz = P.mz;
+
     if (fly) {
       P.vy = (keys.q ? 6 : 0) + (keys.e ? -6 : 0);
     } else {
@@ -1631,7 +1721,7 @@
     if (!blocked(P.x, ny, P.z)) { P.y = ny; P.ground = false; }
     else { if (P.vy < 0) P.ground = true; P.vy = 0; }
 
-    if (P.y < -8) { P.x = WX / 2; P.z = WZ / 2; P.y = 30; P.vy = 0; }
+    if (P.y < -8) { P.x = WX / 2; P.z = WZ / 2; P.y = 30; P.vy = 0; P.mx = P.mz = 0; }
     P.x = Math.max(RAD, Math.min(WX - RAD, P.x));
     P.z = Math.max(RAD, Math.min(WZ - RAD, P.z));
   }
@@ -1946,7 +2036,7 @@
         for (var k = 0; k < n && at < world.length; k++) world[at++] = val;
       }
       if (at !== world.length) return false;
-      if (d.p) { P.x = d.p[0]; P.y = d.p[1]; P.z = d.p[2]; P.yaw = d.p[3]; P.pitch = d.p[4]; }
+      if (d.p) { P.x = d.p[0]; P.y = d.p[1]; P.z = d.p[2]; P.yaw = d.p[3]; P.pitch = d.p[4]; P.mx = P.mz = 0; }
       worldSeed = (typeof d.sd === "number") ? d.sd : region.seed;
       if (d.pl) {
         plot = { x0: d.pl[0], z0: d.pl[1],
@@ -2118,6 +2208,94 @@
     if (b) pick(+b.getAttribute("data-slot"));
   });
 
+  /* ============================================================ block box
+     The bar along the bottom is twelve 34px squares on a phone with no names
+     on them. That is fine once you know the game and poor the first time. The
+     block box is the same twelve blocks, finger-sized, named, and reachable
+     with one tap or the I key.
+
+     Every string here is written as a T(en, fr) pair. build_fr.py skips the
+     inside of <script>, so a sentence written in here in English only would
+     ship in English on the French page. */
+  var inv = document.getElementById("bbInv"),
+      invGrid = document.getElementById("bbInvGrid"),
+      invBtn = document.getElementById("bbInvBtn"),
+      invWasPlaying = false;
+  document.getElementById("bbInvH").textContent = T("Block box", "Boîte à blocs");
+  document.getElementById("bbInvHelp").textContent =
+    T("Choose a block to build with.", "Choisissez un bloc pour construire.");
+  document.getElementById("bbInvClose").textContent = T("Close", "Fermer");
+  invBtn.setAttribute("aria-label", T("Open the block box", "Ouvrir la boîte à blocs"));
+  invBtn.title = invBtn.getAttribute("aria-label");
+
+  function buildInv() {
+    invGrid.innerHTML = "";
+    HOTBAR.forEach(function (id, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "bb-inv-item" + (id === held ? " on" : "");
+      b.setAttribute("data-inv", String(i));
+      b.setAttribute("aria-pressed", String(id === held));
+      b.appendChild(slotIcon(B[id].t[0]));
+      var n = document.createElement("span");
+      n.className = "bb-inv-name";
+      n.textContent = B[id].n[FR ? 1 : 0];
+      b.appendChild(n);
+      invGrid.appendChild(b);
+    });
+  }
+  function invOpen() {
+    if (!inv.hidden) return;
+    buildInv();
+    inv.hidden = false;
+    shell.classList.add("bb-inv-on");
+    /* Pause while it is open. Otherwise you fall off your own tower while you
+       are reading the names, and on a desktop the pointer is still captured. */
+    invWasPlaying = running;
+    if (running) pause();
+    var first = invGrid.querySelector(".bb-inv-item.on") || invGrid.firstChild;
+    if (first && first.focus) first.focus();
+  }
+  function invClose(resume) {
+    if (inv.hidden) return;
+    inv.hidden = true;
+    shell.classList.remove("bb-inv-on");
+    if (resume && invWasPlaying) start();
+    invWasPlaying = false;
+    if (invBtn.focus) invBtn.focus();
+  }
+  invBtn.addEventListener("click", function () { inv.hidden ? invOpen() : invClose(true); });
+  document.getElementById("bbInvClose").addEventListener("click", function () { invClose(true); });
+  invGrid.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-inv]") : null;
+    if (!b) return;
+    pick(+b.getAttribute("data-inv"));
+    invClose(true);
+  });
+  /* I for inventory. NOT E — E is already fly-down in KEYMAP, and a key that
+     does two things is a key that does the wrong one. This listener is separate
+     from the main one on purpose: that one returns early unless the game is
+     running, and the box should open from a paused game too. */
+  document.addEventListener("keydown", function (ev) {
+    if (ev.code !== "KeyI") return;
+    if (/^(INPUT|TEXTAREA|SELECT)$/.test((ev.target.tagName || ""))) return;
+    ev.preventDefault();
+    inv.hidden ? invOpen() : invClose(true);
+  });
+
+  /* Click the dark surround to dismiss, the way the rest of the site behaves */
+  inv.addEventListener("click", function (e) { if (e.target === inv) invClose(true); });
+  /* A dialog that traps nothing is a dialog a keyboard user falls out of. */
+  inv.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { e.preventDefault(); invClose(true); return; }
+    if (e.key !== "Tab") return;
+    var f = inv.querySelectorAll("button");
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
   /* The mouse is CAPTURED while you play on a desktop, so the hotbar sitting
      there in plain sight cannot actually be clicked — you would have to press
      Escape first, which nobody thinks to do. Number keys reach the first nine
@@ -2212,8 +2390,17 @@
       gl.enable(gl.CULL_FACE);
       gl.bindTexture(gl.TEXTURE_2D, tex);
     }
+    /* What is left in this pass is genuinely translucent, so it still has to
+       be drawn far-to-near: a nearer pane must blend over a farther one, not
+       under it. Sorting a few dozen chunk keys per frame costs nothing. */
     gl.depthMask(false);
-    for (var j = 0; j < ks.length; j++) draw(chunks[ks[j]].al);
+    var far = ks.slice().sort(function (a, b) {
+      var A = a.split(","), Bk = b.split(",");
+      var ax = (+A[0] + 0.5) * CH - P.x, az = (+A[1] + 0.5) * CH - P.z;
+      var bx = (+Bk[0] + 0.5) * CH - P.x, bz = (+Bk[1] + 0.5) * CH - P.z;
+      return (bx * bx + bz * bz) - (ax * ax + az * az);
+    });
+    for (var j = 0; j < far.length; j++) draw(chunks[far[j]].al);
     gl.depthMask(true);
   }
 
@@ -2404,7 +2591,7 @@
       }
     }
     if (!best) best = [cx, Math.max(SEA + 1, topOf(cx, cz)), cz];
-    P.x = best[0] + 0.5; P.z = best[2] + 0.5; P.y = best[1] + 1.01; P.vy = 0;
+    P.x = best[0] + 0.5; P.z = best[2] + 0.5; P.y = best[1] + 1.01; P.vy = 0; P.mx = P.mz = 0;
 
     /* face the open side: sample eight directions and take the one whose ground
        stays lowest, which is the one you can see furthest along */
@@ -2480,7 +2667,7 @@
       }
     }
     if (!best) return;                       /* keep the ordinary spawn */
-    P.x = best[0] + 0.5; P.z = best[2] + 0.5; P.y = best[1] + 1.01; P.vy = 0;
+    P.x = best[0] + 0.5; P.z = best[2] + 0.5; P.y = best[1] + 1.01; P.vy = 0; P.mx = P.mz = 0;
     /* forward is (-sin yaw, -cos yaw), the same convention movePlayer uses */
     P.yaw = Math.atan2(-(n[0] - P.x), -(n[2] - P.z));
     P.pitch = -0.05;
@@ -2781,7 +2968,8 @@
               ["⤒", T("jump", "sauter")],
               ["⛏ DIG", T("break the block you are facing", "casser le bloc devant vous")],
               ["🧱 PUT", T("place the block you are holding", "poser le bloc que vous tenez")],
-              [T("Row at the bottom", "Rangée du bas"), T("choose your block", "choisir votre bloc")]];
+              [T("Row at the bottom", "Rangée du bas"), T("choose your block", "choisir votre bloc")],
+              [T("The toolbox button", "Le bouton boîte à outils"), T("open the block box", "ouvrir la boîte à blocs")]];
     }
     return [["W A S D", T("walk", "marcher")],
             [T("Move the mouse", "Bougez la souris"), T("look around", "regarder autour")],
@@ -2790,6 +2978,7 @@
             [T("Right click", "Clic droit"), T("build a block", "poser un bloc")],
             [T("Mouse wheel", "Molette"), T("change block", "changer de bloc")],
             ["1 – 9", T("pick a block straight away", "choisir un bloc directement")],
+            ["I", T("open the block box", "ouvrir la boîte à blocs")],
             ["Q / E", T("fly up and down, when flying is on", "monter et descendre, si le vol est activé")],
             [T("Esc", "Échap"), T("pause and free the mouse", "pause et libérer la souris")]];
   }
