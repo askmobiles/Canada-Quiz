@@ -27,11 +27,11 @@ a = Article(
          "\U0001F4C9 Ce que les tarifs ont fait au Canada, secteur par secteur"),
     hero=T("Steel exports fell by half. Copper went up 40 percent. The two facts are "
            "in the same year, in the same country, under the same tariffs. Here is "
-           "the whole picture, with the official numbers and without the guessing.",
+           "the whole picture, sector by sector, with the official numbers.",
            "Les exportations d'acier ont chuté de moitié. Le cuivre a augmenté de "
            "40 pour cent. Les deux faits datent de la même année, dans le même pays, "
            "sous les mêmes tarifs. Voici le portrait complet, avec les chiffres "
-           "officiels et sans devinettes."),
+           "officiels."),
     checked=T("Last checked 22 August 2026 — this page covers a fast-moving situation",
               "Dernière vérification le 22 août 2026 — cette page traite d'une "
               "situation qui évolue vite"),
@@ -65,23 +65,13 @@ a.callout(T(
     "ce que le Canada taxera n'était pas publiée au moment d'écrire cette page."))
 
 a.callout(T(
-    "<strong>How is this page written?</strong> This is a Canadian site and this page "
-    "is written for Canadians — what happened here, to industries and towns here. It "
-    "is not written against anyone. Tariffs are a decision governments make, Canada "
-    "included, and this page looks at what the numbers did afterwards rather than at "
-    "who deserves the blame. Canadian figures are in Canadian dollars, because that is "
-    "how Statistics Canada and Global Affairs Canada publish them; American figures "
-    "are marked where they appear. Mixing the two silently is one of the commonest "
-    "ways a trade story goes wrong.",
-    "<strong>Comment cette page est-elle écrite ?</strong> Ceci est un site canadien et "
-    "cette page est écrite pour les Canadiens — ce qui s'est passé ici, pour des "
-    "industries et des villes d'ici. Elle n'est écrite contre personne. Les tarifs "
-    "sont une décision que prennent les gouvernements, le Canada compris, et cette "
-    "page regarde ce que les chiffres ont donné ensuite plutôt que de chercher un "
-    "coupable. Les chiffres canadiens sont en dollars canadiens, parce que c'est ainsi "
-    "que Statistique Canada et Affaires mondiales Canada les publient; les chiffres "
-    "américains sont indiqués là où ils apparaissent. Mélanger les deux en silence est "
-    "l'une des façons les plus courantes de rater un reportage sur le commerce."))
+    "<strong>A note on the dollars.</strong> Canadian figures are in Canadian dollars "
+    "and American ones in American dollars, and each is marked where it appears. "
+    "Mixing the two silently is one of the commonest ways a trade story goes wrong.",
+    "<strong>Une note sur les dollars.</strong> Les chiffres canadiens sont en dollars "
+    "canadiens et les chiffres américains en dollars américains, et chacun est indiqué "
+    "là où il apparaît. Mélanger les deux en silence est l'une des façons les plus "
+    "courantes de rater un reportage sur le commerce."))
 
 a.h2(T("The short answer", "La réponse courte"))
 a.p(T(
@@ -300,12 +290,11 @@ a.p(T(
     "So the fair way to describe the last two years is a sharp shock in 2025 followed "
     "by a partial recovery in 2026, with a handful of industries and towns still "
     "carrying the damage. What the tariff that took effect on 22 August 2026 does to "
-    "that recovery is not yet known, and anyone who tells you otherwise is guessing.",
+    "that recovery is not yet known.",
     "La façon juste de décrire les deux dernières années est donc : un choc brutal en "
     "2025, suivi d'une reprise partielle en 2026, avec une poignée d'industries et de "
     "villes qui portent encore les dégâts. Ce que le tarif entré en vigueur le 22 août "
-    "2026 fera à cette reprise n'est pas encore connu, et quiconque prétend le "
-    "contraire devine."))
+    "2026 fera à cette reprise n'est pas encore connu."))
 
 a.h2(T("Read next", "À lire ensuite"))
 a.ul([
@@ -345,13 +334,14 @@ a.sources(T("Where this came from", "D'où viennent ces chiffres"), [
 ])
 
 a.disclaimer(T(
-    "This article is for general information and study. This site is unofficial and "
-    "not affiliated with the Government of Canada. Trade figures are revised as new "
-    "data arrives; every source we used is listed above and on our sources page.",
-    "Cet article est fourni à titre d'information générale et d'étude. Ce site est non "
-    "officiel et n'a aucun lien avec le gouvernement du Canada. Les données "
-    "commerciales sont révisées à mesure que de nouveaux chiffres paraissent; toutes "
-    "nos sources sont énumérées ci-dessus et sur notre page des sources."))
+    "This article is for general information and study. "
+    "This site is unofficial and not affiliated with the Government of Canada. Trade "
+    "figures are revised as new data arrives; every source we used is listed above and "
+    "on our sources page.",
+    "Cet article est fourni à titre d'information générale et d'étude. Ce site est non officiel et n'a aucun "
+    "lien avec le gouvernement du Canada. Les données commerciales sont révisées à "
+    "mesure que de nouveaux chiffres paraissent; toutes nos sources sont énumérées "
+    "ci-dessus et sur notre page des sources."))
 
 if __name__ == "__main__":
     a.build()

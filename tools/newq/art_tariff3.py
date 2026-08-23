@@ -39,20 +39,14 @@ a = Article(
 )
 
 a.callout(T(
-    "<strong>How is this page written?</strong> This is the Canadian half of the "
-    "story, written for Canadians, and written against nobody. It is about what can be "
-    "built here rather than about what happened to us. All dollar figures are Canadian "
-    "dollars. We also keep two things apart that are often mixed together: money a "
-    "government has announced over several years, and money that has actually reached "
-    "a worker or a business. Both matter, but they are not the same thing, and only "
-    "one of them can be counted yet.",
-    "<strong>Comment cette page est-elle écrite ?</strong> Voici la moitié canadienne de "
-    "l'histoire, écrite pour les Canadiens, et écrite contre personne. Elle porte sur "
-    "ce qui peut être bâti ici plutôt que sur ce qui nous est arrivé. Tous les montants "
-    "sont en dollars canadiens. Nous distinguons aussi deux choses souvent confondues : "
-    "l'argent qu'un gouvernement a annoncé sur plusieurs années, et l'argent qui s'est "
-    "réellement rendu à un travailleur ou à une entreprise. Les deux comptent, mais ce "
-    "n'est pas la même chose, et une seule des deux est déjà mesurable."))
+    "<strong>A note on the dollars.</strong> Every figure here is in Canadian dollars. "
+    "One more thing worth keeping apart: money a government has announced over several "
+    "years is not money that has reached a worker or a business, and only the second "
+    "kind can be counted yet.",
+    "<strong>Une note sur les dollars.</strong> Tous les montants ici sont en dollars "
+    "canadiens. Une autre distinction à garder en tête : l'argent qu'un gouvernement a "
+    "annoncé sur plusieurs années n'est pas de l'argent qui s'est rendu à un "
+    "travailleur ou à une entreprise, et seule la seconde sorte est déjà mesurable."))
 
 a.h2(T("Did Canada find other customers? Yes — and here is the catch",
        "Le Canada a-t-il trouvé d'autres clients ? Oui — avec une réserve"))
@@ -161,7 +155,7 @@ a.p(T(
     "first loan was 400 million federal dollars plus 100 million from Ontario to Algoma "
     "Steel — a 5 billion dollar Strategic Response Fund, and roughly 1.5 billion "
     "through the regional development agencies. How much of that has actually been "
-    "spent is not published, and we are not going to guess.",
+    "spent is not published.",
     "Le côté annoncé est plus imposant. Le budget de 2025, déposé le 4 novembre 2025, "
     "a consacré 16,5 milliards de dollars sur cinq ans à son chapitre de réponse aux "
     "tarifs, dont 3,7 milliards en soutien du revenu et 570 millions pour le recyclage "
@@ -169,8 +163,7 @@ a.p(T(
     "10 milliards de dollars pour les grands employeurs — dont le premier prêt a été de "
     "400 millions du fédéral plus 100 millions de l'Ontario à Algoma Steel —, un Fonds "
     "de réponse stratégique de 5 milliards, et environ 1,5 milliard par les agences de "
-    "développement régional. Quelle part a réellement été dépensée n'est pas publiée, "
-    "et nous n'allons pas le deviner."))
+    "développement régional. Quelle part a réellement été dépensée n'est pas publiée."))
 a.p(T(
     "One number is worth noticing because it moved so far. The government first "
     "projected 20 billion dollars of counter-tariff revenue for the year. Budget 2025 "
@@ -400,25 +393,25 @@ a.p(T(
     "commerciale américaine reste un vent de face."))
 a.p(T(
     "Budget 2025 set the target: double what Canada sells outside the United States "
-    "over a decade, about 300 billion dollars more trade by 2035. That is a target, and "
-    "we should be careful never to report it as an achievement. Glen Hodgson of the "
+    "over a decade, about 300 billion dollars more trade by 2035. That is a target, "
+    "not a result. Glen Hodgson of the "
     "C.D. Howe Institute is the optimist about diversification in general — much more "
     "diversified Canadian trade is indeed possible, he wrote in April 2026, and active "
     "public policy can help overcome gravity — though he was writing about the "
     "direction, not endorsing that particular target. The Fraser Institute and Charles "
     "Lammam both say the target is out of reach on today's infrastructure. Nobody publishes a figure for what share of the American market "
-    "can realistically be replaced, and by when. Anyone who gives you one is guessing.",
+    "can realistically be replaced, and by when. No institution publishes that number.",
     "Le budget de 2025 a fixé la cible : doubler ce que le Canada vend hors des "
     "États-Unis en une décennie, soit environ 300 milliards de dollars de commerce en "
-    "plus d'ici 2035. C'est une cible, et il faut se garder de la présenter comme une "
-    "réalisation. Glen Hodgson, de l'Institut C.D. Howe, est l'optimiste au sujet de la "
+    "plus d'ici 2035. C'est une cible, non un résultat. Glen Hodgson, de l'Institut "
+    "C.D. Howe, est l'optimiste au sujet de la "
     "diversification en général — un commerce beaucoup plus diversifié est bel et bien "
     "possible, écrivait-il en avril 2026, et une politique publique active peut aider à "
     "vaincre la gravité — même s'il parlait de la direction à prendre et non de cette "
     "cible précise. L'Institut Fraser et Charles Lammam estiment tous deux que la cible "
     "est hors de portée avec les infrastructures actuelles. Personne ne publie de chiffre sur la part du marché "
-    "américain qui peut réalistement être remplacée, ni sur l'échéance. Quiconque vous "
-    "en donne un devine."))
+    "américain qui peut réalistement être remplacée, ni sur l'échéance. Aucune "
+    "institution ne publie ce chiffre."))
 
 a.h2(T("If you run a small business, this is the practical list",
        "Si vous dirigez une petite entreprise, voici la liste pratique"))
@@ -526,14 +519,14 @@ a.sources(T("Where this came from", "D'où viennent ces chiffres"), [
 ])
 
 a.disclaimer(T(
-    "This article is for general information and study. This site is unofficial and "
-    "not affiliated with the Government of Canada. It is not business, legal or "
-    "financial advice; if a tariff affects your company, speak to the Trade "
+    "This article is for general information and study. "
+    "This site is unofficial and not affiliated with the Government of Canada. It is "
+    "not business, legal or financial advice; if a tariff affects your company, speak to the Trade "
     "Commissioner Service or a customs broker. Every source we used is listed above "
     "and on our sources page.",
-    "Cet article est fourni à titre d'information générale et d'étude. Ce site est non "
-    "officiel et n'a aucun lien avec le gouvernement du Canada. Il ne constitue pas un "
-    "conseil commercial, juridique ou financier; si un tarif touche votre entreprise, "
+    "Cet article est fourni à titre d'information générale et d'étude. Ce site est non officiel et n'a aucun "
+    "lien avec le gouvernement du Canada. Il ne constitue pas un conseil commercial, "
+    "juridique ou financier; si un tarif touche votre entreprise, "
     "parlez au Service des délégués commerciaux ou à un courtier en douane. Toutes nos "
     "sources sont énumérées ci-dessus et sur notre page des sources."))
 

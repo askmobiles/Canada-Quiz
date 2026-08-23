@@ -43,30 +43,20 @@ a = Article(
 )
 
 a.callout(T(
-    "<strong>How is this page written?</strong> This is a Canadian site and this page "
-    "is written for Canadians. It is not written against anyone. Tariffs are a "
-    "decision governments make, and every country has made that decision at some "
-    "point, Canada included. What this page does is look at what the numbers did "
-    "afterwards. We name sources, not culprits, and where two good sources disagree we "
-    "print both and leave the judgement to you. All dollar figures on this page are "
-    "American dollars unless we say otherwise.",
-    "<strong>Comment cette page est-elle écrite ?</strong> Ceci est un site canadien et "
-    "cette page est écrite pour les Canadiens. Elle n'est écrite contre personne. Les "
-    "tarifs sont une décision que prennent les gouvernements, et chaque pays l'a prise "
-    "à un moment ou à un autre, le Canada compris. Ce que fait cette page, c'est "
-    "regarder ce que les chiffres ont donné ensuite. Nous nommons des sources, pas des "
-    "coupables, et là où deux bonnes sources divergent, nous imprimons les deux et "
-    "vous laissons juger. Tous les montants sur cette page sont en dollars américains, "
-    "sauf indication contraire."))
+    "<strong>A note on the dollars.</strong> Every figure on this page is in American "
+    "dollars unless it says otherwise, because most of what is measured here was "
+    "measured on the American side.",
+    "<strong>Une note sur les dollars.</strong> Tous les montants de cette page sont en "
+    "dollars américains, sauf indication contraire, parce que l'essentiel de ce qui est "
+    "mesuré ici l'a été du côté américain."))
 
 a.h2(T("The short answer", "La réponse courte"))
 a.p(T(
-    "Neither country came out ahead, and Canada felt it more. That is the honest "
-    "summary of two years of numbers, and the rest of this page is the working behind "
-    "it.",
+    "Neither country came out ahead, and Canada felt it more. Two years of numbers "
+    "say so, and the rest of this page is the working behind that sentence.",
     "Ni l'un ni l'autre des deux pays n'en est sorti gagnant, et le Canada l'a "
-    "davantage ressenti. C'est le résumé honnête de deux années de chiffres, et le "
-    "reste de cette page en est la démonstration."))
+    "davantage ressenti. Deux années de chiffres le disent, et le reste de cette page "
+    "en est la démonstration."))
 a.p(T(
     "Start with the thing most people have backwards. A tariff is not money one "
     "country pays another. It is a tax collected at the border from the company doing "
@@ -275,8 +265,7 @@ a.p(T(
     "closed. The restart is 50,000 tonnes a year, which the company says lifts "
     "American primary aluminium output by about 10 percent, along with 150 jobs and a "
     "50 million dollar investment. The company's chief executive credited the import "
-    "tariffs with saving the plant. That is a genuine result and it deserves to be "
-    "counted.",
+    "tariffs with saving the plant.",
     "Mais une chose s'est produite qui ne se serait pas produite autrement. La "
     "fonderie Mt. Holly de Century Aluminum, en Caroline du Sud, est revenue à pleine "
     "capacité en juillet 2026 pour la première fois depuis 2015 — elle tournait à "
@@ -284,8 +273,7 @@ a.p(T(
     "tonnes par an, ce qui, selon l'entreprise, accroît la production américaine "
     "d'aluminium primaire d'environ 10 pour cent, avec 150 emplois et un "
     "investissement de 50 millions de dollars. Le chef de la direction a attribué aux "
-    "tarifs le sauvetage de l'usine. C'est un résultat véritable et il mérite d'être "
-    "compté."))
+    "tarifs le sauvetage de l'usine."))
 
 a.h3(T("Vehicles: billions absorbed, prices barely moved",
        "Véhicules : des milliards absorbés, des prix presque inchangés"))
@@ -378,19 +366,17 @@ a.callout(T(
     "showed the least inflation — and concluded that tariffs cannot explain rising "
     "goods inflation. The St. Louis Fed found in August 2026 that tariffs did explain a "
     "large share through February 2026 but that other factors have been the main "
-    "drivers since March. We are not going to referee this. It is a live disagreement "
-    "among serious people inside the same central bank system, and anyone quoting one "
-    "of them as settled fact is leaving out the other.",
+    "drivers since March. Two arms of the same central bank system, reading the same "
+    "period, have not reached the same answer.",
     "<strong>Deux banques de la Réserve fédérale ne s'entendent pas entre elles.</strong> "
     "La Fed de Minneapolis a constaté en avril 2026 que l'inflation par catégorie de "
     "produits était en fait négativement corrélée à l'exposition aux tarifs — les "
     "catégories les plus exposées affichaient le moins d'inflation — et en a conclu "
     "que les tarifs ne peuvent pas expliquer la hausse des prix des biens. La Fed de "
     "Saint-Louis a constaté en août 2026 que les tarifs en expliquaient une large part "
-    "jusqu'en février 2026, mais que d'autres facteurs dominent depuis mars. Nous "
-    "n'allons pas arbitrer. C'est un désaccord vivant entre gens sérieux au sein du "
-    "même système de banque centrale, et quiconque cite l'une des deux comme un fait "
-    "établi laisse l'autre de côté."))
+    "jusqu'en février 2026, mais que d'autres facteurs dominent depuis mars. Deux "
+    "bras du même système de banque centrale, examinant la même période, ne sont pas "
+    "arrivés à la même réponse."))
 
 a.h2(T("Why a neighbour is a different case",
        "Pourquoi un voisin, c'est un cas différent"))
@@ -450,9 +436,7 @@ a.p(T(
 a.h2(T("What is claimed, and what has been measured",
        "Ce qui est affirmé, et ce qui a été mesuré"))
 a.p(T(
-    "The United States government has set out its own case, and it deserves to be "
-    "read in its own words rather than summarised by someone who disagrees with it. A "
-    "White House fact sheet of 20 July 2026 says that tariffs make America wealthier "
+    "A White House fact sheet of 20 July 2026 says that tariffs make America wealthier "
     "and stronger, that American manufacturing grew at its fastest rate in four years, "
     "and that trade policy has brought jobs back. On the trade with Canada "
     "specifically it points to American vehicle sales into Canada falling about 22 "
@@ -460,9 +444,7 @@ a.p(T(
     "582 million dollars. On the smelter that came back to full capacity, the United "
     "States Commerce Department said that producing more aluminium at home reduces "
     "dependence on foreign supply chains.",
-    "Le gouvernement des États-Unis a exposé son propre argumentaire, et il mérite "
-    "d'être lu dans ses propres mots plutôt que résumé par quelqu'un qui n'est pas "
-    "d'accord avec lui. Une fiche d'information de la Maison-Blanche du 20 juillet "
+    "Une fiche d'information de la Maison-Blanche du 20 juillet "
     "2026 affirme que les tarifs rendent l'Amérique plus riche et plus forte, que la "
     "fabrication américaine a connu sa plus forte croissance en quatre ans, et que la "
     "politique commerciale a ramené des emplois. Au sujet du commerce avec le Canada "
@@ -497,19 +479,14 @@ a.p(T(
     "américains. Et la décision de la Cour suprême a déjà fait ressortir environ 100 "
     "milliards de dollars."))
 a.p(T(
-    "Both of those paragraphs are true at once, and that is the whole difficulty. A "
-    "policy this large does several things at the same time, some of them what it "
-    "intended and some of them not. Anyone who can only see one of the two paragraphs "
-    "is arguing rather than counting.",
-    "Ces deux paragraphes sont vrais en même temps, et c'est là toute la difficulté. "
-    "Une politique de cette ampleur fait plusieurs choses à la fois, certaines voulues "
-    "et d'autres non. Quiconque ne voit qu'un seul des deux paragraphes est en train "
-    "d'argumenter plutôt que de compter."))
+    "Both of those paragraphs are true at once. A policy this large does several "
+    "things at the same time, some of them what it intended and some of them not.",
+    "Ces deux paragraphes sont vrais en même temps. Une politique de cette ampleur "
+    "fait plusieurs choses à la fois, certaines voulues et d'autres non."))
 
 a.h2(T("What nobody can tell you", "Ce que personne ne peut vous dire"))
 a.p(T(
-    "Four things are simply not published, and we would rather say so than invent "
-    "them. Nobody knows how many dollars of duty were collected on Canadian goods "
+    "Four things here are simply not published. Nobody knows how many dollars of duty were collected on Canadian goods "
     "specifically, because the United States Treasury does not break its customs "
     "receipts down by country. Nobody has measured the net effect on American gross "
     "domestic product after the fact — every figure you will see is a model "
@@ -517,8 +494,8 @@ a.p(T(
     "paying tariff dollars on Canadian crude or electricity. And the effect of the "
     "copper tariff on American prices, production and jobs has not been measured at "
     "all.",
-    "Quatre choses ne sont tout simplement pas publiées, et nous préférons le dire "
-    "plutôt que de les inventer. Personne ne sait combien de dollars de droits ont été "
+    "Quatre choses ici ne sont tout simplement pas publiées. Personne ne sait combien "
+    "de dollars de droits ont été "
     "perçus sur les produits canadiens précisément, parce que le Trésor américain ne "
     "ventile pas ses recettes douanières par pays. Personne n'a mesuré après coup "
     "l'effet net sur le produit intérieur brut américain — tous les chiffres que vous "
@@ -548,15 +525,13 @@ a.p(T(
     "arithmétique, et il appartient aux gens qui votent dans ce pays."))
 
 a.p(T(
-    "What is properly ours to say is the Canadian half. Much of what happens next will "
-    "be decided outside Canada, and what is worth taking from two years of numbers is "
-    "not resentment but the plain reading: one customer taking three quarters of what "
-    "you sell is a wonderful arrangement right up until it is not. That is the argument "
+    "The Canadian half is simpler. Much of what happens next will be decided outside "
+    "Canada, and two years of numbers make one thing plain: one customer taking three "
+    "quarters of what you sell is a wonderful arrangement right up until it is not. That is the argument "
     "for building the ports, opening the provincial borders and finding other buyers — "
     "and it would still be the argument if every tariff came off tomorrow morning.",
-    "Ce qui nous revient de dire, c'est la moitié canadienne. Une grande partie de la "
-    "suite se décidera hors du Canada, et ce qu'il faut retenir de deux années de "
-    "chiffres n'est pas du ressentiment mais une lecture simple : un client "
+    "La moitié canadienne est plus simple. Une grande partie de la suite se décidera "
+    "hors du Canada, et deux années de chiffres rendent une chose évidente : un client "
     "qui prend les trois quarts de ce que vous vendez est un arrangement merveilleux "
     "jusqu'au jour où il ne l'est plus. C'est l'argument pour bâtir les ports, ouvrir "
     "les frontières provinciales et trouver d'autres acheteurs — et ce serait encore "
@@ -621,14 +596,13 @@ a.sources(T("Where this came from", "D'où viennent ces chiffres"), [
 ])
 
 a.disclaimer(T(
-    "This article is for general information and study. This site is unofficial and "
-    "not affiliated with the Government of Canada or the Government of the United "
-    "States. Where sources disagree we have said so rather than choosing one; every "
-    "source we used is listed above and on our sources page.",
-    "Cet article est fourni à titre d'information générale et d'étude. Ce site est non "
-    "officiel et n'a aucun lien avec le gouvernement du Canada ni avec celui des "
-    "États-Unis. Là où les sources divergent, nous l'avons dit plutôt que d'en choisir "
-    "une; toutes nos sources sont énumérées ci-dessus et sur notre page des sources."))
+    "This article is for general information and study. "
+    "This site is unofficial and not affiliated with the Government of Canada or the "
+    "Government of the United States. Every source used is listed above and on our "
+    "sources page.",
+    "Cet article est fourni à titre d'information générale et d'étude. Ce site est non officiel et n'a aucun "
+    "lien avec le gouvernement du Canada ni avec celui des États-Unis. Toutes les "
+    "sources utilisées sont énumérées ci-dessus et sur notre page des sources."))
 
 if __name__ == "__main__":
     a.build()
