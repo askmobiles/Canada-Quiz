@@ -1604,7 +1604,15 @@
     if (keys.s) { mx -= sy; mz += cy; }
     if (keys.a) { mx -= cy; mz -= sy; }
     if (keys.d) { mx += cy; mz += sy; }
-    if (stick.on) { mx += stick.x * sy + stick.y * cy; mz += -stick.x * cy + stick.y * sy; }
+    /* The touch stick, in the same frame as the keys above.
+       forward F = ( sy, -cy)   right R = ( cy, sy)   so move = x*R + y*F.
+       This line used to read  mx += x*sy + y*cy;  mz += -x*cy + y*sy,
+       which is the transpose: x was steering the forward axis and y the
+       sideways one. On a phone or tablet that came out as a quarter turn --
+       push forward and you walked right. Every touch device had it; it was
+       reported from an iPad on 22 August 2026. The keys were always right,
+       which is why it survived so long. */
+    if (stick.on) { mx += stick.x * cy + stick.y * sy; mz += stick.x * sy - stick.y * cy; }
     var len = Math.hypot(mx, mz);
     if (len > 0.001) { mx = mx / len * speed; mz = mz / len * speed; } else { mx = mz = 0; }
 

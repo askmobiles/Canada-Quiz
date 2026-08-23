@@ -65,7 +65,7 @@ a.callout(T(
     "ce que le Canada taxera n'était pas publiée au moment d'écrire cette page."))
 
 a.callout(T(
-    "<strong>How this page is written.</strong> This is a Canadian site and this page "
+    "<strong>How is this page written?</strong> This is a Canadian site and this page "
     "is written for Canadians — what happened here, to industries and towns here. It "
     "is not written against anyone. Tariffs are a decision governments make, Canada "
     "included, and this page looks at what the numbers did afterwards rather than at "
@@ -73,7 +73,7 @@ a.callout(T(
     "how Statistics Canada and Global Affairs Canada publish them; American figures "
     "are marked where they appear. Mixing the two silently is one of the commonest "
     "ways a trade story goes wrong.",
-    "<strong>Comment cette page est écrite.</strong> Ceci est un site canadien et "
+    "<strong>Comment cette page est-elle écrite ?</strong> Ceci est un site canadien et "
     "cette page est écrite pour les Canadiens — ce qui s'est passé ici, pour des "
     "industries et des villes d'ici. Elle n'est écrite contre personne. Les tarifs "
     "sont une décision que prennent les gouvernements, le Canada compris, et cette "
@@ -281,7 +281,7 @@ a.p(T(
     "Economic Update said Canada avoided one and grew 1.7 percent in 2025. Some "
     "commentators called it a technical recession on an annualised basis. The honest "
     "description is that the economy stalled rather than shrank.",
-    "Était-ce une récession? Statistique Canada ne l'a jamais dit, et la Mise à jour "
+    "Était-ce une récession ? Statistique Canada ne l'a jamais dit, et la Mise à jour "
     "économique du printemps a affirmé que le Canada l'avait évitée et avait crû de "
     "1,7 pour cent en 2025. Certains commentateurs ont parlé d'une récession technique "
     "sur une base annualisée. La description honnête est que l'économie a stagné "
@@ -311,7 +311,7 @@ a.h2(T("Read next", "À lire ensuite"))
 a.ul([
     link("did-us-tariffs-on-canada-work.html",
          T("When a tariff goes on, who actually gains?",
-           "Quand un tarif est imposé, qui y gagne vraiment?")),
+           "Quand un tarif est imposé, qui y gagne vraiment ?")),
     link("how-canada-rebuilds-its-economy.html",
          T("How Canada rebuilds — new customers, old barriers",
            "Comment le Canada se rebâtit — nouveaux clients, vieilles barrières")),

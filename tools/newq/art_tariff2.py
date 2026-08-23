@@ -22,7 +22,7 @@ a = Article(
     slug="did-us-tariffs-on-canada-work.html",
     section="Trade",
     title=T("Tariffs Between Canada and the USA — Who Actually Gains?",
-            "Les tarifs entre le Canada et les États-Unis — qui y gagne vraiment?"),
+            "Les tarifs entre le Canada et les États-Unis — qui y gagne vraiment ?"),
     desc=T("A Canadian look at who a tariff actually costs and who it actually "
            "helps: the revenue, the refunds, the jobs on both sides of the border, "
            "and why the smaller country feels it more.",
@@ -30,7 +30,7 @@ a = Article(
            "réellement : les recettes, les remboursements, les emplois des deux côtés "
            "de la frontière, et pourquoi le plus petit pays le ressent davantage."),
     h1=T("\U0001F3ED When a tariff goes on, who actually gains?",
-         "\U0001F3ED Quand un tarif est imposé, qui y gagne vraiment?"),
+         "\U0001F3ED Quand un tarif est imposé, qui y gagne vraiment ?"),
     hero=T("A tariff is not a payment from one country to another. It is a tax paid "
            "at the border by the company bringing the goods in — and that changes the "
            "answer to who gains completely.",
@@ -43,14 +43,14 @@ a = Article(
 )
 
 a.callout(T(
-    "<strong>How this page is written.</strong> This is a Canadian site and this page "
+    "<strong>How is this page written?</strong> This is a Canadian site and this page "
     "is written for Canadians. It is not written against anyone. Tariffs are a "
     "decision governments make, and every country has made that decision at some "
     "point, Canada included. What this page does is look at what the numbers did "
     "afterwards. We name sources, not culprits, and where two good sources disagree we "
     "print both and leave the judgement to you. All dollar figures on this page are "
     "American dollars unless we say otherwise.",
-    "<strong>Comment cette page est écrite.</strong> Ceci est un site canadien et "
+    "<strong>Comment cette page est-elle écrite ?</strong> Ceci est un site canadien et "
     "cette page est écrite pour les Canadiens. Elle n'est écrite contre personne. Les "
     "tarifs sont une décision que prennent les gouvernements, et chaque pays l'a prise "
     "à un moment ou à un autre, le Canada compris. Ce que fait cette page, c'est "
@@ -230,7 +230,7 @@ a.p(T(
     "consommation d'environ 0,8 point de pourcentage au début de 2026."))
 
 a.h2(T("Did the protected industries actually gain?",
-       "Les industries protégées ont-elles réellement gagné?"))
+       "Les industries protégées ont-elles réellement gagné ?"))
 
 a.h3(T("Steel: more tonnes, much higher prices, flat jobs",
        "Acier : plus de tonnes, des prix bien plus élevés, l'emploi stable"))
@@ -590,7 +590,7 @@ a.sources(T("Where this came from", "D'où viennent ces chiffres"), [
                "Peterson Institute for International Economics — Les tarifs américains sur le Canada et le Mexique nuiraient aux trois économies")),
     out_link("https://libertystreeteconomics.newyorkfed.org/2026/02/who-is-paying-for-the-2025-u-s-tariffs/",
              T("Federal Reserve Bank of New York — Who is paying for the 2025 US tariffs?",
-               "Banque fédérale de réserve de New York — Qui paie les tarifs américains de 2025?")),
+               "Banque fédérale de réserve de New York — Qui paie les tarifs américains de 2025 ?")),
     out_link("https://www.minneapolisfed.org/article/2026/tariffs-cant-explain-rising-goods-inflation",
              T("Federal Reserve Bank of Minneapolis — Tariffs can't explain rising goods inflation",
                "Banque fédérale de réserve de Minneapolis — Les tarifs n'expliquent pas la hausse des prix des biens")),

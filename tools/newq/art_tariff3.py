@@ -39,14 +39,14 @@ a = Article(
 )
 
 a.callout(T(
-    "<strong>How this page is written.</strong> This is the Canadian half of the "
+    "<strong>How is this page written?</strong> This is the Canadian half of the "
     "story, written for Canadians, and written against nobody. It is about what can be "
     "built here rather than about what happened to us. All dollar figures are Canadian "
     "dollars. We also keep two things apart that are often mixed together: money a "
     "government has announced over several years, and money that has actually reached "
     "a worker or a business. Both matter, but they are not the same thing, and only "
     "one of them can be counted yet.",
-    "<strong>Comment cette page est écrite.</strong> Voici la moitié canadienne de "
+    "<strong>Comment cette page est-elle écrite ?</strong> Voici la moitié canadienne de "
     "l'histoire, écrite pour les Canadiens, et écrite contre personne. Elle porte sur "
     "ce qui peut être bâti ici plutôt que sur ce qui nous est arrivé. Tous les montants "
     "sont en dollars canadiens. Nous distinguons aussi deux choses souvent confondues : "
@@ -55,7 +55,7 @@ a.callout(T(
     "n'est pas la même chose, et une seule des deux est déjà mesurable."))
 
 a.h2(T("Did Canada find other customers? Yes — and here is the catch",
-       "Le Canada a-t-il trouvé d'autres clients? Oui — avec une réserve"))
+       "Le Canada a-t-il trouvé d'autres clients ? Oui — avec une réserve"))
 a.p(T(
     "In 2025 Canada's merchandise exports to the United States fell by 30.7 billion "
     "dollars, and merchandise exports to everywhere else rose by 29.1 billion. Put "
@@ -101,7 +101,7 @@ a.p(T(
     "bullion. Meanwhile China rose 14.7 percent in 2025 and 34 percent so far in 2026, "
     "while Japan fell 2.8 percent, South Korea fell 7.2 percent and India fell 27 "
     "percent in the same year.",
-    "Où la croissance est-elle allée? Le Royaume-Uni a bondi de 62 pour cent en 2025 "
+    "Où la croissance est-elle allée ? Le Royaume-Uni a bondi de 62 pour cent en 2025 "
     "et encore de 81 pour cent au premier semestre de 2026 — mais Londres est la plaque "
     "tournante mondiale du commerce de l'or, et Statistique Canada dit directement que "
     "la poussée vient de l'or non ouvré. En juin 2026, le Canada a exporté davantage "
@@ -483,7 +483,7 @@ a.ul([
            "Ce que les tarifs ont fait au Canada, secteur par secteur")),
     link("did-us-tariffs-on-canada-work.html",
          T("When a tariff goes on, who actually gains?",
-           "Quand un tarif est imposé, qui y gagne vraiment?")),
+           "Quand un tarif est imposé, qui y gagne vraiment ?")),
     link("canada-usa-trade-history.html",
          T("Canada and the United States: 170 years of trade, fights and deals",
            "Le Canada et les États-Unis : 170 ans de commerce, de disputes et d'ententes")),
