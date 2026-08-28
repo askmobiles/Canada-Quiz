@@ -16,8 +16,8 @@
   "hash": "679a7e92a576cb2cbb80d0a02aa8111f27d12f4e"
  },
  "about.html": {
-  "date": "2026-08-08",
-  "hash": "43968fb0c4f04297692738e176008ce4c48ef662"
+  "date": "2026-08-28",
+  "hash": "1c173cc5a86b66e91760d701674e51fad6753db1"
  },
  "ai-quiz.html": {
   "date": "2026-08-17",
@@ -40,8 +40,8 @@
   "hash": "5ca15b4ed1f653808e38ad6e55cf3cab0e42766d"
  },
  "all-pages.html": {
-  "date": "2026-08-27",
-  "hash": "02b669583d76cabc957296d8a0e3c44db24afe12"
+  "date": "2026-08-28",
+  "hash": "433f580679ec832325b80888d6c52e5457701e98"
  },
  "animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-13",
@@ -72,8 +72,8 @@
   "hash": "baa2991170cc1f3e6df0875033848366d01ab7d8"
  },
  "blog.html": {
-  "date": "2026-08-27",
-  "hash": "596bb76a3db83fe498f71b3a221fc9c14226910e"
+  "date": "2026-08-28",
+  "hash": "12dc6036dda2089645310eb5959ff9cbdc02e010"
  },
  "body-quiz.html": {
   "date": "2026-08-17",
@@ -292,8 +292,8 @@
   "hash": "e7cd0ec266f4c055fa12b214f20c26f53b3604cc"
  },
  "fr/about.html": {
-  "date": "2026-08-15",
-  "hash": "ab94e0e69cd894858ae58735552e067578c88da9"
+  "date": "2026-08-28",
+  "hash": "b8bb168b39cb9b941573bbe882292abee424733d"
  },
  "fr/ai-quiz.html": {
   "date": "2026-08-20",
@@ -316,8 +316,8 @@
   "hash": "72d446bc363f34b229de2bce4f18b319a4335280"
  },
  "fr/all-pages.html": {
-  "date": "2026-08-27",
-  "hash": "540210f00c2f981b2539039a2abe70af443c3eb0"
+  "date": "2026-08-28",
+  "hash": "78752a4df4455849581b84e5bc1c1d5d5c6935ab"
  },
  "fr/animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-20",
@@ -348,8 +348,8 @@
   "hash": "5e7e7e4c75abe1ef034df47bd97bbd3b2aaae6a1"
  },
  "fr/blog.html": {
-  "date": "2026-08-27",
-  "hash": "d1e7ca371711f6bf52cfc8a61ed870f815a74642"
+  "date": "2026-08-28",
+  "hash": "845ded7e8b5cdcc16c596cd1ce3e04ca987e98ef"
  },
  "fr/body-quiz.html": {
   "date": "2026-08-20",
@@ -376,16 +376,16 @@
   "hash": "3f47c936b47e36b428cf4749371b5ae1b38cac5f"
  },
  "fr/canada-major-projects-office-explained.html": {
-  "date": "2026-08-27",
-  "hash": "57747e4dfee516b15815d04e38452c5915d8a896"
+  "date": "2026-08-28",
+  "hash": "cfdb274223580fbd41f376201fcd1d0bc31db787"
  },
  "fr/canada-map.html": {
   "date": "2026-08-15",
   "hash": "cf833d88f5612a1ac84368162e36648d02b2196b"
  },
  "fr/canada-population-timeline.html": {
-  "date": "2026-08-27",
-  "hash": "9d78be3fc75f9ce1b1c6d8a366d384be54a70e96"
+  "date": "2026-08-28",
+  "hash": "26042e2f9c2d36e5baea921031345a50ba4bbf26"
  },
  "fr/canada-provinces-and-territories-explained.html": {
   "date": "2026-08-15",
@@ -396,11 +396,11 @@
   "hash": "9dbc4b6ffcabd7b6f4ee0560b19abd280a5a846d"
  },
  "fr/canada-usa-trade-history.html": {
-  "date": "2026-08-27",
-  "hash": "cf96b25c65fb1cf0dfc4ea354ab8be4047980968"
+  "date": "2026-08-28",
+  "hash": "1ca01699b6dac6c3d8c09e6b47221a35021019d0"
  },
  "fr/canadarm-canadas-robot-arm-in-space-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "1616794718b67f2f75fd63c4a51bfd4988d8146e"
  },
  "fr/canadas-animals-and-wildlife.html": {
@@ -464,19 +464,19 @@
   "hash": "deaad483f45c4b30afcaef26756b1097fec0d0a0"
  },
  "fr/checkers.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "4c178afc9f7b0eabd3e10679a74913a95d6223bf"
  },
  "fr/chess.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "101b838b2d5501aba37f99f724b929939a7fe914"
  },
  "fr/churchill-falls-gull-island-explained.html": {
-  "date": "2026-08-27",
-  "hash": "e5dcb3a41ced4f4896315f98444a52406dec27a7"
+  "date": "2026-08-28",
+  "hash": "62b1712a1cd6648fa9bc0414526e24bd074f652e"
  },
  "fr/churchill-polar-bear-capital-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "126930be170953f00da068ed3d765f0be5c0fe3d"
  },
  "fr/citizenship.html": {
@@ -488,7 +488,7 @@
   "hash": "664ccce9db0efe61a2a09c5e5ae6fa45e718aac7"
  },
  "fr/connect4.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "ed43241630fd70eb9fd375a01832b959b35d52e4"
  },
  "fr/contact.html": {
@@ -508,8 +508,8 @@
   "hash": "10589a4c5215045a5e2589bb2e77382859c0f7f9"
  },
  "fr/did-us-tariffs-on-canada-work.html": {
-  "date": "2026-08-27",
-  "hash": "d78d98879d0c48e655e0cec78b49d96c7daad68d"
+  "date": "2026-08-28",
+  "hash": "e87088259155cf140d0907d03d56389b05e8fb1b"
  },
  "fr/draw-it.html": {
   "date": "2026-08-15",
@@ -520,8 +520,8 @@
   "hash": "c4339db2667c65649b27026dce33615e4b2c099d"
  },
  "fr/earth-quiz.html": {
-  "date": "2026-08-24",
-  "hash": "88c8341d86388911a302bc8ef28bf1cef608b791"
+  "date": "2026-08-28",
+  "hash": "ad5f3058904cf3f071e670d37c0d843813e4b06d"
  },
  "fr/entertainment-quiz.html": {
   "date": "2026-08-20",
@@ -540,8 +540,8 @@
   "hash": "9cc68c6c67a8bcca3a3503570b1f6a650d9dc553"
  },
  "fr/first-nations-inuit-and-metis-for-kids.html": {
-  "date": "2026-08-24",
-  "hash": "ef1d4fca07aa8f29b83da54623d8e3b3a706a0d5"
+  "date": "2026-08-28",
+  "hash": "aaafa7d5532f0513040235a5ac360ede06080870"
  },
  "fr/flags-game.html": {
   "date": "2026-08-15",
@@ -580,24 +580,24 @@
   "hash": "109c3b5f6047506723d63be7a3b3d6bfd542aeb8"
  },
  "fr/how-canada-built-the-railway.html": {
-  "date": "2026-08-27",
-  "hash": "e2d2f3ec11a48afc44d44bb97626a774fdc776a4"
+  "date": "2026-08-28",
+  "hash": "83df74278507c2a436c79c840bbc6143fcf0e271"
  },
  "fr/how-canada-chose-its-flag-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "b3b7fa3bbb6325b66051101051ccce6ac296c7ca"
  },
  "fr/how-canada-rebuilds-its-economy.html": {
-  "date": "2026-08-27",
-  "hash": "c9935e972021b6ce216ed129b11234a106b66a46"
+  "date": "2026-08-28",
+  "hash": "3323af302b96ccda2a04ba5341a7e6884e42fb2b"
  },
  "fr/how-canada-was-built.html": {
-  "date": "2026-08-27",
-  "hash": "feab536e0b72bbd07ce9cc951cd8b0d87f5ac3a3"
+  "date": "2026-08-28",
+  "hash": "7d4213c2da2b45cab7b2dd8d2a534fe7fd538a8a"
  },
  "fr/how-canadas-cities-and-towns-work.html": {
-  "date": "2026-08-27",
-  "hash": "5cde0c999e24bcf99e0674a4491c2e0b1d7d6d8d"
+  "date": "2026-08-28",
+  "hash": "5d44361e00b6dc1a944ada8902b59d8a07630b92"
  },
  "fr/how-canadas-government-works.html": {
   "date": "2026-08-15",
@@ -620,7 +620,7 @@
   "hash": "cef4eff468df0398b740b8b055d6ee044c93c1da"
  },
  "fr/incorporation-vs-sole-proprietor-canada.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "d163031b4202d8bcd6c2ea3b8f3f090620fdf67d"
  },
  "fr/index.html": {
@@ -628,7 +628,7 @@
   "hash": "9fd4dcdf6dce5d86df9bc6e7eb2267fc99a415e6"
  },
  "fr/indigenous-peoples-of-canada.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "ace2adc99b7ed6fdd92713cc673ca2607c1b7ce2"
  },
  "fr/insulin-discovered-in-canada-for-kids.html": {
@@ -636,8 +636,12 @@
   "hash": "ae83903d57007b4bb8f7deb420fff5a6bb7a23d2"
  },
  "fr/inukshuk.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "e273a7742603231292524d2f0984720553cfbf6b"
+ },
+ "fr/lake-ontario-history-and-people.html": {
+  "date": "2026-08-28",
+  "hash": "4b38c81fbcbf28ccb7e31fa2e3fbdbcbeda819a4"
  },
  "fr/lights-out.html": {
   "date": "2026-08-15",
@@ -784,7 +788,7 @@
   "hash": "5fa577116ab2be2da58fd6ed512d95b5c7c42b28"
  },
  "fr/ontario-g1-study-guide.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "73db49e1fe6590e79c79f51e2c0ec5e99bfb3498"
  },
  "fr/pei-class-7-mock-test.html": {
@@ -804,15 +808,15 @@
   "hash": "b993a46047bcacd1dfcf84cce20e66f4e8223377"
  },
  "fr/prime-ministers-of-canada.html": {
-  "date": "2026-08-27",
-  "hash": "7cacce663b7d8f4b6241456fc2a930ed14a8a8f8"
+  "date": "2026-08-28",
+  "hash": "f775f977be4bd2972d6a671de974d52321b21af1"
  },
  "fr/privacy.html": {
   "date": "2026-08-15",
   "hash": "26ed8ffc5fa1075a7c1d22dc7694f7844c155463"
  },
  "fr/province-quiz.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "d2af7987a4c7778f8aaab6d697ebbf6842d3adb0"
  },
  "fr/quebec-class-5-mock-test.html": {
@@ -840,7 +844,7 @@
   "hash": "78383717967adb7314023184998416f6108f8865"
  },
  "fr/reversi.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "00832216ee37ed6c8ba7c0be7304d188c623c460"
  },
  "fr/rights-and-responsibilities-of-canadian-citizens.html": {
@@ -888,7 +892,7 @@
   "hash": "88f3361a4ec7668e473f0d7260225514913f3478"
  },
  "fr/story-maker.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "a9531972fe7d401fbedf6e116630bedabdda187e"
  },
  "fr/sudoku.html": {
@@ -904,15 +908,15 @@
   "hash": "65e2e0d2b99e8651a8c9ab7c73bd66c5217b0a8c"
  },
  "fr/terry-fox-marathon-of-hope-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "12cf9a19169b59bf41be9976080fde2fff137ac4"
  },
  "fr/the-bluenose-ship-on-the-dime-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "885823ba76cd94ce0a8c130a5529642742228aad"
  },
  "fr/the-dinosaurs-of-alberta-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "a258056288c959fc1bee67dc24b2b479cdd2a2ed"
  },
  "fr/the-history-of-canada-day.html": {
@@ -920,27 +924,27 @@
   "hash": "e261981c7e762897238665e1280f14e99414adef"
  },
  "fr/the-narwhal-and-the-frozen-north-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "882a3f22003acb305e82e2d1d5df589c670d3797"
  },
  "fr/the-northern-lights-for-kids.html": {
-  "date": "2026-08-27",
+  "date": "2026-08-28",
   "hash": "a8e5c7a078d179b0bbdc20c86ed47c8241713982"
  },
  "fr/the-railway-across-canada-for-kids.html": {
-  "date": "2026-08-27",
-  "hash": "ecc7d98597307ac1e5bfd46f67d8b9d0ea68ecb5"
+  "date": "2026-08-28",
+  "hash": "9a5ee1ee3b484afde155d35750aaf4402aa7a548"
  },
  "fr/the-stanley-cup-story-for-kids.html": {
-  "date": "2026-08-24",
-  "hash": "c7f4a7a80d6a850bbd533218497e0b7176c4e58a"
+  "date": "2026-08-28",
+  "hash": "dd6e1243e6a1fce153e9bcc7d50e93d6cc86c6ea"
  },
  "fr/the-story-of-the-canadian-flag.html": {
   "date": "2026-08-08",
   "hash": "91719db82dfa9af0628fdbaddf476f6a4f0ad9ac"
  },
  "fr/the-wild-horses-of-sable-island-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "4598fd86569e81acf3b706462143399f577737e1"
  },
  "fr/tictactoe.html": {
@@ -968,63 +972,63 @@
   "hash": "089ecde1030a0cafae4a8548a0e80aae7155ae2d"
  },
  "fr/ufo-landing-pad-st-paul-alberta-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "9364e4623be8cc7db7105ada1008f74b628874d6"
  },
  "fr/us-tariffs-and-canada-explained.html": {
-  "date": "2026-08-27",
-  "hash": "4186babdee07b540d832cef359da7555e667b66a"
+  "date": "2026-08-28",
+  "hash": "7e9ec00ad9a3003802a4a72f67cf6f030ea6b300"
  },
  "fr/voyageurs-and-the-fur-trade-for-kids.html": {
-  "date": "2026-08-24",
-  "hash": "4a375564431301cae253626b180cabe41e466d98"
+  "date": "2026-08-28",
+  "hash": "a4e93d1e5e9a105e779df6e58b18c193472f5799"
  },
  "fr/whack-a-beaver.html": {
   "date": "2026-08-15",
   "hash": "e1495733d452661df8fbb4b77a5aeb7c139d0687"
  },
  "fr/what-canada-and-the-usa-sell-each-other.html": {
-  "date": "2026-08-27",
-  "hash": "83f90bf423f0436952138047e8298b0b9177bc77"
+  "date": "2026-08-28",
+  "hash": "a2176bdb202ce7219cec44ece64db79db3a0418d"
  },
  "fr/what-canada-day-really-is-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "6e8a4484f31dd7b4bd3a7179daba1d10c6f3a1f2"
  },
  "fr/what-is-confederation.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "49c4d3e10387311165faa06b46bf84ad507c7c45"
  },
  "fr/which-canadian-animal-quiz.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "8a64fe8b66dd7b2ff6dcbe11d6f5ee24726b1a49"
  },
  "fr/which-canadian-city-quiz.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "2783f27a0584cb1414509c945760e4cac0e0c4f3"
  },
  "fr/which-canadian-food-quiz.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "0cedc7656e58d1a1c9260771fa5f13b2d94780d7"
  },
  "fr/which-national-park-quiz.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "3520374b6d6853c6cafbf814b6635e621976a0eb"
  },
  "fr/which-winter-sport-quiz.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "25c0be4b6a97ce1dfbabff75d186acd0f912af09"
  },
  "fr/who-gets-the-tariff-money-back.html": {
-  "date": "2026-08-27",
-  "hash": "70b9ef924d19c538a44575deb9a6dd7ae93fef61"
+  "date": "2026-08-28",
+  "hash": "cb71a3e882e1cbfb47d7a086e80a79d16c8a5421"
  },
  "fr/why-big-projects-take-so-long.html": {
-  "date": "2026-08-27",
-  "hash": "6e92d1de55bbf8dea431948f842309a9df34f157"
+  "date": "2026-08-28",
+  "hash": "20b94bf1781717a524ce645e895aa138c3d3553e"
  },
  "fr/winnie-the-bear-from-winnipeg-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "1a773f1b5b2dbfd66748b4b972b376ddcdd69452"
  },
  "fr/winter-in-canada.html": {
@@ -1064,7 +1068,7 @@
   "hash": "4aef3f7448c750d0ac4c7793935936fa92ed3afa"
  },
  "fr/worlds-longest-beaver-dam-for-kids.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "b8a1e37b16e8c501acbf1c48e76fda5000f625fe"
  },
  "fr/would-you-rather.html": {
@@ -1072,7 +1076,7 @@
   "hash": "a1eeab204cbb31524d93caec1d05d5b9c20e7df1"
  },
  "fr/young-canadians-and-farming.html": {
-  "date": "2026-08-24",
+  "date": "2026-08-28",
   "hash": "108cdfdde92e1923e6a956e50797f4861864fb98"
  },
  "fr/yukon-class-7-mock-test.html": {
@@ -1124,8 +1128,8 @@
   "hash": "b316c8f2e43e1890a6d392a53ee7c65b1c3c9b6f"
  },
  "how-canada-chose-its-flag-for-kids.html": {
-  "date": "2026-08-27",
-  "hash": "38b85079f5e2cbb8bd747b1ec8b1d23e614b9134"
+  "date": "2026-08-28",
+  "hash": "9433c13a0f7d4af9070d857a009a93ae638b0bcc"
  },
  "how-canada-rebuilds-its-economy.html": {
   "date": "2026-08-23",
@@ -1160,8 +1164,8 @@
   "hash": "12dfaa14af58ec6714078c7041412b0b140bcd69"
  },
  "incorporation-vs-sole-proprietor-canada.html": {
-  "date": "2026-08-21",
-  "hash": "007605d6a6c64c049add67b69fbc3f8ca6d918e0"
+  "date": "2026-08-28",
+  "hash": "b7591d63f74b1dcda831b3349bcf8afa444fef41"
  },
  "index.html": {
   "date": "2026-08-20",
@@ -1178,6 +1182,10 @@
  "inukshuk.html": {
   "date": "2026-08-21",
   "hash": "0b5ca713a22947456027adbccde7945c07b3b8d1"
+ },
+ "lake-ontario-history-and-people.html": {
+  "date": "2026-08-28",
+  "hash": "ea67d321b2eb3734af9463538f073c883e0d4163"
  },
  "lights-out.html": {
   "date": "2026-08-15",
@@ -1324,8 +1332,8 @@
   "hash": "61920e8d35a51e8b0bed4e934ba036ead41dc375"
  },
  "ontario-g1-study-guide.html": {
-  "date": "2026-08-21",
-  "hash": "84cb229ba2687e267a4afe2d64b8b47f968a151b"
+  "date": "2026-08-28",
+  "hash": "a3d9bcee419c32ed95a0099e2bb0ae61105511f5"
  },
  "pei-class-7-mock-test.html": {
   "date": "2026-08-20",
@@ -1468,12 +1476,12 @@
   "hash": "03288dbdd1c15041d9b6c03b9633dc15300e8c42"
  },
  "the-railway-across-canada-for-kids.html": {
-  "date": "2026-08-27",
-  "hash": "ab7c9d9311923c96be79671522c4f7cea547301e"
+  "date": "2026-08-28",
+  "hash": "e16ed24e3bc030466d0a0e6b9ca547d596136951"
  },
  "the-stanley-cup-story-for-kids.html": {
-  "date": "2026-08-21",
-  "hash": "3f0780917ab449335411f62cf2c1e302d66dd1ad"
+  "date": "2026-08-28",
+  "hash": "407f3abfb510438c42b3cd5ff0ae0fefdaccf508"
  },
  "the-story-of-the-canadian-flag.html": {
   "date": "2026-08-08",
@@ -1516,8 +1524,8 @@
   "hash": "99e8399403c450c198ad3f611d46e956355dfe23"
  },
  "voyageurs-and-the-fur-trade-for-kids.html": {
-  "date": "2026-08-22",
-  "hash": "7293e23636ee4855012fea991b61a9af59409931"
+  "date": "2026-08-28",
+  "hash": "e4d12f1579eba50987fe7a76b2f6162b76ddca4b"
  },
  "whack-a-beaver.html": {
   "date": "2026-08-15",

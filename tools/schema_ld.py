@@ -37,7 +37,7 @@ import io, json, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://canada-quiz.com/"
 BRAND = "Canada Quiz & Family Fun Games"
-PUBLISHER = "ASK Egoods"
+PUBLISHER = BRAND          # the site is its own publisher; no business name in the markup
 SOCIAL = SITE + "images/social-preview.png"
 
 MARK_OPEN = "<!--LD-->"
