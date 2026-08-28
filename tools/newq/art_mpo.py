@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Article 7 — the Major Projects Office and Canada's big projects.
 
-Source: research/major-projects-office-20260824.md in the private project notes.
+Source: the research notes.
 
 The finding this page is built on, and which almost no coverage leads with:
 Schedule 1 of the Building Canada Act is empty. Eighteen projects have been

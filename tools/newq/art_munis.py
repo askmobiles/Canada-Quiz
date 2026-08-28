@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """Article — how Canada's cities and towns actually work.
 
-Sources: research/canada-municipalities-20260827.md and, for everything about
-census subdivision types, research/csd-types-verified-20260827.md, which
+Sources: the research notes and, for everything about
+census subdivision types, the research notes, which
 supersedes the per-type numbers in the first file.
 
 The finding the page is built on: nobody in Canada publishes how many

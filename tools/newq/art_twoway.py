@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 """Article 5 — what the two countries actually sell each other, both directions.
 
-Sources: research/counter-tariff-revenue-and-import-composition-20260823.md,
-research/two-way-dependence-canada-usa-20260823.md and
-research/tariff-refunds-who-gets-the-money-20260823.md in the private project
-notes.
+Sources: the research notes,
+the research notes and
+the research notes.
 
 Two things were deliberately left off this page because they could not be
 verified. There is no published measurement of how much of China's exports to

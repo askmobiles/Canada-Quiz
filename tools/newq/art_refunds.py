@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 """Article 4 — who actually gets the tariff money back.
 
-Sources: research/tariff-refunds-who-gets-the-money-20260823.md and
-research/counter-tariff-revenue-and-import-composition-20260823.md in the
-private project notes.
+Sources: the research notes.
 
 Two numbers on this page were deliberately left off because they could not be
 confirmed: the size of the goods list covered by the 8 September 2026 Canadian

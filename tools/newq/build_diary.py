@@ -144,7 +144,10 @@ def note_html(n, lang):
            ' data-d="%d"' % n["d"] if n.get("d") else "",
            timeattr, e(when(n, lang)), tag,
            e(title), e(body), link,
-           "—" if lang == "en" else "—", e(n["src"])))
+           "—" if lang == "en" else "—",
+           # French puts a space before a semicolon; the source line is the only
+           # place in a note where one appears.
+           e(n["src"] if lang == "en" else n["src"].replace("; ", " ; "))))
 
 
 def block(notes, lang):

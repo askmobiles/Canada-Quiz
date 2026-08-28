@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 """Article — how Canada built its first transcontinental railway.
 
-Source: research/transcontinental-railway-20260827.md in the private project
-notes. Government of Canada, Crown agencies, national and public museums,
+Source: the research notes. Government of Canada, Crown agencies, national and public museums,
 provincial archives and heritage agencies, and public-university publications
 only. Commercial and crowd-edited reference sites were excluded by the research
 rule and none is cited here.

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Article — the human history of Lake Ontario.
 
-Source: research/lake-ontario-20260828.md in the private project notes.
+Source: the research notes.
 Government of Canada, Crown agencies, national and public museums, provincial
 heritage agencies, municipal governments, public universities and First Nation
 government publications only. Commercial and crowd-edited reference sites were

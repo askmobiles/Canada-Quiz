@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Article 1 of 3 — what the US tariffs did to Canada, sector by sector.
 
-Sources are in the project note research/tariffs-canada-usa-20260822.md.
+Sources are in the research notes.
 Rules followed here, deliberately:
   * merchandise figures are never mixed with goods-and-services figures
   * where two official sources disagree, both are printed and named

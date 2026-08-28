@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """Article — why big infrastructure projects take so long and cost so much.
 
-Source: research/why-infrastructure-is-slow-20260827.md in the private project
-notes, plus research/transcontinental-railway-20260827.md for the historical
+Source: the research notes
+notes, plus the research notes for the historical
 counterweight only.
 
 This page deliberately does NOT argue a thesis. The research file's section 11B

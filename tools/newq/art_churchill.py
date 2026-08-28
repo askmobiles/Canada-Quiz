@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Article 6 — the Churchill Falls and Gull Island agreement of 17 August 2026.
 
-Source: research/churchill-falls-gull-island-20260823.md in the private project
+Source: the research notes
 notes, which lists sixteen things that could not be established and the sources
 that blocked automated retrieval.
 
