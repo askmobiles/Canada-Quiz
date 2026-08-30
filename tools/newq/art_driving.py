@@ -246,14 +246,15 @@ a.fig(bar_chart(
     T("Auditor General of Ontario, 2023.",
       "Vérificatrice générale de l'Ontario, 2023."))
 a.callout(T(
-    "<strong>The course is not the problem. Trading months behind the wheel for a "
-    "certificate is.</strong> Drivers who used the course to cut four months off their wait "
-    "went on to crash about 30 per cent more often than drivers who took the very same "
-    "course and served the full time.",
-    "<strong>Le cours n'est pas le problème. Échanger des mois au volant contre une "
-    "attestation, oui.</strong> Les conducteurs qui ont utilisé le cours pour retrancher "
-    "quatre mois d'attente ont eu environ 30 pour cent plus de collisions que ceux qui ont "
-    "suivi exactement le même cours en respectant le délai complet."))
+    "<strong>Two groups took the same course.</strong> The ones who used it to cut four "
+    "months off their wait went on to crash about 30 per cent more often than the ones who "
+    "served the full time. The audit reports that difference. It does not establish what "
+    "caused it — drivers in a hurry to be licensed may differ in other ways as well.",
+    "<strong>Deux groupes ont suivi le même cours.</strong> Ceux qui s'en sont servis pour "
+    "retrancher quatre mois d'attente ont eu environ 30 pour cent plus de collisions que "
+    "ceux qui ont respecté le délai complet. La vérification rapporte cet écart. Elle n'en "
+    "établit pas la cause — les conducteurs pressés d'obtenir leur permis peuvent aussi "
+    "différer par d'autres aspects."))
 a.p(T(
     "The same audit sent fourteen people to driving schools as ordinary customers. Eleven "
     "of the fourteen received their certificate without being given the required in-car "
@@ -639,10 +640,12 @@ a.p(T(
     "autre. Ce que les données montrent, ce sont des choix de conception, faits "
     "différemment à treize endroits, avec des résultats mesurables."))
 a.ul([
-    T("Time behind the wheel is what makes a driver, and one province sells four months of "
-      "it back for the price of a course — with a measured cost in collisions",
-      "Le temps au volant est ce qui forme un conducteur, et une province en revend quatre "
-      "mois au prix d'un cours — avec un coût mesuré en collisions"),
+    T("One province lets a course shorten the waiting period, and its own auditor found "
+      "that the drivers who took that option crashed more often afterwards than those who "
+      "did not",
+      "Une province permet à un cours de raccourcir le délai d'attente, et sa propre "
+      "vérificatrice a constaté que les conducteurs ayant choisi cette option ont eu par "
+      "la suite plus de collisions que les autres"),
     T("Training works where it is delivered and inspected, and one auditor found a quarter "
       "of schools had never been inspected at all",
       "La formation fonctionne là où elle est donnée et inspectée, et une vérification a "

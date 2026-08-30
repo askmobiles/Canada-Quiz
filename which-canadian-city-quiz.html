@@ -3,9 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Which Canadian City Should You Live In? | Canada Quiz</title>
-<meta name="description" content="Seven questions about weather, weekends and rent, and one city that fits the way you actually live. A free personality quiz — no signup, works on a phone.">
+<title>Which Canadian City Should You Live In? Quiz | Canada Quiz</title>
+<meta name="description" content="Ten questions and thirteen Canadian cities, each with its real population, average two-bedroom rent and vacancy rate. Free, no signup, works on a phone.">
 <link rel="stylesheet" href="css/style.css?v=0e3cc3ad">
+<style>
+.cf-facts{max-width:460px;margin:0 auto 14px;text-align:left}
+.cf-row{display:flex;justify-content:space-between;gap:12px;padding:7px 2px;
+  border-bottom:1px solid #e6e1d8;font-size:15px}
+.cf-row:last-child{border-bottom:none}
+.cf-k{color:#5c5546}
+.cf-v{font-weight:700;text-align:right}
+</style>
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
@@ -19,7 +27,7 @@
 <link rel="alternate" hreflang="en" href="https://canada-quiz.com/which-canadian-city-quiz.html">
 <link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/which-canadian-city-quiz.html">
 <link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/which-canadian-city-quiz.html">
-<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"Quizzes","item":"https://canada-quiz.com/quizzes.html"},{"@type":"ListItem","position":3,"name":"Which Canadian City Should You Live In?","item":"https://canada-quiz.com/which-canadian-city-quiz.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/which-canadian-city-quiz.html#webpage","url":"https://canada-quiz.com/which-canadian-city-quiz.html","name":"Which Canadian City Should You Live In? | Canada Quiz","description":"Seven questions about weather, weekends and rent, and one city that fits the way you actually live. A free personality quiz — no signup, works on a phone.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"Canada Quiz & Family Fun Games","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"Quizzes","item":"https://canada-quiz.com/quizzes.html"},{"@type":"ListItem","position":3,"name":"Which Canadian City Should You Live In? Quiz","item":"https://canada-quiz.com/which-canadian-city-quiz.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/which-canadian-city-quiz.html#webpage","url":"https://canada-quiz.com/which-canadian-city-quiz.html","name":"Which Canadian City Should You Live In? Quiz | Canada Quiz","description":"Ten questions and thirteen Canadian cities, each with its real population, average two-bedroom rent and vacancy rate. Free, no signup, works on a phone.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"Canada Quiz & Family Fun Games","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}}]}</script><!--/LD-->
 </head>
 <body class="qmode-fun">
 <header class="site-header">
@@ -43,9 +51,9 @@
   <section id="start" class="panel center">
     <div style="font-size:46px">🏙️</div>
     <h1>Which Canadian City Should You Live In?</h1>
-    <p class="muted" style="max-width:560px;margin:0 auto">Seven questions about weather, weekends and rent, and one city that fits the way you actually live.</p>
-    <details class="howto"><summary>📖 How to play</summary><p>Tap the choice that feels most like you. There are seven questions, no right answers and nothing to study. At the end you get one result, plus the one that came second, and a button to run the whole thing again.</p></details>
-    <p style="margin-top:18px"><button class="btn btn-lg" type="button" id="startBtn">Start Quiz</button></p>
+    <p class="muted" style="max-width:600px;margin:0 auto">Ten questions about winter, rent, language and how far you want the wilderness to be — and one of thirteen Canadian cities at the end, with what it actually costs to live there.</p>
+    <details class="howto"><summary>📖 How to play</summary><p>Tap the choice that feels most like you. There are ten questions, no right answers and nothing to study. At the end you get one city, the figures that go with it, the city that came second, and a button to run the whole thing again.</p></details>
+    <p style="margin-top:18px"><button class="btn btn-lg" type="button" id="startBtn">Start the quiz</button></p>
   </section>
 
   <section id="quiz" class="panel" style="display:none" data-no-i18n>
@@ -59,48 +67,61 @@
     <div class="result-big" id="r-emoji">🏙️</div>
     <p class="muted" id="r-lead"></p>
     <h2 id="r-name" style="color:var(--red);font-size:clamp(1.8rem,6vw,2.8rem);font-weight:800;margin:0"></h2>
-    <p id="r-desc" style="max-width:520px;margin:0 auto 16px"></p>
+    <p id="r-desc" style="max-width:560px;margin:0 auto 16px"></p>
+    <div id="r-facts" class="cf-facts"></div>
     <p class="muted" id="r-second" style="font-size:14px"></p>
     <div>
       <button class="btn btn-lg" type="button" id="againBtn"></button>
-      <a class="btn btn-ghost btn-lg" href="quizzes.html" id="moreLink">More quizzes</a>
+      <a class="btn btn-ghost btn-lg" href="#compare" id="moreLink"></a>
     </div>
   </section>
 <!--PAGEDOC-->
-<section class="pagedoc">
-  <h2>About this quiz</h2>
-  <p>Seven practical questions — winter, rent, commute, how far wilderness should be — and one Canadian city at the end. It is a personality quiz, not advice, so treat the answer as a conversation starter rather than a plan.</p>
-  <p>The questions are the ones people actually argue about when they think of moving, which is why the quiz works as well for someone who has lived here all their life as for a newcomer choosing a first city.</p>
-  <p>Seven cities appear as results, spread from the Pacific to the Atlantic, and each one comes with a short description of the life that goes with it.</p>
-  <h2>What's inside</h2>
-  <ul>
-    <li>Seven questions with four choices each and a progress bar.</li>
-    <li>Seven results: Toronto, Montreal, Vancouver, Calgary, Halifax, Winnipeg and St. John's.</li>
-    <li>The questions cover winter, weekends, rent, commuting, wilderness, small talk and what you want more of.</li>
-    <li>A Try again button restarts it at once.</li>
-    <li>No signup, nothing saved, works on a phone.</li>
-  </ul>
-  <h2>Good to know</h2>
-  <ul>
-    <li>Toronto is the largest city in Canada and one of the most linguistically varied cities in the world.</li>
-    <li>Montreal sits on an island in the St. Lawrence River and is the largest mainly French-speaking city in the Americas.</li>
-    <li>Vancouver has the mildest winters of any large Canadian city, which is also why it rains so much.</li>
-    <li>Calgary sits about a thousand metres above sea level and is roughly an hour and a half from Banff National Park.</li>
-    <li>St. John's is one of the oldest European-founded settlements in North America and its harbour is reached through a narrow gap in the cliffs.</li>
-  </ul>
+<section class="pagedoc" id="compare">
+  <h2>All thirteen cities, side by side</h2>
+  <p>Population figures are Statistics Canada's estimates for the census metropolitan area on 1 July 2025. Rents and vacancy rates are from one survey — CMHC's Rental Market Survey of October 2025 — so the columns can be compared with each other. The rent shown is the average for a two-bedroom purpose-built apartment, which is a different and usually cheaper thing than a condominium or a house.</p>
+  <div class="cq-scroll" tabindex="0" role="region" aria-label="Table of thirteen Canadian cities — scroll sideways to see all of it"><table class="cq-table"><thead><tr><th>City</th><th>People (2025)</th><th>Two-bedroom rent</th><th>Vacancy rate</th><th>Getting around</th></tr></thead><tbody><tr><td>Toronto</td><td>7,108,874</td><td>$2,034</td><td>3.0%</td><td>Subway and two new light rail lines</td></tr><tr><td>Montreal</td><td>4,597,837</td><td>$1,346</td><td>2.9%</td><td>Métro and the REM light rail</td></tr><tr><td>Vancouver</td><td>3,088,036</td><td>$2,363</td><td>3.7%</td><td>SkyTrain</td></tr><tr><td>Calgary</td><td>1,836,012</td><td>$1,914</td><td>5.0%</td><td>CTrain light rail</td></tr><tr><td>Ottawa</td><td>1,700,014</td><td>$1,926</td><td>3.0%</td><td>O-Train light rail</td></tr><tr><td>Edmonton</td><td>1,692,385</td><td>$1,603</td><td>3.8%</td><td>Light rail, with a west line being built</td></tr><tr><td>Winnipeg</td><td>951,758</td><td>$1,571</td><td>2.8%</td><td>Buses, with one rapid transit corridor</td></tr><tr><td>Quebec City</td><td>903,607</td><td>$1,276</td><td>2.4%</td><td>Buses; a tramway is under construction</td></tr><tr><td>Halifax</td><td>544,834</td><td>not published</td><td>2.6%</td><td>Buses and harbour ferries</td></tr><tr><td>Victoria</td><td>445,090</td><td>$2,120</td><td>3.3%</td><td>Buses only</td></tr><tr><td>Saskatoon</td><td>378,475</td><td>$1,548</td><td>3.3%</td><td>Buses; rapid transit stations being built</td></tr><tr><td>St. John's</td><td>243,478</td><td>$1,348</td><td>2.1%</td><td>Buses only</td></tr><tr><td>Whitehorse</td><td>28,201</td><td>not published</td><td>not surveyed</td><td>Buses; most people drive</td></tr></tbody></table></div>
+  <p class="muted" style="font-size:13.5px">Two gaps, left open on purpose. Halifax has no rent figure here because CMHC's published tables gave more than one two-bedroom value for it in the same survey, and a wrong number is worse than a blank. Whitehorse is not one of the centres CMHC surveys, and it is a town rather than a metropolitan area, so its population is the 2021 census count for the city itself.</p>
+  <h2>How people actually choose a Canadian city</h2>
+  <p>A quiz is a good way to start the argument and a poor way to end it. What follows is what the numbers say about the choice, which is not always what the conversation says.</p>
+  <h3>The rent gap is wider than most people expect</h3>
+  <p>In the same month, the average two-bedroom apartment cost $2,363 in Vancouver and $1,276 in Quebec City. That is a difference of about $1,087 every month, or roughly $13,000 a year, for the same size of home in the same country. Toronto and Victoria sit near the top with Vancouver; Quebec City, Montreal and St. John's sit near the bottom.</p>
+  <p>The national average that October was $1,550. Four of the eleven cities here with a published figure came in below it, and Winnipeg was only $21 above. That is worth saying plainly, because the conversation about housing in Canada is largely a conversation about three cities, and ten of the thirteen here are not those three.</p>
+  <h3>The vacancy rate tells you something the rent does not</h3>
+  <p>The vacancy rate is the share of purpose-built rental apartments standing empty and available. It is a measure of how hard it is to find a place at all, which is a separate question from what a place costs. Below about three per cent, a renter is competing for what is left; above it, a landlord is competing for tenants.</p>
+  <p>In October 2025 the national rate was 3.1 per cent. St. John's was the tightest market on this list at 2.1 per cent, followed by Quebec City at 2.4 and Halifax at 2.6. Quebec City has the lowest rent of the thirteen and St. John's the third lowest, so cheap and hard to find are not opposites. Calgary was the loosest by a distance at 5.0 per cent, which is the highest of any large Canadian city and the reason its rent stopped rising that year.</p>
+  <p>Read the two columns together. A cheap city with a two per cent vacancy rate is cheap for the people already in it.</p>
+  <h3>Where newcomers are going has genuinely shifted</h3>
+  <p>For decades the answer to “where do people who move to Canada settle” was Toronto, Montreal or Vancouver. Statistics Canada's subprovincial estimates published in January 2026 show that changing quickly.</p>
+  <ul><li>Over the five years to July 2025, the share of Ontario's new immigrants settling in the Toronto area fell from 76.1 per cent to 60.5 per cent.</li><li>Over the same period, the share of Quebec's new immigrants settling in the Montreal area fell from 83.1 per cent to 65.3 per cent.</li><li>Quebec City's share of the province's immigrants more than doubled, from 6.7 per cent to 14.7 per cent, and Ottawa–Gatineau's share of Ontario's roughly doubled, from 6.4 per cent to 12.5 per cent.</li><li>The fastest-growing metropolitan areas in the country that year were Edmonton, Moncton and Calgary, each at close to three per cent.</li></ul>
+  <p>If you are choosing a first Canadian city, this matters more than it sounds. The mid-size cities on this list are no longer places you go instead of the community you were expecting to find.</p>
+  <h3>Can you live there without a car?</h3>
+  <p>Six of the thirteen have a rail system you could plan a life around: Toronto, Montreal and Vancouver on a large scale, and Calgary, Ottawa and Edmonton on a smaller one. Quebec City is building a tramway, Saskatoon is building rapid transit stations, and Winnipeg runs a dedicated busway. Halifax and St. John's are walkable in their older parts and bus-only beyond them. In Whitehorse, almost everyone drives.</p>
+  <p>A car costs money the rent table does not show. In a city where you can manage without one, a higher rent is not always the more expensive choice.</p>
+  <h3>Winter, honestly</h3>
+  <p>People get winter wrong in both directions. The prairie cities are colder than newcomers imagine, and the cold is dry and often sunny, which is easier to dress for than the number suggests. The coastal cities are milder than the reputation of the country implies — Victoria and Vancouver rarely hold snow — and they are wet in a way that wears on people who expected mild to mean pleasant.</p>
+  <p>The thing that decides whether a person can live with a Canadian winter is usually not how cold it gets. It is how long it lasts, and how much daylight there is while it does.</p>
+  <h3>What a quiz cannot weigh</h3>
+  <p>Work is usually the real answer, and it does not appear in any of the ten questions. Neither does family, nor whether your qualifications are recognised in that province, nor immigration status, nor whether you can find a place at all in a city with a two per cent vacancy rate. Treat the result as a conversation starter. The table above is the part worth keeping.</p>
   <h2>Common questions</h2>
   <h3>Should I actually move because of this?</h3>
-  <p>No. It is a game. Moving depends on work, family, immigration status, housing and a dozen other things this quiz knows nothing about.</p>
+  <p>No. It is a game with real figures attached. Moving depends on work, family, immigration status and housing you can actually get, and the quiz asks about none of them.</p>
   <h3>Why is my city not one of the answers?</h3>
-  <p>Seven results keep it quick. The seven were picked to cover very different climates and lifestyles from coast to coast rather than to rank anywhere.</p>
-  <h3>How long does it take?</h3>
-  <p>About a minute.</p>
+  <p>Thirteen results keep it quick. They were chosen to cover every region of the country — Pacific coast, prairie, central Canada, Quebec, Atlantic and the North — rather than to rank anywhere.</p>
+  <h3>How current are the rent figures?</h3>
+  <p>They are from CMHC's rental market survey of October 2025, published in December 2025, which is the most recent full survey of every centre. CMHC runs it once a year, so these are the numbers until the next one.</p>
+  <h3>How long does the quiz take?</h3>
+  <p>About two minutes.</p>
   <h3>Can I get a different city?</h3>
-  <p>Yes. Change two answers and the totals shift, which is half the fun of running it twice.</p>
+  <p>Yes. Change two or three answers and the totals move, which is half the reason to run it twice.</p>
+  <h2>Where these numbers come from</h2>
+  <ul class="cq-sources">
+    <li><a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260114/dq260114a-eng.htm" target="_blank" rel="noopener nofollow">Statistics Canada — Canada's population estimates: Subprovincial areas, 2025 (14 January 2026)</a></li>
+    <li><a href="https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/market-reports/rental-market-reports-major-centres" target="_blank" rel="noopener nofollow">Canada Mortgage and Housing Corporation — Rental Market Report, from the October 2025 survey</a></li>
+  </ul>
   <h2>More to explore</h2>
-  <p class="pd-rel"><a href="canadas-biggest-cities.html">Read about Canada's biggest cities</a> · <a href="province-quiz.html">Find out which province matches your personality</a> · <a href="canada-geography-coast-to-coast.html">Explore Canada's geography from coast to coast</a> · <a href="quizzes.html">See every quiz on the site in one place</a></p>
+  <p class="pd-rel"><a href="canadas-biggest-cities.html">Read about Canada's biggest cities</a> · <a href="province-quiz.html">Find out which province matches your personality</a> · <a href="canada-map.html">Explore the map of Canada</a> · <a href="canada-provinces-and-territories-explained.html">Read about the provinces and territories</a> · <a href="quizzes.html">See every quiz on the site in one place</a></p>
   <h2>You might also like</h2>
-  <nav class="also"><p><a href="famous-canadians-in-history.html">⭐ Famous Canadians in History Everyone Should Know</a></p></nav>
+  <nav class="also"><p><a href="canada-geography-coast-to-coast.html">🗺️ Canada's Geography, Coast to Coast</a></p></nav>
 </section>
 <!--/PAGEDOC-->
 </main>
@@ -111,7 +132,7 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <div class="footer-sections"><a href="quizzes.html">All Quizzes</a> · <a href="citizenship.html">Citizenship Test Practice</a> · <a href="driving-test.html">Driving Test Practice</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Family Games</a> · <a href="for-kids.html">For Kids</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">General Knowledge</a> · <a href="blog.html">Blog</a> · <a href="daily.html">Daily Quiz</a></div>
-    <p class="footer-all"><a href="all-pages.html">Every page on the site (205)</a></p>
+    <p class="footer-all"><a href="all-pages.html">Every page on the site (208)</a></p>
     <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
     <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
   </div>
@@ -128,85 +149,538 @@
   "e": "🏙️",
   "ne": "Toronto",
   "nf": "Toronto",
-  "de": "You want everything within reach and you do not mind the crowd that comes with it. Something is always open and something is always happening.",
-  "df": "Vous voulez tout à portée de main et la foule qui vient avec ne vous dérange pas. Il y a toujours quelque chose d’ouvert et toujours quelque chose qui se passe."
+  "de": "You want everything within reach and you accept the crowd that comes with it. Something is always open, something is always on, and you will pay for the privilege of being in the middle of it.",
+  "df": "Vous voulez tout à portée de main et vous acceptez la foule qui vient avec. Il y a toujours quelque chose d'ouvert, toujours quelque chose à faire, et vous paierez pour être au cœur de tout cela.",
+  "pe": "7,108,874",
+  "pf": "7 108 874",
+  "re": "$2,034",
+  "rf": "2 034 $",
+  "ve": "3.0%",
+  "vf": "3,0 %",
+  "te": "Subway and two new light rail lines",
+  "tf": "Métro et deux nouvelles lignes de train léger"
  },
  "montreal": {
   "e": "🥐",
   "ne": "Montreal",
   "nf": "Montréal",
-  "de": "Old streets, cheap rent by big-city standards, and a festival most weekends. You like a place with a bit of style and a lot of noise in summer.",
-  "df": "Des rues anciennes, un loyer abordable pour une grande ville, et un festival presque chaque fin de semaine. Vous aimez un endroit avec du style et beaucoup de bruit l’été."
+  "de": "Old streets, a festival most weekends, and rent that is low for a city of four and a half million. You want a place with style and noise, and you do not mind switching languages mid-sentence.",
+  "df": "Des rues anciennes, un festival presque chaque fin de semaine, et un loyer bas pour une ville de quatre millions et demi d'habitants. Vous voulez un endroit avec du style et du bruit, et changer de langue en pleine phrase ne vous dérange pas.",
+  "pe": "4,597,837",
+  "pf": "4 597 837",
+  "re": "$1,346",
+  "rf": "1 346 $",
+  "ve": "2.9%",
+  "vf": "2,9 %",
+  "te": "Métro and the REM light rail",
+  "tf": "Métro et le REM"
  },
  "vancouver": {
   "e": "🏔️",
   "ne": "Vancouver",
   "nf": "Vancouver",
-  "de": "Mountains on one side, ocean on the other, and rain in between. You will trade a lot for a mild winter and a trail that starts at the end of the bus route.",
-  "df": "Les montagnes d’un côté, l’océan de l’autre, et la pluie entre les deux. Vous échangeriez beaucoup contre un hiver doux et un sentier au bout de la ligne d’autobus."
+  "de": "Mountains on one side, ocean on the other, rain in between, and the highest rent in the country. You will trade a great deal for a mild winter and a trail that starts where the bus stops.",
+  "df": "Les montagnes d'un côté, l'océan de l'autre, la pluie entre les deux, et le loyer le plus élevé au pays. Vous échangeriez beaucoup contre un hiver doux et un sentier qui commence au terminus d'autobus.",
+  "pe": "3,088,036",
+  "pf": "3 088 036",
+  "re": "$2,363",
+  "rf": "2 363 $",
+  "ve": "3.7%",
+  "vf": "3,7 %",
+  "te": "SkyTrain",
+  "tf": "SkyTrain"
  },
  "calgary": {
   "e": "🤠",
   "ne": "Calgary",
   "nf": "Calgary",
-  "de": "Wide streets, big sky and the Rockies an hour and a bit away. You like space, and you like being able to leave the city quickly.",
-  "df": "Des rues larges, un grand ciel et les Rocheuses à un peu plus d’une heure. Vous aimez l’espace, et pouvoir quitter la ville rapidement."
+  "de": "Wide streets, big sky, cold that is dry and bright rather than damp, and the Rockies a little over an hour away. It also has the easiest rental market of any big Canadian city right now.",
+  "df": "Des rues larges, un grand ciel, un froid sec et lumineux plutôt qu'humide, et les Rocheuses à un peu plus d'une heure. C'est aussi le marché locatif le plus facile des grandes villes canadiennes en ce moment.",
+  "pe": "1,836,012",
+  "pf": "1 836 012",
+  "re": "$1,914",
+  "rf": "1 914 $",
+  "ve": "5.0%",
+  "vf": "5,0 %",
+  "te": "CTrain light rail",
+  "tf": "Train léger CTrain"
  },
- "halifax": {
-  "e": "⚓",
-  "ne": "Halifax",
-  "nf": "Halifax",
-  "de": "A harbour, a short walk to everything and a slower gear. You would rather know your neighbours than have a hundred restaurants to choose from.",
-  "df": "Un port, tout à distance de marche et un rythme plus lent. Vous préférez connaître vos voisins qu’avoir cent restaurants à choisir."
+ "ottawa": {
+  "e": "🍁",
+  "ne": "Ottawa",
+  "nf": "Ottawa",
+  "de": "A capital that behaves like a mid-size city: a canal you skate on, real winter, both official languages in ordinary use, and a share of new arrivals that has doubled in five years.",
+  "df": "Une capitale qui se comporte comme une ville de taille moyenne : un canal où l'on patine, un vrai hiver, les deux langues officielles d'usage courant, et une part de nouveaux arrivants qui a doublé en cinq ans.",
+  "pe": "1,700,014",
+  "pf": "1 700 014",
+  "re": "$1,926",
+  "rf": "1 926 $",
+  "ve": "3.0%",
+  "vf": "3,0 %",
+  "te": "O-Train light rail",
+  "tf": "Train léger O-Train"
+ },
+ "edmonton": {
+  "e": "🎭",
+  "ne": "Edmonton",
+  "nf": "Edmonton",
+  "de": "The northernmost big city in Canada, built along a river valley you can disappear into, with a summer of back-to-back festivals and a winter that earns them. It is also the fastest-growing large city in the country.",
+  "df": "La plus nordique des grandes villes canadiennes, bâtie le long d'une vallée fluviale où l'on peut disparaître, avec un été de festivals sans relâche et un hiver qui les fait mériter. C'est aussi la grande ville qui croît le plus vite au pays.",
+  "pe": "1,692,385",
+  "pf": "1 692 385",
+  "re": "$1,603",
+  "rf": "1 603 $",
+  "ve": "3.8%",
+  "vf": "3,8 %",
+  "te": "Light rail, with a west line being built",
+  "tf": "Train léger, avec une ligne ouest en construction"
  },
  "winnipeg": {
   "e": "🌾",
   "ne": "Winnipeg",
   "nf": "Winnipeg",
-  "de": "Real winters, real summers and a house you can actually afford. You value substance over shine and you are not scared of minus thirty.",
-  "df": "De vrais hivers, de vrais étés et une maison à votre portée. Vous préférez le solide au brillant et moins trente ne vous fait pas peur."
+  "de": "Real winters, real summers, and rent that runs almost a quarter below Toronto's. You value substance over shine and minus thirty does not frighten you.",
+  "df": "De vrais hivers, de vrais étés, et un loyer inférieur de près d'un quart à celui de Toronto. Vous préférez le solide au brillant et moins trente ne vous fait pas peur.",
+  "pe": "951,758",
+  "pf": "951 758",
+  "re": "$1,571",
+  "rf": "1 571 $",
+  "ve": "2.8%",
+  "vf": "2,8 %",
+  "te": "Buses, with one rapid transit corridor",
+  "tf": "Autobus, avec un corridor de transport rapide"
+ },
+ "quebec": {
+  "e": "⚜️",
+  "ne": "Quebec City",
+  "nf": "Québec",
+  "de": "The lowest rent of the thirteen cities here, inside the only walled city north of Mexico, in French, under a great deal of snow. A tramway is being built through the middle of it.",
+  "df": "Le loyer le plus bas des treize villes présentées ici, dans la seule ville fortifiée au nord du Mexique, en français, sous beaucoup de neige. Un tramway est en construction en plein centre.",
+  "pe": "903,607",
+  "pf": "903 607",
+  "re": "$1,276",
+  "rf": "1 276 $",
+  "ve": "2.4%",
+  "vf": "2,4 %",
+  "te": "Buses; a tramway is under construction",
+  "tf": "Autobus ; un tramway est en construction"
+ },
+ "halifax": {
+  "e": "⚓",
+  "ne": "Halifax",
+  "nf": "Halifax",
+  "de": "A harbour, a short walk to most of what you need, and a slower gear than anywhere bigger. You would rather know your neighbours than have a hundred restaurants to choose between.",
+  "df": "Un port, tout à distance de marche ou presque, et un rythme plus lent que partout ailleurs de plus grand. Vous préférez connaître vos voisins qu'avoir cent restaurants au choix.",
+  "pe": "544,834",
+  "pf": "544 834",
+  "re": null,
+  "rf": null,
+  "ve": "2.6%",
+  "vf": "2,6 %",
+  "te": "Buses and harbour ferries",
+  "tf": "Autobus et traversiers du port"
+ },
+ "victoria": {
+  "e": "🌷",
+  "ne": "Victoria",
+  "nf": "Victoria",
+  "de": "The mildest winter in Canada, gardens in February, an island between you and the rest of the country, and rent to match. Small, pretty, and further from everything than it looks on a map.",
+  "df": "L'hiver le plus doux du Canada, des jardins en février, une île entre vous et le reste du pays, et un loyer en conséquence. Petite, jolie, et plus loin de tout qu'il n'y paraît sur une carte.",
+  "pe": "445,090",
+  "pf": "445 090",
+  "re": "$2,120",
+  "rf": "2 120 $",
+  "ve": "3.3%",
+  "vf": "3,3 %",
+  "te": "Buses only",
+  "tf": "Autobus seulement"
+ },
+ "saskatoon": {
+  "e": "🌉",
+  "ne": "Saskatoon",
+  "nf": "Saskatoon",
+  "de": "A river through the middle of it, prairie in every direction, and a city small enough to cross in twenty minutes. Rent sits almost exactly at the national average, and rapid transit stations are going in.",
+  "df": "Une rivière en plein milieu, la prairie dans toutes les directions, et une ville assez petite pour la traverser en vingt minutes. Le loyer se situe presque exactement à la moyenne nationale, et des stations de transport rapide sont en chantier.",
+  "pe": "378,475",
+  "pf": "378 475",
+  "re": "$1,548",
+  "rf": "1 548 $",
+  "ve": "3.3%",
+  "vf": "3,3 %",
+  "te": "Buses; rapid transit stations being built",
+  "tf": "Autobus ; des stations de transport rapide en construction"
  },
  "stjohns": {
   "e": "🎣",
   "ne": "St. John's",
   "nf": "Saint-Jean",
-  "de": "Coloured houses on a steep hill, weather that changes four times a day, and people who talk to you in the queue. You like character more than convenience.",
-  "df": "Des maisons colorées sur une côte raide, un temps qui change quatre fois par jour, et des gens qui vous parlent dans la file. Vous préférez le caractère au confort."
+  "de": "Coloured houses up a steep hill, weather that changes four times before lunch, and strangers who talk to you in the queue. It also has one of the tightest rental markets in the country, so start looking early.",
+  "df": "Des maisons colorées sur une côte raide, un temps qui change quatre fois avant midi, et des inconnus qui vous parlent dans la file. C'est aussi l'un des marchés locatifs les plus serrés du pays : commencez à chercher tôt.",
+  "pe": "243,478",
+  "pf": "243 478",
+  "re": "$1,348",
+  "rf": "1 348 $",
+  "ve": "2.1%",
+  "vf": "2,1 %",
+  "te": "Buses only",
+  "tf": "Autobus seulement"
+ },
+ "whitehorse": {
+  "e": "🐺",
+  "ne": "Whitehorse",
+  "nf": "Whitehorse",
+  "de": "Twenty-eight thousand people, mountains at the end of the street, daylight a June where it hardly gets dark and a December where it hardly gets light. You are not looking for a city at all.",
+  "df": "Vingt-huit mille habitants, des montagnes au bout de la rue, une lumière qui un juin où il ne fait presque pas nuit et un décembre où il ne fait presque pas jour. Ce n'est pas une ville que vous cherchez.",
+  "pe": "28,201",
+  "pf": "28 201",
+  "re": null,
+  "rf": null,
+  "ve": null,
+  "vf": null,
+  "te": "Buses; most people drive",
+  "tf": "Autobus ; la plupart des gens conduisent"
  }
 };
   var Q=[
  {
-  "en": "What kind of winter can you live with?",
-  "fr": "Quel genre d’hiver pouvez-vous supporter ?",
+  "en": "What kind of winter can you actually live with?",
+  "fr": "Quel genre d'hiver pouvez-vous vraiment supporter ?",
   "a": [
    {
-    "en": "Cold and snowy, that is normal",
-    "fr": "Froid et neigeux, c’est normal",
+    "en": "Cold and snowy — that is what winter is",
+    "fr": "Froid et neigeux — c'est ça, l'hiver",
     "s": {
-     "winnipeg": 2,
-     "montreal": 1
+     "winnipeg": 3,
+     "edmonton": 2,
+     "ottawa": 2,
+     "quebec": 1
     }
    },
    {
     "en": "Grey and rainy, but mild",
     "fr": "Gris et pluvieux, mais doux",
     "s": {
+     "vancouver": 2,
+     "victoria": 3
+    }
+   },
+   {
+    "en": "Cold, but dry and bright",
+    "fr": "Froid, mais sec et lumineux",
+    "s": {
+     "calgary": 2,
+     "saskatoon": 2,
+     "whitehorse": 2
+    }
+   },
+   {
+    "en": "Windy and wet, straight off the ocean",
+    "fr": "Venteux et humide, droit de l'océan",
+    "s": {
+     "stjohns": 3,
+     "halifax": 2
+    }
+   }
+  ]
+ },
+ {
+  "en": "How big should the place be?",
+  "fr": "À quel point l'endroit doit-il être grand ?",
+  "a": [
+   {
+    "en": "As big as it gets",
+    "fr": "Aussi grand que possible",
+    "s": {
+     "toronto": 3,
+     "montreal": 1
+    }
+   },
+   {
+    "en": "Big, but you can still cross it in half an hour",
+    "fr": "Grand, mais traçable en une demi-heure",
+    "s": {
+     "ottawa": 3,
+     "edmonton": 2,
+     "calgary": 2,
+     "winnipeg": 2,
+     "quebec": 1
+    }
+   },
+   {
+    "en": "Small enough to keep running into people you know",
+    "fr": "Assez petit pour croiser sans cesse des gens que vous connaissez",
+    "s": {
+     "halifax": 2,
+     "victoria": 2,
+     "saskatoon": 2,
+     "stjohns": 2
+    }
+   },
+   {
+    "en": "Genuinely small, and that is the whole point",
+    "fr": "Vraiment petit, et c'est tout l'intérêt",
+    "s": {
+     "whitehorse": 3
+    }
+   }
+  ]
+ },
+ {
+  "en": "How much does the rent decide?",
+  "fr": "Le loyer décide-t-il de tout ?",
+  "a": [
+   {
+    "en": "Everything. Cheapest wins",
+    "fr": "De tout. Le moins cher gagne",
+    "s": {
+     "quebec": 2,
+     "montreal": 1,
+     "saskatoon": 1,
+     "stjohns": 1,
+     "winnipeg": 1
+    }
+   },
+   {
+    "en": "It matters, but so does the city",
+    "fr": "Il compte, mais la ville aussi",
+    "s": {
+     "montreal": 2,
+     "winnipeg": 2,
+     "edmonton": 1,
+     "halifax": 1
+    }
+   },
+   {
+    "en": "I will pay for the location",
+    "fr": "Je paierai pour l'emplacement",
+    "s": {
+     "toronto": 2,
+     "vancouver": 3,
+     "victoria": 1
+    }
+   },
+   {
+    "en": "I would rather buy than rent",
+    "fr": "Je préfère acheter que louer",
+    "s": {
+     "calgary": 3,
+     "edmonton": 2,
+     "saskatoon": 1,
+     "winnipeg": 1
+    }
+   }
+  ]
+ },
+ {
+  "en": "Pick a way to get to work:",
+  "fr": "Choisissez une façon d'aller au travail :",
+  "a": [
+   {
+    "en": "Subway, métro or SkyTrain",
+    "fr": "Métro ou SkyTrain",
+    "s": {
+     "toronto": 2,
+     "montreal": 2,
      "vancouver": 2
     }
    },
    {
-    "en": "Cold, but sunny and dry",
-    "fr": "Froid, mais ensoleillé et sec",
+    "en": "Bike, most of the year",
+    "fr": "À vélo, presque toute l'année",
     "s": {
-     "calgary": 2
+     "victoria": 2,
+     "montreal": 1,
+     "ottawa": 1,
+     "saskatoon": 1
     }
    },
    {
-    "en": "Windy and wet by the sea",
-    "fr": "Venteux et humide au bord de la mer",
+    "en": "Drive, and park without thinking about it",
+    "fr": "En auto, et se garer sans y penser",
     "s": {
+     "calgary": 2,
+     "saskatoon": 2,
+     "winnipeg": 2,
+     "edmonton": 1,
+     "whitehorse": 1
+    }
+   },
+   {
+    "en": "Walk it in twenty minutes",
+    "fr": "À pied, en vingt minutes",
+    "s": {
+     "halifax": 2,
+     "stjohns": 2,
+     "quebec": 1
+    }
+   }
+  ]
+ },
+ {
+  "en": "How far away should real wilderness be?",
+  "fr": "À quelle distance devrait se trouver la vraie nature ?",
+  "a": [
+   {
+    "en": "About an hour by car",
+    "fr": "À une heure de route environ",
+    "s": {
+     "calgary": 2,
+     "edmonton": 2,
+     "ottawa": 2
+    }
+   },
+   {
+    "en": "Where the bus route ends",
+    "fr": "Là où la ligne d'autobus se termine",
+    "s": {
+     "vancouver": 2,
+     "whitehorse": 2
+    }
+   },
+   {
+    "en": "A weekend away is fine",
+    "fr": "Une fin de semaine, c'est correct",
+    "s": {
+     "toronto": 2,
+     "montreal": 1,
+     "winnipeg": 1
+    }
+   },
+   {
+    "en": "I would rather have the ocean at the end of the street",
+    "fr": "Je préfère l'océan au bout de la rue",
+    "s": {
+     "halifax": 2,
+     "stjohns": 2,
+     "victoria": 1
+    }
+   }
+  ]
+ },
+ {
+  "en": "What do you want to hear around you?",
+  "fr": "Qu'aimeriez-vous entendre autour de vous ?",
+  "a": [
+   {
+    "en": "English, mostly",
+    "fr": "De l'anglais, surtout",
+    "s": {
+     "calgary": 1,
+     "edmonton": 1,
+     "winnipeg": 1,
+     "saskatoon": 1,
      "halifax": 1,
-     "stjohns": 2
+     "stjohns": 1,
+     "victoria": 1,
+     "whitehorse": 1
+    }
+   },
+   {
+    "en": "French, mostly",
+    "fr": "Du français, surtout",
+    "s": {
+     "quebec": 3
+    }
+   },
+   {
+    "en": "Both, all day long",
+    "fr": "Les deux, toute la journée",
+    "s": {
+     "montreal": 3,
+     "ottawa": 3
+    }
+   },
+   {
+    "en": "Every language at once",
+    "fr": "Toutes les langues à la fois",
+    "s": {
+     "toronto": 2,
+     "vancouver": 2
+    }
+   }
+  ]
+ },
+ {
+  "en": "A stranger starts talking to you in the queue.",
+  "fr": "Un inconnu vous adresse la parole dans la file.",
+  "a": [
+   {
+    "en": "Wonderful. Tell me everything",
+    "fr": "Merveilleux. Racontez-moi tout",
+    "s": {
+     "stjohns": 2,
+     "halifax": 1,
+     "whitehorse": 1
+    }
+   },
+   {
+    "en": "In a shop, fine. On the train, no",
+    "fr": "Dans un magasin, d'accord. Dans le train, non",
+    "s": {
+     "toronto": 1,
+     "calgary": 1,
+     "ottawa": 1,
+     "vancouver": 1
+    }
+   },
+   {
+    "en": "Only if we are both freezing",
+    "fr": "Seulement si nous gelons tous les deux",
+    "s": {
+     "winnipeg": 2,
+     "saskatoon": 1,
+     "edmonton": 2
+    }
+   },
+   {
+    "en": "It depends which language they open with",
+    "fr": "Ça dépend de la langue qu'il emploie",
+    "s": {
+     "montreal": 2,
+     "quebec": 2
+    }
+   }
+  ]
+ },
+ {
+  "en": "Water, please. What kind?",
+  "fr": "De l'eau, oui. Mais laquelle ?",
+  "a": [
+   {
+    "en": "An ocean you can smell from the front door",
+    "fr": "Un océan que l'on sent depuis le pas de la porte",
+    "s": {
+     "halifax": 2,
+     "stjohns": 2,
+     "victoria": 2
+    }
+   },
+   {
+    "en": "A river running through the middle of town",
+    "fr": "Une rivière en plein milieu de la ville",
+    "s": {
+     "saskatoon": 3,
+     "edmonton": 2,
+     "winnipeg": 2,
+     "ottawa": 2
+    }
+   },
+   {
+    "en": "A lake big enough to look like the sea",
+    "fr": "Un lac assez grand pour ressembler à la mer",
+    "s": {
+     "toronto": 2,
+     "ottawa": 1,
+     "quebec": 1
+    }
+   },
+   {
+    "en": "Mountains will do, thank you",
+    "fr": "Les montagnes feront l'affaire, merci",
+    "s": {
+     "vancouver": 2,
+     "calgary": 2,
+     "whitehorse": 2
     }
    }
   ]
@@ -220,179 +694,36 @@
     "fr": "Une galerie, puis un souper dans un nouvel endroit",
     "s": {
      "toronto": 2,
-     "montreal": 1
-    }
-   },
-   {
-    "en": "On a mountain trail before lunch",
-    "fr": "Sur un sentier de montagne avant midi",
-    "s": {
-     "vancouver": 2,
-     "calgary": 1
-    }
-   },
-   {
-    "en": "A walk along the water and a pub",
-    "fr": "Une marche au bord de l’eau et un pub",
-    "s": {
-     "halifax": 2,
-     "stjohns": 1
-    }
-   },
-   {
-    "en": "A market, a park and no plans",
-    "fr": "Un marché, un parc et aucun plan",
-    "s": {
-     "winnipeg": 2,
-     "montreal": 1
-    }
-   }
-  ]
- },
- {
-  "en": "How much does rent matter?",
-  "fr": "Le loyer compte-t-il beaucoup ?",
-  "a": [
-   {
-    "en": "It decides everything",
-    "fr": "Il décide de tout",
-    "s": {
-     "winnipeg": 2,
-     "stjohns": 1
-    }
-   },
-   {
-    "en": "It matters, but so does the city",
-    "fr": "Il compte, mais la ville aussi",
-    "s": {
      "montreal": 2,
-     "halifax": 1
+     "ottawa": 2
     }
    },
    {
-    "en": "I will pay for the location",
-    "fr": "Je paierai pour l’emplacement",
-    "s": {
-     "toronto": 2,
-     "vancouver": 1
-    }
-   },
-   {
-    "en": "I would rather buy than rent",
-    "fr": "Je préfère acheter que louer",
-    "s": {
-     "calgary": 2
-    }
-   }
-  ]
- },
- {
-  "en": "Pick a way to get to work:",
-  "fr": "Choisissez une façon d’aller au travail :",
-  "a": [
-   {
-    "en": "Subway or streetcar",
-    "fr": "Métro ou tramway",
-    "s": {
-     "toronto": 2,
-     "montreal": 1
-    }
-   },
-   {
-    "en": "Bike, most of the year",
-    "fr": "À vélo, presque toute l’année",
+    "en": "On a trail before lunch",
+    "fr": "Sur un sentier avant midi",
     "s": {
      "vancouver": 2,
-     "montreal": 1
+     "calgary": 1,
+     "whitehorse": 2
     }
    },
    {
-    "en": "Drive, and park easily",
-    "fr": "En auto, et se garer facilement",
+    "en": "A market, a park, and no plans at all",
+    "fr": "Un marché, un parc, et aucun plan",
     "s": {
-     "calgary": 2,
-     "winnipeg": 1
+     "winnipeg": 1,
+     "saskatoon": 1,
+     "edmonton": 2,
+     "quebec": 2
     }
    },
    {
-    "en": "Walk, in twenty minutes",
-    "fr": "À pied, en vingt minutes",
+    "en": "A walk along the water and a pub after",
+    "fr": "Une marche au bord de l'eau, puis un pub",
     "s": {
      "halifax": 2,
-     "stjohns": 1
-    }
-   }
-  ]
- },
- {
-  "en": "How far should real wilderness be?",
-  "fr": "À quelle distance devrait se trouver la vraie nature ?",
-  "a": [
-   {
-    "en": "An hour by car",
-    "fr": "À une heure de route",
-    "s": {
-     "calgary": 2,
-     "vancouver": 1
-    }
-   },
-   {
-    "en": "At the end of the bus line",
-    "fr": "Au bout de la ligne d’autobus",
-    "s": {
-     "vancouver": 2
-    }
-   },
-   {
-    "en": "A weekend away is fine",
-    "fr": "Une fin de semaine, c’est correct",
-    "s": {
-     "toronto": 2,
-     "montreal": 1
-    }
-   },
-   {
-    "en": "I would rather have the ocean",
-    "fr": "Je préfère l’océan",
-    "s": {
-     "halifax": 2,
-     "stjohns": 2
-    }
-   }
-  ]
- },
- {
-  "en": "How do you feel about strangers talking to you?",
-  "fr": "Que pensez-vous des inconnus qui vous parlent ?",
-  "a": [
-   {
-    "en": "Lovely, tell me everything",
-    "fr": "Charmant, racontez-moi tout",
-    "s": {
-     "stjohns": 2,
-     "halifax": 1
-    }
-   },
-   {
-    "en": "Fine in a shop, not on the train",
-    "fr": "Dans un magasin, oui ; dans le train, non",
-    "s": {
-     "toronto": 1,
-     "calgary": 1
-    }
-   },
-   {
-    "en": "In two languages, please",
-    "fr": "En deux langues, s’il vous plaît",
-    "s": {
-     "montreal": 2
-    }
-   },
-   {
-    "en": "Only if we are both freezing",
-    "fr": "Seulement si nous gelons tous les deux",
-    "s": {
-     "winnipeg": 2
+     "stjohns": 1,
+     "victoria": 1
     }
    }
   ]
@@ -405,22 +736,28 @@
     "en": "Choices",
     "fr": "De choix",
     "s": {
-     "toronto": 2
+     "toronto": 2,
+     "montreal": 1
     }
    },
    {
     "en": "Space",
-    "fr": "D’espace",
+    "fr": "D'espace",
     "s": {
-     "calgary": 2,
-     "winnipeg": 1
+     "saskatoon": 3,
+     "calgary": 1,
+     "winnipeg": 1,
+     "whitehorse": 2,
+     "edmonton": 1
     }
    },
    {
-    "en": "Beauty out the window",
+    "en": "Beauty out of the window",
     "fr": "De beauté par la fenêtre",
     "s": {
      "vancouver": 2,
+     "victoria": 2,
+     "quebec": 2,
      "stjohns": 1
     }
    },
@@ -429,7 +766,9 @@
     "fr": "De temps",
     "s": {
      "halifax": 2,
-     "winnipeg": 1
+     "winnipeg": 1,
+     "edmonton": 1,
+     "victoria": 1
     }
    }
   ]
@@ -469,25 +808,55 @@
     });
   }
 
+  /* A row of the result panel. Left cell is a label, right cell a figure, and
+     each is its own text node so the French dictionary can find it. */
+  function fact(label, value){
+    if(!value) return null;
+    var row=document.createElement('div');
+    row.className='cf-row';
+    var a=document.createElement('span'); a.className='cf-k'; a.textContent=label;
+    var b=document.createElement('span'); b.className='cf-v'; b.textContent=value;
+    row.appendChild(a); row.appendChild(b);
+    return row;
+  }
+
   function result(){
     $('quiz').style.display='none';
     $('result').style.display='block';
-    var order=keys.slice().sort(function(a,b){ return scores[b]-scores[a]; });
+    /* a hair of jitter, so a tie is not always broken the same way */
+    var j={};
+    for(var i=0;i<keys.length;i++) j[keys[i]]=scores[keys[i]]+Math.random()*0.001;
+    var order=keys.slice().sort(function(a,b){ return j[b]-j[a]; });
     var best=R[order[0]], second=R[order[1]];
     $('r-emoji').textContent=best.e;
-    $('r-lead').textContent=T('You are most like…','Vous ressemblez surtout à…');
+    $('r-lead').textContent=T('The city that fits you best is\u2026',
+                              'La ville qui vous convient le mieux est\u2026');
     $('r-name').textContent=FR?best.nf:best.ne;
     $('r-desc').textContent=FR?best.df:best.de;
+
+    var f=$('r-facts'); f.innerHTML='';
+    var rows=[
+      fact(T('People in the metro area','Population de la r\u00e9gion m\u00e9tropolitaine'),
+           FR?best.pf:best.pe),
+      fact(T('Average two-bedroom rent','Loyer moyen d\u0027un deux chambres'),
+           FR?best.rf:best.re),
+      fact(T('Rental vacancy rate','Taux d\u0027inoccupation des logements'),
+           FR?best.vf:best.ve),
+      fact(T('Getting around','Se d\u00e9placer'), FR?best.tf:best.te)
+    ];
+    for(var n=0;n<rows.length;n++) if(rows[n]) f.appendChild(rows[n]);
+
     $('r-second').textContent=second
-      ? T('Runner-up: ','Deuxième : ')+(FR?second.nf:second.ne)
+      ? T('Runner-up: ','Deuxi\u00e8me : ')+(FR?second.nf:second.ne)
       : '';
     window.scrollTo(0,0);
   }
 
   function labels(){
-    $('startBtn').textContent=T('Start Quiz','Commencer le quiz');
+    $('startBtn').textContent=T('Start the quiz','Commencer le quiz');
     $('againBtn').textContent=T('Try again','Recommencer');
-    $('moreLink').textContent=T('More quizzes','Plus de quiz');
+    $('moreLink').textContent=T('Compare all thirteen',
+                                'Comparer les treize');
   }
 
   $('startBtn').addEventListener('click',start);
@@ -496,7 +865,7 @@
 })();
 </script>
   <script src="js/game-fullscreen.js?v=29d5dc34" defer></script>
-  <script src="js/site.js?v=e8ae9fb1"></script>
+  <script src="js/site.js?v=008e1a69"></script>
   <script src="js/analytics.js?v=d1aca85c"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
   <script src="js/pwa.js?v=e7218fe1" defer></script>
