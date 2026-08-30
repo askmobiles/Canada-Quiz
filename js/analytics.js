@@ -391,9 +391,9 @@ var CQ_KIND = {
     });
   }
 
-  /* ---------- 4. A private counter just for the owner ----------
-     Stored only in this browser. Visit  yoursite.com/?mystats
-     on your own phone or computer to see your own play history.
+  /* ---------- 4. A counter that never leaves this browser ----------
+     Stored in localStorage only. Add  ?mystats  to any address on your own
+     phone or computer to see your own play history.
      No personal data, nothing sent anywhere.                     */
   try {
     var K = "cq_local_stats";

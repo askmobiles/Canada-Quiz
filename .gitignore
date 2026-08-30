@@ -15,3 +15,13 @@ _upd/
 *.zip
 __pycache__/
 *.pyc
+
+# Notes and documentation stay OUT of the public repository.
+# The site and the code that builds it, nothing else.
+*.md
+
+# packaged output, never committed
+build/
+
+# The build tools live in the private folder, never here.
+tools/

@@ -77,10 +77,10 @@
      Safari on an iPad and an iPhone will not read a long utterance. Hand it a
      whole paragraph and it stays silent — no error, no sound, and onend often
      never fires either, so a reader that chains one paragraph to the next just
-     stops. The owner hit exactly this: on an iPad the story reader spoke the
-     headings and skipped every paragraph, because headings are short and
-     paragraphs are not. On Android and on a computer the same page read fine,
-     which is why it looked like an iPad problem rather than a code problem.
+     stops. On an iPad the story reader spoke the headings and skipped every
+     paragraph, because headings are short and paragraphs are not. On Android
+     and on a computer the same page read fine, which is why it looked like an
+     iPad problem rather than a code problem.
 
      Safari also cuts speech off at roughly fifteen seconds. Both problems go
      away if we never hand it more than a sentence or two at a time, so every
