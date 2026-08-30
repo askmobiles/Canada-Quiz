@@ -212,15 +212,25 @@ def body():
 
     # ---- for teachers
     a('    <div class="pw-screen-only">')
-    a('    <h2>%s</h2>' % T("For teachers and tutors", "Pour le personnel enseignant et les tuteurs"))
+    # Not "for teachers" — the permission is genuinely wider than that, and saying
+    # so is accurate rather than an SEO stretch. Libraries and community programs
+    # are also the places most likely to link to a free printable, which is the
+    # measured weakness in claude/plan-get-to-page-one.md.
+    a('    <h2>%s</h2>' % T("For classrooms, homes and community programs",
+                            "Pour la classe, la maison et les programmes communautaires"))
     a('    <p>%s</p>' % T(
-        "Every sheet is free to photocopy for a class. There is nothing to sign up for and "
-        "nothing to pay, and no student ever needs an account, so no child's information is "
-        "collected by this site at any point.",
-        "Chaque feuille peut &ecirc;tre photocopi&eacute;e librement pour une classe. Il n'y "
-        "a rien &agrave; cr&eacute;er comme compte ni rien &agrave; payer, et aucun &eacute;l&egrave;ve "
-        "n'a besoin d'un compte : aucune information concernant un enfant n'est recueillie "
-        "par ce site."))
+        "Every sheet is free to print and free to photocopy — for a class, a tutoring "
+        "session, a homeschool morning, a library programme, a settlement or language "
+        "class, or a kitchen table on a rainy afternoon. There is nothing to sign up for "
+        "and nothing to pay, and no student ever needs an account, so no child's "
+        "information is collected by this site at any point.",
+        "Chaque feuille peut &ecirc;tre imprim&eacute;e et photocopi&eacute;e librement — "
+        "pour une classe, une s&eacute;ance de tutorat, une matin&eacute;e d'&eacute;cole "
+        "&agrave; la maison, une activit&eacute; de biblioth&egrave;que, un cours "
+        "d'accueil ou de langue, ou la table de cuisine un apr&egrave;s-midi de pluie. Il "
+        "n'y a rien &agrave; cr&eacute;er comme compte ni rien &agrave; payer, et aucun "
+        "&eacute;l&egrave;ve n'a besoin d'un compte : aucune information concernant un "
+        "enfant n'est recueillie par ce site."))
     a('    <p>%s</p>' % T(
         "Pressing Print opens your browser's normal print window. Choosing &#8220;Save as "
         "PDF&#8221; as the destination gives you a file you can email or upload instead of "
