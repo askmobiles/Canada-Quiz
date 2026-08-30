@@ -41,7 +41,7 @@
  },
  "all-pages.html": {
   "date": "2026-08-29",
-  "hash": "edaf1b8c28aba37cf68eec6d5d3f17703599dd53"
+  "hash": "4914565584a6e728cb2571c6552f414b26cd7869"
  },
  "animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-13",
@@ -205,7 +205,7 @@
  },
  "citizenship.html": {
   "date": "2026-08-29",
-  "hash": "e8aa7ca7af67465fc4b5022a306379dcdb6d4ca1"
+  "hash": "3c048689e94b4b289126480b6e66bd5f0ca2a9b4"
  },
  "color-match.html": {
   "date": "2026-08-15",
@@ -272,8 +272,8 @@
   "hash": "f0976c7cf9463cb0d7fb91cc019ff1d0b49f02b1"
  },
  "for-kids.html": {
-  "date": "2026-08-16",
-  "hash": "e1dac1526659083a9f0878f7d29b9aa2eca39b18"
+  "date": "2026-08-29",
+  "hash": "eabcae7549da5244d5acd76f9f57bb06f98d7beb"
  },
  "fr/10-tips-to-pass-your-citizenship-test.html": {
   "date": "2026-08-24",
@@ -317,7 +317,7 @@
  },
  "fr/all-pages.html": {
   "date": "2026-08-29",
-  "hash": "712a8090a8d82dc9975c664407abc3340e120dd8"
+  "hash": "19ace44883f4fbcaf658285449535b4dac415aff"
  },
  "fr/animals-on-canadian-money-for-kids.html": {
   "date": "2026-08-20",
@@ -356,8 +356,8 @@
   "hash": "1dbd9949c1a7fbed6c9baac80caf0912448c5417"
  },
  "fr/brain-trainer.html": {
-  "date": "2026-08-15",
-  "hash": "a13e625647c13ad691a015fa5e2384ee9dff791e"
+  "date": "2026-08-29",
+  "hash": "2a338fd8651dbc4666c57e2c4208635f85f44c03"
  },
  "fr/can-canada-feed-itself.html": {
   "date": "2026-08-15",
@@ -369,7 +369,7 @@
  },
  "fr/canada-driving-test-by-province.html": {
   "date": "2026-08-29",
-  "hash": "f076b3e38a4ad557e1be9b19bd4e26b053604759"
+  "hash": "f2021bc9e1e4554d6ebef33063aa4b60171d7d83"
  },
  "fr/canada-geography-coast-to-coast.html": {
   "date": "2026-08-15",
@@ -420,8 +420,8 @@
   "hash": "ef28a607865741ad1af7b6979c8c31a98dac13a7"
  },
  "fr/canadian-citizenship-test-what-to-expect.html": {
-  "date": "2026-08-22",
-  "hash": "3a010d516e5e12d325ca2da007cdcbf52d529708"
+  "date": "2026-08-29",
+  "hash": "017786d95967763a514f55f70b6712f6fb1fc36d"
  },
  "fr/canadian-food-poutine-maple-syrup.html": {
   "date": "2026-08-15",
@@ -481,7 +481,7 @@
  },
  "fr/citizenship.html": {
   "date": "2026-08-29",
-  "hash": "5796bdd8645c9ca07804baafae95c554620bf6db"
+  "hash": "95a10bf5aee305a28d8905b064ef0eac563e1185"
  },
  "fr/color-match.html": {
   "date": "2026-08-15",
@@ -548,8 +548,8 @@
   "hash": "eff4e45f4103b2d195a00a79f1c777c8e9a1391c"
  },
  "fr/for-kids.html": {
-  "date": "2026-08-16",
-  "hash": "71c7eecd2db6c06b3bd78dc5cfc5ddcd331ba9ec"
+  "date": "2026-08-29",
+  "hash": "e897db0167569986fd7d7a581a7c9ceeed164b7b"
  },
  "fr/fun-quiz.html": {
   "date": "2026-08-29",
@@ -815,6 +815,10 @@
   "date": "2026-08-29",
   "hash": "7cacce663b7d8f4b6241456fc2a930ed14a8a8f8"
  },
+ "fr/printable-quizzes.html": {
+  "date": "2026-08-30",
+  "hash": "a6e273405270aaa756a5ebc9608defe8b5f3f512"
+ },
  "fr/privacy.html": {
   "date": "2026-08-15",
   "hash": "26ed8ffc5fa1075a7c1d22dc7694f7844c155463"
@@ -840,8 +844,8 @@
   "hash": "128300e0e2a6ca4bd95dbc4bfb48837cd5df1d4c"
  },
  "fr/quizzes.html": {
-  "date": "2026-08-15",
-  "hash": "7df08d7f9f7cbb53356332e60cdb2be7325eb5d9"
+  "date": "2026-08-29",
+  "hash": "fc6d5d54139e51c9af777cb498744ba6c418666e"
  },
  "fr/rare-canadian-history-stories.html": {
   "date": "2026-08-15",
@@ -1363,6 +1367,10 @@
   "date": "2026-08-15",
   "hash": "007a2d3e95dd3ab12794adb874d6c842af005a21"
  },
+ "printable-quizzes.html": {
+  "date": "2026-08-30",
+  "hash": "ae6373046a26d0abf179f56b6dddb3d906c2d087"
+ },
  "privacy.html": {
   "date": "2026-08-15",
   "hash": "0875ccf4b453a243209f481bee497f555565ec59"
@@ -1388,8 +1396,8 @@
   "hash": "322c9c9f286487017905b01dc230741b1efa0c26"
  },
  "quizzes.html": {
-  "date": "2026-08-15",
-  "hash": "30ffaef82e02e68b9150759ea35e8e5913564745"
+  "date": "2026-08-29",
+  "hash": "e5cdb71acfdc54d13dbeff1bed6573d08d85e046"
  },
  "rare-canadian-history-stories.html": {
   "date": "2026-08-15",

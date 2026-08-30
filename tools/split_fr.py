@@ -36,7 +36,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC  = os.path.join(ROOT, "js", "i18n-fr.js")
 
 UI = ["site.js", "read-aloud.js", "tv-mode.js", "game-fullscreen.js",
-      "endcard.js", "pwa.js", "ads.js", "analytics.js"]
+      "endcard.js", "pwa.js", "ads.js", "analytics.js", "printables.js"]
 CHUNKS = [("gk",     "gk-questions.js"),
           ("cit",    "citizenship-questions.js"),
           ("fun",    "fun-questions.js"),
@@ -82,5 +82,36 @@ def main():
           % (len(written), total/1024.0, os.path.getsize(SRC)/1024.0))
     for p, n in written:
         print("  %-28s %8.1f KB" % (os.path.basename(p), n/1024.0))
+    stamp_frver()
+
+
+def stamp_frver():
+    """Rewrite the FRVER table in js/site.js from the chunks just written.
+
+    site.js fetches each chunk as i18n-fr-<name>.js?v=<hash>, so a stale hash
+    means a returning French visitor keeps the cached OLD dictionary and never
+    sees new or corrected translations. Nothing used to update this table —
+    asset_ver.py does not touch it — so it drifted silently every time the
+    dictionary changed. On 29 Aug 2026 five of the six hashes were stale.
+    Stamping it here means it can never drift again."""
+    import hashlib, re
+    names = ["core", "gk", "cit", "fun", "drive", "kids"]
+    parts = []
+    for n in names:
+        p = os.path.join(ROOT, "js", "i18n-fr-%s.js" % n)
+        h = hashlib.sha1(io.open(p, "rb").read()).hexdigest()[:8]
+        parts.append('%s:"%s"' % (n, h))
+    line = "var FRVER = {" + ",".join(parts) + "}"
+    sp = os.path.join(ROOT, "js", "site.js")
+    s = io.open(sp, encoding="utf-8").read()
+    m = re.search(r"var FRVER = \{[^}]*\}", s)
+    if not m:
+        raise SystemExit("split_fr: the FRVER table in js/site.js could not be found")
+    if m.group(0) == line:
+        print("  FRVER in site.js already current")
+    else:
+        io.open(sp, "w", encoding="utf-8").write(s.replace(m.group(0), line, 1))
+        print("  FRVER in site.js restamped")
+
 
 main()
