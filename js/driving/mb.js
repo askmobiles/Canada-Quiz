@@ -597,3 +597,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"mbx1", sec:"rules",
+  en:{ q:"What are the three stages of Manitoba's graduated licensing programme?",
+       a:["L, N and full","Class 5L, Class 5I and Class 5F","G1, G2 and G","Learner, probationary and regular"],
+       e:"Manitoba uses Class 5L (learner), Class 5I (intermediate) and Class 5F (full). Ontario uses G1, G2 and G; British Columbia uses L and N." },
+  fr:{ q:"Quelles sont les trois étapes du programme d'accès graduel à la conduite du Manitoba ?",
+       a:["L, N et complet","Classe 5L, classe 5I et classe 5F","G1, G2 et G","Apprenti, probatoire et régulier"],
+       e:"Le Manitoba utilise la classe 5L (apprenti), la classe 5I (intermédiaire) et la classe 5F (complète). L'Ontario emploie G1, G2 et G ; la Colombie-Britannique, L et N." },
+  c:1 },
+
+{ id:"mbx2", sec:"rules",
+  en:{ q:"How long must a Manitoba driver stay at zero alcohol?",
+       a:["Only while a learner","Until the intermediate stage ends","Until age 21","Through both new stages and the first 36 months of the full licence"],
+       e:"Manitoba is unusual: zero alcohol does not stop when you get your full Class 5F licence. It continues for the first 36 months of that stage, roughly five years from the day you start." },
+  fr:{ q:"Combien de temps un conducteur manitobain doit-il demeurer à zéro alcool ?",
+       a:["Seulement pendant le stade d'apprenti","Jusqu'à la fin du stade intermédiaire","Jusqu'à 21 ans","Pendant les deux stades de nouveau conducteur et les 36 premiers mois du permis complet"],
+       e:"Le Manitoba se distingue : le zéro alcool ne cesse pas à l'obtention du permis complet de classe 5F. Il se poursuit pendant les 36 premiers mois de ce stade, soit environ cinq ans depuis le début." },
+  c:3 },
+
+{ id:"mbx3", sec:"rules",
+  en:{ q:"How long must a Manitoba learner's supervising driver have held a full licence?",
+       a:["6 months","1 year","3 years","10 years"],
+       e:"The supervising driver must have held a full Class 5F for at least three years, must be the only front-seat passenger, and must be under .05." },
+  fr:{ q:"Depuis combien de temps l'accompagnateur d'un apprenti manitobain doit-il détenir un permis complet ?",
+       a:["6 mois","1 an","3 ans","10 ans"],
+       e:"L'accompagnateur doit détenir une classe 5F complète depuis au moins trois ans, être le seul passager avant et avoir un taux d'alcoolémie inférieur à 0,05." },
+  c:2 },
+
+{ id:"mbx4", sec:"rules",
+  en:{ q:"Between midnight and 5 a.m., how many passengers may a Manitoba intermediate driver carry alone?",
+       a:["None","One","Three","As many as there are seat belts"],
+       e:"Between midnight and 5 a.m. a Class 5I driver may carry only one passenger, unless a qualified supervising driver is in the front seat." },
+  fr:{ q:"Entre minuit et 5 h, combien de passagers un conducteur intermédiaire manitobain peut-il transporter seul ?",
+       a:["Aucun","Un","Trois","Autant qu'il y a de ceintures"],
+       e:"Entre minuit et 5 h, un conducteur de classe 5I ne peut transporter qu'un seul passager, sauf si un accompagnateur qualifié occupe le siège avant." },
+  c:1 },
+
+{ id:"mbx5", sec:"rules",
+  en:{ q:"What does Manitoba use instead of demerit points?",
+       a:["A warning letter system","A points bank","The Driver Safety Rating scale","Nothing at all"],
+       e:"Manitoba runs a Driver Safety Rating scale from +20 down to −20. Good driving moves you up and cuts your premium; convictions move you down." },
+  fr:{ q:"Qu'utilise le Manitoba à la place des points d'inaptitude ?",
+       a:["Un système de lettres d'avertissement","Une banque de points","L'échelle de la cote de sécurité du conducteur","Rien du tout"],
+       e:"Le Manitoba applique une cote de sécurité du conducteur allant de +20 à −20. Une bonne conduite vous fait monter et réduit votre prime ; les condamnations vous font descendre." },
+  c:2 },
+
+{ id:"mbx6", sec:"rules",
+  en:{ q:"What happens to a Manitoba driver caught using a hand-held phone?",
+       a:["A warning","A $200 fine only","3 demerit points only","A $672 fine and a 3-day licence suspension"],
+       e:"A first offence is $672 and an immediate three-day suspension, rising to seven days next time, plus a drop of five levels on the Driver Safety Rating." },
+  fr:{ q:"Qu'arrive-t-il à un conducteur manitobain surpris à utiliser un téléphone à main ?",
+       a:["Un avertissement","Une amende de 200 $ seulement","3 points d'inaptitude seulement","Une amende de 672 $ et une suspension de permis de 3 jours"],
+       e:"Une première infraction entraîne 672 $ et une suspension immédiate de trois jours, portée à sept jours la fois suivante, plus une baisse de cinq échelons de la cote de sécurité du conducteur." },
+  c:3 },
+
+{ id:"mbx7", sec:"rules",
+  en:{ q:"What is the default speed limit on a Manitoba rural highway with no sign?",
+       a:["90 km/h","80 km/h","100 km/h","110 km/h"],
+       e:"Manitoba's rural default is 90 km/h, and 50 km/h in a city or town. Saskatchewan's rural default next door is 80 km/h." },
+  fr:{ q:"Quelle est la limite de vitesse par défaut sur une route rurale manitobaine sans panneau ?",
+       a:["90 km/h","80 km/h","100 km/h","110 km/h"],
+       e:"La limite rurale par défaut au Manitoba est de 90 km/h, et de 50 km/h en ville ou en village. Chez sa voisine la Saskatchewan, la limite rurale par défaut est de 80 km/h." },
+  c:0 },
+
+{ id:"mbx8", sec:"rules",
+  en:{ q:"When are studded tires illegal in Manitoba?",
+       a:["All year","Between 30 April and 1 October","Only in Winnipeg","They are never illegal"],
+       e:"Studded tires may not be used between 30 April and 1 October. Winter tires themselves are not required by law in Manitoba." },
+  fr:{ q:"Quand les pneus cloutés sont-ils interdits au Manitoba ?",
+       a:["Toute l'année","Entre le 30 avril et le 1er octobre","Seulement à Winnipeg","Ils ne sont jamais interdits"],
+       e:"Les pneus cloutés ne peuvent être utilisés entre le 30 avril et le 1er octobre. Les pneus d'hiver eux-mêmes ne sont pas obligatoires par la loi au Manitoba." },
+  c:1 },
+
+{ id:"mbx9", sec:"rules",
+  en:{ q:"When may a child stop using a booster seat in Manitoba?",
+       a:["At age 5","At 18 kg","At 145 cm, 80 lb or age 9 — whichever comes first","At age 12"],
+       e:"A child may leave the booster on reaching 145 cm, or 80 lb, or age 9 — whichever happens first." },
+  fr:{ q:"Quand un enfant peut-il cesser d'utiliser un siège d'appoint au Manitoba ?",
+       a:["À 5 ans","À 18 kg","À 145 cm, 80 lb ou 9 ans, selon la première éventualité","À 12 ans"],
+       e:"Un enfant peut quitter le siège d'appoint dès qu'il atteint 145 cm, 80 lb ou 9 ans, selon la première éventualité." },
+  c:2 },
+
+{ id:"mbx10", sec:"rules",
+  en:{ q:"What is the speed limit in a Manitoba school zone where the regular limit is under 80 km/h?",
+       a:["30 km/h","40 km/h","50 km/h","60 km/h"],
+       e:"Where the regular limit is under 80 km/h a school zone is 30 km/h. Where it is 80 or more the school zone is 50 km/h. The hours are set by each municipality, so read the sign." },
+  fr:{ q:"Quelle est la limite de vitesse dans une zone scolaire manitobaine où la limite habituelle est inférieure à 80 km/h ?",
+       a:["30 km/h","40 km/h","50 km/h","60 km/h"],
+       e:"Là où la limite habituelle est inférieure à 80 km/h, la zone scolaire est à 30 km/h. Là où elle est de 80 km/h ou plus, la zone scolaire est à 50 km/h. Les heures sont fixées par chaque municipalité : lisez le panneau." },
+  c:0 }
+);

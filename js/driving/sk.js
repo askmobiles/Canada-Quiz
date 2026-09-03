@@ -532,3 +532,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"skx1", sec:"rules",
+  en:{ q:"How long must a Saskatchewan learner hold a Class 7 licence before moving on?",
+       a:["3 months","9 months","12 months","24 months"],
+       e:"The Class 7 learner stage lasts 9 months, then Novice 1 for 6 months and Novice 2 for 12 months before a full Class 5." },
+  fr:{ q:"Combien de temps un apprenti de la Saskatchewan doit-il détenir un permis de classe 7 avant de passer à l'étape suivante ?",
+       a:["3 mois","9 mois","12 mois","24 mois"],
+       e:"Le stade d'apprenti de classe 7 dure 9 mois, puis Novice 1 pendant 6 mois et Novice 2 pendant 12 mois avant la classe 5 complète." },
+  c:1 },
+
+{ id:"skx2", sec:"rules",
+  en:{ q:"Who must have zero alcohol in Saskatchewan, besides new drivers?",
+       a:["Drivers over 65","Only commercial drivers","Every driver aged 21 and under","Nobody else"],
+       e:"Zero tolerance for alcohol and drugs applies to new drivers and to every driver aged 21 and under, whatever licence they hold." },
+  fr:{ q:"Qui doit avoir zéro alcool en Saskatchewan, en plus des nouveaux conducteurs ?",
+       a:["Les conducteurs de plus de 65 ans","Seulement les conducteurs commerciaux","Tout conducteur de 21 ans ou moins","Personne d'autre"],
+       e:"La tolérance zéro pour l'alcool et les drogues s'applique aux nouveaux conducteurs et à tout conducteur de 21 ans ou moins, quel que soit son permis." },
+  c:2 },
+
+{ id:"skx3", sec:"rules",
+  en:{ q:"Between midnight and 5 a.m., who may ride with a Saskatchewan learner or Novice 1 driver?",
+       a:["Only immediate family members","Anybody, up to the number of seat belts","Nobody at all","Only other new drivers"],
+       e:"Between midnight and 5 a.m. every passenger must be an immediate family member. Saskatchewan restricts who is in the car rather than banning night driving outright." },
+  fr:{ q:"Entre minuit et 5 h, qui peut prendre place avec un apprenti ou un conducteur Novice 1 de la Saskatchewan ?",
+       a:["Seulement des membres de la famille immédiate","N'importe qui, jusqu'au nombre de ceintures","Personne du tout","Seulement d'autres nouveaux conducteurs"],
+       e:"Entre minuit et 5 h, chaque passager doit être un membre de la famille immédiate. La Saskatchewan limite qui se trouve dans le véhicule plutôt que d'interdire carrément la conduite de nuit." },
+  c:0 },
+
+{ id:"skx4", sec:"rules",
+  en:{ q:"How many non-family passengers may a Saskatchewan Novice 1 driver carry?",
+       a:["None","One","Three","As many as there are seat belts"],
+       e:"A Novice 1 driver may carry one passenger who is not immediate family. Other passengers must be immediate family, up to the number of seat belts." },
+  fr:{ q:"Combien de passagers hors de la famille un conducteur Novice 1 de la Saskatchewan peut-il transporter ?",
+       a:["Aucun","Un","Trois","Autant qu'il y a de ceintures"],
+       e:"Un conducteur Novice 1 peut transporter un passager qui n'est pas de la famille immédiate. Les autres passagers doivent être de la famille immédiate, jusqu'au nombre de ceintures." },
+  c:1 },
+
+{ id:"skx5", sec:"rules",
+  en:{ q:"Which phones may a Saskatchewan learner or novice driver use?",
+       a:["Hands-free only","Any phone at a red light","A phone used for navigation","None — hand-held and hands-free are both banned"],
+       e:"Saskatchewan learners and novices may not use a cellphone at all, hand-held or hands-free. Only British Columbia is as strict with new drivers." },
+  fr:{ q:"Quels téléphones un apprenti ou un conducteur novice de la Saskatchewan peut-il utiliser ?",
+       a:["Mains libres seulement","N'importe quel téléphone à un feu rouge","Un téléphone servant à la navigation","Aucun : le téléphone à main et le mains libres sont tous deux interdits"],
+       e:"En Saskatchewan, les apprentis et les novices ne peuvent utiliser aucun téléphone cellulaire, à main ou mains libres. Seule la Colombie-Britannique est aussi stricte avec les nouveaux conducteurs." },
+  c:3 },
+
+{ id:"skx6", sec:"rules",
+  en:{ q:"What does a first distracted driving ticket cost in Saskatchewan?",
+       a:["$150","$280","$580 and 4 demerit points","$1,400"],
+       e:"A first offence is $580 and 4 demerit points. A second within twelve months rises to $1,400 and the vehicle is seized for seven days." },
+  fr:{ q:"Combien coûte une première contravention pour conduite distraite en Saskatchewan ?",
+       a:["150 $","280 $","580 $ et 4 points d'inaptitude","1 400 $"],
+       e:"Une première infraction coûte 580 $ et 4 points d'inaptitude. Une deuxième dans les douze mois grimpe à 1 400 $ et le véhicule est saisi pendant sept jours." },
+  c:2 },
+
+{ id:"skx7", sec:"rules",
+  en:{ q:"What kind of vehicle may a Saskatchewan learner or Novice 1 driver not drive?",
+       a:["A pickup truck","A right-hand-drive vehicle","A vehicle with a trailer hitch","A two-door car"],
+       e:"Saskatchewan does not let a learner or Novice 1 driver operate a right-hand-drive vehicle. No neighbouring province has this rule." },
+  fr:{ q:"Quel type de véhicule un apprenti ou un conducteur Novice 1 de la Saskatchewan ne peut-il pas conduire ?",
+       a:["Une camionnette","Un véhicule à conduite à droite","Un véhicule muni d'un attelage","Une voiture à deux portes"],
+       e:"La Saskatchewan interdit à un apprenti ou à un conducteur Novice 1 de conduire un véhicule à conduite à droite. Aucune province voisine n'a cette règle." },
+  c:1 },
+
+{ id:"skx8", sec:"rules",
+  en:{ q:"What must a Saskatchewan learner's supervising driver hold?",
+       a:["A Class 5 held at least 12 months in the last 3 years","Any valid licence","A commercial licence","A licence held for 10 years"],
+       e:"The supervising driver must hold a valid Class 5, held for at least 12 months in the last three years, and must sit in the front passenger seat at all hours." },
+  fr:{ q:"Que doit détenir le conducteur accompagnateur d'un apprenti en Saskatchewan ?",
+       a:["Une classe 5 détenue au moins 12 mois au cours des 3 dernières années","N'importe quel permis valide","Un permis commercial","Un permis détenu depuis 10 ans"],
+       e:"L'accompagnateur doit détenir une classe 5 valide, détenue au moins 12 mois au cours des trois dernières années, et s'asseoir sur le siège du passager avant en tout temps." },
+  c:0 },
+
+{ id:"skx9", sec:"rules",
+  en:{ q:"What is the default speed limit on a Saskatchewan rural road with no posted sign?",
+       a:["60 km/h","80 km/h","100 km/h","110 km/h"],
+       e:"Where no sign is posted on a rural road the limit is 80 km/h. In towns and cities the limit is set locally, so watch for the sign at the edge of the community." },
+  fr:{ q:"Quelle est la limite de vitesse par défaut sur une route rurale de la Saskatchewan sans panneau ?",
+       a:["60 km/h","80 km/h","100 km/h","110 km/h"],
+       e:"Là où aucun panneau n'est affiché sur une route rurale, la limite est de 80 km/h. Dans les villes et villages, la limite est fixée localement : surveillez le panneau à l'entrée de la localité." },
+  c:1 },
+
+{ id:"skx10", sec:"rules",
+  en:{ q:"Until roughly what age must a child in Saskatchewan use a car seat or booster?",
+       a:["Under 3","Under 5","Under 7","Under 12"],
+       e:"Children under seven must ride in an approved car seat or booster sized to them. A child may move to the seat belt alone once over 36 kg." },
+  fr:{ q:"Jusqu'à quel âge environ un enfant doit-il utiliser un siège d'auto ou un siège d'appoint en Saskatchewan ?",
+       a:["Moins de 3 ans","Moins de 5 ans","Moins de 7 ans","Moins de 12 ans"],
+       e:"Les enfants de moins de sept ans doivent prendre place dans un siège d'auto ou un siège d'appoint approuvé et adapté. Un enfant peut passer à la ceinture seule une fois qu'il dépasse 36 kg." },
+  c:2 }
+);

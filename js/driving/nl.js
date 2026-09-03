@@ -541,3 +541,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"nlx1", sec:"rules",
+  en:{ q:"Who must be at zero blood alcohol when a Newfoundland and Labrador learner drives?",
+       a:["Only the learner","The learner AND the accompanying driver","Only the accompanying driver","Neither, if it is daytime"],
+       e:"Both the novice driver and the accompanying driver must be at zero. Prince Edward Island allows its supervisor up to 0.05; here it is zero for both." },
+  fr:{ q:"Qui doit afficher un taux d'alcoolémie nul lorsqu'un apprenti conduit à Terre-Neuve-et-Labrador ?",
+       a:["Seulement l'apprenti","L'apprenti ET le conducteur accompagnateur","Seulement l'accompagnateur","Ni l'un ni l'autre, s'il fait jour"],
+       e:"Le conducteur novice et l'accompagnateur doivent tous deux être à zéro. L'Île-du-Prince-Édouard permet à son accompagnateur jusqu'à 0,05 ; ici, c'est zéro pour les deux." },
+  c:1 },
+
+{ id:"nlx2", sec:"rules",
+  en:{ q:"What must a Newfoundland and Labrador new driver display on the vehicle?",
+       a:["Nothing","A yellow decal","A NOVICE DRIVER sign on the rear, letters at least 5 cm high","A flag on the aerial"],
+       e:"The sign goes on the rear of the vehicle, black on white, with letters at least five centimetres high. The size is set in the rules, not left to the driver." },
+  fr:{ q:"Que doit afficher sur son véhicule un nouveau conducteur de Terre-Neuve-et-Labrador ?",
+       a:["Rien","Un autocollant jaune","Un panneau « NOVICE DRIVER » à l'arrière, avec des lettres d'au moins 5 cm","Un fanion sur l'antenne"],
+       e:"Le panneau se place à l'arrière du véhicule, en noir sur blanc, avec des lettres d'au moins cinq centimètres. La taille est fixée par les règles, et non laissée au conducteur." },
+  c:2 },
+
+{ id:"nlx3", sec:"rules",
+  en:{ q:"Who may drive between midnight and 5 a.m. at Level II in Newfoundland and Labrador?",
+       a:["Anyone at Level II","Only drivers over 21","Nobody at all","Only with an accompanying driver, or with a work exemption"],
+       e:"Level II night driving needs a qualified accompanying driver or a work exemption with proof — and unlike New Brunswick and Prince Edward Island, the rule does not stop at 21. A 45-year-old new driver still needs one." },
+  fr:{ q:"Qui peut conduire entre minuit et 5 h au niveau II à Terre-Neuve-et-Labrador ?",
+       a:["Toute personne au niveau II","Seulement les conducteurs de plus de 21 ans","Personne du tout","Seulement avec un accompagnateur, ou avec une exemption pour le travail"],
+       e:"La conduite de nuit au niveau II exige un accompagnateur qualifié ou une exemption pour le travail avec preuve et, contrairement au Nouveau-Brunswick et à l'Île-du-Prince-Édouard, la règle ne cesse pas à 21 ans. Un nouveau conducteur de 45 ans en a encore besoin." },
+  c:3 },
+
+{ id:"nlx4", sec:"rules",
+  en:{ q:"How many demerit points suspend a Newfoundland and Labrador novice driver?",
+       a:["4 in one year","6 in one year","12 in one year","12 in two years"],
+       e:"A novice is suspended at 6 points in a single year. A fully licensed driver has 12 points over two years." },
+  fr:{ q:"Combien de points d'inaptitude entraînent la suspension d'un conducteur novice à Terre-Neuve-et-Labrador ?",
+       a:["4 en un an","6 en un an","12 en un an","12 en deux ans"],
+       e:"Un novice est suspendu à 6 points en une seule année. Un conducteur pleinement titulaire dispose de 12 points sur deux ans." },
+  c:1 },
+
+{ id:"nlx5", sec:"rules",
+  en:{ q:"What is the speed limit through a Newfoundland and Labrador community when nothing is posted?",
+       a:["50 km/h","40 km/h","60 km/h","80 km/h"],
+       e:"Through a community the limit is 50 km/h unless a sign says otherwise. School zones run between 30 and 50 km/h depending on the location." },
+  fr:{ q:"Quelle est la limite de vitesse dans une localité de Terre-Neuve-et-Labrador lorsque rien n'est affiché ?",
+       a:["50 km/h","40 km/h","60 km/h","80 km/h"],
+       e:"Dans une localité, la limite est de 50 km/h sauf indication contraire. Les zones scolaires varient de 30 à 50 km/h selon l'endroit." },
+  c:0 },
+
+{ id:"nlx6", sec:"rules",
+  en:{ q:"When are studded tires normally allowed in Newfoundland and Labrador?",
+       a:["All year","15 October to 30 April","1 November to 30 April, though the date is often extended","They are banned"],
+       e:"The normal window is 1 November to 30 April, but the province has extended the end date by advisory in recent springs. Check before you take them off." },
+  fr:{ q:"Quand les pneus cloutés sont-ils normalement permis à Terre-Neuve-et-Labrador ?",
+       a:["Toute l'année","Du 15 octobre au 30 avril","Du 1er novembre au 30 avril, bien que la date soit souvent prolongée","Ils sont interdits"],
+       e:"La période normale va du 1er novembre au 30 avril, mais la province a prolongé la date de fin par avis au cours des derniers printemps. Vérifiez avant de les enlever." },
+  c:2 },
+
+{ id:"nlx7", sec:"rules",
+  en:{ q:"How much experience must a Newfoundland and Labrador accompanying driver have?",
+       a:["Two years","Four years","Six months","Ten years"],
+       e:"The accompanying driver needs at least four years of driving experience, must sit in the front seat beside the novice, and must be at zero alcohol." },
+  fr:{ q:"Quelle expérience l'accompagnateur doit-il avoir à Terre-Neuve-et-Labrador ?",
+       a:["Deux ans","Quatre ans","Six mois","Dix ans"],
+       e:"L'accompagnateur doit avoir au moins quatre ans d'expérience de conduite, s'asseoir à l'avant à côté du novice et être à zéro alcool." },
+  c:1 },
+
+{ id:"nlx8", sec:"rules",
+  en:{ q:"What happens to a Newfoundland and Labrador novice who breaks the zero alcohol rule?",
+       a:["A warning","A fine only","A suspension and a restart of that level","Nothing until a second offence"],
+       e:"Suspensions run two months, then four, then six, and the driver must restart the level and complete an alcohol education programme." },
+  fr:{ q:"Qu'arrive-t-il à un novice de Terre-Neuve-et-Labrador qui enfreint la règle du zéro alcool ?",
+       a:["Un avertissement","Une amende seulement","Une suspension et le recommencement de ce niveau","Rien avant une deuxième infraction"],
+       e:"Les suspensions sont de deux mois, puis de quatre, puis de six, et le conducteur doit recommencer le niveau et suivre un programme d'éducation sur l'alcool." },
+  c:2 },
+
+{ id:"nlx9", sec:"rules",
+  en:{ q:"Who may ride with a Newfoundland and Labrador Level I driver?",
+       a:["Only the accompanying driver","Up to three passengers","Anyone, up to the seat belts","Only immediate family"],
+       e:"At Level I nobody but the accompanying driver may be in the car. At Level II passengers are limited only by the number of seat belts." },
+  fr:{ q:"Qui peut prendre place avec un conducteur de niveau I à Terre-Neuve-et-Labrador ?",
+       a:["Seulement le conducteur accompagnateur","Jusqu'à trois passagers","N'importe qui, jusqu'au nombre de ceintures","Seulement la famille immédiate"],
+       e:"Au niveau I, personne d'autre que l'accompagnateur ne peut se trouver dans le véhicule. Au niveau II, les passagers ne sont limités que par le nombre de ceintures." },
+  c:0 },
+
+{ id:"nlx10", sec:"rules",
+  en:{ q:"How long is the Newfoundland and Labrador Level I stage with approved driver education?",
+       a:["6 months","8 months","12 months","18 months"],
+       e:"Level I normally lasts 12 months, shortened to 8 with approved driver education. Level II then lasts a further 12 months." },
+  fr:{ q:"Combien de temps dure le niveau I à Terre-Neuve-et-Labrador avec une formation reconnue ?",
+       a:["6 mois","8 mois","12 mois","18 mois"],
+       e:"Le niveau I dure normalement 12 mois, réduit à 8 avec une formation reconnue. Le niveau II dure ensuite 12 mois de plus." },
+  c:1 }
+);

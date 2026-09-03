@@ -54,7 +54,12 @@
   <details class="howto"><summary>📖 How to play</summary><p>This works like the real test: 20 questions, a 45-minute timer, and you pass with 15 correct. Tap an answer to lock it in and see the explanation, then move to the next question. At the end you'll see PASS or TRY AGAIN, and you can review the questions you missed.</p></details>
 
     <p><span class="pill">20 questions</span> &nbsp; <span class="pill">45 minutes</span> &nbsp; <span class="pill">Pass = 15/20</span></p>
-    <p style="margin-top:18px">
+
+    <p style="margin-top:18px;margin-bottom:6px">
+      <label for="chapter" style="display:block;margin-bottom:6px">Practise one chapter, or the whole guide</label>
+      <select id="chapter" style="font:inherit;padding:10px 12px;border-radius:10px;min-height:44px;max-width:100%"></select>
+    </p>
+    <p style="margin-top:14px">
       <button class="btn btn-lg" onclick="startExam()">Start Practice Test</button>
     </p>
     <div class="disclaimer" style="text-align:left">
@@ -1801,11 +1806,67 @@
   </div>
 </footer>
 
-<script src="js/citizenship-questions.js?v=3bd70f66" defer></script>
+<script src="js/citizenship-questions.js?v=66c4c31e" defer></script>
 <script>
 const TOTAL = 20;          // questions per exam
 const PASS_MARK = 15;      // need 15 to pass
 const TIME_LIMIT = 45*60;  // the real test allows 45 minutes, so this does too
+
+/* Chapter practice.
+   The bank has always carried a Discover Canada chapter on every question, and
+   nothing on the page ever used it. A learner who keeps failing on government
+   could only keep drawing twenty random questions and hoping. The picker below
+   lets them drill one chapter instead.
+
+   The default stays the real thing: all chapters, twenty questions, pass at
+   fifteen. Choosing a chapter is study practice, so the pass mark follows the
+   same 75% as the real test rather than staying at a fixed fifteen — otherwise
+   a seventeen-question chapter would be marked against a mark it cannot reach.
+
+   The French names are written here beside the English, the same way gk-quiz.html
+   does it. The counts are read from the bank at load, so they can never go stale. */
+var FR = /\/fr\//.test(location.pathname);
+function T(en, fr){ return FR ? fr : en; }
+
+var CHAP_FR = {
+  "About the Test": "Au sujet de l'examen",
+  "Rights and Responsibilities": "Droits et responsabilités",
+  "Who We Are": "Qui nous sommes",
+  "Canada's History": "L'histoire du Canada",
+  "Canada's Regions": "Les régions du Canada",
+  "How Canadians Govern Themselves": "Comment les Canadiens se gouvernent",
+  "Canadian Symbols": "Les symboles canadiens",
+  "Federal Elections": "Les élections fédérales",
+  "Canada's Economy": "L'économie du Canada",
+  "Modern Canada": "Le Canada moderne",
+  "The Justice System": "Le système de justice"
+};
+
+function fillChapters(){
+  var sel = document.getElementById('chapter');
+  if(!sel || typeof CITIZENSHIP_QUESTIONS === 'undefined') return;
+  var count = {};
+  for(var i=0;i<CITIZENSHIP_QUESTIONS.length;i++){
+    var c = CITIZENSHIP_QUESTIONS[i].chapter;
+    if(c) count[c] = (count[c]||0) + 1;
+  }
+  var names = Object.keys(count).sort();
+  sel.innerHTML = '';
+  var all = document.createElement('option');
+  all.value = '';
+  all.textContent = T('All chapters — the full practice test',
+                      'Tous les chapitres : l\'examen complet')
+                    + ' (' + CITIZENSHIP_QUESTIONS.length + ')';
+  sel.appendChild(all);
+  for(var k=0;k<names.length;k++){
+    var o = document.createElement('option');
+    o.value = names[k];
+    o.textContent = (CHAP_FR[names[k]] && FR ? CHAP_FR[names[k]] : names[k])
+                    + ' (' + count[names[k]] + ')';
+    sel.appendChild(o);
+  }
+}
+document.addEventListener('DOMContentLoaded', fillChapters);
 
 let examQuestions = [];
 let current = 0;
@@ -1842,7 +1903,20 @@ function startExam(){
   /* the written-out answers are hidden while a test is in progress —
      otherwise you could scroll past the question and read the key */
   document.body.classList.add("quiz-live");
-  examQuestions = pickFresh(CITIZENSHIP_QUESTIONS, Math.min(TOTAL, CITIZENSHIP_QUESTIONS.length), 'cq_cit_seen');
+
+  /* Which chapter, if any. An unknown value falls back to the whole bank, so a
+     stale saved choice or a hand-edited URL can never empty the test. */
+  var sel = document.getElementById('chapter');
+  var chap = sel ? sel.value : '';
+  var pool = CITIZENSHIP_QUESTIONS;
+  if(chap){
+    var only = CITIZENSHIP_QUESTIONS.filter(function(q){ return q.chapter === chap; });
+    if(only.length >= 5) pool = only;
+  }
+  /* Each chapter remembers its own "already seen" list, so drilling one chapter
+     does not use up the questions of the full test. */
+  examQuestions = pickFresh(pool, Math.min(TOTAL, pool.length),
+                            'cq_cit_seen' + (chap ? '_' + chap.replace(/\W+/g,'') : ''));
   current = 0; score = 0; wrongList = []; answered = false;
   timeLeft = TIME_LIMIT;
 
@@ -1941,7 +2015,14 @@ function finishExam(timeUp){
   document.getElementById('quiz-screen').style.display = 'none';
   document.getElementById('result-screen').style.display = 'block';
 
-  const passed = score >= PASS_MARK;
+  /* The real test is 15 out of 20, which is 75%. A chapter run can be shorter
+     than twenty, so hold the same 75% rather than a fixed fifteen — a
+     seventeen-question chapter marked against 15 would be unfairly harsh, and a
+     ten-question one would be impossible. */
+  const needed = (examQuestions.length === TOTAL)
+                 ? PASS_MARK
+                 : Math.ceil(examQuestions.length * 0.75);
+  const passed = score >= needed;
   document.getElementById('result-icon').textContent = passed ? '✅' : '❌';
   const word = document.getElementById('result-word');
   word.textContent = passed ? 'PASS' : 'TRY AGAIN';
@@ -1952,7 +2033,7 @@ function finishExam(timeUp){
   if(timeUp) msg = '⏰ Time ran out. ';
   msg += passed
     ? 'Great job! You would pass with this score. Keep practising to stay sharp.'
-    : 'You need ' + PASS_MARK + ' correct to pass. Review your mistakes below and try again — you can do it!';
+    : 'You need ' + needed + ' correct to pass. Review your mistakes below and try again — you can do it!';
   document.getElementById('result-msg').textContent = msg;
 
   const review = document.getElementById('review');
@@ -1974,7 +2055,7 @@ function finishExam(timeUp){
 }
 </script>
   <script src="js/game-fullscreen.js?v=35da7b56" defer></script>
-  <script src="js/site.js?v=008e1a69"></script>
+  <script src="js/site.js?v=5eea2181"></script>
   <script src="js/analytics.js?v=065edc09"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
   <script src="js/pwa.js?v=7d7e0b9d" defer></script>

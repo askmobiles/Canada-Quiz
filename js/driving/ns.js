@@ -531,3 +531,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"nsx1", sec:"rules",
+  en:{ q:"What are the three stages of the Nova Scotia graduated programme?",
+       a:["L, N and full","G1, G2 and G","Learner, Newly Licensed and Restricted Individual","Level 1 and Level 2 only"],
+       e:"Nova Scotia has an extra stage most provinces do not: after Newly Licensed comes Restricted Individual, which still carries conditions." },
+  fr:{ q:"Quelles sont les trois étapes du programme d'accès graduel de la Nouvelle-Écosse ?",
+       a:["L, N et complet","G1, G2 et G","Apprenti, nouveau titulaire et conducteur restreint","Niveau 1 et niveau 2 seulement"],
+       e:"La Nouvelle-Écosse a une étape de plus que la plupart des provinces : après le stade de nouveau titulaire vient celui de conducteur restreint, qui comporte encore des conditions." },
+  c:2 },
+
+{ id:"nsx2", sec:"rules",
+  en:{ q:"Who must have zero alcohol in Nova Scotia?",
+       a:["Learners only","Drivers under 19","Learners and newly licensed drivers","Learners, newly licensed AND restricted drivers"],
+       e:"Zero alcohol runs right through all three stages, including the Restricted Individual stage that comes after the newly licensed years. Any detectable alcohol means a six-month suspension." },
+  fr:{ q:"Qui doit avoir zéro alcool en Nouvelle-Écosse ?",
+       a:["Les apprentis seulement","Les conducteurs de moins de 19 ans","Les apprentis et les nouveaux titulaires","Les apprentis, les nouveaux titulaires ET les conducteurs restreints"],
+       e:"Le zéro alcool s'applique aux trois étapes, y compris celle du conducteur restreint qui suit les années de nouveau titulaire. Tout alcool détectable entraîne une suspension de six mois." },
+  c:3 },
+
+{ id:"nsx3", sec:"rules",
+  en:{ q:"How many demerit points suspend a Nova Scotia learner?",
+       a:["2","4","6","10"],
+       e:"A learner is suspended at 4 points, a newly licensed driver at 6, and a fully licensed driver at 10 — each for six months." },
+  fr:{ q:"Combien de points d'inaptitude entraînent la suspension d'un apprenti en Nouvelle-Écosse ?",
+       a:["2","4","6","10"],
+       e:"Un apprenti est suspendu à 4 points, un nouveau titulaire à 6 et un conducteur pleinement titulaire à 10, chacun pour six mois." },
+  c:1 },
+
+{ id:"nsx4", sec:"rules",
+  en:{ q:"Why is one phone ticket so serious for a Nova Scotia learner?",
+       a:["It doubles the insurance premium","It adds a year to the learner stage","It carries a $1,000 fine","It carries 4 demerit points, and a learner is suspended at 4"],
+       e:"A hand-held phone offence is 4 demerit points, and a Nova Scotia learner is suspended at 4. One ticket ends the learner's licence outright." },
+  fr:{ q:"Pourquoi une seule contravention pour téléphone est-elle si grave pour un apprenti en Nouvelle-Écosse ?",
+       a:["Elle double la prime d'assurance","Elle ajoute un an au stade d'apprenti","Elle entraîne une amende de 1 000 $","Elle vaut 4 points d'inaptitude, et un apprenti est suspendu à 4"],
+       e:"Une infraction de téléphone à main vaut 4 points d'inaptitude, et un apprenti néo-écossais est suspendu à 4. Une seule contravention met fin au permis d'apprenti." },
+  c:3 },
+
+{ id:"nsx5", sec:"rules",
+  en:{ q:"What is the speed limit on any Nova Scotia highway with no posted sign?",
+       a:["80 km/h","90 km/h","100 km/h","50 km/h"],
+       e:"Unless otherwise posted the maximum on any Nova Scotia highway is 80 km/h. In business and residential districts it is 50 km/h." },
+  fr:{ q:"Quelle est la limite de vitesse sur une route de la Nouvelle-Écosse sans panneau affiché ?",
+       a:["80 km/h","90 km/h","100 km/h","50 km/h"],
+       e:"Sauf indication contraire, le maximum sur toute route de la Nouvelle-Écosse est de 80 km/h. Dans les quartiers commerciaux et résidentiels, il est de 50 km/h." },
+  c:0 },
+
+{ id:"nsx6", sec:"rules",
+  en:{ q:"When does a Nova Scotia school zone speed limit apply?",
+       a:["School mornings only","8 a.m. to 5 p.m. on school days","Whenever children are present, any time of day, all year","Only in September"],
+       e:"Nova Scotia ties the school zone to children being present rather than to clock hours, so it applies any time of day, 365 days a year." },
+  fr:{ q:"Quand la limite de vitesse d'une zone scolaire s'applique-t-elle en Nouvelle-Écosse ?",
+       a:["Seulement les matins d'école","De 8 h à 17 h les jours d'école","Chaque fois que des enfants sont présents, à toute heure, toute l'année","Seulement en septembre"],
+       e:"La Nouvelle-Écosse lie la zone scolaire à la présence d'enfants plutôt qu'à des heures précises : elle s'applique donc à toute heure, 365 jours par année." },
+  c:2 },
+
+{ id:"nsx7", sec:"rules",
+  en:{ q:"Who may ride in the front with a Nova Scotia newly licensed driver?",
+       a:["Nobody","One passenger","Two passengers","Anyone, if belted"],
+       e:"Only one passenger may sit in the front. Rear passengers are limited to the number of working seat belts." },
+  fr:{ q:"Qui peut prendre place à l'avant avec un nouveau titulaire de permis en Nouvelle-Écosse ?",
+       a:["Personne","Un passager","Deux passagers","N'importe qui, s'il est attaché"],
+       e:"Un seul passager peut s'asseoir à l'avant. Les passagers arrière sont limités au nombre de ceintures fonctionnelles." },
+  c:1 },
+
+{ id:"nsx8", sec:"rules",
+  en:{ q:"What must a Nova Scotia newly licensed driver do to reach the next stage?",
+       a:["Simply wait two years","Pass a written test","Complete a driver improvement course","Buy winter tires"],
+       e:"Waiting is not enough. Nova Scotia requires a driver improvement course — a second course after the one many take to shorten the learner stage." },
+  fr:{ q:"Que doit faire un nouveau titulaire de permis de la Nouvelle-Écosse pour passer à l'étape suivante ?",
+       a:["Simplement attendre deux ans","Réussir un examen écrit","Suivre un cours de perfectionnement de la conduite","Acheter des pneus d'hiver"],
+       e:"Attendre ne suffit pas. La Nouvelle-Écosse exige un cours de perfectionnement, soit un deuxième cours après celui que beaucoup suivent pour raccourcir le stade d'apprenti." },
+  c:2 },
+
+{ id:"nsx9", sec:"rules",
+  en:{ q:"When are studded tires allowed in Nova Scotia?",
+       a:["All year","15 October to 30 April","1 November to 1 May","They are banned"],
+       e:"Studded tires may be used from 15 October to 30 April. Winter tires are recommended but not required by Nova Scotia law." },
+  fr:{ q:"Quand les pneus cloutés sont-ils permis en Nouvelle-Écosse ?",
+       a:["Toute l'année","Du 15 octobre au 30 avril","Du 1er novembre au 1er mai","Ils sont interdits"],
+       e:"Les pneus cloutés peuvent être utilisés du 15 octobre au 30 avril. Les pneus d'hiver sont recommandés, mais non exigés par la loi néo-écossaise." },
+  c:1 },
+
+{ id:"nsx10", sec:"rules",
+  en:{ q:"When may a Nova Scotia newly licensed driver not drive?",
+       a:["Midnight to 5 a.m., unless supervised or exempt for work","10 p.m. to 6 a.m.","There is no restriction","Only on holidays"],
+       e:"The midnight to 5 a.m. restriction can be lifted by a supervising driver in the front seat or by a written employment exemption. Unlike some provinces it is not limited by age." },
+  fr:{ q:"Quand un nouveau titulaire de permis de la Nouvelle-Écosse ne peut-il pas conduire ?",
+       a:["De minuit à 5 h, sauf s'il est accompagné ou exempté pour le travail","De 22 h à 6 h","Il n'y a aucune restriction","Seulement les jours fériés"],
+       e:"La restriction de minuit à 5 h peut être levée par un accompagnateur assis à l'avant ou par une exemption écrite liée à l'emploi. Contrairement à certaines provinces, elle n'est pas limitée selon l'âge." },
+  c:0 }
+);

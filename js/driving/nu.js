@@ -556,3 +556,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"nux1", sec:"rules",
+  en:{ q:"How old must you be to get a Class 7 learner's licence in Nunavut?",
+       a:["14","15","16","18"],
+       e:"A Class 7 learner's licence is issued at 15, and a full Class 5 or 6 at 16." },
+  fr:{ q:"Quel âge faut-il avoir pour obtenir un permis d'apprenti de classe 7 au Nunavut ?",
+       a:["14 ans","15 ans","16 ans","18 ans"],
+       e:"Le permis d'apprenti de classe 7 est délivré à 15 ans, et le permis complet de classe 5 ou 6 à 16 ans." },
+  c:1 },
+
+{ id:"nux2", sec:"rules",
+  en:{ q:"How long must a first-time Nunavut driver practise before taking the driving exam?",
+       a:["Four weeks with a learner's permit","Six months","One year","Two years"],
+       e:"Nunavut requires four weeks of practice driving with a learner's permit. Yukon asks six months and the Northwest Territories a full year." },
+  fr:{ q:"Combien de temps un nouveau conducteur du Nunavut doit-il pratiquer avant de passer l'examen de conduite ?",
+       a:["Quatre semaines avec un permis d'apprenti","Six mois","Un an","Deux ans"],
+       e:"Le Nunavut exige quatre semaines de pratique avec un permis d'apprenti. Le Yukon en demande six mois et les Territoires du Nord-Ouest, une année complète." },
+  c:0 },
+
+{ id:"nux3", sec:"rules",
+  en:{ q:"What is the basic speed limit inside a Nunavut community?",
+       a:["50 km/h or as posted","40 km/h","60 km/h","80 km/h"],
+       e:"Inside communities the basic limit is 50 km/h or as posted. Outside communities it is 90 km/h." },
+  fr:{ q:"Quelle est la limite de vitesse de base dans une localité du Nunavut ?",
+       a:["50 km/h ou selon l'affichage","40 km/h","60 km/h","80 km/h"],
+       e:"À l'intérieur des localités, la limite de base est de 50 km/h ou selon l'affichage. À l'extérieur des localités, elle est de 90 km/h." },
+  c:0 },
+
+{ id:"nux4", sec:"rules",
+  en:{ q:"What is the speed limit for trucks outside Nunavut communities?",
+       a:["90 km/h, the same as cars","100 km/h","80 km/h, day or night","There is no separate limit"],
+       e:"Nunavut sets a separate truck limit of 80 km/h outside cities and towns, day or night, where cars may do 90." },
+  fr:{ q:"Quelle est la limite de vitesse pour les camions à l'extérieur des localités du Nunavut ?",
+       a:["90 km/h, comme les voitures","100 km/h","80 km/h, de jour comme de nuit","Il n'y a pas de limite distincte"],
+       e:"Le Nunavut fixe une limite distincte de 80 km/h pour les camions à l'extérieur des villes et villages, de jour comme de nuit, là où les voitures peuvent rouler à 90." },
+  c:2 },
+
+{ id:"nux5", sec:"rules",
+  en:{ q:"What does a Nunavut Restricted Driver's Licence allow?",
+       a:["Driving only in summer","Driving only within Nunavut, or within 100 km of your home community","Driving only during daylight","Driving any vehicle anywhere in Canada"],
+       e:"Nunavut publishes a separate manual for this licence, which limits driving to within the territory or within 100 kilometres of the holder's home community. Nothing like it exists in Yukon or the Northwest Territories." },
+  fr:{ q:"Que permet un permis de conduire restreint du Nunavut ?",
+       a:["De conduire seulement l'été","De conduire seulement au Nunavut, ou à moins de 100 km de sa localité","De conduire seulement le jour","De conduire n'importe quel véhicule partout au Canada"],
+       e:"Le Nunavut publie un manuel distinct pour ce permis, qui limite la conduite au territoire ou à un rayon de 100 kilomètres de la localité du titulaire. Rien de tel n'existe au Yukon ni dans les Territoires du Nord-Ouest." },
+  c:1 },
+
+{ id:"nux6", sec:"rules",
+  en:{ q:"What is the first rule for driving on a loose gravel road in Nunavut?",
+       a:["Do not travel too fast","Use your high beams","Stay in the middle of the road","Brake hard on curves"],
+       e:"Speed is the danger on gravel: traction is poor, stones fly up, and dust hides what is ahead. The first rule is simply not to go too fast." },
+  fr:{ q:"Quelle est la première règle pour conduire sur une route de gravier meuble au Nunavut ?",
+       a:["Ne pas rouler trop vite","Utiliser les feux de route","Rester au milieu de la route","Freiner fort dans les courbes"],
+       e:"La vitesse est le danger sur le gravier : l'adhérence est faible, les cailloux volent et la poussière masque ce qui vient. La première règle est simplement de ne pas rouler trop vite." },
+  c:0 },
+
+{ id:"nux7", sec:"rules",
+  en:{ q:"What should you not do behind a vehicle raising a heavy dust cloud in Nunavut?",
+       a:["Slow down","Turn on your headlights","Try to pass it","Increase your following distance"],
+       e:"Do not try to pass a vehicle creating a heavy dust cloud. You cannot see what is coming the other way until you are already committed." },
+  fr:{ q:"Que ne devriez-vous pas faire derrière un véhicule soulevant un épais nuage de poussière au Nunavut ?",
+       a:["Ralentir","Allumer vos phares","Tenter de le dépasser","Augmenter votre distance de suivi"],
+       e:"N'essayez pas de dépasser un véhicule qui soulève un épais nuage de poussière. Vous ne voyez pas ce qui arrive en sens inverse avant d'être déjà engagé." },
+  c:2 },
+
+{ id:"nux8", sec:"rules",
+  en:{ q:"What should a Nunavut driver watch for when parking or backing up in a community?",
+       a:["Falling ice","Loose dogs around the vehicle","Low aircraft","Nothing in particular"],
+       e:"The driver's manual asks drivers to look out for dogs around the car when parking, backing up or driving through town, as well as for wildlife on the road." },
+  fr:{ q:"À quoi un conducteur du Nunavut doit-il faire attention en stationnant ou en reculant dans une localité ?",
+       a:["La chute de glace","Des chiens en liberté autour du véhicule","Des avions volant bas","Rien de particulier"],
+       e:"Le manuel du conducteur demande de surveiller les chiens autour du véhicule en stationnant, en reculant ou en circulant dans la localité, ainsi que la faune sur la route." },
+  c:1 },
+
+{ id:"nux9", sec:"rules",
+  en:{ q:"When may a Nunavut motorcycle learner not ride?",
+       a:["In the rain","On weekends","After dark, or where the limit is 70 km/h or more","There is no restriction"],
+       e:"A motorcycle learner may not ride in the dark, or in speed zones of 70 km/h or greater, and must have a Class 6 licence holder with them." },
+  fr:{ q:"Quand un apprenti motocycliste du Nunavut ne peut-il pas rouler ?",
+       a:["Sous la pluie","La fin de semaine","Après la tombée du jour, ou là où la limite est de 70 km/h ou plus","Il n'y a aucune restriction"],
+       e:"Un apprenti motocycliste ne peut pas rouler dans l'obscurité, ni dans les zones où la limite est de 70 km/h ou plus, et doit être accompagné d'un titulaire de permis de classe 6." },
+  c:2 },
+
+{ id:"nux10", sec:"rules",
+  en:{ q:"What is the legal blood alcohol limit for a fully licensed Nunavut driver?",
+       a:["0.08","0.05","Zero","0.10"],
+       e:"The Nunavut driver's manual states the limit as 0.08. As everywhere in Canada, the safest amount before driving is none." },
+  fr:{ q:"Quelle est la limite légale d'alcoolémie pour un conducteur pleinement titulaire au Nunavut ?",
+       a:["0,08","0,05","Zéro","0,10"],
+       e:"Le manuel du conducteur du Nunavut fixe la limite à 0,08. Comme partout au Canada, la quantité la plus sûre avant de conduire demeure zéro." },
+  c:0 }
+);

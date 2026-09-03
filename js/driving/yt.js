@@ -553,3 +553,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"ytx1", sec:"rules",
+  en:{ q:"How many stages does the Yukon graduated licensing programme have?",
+       a:["Two — learner and novice","Three","Four","None at all"],
+       e:"Yukon has two stages: a learner licence from age 15 for at least six months, then a novice licence from 16 for at least eighteen months. The Northwest Territories next door uses three stages." },
+  fr:{ q:"Combien d'étapes compte le programme d'accès graduel du Yukon ?",
+       a:["Deux : apprenti et novice","Trois","Quatre","Aucune"],
+       e:"Le Yukon compte deux étapes : un permis d'apprenti dès 15 ans pendant au moins six mois, puis un permis de novice dès 16 ans pendant au moins dix-huit mois. Les Territoires du Nord-Ouest voisins en comptent trois." },
+  c:0 },
+
+{ id:"ytx2", sec:"rules",
+  en:{ q:"How many passengers may a Yukon learner carry?",
+       a:["None","Two including the co-driver, or more if they are immediate family","Three","As many as there are seat belts"],
+       e:"The limit is two people including the co-driver, unless the extra passengers are immediate family members." },
+  fr:{ q:"Combien de passagers un apprenti du Yukon peut-il transporter ?",
+       a:["Aucun","Deux, y compris le co-conducteur, ou plus s'il s'agit de la famille immédiate","Trois","Autant qu'il y a de ceintures"],
+       e:"La limite est de deux personnes, y compris le co-conducteur, sauf si les passagers supplémentaires sont des membres de la famille immédiate." },
+  c:1 },
+
+{ id:"ytx3", sec:"rules",
+  en:{ q:"Between which hours may a Yukon learner drive?",
+       a:["Any time","Daylight only","5 a.m. to midnight","6 a.m. to 11 p.m."],
+       e:"A learner drives between 5 a.m. and midnight. A novice may drive at any hour, but needs a co-driver in the vehicle between midnight and 5 a.m." },
+  fr:{ q:"Entre quelles heures un apprenti du Yukon peut-il conduire ?",
+       a:["En tout temps","Seulement le jour","De 5 h à minuit","De 6 h à 23 h"],
+       e:"Un apprenti conduit entre 5 h et minuit. Un novice peut conduire à toute heure, mais doit avoir un co-conducteur dans le véhicule entre minuit et 5 h." },
+  c:2 },
+
+{ id:"ytx4", sec:"rules",
+  en:{ q:"Who must be free of alcohol and drugs when a Yukon learner drives?",
+       a:["Only the learner","The learner and the co-driver","Only the co-driver","Neither, below 0.05"],
+       e:"Zero tolerance applies to both the new driver and the co-driver. A co-driver who has been drinking is not a co-driver." },
+  fr:{ q:"Qui doit être exempt d'alcool et de drogue lorsqu'un apprenti conduit au Yukon ?",
+       a:["Seulement l'apprenti","L'apprenti et le co-conducteur","Seulement le co-conducteur","Ni l'un ni l'autre, sous 0,05"],
+       e:"La tolérance zéro s'applique tant au nouveau conducteur qu'au co-conducteur. Un co-conducteur qui a bu n'est pas un co-conducteur." },
+  c:1 },
+
+{ id:"ytx5", sec:"rules",
+  en:{ q:"How many demerit points suspend a Yukon driver in the graduated programme?",
+       a:["4","7","12","15"],
+       e:"A graduated driver is suspended at 7 points. Every other Yukon licence holder has 15." },
+  fr:{ q:"Combien de points d'inaptitude entraînent la suspension d'un conducteur du Yukon au programme gradué ?",
+       a:["4","7","12","15"],
+       e:"Un conducteur au programme gradué est suspendu à 7 points. Tout autre titulaire de permis du Yukon en a 15." },
+  c:1 },
+
+{ id:"ytx6", sec:"rules",
+  en:{ q:"What extra penalty does a Yukon graduated driver face for distracted driving?",
+       a:["Nothing extra","A doubled fine","A vehicle seizure","They must restart the programme and lose their earned days"],
+       e:"On top of the fine and 3 demerit points, a graduated driver restarts the programme and loses all the driving experience days already earned." },
+  fr:{ q:"Quelle sanction supplémentaire un conducteur gradué du Yukon subit-il pour conduite distraite ?",
+       a:["Rien de plus","Une amende doublée","Une saisie du véhicule","Il doit recommencer le programme et perdre les jours accumulés"],
+       e:"En plus de l'amende et des 3 points d'inaptitude, un conducteur gradué recommence le programme et perd tous les jours d'expérience déjà accumulés." },
+  c:3 },
+
+{ id:"ytx7", sec:"rules",
+  en:{ q:"What is the speed limit in a Yukon playground zone?",
+       a:["50 km/h during school hours","40 km/h","30 km/h, 24 hours a day","There is no special limit"],
+       e:"Playground zones are 30 km/h around the clock. Yukon school zones are 50 km/h between 8 a.m. and 4:30 p.m. on school days." },
+  fr:{ q:"Quelle est la limite de vitesse dans une zone de terrain de jeu au Yukon ?",
+       a:["50 km/h pendant les heures de classe","40 km/h","30 km/h, 24 heures sur 24","Il n'y a pas de limite spéciale"],
+       e:"Les zones de terrain de jeu sont à 30 km/h en tout temps. Les zones scolaires du Yukon sont à 50 km/h de 8 h à 16 h 30 les jours d'école." },
+  c:2 },
+
+{ id:"ytx8", sec:"rules",
+  en:{ q:"Why should you slow down and avoid passing on a permafrost-affected Yukon highway?",
+       a:["The road is closed to passing by law","Thawing ground leaves dips and waves in the road surface","Snow drifts hide the centre line","The road is always gravel"],
+       e:"Thawing permafrost makes the surface roll like a wave. Slow down, scan far ahead, and do not stop or pull over except in an emergency." },
+  fr:{ q:"Pourquoi ralentir et éviter de dépasser sur une route du Yukon touchée par le pergélisol ?",
+       a:["La loi y interdit le dépassement","Le dégel du sol crée des creux et des vagues dans la chaussée","La poudrerie cache la ligne centrale","La route est toujours en gravier"],
+       e:"Le dégel du pergélisol fait onduler la chaussée comme une vague. Ralentissez, regardez loin devant, et ne vous arrêtez pas sur l'accotement sauf en cas d'urgence." },
+  c:1 },
+
+{ id:"ytx9", sec:"rules",
+  en:{ q:"What should you carry when driving the Dempster Highway?",
+       a:["Spare tires — almost the whole road is gravel and flats are common","Nothing special","A boat","Extra windshield wipers only"],
+       e:"Except for the first five kilometres the Dempster is all gravel, and flat tires are common. Stop only where others can pass safely, never on a hill, bridge or curve." },
+  fr:{ q:"Que devriez-vous emporter en empruntant la route Dempster ?",
+       a:["Des pneus de rechange : presque toute la route est en gravier et les crevaisons sont fréquentes","Rien de particulier","Une embarcation","Seulement des essuie-glaces supplémentaires"],
+       e:"Sauf pour les cinq premiers kilomètres, la Dempster est entièrement en gravier et les crevaisons sont fréquentes. Arrêtez-vous seulement là où les autres peuvent passer en sécurité, jamais dans une côte, sur un pont ou dans une courbe." },
+  c:0 },
+
+{ id:"ytx10", sec:"rules",
+  en:{ q:"When do the Peel and Mackenzie river crossings on the Dempster Highway not operate at all?",
+       a:["Only in midwinter","Only in midsummer","During freeze-up and break-up","They always operate"],
+       e:"Ferries run from early June to mid-October and ice bridges from late November to late April. In between, during freeze-up and break-up, neither runs and the road is cut." },
+  fr:{ q:"Quand les traversées des rivières Peel et Mackenzie sur la route Dempster ne fonctionnent-elles pas du tout ?",
+       a:["Seulement au cœur de l'hiver","Seulement au cœur de l'été","Pendant le gel et la débâcle","Elles fonctionnent toujours"],
+       e:"Les traversiers circulent du début juin à la mi-octobre et les ponts de glace de la fin novembre à la fin avril. Entre les deux, pendant le gel et la débâcle, ni l'un ni l'autre ne fonctionne et la route est coupée." },
+  c:2 }
+);

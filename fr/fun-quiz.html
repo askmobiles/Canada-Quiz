@@ -50,7 +50,11 @@
     </p>
   <details class="howto"><summary>📖 Comment jouer</summary><p>Touchez la réponse que vous pensez être bonne. Vous saurez instantanément si vous avez raison, avec un fait amusant en prime. Répondez à toutes les questions pour obtenir votre pointage — puis rejouez pour le battre !</p></details>
 
-    <p style="margin-top:18px">
+    <p style="margin-top:18px;margin-bottom:6px">
+      <label for="topic" style="display:block;margin-bottom:6px">Choisissez un thème, ou jouez à tous</label>
+      <select id="topic" style="font:inherit;padding:10px 12px;border-radius:10px;min-height:44px;max-width:100%"></select>
+    </p>
+    <p style="margin-top:14px">
       <button class="btn btn-lg" onclick="startQuiz()">Commencer le quiz amusant</button>
     </p>
   </section>
@@ -90,7 +94,7 @@
 <ol class="qb">
 <li class="qb-item">
 <p class="qb-q">Pour quel sirop sucré le Canada est-il mondialement célèbre ?</p>
-<ul class="qb-o"><li class="qb-ok">Sirop d'érable<span class="qb-lab">Correct answer</span></li><li>Miel</li><li>Sirop de maïs</li><li>Agave</li></ul>
+<ul class="qb-o"><li class="qb-ok">Sirop d'érable<span class="qb-lab">Correct answer</span></li><li>Le miel</li><li>Sirop de maïs</li><li>Agave</li></ul>
 <p class="qb-e">Le Canada produit la majeure partie du sirop d'érable mondial, surtout au Québec ! 🍁</p>
 </li>
 <li class="qb-item">
@@ -155,7 +159,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelles sont les deux couleurs principales du drapeau canadien ?</p>
-<ul class="qb-o"><li class="qb-ok">Rouge et blanc<span class="qb-lab">Correct answer</span></li><li>Bleu et jaune</li><li>Vert et blanc</li><li>Noir et rouge</li></ul>
+<ul class="qb-o"><li class="qb-ok">Rouge et blanc<span class="qb-lab">Correct answer</span></li><li>Le bleu et le jaune</li><li>Vert et blanc</li><li>Noir et rouge</li></ul>
 <p class="qb-e">Le drapeau est rouge et blanc, avec une feuille d'érable rouge au centre.</p>
 </li>
 <li class="qb-item">
@@ -165,7 +169,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle activité hivernale consiste à glisser des pierres sur la glace vers une cible ?</p>
-<ul class="qb-o"><li class="qb-ok">Curling<span class="qb-lab">Correct answer</span></li><li>Le bowling</li><li>Fléchettes</li><li>Shuffleboard</li></ul>
+<ul class="qb-o"><li class="qb-ok">Le curling<span class="qb-lab">Correct answer</span></li><li>Les quilles</li><li>Fléchettes</li><li>Shuffleboard</li></ul>
 <p class="qb-e">Le curling est un sport de glace populaire au Canada — les équipes balaient la glace avec des balais !</p>
 </li>
 <li class="qb-item">
@@ -180,7 +184,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel est le sport d'été national officiel du Canada ?</p>
-<ul class="qb-o"><li class="qb-ok">La crosse<span class="qb-lab">Correct answer</span></li><li>Baseball</li><li>Soccer</li><li>L'aviron</li></ul>
+<ul class="qb-o"><li class="qb-ok">La crosse<span class="qb-lab">Correct answer</span></li><li>Le baseball</li><li>Soccer</li><li>L'aviron</li></ul>
 <p class="qb-e">La crosse est le sport d'été officiel du Canada et vient des traditions des Premières Nations.</p>
 </li>
 <li class="qb-item">
@@ -310,7 +314,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">De quelle couleur est le célèbre habit de cérémonie des Mounties ?</p>
-<ul class="qb-o"><li>Bleu</li><li>Vert</li><li>Noire</li><li class="qb-ok">Rouge<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Bleu</li><li>Le vert</li><li>Noire</li><li class="qb-ok">Le rouge<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">La tunique rouge vif est connue partout dans le monde.</p>
 </li>
 <li class="qb-item">
@@ -325,7 +329,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Dans quelle province se déroule l'histoire d'Anne... la maison aux pignons verts ?</p>
-<ul class="qb-o"><li>Alberta</li><li>Manitoba</li><li class="qb-ok">Île-du-Prince-Édouard<span class="qb-lab">Correct answer</span></li><li>Ontario</li></ul>
+<ul class="qb-o"><li>Alberta</li><li>Manitoba</li><li class="qb-ok">L'Île-du-Prince-Édouard<span class="qb-lab">Correct answer</span></li><li>Ontario</li></ul>
 <p class="qb-e">Lucy Maud Montgomery a situé sa célèbre histoire à l'Île-du-Prince-Édouard.</p>
 </li>
 <li class="qb-item">
@@ -340,7 +344,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel sport a été inventé par le Canadien James Naismith ?</p>
-<ul class="qb-o"><li>Volleyball</li><li class="qb-ok">Basketball<span class="qb-lab">Correct answer</span></li><li>Baseball</li><li>Badminton</li></ul>
+<ul class="qb-o"><li>Le volleyball</li><li class="qb-ok">Le basketball<span class="qb-lab">Correct answer</span></li><li>Le baseball</li><li>Le badminton</li></ul>
 <p class="qb-e">James Naismith, né en Ontario, a inventé le basketball en 1891.</p>
 </li>
 <li class="qb-item">
@@ -365,7 +369,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Un Canadien a été le premier à faire breveter quelle tartinade ?</p>
-<ul class="qb-o"><li>Beurre</li><li>Confiture</li><li class="qb-ok">Beurre d'arachide<span class="qb-lab">Correct answer</span></li><li>Miel</li></ul>
+<ul class="qb-o"><li>Beurre</li><li>Confiture</li><li class="qb-ok">Beurre d'arachide<span class="qb-lab">Correct answer</span></li><li>Le miel</li></ul>
 <p class="qb-e">Marcellus Gilmore Edson, du Québec, a fait breveter une pâte d'arachide en 1884.</p>
 </li>
 <li class="qb-item">
@@ -380,12 +384,12 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Comment s'appelle le trophée que se disputent les équipes de la LNH ?</p>
-<ul class="qb-o"><li class="qb-ok">La coupe Stanley<span class="qb-lab">Correct answer</span></li><li>La Coupe du monde</li><li>La Coupe Vanier</li><li>La Coupe Grey</li></ul>
+<ul class="qb-o"><li class="qb-ok">La coupe Stanley<span class="qb-lab">Correct answer</span></li><li>La Coupe du monde</li><li>La coupe Vanier</li><li>La coupe Grey</li></ul>
 <p class="qb-e">La Coupe Stanley est le trophée le plus ancien et le plus célèbre du hockey.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">La Coupe Grey est le championnat de quel sport canadien ?</p>
-<ul class="qb-o"><li>Baseball</li><li class="qb-ok">Football<span class="qb-lab">Correct answer</span></li><li>Soccer</li><li>Rugby</li></ul>
+<ul class="qb-o"><li>Le baseball</li><li class="qb-ok">Le football<span class="qb-lab">Correct answer</span></li><li>Soccer</li><li>Le rugby</li></ul>
 <p class="qb-e">La Coupe Grey est le match de championnat de la Ligue canadienne de football.</p>
 </li>
 <li class="qb-item">
@@ -430,7 +434,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle célèbre chute d'eau se trouve à la frontière de l'Ontario et des États-Unis ?</p>
-<ul class="qb-o"><li>Les chutes Victoria</li><li>La chute Montmorency</li><li class="qb-ok">Les chutes Niagara<span class="qb-lab">Correct answer</span></li><li>Les chutes Angel</li></ul>
+<ul class="qb-o"><li>Les chutes Victoria</li><li>La chute Montmorency</li><li class="qb-ok">Les chutes du Niagara<span class="qb-lab">Correct answer</span></li><li>Le Salto Ángel</li></ul>
 <p class="qb-e">Les chutes du Niagara sont partagées par l'Ontario et l'État de New York et attirent des visiteurs toute l'année.</p>
 </li>
 <li class="qb-item">
@@ -450,22 +454,22 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle est la plus grande province du Canada par superficie ?</p>
-<ul class="qb-o"><li>Ontario</li><li class="qb-ok">Québec<span class="qb-lab">Correct answer</span></li><li>Alberta</li><li>Colombie-Britannique</li></ul>
+<ul class="qb-o"><li>Ontario</li><li class="qb-ok">Le Québec<span class="qb-lab">Correct answer</span></li><li>Alberta</li><li>La Colombie-Britannique</li></ul>
 <p class="qb-e">Le Québec couvre la plus grande superficie de toutes les provinces canadiennes.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle est la plus petite province du Canada ?</p>
-<ul class="qb-o"><li>Nouvelle-Écosse</li><li>Nouveau-Brunswick</li><li class="qb-ok">Île-du-Prince-Édouard<span class="qb-lab">Correct answer</span></li><li>Terre-Neuve-et-Labrador</li></ul>
+<ul class="qb-o"><li>La Nouvelle-Écosse</li><li>Le Nouveau-Brunswick</li><li class="qb-ok">L'Île-du-Prince-Édouard<span class="qb-lab">Correct answer</span></li><li>Terre-Neuve-et-Labrador</li></ul>
 <p class="qb-e">L'Île-du-Prince-Édouard est la plus petite province, en superficie comme en population.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle province est surnommée « The Rock » ?</p>
-<ul class="qb-o"><li>Nouvelle-Écosse</li><li>Manitoba</li><li>Saskatchewan</li><li class="qb-ok">Terre-Neuve-et-Labrador<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>La Nouvelle-Écosse</li><li>Manitoba</li><li>Saskatchewan</li><li class="qb-ok">Terre-Neuve-et-Labrador<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Terre-Neuve est appelée « The Rock » à cause de sa côte rocheuse et accidentée.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle province est célèbre pour cultiver des pommes de terre dans une terre rouge ?</p>
-<ul class="qb-o"><li class="qb-ok">Île-du-Prince-Édouard<span class="qb-lab">Correct answer</span></li><li>Colombie-Britannique</li><li>Manitoba</li><li>Ontario</li></ul>
+<ul class="qb-o"><li class="qb-ok">L'Île-du-Prince-Édouard<span class="qb-lab">Correct answer</span></li><li>La Colombie-Britannique</li><li>Manitoba</li><li>Ontario</li></ul>
 <p class="qb-e">La terre rouge de l'Île-du-Prince-Édouard est parfaite pour les pommes de terre.</p>
 </li>
 <li class="qb-item">
@@ -480,7 +484,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Victoria est la capitale de quelle province ?</p>
-<ul class="qb-o"><li>Manitoba</li><li>Ontario</li><li>Alberta</li><li class="qb-ok">Colombie-Britannique<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Manitoba</li><li>Ontario</li><li>Alberta</li><li class="qb-ok">La Colombie-Britannique<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Victoria, sur l'île de Vancouver, est la capitale de la Colombie-Britannique.</p>
 </li>
 <li class="qb-item">
@@ -565,7 +569,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Comment appelle-t-on un bébé orignal ?</p>
-<ul class="qb-o"><li class="qb-ok">Un veau<span class="qb-lab">Correct answer</span></li><li>Un ourson</li><li>Un renardeau</li><li>Un chiot</li></ul>
+<ul class="qb-o"><li class="qb-ok">Un veau<span class="qb-lab">Correct answer</span></li><li>Un petit</li><li>Un renardeau</li><li>Un chiot</li></ul>
 <p class="qb-e">Comme les jeunes cerfs et les bovins, un bébé orignal s'appelle un veau.</p>
 </li>
 <li class="qb-item">
@@ -585,7 +589,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Comment les Canadiens appellent-ils le congé du long week-end de la fin mai ?</p>
-<ul class="qb-o"><li class="qb-ok">Fête de Victoria<span class="qb-lab">Correct answer</span></li><li>La fête du Travail</li><li>La fête de la Famille</li><li>Le lendemain de Noël</li></ul>
+<ul class="qb-o"><li class="qb-ok">La fête de la Reine<span class="qb-lab">Correct answer</span></li><li>La fête du Travail</li><li>La fête de la Famille</li><li>Le Boxing Day</li></ul>
 <p class="qb-e">La fête de la Reine, à la fin mai, est souvent le premier week-end de camping de l'année.</p>
 </li>
 <li class="qb-item">
@@ -615,7 +619,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel animal marin a une carapace dure et marche de côté ?</p>
-<ul class="qb-o"><li>Calmar</li><li>Anguille</li><li>Phoque</li><li class="qb-ok">Crabe<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Le calmar</li><li>Anguille</li><li>Phoque</li><li class="qb-ok">Crabe<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Les pattes du crabe se plient sur les côtés, alors se déplacer de côté est plus rapide pour lui.</p>
 </li>
 <li class="qb-item">
@@ -650,7 +654,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">De quelle couleur est la peau sous la fourrure blanche de l'ours polaire ?</p>
-<ul class="qb-o"><li>Rose</li><li>Blanche</li><li>Gris</li><li class="qb-ok">Noire<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Le rose</li><li>Blanche</li><li>Gris</li><li class="qb-ok">Noire<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">La peau noire absorbe le soleil et aide l'ours polaire à rester au chaud dans l'Arctique.</p>
 </li>
 <li class="qb-item">
@@ -665,7 +669,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Le maïs soufflé est fait à partir de quelle céréale ?</p>
-<ul class="qb-o"><li>Blé</li><li>Riz</li><li class="qb-ok">Maïs<span class="qb-lab">Correct answer</span></li><li>Avoine</li></ul>
+<ul class="qb-o"><li>Blé</li><li>Le riz</li><li class="qb-ok">Maïs<span class="qb-lab">Correct answer</span></li><li>Avoine</li></ul>
 <p class="qb-e">Certains grains de maïs contiennent de l'eau qui devient vapeur et les fait éclater.</p>
 </li>
 <li class="qb-item">
@@ -680,12 +684,12 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel fruit porte ses graines à l'extérieur ?</p>
-<ul class="qb-o"><li class="qb-ok">Fraise<span class="qb-lab">Correct answer</span></li><li>Pomme</li><li>L'orange</li><li>Banane</li></ul>
+<ul class="qb-o"><li class="qb-ok">Fraise<span class="qb-lab">Correct answer</span></li><li>Apple</li><li>L'orange</li><li>Banane</li></ul>
 <p class="qb-e">Les petits points jaunes de la fraise sont ses graines, posées sur la peau.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel est l'ingrédient principal d'une omelette ?</p>
-<ul class="qb-o"><li>Riz</li><li>Haricots</li><li>Farine</li><li class="qb-ok">Œufs<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Le riz</li><li>Haricots</li><li>Farine</li><li class="qb-ok">Œufs<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Une omelette, ce sont des œufs battus cuits à la poêle, souvent pliés sur une garniture.</p>
 </li>
 <li class="qb-item">
@@ -720,7 +724,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Comment appelle-t-on une pluie très légère aux gouttes minuscules ?</p>
-<ul class="qb-o"><li>Grêle</li><li>Grésil</li><li class="qb-ok">Bruine<span class="qb-lab">Correct answer</span></li><li>Le gel</li></ul>
+<ul class="qb-o"><li>La grêle</li><li>Grésil</li><li class="qb-ok">Bruine<span class="qb-lab">Correct answer</span></li><li>Le givre</li></ul>
 <p class="qb-e">La bruine tombe de nuages bas en gouttes si fines qu'elles semblent flotter.</p>
 </li>
 <li class="qb-item">
@@ -730,7 +734,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Comment appelle-t-on l'étude des étoiles et des planètes ?</p>
-<ul class="qb-o"><li>Botanique</li><li class="qb-ok">Astronomie<span class="qb-lab">Correct answer</span></li><li>Géologie</li><li>Zoologie</li></ul>
+<ul class="qb-o"><li>La botanique</li><li class="qb-ok">Astronomie<span class="qb-lab">Correct answer</span></li><li>La géologie</li><li>La zoologie</li></ul>
 <p class="qb-e">L'astronomie est la science de tout ce qui se trouve dans l'espace, des lunes aux galaxies.</p>
 </li>
 <li class="qb-item">
@@ -755,7 +759,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Le Canada se trouve sur quel continent ?</p>
-<ul class="qb-o"><li>L'Europe</li><li class="qb-ok">Amérique du Nord<span class="qb-lab">Correct answer</span></li><li>L'Amérique du Sud</li><li>L'Asie</li></ul>
+<ul class="qb-o"><li>L'Europe</li><li class="qb-ok">De l'Amérique du Nord<span class="qb-lab">Correct answer</span></li><li>L'Amérique du Sud</li><li>L'Asie</li></ul>
 <p class="qb-e">Le Canada occupe la partie nord de l'Amérique du Nord, au-dessus des États-Unis. 🍁</p>
 </li>
 <li class="qb-item">
@@ -795,7 +799,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle couleur de ceinture désigne habituellement un expert en karaté ?</p>
-<ul class="qb-o"><li>Blanche</li><li>Jaune</li><li>Vert</li><li class="qb-ok">Noire<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Blanche</li><li>Jaune</li><li>Le vert</li><li class="qb-ok">Noire<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">En karaté, on commence avec la ceinture blanche et on atteint la noire après des années.</p>
 </li>
 <li class="qb-item">
@@ -810,7 +814,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Dans Winnie-the-Pooh, qu'est-ce que Pooh adore manger ?</p>
-<ul class="qb-o"><li>Fromage</li><li>Carottes</li><li>Maïs soufflé</li><li class="qb-ok">Miel<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Fromage</li><li>Carottes</li><li>Maïs soufflé</li><li class="qb-ok">Le miel<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Pooh est un ours qui se coince souvent quelque part en cherchant du miel.</p>
 </li>
 <li class="qb-item">
@@ -965,7 +969,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">La pittoresque piste Cabot fait le tour de la côte de quelle province ?</p>
-<ul class="qb-o"><li>Manitoba</li><li>Québec</li><li class="qb-ok">Nouvelle-Écosse<span class="qb-lab">Correct answer</span></li><li>Alberta</li></ul>
+<ul class="qb-o"><li>Manitoba</li><li>Le Québec</li><li class="qb-ok">La Nouvelle-Écosse<span class="qb-lab">Correct answer</span></li><li>Alberta</li></ul>
 <p class="qb-e">Elle fait le tour de l'île du Cap-Breton, avec l'océan d'un côté et des collines vertes de l'autre.</p>
 </li>
 <li class="qb-item">
@@ -1105,7 +1109,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Le peameal bacon, une spécialité de Toronto, est une longe de porc roulée dans quoi ?</p>
-<ul class="qb-o"><li>Des arachides broyées</li><li>Du sucre</li><li>De la chapelure</li><li class="qb-ok">De la semoule de maïs<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Des arachides broyées</li><li>Le sucre</li><li>De la chapelure</li><li class="qb-ok">De la semoule de maïs<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Autrefois, on la roulait dans des pois jaunes moulus, d'où son nom anglais. Les cuisiniers utilisent maintenant la semoule de maïs, mais le nom est resté.</p>
 </li>
 <li class="qb-item">
@@ -1125,7 +1129,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Le drapeau de quelle province reprend la croix du drapeau de l'Écosse, avec les couleurs inversées ?</p>
-<ul class="qb-o"><li>Manitoba</li><li>Nouveau-Brunswick</li><li>Île-du-Prince-Édouard</li><li class="qb-ok">Nouvelle-Écosse<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Manitoba</li><li>Le Nouveau-Brunswick</li><li>L'Île-du-Prince-Édouard</li><li class="qb-ok">La Nouvelle-Écosse<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Le drapeau de l'Écosse porte une croix blanche sur fond bleu ; celui-ci porte une croix bleue sur fond blanc. Les armoiries royales d'Écosse figurent au centre.</p>
 </li>
 <li class="qb-item">
@@ -1268,7 +1272,7 @@
   </div>
 </footer>
 
-<script src="../js/fun-questions.js?v=e1a9cc70" defer></script>
+<script src="../js/fun-questions.js?v=e1322801" defer></script>
 <script>
 let qs=[], cur=0, score=0, answered=false;
 
@@ -1296,11 +1300,67 @@ function pickFresh(bank, count, key){
   return chosen.map(i=>balanceOpts(bank[i]));
 }
 
+/* Topic play.
+   The bank used to be one flat list of 225 questions, so somebody who wanted
+   Canadian food got camels and karate belts. Every question now carries a
+   topic — see tools/newq/fun_topics.py — and this picker uses them. The
+   default is still everything, because that is the game most families want. */
+var FR = /\/fr\//.test(location.pathname);
+function T2(en, fr){ return FR ? fr : en; }
+
+var TOPIC_FR = {
+  "Food & Drink": "Cuisine et boissons",
+  "Hockey & Sport": "Hockey et sport",
+  "Slang & Everyday Life": "Expressions et vie quotidienne",
+  "Animals of Canada": "Animaux du Canada",
+  "Places & Geography": "Lieux et géographie",
+  "Symbols & Holidays": "Symboles et fêtes",
+  "Famous Canadians & Inventions": "Canadiens célèbres et inventions",
+  "Winter in Canada": "L'hiver au Canada",
+  "Beyond Canada": "Au-delà du Canada"
+};
+
+function fillTopics(){
+  var sel = document.getElementById('topic');
+  if(!sel || typeof FUN_QUESTIONS === 'undefined') return;
+  var count = {};
+  for(var i=0;i<FUN_QUESTIONS.length;i++){
+    var c = FUN_QUESTIONS[i].cat;
+    if(c) count[c] = (count[c]||0) + 1;
+  }
+  var names = Object.keys(count).sort();
+  sel.innerHTML = '';
+  var all = document.createElement('option');
+  all.value = '';
+  all.textContent = T2('Everything mixed together', 'Tout mélangé')
+                    + ' (' + FUN_QUESTIONS.length + ')';
+  sel.appendChild(all);
+  for(var k=0;k<names.length;k++){
+    var o = document.createElement('option');
+    o.value = names[k];
+    o.textContent = (FR && TOPIC_FR[names[k]] ? TOPIC_FR[names[k]] : names[k])
+                    + ' (' + count[names[k]] + ')';
+    sel.appendChild(o);
+  }
+}
+document.addEventListener('DOMContentLoaded', fillTopics);
+
 function startQuiz(){
   /* the written-out answers are hidden while a test is in progress —
      otherwise you could scroll past the question and read the key */
   document.body.classList.add("quiz-live");
-  qs = pickFresh(FUN_QUESTIONS, Math.min(8, FUN_QUESTIONS.length), 'fun_seen');
+
+  var sel = document.getElementById('topic');
+  var topic = sel ? sel.value : '';
+  var pool = FUN_QUESTIONS;
+  if(topic){
+    var only = FUN_QUESTIONS.filter(function(q){ return q.cat === topic; });
+    if(only.length >= 8) pool = only;
+  }
+  /* each topic keeps its own "already seen" list, so playing one topic does
+     not use up the questions of the mixed game */
+  qs = pickFresh(pool, Math.min(8, pool.length),
+                 'fun_seen' + (topic ? '_' + topic.replace(/\W+/g,'') : ''));
   cur=0; score=0; answered=false;
   document.getElementById('start-screen').style.display='none';
   document.getElementById('result-screen').style.display='none';
@@ -1363,7 +1423,7 @@ function finish(){
 }
 </script>
   <script src="../js/game-fullscreen.js?v=35da7b56" defer></script>
-  <script src="../js/site.js?v=008e1a69"></script>
+  <script src="../js/site.js?v=5eea2181"></script>
   <script src="../js/analytics.js?v=065edc09"></script>
   <script src="../js/ads.js?v=00e703ff" defer></script>
   <script src="../js/pwa.js?v=7d7e0b9d" defer></script>

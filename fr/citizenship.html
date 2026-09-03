@@ -53,7 +53,12 @@
   <details class="howto"><summary>📖 Comment jouer</summary><p>Cela fonctionne comme le vrai test : 20 questions, une minuterie de 45 minutes, et vous réussissez avec 15 bonnes réponses. Touchez une réponse pour la valider et voir l'explication, puis passez à la question suivante. À la fin, vous verrez RÉUSSI ou RÉESSAYER, et vous pourrez revoir les questions manquées.</p></details>
 
     <p><span class="pill">20 questions</span> &nbsp; <span class="pill">45 minutes</span> &nbsp; <span class="pill">Réussite = 15/20</span></p>
-    <p style="margin-top:18px">
+
+    <p style="margin-top:18px;margin-bottom:6px">
+      <label for="chapter" style="display:block;margin-bottom:6px">Exercez-vous sur un chapitre, ou sur tout le guide</label>
+      <select id="chapter" style="font:inherit;padding:10px 12px;border-radius:10px;min-height:44px;max-width:100%"></select>
+    </p>
+    <p style="margin-top:14px">
       <button class="btn btn-lg" onclick="startExam()">Commencer l'examen pratique</button>
     </p>
     <div class="disclaimer" style="text-align:left">
@@ -238,7 +243,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel document de 1215 est l'un des fondements du droit et des libertés au Canada ?</p>
-<ul class="qb-o"><li class="qb-ok">La Magna Carta<span class="qb-lab">Correct answer</span></li><li>Le Traité de Paris</li><li>L'Acte de Québec</li><li>Le Statut de Westminster</li></ul>
+<ul class="qb-o"><li class="qb-ok">La Grande Charte<span class="qb-lab">Correct answer</span></li><li>Le traité de Paris</li><li>L'Acte de Québec</li><li>Le Statut de Westminster</li></ul>
 <p class="qb-e">La Magna Carta, signée en Angleterre en 1215, est souvent appelée la Grande Charte des libertés. Elle nous a légué des idées comme la liberté sous la loi et le procès devant jury.</p>
 </li>
 <li class="qb-item">
@@ -248,7 +253,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Laquelle de ces actions est une responsabilité de la citoyenneté canadienne plutôt qu'un droit ?</p>
-<ul class="qb-o"><li>Parler anglais ou français</li><li>Demander un passeport</li><li class="qb-ok">Faire partie d'un jury lorsqu'on est convoqué<span class="qb-lab">Correct answer</span></li><li>À voter aux élections</li></ul>
+<ul class="qb-o"><li>Parler anglais ou français</li><li>Demander un passeport</li><li class="qb-ok">Faire partie d'un jury lorsqu'on est convoqué<span class="qb-lab">Correct answer</span></li><li>Voter aux élections</li></ul>
 <p class="qb-e">Faire partie d'un jury est un devoir. Il en va de même d'obéir à la loi, de subvenir à ses besoins et à ceux de sa famille, et d'aider les autres dans la collectivité.</p>
 </li>
 <li class="qb-item">
@@ -278,7 +283,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Dans quelle partie du Canada les Inuits vivent-ils principalement ?</p>
-<ul class="qb-o"><li class="qb-ok">L'Arctique (Nord)<span class="qb-lab">Correct answer</span></li><li>Les Prairies</li><li>La côte Ouest</li><li>Sud de l'Ontario</li></ul>
+<ul class="qb-o"><li class="qb-ok">L'Arctique (Nord)<span class="qb-lab">Correct answer</span></li><li>Les Prairies</li><li>La côte Ouest</li><li>Dans le sud de l'Ontario</li></ul>
 <p class="qb-e">Les Inuits vivent principalement dans l'Arctique, dans le Grand Nord canadien.</p>
 </li>
 <li class="qb-item">
@@ -288,7 +293,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Entre 1871 et 1921, qu'est-ce que la Couronne a signé avec les Premières Nations dans les Prairies et dans le Nord ?</p>
-<ul class="qb-o"><li>Le Traité de Paris</li><li class="qb-ok">Les traités numérotés<span class="qb-lab">Correct answer</span></li><li>L'Acte de Québec</li><li>Le Statut de Westminster</li></ul>
+<ul class="qb-o"><li>Le traité de Paris</li><li class="qb-ok">Les traités numérotés<span class="qb-lab">Correct answer</span></li><li>L'Acte de Québec</li><li>Le Statut de Westminster</li></ul>
 <p class="qb-e">Onze traités numérotés énoncent des promesses portant sur les terres, les paiements, l'éducation et les droits de chasse. Ils façonnent encore aujourd'hui la relation entre les Premières Nations et les gouvernements.</p>
 </li>
 <li class="qb-item">
@@ -313,7 +318,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Dans les années 1700, la colonie française du Canada s'appelait…</p>
-<ul class="qb-o"><li>Le Haut-Canada</li><li>Colombie-Britannique</li><li>Nouvelle-Angleterre</li><li class="qb-ok">Nouvelle-France<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Le Haut-Canada</li><li>La Colombie-Britannique</li><li>Nouvelle-Angleterre</li><li class="qb-ok">Nouvelle-France<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">La colonie française le long du Saint-Laurent s'appelait la Nouvelle-France.</p>
 </li>
 <li class="qb-item">
@@ -323,7 +328,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Après que la Grande-Bretagne a vaincu la France, le traité de Paris de 1763 a cédé le Canada à…</p>
-<ul class="qb-o"><li>Les États-Unis</li><li>Les Pays-Bas</li><li class="qb-ok">Grande-Bretagne<span class="qb-lab">Correct answer</span></li><li>L'Espagne</li></ul>
+<ul class="qb-o"><li>Les États-Unis</li><li>Les Pays-Bas</li><li class="qb-ok">La Grande-Bretagne<span class="qb-lab">Correct answer</span></li><li>L'Espagne</li></ul>
 <p class="qb-e">Le traité de Paris de 1763 a cédé la Nouvelle-France à la Grande-Bretagne.</p>
 </li>
 <li class="qb-item">
@@ -338,7 +343,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Pendant la guerre de 1812, qui a envahi le Canada mais a été vaincu ?</p>
-<ul class="qb-o"><li>La Russie</li><li class="qb-ok">Les États-Unis<span class="qb-lab">Correct answer</span></li><li>La France</li><li>Grande-Bretagne</li></ul>
+<ul class="qb-o"><li>La Russie</li><li class="qb-ok">Les États-Unis<span class="qb-lab">Correct answer</span></li><li>La France</li><li>La Grande-Bretagne</li></ul>
 <p class="qb-e">Les États-Unis ont envahi le Canada pendant la guerre de 1812, mais l'invasion a été repoussée.</p>
 </li>
 <li class="qb-item">
@@ -378,7 +383,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle a été la dernière province à se joindre au Canada, en 1949 ?</p>
-<ul class="qb-o"><li class="qb-ok">Terre-Neuve-et-Labrador<span class="qb-lab">Correct answer</span></li><li>Manitoba</li><li>Colombie-Britannique</li><li>Alberta</li></ul>
+<ul class="qb-o"><li class="qb-ok">Terre-Neuve-et-Labrador<span class="qb-lab">Correct answer</span></li><li>Manitoba</li><li>La Colombie-Britannique</li><li>Alberta</li></ul>
 <p class="qb-e">Terre-Neuve-et-Labrador a été la dernière province à se joindre au Canada, en 1949.</p>
 </li>
 <li class="qb-item">
@@ -408,7 +413,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Au 19e siècle, le 'chemin de fer clandestin' a aidé des personnes à fuir l'esclavage en les menant vers...</p>
-<ul class="qb-o"><li class="qb-ok">Canada<span class="qb-lab">Correct answer</span></li><li>Islande</li><li>Cuba</li><li>Le Mexique</li></ul>
+<ul class="qb-o"><li class="qb-ok">Le Canada<span class="qb-lab">Correct answer</span></li><li>L'Islande</li><li>Cuba</li><li>Le Mexique</li></ul>
 <p class="qb-e">Des milliers de personnes ont suivi ce réseau secret d'entraide vers le nord pour trouver la liberté au Canada.</p>
 </li>
 <li class="qb-item">
@@ -438,7 +443,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">En 1793, quelle colonie a adopté l'une des premières lois de l'Empire britannique visant à limiter l'esclavage ?</p>
-<ul class="qb-o"><li>Terre-Neuve</li><li>Le Bas-Canada</li><li class="qb-ok">Le Haut-Canada<span class="qb-lab">Correct answer</span></li><li>Nouvelle-Écosse</li></ul>
+<ul class="qb-o"><li>Terre-Neuve</li><li>Le Bas-Canada</li><li class="qb-ok">Le Haut-Canada<span class="qb-lab">Correct answer</span></li><li>La Nouvelle-Écosse</li></ul>
 <p class="qb-e">Le lieutenant-gouverneur John Graves Simcoe a fait adopter cette loi par l'assemblée du Haut-Canada, l'Ontario d'aujourd'hui. L'esclavage a été aboli dans tout l'Empire britannique en 1833.</p>
 </li>
 <li class="qb-item">
@@ -448,7 +453,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Les troupes canadiennes ont mené la libération de quel pays en 1944 et en 1945 ?</p>
-<ul class="qb-o"><li class="qb-ok">Les Pays-Bas<span class="qb-lab">Correct answer</span></li><li>La Norvège</li><li>La Grèce</li><li>Danemark</li></ul>
+<ul class="qb-o"><li class="qb-ok">Les Pays-Bas<span class="qb-lab">Correct answer</span></li><li>La Norvège</li><li>La Grèce</li><li>Le Danemark</li></ul>
 <p class="qb-e">La famille royale néerlandaise s'était réfugiée à Ottawa pendant la guerre. Les Pays-Bas envoient encore chaque année des tulipes à Ottawa en signe de reconnaissance.</p>
 </li>
 <li class="qb-item">
@@ -483,7 +488,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle province a été la première à accorder le droit de vote aux femmes, en 1916 ?</p>
-<ul class="qb-o"><li>Ontario</li><li class="qb-ok">Manitoba<span class="qb-lab">Correct answer</span></li><li>Nouvelle-Écosse</li><li>Alberta</li></ul>
+<ul class="qb-o"><li>Ontario</li><li class="qb-ok">Manitoba<span class="qb-lab">Correct answer</span></li><li>La Nouvelle-Écosse</li><li>Alberta</li></ul>
 <p class="qb-e">Les Manitobaines ont obtenu le droit de vote provincial en janvier 1916, au terme d'une longue campagne menée notamment par Nellie McClung. La Saskatchewan et l'Alberta ont suivi quelques mois plus tard.</p>
 </li>
 <li class="qb-item">
@@ -508,7 +513,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Les vestiges d'un établissement viking ont été trouvés à L'Anse aux Meadows. Dans quelle province ce lieu se trouve-t-il ?</p>
-<ul class="qb-o"><li>Colombie-Britannique</li><li class="qb-ok">Terre-Neuve-et-Labrador<span class="qb-lab">Correct answer</span></li><li>Nouvelle-Écosse</li><li>Québec</li></ul>
+<ul class="qb-o"><li>La Colombie-Britannique</li><li class="qb-ok">Terre-Neuve-et-Labrador<span class="qb-lab">Correct answer</span></li><li>La Nouvelle-Écosse</li><li>Le Québec</li></ul>
 <p class="qb-e">L'Anse aux Meadows, à la pointe nord de Terre-Neuve, est un site du patrimoine mondial et le seul établissement viking confirmé en Amérique du Nord.</p>
 </li>
 <li class="qb-item">
@@ -718,7 +723,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle colonie a été la première de l'Amérique du Nord britannique à obtenir le gouvernement responsable complet, en 1847 et 1848 ?</p>
-<ul class="qb-o"><li class="qb-ok">Nouvelle-Écosse<span class="qb-lab">Correct answer</span></li><li>Terre-Neuve</li><li>Nouveau-Brunswick</li><li>Île-du-Prince-Édouard</li></ul>
+<ul class="qb-o"><li class="qb-ok">La Nouvelle-Écosse<span class="qb-lab">Correct answer</span></li><li>Terre-Neuve</li><li>Le Nouveau-Brunswick</li><li>L'Île-du-Prince-Édouard</li></ul>
 <p class="qb-e">La Nouvelle-Écosse a ouvert la voie, et elle l'a fait pacifiquement, sans qu'un seul coup de feu soit tiré. La Province du Canada unie a suivi en 1848 et 1849.</p>
 </li>
 <li class="qb-item">
@@ -778,7 +783,7 @@
 <ol class="qb">
 <li class="qb-item">
 <p class="qb-q">La fourrure de quel animal a stimulé une grande partie de l'économie du Canada à ses débuts ?</p>
-<ul class="qb-o"><li class="qb-ok">Le castor<span class="qb-lab">Correct answer</span></li><li>Renard</li><li>Ours</li><li>Le cerf</li></ul>
+<ul class="qb-o"><li class="qb-ok">Le castor<span class="qb-lab">Correct answer</span></li><li>Renard</li><li>Ours</li><li>De cerfs</li></ul>
 <p class="qb-e">Le commerce de la fourrure de castor a été l'une des premières et des plus importantes industries du Canada.</p>
 </li>
 <li class="qb-item">
@@ -818,7 +823,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle province est la plus connue pour la production de pétrole et de gaz naturel ?</p>
-<ul class="qb-o"><li>Île-du-Prince-Édouard</li><li>Nouvelle-Écosse</li><li>Manitoba</li><li class="qb-ok">Alberta<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>L'Île-du-Prince-Édouard</li><li>La Nouvelle-Écosse</li><li>Manitoba</li><li class="qb-ok">Alberta<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Les gisements de pétrole et de gaz de l'Alberta, dont les sables bitumineux, forment une grande part de l'économie canadienne.</p>
 </li>
 <li class="qb-item">
@@ -828,7 +833,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle province est le centre de l'industrie automobile du Canada ?</p>
-<ul class="qb-o"><li>Colombie-Britannique</li><li class="qb-ok">Ontario<span class="qb-lab">Correct answer</span></li><li>Saskatchewan</li><li>Nouveau-Brunswick</li></ul>
+<ul class="qb-o"><li>La Colombie-Britannique</li><li class="qb-ok">Ontario<span class="qb-lab">Correct answer</span></li><li>Saskatchewan</li><li>Le Nouveau-Brunswick</li></ul>
 <p class="qb-e">Le sud de l'Ontario compte de nombreuses usines qui fabriquent des véhicules et des pièces vendus au Canada et à l'étranger.</p>
 </li>
 <li class="qb-item">
@@ -843,7 +848,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">À quoi sert un numéro d'assurance sociale ?</p>
-<ul class="qb-o"><li class="qb-ok">À travailler au Canada et à recevoir des prestations gouvernementales<span class="qb-lab">Correct answer</span></li><li>À voter aux élections</li><li>À entrer au pays</li><li>À immatriculer un véhicule</li></ul>
+<ul class="qb-o"><li class="qb-ok">À travailler au Canada et à recevoir des prestations gouvernementales<span class="qb-lab">Correct answer</span></li><li>Voter aux élections</li><li>À entrer au pays</li><li>À immatriculer un véhicule</li></ul>
 <p class="qb-e">Vous avez besoin d'un NAS pour travailler et pour recevoir des prestations. Gardez-le confidentiel, car il peut servir au vol d'identité.</p>
 </li>
 <li class="qb-item">
@@ -908,7 +913,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Qui représente le souverain dans chaque province ?</p>
-<ul class="qb-o"><li class="qb-ok">Le lieutenant-gouverneur<span class="qb-lab">Correct answer</span></li><li>Le maire</li><li>Le premier ministre provincial</li><li>Le sénateur</li></ul>
+<ul class="qb-o"><li class="qb-ok">Le lieutenant-gouverneur<span class="qb-lab">Correct answer</span></li><li>Le maire</li><li>Le premier ministre</li><li>Le sénateur</li></ul>
 <p class="qb-e">Un lieutenant-gouverneur représente le souverain dans chaque province.</p>
 </li>
 <li class="qb-item">
@@ -918,7 +923,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Les membres de quelle chambre du Parlement sont ÉLUS par la population ?</p>
-<ul class="qb-o"><li>Le Cabinet</li><li>La Cour suprême</li><li class="qb-ok">À la Chambre des communes<span class="qb-lab">Correct answer</span></li><li>Le Sénat</li></ul>
+<ul class="qb-o"><li>Le Cabinet</li><li>La Cour suprême</li><li class="qb-ok">La Chambre des communes<span class="qb-lab">Correct answer</span></li><li>Le Sénat</li></ul>
 <p class="qb-e">Les députés de la Chambre des communes sont élus par les électeurs.</p>
 </li>
 <li class="qb-item">
@@ -1003,7 +1008,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Jusqu'à quel âge un sénateur peut-il normalement siéger ?</p>
-<ul class="qb-o"><li>65 ans</li><li>70 ans</li><li class="qb-ok">75 ans<span class="qb-lab">Correct answer</span></li><li>Il n'y a aucune limite d'âge</li></ul>
+<ul class="qb-o"><li>65</li><li>70 ans</li><li class="qb-ok">75<span class="qb-lab">Correct answer</span></li><li>Il n'y a aucune limite d'âge</li></ul>
 <p class="qb-e">Les sénateurs doivent prendre leur retraite à 75 ans. Le Sénat étudie les projets de loi avec soin et on l'appelle parfois la chambre de second examen objectif.</p>
 </li>
 <li class="qb-item">
@@ -1073,7 +1078,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle province est majoritairement francophone ?</p>
-<ul class="qb-o"><li>Manitoba</li><li>Ontario</li><li class="qb-ok">Québec<span class="qb-lab">Correct answer</span></li><li>Alberta</li></ul>
+<ul class="qb-o"><li>Manitoba</li><li>Ontario</li><li class="qb-ok">Le Québec<span class="qb-lab">Correct answer</span></li><li>Alberta</li></ul>
 <p class="qb-e">Le Québec est la seule province où la majorité des gens ont le français comme langue maternelle.</p>
 </li>
 <li class="qb-item">
@@ -1153,12 +1158,12 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Les montagnes Rocheuses traversent l'Alberta et quelle autre province ?</p>
-<ul class="qb-o"><li>Ontario</li><li>Québec</li><li class="qb-ok">Colombie-Britannique<span class="qb-lab">Correct answer</span></li><li>Nouvelle-Écosse</li></ul>
+<ul class="qb-o"><li>Ontario</li><li>Le Québec</li><li class="qb-ok">La Colombie-Britannique<span class="qb-lab">Correct answer</span></li><li>La Nouvelle-Écosse</li></ul>
 <p class="qb-e">Les montagnes Rocheuses traversent l'Alberta et la Colombie-Britannique.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">Les célèbres chutes Niagara sont situées dans quelle province ?</p>
-<ul class="qb-o"><li>Alberta</li><li>Manitoba</li><li>Québec</li><li class="qb-ok">Ontario<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Alberta</li><li>Manitoba</li><li>Le Québec</li><li class="qb-ok">Ontario<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Les chutes Niagara sont en Ontario, à la frontière avec les États-Unis.</p>
 </li>
 <li class="qb-item">
@@ -1173,7 +1178,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle est la plus grande province du Canada par superficie ?</p>
-<ul class="qb-o"><li>Ontario</li><li>Colombie-Britannique</li><li>Alberta</li><li class="qb-ok">Québec<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Ontario</li><li>La Colombie-Britannique</li><li>Alberta</li><li class="qb-ok">Le Québec<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Le Québec est plus grand que toute autre province, même si le territoire du Nunavut couvre encore plus de terres.</p>
 </li>
 <li class="qb-item">
@@ -1188,7 +1193,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle est la plus petite province du Canada ?</p>
-<ul class="qb-o"><li>Nouveau-Brunswick</li><li>Terre-Neuve-et-Labrador</li><li class="qb-ok">Île-du-Prince-Édouard<span class="qb-lab">Correct answer</span></li><li>Nouvelle-Écosse</li></ul>
+<ul class="qb-o"><li>Le Nouveau-Brunswick</li><li>Terre-Neuve-et-Labrador</li><li class="qb-ok">L'Île-du-Prince-Édouard<span class="qb-lab">Correct answer</span></li><li>La Nouvelle-Écosse</li></ul>
 <p class="qb-e">L'Île-du-Prince-Édouard est si petite qu'on la traverse en voiture en quelques heures, et un long pont la relie au continent.</p>
 </li>
 <li class="qb-item">
@@ -1208,12 +1213,12 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle est la seule province dont le français est la seule langue officielle ?</p>
-<ul class="qb-o"><li>Manitoba</li><li class="qb-ok">Québec<span class="qb-lab">Correct answer</span></li><li>Nouveau-Brunswick</li><li>Ontario</li></ul>
+<ul class="qb-o"><li>Manitoba</li><li class="qb-ok">Le Québec<span class="qb-lab">Correct answer</span></li><li>Le Nouveau-Brunswick</li><li>Ontario</li></ul>
 <p class="qb-e">Le Québec est la seule province dont la seule langue officielle est le français. Le Nouveau-Brunswick est la seule province officiellement bilingue.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel est le plus grand lac situé entièrement au Canada ?</p>
-<ul class="qb-o"><li class="qb-ok">Le Grand lac de l'Ours<span class="qb-lab">Correct answer</span></li><li>Le lac Winnipeg</li><li>Le lac Ontario</li><li>Lac Supérieur</li></ul>
+<ul class="qb-o"><li class="qb-ok">Le Grand lac de l'Ours<span class="qb-lab">Correct answer</span></li><li>Le lac Winnipeg</li><li>Le lac Ontario</li><li>Le lac Supérieur</li></ul>
 <p class="qb-e">Le Grand lac de l'Ours se trouve dans les Territoires du Nord-Ouest et touche le cercle polaire arctique. Les Grands Lacs sont plus vastes, mais le Canada les partage avec les États-Unis.</p>
 </li>
 <li class="qb-item">
@@ -1243,17 +1248,17 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel est le sport national d'hiver du Canada ?</p>
-<ul class="qb-o"><li class="qb-ok">Le hockey sur glace<span class="qb-lab">Correct answer</span></li><li>Ski</li><li>Planche à neige</li><li>Curling</li></ul>
+<ul class="qb-o"><li class="qb-ok">Le hockey sur glace<span class="qb-lab">Correct answer</span></li><li>Ski</li><li>Planche à neige</li><li>Le curling</li></ul>
 <p class="qb-e">Le hockey sur glace est le sport national d'hiver ; la crosse est le sport national d'été.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel est le sport d'été national du Canada ?</p>
-<ul class="qb-o"><li>Soccer</li><li class="qb-ok">La crosse<span class="qb-lab">Correct answer</span></li><li>Le cricket</li><li>Baseball</li></ul>
+<ul class="qb-o"><li>Soccer</li><li class="qb-ok">La crosse<span class="qb-lab">Correct answer</span></li><li>Le cricket</li><li>Le baseball</li></ul>
 <p class="qb-e">La crosse est le sport d'été national du Canada.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel est le titre de l'hymne national du Canada ?</p>
-<ul class="qb-o"><li>Dieu protège le Roi</li><li>The Maple Leaf Forever</li><li class="qb-ok">Ô Canada<span class="qb-lab">Correct answer</span></li><li>Vrai Nord</li></ul>
+<ul class="qb-o"><li>God Save the King</li><li>The Maple Leaf Forever</li><li class="qb-ok">Ô Canada<span class="qb-lab">Correct answer</span></li><li>Vrai Nord</li></ul>
 <p class="qb-e">« Ô Canada » est devenu l'hymne national officiel en 1980.</p>
 </li>
 <li class="qb-item">
@@ -1268,7 +1273,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Que célébrons-nous le 1er juillet ?</p>
-<ul class="qb-o"><li>Jour du Souvenir</li><li class="qb-ok">La fête du Canada<span class="qb-lab">Correct answer</span></li><li>Fête de Victoria</li><li>La fête du Travail</li></ul>
+<ul class="qb-o"><li>Le jour du Souvenir</li><li class="qb-ok">La fête du Canada<span class="qb-lab">Correct answer</span></li><li>La fête de la Reine</li><li>La fête du Travail</li></ul>
 <p class="qb-e">Le 1er juillet est la fête du Canada, marquant la Confédération de 1867.</p>
 </li>
 <li class="qb-item">
@@ -1293,7 +1298,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">La fleur de lys est un symbole traditionnel de…</p>
-<ul class="qb-o"><li>Les Prairies</li><li>L'Arctique</li><li class="qb-ok">Le Canada français / le Québec<span class="qb-lab">Correct answer</span></li><li>Colombie-Britannique</li></ul>
+<ul class="qb-o"><li>Les Prairies</li><li>Dans l'Arctique</li><li class="qb-ok">Le Canada français / le Québec<span class="qb-lab">Correct answer</span></li><li>La Colombie-Britannique</li></ul>
 <p class="qb-e">La fleur de lys est un symbole du patrimoine français et figure sur le drapeau du Québec.</p>
 </li>
 <li class="qb-item">
@@ -1313,7 +1318,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel sport populaire a été inventé par un Canadien ?</p>
-<ul class="qb-o"><li>Le tennis</li><li>Le golf</li><li>Le cricket</li><li class="qb-ok">Basketball<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Le tennis</li><li>Le golf</li><li>Le cricket</li><li class="qb-ok">Le basketball<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">James Naismith, né en Ontario, a inventé le basketball en 1891 alors qu'il enseignait à des jeunes. 🏀</p>
 </li>
 <li class="qb-item">
@@ -1338,12 +1343,12 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel trophée, offert par un gouverneur général, est remis aux champions du hockey professionnel ?</p>
-<ul class="qb-o"><li class="qb-ok">La coupe Stanley<span class="qb-lab">Correct answer</span></li><li>La Coupe Vanier</li><li>La Coupe Memorial</li><li>La Coupe Grey</li></ul>
+<ul class="qb-o"><li class="qb-ok">La coupe Stanley<span class="qb-lab">Correct answer</span></li><li>La coupe Vanier</li><li>La coupe Memorial</li><li>La coupe Grey</li></ul>
 <p class="qb-e">Lord Stanley a offert cette coupe en 1892 à la meilleure équipe de hockey au Canada. La Coupe Grey, offerte par un autre gouverneur général, revient aux champions de football.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel congé, à la fin de mai, honore le souverain ?</p>
-<ul class="qb-o"><li>Action de grâce</li><li>Le lendemain de Noël</li><li>La fête du Travail</li><li class="qb-ok">Fête de Victoria<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Action de grâce</li><li>Le Boxing Day</li><li>La fête du Travail</li><li class="qb-ok">La fête de la Reine<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">La fête de Victoria a lieu le lundi précédant le 25 mai. Elle souligne l'anniversaire de la reine Victoria et sert aussi d'anniversaire officiel du souverain au Canada.</p>
 </li>
 <li class="qb-item">
@@ -1358,7 +1363,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel est l'hymne royal du Canada ?</p>
-<ul class="qb-o"><li class="qb-ok">Dieu protège le Roi<span class="qb-lab">Correct answer</span></li><li>Ô Canada</li><li>Rule Britannia</li><li>The Maple Leaf Forever</li></ul>
+<ul class="qb-o"><li class="qb-ok">God Save the King<span class="qb-lab">Correct answer</span></li><li>Ô Canada</li><li>Rule Britannia</li><li>The Maple Leaf Forever</li></ul>
 <p class="qb-e">God Save the King est l'hymne royal, joué en présence des membres de la famille royale. Ô Canada est l'hymne national.</p>
 </li>
 <li class="qb-item">
@@ -1458,7 +1463,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">De quelles organisations internationales le Canada est-il membre ?</p>
-<ul class="qb-o"><li>Les Nations Unies seulement</li><li>L'OTAN seulement</li><li>Aucune d'entre elles</li><li class="qb-ok">Les Nations Unies, l'OTAN, le Commonwealth et la Francophonie<span class="qb-lab">Correct answer</span></li></ul>
+<ul class="qb-o"><li>Les Nations Unies seulement</li><li>L'OTAN seulement</li><li>Aucun</li><li class="qb-ok">Les Nations Unies, l'OTAN, le Commonwealth et la Francophonie<span class="qb-lab">Correct answer</span></li></ul>
 <p class="qb-e">Le Canada appartient aux quatre. Son adhésion au Commonwealth et à la Francophonie reflète son héritage britannique et français.</p>
 </li>
 </ol>
@@ -1578,12 +1583,12 @@
 <ol class="qb">
 <li class="qb-item">
 <p class="qb-q">Que signifie la « primauté du droit » ?</p>
-<ul class="qb-o"><li class="qb-ok">Tout le monde, y compris les gouvernements, doit obéir à la loi<span class="qb-lab">Correct answer</span></li><li>Seuls les citoyens obéissent à la loi</li><li>Le roi est au-dessus de la loi</li><li>La police fait les lois</li></ul>
+<ul class="qb-o"><li class="qb-ok">Tous, y compris les gouvernements, doivent obéir à la loi<span class="qb-lab">Correct answer</span></li><li>Seuls les citoyens obéissent à la loi</li><li>Le roi est au-dessus de la loi</li><li>La police fait les lois</li></ul>
 <p class="qb-e">La primauté du droit signifie que tout le monde — même les dirigeants — est soumis à la même loi.</p>
 </li>
 <li class="qb-item">
 <p class="qb-q">Quel est le plus haut tribunal du Canada ?</p>
-<ul class="qb-o"><li>La Cour provinciale</li><li class="qb-ok">La Cour suprême du Canada<span class="qb-lab">Correct answer</span></li><li>À la Chambre des communes</li><li>Le Sénat</li></ul>
+<ul class="qb-o"><li>La Cour provinciale</li><li class="qb-ok">La Cour suprême du Canada<span class="qb-lab">Correct answer</span></li><li>La Chambre des communes</li><li>Le Sénat</li></ul>
 <p class="qb-e">La Cour suprême du Canada est le plus haut tribunal du pays.</p>
 </li>
 <li class="qb-item">
@@ -1693,7 +1698,7 @@
 </li>
 <li class="qb-item">
 <p class="qb-q">Quelle journée, chaque mois de juin, honore les Premières Nations, les Inuits et les Métis ?</p>
-<ul class="qb-o"><li class="qb-ok">La Journée nationale des peuples autochtones<span class="qb-lab">Correct answer</span></li><li>La fête du Canada</li><li>La fête du Travail</li><li>Fête de Victoria</li></ul>
+<ul class="qb-o"><li class="qb-ok">La Journée nationale des peuples autochtones<span class="qb-lab">Correct answer</span></li><li>La fête du Canada</li><li>La fête du Travail</li><li>La fête de la Reine</li></ul>
 <p class="qb-e">La Journée nationale des peuples autochtones a lieu le 21 juin, jour du solstice d'été, une date que de nombreuses communautés autochtones soulignent depuis longtemps par des célébrations.</p>
 </li>
 <li class="qb-item">
@@ -1799,11 +1804,67 @@
   </div>
 </footer>
 
-<script src="../js/citizenship-questions.js?v=3bd70f66" defer></script>
+<script src="../js/citizenship-questions.js?v=66c4c31e" defer></script>
 <script>
 const TOTAL = 20;          // questions per exam
 const PASS_MARK = 15;      // need 15 to pass
 const TIME_LIMIT = 45*60;  // the real test allows 45 minutes, so this does too
+
+/* Chapter practice.
+   The bank has always carried a Discover Canada chapter on every question, and
+   nothing on the page ever used it. A learner who keeps failing on government
+   could only keep drawing twenty random questions and hoping. The picker below
+   lets them drill one chapter instead.
+
+   The default stays the real thing: all chapters, twenty questions, pass at
+   fifteen. Choosing a chapter is study practice, so the pass mark follows the
+   same 75% as the real test rather than staying at a fixed fifteen — otherwise
+   a seventeen-question chapter would be marked against a mark it cannot reach.
+
+   The French names are written here beside the English, the same way gk-quiz.html
+   does it. The counts are read from the bank at load, so they can never go stale. */
+var FR = /\/fr\//.test(location.pathname);
+function T(en, fr){ return FR ? fr : en; }
+
+var CHAP_FR = {
+  "About the Test": "Au sujet de l'examen",
+  "Rights and Responsibilities": "Droits et responsabilités",
+  "Who We Are": "Qui nous sommes",
+  "Canada's History": "L'histoire du Canada",
+  "Canada's Regions": "Les régions du Canada",
+  "How Canadians Govern Themselves": "Comment les Canadiens se gouvernent",
+  "Canadian Symbols": "Les symboles canadiens",
+  "Federal Elections": "Les élections fédérales",
+  "Canada's Economy": "L'économie du Canada",
+  "Modern Canada": "Le Canada moderne",
+  "The Justice System": "Le système de justice"
+};
+
+function fillChapters(){
+  var sel = document.getElementById('chapter');
+  if(!sel || typeof CITIZENSHIP_QUESTIONS === 'undefined') return;
+  var count = {};
+  for(var i=0;i<CITIZENSHIP_QUESTIONS.length;i++){
+    var c = CITIZENSHIP_QUESTIONS[i].chapter;
+    if(c) count[c] = (count[c]||0) + 1;
+  }
+  var names = Object.keys(count).sort();
+  sel.innerHTML = '';
+  var all = document.createElement('option');
+  all.value = '';
+  all.textContent = T('All chapters — the full practice test',
+                      'Tous les chapitres : l\'examen complet')
+                    + ' (' + CITIZENSHIP_QUESTIONS.length + ')';
+  sel.appendChild(all);
+  for(var k=0;k<names.length;k++){
+    var o = document.createElement('option');
+    o.value = names[k];
+    o.textContent = (CHAP_FR[names[k]] && FR ? CHAP_FR[names[k]] : names[k])
+                    + ' (' + count[names[k]] + ')';
+    sel.appendChild(o);
+  }
+}
+document.addEventListener('DOMContentLoaded', fillChapters);
 
 let examQuestions = [];
 let current = 0;
@@ -1840,7 +1901,20 @@ function startExam(){
   /* the written-out answers are hidden while a test is in progress —
      otherwise you could scroll past the question and read the key */
   document.body.classList.add("quiz-live");
-  examQuestions = pickFresh(CITIZENSHIP_QUESTIONS, Math.min(TOTAL, CITIZENSHIP_QUESTIONS.length), 'cq_cit_seen');
+
+  /* Which chapter, if any. An unknown value falls back to the whole bank, so a
+     stale saved choice or a hand-edited URL can never empty the test. */
+  var sel = document.getElementById('chapter');
+  var chap = sel ? sel.value : '';
+  var pool = CITIZENSHIP_QUESTIONS;
+  if(chap){
+    var only = CITIZENSHIP_QUESTIONS.filter(function(q){ return q.chapter === chap; });
+    if(only.length >= 5) pool = only;
+  }
+  /* Each chapter remembers its own "already seen" list, so drilling one chapter
+     does not use up the questions of the full test. */
+  examQuestions = pickFresh(pool, Math.min(TOTAL, pool.length),
+                            'cq_cit_seen' + (chap ? '_' + chap.replace(/\W+/g,'') : ''));
   current = 0; score = 0; wrongList = []; answered = false;
   timeLeft = TIME_LIMIT;
 
@@ -1939,7 +2013,14 @@ function finishExam(timeUp){
   document.getElementById('quiz-screen').style.display = 'none';
   document.getElementById('result-screen').style.display = 'block';
 
-  const passed = score >= PASS_MARK;
+  /* The real test is 15 out of 20, which is 75%. A chapter run can be shorter
+     than twenty, so hold the same 75% rather than a fixed fifteen — a
+     seventeen-question chapter marked against 15 would be unfairly harsh, and a
+     ten-question one would be impossible. */
+  const needed = (examQuestions.length === TOTAL)
+                 ? PASS_MARK
+                 : Math.ceil(examQuestions.length * 0.75);
+  const passed = score >= needed;
   document.getElementById('result-icon').textContent = passed ? '✅' : '❌';
   const word = document.getElementById('result-word');
   word.textContent = passed ? 'PASS' : 'TRY AGAIN';
@@ -1950,7 +2031,7 @@ function finishExam(timeUp){
   if(timeUp) msg = '⏰ Time ran out. ';
   msg += passed
     ? 'Great job! You would pass with this score. Keep practising to stay sharp.'
-    : 'You need ' + PASS_MARK + ' correct to pass. Review your mistakes below and try again — you can do it!';
+    : 'You need ' + needed + ' correct to pass. Review your mistakes below and try again — you can do it!';
   document.getElementById('result-msg').textContent = msg;
 
   const review = document.getElementById('review');
@@ -1972,7 +2053,7 @@ function finishExam(timeUp){
 }
 </script>
   <script src="../js/game-fullscreen.js?v=35da7b56" defer></script>
-  <script src="../js/site.js?v=008e1a69"></script>
+  <script src="../js/site.js?v=5eea2181"></script>
   <script src="../js/analytics.js?v=065edc09"></script>
   <script src="../js/ads.js?v=00e703ff" defer></script>
   <script src="../js/pwa.js?v=7d7e0b9d" defer></script>

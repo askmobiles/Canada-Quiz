@@ -590,3 +590,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"nbx1", sec:"rules",
+  en:{ q:"Who may ride with a New Brunswick Level 1 driver?",
+       a:["Only the accompanying driver","Up to three passengers","Anyone, up to the number of seat belts","Only family members"],
+       e:"A Level 1 driver may carry no passengers at all except the accompanying driver. The passenger rules loosen at Level 2." },
+  fr:{ q:"Qui peut prendre place avec un conducteur de niveau 1 au Nouveau-Brunswick ?",
+       a:["Seulement le conducteur accompagnateur","Jusqu'à trois passagers","N'importe qui, jusqu'au nombre de ceintures","Seulement des membres de la famille"],
+       e:"Un conducteur de niveau 1 ne peut transporter aucun passager, sauf le conducteur accompagnateur. Les règles s'assouplissent au niveau 2." },
+  c:0 },
+
+{ id:"nbx2", sec:"rules",
+  en:{ q:"How many passengers may a New Brunswick Level 2 driver carry?",
+       a:["One","No more than three, with only one in the front seat","As many as there are seat belts","Only immediate family"],
+       e:"New Brunswick counts heads: no more than three passengers, and only one of them in the front seat. Its Atlantic neighbours limit passengers differently." },
+  fr:{ q:"Combien de passagers un conducteur de niveau 2 du Nouveau-Brunswick peut-il transporter ?",
+       a:["Un","Au plus trois, dont un seul à l'avant","Autant qu'il y a de ceintures","Seulement la famille immédiate"],
+       e:"Le Nouveau-Brunswick compte les personnes : au plus trois passagers, dont un seul à l'avant. Ses voisins de l'Atlantique limitent les passagers autrement." },
+  c:1 },
+
+{ id:"nbx3", sec:"rules",
+  en:{ q:"How much driving experience must a New Brunswick supervising driver have?",
+       a:["One year","Two years","Three years","Five years"],
+       e:"The supervising driver must hold a Class 5 or better with at least three years of driving experience, and must sit in the front passenger seat." },
+  fr:{ q:"Quelle expérience de conduite l'accompagnateur néo-brunswickois doit-il avoir ?",
+       a:["Un an","Deux ans","Trois ans","Cinq ans"],
+       e:"L'accompagnateur doit détenir une classe 5 ou mieux avec au moins trois ans d'expérience de conduite et s'asseoir sur le siège du passager avant." },
+  c:2 },
+
+{ id:"nbx4", sec:"rules",
+  en:{ q:"What happens to a New Brunswick novice driver who breaks the zero alcohol rule?",
+       a:["A warning","A 24-hour suspension","A 30-day suspension","A one-year suspension and a restart of the whole programme"],
+       e:"The penalty is a full year off the road and a restart of the graduated programme, with no credit for a road test already passed or a course already taken." },
+  fr:{ q:"Qu'arrive-t-il à un conducteur novice du Nouveau-Brunswick qui enfreint la règle du zéro alcool ?",
+       a:["Un avertissement","Une suspension de 24 heures","Une suspension de 30 jours","Une suspension d'un an et le recommencement de tout le programme"],
+       e:"La sanction est un an complet sans conduire et le recommencement du programme d'accès graduel, sans crédit pour un examen déjà réussi ni un cours déjà suivi." },
+  c:3 },
+
+{ id:"nbx5", sec:"rules",
+  en:{ q:"What does a hand-held phone ticket cost in New Brunswick?",
+       a:["$172.50 and 3 points","$340.50 and 5 demerit points","$600 and 2 points","A warning for a first offence"],
+       e:"New Brunswick charges $340.50 and 5 demerit points — the highest demerit count for a phone offence among the Atlantic provinces." },
+  fr:{ q:"Combien coûte une contravention pour téléphone à main au Nouveau-Brunswick ?",
+       a:["172,50 $ et 3 points","340,50 $ et 5 points d'inaptitude","600 $ et 2 points","Un avertissement pour une première infraction"],
+       e:"Le Nouveau-Brunswick impose 340,50 $ et 5 points d'inaptitude, le plus grand nombre de points pour une infraction de téléphone parmi les provinces de l'Atlantique." },
+  c:1 },
+
+{ id:"nbx6", sec:"rules",
+  en:{ q:"When may a New Brunswick child stop using a booster seat?",
+       a:["At age 6","At 18 kg","At age 9, 36 kg or 145 cm — whichever comes first","At age 12"],
+       e:"The booster stays until the child reaches any one of those three: 9 years old, 36 kg, or 145 cm. The minimum fine for getting it wrong is $172.50." },
+  fr:{ q:"Quand un enfant du Nouveau-Brunswick peut-il cesser d'utiliser un siège d'appoint ?",
+       a:["À 6 ans","À 18 kg","À 9 ans, 36 kg ou 145 cm, selon la première éventualité","À 12 ans"],
+       e:"Le siège d'appoint reste jusqu'à ce que l'enfant atteigne l'un de ces trois seuils : 9 ans, 36 kg ou 145 cm. L'amende minimale en cas d'erreur est de 172,50 $." },
+  c:2 },
+
+{ id:"nbx7", sec:"rules",
+  en:{ q:"When are studded tires allowed in New Brunswick?",
+       a:["All year","15 October to 1 May","1 December to 15 March","They are banned"],
+       e:"Studded tires are allowed from 15 October to 1 May. Winter tires themselves are recommended in New Brunswick but not required by law." },
+  fr:{ q:"Quand les pneus cloutés sont-ils permis au Nouveau-Brunswick ?",
+       a:["Toute l'année","Du 15 octobre au 1er mai","Du 1er décembre au 15 mars","Ils sont interdits"],
+       e:"Les pneus cloutés sont permis du 15 octobre au 1er mai. Les pneus d'hiver eux-mêmes sont recommandés au Nouveau-Brunswick, mais non exigés par la loi." },
+  c:1 },
+
+{ id:"nbx8", sec:"rules",
+  en:{ q:"When may a New Brunswick Level 2 driver under 21 drive between midnight and 5 a.m.?",
+       a:["With a qualified accompanying driver, or for work or education","Never, in any circumstances","Any time they like","Only on weekends"],
+       e:"The night restriction is lifted for work and education, and when a Class 5 driver with three years of experience is in the vehicle. It stops applying at 21." },
+  fr:{ q:"Quand un conducteur de niveau 2 de moins de 21 ans peut-il conduire entre minuit et 5 h au Nouveau-Brunswick ?",
+       a:["Avec un accompagnateur qualifié, ou pour le travail ou les études","Jamais, en aucune circonstance","Quand ils le veulent","Seulement la fin de semaine"],
+       e:"La restriction de nuit est levée pour le travail et les études, et lorsqu'un conducteur de classe 5 ayant trois ans d'expérience est dans le véhicule. Elle cesse de s'appliquer à 21 ans." },
+  c:0 },
+
+{ id:"nbx9", sec:"rules",
+  en:{ q:"How long is the New Brunswick Level 1 stage with certified driver training?",
+       a:["6 months","8 months","12 months","18 months"],
+       e:"Level 1 normally lasts 12 months, cut to 8 with certified driver training. Level 2 then lasts a further 12 months." },
+  fr:{ q:"Combien de temps dure le niveau 1 au Nouveau-Brunswick avec une formation reconnue ?",
+       a:["6 mois","8 mois","12 mois","18 mois"],
+       e:"Le niveau 1 dure normalement 12 mois, réduit à 8 avec une formation reconnue. Le niveau 2 dure ensuite 12 mois de plus." },
+  c:1 },
+
+{ id:"nbx10", sec:"rules",
+  en:{ q:"Where does New Brunswick mark that a driver is still a learner?",
+       a:["On a sticker in the rear window","On a magnetic plate","With an 'L' printed on the licence card","Nowhere at all"],
+       e:"New Brunswick prints an L on the front of the licence card itself. Prince Edward Island and Newfoundland and Labrador instead require a sign on the vehicle." },
+  fr:{ q:"Où le Nouveau-Brunswick indique-t-il qu'un conducteur est encore apprenti ?",
+       a:["Sur un autocollant dans la lunette arrière","Sur une plaque magnétique","Par un « L » imprimé sur la carte de permis","Nulle part"],
+       e:"Le Nouveau-Brunswick imprime un « L » à l'avant de la carte de permis. L'Île-du-Prince-Édouard et Terre-Neuve-et-Labrador exigent plutôt un panneau sur le véhicule." },
+  c:2 }
+);

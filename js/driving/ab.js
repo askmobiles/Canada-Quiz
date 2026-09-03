@@ -987,3 +987,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"abx1", sec:"rules",
+  en:{ q:"What is the youngest age at which you can get a learner's licence in Alberta?",
+       a:["14","16","18","21"],
+       e:"Alberta issues the Class 7 learner's licence from age 14, the youngest starting age in Canada. Saskatchewan and British Columbia both start at 16." },
+  fr:{ q:"À quel âge le plus jeune peut-on obtenir un permis d'apprenti conducteur en Alberta ?",
+       a:["14 ans","16 ans","18 ans","21 ans"],
+       e:"L'Alberta délivre le permis d'apprenti de classe 7 dès 14 ans, l'âge de départ le plus jeune au Canada. La Saskatchewan et la Colombie-Britannique commencent toutes deux à 16 ans." },
+  c:0 },
+
+{ id:"abx2", sec:"rules",
+  en:{ q:"When may an Alberta Class 7 learner not drive at all?",
+       a:["Between 8 p.m. and 6 a.m.","Between midnight and 5 a.m.","On weekends","There is no restriction"],
+       e:"A Class 7 learner may not drive between midnight and 5 a.m. Once you reach the Class 5-GDL stage that curfew is gone." },
+  fr:{ q:"Quand un apprenti de classe 7 de l'Alberta ne peut-il pas conduire du tout ?",
+       a:["Entre 20 h et 6 h","Entre minuit et 5 h","La fin de semaine","Il n'y a aucune restriction"],
+       e:"Un apprenti de classe 7 ne peut pas conduire entre minuit et 5 h. Une fois au stade de la classe 5-GDL, ce couvre-feu ne s'applique plus." },
+  c:1 },
+
+{ id:"abx3", sec:"rules",
+  en:{ q:"How much alcohol may a novice Alberta driver have in their blood?",
+       a:["Up to 0.05","Up to 0.08","None at all","One drink is allowed"],
+       e:"Alberta novice drivers must have zero alcohol and zero drugs. Breaking that brings an immediate suspension, a vehicle seizure and a fine." },
+  fr:{ q:"Quelle quantité d'alcool un conducteur novice de l'Alberta peut-il avoir dans le sang ?",
+       a:["Jusqu'à 0,05","Jusqu'à 0,08","Aucune","Une consommation est permise"],
+       e:"Les conducteurs novices de l'Alberta doivent avoir zéro alcool et zéro drogue. Y contrevenir entraîne une suspension immédiate, une saisie du véhicule et une amende." },
+  c:2 },
+
+{ id:"abx4", sec:"rules",
+  en:{ q:"Where must the supervising driver sit when an Alberta learner is driving?",
+       a:["Anywhere in the vehicle","In the front passenger seat","Directly behind the driver","They do not have to be in the vehicle"],
+       e:"The supervising driver must be over 18, hold a full Class 5 or higher, and sit in the front passenger seat where they can see the road and help." },
+  fr:{ q:"Où doit s'asseoir le conducteur accompagnateur lorsqu'un apprenti conduit en Alberta ?",
+       a:["N'importe où dans le véhicule","Sur le siège du passager avant","Directement derrière le conducteur","Il n'a pas à être dans le véhicule"],
+       e:"Le conducteur accompagnateur doit avoir plus de 18 ans, détenir une classe 5 complète ou supérieure, et s'asseoir sur le siège du passager avant, d'où il voit la route et peut aider." },
+  c:1 },
+
+{ id:"abx5", sec:"rules",
+  en:{ q:"What is the speed limit in an Alberta playground zone?",
+       a:["30 km/h","40 km/h","50 km/h","60 km/h"],
+       e:"Playground zones are 30 km/h, and unlike school zones they apply every day of the week, from 8:30 a.m. until one hour after sunset." },
+  fr:{ q:"Quelle est la limite de vitesse dans une zone de terrain de jeu en Alberta ?",
+       a:["30 km/h","40 km/h","50 km/h","60 km/h"],
+       e:"Les zones de terrain de jeu sont à 30 km/h et, contrairement aux zones scolaires, elles s'appliquent tous les jours, de 8 h 30 jusqu'à une heure après le coucher du soleil." },
+  c:0 },
+
+{ id:"abx6", sec:"rules",
+  en:{ q:"Are winter tires required by law in Alberta?",
+       a:["Yes, from October to April","Yes, on all highways","No, they are recommended but not required","Only for new drivers"],
+       e:"Alberta has not made winter tires mandatory. They are strongly recommended, and British Columbia does require them on many highways, but Alberta law does not." },
+  fr:{ q:"Les pneus d'hiver sont-ils obligatoires par la loi en Alberta ?",
+       a:["Oui, d'octobre à avril","Oui, sur toutes les routes","Non, ils sont recommandés mais non obligatoires","Seulement pour les nouveaux conducteurs"],
+       e:"L'Alberta n'a pas rendu les pneus d'hiver obligatoires. Ils sont fortement recommandés, et la Colombie-Britannique les exige sur bien des routes, mais la loi albertaine ne le fait pas." },
+  c:2 },
+
+{ id:"abx7", sec:"rules",
+  en:{ q:"How many demerit points suspend an Alberta driver still in the graduated program?",
+       a:["4","8","15","20"],
+       e:"A graduated driver is suspended at 8 demerit points. A fully licensed Alberta driver has until 15." },
+  fr:{ q:"Combien de points d'inaptitude entraînent la suspension d'un conducteur albertain encore au programme gradué ?",
+       a:["4","8","15","20"],
+       e:"Un conducteur au programme gradué est suspendu à 8 points d'inaptitude. Un conducteur albertain pleinement titulaire dispose de 15 points." },
+  c:1 },
+
+{ id:"abx8", sec:"rules",
+  en:{ q:"What does an Alberta driver face for using a hand-held phone while driving?",
+       a:["A warning only","A $100 fine","A $390 fine and 3 demerit points","Immediate licence cancellation"],
+       e:"Distracted driving in Alberta costs $390 and 3 demerit points. For a novice driver those 3 points are almost half the way to a suspension." },
+  fr:{ q:"Que risque un conducteur albertain qui utilise un téléphone à main au volant ?",
+       a:["Un simple avertissement","Une amende de 100 $","Une amende de 390 $ et 3 points d'inaptitude","L'annulation immédiate du permis"],
+       e:"La conduite distraite en Alberta coûte 390 $ et 3 points d'inaptitude. Pour un conducteur novice, ces 3 points représentent près de la moitié du chemin vers une suspension." },
+  c:2 },
+
+{ id:"abx9", sec:"rules",
+  en:{ q:"Which Alberta rule surprises drivers moving from another province?",
+       a:["Seat belts are optional","Children may sit in the front at any age","Winter tires are mandatory","Booster seats are not required by law"],
+       e:"Alberta requires a child safety seat only for a child under six who weighs 18 kg or less. It is the one province with no booster-seat law, though safety experts still strongly advise using one." },
+  fr:{ q:"Quelle règle albertaine surprend les conducteurs venus d'une autre province ?",
+       a:["Le port de la ceinture est facultatif","Les enfants peuvent s'asseoir à l'avant à tout âge","Les pneus d'hiver sont obligatoires","Les sièges d'appoint ne sont pas exigés par la loi"],
+       e:"L'Alberta n'exige un siège d'auto que pour un enfant de moins de six ans pesant 18 kg ou moins. C'est la seule province sans loi sur les sièges d'appoint, même si les experts en sécurité en recommandent fortement l'usage." },
+  c:3 },
+
+{ id:"abx10", sec:"rules",
+  en:{ q:"May an Alberta Class 5-GDL driver supervise a learner?",
+       a:["Yes, at any time","No — a full Class 5 or higher is needed","Yes, but only in daylight","Yes, if a parent is also present"],
+       e:"A probationary Class 5-GDL driver may not act as the accompanying driver for a learner. The supervisor needs a full Class 5 or higher." },
+  fr:{ q:"Un conducteur albertain de classe 5-GDL peut-il superviser un apprenti ?",
+       a:["Oui, en tout temps","Non : une classe 5 complète ou supérieure est requise","Oui, mais seulement le jour","Oui, si un parent est aussi présent"],
+       e:"Un conducteur probatoire de classe 5-GDL ne peut pas servir d'accompagnateur à un apprenti. L'accompagnateur doit détenir une classe 5 complète ou supérieure." },
+  c:1 }
+);

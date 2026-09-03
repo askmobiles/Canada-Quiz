@@ -593,3 +593,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"qcx1", sec:"rules",
+  en:{ q:"What must you complete in Quebec before you can even get a learner's licence?",
+       a:["Nothing extra","A first aid course","The first modules of a recognised driving course","A year of supervised driving"],
+       e:"Quebec requires the driving course to begin before the learner's licence is issued: you complete the first phase and pass the driving school's test first. Most provinces let you start driving before any course." },
+  fr:{ q:"Que devez-vous faire au Québec avant même de pouvoir obtenir un permis d'apprenti conducteur ?",
+       a:["Rien de plus","Un cours de premiers soins","Les premiers modules d'un cours de conduite reconnu","Un an de conduite accompagnée"],
+       e:"Le Québec exige que le cours de conduite débute avant la délivrance du permis d'apprenti : vous terminez la première phase et réussissez l'examen de l'école de conduite d'abord. La plupart des provinces permettent de commencer à conduire avant tout cours." },
+  c:2 },
+
+{ id:"qcx2", sec:"rules",
+  en:{ q:"Which drivers in Quebec must have zero alcohol in their blood?",
+       a:["Only learner licence holders","Learners, probationary holders, and every driver under 22","Only drivers under 18","Nobody — the limit is .08 for all"],
+       e:"Zero alcohol applies to learners and probationary holders whatever their age, and to every driver under 22. Note the cut-off: Quebec says under 22, Ontario says 21 and under." },
+  fr:{ q:"Quels conducteurs au Québec doivent avoir zéro alcool dans le sang ?",
+       a:["Seulement les titulaires d'un permis d'apprenti","Les apprentis, les titulaires d'un permis probatoire et tout conducteur de moins de 22 ans","Seulement les conducteurs de moins de 18 ans","Personne : la limite est de 0,08 pour tous"],
+       e:"Le zéro alcool s'applique aux apprentis et aux titulaires d'un permis probatoire, quel que soit leur âge, et à tout conducteur de moins de 22 ans. Attention au seuil : le Québec dit moins de 22 ans, l'Ontario dit 21 ans ou moins." },
+  c:1 },
+
+{ id:"qcx3", sec:"rules",
+  en:{ q:"How long must a Quebec accompanying rider have held a Class 5 licence?",
+       a:["One year","Two years","Four years","Ten years"],
+       e:"The accompanying rider must have held a valid Class 5 licence for at least two years. Someone still on a probationary licence may not act as an accompanying rider." },
+  fr:{ q:"Depuis combien de temps l'accompagnateur québécois doit-il détenir un permis de classe 5 ?",
+       a:["Un an","Deux ans","Quatre ans","Dix ans"],
+       e:"L'accompagnateur doit détenir un permis de classe 5 valide depuis au moins deux ans. Une personne encore titulaire d'un permis probatoire ne peut pas servir d'accompagnateur." },
+  c:1 },
+
+{ id:"qcx4", sec:"rules",
+  en:{ q:"How many demerit points cost a Quebec learner or probationary driver their licence?",
+       a:["8","6","4","15"],
+       e:"A learner or probationary licence is revoked at 4 points. A regular licence holder under 23 has 8, from 23 to 24 has 12, and from 25 has 15." },
+  fr:{ q:"Combien de points d'inaptitude font perdre son permis à un apprenti ou à un conducteur probatoire au Québec ?",
+       a:["8","6","4","15"],
+       e:"Le permis d'apprenti ou probatoire est révoqué à 4 points. Le titulaire d'un permis régulier de moins de 23 ans en a 8 ; de 23 à 24 ans, 12 ; et à partir de 25 ans, 15." },
+  c:2 },
+
+{ id:"qcx5", sec:"rules",
+  en:{ q:"What does a first distracted driving offence cost in Quebec?",
+       a:["$100 and 2 points","A warning","$200 and 3 points","$300 to $600 and 5 demerit points"],
+       e:"The fine is $300 to $600 with 5 demerit points, and the same penalty applies to every driver. Note that 5 points is more than the 4 a learner is allowed." },
+  fr:{ q:"Que coûte une première infraction de conduite distraite au Québec ?",
+       a:["100 $ et 2 points","Un avertissement","200 $ et 3 points","De 300 $ à 600 $ et 5 points d'inaptitude"],
+       e:"L'amende va de 300 $ à 600 $ avec 5 points d'inaptitude, et la même sanction s'applique à tout conducteur. Notez que 5 points dépassent les 4 points permis à un apprenti." },
+  c:3 },
+
+{ id:"qcx6", sec:"rules",
+  en:{ q:"When are winter tires mandatory in Quebec?",
+       a:["1 November to 30 April","1 December to 15 March","Only when snow is on the ground","They are not mandatory"],
+       e:"Every passenger vehicle registered in Quebec must have winter tires from 1 December to 15 March, marked with the mountain-and-snowflake pictogram. The fine is $200 to $300." },
+  fr:{ q:"Quand les pneus d'hiver sont-ils obligatoires au Québec ?",
+       a:["Du 1er novembre au 30 avril","Du 1er décembre au 15 mars","Seulement quand il y a de la neige au sol","Ils ne sont pas obligatoires"],
+       e:"Tout véhicule de promenade immatriculé au Québec doit être muni de pneus d'hiver du 1er décembre au 15 mars, portant le pictogramme de la montagne et du flocon. L'amende va de 200 $ à 300 $." },
+  c:1 },
+
+{ id:"qcx7", sec:"rules",
+  en:{ q:"Where in Quebec is turning right on a red light forbidden?",
+       a:["On the whole island of Montreal","In Quebec City","On every autoroute","Nowhere — it is allowed everywhere"],
+       e:"Right on red is allowed across Quebec except on the island of Montreal, and anywhere a sign forbids it. Quebec only allowed it province-wide in 2003." },
+  fr:{ q:"Où, au Québec, le virage à droite au feu rouge est-il interdit ?",
+       a:["Sur toute l'île de Montréal","À Québec","Sur toutes les autoroutes","Nulle part : c'est permis partout"],
+       e:"Le virage à droite au feu rouge est permis partout au Québec, sauf sur l'île de Montréal et là où un panneau l'interdit. Le Québec ne l'a autorisé à l'échelle de la province qu'en 2003." },
+  c:0 },
+
+{ id:"qcx8", sec:"rules",
+  en:{ q:"In Quebec, how do two drivers facing each other and both turning left pass one another?",
+       a:["Behind each other","In front of each other","The larger vehicle goes first","Both must wait for a green arrow"],
+       e:"In Quebec you turn in front of the oncoming vehicle that is also turning left. Drivers arriving from provinces where you pass behind each other need to unlearn the habit." },
+  fr:{ q:"Au Québec, comment deux conducteurs qui se font face et tournent tous deux à gauche se croisent-ils ?",
+       a:["L'un derrière l'autre","L'un devant l'autre","Le plus gros véhicule passe en premier","Les deux doivent attendre une flèche verte"],
+       e:"Au Québec, vous tournez devant le véhicule venant en sens inverse qui tourne aussi à gauche. Les conducteurs venant de provinces où l'on se croise par l'arrière doivent désapprendre cette habitude." },
+  c:1 },
+
+{ id:"qcx9", sec:"rules",
+  en:{ q:"How much space must a Quebec driver leave when passing a cyclist where the limit is over 50 km/h?",
+       a:["No set distance","1 metre","1.5 metres","3 metres"],
+       e:"Quebec sets the distance in law: 1 metre where the limit is 50 km/h or less, and 1.5 metres where it is higher." },
+  fr:{ q:"Quel espace un conducteur québécois doit-il laisser en dépassant un cycliste là où la limite dépasse 50 km/h ?",
+       a:["Aucune distance précise","1 mètre","1,5 mètre","3 mètres"],
+       e:"Le Québec fixe la distance dans la loi : 1 mètre là où la limite est de 50 km/h ou moins, et 1,5 mètre là où elle est supérieure." },
+  c:2 },
+
+{ id:"qcx10", sec:"rules",
+  en:{ q:"Until when must a child in Quebec use a car seat or booster?",
+       a:["Until age 6","Until age 9 or 145 cm tall","Until 18 kg","Until age 12"],
+       e:"Quebec uses one simple threshold: a car seat is needed until the child is 9 years old or at least 145 cm tall. Getting it wrong costs $80 to $100 and 3 demerit points." },
+  fr:{ q:"Jusqu'à quand un enfant doit-il utiliser un siège d'auto ou un siège d'appoint au Québec ?",
+       a:["Jusqu'à 6 ans","Jusqu'à 9 ans ou 145 cm","Jusqu'à 18 kg","Jusqu'à 12 ans"],
+       e:"Le Québec applique un seuil simple : le siège d'auto est requis jusqu'à ce que l'enfant ait 9 ans ou mesure au moins 145 cm. Une erreur coûte de 80 $ à 100 $ et 3 points d'inaptitude." },
+  c:1 }
+);

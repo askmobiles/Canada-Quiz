@@ -51,7 +51,11 @@
     </p>
   <details class="howto"><summary>📖 How to play</summary><p>Tap the answer you think is right. You'll see instantly if you're correct, along with a fun fact. Answer all the questions to get your score — then play again to beat it!</p></details>
 
-    <p style="margin-top:18px">
+    <p style="margin-top:18px;margin-bottom:6px">
+      <label for="topic" style="display:block;margin-bottom:6px">Choose a topic, or play them all</label>
+      <select id="topic" style="font:inherit;padding:10px 12px;border-radius:10px;min-height:44px;max-width:100%"></select>
+    </p>
+    <p style="margin-top:14px">
       <button class="btn btn-lg" onclick="startQuiz()">Start the Fun Quiz</button>
     </p>
   </section>
@@ -1269,7 +1273,7 @@
   </div>
 </footer>
 
-<script src="js/fun-questions.js?v=e1a9cc70" defer></script>
+<script src="js/fun-questions.js?v=e1322801" defer></script>
 <script>
 let qs=[], cur=0, score=0, answered=false;
 
@@ -1297,11 +1301,67 @@ function pickFresh(bank, count, key){
   return chosen.map(i=>balanceOpts(bank[i]));
 }
 
+/* Topic play.
+   The bank used to be one flat list of 225 questions, so somebody who wanted
+   Canadian food got camels and karate belts. Every question now carries a
+   topic — see tools/newq/fun_topics.py — and this picker uses them. The
+   default is still everything, because that is the game most families want. */
+var FR = /\/fr\//.test(location.pathname);
+function T2(en, fr){ return FR ? fr : en; }
+
+var TOPIC_FR = {
+  "Food & Drink": "Cuisine et boissons",
+  "Hockey & Sport": "Hockey et sport",
+  "Slang & Everyday Life": "Expressions et vie quotidienne",
+  "Animals of Canada": "Animaux du Canada",
+  "Places & Geography": "Lieux et géographie",
+  "Symbols & Holidays": "Symboles et fêtes",
+  "Famous Canadians & Inventions": "Canadiens célèbres et inventions",
+  "Winter in Canada": "L'hiver au Canada",
+  "Beyond Canada": "Au-delà du Canada"
+};
+
+function fillTopics(){
+  var sel = document.getElementById('topic');
+  if(!sel || typeof FUN_QUESTIONS === 'undefined') return;
+  var count = {};
+  for(var i=0;i<FUN_QUESTIONS.length;i++){
+    var c = FUN_QUESTIONS[i].cat;
+    if(c) count[c] = (count[c]||0) + 1;
+  }
+  var names = Object.keys(count).sort();
+  sel.innerHTML = '';
+  var all = document.createElement('option');
+  all.value = '';
+  all.textContent = T2('Everything mixed together', 'Tout mélangé')
+                    + ' (' + FUN_QUESTIONS.length + ')';
+  sel.appendChild(all);
+  for(var k=0;k<names.length;k++){
+    var o = document.createElement('option');
+    o.value = names[k];
+    o.textContent = (FR && TOPIC_FR[names[k]] ? TOPIC_FR[names[k]] : names[k])
+                    + ' (' + count[names[k]] + ')';
+    sel.appendChild(o);
+  }
+}
+document.addEventListener('DOMContentLoaded', fillTopics);
+
 function startQuiz(){
   /* the written-out answers are hidden while a test is in progress —
      otherwise you could scroll past the question and read the key */
   document.body.classList.add("quiz-live");
-  qs = pickFresh(FUN_QUESTIONS, Math.min(8, FUN_QUESTIONS.length), 'fun_seen');
+
+  var sel = document.getElementById('topic');
+  var topic = sel ? sel.value : '';
+  var pool = FUN_QUESTIONS;
+  if(topic){
+    var only = FUN_QUESTIONS.filter(function(q){ return q.cat === topic; });
+    if(only.length >= 8) pool = only;
+  }
+  /* each topic keeps its own "already seen" list, so playing one topic does
+     not use up the questions of the mixed game */
+  qs = pickFresh(pool, Math.min(8, pool.length),
+                 'fun_seen' + (topic ? '_' + topic.replace(/\W+/g,'') : ''));
   cur=0; score=0; answered=false;
   document.getElementById('start-screen').style.display='none';
   document.getElementById('result-screen').style.display='none';
@@ -1364,7 +1424,7 @@ function finish(){
 }
 </script>
   <script src="js/game-fullscreen.js?v=35da7b56" defer></script>
-  <script src="js/site.js?v=008e1a69"></script>
+  <script src="js/site.js?v=5eea2181"></script>
   <script src="js/analytics.js?v=065edc09"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
   <script src="js/pwa.js?v=7d7e0b9d" defer></script>

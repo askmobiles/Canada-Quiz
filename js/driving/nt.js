@@ -548,3 +548,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"ntx1", sec:"rules",
+  en:{ q:"What is the middle stage of the Northwest Territories licensing programme called?",
+       a:["Novice","Level 2","Probationary Class 5P","G2"],
+       e:"The Northwest Territories runs Learner Class 7, then Probationary Class 5P or 6P, then a full licence. The 5P name is unique to the territory." },
+  fr:{ q:"Comment s'appelle l'étape intermédiaire du programme de permis des Territoires du Nord-Ouest ?",
+       a:["Novice","Niveau 2","Probatoire de classe 5P","G2"],
+       e:"Les Territoires du Nord-Ouest appliquent le permis d'apprenti de classe 7, puis le permis probatoire de classe 5P ou 6P, puis le permis complet. L'appellation 5P est propre au territoire." },
+  c:2 },
+
+{ id:"ntx2", sec:"rules",
+  en:{ q:"Who may ride with a Northwest Territories Class 7 learner?",
+       a:["Only the supervisor","Two passengers","Immediate family only","Anyone, up to the seat belts"],
+       e:"A Class 7 learner may have no passengers other than the supervisor. Yukon next door allows two people including the co-driver." },
+  fr:{ q:"Qui peut prendre place avec un apprenti de classe 7 des Territoires du Nord-Ouest ?",
+       a:["Seulement le superviseur","Deux passagers","La famille immédiate seulement","N'importe qui, jusqu'au nombre de ceintures"],
+       e:"Un apprenti de classe 7 ne peut avoir aucun passager autre que le superviseur. Le Yukon voisin permet deux personnes, y compris le co-conducteur." },
+  c:0 },
+
+{ id:"ntx3", sec:"rules",
+  en:{ q:"When may a Northwest Territories Class 7 learner not drive?",
+       a:["Midnight to 5 a.m.","11 p.m. to 6 a.m.","1 a.m. to 5 a.m.","There is no restriction"],
+       e:"The Northwest Territories curfew is 11 p.m. to 6 a.m. — an hour earlier at each end than the midnight to 5 a.m. rule most provinces use." },
+  fr:{ q:"Quand un apprenti de classe 7 des Territoires du Nord-Ouest ne peut-il pas conduire ?",
+       a:["De minuit à 5 h","De 23 h à 6 h","De 1 h à 5 h","Il n'y a aucune restriction"],
+       e:"Le couvre-feu des Territoires du Nord-Ouest va de 23 h à 6 h, soit une heure plus tôt de chaque côté que la règle de minuit à 5 h appliquée dans la plupart des provinces." },
+  c:1 },
+
+{ id:"ntx4", sec:"rules",
+  en:{ q:"How much experience must a Northwest Territories learner's supervisor have?",
+       a:["6 months","12 months","24 months with a full Class 5","5 years"],
+       e:"The supervisor needs at least 24 months of experience with a full Class 5 licence, and both driver and supervisor must be at zero blood alcohol." },
+  fr:{ q:"Quelle expérience le superviseur d'un apprenti des Territoires du Nord-Ouest doit-il avoir ?",
+       a:["6 mois","12 mois","24 mois avec une classe 5 complète","5 ans"],
+       e:"Le superviseur doit avoir au moins 24 mois d'expérience avec un permis de classe 5 complet, et le conducteur comme le superviseur doivent afficher un taux d'alcoolémie nul." },
+  c:2 },
+
+{ id:"ntx5", sec:"rules",
+  en:{ q:"Which drivers must have no alcohol or drugs at all in the Northwest Territories?",
+       a:["Only learners","Novice drivers and every driver under 22","Only drivers under 18","Nobody"],
+       e:"Zero applies to novice drivers, to every driver under 22, and to certain commercial drivers. Any presence at all results in a suspension." },
+  fr:{ q:"Quels conducteurs ne doivent avoir aucun alcool ni aucune drogue dans les Territoires du Nord-Ouest ?",
+       a:["Seulement les apprentis","Les conducteurs novices et tout conducteur de moins de 22 ans","Seulement les conducteurs de moins de 18 ans","Personne"],
+       e:"Le zéro s'applique aux conducteurs novices, à tout conducteur de moins de 22 ans et à certains conducteurs commerciaux. Toute présence entraîne une suspension." },
+  c:1 },
+
+{ id:"ntx6", sec:"rules",
+  en:{ q:"What is the speed limit inside a Northwest Territories community when nothing is posted?",
+       a:["50 km/h","40 km/h","60 km/h","90 km/h"],
+       e:"Inside a settlement or municipality the maximum is 50 km/h unless otherwise posted. On a primary highway outside a community it is 90 km/h." },
+  fr:{ q:"Quelle est la limite de vitesse dans une localité des Territoires du Nord-Ouest lorsque rien n'est affiché ?",
+       a:["50 km/h","40 km/h","60 km/h","90 km/h"],
+       e:"À l'intérieur d'une localité ou d'une municipalité, le maximum est de 50 km/h sauf indication contraire. Sur une route principale à l'extérieur d'une localité, il est de 90 km/h." },
+  c:0 },
+
+{ id:"ntx7", sec:"rules",
+  en:{ q:"How many demerit points suspend a Northwest Territories learner or probationary driver?",
+       a:["4","6","12","15"],
+       e:"A Class 7 or 5P driver is suspended for 30 days at 6 points. A fully licensed driver has 15, and is contacted for an interview at 12." },
+  fr:{ q:"Combien de points d'inaptitude entraînent la suspension d'un apprenti ou d'un conducteur probatoire des Territoires du Nord-Ouest ?",
+       a:["4","6","12","15"],
+       e:"Un conducteur de classe 7 ou 5P est suspendu 30 jours à 6 points. Un conducteur pleinement titulaire en a 15 et est convoqué en entrevue à 12 points." },
+  c:1 },
+
+{ id:"ntx8", sec:"rules",
+  en:{ q:"Why are speed limits set on Northwest Territories ice roads?",
+       a:["To save fuel","To reduce noise","To protect the structure of the ice","Because of wildlife only"],
+       e:"A vehicle moving too fast pushes a pressure wave through the ice that can damage it. The limit protects the road itself, not just the driver." },
+  fr:{ q:"Pourquoi des limites de vitesse sont-elles fixées sur les routes de glace des Territoires du Nord-Ouest ?",
+       a:["Pour économiser du carburant","Pour réduire le bruit","Pour protéger la structure de la glace","Uniquement à cause de la faune"],
+       e:"Un véhicule qui roule trop vite pousse une onde de pression dans la glace qui peut l'endommager. La limite protège la route elle-même, et pas seulement le conducteur." },
+  c:2 },
+
+{ id:"ntx9", sec:"rules",
+  en:{ q:"What does the Northwest Territories advise carrying for winter road travel that a southern kit would not include?",
+       a:["An extra pair of gloves","A road map","Bottled water","A satellite phone or two-way radio, and a sleeping bag rated to −20 °C"],
+       e:"Winter road kits in the Northwest Territories include a satellite phone or two-way radio, an axe, flares and a sleeping bag rated to at least −20 °C. Help can be a very long way off." },
+  fr:{ q:"Que conseillent d'emporter les Territoires du Nord-Ouest pour un trajet sur route d'hiver, qu'une trousse du Sud ne contiendrait pas ?",
+       a:["Une paire de gants supplémentaire","Une carte routière","De l'eau embouteillée","Un téléphone satellite ou une radio bidirectionnelle, et un sac de couchage coté −20 °C"],
+       e:"Les trousses pour routes d'hiver des Territoires du Nord-Ouest comprennent un téléphone satellite ou une radio bidirectionnelle, une hache, des fusées éclairantes et un sac de couchage coté au moins −20 °C. Les secours peuvent être très loin." },
+  c:3 },
+
+{ id:"ntx10", sec:"rules",
+  en:{ q:"What must a driver check before setting out on a Northwest Territories ice road?",
+       a:["The posted load limit and whether the road is open","Only the weather forecast","The price of fuel","Nothing — ice roads are always safe"],
+       e:"Respect the posted load limit and never drive a closed road. Road status is published before you leave." },
+  fr:{ q:"Que doit vérifier un conducteur avant de s'engager sur une route de glace des Territoires du Nord-Ouest ?",
+       a:["La limite de charge affichée et l'état d'ouverture de la route","Seulement les prévisions météo","Le prix du carburant","Rien : les routes de glace sont toujours sûres"],
+       e:"Respectez la limite de charge affichée et ne circulez jamais sur une route fermée. L'état des routes est publié avant votre départ." },
+  c:0 }
+);

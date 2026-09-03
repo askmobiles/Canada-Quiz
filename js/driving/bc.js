@@ -985,3 +985,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"bcx1", sec:"rules",
+  en:{ q:"How long must a British Columbia driver stay in the Novice (N) stage without a course?",
+       a:["6 months","12 months","24 months","36 months"],
+       e:"The Novice stage lasts 24 months, or 18 months if you complete an ICBC-approved driver training course." },
+  fr:{ q:"Combien de temps un conducteur de la Colombie-Britannique doit-il rester au stade novice (N) sans suivre de cours ?",
+       a:["6 mois","12 mois","24 mois","36 mois"],
+       e:"Le stade novice dure 24 mois, ou 18 mois si vous suivez un cours de conduite approuvé par ICBC." },
+  c:2 },
+
+{ id:"bcx2", sec:"rules",
+  en:{ q:"How many passengers may a British Columbia Novice (N) driver normally carry?",
+       a:["As many as there are seat belts","Only one","Three","None at all"],
+       e:"A Novice driver may carry only one passenger, unless every passenger is immediate family, or a qualified supervisor is in the vehicle." },
+  fr:{ q:"Combien de passagers un conducteur novice (N) de la Colombie-Britannique peut-il normalement transporter ?",
+       a:["Autant qu'il y a de ceintures","Un seul","Trois","Aucun"],
+       e:"Un conducteur novice ne peut transporter qu'un seul passager, sauf si tous les passagers sont de la famille immédiate ou qu'un accompagnateur qualifié se trouve dans le véhicule." },
+  c:1 },
+
+{ id:"bcx3", sec:"rules",
+  en:{ q:"Between which hours may a British Columbia Learner (L) drive?",
+       a:["5 a.m. to midnight","Any time","7 a.m. to 7 p.m.","Daylight hours only"],
+       e:"An L driver may drive only between 5 a.m. and midnight. The Novice stage has no curfew." },
+  fr:{ q:"Entre quelles heures un apprenti (L) de la Colombie-Britannique peut-il conduire ?",
+       a:["De 5 h à minuit","En tout temps","De 7 h à 19 h","Seulement le jour"],
+       e:"Un conducteur L ne peut conduire qu'entre 5 h et minuit. Le stade novice n'a pas de couvre-feu." },
+  c:0 },
+
+{ id:"bcx4", sec:"rules",
+  en:{ q:"What must a British Columbia L or N driver display on the vehicle?",
+       a:["Nothing","The official L or N sign","A yellow triangle","A copy of the licence"],
+       e:"British Columbia requires the official L or N sign in the rear window, so other drivers know a new driver is at the wheel." },
+  fr:{ q:"Que doit afficher sur son véhicule un conducteur L ou N de la Colombie-Britannique ?",
+       a:["Rien","Le panneau officiel L ou N","Un triangle jaune","Une copie du permis"],
+       e:"La Colombie-Britannique exige le panneau officiel L ou N dans la lunette arrière, afin que les autres conducteurs sachent qu'un nouveau conducteur est au volant." },
+  c:1 },
+
+{ id:"bcx5", sec:"rules",
+  en:{ q:"When must winter tires or chains be used on designated British Columbia highways?",
+       a:["1 November to 1 March","Only when it is snowing","1 October to 30 April","They are never required"],
+       e:"On designated highways winter tires or chains are required from 1 October to 30 April. On some routes away from mountain passes the requirement ends 31 March. Watch for the signs." },
+  fr:{ q:"Quand faut-il utiliser des pneus d'hiver ou des chaînes sur les routes désignées de la Colombie-Britannique ?",
+       a:["Du 1er novembre au 1er mars","Seulement quand il neige","Du 1er octobre au 30 avril","Ils ne sont jamais exigés"],
+       e:"Sur les routes désignées, les pneus d'hiver ou les chaînes sont exigés du 1er octobre au 30 avril. Sur certaines routes éloignées des cols de montagne, l'exigence prend fin le 31 mars. Surveillez les panneaux." },
+  c:2 },
+
+{ id:"bcx6", sec:"rules",
+  en:{ q:"What is the minimum tread depth for a legal winter tire in British Columbia?",
+       a:["1.6 mm","3.5 mm","6 mm","There is no minimum"],
+       e:"A winter tire must have at least 3.5 mm of tread and carry either the M+S marking or the three-peak mountain and snowflake symbol." },
+  fr:{ q:"Quelle est la profondeur minimale de la bande de roulement d'un pneu d'hiver conforme en Colombie-Britannique ?",
+       a:["1,6 mm","3,5 mm","6 mm","Il n'y a pas de minimum"],
+       e:"Un pneu d'hiver doit avoir au moins 3,5 mm de bande de roulement et porter soit la mention M+S, soit le symbole de la montagne à trois pics et du flocon." },
+  c:1 },
+
+{ id:"bcx7", sec:"rules",
+  en:{ q:"Which phones may a British Columbia L or N driver use while driving?",
+       a:["Hands-free only","Any phone on speaker","A phone in a dashboard mount","None — all electronic devices are banned"],
+       e:"L and N drivers may not use any electronic device, not even hands-free. A fully licensed driver may use hands-free, but a new driver may not." },
+  fr:{ q:"Quels téléphones un conducteur L ou N de la Colombie-Britannique peut-il utiliser au volant ?",
+       a:["Mains libres seulement","N'importe quel téléphone en mode mains libres","Un téléphone fixé au tableau de bord","Aucun : tous les appareils électroniques sont interdits"],
+       e:"Les conducteurs L et N ne peuvent utiliser aucun appareil électronique, pas même en mains libres. Un conducteur pleinement titulaire peut utiliser le mains libres, mais pas un nouveau conducteur." },
+  c:3 },
+
+{ id:"bcx8", sec:"rules",
+  en:{ q:"What is the penalty for using a hand-held phone in British Columbia?",
+       a:["$368 and 4 penalty points","$100 and no points","A warning for a first offence","$1,000 and a 30-day suspension"],
+       e:"Distracted driving in British Columbia costs $368 and 4 penalty points, and for a new driver those points come with far tighter limits." },
+  fr:{ q:"Quelle est la sanction pour l'utilisation d'un téléphone à main en Colombie-Britannique ?",
+       a:["368 $ et 4 points de pénalité","100 $ et aucun point","Un avertissement pour une première infraction","1 000 $ et une suspension de 30 jours"],
+       e:"La conduite distraite en Colombie-Britannique coûte 368 $ et 4 points de pénalité et, pour un nouveau conducteur, ces points s'appliquent à des seuils bien plus stricts." },
+  c:0 },
+
+{ id:"bcx9", sec:"rules",
+  en:{ q:"When may a child stop using a booster seat in British Columbia?",
+       a:["At age 6","At 18 kg","At age 9 or 145 cm, whichever comes first","At age 12"],
+       e:"A child stays in a booster until they turn 9 or reach 145 cm, whichever comes first. Every child under 16 must be properly restrained." },
+  fr:{ q:"Quand un enfant peut-il cesser d'utiliser un siège d'appoint en Colombie-Britannique ?",
+       a:["À 6 ans","À 18 kg","À 9 ans ou 145 cm, selon la première éventualité","À 12 ans"],
+       e:"Un enfant reste dans un siège d'appoint jusqu'à 9 ans ou 145 cm, selon la première éventualité. Tout enfant de moins de 16 ans doit être bien retenu." },
+  c:2 },
+
+{ id:"bcx10", sec:"rules",
+  en:{ q:"What is the speed limit in a British Columbia school zone during school days?",
+       a:["20 km/h","30 km/h, 8 a.m. to 5 p.m.","40 km/h all day","50 km/h"],
+       e:"School zones are 30 km/h from 8 a.m. to 5 p.m. on school days. Playground zones are also 30 km/h, but every day from dawn to dusk." },
+  fr:{ q:"Quelle est la limite de vitesse dans une zone scolaire de la Colombie-Britannique les jours d'école ?",
+       a:["20 km/h","30 km/h, de 8 h à 17 h","40 km/h toute la journée","50 km/h"],
+       e:"Les zones scolaires sont à 30 km/h de 8 h à 17 h les jours d'école. Les zones de terrain de jeu sont aussi à 30 km/h, mais tous les jours, de l'aube au crépuscule." },
+  c:1 }
+);

@@ -604,3 +604,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"pex1", sec:"rules",
+  en:{ q:"How long does the whole Prince Edward Island graduated programme take at minimum?",
+       a:["One year","Two years","Three years","Five years"],
+       e:"Three stages of 365 days each make three years, or a little under with driver education. It is the longest graduated programme in Atlantic Canada." },
+  fr:{ q:"Combien de temps dure au minimum tout le programme d'accès graduel de l'Île-du-Prince-Édouard ?",
+       a:["Un an","Deux ans","Trois ans","Cinq ans"],
+       e:"Trois étapes de 365 jours chacune font trois ans, ou un peu moins avec une formation de conducteur. C'est le plus long programme d'accès graduel du Canada atlantique." },
+  c:2 },
+
+{ id:"pex2", sec:"rules",
+  en:{ q:"Which hours are closed to a Prince Edward Island driver under 21 in the first two stages?",
+       a:["Midnight to 5 a.m.","1 a.m. to 5 a.m.","11 p.m. to 6 a.m.","There is no curfew"],
+       e:"Prince Edward Island's curfew starts at 1 a.m., an hour later than its Atlantic neighbours, and applies only to drivers under 21." },
+  fr:{ q:"Quelles heures sont interdites à un conducteur de moins de 21 ans aux deux premières étapes, à l'Île-du-Prince-Édouard ?",
+       a:["De minuit à 5 h","De 1 h à 5 h","De 23 h à 6 h","Il n'y a pas de couvre-feu"],
+       e:"Le couvre-feu de l'Île-du-Prince-Édouard commence à 1 h, une heure plus tard que chez ses voisins de l'Atlantique, et ne s'applique qu'aux conducteurs de moins de 21 ans." },
+  c:1 },
+
+{ id:"pex3", sec:"rules",
+  en:{ q:"How many non-family passengers may a Prince Edward Island Stage 2 driver carry?",
+       a:["None","One","Three","As many as there are seat belts"],
+       e:"Only one passenger may be outside the immediate family. Immediate family may fill the remaining seat belts — so a carload of cousins is fine, but two friends is not." },
+  fr:{ q:"Combien de passagers hors de la famille un conducteur de l'étape 2 peut-il transporter à l'Île-du-Prince-Édouard ?",
+       a:["Aucun","Un","Trois","Autant qu'il y a de ceintures"],
+       e:"Un seul passager peut être hors de la famille immédiate. La famille immédiate peut occuper les autres ceintures : une voiture pleine de cousins est permise, mais deux amis ne le sont pas." },
+  c:1 },
+
+{ id:"pex4", sec:"rules",
+  en:{ q:"Until what age must a Prince Edward Island driver keep a zero blood alcohol level?",
+       a:["18","19","22","25"],
+       e:"Zero tolerance carries on past the graduated programme: every driver under 22 must have no alcohol at all, even with a full licence." },
+  fr:{ q:"Jusqu'à quel âge un conducteur de l'Île-du-Prince-Édouard doit-il maintenir un taux d'alcoolémie nul ?",
+       a:["18 ans","19 ans","22 ans","25 ans"],
+       e:"La tolérance zéro se poursuit au-delà du programme gradué : tout conducteur de moins de 22 ans ne doit avoir aucun alcool, même avec un permis complet." },
+  c:2 },
+
+{ id:"pex5", sec:"rules",
+  en:{ q:"What must a Prince Edward Island new driver display on the vehicle?",
+       a:["Nothing","A yellow 'L' or 'G' decal","A red triangle","The learner's permit itself"],
+       e:"Stage 1 drivers display a yellow L decal and later stages a G decal. Replacements are free." },
+  fr:{ q:"Que doit afficher sur son véhicule un nouveau conducteur de l'Île-du-Prince-Édouard ?",
+       a:["Rien","Un autocollant jaune « L » ou « G »","Un triangle rouge","Le permis d'apprenti lui-même"],
+       e:"Les conducteurs de l'étape 1 affichent un autocollant jaune « L » et les étapes suivantes un autocollant « G ». Les remplacements sont gratuits." },
+  c:1 },
+
+{ id:"pex6", sec:"rules",
+  en:{ q:"What does a distracted driving ticket cost on Prince Edward Island?",
+       a:["$172.50","$233.95","$340.50","$575 to $1,275 and 5 demerit points"],
+       e:"Prince Edward Island has the steepest hand-held phone fine in Atlantic Canada. New drivers are also barred from headphones and every hand-held device." },
+  fr:{ q:"Combien coûte une contravention pour conduite distraite à l'Île-du-Prince-Édouard ?",
+       a:["172,50 $","233,95 $","340,50 $","De 575 $ à 1 275 $ et 5 points d'inaptitude"],
+       e:"L'Île-du-Prince-Édouard impose l'amende la plus élevée du Canada atlantique pour le téléphone à main. Les nouveaux conducteurs ne peuvent non plus porter d'écouteurs ni utiliser d'appareil à main." },
+  c:3 },
+
+{ id:"pex7", sec:"rules",
+  en:{ q:"What blood alcohol level must a Prince Edward Island accompanying driver stay under?",
+       a:["Under 0.05","Zero","Under 0.08","There is no limit for the supervisor"],
+       e:"The accompanying driver must be under 0.05, hold a licence for at least four years, and sit in the front seat at all times. In Newfoundland and Labrador the supervisor must be at zero." },
+  fr:{ q:"Quel taux d'alcoolémie l'accompagnateur doit-il respecter à l'Île-du-Prince-Édouard ?",
+       a:["Moins de 0,05","Zéro","Moins de 0,08","Aucune limite pour l'accompagnateur"],
+       e:"L'accompagnateur doit avoir moins de 0,05, détenir un permis depuis au moins quatre ans et occuper le siège avant en tout temps. À Terre-Neuve-et-Labrador, l'accompagnateur doit être à zéro." },
+  c:0 },
+
+{ id:"pex8", sec:"rules",
+  en:{ q:"What happens to a Prince Edward Island Stage 1 driver who collects any demerit points?",
+       a:["Nothing until six points","A suspension of at least 30 days","A written warning only","A fine but no suspension"],
+       e:"At Stage 1 any conviction carrying demerit points brings a suspension of at least 30 days. Stage 2 allows 6 points and Stage 3 allows 9." },
+  fr:{ q:"Qu'arrive-t-il à un conducteur de l'étape 1 qui accumule des points d'inaptitude à l'Île-du-Prince-Édouard ?",
+       a:["Rien avant six points","Une suspension d'au moins 30 jours","Un simple avertissement écrit","Une amende sans suspension"],
+       e:"À l'étape 1, toute condamnation entraînant des points d'inaptitude donne lieu à une suspension d'au moins 30 jours. L'étape 2 permet 6 points et l'étape 3, 9 points." },
+  c:1 },
+
+{ id:"pex9", sec:"rules",
+  en:{ q:"When may a child stop using a booster seat on Prince Edward Island?",
+       a:["At age 6","At 18 kg","At age 10 or 145 cm, whichever comes first","At age 12"],
+       e:"A child may leave the booster on turning 10 or reaching 145 cm, whichever comes first — an older age than most provinces use." },
+  fr:{ q:"Quand un enfant peut-il cesser d'utiliser un siège d'appoint à l'Île-du-Prince-Édouard ?",
+       a:["À 6 ans","À 18 kg","À 10 ans ou 145 cm, selon la première éventualité","À 12 ans"],
+       e:"Un enfant peut quitter le siège d'appoint à 10 ans ou à 145 cm, selon la première éventualité, soit un âge plus avancé que dans la plupart des provinces." },
+  c:2 },
+
+{ id:"pex10", sec:"rules",
+  en:{ q:"How much may driver education shorten Stage 1 on Prince Edward Island?",
+       a:["To 180 days","To 275 days","To 90 days","It cannot be shortened"],
+       e:"Certified driver education cuts Stage 1 from 365 days to 275. Stages 2 and 3 remain 365 days each." },
+  fr:{ q:"De combien une formation de conducteur peut-elle raccourcir l'étape 1 à l'Île-du-Prince-Édouard ?",
+       a:["À 180 jours","À 275 jours","À 90 jours","Elle ne peut pas être raccourcie"],
+       e:"Une formation reconnue réduit l'étape 1 de 365 à 275 jours. Les étapes 2 et 3 demeurent de 365 jours chacune." },
+  c:1 }
+);

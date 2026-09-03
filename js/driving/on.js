@@ -2297,3 +2297,102 @@ window.CQ_PROVINCE = {
   ],
   questions: window.CQ_DRIVE_Q
 };
+
+
+/* Ten more rules questions, added 3 September 2026.
+   Written from this jurisdiction's own official handbook, and
+   chosen for what makes its rules different from its neighbours'.
+   The French is written beside the English on purpose: see the
+   note at the top of tools/newq/fr_qbank.py. */
+(window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
+
+{ id:"onx1", sec:"rules",
+  en:{ q:"How long must an Ontario G1 driver wait before the first road test if they take an approved course?",
+       a:["4 months","8 months","12 months","24 months"],
+       e:"The G1 stage normally lasts 12 months, but an approved Beginner Driver Education course cuts it to 8." },
+  fr:{ q:"Combien de temps un conducteur ontarien G1 doit-il attendre avant le premier examen de conduite s'il suit un cours approuvé ?",
+       a:["4 mois","8 mois","12 mois","24 mois"],
+       e:"Le stade G1 dure normalement 12 mois, mais un cours reconnu de conduite pour débutants le réduit à 8 mois." },
+  c:1 },
+
+{ id:"onx2", sec:"rules",
+  en:{ q:"How much driving experience must an Ontario G1's accompanying driver have?",
+       a:["One year","Two years","Four years","Ten years"],
+       e:"The accompanying driver needs a full Class G or higher, at least four years of driving experience, a blood alcohol level under .05, and must be the only other person in the front seat." },
+  fr:{ q:"Quelle expérience de conduite l'accompagnateur d'un conducteur G1 ontarien doit-il avoir ?",
+       a:["Un an","Deux ans","Quatre ans","Dix ans"],
+       e:"L'accompagnateur doit détenir une classe G complète ou supérieure, avoir au moins quatre ans d'expérience, afficher un taux d'alcoolémie inférieur à 0,05 et être la seule autre personne à l'avant." },
+  c:2 },
+
+{ id:"onx3", sec:"rules",
+  en:{ q:"Which roads may an Ontario G1 driver not use?",
+       a:["400-series highways posted over 80 km/h, and certain named expressways","All highways outside a city","Any road with a centre line","Gravel roads"],
+       e:"A G1 may not drive on 400-series highways posted above 80 km/h, nor on the Queen Elizabeth Way, Don Valley Parkway, Gardiner Expressway, E.C. Row Expressway or Conestoga Parkway — unless a certified driving instructor is with them." },
+  fr:{ q:"Quelles routes un conducteur G1 ontarien ne peut-il pas emprunter ?",
+       a:["Les autoroutes de la série 400 affichées à plus de 80 km/h et certaines voies rapides nommées","Toutes les routes à l'extérieur d'une ville","Toute route avec une ligne centrale","Les routes de gravier"],
+       e:"Un conducteur G1 ne peut circuler sur les autoroutes de la série 400 affichées à plus de 80 km/h, ni sur la Queen Elizabeth Way, la promenade Don Valley, l'autoroute Gardiner, la voie rapide E.C. Row ou la promenade Conestoga, sauf en présence d'un instructeur de conduite agréé." },
+  c:0 },
+
+{ id:"onx4", sec:"rules",
+  en:{ q:"Which Ontario licence stage has a midnight to 5 a.m. driving ban?",
+       a:["G2","G1","Both G1 and G2","Neither"],
+       e:"Only G1 has a driving curfew. A G2 driver may drive at any hour — the midnight to 5 a.m. rule at the G2 stage is about how many young passengers may be in the car, not about driving." },
+  fr:{ q:"Quel stade du permis ontarien interdit de conduire entre minuit et 5 h ?",
+       a:["G2","G1","G1 et G2","Ni l'un ni l'autre"],
+       e:"Seul le G1 a un couvre-feu de conduite. Un conducteur G2 peut conduire à toute heure : la règle de minuit à 5 h au stade G2 concerne le nombre de jeunes passagers, non la conduite elle-même." },
+  c:1 },
+
+{ id:"onx5", sec:"rules",
+  en:{ q:"Which drivers in Ontario must have a blood alcohol level of zero?",
+       a:["Only G1 drivers","Only drivers under 18","All G1 and G2 drivers, and every driver aged 21 and under","Nobody, the limit is always .08"],
+       e:"Zero applies to every novice driver and to every driver aged 21 and under, whatever licence they hold. So a 20-year-old with a full G is still at zero." },
+  fr:{ q:"Quels conducteurs en Ontario doivent afficher un taux d'alcoolémie de zéro ?",
+       a:["Seulement les conducteurs G1","Seulement les conducteurs de moins de 18 ans","Tous les conducteurs G1 et G2, et tout conducteur de 21 ans ou moins","Personne, la limite est toujours 0,08"],
+       e:"Le zéro s'applique à tout conducteur novice et à tout conducteur de 21 ans ou moins, quel que soit son permis. Ainsi, une personne de 20 ans détenant un permis G complet demeure à zéro." },
+  c:2 },
+
+{ id:"onx6", sec:"rules",
+  en:{ q:"How many demerit points suspend an Ontario novice driver?",
+       a:["6","9","12","15"],
+       e:"A novice driver is suspended for 60 days at 9 points. A fully licensed driver is suspended for 30 days at 15." },
+  fr:{ q:"Combien de points d'inaptitude entraînent la suspension d'un conducteur novice ontarien ?",
+       a:["6","9","12","15"],
+       e:"Un conducteur novice est suspendu 60 jours à 9 points. Un conducteur pleinement titulaire est suspendu 30 jours à 15 points." },
+  c:1 },
+
+{ id:"onx7", sec:"rules",
+  en:{ q:"What does a first distracted driving conviction cost an Ontario NOVICE driver?",
+       a:["3 demerit points and a 3-day suspension","A warning","Demerit points but no suspension","A fine and a 30-day suspension, with no demerit points"],
+       e:"A novice gets no demerit points but a 30-day suspension — ten times longer than the three days a fully licensed driver receives. A second offence brings 90 days, a third loses the licence entirely." },
+  fr:{ q:"Que coûte une première condamnation pour conduite distraite à un conducteur NOVICE ontarien ?",
+       a:["3 points d'inaptitude et une suspension de 3 jours","Un avertissement","Des points d'inaptitude mais aucune suspension","Une amende et une suspension de 30 jours, sans points d'inaptitude"],
+       e:"Un novice ne reçoit aucun point d'inaptitude, mais une suspension de 30 jours, soit dix fois plus longue que les trois jours imposés à un conducteur pleinement titulaire. Une deuxième infraction entraîne 90 jours ; une troisième, la perte du permis." },
+  c:3 },
+
+{ id:"onx8", sec:"rules",
+  en:{ q:"What is the speed limit on an Ontario road inside a city, town or village with no sign posted?",
+       a:["50 km/h","40 km/h","60 km/h","80 km/h"],
+       e:"Inside a city, town or village the default is 50 km/h. Everywhere else in Ontario the default is 80 km/h." },
+  fr:{ q:"Quelle est la limite de vitesse sur une route ontarienne située dans une ville ou un village, sans panneau affiché ?",
+       a:["50 km/h","40 km/h","60 km/h","80 km/h"],
+       e:"À l'intérieur d'une ville ou d'un village, la limite par défaut est de 50 km/h. Ailleurs en Ontario, elle est de 80 km/h." },
+  c:0 },
+
+{ id:"onx9", sec:"rules",
+  en:{ q:"Where in Ontario are studded tires allowed?",
+       a:["Everywhere in the province","On vehicles registered in Northern Ontario","Nowhere at all","Only on commercial trucks"],
+       e:"Studded tires are for vehicles registered in Northern Ontario. Drivers from other provinces passing through may also use them. Winter tires themselves are not required in Ontario." },
+  fr:{ q:"Où, en Ontario, les pneus cloutés sont-ils permis ?",
+       a:["Partout dans la province","Sur les véhicules immatriculés dans le Nord de l'Ontario","Nulle part","Seulement sur les camions commerciaux"],
+       e:"Les pneus cloutés sont réservés aux véhicules immatriculés dans le Nord de l'Ontario. Les conducteurs d'autres provinces de passage peuvent aussi en utiliser. Les pneus d'hiver eux-mêmes ne sont pas obligatoires en Ontario." },
+  c:1 },
+
+{ id:"onx10", sec:"rules",
+  en:{ q:"When may an Ontario child stop using a booster seat?",
+       a:["At age 6","At 18 kg","At age 8, 36 kg or 145 cm — whichever comes first","At age 12"],
+       e:"The child may move to the seat belt alone once they turn 8, reach 36 kg, or reach 145 cm — whichever happens first. Getting it wrong costs $240 and 2 demerit points." },
+  fr:{ q:"Quand un enfant ontarien peut-il cesser d'utiliser un siège d'appoint ?",
+       a:["À 6 ans","À 18 kg","À 8 ans, 36 kg ou 145 cm, selon la première éventualité","À 12 ans"],
+       e:"L'enfant peut passer à la ceinture seule dès qu'il atteint 8 ans, 36 kg ou 145 cm, selon la première éventualité. Une erreur coûte 240 $ et 2 points d'inaptitude." },
+  c:2 }
+);
