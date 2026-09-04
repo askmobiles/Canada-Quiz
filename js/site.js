@@ -53,6 +53,12 @@
     { href: "about.html",   label: "About" },
     { href: "contact.html", label: "Contact" },
     { href: "all-pages.html", label: "All Pages" },
+    /* This list is the footer a visitor SEES: paint() replaces the footer that
+       came from the server with this one. So a link added to the template in
+       tools/rewrite_pages.py and not added here is invisible to everyone
+       except a crawler running without JavaScript — which is exactly how the
+       teachers link was lost on its first build. Change the two together. */
+    { href: "teachers.html", label: "For Teachers" },
     { href: "privacy.html", label: "Privacy Policy" },
     { href: "terms.html",   label: "Terms & Conditions" }
   ];
@@ -233,7 +239,7 @@
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
-  var FRVER = {core:"89a2a025",gk:"6f27c61d",cit:"16073165",fun:"f74b31b4",drive:"9121887f",kids:"71e99c45"};
+  var FRVER = {core:"80ff069d",gk:"6f27c61d",cit:"16073165",fun:"f74b31b4",drive:"9121887f",kids:"71e99c45"};
   function loadFrench(done) {
     /* The dictionary is split into chunks by tools/split_fr.py. Every French
        page needs "core" (the header, footer and UI strings site.js injects);
