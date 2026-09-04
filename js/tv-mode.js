@@ -102,15 +102,15 @@
   var STEPS = {
     ios: [
       ["Make sure the phone and the TV are on the same Wi-Fi.", "Assurez-vous que le téléphone et la télé sont sur le même Wi-Fi."],
-      ["Swipe down from the top-right corner of the screen.", "Balayez vers le bas depuis le coin supérieur droit de l’écran."],
-      ["Tap Screen Mirroring, then choose your TV.", "Touchez Recopie de l’écran, puis choisissez votre télé."],
+      ["Swipe down from the top-right corner of the screen.", "Balayez vers le bas depuis le coin supérieur droit de l'écran."],
+      ["Tap Screen Mirroring, then choose your TV.", "Touchez Recopie de l'écran, puis choisissez votre télé."],
       ["Come back here and press Full screen.", "Revenez ici et appuyez sur Plein écran."]
     ],
     ipad: [
-      ["Make sure the iPad and the TV are on the same Wi-Fi.", "Assurez-vous que l’iPad et la télé sont sur le même Wi-Fi."],
-      ["Swipe down from the top-right corner of the screen.", "Balayez vers le bas depuis le coin supérieur droit de l’écran."],
-      ["Tap Screen Mirroring, then choose your TV or Apple TV.", "Touchez Recopie de l’écran, puis choisissez votre télé ou votre Apple TV."],
-      ["Turn the iPad sideways, come back here and press Full screen.", "Tournez l’iPad de côté, revenez ici et appuyez sur Plein écran."]
+      ["Make sure the iPad and the TV are on the same Wi-Fi.", "Assurez-vous que l'iPad et la télé sont sur le même Wi-Fi."],
+      ["Swipe down from the top-right corner of the screen.", "Balayez vers le bas depuis le coin supérieur droit de l'écran."],
+      ["Tap Screen Mirroring, then choose your TV or Apple TV.", "Touchez Recopie de l'écran, puis choisissez votre télé ou votre Apple TV."],
+      ["Turn the iPad sideways, come back here and press Full screen.", "Tournez l'iPad de côté, revenez ici et appuyez sur Plein écran."]
     ],
     android: [
       ["Make sure the phone and the TV are on the same Wi-Fi.", "Assurez-vous que le téléphone et la télé sont sur le même Wi-Fi."],
@@ -120,13 +120,13 @@
     ],
     mac: [
       ["Make sure the Mac and the TV are on the same Wi-Fi.", "Assurez-vous que le Mac et la télé sont sur le même Wi-Fi."],
-      ["Click Control Centre in the menu bar, then Screen Mirroring.", "Cliquez sur le Centre de contrôle dans la barre de menus, puis sur Recopie d’écran."],
+      ["Click Control Centre in the menu bar, then Screen Mirroring.", "Cliquez sur le Centre de contrôle dans la barre de menus, puis sur Recopie d'écran."],
       ["Choose your TV or Apple TV. An HDMI cable works just as well.", "Choisissez votre télé ou votre Apple TV. Un câble HDMI fonctionne aussi bien."],
       ["Come back here and press Full screen.", "Revenez ici et appuyez sur Plein écran."]
     ],
     windows: [
       ["For a wireless TV, press the Windows key and K, then pick your TV.", "Pour une télé sans fil, appuyez sur la touche Windows et K, puis choisissez votre télé."],
-      ["Or open the Chrome menu (⋮) and click Cast, then Sources → Cast tab.", "Ou ouvrez le menu de Chrome (⋮), cliquez sur Caster, puis Sources → Caster l’onglet."],
+      ["Or open the Chrome menu (⋮) and click Cast, then Sources → Cast tab.", "Ou ouvrez le menu de Chrome (⋮), cliquez sur Caster, puis Sources → Caster l'onglet."],
       ["Or simply run an HDMI cable from the laptop to the TV.", "Ou branchez simplement un câble HDMI entre le portable et la télé."],
       ["Come back here and press Full screen.", "Revenez ici et appuyez sur Plein écran."]
     ],
@@ -135,8 +135,8 @@
       ["Press Full screen and turn on big TV text below.", "Appuyez sur Plein écran et activez le grand texte télé ci-dessous."]
     ],
     other: [
-      ["Put the device and the TV on the same Wi-Fi.", "Mettez l’appareil et la télé sur le même Wi-Fi."],
-      ["Use your device's screen mirroring or cast feature and pick the TV.", "Utilisez la recopie d’écran ou la diffusion de votre appareil et choisissez la télé."],
+      ["Put the device and the TV on the same Wi-Fi.", "Mettez l'appareil et la télé sur le même Wi-Fi."],
+      ["Use your device's screen mirroring or cast feature and pick the TV.", "Utilisez la recopie d'écran ou la diffusion de votre appareil et choisissez la télé."],
       ["An HDMI cable from a laptop to the TV always works.", "Un câble HDMI entre un portable et la télé fonctionne toujours."],
       ["Come back here and press Full screen.", "Revenez ici et appuyez sur Plein écran."]
     ]
@@ -174,7 +174,7 @@
 
   function startCast(statusEl) {
     if (!castReq) return;
-    statusEl.textContent = T("Looking for screens…", "Recherche d’écrans…");
+    statusEl.textContent = T("Looking for screens…", "Recherche d'écrans…");
     castReq.start().then(function (conn) {
       castConn = conn;
       statusEl.textContent = T("Connected to " + (conn.name || "your screen") + ".",
@@ -226,7 +226,7 @@
 
     var lead = document.createElement("p");
     lead.textContent = T("The whole screen goes to the TV, and you keep tapping on this device.",
-                         "Tout l’écran va à la télé, et vous continuez à toucher sur cet appareil.");
+                         "Tout l'écran va à la télé, et vous continuez à toucher sur cet appareil.");
     card.appendChild(lead);
 
     var ol = document.createElement("ol");
@@ -244,7 +244,7 @@
       var st2 = document.createElement("p");
       st2.style.margin = "0 0 8px";
       st2.textContent = T("A screen was found on your Wi-Fi. You can connect in one tap:",
-                          "Un écran a été trouvé sur votre Wi-Fi. Vous pouvez vous connecter d’une seule touche :");
+                          "Un écran a été trouvé sur votre Wi-Fi. Vous pouvez vous connecter d'une seule touche :");
       var cb = document.createElement("button");
       cb.type = "button"; cb.className = "btn btn-lg"; cb.style.width = "100%";
       cb.textContent = T("📡 Connect to a screen", "📡 Se connecter à un écran");

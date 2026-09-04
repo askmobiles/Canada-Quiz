@@ -214,14 +214,14 @@
     box.setAttribute("data-no-i18n", "");
     var b = document.createElement("b");
     b.textContent = T("Add Canada Quiz to your home screen",
-                      "Ajouter Canada Quiz à votre écran d’accueil");
+                      "Ajouter Canada Quiz à votre écran d'accueil");
     var p = document.createElement("div");
     p.textContent = T("1. Tap the Share button at the top of Safari — the square with the arrow. "
                     + "2. Scroll down and tap Add to Home Screen. "
                     + "3. Tap Add. The games then open like an app, with no address bar, and most of them still work with no signal.",
                       "1. Touchez le bouton Partager en haut de Safari — le carré avec la flèche. "
-                    + "2. Faites défiler et touchez Sur l’écran d’accueil. "
-                    + "3. Touchez Ajouter. Les jeux s’ouvrent ensuite comme une application, sans barre d’adresse, et la plupart fonctionnent sans réseau.");
+                    + "2. Faites défiler et touchez Sur l'écran d'accueil. "
+                    + "3. Touchez Ajouter. Les jeux s'ouvrent ensuite comme une application, sans barre d'adresse, et la plupart fonctionnent sans réseau.");
     var row = document.createElement("div"); row.className = "row";
     var ok = document.createElement("button");
     ok.type = "button"; ok.className = "btn"; ok.textContent = T("Got it", "Compris");
@@ -253,7 +253,7 @@
     btn.type = "button";
     btn.className = "pwa-btn";
     btn.textContent = T("📲 Install the app on this device",
-                        "📲 Installer l’application sur cet appareil");
+                        "📲 Installer l'application sur cet appareil");
     btn.addEventListener("click", function () {
       if (deferred) {
         deferred.prompt();

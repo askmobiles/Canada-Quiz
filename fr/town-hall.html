@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soyez le maire — un jeu municipal canadien</title>
+<meta name="description" content="Dirigez une petite ville canadienne pendant un mandat. Neige, conduites d&#x27;eau, toit de l&#x27;aréna et budget tirent chacun de leur côté. Gratuit, sans inscription.">
+<link rel="stylesheet" href="../css/style.css?v=0e3cc3ad">
+<style>
+  .th-wrap{max-width:640px;margin:0 auto}
+  .th-screen{display:none}.th-screen.on{display:block}
+  .th-meters{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 16px}
+  .th-m{border:2px solid var(--line);border-radius:14px;padding:10px 12px;background:var(--card)}
+  .th-m .lab{font-weight:800;font-size:.85rem;color:var(--muted);display:flex;
+    justify-content:space-between;align-items:baseline;gap:6px}
+  .th-m .lab b{font-variant-numeric:tabular-nums;font-size:1.05rem;color:var(--ink)}
+  .th-bar{height:10px;border-radius:999px;background:#eee7dc;margin-top:7px;overflow:hidden}
+  .th-bar i{display:block;height:100%;border-radius:999px;transition:width .35s ease,background .35s ease}
+  .th-m.low .th-bar i{background:#c8102e}
+  .th-round{text-align:center;font-weight:800;color:var(--muted);font-size:.9rem;margin:0 0 10px}
+  .th-card{border:2px solid var(--line);border-radius:16px;padding:16px;background:var(--card)}
+  .th-card h3{margin:0 0 6px;font-size:1.15rem}
+  .th-who{font-weight:800;color:var(--muted);font-size:.85rem;margin:0 0 8px}
+  .th-opt{display:block;width:100%;min-height:56px;margin:9px 0;padding:13px 15px;
+    border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;
+    font-family:inherit;font-size:1rem;font-weight:800;text-align:left;line-height:1.35;cursor:pointer}
+  .th-opt:hover{border-color:var(--orange,#d97706);background:#fffaf2}
+  .th-opt:active{transform:translateY(2px)}
+  .th-opt:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  .th-out{border:2px solid var(--line);border-left-width:8px;border-radius:14px;
+    padding:14px 16px;background:#fffaf2;margin-top:4px}
+  .th-out p{margin:.4em 0}
+  .th-delta{font-weight:800;font-size:.95rem;display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+  .th-delta span{white-space:nowrap}
+  .th-up{color:#0a7d3f}.th-dn{color:#c8102e}
+  .th-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+  .th-res{text-align:center}
+  .th-res .big{font-size:2.6rem;line-height:1.1;margin:6px 0}
+  .th-jobs{text-align:left;border:2px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:14px}
+  .th-jobs ul{margin:.4em 0 0;padding-left:1.2em}
+  .th-jobs li{margin:.3em 0}
+  .th-note{font-size:.9rem;color:var(--muted);margin-top:14px}
+  @media (max-width:400px){ .th-meters{grid-template-columns:1fr} }
+</style>
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#c8102e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Canada Quiz">
+<meta name="google-adsense-account" content="ca-pub-7256851069341390">
+<link rel="canonical" href="https://canada-quiz.com/fr/town-hall.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/town-hall.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/town-hall.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/town-hall.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://canada-quiz.com/fr/"},{"@type":"ListItem","position":2,"name":"Jeux de groupe","item":"https://canada-quiz.com/fr/games.html"},{"@type":"ListItem","position":3,"name":"Soyez le maire","item":"https://canada-quiz.com/fr/town-hall.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/fr/town-hall.html#webpage","url":"https://canada-quiz.com/fr/town-hall.html","name":"Soyez le maire — un jeu municipal canadien","description":"Dirigez une petite ville canadienne pendant un mandat. Neige, conduites d&#x27;eau, toit de l&#x27;aréna et budget tirent chacun de leur côté. Gratuit, sans inscription.","inLanguage":"fr-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/fr/","name":"Canada Quiz et jeux amusants en famille"},"publisher":{"@type":"Organization","name":"Canada Quiz & Family Fun Games","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ce jeu me dit-il quel métier je devrais faire ?","acceptedAnswer":{"@type":"Answer","text":"Non, et il le dit à l'écran des résultats. Les vrais tests d'orientation reposent sur des décennies de recherche ; un jeu de navigateur n'en est pas un. Il montre quel type de décision vous avez aimé prendre aujourd'hui, et quels métiers en comportent beaucoup."}},{"@type":"Question","name":"Peut-on perdre ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Si le budget, la population, la satisfaction ou l'état de la ville atteint zéro, votre mandat se termine tôt et le jeu vous dit lequel s'est épuisé. Tout financer vide le budget ; tout économiser vide le reste."}},{"@type":"Question","name":"Les décisions sont-elles les mêmes chaque fois ?","acceptedAnswer":{"@type":"Answer","text":"Non. Douze sont tirées d'un ensemble plus large et mélangées : deux mandats sont rarement identiques, et un choix qui a fonctionné une fois peut échouer lorsqu'il arrive dans un autre ordre."}},{"@type":"Question","name":"Est-ce utile en classe ?","acceptedAnswer":{"@type":"Answer","text":"Il a été conçu dans cette optique. Aucune inscription, aucun compte, rien n'est recueilli ; il fonctionne sur un téléphone ou un projecteur, et chaque carte enseigne une vraie responsabilité municipale — qui figure aussi à l'examen de citoyenneté canadienne."}}]}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="quizzes.html">Quiz</a>
+      <a href="games.html">Jeux en famille</a>
+      <a href="for-kids.html">Pour les enfants</a>
+      <a href="citizenship.html">citoyenneté</a>
+      <a href="driving-test.html">Examen de conduite</a>
+      <a href="daily.html">Du jour</a>
+      <a href="blog.html">Blogue</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🏛️ Soyez le maire</h1>
+    <p>Vous avez un mandat pour diriger une petite ville canadienne. Douze décisions. La neige, les conduites d'eau, le toit de l'aréna et le budget tirent tous dans des directions différentes.</p>
+  </section>
+  <details class="howto"><summary>📖 Comment jouer</summary><p>Des résidents vous soumettent un problème. Choisissez une réponse parmi trois. Chaque réponse fait bouger quatre choses : le <b>budget</b>, la <b>population</b>, la <b>satisfaction</b> des gens et l' <b>état</b> des routes, des conduites et des bâtiments. Rien n'est gratuit : dépenser répare les choses mais vide le budget, et économiser rend les gens mécontents. Terminez votre mandat sans qu'aucune des quatre jauges n'atteigne zéro. À la fin, vous verrez sur quelles parties du travail vous vous êtes appuyé.</p></details>
+
+  <div class="panel" data-fs-host>
+    <div class="th-wrap" id="thWrap" data-no-i18n>
+
+      <div class="th-screen on" id="thStart">
+        <p id="thIntro" style="font-weight:800"></p>
+        <p class="muted" id="thIntro2"></p>
+        <div class="th-btns">
+          <button type="button" class="btn btn-lg" id="thGo"></button>
+        </div>
+      </div>
+
+      <div class="th-screen" id="thGame">
+        <div class="th-meters" id="thMeters"></div>
+        <p class="th-round" id="thRound"></p>
+        <div class="th-card" id="thCard"></div>
+      </div>
+
+      <div class="th-screen" id="thEnd">
+        <div class="th-res">
+          <div class="big" id="thEndIcon">🏛️</div>
+          <h2 id="thEndTitle" style="margin:.2em 0"></h2>
+          <p id="thEndLine" style="font-weight:800;font-size:1.1rem"></p>
+          <div class="th-meters" id="thEndMeters"></div>
+          <div class="th-jobs">
+            <h3 style="margin:0 0 4px" id="thLeanTitle"></h3>
+            <p id="thLeanBody" style="margin:.3em 0"></p>
+            <h3 style="margin:.9em 0 4px" id="thJobsTitle"></h3>
+            <ul id="thJobsList"></ul>
+          </div>
+          <p class="th-note" id="thDisclaimer"></p>
+          <div class="th-btns">
+            <button type="button" class="btn btn-lg" id="thAgain"></button>
+            <a class="btn btn-ghost btn-lg" href="how-canadas-cities-and-towns-work.html" id="thReadMore"></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>À propos de ce jeu</h2>
+  <p>Soyez le maire vous met à la tête d'une ville canadienne d'environ cinq mille habitants pour un mandat. Douze personnes viennent vous soumettre un problème, vous choisissez une réponse parmi trois, et quatre choses bougent : le budget, la population, la satisfaction des résidents et l'état des routes, des conduites et des bâtiments.</p>
+  <p>Rien n'y est inventé. Chaque décision porte sur ce dont les municipalités canadiennes sont réellement responsables : déneiger, traiter l'eau, ramasser les ordures, assurer le service d'incendie, la bibliothèque et l'aréna, délivrer les permis de construire et fixer le taux de taxe foncière. Le toit de l'aréna et la conduite d'eau centenaire sont les deux problèmes dont les petites villes canadiennes parlent le plus.</p>
+  <p>À la fin, le jeu vous dit sur quelle partie du travail vous vous êtes appuyé et nomme des métiers au Canada qui font appel à cela. Il ne vous dit pas quoi devenir. C'est un jeu, pas un test d'orientation — cette phrase figure aussi à l'écran des résultats, car elle compte plus que le pointage.</p>
+  <h2>Conseils pour jouer</h2>
+  <ul>
+    <li>Le déneigement est le service municipal dont les Canadiens se plaignent le plus, et celui qu'ils remarquent en premier. La plupart des villes dégagent d'abord les routes prioritaires : hôpital, écoles, circuits d'autobus.</li>
+    <li>Le cycle de gel et de dégel du Canada explique l'apparition des nids-de-poule chaque printemps. L'eau s'infiltre dans une fissure, gèle, prend de l'expansion et fait éclater la chaussée : voilà pourquoi réparer le drainage est souvent la vraie réparation.</li>
+    <li>Savoir si la ville déneige votre trottoir ou si vous devez le faire vous-même se décide municipalité par municipalité. Il n'existe aucune règle nationale, et des villes voisines diffèrent souvent.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>Ce jeu me dit-il quel métier je devrais faire ?</h3>
+  <p>Non, et il le dit à l'écran des résultats. Les vrais tests d'orientation reposent sur des décennies de recherche ; un jeu de navigateur n'en est pas un. Il montre quel type de décision vous avez aimé prendre aujourd'hui, et quels métiers en comportent beaucoup.</p>
+  <h3>Peut-on perdre ?</h3>
+  <p>Oui. Si le budget, la population, la satisfaction ou l'état de la ville atteint zéro, votre mandat se termine tôt et le jeu vous dit lequel s'est épuisé. Tout financer vide le budget ; tout économiser vide le reste.</p>
+  <h3>Les décisions sont-elles les mêmes chaque fois ?</h3>
+  <p>Non. Douze sont tirées d'un ensemble plus large et mélangées : deux mandats sont rarement identiques, et un choix qui a fonctionné une fois peut échouer lorsqu'il arrive dans un autre ordre.</p>
+  <h3>Est-ce utile en classe ?</h3>
+  <p>Il a été conçu dans cette optique. Aucune inscription, aucun compte, rien n'est recueilli ; il fonctionne sur un téléphone ou un projecteur, et chaque carte enseigne une vraie responsabilité municipale — qui figure aussi à l'examen de citoyenneté canadienne.</p>
+  <h2>À découvrir aussi</h2>
+  <p class="pd-rel"><a href="how-canadas-cities-and-towns-work.html">Comment fonctionnent vraiment les villes canadiennes</a> · <a href="how-canadas-government-works.html">Comment fonctionne le gouvernement du Canada</a> · <a href="citizenship.html">Pratique pour l'examen de citoyenneté</a></p>
+</section>
+<!--/PAGEDOC-->
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="../brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
+    <div class="footer-links"><a href="index.html">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
+    <div class="footer-sections"><a href="quizzes.html">Tous les quiz</a> · <a href="citizenship.html">Pratique de l'examen de citoyenneté</a> · <a href="driving-test.html">Pratique de l'examen de conduite</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Jeux en famille</a> · <a href="for-kids.html">Pour les enfants</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">Culture générale</a> · <a href="blog.html">Blogue</a> · <a href="daily.html">Daily Quiz</a></div>
+    <p class="footer-all"><a href="all-pages.html">Toutes les pages du site (210)</a></p>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
+  </div>
+</footer>
+
+
+  <script src="../js/game-fullscreen.js?v=35da7b56" defer></script>
+
+<script>
+/* Be the Mayor — a Canadian town hall game.
+
+   Every card is a real thing a Canadian municipality is responsible for:
+   snow clearing, water mains, the arena, the library, garbage, transit,
+   building permits, property tax. Municipal responsibility is also on the
+   citizenship test, so the facts here are the same facts the citizenship
+   pages teach.
+
+   The French is inline beside the English, the same pattern gk-quiz.html
+   uses. The wrapper carries data-no-i18n so build_fr.py does not touch it. */
+(function(){
+"use strict";
+var FR = /\/fr\//.test(location.pathname);
+function T(en, fr){ return FR ? fr : en; }
+function $(id){ return document.getElementById(id); }
+
+/* ---- the four meters ------------------------------------------------- */
+var METERS = [
+  {k:"budget", icon:"💰", en:"Budget",     fr:"Budget",       col:"#d4a017"},
+  {k:"people", icon:"👥", en:"People",     fr:"Population",   col:"#2f6fb2"},
+  {k:"happy",  icon:"😊", en:"Happiness",  fr:"Satisfaction", col:"#0a7d3f"},
+  {k:"repair", icon:"🔧", en:"Condition",  fr:"État",    col:"#8a5cb8"}
+];
+
+/* ---- what each choice leans on --------------------------------------- */
+/* build = fix and expand things · save = protect the budget
+   people = do what residents ask · plan = the careful, slower option */
+
+var CARDS = [
+ {t:["The first snow","La première neige"],
+  w:["The public works foreman","Le contremaître des travaux publics"],
+  s:["Eight centimetres overnight. Do we send the plows out now, at overtime rates, or wait until the morning shift?",
+     "Huit centimètres pendant la nuit. Envoie-t-on les déneigeuses maintenant, au tarif des heures supplémentaires, ou attend-on l'équipe du matin ?"],
+  o:[
+   {a:["Send them now","Les envoyer maintenant"],tag:"people",d:{budget:-8,happy:+8,repair:+2},
+    r:["Roads are clear by seven. Snow clearing is the service Canadians complain about most, and the one they notice first.",
+       "Les routes sont dégagées à sept heures. Le déneigement est le service dont les Canadiens se plaignent le plus, et celui qu'ils remarquent en premier."]},
+   {a:["Wait for the morning shift","Attendre l'équipe du matin"],tag:"save",d:{budget:+3,happy:-7,repair:-2},
+    r:["You saved the overtime. Two cars slid at the hill on Mill Street and the phone did not stop ringing.",
+       "Vous avez économisé les heures supplémentaires. Deux voitures ont dérapé dans la côte et le téléphone n'a pas cessé de sonner."]},
+   {a:["Main roads now, side streets later","Rues principales maintenant, rues secondaires plus tard"],tag:"plan",d:{budget:-4,happy:+2,repair:+1},
+    r:["This is what most Canadian towns actually do. Priority routes first: hospital, schools, bus routes.",
+       "C'est ce que font la plupart des villes canadiennes. Les routes prioritaires d'abord : hôpital, écoles, circuits d'autobus."]}
+  ]},
+
+ {t:["The arena roof","Le toit de l'aréna"],
+  w:["The minor hockey association","L'association de hockey mineur"],
+  s:["The arena roof leaks over the north stands. Repair is expensive. Closing the arena for a season is cheaper.",
+     "Le toit de l'aréna coule au-dessus des gradins nord. La réparation coûte cher. Fermer l'aréna une saison coûte moins cher."],
+  o:[
+   {a:["Fix the roof properly","Réparer le toit correctement"],tag:"build",d:{budget:-14,happy:+9,repair:+10},
+    r:["Expensive, and done. In a small Canadian town the arena is often the only indoor place the whole community shares.",
+       "Coûteux, mais réglé. Dans une petite ville canadienne, l'aréna est souvent le seul lieu intérieur partagé par toute la collectivité."]},
+   {a:["Patch it and watch it","Le rapiécer et surveiller"],tag:"save",d:{budget:-3,happy:0,repair:-6},
+    r:["It holds for now. Deferred repair is the quiet problem in Canadian municipalities: putting it off always costs more later.",
+       "Ça tient pour l'instant. Les réparations reportées sont le problème discret des municipalités canadiennes : reporter coûte toujours plus cher ensuite."]},
+   {a:["Close it for a season","La fermer pour une saison"],tag:"save",d:{budget:+6,happy:-14,people:-3,repair:+2},
+    r:["The budget looks better. Three hockey teams now drive forty minutes to the next town, and some families followed.",
+       "Le budget paraît meilleur. Trois équipes de hockey roulent maintenant quarante minutes jusqu'à la ville voisine, et des familles ont suivi."]}
+  ]},
+
+ {t:["A water main breaks","Une conduite d'eau se rompt"],
+  w:["The water operator","L'opérateur d'aqueduc"],
+  s:["A hundred-year-old cast iron pipe split under Queen Street. The block has no water.",
+     "Une conduite de fonte centenaire s'est fendue sous la rue Queen. Le pâté de maisons n'a plus d'eau."],
+  o:[
+   {a:["Replace the whole block of pipe","Remplacer toute la conduite du pâté de maisons"],tag:"build",d:{budget:-16,happy:+4,repair:+14},
+    r:["The street is torn up for two weeks and then it is good for another century. Safe drinking water is a municipal responsibility.",
+       "La rue est éventée deux semaines, puis elle est bonne pour un autre siècle. L'eau potable est une responsabilité municipale."]},
+   {a:["Repair just the break","Ne réparer que la fuite"],tag:"save",d:{budget:-5,happy:+1,repair:-3},
+    r:["Water is back by evening. The rest of that pipe is exactly as old as the piece that failed.",
+       "L'eau revient en soirée. Le reste de la conduite a exactement l'âge du morceau qui a cédé."]},
+   {a:["Repair it, and survey the rest","Réparer, puis inspecter le reste"],tag:"plan",d:{budget:-9,happy:+2,repair:+6},
+    r:["You now know which streets are next. Knowing what you own and what shape it is in is the whole job.",
+       "Vous savez maintenant quelles rues suivront. Savoir ce que l'on possède et dans quel état, c'est tout le travail."]}
+  ]},
+
+ {t:["A builder wants to build","Un promoteur veut construire"],
+  w:["A developer","Un promoteur immobilier"],
+  s:["Two hundred new homes on the field north of town. More people, more tax — and more roads, pipes and school buses.",
+     "Deux cents nouvelles maisons dans le champ au nord. Plus d'habitants, plus de taxes — mais aussi plus de routes, de conduites et d'autobus scolaires."],
+  o:[
+   {a:["Approve it","Approuver"],tag:"build",d:{budget:+10,people:+16,happy:-5,repair:-8},
+    r:["The town grows. New subdivisions bring tax money, and they also bring pipes and roads the town must maintain forever.",
+       "La ville grandit. Les nouveaux quartiers apportent des recettes fiscales, mais aussi des conduites et des routes à entretenir pour toujours."]},
+   {a:["Refuse it","Refuser"],tag:"save",d:{people:-2,happy:+3,repair:+2},
+    r:["The field stays a field. Some residents are relieved. Young families who wanted to stay could not find a house.",
+       "Le champ reste un champ. Des résidents sont soulagés. De jeunes familles qui voulaient rester n'ont pas trouvé de maison."]},
+   {a:["Approve it, but they pay for the pipes","Approuver, mais qu'il paie les conduites"],tag:"plan",d:{budget:+4,people:+12,happy:+1,repair:-1},
+    r:["Development charges are how Canadian municipalities make growth pay for itself. The builder grumbled and agreed.",
+       "Les redevances d'aménagement permettent aux municipalités canadiennes de faire payer la croissance par elle-même. Le promoteur a rouspété, puis accepté."]}
+  ]},
+
+ {t:["The tax rate","Le taux de taxe"],
+  w:["The treasurer","Le trésorier"],
+  s:["Budget night. Property tax is the main money a Canadian town raises itself. Up, down, or hold?",
+     "Soir du budget. La taxe foncière est la principale recette qu'une ville canadienne perçoit elle-même. Hausse, baisse ou statu quo ?"],
+  o:[
+   {a:["Raise it","L'augmenter"],tag:"plan",d:{budget:+15,happy:-11},
+    r:["The money is real and so is the anger. Property tax pays for roads, water, fire and the library.",
+       "L'argent est réel, la colère aussi. La taxe foncière paie les routes, l'eau, les incendies et la bibliothèque."]},
+   {a:["Freeze it","La geler"],tag:"people",d:{budget:-4,happy:+8},
+    r:["Popular tonight. Costs went up anyway, so something else will have to give.",
+       "Populaire ce soir. Les coûts ont augmenté quand même : il faudra couper ailleurs."]},
+   {a:["Small increase, tied to repairs","Petite hausse, liée aux réparations"],tag:"plan",d:{budget:+8,happy:-3,repair:+3},
+    r:["Telling people exactly what the increase buys is the difference between a tax and a bill.",
+       "Dire aux gens ce que la hausse achète exactement, c'est la différence entre une taxe et une facture."]}
+  ]},
+
+ {t:["The library wants to open Sundays","La bibliothèque veut ouvrir le dimanche"],
+  w:["The head librarian","La bibliothécaire en chef"],
+  s:["Sunday hours cost staff time. She says newcomers use the computers and the language shelves most on weekends.",
+     "L'ouverture du dimanche coûte des heures de personnel. Elle dit que les nouveaux arrivants utilisent surtout les ordinateurs et les livres de langue la fin de semaine."],
+  o:[
+   {a:["Open on Sundays","Ouvrir le dimanche"],tag:"people",d:{budget:-6,happy:+9,people:+3},
+    r:["Public libraries in Canada are free to use and ask nobody for a reason. For many newcomers they are the first door that opens.",
+       "Les bibliothèques publiques au Canada sont gratuites et ne demandent aucune raison. Pour bien des nouveaux arrivants, c'est la première porte qui s'ouvre."]},
+   {a:["Not this year","Pas cette année"],tag:"save",d:{budget:+2,happy:-5},
+    r:["The budget holds. The computers sit dark on the busiest day of the week.",
+       "Le budget tient. Les ordinateurs restent éteints le jour le plus achalandé de la semaine."]},
+   {a:["Sunday afternoons only","Les dimanches après-midi seulement"],tag:"plan",d:{budget:-3,happy:+6,people:+1},
+    r:["Half the cost, most of the benefit. Small towns run on compromises like this one.",
+       "La moitié du coût, presque tout le bénéfice. Les petites villes fonctionnent avec des compromis comme celui-là."]}
+  ]},
+
+ {t:["Spring potholes","Les nids-de-poule du printemps"],
+  w:["Half the town","La moitié de la ville"],
+  s:["The thaw has chewed up every road. Water gets into cracks, freezes, expands, and breaks the pavement apart.",
+     "Le dégel a ravagé toutes les routes. L'eau s'infiltre dans les fissures, gèle, prend de l'expansion et fait éclater la chaussée."],
+  o:[
+   {a:["Repave the worst streets","Repaver les pires rues"],tag:"build",d:{budget:-13,happy:+7,repair:+12},
+    r:["Proper paving lasts. Canada's freeze-and-thaw cycle is why our roads age faster than roads in warm countries.",
+       "Un pavage bien fait dure. Le cycle de gel et de dégel du Canada explique pourquoi nos routes vieillissent plus vite que celles des pays chauds."]},
+   {a:["Cold patch everything","Rapiécer tout à froid"],tag:"save",d:{budget:-3,happy:+2,repair:-4},
+    r:["Cheap and fast. Cold patch is a winter fix that pops out again by summer, and everyone knows it.",
+       "Rapide et bon marché. L'enrobé à froid est une solution d'hiver qui rejaillit d'ici l'été, et tout le monde le sait."]},
+   {a:["Fix the drainage first","Réparer d'abord le drainage"],tag:"plan",d:{budget:-8,happy:-2,repair:+9},
+    r:["Nobody thanks you for a ditch. Water is what destroys a road, so the ditch is the repair.",
+       "Personne ne vous remercie pour un fossé. C'est l'eau qui détruit une route : le fossé est donc la réparation."]}
+  ]},
+
+ {t:["Garbage day","La collecte des ordures"],
+  w:["The waste contractor","L'entrepreneur en collecte"],
+  s:["The contract is up. Weekly pickup costs more. Every-two-weeks costs less and pushes people to compost and recycle.",
+     "Le contrat arrive à échéance. La collecte hebdomadaire coûte plus cher. Aux deux semaines coûte moins et pousse les gens à composter et recycler."],
+  o:[
+   {a:["Keep it weekly","Garder l'hebdomadaire"],tag:"people",d:{budget:-7,happy:+5},
+    r:["Nobody notices garbage collection until it stops. Waste is a municipal responsibility across Canada.",
+       "Personne ne remarque la collecte des ordures avant qu'elle s'arrête. La gestion des déchets est une responsabilité municipale partout au Canada."]},
+   {a:["Move to every two weeks","Passer aux deux semaines"],tag:"save",d:{budget:+8,happy:-8},
+    r:["Real savings, real complaints, and more compost. Many Canadian towns have made exactly this trade.",
+       "De vraies économies, de vraies plaintes, et plus de compost. Bien des villes canadiennes ont fait exactement ce choix."]},
+   {a:["Every two weeks, with free compost bins","Aux deux semaines, avec bacs à compost gratuits"],tag:"plan",d:{budget:+3,happy:-1,repair:+1},
+    r:["Give people the tool before you take away the service. The complaints were a fraction of what they would have been.",
+       "Donnez l'outil avant de retirer le service. Les plaintes ont été une fraction de ce qu'elles auraient été."]}
+  ]},
+
+ {t:["The fire truck is thirty years old","Le camion d'incendie a trente ans"],
+  w:["The fire chief","Le chef pompier"],
+  s:["It still starts. Parts are getting hard to find, and the pump failed a test last month.",
+     "Il démarre encore. Les pièces se font rares et la pompe a échoué à un test le mois dernier."],
+  o:[
+   {a:["Buy a new one","En acheter un neuf"],tag:"build",d:{budget:-18,happy:+6,repair:+8},
+    r:["A serious amount of money for a small town. Fire protection is a municipal service, and it is not the place to gamble.",
+       "Une somme importante pour une petite ville. La protection incendie est un service municipal, et ce n'est pas là qu'on prend des risques."]},
+   {a:["Rebuild the pump","Reconstruire la pompe"],tag:"plan",d:{budget:-7,happy:+2,repair:+3},
+    r:["Buys three or four more years and gives you time to save. Many small municipalities plan replacements a decade ahead.",
+       "Cela donne trois ou quatre ans de plus et le temps d'épargner. Bien des petites municipalités planifient les remplacements dix ans à l'avance."]},
+   {a:["Leave it another year","Attendre encore un an"],tag:"save",d:{budget:+2,happy:-6,repair:-7},
+    r:["It saved money. The chief put his concerns in writing, which is what a chief does when he is overruled.",
+       "Cela a économisé de l'argent. Le chef a mis ses inquiétudes par écrit, ce que fait un chef quand on passe outre son avis."]}
+  ]},
+
+ {t:["Language classes need a room","Les cours de langue cherchent un local"],
+  w:["A settlement worker","Un intervenant en établissement"],
+  s:["Newcomer families have arrived and the English and French classes have nowhere to meet. The community centre has space on weeknights.",
+     "Des familles de nouveaux arrivants sont arrivées et les cours d'anglais et de français n'ont nulle part où se réunir. Le centre communautaire a de la place en semaine."],
+  o:[
+   {a:["Give them the room, free","Leur prêter le local, gratuitement"],tag:"people",d:{budget:-4,happy:+8,people:+6},
+    r:["Newcomers who can settle, stay. Small Canadian towns compete hard for the families that big cities take for granted.",
+       "Les nouveaux arrivants qui s'installent bien restent. Les petites villes canadiennes se battent pour des familles que les grandes villes tiennent pour acquises."]},
+   {a:["Charge the usual rental fee","Facturer le tarif habituel"],tag:"save",d:{budget:+2,happy:-4,people:-2},
+    r:["The rules were applied evenly. The class moved to a church basement in the next town, and some families moved with it.",
+       "Les règles ont été appliquées équitablement. Le cours a déménagé au sous-sol d'une église de la ville voisine, et des familles ont suivi."]},
+   {a:["Free room, and put it on the town website","Local gratuit, et l'afficher sur le site de la ville"],tag:"plan",d:{budget:-4,happy:+9,people:+8},
+    r:["A service nobody can find is not a service. Word reached families two towns over.",
+       "Un service introuvable n'est pas un service. La nouvelle a atteint des familles à deux villes de là."]}
+  ]},
+
+ {t:["The old bridge","Le vieux pont"],
+  w:["The engineer's report","Le rapport de l'ingénieur"],
+  s:["The bridge on the county road needs an inspection. If it fails, the detour is twenty kilometres.",
+     "Le pont de la route de comté doit être inspecté. S'il est fermé, le détour est de vingt kilomètres."],
+  o:[
+   {a:["Full inspection and repairs","Inspection complète et réparations"],tag:"build",d:{budget:-15,happy:+3,repair:+13},
+    r:["Bridges are inspected on a schedule in Canada for a reason. A closed bridge splits a rural town in half.",
+       "Au Canada, les ponts sont inspectés selon un calendrier pour une bonne raison. Un pont fermé coupe une ville rurale en deux."]},
+   {a:["Post a weight limit and wait","Afficher une limite de charge et attendre"],tag:"save",d:{budget:0,happy:-4,repair:-5},
+    r:["Free, and legal. Farm trucks and the fire truck now take the long way around.",
+       "Gratuit, et légal. Les camions de ferme et le camion d'incendie font maintenant le long détour."]},
+   {a:["Inspect now, budget the repair for next year","Inspecter maintenant, budgéter la réparation l'an prochain"],tag:"plan",d:{budget:-5,happy:+1,repair:+4},
+    r:["You cannot plan what you have not measured. The report told you it had four years, not one.",
+       "On ne peut pas planifier ce qu'on n'a pas mesuré. Le rapport indiquait qu'il restait quatre ans, pas un."]}
+  ]},
+
+ {t:["Canada Day","La fête du Canada"],
+  w:["The volunteer committee","Le comité de bénévoles"],
+  s:["They want fireworks, a stage and a pancake breakfast. It is the one day the whole town is in one place.",
+     "Ils veulent des feux d'artifice, une scène et un déjeuner aux crêpes. C'est le seul jour où toute la ville est au même endroit."],
+  o:[
+   {a:["Fund the whole thing","Tout financer"],tag:"people",d:{budget:-9,happy:+12,people:+2},
+    r:["Expensive for one day. New arrivals met their neighbours, which is worth more than it looks on a spreadsheet.",
+       "Coûteux pour une seule journée. Les nouveaux arrivants ont rencontré leurs voisins, ce qui vaut plus que ce qu'un tableur montre."]},
+   {a:["Fund half, they raise the rest","Financer la moitié, ils trouvent le reste"],tag:"plan",d:{budget:-4,happy:+7},
+    r:["The committee raised it in three weeks. People look after what they helped pay for.",
+       "Le comité a trouvé la somme en trois semaines. Les gens prennent soin de ce qu'ils ont aidé à payer."]},
+   {a:["Skip it this year","Sauter cette année"],tag:"save",d:{budget:+5,happy:-11},
+    r:["The savings were real and small. It was the thing people brought up all year.",
+       "Les économies étaient réelles et modestes. C'est le sujet que les gens ont ramené toute l'année."]}
+  ]},
+
+ {t:["Sidewalks and seniors","Trottoirs et aînés"],
+  w:["A resident, aged eighty-one","Une résidente de quatre-vingt-un ans"],
+  s:["She cannot clear her own sidewalk any more, and the bylaw says she must. Several neighbours are in the same position.",
+     "Elle ne peut plus déneiger son trottoir, et le règlement l'y oblige. Plusieurs voisins sont dans la même situation."],
+  o:[
+   {a:["The town clears sidewalks","La ville déneige les trottoirs"],tag:"people",d:{budget:-10,happy:+10,repair:+2},
+    r:["A real cost, every winter, forever. Some Canadian municipalities do it and some leave it to residents — there is no national rule.",
+       "Un coût réel, chaque hiver, pour toujours. Certaines municipalités canadiennes le font, d'autres laissent cela aux résidents : il n'y a pas de règle nationale."]},
+   {a:["Keep the bylaw as it is","Garder le règlement tel quel"],tag:"save",d:{budget:+1,happy:-7},
+    r:["Consistent, and hard on the people least able to comply.",
+       "Cohérent, et dur pour ceux qui peuvent le moins s'y conformer."]},
+   {a:["A volunteer list, matched by the town","Une liste de bénévoles, coordonnée par la ville"],tag:"plan",d:{budget:-2,happy:+8,people:+1},
+    r:["Costs almost nothing and works because it is a small town. It would not work in a city of a million.",
+       "Cela ne coûte presque rien et fonctionne parce que c'est une petite ville. Cela ne marcherait pas dans une ville d'un million d'habitants."]}
+  ]},
+
+ {t:["A bus that runs twice a day","Un autobus deux fois par jour"],
+  w:["The high school principal","La directrice de l'école secondaire"],
+  s:["There is no transit. Students and people without cars cannot get to the college in the next town.",
+     "Il n'y a aucun transport en commun. Les élèves et les gens sans voiture ne peuvent pas se rendre au collège de la ville voisine."],
+  o:[
+   {a:["Start the bus route","Lancer le circuit d'autobus"],tag:"build",d:{budget:-12,happy:+8,people:+5},
+    r:["Transit is a municipal responsibility, and outside big cities it is often the first thing cut and the last thing restored.",
+       "Le transport en commun est une responsabilité municipale et, hors des grandes villes, c'est souvent la première chose coupée et la dernière rétablie."]},
+   {a:["No bus","Pas d'autobus"],tag:"save",d:{budget:+3,happy:-6,people:-4},
+    r:["The budget is safer. Three families moved closer to the college.",
+       "Le budget est plus sûr. Trois familles se sont rapprochées du collège."]},
+   {a:["Share the cost with the next town","Partager le coût avec la ville voisine"],tag:"plan",d:{budget:-6,happy:+7,people:+4},
+    r:["Neighbouring municipalities share services all over Canada — fire, water, recreation. Two half-budgets bought one whole bus.",
+       "Les municipalités voisines partagent des services partout au Canada : incendie, eau, loisirs. Deux demi-budgets ont payé un autobus complet."]}
+  ]},
+
+ {t:["Trees on Main Street","Des arbres sur la rue Principale"],
+  w:["The horticulture club","Le club d'horticulture"],
+  s:["The old elms are dying. Replacing them costs money and the new trees will not give shade for fifteen years.",
+     "Les vieux ormes meurent. Les remplacer coûte cher et les nouveaux arbres ne donneront pas d'ombre avant quinze ans."],
+  o:[
+   {a:["Plant the trees","Planter les arbres"],tag:"plan",d:{budget:-6,happy:+6,repair:+2},
+    r:["Nothing you do this term will show. Street trees cool a town in summer and hold the soil beside the road.",
+       "Rien de ce que vous faites ce mandat ne paraîtra. Les arbres de rue rafraîchissent une ville l'été et retiennent le sol au bord de la route."]},
+   {a:["Cut them and pave it flat","Les couper et tout paver"],tag:"save",d:{budget:+4,happy:-8,repair:-2},
+    r:["Cheaper to maintain, and Main Street is now noticeably hotter in July.",
+       "Moins cher à entretenir, et la rue Principale est maintenant nettement plus chaude en juillet."]},
+   {a:["Plant, and ask residents to water them","Planter, et demander aux résidents de les arroser"],tag:"people",d:{budget:-3,happy:+7,repair:+1},
+    r:["Two hundred people signed up for a tree each. A town that helps plant a tree does not let it die.",
+       "Deux cents personnes ont adopté un arbre. Une ville qui aide à planter un arbre ne le laisse pas mourir."]}
+  ]},
+
+ {t:["The building permit","Le permis de construire"],
+  w:["The building inspector","L'inspecteur en bâtiment"],
+  s:["A family started an addition without a permit. The framing does not meet code.",
+     "Une famille a commencé un agrandissement sans permis. La charpente n'est pas conforme au code."],
+  o:[
+   {a:["Order it corrected","Exiger la correction"],tag:"plan",d:{budget:+2,happy:-5,repair:+5},
+    r:["The building code is not decoration. Inspectors exist so that a roof holds up under Canadian snow load.",
+       "Le code du bâtiment n'est pas décoratif. Les inspecteurs existent pour qu'un toit tienne sous la charge de neige canadienne."]},
+   {a:["Let it go this once","Fermer les yeux pour cette fois"],tag:"people",d:{happy:+4,repair:-8},
+    r:["One neighbour was pleased. Two others asked why the rules applied to them last year.",
+       "Un voisin était content. Deux autres ont demandé pourquoi les règles s'appliquaient à eux l'an dernier."]},
+   {a:["Correct it, and waive the late fee","Corriger, et annuler l'amende"],tag:"people",d:{budget:-1,happy:+3,repair:+5},
+    r:["The building gets fixed and the family is not ruined. Enforcement and cruelty are not the same thing.",
+       "Le bâtiment est corrigé et la famille n'est pas ruinée. Faire respecter la loi et être cruel, ce n'est pas la même chose."]}
+  ]}
+];
+
+/* ---- what you leaned on, and where that shows up in real work -------- */
+var PROFILES = {
+ build:{
+  icon:"🏗️",
+  t:["You built and repaired","Vous avez bâti et réparé"],
+  b:["You spent on the things that hold a town up — pipes, roofs, bridges, roads. It cost you money and people did not always thank you, because good infrastructure is invisible until it fails.",
+     "Vous avez investi dans ce qui tient une ville debout : conduites, toitures, ponts, routes. Cela a coûté cher et on ne vous a pas toujours remercié, car une bonne infrastructure est invisible jusqu'à ce qu'elle cède."],
+  j:[["Civil engineering technologist","Technologue en génie civil"],
+     ["Public works supervisor","Superviseur des travaux publics"],
+     ["Water treatment operator","Opérateur d'usine de traitement des eaux"],
+     ["Electrician, plumber or heavy equipment operator — Red Seal trades","Électricien, plombier ou opérateur de machinerie lourde — métiers du Sceau rouge"]]},
+ save:{
+  icon:"📊",
+  t:["You watched the money","Vous avez surveillé l'argent"],
+  b:["You protected the budget, and you said no more often than yes. Someone has to. A town that runs out of money cannot fix anything at all — but saving always costs something you cannot see on the balance sheet.",
+     "Vous avez protégé le budget et vous avez dit non plus souvent que oui. Quelqu'un doit le faire. Une ville à court d'argent ne peut plus rien réparer, mais économiser coûte toujours quelque chose qui n'apparaît pas au bilan."],
+  j:[["Accountant or bookkeeper","Comptable ou teneur de livres"],
+     ["Municipal finance officer","Agent des finances municipales"],
+     ["Auditor","Vérificateur"],
+     ["Purchasing and procurement officer","Agent d'approvisionnement"]]},
+ people:{
+  icon:"🤝",
+  t:["You listened to people","Vous avez écouté les gens"],
+  b:["You chose what residents in front of you needed — the library open, the classes housed, the festival funded. Happiness is not a soft measure: people who feel looked after stay, and a town that loses people loses everything else next.",
+     "Vous avez choisi ce dont les résidents devant vous avaient besoin : la bibliothèque ouverte, les cours logés, la fête financée. La satisfaction n'est pas une mesure molle : les gens qui se sentent soutenus restent, et une ville qui perd des habitants perd ensuite tout le reste."],
+  j:[["Settlement or community services worker","Intervenant en établissement ou en services communautaires"],
+     ["Teacher or librarian","Enseignant ou bibliothécaire"],
+     ["Recreation programmer","Programmateur en loisirs"],
+     ["Human resources or public relations","Ressources humaines ou relations publiques"]]},
+ plan:{
+  icon:"🗺️",
+  t:["You planned ahead","Vous avez planifié"],
+  b:["You kept choosing the option that cost a little now to avoid a lot later — inspect first, share the cost, fix the drain instead of the pothole. It is the least dramatic way to run anything, and usually the cheapest over ten years.",
+     "Vous avez sans cesse choisi l'option qui coûte un peu maintenant pour éviter beaucoup plus tard : inspecter d'abord, partager les coûts, réparer le drainage plutôt que le nid-de-poule. C'est la façon la moins spectaculaire de diriger quoi que ce soit, et généralement la moins coûteuse sur dix ans."],
+  j:[["Urban or regional planner","Urbaniste ou aménagiste"],
+     ["Architect or architectural technologist","Architecte ou technologue en architecture"],
+     ["Project manager","Gestionnaire de projet"],
+     ["Municipal administrator or clerk","Administrateur ou greffier municipal"]]}
+};
+
+/* ---- state ------------------------------------------------------------ */
+var S, order, idx;
+
+function start(){
+  S = {budget:60, people:50, happy:60, repair:60,
+       tally:{build:0, save:0, people:0, plan:0}, ended:null};
+  order = CARDS.map(function(_,i){return i;});
+  for(var i=order.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1)); var t=order[i]; order[i]=order[j]; order[j]=t;
+  }
+  order = order.slice(0,12);
+  idx = 0;
+  show("thGame");
+  drawMeters($("thMeters"));
+  drawCard();
+}
+
+function show(id){
+  ["thStart","thGame","thEnd"].forEach(function(x){
+    $(x).classList.toggle("on", x===id);
+  });
+}
+
+function clamp(n){ return Math.max(0, Math.min(100, n)); }
+
+function drawMeters(host){
+  host.innerHTML = "";
+  METERS.forEach(function(m){
+    var v = S[m.k];
+    var d = document.createElement("div");
+    d.className = "th-m" + (v<=20 ? " low" : "");
+    var lab = document.createElement("div");
+    lab.className = "lab";
+    var name = document.createElement("span");
+    name.textContent = m.icon + " " + T(m.en, m.fr);
+    var num = document.createElement("b");
+    num.textContent = v;
+    lab.appendChild(name); lab.appendChild(num);
+    var bar = document.createElement("div"); bar.className = "th-bar";
+    var fill = document.createElement("i");
+    fill.style.width = v + "%";
+    fill.style.background = v<=20 ? "#c8102e" : m.col;
+    bar.appendChild(fill);
+    d.appendChild(lab); d.appendChild(bar);
+    host.appendChild(d);
+  });
+}
+
+function drawCard(){
+  var c = CARDS[order[idx]];
+  $("thRound").textContent = T("Decision ","Décision ") + (idx+1) +
+                             T(" of 12"," sur 12");
+  var host = $("thCard");
+  host.innerHTML = "";
+  var h = document.createElement("h3"); h.textContent = T(c.t[0], c.t[1]);
+  var w = document.createElement("p"); w.className = "th-who";
+  w.textContent = T(c.w[0], c.w[1]);
+  var s = document.createElement("p"); s.textContent = T(c.s[0], c.s[1]);
+  host.appendChild(h); host.appendChild(w); host.appendChild(s);
+
+  c.o.forEach(function(op){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "th-opt";
+    b.textContent = T(op.a[0], op.a[1]);
+    b.onclick = function(){ choose(op); };
+    host.appendChild(b);
+  });
+}
+
+function choose(op){
+  for(var k in op.d){ if(k!=="tag") S[k] = clamp(S[k] + op.d[k]); }
+  S.tally[op.tag] += 1;
+  drawMeters($("thMeters"));
+
+  var host = $("thCard");
+  host.innerHTML = "";
+  var box = document.createElement("div"); box.className = "th-out";
+  var p = document.createElement("p");
+  p.innerHTML = "<b>" + esc(T(op.a[0], op.a[1])) + "</b>";
+  var r = document.createElement("p"); r.textContent = T(op.r[0], op.r[1]);
+  var d = document.createElement("div"); d.className = "th-delta";
+  METERS.forEach(function(m){
+    var v = op.d[m.k];
+    if(!v) return;
+    var sp = document.createElement("span");
+    sp.className = v>0 ? "th-up" : "th-dn";
+    sp.textContent = m.icon + " " + (v>0?"+":"") + v;
+    d.appendChild(sp);
+  });
+  box.appendChild(p); box.appendChild(r); box.appendChild(d);
+  host.appendChild(box);
+
+  var dead = null;
+  METERS.forEach(function(m){ if(S[m.k]<=0 && !dead) dead = m; });
+
+  var btns = document.createElement("div"); btns.className = "th-btns";
+  var nb = document.createElement("button");
+  nb.type = "button"; nb.className = "btn btn-lg";
+  idx += 1;
+  if(dead){
+    S.ended = dead.k;
+    nb.textContent = T("See how it went","Voir le résultat");
+    nb.onclick = finish;
+  } else if(idx >= 12){
+    nb.textContent = T("End of your term →","Fin de votre mandat →");
+    nb.onclick = finish;
+  } else {
+    nb.textContent = T("Next →","Suivant →");
+    nb.onclick = drawCard;
+  }
+  btns.appendChild(nb);
+  host.appendChild(btns);
+  nb.focus();
+}
+
+function esc(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+function finish(){
+  show("thEnd");
+  drawMeters($("thEndMeters"));
+
+  var best = "plan", bestN = -1;
+  for(var k in S.tally){ if(S.tally[k] > bestN){ bestN = S.tally[k]; best = k; } }
+  var pr = PROFILES[best];
+
+  if(S.ended){
+    var m = METERS.filter(function(x){ return x.k===S.ended; })[0];
+    $("thEndIcon").textContent = "⚠️";
+    $("thEndTitle").textContent = T("Your term ended early","Votre mandat s'est terminé tôt");
+    $("thEndLine").textContent =
+      T("You ran out of ", "Vous avez épuisé : ") + T(m.en, m.fr).toLowerCase() +
+      T(". A town cannot keep going without it.", ". Une ville ne peut pas continuer sans cela.");
+  } else {
+    var total = S.budget + S.people + S.happy + S.repair;
+    $("thEndIcon").textContent = pr.icon;
+    $("thEndTitle").textContent = T("Your term is over","Votre mandat est terminé");
+    $("thEndLine").textContent = total >= 260
+      ? T("You left the town better than you found it.","Vous laissez la ville en meilleur état qu'à votre arrivée.")
+      : total >= 180
+        ? T("The town is still standing, and so are you.","La ville tient debout, et vous aussi.")
+        : T("It was a hard term. Every mayor gets one.","Ce fut un mandat difficile. Chaque maire en connaît un.");
+  }
+
+  $("thLeanTitle").textContent = pr.icon + " " + T(pr.t[0], pr.t[1]);
+  $("thLeanBody").textContent = T(pr.b[0], pr.b[1]);
+  $("thJobsTitle").textContent = T("Jobs in Canada that use this",
+                                   "Des métiers au Canada qui font appel à cela");
+  var ul = $("thJobsList"); ul.innerHTML = "";
+  pr.j.forEach(function(j){
+    var li = document.createElement("li");
+    li.textContent = T(j[0], j[1]);
+    ul.appendChild(li);
+  });
+  $("thDisclaimer").textContent = T(
+    "This is a game, not a career test. It shows which parts of one job you enjoyed today — nothing more. Real career advice comes from a guidance counsellor, a teacher, or someone doing the work.",
+    "Ceci est un jeu, pas un test d'orientation. Il montre quelles parties d'un métier vous avez aimées aujourd'hui, rien de plus. Les vrais conseils viennent d'un conseiller en orientation, d'un enseignant ou de quelqu'un qui fait le travail.");
+}
+
+/* ---- wire up ---------------------------------------------------------- */
+$("thIntro").textContent = T(
+  "You have just been elected mayor of a town of about 5,000 people.",
+  "Vous venez d'être élu maire d'une ville d'environ 5 000 habitants.");
+$("thIntro2").textContent = T(
+  "Twelve decisions, drawn from what Canadian municipalities really look after: snow, water, roads, garbage, fire, the library and the arena. Watch all four meters — if any one reaches zero, your term ends early.",
+  "Douze décisions, tirées de ce dont les municipalités canadiennes s'occupent vraiment : neige, eau, routes, ordures, incendie, bibliothèque et aréna. Surveillez les quatre jauges : si l'une atteint zéro, votre mandat se termine tôt.");
+$("thGo").textContent = T("Take office →","Entrer en fonction →");
+$("thAgain").textContent = T("Run again","Rejouer");
+$("thReadMore").textContent = T("How Canadian towns really work",
+                                "Comment fonctionnent vraiment les villes canadiennes");
+if(FR) $("thReadMore").setAttribute("href","how-canadas-cities-and-towns-work.html");
+$("thGo").onclick = start;
+$("thAgain").onclick = start;
+})();
+</script>
+
+  <script src="../js/site.js?v=2cdb6537"></script>
+  <script src="../js/analytics.js?v=065edc09"></script>
+  <script src="../js/ads.js?v=00e703ff" defer></script>
+  <script src="../js/pwa.js?v=4afcd38a" defer></script>
+  <script src="../js/tv-mode.js?v=836e4dd9" defer></script>
+</body>
+</html>
