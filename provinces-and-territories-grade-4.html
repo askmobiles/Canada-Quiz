@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Provinces and Territories of Canada — Grade 4 Lesson, Quiz and Worksheet</title>
+<meta name="description" content="A Grade 4 lesson on Canada's ten provinces, three territories and seven physical regions, with a quiz, endless practice, a challenge round, and printable worksheets with answer sheets. Free, no accounts, English and French.">
+<link rel="stylesheet" href="css/style.css?v=0e3cc3ad">
+<style>
+  .sz-learn{margin:0 0 8px}
+  .sz-panes{max-width:760px}
+  .sz-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+  .sz-tab{flex:1 1 100px;min-height:48px;border:2px solid var(--line);border-radius:14px;background:var(--card);
+    color:var(--ink);font-weight:800;font-size:.95rem;cursor:pointer;padding:8px 6px;line-height:1.15}
+  .sz-tab[aria-selected="true"]{border-color:var(--red);background:var(--red);color:#fff}
+  .sz-tab:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  .sz-pane{display:none}.sz-pane.on{display:block}
+  .sz-learn .sz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:12px 0}
+  .sz-pt{border:2px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--card)}
+  .sz-pt h3{margin:0 0 4px;font-size:1.05rem}
+  .sz-pt .cap{font-weight:800;color:var(--red)}
+  .sz-pt .meta{font-size:.85rem;color:var(--muted);margin:0 0 6px}
+  .sz-pt p{margin:0;font-size:.95rem}
+  .sz-badge{display:inline-block;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:999px;background:var(--line);margin-left:6px;vertical-align:middle}
+  .sz-phys li{margin:0 0 8px}
+  .sz-q{font-size:1.2rem;font-weight:800;margin:0 0 12px;line-height:1.35}
+  .sz-opts{display:grid;gap:10px;margin:0 0 12px}
+  .sz-opt{text-align:left;border:2px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);
+    padding:12px 14px;font-size:1.02rem;cursor:pointer;min-height:48px;line-height:1.3}
+  .sz-opt:hover{border-color:var(--blue)}
+  .sz-opt.right{border-color:#1a9c4b;background:#e4f7ea}
+  .sz-opt.wrong{border-color:var(--red);background:#fde8e8}
+  .sz-opt[disabled]{cursor:default}
+  .sz-exp{border-left:4px solid var(--blue);padding:8px 12px;margin:0 0 12px;background:var(--card);border-radius:0 10px 10px 0;display:none}
+  .sz-exp.on{display:block}
+  .sz-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px;font-weight:800}
+  .sz-prog{height:10px;border-radius:999px;background:var(--line);overflow:hidden;margin:0 0 14px}
+  .sz-prog>span{display:block;height:100%;background:var(--red);width:0;transition:width .25s}
+  .sz-btns{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 0}
+  .sz-res{text-align:center;padding:12px 0}
+  .sz-res .big{font-size:3.4rem;line-height:1}
+  .sz-res h2{margin:.2em 0}
+  .sz-note{font-size:.9rem;color:var(--muted)}
+  .sz-picker{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+  .sz-picker .btn{min-height:44px}
+  .sz-picker .btn.on{outline:3px solid var(--red)}
+  /* the sheet itself, on screen */
+  .sz-sheet{border:2px solid var(--line);border-radius:14px;padding:18px 20px;background:#fff;color:#000;max-width:720px}
+  .sz-sheet h2{margin:0 0 2px;font-size:1.35rem}
+  .sz-sheet .hd{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:2px solid #000;padding:0 0 8px;margin:0 0 12px}
+  .sz-sheet .nm{font-size:.95rem}
+  .sz-sheet h3{margin:14px 0 6px;font-size:1.05rem}
+  .sz-sheet ol{margin:0;padding-left:22px}
+  .sz-sheet li{margin:0 0 10px;line-height:1.45}
+  .sz-sheet .qt{display:block}
+  .sz-sheet .o{display:block;margin-left:4px}
+  .sz-sheet .bl{display:inline-block;min-width:170px;border-bottom:1.5px solid #000;margin-left:6px}
+  .sz-sheet .ft{margin:16px 0 0;font-size:.8rem;border-top:1px solid #999;padding-top:6px}
+  .sz-sheet .ans{font-weight:800}
+  @media print{
+    body>*:not(main){display:none!important}
+    main.container>*:not(.sz-app){display:none!important}
+    .sz-app>*:not(.sz-panes){display:none!important}
+    .sz-pane{display:none!important}
+    .sz-pane.on{display:block!important}
+    .sz-pane.on>*:not(.sz-sheet){display:none!important}
+    body{background:#fff!important;color:#000!important;font-size:12pt}
+    main.container{max-width:none;padding:0;margin:0}
+    .panel,.sz-app{border:0!important;box-shadow:none!important;padding:0!important;margin:0!important;background:#fff!important}
+    .sz-sheet{border:0;border-radius:0;padding:0;max-width:none}
+    .sz-sheet li{page-break-inside:avoid;break-inside:avoid;margin:0 0 5pt}
+    /* two answers per line, so eight questions and the capitals fit one page */
+    .sz-sheet .o{display:inline-block;width:47%;vertical-align:top}
+    .sz-sheet h3{margin:9pt 0 4pt}
+    body{font-size:11pt}
+    a[href]:after{content:""}
+  }
+</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#c8102e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Canada Quiz">
+<meta name="google-adsense-account" content="ca-pub-7256851069341390">
+<link rel="canonical" href="https://canada-quiz.com/provinces-and-territories-grade-4.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/provinces-and-territories-grade-4.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/provinces-and-territories-grade-4.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/provinces-and-territories-grade-4.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"For Kids","item":"https://canada-quiz.com/for-kids.html"},{"@type":"ListItem","position":3,"name":"Provinces and Territories of Canada","item":"https://canada-quiz.com/provinces-and-territories-grade-4.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/provinces-and-territories-grade-4.html#webpage","url":"https://canada-quiz.com/provinces-and-territories-grade-4.html","name":"Provinces and Territories of Canada — Grade 4 Lesson, Quiz and Worksheet","description":"A Grade 4 lesson on Canada's ten provinces, three territories and seven physical regions, with a quiz, endless practice, a challenge round, and printable worksheets with answer sheets. Free, no accounts, English and French.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"Canada Quiz & Family Fun Games","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this the Ontario Grade 4 social studies unit?","acceptedAnswer":{"@type":"Answer","text":"It covers the same ground as the Ontario unit called Political and Physical Regions of Canada, and other provinces teach the same material within a year of Grade 4. It is not an official resource and is not approved by any school board; it is free practice."}},{"@type":"Question","name":"Do the worksheet and the answer sheet really match?","acceptedAnswer":{"@type":"Answer","text":"Yes. Worksheet A always has the same questions in the same order, and Answer Sheet A lists those answers. The same is true of B and C. You can print the worksheet today and the answers next week."}},{"@type":"Question","name":"Can I use this on a projector?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Practice tab is made for it: one big question at a time, no timer, no score, and the class answers together. The full-screen button on the panel makes it fill the screen."}}]}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="for-kids.html">For Kids</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>🍁 Provinces and Territories of Canada</h1>
+    <p>A Grade 4 lesson with a quiz, endless practice, a challenge round, and printable worksheets with answer sheets. No accounts, nothing to download.</p>
+  </section>
+  <details class="howto"><summary>📖 For teachers and parents</summary><p>Six tabs, one topic. <b>Learn</b> is a short lesson a child can read alone. <b>Quiz</b> is ten questions with an explanation after each answer. <b>Practice</b> never ends and keeps no score. <b>Challenge</b> is twelve harder questions on physical regions and Confederation. <b>Worksheet</b> and <b>Answers</b> print — pick the same letter for both, and the answer sheet matches the worksheet. Three versions, so a class can have three different sheets side by side.</p></details>
+
+  <div class="panel sz-app" data-fs-host>
+    <div class="sz-tabs" role="tablist" id="szTabs" data-no-i18n></div>
+  <section class="sz-learn" id="szLearn">
+    <h2>📖 Learn: ten provinces, three territories</h2>
+    <p>Canada is divided into <b>ten provinces</b> and <b>three territories</b>. Each one has a capital city, where its government meets. The capital of the whole country is Ottawa, in Ontario.</p>
+    <p>Provinces run many of their own affairs. Territories are in the far north, have far fewer people, and get more of their powers from the federal government in Ottawa.</p>
+    <h3>West Coast</h3>
+    <div class="sz-grid">
+      <div class="sz-pt"><h3>British Columbia<span class="sz-badge">Province</span></h3><p class="meta">Capital: <span class="cap">Victoria</span> · Joined Canada in 1871</p><p>Most of British Columbia is mountains and forest. It is the only province that touches the Pacific Ocean.</p></div>
+    </div>
+    <h3>The Prairies</h3>
+    <div class="sz-grid">
+      <div class="sz-pt"><h3>Alberta<span class="sz-badge">Province</span></h3><p class="meta">Capital: <span class="cap">Edmonton</span> · Joined Canada in 1905</p><p>Alberta has the Rocky Mountains on its western edge, and some of the best dinosaur fossils in the world near Drumheller.</p></div>
+      <div class="sz-pt"><h3>Saskatchewan<span class="sz-badge">Province</span></h3><p class="meta">Capital: <span class="cap">Regina</span> · Joined Canada in 1905</p><p>Saskatchewan is mostly flat farmland. It grows more wheat than any other province.</p></div>
+      <div class="sz-pt"><h3>Manitoba<span class="sz-badge">Province</span></h3><p class="meta">Capital: <span class="cap">Winnipeg</span> · Joined Canada in 1870</p><p>Manitoba touches Hudson Bay. Polar bears gather near the town of Churchill every fall.</p></div>
+    </div>
+    <h3>Central Canada</h3>
+    <div class="sz-grid">
+      <div class="sz-pt"><h3>Ontario<span class="sz-badge">Province</span></h3><p class="meta">Capital: <span class="cap">Toronto</span> · Joined Canada in 1867</p><p>Ontario has more people than any other province. Ottawa, the capital of Canada, is in Ontario.</p></div>
+      <div class="sz-pt"><h3>Quebec<span class="sz-badge">Province</span></h3><p class="meta">Capital: <span class="cap">Quebec City</span> · Joined Canada in 1867</p><p>Quebec is the biggest province by land. Most people there speak French.</p></div>
+    </div>
+    <h3>Atlantic Canada</h3>
+    <div class="sz-grid">
+      <div class="sz-pt"><h3>New Brunswick<span class="sz-badge">Province</span></h3><p class="meta">Capital: <span class="cap">Fredericton</span> · Joined Canada in 1867</p><p>New Brunswick is the only province where English and French are both official. The Bay of Fundy has the highest tides in the world.</p></div>
+      <div class="sz-pt"><h3>Nova Scotia<span class="sz-badge">Province</span></h3><p class="meta">Capital: <span class="cap">Halifax</span> · Joined Canada in 1867</p><p>Nova Scotia is almost an island. Nowhere in the province is far from the sea.</p></div>
+      <div class="sz-pt"><h3>Prince Edward Island<span class="sz-badge">Province</span></h3><p class="meta">Capital: <span class="cap">Charlottetown</span> · Joined Canada in 1873</p><p>Prince Edward Island is the smallest province. The Confederation Bridge, about 13 km long, joins it to the mainland.</p></div>
+      <div class="sz-pt"><h3>Newfoundland and Labrador<span class="sz-badge">Province</span></h3><p class="meta">Capital: <span class="cap">St. John's</span> · Joined Canada in 1949</p><p>Newfoundland and Labrador was the last province to join Canada, in 1949. Icebergs float past its coast every spring.</p></div>
+    </div>
+    <h3>The North</h3>
+    <div class="sz-grid">
+      <div class="sz-pt"><h3>Yukon<span class="sz-badge">Territory</span></h3><p class="meta">Capital: <span class="cap">Whitehorse</span> · Joined Canada in 1898</p><p>Yukon has Mount Logan, the highest mountain in Canada. Thousands of people rushed there looking for gold in 1898.</p></div>
+      <div class="sz-pt"><h3>Northwest Territories<span class="sz-badge">Territory</span></h3><p class="meta">Capital: <span class="cap">Yellowknife</span> · Joined Canada in 1870</p><p>The Northwest Territories has Great Bear Lake, the biggest lake that is entirely inside Canada, and the Mackenzie, Canada's longest river.</p></div>
+      <div class="sz-pt"><h3>Nunavut<span class="sz-badge">Territory</span></h3><p class="meta">Capital: <span class="cap">Iqaluit</span> · Joined Canada in 1999</p><p>Nunavut is the newest and the biggest territory. It was created in 1999, and most of the people who live there are Inuit.</p></div>
+    </div>
+    <h2 style="margin-top:18px">🗺️ Learn: the seven physical regions</h2>
+    <p>Provinces and territories are <b>political</b> regions: people drew the lines. Canada also has <b>physical</b> regions, made by nature — the land itself, from mountains to plains to old rock.</p>
+    <ul class="sz-phys">
+      <li><b>Western Cordillera.</b> The mountains of British Columbia and Yukon. Tall, young and still growing.</li>
+      <li><b>Interior Plains.</b> The flat land of Alberta, Saskatchewan and Manitoba. Canada's farmland, and oil and gas underneath.</li>
+      <li><b>Canadian Shield.</b> Old, hard rock with thin soil, thousands of lakes and forest. It covers about half of Canada.</li>
+      <li><b>Hudson Bay Lowlands.</b> Flat, wet land along the south of Hudson Bay, in Ontario and Manitoba. Very few people live there.</li>
+      <li><b>Great Lakes and St. Lawrence Lowlands.</b> The smallest region, in southern Ontario and Quebec. More than half of all Canadians live here.</li>
+      <li><b>Appalachian Region.</b> Old, rounded hills in the Atlantic provinces and eastern Quebec. Some of the oldest mountains in the world, worn down by time.</li>
+      <li><b>Arctic Lowlands and Innuitian Mountains.</b> The islands of the far north, in Nunavut. Frozen most of the year, with no trees at all.</li>
+    </ul>
+  </section>
+    <div class="sz-panes" data-no-i18n>
+
+        <div class="sz-pane" id="szPaneQuiz" role="tabpanel">
+          <div id="szQuizStart">
+            <p id="szQuizIntro" style="font-weight:800"></p>
+            <div class="sz-btns"><button type="button" class="btn btn-lg" id="szQuizGo"></button></div>
+          </div>
+          <div id="szQuizPlay" style="display:none">
+            <div class="sz-bar"><span id="szQuizNo"></span><span id="szQuizScore"></span></div>
+            <div class="sz-prog"><span id="szQuizBar"></span></div>
+            <p class="sz-q" id="szQuizQ"></p>
+            <div class="sz-opts" id="szQuizOpts"></div>
+            <div class="sz-exp" id="szQuizExp"></div>
+            <div class="sz-btns"><button type="button" class="btn" id="szQuizNext" style="display:none"></button></div>
+          </div>
+          <div id="szQuizEnd" style="display:none" class="sz-res">
+            <div class="big" id="szQuizIcon"></div>
+            <h2 id="szQuizTitle"></h2>
+            <p id="szQuizLine" style="font-weight:800;font-size:1.1rem"></p>
+            <div class="sz-btns" style="justify-content:center">
+              <button type="button" class="btn btn-lg" id="szQuizAgain"></button>
+              <button type="button" class="btn btn-ghost btn-lg" id="szQuizToChal"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sz-pane" id="szPanePractice" role="tabpanel">
+          <div class="sz-bar"><span id="szPracTally"></span><button type="button" class="btn btn-ghost" id="szPracReset"></button></div>
+          <p class="sz-q" id="szPracQ"></p>
+          <div class="sz-opts" id="szPracOpts"></div>
+          <div class="sz-exp" id="szPracExp"></div>
+          <div class="sz-btns"><button type="button" class="btn" id="szPracNext"></button></div>
+        </div>
+
+        <div class="sz-pane" id="szPaneChal" role="tabpanel">
+          <div id="szChalStart">
+            <p id="szChalIntro" style="font-weight:800"></p>
+            <div class="sz-btns"><button type="button" class="btn btn-lg" id="szChalGo"></button></div>
+          </div>
+          <div id="szChalPlay" style="display:none">
+            <div class="sz-bar"><span id="szChalNo"></span><span id="szChalScore"></span></div>
+            <div class="sz-prog"><span id="szChalBar"></span></div>
+            <p class="sz-q" id="szChalQ"></p>
+            <div class="sz-opts" id="szChalOpts"></div>
+            <div class="sz-exp" id="szChalExp"></div>
+            <div class="sz-btns"><button type="button" class="btn" id="szChalNext" style="display:none"></button></div>
+          </div>
+          <div id="szChalEnd" style="display:none" class="sz-res">
+            <div class="big" id="szChalIcon"></div>
+            <h2 id="szChalTitle"></h2>
+            <p id="szChalLine" style="font-weight:800;font-size:1.1rem"></p>
+            <div class="sz-btns" style="justify-content:center"><button type="button" class="btn btn-lg" id="szChalAgain"></button></div>
+          </div>
+        </div>
+
+        <div class="sz-pane" id="szPaneWs" role="tabpanel">
+          <div class="sz-picker" id="szWsPick"></div>
+          <p class="sz-note" id="szWsNote"></p>
+          <div class="sz-sheet" id="szWsSheet"></div>
+          <div class="sz-btns"><button type="button" class="btn btn-lg" id="szWsPrint"></button></div>
+        </div>
+
+        <div class="sz-pane" id="szPaneAk" role="tabpanel">
+          <div class="sz-picker" id="szAkPick"></div>
+          <p class="sz-note" id="szAkNote"></p>
+          <div class="sz-sheet" id="szAkSheet"></div>
+          <div class="sz-btns"><button type="button" class="btn btn-lg" id="szAkPrint"></button></div>
+        </div>
+
+    </div>
+  </div>
+
+<!--PAGEDOC-->
+<section class="pagedoc">
+  <h2>About this quiz</h2>
+  <p>This page covers the Grade 4 unit on Canada's political and physical regions: the ten provinces, the three territories, their capitals, the year each joined Canada, and the seven physical regions from the Western Cordillera to the Arctic islands.</p>
+  <p>It works six ways. Read the lesson, take the ten-question quiz, practise for as long as you like with no score, try the harder challenge round, then print a worksheet and its answer sheet. There are three versions of the worksheet, lettered A, B and C, and the answer sheet with the same letter matches its worksheet exactly.</p>
+  <p>Every question comes with a one-line explanation, so a child learns the fact rather than just the answer. Nothing is timed, nothing is saved, and there is nothing to sign up for.</p>
+  <h2>Good to know</h2>
+  <ul>
+    <li>Canada has ten provinces and three territories. The territories are Yukon, the Northwest Territories and Nunavut, and together they cover about two fifths of the country's land but hold fewer people than most single cities.</li>
+    <li>The Canadian Shield covers about half of Canada. Its rock is among the oldest on Earth, its soil is thin, and it holds thousands of lakes.</li>
+    <li>More than half of all Canadians live in the smallest physical region, the Great Lakes and St. Lawrence Lowlands, in southern Ontario and Quebec.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Is this the Ontario Grade 4 social studies unit?</h3>
+  <p>It covers the same ground as the Ontario unit called Political and Physical Regions of Canada, and other provinces teach the same material within a year of Grade 4. It is not an official resource and is not approved by any school board; it is free practice.</p>
+  <h3>Do the worksheet and the answer sheet really match?</h3>
+  <p>Yes. Worksheet A always has the same questions in the same order, and Answer Sheet A lists those answers. The same is true of B and C. You can print the worksheet today and the answers next week.</p>
+  <h3>Can I use this on a projector?</h3>
+  <p>Yes. The Practice tab is made for it: one big question at a time, no timer, no score, and the class answers together. The full-screen button on the panel makes it fill the screen.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="canada-map.html">Canada map quiz</a> · <a href="province-quiz.html">Province quiz</a> · <a href="canada-provinces-and-territories-explained.html">Provinces and territories explained</a> · <a href="printable-quizzes.html">More printable quiz sheets</a> · <a href="teachers.html">For teachers</a></p>
+</section>
+<!--/PAGEDOC-->
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="teachers.html">For Teachers</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <div class="footer-sections"><a href="quizzes.html">All Quizzes</a> · <a href="citizenship.html">Citizenship Test Practice</a> · <a href="driving-test.html">Driving Test Practice</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Family Games</a> · <a href="for-kids.html">For Kids</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">General Knowledge</a> · <a href="blog.html">Blog</a> · <a href="daily.html">Daily Quiz</a></div>
+    <p class="footer-all"><a href="all-pages.html">Every page on the site (211)</a></p>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+
+  <script src="js/game-fullscreen.js?v=35da7b56" defer></script>
+<script>
+(function () {
+  "use strict";
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr) { return FR ? fr : en; }
+  function $(id) { return document.getElementById(id); }
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+  var D = [{"id": "bc", "en": "British Columbia", "fr": "Colombie-Britannique", "cap": "Victoria", "capfr": "Victoria", "type": "p", "region": "west", "joined": 1871, "area": 5, "coast": ["pacific"], "fact": "Most of British Columbia is mountains and forest. It is the only province that touches the Pacific Ocean.", "factfr": "La Colombie-Britannique est surtout faite de montagnes et de forêts. C'est la seule province qui touche l'océan Pacifique."}, {"id": "ab", "en": "Alberta", "fr": "Alberta", "cap": "Edmonton", "capfr": "Edmonton", "type": "p", "region": "prairies", "joined": 1905, "area": 6, "coast": [], "fact": "Alberta has the Rocky Mountains on its western edge, and some of the best dinosaur fossils in the world near Drumheller.", "factfr": "L'Alberta a les montagnes Rocheuses à l'ouest, et certains des plus beaux fossiles de dinosaures au monde, près de Drumheller."}, {"id": "sk", "en": "Saskatchewan", "fr": "Saskatchewan", "cap": "Regina", "capfr": "Regina", "type": "p", "region": "prairies", "joined": 1905, "area": 7, "coast": [], "fact": "Saskatchewan is mostly flat farmland. It grows more wheat than any other province.", "factfr": "La Saskatchewan est surtout une plaine de fermes. Elle produit plus de blé que toute autre province."}, {"id": "mb", "en": "Manitoba", "fr": "Manitoba", "cap": "Winnipeg", "capfr": "Winnipeg", "type": "p", "region": "prairies", "joined": 1870, "area": 8, "coast": ["hudson"], "fact": "Manitoba touches Hudson Bay. Polar bears gather near the town of Churchill every fall.", "factfr": "Le Manitoba touche la baie d'Hudson. Des ours polaires se rassemblent près de la ville de Churchill chaque automne."}, {"id": "on", "en": "Ontario", "fr": "Ontario", "cap": "Toronto", "capfr": "Toronto", "type": "p", "region": "central", "joined": 1867, "area": 4, "coast": ["hudson"], "fact": "Ontario has more people than any other province. Ottawa, the capital of Canada, is in Ontario.", "factfr": "L'Ontario compte plus d'habitants que toute autre province. Ottawa, la capitale du Canada, est en Ontario."}, {"id": "qc", "en": "Quebec", "fr": "Québec", "cap": "Quebec City", "capfr": "Québec", "type": "p", "region": "central", "joined": 1867, "area": 2, "coast": ["atlantic", "hudson"], "fact": "Quebec is the biggest province by land. Most people there speak French.", "factfr": "Le Québec est la plus grande province par sa superficie. La plupart des gens y parlent français."}, {"id": "nb", "en": "New Brunswick", "fr": "Nouveau-Brunswick", "cap": "Fredericton", "capfr": "Fredericton", "type": "p", "region": "atlantic", "joined": 1867, "area": 11, "coast": ["atlantic"], "fact": "New Brunswick is the only province where English and French are both official. The Bay of Fundy has the highest tides in the world.", "factfr": "Le Nouveau-Brunswick est la seule province où l'anglais et le français sont tous deux officiels. La baie de Fundy a les plus hautes marées du monde."}, {"id": "ns", "en": "Nova Scotia", "fr": "Nouvelle-Écosse", "cap": "Halifax", "capfr": "Halifax", "type": "p", "region": "atlantic", "joined": 1867, "area": 12, "coast": ["atlantic"], "fact": "Nova Scotia is almost an island. Nowhere in the province is far from the sea.", "factfr": "La Nouvelle-Écosse est presque une île. Nulle part dans la province on n'est loin de la mer."}, {"id": "pe", "en": "Prince Edward Island", "fr": "Île-du-Prince-Édouard", "cap": "Charlottetown", "capfr": "Charlottetown", "type": "p", "region": "atlantic", "joined": 1873, "area": 13, "coast": ["atlantic"], "fact": "Prince Edward Island is the smallest province. The Confederation Bridge, about 13 km long, joins it to the mainland.", "factfr": "L'Île-du-Prince-Édouard est la plus petite province. Le pont de la Confédération, long d'environ 13 km, la relie au continent."}, {"id": "nl", "en": "Newfoundland and Labrador", "fr": "Terre-Neuve-et-Labrador", "cap": "St. John's", "capfr": "St. John's", "type": "p", "region": "atlantic", "joined": 1949, "area": 10, "coast": ["atlantic"], "fact": "Newfoundland and Labrador was the last province to join Canada, in 1949. Icebergs float past its coast every spring.", "factfr": "Terre-Neuve-et-Labrador a été la dernière province à se joindre au Canada, en 1949. Des icebergs passent le long de sa côte chaque printemps."}, {"id": "yt", "en": "Yukon", "fr": "Yukon", "cap": "Whitehorse", "capfr": "Whitehorse", "type": "t", "region": "north", "joined": 1898, "area": 9, "coast": ["arctic"], "fact": "Yukon has Mount Logan, the highest mountain in Canada. Thousands of people rushed there looking for gold in 1898.", "factfr": "Le Yukon a le mont Logan, la plus haute montagne du Canada. Des milliers de gens s'y sont rués pour chercher de l'or en 1898."}, {"id": "nt", "en": "Northwest Territories", "fr": "Territoires du Nord-Ouest", "cap": "Yellowknife", "capfr": "Yellowknife", "type": "t", "region": "north", "joined": 1870, "area": 3, "coast": ["arctic"], "fact": "The Northwest Territories has Great Bear Lake, the biggest lake that is entirely inside Canada, and the Mackenzie, Canada's longest river.", "factfr": "Les Territoires du Nord-Ouest ont le Grand lac de l'Ours, le plus grand lac entièrement au Canada, et le Mackenzie, le plus long fleuve du Canada."}, {"id": "nu", "en": "Nunavut", "fr": "Nunavut", "cap": "Iqaluit", "capfr": "Iqaluit", "type": "t", "region": "north", "joined": 1999, "area": 1, "coast": ["arctic", "hudson"], "fact": "Nunavut is the newest and the biggest territory. It was created in 1999, and most of the people who live there are Inuit.", "factfr": "Le Nunavut est le territoire le plus récent et le plus grand. Il a été créé en 1999, et la plupart de ses habitants sont des Inuits."}];
+  var REG = {"west": ["West Coast", "Côte Ouest"], "prairies": ["The Prairies", "Les Prairies"], "central": ["Central Canada", "Canada central"], "atlantic": ["Atlantic Canada", "Canada atlantique"], "north": ["The North", "Le Nord"]};
+  var COAST = {"pacific": ["the Pacific Ocean", "l'océan Pacifique"], "atlantic": ["the Atlantic Ocean", "l'océan Atlantique"], "arctic": ["the Arctic Ocean", "l'océan Arctique"], "hudson": ["Hudson Bay", "la baie d'Hudson"]};
+  var CHAL = [{"q": "Which physical region covers about half of Canada?", "qfr": "Quelle région physique couvre environ la moitié du Canada ?", "o": ["Canadian Shield", "Interior Plains", "Western Cordillera", "Appalachian Region"], "ofr": ["Bouclier canadien", "Plaines intérieures", "Cordillère de l'Ouest", "Région des Appalaches"], "a": 0, "x": "The Canadian Shield is old, hard rock with thin soil and thousands of lakes, and it covers about half the country.", "xfr": "Le Bouclier canadien est fait de roche vieille et dure, avec un sol mince et des milliers de lacs, et il couvre environ la moitié du pays."}, {"q": "Where do more than half of all Canadians live?", "qfr": "Où vivent plus de la moitié des Canadiens ?", "o": ["Great Lakes and St. Lawrence Lowlands", "Canadian Shield", "Interior Plains", "Hudson Bay Lowlands"], "ofr": ["Basses-terres des Grands Lacs et du Saint-Laurent", "Bouclier canadien", "Plaines intérieures", "Basses-terres de la baie d'Hudson"], "a": 0, "x": "It is the smallest region, but most of Canada's big cities are in it: Toronto, Montreal, Ottawa, Quebec City.", "xfr": "C'est la plus petite région, mais la plupart des grandes villes du Canada s'y trouvent : Toronto, Montréal, Ottawa, Québec."}, {"q": "Which four provinces formed Canada in 1867?", "qfr": "Quelles quatre provinces ont formé le Canada en 1867 ?", "o": ["Ontario, Quebec, Nova Scotia, New Brunswick", "Ontario, Quebec, Manitoba, British Columbia", "Nova Scotia, New Brunswick, PEI, Newfoundland", "Ontario, Quebec, Alberta, Saskatchewan"], "ofr": ["Ontario, Québec, Nouvelle-Écosse, Nouveau-Brunswick", "Ontario, Québec, Manitoba, Colombie-Britannique", "Nouvelle-Écosse, Nouveau-Brunswick, Î.-P.-É., Terre-Neuve", "Ontario, Québec, Alberta, Saskatchewan"], "a": 0, "x": "Confederation on 1 July 1867 joined four provinces. The others came later, one or two at a time, until Nunavut in 1999.", "xfr": "La Confédération du 1er juillet 1867 a réuni quatre provinces. Les autres sont venues plus tard, une ou deux à la fois, jusqu'au Nunavut en 1999."}, {"q": "Which province sits between Alberta and Manitoba?", "qfr": "Quelle province se trouve entre l'Alberta et le Manitoba ?", "o": ["Saskatchewan", "Ontario", "British Columbia", "Yukon"], "ofr": ["Saskatchewan", "Ontario", "Colombie-Britannique", "Yukon"], "a": 0, "x": "From west to east the Prairie provinces are Alberta, Saskatchewan, Manitoba.", "xfr": "D'ouest en est, les provinces des Prairies sont l'Alberta, la Saskatchewan et le Manitoba."}, {"q": "Which two provinces have no sea coast at all?", "qfr": "Quelles deux provinces n'ont aucune côte maritime ?", "o": ["Alberta and Saskatchewan", "Manitoba and Ontario", "Quebec and New Brunswick", "Alberta and British Columbia"], "ofr": ["L'Alberta et la Saskatchewan", "Le Manitoba et l'Ontario", "Le Québec et le Nouveau-Brunswick", "L'Alberta et la Colombie-Britannique"], "a": 0, "x": "Manitoba and Ontario both reach Hudson Bay. Alberta and Saskatchewan are the only provinces completely surrounded by land.", "xfr": "Le Manitoba et l'Ontario touchent tous deux la baie d'Hudson. L'Alberta et la Saskatchewan sont les seules provinces entièrement entourées de terre."}, {"q": "Which Great Lake is the only one entirely outside Canada?", "qfr": "Quel Grand Lac est le seul entièrement hors du Canada ?", "o": ["Lake Michigan", "Lake Superior", "Lake Huron", "Lake Erie"], "ofr": ["Le lac Michigan", "Le lac Supérieur", "Le lac Huron", "Le lac Érié"], "a": 0, "x": "Four of the five Great Lakes are shared between Canada and the United States. Lake Michigan is entirely in the United States.", "xfr": "Quatre des cinq Grands Lacs sont partagés entre le Canada et les États-Unis. Le lac Michigan est entièrement aux États-Unis."}, {"q": "Which physical region is made of flat, wet land where very few people live?", "qfr": "Quelle région physique est faite de terres plates et humides où très peu de gens vivent ?", "o": ["Hudson Bay Lowlands", "Appalachian Region", "Western Cordillera", "Great Lakes and St. Lawrence Lowlands"], "ofr": ["Basses-terres de la baie d'Hudson", "Région des Appalaches", "Cordillère de l'Ouest", "Basses-terres des Grands Lacs et du Saint-Laurent"], "a": 0, "x": "The Hudson Bay Lowlands run along the south of Hudson Bay in Ontario and Manitoba. They are marsh and bog, with polar bears on the coast.", "xfr": "Les Basses-terres de la baie d'Hudson longent le sud de la baie d'Hudson en Ontario et au Manitoba. Ce sont des marais et des tourbières, avec des ours polaires sur la côte."}, {"q": "Which was the last province to join Canada?", "qfr": "Quelle a été la dernière province à se joindre au Canada ?", "o": ["Newfoundland and Labrador", "British Columbia", "Prince Edward Island", "Alberta"], "ofr": ["Terre-Neuve-et-Labrador", "La Colombie-Britannique", "L'Île-du-Prince-Édouard", "L'Alberta"], "a": 0, "x": "Newfoundland and Labrador joined in 1949. Nunavut, a territory, was created later, in 1999.", "xfr": "Terre-Neuve-et-Labrador s'est jointe en 1949. Le Nunavut, un territoire, a été créé plus tard, en 1999."}, {"q": "Which physical region has the oldest, most worn-down mountains?", "qfr": "Quelle région physique a les montagnes les plus vieilles et les plus usées ?", "o": ["Appalachian Region", "Western Cordillera", "Innuitian Mountains", "Interior Plains"], "ofr": ["Région des Appalaches", "Cordillère de l'Ouest", "Monts Innuitiens", "Plaines intérieures"], "a": 0, "x": "The Appalachians in the Atlantic provinces are among the oldest mountains on Earth. Time has worn them into rounded hills. The Cordillera in the west is young and still tall.", "xfr": "Les Appalaches, dans les provinces de l'Atlantique, sont parmi les plus vieilles montagnes de la Terre. Le temps les a usées en collines arrondies. La Cordillère, à l'ouest, est jeune et encore haute."}, {"q": "How many provinces and territories does Canada have altogether?", "qfr": "Combien de provinces et de territoires le Canada compte-t-il en tout ?", "o": ["13", "10", "12", "15"], "ofr": ["13", "10", "12", "15"], "a": 0, "x": "Ten provinces and three territories. The territories are Yukon, the Northwest Territories and Nunavut.", "xfr": "Dix provinces et trois territoires. Les territoires sont le Yukon, les Territoires du Nord-Ouest et le Nunavut."}, {"q": "Which is the biggest of all thirteen provinces and territories by land?", "qfr": "Lequel des treize provinces et territoires est le plus grand par sa superficie ?", "o": ["Nunavut", "Quebec", "Ontario", "Northwest Territories"], "ofr": ["Le Nunavut", "Le Québec", "L'Ontario", "Les Territoires du Nord-Ouest"], "a": 0, "x": "Nunavut is the biggest of all thirteen. Quebec is the biggest province. Nunavut is about one fifth of Canada's land.", "xfr": "Le Nunavut est le plus grand des treize. Le Québec est la plus grande province. Le Nunavut représente environ un cinquième des terres du Canada."}, {"q": "Which province touches both the Atlantic Ocean and Hudson Bay?", "qfr": "Quelle province touche à la fois l'océan Atlantique et la baie d'Hudson ?", "o": ["Quebec", "Ontario", "Nova Scotia", "Manitoba"], "ofr": ["Le Québec", "L'Ontario", "La Nouvelle-Écosse", "Le Manitoba"], "a": 0, "x": "Quebec reaches Hudson Bay in the north-west and the Gulf of St. Lawrence, part of the Atlantic, in the east.", "xfr": "Le Québec touche la baie d'Hudson au nord-ouest et le golfe du Saint-Laurent, une partie de l'Atlantique, à l'est."}, {"q": "Which ocean touches Yukon?", "qfr": "Quel océan touche le Yukon ?", "o": ["The Arctic Ocean", "The Pacific Ocean", "The Atlantic Ocean", "None — it has no coast"], "ofr": ["L'océan Arctique", "L'océan Pacifique", "L'océan Atlantique", "Aucun — il n'a pas de côte"], "a": 0, "x": "Yukon's short northern coast is on the Beaufort Sea, part of the Arctic Ocean. British Columbia sits between Yukon and the Pacific.", "xfr": "La courte côte nord du Yukon donne sur la mer de Beaufort, une partie de l'océan Arctique. La Colombie-Britannique se trouve entre le Yukon et le Pacifique."}, {"q": "Which province shares a land border with Newfoundland and Labrador?", "qfr": "Quelle province partage une frontière terrestre avec Terre-Neuve-et-Labrador ?", "o": ["Quebec", "Nova Scotia", "New Brunswick", "Prince Edward Island"], "ofr": ["Le Québec", "La Nouvelle-Écosse", "Le Nouveau-Brunswick", "L'Île-du-Prince-Édouard"], "a": 0, "x": "The island of Newfoundland has no land border, but Labrador, on the mainland, borders Quebec.", "xfr": "L'île de Terre-Neuve n'a pas de frontière terrestre, mais le Labrador, sur le continent, borde le Québec."}];
+
+  // One name per language, with the article the French needs in a sentence.
+  function nm(d) { return FR ? d.fr : d.en; }
+  function cap(d) { return FR ? d.capfr : d.cap; }
+  function fact(d) { return FR ? d.factfr : d.fact; }
+  function reg(k) { return FR ? REG[k][1] : REG[k][0]; }
+  function kind(d) { return d.type === "t" ? T("territory", "territoire") : T("province", "province"); }
+
+  /* ---------- random, plain and seeded ---------- */
+  function rnd(n) { return Math.floor(Math.random() * n); }
+  function shuffle(a, r) {
+    r = r || rnd;
+    for (var i = a.length - 1; i > 0; i--) { var j = r(i + 1); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  // mulberry32 — a small seeded generator, so Worksheet A is always the same
+  // sheet and Answer Sheet A always matches it.
+  function seeded(seed) {
+    var s = seed >>> 0;
+    return function (n) {
+      s += 0x6D2B79F5;
+      var t = s;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return Math.floor((((t ^ (t >>> 14)) >>> 0) / 4294967296) * n);
+    };
+  }
+  function pick(arr, n, r) { return shuffle(arr.slice(), r).slice(0, n); }
+  function others(d, n, r, filter) {
+    var pool = D.filter(function (x) { return x.id !== d.id && (!filter || filter(x)); });
+    return pick(pool, n, r);
+  }
+
+  /* ---------- question generators ----------
+     Each returns {q, opts:[{t, ok}], x} with opts already shuffled.
+     "r" is the random function — Math.random for play, seeded for sheets. */
+  function mk(q, right, wrongs, x, r) {
+    var opts = [{ t: right, ok: true }].concat(wrongs.map(function (w) { return { t: w, ok: false }; }));
+    return { q: q, opts: shuffle(opts, r), x: x };
+  }
+  var GEN = {
+    capital: function (d, r) {
+      var w = others(d, 3, r).map(cap);
+      return mk(T("What is the capital of " + d.en + "?", "Quelle est la capitale " + deOf(d) + " ?"),
+                cap(d), w,
+                T("The capital of " + d.en + " is " + d.cap + ". ", "La capitale " + deOf(d) + " est " + d.capfr + ". ") + fact(d), r);
+    },
+    whichcap: function (d, r) {
+      var w = others(d, 3, r).map(nm);
+      return mk(T("Which province or territory has " + d.cap + " as its capital?",
+                  "Quelle province ou quel territoire a " + d.capfr + " pour capitale ?"),
+                nm(d), w,
+                T(d.cap + " is the capital of " + d.en + ". ", d.capfr + " est la capitale " + deOf(d) + ". ") + fact(d), r);
+    },
+    region: function (d, r) {
+      var keys = Object.keys(REG).filter(function (k) { return k !== d.region; });
+      var w = pick(keys, 3, r).map(reg);
+      return mk(T("Which region of Canada is " + d.en + " in?", "Dans quelle région du Canada se trouve " + leNm(d) + " ?"),
+                reg(d.region), w,
+                T(d.en + " is in " + reg(d.region) + ". ", upper(leNm(d)) + " est dans la région " + reg(d.region) + ". ") + fact(d), r);
+    },
+    type: function (d, r) {
+      var isT = d.type === "t";
+      var w = others(d, 3, r, function (x) { return x.type !== d.type; }).map(nm);
+      return mk(isT ? T("Which of these is a territory, not a province?", "Lequel de ceux-ci est un territoire, et non une province ?")
+                    : T("Which of these is a province, not a territory?", "Lequel de ceux-ci est une province, et non un territoire ?"),
+                nm(d), w,
+                T(d.en + " is a " + kind(d) + ". Canada has ten provinces and three territories: Yukon, the Northwest Territories and Nunavut.",
+                  upper(leNm(d)) + " est un" + (isT ? "" : "e") + " " + kind(d) + ". Le Canada compte dix provinces et trois territoires : le Yukon, les Territoires du Nord-Ouest et le Nunavut."), r);
+    },
+    joined: function (d, r) {
+      var years = [1867, 1870, 1871, 1873, 1898, 1905, 1949, 1999].filter(function (y) { return y !== d.joined; });
+      var w = pick(years, 3, r).map(String);
+      return mk(T("In what year did " + d.en + " join Canada?", "En quelle année " + leNm(d) + " s'est-" + (isFem(d) ? "elle" : "il") + " joint" + (isFem(d) ? "e" : "") + " au Canada ?"),
+                String(d.joined), w,
+                T(d.en + " joined Canada in " + d.joined + ". ", upper(leNm(d)) + " s'est joint" + (isFem(d) ? "e" : "") + " au Canada en " + d.joined + ". ") + fact(d), r);
+    },
+    coast: function (d, r) {
+      if (!d.coast.length) {
+        var w0 = others(d, 3, r, function (x) { return x.coast.length > 0; }).map(nm);
+        return mk(T("Which of these has no sea coast at all?", "Lequel de ceux-ci n'a aucune côte maritime ?"),
+                  nm(d), w0,
+                  T(d.en + " is surrounded by land on every side. Only Alberta and Saskatchewan are like this.",
+                    upper(leNm(d)) + " est entouré" + (isFem(d) ? "e" : "") + " de terre de tous les côtés. Seules l'Alberta et la Saskatchewan sont ainsi."), r);
+      }
+      var c = d.coast[0];
+      var keys = Object.keys(COAST).filter(function (k) { return d.coast.indexOf(k) < 0; });
+      var w = pick(keys, 3, r).map(function (k) { return FR ? COAST[k][1] : COAST[k][0]; });
+      if (w.length < 3) w.push(T("None — it has no coast", "Aucune — pas de côte"));
+      return mk(T("Which body of water touches " + d.en + "?", "Quelle étendue d'eau touche " + leNm(d) + " ?"),
+                FR ? COAST[c][1] : COAST[c][0], w,
+                T(d.en + " has a coast on " + COAST[c][0] + ". ", upper(leNm(d)) + " a une côte sur " + COAST[c][1] + ". ") + fact(d), r);
+    }
+  };
+  // Superlatives that only one entry can answer.
+  var SUPER = [
+    ["nu", T("Which is the biggest territory?", "Quel est le plus grand territoire ?")],
+    ["qc", T("Which is the biggest province by land?", "Quelle est la plus grande province par sa superficie ?")],
+    ["pe", T("Which is the smallest province?", "Quelle est la plus petite province ?")],
+    ["on", T("Which province has the most people?", "Quelle province compte le plus d'habitants ?")],
+    ["on", T("The capital of Canada, Ottawa, is in which province?", "La capitale du Canada, Ottawa, est dans quelle province ?")],
+    ["nb", T("Which is the only province where English and French are both official?", "Quelle est la seule province où l'anglais et le français sont tous deux officiels ?")],
+    ["nl", T("Which province joined Canada last, in 1949?", "Quelle province s'est jointe au Canada en dernier, en 1949 ?")],
+    ["nu", T("Which territory was created in 1999?", "Quel territoire a été créé en 1999 ?")],
+    ["yt", T("Mount Logan, Canada's highest mountain, is in which territory?", "Le mont Logan, la plus haute montagne du Canada, est dans quel territoire ?")],
+    ["bc", T("Which is the only province on the Pacific Ocean?", "Quelle est la seule province sur l'océan Pacifique ?")],
+    ["mb", T("Polar bears gather at Churchill every fall. Which province is Churchill in?", "Des ours polaires se rassemblent à Churchill chaque automne. Dans quelle province est Churchill ?")],
+    ["sk", T("Which province grows the most wheat?", "Quelle province produit le plus de blé ?")],
+    ["nt", T("Great Bear Lake and the Mackenzie River are in which territory?", "Le Grand lac de l'Ours et le fleuve Mackenzie sont dans quel territoire ?")],
+    ["ab", T("Drumheller, famous for dinosaur fossils, is in which province?", "Drumheller, célèbre pour ses fossiles de dinosaures, est dans quelle province ?")]
+  ];
+  function superQ(i, r) {
+    var d = byId(SUPER[i][0]);
+    var w = others(d, 3, r, function (x) { return x.type === d.type; }).map(nm);
+    return mk(SUPER[i][1], nm(d), w, fact(d), r);
+  }
+  function byId(id) { for (var i = 0; i < D.length; i++) if (D[i].id === id) return D[i]; }
+
+  /* French helpers: "du Québec" / "de l'Ontario" / "de la Nouvelle-Écosse",
+     and "le Québec" / "l'Ontario" / "la Nouvelle-Écosse". */
+  var FEM = { bc: 1, sk: 1, nb: 0, ns: 1, pe: 1, nl: 1, ab: 1, mb: 0, on: 0, qc: 0, yt: 0, nt: 0, nu: 0 };
+  var PLURAL = { nt: 1 };
+  function isFem(d) { return !!FEM[d.id]; }
+  function vowel(s) { return /^[AEIOUÎÉ]/i.test(s); }
+  function leNm(d) {
+    if (d.id === "nl") return "Terre-Neuve-et-Labrador";
+    if (PLURAL[d.id]) return "les " + d.fr;
+    if (vowel(d.fr)) return "l'" + d.fr;
+    return (isFem(d) ? "la " : "le ") + d.fr;
+  }
+  function deOf(d) {
+    if (d.id === "nl") return "de Terre-Neuve-et-Labrador";
+    if (PLURAL[d.id]) return "des " + d.fr;
+    if (vowel(d.fr)) return "de l'" + d.fr;
+    return (isFem(d) ? "de la " : "du ") + d.fr;
+  }
+  function upper(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  /* ---------- pools ---------- */
+  // Easy pool: every generator on every entry, plus the superlatives.
+  function easyPool(r) {
+    var out = [];
+    D.forEach(function (d) {
+      ["capital", "whichcap", "region", "type", "coast"].forEach(function (g) { out.push({ g: g, d: d }); });
+    });
+    SUPER.forEach(function (s, i) { out.push({ s: i }); });
+    return out;
+  }
+  function build(item, r) {
+    if (item.s !== undefined) return superQ(item.s, r);
+    return GEN[item.g](item.d, r);
+  }
+  // A set with no two questions about the same place, and no two of one type.
+  function pickSet(n, r) {
+    var pool = shuffle(easyPool(r), r), out = [], seen = {}, types = {};
+    for (var i = 0; i < pool.length && out.length < n; i++) {
+      var it = pool[i];
+      var key = it.s !== undefined ? SUPER[it.s][0] : it.d.id;
+      var ty = it.s !== undefined ? "super" : it.g;
+      // "Which of these is a province?" twice on one sheet, with the same
+      // three territories as the wrong answers both times, reads as padding.
+      // One of those per set; the other kinds up to a quarter of the set.
+      var cap = ty === "type" ? 1 : Math.ceil(n / 4);
+      if (seen[key] || (types[ty] || 0) >= cap) continue;
+      seen[key] = 1; types[ty] = (types[ty] || 0) + 1;
+      out.push(build(it, r));
+    }
+    return out;
+  }
+  function chalSet() {
+    var base = shuffle(CHAL.slice()).slice(0, 8).map(function (c) {
+      var opts = c.o.map(function (o, i) { return { t: FR ? c.ofr[i] : o, ok: i === c.a }; });
+      return { q: FR ? c.qfr : c.q, opts: shuffle(opts), x: FR ? c.xfr : c.x };
+    });
+    var joined = pick(D, 4).map(function (d) { return GEN.joined(d); });
+    return shuffle(base.concat(joined));
+  }
+
+  /* ---------- tabs ---------- */
+  var TABS = [
+    ["learn", "📖 " + T("Learn", "Apprendre")],
+    ["quiz", "🎮 " + T("Quiz", "Quiz")],
+    ["practice", "🔁 " + T("Practice", "Pratique")],
+    ["chal", "🧠 " + T("Challenge", "Défi")],
+    ["ws", "🖨️ " + T("Worksheet", "Feuille")],
+    ["ak", "✅ " + T("Answers", "Corrigé")]
+  ];
+  var PANE = { quiz: "szPaneQuiz", practice: "szPanePractice", chal: "szPaneChal", ws: "szPaneWs", ak: "szPaneAk" };
+  var current = "learn";
+  function show(key) {
+    current = key;
+    TABS.forEach(function (t) {
+      var b = $("szTab-" + t[0]);
+      b.setAttribute("aria-selected", t[0] === key ? "true" : "false");
+    });
+    Object.keys(PANE).forEach(function (k) { $(PANE[k]).classList.toggle("on", k === key); });
+    var learn = $("szLearn");
+    if (learn) learn.style.display = key === "learn" ? "" : "none";
+    if (key === "learn" && learn) learn.scrollIntoView({ behavior: "smooth", block: "start" });
+    else $("szTabs").scrollIntoView({ behavior: "smooth", block: "start" });
+    if (key === "practice" && !pracQ) pracNext();
+    try { location.hash = key; } catch (e) {}
+  }
+  (function tabs() {
+    var host = $("szTabs");
+    TABS.forEach(function (t) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "sz-tab"; b.id = "szTab-" + t[0];
+      b.setAttribute("role", "tab"); b.textContent = t[1];
+      b.addEventListener("click", function () { show(t[0]); });
+      host.appendChild(b);
+    });
+  })();
+
+  /* ---------- one question on screen ---------- */
+  function render(q, ids, onAnswer) {
+    $(ids.q).textContent = q.q;
+    var host = $(ids.opts); host.innerHTML = "";
+    $(ids.exp).className = "sz-exp";
+    q.opts.forEach(function (o) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "sz-opt"; b.textContent = o.t;
+      b.addEventListener("click", function () {
+        var all = host.querySelectorAll(".sz-opt");
+        for (var i = 0; i < all.length; i++) { all[i].disabled = true; }
+        b.classList.add(o.ok ? "right" : "wrong");
+        if (!o.ok) for (var j = 0; j < all.length; j++) if (q.opts[j].ok) all[j].classList.add("right");
+        $(ids.exp).textContent = (o.ok ? T("Right. ", "Bravo. ") : T("Not quite. ", "Pas tout à fait. ")) + q.x;
+        $(ids.exp).className = "sz-exp on";
+        onAnswer(o.ok);
+      });
+      host.appendChild(b);
+    });
+  }
+
+  /* ---------- quiz ---------- */
+  var quiz = null, qi = 0, qscore = 0;
+  $("szQuizIntro").textContent = T("Ten questions on the provinces, territories and capitals. After each answer you get one line that explains it.",
+                                   "Dix questions sur les provinces, les territoires et les capitales. Après chaque réponse, une ligne l'explique.");
+  $("szQuizGo").textContent = T("Start the quiz", "Commencer le quiz");
+  $("szQuizNext").textContent = T("Next →", "Suivant →");
+  $("szQuizAgain").textContent = T("Try again", "Recommencer");
+  $("szQuizToChal").textContent = T("Try the Challenge →", "Essayer le Défi →");
+  function quizStart() {
+    quiz = pickSet(10); qi = 0; qscore = 0;
+    $("szQuizStart").style.display = "none"; $("szQuizEnd").style.display = "none";
+    $("szQuizPlay").style.display = "";
+    quizShow();
+  }
+  function quizShow() {
+    $("szQuizNo").textContent = T("Question " + (qi + 1) + " of " + quiz.length, "Question " + (qi + 1) + " sur " + quiz.length);
+    $("szQuizScore").textContent = T("Score: ", "Score : ") + qscore;
+    $("szQuizBar").style.width = (qi / quiz.length * 100) + "%";
+    $("szQuizNext").style.display = "none";
+    render(quiz[qi], { q: "szQuizQ", opts: "szQuizOpts", exp: "szQuizExp" }, function (ok) {
+      if (ok) qscore++;
+      $("szQuizScore").textContent = T("Score: ", "Score : ") + qscore;
+      $("szQuizNext").textContent = qi + 1 < quiz.length ? T("Next →", "Suivant →") : T("See my result →", "Voir mon résultat →");
+      $("szQuizNext").style.display = "";
+    });
+  }
+  function quizEnd() {
+    $("szQuizPlay").style.display = "none"; $("szQuizEnd").style.display = "";
+    var n = quiz.length, p = qscore / n;
+    $("szQuizIcon").textContent = p >= 0.9 ? "🌟" : p >= 0.7 ? "🍁" : p >= 0.5 ? "👍" : "📚";
+    $("szQuizTitle").textContent = p >= 0.9 ? T("Excellent!", "Excellent !") : p >= 0.7 ? T("Well done", "Bien joué") : p >= 0.5 ? T("Good start", "Bon début") : T("Keep going", "Continuez");
+    $("szQuizLine").textContent = T("You got " + qscore + " out of " + n + ".", "Vous avez " + qscore + " sur " + n + ".") +
+      (p < 0.7 ? T(" Read the lesson again, then try once more.", " Relisez la leçon, puis réessayez.") : "");
+  }
+  $("szQuizGo").addEventListener("click", quizStart);
+  $("szQuizAgain").addEventListener("click", quizStart);
+  $("szQuizToChal").addEventListener("click", function () { show("chal"); });
+  $("szQuizNext").addEventListener("click", function () { qi++; if (qi < quiz.length) quizShow(); else quizEnd(); });
+
+  /* ---------- practice ---------- */
+  var pracQ = null, pracN = 0, pracOk = 0;
+  $("szPracReset").textContent = T("Reset", "Remettre à zéro");
+  $("szPracNext").textContent = T("Another one →", "Une autre →");
+  function pracTally() {
+    $("szPracTally").textContent = pracN ? T(pracOk + " right out of " + pracN, pracOk + " bonnes sur " + pracN) : T("No score here — just practise.", "Pas de score ici — on s'exerce.");
+  }
+  function pracNext() {
+    pracQ = pickSet(1)[0];
+    render(pracQ, { q: "szPracQ", opts: "szPracOpts", exp: "szPracExp" }, function (ok) { pracN++; if (ok) pracOk++; pracTally(); });
+    pracTally();
+  }
+  $("szPracNext").addEventListener("click", pracNext);
+  $("szPracReset").addEventListener("click", function () { pracN = 0; pracOk = 0; pracNext(); });
+
+  /* ---------- challenge ---------- */
+  var chal = null, ci = 0, cscore = 0;
+  $("szChalIntro").textContent = T("Twelve harder questions: the seven physical regions, Confederation, borders and coasts. For when the quiz felt easy.",
+                                   "Douze questions plus difficiles : les sept régions physiques, la Confédération, les frontières et les côtes. Pour quand le quiz a semblé facile.");
+  $("szChalGo").textContent = T("Start the challenge", "Commencer le défi");
+  $("szChalAgain").textContent = T("Try again", "Recommencer");
+  function chalStart() {
+    chal = chalSet(); ci = 0; cscore = 0;
+    $("szChalStart").style.display = "none"; $("szChalEnd").style.display = "none";
+    $("szChalPlay").style.display = "";
+    chalShow();
+  }
+  function chalShow() {
+    $("szChalNo").textContent = T("Question " + (ci + 1) + " of " + chal.length, "Question " + (ci + 1) + " sur " + chal.length);
+    $("szChalScore").textContent = T("Score: ", "Score : ") + cscore;
+    $("szChalBar").style.width = (ci / chal.length * 100) + "%";
+    $("szChalNext").style.display = "none";
+    render(chal[ci], { q: "szChalQ", opts: "szChalOpts", exp: "szChalExp" }, function (ok) {
+      if (ok) cscore++;
+      $("szChalScore").textContent = T("Score: ", "Score : ") + cscore;
+      $("szChalNext").textContent = ci + 1 < chal.length ? T("Next →", "Suivant →") : T("See my result →", "Voir mon résultat →");
+      $("szChalNext").style.display = "";
+    });
+  }
+  function chalEnd() {
+    $("szChalPlay").style.display = "none"; $("szChalEnd").style.display = "";
+    var n = chal.length, p = cscore / n;
+    $("szChalIcon").textContent = p >= 0.9 ? "🥇" : p >= 0.7 ? "🥈" : p >= 0.5 ? "🥉" : "💪";
+    $("szChalTitle").textContent = p >= 0.9 ? T("Gold", "Or") : p >= 0.7 ? T("Silver", "Argent") : p >= 0.5 ? T("Bronze", "Bronze") : T("Good try", "Bel effort");
+    $("szChalLine").textContent = T("You got " + cscore + " out of " + n + ".", "Vous avez " + cscore + " sur " + n + ".");
+  }
+  $("szChalGo").addEventListener("click", chalStart);
+  $("szChalAgain").addEventListener("click", chalStart);
+  $("szChalNext").addEventListener("click", function () { ci++; if (ci < chal.length) chalShow(); else chalEnd(); });
+
+  /* ---------- worksheet + answer sheet ---------- */
+  var SHEETS = ["A", "B", "C"];
+  var SEED = { A: 20260904, B: 41867, C: 71999 };
+  var sheet = "A";
+  function sheetData(letter) {
+    var r = seeded(SEED[letter]);
+    var mc = pickSet(8, r);
+    var caps = pick(D, 5, r);
+    return { mc: mc, caps: caps };
+  }
+  var LET = ["a", "b", "c", "d"];
+  var URLTXT = "canada-quiz.com/" + (FR ? "fr/" : "") + "provinces-and-territories-grade-4.html";
+  function head(letter, which) {
+    return '<div class="hd"><div><h2>' + esc(T("Provinces and Territories of Canada", "Provinces et territoires du Canada")) +
+      "</h2><div>" + esc(T("Grade 4", "4e année")) + " · " + esc(which) + " " + letter + "</div></div>" +
+      '<div class="nm">' + esc(T("Name:", "Nom :")) + ' <span class="bl"></span><br>' + esc(T("Date:", "Date :")) + ' <span class="bl"></span></div></div>';
+  }
+  function foot() {
+    return '<p class="ft">' + esc(T("Free to print and copy for your class.", "Libre d'impression et de copie pour votre classe.")) + " " + URLTXT + "</p>";
+  }
+  function wsHtml(letter) {
+    var s = sheetData(letter), h = head(letter, T("Worksheet", "Feuille"));
+    h += "<h3>" + esc(T("Part 1 — Circle the right answer", "Partie 1 — Encercle la bonne réponse")) + "</h3><ol>";
+    s.mc.forEach(function (q) {
+      h += '<li><span class="qt">' + esc(q.q) + "</span>";
+      q.opts.forEach(function (o, i) { h += '<span class="o">' + LET[i] + ") " + esc(o.t) + "</span>"; });
+      h += "</li>";
+    });
+    h += "</ol><h3>" + esc(T("Part 2 — Write the capital city", "Partie 2 — Écris la capitale")) + "</h3><ol>";
+    s.caps.forEach(function (d) { h += "<li>" + esc(nm(d)) + ' <span class="bl"></span></li>'; });
+    h += "</ol><h3>" + esc(T("Part 3 — Name the three territories of Canada", "Partie 3 — Nomme les trois territoires du Canada")) + "</h3>";
+    h += '<p><span class="bl"></span> <span class="bl"></span> <span class="bl"></span></p>';
+    return h + foot();
+  }
+  function akHtml(letter) {
+    var s = sheetData(letter), h = head(letter, T("Answer Sheet", "Corrigé"));
+    h += "<h3>" + esc(T("Part 1", "Partie 1")) + "</h3><ol>";
+    s.mc.forEach(function (q) {
+      var k = 0; for (var i = 0; i < q.opts.length; i++) if (q.opts[i].ok) k = i;
+      h += '<li><span class="ans">' + LET[k] + ") " + esc(q.opts[k].t) + "</span> — " + esc(q.q) + "</li>";
+    });
+    h += "</ol><h3>" + esc(T("Part 2", "Partie 2")) + "</h3><ol>";
+    s.caps.forEach(function (d) { h += "<li>" + esc(nm(d)) + ' — <span class="ans">' + esc(cap(d)) + "</span></li>"; });
+    h += "</ol><h3>" + esc(T("Part 3", "Partie 3")) + '</h3><p class="ans">' +
+      esc(T("Yukon, Northwest Territories, Nunavut (any order)", "Yukon, Territoires du Nord-Ouest, Nunavut (dans n'importe quel ordre)")) + "</p>";
+    return h + foot();
+  }
+  function picker(hostId, onPick) {
+    var host = $(hostId); host.innerHTML = "";
+    var lab = document.createElement("span"); lab.style.fontWeight = "800";
+    lab.textContent = T("Sheet:", "Feuille :"); host.appendChild(lab);
+    SHEETS.forEach(function (L) {
+      var b = document.createElement("button"); b.type = "button";
+      b.className = "btn btn-ghost" + (L === sheet ? " on" : ""); b.textContent = L;
+      b.addEventListener("click", function () { sheet = L; onPick(); });
+      host.appendChild(b);
+    });
+  }
+  function paintSheets() {
+    picker("szWsPick", paintSheets); picker("szAkPick", paintSheets);
+    $("szWsSheet").innerHTML = wsHtml(sheet);
+    $("szAkSheet").innerHTML = akHtml(sheet);
+  }
+  $("szWsNote").textContent = T("Three different worksheets. The answer sheet with the same letter matches it exactly. Prints on one page, black and white.",
+                                "Trois feuilles différentes. Le corrigé portant la même lettre lui correspond exactement. S'imprime sur une page, en noir et blanc.");
+  $("szAkNote").textContent = T("The answers for the worksheet with the same letter. Print this one separately.",
+                                "Les réponses de la feuille portant la même lettre. Imprimez celui-ci séparément.");
+  $("szWsPrint").textContent = "🖨️ " + T("Print worksheet", "Imprimer la feuille");
+  $("szAkPrint").textContent = "🖨️ " + T("Print answer sheet", "Imprimer le corrigé");
+  $("szWsPrint").addEventListener("click", function () { window.print(); });
+  $("szAkPrint").addEventListener("click", function () { window.print(); });
+  paintSheets();
+
+  /* ---------- start ---------- */
+  var want = (location.hash || "").replace("#", "");
+  show(PANE[want] || want === "learn" ? want : "learn");
+})();
+</script>
+  <script src="js/site.js?v=1f569062"></script>
+  <script src="js/analytics.js?v=065edc09"></script>
+  <script src="js/ads.js?v=00e703ff" defer></script>
+  <script src="js/pwa.js?v=4afcd38a" defer></script>
+  <script src="js/tv-mode.js?v=836e4dd9" defer></script>
+</body>
+</html>
