@@ -198,7 +198,7 @@
      did. Open any story with  #ra-debug  on the end of the address and a panel
      shows every event — start, end, error, the engine's own flags — with times.
      A screenshot of that panel is worth more than another guess. */
-  var VERSION = "reader 5";
+  var VERSION = "reader 6 (recorded stories)";
   var LOG = [];
   var logBox = null;
   function log(msg) {
@@ -533,9 +533,102 @@
     );
   }
 
+  /* ------------------------------------------------ a recorded story
+     Where the build has recorded the story (audio/stories/<page>-<lang>.mp3,
+     made by tools/newq/build_story_audio.py), the page carries an empty
+     <div class="ra-audio" data-audio="<page>"> and this turns it into the
+     Play button. A file plays on every device, which the speech engine does
+     not (see the FOURTH iPad FIX above). The speech engine is still used for
+     quizzes, where there are thousands of questions and no files. */
+  var audioEl = null, audioBtn = null;
+
+  function fmt(sec) {
+    sec = Math.max(0, Math.round(sec || 0));
+    return Math.floor(sec / 60) + ":" + (sec % 60 < 10 ? "0" : "") + (sec % 60);
+  }
+
+  function mountAudio(host) {
+    var slug = host.getAttribute("data-audio");
+    if (!slug || host.querySelector("audio")) return false;
+    var base = FR ? "../" : "";
+    audioEl = document.createElement("audio");
+    audioEl.preload = "none";                    /* nothing downloads until Play */
+    audioEl.src = base + "audio/stories/" + slug + "-" + (FR ? "fr" : "en") + ".mp3";
+    audioBtn = document.createElement("button");
+    audioBtn.type = "button";
+    audioBtn.className = "ra-btn ra-story btn btn-ghost";
+    audioBtn.setAttribute("aria-pressed", "false");
+    var time = document.createElement("span");
+    time.className = "ra-time";
+    function label(state) {
+      audioBtn.textContent = state === "playing" ? T("⏸ Pause", "⏸ Pause")
+                           : state === "paused" ? T("▶ Keep reading", "▶ Continuer la lecture")
+                           : T("🔊 Read the story to me", "🔊 Lis-moi l'histoire");
+      audioBtn.appendChild(time);
+      audioBtn.setAttribute("aria-pressed", state === "playing" ? "true" : "false");
+    }
+    label("idle");
+    audioBtn.addEventListener("click", function () {
+      if (audioEl.paused) {
+        stop();                                  /* silence the quiz reader */
+        var p = audioEl.play();
+        if (p && p.catch) p.catch(function (e) { log("audio play refused: " + e); });
+      } else {
+        audioEl.pause();
+      }
+    });
+    audioEl.addEventListener("play", function () { label("playing"); log("audio playing " + slug); });
+    audioEl.addEventListener("pause", function () { label(audioEl.ended ? "idle" : "paused"); });
+    audioEl.addEventListener("ended", function () { label("idle"); clearMark(); log("audio ended"); });
+    audioEl.addEventListener("error", function () { label("idle"); log("audio error " + (audioEl.error && audioEl.error.code)); });
+    audioEl.addEventListener("timeupdate", function () {
+      if (audioEl.duration) {
+        time.textContent = " " + fmt(audioEl.currentTime) + " / " + fmt(audioEl.duration);
+        markByTime(audioEl.currentTime / audioEl.duration);
+      }
+    });
+    host.appendChild(audioBtn);
+    host.appendChild(audioEl);
+    return true;
+  }
+
+  /* The recording has no idea where paragraph three starts, so the highlight
+     follows the clock: the share of the story's characters read so far, plus
+     a fixed allowance per sentence for the pause the voice leaves. Close
+     enough for a finger to follow; never claimed to be exact. */
+  var weights = null;
+  function markByTime(frac) {
+    if (!storyParas.length) return;
+    if (!weights) {
+      weights = [];
+      for (var i = 0; i < storyParas.length; i++) {
+        var tx = (storyParas[i].textContent || "").replace(/\s+/g, " ").trim();
+        var sentences = (tx.match(/[.!?…](\s|$)/g) || []).length || 1;
+        weights.push(tx.length + sentences * 9);   /* 0.45 s pause ≈ 9 chars */
+      }
+    }
+    var total = 0, i;
+    for (i = 0; i < weights.length; i++) total += weights[i];
+    var target = frac * total, acc = 0, at = 0;
+    for (i = 0; i < weights.length; i++) { acc += weights[i]; if (acc >= target) { at = i; break; } at = i; }
+    for (i = 0; i < storyParas.length; i++) storyParas[i].classList.toggle("ra-now", i === at);
+  }
+
   function mountStory() {
     var blocks = document.querySelectorAll(".kid-story");
     if (!blocks.length || document.querySelector(".ra-story")) return;
+    /* collect the paragraphs first: the recorded player highlights them too */
+    var hostAudio = document.querySelector(".ra-audio");
+    if (hostAudio) {
+      storyParas = [];
+      var lede0 = document.querySelector(".kid-lede");
+      if (lede0) storyParas.push(lede0);
+      for (var b0 = 0; b0 < blocks.length; b0++) {
+        var ps0 = blocks[b0].querySelectorAll("h2, h3, p, .kid-wow");
+        for (var i0 = 0; i0 < ps0.length; i0++) storyParas.push(ps0[i0]);
+      }
+      if (mountAudio(hostAudio)) { log("recorded story mounted"); return; }
+    }
     storyParas = [];
     var lede = document.querySelector(".kid-lede");
     if (lede) storyParas.push(lede);
@@ -581,6 +674,8 @@
 
   var css = ".ra-btn{display:block;margin:0 auto 12px;font-size:14px;padding:8px 16px}" +
             ".ra-story{margin-bottom:16px}" +
+            ".ra-time{font-weight:600;opacity:.75;font-variant-numeric:tabular-nums}" +
+            ".ra-audio audio{display:none}" +
             /* the paragraph being read, so a child can follow with a finger */
             ".ra-now{background:#fff3c4;border-radius:10px;box-shadow:0 0 0 8px #fff3c4}" +
             "@media(prefers-reduced-motion:reduce){.ra-now{transition:none}}" +
