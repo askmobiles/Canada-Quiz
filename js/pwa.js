@@ -162,7 +162,7 @@
                 (window.matchMedia && (matchMedia("(display-mode: fullscreen)").matches ||
                                        matchMedia("(display-mode: minimal-ui)").matches));
 
-  function homeHref() { return BASE + "index.html"; }
+  function homeHref() { return BASE || "./"; }
 
   function isHome() {
     var f = location.pathname.split("/").pop();

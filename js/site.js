@@ -34,7 +34,7 @@
      1. THE MENU — change a link here and it changes on all pages
      --------------------------------------------------------------- */
   var NAV = [
-    { href: "index.html",       label: "Home" },
+    { href: "./",               label: "Home" },
     { href: "quizzes.html",     label: "Quizzes" },
     { href: "games.html",       label: "Family Games" },
     /* For Kids sits beside Family Games because that is what a parent is
@@ -49,7 +49,7 @@
   ];
 
   var FOOTER_LINKS = [
-    { href: "index.html",   label: "Home" },
+    { href: "./",           label: "Home" },
     { href: "about.html",   label: "About" },
     { href: "contact.html", label: "Contact" },
     { href: "all-pages.html", label: "All Pages" },
@@ -84,7 +84,10 @@
 
   function setLang(next) {
     if (next === lang) return;
-    location.href = next === "fr" ? BASE + "fr/" + file : BASE + file;
+    /* the home page is /  and  /fr/  — never index.html, which is a second
+       URL for the same page */
+    var f = file === "index.html" ? "" : file;
+    location.href = next === "fr" ? BASE + "fr/" + f : (BASE + f || "./");
   }
   window.CQ.setLang = setLang;
 
@@ -239,7 +242,7 @@
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
-  var FRVER = {core:"f4f8face",gk:"6ddd62f2",cit:"b98c0b9f",fun:"42998e37",drive:"9121887f",kids:"71e99c45"};
+  var FRVER = {core:"b2dc70ff",gk:"8120e74d",cit:"b98c0b9f",fun:"42998e37",drive:"9121887f",kids:"71e99c45"};
   function loadFrench(done) {
     /* The dictionary is split into chunks by tools/split_fr.py. Every French
        page needs "core" (the header, footer and UI strings site.js injects);
@@ -275,7 +278,10 @@
 
   function headerHTML() {
     var links = NAV.map(function (n) {
-      var on = n.href === file ? ' class="on" aria-current="page"' : "";
+      /* the home link is "./" (see FOOTER_LINKS in tools/rewrite_pages.py), so
+         it is "on" when the page is the home page, whatever the URL says */
+      var here = n.href === "./" ? file === "index.html" : n.href === file;
+      var on = here ? ' class="on" aria-current="page"' : "";
       return '<a href="' + n.href + '"' + on + ">" + esc(T(n.label)) + "</a>";
     }).join("");
 
@@ -286,7 +292,7 @@
               '<span aria-hidden="true">🌐</span> ' + other.toUpperCase() + "</button>";
 
     return '<div class="container">' +
-      '<a class="brand" href="index.html" aria-label="' + esc(BRAND) + '">' +
+      '<a class="brand" href="./" aria-label="' + esc(BRAND) + '">' +
         '<img src="' + BASE + 'brand/logo-horizontal-white.svg" alt="' + esc(BRAND) +
         '" class="brand-logo" width="230" height="55">' +
       "</a>" +

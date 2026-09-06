@@ -860,3 +860,96 @@ h1,h2,h3,h4,.card h3,.pill{overflow-wrap:break-word}
   .cq-row{grid-template-columns:minmax(120px,240px) 1fr 78px;align-items:center;gap:12px;margin-bottom:9px}
   .cq-row .cq-val{text-align:right}
 }
+
+
+/* =====================================================================
+   GAME BOARDS — fit the screen, whichever way it is held (6 Sept 2026)
+
+   Measured across 47 games at five screen sizes before writing this.
+   Nothing overflowed sideways; that was already right. Two things were
+   wrong on almost every board game:
+
+     * a phone held sideways (740×360): boards were sized from the WIDTH
+       only — min(94vw, 460px) — so a 460px board sat on a 360px-tall
+       screen and the bottom row was off the bottom. 21 games.
+
+     * a laptop or monitor: the same 340–460px cap that is right on a
+       phone is a postage stamp on 1920×1080. 22 games under 45% of the
+       screen's short side.
+
+   One rule fixes both: a board may be as wide as the screen, or as tall
+   as 74% of the screen, or its own cap — whichever is SMALLEST. Every
+   board here keeps its shape with aspect-ratio or square cells in fr
+   units, so width is the only thing that needs setting.
+
+   These live here, not in each page, so the rule is one rule. "main ."
+   is there for specificity: the pages set the same classes inline, and
+   inline <style> comes after this file, so a bare class would lose.
+   ===================================================================== */
+main .lo-grid, main .mem-board, main .rv-board, main .sk-grid, main .ck-board,
+main .ch-board, main .g2-board, main .sp-board, main .cw-grid, main .ws-wrap,
+main .ms-grid, main .wb-wrap, main .cr-board, main #wheel, main .sw-wrap,
+main .game-wrap{
+  width:100%;
+  max-width:min(94vw, 74vh, 640px);
+  margin-left:auto; margin-right:auto;
+}
+/* the wrappers around them, which carried their own caps (440, 400, 520…) */
+main .ck-wrap, main .sk-wrap, main .g2-wrap, main .sp-wrap, main .lo-wrap, main .cw-wrap,
+main .rv-wrap, main .ms-wrap, main .ms-pads{
+  width:100%;
+  max-width:min(94vw, 74vh, 640px);
+  margin-left:auto; margin-right:auto;
+}
+main .ck-wrap, main .rv-wrap{ max-width:min(94vw, 78vh, 680px) }
+main .ms-pads{ max-width:min(94vw, 70vh, 560px) }          /* Maple Says: four pads */
+main .fg-big{ max-width:min(94vw, 60vh, 560px) }           /* Flags: the flag itself */
+main .sw-stage{ width:min(88vw, 70vh, 560px) }              /* Spin the Wheel: the wheel */
+main .cr-board, main #wheel{ height:auto }              /* canvases keep their ratio */
+main .mem-board{ max-width:min(94vw, 74vh, 700px) }      /* 6×6 grid earns a little more */
+main .ck-board, main .ch-board, main .rv-board{ max-width:min(94vw, 78vh, 680px) }
+/* not square: Word Master is 5 wide by 6 tall, Connect 4 is 7 by 6,
+   Draw It is 4:3, so the height allowance is converted to a width */
+main .wm-board{ max-width:min(94vw, 56vh, 460px) }
+main .c4-board, main .c4-play{ width:100%; max-width:min(94vw, calc(74vh * 7 / 6), 640px); margin-left:auto; margin-right:auto }
+main canvas.di-canvas, main .di-wrap{ width:100%; max-width:min(94vw, calc(74vh * 4 / 3), 860px); margin-left:auto; margin-right:auto }
+/* Tic-tac-toe: three cells that were capped at 90px on every screen */
+main .board{ grid-template-columns:repeat(3, minmax(min(72px, 28vw), min(170px, 24vh))) }
+main .board .cell{ aspect-ratio:1/1; min-height:0 }
+
+/* On a phone the letter keyboards (Word Master, Crossword) had 25px-wide
+   keys: panel padding on both sides plus 6px gaps left 250px for ten
+   keys. Let the keyboard use the panel's padding and tighten the gap:
+   ten keys in about 320px, which is what a phone's own keyboard does. */
+@media (max-width:480px){
+  main .wm-keyboard, main .cw-kb{ margin-left:-12px; margin-right:-12px; max-width:none }
+  main .wm-krow, main .cw-krow{ gap:3px }
+  main .wm-key, main .cw-key{ max-width:none; min-width:0 }
+  main .cw-key{ height:48px; font-size:16px }
+  main .cw-key.wide{ font-size:12px }
+}
+
+/* Snake on a phone held sideways: the board and the d-pad side by side,
+   so both fit without scrolling. Portrait keeps the d-pad underneath. */
+@media (orientation:landscape) and (max-height:520px){
+  main .game-wrap:has(.dpad){ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px 22px; max-width:none }
+  main .game-wrap:has(.dpad) .stat-row{ flex-basis:100%; margin-bottom:0 !important }
+  main .game-wrap:has(.dpad) .cq-stage{ flex:0 0 auto; width:min(70vh, 94vw - 260px); margin:0 }
+  main .game-wrap:has(.dpad) .dpad{ margin:0; grid-template-columns:repeat(3,56px); grid-template-rows:repeat(3,56px) }
+  /* the hint sentence sits between the board and the d-pad in the markup and
+     was pushing the d-pad onto the next line; put the pad first, text after */
+  main .game-wrap:has(.dpad) .stat-row{ order:-3 }
+  main .game-wrap:has(.dpad) .cq-stage{ order:-2 }
+  main .game-wrap:has(.dpad) .dpad{ order:-1 }
+  main .game-wrap:has(.dpad) p{ flex-basis:100%; margin:4px 0 }
+  main .game-wrap:has(.dpad) .btn{ flex-basis:auto }
+}
+
+/* The floating "Play on TV" and "Full screen" buttons (js/tv-mode.js and
+   js/game-fullscreen.js) sit bottom-right at 15px text with 20px padding.
+   On a phone held sideways the screen is 360px tall and they cover the
+   corner of the board. Same buttons, smaller, and stacked tighter. */
+@media (orientation:landscape) and (max-height:520px){
+  .tv-btn, .fs-btn{ padding:8px 12px !important; font-size:12.5px !important }
+  .tv-btn{ bottom:calc(48px + env(safe-area-inset-bottom,0px)) !important }
+}

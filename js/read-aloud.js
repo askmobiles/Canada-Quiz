@@ -114,19 +114,28 @@
     return out;
   }
 
+  /* Apple devices. An iPad in Safari calls itself a Mac, so the touch-point
+     count is what tells them apart from a real desktop. */
+  var APPLE = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+              (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+
   /* Set once, the first time a voiced utterance turns out to be silent. After
-     that we stop choosing a voice at all and let the device choose, because
-     re-testing a voice that does not work costs a second and a half on every
-     single sentence — which turns a working story into an unbearably slow one. */
-  var voiceBroken = false;
+     that we stop choosing a voice at all and let the device choose. On Apple
+     devices we never choose one in the first place: iOS picks a good voice from
+     the language on its own, and handing it a voice object it has not finished
+     loading is the most reliable way to get silence out of it. */
+  var voiceBroken = APPLE;
+
+  /* Every utterance we ever create, kept alive. Safari and Chrome both garbage
+     collect an utterance that nothing references while it is still playing —
+     and a collected utterance never fires onend, so the reader stops dead at
+     the end of that sentence with no error. Holding them here is the fix
+     everybody eventually finds. */
+  var KEEP = [];
 
   function utter(text, plain) {
     var u = new SpeechSynthesisUtterance(text);
     u.lang = LANG;
-    /* plain = do not choose a voice. On an iPad, handing speak() a voice object
-       that the system is not ready to use makes it accept the utterance and
-       then say nothing at all, silently. So the retry below drops the voice and
-       lets the device pick for itself. */
     if (!plain && !voiceBroken) {
       var v = pickVoice();
       if (v) u.voice = v;
@@ -135,88 +144,107 @@
        carry the fact being taught. */
     u.rate = 0.9;
     u.pitch = 1;
+    KEEP.push(u);
+    if (KEEP.length > 40) KEEP.splice(0, KEEP.length - 40);
     return u;
   }
 
   /* ------------------------------------------------- speaking, one at a time
 
-     THE SECOND iPad FIX. Cutting the text into short bites was not enough.
-     Safari will accept a whole queue of utterances and then only ever speak the
-     first, so a paragraph cut into three bites still went quiet — which looked
-     exactly like the original bug and is why the first fix did not help.
+     THE THIRD iPad FIX, and the one that explains the first two.
 
-     So nothing is ever queued. One bite is spoken, and the next is only handed
-     over once the engine has actually finished with the last. Three things can
-     tell us it has finished, and we accept whichever arrives first:
+     Nothing is ever queued: one bite is spoken, and the next is handed over
+     only when the engine has finished with the last. The second fix did that,
+     and it still stopped after the first paragraph on an iPhone. Here is why.
 
-       1. onend fires, the way the specification says it should;
-       2. the engine reports it is no longer speaking (Safari often skips onend);
-       3. nothing at all happened within 1.4 seconds, in which case the bite was
-          swallowed — we say it once more without choosing a voice, and if even
-          that produces silence we move on rather than leaving a child staring
-          at a highlighted paragraph in a silent room.
+     It treated "no sound within 0.85 seconds" as a failure, said the bite
+     again, and after 0.85 more seconds skipped it. An iPhone or iPad routinely
+     takes one to two seconds to start a voice — longer for the first sentence
+     after a pause, longer still on an older device. So from the second sentence
+     on, every bite was declared dead before it had a chance to begin, repeated,
+     and skipped. The first paragraph read because the button tap arrived with
+     a longer allowance. Everything after it was silence. The timeouts that
+     looked like robustness were the bug.
+
+     Now:
+
+       * a bite gets SIX seconds to start. Apple's engine is slow, not broken;
+       * "finished" means onend fired, or the engine reports it stopped after
+         having started (Safari often skips onend);
+       * a bite that never started is cancelled, and only after a short pause
+         is it said once more with no voice chosen — Safari swallows a speak()
+         that follows a cancel() too closely, which is what turned the old
+         retry into a second silence;
+       * Safari also parks the engine in a "paused" state after a cancel, from
+         which nothing ever plays again until resume() is called — so resume()
+         is called before and after every speak(). It is harmless elsewhere.
   */
   function speakSeq(list, isLive, done) {
-    var i = 0, tries = 0, guard = null, cancelled = false;
-    /* Once one bite has been heard we know the device works, so we no longer
-       need to be so patient about the next one. On a device that reports
-       nothing at all this is the difference between a story that plods and a
-       story a child will sit through. */
-    var everStarted = false;
+    var i = 0, tries = 0, guard = null, cancelled = false, delay = null;
 
-    function stopGuard() { if (guard) { clearInterval(guard); guard = null; } }
+    function stopGuard() {
+      if (guard) { clearInterval(guard); guard = null; }
+      if (delay) { clearTimeout(delay); delay = null; }
+    }
     function alive() { return !cancelled && isLive(); }
+    function unpause() { try { if (window.speechSynthesis.paused) window.speechSynthesis.resume(); } catch (e) { } }
 
     function go() {
       stopGuard();
       if (!alive()) return;
       if (i >= list.length) { done && done(); return; }
 
-      var plainOnly = tries > 0 || voiceBroken;
-      var u = utter(list[i], plainOnly);
-      var moved = false;
+      var u = utter(list[i], tries > 0 || voiceBroken);
+      var moved = false, started = false, quietSince = 0;
 
       function advance() {
         if (moved) return;
-        moved = true;
-        stopGuard();
+        moved = true; stopGuard();
         i++; tries = 0;
         go();
       }
-      function retryOrAdvance() {
+      function failed() {
         if (moved) return;
-        stopGuard();
+        moved = true; stopGuard();
         if (tries === 0) {
-          /* The voiced attempt produced silence. Remember that for the rest of
-             the visit, then say this bite again without choosing a voice. */
-          if (!plainOnly) voiceBroken = true;
+          /* never started: clear whatever Safari is holding, wait for it to
+             settle, then say the same bite once more with no voice chosen */
+          voiceBroken = true;
           tries = 1;
-          go();
+          try { window.speechSynthesis.cancel(); } catch (e) { }
+          delay = setTimeout(function () { delay = null; if (alive()) go(); }, 350);
         } else {
-          moved = true; i++; tries = 0; go();
+          i++; tries = 0; go();
         }
       }
 
-      var started = false;
-      /* onstart is the reliable half of the specification — Safari fires it even
-         when it forgets onend. Without it we would have to guess "did it start?"
-         by polling, and a short sentence can begin and end between two polls,
-         which made every heading wait out the full timeout and get spoken twice. */
-      u.onstart = function () { started = true; everStarted = true; };
+      u.onstart = function () { started = true; };
       u.onend = advance;
-      u.onerror = retryOrAdvance;
+      u.onerror = function (e) {
+        /* "interrupted" and "canceled" are us stopping it, not a failure */
+        if (e && (e.error === "interrupted" || e.error === "canceled")) return;
+        failed();
+      };
 
+      unpause();
       try { window.speechSynthesis.speak(u); }
-      catch (e) { retryOrAdvance(); return; }
+      catch (e) { failed(); return; }
+      unpause();
 
       var t0 = now();
       guard = setInterval(function () {
         if (!alive()) { stopGuard(); return; }
         var s = window.speechSynthesis;
-        if (s.speaking) { started = true; everStarted = true; return; }
-        if (started) { advance(); return; }   /* began and is now over */
-        if (now() - t0 > (everStarted ? 850 : 1400)) { retryOrAdvance(); }
-      }, 200);
+        if (s.speaking) { started = true; quietSince = 0; return; }
+        if (started) {
+          /* began, and the engine now says it is over. Give onend a moment to
+             arrive on its own; if it does not, move on anyway. */
+          if (!quietSince) quietSince = now();
+          else if (now() - quietSince > 400) advance();
+          return;
+        }
+        if (now() - t0 > 6000) failed();
+      }, 150);
     }
 
     go();
@@ -236,8 +264,12 @@
     stop();
     if (sayer) { sayer.cancel(); sayer = null; }
     /* A question plus four answers is easily past the limit on its own, so the
-       quiz reader is read one bite at a time as well. */
-    sayer = speakSeq(bites(text), function () { return on && lastSaid === mine; }, null);
+       quiz reader is read one bite at a time as well. The short wait is for
+       Safari, which swallows a speak() that follows a cancel() too closely. */
+    setTimeout(function () {
+      if (!on || lastSaid !== mine) return;
+      sayer = speakSeq(bites(text), function () { return on && lastSaid === mine; }, null);
+    }, APPLE ? 300 : 0);
   }
 
   /* --------------------------------------------------------- what to read */
