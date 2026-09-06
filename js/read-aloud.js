@@ -92,6 +92,19 @@
 
   function bites(text) {
     text = String(text || "").replace(/\s+/g, " ").trim();
+    /* THE FOURTH iPad FIX — the one with evidence.
+
+       An on-page log from an iPhone on iOS 18.7 (6 September 2026) showed:
+       the first utterance plays, `speaking` goes to 1, and then NOTHING —
+       no onstart, no onend, and the flag never clears. Every utterance the
+       page starts afterwards reports speaking=1 and makes no sound. The tap
+       authorizes one utterance; the ones the page starts on its own are
+       refused, silently.
+
+       So on Apple devices the text is never cut up. Cutting was a fix for
+       Chrome, which does stop after about fifteen seconds; Apple's engine
+       reads long text without complaint. One utterance per tap. */
+    if (APPLE) return text ? [text] : [];
     var out = [];
     while (text.length > MAX) {
       var head = text.slice(0, MAX + 1);
@@ -185,7 +198,7 @@
      did. Open any story with  #ra-debug  on the end of the address and a panel
      shows every event — start, end, error, the engine's own flags — with times.
      A screenshot of that panel is worth more than another guess. */
-  var VERSION = "reader 4";
+  var VERSION = "reader 5";
   var LOG = [];
   var logBox = null;
   function log(msg) {
@@ -263,7 +276,10 @@
       var u = utter(text, tries > 0 || voiceBroken);
       var moved = false, started = false, quietSince = 0, startedAt = 0;
       /* the longest this bite could take at this rate, with slack */
-      var maxMs = 3000 + text.length * 120;
+      /* Apple never clears `speaking`, so this timer is the only thing that
+         ends a story there; it must be longer than the reading could take,
+         because ending it early would cancel the audio mid-sentence. */
+      var maxMs = 5000 + text.length * (APPLE ? 170 : 120);
 
       function advance(why) {
         if (moved) return;
@@ -482,6 +498,24 @@
     if (storyRun) { storyRun.cancel(); storyRun = null; }
     clearMark();
     if (storyIdx >= storyParas.length) { stopStory(); return; }
+
+    if (APPLE) {
+      /* one utterance for the whole story (see bites). With no events from
+         the engine there is nothing to drive a paragraph highlight, so the
+         whole story is marked instead of pretending to know where it is. */
+      var all = [];
+      for (var k = 0; k < storyParas.length; k++) {
+        var tx = (storyParas[k].textContent || "").replace(/\s+/g, " ").trim();
+        if (!tx) continue;
+        if (!/[.!?…]$/.test(tx)) tx += ".";
+        all.push(tx);
+        storyParas[k].classList.add("ra-now");
+      }
+      storyIdx = storyParas.length;
+      log("apple: whole story as one utterance, " + all.join(" ").length + " chars");
+      storyRun = speakSeq([all.join(" ")], function () { return storyOn; }, function () { stopStory(); });
+      return;
+    }
 
     var el = storyParas[storyIdx];
     el.classList.add("ra-now");
