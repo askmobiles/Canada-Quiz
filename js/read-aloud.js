@@ -179,6 +179,58 @@
          which nothing ever plays again until resume() is called — so resume()
          is called before and after every speak(). It is harmless elsewhere.
   */
+  /* ------------------------------------------------------------ diagnostics
+     The reader has now been "fixed" for the iPad three times from a desk with
+     no iPad on it. This log is the fourth approach: the phone tells us what it
+     did. Open any story with  #ra-debug  on the end of the address and a panel
+     shows every event — start, end, error, the engine's own flags — with times.
+     A screenshot of that panel is worth more than another guess. */
+  var VERSION = "reader 4";
+  var LOG = [];
+  var logBox = null;
+  function log(msg) {
+    var s = window.speechSynthesis;
+    var line = ((now() % 100000) / 1000).toFixed(1) + "s " + msg +
+               "  [spk=" + (s.speaking ? 1 : 0) + " pnd=" + (s.pending ? 1 : 0) + " pau=" + (s.paused ? 1 : 0) + "]";
+    LOG.push(line);
+    if (LOG.length > 60) LOG.shift();
+    if (logBox) logBox.textContent = LOG.join("\n");
+  }
+  function mountDebug() {
+    if (logBox || (location.hash || "").indexOf("ra-debug") < 0) return;
+    logBox = document.createElement("pre");
+    logBox.setAttribute("data-no-i18n", "");
+    logBox.style.cssText = "position:fixed;left:0;right:0;bottom:0;max-height:45vh;overflow:auto;margin:0;padding:8px 10px;" +
+      "background:#111;color:#9f9;font:11px/1.35 monospace;z-index:99999;white-space:pre-wrap";
+    document.body.appendChild(logBox);
+    log(VERSION + " · " + (APPLE ? "apple" : "other") + " · voices=" + voices.length + " · " + navigator.userAgent.slice(0, 60));
+  }
+  window.addEventListener("hashchange", mountDebug);
+
+  /* ------------------------------------------------- speaking, one at a time
+
+     Nothing is queued: one bite is spoken, and the next is handed over only
+     when the engine has finished with the last. What "finished" means, and
+     what to do when the engine misbehaves, is where every iPad bug has lived:
+
+       * a bite gets SIX seconds to start — Apple's engine is slow, not broken;
+       * finished = onend fired, or the engine reports it stopped after having
+         started (Safari often skips onend), or the bite has been "speaking"
+         for longer than it could possibly take — Safari can also leave
+         `speaking` stuck at true after a bite ends, and a reader that trusts
+         that flag waits forever, which reads as "stopped after the first
+         paragraph";
+       * the next bite is never started from inside the previous one's onend
+         handler. WebKit drops a speak() issued during another utterance's end
+         event. Every hand-over goes through a short timer;
+       * on Apple, if the engine still claims to be busy when we are about to
+         speak, it is cleared with cancel() and given a moment to settle first
+         — a speak() that follows cancel() too closely is swallowed;
+       * a bite that never started is said once more with no voice chosen,
+         then skipped rather than blocking the rest of the story;
+       * resume() before and after every speak(), because Safari parks the
+         engine paused after a cancel. Harmless elsewhere.
+  */
   function speakSeq(list, isLive, done) {
     var i = 0, tries = 0, guard = null, cancelled = false, delay = null;
 
@@ -188,65 +240,83 @@
     }
     function alive() { return !cancelled && isLive(); }
     function unpause() { try { if (window.speechSynthesis.paused) window.speechSynthesis.resume(); } catch (e) { } }
+    function later(fn, ms) { delay = setTimeout(function () { delay = null; if (alive()) fn(); }, ms); }
 
     function go() {
       stopGuard();
       if (!alive()) return;
-      if (i >= list.length) { done && done(); return; }
+      if (i >= list.length) { log("sequence done"); done && done(); return; }
 
-      var u = utter(list[i], tries > 0 || voiceBroken);
-      var moved = false, started = false, quietSince = 0;
-
-      function advance() {
-        if (moved) return;
-        moved = true; stopGuard();
-        i++; tries = 0;
-        go();
+      var s = window.speechSynthesis;
+      /* an engine that says it is busy when nothing of ours is playing is the
+         stuck-flag bug; clear it and come back after it has settled */
+      if (APPLE && (s.speaking || s.pending) && !going) {
+        log("engine busy before speak — cancel and wait");
+        try { s.cancel(); } catch (e) { }
+        going = true;
+        later(function () { going = false; go(); }, 250);
+        return;
       }
-      function failed() {
+      going = false;
+
+      var text = list[i];
+      var u = utter(text, tries > 0 || voiceBroken);
+      var moved = false, started = false, quietSince = 0, startedAt = 0;
+      /* the longest this bite could take at this rate, with slack */
+      var maxMs = 3000 + text.length * 120;
+
+      function advance(why) {
         if (moved) return;
         moved = true; stopGuard();
+        log("bite " + (i + 1) + "/" + list.length + " done: " + why);
+        i++; tries = 0;
+        later(go, APPLE ? 120 : 0);
+      }
+      function failed(why) {
+        if (moved) return;
+        moved = true; stopGuard();
+        log("bite " + (i + 1) + " failed: " + why + (tries ? " — skipping" : " — retry, no voice"));
         if (tries === 0) {
-          /* never started: clear whatever Safari is holding, wait for it to
-             settle, then say the same bite once more with no voice chosen */
           voiceBroken = true;
           tries = 1;
           try { window.speechSynthesis.cancel(); } catch (e) { }
-          delay = setTimeout(function () { delay = null; if (alive()) go(); }, 350);
+          later(go, 350);
         } else {
-          i++; tries = 0; go();
+          i++; tries = 0;
+          later(go, 120);
         }
       }
 
-      u.onstart = function () { started = true; };
-      u.onend = advance;
+      u.onstart = function () { started = true; startedAt = now(); log("onstart " + (i + 1)); };
+      u.onend = function () { log("onend " + (i + 1)); advance("onend"); };
       u.onerror = function (e) {
-        /* "interrupted" and "canceled" are us stopping it, not a failure */
-        if (e && (e.error === "interrupted" || e.error === "canceled")) return;
-        failed();
+        var kind = (e && e.error) || "?";
+        log("onerror " + (i + 1) + ": " + kind);
+        if (kind === "interrupted" || kind === "canceled") return;
+        failed(kind);
       };
 
       unpause();
-      try { window.speechSynthesis.speak(u); }
-      catch (e) { failed(); return; }
+      try { window.speechSynthesis.speak(u); log("speak " + (i + 1) + " (" + text.length + " chars" + (u.voice ? ", voice" : "") + ")"); }
+      catch (e) { failed("speak threw"); return; }
       unpause();
 
       var t0 = now();
       guard = setInterval(function () {
         if (!alive()) { stopGuard(); return; }
         var s = window.speechSynthesis;
-        if (s.speaking) { started = true; quietSince = 0; return; }
+        if (started && now() - startedAt > maxMs) { advance("overran " + maxMs + "ms — stuck flag"); return; }
+        if (s.speaking) { if (!started) { started = true; startedAt = now(); log("speaking seen " + (i + 1)); } quietSince = 0; return; }
         if (started) {
-          /* began, and the engine now says it is over. Give onend a moment to
-             arrive on its own; if it does not, move on anyway. */
           if (!quietSince) quietSince = now();
-          else if (now() - quietSince > 400) advance();
+          else if (now() - quietSince > 400) advance("engine quiet");
           return;
         }
-        if (now() - t0 > 6000) failed();
+        if (now() - t0 > 6000) failed("never started in 6s");
       }, 150);
     }
 
+    var going = false;
     go();
     return { cancel: function () { cancelled = true; stopGuard(); } };
   }
@@ -453,7 +523,8 @@
     storyBtn.setAttribute("aria-pressed", "false");
     storyBtn.textContent = storyLabel();
     storyBtn.addEventListener("click", function () {
-      if (storyOn) { stopStory(); return; }
+      if (storyOn) { log("stop tapped"); stopStory(); return; }
+      log("read tapped · paragraphs=" + storyParas.length);
       storyOn = true;
       storyIdx = 0;
       storyBtn.textContent = storyLabel();
@@ -464,6 +535,7 @@
   }
 
   function start() {
+    mountDebug();
     mountStory();
     var boxes = document.querySelectorAll(OPTS);
     if (!boxes.length) return;
