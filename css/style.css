@@ -1074,3 +1074,32 @@ main .board .cell{ aspect-ratio:1/1; min-height:0 }
 .pd-fold > summary:hover .pd-sum{color:#c8102e}
 .pd-body{padding-top:8px}
 .pd-body > h2:first-child{margin-top:6px}
+
+/* Site search. No server, no spinner: the whole index is one small file the
+   browser already has by the time the second letter is typed. */
+.cq-box{max-width:760px;margin:14px auto 10px}
+.cq-field{position:relative}
+.cq-field input{width:100%;font-size:18px;padding:14px 46px 14px 16px;
+  border:2px solid #e0d8d8;border-radius:12px;background:#fff;color:#22222a}
+.cq-field input:focus{outline:none;border-color:#c8102e}
+.cq-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  border:0;background:#f0eaea;border-radius:8px;padding:6px 10px;cursor:pointer;
+  font-size:13px;font-weight:700;color:#5a5a64}
+.cq-clear:hover{background:#e4dcdc}
+.cq-count{margin:10px 2px 4px;font-size:14px;color:#66666f}
+.cq-list{list-style:none;margin:0;padding:0}
+.cq-list li{padding:12px 2px;border-top:1px solid #efeaea}
+.cq-list li a{font-weight:700;font-size:16.5px}
+.cq-sec{display:inline-block;margin-left:9px;font-size:11.5px;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;color:#8a8a95;
+  background:#f4f1f1;border-radius:999px;padding:3px 9px;vertical-align:2px}
+.cq-list li p{margin:4px 0 0;font-size:14px;color:#5a5a64;line-height:1.5}
+.cq-empty{margin:6px 2px;font-size:15px}
+@media (max-width:560px){
+  .cq-field input{font-size:16.5px;padding:12px 44px 12px 13px}
+  .cq-sec{margin-left:0;margin-top:4px;display:block;width:max-content}
+}
+/* Chrome draws its own clear "x" inside input[type=search]; it landed under
+   our Clear button and looked like a smudge. */
+.cq-field input[type=search]::-webkit-search-cancel-button,
+.cq-field input[type=search]::-webkit-search-decoration{-webkit-appearance:none;display:none}

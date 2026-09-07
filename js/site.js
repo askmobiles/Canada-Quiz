@@ -45,7 +45,11 @@
     { href: "citizenship.html", label: "Citizenship" },
     { href: "driving-test.html", label: "Driving Test" },
     { href: "daily.html",       label: "Daily" },
-    { href: "blog.html",        label: "Blog" }
+    { href: "blog.html",        label: "Blog" },
+    /* the menu visitors actually see — this list and the one in
+       tools/rewrite_pages.py must stay in step, or the HTML menu and the
+       painted menu disagree and one of them is wrong */
+    { href: "search.html",      label: "Search" }
   ];
 
   var FOOTER_LINKS = [
@@ -242,7 +246,7 @@
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
-  var FRVER = {core:"bd8db1c0",gk:"8a710697",cit:"b98c0b9f",fun:"42998e37",drive:"9121887f",kids:"71e99c45"};
+  var FRVER = {core:"8a731536",gk:"8a710697",cit:"b98c0b9f",fun:"42998e37",drive:"9121887f",kids:"71e99c45"};
   function loadFrench(done) {
     /* The dictionary is split into chunks by tools/split_fr.py. Every French
        page needs "core" (the header, footer and UI strings site.js injects);
