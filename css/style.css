@@ -1043,3 +1043,34 @@ main .board .cell{ aspect-ratio:1/1; min-height:0 }
   .tp-steps li{max-width:none;width:100%}
   .tp-cta .btn{width:100%;text-align:center}
 }
+
+/* Teachers page — the long prose, folded.
+   Closed is not hidden: the text is in the HTML and Google reads it. It is the
+   teacher who should not have to scroll past it to reach the next thing. */
+.tp-more .tp-sub{margin:0 0 10px}
+.tp-acc{border-top:1px solid #ece7e7}
+.tp-acc:last-of-type{border-bottom:1px solid #ece7e7}
+.tp-acc > summary{cursor:pointer;list-style:none;padding:13px 34px 13px 2px;position:relative}
+.tp-acc > summary::-webkit-details-marker{display:none}
+.tp-acc > summary h3{display:inline;margin:0;font-size:17px}
+.tp-acc > summary::after{content:"+";position:absolute;right:6px;top:9px;
+  font-size:23px;line-height:1;color:#c8102e;font-weight:400}
+.tp-acc[open] > summary::after{content:"\2212"}
+.tp-acc > summary:hover h3{color:#c8102e}
+.tp-acc-b{padding:0 2px 14px}
+.tp-acc-b p{margin:0 0 10px}
+
+/* The "About this page" block, folded.
+   Closed on screen, not hidden from a crawler: the text is in the HTML and the
+   FAQ structured data still reads it. A visitor who came to use the page no
+   longer scrolls three screens past it. */
+.pd-fold{margin:0}
+.pd-fold > summary{cursor:pointer;list-style:none;padding:4px 34px 4px 0;position:relative}
+.pd-fold > summary::-webkit-details-marker{display:none}
+.pd-fold > summary .pd-sum{font-weight:700;font-size:19px}
+.pd-fold > summary::after{content:"+";position:absolute;right:4px;top:-2px;
+  font-size:24px;line-height:1;color:#c8102e}
+.pd-fold[open] > summary::after{content:"\2212"}
+.pd-fold > summary:hover .pd-sum{color:#c8102e}
+.pd-body{padding-top:8px}
+.pd-body > h2:first-child{margin-top:6px}

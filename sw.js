@@ -25,7 +25,7 @@
      * The runtime cache is capped, so a tablet never fills up with 250 pages
        and a 2.4 MB French dictionary it will not read again.
 */
-var VERSION = "5a694445a318";
+var VERSION = "781098d6e485";
 var SHELL = "cq-shell-" + VERSION;
 var RUNTIME = "cq-run-" + VERSION;
 var MAX_RUNTIME = 220;
@@ -39,7 +39,7 @@ var PRECACHE = [
   "citizenship.html",
   "driving-test.html",
   "daily.html",
-  "css/style.css?v=aa14ff01",
+  "css/style.css?v=ba575521",
   "js/site.js?v=7616c46c",
   "js/game-fullscreen.js?v=35da7b56",
   "js/endcard.js?v=e6598278",
