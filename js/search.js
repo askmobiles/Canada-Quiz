@@ -41,7 +41,9 @@
     all: "Toutes les pages",
     one: "1 page",
     many: "%d pages",
-    clear: "Effacer"
+    clear: "Effacer",
+    inside: "dans la page",
+    loading: "Recherche dans le texte des pages…"
   } : {
     ph: "Search for a quiz, a game, a province…",
     hint: "Type a few letters. The search runs inside your browser.",
@@ -50,14 +52,16 @@
     all: "All the pages",
     one: "1 page",
     many: "%d pages",
-    clear: "Clear"
+    clear: "Clear",
+    inside: "mentioned on the page",
+    loading: "Searching inside the pages…"
   };
 
   var input = box.querySelector("input");
   var out = box.querySelector(".cq-results");
   var count = box.querySelector(".cq-count");
   var clear = box.querySelector(".cq-clear");
-  var data = null, pending = null;
+  var data = null, words = null, wordsWanted = false, pending = null;
 
   input.placeholder = W.ph;
   if (clear) clear.textContent = W.clear;
@@ -87,9 +91,52 @@
         data[i].ft = fold(data[i].t);
       }
       then();
+      loadWords();
     };
     x.onerror = function () { data = []; then(); };
     x.send();
+  }
+
+  /* THE SECOND FILE, AND WHY IT IS SECOND
+     The small index above knows each page's name and description, and answers
+     most searches the moment it lands. It cannot see inside a page, so
+     "Jean Chrétien" — a name in a table on the prime ministers page — found
+     nothing at all.
+     words is every word on every page mapped back to the pages carrying it.
+     It is about half a megabyte, so it is fetched BEHIND the small one and
+     only here, on the search page. While it is still coming the search already
+     works; when it arrives the current query is simply run again. */
+  function loadWords() {
+    if (words || wordsWanted) return;
+    wordsWanted = true;
+    var x = new XMLHttpRequest();
+    x.open("GET", "search-words.json", true);
+    x.onload = function () {
+      try { words = JSON.parse(x.responseText); } catch (e) { words = {}; }
+      if (input.value.trim()) render(input.value.trim());
+    };
+    x.onerror = function () { words = {}; };
+    x.send();
+  }
+
+  /* Which pages carry this word. A term is also treated as a prefix, so
+     "chret" finds "chretien" while somebody is still typing. */
+  function pagesFor(term) {
+    if (!words) return null;
+    var hit = {};
+    if (words[term]) {
+      var a = words[term].split(",");
+      for (var i = 0; i < a.length; i++) hit[a[i]] = 1;
+    }
+    if (term.length >= 4) {
+      for (var w in words) {
+        if (w.length > term.length && w.indexOf(term) === 0) {
+          var b = words[w].split(",");
+          for (var j = 0; j < b.length; j++) hit[b[j]] = 1;
+        }
+      }
+    }
+    return hit;
   }
 
   function render(q) {
@@ -99,17 +146,32 @@
       count.textContent = W.hint;
       return;
     }
+    /* every term, looked up once in the word index */
+    var inside = null;
+    if (words) {
+      for (var t2 = 0; t2 < terms.length; t2++) {
+        var got = pagesFor(terms[t2]);
+        if (inside === null) { inside = got; continue; }
+        for (var key in inside) { if (!got[key]) delete inside[key]; }
+      }
+    }
+
     var hits = [];
     for (var i = 0; i < data.length; i++) {
       var e = data[i], ok = true;
       for (var j = 0; j < terms.length; j++) {
         if (e.f.indexOf(terms[j]) < 0) { ok = false; break; }
       }
-      if (!ok) continue;
-      /* a name match beats a description match, and an earlier one beats a
-         later one, so "flag" puts the flag page first */
-      var pos = e.ft.indexOf(terms[0]);
-      hits.push([pos < 0 ? 9999 : pos, e]);
+      if (ok) {
+        /* a name match beats a description match, and an earlier one beats a
+           later one, so "flag" puts the flag page first */
+        var pos = e.ft.indexOf(terms[0]);
+        hits.push([pos < 0 ? 500 : pos, e, false]);
+      } else if (inside && inside[i]) {
+        /* found in the body of the page, not in its name — worth showing, but
+           under everything that matched by name */
+        hits.push([1000, e, true]);
+      }
     }
     hits.sort(function (a, b) {
       if (a[0] !== b[0]) return a[0] - b[0];
@@ -117,7 +179,9 @@
     });
 
     if (!hits.length) {
-      count.textContent = W.none.replace("%s", q);
+      /* the half-megabyte file may still be on its way; say so rather than
+         telling somebody their word is not on the site when it may be */
+      count.textContent = words ? W.none.replace("%s", q) : W.loading;
       out.innerHTML = '<p class="cq-empty">' + esc(W.tryagain) + " " +
         '<a href="all-pages.html">' + esc(W.all) + "</a></p>";
       return;
@@ -129,6 +193,7 @@
       var h = hits[k][1];
       html.push('<li><a href="' + esc(h.u) + '">' + esc(h.t) + "</a>" +
                 '<span class="cq-sec">' + esc(h.g) + "</span>" +
+                (hits[k][2] ? '<span class="cq-in">' + esc(W.inside) + "</span>" : "") +
                 "<p>" + esc(h.d) + "</p></li>");
     }
     out.innerHTML = '<ul class="cq-list">' + html.join("") + "</ul>";
