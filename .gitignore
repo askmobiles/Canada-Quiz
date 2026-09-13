@@ -25,3 +25,6 @@ build/
 
 # The build tools live in the private folder, never here.
 tools/
+
+# Claude/OneDrive drops sample files here; they are not part of the site.
+Claude outputs/
