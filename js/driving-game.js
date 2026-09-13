@@ -39,7 +39,13 @@
   "use strict";
 
   var mount = document.getElementById("dg-scene");
-  if (!mount || typeof CQ_SCENES === "undefined") return;
+  /* The bank has to be here; the game's own mount point does not. Those are two
+     different conditions and they used to be one. Returning when #dg-scene was
+     absent meant window.CQDriveScene below never got defined, so no other page
+     could draw a scene — which is exactly what stopped the road trip drawing
+     an intersection. The mount is checked again further down, just before the
+     game starts. */
+  if (typeof CQ_SCENES === "undefined") return;
 
   var FR = /(^|\/)fr\//.test(location.pathname);
   var SRC = window.CQ_SCENE_SRC || {};
@@ -473,8 +479,11 @@
   window.CQDriveScene = { draw: draw, scenes: CQ_SCENES };
 
   /* =====================================================================
-     THE GAME
+     THE GAME — only if this page is the game. Any other page has the drawing
+     above and stops here.
      ===================================================================== */
+  if (!mount) return;
+
   function shuffle(a) {
     a = a.slice();
     for (var i = a.length - 1; i > 0; i--) {

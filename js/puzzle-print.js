@@ -310,10 +310,58 @@
     return o.join("");
   }
 
-  function sheet(spec) {
-    var old = document.getElementById(ROOT_ID);
-    if (old && old.parentNode) old.parentNode.removeChild(old);
+  /* Build the sheet, SHOW IT, and let the person press Print.
 
+     WHY IT WORKS THIS WAY NOW
+     -------------------------
+     The first two versions built the sheet at the moment of printing — once in
+     the page, once in a hidden frame. Both are fragile for the same reason: on
+     iOS print() returns immediately and the "printing finished" event fires at
+     once, so anything created or destroyed around that call is a race against
+     the print preview. Losing that race printed the web page: the heading, the
+     nav, the buttons, three pages of it, reported from an iPad.
+
+     js/printables.js has never had this problem, and the reason is that it does
+     not touch the page at print time at all. It renders the sheet, the sheet
+     sits there, and Print prints what is already on the screen.
+
+     So this does the same. Nothing appears or disappears while the browser is
+     printing, which means there is no moment for it to get wrong. It is also
+     simply better: you see the sheet before you spend the paper. */
+  var lastMake = null, lastSpec = null, lastCopies = 1;
+
+  function host() {
+    /* Before the site footer, so the sheet is the last thing in the page and
+       still a direct child of <body> — which is what the print rule that hides
+       everything else is written against. */
+    return document.querySelector("footer.site-footer") || null;
+  }
+
+  function toolbar() {
+    var t = document.createElement("div");
+    t.className = "cqp-bar";
+    t.innerHTML =
+      '<button type="button" class="btn btn-lg cqp-doprint">Print these sheets</button>' +
+      '<button type="button" class="btn btn-ghost cqp-remake">Make different sheets</button>' +
+      '<button type="button" class="btn btn-ghost cqp-close">Close</button>';
+    t.querySelector(".cqp-doprint").onclick = function () {
+      try { window.print(); } catch (e) {}
+    };
+    t.querySelector(".cqp-remake").onclick = function () {
+      if (lastMake) build(lastSpec, lastMake, lastCopies);
+    };
+    t.querySelector(".cqp-close").onclick = close;
+    return t;
+  }
+
+  function close() {
+    var r = document.getElementById(ROOT_ID);
+    if (r && r.parentNode) r.parentNode.removeChild(r);
+    document.body.className =
+      document.body.className.replace(/\s*\bcqp-printing\b/g, "");
+  }
+
+  function sheet(spec) {
     var list = spec.sheets || [], keys = spec.keys || [];
     if (!list.length) return;
 
@@ -323,47 +371,42 @@
       if (keys[i]) o.push(page(spec, keys[i], i + 1, keys.length, true));
     }
 
+    var old = document.getElementById(ROOT_ID);
+    if (old && old.parentNode) old.parentNode.removeChild(old);
+
     var root = document.createElement("div");
     root.id = ROOT_ID;
     root.className = "cqp";
-    root.innerHTML = o.join("");
-    document.body.appendChild(root);
-    /* The print rules hang off this class, never off the page. Without it a
-       global "hide everything except the sheet" rule would hide the whole of
-       every other page on the site the moment anyone pressed Ctrl+P. */
-    document.body.className += " cqp-printing";
+    root.innerHTML = '<p class="cqp-lead">Ready to print. The answer key starts on its own page.</p>';
+    root.appendChild(toolbar());
+    var pages = document.createElement("div");
+    pages.className = "cqp-pages";
+    pages.innerHTML = o.join("");
+    root.appendChild(pages);
+    root.appendChild(toolbar());
 
-    /* Translate before printing, not after. See the note at the top. */
     if (window.CQ && window.CQ.lang === "fr" && window.CQ.translateNode) {
       try { window.CQ.translateNode(root); } catch (e) {}
     }
 
-    function cleanup() {
-      if (root.parentNode) root.parentNode.removeChild(root);
-      document.body.className =
-        document.body.className.replace(/\s*\bcqp-printing\b/g, "");
-      if (window.removeEventListener) window.removeEventListener("afterprint", cleanup);
-    }
-    if (window.addEventListener) window.addEventListener("afterprint", cleanup);
-    /* Safari fires no afterprint; sweep up on the next turn of the loop. */
-    setTimeout(function () { if (document.getElementById(ROOT_ID)) cleanup(); }, 45000);
+    var f = host();
+    if (f && f.parentNode) f.parentNode.insertBefore(root, f);
+    else document.body.appendChild(root);
 
-    /* One frame, so the browser has laid the sheet out before it measures it
-       for pagination. Printing in the same tick puts the answer key on page 1
-       on some builds of Chrome. */
-    if (window.requestAnimationFrame) {
-      requestAnimationFrame(function () { setTimeout(function () { window.print(); }, 30); });
-    } else {
-      setTimeout(function () { window.print(); }, 60);
+    if (!/\bcqp-printing\b/.test(document.body.className)) {
+      document.body.className += " cqp-printing";
     }
+    if (root.scrollIntoView) root.scrollIntoView({ block: "start" });
   }
 
   /* ---------- many copies from the page's own generator ---------- */
 
-  /* make() must build a NEW puzzle and return {body, key}. Called once per
-     copy, so thirty children get thirty different puzzles. */
+  /* make() must build a NEW puzzle and return {body, key}. It is called once
+     per copy, so thirty children get thirty different puzzles and nobody can
+     read their neighbour's. */
   function build(spec, make, copies) {
     copies = Math.max(1, Math.min(40, parseInt(copies, 10) || 1));
+    lastMake = make; lastSpec = spec; lastCopies = copies;
     var sheets = [], keys = [], one, i;
     for (i = 0; i < copies; i++) {
       one = make(i);
@@ -379,9 +422,11 @@
   /* ---------- ?print=1&copies=N — how the hub page drives a game ---------- */
 
   /* A game page calls CQPrint.auto(fn) at the end of its script. If the URL
-     asks for a print, fn(copies) runs once the page has settled. The hub page
-     at printable-puzzles.html links here rather than generating anything
-     itself, which is the whole reason no puzzle is drawn twice. */
+     asks for a print, fn(copies) runs once the page has settled — and RENDERS
+     the sheets rather than printing them. The person presses Print when they
+     can see what they are about to spend paper on. The hub page at
+     printable-puzzles.html links here rather than generating anything itself,
+     which is the whole reason no puzzle is drawn twice. */
   function auto(fn) {
     var q = {};
     location.search.replace(/^\?/, "").split("&").forEach(function (kv) {
@@ -396,7 +441,7 @@
   }
 
   window.CQPrint = {
-    sheet: sheet, build: build, auto: auto, spec: spec,
+    sheet: sheet, build: build, auto: auto, spec: spec, close: close,
     grid: grid, sudokuGrid: sudokuGrid, crossword: crossword, clues: clues,
     words: words, tiles: tiles, boxes: boxes,
     questions: questions, answers: answers, cards: cards, blanks: blanks,
