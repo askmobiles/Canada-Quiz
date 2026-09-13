@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Would You Do? Ontario Driving Situations Game</title>
+<meta name="description" content="See the intersection drawn, choose what you would do, and watch your percentage. 26 real Ontario driving situations, free, no signup.">
+<link rel="stylesheet" href="css/style.css?v=dfcfa9e8">
+<style>
+  .dg-wrap{max-width:720px;margin:0 auto}
+  .dg-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:2px 0 12px}
+  .dg-pill{background:#fff;border:1px solid #e6e1d8;border-radius:12px;padding:7px 15px;
+    text-align:center;min-width:86px}
+  .dg-pill strong{display:block;font-size:20px;font-weight:800;color:#2b2d42;line-height:1.1}
+  .dg-pill span{font-size:12px;color:#5f6b7a;font-weight:600}
+  .dg-pill.good{border-color:#2a9d8f;background:#f2fbf9}
+  .dg-pill.good strong{color:#1d7d71}
+  .dg-pill.bad{border-color:#e9a7ac;background:#fdf5f6}
+  .dg-scene{background:#e8ebee;border:1px solid #ded7cc;border-radius:16px;overflow:hidden;
+    line-height:0}
+  .dg-scene svg{width:100%;height:auto;display:block}
+  .dg-count{text-align:center;font-size:12px;font-weight:700;color:#5f6b7a;
+    letter-spacing:.06em;margin:10px 0 0}
+  .dg-q{font-size:19px;font-weight:800;color:#2b2d42;text-align:center;
+    line-height:1.4;margin:8px 0 14px}
+  .dg-opts{display:grid;gap:10px}
+  .dg-opt{background:#fff;border:2px solid #ded7cc;border-radius:14px;padding:15px 18px;
+    font:inherit;font-size:16px;font-weight:600;color:#2b2d42;text-align:left;
+    cursor:pointer;line-height:1.35;transition:border-color .12s,background .12s}
+  .dg-opt:hover:enabled{border-color:#2b6cb0;background:#f5f9fd}
+  .dg-opt.right{border-color:#2a9d8f;background:#f2fbf9;color:#14655c}
+  .dg-opt.wrong{border-color:#e63946;background:#fdf3f4;color:#a4262f}
+  .dg-opt[disabled]{cursor:default;opacity:1}
+  .dg-fb{margin:14px 0 0}
+  .dg-fb.ok{border-left:5px solid #2a9d8f;background:#f2fbf9;border-radius:12px;padding:14px 16px}
+  .dg-fb.no{border-left:5px solid #e63946;background:#fdf3f4;border-radius:12px;padding:14px 16px}
+  .dg-verdict{font-weight:800;font-size:17px;margin:0 0 6px;color:#2b2d42}
+  .dg-why{margin:0;font-size:15px;line-height:1.5;color:#3c4350}
+  .dg-src{margin:8px 0 0;font-size:12px;color:#5f6b7a}
+  .dg-big{font-size:64px;font-weight:800;line-height:1;margin:4px 0 6px;
+    text-align:center;color:#2b2d42}
+  .dg-fb .dg-big+.dg-verdict,.dg-fb .dg-big~.dg-why,.dg-fb .dg-big~.dg-src{text-align:center}
+  .dg-missed-h{margin:18px 0 8px;font-size:16px}
+  .dg-missed{display:grid;grid-template-columns:150px 1fr;gap:12px;background:#fff;
+    border:1px solid #e6e1d8;border-radius:12px;padding:12px;margin:0 0 10px}
+  .dg-missed-pic{line-height:0}
+  .dg-missed-pic svg{width:100%;height:auto;border-radius:8px}
+  .dg-missed-q{font-weight:700;margin:0 0 4px;font-size:14px;color:#2b2d42}
+  .dg-missed-a{margin:0 0 4px;font-size:14px;font-weight:700;color:#14655c}
+  @media (max-width:560px){
+    .dg-q{font-size:17px}
+    .dg-opt{font-size:15px;padding:13px 15px}
+    .dg-big{font-size:52px}
+    .dg-missed{grid-template-columns:1fr}
+  }
+</style>
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#c8102e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Canada Quiz">
+<meta name="google-adsense-account" content="ca-pub-7256851069341390">
+<link rel="canonical" href="https://canada-quiz.com/ontario-driving-scenarios.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/ontario-driving-scenarios.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/ontario-driving-scenarios.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/ontario-driving-scenarios.html">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"What Would You Do? Ontario Driving Situations Game","item":"https://canada-quiz.com/ontario-driving-scenarios.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/ontario-driving-scenarios.html#webpage","url":"https://canada-quiz.com/ontario-driving-scenarios.html","name":"What Would You Do? Ontario Driving Situations Game","description":"See the intersection drawn, choose what you would do, and watch your percentage. 26 real Ontario driving situations, free, no signup.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"Canada Quiz & Family Fun Games","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this the real driving test?","acceptedAnswer":{"@type":"Answer","text":"No. It is free practice for the written G1 knowledge test and for understanding the rules, and it is not affiliated with the Ministry of Transportation, ServiceOntario or DriveTest. It is also not a road test — no website can give you one of those."}},{"@type":"Question","name":"Where do the answers come from?","acceptedAnswer":{"@type":"Answer","text":"The Official MTO Driver’s Handbook, which the Ontario government publishes free on ontario.ca. Each explanation names the chapter it came from and links to it, and quotes the handbook’s own words where they are short enough."}},{"@type":"Question","name":"How is this different from your Ontario G1 practice test?","acceptedAnswer":{"@type":"Answer","text":"The practice test asks the question in words, the way the real written test does, and there are 250 of them for Ontario. This game shows you the situation instead and asks what you would do. Use both: the practice test for the exam, this for the decision."}},{"@type":"Question","name":"Do I need an account, and is my score private?","acceptedAnswer":{"@type":"Answer","text":"There is no signup, no email address and nothing to pay. Your best percentage is kept by your own browser on your own device and is never sent anywhere."}},{"@type":"Question","name":"Are the situations only for Ontario?","acceptedAnswer":{"@type":"Answer","text":"The answers are checked against Ontario’s handbook, so Ontario is what they are guaranteed to describe. Most of what is here — stopping for a school bus, yielding to the car on your right, what a yellow light asks — works the same way across Canada, but the details belong to each province, so check your own handbook if you are not in Ontario."}}]}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="./" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="./">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="for-kids.html">For Kids</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <a href="search.html">Search</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>&#128663; What Would You Do?</h1>
+    <h2 class="sr-only">Ontario driving situations game</h2>
+    <p>Look down on a real Ontario driving situation, choose what you would do, and see your percentage climb. Twenty-six situations, each one checked against the Official MTO Driver's Handbook.</p>
+  </section>
+  <div class="panel">
+    <div class="dg-wrap" id="dg-wrap">
+      <div class="dg-bar" id="dg-bar"></div>
+      <div class="dg-scene" id="dg-scene"></div>
+      <p class="dg-count" id="dg-count"></p>
+      <p class="dg-q" id="dg-q"></p>
+      <div class="dg-opts" id="dg-opts"></div>
+      <div class="dg-fb" id="dg-fb"></div>
+      <div class="center" id="dg-next" style="margin-top:12px"></div>
+      <p class="muted" style="font-size:12px;margin:16px 0 0;text-align:center">Practice for the written G1 knowledge test and for understanding the rules. It is not a road test and it is not an official test.</p>
+    </div>
+  </div>
+  <div class="center" style="margin:18px 0 6px">
+    <a class="btn" href="ontario-g1-practice-test.html">Ontario G1 practice test</a>
+    <a class="btn btn-ghost" href="ontario-g1-road-signs.html">Study the road signs</a>
+    <a class="btn btn-ghost" href="driving-test.html">All provinces</a>
+  </div>
+<!--PAGEDOC-->
+<section class="pagedoc">
+<details class="pd-fold">
+  <summary><span class="pd-sum">About this game</span></summary>
+  <div class="pd-body">
+  <p>This is not a written quiz with a sign beside it. You look down on a real Ontario driving situation — your car marked, the other cars where they would really be, the light, the school bus with its red lamps lit, the person stepping into the crosswalk — and you choose what you would do. Then you find out, and the percentage at the top moves.</p>
+  <p>There are twenty-six situations and each round deals ten of them, so a second round is genuinely a new round. Every answer is checked against the Official MTO Driver’s Handbook on ontario.ca, and the chapter it came from is named under the explanation with a link, so you can go and read the rule yourself rather than take our word for it.</p>
+  <p>Some of the situations are the ones people most often get wrong. Who moves first when two cars reach an all-way stop together. Whether you stop for a school bus coming the other way, and the one case where you do not. What a yellow light asks of you when you are already on the line. When to signal on the way out of a roundabout. They are drawn rather than described because that is the form the decision takes on the road.</p>
+  <p>Every picture is drawn in code out of rectangles, circles and lines, and the road signs are our own drawings. Nothing is photographed and nothing is taken from a publication. It is free, there is nothing to sign up for, and your best percentage is remembered by your own browser and never sent anywhere.</p>
+  <h2>How it works</h2>
+  <ul>
+    <li>A drawn bird’s-eye view of the situation, with your car clearly marked.</li>
+    <li>One question and four answers, each a thing a driver could actually do.</li>
+    <li>A tick or a cross the moment you choose, with one short reason and the handbook chapter behind it.</li>
+    <li>Your score, your percentage and your streak across the top, updated on every tap.</li>
+    <li>A result after ten, then every situation you missed drawn again with the right answer beside it.</li>
+  </ul>
+  <h2>Tips for playing</h2>
+  <ul>
+    <li>The Ontario G1 knowledge test is 20 road-sign questions and 20 rules questions, and you must get at least 16 of the 20 right in each half — 80 per cent, twice.</li>
+    <li>The one place a school bus with flashing red lights does not stop oncoming traffic is a highway divided by a median strip. If the only thing between the two sides is paint, you stop.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Is this the real driving test?</h3>
+  <p>No. It is free practice for the written G1 knowledge test and for understanding the rules, and it is not affiliated with the Ministry of Transportation, ServiceOntario or DriveTest. It is also not a road test — no website can give you one of those.</p>
+  <h3>Where do the answers come from?</h3>
+  <p>The Official MTO Driver’s Handbook, which the Ontario government publishes free on ontario.ca. Each explanation names the chapter it came from and links to it, and quotes the handbook’s own words where they are short enough.</p>
+  <h3>How is this different from your Ontario G1 practice test?</h3>
+  <p>The practice test asks the question in words, the way the real written test does, and there are 250 of them for Ontario. This game shows you the situation instead and asks what you would do. Use both: the practice test for the exam, this for the decision.</p>
+  <h3>Do I need an account, and is my score private?</h3>
+  <p>There is no signup, no email address and nothing to pay. Your best percentage is kept by your own browser on your own device and is never sent anywhere.</p>
+  <h3>Are the situations only for Ontario?</h3>
+  <p>The answers are checked against Ontario’s handbook, so Ontario is what they are guaranteed to describe. Most of what is here — stopping for a school bus, yielding to the car on your right, what a yellow light asks — works the same way across Canada, but the details belong to each province, so check your own handbook if you are not in Ontario.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="ontario-g1-practice-test.html">Practise the Ontario G1 written test</a> · <a href="ontario-g1-road-signs.html">Study the road signs one group at a time</a> · <a href="ontario-g1-rules-of-the-road.html">Study the rules of the road by chapter</a> · <a href="driving-test.html">Driving test practice for every province</a></p>
+  </div>
+</details>
+</section>
+<!--/PAGEDOC-->
+</main>
+
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
+    <div class="footer-links"><a href="./">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="teachers.html">For Teachers</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <div class="footer-sections"><a href="quizzes.html">All Quizzes</a> · <a href="citizenship.html">Citizenship Test Practice</a> · <a href="driving-test.html">Driving Test Practice</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Family Games</a> · <a href="for-kids.html">For Kids</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">General Knowledge</a> · <a href="blog.html">Blog</a> · <a href="daily.html">Daily Quiz</a></div>
+    <p class="footer-all"><a href="all-pages.html">Every page on the site (213)</a></p>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+<script src="js/driving/signs.js?v=1fed6c9e"></script>
+<script src="js/driving/scenes.js?v=c608ac9e"></script>
+<script src="js/driving-game.js?v=6788cdd0"></script>
+<script src="js/game-fullscreen.js?v=35da7b56"></script>
+  <script src="js/site.js?v=8400b643"></script>
+  <script src="js/analytics.js?v=065edc09"></script>
+  <script src="js/ads.js?v=00e703ff" defer></script>
+  <script src="js/pwa.js?v=cb9b3ff7" defer></script>
+  <script src="js/tv-mode.js?v=836e4dd9" defer></script>
+</body>
+</html>
