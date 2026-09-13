@@ -129,10 +129,10 @@ window.CQ_DRIVE_Q = [];
   c:0 },
 
 { id:"pes14", sec:"signs", sign:"warn-railway",
-  en:{ q:"What does this round yellow sign marked with a cross announce?",
+  en:{ q:"What does this yellow diamond sign showing a road and a railway track announce?",
        a:["A crossroads ahead","A route to the hospital","A dead end","A railway crossing ahead"],
        e:"A level crossing is coming up. Slow down, look and listen, and never start across unless you can clear the tracks completely on the far side." },
-  fr:{ q:"Que vous annonce ce panneau jaune rond marqué d'une croix ?",
+  fr:{ q:"Que vous annonce ce panneau jaune en losange montrant une route et une voie ferrée ?",
        a:["Un carrefour devant","Un itinéraire vers l'hôpital","Une voie sans issue","Un passage à niveau devant"],
        e:"Un passage à niveau approche. Ralentissez, regardez et écoutez, et ne vous engagez jamais si vous ne pouvez pas dégager complètement les rails de l'autre côté." },
   c:3 },

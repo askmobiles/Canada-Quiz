@@ -33,6 +33,13 @@
     next:         { en: "Next question →",             fr: "Question suivante →" },
     seeResult:    { en: "See my result →",             fr: "Voir mon résultat →" },
     questionOf:   { en: "Question %1 of %2",           fr: "Question %1 sur %2" },
+    streak:       { en: "%1 streak",                   fr: "série de %1" },
+    tryAnother:   { en: "Try another 10",              fr: "Essayer 10 autres" },
+    challenge:    { en: "Challenge a friend",          fr: "Défier un ami" },
+    copied:       { en: "Copied. Paste it to a friend.",
+                    fr: "Copié. Collez-le à un ami." },
+    shareMsg:     { en: "I scored %1 out of %2 on the free Canada Quiz driving practice. Can you beat it?",
+                    fr: "J'ai obtenu %1 sur %2 à la pratique de conduite gratuite de Canada Quiz. Pouvez-vous faire mieux ?" },
     pass:         { en: "PASS",                        fr: "RÉUSSI" },
     fail:         { en: "TRY AGAIN",                   fr: "À REPRENDRE" },
     scored:       { en: "You scored %1 out of %2",     fr: "Vous avez obtenu %1 sur %2" },
@@ -81,8 +88,8 @@
     catNote: {
       regulatory:  { en: "These tell you the law. You must obey them.",
                      fr: "Ils indiquent la loi. Vous devez les respecter." },
-      warning:     { en: "Yellow diamonds. They warn you about what is ahead.",
-                     fr: "Losanges jaunes. Ils annoncent ce qui vient devant vous." },
+      warning:     { en: "Mostly yellow diamonds, and they warn you about what is ahead. Watch for the exceptions: school signs are green pentagons, a slow-moving vehicle is an orange triangle, and the crossbuck at a railway is a white X.",
+                     fr: "Surtout des losanges jaunes, qui annoncent ce qui vient devant vous. Attention aux exceptions : les panneaux scolaires sont des pentagones verts, le véhicule lent est un triangle orange, et la croix de Saint-André au passage à niveau est un X blanc." },
       temporary:   { en: "Orange signs. Road work, workers and lower speed limits.",
                      fr: "Panneaux orange. Travaux, ouvriers et limites de vitesse réduites." },
       information: { en: "Green and blue signs. Directions, services and distances.",
@@ -444,15 +451,19 @@
   /* =========================================================================
      Shared: an untimed practice run over any list of questions
      ========================================================================= */
-  function practice(box, list, autoOpen) {
+  function practice(box, list, autoOpen, pool) {
     if (!box || !list || !list.length) return;
-    var qs = shuffle(list), cur = 0, score = 0, done = false;
+    /* pool is the whole bank this ten was drawn from. Without it "try another"
+       can only reshuffle the same ten, which is what it used to do. */
+    var size = list.length;
+    var qs = shuffle(list), cur = 0, score = 0, streak = 0, best = 0, done = false;
 
     function frame() {
       box.innerHTML =
         '<section class="panel" id="dq-p">' +
           '<div class="quiz-meta"><span class="pill" id="dq-pc"></span>' +
-          '<span class="pill" id="dq-ps"></span></div>' +
+          '<span class="pill" id="dq-ps"></span>' +
+          '<span class="pill" id="dq-pk" style="display:none"></span></div>' +
           '<div class="progress"><span id="dq-pb"></span></div>' +
           '<div id="dq-part"></div>' +
           '<h3 id="dq-pq" style="margin-top:10px"></h3>' +
@@ -484,6 +495,9 @@
         b.onclick = function () { hit(parseInt(b.getAttribute("data-i"), 10)); };
       });
       box.querySelector("#dq-pe").style.display = "none";
+      var k = box.querySelector("#dq-pk");
+      k.textContent = T("streak", streak);
+      k.style.display = streak > 1 ? "" : "none";
       var n = box.querySelector("#dq-pn");
       n.style.display = "none";
       n.textContent = (cur === qs.length - 1) ? T("seeResult") : T("next");
@@ -493,7 +507,11 @@
       if (done) return;
       done = true;
       var q = qs[cur];
-      if (i === q.c) score++;
+      if (i === q.c) { score++; streak++; if (streak > best) best = streak; }
+      else streak = 0;
+      var k = box.querySelector("#dq-pk");
+      k.textContent = T("streak", streak);
+      k.style.display = streak > 1 ? "" : "none";
       var o = box.querySelector("#dq-po");
       Array.prototype.forEach.call(o.children, function (b, k) {
         b.disabled = true; b.classList.add("disabled");
@@ -514,13 +532,48 @@
         '<section class="panel center">' +
           '<div class="result-big">' + (pct >= 80 ? "✅" : "📘") + "</div>" +
           '<p class="score">' + esc(T("scored", score, qs.length)) + " — " + pct + "%</p>" +
-          '<p style="margin-top:16px"><button class="btn" id="dq-pr">' +
-             esc(T("startOver")) + "</button></p>" +
+          (best > 1 ? '<p class="muted">' + esc(T("streak", best)) + "</p>" : "") +
+          '<p style="margin-top:16px">' +
+            '<button class="btn" id="dq-pr">' + esc(T("tryAnother")) + "</button> " +
+            '<button class="btn btn-ghost" id="dq-pshare">' + esc(T("challenge")) + "</button></p>" +
+          '<p class="muted" id="dq-pmsg" style="min-height:20px"></p>' +
         "</section>";
+
+      /* A NEW ten, not the same ten shuffled.
+         pool is the whole bank; without it this could only reorder the ten the
+         player had just answered, which is why nobody played a second round. */
       box.querySelector("#dq-pr").onclick = function () {
-        qs = shuffle(list); cur = 0; score = 0; frame();
+        var src = (pool && pool.length > size) ? shuffle(pool).slice(0, size) : list;
+        list = src;
+        qs = shuffle(src);
+        cur = 0; score = 0; streak = 0; best = 0;
+        frame();
       };
+
+      /* No account, no social login, nothing sent anywhere. The score becomes a
+         line of text on the player's own clipboard and they decide who sees it. */
+      box.querySelector("#dq-pshare").onclick = function () {
+        var msg = T("shareMsg", score, qs.length) + " " + location.href;
+        var said = function () { box.querySelector("#dq-pmsg").textContent = T("copied"); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(msg).then(said, function () { fallback(msg, said); });
+        } else { fallback(msg, said); }
+      };
+
       window.scrollTo(0, box.getBoundingClientRect().top + window.pageYOffset - 80);
+    }
+
+    /* Older browsers, and any page not served over https, have no clipboard API.
+       A hidden textarea and execCommand still work everywhere. */
+    function fallback(msg, said) {
+      var ta = document.createElement("textarea");
+      ta.value = msg;
+      ta.setAttribute("readonly", "");
+      ta.style.cssText = "position:absolute;left:-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); said(); } catch (e) {}
+      document.body.removeChild(ta);
     }
 
     if (autoOpen) frame();
@@ -547,7 +600,8 @@
     quickPractice: function (sel, n) {
       var box = document.querySelector(sel);
       if (!box || !window.CQ_DRIVE_Q) return;
-      practice(box, shuffle(window.CQ_DRIVE_Q).slice(0, n || 10), true);
+      var all = window.CQ_DRIVE_Q;
+      practice(box, shuffle(all).slice(0, n || 10), true, all);
     }
   };
 })();

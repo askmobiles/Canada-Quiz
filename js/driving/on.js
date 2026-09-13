@@ -426,10 +426,10 @@ window.CQ_DRIVE_Q = [];
 { id:"sb16", sec:"signs", sign:"warn-railway",
   en:{ q:"What does this sign mean?",
        a:["A road crosses a river ahead","A rest area is ahead","A truck route starts ahead","A railway crosses the road ahead"],
-       e:"This round yellow sign warns you well before the tracks. Slow down, look and listen both ways, and be ready to stop." },
+       e:"This yellow diamond warns you well before the tracks. The bar is the road you are on and the line of rails and ties is the railway, so the angle between them is the angle at which the tracks cross the road. Slow down, look and listen both ways, and be ready to stop." },
   fr:{ q:"Que signifie ce panneau ?",
        a:["Une route traverse une rivière plus loin","Une halte routière se trouve plus loin","Une route pour camions commence plus loin","Une voie ferrée traverse la route plus loin"],
-       e:"Ce panneau jaune rond vous avertit bien avant les rails. Ralentissez, regardez et écoutez des deux côtés, et soyez prêt à arrêter." },
+       e:"Ce panneau jaune en losange vous avertit bien avant la voie ferrée. La barre représente la route sur laquelle vous roulez et la ligne de rails et de traverses représente la voie ferrée : l'angle entre les deux est celui sous lequel la voie traverse la route. Ralentissez, regardez et écoutez des deux côtés, et soyez prêt à arrêter." },
   c:3 },
 
 { id:"sb17", sec:"signs", sign:"warn-crossbuck",
