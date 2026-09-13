@@ -224,6 +224,12 @@
     for (var j = 0; j < kids.length; j++) translateNode(kids[j]);
   }
 
+  /* js/puzzle-print.js builds a print sheet and opens the print dialog in the
+     same breath. Waiting for the MutationObserver below would be a race
+     against the print window, and losing that race prints an English sheet on
+     a French page, so the sheet is translated synchronously instead. */
+  window.CQ.translateNode = translateNode;
+
   function translatePage() {
     if (!DICT) return;
     document.documentElement.lang = "fr";
@@ -246,7 +252,7 @@
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
-  var FRVER = {core:"5b862fb6",gk:"8a710697",cit:"381f87d9",fun:"d3ffcc48",drive:"eab85b5c",kids:"71e99c45"};
+  var FRVER = {core:"bde0d25f",gk:"164fbade",cit:"381f87d9",fun:"d3ffcc48",drive:"eab85b5c",kids:"71e99c45"};
   function loadFrench(done) {
     /* The dictionary is split into chunks by tools/split_fr.py. Every French
        page needs "core" (the header, footer and UI strings site.js injects);

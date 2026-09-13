@@ -1106,3 +1106,125 @@ main .board .cell{ aspect-ratio:1/1; min-height:0 }
 .cq-in{display:inline-block;margin-left:8px;font-size:11.5px;font-weight:700;
   color:#6b6b76;background:#eef4f9;border-radius:999px;padding:3px 9px;vertical-align:2px}
 @media (max-width:560px){.cq-in{margin-left:0;margin-top:4px;display:block;width:max-content}}
+
+/* ===== PUZZLE PRINT SHEETS (js/puzzle-print.js) =====
+   A printed puzzle borrows nothing from the game board it came from: a board is
+   styled for a thumb on a phone, which is the wrong thing on a sheet of paper.
+   Everything here is its own, and none of it shows on screen.
+   The rules hang off body.cqp-printing, never off the page, so pressing Ctrl+P
+   on any other page of the site still prints that page normally. */
+.cqp{display:none}
+@media print{
+  body.cqp-printing{background:#fff!important;color:#000!important;margin:0}
+  body.cqp-printing>*:not(#cqp-root){display:none!important}
+  body.cqp-printing #cqp-root{display:block}
+  body.cqp-printing .cqp-sheet{
+    page-break-after:always;break-after:page;
+    font:12pt/1.45 Georgia,"Times New Roman",serif;color:#000}
+  body.cqp-printing .cqp-sheet:last-child{page-break-after:auto;break-after:auto}
+  /* the answer key always starts on a new sheet of paper, so a teacher can
+     photocopy the questions without the answers going out with them */
+  body.cqp-printing .cqp-keysheet{page-break-before:always;break-before:page}
+  body.cqp-printing a[href]:after{content:""}
+}
+@page{margin:15mm 14mm}
+.cqp-head{display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:2pt solid #000;padding-bottom:4pt;margin-bottom:8pt}
+.cqp-title{font-size:17pt;margin:0;font-weight:700;letter-spacing:.2pt}
+.cqp-keyword{font-weight:400;font-style:italic}
+.cqp-src{margin:0;font-size:9.5pt;letter-spacing:.3pt}
+.cqp-meta{display:flex;gap:18pt;font-size:11pt;margin:0 0 8pt}
+.cqp-meta span{flex:1;border-bottom:1pt solid #000;padding-bottom:10pt}
+.cqp-copy{font-size:9.5pt;margin:0 0 6pt;font-style:italic}
+.cqp-note{font-size:11pt;margin:0 0 10pt}
+.cqp-body{page-break-inside:auto}
+.cqp-foot{border-top:1pt solid #000;margin-top:12pt;padding-top:5pt;font-size:8.5pt}
+
+/* --- a grid of letters or numbers --- */
+.cqp-grid{border-collapse:collapse;margin:0 auto 10pt;table-layout:fixed;
+  width:min(100%,calc(var(--cqp-n) * 9.2mm))}
+.cqp-grid td{border:.5pt solid #555;text-align:center;vertical-align:middle;
+  font:600 12.5pt/1 "Courier New",monospace;
+  width:9.2mm;height:9.2mm;padding:0}
+.cqp-sudoku td{font:700 14pt/1 Georgia,serif;border:.5pt solid #777}
+.cqp-sudoku tr:first-child td{border-top:1.6pt solid #000}
+.cqp-sudoku tr:last-child td{border-bottom:1.6pt solid #000}
+.cqp-sudoku td:first-child{border-left:1.6pt solid #000}
+.cqp-sudoku td:last-child{border-right:1.6pt solid #000}
+.cqp-sudoku tr:nth-child(3n) td{border-bottom:1.6pt solid #000}
+.cqp-sudoku td:nth-child(3n){border-right:1.6pt solid #000}
+.cqp-blank{color:transparent}
+
+/* --- the word list under a puzzle --- */
+.cqp-words{list-style:none;margin:0 0 10pt;padding:0;
+  columns:var(--cqp-cols,3);column-gap:10mm}
+.cqp-words li{font:11.5pt/1.75 "Courier New",monospace;
+  break-inside:avoid;letter-spacing:.4pt}
+
+/* --- numbered things to answer --- */
+.cqp-qs{margin:0 0 10pt;padding-left:8mm}
+/* the write-on line runs to the right margin, so twelve answers line up in a
+   column instead of stepping in and out with the length of each hint */
+.cqp-qs li{margin:0 0 7pt;break-inside:avoid;page-break-inside:avoid;
+  font-size:11.5pt}
+.cqp-qrow{display:flex;align-items:flex-end;gap:3mm}
+.cqp-qs .cqp-line{flex:1}
+.cqp-q{margin-right:4pt}
+.cqp-line{display:inline-block;border-bottom:.8pt solid #000;min-width:2.6cm;
+  height:1em;vertical-align:-2pt}
+.cqp-key-list{margin:0;padding-left:8mm}
+.cqp-key-list li{margin:0 0 5pt;font-size:11.5pt;break-inside:avoid}
+
+/* --- cards to cut out --- */
+.cqp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.cqp-card{border:.8pt dashed #000;padding:9mm 3mm;text-align:center;
+  font-size:12.5pt;font-weight:700;break-inside:avoid}
+
+/* --- a play sheet with ruled lines --- */
+.cqp-blanks{list-style:none;margin:0 0 10pt;padding:0}
+.cqp-blanks li{display:flex;align-items:flex-end;gap:4mm;margin:0 0 9pt;
+  break-inside:avoid}
+.cqp-blabel{font-size:11.5pt;font-weight:700;min-width:38mm}
+.cqp-blanks .cqp-line{flex:1}
+
+/* --- a crossword on paper --- */
+.cqp-cw{width:min(100%,calc(var(--cqp-n) * 10mm))}
+.cqp-cw td{position:relative;width:10mm;height:10mm;border:.6pt solid #000;
+  font:700 13pt/1 Georgia,serif;vertical-align:middle}
+/* The empty squares are left blank, not blacked in. These puzzles are the
+   sparse criss-cross kind, not the dense American kind, so blacking the gaps
+   turns most of the sheet into solid toner — which school printers either
+   refuse or charge a cartridge for. On screen these squares are transparent
+   too, so the paper now matches what the page shows. */
+.cqp-cw .cqp-block{border:0;background:none}
+.cqp-num{position:absolute;top:.3mm;left:.6mm;font:400 6.5pt/1 Arial,sans-serif;
+  font-style:normal}
+.cqp-clues{display:grid;grid-template-columns:1fr 1fr;gap:8mm;margin-top:6pt}
+.cqp-cluecol dl{margin:0;display:grid;grid-template-columns:auto 1fr;
+  gap:1pt 3pt;font-size:10.5pt}
+.cqp-cluecol dt{font-weight:700;text-align:right}
+.cqp-cluecol dd{margin:0}
+.cqp-cluehead{font-size:11.5pt;margin:0 0 3pt;border-bottom:.8pt solid #000;
+  padding-bottom:2pt}
+
+/* --- word tiles and write-in boxes --- */
+.cqp-tiles{display:grid;grid-template-columns:repeat(var(--cqp-cols,4),1fr);
+  gap:1.6mm;margin:0 0 8pt}
+.cqp-tile{border:.7pt solid #000;padding:4.4mm 1mm;text-align:center;
+  font-size:11pt;font-weight:700;break-inside:avoid}
+.cqp-boxes{display:grid;gap:3mm}
+.cqp-box{border:.7pt solid #000;padding:2.4mm 3mm;break-inside:avoid}
+.cqp-box b{display:block;font-size:10pt;margin-bottom:1.4mm}
+.cqp-box .cqp-line{display:block;min-width:0;width:100%;height:7mm;
+  border-bottom:.6pt solid #999}
+
+/* --- the big letter on a Categories play sheet --- */
+.cqp-bigletter{font:700 46pt/1 Georgia,serif;text-align:center;margin:2pt 0 8pt;
+  letter-spacing:2pt}
+.cqp-card b{display:block}
+.cqp-cardsub{display:block;font:400 8pt/1.3 Arial,sans-serif;font-style:normal;
+  margin-top:1.6mm;letter-spacing:.4pt}
+/* a maths worksheet is columns, not one sum per line down a whole page */
+.cqp-cols{columns:var(--cqp-cols,3);column-gap:9mm}
+.cqp-cols li{break-inside:avoid;page-break-inside:avoid}
+.tp-c7{background:#fdf6fb;border-color:#f0dcea}

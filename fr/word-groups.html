@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Groupes de mots — Classez 16 mots en 4 groupes</title>
 <meta name="description" content="Groupes de mots — une énigme gratuite de classement de mots. Classez 16 mots en 4 groupes secrets de 4. Un jeu de réflexion amusant pour tous les âges.">
-<link rel="stylesheet" href="../css/style.css?v=dfcfa9e8">
+<link rel="stylesheet" href="../css/style.css?v=040a25b6">
 <style>
   .cn-wrap{max-width:460px;margin:0 auto;text-align:center}
   .cn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:14px auto;max-width:100%}
@@ -71,6 +71,7 @@
         <button class="btn" id="submitBtn" onclick="submitGuess()">Envoyer</button>
         <button class="btn btn-ghost" onclick="shuffleTiles()">Mélanger</button>
         <button class="btn btn-ghost" onclick="newGame()">Nouveau casse-tête</button>
+        <button class="btn btn-ghost" onclick="printPuzzle()">&#128424; Imprimer ce casse-t&ecirc;te</button>
       </div>
       <div class="center" style="margin-top:8px"><a class="btn btn-ghost" href="games.html">Tous les jeux</a></div>
     </div>
@@ -122,12 +123,13 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="./">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="teachers.html">Pour les enseignants</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <div class="footer-sections"><a href="quizzes.html">Tous les quiz</a> · <a href="citizenship.html">Pratique de l'examen de citoyenneté</a> · <a href="driving-test.html">Pratique de l'examen de conduite</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Jeux en famille</a> · <a href="for-kids.html">Pour les enfants</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">Culture générale</a> · <a href="blog.html">Blogue</a> · <a href="daily.html">Daily Quiz</a></div>
-    <p class="footer-all"><a href="all-pages.html">Toutes les pages du site (213)</a></p>
+    <p class="footer-all"><a href="all-pages.html">Toutes les pages du site (214)</a></p>
     <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
     <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
   </div>
 </footer>
 
+<script src="../js/puzzle-print.js?v=8302678e"></script>
 <script>
 const PUZZLES=[
   [["Canadian animals","Beaver","Moose","Loon","Caribou"],["Provinces","Ontario","Alberta","Quebec","Manitoba"],["Winter things","Snow","Ice","Toque","Mittens"],["Fruits","Apple","Banana","Cherry","Grape"]],
@@ -207,9 +209,31 @@ function revealAll(){
 }
 function msg(t,bad){ const m=document.getElementById('msg'); m.style.color=bad?'#e63946':'#2a9d8f'; m.textContent=t; }
 newGame();
+
+/* ---- printing ----------------------------------------------------------
+   The same sixteen words, shuffled by this page's own shuffle(), with four
+   boxes to write the groups into. The key names each group, which is the part
+   a teacher needs and a child cannot see on the tiles. */
+function makeSheet(){
+  const p=PUZZLES[Math.floor(Math.random()*PUZZLES.length)];
+  const ws=[]; p.forEach(g=>g.slice(1).forEach(w=>ws.push(w)));
+  shuffle(ws);
+  /* the labels come from CQPrint, not from here — see the note on SHEET in
+     js/puzzle-print.js for why a string in this inline block never reaches the
+     French dictionary */
+  const body = CQPrint.tiles(ws,4) + CQPrint.boxes(CQPrint.spec('word-groups').groups,1);
+  const key = CQPrint.answers(p.map(g=>'<b>'+CQPrint.esc(g[0])+'</b> &mdash; '+
+                                        g.slice(1).map(CQPrint.esc).join(', ')));
+  return { body: body, key: key };
+}
+function printPuzzle(copies){
+  CQPrint.build(CQPrint.spec('word-groups'),
+                makeSheet, copies||1);
+}
+CQPrint.auto(function(c){ printPuzzle(c); });
 </script>
   <script src="../js/game-fullscreen.js?v=35da7b56"></script>
-  <script src="../js/site.js?v=8400b643"></script>
+  <script src="../js/site.js?v=1dd02231"></script>
   <script src="../js/analytics.js?v=065edc09"></script>
   <script src="../js/ads.js?v=00e703ff" defer></script>
   <script src="../js/pwa.js?v=cb9b3ff7" defer></script>

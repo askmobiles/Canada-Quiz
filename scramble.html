@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Canada Word Scramble — Family Games</title>
 <meta name="description" content="Free Canada word scramble game. Unscramble the Canadian words! Kids and family friendly.">
-<link rel="stylesheet" href="css/style.css?v=dfcfa9e8">
+<link rel="stylesheet" href="css/style.css?v=040a25b6">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
@@ -55,6 +55,7 @@
     <div style="margin-top:14px">
       <button class="btn" onclick="check()">Check</button>
       <button class="btn btn-ghost" onclick="newWord()">New Word</button>
+      <button class="btn btn-ghost" onclick="printPuzzle()">&#128424; Print a worksheet</button>
     </div>
     <p id="result" style="font-weight:800;min-height:26px"></p>
     <p class="pill" id="score">Solved: 0</p>
@@ -105,12 +106,13 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="./">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="teachers.html">For Teachers</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <div class="footer-sections"><a href="quizzes.html">All Quizzes</a> · <a href="citizenship.html">Citizenship Test Practice</a> · <a href="driving-test.html">Driving Test Practice</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Family Games</a> · <a href="for-kids.html">For Kids</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">General Knowledge</a> · <a href="blog.html">Blog</a> · <a href="daily.html">Daily Quiz</a></div>
-    <p class="footer-all"><a href="all-pages.html">Every page on the site (213)</a></p>
+    <p class="footer-all"><a href="all-pages.html">Every page on the site (214)</a></p>
     <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
     <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
   </div>
 </footer>
 
+<script src="js/puzzle-print.js?v=8302678e"></script>
 <script>
 const WORDS=[
   {word:"MAPLE",hint:"A famous Canadian tree and syrup"},
@@ -146,9 +148,27 @@ function check(){
   } else { res.style.color='#e63946'; res.textContent='❌ Try again!'; }
 }
 newWord();
+
+/* ---- printing ----------------------------------------------------------
+   Twelve words on a sheet instead of one at a time on screen. The scrambling
+   is done by this page's own scramble(), and the hints are the page's own, so
+   nothing about the worksheet was written twice. */
+function makeSheet(){
+  const pick=WORDS.slice();
+  for(let i=pick.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pick[i],pick[j]]=[pick[j],pick[i]];}
+  const use=pick.slice(0,12);
+  const qs=use.map(w=>CQPrint.esc(scramble(w.word))+' &mdash; <i>'+CQPrint.esc(w.hint)+'</i>');
+  return { body: CQPrint.questions(qs,'4cm'),
+           key:  CQPrint.answers(use.map(w=>CQPrint.esc(w.word))) };
+}
+function printPuzzle(copies){
+  CQPrint.build(CQPrint.spec('scramble'),
+                makeSheet, copies||1);
+}
+CQPrint.auto(function(c){ printPuzzle(c); });
 </script>
   <script src="js/game-fullscreen.js?v=35da7b56"></script>
-  <script src="js/site.js?v=8400b643"></script>
+  <script src="js/site.js?v=1dd02231"></script>
   <script src="js/analytics.js?v=065edc09"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
   <script src="js/pwa.js?v=cb9b3ff7" defer></script>

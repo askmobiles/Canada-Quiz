@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://canada-quiz.com/fr/times-tables.html">
 <meta property="og:image" content="https://canada-quiz.com/images/social-preview.png">
-<link rel="stylesheet" href="../css/style.css?v=dfcfa9e8">
+<link rel="stylesheet" href="../css/style.css?v=040a25b6">
 <style>
 .tt-wrap{max-width:520px;margin:0 auto;text-align:left}
 .tt-view{display:none}
@@ -131,6 +131,7 @@
         <p class="tt-allline muted" id="tt-allmedal" data-no-i18n></p>
         <div class="tt-box">
           <button class="btn btn-purple" id="tt-go-weak">🎯 Travailler mes faits difficiles</button>
+          <button class="btn btn-ghost" id="tt-print">&#128424; Imprimer une feuille d'exercices</button>
           <p class="tt-note muted" id="tt-weaknote" data-no-i18n></p>
         </div>
       </div>
@@ -263,12 +264,13 @@
     <p>Des quiz gratuits, des jeux en famille et de la préparation à la citoyenneté — sans inscription et sans publicité envahissante.</p>
     <div class="footer-links"><a href="./">Accueil</a> · <a href="about.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="teachers.html">Pour les enseignants</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></div>
     <div class="footer-sections"><a href="quizzes.html">Tous les quiz</a> · <a href="citizenship.html">Pratique de l'examen de citoyenneté</a> · <a href="driving-test.html">Pratique de l'examen de conduite</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Jeux en famille</a> · <a href="for-kids.html">Pour les enfants</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">Culture générale</a> · <a href="blog.html">Blogue</a> · <a href="daily.html">Daily Quiz</a></div>
-    <p class="footer-all"><a href="all-pages.html">Toutes les pages du site (213)</a></p>
+    <p class="footer-all"><a href="all-pages.html">Toutes les pages du site (214)</a></p>
     <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz et jeux amusants en famille. Tous droits réservés.</p>
     <p class="muted" style="color:#b4a9cc;font-size:12.5px">Site de pratique non officiel. Non affilié au gouvernement du Canada.</p>
   </div>
 </footer>
 
+<script src="../js/puzzle-print.js?v=8302678e"></script>
 <script>
 (function(){
   var FR = /\/fr\//.test(location.pathname);
@@ -866,11 +868,40 @@
     goHome();
   }
 
+  /* ---- printing ---------------------------------------------------------
+     Thirty facts on a sheet. randomFacts() and TIMES() are the page's own, so
+     a printed worksheet asks the same questions in the same notation as the
+     screen — including the × sign, which a child copying from a keyboard
+     would otherwise write as x. Every table from 1 to 12 is drawn on, because
+     a worksheet is usually mixed revision rather than one table drilled. */
+  function printSheet(){
+    var tables = [1,2,3,4,5,6,7,8,9,10,11,12];
+    var facts = randomFacts(tables, 30);
+    var qs = [], key = [], i;
+    for(i = 0; i < facts.length; i++){
+      qs.push(TIMES(facts[i].a, facts[i].b) + ' =');
+      key.push(TIMES(facts[i].a, facts[i].b) + ' = <b>' + (facts[i].a * facts[i].b) + '</b>');
+    }
+    return { body: CQPrint.questions(qs, '1.5cm', 3), key: CQPrint.answers(key, 3) };
+  }
+  window.TTPrint = function(copies){
+    if(!window.CQPrint){ return; }
+    CQPrint.build({ title: T('Times Tables', 'Tables de multiplication'),
+                    note: T('Work out each answer and write it on the line.',
+                            'Calculez chaque r\u00e9ponse et \u00e9crivez-la sur la ligne.') },
+                  printSheet, copies || 1);
+  };
+
   try{ init(); }catch(e){}
+  (function(){
+    var b = document.getElementById('tt-print');
+    if(b){ b.onclick = function(){ window.TTPrint(1); }; }
+    if(window.CQPrint){ CQPrint.auto(function(c){ window.TTPrint(c); }); }
+  }());
 })();
 </script>
   <script src="../js/game-fullscreen.js?v=35da7b56"></script>
-  <script src="../js/site.js?v=8400b643"></script>
+  <script src="../js/site.js?v=1dd02231"></script>
   <script src="../js/analytics.js?v=065edc09"></script>
   <script src="../js/ads.js?v=00e703ff" defer></script>
   <script src="../js/pwa.js?v=cb9b3ff7" defer></script>

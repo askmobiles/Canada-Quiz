@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Would You Rather? — Family Party Game | Canada Quiz</title>
 <meta name="description" content="Would You Rather? A free family party game with nearly 60 fun, kid-friendly questions. Pass the phone around and see what everyone picks. No signup.">
-<link rel="stylesheet" href="css/style.css?v=dfcfa9e8">
+<link rel="stylesheet" href="css/style.css?v=040a25b6">
 <style>
   .wr-wrap{max-width:520px;margin:0 auto;text-align:center}
   .wr-opts{display:flex;flex-direction:column;gap:14px;margin:16px 0}
@@ -66,6 +66,7 @@
       <p id="tally" style="font-weight:800;min-height:22px"></p>
       <div class="center">
         <button class="btn btn-lg" onclick="nextQ()">Next question →</button>
+        <button class="btn btn-ghost" onclick="printPuzzle()">&#128424; Print a discussion sheet</button>
         <a class="btn btn-ghost" href="games.html">All Games</a>
       </div>
     </div>
@@ -120,11 +121,12 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="./">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="teachers.html">For Teachers</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <div class="footer-sections"><a href="quizzes.html">All Quizzes</a> · <a href="citizenship.html">Citizenship Test Practice</a> · <a href="driving-test.html">Driving Test Practice</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Family Games</a> · <a href="for-kids.html">For Kids</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">General Knowledge</a> · <a href="blog.html">Blog</a> · <a href="daily.html">Daily Quiz</a></div>
-    <p class="footer-all"><a href="all-pages.html">Every page on the site (213)</a></p>
+    <p class="footer-all"><a href="all-pages.html">Every page on the site (214)</a></p>
     <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
     <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
   </div>
 </footer>
+<script src="js/puzzle-print.js?v=8302678e"></script>
 <script>
 const Q=[
  ["have a pet dragon","have a pet unicorn"],["be able to fly","be able to turn invisible"],
@@ -182,9 +184,26 @@ function pick(which){
 }
 function nextQ(){ idx=(idx+1)%order.length; if(idx===0) order=shuffle(order); show(); window.scrollTo(0,0); }
 start();
+
+/* ---- printing ----------------------------------------------------------
+   Twelve questions on a sheet, drawn from the page's own bank. This is the one
+   printable here that is not a puzzle: it is a talking sheet for a language
+   class, a circle time or a long car journey, so it has no answer key and a
+   line for a reason rather than an answer. */
+function makeSheet(){
+  const pick=shuffle(Q.map((_,i)=>i)).slice(0,12);
+  const items=pick.map(i=>'<b>'+CQPrint.esc(cap(Q[i][0]))+'</b> &nbsp;or&nbsp; <b>'+
+                          CQPrint.esc(cap(Q[i][1]))+'</b>?');
+  return { body: CQPrint.questions(items,'3cm'), key:'' };
+}
+function printPuzzle(copies){
+  CQPrint.build(CQPrint.spec('would-you-rather'),
+                makeSheet, copies||1);
+}
+CQPrint.auto(function(c){ printPuzzle(c); });
 </script>
   <script src="js/game-fullscreen.js?v=35da7b56"></script>
-  <script src="js/site.js?v=8400b643"></script>
+  <script src="js/site.js?v=1dd02231"></script>
   <script src="js/analytics.js?v=065edc09"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
   <script src="js/pwa.js?v=cb9b3ff7" defer></script>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Word Search — Free Puzzle, 3 Levels | Family Games</title>
 <meta name="description" content="Free word search puzzle with easy, medium, and hard levels and a variety of topics — animals, nature, space, food and more. Fun for kids and adults.">
-<link rel="stylesheet" href="css/style.css?v=dfcfa9e8">
+<link rel="stylesheet" href="css/style.css?v=040a25b6">
 <style>
   .ws-wrap{max-width:480px;margin:0 auto}
   .ws-grid{display:grid;gap:2px;margin:10px auto;touch-action:none;user-select:none;-webkit-user-select:none}
@@ -29,7 +29,7 @@
 <link rel="alternate" hreflang="en" href="https://canada-quiz.com/word-search.html">
 <link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/word-search.html">
 <link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/word-search.html">
-<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"Brain & Puzzle Games","item":"https://canada-quiz.com/games.html"},{"@type":"ListItem","position":3,"name":"Word Search","item":"https://canada-quiz.com/word-search.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/word-search.html#webpage","url":"https://canada-quiz.com/word-search.html","name":"Word Search — Free Puzzle, 3 Levels | Family Games","description":"Free word search puzzle with easy, medium, and hard levels and a variety of topics — animals, nature, space, food and more. Fun for kids and adults.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"Canada Quiz & Family Fun Games","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which level should a young child start with?","acceptedAnswer":{"@type":"Answer","text":"Easy. The grid is smaller and the words are three or four letters long, which keeps a first puzzle short enough to finish before interest fades."}},{"@type":"Question","name":"Can I print the puzzle?","acceptedAnswer":{"@type":"Answer","text":"Not as a worksheet. The grid is made to be played on screen, because dragging across the letters is what marks a word as found."}},{"@type":"Question","name":"Does the same puzzle come back?","acceptedAnswer":{"@type":"Answer","text":"No. Every grid is built from nothing with a random selection of words and random filler letters, so each puzzle you open is genuinely new."}},{"@type":"Question","name":"What if I cannot find the last word?","acceptedAnswer":{"@type":"Answer","text":"There is no reveal button, so the choices are to keep looking or to press New Puzzle and start again with a fresh grid at any level."}},{"@type":"Question","name":"How many words must I find?","acceptedAnswer":{"@type":"Answer","text":"Ten in every puzzle, whatever the level. They are listed under the grid, so you always know exactly what is still left to look for."}}]}]}</script><!--/LD-->
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"Brain & Puzzle Games","item":"https://canada-quiz.com/games.html"},{"@type":"ListItem","position":3,"name":"Word Search","item":"https://canada-quiz.com/word-search.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/word-search.html#webpage","url":"https://canada-quiz.com/word-search.html","name":"Word Search — Free Puzzle, 3 Levels | Family Games","description":"Free word search puzzle with easy, medium, and hard levels and a variety of topics — animals, nature, space, food and more. Fun for kids and adults.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"Canada Quiz & Family Fun Games","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which level should a young child start with?","acceptedAnswer":{"@type":"Answer","text":"Easy. The grid is smaller and the words are three or four letters long, which keeps a first puzzle short enough to finish before interest fades."}},{"@type":"Question","name":"Can I print the puzzle?","acceptedAnswer":{"@type":"Answer","text":"Yes. Press Print this puzzle and you get the grid and the word list laid out for a sheet of paper, with a solution grid on a page of its own. The screen version still marks a word as found when you drag across the letters."}},{"@type":"Question","name":"Does the same puzzle come back?","acceptedAnswer":{"@type":"Answer","text":"No. Every grid is built from nothing with a random selection of words and random filler letters, so each puzzle you open is genuinely new."}},{"@type":"Question","name":"What if I cannot find the last word?","acceptedAnswer":{"@type":"Answer","text":"There is no reveal button, so the choices are to keep looking or to press New Puzzle and start again with a fresh grid at any level."}},{"@type":"Question","name":"How many words must I find?","acceptedAnswer":{"@type":"Answer","text":"Ten in every puzzle, whatever the level. They are listed under the grid, so you always know exactly what is still left to look for."}}]}]}</script><!--/LD-->
 </head>
 <body>
 <header class="site-header">
@@ -74,6 +74,7 @@
       <p class="center" id="msg" style="font-weight:700;min-height:22px"></p>
       <div class="center">
         <button class="btn" onclick="newPuzzle()">New Puzzle</button>
+        <button class="btn btn-ghost" onclick="printPuzzle()">&#128424; Print this puzzle</button>
         <a class="btn btn-ghost" href="games.html">All Games</a>
       </div>
     </div>
@@ -85,7 +86,7 @@
   <div class="pd-body">
   <p>Word Search hides ten words inside a letter grid and asks you to find every one. Press the first letter, drag to the last, and the word turns green in the grid and gets crossed off the list below it.</p>
   <p>Three levels change both the grid and the vocabulary. Easy uses short words like frog and snow in a smaller grid, Medium moves up to volcano and rainbow, and Hard hides long ones such as helicopter and orchestra.</p>
-  <p>Each puzzle is built from scratch, so the same level never gives you the same grid twice. That makes it a good quiet activity for a child, for a waiting room, or for a classroom filler that never runs out.</p>
+  <p>Each puzzle is built from scratch, so the same level never gives you the same grid twice. That makes it a good quiet activity for a child, for a waiting room, or for a classroom filler that never runs out. It also prints: a Print button under the grid lays the puzzle and its word list out for paper, with the solution on a page of its own.</p>
   <h2>How it works</h2>
   <ul>
     <li>A level menu at the top offers Easy with short words, Medium, and Hard with long words, and switching builds a new grid.</li>
@@ -107,7 +108,7 @@
   <h3>Which level should a young child start with?</h3>
   <p>Easy. The grid is smaller and the words are three or four letters long, which keeps a first puzzle short enough to finish before interest fades.</p>
   <h3>Can I print the puzzle?</h3>
-  <p>Not as a worksheet. The grid is made to be played on screen, because dragging across the letters is what marks a word as found.</p>
+  <p>Yes. Press Print this puzzle and you get the grid and the word list laid out for a sheet of paper, with a solution grid on a page of its own. The screen version still marks a word as found when you drag across the letters.</p>
   <h3>Does the same puzzle come back?</h3>
   <p>No. Every grid is built from nothing with a random selection of words and random filler letters, so each puzzle you open is genuinely new.</p>
   <h3>What if I cannot find the last word?</h3>
@@ -130,12 +131,13 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="./">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="teachers.html">For Teachers</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <div class="footer-sections"><a href="quizzes.html">All Quizzes</a> · <a href="citizenship.html">Citizenship Test Practice</a> · <a href="driving-test.html">Driving Test Practice</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Family Games</a> · <a href="for-kids.html">For Kids</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">General Knowledge</a> · <a href="blog.html">Blog</a> · <a href="daily.html">Daily Quiz</a></div>
-    <p class="footer-all"><a href="all-pages.html">Every page on the site (213)</a></p>
+    <p class="footer-all"><a href="all-pages.html">Every page on the site (214)</a></p>
     <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
     <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
   </div>
 </footer>
 
+<script src="js/puzzle-print.js?v=8302678e"></script>
 <script>
 /* 3 levels, 15 words each, variety of topics */
 const LEVELS = {
@@ -147,6 +149,9 @@ const GRID_SIZE = { Easy:11, Medium:12, Hard:13 };
 const WORDS_PER_PUZZLE = 10;
 const DIRS=[[0,1],[1,0],[1,1],[-1,1],[0,-1],[-1,0],[-1,-1],[1,-1]];
 let N=12, grid=[], words=[], found=new Set();
+/* where each word ended up. The answer key is drawn from this, so the key can
+   never disagree with the grid a child is holding. */
+let placed={};
 let selecting=false, startRC=null;
 
 function rnd(n){return Math.floor(Math.random()*n);}
@@ -158,6 +163,7 @@ function newPuzzle(){
   words=shuffle(bank).slice(0, Math.min(WORDS_PER_PUZZLE, bank.length));
   found=new Set();
   grid=Array.from({length:N},()=>Array(N).fill(''));
+  placed={};
   // place longest first for a better fit
   words.sort((a,b)=>b.length-a.length);
   for(const w of words) placeWord(w);
@@ -175,7 +181,9 @@ function placeWord(w){
     let ok=true;
     for(let i=0;i<w.length;i++){ const cur=grid[r0+d[0]*i][c0+d[1]*i]; if(cur && cur!==w[i]){ok=false;break;} }
     if(!ok) continue;
-    for(let i=0;i<w.length;i++){ grid[r0+d[0]*i][c0+d[1]*i]=w[i]; }
+    const cells=[];
+    for(let i=0;i<w.length;i++){ grid[r0+d[0]*i][c0+d[1]*i]=w[i]; cells.push([r0+d[0]*i,c0+d[1]*i]); }
+    placed[w]=cells;
     return true;
   }
   return false;
@@ -223,10 +231,33 @@ const gridEl=document.getElementById('grid');
 gridEl.addEventListener('pointerdown',e=>{ const t=e.target.closest('.ws-cell'); if(!t)return; e.preventDefault(); selecting=true; startRC=[+t.dataset.r,+t.dataset.c]; highlight([startRC]); });
 gridEl.addEventListener('pointermove',e=>{ if(!selecting)return; const t=cellFromPoint(e.clientX,e.clientY); if(!t)return; const cells=lineCells(startRC[0],startRC[1],+t.dataset.r,+t.dataset.c); if(cells) highlight(cells); });
 document.addEventListener('pointerup',e=>{ if(!selecting)return; selecting=false; const t=cellFromPoint(e.clientX,e.clientY); if(t){ trySelect(startRC[0],startRC[1],+t.dataset.r,+t.dataset.c); } clearSel(); startRC=null; });
+
+/* ---- printing ----------------------------------------------------------
+   makeSheet() calls the page's own newPuzzle(), so the sheet on paper is made
+   by the same code as the puzzle on screen. There is no second generator to
+   drift. The key shows only the hidden words in their places and leaves the
+   filler letters blank, which is how a solution grid is normally printed. */
+function makeSheet(){
+  newPuzzle();
+  const body = CQPrint.grid(grid) + CQPrint.words(words, 3);
+  const key = Array.from({length:N},()=>Array(N).fill(''));
+  Object.keys(placed).forEach(w=>placed[w].forEach(([r,c])=>{ key[r][c]=grid[r][c]; }));
+  return { body: body, key: CQPrint.grid(key) + CQPrint.words(words, 3) };
+}
+function printSpec(){
+  return CQPrint.spec('word-search');
+}
+function printPuzzle(copies){
+  CQPrint.build(printSpec(), makeSheet, copies || 1);
+}
+CQPrint.auto(function(copies, q){
+  if(q.level && document.getElementById('level')) document.getElementById('level').value=q.level;
+  printPuzzle(copies);
+});
 newPuzzle();
 </script>
   <script src="js/game-fullscreen.js?v=35da7b56"></script>
-  <script src="js/site.js?v=8400b643"></script>
+  <script src="js/site.js?v=1dd02231"></script>
   <script src="js/analytics.js?v=065edc09"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
   <script src="js/pwa.js?v=cb9b3ff7" defer></script>

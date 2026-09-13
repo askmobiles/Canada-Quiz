@@ -334,6 +334,28 @@
   el("cw-reveal").onclick = reveal;
   el("cw-new").onclick = newGame;
 
+  /* ---- printing ---------------------------------------------------------
+     The page title has promised a "printable-style puzzle" since the page was
+     built, and until now there was no way to print one. newGame() is the
+     page's own dealer, so a printed crossword is a crossword this page could
+     have dealt on screen — clues, numbering and blacked-out squares all come
+     from the same puzzle object. The clue headings reuse W.across / W.down, so
+     the French page prints Horizontal and Vertical without a second
+     dictionary. */
+  function printSheet() {
+    newGame();
+    return {
+      body: CQPrint.crossword(P.cells, P.num, false) +
+            CQPrint.clues(W.across, P.across, W.down, P.down),
+      key:  CQPrint.crossword(P.cells, P.num, true)
+    };
+  }
+  window.CWPrint = function (copies) {
+    if (!window.CQPrint) return;
+    CQPrint.build(CQPrint.spec("crossword"), printSheet, copies || 1);
+  };
+
   buildThemes();
   newGame();
+  if (window.CQPrint) CQPrint.auto(function (copies) { window.CWPrint(copies); });
 }());
