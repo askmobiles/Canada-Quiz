@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Word Groups — Sort 16 Words into 4 Groups | Family Games</title>
 <meta name="description" content="Word Groups — a free word-sorting puzzle. Sort 16 words into 4 secret groups of 4. Fun brain game for all ages.">
-<link rel="stylesheet" href="css/style.css?v=82f1c6f5">
+<link rel="stylesheet" href="css/style.css?v=6c25b50e">
 <style>
   .cn-wrap{max-width:460px;margin:0 auto;text-align:center}
   .cn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:14px auto;max-width:100%}
@@ -63,10 +63,10 @@
 
   <div class="panel">
     <div class="cn-wrap">
-      <div id="solved"></div>
-      <div class="cn-grid" id="grid"></div>
+      <div id="solved" data-no-i18n></div>
+      <div class="cn-grid" id="grid" data-no-i18n></div>
       <div class="hearts" id="hearts"></div>
-      <p class="center" id="msg" style="font-weight:800;min-height:22px"></p>
+      <p class="center" id="msg" data-no-i18n style="font-weight:800;min-height:22px"></p>
       <div class="center">
         <button class="btn" id="submitBtn" onclick="submitGuess()">Submit</button>
         <button class="btn btn-ghost" onclick="shuffleTiles()">Shuffle</button>
@@ -123,24 +123,19 @@
     <p>Free quizzes, family games and citizenship practice — no signup, no ads in your face.</p>
     <div class="footer-links"><a href="./">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="teachers.html">For Teachers</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
     <div class="footer-sections"><a href="quizzes.html">All Quizzes</a> · <a href="citizenship.html">Citizenship Test Practice</a> · <a href="driving-test.html">Driving Test Practice</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Family Games</a> · <a href="for-kids.html">For Kids</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">General Knowledge</a> · <a href="blog.html">Blog</a> · <a href="daily.html">Daily Quiz</a></div>
-    <p class="footer-all"><a href="all-pages.html">Every page on the site (215)</a></p>
+    <p class="footer-all"><a href="all-pages.html">Every page on the site (216)</a></p>
     <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
     <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
   </div>
 </footer>
 
+<script src="js/word-banks.js?v=ec16f2a0"></script>
 <script src="js/puzzle-print.js?v=700cb124"></script>
 <script>
-const PUZZLES=[
-  [["Canadian animals","Beaver","Moose","Loon","Caribou"],["Provinces","Ontario","Alberta","Quebec","Manitoba"],["Winter things","Snow","Ice","Toque","Mittens"],["Fruits","Apple","Banana","Cherry","Grape"]],
-  [["Hockey words","Puck","Stick","Goal","Rink"],["Colours","Red","Blue","Green","Yellow"],["Canadian foods","Poutine","Nanaimo","BeaverTail","Butter tart"],["Body parts","Arm","Leg","Head","Hand"]],
-  [["Oceans","Atlantic","Pacific","Arctic","Indian"],["Trees","Maple","Pine","Oak","Birch"],["Weather","Rain","Wind","Fog","Storm"],["Instruments","Guitar","Drums","Piano","Flute"]],
-  [["Canadian cities","Toronto","Calgary","Halifax","Regina"],["Farm animals","Cow","Pig","Sheep","Goat"],["Shapes","Circle","Square","Triangle","Star"],["Drinks","Water","Juice","Milk","Tea"]],
-  [["In space","Sun","Moon","Star","Planet"],["Sports","Soccer","Tennis","Golf","Boxing"],["Kitchen","Fork","Spoon","Plate","Cup"],["Birds","Eagle","Robin","Owl","Duck"]],
-  [["Time","Hour","Minute","Second","Day"],["Canadian coins","Penny","Nickel","Dime","Loonie"],["Bugs","Ant","Bee","Fly","Moth"],["Clothes","Shirt","Pants","Hat","Shoes"]],
-  [["Reptiles","Snake","Lizard","Turtle","Gecko"],["Canada symbols","Flag","Anthem","Maple","Poppy"],["Vehicles","Car","Bus","Train","Truck"],["Vegetables","Carrot","Potato","Onion","Pea"]],
-  [["Continents","Asia","Africa","Europe","Australia"],["Metals","Gold","Silver","Iron","Copper"],["Feelings","Happy","Sad","Angry","Scared"],["Berries","Blueberry","Strawberry","Raspberry","Cranberry"]]
-];
+/* The puzzles live in js/word-banks.js, in both languages. The French set is
+   not a translation of the English one: a French speaker groups Petits fruits,
+   not Berries. See the note at the top of that file. */
+const PUZZLES=CQWB.groups;
 let puzzle=null, tiles=[], selected=[], solved=[], lives=4;
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function newGame(){
@@ -169,7 +164,7 @@ function toggle(i){
 }
 function shuffleTiles(){ shuffle(tiles); selected=[]; render(); }
 function submitGuess(){
-  if(selected.length!==4){ msg('Pick exactly 4 words',true); return; }
+  if(selected.length!==4){ msg(CQWB.msg.pickFour,true); return; }
   const gs=selected.map(i=>tiles[i].g);
   const allSame = gs.every(x=>x===gs[0]);
   if(allSame){
@@ -180,8 +175,8 @@ function submitGuess(){
     selected=[];
     showSolved(gi);
     render();
-    if(solved.length===4){ msg('🎉 You solved it! Great job!',false); document.getElementById('submitBtn').disabled=true; }
-    else msg('Nice! Group found.',false);
+    if(solved.length===4){ msg(CQWB.msg.solved,false); document.getElementById('submitBtn').disabled=true; }
+    else msg(CQWB.msg.groupFound,false);
   } else {
     // one away?
     const counts={}; gs.forEach(x=>counts[x]=(counts[x]||0)+1);
@@ -189,7 +184,7 @@ function submitGuess(){
     lives--; drawHearts();
     const g=document.getElementById('grid'); g.classList.add('shake'); setTimeout(()=>g.classList.remove('shake'),300);
     if(lives<=0){ revealAll(); }
-    else msg(max===3?'So close — one away!':'Not a group. Try again!',true);
+    else msg(max===3?CQWB.msg.oneAway:CQWB.msg.notGroup,true);
     selected=[]; render();
   }
 }
@@ -205,7 +200,7 @@ function revealAll(){
   const remaining=[0,1,2,3].filter(gi=>!solved.includes(gi));
   remaining.forEach(gi=>{ if(!solved.includes(gi)){ solved.push(gi); showSolved(gi); } });
   tiles=[]; render();
-  msg('😅 Out of tries! Here were the groups.',true);
+  msg(CQWB.msg.outOfTries,true);
 }
 function msg(t,bad){ const m=document.getElementById('msg'); m.style.color=bad?'#e63946':'#2a9d8f'; m.textContent=t; }
 newGame();
@@ -233,7 +228,7 @@ function printPuzzle(copies){
 CQPrint.auto(function(c){ printPuzzle(c); });
 </script>
   <script src="js/game-fullscreen.js?v=35da7b56"></script>
-  <script src="js/site.js?v=f0b7d5e1"></script>
+  <script src="js/site.js?v=1f808f83"></script>
   <script src="js/analytics.js?v=065edc09"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
   <script src="js/pwa.js?v=cb9b3ff7" defer></script>

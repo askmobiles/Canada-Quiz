@@ -1,4 +1,4 @@
-/* canada-quiz.com — Which Came First?
+/* canada-quiz.com — Which Came First? The River of Time.
  *
  * WHY THIS EXISTS
  * ---------------
@@ -14,6 +14,18 @@
  *
  * A search engine can print a date. It cannot make the choice for you. That is
  * the whole design of this game.
+ *
+ * WHY IT IS A CROSSING AND NO LONGER ENDLESS
+ * ------------------------------------------
+ * It used to run for ever: answer a pair, get another pair, until you closed
+ * the tab. There was no point at which you had finished, so there was nothing
+ * to come back to. The drawn driving game settled the question — ten
+ * situations, a percentage climbing where you can see it, a card at the end.
+ *
+ * So this is a crossing now. Twelve stones, three lifebuoys, a far bank. The
+ * river is drawn in js/wcf-river.js, which knows nothing about history; this
+ * file knows nothing about how a stone is drawn. Either can be changed without
+ * touching the other.
  *
  * THE DATA
  * --------
@@ -46,7 +58,16 @@
     y1000: "Vers l'an 1000",
     story: "Lire l'histoire complète",
     vs: "LEQUEL EST ARRIVÉ EN PREMIER ?",
-    tap: "Touchez un événement"
+    tap: "Touchez un événement",
+    across: "Traversé",
+    pct: "Justes",
+    crossed: "Vous avez traversé la rivière du temps !",
+    fell: "Vous êtes tombé à l'eau. La rivière a gagné cette fois.",
+    reached: "Vous êtes arrivé à la pierre",
+    again: "Traverser encore",
+    bestCross: "Meilleure traversée",
+    missedTitle: "Celles qui vous ont piégé",
+    riverLabel: "Des pierres pour traverser une rivière. Chaque bonne réponse vous fait avancer d'une pierre."
   } : {
     correct: "Correct",
     wrong: "Not that one",
@@ -57,13 +78,28 @@
     y1000: "About the year 1000",
     story: "Read the full story",
     vs: "WHICH CAME FIRST?",
-    tap: "Tap an event"
+    tap: "Tap an event",
+    across: "Across",
+    pct: "Correct",
+    crossed: "You crossed the River of Time!",
+    fell: "You fell in. The river won this time.",
+    reached: "You reached stone",
+    again: "Cross again",
+    bestCross: "Best crossing",
+    missedTitle: "The ones that caught you",
+    riverLabel: "Stepping stones across a river. Every right answer moves you one stone."
   };
 
   var KEY = "cq-wcf-best";
+  var KEY_CROSS = "cq-wcf-cross";
+  var STONES = window.CQRiver ? CQRiver.stones : 12;
+  var BUOYS = window.CQRiver ? CQRiver.buoys : 3;
+
   var streak = 0, right = 0, asked = 0, best = 0, answered = false, cur = null;
+  var at = 0, buoys = BUOYS, over = false, won = false, missed = [], bestCross = 0;
 
   try { best = parseInt(localStorage.getItem(KEY), 10) || 0; } catch (e) { best = 0; }
+  try { bestCross = parseInt(localStorage.getItem(KEY_CROSS), 10) || 0; } catch (e) { bestCross = 0; }
 
   function el(id) { return document.getElementById(id); }
   function title(e) { return FR ? e.f : e.t; }
@@ -79,9 +115,9 @@
   }
 
   /* HOW A PAIR IS CHOSEN
-     Early rounds take events far apart, so the first answer is a win and the
-     rules explain themselves. The gap then narrows, so round twelve is a real
-     question. Without this the first pair could be 1982 against 1984 and a new
+     Early stones take events far apart, so the first answer is a win and the
+     rules explain themselves. The gap then narrows, so the last stones are real
+     questions. Without this the first pair could be 1982 against 1984 and a new
      player would think the game was a coin toss. */
   function minGap() {
     if (asked < 3) return 200;
@@ -107,19 +143,30 @@
     return Math.random() < 0.5 ? [a, b] : [b, a];
   }
 
+  function river() {
+    if (window.CQRiver) {
+      CQRiver.draw(el("wf-river"), at, buoys, over, won, W.riverLabel);
+    }
+  }
+
+  function percent() {
+    return asked ? Math.round(right * 100 / asked) : 0;
+  }
+
   function scores() {
     var s = el("wf-scores");
     s.innerHTML = "";
-    [[W.streak, streak], [W.best, best], [W.right, right + " / " + asked]]
-      .forEach(function (row) {
-        var d = document.createElement("div");
-        d.className = "wf-score";
-        d.setAttribute("data-no-i18n", "");
-        d.innerHTML = "<span></span>";
-        d.firstChild.textContent = row[0];
-        d.appendChild(document.createTextNode(String(row[1])));
-        s.appendChild(d);
-      });
+    [[W.across, at + " / " + STONES],
+     [W.pct, percent() + "%"],
+     [W.streak, streak]].forEach(function (row) {
+      var d = document.createElement("div");
+      d.className = "wf-score";
+      d.setAttribute("data-no-i18n", "");
+      d.innerHTML = "<span></span>";
+      d.firstChild.textContent = row[0];
+      d.appendChild(document.createTextNode(String(row[1])));
+      s.appendChild(d);
+    });
   }
 
   function card(e) {
@@ -142,6 +189,7 @@
   }
 
   function deal() {
+    if (over) return;
     answered = false;
     cur = pick();
     el("wf-vs").textContent = W.vs;
@@ -152,10 +200,54 @@
     pairBox.appendChild(card(cur[0]));
     pairBox.appendChild(card(cur[1]));
     scores();
+    river();
+  }
+
+  /* The card at the end. Same shape as the driving game: the number first, big
+     enough to read across a room, then what it means, then what caught you. */
+  function finish(didWin) {
+    over = true;
+    won = didWin;
+    if (at > STONES) at = STONES;
+    if (at > bestCross) {
+      bestCross = at;
+      try { localStorage.setItem(KEY_CROSS, String(bestCross)); } catch (e) {}
+    }
+    river();
+
+    pairBox.innerHTML = "";
+    el("wf-vs").textContent = "";
+    el("wf-msg").textContent = "";
+    el("wf-links").innerHTML = "";
+
+    var box = el("wf-end");
+    if (!box) return;
+    var h = '<div class="wf-end-pc">' + percent() + "%</div>";
+    h += '<p class="wf-end-head">' + (didWin ? W.crossed : W.fell) + "</p>";
+    h += '<p class="wf-end-sub">' + W.reached + " " + at + " / " + STONES +
+         " &middot; " + W.bestCross + " " + bestCross + " / " + STONES + "</p>";
+
+    if (missed.length) {
+      h += '<p class="wf-end-head2">' + W.missedTitle + "</p><ul class=\"wf-missed\">";
+      missed.forEach(function (m) {
+        h += "<li><b>" + esc(title(m.first)) + "</b> (" + esc(yearLabel(m.first)) +
+             ") &nbsp;&rarr;&nbsp; " + esc(title(m.later)) + " (" + esc(yearLabel(m.later)) + ")" +
+             ' <a href="canada-diary.html#' + esc(m.first.a) + '">' + esc(W.story) + "</a></li>";
+      });
+      h += "</ul>";
+    }
+    box.innerHTML = h;
+    box.setAttribute("data-no-i18n", "");
+    box.classList.add("is-on");
+    el("wf-next").disabled = true;
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
   function answer(chosen, btn) {
-    if (answered) return;
+    if (answered || over) return;
     answered = true;
     asked++;
     var other = (chosen === cur[0]) ? cur[1] : cur[0];
@@ -176,7 +268,7 @@
 
     var m = el("wf-msg");
     if (win) {
-      right++; streak++;
+      right++; streak++; at++;
       if (streak > best) {
         best = streak;
         try { localStorage.setItem(KEY, String(best)); } catch (e) {}
@@ -185,10 +277,18 @@
       m.textContent = W.correct;
     } else {
       streak = 0;
+      buoys--;
+      /* A wrong answer costs a buoy but never a stone. Sliding backwards on a
+         hard question makes the game feel like a punishment, and people stop. */
+      /* On a wrong answer the one they tapped is the later event, so the one
+         they should have tapped is the other. Stored that way round, the end
+         card reads as "this came first, then this". */
+      missed.push({ first: other, later: chosen });
       m.style.color = "#e63946";
       m.textContent = W.wrong;
     }
     scores();
+    river();
 
     // both events link back to the sourced diary entry they came from
     var links = el("wf-links");
@@ -200,17 +300,34 @@
       a.setAttribute("data-no-i18n", "");
       links.appendChild(a);
     });
+
+    /* The end card waits 900ms so the years stay on screen long enough to read.
+       The game has to close NOW though, not in 900ms: without this, pressing
+       Next inside that window dealt one more pair and the card came out saying
+       "stone 13 / 12". */
+    if (at >= STONES || buoys <= 0) {
+      var crossed = at >= STONES;
+      over = true;
+      el("wf-next").disabled = true;
+      setTimeout(function () { finish(crossed); }, 900);
+    }
+  }
+
+  function restart() {
+    streak = 0; right = 0; asked = 0;
+    at = 0; buoys = BUOYS; over = false; won = false; missed = [];
+    var box = el("wf-end");
+    if (box) { box.innerHTML = ""; box.classList.remove("is-on"); }
+    el("wf-next").disabled = false;
+    deal();
   }
 
   el("wf-next").onclick = deal;
-  el("wf-reset").onclick = function () {
-    streak = 0; right = 0; asked = 0;
-    deal();
-  };
+  el("wf-reset").onclick = restart;
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Enter" && answered) deal();
+    if (e.key === "Enter") { if (over) restart(); else if (answered) deal(); }
   });
 
-  deal();
+  restart();
 }());

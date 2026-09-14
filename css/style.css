@@ -1288,3 +1288,75 @@ main .board .cell{ aspect-ratio:1/1; min-height:0 }
   .rt-stop{height:12px}.rt-stop.here{height:22px;flex:0 0 28px}
   .rt-q{font-size:16px}
 }
+
+/* ---- MAP OF CANADA ON THE DRIVING HUB --------------------------------
+   The same shapes as the map game (js/canada-map-svg.js), used here as a way
+   in rather than as a question. A province lights up when it is chosen and its
+   four pages appear underneath, so nobody has to read thirteen cards to find
+   the one that is theirs. */
+.dm-wrap{text-align:center}
+.dm-map{display:block;width:100%;max-width:720px;margin:.75rem auto .25rem;height:auto}
+.dm-usa{fill:#e9e6df}
+.dm-water{fill:#cfe3ef;pointer-events:none}
+.dm-p{stroke:#fdfbf7;stroke-width:1.5;cursor:pointer;transition:opacity .12s ease}
+.dm-p:hover,.dm-p:focus{opacity:.7;outline:none}
+.dm-p:focus-visible{stroke:#2b2d42;stroke-width:3}
+.dm-p.on{stroke:#2b2d42;stroke-width:3}
+.dm-hit{fill:transparent;cursor:pointer}
+.dm-hit.on{fill:none;stroke:#2b2d42;stroke-width:2.5}
+.dm-hide{display:none}
+.dm-panel{min-height:3.5rem;margin:.25rem auto 0;max-width:640px}
+.dm-prompt{margin:.75rem 0}
+.dm-name{margin:.25rem 0 .6rem;font-size:1.25rem}
+.dm-links{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.dm-links .btn{flex:1 1 auto;min-width:8rem}
+@media (max-width:480px){
+  .dm-links .btn{flex:1 1 45%;min-width:0}
+}
+
+/* ---- READ THE ROAD — the road-sign game ------------------------------
+   Big art, big buttons, one question at a time. Sized so a grandparent and a
+   seven-year-old can both use it on the same phone, which is the point of the
+   two-player mode. */
+.rr-wrap{max-width:720px;margin:0 auto;text-align:center}
+.rr-h{margin:.2rem 0 .9rem;font-size:1.25rem}
+.rr-modes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.rr-modes{grid-template-columns:1fr}}
+.rr-mode{display:flex;flex-direction:column;align-items:center;gap:4px;
+  background:#fff;border:2px solid #ded7cc;border-radius:16px;padding:18px 14px;
+  font:inherit;cursor:pointer;transition:border-color .12s}
+.rr-mode:hover,.rr-mode:focus-visible{border-color:#2b6cb0;outline:none}
+.rr-emoji{font-size:30px;line-height:1}
+.rr-mode-t{font-weight:800;color:#2b2d42;font-size:17px}
+.rr-mode-s{color:#5f6b7a;font-size:13.5px;line-height:1.35}
+.rr-art{margin:10px auto 2px;width:min(190px,52vw)}
+.rr-art svg{display:block;width:100%;height:auto}
+.rr-count{color:#5f6b7a;font-size:13px;margin:2px 0 0;font-weight:700}
+.rr-q{font-weight:800;font-size:18px;color:#2b2d42;margin:8px 0 12px;line-height:1.35}
+.rr-opts{display:grid;gap:10px}
+.rr-opt{background:#fff;border:2px solid #ded7cc;border-radius:14px;padding:14px 16px;
+  font:inherit;font-size:16px;color:#2b2d42;cursor:pointer;text-align:center;
+  line-height:1.35;transition:border-color .12s}
+.rr-opt:hover:enabled{border-color:#2b6cb0}
+.rr-opt.win{border-color:#2a9d8f;background:#f2fbf9;font-weight:700}
+.rr-opt.lose{border-color:#e63946;background:#fdf3f4}
+.rr-opt[disabled]{cursor:default}
+.rr-fb{min-height:26px;margin:12px 0 2px;font-size:15px;line-height:1.45;font-weight:600}
+.rr-fb.ok{color:#1d7a6e}
+.rr-fb.no{color:#c32b38}
+.rr-teach{display:inline-block;margin-top:6px;color:#5f6b7a;font-weight:600;font-size:13.5px}
+.rr-after{margin-top:8px}
+.rr-scores{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:4px 0 2px}
+.rr-score{background:#fff;border:1px solid #e6e1d8;border-radius:12px;padding:8px 16px;
+  font-weight:800;color:#2b2d42;font-size:16px;min-width:92px}
+.rr-score span{display:block;color:#5f6b7a;font-weight:600;font-size:12.5px}
+.rr-scores.big .rr-score{font-size:30px;padding:10px 22px}
+.rr-turn{font-weight:800;color:#2b2d42;font-size:17px;margin:2px 0 6px}
+.rr-big{font-size:64px;line-height:1;font-weight:800;color:#2b2d42;margin:6px 0 2px}
+.rr-sub{color:#5f6b7a;margin:0 0 10px}
+.rr-names{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0 14px}
+.rr-in{border:2px solid #ded7cc;border-radius:12px;padding:12px 14px;font:inherit;
+  font-size:16px;min-width:150px;text-align:center}
+.rr-in:focus{border-color:#2b6cb0;outline:none}
+.rr-note{font-size:12.5px;margin-top:12px}
+.rr-loading{color:#5f6b7a;font-weight:700;padding:40px 0}
