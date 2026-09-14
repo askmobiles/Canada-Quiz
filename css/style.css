@@ -1360,3 +1360,43 @@ main .board .cell{ aspect-ratio:1/1; min-height:0 }
 .rr-in:focus{border-color:#2b6cb0;outline:none}
 .rr-note{font-size:12.5px;margin-top:12px}
 .rr-loading{color:#5f6b7a;font-weight:700;padding:40px 0}
+
+/* ---- THE LANDS — the shared game layout ---------------------------
+   One drawn situation, big buttons under it, used by every land. Sized for a
+   child on a tablet with a grown-up leaning in, which is how these are played. */
+.land-wrap{max-width:560px;margin:0 auto;text-align:center}
+.land-intro{font-size:17px;color:#2b2d42;font-weight:600;margin:10px 0 16px}
+.land-svg{display:block;width:min(420px,92%);margin:8px auto 2px;height:auto}
+.land-bar{display:flex;gap:10px;justify-content:center;margin:2px 0 4px}
+.land-stat{background:#fff;border:1px solid #e6e1d8;border-radius:12px;padding:7px 16px;
+  font-weight:800;color:#2b2d42;font-size:16px;min-width:86px}
+.land-stat span{display:block;color:#5f6b7a;font-weight:600;font-size:12.5px}
+.land-count{color:#5f6b7a;font-size:13px;font-weight:700;margin:2px 0 0}
+.land-q{font-weight:800;font-size:17.5px;color:#2b2d42;margin:8px 0 14px;line-height:1.4}
+.land-opts{display:grid;gap:10px}
+.land-opt{background:#fff;border:2px solid #ded7cc;border-radius:14px;padding:14px 16px;
+  font:inherit;font-size:16px;color:#2b2d42;cursor:pointer;text-align:left;
+  line-height:1.4;transition:border-color .12s}
+.land-opt:hover:enabled{border-color:#2b6cb0}
+.land-opt.win{border-color:#2a9d8f;background:#f2fbf9;font-weight:700}
+.land-opt.lose{border-color:#e63946;background:#fdf3f4}
+.land-opt[disabled]{cursor:default}
+.land-fb{min-height:26px;margin:14px 0 2px;font-size:15.5px;line-height:1.5;text-align:left}
+.land-fb.ok{color:#1d7a6e}
+.land-fb.no{color:#c32b38}
+.land-after{margin-top:10px}
+.land-big{font-size:64px;line-height:1;font-weight:800;color:#2b2d42;margin:8px 0 2px}
+.land-sub{color:#5f6b7a;margin:0 0 8px;font-weight:700}
+.land-all{font-size:17px;font-weight:700;color:#1d7a6e;margin:10px 0}
+.land-head2{font-weight:800;font-size:18px;color:#2b2d42;margin:18px 0 4px}
+.land-note{font-size:14px;margin:0 0 12px}
+.land-missed{list-style:none;padding:0;margin:0;text-align:left}
+.land-missed li{background:#fff;border:1px solid #e6e1d8;border-radius:14px;
+  padding:12px 14px;margin:0 0 10px;font-size:14.5px;line-height:1.5;
+  display:flex;gap:14px;align-items:center}
+.land-missed .land-svg{width:150px;flex:0 0 150px;margin:0}
+@media (max-width:520px){
+  .land-missed li{flex-direction:column;align-items:stretch}
+  .land-missed .land-svg{width:100%;flex:none}
+}
+.land-talk{margin-top:16px;font-weight:700;color:#2b2d42}
