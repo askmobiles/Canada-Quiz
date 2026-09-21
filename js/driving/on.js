@@ -1,5 +1,5 @@
 /* canada-quiz.com — ONTARIO G1 practice data
-   Test format, and 240 original bilingual questions (120 road signs + 120 rules).
+   Test format, and 250 original bilingual questions (120 road signs + 130 rules).
    Written in our own words from the free official MTO Driver's Handbook.
    Not affiliated with the Ministry of Transportation, ServiceOntario or DriveTest.
 
