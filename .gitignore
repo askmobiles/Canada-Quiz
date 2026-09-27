@@ -26,5 +26,8 @@ build/
 # The build tools live in the private folder, never here.
 tools/
 
-# Claude/OneDrive drops sample files here; they are not part of the site.
-Claude outputs/
+# A sync folder may drop sample files into a directory whose name ends in
+# "outputs". Matched by pattern rather than by name, so this file names no
+# tool: the repository is public, and a public file should not describe the
+# owner's setup.
+*outputs/
