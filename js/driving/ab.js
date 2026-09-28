@@ -277,7 +277,7 @@ window.CQ_DRIVE_Q = [];
     fr:{ q:"Un conducteur de classe 5-GDL en Alberta peut-il servir d'accompagnateur pour un apprenti ?", a:["Non, l'accompagnateur doit détenir un permis complet","Oui, du moment qu'il a plus de 18 ans","Oui, si l'apprenti est un membre de sa famille","Oui, mais seulement pendant le jour"], e:"En Alberta, seul un conducteur titulaire d'un permis complet peut accompagner un apprenti, donc un conducteur probatoire ne peut pas occuper ce siège." },
     c:0 },
   { id:"abr9", sec:"rules", topic:"licence",
-    en:{ q:"How many demerit points will suspend the licence of an Alberta graduated licensing driver?", a:["6","8","10","15"], e:"In Alberta a learner or probationary driver is suspended at 8 demerit points, while a fully licensed driver has more room." },
+    en:{ q:"How many demerit points will suspend the licence of an Alberta graduated licensing driver?", a:["6","8","10","15"], e:"In Alberta a learner or probationary driver is suspended at 8 demerit points collected within two years, while a fully licensed driver has until 15." },
     fr:{ q:"Combien de points d'inaptitude entraînent la suspension du permis d'un conducteur albertain au permis graduel ?", a:["6","8","10","15"], e:"En Alberta, un apprenti ou un conducteur probatoire est suspendu à 8 points d'inaptitude, alors qu'un conducteur au permis complet a plus de marge." },
     c:1 },
   { id:"abr10", sec:"rules", topic:"licence",

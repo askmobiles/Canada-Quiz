@@ -414,10 +414,10 @@ window.CQ_DRIVE_Q = [];
 
 { id:"per15", sec:"rules", topic:"demerits",
   en:{ q:"How many demerit points bring a suspension for a Stage 2 or Stage 3 driver?",
-       a:["Twelve, over any period","Three within six months","Six within 12 months, or nine within 24 months","There is no threshold at these stages"],
-       e:"A newly licensed driver is suspended at six points within 12 months or nine within 24. A repeat offence also lengthens the time spent in the graduated program." },
+       a:["Twelve, over any period","Three within six months","Six points in Stage 2, or nine points in Stage 3","There is no threshold at these stages"],
+       e:"Prince Edward Island sets the threshold by stage, not by a rolling window: a Stage 2 driver is suspended at six points, a Stage 3 driver at nine. Do not assume points expire in time to save you." },
   fr:{ q:"Combien de points d'inaptitude entraînent une suspension pour un conducteur de l'étape 2 ou de l'étape 3 ?",
-       a:["Douze, sur n'importe quelle période","Trois en six mois","Six en 12 mois, ou neuf en 24 mois","Il n'y a aucun seuil à ces étapes"],
+       a:["Douze, sur n'importe quelle période","Trois en six mois","Six points à l'étape 2, ou neuf points à l'étape 3","Il n'y a aucun seuil à ces étapes"],
        e:"Un conducteur récemment titulaire d'un permis est suspendu à six points en 12 mois ou à neuf points en 24 mois. Une récidive allonge aussi la durée du programme progressif." },
   c:2 },
 

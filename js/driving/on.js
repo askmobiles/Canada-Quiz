@@ -572,10 +572,10 @@ window.CQ_DRIVE_Q = [];
 { id:"ra1", sec:"rules", topic:"licensing",
   en:{ q:"While you drive with a G1 licence, how much alcohol may the accompanying driver beside you have in their blood?",
        a:["Zero, the same as your own limit","Below .08","Below .05","No limit applies to them"],
-       e:"The accompanying driver must stay below .05. They also need a full class G licence with at least four years of driving experience, and they must sit in the front passenger seat. Your own limit as a G1 driver stays at zero." },
+       e:"The accompanying driver must stay below .05 — and if they are 21 or under, their limit is zero, like yours. They also need a full class G licence with at least four years of driving experience, and they must sit in the front passenger seat. Your own limit as a G1 driver stays at zero." },
   fr:{ q:"Pendant que vous conduisez avec un permis G1, quel taux d'alcool l'accompagnateur assis à côté de vous peut-il avoir dans le sang ?",
        a:["Zéro, comme votre propre limite","Sous 0,08","Sous 0,05","Aucune limite ne s'applique à lui"],
-       e:"L'accompagnateur doit rester sous 0,05. Il doit aussi détenir un permis complet de classe G avec au moins quatre ans d'expérience de conduite et s'asseoir sur le siège du passager avant. Votre propre limite comme conducteur G1 reste à zéro." },
+       e:"L'accompagnateur doit rester sous 0,05 — et s'il a 21 ans ou moins, sa limite est zéro, comme la vôtre. Il doit aussi détenir un permis complet de classe G avec au moins quatre ans d'expérience de conduite et s'asseoir sur le siège du passager avant. Votre propre limite comme conducteur G1 reste à zéro." },
   c:2 },
 
 { id:"ra2", sec:"rules", topic:"licensing",
