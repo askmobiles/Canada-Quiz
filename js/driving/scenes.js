@@ -15,7 +15,7 @@
  *
  * WHERE THE ANSWERS COME FROM
  * ---------------------------
- * Every one of the 26 situations is checked against the Official MTO Driver's
+ * Every one of the 35 situations is checked against the Official MTO Driver's
  * Handbook on ontario.ca, and each carries the chapter it came from in "s", so
  * a learner who does not believe an answer can go and read the rule. The
  * handbook's own words appear in the explanation wherever they are short enough
@@ -64,6 +64,36 @@
       u: "https://www.ontario.ca/document/official-mto-drivers-handbook/driving-night-and-bad-weather",
       en: "Driver's Handbook — Driving at night and in bad weather",
       fr: "Guide du conducteur — Conduire la nuit et par mauvais temps"
+    },
+    stopping: {
+      u: "https://www.ontario.ca/document/official-mto-drivers-handbook/stopping",
+      en: "Driver's Handbook — Stopping",
+      fr: "Guide du conducteur — L'arrêt"
+    },
+    marks: {
+      u: "https://www.ontario.ca/document/official-mto-drivers-handbook/pavement-markings",
+      en: "Driver's Handbook — Pavement markings",
+      fr: "Guide du conducteur — Les marques sur la chaussée"
+    },
+    passing: {
+      u: "https://www.ontario.ca/document/official-mto-drivers-handbook/changing-positions",
+      en: "Driver's Handbook — Changing positions",
+      fr: "Guide du conducteur — Changer de position"
+    },
+    parking: {
+      u: "https://www.ontario.ca/document/official-mto-drivers-handbook/parking-along-roadways",
+      en: "Driver's Handbook — Parking along roadways",
+      fr: "Guide du conducteur — Le stationnement en bordure de route"
+    },
+    freeway: {
+      u: "https://www.ontario.ca/document/official-mto-drivers-handbook/freeway-driving",
+      en: "Driver's Handbook — Freeway driving",
+      fr: "Guide du conducteur — La conduite sur autoroute"
+    },
+    situations: {
+      u: "https://www.ontario.ca/document/official-mto-drivers-handbook/dealing-particular-situations",
+      en: "Driver's Handbook — Dealing with particular situations",
+      fr: "Guide du conducteur — Faire face à des situations particulières"
     },
     emerg: {
       u: "https://www.ontario.ca/page/driving-near-emergency-vehicles",
@@ -610,7 +640,193 @@
       fr: "Si la chaussée semble noire et luisante, soyez méfiant : elle peut être couverte d'une mince couche de glace, la glace noire. Les ponts, les zones ombragées et les viaducs gèlent en premier."
     },
     s: "weather"
+  },
+
+  /* ---------- school zones, guards and work zones ------------------- */
+  {
+    id: "school-crossing-guard",
+    sc: { kind: "road", sign: "warn-school-crossing", ped: "cross", you: { y: 262 } },
+    q: {
+      en: "The school crossing is marked and a crossing guard is still standing out in the road. The last child has just reached the far sidewalk. What do you do?",
+      fr: "Le passage scolaire est marqué et un brigadier se tient encore sur la chaussée. Le dernier enfant vient d'atteindre le trottoir d'en face. Que faites-vous ?"
+    },
+    a: [
+      { en: "Stay stopped until the guard is off the road too", fr: "Restez immobilisé jusqu'à ce que le brigadier ait lui aussi quitté la chaussée" },
+      { en: "Go now — the children are across", fr: "Avancez maintenant : les enfants sont passés" },
+      { en: "Edge forward slowly past the guard", fr: "Avancez doucement en dépassant le brigadier" },
+      { en: "Go around the guard on the far side of the road", fr: "Contournez le brigadier par l'autre côté de la chaussée" }
+    ],
+    c: 0,
+    why: {
+      en: "You must stop before the crossing and “remain stopped until all people, including the school crossing guard, have cleared the entire roadway.” The guard is a person on the road, not a signal. Not stopping properly carries three demerit points.",
+      fr: "Vous devez vous arrêter avant le passage et rester immobilisé jusqu'à ce que toutes les personnes, y compris le brigadier scolaire, aient complètement quitté la chaussée. Le brigadier est une personne sur la route, pas un feu. Ne pas s'arrêter correctement vaut trois points d'inaptitude."
+    },
+    s: "stopping"
+  },
+  {
+    id: "community-safety-zone",
+    sc: { kind: "road", sign: "community-safety-zone", you: { y: 262 } },
+    q: {
+      en: "You pass this sign. What has just changed for you as a driver?",
+      fr: "Vous passez devant ce panneau. Qu'est-ce qui vient de changer pour vous comme conducteur ?"
+    },
+    a: [
+      { en: "Nothing about the rules, but fines for breaking them go up here", fr: "Rien dans les règles, mais les amendes y sont plus élevées" },
+      { en: "The speed limit automatically drops to 40 km/h", fr: "La limite de vitesse passe automatiquement à 40 km/h" },
+      { en: "It only applies during school hours", fr: "Cela ne s'applique que pendant les heures d'école" },
+      { en: "It is a warning sign with no legal effect", fr: "C'est un panneau d'avertissement sans effet juridique" }
+    ],
+    c: 0,
+    why: {
+      en: "The sign marks somewhere “the community has identified that there is a special risk to pedestrians,” and “traffic related offences committed within the zone are subject to increased fines.” The speed limit is whatever is posted — the sign does not change it by itself.",
+      fr: "Le panneau signale un endroit où la communauté a jugé qu'il existe un risque particulier pour les piétons, et les infractions routières commises dans la zone entraînent des amendes plus élevées. La limite de vitesse reste celle qui est affichée : le panneau ne la change pas à lui seul."
+    },
+    s: "signs"
+  },
+  {
+    id: "construction-flagger",
+    sc: { kind: "road", sign: "temp-flagger", you: { y: 262 } },
+    q: {
+      en: "A traffic-control person in the work zone ahead is holding a STOP paddle towards you. What do you do?",
+      fr: "Dans la zone de travaux devant vous, un signaleur brandit une palette ARRÊT dans votre direction. Que faites-vous ?"
+    },
+    a: [
+      { en: "Stop, and wait until they signal you through", fr: "Arrêtez-vous et attendez son signal pour repartir" },
+      { en: "Slow to a crawl and keep rolling past", fr: "Ralentissez au pas et continuez à rouler" },
+      { en: "Obey the posted signs but treat the flagger as advisory", fr: "Obéissez aux panneaux, mais considérez le signaleur comme facultatif" },
+      { en: "Change lanes and go around the closed section yourself", fr: "Changez de voie et contournez vous-même la section fermée" }
+    ],
+    c: 0,
+    why: {
+      en: "“It is also an offence to disobey STOP or SLOW signs displayed by a traffic-control person or firefighter.” The handbook also says plainly: in a construction zone, do not change lanes. Speeding fines are doubled where workers are present.",
+      fr: "Désobéir aux panneaux ARRÊT ou LENTEMENT d'un signaleur ou d'un pompier est une infraction. Le guide dit aussi clairement de ne pas changer de voie dans une zone de travaux. Les amendes pour excès de vitesse y sont doublées lorsque des travailleurs sont présents."
+    },
+    s: "situations"
+  },
+
+  /* ---------- passing, merging and lane discipline ------------------ */
+  {
+    id: "solid-yellow-line",
+    sc: { kind: "road", centre: "solid", cars: [{ at: "ahead" }], you: { y: 268 } },
+    q: {
+      en: "You are behind a slower car on a two-lane road. The centre line is solid yellow on your side, and the road ahead looks empty. Can you pass?",
+      fr: "Vous suivez une voiture plus lente sur une route à deux voies. La ligne centrale est jaune continue de votre côté et la route devant paraît vide. Pouvez-vous dépasser ?"
+    },
+    a: [
+      { en: "No — a solid line on your side means passing is unsafe here", fr: "Non : une ligne continue de votre côté signifie qu'il est dangereux de dépasser ici" },
+      { en: "Yes, if you can see far enough and nothing is coming", fr: "Oui, si vous voyez assez loin et que rien n'arrive" },
+      { en: "Yes, because the car ahead is unusually slow", fr: "Oui, parce que la voiture devant est particulièrement lente" },
+      { en: "Only if the line is solid on both sides", fr: "Seulement si la ligne est continue des deux côtés" }
+    ],
+    c: 0,
+    why: {
+      en: "“A solid line at the left of your lane means it is unsafe to pass.” An empty-looking road is not the test — the line is there because of what you cannot see, such as a hill crest or a curve.",
+      fr: "Une ligne continue à gauche de votre voie signifie qu'il est dangereux de dépasser. Une route qui paraît vide n'est pas le critère : la ligne est là à cause de ce que vous ne voyez pas, comme un sommet de côte ou une courbe."
+    },
+    s: "marks"
+  },
+  {
+    id: "broken-yellow-line",
+    sc: { kind: "road", centre: "broken", cars: [{ at: "ahead" }], you: { y: 262 } },
+    q: {
+      en: "Same road, but now the centre line is broken yellow on your side. You may pass. What must you do first?",
+      fr: "Même route, mais la ligne centrale est maintenant jaune discontinue de votre côté. Vous pouvez dépasser. Que devez-vous faire d'abord ?"
+    },
+    a: [
+      { en: "Signal, and check the way is clear both ahead and behind", fr: "Signalez, et vérifiez que la voie est libre devant et derrière" },
+      { en: "Just go — a broken line means passing is always allowed", fr: "Allez-y : une ligne discontinue autorise toujours le dépassement" },
+      { en: "Check ahead only, since you are moving left", fr: "Vérifiez seulement devant, puisque vous vous déplacez à gauche" },
+      { en: "Pull out first, then signal so you do not confuse the driver ahead", fr: "Déboîtez d'abord, puis signalez pour ne pas troubler le conducteur devant" }
+    ],
+    c: 0,
+    why: {
+      en: "“A broken line at the left of your lane means you may pass if the way is clear.” The handbook asks you to “use your left-turn signal… and check that the way is clear ahead and behind before moving into the passing lane.” Passing is also banned within 30 metres of a pedestrian crossover, or of a bridge, viaduct or tunnel.",
+      fr: "Une ligne discontinue à gauche de votre voie signifie que vous pouvez dépasser si la voie est libre. Le guide demande d'utiliser le clignotant gauche et de vérifier que la voie est libre devant et derrière avant de vous déporter. Le dépassement est aussi interdit à moins de 30 mètres d'un passage pour piétons, d'un pont, d'un viaduc ou d'un tunnel."
+    },
+    s: "passing"
+  },
+  {
+    id: "being-passed",
+    sc: { kind: "road", twoLane: true, behind: true, you: { y: 250 } },
+    q: {
+      en: "You are at the speed limit. A car comes up fast behind you and pulls out to pass. What do you do?",
+      fr: "Vous roulez à la limite de vitesse. Une voiture arrive vite derrière vous et déboîte pour vous dépasser. Que faites-vous ?"
+    },
+    a: [
+      { en: "Move closer to the right of your lane and let them by", fr: "Serrez à droite dans votre voie et laissez-la passer" },
+      { en: "Hold your position — you are already at the limit", fr: "Gardez votre position : vous êtes déjà à la limite" },
+      { en: "Tap the brakes to warn them off", fr: "Touchez les freins pour la dissuader" },
+      { en: "Speed up so they give up on passing", fr: "Accélérez pour qu'elle renonce à dépasser" }
+    ],
+    c: 0,
+    why: {
+      en: "“When faster traffic wants to pass you, move to the right and let it pass in safety.” If they have pulled into the oncoming lane, watch that lane and move closer to your right. And the handbook is blunt about the last option: “do not speed up when another driver is trying to pass you. It is unlawful and dangerous.”",
+      fr: "Quand une circulation plus rapide veut vous dépasser, serrez à droite et laissez-la passer en sécurité. Si elle s'est engagée dans la voie inverse, surveillez cette voie et rapprochez-vous de votre droite. Le guide est net sur la dernière réponse : n'accélérez pas quand un autre conducteur tente de vous dépasser, c'est illégal et dangereux."
+    },
+    s: "passing"
+  },
+
+  /* ---------- the country road -------------------------------------- */
+  {
+    id: "crossbuck-no-lights",
+    sc: { kind: "road", sign: "warn-crossbuck", tracks: true, you: { y: 268 } },
+    q: {
+      en: "A railway crossing with the X sign, but no lights and no gates. What does the law ask of you here?",
+      fr: "Un passage à niveau avec le panneau en X, mais sans feux ni barrières. Qu'exige la loi de vous ici ?"
+    },
+    a: [
+      { en: "Slow down, look and listen both ways, cross only when sure", fr: "Ralentir, regarder et écouter des deux côtés, et ne traverser qu'une fois certain" },
+      { en: "Come to a full stop, the way a school bus must", fr: "Faire un arrêt complet, comme doit le faire un autobus scolaire" },
+      { en: "Keep your speed — no lights means the line is not in use", fr: "Garder votre vitesse : sans feux, la ligne n'est pas en service" },
+      { en: "Sound your horn and cross without slowing", fr: "Klaxonner et traverser sans ralentir" }
+    ],
+    c: 0,
+    why: {
+      en: "“Slow down, listen and look both ways to make sure the way is clear before crossing the tracks.” A full stop is required of school buses, not of cars. If a train is coming, stop at least five metres from the nearest rail — and never try to beat it, because a train can take up to two kilometres to stop.",
+      fr: "Ralentissez, écoutez et regardez des deux côtés pour vous assurer que la voie est libre avant de traverser. L'arrêt complet est exigé des autobus scolaires, pas des voitures. Si un train arrive, arrêtez-vous à au moins cinq mètres du rail le plus proche — et n'essayez jamais de le devancer : un train peut mettre jusqu'à deux kilomètres à s'arrêter."
+    },
+    s: "stopping"
+  },
+  {
+    id: "deer-dusk",
+    sc: { kind: "road", sign: "warn-deer", you: { y: 262 } },
+    q: {
+      en: "Dusk on a country road. A deer is standing at the edge of the pavement, watching you come. What do you do?",
+      fr: "Au crépuscule sur une route de campagne. Un chevreuil se tient au bord de la chaussée et vous regarde approcher. Que faites-vous ?"
+    },
+    a: [
+      { en: "Slow down, sound your horn, and be ready to stop", fr: "Ralentir, klaxonner et être prêt à vous arrêter" },
+      { en: "Steer around it into the other lane", fr: "Le contourner en passant dans l'autre voie" },
+      { en: "Keep your speed and flash your high beams to scare it", fr: "Garder votre vitesse et faire des appels de phares pour l'effrayer" },
+      { en: "Pull onto the shoulder to let it decide", fr: "Vous ranger sur l'accotement pour la laisser décider" }
+    ],
+    c: 0,
+    why: {
+      en: "“Slow down and sound your horn.” The handbook warns against the other three: “don't try to drive around the animal,” because “animal movements are unpredictable,” and do not park on the shoulder, since other drivers may be watching the animal instead of you. Watch for more — where there is one, there are often others.",
+      fr: "Ralentissez et klaxonnez. Le guide déconseille les trois autres réponses : n'essayez pas de contourner l'animal, car ses mouvements sont imprévisibles, et ne vous arrêtez pas sur l'accotement, d'autres conducteurs pouvant regarder l'animal plutôt que vous. Surveillez les suivants : là où il y en a un, il y en a souvent d'autres."
+    },
+    s: "situations"
+  },
+  {
+    id: "slow-moving-vehicle",
+    sc: { kind: "road", sign: "slow-vehicle", centre: "broken", cars: [{ at: "ahead" }], you: { y: 268 } },
+    q: {
+      en: "A vehicle ahead carries the orange and red triangle, and you are coming up to the crest of a hill. What do you do?",
+      fr: "Le véhicule devant vous porte le triangle orange et rouge, et vous approchez du sommet d'une côte. Que faites-vous ?"
+    },
+    a: [
+      { en: "Stay well back and wait until you can see far enough to pass", fr: "Restez bien en retrait et attendez de voir assez loin pour dépasser" },
+      { en: "Pass on the hill — it will pull over for you", fr: "Dépassez dans la côte : il se rangera pour vous" },
+      { en: "Pass on the right shoulder to avoid the centre line", fr: "Dépassez par l'accotement de droite pour éviter la ligne centrale" },
+      { en: "Follow close behind, ready to pull out the moment it straightens", fr: "Collez-le de près, prêt à déboîter dès que la route se redresse" }
+    ],
+    c: 0,
+    why: {
+      en: "The triangle means the vehicle travels at 40 km/h or less: “stay well back and do not pass until it is safe to do so.” And the handbook is specific about where it is not safe — “don't attempt to pass when approaching the crest of a hill or on a curve where your vision of oncoming traffic is obstructed.”",
+      fr: "Le triangle signifie que le véhicule roule à 40 km/h ou moins : restez bien en retrait et ne dépassez pas avant qu'il soit sûr de le faire. Le guide précise où ce n'est pas sûr : n'essayez pas de dépasser à l'approche d'un sommet de côte ou dans une courbe où votre vue de la circulation venant en sens inverse est masquée."
+    },
+    s: "share"
   }
 
-  ];
+];
 }());

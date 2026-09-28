@@ -326,12 +326,18 @@
       dashes(C.vR + 10, (C.hTop + C.hBot) / 2, V.w - C.vR - 10, false, COL.line) +
       rect(C.vL, C.stopLine, C.vR - C.vL - 45, 5, "#ffffff", ' opacity=".9"');
   }
-  function straightRoad(twoLane) {
+  function straightRoad(twoLane, centre) {
+    /* WHY "centre" EXISTS
+       Two scenarios turn entirely on whether the centre line is solid or
+       broken — that is the whole rule being taught. Drawing a dashed line for
+       both made the two pictures identical, so the learner was asked to read a
+       line the drawing never showed. "solid" draws the unbroken yellow line. */
     var l = twoLane ? 130 : R.l, r = twoLane ? 300 : R.r;
     var o = rect(0, 0, V.w, V.h, COL.grass) + rect(l, 0, r - l, V.h, COL.road);
-    o += twoLane
-      ? dashes(215, 0, V.h, true, COL.dash) + rect(r, 0, 34, V.h, "#b9a98e")
-      : dashes(210, 0, V.h, true, COL.line);
+    var x = twoLane ? 215 : 210, col = twoLane ? COL.dash : COL.line;
+    o += centre === "solid" ? rect(x - 2, 0, 4, V.h, col)
+                            : dashes(x, 0, V.h, true, col);
+    if (twoLane) o += rect(r, 0, 34, V.h, "#b9a98e");
     return o;
   }
   function dividedRoad() {
@@ -390,7 +396,7 @@
       o += mineCar(C.mine, mineY);
 
     } else if (sc.kind === "road") {
-      o += straightRoad(sc.twoLane);
+      o += straightRoad(sc.twoLane, sc.centre);
       if (sc.fog) {
         o += '<defs><linearGradient id="dgfog" x1="0" y1="0" x2="0" y2="1">' +
           '<stop offset="0" stop-color="#eef2f5" stop-opacity=".95"/>' +
@@ -464,6 +470,17 @@
         o += mineCar(232, 288);
       }
     }
+
+    /* THE SITE NAME, ON THE PICTURE ITSELF
+       These drawings travel. A learner screenshots one and sends it to a
+       friend, a teacher drops it in a slide, an assistant shows it in an
+       answer — and by then the page it came from is gone. The mark rides in
+       the corner of the grass, dark enough to survive a screenshot and quiet
+       enough that it never competes with the road. It carries no words, only
+       the domain, so one drawing still serves both languages. */
+    o += '<text x="' + (V.w - 8) + '" y="' + (V.h - 7) + '" text-anchor="end" ' +
+      'font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" ' +
+      'fill="#2f3a44" opacity=".45">canada-quiz.com</text>';
 
     return '<svg viewBox="0 0 ' + V.w + " " + V.h + '" role="img" ' +
       'preserveAspectRatio="xMidYMid meet" aria-label="' +
