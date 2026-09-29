@@ -409,7 +409,17 @@
       });
     });
     function openTarget() {
-      var el = location.hash && document.querySelector(location.hash);
+      // A hash is not always a valid CSS selector. The browser percent-encodes
+      // anything non-ASCII, so a French page reaching #mélange arrives here as
+      // "#m%C3%A9lange" and querySelector throws, killing everything after it
+      // in this function. Found 29 September 2026 when the quiz topic slugs
+      // started putting real hashes on these pages for the first time.
+      var el = null;
+      try { el = location.hash && document.querySelector(location.hash); }
+      catch (e) {
+        try { el = document.getElementById(decodeURIComponent(location.hash.slice(1))); }
+        catch (e2) { el = null; }
+      }
       while (el) { if (el.tagName === "DETAILS") el.open = true; el = el.parentElement; }
     }
     window.addEventListener("hashchange", openTarget);
