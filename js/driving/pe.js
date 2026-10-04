@@ -405,11 +405,11 @@ window.CQ_DRIVE_Q = [];
 
 { id:"per14", sec:"rules", topic:"demerits",
   en:{ q:"What happens to a Stage 1 permit when the driver is convicted of an offence that carries demerit points?",
-       a:["Nothing until six points have built up","A warning letter is sent for a first offence","The points are recorded but never lead to a suspension","The permit is suspended for at least 30 days, however few the points"],
-       e:"At Stage 1 there is no allowance at all. Any conviction carrying demerit points suspends the instruction permit for a minimum of 30 days, which is stricter than the thresholds that apply later on." },
+       a:["Nothing until six points have built up","A warning letter is sent for a first offence","The points are recorded but never lead to a suspension","The permit is suspended for one month, however few the points"],
+       e:"At Stage 1 there is no allowance at all. Any conviction carrying demerit points suspends the instruction permit for one month, which is stricter than the thresholds that apply later on." },
   fr:{ q:"Qu'arrive-t-il au permis d'apprenti lorsque son titulaire est déclaré coupable d'une infraction assortie de points d'inaptitude ?",
-       a:["Rien tant que six points ne sont pas accumulés","Une lettre d'avertissement est envoyée à la première infraction","Les points sont inscrits mais n'entraînent jamais de suspension","Le permis est suspendu au moins 30 jours, si peu de points que ce soit"],
-       e:"À l'étape 1, il n'y a aucune marge. Toute condamnation assortie de points d'inaptitude suspend le permis d'apprenti pendant au moins 30 jours, une règle plus sévère que les seuils des étapes suivantes." },
+       a:["Rien tant que six points ne sont pas accumulés","Une lettre d'avertissement est envoyée à la première infraction","Les points sont inscrits mais n'entraînent jamais de suspension","Le permis est suspendu un mois, quel que soit le nombre de poins, si peu de points que ce soit"],
+       e:"À l'étape 1, il n'y a aucune marge. Toute condamnation assortie de points d'inaptitude suspend le permis d'apprenti pendant un mois, une règle plus sévère que les seuils des étapes suivantes." },
   c:3 },
 
 { id:"per15", sec:"rules", topic:"demerits",
@@ -678,11 +678,11 @@ window.CQ_PROVINCE = {
 
 { id:"pex8", sec:"rules",
   en:{ q:"What happens to a Prince Edward Island Stage 1 driver who collects any demerit points?",
-       a:["Nothing until six points","A suspension of at least 30 days","A written warning only","A fine but no suspension"],
-       e:"At Stage 1 any conviction carrying demerit points brings a suspension of at least 30 days. Stage 2 allows 6 points and Stage 3 allows 9." },
+       a:["Nothing until six points","A one-month suspension","A written warning only","A fine but no suspension"],
+       e:"At Stage 1 any conviction carrying demerit points brings a one-month suspension. Stage 2 allows 6 points and Stage 3 allows 9." },
   fr:{ q:"Qu'arrive-t-il à un conducteur de l'étape 1 qui accumule des points d'inaptitude à l'Île-du-Prince-Édouard ?",
-       a:["Rien avant six points","Une suspension d'au moins 30 jours","Un simple avertissement écrit","Une amende sans suspension"],
-       e:"À l'étape 1, toute condamnation entraînant des points d'inaptitude donne lieu à une suspension d'au moins 30 jours. L'étape 2 permet 6 points et l'étape 3, 9 points." },
+       a:["Rien avant six points","Une suspension d'un mois","Un simple avertissement écrit","Une amende sans suspension"],
+       e:"À l'étape 1, toute condamnation entraînant des points d'inaptitude donne lieu à une suspension d'un mois. L'étape 2 permet 6 points et l'étape 3, 9 points." },
   c:1 },
 
 { id:"pex9", sec:"rules",
