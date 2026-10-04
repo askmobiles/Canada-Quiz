@@ -17,6 +17,14 @@
 .cm-bar .cm-tag{font-weight:800;font-size:.85rem;color:var(--muted)}
 .cm-q{flex:1 1 100%;order:-1;text-align:center;font-weight:800;font-size:1.02rem;color:var(--ink);min-height:2.4em;display:flex;align-items:center;justify-content:center}
 .cm-mapbox{width:100%;background:#e7f2fa;border:2px solid var(--line);border-radius:var(--radius);overflow:hidden;touch-action:manipulation}
+/* The mode menu used to show NO MAP AT ALL - on a page called Map of Canada,
+   and the most visited page on the site. 575 people a month landed here and
+   saw five buttons. The map is now drawn under the buttons while choosing:
+   labels on, nothing tappable, no question bar. */
+.cm-preview .cm-bar{display:none}
+.cm-preview .cm-map{pointer-events:none}
+.cm-preview .cm-mapbox{margin-top:12px}
+
 .cm-map{display:block;width:100%;height:auto}
 .cm-p{stroke:#ffffff;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round;cursor:pointer;transition:fill .18s ease,filter .18s ease}
 .cm-map.cm-lock .cm-p{cursor:default}
@@ -406,9 +414,11 @@
   function goMenu(){
     clearTimers(); clearFx(); clearPins(); mode = null; locked = false;
     svg.classList.remove('cm-dim','cm-lock');
-    show(menu, true); show(play, false); show(res, false);
+    show(menu, true); show(res, false);
+    /* the map stays on screen while choosing a mode - see .cm-preview */
+    show(play, true); play.classList.add('cm-preview');
     show(optsEl, false); show(cardEl, false); show(hintEl, false);
-    show(backBt, false); show(againBt, false); show(gLab, false);
+    show(backBt, false); show(againBt, false); show(gLab, true);
     if (qEl) qEl.textContent = '';
     if (rEl) rEl.textContent = '';
     if (sEl) sEl.textContent = '';
@@ -419,6 +429,7 @@
     mode = m; idx = 0; score = 0; missed = []; locked = false;
     svg.classList.remove('cm-dim','cm-lock');
     show(menu, false); show(res, false); show(play, true);
+    play.classList.remove('cm-preview');
     show(backBt, true); show(againBt, false);
     show(cardEl, false);
     if (m === 'exp'){
