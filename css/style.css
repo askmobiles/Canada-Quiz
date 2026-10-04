@@ -1400,3 +1400,20 @@ main .board .cell{ aspect-ratio:1/1; min-height:0 }
   .land-missed .land-svg{width:100%;flex:none}
 }
 .land-talk{margin-top:16px;font-weight:700;color:#2b2d42}
+
+/* ---- blog.html carries two feature strips ---------------------------------
+   The diary's parchment is deliberate: that page is history, oldest to newest,
+   and the texture is the theme. This one is a plain record of what changed
+   this month, so it wears the site's ordinary card skin instead. Stacked, two
+   parchment strips read as twins and neither one stands out.
+   The layout rules are shared with .diary-feature; only the skin changes, so
+   this block stays small and the two strips can never drift out of alignment.
+   Must be regenerated into css/critical.css — the strip is above the fold. */
+.feature-plain{border:1px solid var(--line);border-left:6px solid var(--red);
+  background-color:var(--card);background-image:none;box-shadow:var(--shadow)}
+.feature-plain:hover{box-shadow:0 10px 26px rgba(43,45,66,.13)}
+.feature-plain .diary-feature-kicker{color:var(--red-dark)}
+/* plain sans, not the diary's hand. The hand is what made it read as a diary. */
+.feature-plain .diary-feature-title{color:var(--ink);font-family:inherit}
+.feature-plain .diary-feature-blurb{color:var(--muted)}
+.feature-plain .diary-feature-go{background:var(--green-dark)}
