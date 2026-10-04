@@ -21,6 +21,14 @@
    and the most visited page on the site. 575 people a month landed here and
    saw five buttons. The map is now drawn under the buttons while choosing:
    labels on, nothing tappable, no question bar. */
+/* The verdict used to vanish after 700ms and the next question began, too
+   fast to read. Nothing moves now until Next is pressed, and a sentence
+   explains the answer, the way the other quizzes on this site do. */
+.cm-why{margin:10px 0 0;font-size:15.5px;line-height:1.55;color:var(--ink);
+  background:#f4f8fd;border:1px solid #dfe9f4;border-radius:12px;padding:11px 13px}
+#cm-nextwrap{margin:12px 0 0}
+.cm-say-ok{color:var(--green-dark)}
+.cm-say-no{color:var(--red-dark)}
 .cm-preview .cm-bar{display:none}
 .cm-preview .cm-map{pointer-events:none}
 .cm-preview .cm-mapbox{margin-top:12px}
@@ -144,13 +152,15 @@
      page, because it is the one word here the French build translates. -->
 </svg>
 <script src="js/canada-map-svg.js?v=18fc8bd3"></script>
-<script src="js/canada-map-places.js?v=b4262689"></script>
+<script src="js/canada-map-places.js?v=c6ae0a69"></script>
 <script src="js/canada-map-draw.js?v=76730dd2"></script>
 <script>CQMap.draw(document.getElementById("cm-svg"), {idPrefix:"cm-s-"});</script>
         </div>
 
         <div class="cm-opts cm-hide" id="cm-opts"></div>
         <div class="cm-card cm-hide" id="cm-card" data-no-i18n></div>
+        <p class="cm-why cm-hide" id="cm-why" data-no-i18n></p>
+        <div class="center cm-hide" id="cm-nextwrap"><button class="btn btn-green" id="cm-next" type="button">Next</button></div>
         <p class="center muted cm-hide" id="cm-hint" style="margin:10px 0 0;font-weight:700">Tap any province or territory on the map.</p>
       </div>
 
@@ -364,7 +374,10 @@
       hintEl = $('cm-hint'),
       backBt = $('cm-back'),
       againBt= $('cm-again'),
-      newBt  = $('cm-new');
+      newBt  = $('cm-new'),
+      whyEl  = $('cm-why'),
+      nextBt = $('cm-next'),
+      nextWrap = $('cm-nextwrap');
 
   if (!svg || !gShape || !menu || !play) return;
 
@@ -417,7 +430,7 @@
     show(menu, true); show(res, false);
     /* the map stays on screen while choosing a mode - see .cm-preview */
     show(play, true); play.classList.add('cm-preview');
-    show(optsEl, false); show(cardEl, false); show(hintEl, false);
+    show(optsEl, false); show(cardEl, false); show(hintEl, false); hideEnd();
     show(backBt, false); show(againBt, false); show(gLab, true);
     if (qEl) qEl.textContent = '';
     if (rEl) rEl.textContent = '';
@@ -477,6 +490,8 @@
 
   function nextRound(){
     clearFx();
+    clearSay();
+    hideEnd();
     locked = false;
     svg.classList.remove('cm-lock');
     if (idx >= order.length){ finish(); return; }
@@ -519,6 +534,14 @@
     }
   }
 
+  /* Capital Cities asked "what is the capital of Quebec?" and never showed
+     Quebec. Whatever the mode, once the round is over the place is lit on the
+     map, so the answer is somewhere you can see. */
+  function lightAnswer(p){
+    var sh = shapes[p.id];
+    if (sh) sh.classList.add('cm-good');
+  }
+
   function lockOptions(){
     if (!optsEl) return;
     var bs = optsEl.querySelectorAll('button');
@@ -530,8 +553,11 @@
     locked = true;
     lockOptions();
     var right = (chosen.id === correct.id);
+    var answer = (mode === 'cap') ? capOf(correct) : nameOf(correct);
     if (right){
       score++; btn.classList.add('cm-ok');
+      say(T('Right \u2014 ' + answer + '.', 'Bonne r\u00e9ponse \u2014 ' + answer + '.'), true);
+      lightAnswer(correct);
     } else {
       btn.classList.add('cm-no');
       missed.push(correct);
@@ -539,9 +565,39 @@
       for (var i=0;i<bs.length;i++){
         if (bs[i].getAttribute('data-id') === correct.id) bs[i].classList.add('cm-ok');
       }
+      say(T('No \u2014 the answer is ' + answer + '.',
+            'Non \u2014 la r\u00e9ponse est ' + answer + '.'), false);
+      lightAnswer(correct);
     }
     paintBar();
-    later(function(){ idx++; nextRound(); }, right ? 750 : 1500);
+    endRound(factsOf(correct)[0]);
+  }
+
+  /* SAY IT IN WORDS. Find It used to answer only by flashing a province dark
+     green or dark red for well under a second. On a map where every province is
+     already a bright colour that is easy to miss entirely - a whole round can
+     go by without knowing whether you were right. Name It and Capital Cities
+     at least colour the button you pressed. Now all of them write the verdict
+     where the question was, and colour it. */
+  /* Nothing advances on a timer any more. A round ends by showing the
+     explanation and the Next button, and the player decides when to move on. */
+  function endRound(why){
+    if (whyEl){ whyEl.textContent = why || ''; show(whyEl, !!why); }
+    show(nextWrap, true);
+  }
+  function hideEnd(){
+    show(whyEl, false); show(nextWrap, false);
+    if (whyEl) whyEl.textContent = '';
+  }
+
+  function say(msg, ok){
+    if (!qEl) return;
+    qEl.textContent = msg;
+    qEl.classList.remove('cm-say-ok', 'cm-say-no');
+    qEl.classList.add(ok ? 'cm-say-ok' : 'cm-say-no');
+  }
+  function clearSay(){
+    if (qEl) qEl.classList.remove('cm-say-ok', 'cm-say-no');
   }
 
   function tapShape(id){
@@ -557,19 +613,21 @@
       score++;
       var g = shapes[id];
       if (g) g.classList.add('cm-good');
+      say(T('Yes \u2014 that is ' + nameOf(p) + '.',
+            'Oui \u2014 c\u2019est ' + nameOf(p) + '.'), true);
       paintBar();
-      later(function(){ idx++; nextRound(); }, 700);
+      endRound(factsOf(p)[0]);
     } else {
       missed.push(target);
       var bad = shapes[id];
       if (bad) bad.classList.add('cm-bad');
+      var good = shapes[target.id];
+      if (good) good.classList.add('cm-good');
+      say(T('No \u2014 you tapped ' + nameOf(p) + '. ' + nameOf(target) + ' is the one in green.',
+            'Non \u2014 vous avez touch\u00e9 ' + nameOf(p) + '. ' + nameOf(target) +
+            ', c\u2019est celle en vert.'), false);
       paintBar();
-      later(function(){
-        if (bad) bad.classList.remove('cm-bad');
-        var good = shapes[target.id];
-        if (good) good.classList.add('cm-good');
-        later(function(){ idx++; nextRound(); }, 900);
-      }, 600);
+      endRound(factsOf(target)[0]);
     }
   }
 
@@ -708,6 +766,8 @@
 
   function wRound(){
     clearPins(); clearFx();
+    clearSay();
+    hideEnd();
     locked = false;
     svg.classList.remove('cm-lock');
     if (idx >= wOrder.length){ finish(); return; }
@@ -742,7 +802,7 @@
                                    wName(p) + ' est ici — vous étiez à environ ' + km + ' km.');
     }
     if (sEl) sEl.textContent = T('Score ', 'Score ') + score + ' / ' + wOrder.length;
-    later(function(){ idx++; wRound(); }, ok ? 1100 : 2100);
+    endRound(FR ? p.ff : p.ef);
   }
 
   gShape.addEventListener('click', function(ev){
@@ -762,6 +822,10 @@
     var el = $(k);
     if (el) el.addEventListener('click', function(){ start(mb[k]); });
   });
+  if (nextBt) nextBt.addEventListener('click', function(){
+    idx++;
+    if (mode === 'where') wRound(); else nextRound();
+  });
   if (backBt)  backBt.addEventListener('click', goMenu);
   if (againBt) againBt.addEventListener('click', function(){ if (mode) start(mode); });
   if (newBt)   newBt.addEventListener('click', goMenu);
@@ -770,7 +834,7 @@
 })();
 </script>
   <script src="js/game-fullscreen.js?v=35da7b56"></script>
-  <script src="js/site.js?v=a1b0990c"></script>
+  <script src="js/site.js?v=ca1b99e2"></script>
   <script src="js/analytics.js?v=065edc09"></script>
   <script src="js/ads.js?v=00e703ff" defer></script>
   <script src="js/pwa.js?v=cb9b3ff7" defer></script>
