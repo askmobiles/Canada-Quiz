@@ -1417,3 +1417,38 @@ main .board .cell{ aspect-ratio:1/1; min-height:0 }
 .feature-plain .diary-feature-title{color:var(--ink);font-family:inherit}
 .feature-plain .diary-feature-blurb{color:var(--muted)}
 .feature-plain .diary-feature-go{background:var(--green-dark)}
+
+/* ---- tap targets ---------------------------------------------------------
+   WCAG 2.5.8 asks for 24 by 24 CSS pixels. A link inside a sentence is exempt
+   from it; none of these are. They are navigation links sitting on their own
+   line or in a row of links, and at 16 to 17px tall they are genuinely hard to
+   hit with a thumb — the footer one appears on 151 pages.
+
+   Vertical padding on an INLINE element grows the hit area without touching the
+   line box, so nothing on the page moves: only the target grows. That is why
+   this is padding and not line-height or display:block.
+
+   EVERY selector carries :not([class]). Without it this rule beat the call-to-
+   action buttons' own .btn padding — `p > a:only-child` scores 0-1-2 against a
+   class's 0-1-0 — and silently shrank the big red buttons on every article page
+   by 20px. A pixel diff caught it; nothing else would have. A link that is
+   styled to look like something always has a class, so :not([class]) is the
+   line between "plain navigation link" and "component".
+
+   None of the links this now matches carry a background or a border, so the
+   padding is invisible. Measured at 360px across all 482 pages with the
+   stylesheet fully applied — measure with waitUntil:"load", not
+   "domcontentloaded", or you are reading the page before style.css lands and
+   every number is wrong. */
+.footer-all a:not([class]),
+.pd-rel a:not([class]),
+.dmore a:not([class]),
+.also a:not([class]),
+.cq-sources li > a:not([class]),
+.tp-level li > a:not([class]),
+.panel ul li > a:not([class]),
+.pagedoc ul li > a:not([class]),
+p.muted > a:not([class]),
+td > a:not([class]),
+/* a paragraph whose only child is a link is a standalone target, never prose */
+p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
