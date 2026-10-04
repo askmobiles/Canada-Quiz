@@ -1452,3 +1452,15 @@ p.muted > a:not([class]),
 td > a:not([class]),
 /* a paragraph whose only child is a link is a standalone target, never prose */
 p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
+
+/* ---- Map: Where Is It? pins ----------------------------------------------
+   Drawn into the map's own 960x700 user units, so they scale with it and need
+   no pixel maths. Stroke widths are in those units too: 2 units is about
+   0.75px on a phone-width map, which is why they look thin here and right
+   there. Not in critical.css on purpose - nothing is drawn until a round
+   starts, long after the first screen. */
+.cm-pin-ok{fill:#2a9d8f;stroke:#fff;stroke-width:4}
+.cm-pin-no{fill:#e63946;stroke:#fff;stroke-width:4}
+.cm-pin-true{fill:#ffb703;stroke:#2b2d42;stroke-width:4}
+.cm-pin-line{stroke:#2b2d42;stroke-width:3.5;stroke-dasharray:9 7;opacity:.8}
+#cm-pins{pointer-events:none}
