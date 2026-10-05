@@ -22,6 +22,13 @@
     + 'border-radius:999px;padding:13px 20px;font-weight:800;font-size:15px;font-family:inherit;cursor:pointer;'
     + 'box-shadow:0 3px 12px rgba(0,0,0,.3);display:none;-webkit-tap-highlight-color:transparent}'
     + '.fs-btn:active{transform:scale(.96)}'
+    /* see the note in js/tv-mode.js - icon only on a phone so the button
+       stops covering the game it is offering to enlarge */
+    + '@media (max-width:560px){.fs-btn{padding:0;width:48px;height:48px;font-size:0;'
+    + 'display:flex;align-items:center;justify-content:center}'
+    /* see js/tv-mode.js - hidden while the player is aiming at a map */
+    + 'body.cq-aiming .fs-btn{display:none!important}'
+    + '.fs-btn .fsb-ico{font-size:21px}}'
     + '.fs-exit{position:fixed;z-index:10001;background:#c1121f;color:#fff;border:none;'
     + 'right:calc(10px + env(safe-area-inset-right,0px));top:calc(10px + env(safe-area-inset-top,0px));'
     + 'border-radius:999px;width:48px;height:48px;font-size:22px;font-weight:900;cursor:pointer;'
@@ -100,7 +107,13 @@
   var enterBtn = document.createElement('button');
   enterBtn.className = 'fs-btn';
   enterBtn.type = 'button';
-  enterBtn.textContent = T('⛶ Full screen', '⛶ Plein écran');
+  /* icon and words split so a phone can keep the icon and drop the words */
+  (function(){
+    var i = document.createElement('span'); i.className = 'fsb-ico'; i.textContent = '⛶';
+    var l = document.createElement('span'); l.className = 'fsb-lbl';
+    l.textContent = ' ' + T('Full screen', 'Plein écran');
+    enterBtn.appendChild(i); enterBtn.appendChild(l);
+  })();
   enterBtn.setAttribute('aria-label', T('Play in full screen', 'Jouer en plein écran'));
   enterBtn.setAttribute('data-no-i18n', '');
 

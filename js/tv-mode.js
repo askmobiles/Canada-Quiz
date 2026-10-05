@@ -39,6 +39,20 @@
     + ".tv-btn.on{background:#1f7a6f}"
     + "@media (hover:none) and (pointer:coarse){.tv-btn{display:block}}"
     + "@media (max-width:900px){.tv-btn{display:block}}"
+    /* On a phone these two floating buttons sat on top of the game - on the
+       map page they covered Ontario, which you have to be able to tap. Below
+       560px they become round icon buttons: same tap target, a fifth of the
+       area. The label is still read out, it is just not painted.
+       Moving them to the left corner was tried and is worse - that corner has
+       Vancouver, Victoria and Pacific Rim. No corner of a map of Canada is
+       empty, so the map page hides them outright while a tap is awaited:
+       see body.cq-aiming below. */
+    /* while a game is waiting for the player to tap the map, these two get
+       out of the way completely. The page sets the class; no other page
+       uses it. They come back the moment the round is answered. */
+    + "body.cq-aiming .tv-btn{display:none!important}"
+    + "@media (max-width:560px){.tv-btn{padding:0;width:48px;height:48px;font-size:0;display:flex;align-items:center;justify-content:center}"
+    + ".tv-btn .tvb-ico{font-size:21px}}"
     + "html.fs-touch .tv-btn{display:block}"
     /* on a desktop the button only appears when casting is genuinely possible */
     + "html.tv-can-cast .tv-btn{display:block}"
@@ -305,9 +319,20 @@
   tvBtn.addEventListener("click", openSheet);
 
   function paintBtn() {
-    tvBtn.textContent = document.body.classList.contains("play-mode")
-      ? "📺"
-      : T("📺 Play on TV", "📺 Jouer à la télé");
+    /* icon and words in separate spans so a phone can keep the icon and drop
+       the words - see the max-width:560px rule. aria-label carries the full
+       name either way, so nothing is lost to a screen reader. */
+    tvBtn.textContent = "";
+    var ico = document.createElement("span");
+    ico.className = "tvb-ico";
+    ico.textContent = "📺";
+    tvBtn.appendChild(ico);
+    if (!document.body.classList.contains("play-mode")) {
+      var lbl = document.createElement("span");
+      lbl.className = "tvb-lbl";
+      lbl.textContent = " " + T("Play on TV", "Jouer à la télé");
+      tvBtn.appendChild(lbl);
+    }
   }
 
   function mount() {

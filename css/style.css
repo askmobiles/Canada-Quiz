@@ -1459,6 +1459,8 @@ p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
    0.75px on a phone-width map, which is why they look thin here and right
    there. Not in critical.css on purpose - nothing is drawn until a round
    starts, long after the first screen. */
+/* the marker you have put down but not committed yet */
+.cm-pin-you{fill:#4895ef;stroke:#fff;stroke-width:4}
 .cm-pin-ok{fill:#2a9d8f;stroke:#fff;stroke-width:4}
 .cm-pin-no{fill:#e63946;stroke:#fff;stroke-width:4}
 .cm-pin-true{fill:#ffb703;stroke:#2b2d42;stroke-width:4}
