@@ -1460,9 +1460,21 @@ p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
    there. Not in critical.css on purpose - nothing is drawn until a round
    starts, long after the first screen. */
 /* the marker you have put down but not committed yet */
-.cm-pin-you{fill:#4895ef;stroke:#fff;stroke-width:4}
-.cm-pin-ok{fill:#2a9d8f;stroke:#fff;stroke-width:4}
-.cm-pin-no{fill:#e63946;stroke:#fff;stroke-width:4}
+/* THE MARKERS MUST NOT MATCH THE PROVINCES. js/canada-map-svg.js paints the
+   provinces in exactly five colours - #8e7dbe #4895ef #2a9d8f #ffb703 #f4845f
+   - and the first three were also the marker colours, so a green 'right'
+   marker landing on a green province simply disappeared, leaving a white
+   outline and no answer. The hues keep their meaning (blue you, green right,
+   red wrong, amber the true spot) at values no province uses, and every
+   marker carries a dark halo so it reads on water, land or snow alike. */
+.cm-pin-you,.cm-pin-ok,.cm-pin-no,.cm-pin-true{filter:drop-shadow(0 0 3px rgba(0,0,0,.55))}
+.cm-pin-you{fill:#13429b;stroke:#fff;stroke-width:4}
+.cm-pin-ok{fill:#10695f;stroke:#fff;stroke-width:4}
+.cm-pin-no{fill:#d00000;stroke:#fff;stroke-width:4}
 .cm-pin-true{fill:#ffb703;stroke:#2b2d42;stroke-width:4}
 .cm-pin-line{stroke:#2b2d42;stroke-width:3.5;stroke-dasharray:9 7;opacity:.8}
+/* the accepting circle for a place that is an area, not a point - Hudson Bay,
+   the Rockies, the St. Lawrence, Lake Superior. Shown only once the answer is
+   revealed, so it explains what counted instead of giving it away. */
+.cm-pin-area{fill:#ffb703;fill-opacity:.17;stroke:#f08c00;stroke-width:3.5;stroke-dasharray:12 9}
 #cm-pins{pointer-events:none}
