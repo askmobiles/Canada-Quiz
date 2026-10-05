@@ -77,6 +77,19 @@
     signsCount:   { en: "%1 signs",                    fr: "%1 panneaux" },
     qCount:       { en: "%1 questions",                fr: "%1 questions" },
     startOver:    { en: "Start over",                  fr: "Recommencer" },
+    missTitle:    { en: "Your mistakes",               fr: "Vos erreurs" },
+    missMany:     { en: "%1 questions you got wrong are waiting to be put right.",
+                    fr: "%1 questions manquées attendent d'être corrigées." },
+    missOne:      { en: "1 question you got wrong is waiting to be put right.",
+                    fr: "1 question manquée attend d'être corrigée." },
+    missGo:       { en: "Practise my mistakes",        fr: "Pratiquer mes erreurs" },
+    missClear:    { en: "Clear the list",              fr: "Effacer la liste" },
+    missClearAsk: { en: "Clear your saved mistakes?",  fr: "Effacer vos erreurs enregistrées ?" },
+    missDone:     { en: "Back",                        fr: "Retour" },
+    missEmpty:    { en: "Nothing left to put right. Well done.",
+                    fr: "Plus rien à corriger. Bravo." },
+    missNote:     { en: "Saved on this device. Nothing is sent anywhere. A question leaves the list as soon as you get it right.",
+                    fr: "Enregistré sur cet appareil. Rien n'est envoyé nulle part. Une question quitte la liste dès que vous y répondez correctement." },
     cat: {
       regulatory:  { en: "Regulatory signs",   fr: "Panneaux de prescription" },
       warning:     { en: "Warning signs",      fr: "Panneaux d'avertissement" },
@@ -128,6 +141,121 @@
     return a;
   }
   function pick(list, n) { return shuffle(list).slice(0, n); }
+
+  /* =========================================================================
+     THE MISTAKES BOOK
+     Every question in every bank already carries an id ("sa1", "r42"), unique
+     inside its province, so a wrong answer is remembered as four characters and
+     nothing else. No name, no score, no history, no account - which is the same
+     promise the teachers page makes about student data, and it has to stay true
+     here too.
+
+     A question goes in when it is answered wrong and comes straight back out
+     when it is answered right, so the list is a shrinking to-do rather than a
+     record of failure.
+
+     localStorage throws outright in some privacy modes rather than returning
+     null, so every call is wrapped: if it is unavailable the feature simply
+     does not appear and the tests work exactly as before.
+     ========================================================================= */
+  var MISS_KEY = "cq.miss." + (P && P.code ? P.code : "x");
+  var MISS_CAP = 300;
+
+  function missRead() {
+    try {
+      var raw = window.localStorage.getItem(MISS_KEY);
+      if (!raw) return [];
+      var a = JSON.parse(raw);
+      return Object.prototype.toString.call(a) === "[object Array]" ? a : [];
+    } catch (e) { return []; }
+  }
+  function missWrite(a) {
+    try { window.localStorage.setItem(MISS_KEY, JSON.stringify(a.slice(-MISS_CAP))); }
+    catch (e) {}
+  }
+  function missMark(q, right) {
+    if (!q || !q.id) return;
+    var a = missRead(), i = a.indexOf(q.id);
+    if (right) { if (i >= 0) { a.splice(i, 1); missWrite(a); } }
+    else if (i < 0) { a.push(q.id); missWrite(a); }
+    missCount();
+  }
+  /* saved ids -> the actual questions. A bank edit can retire a question, so
+     ids that no longer exist are dropped here rather than crashing a run. */
+  function missList() {
+    var want = missRead();
+    if (!want.length || !P) return [];
+    var byId = {};
+    P.questions.forEach(function (q) { byId[q.id] = q; });
+    var out = [], keep = [];
+    want.forEach(function (id) { if (byId[id]) { out.push(byId[id]); keep.push(id); } });
+    if (keep.length !== want.length) missWrite(keep);
+    return out;
+  }
+
+  /* the one line that says how many are left, kept in step while you play */
+  function missCount() {
+    var n = document.getElementById("dq-miss-n");
+    if (!n) return;
+    var c = missRead().length;
+    n.textContent = c === 0 ? T("missEmpty") : (c === 1 ? T("missOne") : T("missMany", c));
+    var go = document.getElementById("dq-miss-go");
+    if (go) go.style.display = c ? "" : "none";
+  }
+
+  /* The strip is inserted BEFORE the mount, never inside it: mock() and the
+     study screens rewrite their own innerHTML on every screen and would wipe
+     anything living in there. One element, one id, so a page that starts two
+     mounts gets one strip. */
+  function missStrip(mount) {
+    var host = el(mount);
+    if (!host || !host.parentNode) return;
+    if (!missList().length) {
+      var old = document.getElementById("dq-miss");
+      if (old && old.parentNode) old.parentNode.removeChild(old);
+      return;
+    }
+    var box = document.getElementById("dq-miss");
+    if (!box) {
+      box = document.createElement("section");
+      box.id = "dq-miss";
+      box.className = "panel";
+      box.setAttribute("data-no-i18n", "");
+      host.parentNode.insertBefore(box, host);
+    }
+    paintStrip(box);
+  }
+
+  function paintStrip(box) {
+    box.innerHTML =
+      '<div id="dq-miss-head">' +
+        '<h3 style="margin:0 0 4px">\uD83D\uDCD5 ' + esc(T("missTitle")) + "</h3>" +
+        '<p class="muted" id="dq-miss-n" style="margin:0 0 10px"></p>' +
+        '<p style="margin:0">' +
+          '<button class="btn" id="dq-miss-go">' + esc(T("missGo")) + "</button> " +
+          '<button class="btn btn-ghost" id="dq-miss-clr">' + esc(T("missClear")) + "</button>" +
+        "</p>" +
+        '<p class="muted" style="font-size:13px;margin:10px 0 0">' + esc(T("missNote")) + "</p>" +
+      "</div>" +
+      '<div id="dq-miss-box"></div>';
+    missCount();
+    box.querySelector("#dq-miss-go").onclick = function () {
+      var list = missList();
+      if (!list.length) { missCount(); return; }
+      box.querySelector("#dq-miss-head").style.display = "none";
+      var run = box.querySelector("#dq-miss-box");
+      run.innerHTML = '<div id="dq-miss-run"></div>' +
+        '<p class="center" style="margin:12px 0 0">' +
+          '<button class="btn btn-ghost" id="dq-miss-back">' + esc(T("missDone")) + "</button></p>";
+      box.querySelector("#dq-miss-back").onclick = function () { paintStrip(box); };
+      practice(box.querySelector("#dq-miss-run"), list, true, list);
+    };
+    box.querySelector("#dq-miss-clr").onclick = function () {
+      if (!window.confirm(T("missClearAsk"))) return;
+      missWrite([]);
+      if (box.parentNode) box.parentNode.removeChild(box);
+    };
+  }
 
   function signHTML(id, big) {
     var art = SIGNS[id];
@@ -271,6 +399,7 @@
       answered = true; picked = i;
       var item = qs[cur], q = item.q;
       item.given = i;
+      missMark(q, i === q.c);
       var box = host.querySelector("#dq-opts");
       Array.prototype.forEach.call(box.children, function (b, k) {
         b.disabled = true; b.classList.add("disabled");
@@ -343,6 +472,7 @@
       window.scrollTo(0, 0);
     }
 
+    missStrip(host);
     screenStart();
   }
 
@@ -353,6 +483,7 @@
     var host = el(mount);
     if (!host || !P) return;
     host.setAttribute("data-no-i18n", "");
+    missStrip(host);
     var cats = ["regulatory", "warning", "temporary", "information", "lights", "markings"];
 
     var nav = cats.map(function (c) {
@@ -409,6 +540,7 @@
     var host = el(mount);
     if (!host || !P) return;
     host.setAttribute("data-no-i18n", "");
+    missStrip(host);
     var topics = P.topics || [];
 
     host.innerHTML =
@@ -507,6 +639,7 @@
       if (done) return;
       done = true;
       var q = qs[cur];
+      missMark(q, i === q.c);
       if (i === q.c) { score++; streak++; if (streak > best) best = streak; }
       else streak = 0;
       var k = box.querySelector("#dq-pk");
@@ -601,6 +734,7 @@
       var box = document.querySelector(sel);
       if (!box || !window.CQ_DRIVE_Q) return;
       var all = window.CQ_DRIVE_Q;
+      missStrip(box);
       practice(box, shuffle(all).slice(0, n || 10), true, all);
     }
   };

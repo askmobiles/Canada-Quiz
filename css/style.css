@@ -1477,4 +1477,17 @@ p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
    the Rockies, the St. Lawrence, Lake Superior. Shown only once the answer is
    revealed, so it explains what counted instead of giving it away. */
 .cm-pin-area{fill:#ffb703;fill-opacity:.17;stroke:#f08c00;stroke-width:3.5;stroke-dasharray:12 9}
+/* The mistakes book, above every driving test and study screen. It only
+   exists when there is something in it, so it reads as a to-do rather than
+   as furniture: a warm left edge, not a red warning. */
+#dq-miss{border-left:5px solid #ffb703;background:#fffdf6}
+#dq-miss h3{color:var(--ink)}
+@media(max-width:560px){#dq-miss .muted:last-child{padding-right:58px}}
+/* the blog's section headings. The page is six groups now, not one run of
+   sixty-three cards, so each group needs a heading that reads as a divider
+   rather than as another card title. */
+.blog-sec{margin:34px 0 14px;font-size:22px;letter-spacing:-.01em;color:var(--ink);
+  padding-bottom:8px;border-bottom:3px solid var(--red)}
+.blog-sec:first-of-type{margin-top:22px}
+@media(max-width:560px){.blog-sec{font-size:19px;margin:26px 0 12px}}
 #cm-pins{pointer-events:none}
