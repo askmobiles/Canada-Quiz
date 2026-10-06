@@ -252,7 +252,7 @@
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
-  var FRVER = {core:"ca2fe88f",gk:"12536384",cit:"57280bfd",fun:"9753028c",drive:"9ea6f05c",kids:"71e99c45"};
+  var FRVER = {core:"980208bc",gk:"931247c5",cit:"3284f982",fun:"9753028c",drive:"9ea6f05c",kids:"71e99c45"};
   function loadFrench(done) {
     /* The dictionary is split into chunks by tools/split_fr.py. Every French
        page needs "core" (the header, footer and UI strings site.js injects);
