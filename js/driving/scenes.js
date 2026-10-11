@@ -15,7 +15,7 @@
  *
  * WHERE THE ANSWERS COME FROM
  * ---------------------------
- * Every one of the 35 situations is checked against the Official MTO Driver's
+ * Every one of the situations is checked against the Official MTO Driver's
  * Handbook on ontario.ca, and each carries the chapter it came from in "s", so
  * a learner who does not believe an answer can go and read the rule. The
  * handbook's own words appear in the explanation wherever they are short enough
@@ -826,6 +826,269 @@
       fr: "Le triangle signifie que le véhicule roule à 40 km/h ou moins : restez bien en retrait et ne dépassez pas avant qu'il soit sûr de le faire. Le guide précise où ce n'est pas sûr : n'essayez pas de dépasser à l'approche d'un sommet de côte ou dans une courbe où votre vue de la circulation venant en sens inverse est masquée."
     },
     s: "share"
+  },
+
+  /* ---- Added October 2026: thirteen more, same rule — nothing written that was
+     not read on ontario.ca the same day. ---- */
+  {
+    id: "allway-first",
+    sc: { kind: "cross", signs: ["stop"], cars: [{ at: "left" }], you: { y: 268 } },
+    q: {
+      en: "An all-way stop. The grey car on your left came to a complete stop a moment before you did. Who goes first?",
+      fr: "Un arrêt toutes directions. La voiture grise à votre gauche s'est immobilisée complètement un instant avant vous. Qui passe en premier ?"
+    },
+    a: [
+      { en: "The grey car — it stopped first", fr: "La voiture grise : elle s'est arrêtée la première" },
+      { en: "You — the vehicle on the right always goes first", fr: "Vous : le véhicule de droite passe toujours en premier" },
+      { en: "Whoever is going straight", fr: "Celui qui va tout droit" },
+      { en: "Whoever moves first", fr: "Le premier qui démarre" }
+    ],
+    c: 0,
+    why: {
+      en: "“At an intersection with stop signs at all corners, you must yield the right-of-way to the first vehicle to come to a complete stop.” The right-hand rule only decides a tie: “If two vehicles stop at the same time, the vehicle on the left must yield to the vehicle on the right.”",
+      fr: "À une intersection munie de panneaux d'arrêt à tous les coins, vous devez céder le passage au premier véhicule qui s'est immobilisé complètement. La règle de la droite ne tranche qu'une égalité : si deux véhicules s'arrêtent en même temps, celui de gauche cède le passage à celui de droite."
+    },
+    s: "inter"
+  },
+  {
+    id: "right-lane-ends",
+    sc: { kind: "road", twoLane: true, sign: "warn-right-lane-ends", cars: [{ at: "aheadLeft", y: 150 }], you: { y: 262 } },
+    q: {
+      en: "Two lanes your way. The sign says your lane ends ahead, and a car in the left lane is just ahead of you. What do you do?",
+      fr: "Deux voies dans votre sens. Le panneau annonce que votre voie se termine, et une voiture dans la voie de gauche est juste devant vous. Que faites-vous ?"
+    },
+    a: [
+      { en: "Signal left, keep your speed, and merge behind that car when there is a safe gap", fr: "Signaler à gauche, garder votre vitesse et vous insérer derrière cette voiture quand il y a un espace sûr" },
+      { en: "Speed up and squeeze in ahead of it before the lane runs out", fr: "Accélérer et vous faufiler devant elle avant la fin de la voie" },
+      { en: "Stop at the end of your lane and wait for someone to let you in", fr: "Vous arrêter au bout de votre voie et attendre qu'on vous laisse passer" },
+      { en: "Carry on along the shoulder", fr: "Continuer sur l'accotement" }
+    ],
+    c: 0,
+    why: {
+      en: "“Right lane ends ahead. If you are in the right-hand lane, you must merge safely with traffic in the lane to the left.” Merging is a lane change, and the handbook's rule for those is blunt: “Never make sudden lane changes by cutting in front of another vehicle,” and “even if you signal, they expect you to yield the right-of-way.”",
+      fr: "La voie de droite se termine. Si vous êtes dans la voie de droite, vous devez vous insérer en sécurité dans la circulation de la voie de gauche. S'insérer est un changement de voie, et le guide est direct : ne faites jamais de changement de voie brusque en vous rabattant devant un autre véhicule ; même si vous signalez, les autres s'attendent à ce que vous cédiez le passage."
+    },
+    s: "signs"
+  },
+  {
+    id: "stop-ahead",
+    sc: { kind: "road", sign: "warn-stop-ahead", you: { y: 262 } },
+    q: {
+      en: "A country road with nothing in sight yet. This yellow sign has just appeared. What does it ask of you?",
+      fr: "Une route de campagne, rien en vue pour l'instant. Ce panneau jaune vient d'apparaître. Que vous demande-t-il ?"
+    },
+    a: [
+      { en: "Slow down — there is a stop sign ahead that you cannot see yet", fr: "Ralentir : il y a un panneau d'arrêt plus loin que vous ne voyez pas encore" },
+      { en: "Stop here, at the sign", fr: "Vous arrêter ici, au panneau" },
+      { en: "Nothing — it only applies to trucks", fr: "Rien : il ne concerne que les camions" },
+      { en: "Speed up to clear the intersection before anyone arrives", fr: "Accélérer pour franchir l'intersection avant que quelqu'un arrive" }
+    ],
+    c: 0,
+    why: {
+      en: "The handbook's whole entry for this sign is three words long: “Stop sign ahead. Slow down.” It is a warning sign, not the stop itself — the octagon is still to come, often just past a bend or the top of a hill, which is exactly why the warning exists.",
+      fr: "L'entrée du guide pour ce panneau tient en quelques mots : panneau d'arrêt plus loin, ralentissez. C'est un panneau d'avertissement, pas l'arrêt lui-même : l'octogone est encore à venir, souvent juste après une courbe ou un sommet de côte, et c'est précisément pour cela que l'avertissement existe."
+    },
+    s: "signs"
+  },
+  {
+    id: "slippery-rain",
+    sc: { kind: "road", sign: "warn-slippery", you: { y: 262 } },
+    q: {
+      en: "The first drops of rain have just started hitting the windshield, and this sign is at the roadside. What do you do?",
+      fr: "Les premières gouttes de pluie viennent de toucher le pare-brise, et ce panneau est au bord de la route. Que faites-vous ?"
+    },
+    a: [
+      { en: "Slow down now — the road is at its most slippery as the first drops fall", fr: "Ralentir tout de suite : la route est la plus glissante quand tombent les premières gouttes" },
+      { en: "Keep your speed; a little rain only matters once the road is soaked", fr: "Garder votre vitesse : un peu de pluie ne compte qu'une fois la route trempée" },
+      { en: "Brake hard to test how much grip there is", fr: "Freiner fort pour tester l'adhérence" },
+      { en: "Move to the centre line where the road is driest", fr: "Vous placer sur la ligne centrale, là où la route est la plus sèche" }
+    ],
+    c: 0,
+    why: {
+      en: "The sign means “pavement is slippery when wet. Slow down and drive with caution.” And the timing matters: “Rain makes road surfaces slippery, especially as the first drops fall.” Deep water adds a second danger — tires “may ride on top of the water, like water skis,” which the handbook calls hydroplaning — so “slow down when the road is wet.”",
+      fr: "Le panneau signifie que la chaussée est glissante lorsqu'elle est mouillée : ralentissez et conduisez avec prudence. Et le moment compte : la pluie rend la chaussée glissante, surtout lorsque tombent les premières gouttes. L'eau profonde ajoute un second danger, les pneus peuvent flotter sur l'eau comme des skis nautiques, ce que le guide appelle l'aquaplanage ; ralentissez donc dès que la route est mouillée."
+    },
+    s: "weather"
+  },
+  {
+    id: "steep-hill",
+    sc: { kind: "road", sign: "warn-steep-hill", you: { y: 262 } },
+    q: {
+      en: "A long, steep downhill is about to start. What does this sign tell you to think about?",
+      fr: "Une longue descente abrupte va commencer. À quoi ce panneau vous demande-t-il de penser ?"
+    },
+    a: [
+      { en: "You may need a lower gear on the way down", fr: "Vous aurez peut-être besoin d'un rapport inférieur pour descendre" },
+      { en: "Shift into neutral and let the car roll", fr: "Passer au point mort et laisser la voiture rouler" },
+      { en: "Speed up so the climb on the other side is easier", fr: "Accélérer pour que la montée de l'autre côté soit plus facile" },
+      { en: "Switch the engine off to save fuel", fr: "Couper le moteur pour économiser du carburant" }
+    ],
+    c: 0,
+    why: {
+      en: "“Steep hill ahead. You may need to use a lower gear.” That is the handbook's entire note, and it is the point: a lower gear lets the engine help hold your speed on a long descent instead of leaving it all to the brakes.",
+      fr: "Côte abrupte plus loin : vous aurez peut-être besoin d'un rapport inférieur. C'est toute la note du guide, et c'est l'essentiel : un rapport inférieur laisse le moteur aider à retenir la voiture dans une longue descente au lieu de tout confier aux freins."
+    },
+    s: "signs"
+  },
+  {
+    id: "divided-ends",
+    sc: { kind: "road", sign: "warn-divided-ends", centre: "solid", you: { y: 262 } },
+    q: {
+      en: "You have been on a divided highway for an hour, with a median between you and the other direction. This sign appears. What changes ahead?",
+      fr: "Vous roulez depuis une heure sur une route à chaussées séparées, un terre-plein entre vous et l'autre sens. Ce panneau apparaît. Qu'est-ce qui change plus loin ?"
+    },
+    a: [
+      { en: "Oncoming traffic will share the same road — keep to the right", fr: "La circulation en sens inverse partagera la même chaussée : tenez votre droite" },
+      { en: "The road becomes one-way", fr: "La route devient à sens unique" },
+      { en: "A second divided section begins", fr: "Une seconde section à chaussées séparées commence" },
+      { en: "The speed limit doubles", fr: "La limite de vitesse double" }
+    ],
+    c: 0,
+    why: {
+      en: "“Divided highway ends: traffic travels in both directions on the same road ahead. Keep to the right-hand road.” After an hour with nothing coming towards you, the next headlights you see will be in the lane beside yours.",
+      fr: "Fin de la route à chaussées séparées : plus loin, la circulation se fait dans les deux sens sur la même chaussée. Tenez la voie de droite. Après une heure sans rien en face, les prochains phares que vous verrez seront dans la voie voisine de la vôtre."
+    },
+    s: "signs"
+  },
+  {
+    id: "lane-change-check",
+    sc: { kind: "road", twoLane: true, cars: [{ at: "ahead", y: 150 }], you: { y: 262 } },
+    q: {
+      en: "The car ahead in your lane is slowing to turn. You want to move into the left lane. What is the right order of things?",
+      fr: "La voiture devant vous dans votre voie ralentit pour tourner. Vous voulez passer dans la voie de gauche. Quel est le bon ordre ?"
+    },
+    a: [
+      { en: "Mirrors, blind spot over your shoulder, signal, check again, then steer over gradually without slowing", fr: "Rétroviseurs, angle mort par-dessus l'épaule, clignotant, nouvelle vérification, puis déboîter en douceur sans ralentir" },
+      { en: "Signal and move over right away — signalling gives you the right-of-way", fr: "Signaler et déboîter aussitôt : le clignotant vous donne la priorité" },
+      { en: "Swerve across quickly before the car behind closes the gap", fr: "Déboîter d'un coup avant que la voiture derrière referme l'espace" },
+      { en: "Move over without signalling so nobody speeds up to block you", fr: "Déboîter sans signaler pour que personne n'accélère pour vous bloquer" }
+    ],
+    c: 0,
+    why: {
+      en: "The handbook's steps: “Check your mirrors for a space in traffic,” “check your blind spot by looking over your shoulder,” “signal that you want to move left or right,” “check again,” then “steer gradually into the new lane. Do not slow down.” And a reminder that undoes the second answer: “Even if you signal, they expect you to yield the right-of-way.”",
+      fr: "Les étapes du guide : vérifiez vos rétroviseurs pour trouver un espace, vérifiez votre angle mort en regardant par-dessus l'épaule, signalez votre intention, vérifiez de nouveau, puis engagez-vous progressivement dans la nouvelle voie sans ralentir. Et un rappel qui élimine la deuxième réponse : même si vous signalez, les autres s'attendent à ce que vous cédiez le passage."
+    },
+    s: "passing"
+  },
+  {
+    id: "hov-alone",
+    sc: { kind: "road", twoLane: true, sign: "hov-lane", you: { y: 262 } },
+    q: {
+      en: "A provincial highway. You are alone in the car, and the left lane carries this sign. May you use that lane?",
+      fr: "Une autoroute provinciale. Vous êtes seul dans la voiture, et la voie de gauche porte ce panneau. Pouvez-vous l'utiliser ?"
+    },
+    a: [
+      { en: "No — it is reserved for vehicles carrying at least two people", fr: "Non : elle est réservée aux véhicules transportant au moins deux personnes" },
+      { en: "Yes, as long as you keep to the speed limit", fr: "Oui, tant que vous respectez la limite de vitesse" },
+      { en: "Yes, outside rush hour", fr: "Oui, en dehors des heures de pointe" },
+      { en: "Only if you are passing", fr: "Seulement pour dépasser" }
+    ],
+    c: 0,
+    why: {
+      en: "HOV lanes on provincial highways “are reserved for” vehicles “carrying at least two people.” Two more lines from the same page: “Large trucks are not permitted on the HOV lanes, regardless of the number of occupants,” and “it is illegal and unsafe to cross the striped buffer pavement markings.”",
+      fr: "Les voies réservées aux véhicules multioccupants des autoroutes provinciales sont réservées aux véhicules transportant au moins deux personnes. Deux autres lignes de la même page : les gros camions n'y sont pas admis, quel que soit le nombre d'occupants, et il est illégal et dangereux de franchir la zone tampon hachurée."
+    },
+    s: "freeway"
+  },
+  {
+    id: "missed-exit",
+    sc: { kind: "road", twoLane: true, sign: "info-exit", you: { y: 262 } },
+    q: {
+      en: "On the freeway, you realise the exit you just passed was yours. What do you do?",
+      fr: "Sur l'autoroute, vous réalisez que la sortie que vous venez de passer était la vôtre. Que faites-vous ?"
+    },
+    a: [
+      { en: "Keep going and take the next exit", fr: "Continuer et prendre la sortie suivante" },
+      { en: "Stop on the shoulder and reverse carefully to the ramp", fr: "Vous arrêter sur l'accotement et reculer prudemment jusqu'à la bretelle" },
+      { en: "Make a U-turn through the median", fr: "Faire demi-tour par le terre-plein" },
+      { en: "Stop in the lane and wait for a gap to back up", fr: "Vous arrêter dans la voie et attendre un espace pour reculer" }
+    ],
+    c: 0,
+    why: {
+      en: "“If you miss an exit, do not stop or reverse on the freeway. Take the next exit.” A few extra minutes against a vehicle reversing into 100 km/h traffic is not a close call.",
+      fr: "Si vous manquez une sortie, ne vous arrêtez pas et ne reculez pas sur l'autoroute. Prenez la sortie suivante. Quelques minutes de plus contre un véhicule qui recule dans une circulation à 100 km/h : le choix n'est pas difficile."
+    },
+    s: "freeway"
+  },
+  {
+    id: "high-beams-following",
+    sc: { kind: "road", night: true, beams: "high", cars: [{ at: "ahead", y: 150 }], you: { y: 262 } },
+    q: {
+      en: "Night, high beams on. You have caught up with a car about 50 metres ahead. What do you do?",
+      fr: "Nuit, feux de route allumés. Vous avez rattrapé une voiture à environ 50 mètres devant. Que faites-vous ?"
+    },
+    a: [
+      { en: "Switch to low beams — you are following within 60 metres", fr: "Passer aux feux de croisement : vous suivez à moins de 60 mètres" },
+      { en: "Keep high beams on so you can see past the car", fr: "Garder les feux de route pour voir au-delà de la voiture" },
+      { en: "Flash your high beams so the driver speeds up", fr: "Faire des appels de phares pour que le conducteur accélère" },
+      { en: "Turn your headlights off and use the car ahead's lights", fr: "Éteindre vos phares et profiter des feux de la voiture devant" }
+    ],
+    c: 0,
+    why: {
+      en: "“Use your low-beam headlights within 150 metres of an oncoming vehicle or when following a vehicle within 60 metres.” High beams in a driver's mirrors are glare — “dazzling light that makes it hard for you to see.”",
+      fr: "Utilisez vos feux de croisement à moins de 150 mètres d'un véhicule venant en sens inverse ou lorsque vous suivez un véhicule à moins de 60 mètres. Des feux de route dans les rétroviseurs d'un conducteur, c'est de l'éblouissement : une lumière aveuglante qui empêche de bien voir."
+    },
+    s: "weather"
+  },
+  {
+    id: "high-beams-oncoming",
+    sc: { kind: "road", night: true, beams: "high", cars: [{ at: "onc", y: 96 }], you: { y: 262 } },
+    q: {
+      en: "Night on a country road, high beams on. Headlights appear, coming towards you. What do you do?",
+      fr: "Nuit sur une route de campagne, feux de route allumés. Des phares apparaissent, venant vers vous. Que faites-vous ?"
+    },
+    a: [
+      { en: "Dip to low beams within 150 metres and look slightly to the right of the oncoming lights", fr: "Passer aux feux de croisement à moins de 150 mètres et regarder légèrement à droite des phares qui arrivent" },
+      { en: "Keep high beams on until the other driver dips first", fr: "Garder les feux de route jusqu'à ce que l'autre conducteur baisse les siens" },
+      { en: "Stare at the oncoming lights to judge the distance", fr: "Fixer les phares qui arrivent pour juger la distance" },
+      { en: "Turn your lights off for a moment so you do not dazzle them", fr: "Éteindre vos feux un instant pour ne pas éblouir l'autre" }
+    ],
+    c: 0,
+    why: {
+      en: "“Use your low-beam headlights within 150 metres of an oncoming vehicle.” Then protect your own eyes: “look up and beyond and slightly to the right of the oncoming lights.” Once the car has passed and “you can't see any headlights, switch back to high beams.”",
+      fr: "Utilisez vos feux de croisement à moins de 150 mètres d'un véhicule venant en sens inverse. Puis protégez vos propres yeux : regardez devant, au loin et légèrement à droite des phares qui arrivent. Une fois la voiture passée, s'il n'y a plus aucun phare en vue, repassez aux feux de route."
+    },
+    s: "weather"
+  },
+  {
+    id: "keep-right-freeway",
+    sc: { kind: "road", twoLane: true, you: { x: 172, y: 262 } },
+    q: {
+      en: "Freeway, light traffic, nobody ahead of you. You are cruising along in the left lane. Is that where you should be?",
+      fr: "Autoroute, circulation fluide, personne devant vous. Vous roulez tranquillement dans la voie de gauche. Est-ce la bonne voie ?"
+    },
+    a: [
+      { en: "No — keep to the right; the left lanes are for passing", fr: "Non : tenez votre droite, les voies de gauche servent à dépasser" },
+      { en: "Yes — the left lane is for anyone doing the speed limit", fr: "Oui : la voie de gauche est pour quiconque roule à la limite" },
+      { en: "Yes, as long as you are not slowing anyone down right now", fr: "Oui, tant que vous ne ralentissez personne pour l'instant" },
+      { en: "It makes no difference on a freeway", fr: "Cela ne change rien sur une autoroute" }
+    ],
+    c: 0,
+    why: {
+      en: "“Traffic should keep to the right, using the left lanes for passing.” The handbook says it twice more: “Drive in the right-hand lane when possible,” and “get into the habit of driving in the right lane, leaving the other lanes clear for passing.”",
+      fr: "La circulation doit se tenir à droite et utiliser les voies de gauche pour dépasser. Le guide le répète encore deux fois : roulez dans la voie de droite quand c'est possible, et prenez l'habitude de rouler à droite en laissant les autres voies libres pour les dépassements."
+    },
+    s: "freeway"
+  },
+  {
+    id: "freeway-merge",
+    sc: { kind: "road", twoLane: true, sign: "warn-merge", cars: [{ at: "aheadLeft", y: 110 }], you: { y: 262 } },
+    q: {
+      en: "You are on the ramp, in the acceleration lane, and the freeway traffic beside you is doing 100 km/h. What do you do?",
+      fr: "Vous êtes sur la bretelle, dans la voie d'accélération, et la circulation de l'autoroute à côté roule à 100 km/h. Que faites-vous ?"
+    },
+    a: [
+      { en: "Speed up to match the freeway traffic, then merge into a gap", fr: "Accélérer jusqu'à la vitesse de l'autoroute, puis vous insérer dans un espace" },
+      { en: "Stop at the end of the ramp and wait for a clear road", fr: "Vous arrêter au bout de la bretelle et attendre que la voie soit libre" },
+      { en: "Merge at ramp speed and let the freeway traffic brake for you", fr: "Vous insérer à la vitesse de la bretelle et laisser la circulation freiner pour vous" },
+      { en: "Drive along the shoulder until a gap appears", fr: "Rouler sur l'accotement jusqu'à ce qu'un espace apparaisse" }
+    ],
+    c: 0,
+    why: {
+      en: "“In the acceleration lane, drivers increase their speed to the speed of traffic on the freeway before they merge with it.” The sign itself means “two roads going in the same direction are about to join into one.” And the courtesy runs both ways: “Freeway drivers should move over, if it is safe to do so, leaving room for merging vehicles.”",
+      fr: "Dans la voie d'accélération, les conducteurs augmentent leur vitesse jusqu'à celle de la circulation de l'autoroute avant de s'y insérer. Le panneau lui-même signifie que deux routes allant dans le même sens vont se rejoindre en une seule. Et la courtoisie va dans les deux sens : les conducteurs de l'autoroute devraient se déplacer, si c'est sûr, pour laisser de la place aux véhicules qui s'insèrent."
+    },
+    s: "freeway"
   }
 
 ];

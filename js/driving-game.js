@@ -396,7 +396,21 @@
       o += mineCar(C.mine, mineY);
 
     } else if (sc.kind === "road") {
+      var mineX = (sc.you && sc.you.x) || (sc.twoLane ? 262 : R.mine);
       o += straightRoad(sc.twoLane, sc.centre);
+      /* NIGHT — the whole picture goes dark, and the headlight beams are drawn
+         as pale wedges in front of your car. "high" reaches the top of the
+         picture; "low" stops short. The rule about dipping your lights only
+         makes sense once a learner can SEE how far each beam goes. */
+      if (sc.night) {
+        o += rect(0, 0, V.w, V.h, "#0b1424", ' opacity=".58"');
+        if (sc.beams) {
+          var reach = sc.beams === "high" ? 0 : mineY - 110;
+          o += '<polygon points="' + (mineX - 14) + ',' + (mineY - 30) + ' ' +
+            (mineX + 14) + ',' + (mineY - 30) + ' ' + (mineX + 46) + ',' + reach + ' ' +
+            (mineX - 46) + ',' + reach + '" fill="#fff3b0" opacity=".30"/>';
+        }
+      }
       if (sc.fog) {
         o += '<defs><linearGradient id="dgfog" x1="0" y1="0" x2="0" y2="1">' +
           '<stop offset="0" stop-color="#eef2f5" stop-opacity=".95"/>' +
@@ -436,12 +450,17 @@
       if (sc.police) o += policeCar(314, 146, "n");
       if (sc.cars) {
         for (i = 0; i < sc.cars.length; i++) {
-          if (sc.cars[i].at === "ahead") {
-            o += car(sc.twoLane ? 262 : R.mine, sc.fog ? 150 : 140, "n", COL.other);
+          var at = sc.cars[i].at, cy = sc.cars[i].y;
+          if (at === "ahead") {
+            o += car(sc.twoLane ? 262 : R.mine, cy || (sc.fog ? 150 : 140), "n", COL.other);
+          } else if (at === "aheadLeft") {       // the left lane of a two-lane road
+            o += car(172, cy || 120, "n", COL.other2);
+          } else if (at === "onc") {             // coming towards you, plain road
+            o += car(R.other, cy || 112, "s", COL.other);
           }
         }
       }
-      o += mineCar(sc.twoLane ? 262 : R.mine, mineY, sc.skid ? 20 : 0);
+      o += mineCar(mineX, mineY, sc.skid ? 20 : 0);
       if (sc.skid) {
         o += '<path d="M250,316 Q244,282 232,258" fill="none" stroke="#4d545c"' +
           ' stroke-width="8" stroke-linecap="round" opacity=".5"/>' +
