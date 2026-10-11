@@ -1253,6 +1253,7 @@ main .board .cell{ aspect-ratio:1/1; min-height:0 }
 .cqp-cols{columns:var(--cqp-cols,3);column-gap:9mm}
 .cqp-cols li{break-inside:avoid;page-break-inside:avoid}
 .tp-c7{background:#fdf6fb;border-color:#f0dcea}
+.tp-c8{background:#f1f8f6;border-color:#d5ebe4}
 
 /* ===== ROAD TRIP ACROSS CANADA (js/road-trip.js) ===== */
 .rt-panel{padding:14px 14px 18px}
