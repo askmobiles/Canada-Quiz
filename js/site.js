@@ -252,7 +252,7 @@
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
-  var FRVER = {core:"00fe8e61",gk:"c796c056",cit:"1a01b20d",fun:"b971d20f",drive:"9ea6f05c",kids:"71e99c45"};
+  var FRVER = {core:"0b0e623a",gk:"c796c056",cit:"1a01b20d",fun:"b971d20f",drive:"9ea6f05c",kids:"71e99c45"};
   function loadFrench(done) {
     /* The dictionary is split into chunks by tools/split_fr.py. Every French
        page needs "core" (the header, footer and UI strings site.js injects);
@@ -301,6 +301,16 @@
               ' aria-label="' + esc(tip) + '" title="' + esc(tip) + '">' +
               '<span aria-hidden="true">🌐</span> ' + other.toUpperCase() + "</button>";
 
+    /* Dark/light switch. Only on pages that carry the theme loader at the top
+       of <head> (tools/newq/build_dark.py): the Canada Diary and the printable
+       sheets stay on paper, so they get no switch at all. */
+    if (document.documentElement.getAttribute("data-theme-ok")) {
+      var tt = lang === "fr" ? "Mode sombre ou clair" : "Dark or light mode";
+      btn += '<button type="button" class="lang-btn cq-theme-btn" data-no-i18n data-cq-theme' +
+             ' aria-label="' + esc(tt) + '" title="' + esc(tt) + '">' +
+             '<span class="t-moon" aria-hidden="true">🌙</span><span class="t-sun" aria-hidden="true">☀️</span></button>';
+    }
+
     return '<div class="container">' +
       '<a class="brand" href="./" aria-label="' + esc(BRAND) + '">' +
         '<img src="' + BASE + 'brand/logo-horizontal-white.svg" alt="' + esc(BRAND) +
@@ -322,6 +332,21 @@
       '<p class="muted" style="color:#b4a9cc;font-size:12px">' + esc(T(COPYRIGHT)) + "</p>" +
       '<p class="muted" style="color:#b4a9cc;font-size:12.5px">' + esc(T(DISCLAIMER)) + "</p>" +
       "</div>";
+  }
+
+  /* Flip dark/light and remember the choice. css/dark.css is only on the page
+     already if the visitor arrived in dark mode, so it is fetched on the
+     first switch; window.CQ_DARK is its stamped address, set by the loader. */
+  function toggleTheme() {
+    var d = document.documentElement;
+    var dark = d.getAttribute("data-theme") !== "dark";
+    if (dark && !document.getElementById("cq-dark") && window.CQ_DARK) {
+      var l = document.createElement("link");
+      l.rel = "stylesheet"; l.id = "cq-dark"; l.href = window.CQ_DARK;
+      document.head.appendChild(l);
+    }
+    if (dark) d.setAttribute("data-theme", "dark"); else d.removeAttribute("data-theme");
+    try { localStorage.setItem("cq-theme", dark ? "dark" : "light"); } catch (e) {}
   }
 
   function paint() {
@@ -361,7 +386,9 @@
 
     h.addEventListener("click", function (e) {
       var b = e.target && e.target.closest ? e.target.closest("[data-set-lang]") : null;
-      if (b) { e.preventDefault(); setLang(b.getAttribute("data-set-lang")); }
+      if (b) { e.preventDefault(); setLang(b.getAttribute("data-set-lang")); return; }
+      var t = e.target && e.target.closest ? e.target.closest("[data-cq-theme]") : null;
+      if (t) { e.preventDefault(); toggleTheme(); }
     });
 
     /* icons — same on every page */

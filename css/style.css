@@ -215,6 +215,11 @@ input.text-in{font-size:18px;padding:12px 14px;border:2px solid var(--line);bord
 }
 .lang-btn:hover{background:rgba(255,255,255,.32)}
 .lang-btn:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+/* dark/light switch: a moon in light mode, a sun in dark mode */
+.cq-theme-btn{font-size:15px;padding:6px 10px;letter-spacing:0}
+.cq-theme-btn .t-sun{display:none}
+html[data-theme="dark"] .cq-theme-btn .t-sun{display:inline}
+html[data-theme="dark"] .cq-theme-btn .t-moon{display:none}
 html.lang-fr .nav a{font-size:13.5px;padding:8px 10px}
 @media (max-width:640px){
   .brand-logo{height:30px}
