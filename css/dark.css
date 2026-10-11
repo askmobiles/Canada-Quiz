@@ -402,7 +402,7 @@ html[data-theme="dark"] .cm-miss li{color:var(--muted)}
 html[data-theme="dark"] .cr-msg{color:var(--muted)}
 html[data-theme="dark"] .cr-sc{background:#1d2029;color:var(--ink)}
 html[data-theme="dark"] .cr-pick button{background:#1d2029;color:var(--ink)}
-html[data-theme="dark"] .cr-pick button.on{background:var(--blue);color:#fff}
+html[data-theme="dark"] .cr-pick button.on{background:#1471df;color:#fff}
 html[data-theme="dark"] .cr-note{color:var(--muted)}
 html[data-theme="dark"] .cg-letter{color:var(--red-dark)}
 html[data-theme="dark"] .cg-list li{background:#1a212f}
@@ -666,7 +666,7 @@ html[data-theme="dark"] .dg-missed-q{color:#d2d4e1}
 html[data-theme="dark"] .dg-missed-a{color:#bef0eb}
 html[data-theme="dark"] .sz-cur{background:var(--card)}
 html[data-theme="dark"] .sz-tab{background:var(--card);color:var(--ink)}
-html[data-theme="dark"] .sz-tab[aria-selected="true"]{background:var(--red);color:#fff}
+html[data-theme="dark"] .sz-tab[aria-selected="true"]{background:#c1121f;color:#fff}
 html[data-theme="dark"] .sz-pt{background:var(--card)}
 html[data-theme="dark"] .sz-pt .cap{color:var(--red-dark)}
 html[data-theme="dark"] .sz-pt .meta{color:var(--muted)}

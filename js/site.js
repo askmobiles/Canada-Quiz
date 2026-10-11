@@ -68,7 +68,7 @@
   ];
 
   var BRAND      = "Canada Quiz & Family Fun Games";
-  var FOOTER_TAG = "Free quizzes, family games and citizenship practice — no signup, no ads in your face.";
+  var FOOTER_TAG = "Free quizzes, family games and citizenship practice — no signup, nothing on the site costs money.";
   var COPYRIGHT  = "© 2026 Canada Quiz & Family Fun Games. All rights reserved.";
   var DISCLAIMER = "Unofficial practice site. Not affiliated with the Government of Canada.";
 
@@ -252,7 +252,7 @@
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
-  var FRVER = {core:"0b0e623a",gk:"c796c056",cit:"1a01b20d",fun:"b971d20f",drive:"9ea6f05c",kids:"71e99c45"};
+  var FRVER = {core:"c2c59eff",gk:"c7253467",cit:"dc455b1a",fun:"b971d20f",drive:"9ea6f05c",kids:"71e99c45"};
   function loadFrench(done) {
     /* The dictionary is split into chunks by tools/split_fr.py. Every French
        page needs "core" (the header, footer and UI strings site.js injects);
