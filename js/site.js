@@ -313,7 +313,7 @@
 
     return '<div class="container">' +
       '<a class="brand" href="./" aria-label="' + esc(BRAND) + '">' +
-        '<img src="' + BASE + 'brand/logo-horizontal-white.svg" alt="' + esc(BRAND) +
+        '<img src="' + BASE + 'brand/logo-horizontal-white.svg?v=bb66f331" alt="' + esc(BRAND) +
         '" class="brand-logo" width="230" height="55">' +
       "</a>" +
       '<nav class="nav" aria-label="' + esc(T("Main navigation")) + '">' + links + btn + "</nav>" +
@@ -325,7 +325,7 @@
       return '<a href="' + n.href + '">' + esc(T(n.label)) + "</a>";
     }).join(" · ");
     return '<div class="container center">' +
-      '<img src="' + BASE + 'brand/logo-horizontal-white.svg" alt="' + esc(BRAND) +
+      '<img src="' + BASE + 'brand/logo-horizontal-white.svg?v=bb66f331" alt="' + esc(BRAND) +
       '" class="footer-logo" width="200" height="48">' +
       "<p>" + esc(T(FOOTER_TAG)) + "</p>" +
       '<div class="footer-links">' + links + "</div>" +
@@ -395,12 +395,12 @@
     if (!document.querySelector('link[rel="apple-touch-icon"]')) {
       var a = document.createElement("link");
       a.rel = "apple-touch-icon";
-      a.href = BASE + "brand/apple-touch-icon.png";
+      a.href = BASE + "brand/apple-touch-icon.png?v=e5ca0b50";
       document.head.appendChild(a);
     }
     var ico = document.querySelector('link[rel="icon"]');
     if (!ico) { ico = document.createElement("link"); ico.rel = "icon"; document.head.appendChild(ico); }
-    ico.href = BASE + "brand/favicon.svg";
+    ico.href = BASE + "brand/favicon.svg?v=2e301691";
     ico.type = "image/svg+xml";
   }
 
