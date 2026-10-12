@@ -1505,3 +1505,5 @@ p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
 .blog-sec:first-of-type{margin-top:22px}
 @media(max-width:560px){.blog-sec{font-size:19px;margin:26px 0 12px}}
 #cm-pins{pointer-events:none}
+
+.kid-quiz [hidden]{display:none}
