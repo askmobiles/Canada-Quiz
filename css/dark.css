@@ -907,12 +907,16 @@ html[data-theme="dark"] .wr-or{color:#bac1c9}
 html[data-theme="dark"] .wr-num{color:#bfc2c6}
 html[data-theme="dark"] [style*="border-top:1px solid #e6e1d8"]{border-top:1px solid #5d513c!important}
 html[data-theme="dark"] [style*="color:#b4a9cc"]{color:#a69ac1!important}
+html[data-theme="dark"] [style*="background:#eaf7ef"]{background:#1a3525!important}
+html[data-theme="dark"] [style*="color:#1f6b3a"]{color:#bceacd!important}
 html[data-theme="dark"] [style*="background:#eef2fb"]{background:#162035!important}
 html[data-theme="dark"] [style*="color:#1b4b8a"]{color:#adc9ed!important}
 html[data-theme="dark"] [style*="background:#eef3ff"]{background:#161f34!important}
 html[data-theme="dark"] [style*="color:#3a6ea5"]{color:#a3bfdd!important}
 html[data-theme="dark"] [style*="background:#eef6f4"]{background:#1e302c!important}
 html[data-theme="dark"] [style*="color:#1c6a60"]{color:#bcece6!important}
+html[data-theme="dark"] [style*="background:#fdecee"]{background:#35161a!important}
+html[data-theme="dark"] [style*="color:#9b1020"]{color:#f3a4ad!important}
 html[data-theme="dark"] [style*="background:#f2faf5"]{background:#193222!important}
 html[data-theme="dark"] [style*="background:#faf8f4"]{background:#2f281a!important}
 html[data-theme="dark"] [style*="color:var(--red)"]{color:var(--red-dark)!important}
