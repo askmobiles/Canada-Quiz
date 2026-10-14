@@ -6,6 +6,7 @@
 Object.assign(window.CQ_SIGNS = window.CQ_SIGNS || {}, {
 
 "stop": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Stop sign"><polygon points="35,6 65,6 94,35 94,65 65,94 35,94 6,65 6,35" fill="#d02128" stroke="#111111" stroke-width="2"/><polygon points="36.8,11.3 63.2,11.3 88.7,36.8 88.7,63.2 63.2,88.7 36.8,88.7 11.3,63.2 11.3,36.8" fill="none" stroke="#ffffff" stroke-width="4"/><text x="50" y="61" font-family="Arial, Helvetica, sans-serif" font-weight="bold" text-anchor="middle" font-size="29" fill="#ffffff" letter-spacing="1">STOP</text></svg>`,
+"stop-qc": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Stop sign (ARRÊT)"><polygon points="35,6 65,6 94,35 94,65 65,94 35,94 6,65 6,35" fill="#d02128" stroke="#111111" stroke-width="2"/><polygon points="36.8,11.3 63.2,11.3 88.7,36.8 88.7,63.2 63.2,88.7 36.8,88.7 11.3,63.2 11.3,36.8" fill="none" stroke="#ffffff" stroke-width="4"/><text x="50" y="61" font-family="Arial, Helvetica, sans-serif" font-weight="bold" text-anchor="middle" font-size="21" fill="#ffffff" letter-spacing="0">ARRÊT</text></svg>`,
 
 "yield": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Yield sign"><polygon points="7,15 93,15 50,92" fill="#ffffff" stroke="#d02128" stroke-width="10" stroke-linejoin="round"/><text x="50" y="38" font-family="Arial, Helvetica, sans-serif" font-weight="bold" text-anchor="middle" font-size="14" fill="#d02128">YIELD</text></svg>`,
 

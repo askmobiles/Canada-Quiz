@@ -23,6 +23,9 @@
   var P = window.CQ_PROVINCE || null;
   var SIGNS = window.CQ_SIGNS || {};
   var META = window.CQ_SIGN_META || {};
+  /* A province's own version of a shared sign ("stop-qc", which reads ARRÊT) has no entry of
+     its own, so the sign lists do not show it twice; it borrows the shared sign's name. */
+  function metaOf(id) { return META[id] || META[String(id).replace(/-[a-z]+$/, "")]; }
 
   /* ---------------------------------------------------------------
      Words the engine itself prints. Both languages, side by side.
@@ -505,7 +508,7 @@
                "<p>" + esc(L(META[id])) + "</p></div>";
       }).join("");
       var qcount = bySec("signs").filter(function (q) {
-        return q.sign && META[q.sign] && META[q.sign].cat === c;
+        return q.sign && metaOf(q.sign) && metaOf(q.sign).cat === c;
       }).length;
       el("#dq-cat").innerHTML =
         '<section class="panel">' +
@@ -521,7 +524,7 @@
       var pb = el("#dq-prac");
       if (pb) pb.onclick = function () {
         practice(el("#dq-prac-box"), bySec("signs").filter(function (q) {
-          return q.sign && META[q.sign] && META[q.sign].cat === c;
+          return q.sign && metaOf(q.sign) && metaOf(q.sign).cat === c;
         }));
       };
       window.scrollTo(0, 0);

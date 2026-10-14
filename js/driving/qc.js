@@ -9,7 +9,7 @@ window.CQ_DRIVE_Q = [];
 /* ---------- road signs ---------- */
 (window.CQ_DRIVE_Q = window.CQ_DRIVE_Q || []).push(
 
-{ id:"qcs1", sec:"signs", sign:"stop",
+{ id:"qcs1", sec:"signs", sign:"stop-qc",
   en:{ q:"In Quebec this sign reads ARRÊT. What must you do at it?",
        a:["Come to a complete stop every time, then go when it is safe","Stop only in daylight","Yield to the right only","Slow and continue if clear"],
        e:"Quebec uses the French word ARRÊT on its octagonal stop signs. The rule is the same everywhere: a full stop, at the line, every time." },
