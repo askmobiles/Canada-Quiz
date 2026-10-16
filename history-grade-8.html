@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--cq-theme--><script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('cq-theme')}catch(e){}var dark=t?t==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);d.setAttribute('data-theme-ok','1');window.CQ_DARK='css/dark.css?v=c9588592';if(dark){d.setAttribute('data-theme','dark');document.write('<link rel="stylesheet" id="cq-dark" href="css/dark.css?v=c9588592">')}var s=null,q=/[?&]season=([a-z]+)/.exec(location.search);if(q){s=q[1]}else{try{var p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()),y=0,m=0,n=0;p.forEach(function(x){if(x.type==='year')y=+x.value;if(x.type==='month')m=+x.value;if(x.type==='day')n=+x.value});var k=m*100+n,t=Date.UTC(y,m-1,n)/864e5,a=y%19,b=Math.floor(y/100),c=y%100,h=(19*a+b-Math.floor(b/4)-Math.floor((b-Math.floor((b+8)/25)+1)/3)+15)%30,l=(32+2*(b%4)+2*Math.floor(c/4)-h-c%4)%7,r=Math.floor((a+11*h+22*l)/451),e=Date.UTC(y,Math.floor((h+l-7*r+114)/31)-1,(h+l-7*r+114)%31+1)/864e5,g=Date.UTC(y,9,1+(8-new Date(Date.UTC(y,9,1)).getUTCDay())%7+7)/864e5;s=k===1111?null:(k>=1231||k<=102)?'newyear':(k>=1218&&k<=1226)?'christmas':(t>=e-2&&t<=e+1)?'easter':(t>=g-2&&t<=g)?'thanksgiving':(k>=1020&&k<=1031)?'halloween':(k>=624&&k<=702)?'canadaday':(k>=212&&k<=214)?'valentine':k===215?'flagday':(k>=315&&k<=317)?'stpatrick':(k>=1201||k<=319)?'winter':k<=620?'spring':k<=921?'summer':'autumn';}catch(e){}}if(s&&s!=='none'){d.setAttribute('data-season',s);document.write('<link rel="stylesheet" href="css/seasons.css?v=43fb7435">')}})();</script><!--/cq-theme-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creating Canada, 1850–1914: Grade 8 History Quiz</title>
+<meta name="description" content="Grade 8 history, 1850 to 1914: Confederation, Red River, the treaties, the railway and the Klondike. Lesson, quiz and printable worksheets.">
+<style id="cq-critical">:root{--red:#e63946;--red-dark:#c1121f;--ink:#2b2d42;--muted:#5f6b7a;--bg:#fdfbf7;--card:#ffffff;--line:#ece3e5;--green:#2a9d8f;--green-dark:#1f7a6f;--blue:#4895ef;--blue-dark:#1471df;--red-aa:#e32231;--yellow:#ffb703;--purple:#8e7dbe;--orange:#f4845f;--shadow:0 8px 24px rgba(43,45,66,.08);--radius:18px}*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Nunito",Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}a{color:var(--red-dark);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:980px;margin:0 auto;padding:0 18px}img{max-width:100%}.site-header{background:linear-gradient(100deg,#e32231 0%,#d6333f 60%,#cc4a2c 100%);color:#fff;padding:14px 0;box-shadow:0 3px 14px rgba(230,57,70,.25);position:sticky;top:0;z-index:50}.site-header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}.brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;color:#fff}.brand:hover{text-decoration:none;opacity:.95}.nav{display:flex;gap:4px;flex-wrap:wrap}.nav a{color:#fff;font-weight:700;font-size:14.5px;padding:8px 12px;border-radius:10px}.nav a:hover{background:rgba(255,255,255,.20);text-decoration:none}.hero{text-align:center;padding:44px 18px 24px}.hero h1{font-size:clamp(26px,6vw,38px);margin:0 0 10px;line-height:1.15}.hero p{font-size:clamp(16px,2.6vw,19px);color:var(--muted);max-width:640px;margin:0 auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:18px;margin:28px 0}.card{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--red);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .12s ease,box-shadow .12s ease}.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(43,45,66,.12)}.card .emoji{font-size:42px}.card h3{margin:12px 0 6px;font-size:21px}.card p{color:var(--muted);margin:0 0 18px;flex:1}.card.c-blue{border-top-color:var(--blue)}.card.c-green{border-top-color:var(--green)}.card.c-red{border-top-color:var(--red)}.card.c-teal{border-top-color:#0e7490}.btn{display:inline-block;background:#e32231;color:#fff;font-weight:800;font-size:16px;padding:13px 24px;border-radius:12px;border:none;cursor:pointer;text-align:center;min-height:46px;transition:transform .05s ease,background .15s ease,box-shadow .15s ease;box-shadow:0 4px 0 rgba(0,0,0,.06)}.btn:hover{background:var(--red-dark);text-decoration:none;color:#fff}.btn:active{transform:translateY(2px);box-shadow:none}.btn-green{background:#238277}.btn-green:hover{background:var(--green-dark)}.btn-blue{background:#1471df}.btn-blue:hover{background:#0f5cb4}.btn-purple{background:#7c68b4}.btn-purple:hover{background:#66539c}.btn-orange{background:#f4845f;color:#3a1400}.btn-orange:hover{background:#ef6c3f;color:#3a1400}.btn-yellow{background:#ffb703;color:#3d3000}.btn-yellow:hover{background:#e9a300;color:#3d3000}.btn-ghost{background:#fff;color:var(--red-dark);border:2px solid var(--red-dark);box-shadow:none}.btn-ghost:hover{background:#fff5f6;color:var(--red-dark)}.btn-lg{font-size:18px;padding:15px 30px;min-height:52px}.btn:disabled{opacity:.5;cursor:not-allowed}.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin:22px 0}.center{text-align:center}.muted{color:var(--muted)}.pill{display:inline-block;background:#fff0f1;color:var(--red-dark);border-radius:999px;padding:5px 14px;font-size:14px;font-weight:700;margin:2px}.options{display:flex;flex-direction:column;gap:12px;margin:20px 0}.option{text-align:left;background:#fff;border:2px solid var(--line);border-radius:14px;padding:15px 16px;font-size:16px;cursor:pointer;min-height:50px;transition:border-color .12s ease,background .12s ease,transform .05s ease}.option:hover{border-color:var(--red);background:#fffafa}.option:active{transform:scale(.99)}.explain{background:#eef6ff;border-left:4px solid var(--blue);padding:13px 15px;border-radius:10px;margin-top:14px;color:#33475b}.quiz-meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px}.timer{font-weight:800;font-size:18px}.progress{height:12px;background:#f0e7e9;border-radius:999px;overflow:hidden;margin:6px 0 18px}.progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--orange));width:0;transition:width .3s ease}.result-big{font-size:clamp(42px,12vw,56px);font-weight:900;margin:6px 0}.pass{color:var(--green)}.score{font-size:22px;font-weight:800}.ad-slot{max-width:728px;margin:22px auto;padding:10px;background:#f7f5f1;border:1px dashed #dcd6cf;border-radius:12px;text-align:center;color:#6b7075;font-size:12px;min-height:90px;display:flex;align-items:center;justify-content:center}.ad-label{font-size:11px;color:#6b7075;text-transform:uppercase;letter-spacing:1px}.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}.site-footer{margin-top:44px;background:#2b2340;color:#e7e0f2;padding:26px 0;font-size:14px}.site-footer a{color:#ffc6cd}.footer-links{margin:8px 0}.footer-links a{margin:0 8px}.disclaimer{background:#fff8e6;border:1px solid #f3e0a6;color:#6b5300;border-radius:12px;padding:14px 16px;font-size:14px;margin:22px 0}@media (max-width:560px){.nav a{padding:7px 9px;font-size:13.5px}.brand{font-size:17px}.panel{padding:18px}.btn-lg{width:100%;margin:4px 0}.grid{gap:14px}}.howto{max-width:640px;margin:16px auto;background:#eef6ff;border:1px solid #d5e6fb;border-radius:12px;padding:2px 18px}.howto summary{cursor:pointer;font-weight:800;padding:12px 0;color:#2b6cb0;list-style:none}.howto summary::-webkit-details-marker{display:none}.howto p{margin:4px 0 14px;color:#33475b;font-size:15px;line-height:1.55}.brand-logo{height:38px;width:auto;display:block}.footer-logo{height:40px;width:auto;display:block;margin:0 auto 8px;opacity:.95}.lang-btn{margin-left:6px;background:rgba(255,255,255,.18);color:#fff;border:1.5px solid rgba(255,255,255,.55);font-weight:800;font-size:13.5px;letter-spacing:.6px;padding:7px 12px;border-radius:10px;cursor:pointer;font-family:inherit;line-height:1.2}.lang-btn:hover{background:rgba(255,255,255,.32)}.cq-theme-btn{font-size:15px;padding:6px 10px;letter-spacing:0}.cq-theme-btn .t-sun{display:none}html[data-theme="dark"] .cq-theme-btn .t-sun{display:inline}html[data-theme="dark"] .cq-theme-btn .t-moon{display:none}html.lang-fr .nav a{font-size:13.5px;padding:8px 10px}@media (max-width:640px){.brand-logo{height:30px}.footer-logo{height:34px}.lang-btn{padding:6px 10px;font-size:12.5px}}.footer-map>summary::-webkit-details-marker{display:none}.hero-split{text-align:left;padding:34px 18px 10px;background:radial-gradient(1100px 420px at 78% 14%,#eaf4ff 0%,rgba(234,244,255,0) 62%)}.hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:26px 34px;align-items:center}.hero-copy h1{font-size:clamp(30px,4.6vw,54px);line-height:1.06;margin:0 0 14px;letter-spacing:-.5px;color:var(--ink)}.hero-copy h1 .hl{color:var(--red)}.hero-copy h1 .leaf{font-size:.82em}.hero-copy>p{font-size:clamp(16px,1.5vw,19px);color:var(--muted);max-width:560px;margin:0 0 16px}.hero-art{justify-self:center}.hero-art img{width:100%;max-width:560px;height:auto;display:block}.hero-badges{list-style:none;display:flex;flex-wrap:wrap;gap:8px 10px;padding:0;margin:0 0 20px}.hero-badges li{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;font-weight:700;font-size:14.5px;color:var(--ink);box-shadow:0 2px 8px rgba(43,45,66,.06)}.hero-badges .dot{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;color:#fff;font-size:13px;line-height:1;flex:0 0 24px;overflow:hidden;font-variant-emoji:text}.hero-badges .d-green{background:#238277}.hero-badges .d-purple{background:#7c68b4}.hero-badges .d-yellow{background:var(--yellow);color:#3d3000}.hero-badges .d-red{background:#e32231}.d-green{background:#238277}.d-purple{background:#7c68b4}.d-yellow{background:var(--yellow);color:#3d3000}.d-red{background:#e32231}.hero-cta{margin:0;display:flex;flex-wrap:wrap;gap:12px}.hero-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(160px,100%),1fr));gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 4px;margin:26px 0 12px}.strip-item{padding:14px 16px;border-right:1px solid var(--line);text-align:left;min-width:0}.strip-item:last-child{border-right:0}.strip-item .si-emoji{font-size:24px;line-height:1}.strip-item h3{margin:6px 0 4px;font-size:15px;color:var(--ink);line-height:1.2}.strip-item p{margin:0;font-size:13px;color:var(--muted);line-height:1.35}@media (min-width:901px){.hero-strip{grid-template-columns:repeat(3,1fr)}.strip-item:nth-child(3n){border-right:0}.strip-item:nth-child(-n+3){border-bottom:1px solid var(--line)}}@media (max-width:900px){.hero-split{text-align:center;padding-top:26px}.hero-grid{grid-template-columns:1fr}.hero-art{order:-1}.hero-art img{max-width:420px}.hero-copy>p{margin-left:auto;margin-right:auto}.hero-badges{justify-content:center}.hero-cta{justify-content:center}.strip-item{text-align:center;border-right:0;border-bottom:1px solid var(--line)}.strip-item:last-child{border-bottom:0}}@media (max-width:640px){.hero-strip{grid-template-columns:1fr 1fr}.strip-item{border-bottom:0;padding:12px 10px}}.dq-sign{display:flex;justify-content:center;margin:8px 0}.dq-sign svg{width:110px;height:110px;display:block}.dq-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(132px,100%),1fr));gap:14px;margin-top:16px}.dq-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 8px;text-align:center}.dq-card .dq-sign{margin:0}.dq-card .dq-sign svg{width:88px;height:88px}.dq-card p{margin:8px 0 0;font-size:13.5px;line-height:1.35;color:var(--muted)}.dq-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.dq-tabs .btn{padding:9px 15px;font-size:14.5px}.dq-tab.on{background:var(--red-aa);border-color:var(--red-aa);color:#fff}details.dq-learn{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}details.dq-learn summary{cursor:pointer;font-weight:700;color:var(--ink)}details.dq-learn p{margin:6px 0}main p a:not(.btn):not(.card),main li a:not(.btn):not(.card),.disclaimer a,main .muted a:not(.btn){text-decoration:underline;text-underline-offset:2px}main p a:not(.btn):hover,main li a:not(.btn):hover{text-decoration:underline}.lvl-pick{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px auto 4px;max-width:560px}.lvl-pick .lvl{flex:1 1 150px;min-height:64px;cursor:pointer;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:14px;padding:10px 12px;font:inherit;font-weight:700;font-size:1rem;line-height:1.25;transition:background .15s,border-color .15s,color .15s}.lvl-pick .lvl small{display:block;font-weight:600;font-size:.72rem;margin-top:3px;color:var(--muted)}.lvl-pick .lvl:hover{border-color:var(--red-aa)}.lvl-pick .lvl.on{background:var(--red-aa);border-color:var(--red-aa);color:#fff}.lvl-pick .lvl.on small{color:#fff}.pagedoc{max-width:760px;margin:26px auto 0;padding:22px 20px 26px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);color:var(--ink);line-height:1.65}.pagedoc h2{font-size:1.18rem;margin:22px 0 8px;color:var(--ink)}.pagedoc h2:first-child{margin-top:0}.pagedoc p{margin:0 0 10px}.pagedoc ul{margin:0 0 10px;padding-left:22px}.pagedoc li{margin:0 0 6px}.pagedoc a{color:var(--red-dark);text-decoration:underline}.pagedoc .pd-rel{margin:0}@media(max-width:520px){.pagedoc{padding:18px 15px 22px;margin-top:20px}}.cq-table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 10px}.cq-table th{text-align:left;padding:8px 10px;background:var(--red-dark);color:#fff;font-weight:700;font-size:13.5px;white-space:nowrap}.cq-table td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}.cq-table tbody tr:nth-child(even){background:rgba(0,0,0,.025)}.cq-table tbody tr:hover{background:rgba(0,0,0,.05)}.cq-callout{background:#fff8e6;border:1px solid #f0dca0;border-left:5px solid #e3b737;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:15px;line-height:1.6}@media(max-width:520px){.cq-table{font-size:13px}.cq-table th,.cq-table td{padding:6px 7px}}.idx-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:2px 22px;margin-top:6px}.idx-cols a{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 10px;border-radius:9px;font-weight:700;font-size:15px;line-height:1.35;color:var(--ink,#22203a);text-decoration:none}.idx-cols a:hover{background:#f3effa;text-decoration:none}.idx-n{font-weight:700;font-size:12.5px;color:#5d5876;background:#efeaf7;border-radius:999px;padding:2px 9px;white-space:nowrap}.idx-cols a:hover .idx-n{background:#fff}@media (max-width:560px){.idx-cols{grid-template-columns:1fr;gap:0}.idx-cols a{font-size:14.5px;padding:9px 8px}}.cq-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px -4px 10px;padding:0 4px}.cq-scroll .cq-table{min-width:720px}.kids .kid-eyebrow{margin:0 0 6px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:13px;color:var(--red-dark)}.kids .kid-top h1{font-size:clamp(26px,5.4vw,40px);line-height:1.18}.kids .kid-lede{font-size:clamp(17px,2.6vw,21px);line-height:1.55;max-width:640px;margin:6px auto 0;color:var(--muted)}.kid-art{margin:16px 0 4px}.kid-art img{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line);background:#eaf4fb}.kid-art figcaption{margin-top:8px;text-align:center;font-size:14px;color:var(--muted);line-height:1.5}.kid-story p{font-size:clamp(17px,2.5vw,19.5px);line-height:1.75;margin:0 0 16px}.kq-exp{margin:12px 0 0;padding:12px 14px;border-radius:12px;font-size:16px;line-height:1.6;background:#f3effa}@media (max-width:520px){.kid-story p{margin-bottom:14px}.kid-art img{border-radius:12px}}@media (max-width:560px){.site-header{position:static}.site-header .container{gap:6px}.nav{gap:2px}.nav a{padding:6px 8px;font-size:13px}html.lang-fr .nav a{font-size:12.5px;padding:6px 7px}.lang-btn{padding:6px 10px;font-size:13px}}.cq-pairs{overflow:visible;margin:6px 0 10px}.cq-pairs .cq-table{min-width:0}@media(max-width:620px){.cq-pairs .cq-table,.cq-pairs .cq-table tbody,.cq-pairs .cq-table tr,.cq-pairs .cq-table th,.cq-pairs .cq-table td{display:block;width:auto}.cq-pairs .cq-table tr{border-bottom:1px solid var(--line);padding:8px 0}.cq-pairs .cq-table tr:last-child{border-bottom:0}.cq-pairs .cq-table td{border:0;padding:0;color:var(--muted)}.cq-pairs .cq-table tbody tr:nth-child(even){background:none}}.qbank h3{margin:22px 0 4px}body.quiz-live .qbank{display:none}body.quiz-live .qbank-note{display:block}.qbank-note{display:none;margin:0 0 14px;font-size:14px;color:var(--muted)}.qbank details.qb-acc{border:1px solid var(--line);border-radius:14px;margin:10px 0;background:var(--card)}.qbank details.qb-acc summary{cursor:pointer;padding:13px 16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}.qbank details.qb-acc summary::-webkit-details-marker{display:none}.qbank details.qb-acc summary:after{content:"+";color:var(--red);font-size:22px;font-weight:800;line-height:1;flex:0 0 auto}.qbank details.qb-acc summary:hover{background:#fdf6f7;border-radius:14px}.qbank h3.qb-acc-t{margin:0;font-size:17px;font-weight:800}.qbank .qb-acc-t{margin:0}.qbank .qb-acc-n{font-weight:600;font-size:13.5px;color:var(--muted);white-space:nowrap}.qbank .qb-tools{margin:12px 0 4px}.qbank .qb-openall{cursor:pointer;font:inherit;font-size:14px;font-weight:700;color:var(--red-dark);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 15px}.qbank .qb-openall:hover{border-color:var(--red);background:#fff0f1}.qmode-fun .progress,.qmode-study .progress{height:12px;border-radius:999px;overflow:hidden;position:relative}.qmode-fun .progress>span{background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow));position:relative;overflow:hidden}.qmode-fun .progress>span:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.55),transparent 80%);transform:translateX(-100%);animation:qzSheen 1.9s ease-in-out infinite}@keyframes qzSheen{}.qmode-study .progress{background:#eef0f3}.qmode-study .progress>span{background:linear-gradient(90deg,var(--blue-dark),var(--blue))}.qz-pct{font-weight:800;font-size:13px;color:var(--muted);white-space:nowrap}.qmode-fun .qz-pct{color:var(--red-dark)}.qz-streak{font-weight:900;font-size:13.5px;border-radius:999px;padding:6px 12px;white-space:nowrap;background:#ffe8ea;color:var(--red-dark);transition:transform .25s}.qmode-study .qz-streak{display:none}@keyframes qzPop{0%{transform:scale(1)}40%{transform:scale(1.04)}100%{transform:scale(1)}}@keyframes qzShake{0%,100%{transform:translateX(0)}18%{transform:translateX(-8px)}55%{transform:translateX(8px)}80%{transform:translateX(-3px)}}.qmode-study .option{transition:.14s}.qmode-study .option:hover:not(.disabled){border-color:var(--blue);background:#f7fbff}@media (prefers-reduced-motion:reduce){.qmode-fun .progress>span:after{animation:none}.qz-streak{transition:none}}.qmode-fun .result-big{animation:qzRise .5s cubic-bezier(.2,.8,.3,1)}@keyframes qzRise{from{opacity:0;transform:translateY(16px) scale(.9)}}.qmode-fun .score{font-size:30px;color:var(--red-dark)}.qmode-study .qz-best{display:none}.qmode-study .result-big.pass{display:inline-block;font-size:15px;letter-spacing:.06em;background:#e9faf6;color:var(--green-dark);border-radius:999px;padding:8px 18px;margin:8px 0}.qmode-study .score{font-size:26px}.qmode-fun .qz-segs{display:none}@keyframes qzFall{to{transform:translateY(108vh) rotate(700deg);opacity:0}}@media (prefers-reduced-motion:reduce){.qmode-fun .result-big{animation:none}.qz-burst{display:none}}.also p{margin:0;line-height:1.85}.grid>*,.hero-strip>*,.prov-grid>*,.dq-gallery>*{min-width:0}.qbank details.qb-acc summary{flex-wrap:wrap}.qbank .qb-acc-t{min-width:0;overflow-wrap:anywhere}@media (max-width:400px){.qbank details.qb-acc summary{padding:12px 12px}}h1,h2,h3,h4,.card h3,.pill{overflow-wrap:break-word}@font-face{font-family:"DiaryHand";src:url(../fonts/comic-neue-regular.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:"DiaryHand";src:url(../fonts/comic-neue-bold.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}.diary .d-count{color:var(--muted);font-size:14.5px;margin:0 0 14px}.diary .d-foot{color:var(--muted);font-size:13.5px;margin:22px 0 0;line-height:1.6}.d-tools{margin:0 0 14px}.d-readbtn{min-height:44px}.d-readpanel{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:10px 0 0;background:#fff}.d-rowlabel{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:8px 0 6px}.d-rowlabel:first-child{margin-top:0}.d-row{display:flex;flex-wrap:wrap;gap:7px}.d-opt{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink,#2b2d42);border-radius:10px;padding:10px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;min-height:44px}.d-opt[aria-pressed="true"]{background:#238277;border-color:#238277;color:#fff}.d-tabs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 10px}.d-tab{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink,#2b2d42);border-radius:999px;padding:11px 17px;font:inherit;font-size:14.5px;font-weight:700;cursor:pointer;min-height:46px}.d-tab[aria-selected="true"]{background:#2b2d42;border-color:#2b2d42;color:#fff}.d-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}.d-said{color:var(--muted);font-size:14px;margin:0 0 4px}.dera{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:26px 0 10px;font-weight:800}.dera:first-child{margin-top:6px}.dnote{border-radius:14px;padding:20px 20px 15px;overflow:hidden;margin:0 0 11px;border:1px solid var(--line);background:#fff;transition:background .3s ease,border-color .3s ease}.dwhen{display:inline-block;border-radius:999px;padding:4px 13px;font-size:14px;font-weight:700;margin:0 0 9px;background:#eef6f4;color:#1c6a60}.dtag{display:inline-block;background:#284673;color:#fff;border-radius:999px;padding:2px 9px;font-size:11.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-left:7px;vertical-align:2px}.dtitle{margin:0 0 8px;font-size:19px;line-height:1.32}.dbody{margin:0;font-size:16.5px;line-height:1.7}.dmore{margin:10px 0 0;font-size:15px}.dsrc{margin:12px 0 0;padding:9px 0 0;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.5}.rd-paper-aged .dnote.e0,.rd-paper-aged .dnote.e1{background-color:#ecd49b;border-color:#a97c33;background-image:radial-gradient(ellipse 96% 88% at 50% 42%,rgba(253,242,210,.78),transparent 76%),radial-gradient(ellipse 22% 34% at 8% 26%,rgba(150,96,22,.18),transparent 68%),radial-gradient(ellipse 5% 12% at 88% 82%,rgba(140,86,18,.22),transparent 76%),linear-gradient(to bottom,transparent 46%,rgba(132,84,20,.15) 49.3%,rgba(255,248,222,.5) 50.6%,transparent 54%),radial-gradient(116% 102% at 50% 50%,transparent 50%,rgba(122,74,14,.34) 100%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.026' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='luminanceToAlpha'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.48' intercept='-0.09'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='300' height='300' fill='%238d5a14' filter='url(%23m)'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");background-size:auto,auto,auto,auto,auto,175px 175px,140px 140px;box-shadow:0 2px 12px rgba(110,70,16,.20)}.rd-paper-aged .dnote.e0 .dwhen,.rd-paper-aged .dnote.e1 .dwhen{background:rgba(238,208,144,.92);color:#4a3204}.rd-paper-aged .dnote.e0 .dtitle,.rd-paper-aged .dnote.e1 .dtitle{color:#201301}.rd-paper-aged .dnote.e0 .dbody,.rd-paper-aged .dnote.e1 .dbody{color:#221502}.rd-paper-aged .dnote.e0 .dsrc,.rd-paper-aged .dnote.e1 .dsrc{color:#5a3a05;border-top-color:rgba(150,108,36,.26)}.rd-paper-aged .dnote.e0 .dmore a,.rd-paper-aged .dnote.e1 .dmore a{color:#6a3c06}.rd-paper-aged .dnote.e2{background:#f3f1ea;border-color:#dad6c9}.rd-paper-aged .dnote.e2 .dtitle{color:#2c2a26;font-family:Georgia,"Times New Roman",serif}.rd-paper-aged .dnote.e2 .dbody{color:#35332e}.rd-paper-aged .dnote.e2 .dwhen{background:#e3dfd2;color:#55503f}.rd-paper-aged .dnote.e3{background:#faf9f5;border-color:#e0ded2}.rd-paper-aged .dnote.e3 .dtitle{color:#26262b;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:17px}.rd-paper-aged .dnote.e3 .dwhen{background:#ebe9db;color:#575540;font-family:ui-monospace,Menlo,monospace}.dnote.fut{background:#eef3fb;border-color:#c4d5ef}.dnote.fut .dtitle{color:#1f2f4a}.dnote.fut .dbody{color:#2a3a55}.dnote.fut .dwhen{background:#d9e5f8;color:#284673}.rd-hand-friendly .dnote.e0,.rd-hand-friendly .dnote.e1{font-family:"DiaryHand","Chalkboard SE","Comic Neue",cursive}.rd-hand-friendly .dnote.e0 .dtitle,.rd-hand-friendly .dnote.e1 .dtitle{font-size:22px}.rd-hand-friendly .dnote.e0 .dbody,.rd-hand-friendly .dnote.e1 .dbody{font-size:18px;line-height:1.78}.dnote[hidden],.dera[hidden]{display:none}@media (max-width:520px){.dnote{padding:17px 16px 13px}.dtitle{font-size:18px}.dbody{font-size:16px}}.diary-feature{display:flex;align-items:center;gap:16px;flex-wrap:wrap;text-decoration:none;color:inherit;margin:0 0 18px;padding:18px 20px;border:1px solid #a97c33;border-radius:16px;background-color:#ecd49b;background-image:radial-gradient(ellipse 96% 90% at 50% 44%,rgba(253,242,210,.80),transparent 76%),radial-gradient(ellipse 18% 40% at 6% 30%,rgba(150,96,22,.16),transparent 70%),radial-gradient(116% 104% at 50% 50%,transparent 52%,rgba(122,74,14,.30) 100%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.026' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='luminanceToAlpha'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.40' intercept='-0.10'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='300' height='300' fill='%238d5a14' filter='url(%23m)'/%3E%3C/svg%3E");background-size:auto,auto,auto,175px 175px;box-shadow:0 2px 12px rgba(110,70,16,.18)}.diary-feature:hover{box-shadow:0 4px 18px rgba(110,70,16,.26)}.diary-feature-mark{flex:0 0 46px;width:46px;height:46px;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;font-size:26px;line-height:1}.diary-feature-text{flex:1 1 300px;min-width:0}.diary-feature-kicker{display:block;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#6b4508;margin:0 0 3px}.diary-feature-title{display:block;font-size:21px;font-weight:800;color:#241602;line-height:1.25;font-family:"DiaryHand","Chalkboard SE","Comic Neue",cursive}.diary-feature-blurb{display:block;font-size:15px;color:#2b1c04;margin:5px 0 0;line-height:1.55}.diary-feature-go{flex:0 0 auto;background:#238277;color:#fff;border-radius:999px;padding:11px 18px;font-weight:800;font-size:14.5px;min-height:44px;display:inline-flex;align-items:center}@media (max-width:560px){.diary-feature{padding:16px}.diary-feature-go{width:100%;justify-content:center}}.dicon{float:right;margin:0 0 8px 12px;width:40px;height:40px;flex:0 0 40px;overflow:hidden;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;border:1px solid rgba(0,0,0,.08)}.dicon .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}.t-war{background:#fdeced}.t-treaty{background:#f3efe4}.t-law{background:#eef2fb}.t-disaster{background:#fdf0e6}.t-explore{background:#eaf4f1}.t-land{background:#fdeef0}.t-build{background:#eef4f9}.t-sport{background:#fff6e0}.t-people{background:#f2eefa}.t-sea{background:#e9f2f7}.t-culture{background:#fbeef6}.t-science{background:#fdf7e3}.rd-paper-aged .dnote.e0 .dicon,.rd-paper-aged .dnote.e1 .dicon{background:rgba(255,250,232,.55);border-color:rgba(140,96,26,.30)}@media (max-width:420px){.dicon{width:34px;height:34px;flex:0 0 34px;font-size:17px;margin-left:9px}}main .lo-grid,main .mem-board,main .rv-board,main .sk-grid,main .ck-board,main .ch-board,main .g2-board,main .sp-board,main .cw-grid,main .ws-wrap,main .ms-grid,main .wb-wrap,main .cr-board,main #wheel,main .sw-wrap,main .game-wrap{width:100%;max-width:min(94vw,74vh,640px);margin-left:auto;margin-right:auto}main .ck-wrap,main .sk-wrap,main .g2-wrap,main .sp-wrap,main .lo-wrap,main .cw-wrap,main .rv-wrap,main .ms-wrap,main .ms-pads{width:100%;max-width:min(94vw,74vh,640px);margin-left:auto;margin-right:auto}main .cr-board,main #wheel{height:auto}main .ck-board,main .ch-board,main .rv-board{max-width:min(94vw,78vh,680px)}@media (max-width:480px){main .wm-keyboard,main .cw-kb{margin-left:-12px;margin-right:-12px;max-width:none}main .wm-krow,main .cw-krow{gap:3px}main .wm-key,main .cw-key{max-width:none;min-width:0}main .cw-key{height:48px;font-size:16px}main .cw-key.wide{font-size:12px}}@media (orientation:landscape) and (max-height:520px){}@media (orientation:landscape) and (max-height:520px){.tv-btn,.fs-btn{padding:8px 12px !important;font-size:12.5px !important}.tv-btn{bottom:calc(48px+env(safe-area-inset-bottom,0px)) !important}}.tp-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center;background:linear-gradient(135deg,#fff 0%,#fdf6f6 100%);border:1px solid #eee3e3;border-radius:18px;padding:26px 26px 22px;margin:18px 0 14px}.tp-eyebrow{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:#c8102e;font-weight:700;margin:0 0 6px}.tp-hero h1{font-size:clamp(28px,4.4vw,42px);line-height:1.12;margin:0 0 10px}.tp-hero .tp-lead{font-size:16px;color:#4a4a55;margin:0 0 12px;max-width:46ch}.tp-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}.tp-chips li{background:#fff;border:1px solid #e6dfdf;border-radius:999px;padding:6px 13px;font-size:13.5px;font-weight:600;color:#3c3c46}.tp-cta{display:flex;flex-wrap:wrap;gap:10px}.tp-art{margin:0}.tp-art svg{width:100%;height:auto;display:block;border-radius:14px}.tp-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 26px}.tp-trust div{background:#f4f8fc;border:1px solid #e2ebf4;border-radius:14px;padding:14px 16px}.tp-trust h3{margin:0 0 4px;font-size:15.5px}.tp-trust p{margin:0;font-size:13.5px;color:#55555f;line-height:1.45}.tp-h2{font-size:clamp(21px,2.8vw,27px);margin:0 0 4px}.tp-sub{color:#66666f;margin:0 0 14px;font-size:15px}.tp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 28px}.tp-card{border:1px solid #e8e2e2;border-radius:14px;padding:16px 17px;background:#fff}.tp-card .tp-ico{font-size:26px;line-height:1;margin:0 0 8px}.tp-card h3{margin:0 0 5px;font-size:16.5px}.tp-card p{margin:0 0 10px;font-size:14px;color:#55555f;line-height:1.5}.tp-card a{font-weight:700;font-size:14px;text-decoration:none}.tp-card a::after{content:" \2192"}.tp-c1{background:#fff6f6;border-color:#f3dede}@media (max-width:900px){.tp-hero{grid-template-columns:1fr;padding:22px 18px}.tp-art{order:-1}.tp-trust,.tp-grid,.tp-levels{grid-template-columns:1fr 1fr}}@media (max-width:620px){.tp-trust,.tp-grid,.tp-levels{grid-template-columns:1fr}.tp-cta .btn{width:100%;text-align:center}}.tp-acc>summary::-webkit-details-marker{display:none}.pd-fold{margin:0}.pd-fold>summary{cursor:pointer;list-style:none;padding:4px 34px 4px 0;position:relative}.pd-fold>summary::-webkit-details-marker{display:none}.pd-fold>summary .pd-sum{font-weight:700;font-size:19px}.pd-fold>summary::after{content:"+";position:absolute;right:4px;top:-2px;font-size:24px;line-height:1;color:#c8102e}.pd-fold>summary:hover .pd-sum{color:#c8102e}.pd-body{padding-top:8px}.cq-box{max-width:760px;margin:14px auto 10px}.cq-field{position:relative}.cq-field input{width:100%;font-size:18px;padding:14px 46px 14px 16px;border:2px solid #e0d8d8;border-radius:12px;background:#fff;color:#22222a}.cq-field input:focus{outline:none;border-color:#c8102e}.cq-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:#f0eaea;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:13px;font-weight:700;color:#5a5a64}.cq-clear:hover{background:#e4dcdc}.cq-count{margin:10px 2px 4px;font-size:14px;color:#66666f}@media (max-width:560px){.cq-field input{font-size:16.5px;padding:12px 44px 12px 13px}}.cq-field input[type=search]::-webkit-search-cancel-button,.cq-field input[type=search]::-webkit-search-decoration{-webkit-appearance:none;display:none}@media print{}@page{margin:15mm 14mm}.rt-panel{padding:14px 14px 18px}.rt{min-height:320px}.rt-road{display:flex;gap:3px;align-items:center;margin:0 0 12px;background:linear-gradient(#e9e4dc,#e9e4dc) center/100% 6px no-repeat;padding:6px 0}.rt-stop{flex:1;height:16px;border-radius:999px;background:#d8d2c8;display:flex;align-items:center;justify-content:center;font-size:13px;line-height:1}.rt-stop.here{background:#c8102e;height:26px;color:#fff;flex:0 0 34px}.rt-next{margin-top:4px}.rt-end{text-align:center;padding:18px 6px}.rt-endsub{margin:0 0 8px;color:#55555f;line-height:1.5}@media (max-width:520px){.rt-stop{height:12px}.rt-stop.here{height:22px;flex:0 0 28px}}.dm-wrap{text-align:center}.dm-map{display:block;width:100%;max-width:720px;margin:.75rem auto .25rem;height:auto}.dm-usa{fill:#e9e6df}.dm-water{fill:#cfe3ef;pointer-events:none}.dm-p{stroke:#fdfbf7;stroke-width:1.5;cursor:pointer;transition:opacity .12s ease}.dm-p:hover,.dm-p:focus{opacity:.7;outline:none}.dm-hit{fill:transparent;cursor:pointer}.dm-hide{display:none}.dm-panel{min-height:3.5rem;margin:.25rem auto 0;max-width:640px}.dm-prompt{margin:.75rem 0}.rr-wrap{max-width:720px;margin:0 auto;text-align:center}.rr-h{margin:.2rem 0 .9rem;font-size:1.25rem}.rr-modes{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:520px){.rr-modes{grid-template-columns:1fr}}.rr-mode{display:flex;flex-direction:column;align-items:center;gap:4px;background:#fff;border:2px solid #ded7cc;border-radius:16px;padding:18px 14px;font:inherit;cursor:pointer;transition:border-color .12s}.rr-mode:hover,.rr-mode:focus-visible{border-color:#2b6cb0;outline:none}.rr-emoji{font-size:30px;line-height:1}.rr-mode-t{font-weight:800;color:#2b2d42;font-size:17px}.rr-mode-s{color:#5f6b7a;font-size:13.5px;line-height:1.35}.land-wrap{max-width:560px;margin:0 auto;text-align:center}.land-intro{font-size:17px;color:#2b2d42;font-weight:600;margin:10px 0 16px}.feature-plain{border:1px solid var(--line);border-left:6px solid var(--red);background-color:var(--card);background-image:none;box-shadow:var(--shadow)}.feature-plain:hover{box-shadow:0 10px 26px rgba(43,45,66,.13)}.feature-plain .diary-feature-kicker{color:var(--red-dark)}.feature-plain .diary-feature-title{color:var(--ink);font-family:inherit}.feature-plain .diary-feature-blurb{color:var(--muted)}.feature-plain .diary-feature-go{background:var(--green-dark)}.footer-all a:not([class]),.pd-rel a:not([class]),.dmore a:not([class]),.also a:not([class]),.cq-sources li>a:not([class]),.tp-level li>a:not([class]),.panel ul li>a:not([class]),.pagedoc ul li>a:not([class]),p.muted>a:not([class]),td>a:not([class]),p>a:only-child:not([class]){padding-top:5px;padding-bottom:5px}.blog-sec{margin:34px 0 14px;font-size:22px;letter-spacing:-.01em;color:var(--ink);padding-bottom:8px;border-bottom:3px solid var(--red)}.blog-sec:first-of-type{margin-top:22px}@media(max-width:560px){.blog-sec{font-size:19px;margin:26px 0 12px}}#cm-pins{pointer-events:none}</style>
+<link rel="stylesheet" href="css/style.css?v=60ee6cdc" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="css/style.css?v=60ee6cdc"></noscript>
+<style>
+  .sz-cur{max-width:760px;margin:6px auto 12px;padding:10px 14px;border-left:4px solid var(--red);background:var(--card);border-radius:0 12px 12px 0;font-size:.95rem}
+  .sz-learn{margin:0 0 8px}
+  .sz-panes{max-width:760px}
+  .sz-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+  .sz-tab{flex:1 1 100px;min-height:48px;border:2px solid var(--line);border-radius:14px;background:var(--card);
+    color:var(--ink);font-weight:800;font-size:.95rem;cursor:pointer;padding:8px 6px;line-height:1.15}
+  .sz-tab[aria-selected="true"]{border-color:var(--red-dark);background:var(--red-dark);color:#fff}
+  .sz-tab:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  .sz-pane{display:none}.sz-pane.on{display:block}
+  .sz-learn .sz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:12px 0}
+  .sz-pt{border:2px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--card)}
+  .sz-pt h3{margin:0 0 4px;font-size:1.05rem}
+  .sz-pt .cap{font-weight:800;color:var(--red-dark)}
+  .sz-pt .meta{font-size:.85rem;color:var(--muted);margin:0 0 6px}
+  .sz-pt p{margin:0;font-size:.95rem}
+  .sz-badge{display:inline-block;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:999px;background:var(--line);margin-left:6px;vertical-align:middle}
+  .sz-phys li{margin:0 0 8px}
+  .sz-q{font-size:1.2rem;font-weight:800;margin:0 0 12px;line-height:1.35}
+  .sz-opts{display:grid;gap:10px;margin:0 0 12px}
+  .sz-opt{text-align:left;border:2px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);
+    padding:12px 14px;font-size:1.02rem;cursor:pointer;min-height:48px;line-height:1.3}
+  .sz-opt:hover{border-color:var(--blue)}
+  .sz-opt.right{border-color:#1a9c4b;background:#e4f7ea}
+  .sz-opt.wrong{border-color:var(--red);background:#fde8e8}
+  .sz-opt[disabled]{cursor:default}
+  .sz-exp{border-left:4px solid var(--blue);padding:8px 12px;margin:0 0 12px;background:var(--card);border-radius:0 10px 10px 0;display:none}
+  .sz-exp.on{display:block}
+  .sz-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px;font-weight:800}
+  .sz-prog{height:10px;border-radius:999px;background:var(--line);overflow:hidden;margin:0 0 14px}
+  .sz-prog>span{display:block;height:100%;background:var(--red);width:0;transition:width .25s}
+  .sz-btns{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 0}
+  .sz-res{text-align:center;padding:12px 0}
+  .sz-res .big{font-size:3.4rem;line-height:1}
+  .sz-res h2{margin:.2em 0}
+  .sz-note{font-size:.9rem;color:var(--muted)}
+  .sz-picker{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+  .sz-picker .btn{min-height:44px}
+  .sz-picker .btn.on{outline:3px solid var(--red)}
+  /* the sheet itself, on screen */
+  .sz-sheet{border:2px solid var(--line);border-radius:14px;padding:18px 20px;background:#fff;color:#000;max-width:720px}
+  .sz-sheet h2{margin:0 0 2px;font-size:1.35rem}
+  .sz-sheet .hd{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:2px solid #000;padding:0 0 8px;margin:0 0 12px}
+  .sz-sheet .nm{font-size:.95rem}
+  .sz-sheet h3{margin:14px 0 6px;font-size:1.05rem}
+  .sz-sheet ol{margin:0;padding-left:22px}
+  .sz-sheet li{margin:0 0 10px;line-height:1.45}
+  .sz-sheet .qt{display:block}
+  .sz-sheet .o{display:block;margin-left:4px}
+  .sz-sheet .bl{display:inline-block;min-width:170px;border-bottom:1.5px solid #000;margin-left:6px}
+  .sz-sheet .ft{margin:16px 0 0;font-size:.8rem;border-top:1px solid #999;padding-top:6px}
+  .sz-sheet .ans{font-weight:800}
+  @media print{
+    body>*:not(main){display:none!important}
+    main.container>*:not(.sz-app){display:none!important}
+    .sz-app>*:not(.sz-panes){display:none!important}
+    .sz-pane{display:none!important}
+    .sz-pane.on{display:block!important}
+    .sz-pane.on>*:not(.sz-sheet){display:none!important}
+    body{background:#fff!important;color:#000!important;font-size:12pt}
+    main.container{max-width:none;padding:0;margin:0}
+    .panel,.sz-app{border:0!important;box-shadow:none!important;padding:0!important;margin:0!important;background:#fff!important}
+    .sz-sheet{border:0;border-radius:0;padding:0;max-width:none}
+    .sz-sheet li{page-break-inside:avoid;break-inside:avoid;margin:0 0 5pt}
+    /* two answers per line, so eight questions and the capitals fit one page */
+    .sz-sheet .o{display:inline-block;width:47%;vertical-align:top}
+    .sz-sheet h3{margin:9pt 0 4pt}
+    body{font-size:11pt}
+    a[href]:after{content:""}
+  }
+
+  .sz-learn .sz-ev{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:12px 0}
+  .sz-yr{display:inline-block;font-weight:800;font-size:.8rem;padding:2px 9px;border-radius:999px;background:var(--red-dark);color:#fff;margin:0 0 6px}
+  .sz-unit{margin:22px 0 4px}
+  .sz-tl{list-style:none;padding:0;margin:10px 0;border-left:3px solid var(--line)}
+  .sz-tl li{margin:0 0 8px;padding-left:12px}
+  .sz-tl b{display:inline-block;min-width:3.2em;color:var(--red-dark)}
+  .sz-prov{max-width:760px;margin:0 auto 14px}
+  .sz-prov table{width:100%;border-collapse:collapse;font-size:.92rem}
+  .sz-prov td{padding:6px 8px;border-top:1px solid var(--line);vertical-align:top}
+  .sz-prov table{table-layout:fixed}
+  .sz-prov td:first-child{font-weight:800;width:40%;padding-right:10px;font-size:.88rem}
+  .sz-sheet .ord{display:block;margin:0 0 6px}
+  .sz-sheet .box{display:inline-block;width:28px;height:22px;border:1.5px solid #000;margin-right:8px;vertical-align:middle}
+  .sz-sheet .lines span{display:block;border-bottom:1.5px solid #000;height:26px}
+  @media print{
+    .sz-sheet .ord{margin:0 0 3pt}
+.sz-sheet .lines span{height:18pt}
+    .sz-sheet{font-size:9.5pt}
+    .sz-sheet h3{margin:7pt 0 3pt}
+    .sz-sheet li{margin:0 0 4pt}
+  }
+</style>
+<link rel="icon" href="brand/favicon.svg?v=2e301691" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png?v=e5ca0b50">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#c8102e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Canada Quiz">
+<meta name="google-adsense-account" content="ca-pub-7256851069341390">
+<link rel="canonical" href="https://canada-quiz.com/history-grade-8.html">
+<link rel="alternate" hreflang="en" href="https://canada-quiz.com/history-grade-8.html">
+<link rel="alternate" hreflang="fr" href="https://canada-quiz.com/fr/history-grade-8.html">
+<link rel="alternate" hreflang="x-default" href="https://canada-quiz.com/history-grade-8.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Canada Quiz">
+<meta property="og:locale" content="en_CA">
+<meta property="og:title" content="Creating Canada, 1850–1914: Grade 8 History Quiz">
+<meta property="og:description" content="Grade 8 history, 1850 to 1914: Confederation, Red River, the treaties, the railway and the Klondike. Lesson, quiz and printable worksheets.">
+<meta property="og:url" content="https://canada-quiz.com/history-grade-8.html">
+<meta property="og:image" content="https://canada-quiz.com/images/social/quizzes.png?v=6ea4effc">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Creating Canada, 1850–1914: Grade 8 History Quiz">
+<meta name="twitter:description" content="Grade 8 history, 1850 to 1914: Confederation, Red River, the treaties, the railway and the Klondike. Lesson, quiz and printable worksheets.">
+<meta name="twitter:image" content="https://canada-quiz.com/images/social/quizzes.png?v=6ea4effc">
+<!--LD--><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canada-quiz.com/"},{"@type":"ListItem","position":2,"name":"Quizzes","item":"https://canada-quiz.com/quizzes.html"},{"@type":"ListItem","position":3,"name":"Creating Canada, 1850–1914: Grade 8 History Quiz","item":"https://canada-quiz.com/history-grade-8.html"}]},{"@type":"WebPage","@id":"https://canada-quiz.com/history-grade-8.html#webpage","url":"https://canada-quiz.com/history-grade-8.html","name":"Creating Canada, 1850–1914: Grade 8 History Quiz","description":"Grade 8 history, 1850 to 1914: Confederation, Red River, the treaties, the railway and the Klondike. Lesson, quiz and printable worksheets.","inLanguage":"en-CA","isPartOf":{"@type":"WebSite","url":"https://canada-quiz.com/","name":"Canada Quiz & Family Fun Games"},"publisher":{"@type":"Organization","name":"Canada Quiz & Family Fun Games","url":"https://canada-quiz.com/"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://canada-quiz.com/images/social-preview.png"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which grade is this in my province?","acceptedAnswer":{"@type":"Answer","text":"The page is labelled with the Ontario grade, Grade 8. The \"In your province\" box near the top lists where other provinces teach it; for example, British Columbia: Grade 9 (1750–1919)."}},{"@type":"Question","name":"Do the worksheet and the answer sheet really match?","acceptedAnswer":{"@type":"Answer","text":"Yes. Worksheet A always has the same questions in the same order, and Answer Sheet A lists those answers, including the order of the timeline events and what a good written answer should mention."}}]}]}</script><!--/LD-->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="./" aria-label="Canada Quiz &amp; Family Fun Games"><img src="brand/logo-horizontal-white.svg?v=bb66f331" alt="Canada Quiz &amp; Family Fun Games" class="brand-logo" width="230" height="55"></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="./">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="games.html">Family Games</a>
+      <a href="for-kids.html">For Kids</a>
+      <a href="citizenship.html">Citizenship</a>
+      <a href="driving-test.html">Driving Test</a>
+      <a href="daily.html">Daily</a>
+      <a href="blog.html">Blog</a>
+      <a href="search.html">Search</a>
+      <button type="button" class="lang-btn" data-no-i18n data-set-lang="fr" aria-label="Passer en français" title="Passer en français"><span aria-hidden="true">🌐</span> FR</button>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" style="padding:26px 20px 6px">
+    <h1>📜 Grade 8 History: Creating Canada, 1850–1914</h1>
+    <p>A Grade 8 lesson on Canada from 1850 to 1914, with a quiz, endless practice, a challenge round, and printable worksheets with answer sheets. No accounts, nothing to download.</p>
+  </section>
+  <p class="sz-cur"><b>Curriculum:</b> Ontario History, Grade 8 (2026), Strand A (<i>Creating Canada, 1850–1890</i>) and Strand B (<i>Canada, 1890–1914: A Changing Society</i>), including the contributions of Black individuals and communities. Other provinces teach much of this between Grades 6 and 9. Unofficial practice, not approved by any school board.</p>
+  <details class="howto sz-prov"><summary>📍 In your province</summary><p>Where this is taught, by province:</p><table><tr><td>Ontario</td><td>Grade 8</td></tr><tr><td>British Columbia</td><td>Grade 9 (1750–1919)</td></tr><tr><td>Alberta</td><td>Grade 7 (Following Confederation)</td></tr><tr><td>Saskatchewan</td><td>Grade 4 (Treaties and settlement)</td></tr><tr><td>Manitoba</td><td>Grade 6 (Building a Nation, 1867–1914)</td></tr><tr><td>Quebec</td><td>Elementary Grades 5 and 6, and Secondary IV</td></tr><tr><td>Nova Scotia</td><td>Grade 7 (the Maritimes, 1820–1920)</td></tr><tr><td>Newfoundland and Labrador</td><td>Grades 7 and 8</td></tr></table><p class="sz-note">From each province's own curriculum. Not listed? Your province's curriculum covers it too; ask your teacher which grade.</p></details>
+  <details class="howto"><summary>📖 For teachers and parents</summary><p>Six tabs, one topic. <b>Learn</b> is a short lesson with a timeline. <b>Quiz</b> is ten questions with an explanation after each answer. <b>Practice</b> never ends and keeps no score. <b>Challenge</b> is twelve harder questions. <b>Worksheet</b> and <b>Answers</b> print — pick the same letter for both, and the answer sheet matches the worksheet. Three versions, so a class can have three different sheets side by side.</p></details>
+  <div class="panel sz-app" data-fs-host>
+    <div class="sz-tabs" role="tablist" id="szTabs" data-no-i18n></div>
+  <section class="sz-learn" id="szLearn">
+    <h2 class="sz-unit">📖 Creating Canada, 1850–1890</h2>
+    <p>Three colonies became one country of four provinces in 1867, and within four years it reached the Pacific. For First Nations and Métis on the Prairies, those same years brought treaties, the Indian Act and armed conflict.</p>
+    <div class="sz-ev">
+      <div class="sz-pt"><span class="sz-yr">1850s</span><h3>Freedom seekers in Canada West</h3><p>Thousands escaped slavery in the United States to Canada West. Harriet Tubman lived in St. Catharines in the 1850s and guided people there. Mary Ann Shadd founded the Provincial Freeman in 1853, the first newspaper in North America published by a Black woman.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1858</span><h3>Gold and a new colony on the Pacific</h3><p>Gold on the Fraser River brought thousands of miners, and Britain created the colony of British Columbia. That year, hundreds of Black Americans from San Francisco settled in Victoria at Governor James Douglas's invitation.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1861</span><h3>Anderson Ruffin Abbott</h3><p>Born in Toronto, Abbott became the first Canadian-born Black doctor in 1861. He served as a surgeon in the American Civil War, in charge of a hospital near Washington, and later practised medicine in Ontario.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1864</span><h3>Charlottetown and Quebec</h3><p>Leaders from the colonies met at Charlottetown in September 1864, then at Quebec in October, where they wrote the 72 Resolutions: the plan for a new country.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1860s</span><h3>Why join together?</h3><p>The Province of Canada's government kept getting stuck. Many feared the United States after its Civil War, especially after the Fenian raids of 1866. A railway to the Atlantic, and trade between the colonies, needed one government.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1867</span><h3>Confederation</h3><p>On July 1, 1867, the British North America Act joined Ontario, Quebec, Nova Scotia and New Brunswick into the Dominion of Canada. John A. Macdonald became the first prime minister.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1869–1870</span><h3>The Red River Resistance</h3><p>Canada bought Rupert's Land from the Hudson's Bay Company without asking the people who lived there. The Métis at Red River, led by Louis Riel, formed their own government and negotiated. The result was the Manitoba Act: Manitoba joined Canada in 1870.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1871–1873</span><h3>From sea to sea</h3><p>British Columbia joined in 1871, on the promise of a railway to the Pacific within ten years. Prince Edward Island joined in 1873. The North-West Mounted Police were also created in 1873.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1871–1877</span><h3>The Numbered Treaties</h3><p>First Nations and the Crown signed Treaties 1 to 7 across the Prairies. Many First Nations understood them as agreements to share the land; the government treated them as giving it up. Promised help with farming, schools and medicine was often late, small or never came.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1876</span><h3>The Indian Act</h3><p>This federal law controlled much of First Nations life: who counted as "Indian", how reserves were run, and later bans on ceremonies such as the potlatch. It has been changed many times and is still in force.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1880s</span><h3>Residential schools</h3><p>From the 1880s the federal government expanded church-run residential schools. More than 150,000 First Nations, Métis and Inuit children were taken from their families and punished for speaking their languages, and many were harmed or died. The last school closed in 1996.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1882</span><h3>John Ware</h3><p>Born into slavery in the United States, John Ware came north on a cattle drive in 1882 to what is now Alberta. He became one of the best-known ranchers and cowboys in the West.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1885</span><h3>The railway is finished</h3><p>The last spike of the Canadian Pacific Railway was driven at Craigellachie, BC, on November 7, 1885. About 15,000 Chinese workers built much of the hardest section in BC, for less pay than others, and hundreds died. That same year Canada made Chinese immigrants pay a $50 head tax.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1885</span><h3>The North-West Resistance</h3><p>Métis and some First Nations in what is now Saskatchewan resisted after years of ignored petitions. Troops came west on the new railway and defeated the Métis at Batoche. Louis Riel was hanged in Regina on November 16, 1885, and Cree leaders Poundmaker and Big Bear were jailed.</p></div>
+    </div>
+    <h2 class="sz-unit">📖 Canada, 1890–1914: A Changing Society</h2>
+    <p>Gold in the Yukon, millions of new settlers, two new provinces, growing cities and factories — and new rules about who was welcome. Then, in August 1914, war.</p>
+    <div class="sz-ev">
+      <div class="sz-pt"><span class="sz-yr">1896</span><h3>Laurier and the Klondike</h3><p>Wilfrid Laurier became the first French-Canadian prime minister in 1896. The same summer, gold was found on a creek in the Yukon by George Carmack and two Tagish men, Keish (Skookum Jim) and Dawson Charlie. The Klondike Gold Rush followed, and Yukon became a territory in 1898.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1896–1914</span><h3>Settling the West</h3><p>Clifford Sifton's posters across Europe and the United States offered 160 acres of Prairie land for a $10 fee. Ukrainians, Germans, Scandinavians, Americans, Doukhobors and many others came, and the Prairie population grew fast.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1905</span><h3>Alberta and Saskatchewan</h3><p>So many settlers had arrived that two new provinces were created from the North-West Territories on September 1, 1905.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1908–1911</span><h3>Amber Valley</h3><p>About 1,000 Black settlers, many from Oklahoma, came to the Prairies looking for land and safety. They built farming communities such as Amber Valley, Alberta, even as some newspapers and politicians campaigned to keep them out.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1903–1914</span><h3>Who was welcome?</h3><p>The Chinese head tax rose to $500 in 1903. A 1908 rule required immigrants to come by one continuous journey, which kept out most people from India. In 1914 the Komagata Maru, carrying 376 passengers from British India, mostly Sikhs, was kept off Vancouver for two months and sent back. Canada apologized in 2016.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1890s–1914</span><h3>Cities and factories</h3><p>Towns grew into cities with factories, electric streetcars and crowded neighbourhoods. Many workers, including children, worked long hours for low pay, and more of them joined unions to ask for better conditions.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1914</span><h3>Women and the vote</h3><p>In 1914 no woman could vote in a federal election. That January, Nellie McClung and others staged a mock "Women's Parliament" in Winnipeg, turning the arguments against them upside down. Manitoba became the first province to give women the vote two years later.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1899–1902</span><h3>The South African War</h3><p>More than 7,000 Canadians volunteered to fight for Britain in South Africa. Many English Canadians supported it; many French Canadians, led by Henri Bourassa, did not want Canada fighting Britain's wars.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1901–1909</span><h3>Firsts</h3><p>Marconi received the first radio signal across the Atlantic at Signal Hill, St. John's, in 1901. Onondaga runner Tom Longboat won the Boston Marathon in 1907. The first Grey Cup was played in 1909.</p></div>
+      <div class="sz-pt"><span class="sz-yr">1914</span><h3>War</h3><p>When Britain declared war on Germany on August 4, 1914, Canada was at war too: as part of the British Empire, it could not stay out.</p></div>
+    </div>
+    <h2 class="sz-unit">🗓️ Timeline</h2>
+    <ul class="sz-tl">
+      <li><b>1853</b> Mary Ann Shadd founds the Provincial Freeman</li>
+      <li><b>1858</b> Gold rush; the colony of British Columbia is created</li>
+      <li><b>1864</b> The Charlottetown and Quebec conferences</li>
+      <li><b>1867</b> Confederation: the Dominion of Canada is formed</li>
+      <li><b>1870</b> Manitoba joins Canada after the Red River Resistance</li>
+      <li><b>1873</b> Prince Edward Island joins; the NWMP is created</li>
+      <li><b>1876</b> The Indian Act is passed</li>
+      <li><b>1885</b> The last spike; Louis Riel is hanged</li>
+      <li><b>1891</b> James Naismith invents basketball</li>
+      <li><b>1896</b> Laurier becomes prime minister; gold is found in the Klondike</li>
+      <li><b>1898</b> Yukon becomes a territory</li>
+      <li><b>1901</b> Marconi receives a radio signal at Signal Hill</li>
+      <li><b>1905</b> Alberta and Saskatchewan become provinces</li>
+      <li><b>1910</b> Canada creates its own navy</li>
+      <li><b>1914</b> The Komagata Maru is turned away; Canada enters the war</li>
+    </ul>
+  </section>
+    <div class="sz-panes" data-no-i18n>
+
+        <div class="sz-pane" id="szPaneQuiz" role="tabpanel">
+          <div id="szQuizStart">
+            <p id="szQuizIntro" style="font-weight:800"></p>
+            <div class="sz-btns"><button type="button" class="btn btn-lg" id="szQuizGo"></button></div>
+          </div>
+          <div id="szQuizPlay" style="display:none">
+            <div class="sz-bar"><span id="szQuizNo"></span><span id="szQuizScore"></span></div>
+            <div class="sz-prog"><span id="szQuizBar"></span></div>
+            <p class="sz-q" id="szQuizQ"></p>
+            <div class="sz-opts" id="szQuizOpts"></div>
+            <div class="sz-exp" id="szQuizExp"></div>
+            <div class="sz-btns"><button type="button" class="btn" id="szQuizNext" style="display:none"></button></div>
+          </div>
+          <div id="szQuizEnd" style="display:none" class="sz-res">
+            <div class="big" id="szQuizIcon"></div>
+            <h2 id="szQuizTitle"></h2>
+            <p id="szQuizLine" style="font-weight:800;font-size:1.1rem"></p>
+            <div class="sz-btns" style="justify-content:center">
+              <button type="button" class="btn btn-lg" id="szQuizAgain"></button>
+              <button type="button" class="btn btn-ghost btn-lg" id="szQuizToChal"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sz-pane" id="szPanePractice" role="tabpanel">
+          <div class="sz-bar"><span id="szPracTally"></span><button type="button" class="btn btn-ghost" id="szPracReset"></button></div>
+          <p class="sz-q" id="szPracQ"></p>
+          <div class="sz-opts" id="szPracOpts"></div>
+          <div class="sz-exp" id="szPracExp"></div>
+          <div class="sz-btns"><button type="button" class="btn" id="szPracNext"></button></div>
+        </div>
+
+        <div class="sz-pane" id="szPaneChal" role="tabpanel">
+          <div id="szChalStart">
+            <p id="szChalIntro" style="font-weight:800"></p>
+            <div class="sz-btns"><button type="button" class="btn btn-lg" id="szChalGo"></button></div>
+          </div>
+          <div id="szChalPlay" style="display:none">
+            <div class="sz-bar"><span id="szChalNo"></span><span id="szChalScore"></span></div>
+            <div class="sz-prog"><span id="szChalBar"></span></div>
+            <p class="sz-q" id="szChalQ"></p>
+            <div class="sz-opts" id="szChalOpts"></div>
+            <div class="sz-exp" id="szChalExp"></div>
+            <div class="sz-btns"><button type="button" class="btn" id="szChalNext" style="display:none"></button></div>
+          </div>
+          <div id="szChalEnd" style="display:none" class="sz-res">
+            <div class="big" id="szChalIcon"></div>
+            <h2 id="szChalTitle"></h2>
+            <p id="szChalLine" style="font-weight:800;font-size:1.1rem"></p>
+            <div class="sz-btns" style="justify-content:center"><button type="button" class="btn btn-lg" id="szChalAgain"></button></div>
+          </div>
+        </div>
+
+        <div class="sz-pane" id="szPaneWs" role="tabpanel">
+          <div class="sz-picker" id="szWsPick"></div>
+          <p class="sz-note" id="szWsNote"></p>
+          <div class="sz-sheet" id="szWsSheet"></div>
+          <div class="sz-btns"><button type="button" class="btn btn-lg" id="szWsPrint"></button><a class="btn btn-ghost btn-lg" id="szWsPdf" download></a></div>
+        </div>
+
+        <div class="sz-pane" id="szPaneAk" role="tabpanel">
+          <div class="sz-picker" id="szAkPick"></div>
+          <p class="sz-note" id="szAkNote"></p>
+          <div class="sz-sheet" id="szAkSheet"></div>
+          <div class="sz-btns"><button type="button" class="btn btn-lg" id="szAkPrint"></button><a class="btn btn-ghost btn-lg" id="szAkPdf" download></a></div>
+        </div>
+
+    </div>
+  </div>
+
+<!--PAGEDOC-->
+<section class="pagedoc">
+<details class="pd-fold">
+  <summary><span class="pd-sum">About this quiz</span></summary>
+  <div class="pd-body">
+  <p>This page covers Grade 8 Canadian history from 1850 to 1914: Confederation, the Red River and North-West resistances, the Numbered Treaties and the Indian Act, the railway, the settlement of the West, and a changing society up to the First World War. It includes Black Canadians, First Nations, Métis and Asian Canadians in the places they belong in that story, as the 2026 Ontario curriculum asks.</p>
+  <p>It works six ways. Read the lesson and its timeline, take the ten-question quiz, practise for as long as you like with no score, try the harder challenge round, then print a worksheet and its answer sheet. There are three versions, lettered A, B and C, and the answer sheet with the same letter matches its worksheet exactly.</p>
+  <h2>Good to know</h2>
+  <ul>
+    <li>Canada grew from four provinces in 1867 to nine provinces and two territories by 1905, reaching the Pacific in 1871 with British Columbia.</li>
+    <li>Mary Ann Shadd's Provincial Freeman, founded in 1853, was the first newspaper in North America published by a Black woman.</li>
+  </ul>
+  <h2>Common questions</h2>
+  <h3>Which grade is this in my province?</h3>
+  <p>The page is labelled with the Ontario grade, Grade 8. The "In your province" box near the top lists where other provinces teach it; for example, British Columbia: Grade 9 (1750–1919).</p>
+  <h3>Do the worksheet and the answer sheet really match?</h3>
+  <p>Yes. Worksheet A always has the same questions in the same order, and Answer Sheet A lists those answers, including the order of the timeline events and what a good written answer should mention.</p>
+  <h2>More to explore</h2>
+  <p class="pd-rel"><a href="history-grade-7.html">Grade 7 History: New France to 1850</a> · <a href="what-is-confederation.html">What is Confederation?</a> · <a href="how-canada-built-the-railway.html">How Canada built the railway</a> · <a href="prime-ministers-of-canada.html">Prime ministers of Canada</a> · <a href="teachers.html">For teachers</a></p>
+  </div>
+</details>
+</section>
+<!--/PAGEDOC-->
+</main>
+<footer class="site-footer">
+  <div class="container center">
+    <img src="brand/logo-horizontal-white.svg?v=bb66f331" alt="Canada Quiz &amp; Family Fun Games" class="footer-logo" width="200" height="48">
+    <p>Free quizzes, family games and citizenship practice — no signup, nothing on the site costs money.</p>
+    <div class="footer-links"><a href="./">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="sources.html">Sources</a> · <a href="teachers.html">For Teachers</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></div>
+    <div class="footer-sections"><a href="quizzes.html">All Quizzes</a> · <a href="citizenship.html">Citizenship Test Practice</a> · <a href="driving-test.html">Driving Test Practice</a> · <a href="canada-driving-test-by-province.html">Driving Tests by Province</a> · <a href="games.html">Family Games</a> · <a href="for-kids.html">For Kids</a> · <a href="canada-quiz.html">Canada Quiz</a> · <a href="gk-quiz.html">General Knowledge</a> · <a href="blog.html">Blog</a> · <a href="daily.html">Daily Quiz</a></div>
+    <p class="footer-all"><a href="all-pages.html">Every page on the site (252)</a></p>
+    <p class="muted" style="color:#b4a9cc;font-size:12px">© 2026 Canada Quiz &amp; Family Fun Games. All rights reserved.</p>
+    <p class="muted" style="color:#b4a9cc;font-size:12.5px">Unofficial practice site. Not affiliated with the Government of Canada.</p>
+  </div>
+</footer>
+
+
+  <script src="js/game-fullscreen.js?v=b4343d3b" defer></script>
+<script>
+(function () {
+  "use strict";
+  var FR = /\/fr\//.test(location.pathname);
+  function T(en, fr) { return FR ? fr : en; }
+  function $(id) { return document.getElementById(id); }
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  var P = {"units": [["Creating Canada, 1850–1890", "La création du Canada, 1850-1890"], ["Canada, 1890–1914: A Changing Society", "Le Canada, 1890-1914 : une société en changement"]], "qs": [{"u": 0, "q": "Mary Ann Shadd founded the Provincial Freeman in 1853. Why is it famous?", "qfr": "Mary Ann Shadd a fondé le Provincial Freeman en 1853. Pourquoi est-il célèbre ?", "o": ["It was the first newspaper in North America published by a Black woman", "It was Canada's first French newspaper", "It announced Confederation", "It was printed on the first railway"], "ofr": ["C'était le premier journal d'Amérique du Nord publié par une femme noire", "C'était le premier journal français du Canada", "Il a annoncé la Confédération", "Il était imprimé dans le premier train"], "x": "Shadd used the paper to call for equal rights and to encourage freedom seekers to settle in Canada.", "xfr": "Shadd s'en servait pour réclamer l'égalité des droits et encourager les personnes en quête de liberté à s'établir au Canada."}, {"u": 0, "q": "Harriet Tubman lived in which Canadian town in the 1850s, guiding freedom seekers there?", "qfr": "Dans quelle ville canadienne Harriet Tubman a-t-elle vécu dans les années 1850, en y guidant des gens ?", "o": ["St. Catharines", "Halifax", "Victoria", "Winnipeg"], "ofr": ["St. Catharines", "Halifax", "Victoria", "Winnipeg"], "x": "St. Catharines, near the Niagara border, was a main destination on the Underground Railroad.", "xfr": "St. Catharines, près de la frontière du Niagara, était une destination majeure du chemin de fer clandestin."}, {"u": 0, "q": "What brought thousands of miners to the Fraser River in 1858?", "qfr": "Qu'est-ce qui a attiré des milliers de mineurs au fleuve Fraser en 1858 ?", "o": ["Gold", "Oil", "Furs", "Coal"], "ofr": ["L'or", "Le pétrole", "Les fourrures", "Le charbon"], "x": "The gold rush led Britain to create the colony of British Columbia that same year.", "xfr": "La ruée vers l'or a mené la Grande-Bretagne à créer la colonie de la Colombie-Britannique la même année."}, {"u": 0, "q": "Who became the first Canadian-born Black doctor, in 1861?", "qfr": "Qui est devenu le premier médecin noir né au Canada, en 1861 ?", "o": ["Anderson Ruffin Abbott", "John Ware", "Josiah Henson", "Mifflin Gibbs"], "ofr": ["Anderson Ruffin Abbott", "John Ware", "Josiah Henson", "Mifflin Gibbs"], "x": "Abbott was born in Toronto and served as a surgeon in the American Civil War.", "xfr": "Abbott est né à Toronto et a été chirurgien pendant la guerre de Sécession."}, {"u": 0, "q": "Where did the first conference about uniting the colonies meet in September 1864?", "qfr": "Où s'est tenue la première conférence sur l'union des colonies, en septembre 1864 ?", "o": ["Charlottetown", "Quebec City", "London", "Ottawa"], "ofr": ["Charlottetown", "Québec", "Londres", "Ottawa"], "x": "The Maritime leaders had planned to discuss their own union, and leaders from the Province of Canada asked to join in.", "xfr": "Les chefs des Maritimes voulaient discuter de leur propre union, et des chefs de la Province du Canada ont demandé à y participer."}, {"u": 0, "q": "What were the 72 Resolutions, written at Quebec in 1864?", "qfr": "Qu'étaient les 72 résolutions, rédigées à Québec en 1864 ?", "o": ["The plan for Confederation", "A treaty with the United States", "Rules for the fur trade", "The first Indian Act"], "ofr": ["Le plan de la Confédération", "Un traité avec les États-Unis", "Des règles pour la traite des fourrures", "La première Loi sur les Indiens"], "x": "They became the basis of the British North America Act of 1867.", "xfr": "Elles sont devenues la base de l'Acte de l'Amérique du Nord britannique de 1867."}, {"u": 0, "q": "Which four provinces formed Canada on July 1, 1867?", "qfr": "Quelles quatre provinces ont formé le Canada le 1er juillet 1867 ?", "o": ["Ontario, Quebec, Nova Scotia, New Brunswick", "Ontario, Quebec, Manitoba, British Columbia", "Nova Scotia, New Brunswick, PEI, Newfoundland", "Ontario, Quebec, Alberta, Saskatchewan"], "ofr": ["Ontario, Québec, Nouvelle-Écosse, Nouveau-Brunswick", "Ontario, Québec, Manitoba, Colombie-Britannique", "Nouvelle-Écosse, Nouveau-Brunswick, Î.-P.-É., Terre-Neuve", "Ontario, Québec, Alberta, Saskatchewan"], "x": "The Province of Canada was split into Ontario and Quebec, and joined with Nova Scotia and New Brunswick.", "xfr": "La Province du Canada a été divisée en Ontario et Québec, puis unie à la Nouvelle-Écosse et au Nouveau-Brunswick."}, {"u": 0, "q": "Who was Canada's first prime minister?", "qfr": "Qui a été le premier premier ministre du Canada ?", "o": ["John A. Macdonald", "Wilfrid Laurier", "George Brown", "Louis Riel"], "ofr": ["John A. Macdonald", "Wilfrid Laurier", "George Brown", "Louis Riel"], "x": "Macdonald took office on July 1, 1867, and led the country for most of the next 24 years.", "xfr": "Macdonald est entré en fonction le 1er juillet 1867 et a dirigé le pays pendant la plus grande partie des 24 années suivantes."}, {"u": 0, "q": "Which of these was a reason for Confederation?", "qfr": "Laquelle de ces raisons a mené à la Confédération ?", "o": ["Fear of the United States after its Civil War", "France wanted its colony back", "The fur trade needed a new company", "Gold had been found in the Yukon"], "ofr": ["La crainte des États-Unis après leur guerre de Sécession", "La France voulait reprendre sa colonie", "La traite des fourrures avait besoin d'une nouvelle compagnie", "On avait trouvé de l'or au Yukon"], "x": "The Fenian raids of 1866 made the fear real. Political deadlock, railways and trade were other reasons.", "xfr": "Les raids des Féniens de 1866 ont rendu cette crainte bien réelle. L'impasse politique, les chemins de fer et le commerce étaient d'autres raisons."}, {"u": 0, "q": "Who led the Métis at Red River in 1869–1870?", "qfr": "Qui a mené les Métis de la rivière Rouge en 1869-1870 ?", "o": ["Louis Riel", "Gabriel Dumont", "Poundmaker", "Joseph Howe"], "ofr": ["Louis Riel", "Gabriel Dumont", "Poundmaker", "Joseph Howe"], "x": "Riel's provisional government negotiated Manitoba's entry into Canada.", "xfr": "Le gouvernement provisoire de Riel a négocié l'entrée du Manitoba dans le Canada."}, {"u": 0, "q": "Why did the Métis at Red River resist in 1869?", "qfr": "Pourquoi les Métis de la rivière Rouge ont-ils résisté en 1869 ?", "o": ["Canada bought their land without asking them", "They wanted to join the United States", "The railway had destroyed their town", "They were refused the vote in Ontario"], "ofr": ["Le Canada avait acheté leurs terres sans les consulter", "Ils voulaient rejoindre les États-Unis", "Le chemin de fer avait détruit leur ville", "On leur refusait le vote en Ontario"], "x": "Canada bought Rupert's Land from the Hudson's Bay Company, and surveyors arrived before anyone asked the Métis.", "xfr": "Le Canada avait acheté la Terre de Rupert à la Compagnie de la Baie d'Hudson, et les arpenteurs sont arrivés avant qu'on ait consulté les Métis."}, {"u": 0, "q": "Which province joined Canada in 1870?", "qfr": "Quelle province s'est jointe au Canada en 1870 ?", "o": ["Manitoba", "British Columbia", "Prince Edward Island", "Saskatchewan"], "ofr": ["Le Manitoba", "La Colombie-Britannique", "L'Île-du-Prince-Édouard", "La Saskatchewan"], "x": "The Manitoba Act, negotiated by Riel's government, made it the fifth province.", "xfr": "La Loi sur le Manitoba, négociée par le gouvernement de Riel, en a fait la cinquième province."}, {"u": 0, "q": "What did Canada promise British Columbia to get it to join in 1871?", "qfr": "Qu'a promis le Canada à la Colombie-Britannique pour qu'elle se joigne en 1871 ?", "o": ["A railway to the Pacific within ten years", "Its own army", "Ownership of the Yukon", "No federal taxes"], "ofr": ["Un chemin de fer vers le Pacifique en dix ans", "Sa propre armée", "La propriété du Yukon", "Aucun impôt fédéral"], "x": "The promise took longer than ten years: the last spike was driven in 1885.", "xfr": "La promesse a pris plus de dix ans : le dernier crampon a été posé en 1885."}, {"u": 0, "q": "Which police force was created in 1873 to keep order in the West?", "qfr": "Quelle police a été créée en 1873 pour maintenir l'ordre dans l'Ouest ?", "o": ["The North-West Mounted Police", "The Ontario Provincial Police", "The Hudson's Bay Guard", "The Coloured Corps"], "ofr": ["La Police à cheval du Nord-Ouest", "La Police provinciale de l'Ontario", "La Garde de la Baie d'Hudson", "Le Coloured Corps"], "x": "The NWMP marched west in 1874. It later became the Royal Canadian Mounted Police.", "xfr": "La PCN-O s'est mise en marche vers l'ouest en 1874. Elle est devenue plus tard la Gendarmerie royale du Canada."}, {"u": 0, "q": "What were the Numbered Treaties of 1871 to 1877?", "qfr": "Qu'étaient les traités numérotés de 1871 à 1877 ?", "o": ["Agreements between First Nations and the Crown on the Prairies", "Trade deals with the United States", "Laws that created new provinces", "Rules for the railway workers"], "ofr": ["Des ententes entre les Premières Nations et la Couronne dans les Prairies", "Des accords commerciaux avec les États-Unis", "Des lois créant de nouvelles provinces", "Des règles pour les ouvriers du chemin de fer"], "x": "Many First Nations understood them as sharing the land; the government treated them as giving it up. Many promises were not kept.", "xfr": "Beaucoup de Premières Nations les comprenaient comme un partage de la terre ; le gouvernement les traitait comme une cession. Bien des promesses n'ont pas été tenues."}, {"u": 0, "q": "The Indian Act, first passed in 1876, is…", "qfr": "La Loi sur les Indiens, adoptée en 1876, est…", "o": ["a federal law that controlled much of First Nations life", "a treaty First Nations wrote themselves", "a law that ended the fur trade", "the act that created Manitoba"], "ofr": ["une loi fédérale qui contrôlait une grande partie de la vie des Premières Nations", "un traité rédigé par les Premières Nations", "une loi qui a mis fin à la traite des fourrures", "la loi qui a créé le Manitoba"], "x": "It decided who counted as \"Indian\" and how reserves were run, and later banned ceremonies. It is still in force, changed many times.", "xfr": "Elle décidait qui comptait comme « Indien » et comment les réserves étaient gérées, et a plus tard interdit des cérémonies. Elle est toujours en vigueur, modifiée bien des fois."}, {"u": 0, "q": "What happened to children at residential schools?", "qfr": "Qu'arrivait-il aux enfants dans les pensionnats ?", "o": ["They were taken from their families and punished for speaking their languages", "They chose freely whether to go", "They were taught in their own languages", "They went home every evening"], "ofr": ["Ils étaient enlevés à leur famille et punis pour avoir parlé leur langue", "Ils choisissaient librement d'y aller", "Ils apprenaient dans leur propre langue", "Ils rentraient chez eux chaque soir"], "x": "More than 150,000 children went to the schools; many were harmed or died. The last one closed in 1996.", "xfr": "Plus de 150 000 enfants sont passés par ces pensionnats ; beaucoup ont subi des sévices ou en sont morts. Le dernier a fermé en 1996."}, {"u": 0, "q": "John Ware, who came north on a cattle drive in 1882, became famous as…", "qfr": "John Ware, venu vers le nord avec un troupeau en 1882, est devenu célèbre comme…", "o": ["a rancher and cowboy", "a prime minister", "a newspaper publisher", "a railway engineer"], "ofr": ["éleveur et cowboy", "premier ministre", "éditeur de journal", "ingénieur ferroviaire"], "x": "Born into slavery in the United States, he became one of the best-known ranchers in what is now Alberta.", "xfr": "Né esclave aux États-Unis, il est devenu l'un des éleveurs les plus connus de ce qui est aujourd'hui l'Alberta."}, {"u": 0, "q": "Where was the last spike of the Canadian Pacific Railway driven in 1885?", "qfr": "Où a été posé le dernier crampon du chemin de fer Canadien Pacifique, en 1885 ?", "o": ["Craigellachie, BC", "Halifax, NS", "Winnipeg, MB", "Montreal, QC"], "ofr": ["Craigellachie, C.-B.", "Halifax, N.-É.", "Winnipeg, Man.", "Montréal, Qc"], "x": "On November 7, 1885, the railway finally joined east and west.", "xfr": "Le 7 novembre 1885, le chemin de fer a enfin relié l'est et l'ouest."}, {"u": 0, "q": "Who built much of the hardest section of the railway through British Columbia?", "qfr": "Qui a bâti une grande partie du tronçon le plus difficile du chemin de fer en Colombie-Britannique ?", "o": ["About 15,000 Chinese workers", "The North-West Mounted Police", "Loyalists from New York", "Soldiers from Britain"], "ofr": ["Environ 15 000 ouvriers chinois", "La Police à cheval du Nord-Ouest", "Des loyalistes de New York", "Des soldats britanniques"], "x": "They were paid less than other workers and given the most dangerous jobs, and hundreds died.", "xfr": "Ils étaient moins payés que les autres et recevaient les tâches les plus dangereuses, et des centaines sont morts."}, {"u": 0, "q": "What was the head tax that Canada introduced in 1885?", "qfr": "Qu'était la taxe d'entrée imposée par le Canada en 1885 ?", "o": ["A fee charged only to Chinese immigrants", "A tax on every railway ticket", "A tax on hats", "A fee to vote"], "ofr": ["Un droit exigé seulement des immigrants chinois", "Une taxe sur chaque billet de train", "Une taxe sur les chapeaux", "Un droit pour voter"], "x": "It started at $50 and rose to $500 by 1903. Canada apologized for it in 2006.", "xfr": "Elle a commencé à 50 $ et est passée à 500 $ en 1903. Le Canada s'en est excusé en 2006."}, {"u": 0, "q": "Where were the Métis defeated in 1885?", "qfr": "Où les Métis ont-ils été vaincus en 1885 ?", "o": ["Batoche", "Red River", "Craigellachie", "Queenston Heights"], "ofr": ["Batoche", "La rivière Rouge", "Craigellachie", "Queenston Heights"], "x": "Troops came west on the new railway. After Batoche, Louis Riel surrendered and was hanged in Regina.", "xfr": "Les troupes sont venues par le nouveau chemin de fer. Après Batoche, Louis Riel s'est rendu et a été pendu à Regina."}, {"u": 1, "q": "Who became Canada's first French-Canadian prime minister, in 1896?", "qfr": "Qui est devenu le premier premier ministre canadien-français, en 1896 ?", "o": ["Wilfrid Laurier", "George-Étienne Cartier", "Henri Bourassa", "Louis-Hippolyte LaFontaine"], "ofr": ["Wilfrid Laurier", "George-Étienne Cartier", "Henri Bourassa", "Louis-Hippolyte La Fontaine"], "x": "Laurier led Canada from 1896 to 1911, the years of the great western settlement.", "xfr": "Laurier a dirigé le Canada de 1896 à 1911, les années du grand peuplement de l'Ouest."}, {"u": 1, "q": "Gold found in 1896 started a rush to which region?", "qfr": "L'or découvert en 1896 a déclenché une ruée vers quelle région ?", "o": ["The Klondike, in the Yukon", "The Fraser River", "Cape Breton", "Hudson Bay"], "ofr": ["Le Klondike, au Yukon", "Le fleuve Fraser", "Le Cap-Breton", "La baie d'Hudson"], "x": "It was found by George Carmack and two Tagish men, Keish (Skookum Jim) and Dawson Charlie.", "xfr": "Il a été trouvé par George Carmack et deux Tagish, Keish (Skookum Jim) et Dawson Charlie."}, {"u": 1, "q": "Yukon became a territory in which year, because of the gold rush?", "qfr": "En quelle année le Yukon est-il devenu un territoire, à cause de la ruée vers l'or ?", "o": ["1898", "1867", "1905", "1949"], "ofr": ["1898", "1867", "1905", "1949"], "x": "So many people arrived that Canada made Yukon a separate territory, with Dawson City as its first capital.", "xfr": "Il est arrivé tant de gens que le Canada a fait du Yukon un territoire distinct, avec Dawson City comme première capitale."}, {"u": 1, "q": "Who ran the campaign to bring settlers to the Prairies, with posters across Europe?", "qfr": "Qui a mené la campagne pour attirer des colons dans les Prairies, avec des affiches partout en Europe ?", "o": ["Clifford Sifton", "John A. Macdonald", "Nellie McClung", "Henri Bourassa"], "ofr": ["Clifford Sifton", "John A. Macdonald", "Nellie McClung", "Henri Bourassa"], "x": "As Minister of the Interior under Laurier, Sifton advertised cheap land and good farming.", "xfr": "Ministre de l'Intérieur sous Laurier, Sifton vantait des terres bon marché et une bonne agriculture."}, {"u": 1, "q": "What did a settler get for a $10 fee under the homestead system?", "qfr": "Qu'obtenait un colon pour 10 $ grâce au système des concessions ?", "o": ["160 acres of land", "A ticket home", "A house in the city", "A railway job"], "ofr": ["160 acres de terre", "Un billet de retour", "Une maison en ville", "Un emploi au chemin de fer"], "x": "The land became theirs if they lived on it and farmed it for three years.", "xfr": "La terre devenait la leur s'ils y vivaient et la cultivaient pendant trois ans."}, {"u": 1, "q": "Which two provinces were created in 1905?", "qfr": "Quelles deux provinces ont été créées en 1905 ?", "o": ["Alberta and Saskatchewan", "Manitoba and British Columbia", "Yukon and Nunavut", "Ontario and Quebec"], "ofr": ["L'Alberta et la Saskatchewan", "Le Manitoba et la Colombie-Britannique", "Le Yukon et le Nunavut", "L'Ontario et le Québec"], "x": "Both were carved from the North-West Territories as settlers filled the Prairies.", "xfr": "Les deux ont été taillées dans les Territoires du Nord-Ouest à mesure que les colons peuplaient les Prairies."}, {"u": 1, "q": "Amber Valley, Alberta, was built by…", "qfr": "Amber Valley, en Alberta, a été bâtie par…", "o": ["Black settlers, many from Oklahoma", "Gold miners from the Klondike", "Railway workers from China", "Loyalists from Nova Scotia"], "ofr": ["des colons noirs, dont beaucoup venaient de l'Oklahoma", "des mineurs du Klondike", "des ouvriers chinois du chemin de fer", "des loyalistes de Nouvelle-Écosse"], "x": "About 1,000 Black settlers came to the Prairies between 1908 and 1911, despite campaigns to keep them out.", "xfr": "Environ 1 000 colons noirs sont arrivés dans les Prairies entre 1908 et 1911, malgré des campagnes pour les tenir à l'écart."}, {"u": 1, "q": "In 1903 the Chinese head tax was raised to…", "qfr": "En 1903, la taxe d'entrée imposée aux Chinois est passée à…", "o": ["$500", "$5", "$50", "$5,000"], "ofr": ["500 $", "5 $", "50 $", "5 000 $"], "x": "It began at $50 in 1885 and rose to $100, then $500 — a huge sum then, meant to keep people out.", "xfr": "Elle a commencé à 50 $ en 1885, puis est passée à 100 $ et à 500 $ — une somme énorme à l'époque, faite pour décourager."}, {"u": 1, "q": "What happened to the Komagata Maru in 1914?", "qfr": "Qu'est-il arrivé au Komagata Maru en 1914 ?", "o": ["Its passengers from British India were kept off Vancouver and sent back", "It carried the first settlers to Amber Valley", "It brought gold from the Klondike", "It took Canadian soldiers to South Africa"], "ofr": ["Ses passagers de l'Inde britannique ont été retenus au large de Vancouver et renvoyés", "Il a amené les premiers colons d'Amber Valley", "Il a rapporté de l'or du Klondike", "Il a transporté des soldats canadiens en Afrique du Sud"], "x": "Of 376 passengers, mostly Sikhs, only a few were allowed to land. Canada apologized in 2016.", "xfr": "Sur 376 passagers, surtout des sikhs, seuls quelques-uns ont pu débarquer. Le Canada s'est excusé en 2016."}, {"u": 1, "q": "Why did many factory workers join unions before 1914?", "qfr": "Pourquoi beaucoup d'ouvriers d'usine se sont-ils syndiqués avant 1914 ?", "o": ["For better pay and shorter hours", "To get free land in the West", "To avoid paying the head tax", "To vote in federal elections"], "ofr": ["Pour de meilleurs salaires et des journées plus courtes", "Pour avoir des terres gratuites dans l'Ouest", "Pour éviter la taxe d'entrée", "Pour voter aux élections fédérales"], "x": "Long hours, low pay, dangerous machines and child labour were common in the new factories.", "xfr": "Les longues journées, les bas salaires, les machines dangereuses et le travail des enfants étaient courants dans les nouvelles usines."}, {"u": 1, "q": "In 1914, could women vote in Canadian federal elections?", "qfr": "En 1914, les femmes pouvaient-elles voter aux élections fédérales canadiennes ?", "o": ["No", "Yes, all women", "Only in Quebec", "Only women who owned land in Ontario"], "ofr": ["Non", "Oui, toutes les femmes", "Seulement au Québec", "Seulement les propriétaires en Ontario"], "x": "Not yet. Manitoba was the first province to give women the vote, in 1916, and most women won the federal vote in 1918.", "xfr": "Pas encore. Le Manitoba a été la première province à accorder le vote aux femmes, en 1916, et la plupart des femmes ont obtenu le vote fédéral en 1918."}, {"u": 1, "q": "Who staged a mock \"Women's Parliament\" in Winnipeg in 1914?", "qfr": "Qui a présenté un parlement fictif, le « Parlement des femmes », à Winnipeg en 1914 ?", "o": ["Nellie McClung and others", "Mary Ann Shadd", "Laura Secord", "Harriet Tubman"], "ofr": ["Nellie McClung et d'autres", "Mary Ann Shadd", "Laura Secord", "Harriet Tubman"], "x": "They played a parliament of women debating whether men should be allowed to vote, to show how silly the arguments against women sounded.", "xfr": "Elles jouaient un parlement de femmes se demandant si les hommes devaient voter, pour montrer à quel point les arguments contre les femmes sonnaient faux."}, {"u": 1, "q": "More than 7,000 Canadians volunteered for which war, from 1899 to 1902?", "qfr": "Plus de 7 000 Canadiens se sont portés volontaires pour quelle guerre, de 1899 à 1902 ?", "o": ["The South African War", "The War of 1812", "The First World War", "The American Civil War"], "ofr": ["La guerre d'Afrique du Sud", "La guerre de 1812", "La Première Guerre mondiale", "La guerre de Sécession"], "x": "It split the country: many English Canadians supported it, while Henri Bourassa and many French Canadians opposed it.", "xfr": "Elle a divisé le pays : beaucoup de Canadiens anglais l'appuyaient, alors qu'Henri Bourassa et beaucoup de Canadiens français s'y opposaient."}, {"u": 1, "q": "Where did Marconi receive the first radio signal sent across the Atlantic, in 1901?", "qfr": "Où Marconi a-t-il reçu le premier signal radio transatlantique, en 1901 ?", "o": ["Signal Hill, St. John's", "Parliament Hill, Ottawa", "Citadel Hill, Halifax", "Mount Royal, Montreal"], "ofr": ["Signal Hill, à St. John's", "La colline du Parlement, à Ottawa", "La colline de la Citadelle, à Halifax", "Le mont Royal, à Montréal"], "x": "The signal, the letter S in Morse code, came from Cornwall, England, on December 12, 1901.", "xfr": "Le signal, la lettre S en morse, venait de Cornouailles, en Angleterre, le 12 décembre 1901."}, {"u": 1, "q": "Tom Longboat, who won the Boston Marathon in 1907, was from which nation?", "qfr": "Tom Longboat, vainqueur du marathon de Boston en 1907, était de quelle nation ?", "o": ["Onondaga", "Cree", "Inuit", "Mi'kmaq"], "ofr": ["Onondaga", "Crie", "Inuit", "Mi'kmaq"], "x": "Longboat, from Six Nations of the Grand River, was one of the most famous athletes in the world.", "xfr": "Longboat, des Six Nations de la rivière Grand, était l'un des athlètes les plus célèbres du monde."}, {"u": 1, "q": "Why was Canada at war on August 4, 1914?", "qfr": "Pourquoi le Canada était-il en guerre le 4 août 1914 ?", "o": ["Britain declared war, and Canada was part of the British Empire", "Germany invaded Halifax", "Canada declared war on its own first", "The United States asked for help"], "ofr": ["La Grande-Bretagne a déclaré la guerre, et le Canada faisait partie de l'Empire britannique", "L'Allemagne a envahi Halifax", "Le Canada a déclaré la guerre seul en premier", "Les États-Unis ont demandé de l'aide"], "x": "Canada could choose how much to help, but not whether to be at war. That changed in 1939.", "xfr": "Le Canada pouvait choisir l'ampleur de son aide, mais pas d'être en guerre ou non. Cela a changé en 1939."}, {"u": 1, "q": "Which group came to the Prairies in 1899 as a large religious community?", "qfr": "Quel groupe est arrivé dans les Prairies en 1899 en tant que grande communauté religieuse ?", "o": ["The Doukhobors", "The Loyalists", "The Acadians", "The Patriotes"], "ofr": ["Les Doukhobors", "Les loyalistes", "Les Acadiens", "Les Patriotes"], "x": "About 7,500 Doukhobors came from Russia, escaping persecution for refusing to serve in the army.", "xfr": "Environ 7 500 Doukhobors sont venus de Russie, fuyant la persécution pour avoir refusé de servir dans l'armée."}, {"u": 1, "q": "Which group arrived in large numbers on the Prairies, building onion-domed churches?", "qfr": "Quel groupe est arrivé en grand nombre dans les Prairies, construisant des églises à bulbes ?", "o": ["Ukrainians", "Loyalists", "Acadians", "Inuit"], "ofr": ["Les Ukrainiens", "Les loyalistes", "Les Acadiens", "Les Inuits"], "x": "About 170,000 Ukrainians came to Canada between 1891 and 1914, most of them to the Prairies; their churches still dot the countryside.", "xfr": "Environ 170 000 Ukrainiens sont venus au Canada entre 1891 et 1914, la plupart dans les Prairies ; leurs églises parsèment encore la campagne."}], "chal": [{"q": "Which group from the United States raided Canada in 1866, pushing many towards Confederation?", "qfr": "Quel groupe venu des États-Unis a fait des raids au Canada en 1866, poussant bien des gens vers la Confédération ?", "o": ["The Fenians", "The Patriotes", "The Loyalists", "The Voltigeurs"], "ofr": ["Les Féniens", "Les Patriotes", "Les loyalistes", "Les Voltigeurs"], "x": "The Fenians were Irish-American veterans who wanted to pressure Britain over Ireland. Their raids, including at Ridgeway, frightened the colonies.", "xfr": "Les Féniens étaient des vétérans irlando-américains qui voulaient faire pression sur la Grande-Bretagne au sujet de l'Irlande. Leurs raids, dont celui de Ridgeway, ont effrayé les colonies."}, {"q": "Which two Atlantic colonies said no to Confederation in 1867?", "qfr": "Quelles deux colonies de l'Atlantique ont dit non à la Confédération en 1867 ?", "o": ["Prince Edward Island and Newfoundland", "Nova Scotia and New Brunswick", "Newfoundland and Nova Scotia", "New Brunswick and PEI"], "ofr": ["L'Île-du-Prince-Édouard et Terre-Neuve", "La Nouvelle-Écosse et le Nouveau-Brunswick", "Terre-Neuve et la Nouvelle-Écosse", "Le Nouveau-Brunswick et l'Î.-P.-É."], "x": "PEI joined in 1873 when it needed help with railway debts. Newfoundland waited until 1949.", "xfr": "L'Î.-P.-É. s'est jointe en 1873 quand elle a eu besoin d'aide pour ses dettes ferroviaires. Terre-Neuve a attendu jusqu'en 1949."}, {"q": "Which Father of Confederation led the French-Canadian Conservatives and worked with Macdonald?", "qfr": "Quel Père de la Confédération dirigeait les conservateurs canadiens-français et travaillait avec Macdonald ?", "o": ["George-Étienne Cartier", "Louis Riel", "Henri Bourassa", "Louis-Joseph Papineau"], "ofr": ["George-Étienne Cartier", "Louis Riel", "Henri Bourassa", "Louis-Joseph Papineau"], "x": "Cartier brought Canada East into the deal and later helped bring in Manitoba and British Columbia.", "xfr": "Cartier a fait entrer le Canada-Est dans l'entente et a ensuite aidé à faire entrer le Manitoba et la Colombie-Britannique."}, {"q": "Which scandal over railway money forced Macdonald's government to resign in 1873?", "qfr": "Quel scandale lié à l'argent du chemin de fer a forcé le gouvernement Macdonald à démissionner en 1873 ?", "o": ["The Pacific Scandal", "The Klondike Scandal", "The Fenian Affair", "The Rupert's Land Scandal"], "ofr": ["Le scandale du Pacifique", "Le scandale du Klondike", "L'affaire des Féniens", "Le scandale de la Terre de Rupert"], "x": "Macdonald's party had taken election money from the businessman seeking the railway contract. He returned to power in 1878.", "xfr": "Le parti de Macdonald avait reçu de l'argent électoral de l'homme d'affaires qui voulait le contrat du chemin de fer. Il est revenu au pouvoir en 1878."}, {"q": "Which Métis leader was Riel's military commander at Batoche in 1885?", "qfr": "Quel chef métis était le commandant militaire de Riel à Batoche en 1885 ?", "o": ["Gabriel Dumont", "Big Bear", "Poundmaker", "Cuthbert Grant"], "ofr": ["Gabriel Dumont", "Big Bear", "Poundmaker", "Cuthbert Grant"], "x": "Dumont, a famous buffalo hunter, escaped to the United States after Batoche.", "xfr": "Dumont, un célèbre chasseur de bison, s'est enfui aux États-Unis après Batoche."}, {"q": "Which ceremony did an 1884 change to the Indian Act ban on the West Coast?", "qfr": "Quelle cérémonie une modification de 1884 à la Loi sur les Indiens a-t-elle interdite sur la côte Ouest ?", "o": ["The potlatch", "The powwow", "The sun dance", "The midnight mass"], "ofr": ["Le potlatch", "Le pow-wow", "La danse du soleil", "La messe de minuit"], "x": "The potlatch, a gift-giving feast central to many Pacific Coast nations, was banned until 1951.", "xfr": "Le potlatch, une fête de don au cœur de bien des nations de la côte du Pacifique, a été interdit jusqu'en 1951."}, {"q": "Which Black businessman was elected to Victoria's city council in 1866?", "qfr": "Quel homme d'affaires noir a été élu au conseil municipal de Victoria en 1866 ?", "o": ["Mifflin Gibbs", "John Ware", "Anderson Ruffin Abbott", "Josiah Henson"], "ofr": ["Mifflin Gibbs", "John Ware", "Anderson Ruffin Abbott", "Josiah Henson"], "x": "Gibbs was one of the Black settlers who came from San Francisco in 1858.", "xfr": "Gibbs faisait partie des colons noirs venus de San Francisco en 1858."}, {"q": "Who invented basketball in 1891?", "qfr": "Qui a inventé le basketball en 1891 ?", "o": ["James Naismith, from Almonte, Ontario", "Tom Longboat", "Alexander Graham Bell", "Lord Stanley"], "ofr": ["James Naismith, d'Almonte, en Ontario", "Tom Longboat", "Alexander Graham Bell", "Lord Stanley"], "x": "Naismith was teaching in Springfield, Massachusetts, and needed an indoor game for winter.", "xfr": "Naismith enseignait à Springfield, au Massachusetts, et cherchait un jeu d'intérieur pour l'hiver."}, {"q": "What did the 1910 Naval Service Act create?", "qfr": "Qu'a créé la Loi sur le service naval de 1910 ?", "o": ["Canada's own navy", "The Mounted Police", "The CPR", "The Yukon Territory"], "ofr": ["La marine du Canada", "La Police montée", "Le Canadien Pacifique", "Le territoire du Yukon"], "x": "Laurier's compromise: a small Canadian navy that could be lent to Britain in wartime. Some said it did too much, others too little.", "xfr": "Le compromis de Laurier : une petite marine canadienne qu'on pouvait prêter à la Grande-Bretagne en temps de guerre. Certains trouvaient que c'était trop, d'autres pas assez."}, {"q": "Henri Bourassa opposed sending Canadians to the South African War. What did he believe?", "qfr": "Henri Bourassa s'opposait à l'envoi de Canadiens en Afrique du Sud. Que pensait-il ?", "o": ["Canada should decide its own wars, not follow Britain", "Canada should join the United States", "Only French Canadians should fight", "The war was already over"], "ofr": ["Le Canada devait décider lui-même de ses guerres, sans suivre la Grande-Bretagne", "Le Canada devait rejoindre les États-Unis", "Seuls les Canadiens français devaient combattre", "La guerre était déjà finie"], "x": "Bourassa founded the newspaper Le Devoir in 1910 and argued for a Canada independent of British wars.", "xfr": "Bourassa a fondé le journal Le Devoir en 1910 et défendait un Canada indépendant des guerres britanniques."}, {"q": "In 1885, besides Riel, eight Cree and Assiniboine men were hanged together at…", "qfr": "En 1885, en plus de Riel, huit hommes cris et assiniboines ont été pendus ensemble à…", "o": ["Battleford", "Batoche", "Winnipeg", "Calgary"], "ofr": ["Battleford", "Batoche", "Winnipeg", "Calgary"], "x": "It remains the largest mass hanging in Canadian history. Students from the nearby Battleford residential school were made to watch.", "xfr": "Cela reste la plus grande pendaison collective de l'histoire du Canada. Des élèves du pensionnat voisin de Battleford ont été forcés d'y assister."}, {"q": "What was the 1908 \"continuous journey\" rule really designed to do?", "qfr": "À quoi servait vraiment la règle du « voyage sans escale » de 1908 ?", "o": ["Keep out immigrants from India without naming them", "Speed up the trip from Europe", "Help settlers reach the Yukon", "Make ships safer"], "ofr": ["Écarter les immigrants de l'Inde sans les nommer", "Accélérer le voyage depuis l'Europe", "Aider les colons à gagner le Yukon", "Rendre les navires plus sûrs"], "x": "No ship sailed straight from India to Canada, so the rule kept people out while sounding neutral. The Komagata Maru tested it in 1914.", "xfr": "Aucun navire ne faisait le trajet direct de l'Inde au Canada : la règle écartait ces gens tout en semblant neutre. Le Komagata Maru l'a contestée en 1914."}], "tl": [[1853, "Mary Ann Shadd founds the Provincial Freeman", "Mary Ann Shadd fonde le Provincial Freeman"], [1858, "Gold rush; the colony of British Columbia is created", "Ruée vers l'or ; la colonie de la Colombie-Britannique est créée"], [1864, "The Charlottetown and Quebec conferences", "Les conférences de Charlottetown et de Québec"], [1867, "Confederation: the Dominion of Canada is formed", "La Confédération : le Dominion du Canada est formé"], [1870, "Manitoba joins Canada after the Red River Resistance", "Le Manitoba entre dans le Canada après la résistance de la rivière Rouge"], [1873, "Prince Edward Island joins; the NWMP is created", "L'Île-du-Prince-Édouard se joint ; la PCN-O est créée"], [1876, "The Indian Act is passed", "La Loi sur les Indiens est adoptée"], [1885, "The last spike; Louis Riel is hanged", "Le dernier crampon ; Louis Riel est pendu"], [1891, "James Naismith invents basketball", "James Naismith invente le basketball"], [1896, "Laurier becomes prime minister; gold is found in the Klondike", "Laurier devient premier ministre ; on trouve de l'or au Klondike"], [1898, "Yukon becomes a territory", "Le Yukon devient un territoire"], [1901, "Marconi receives a radio signal at Signal Hill", "Marconi reçoit un signal radio à Signal Hill"], [1905, "Alberta and Saskatchewan become provinces", "L'Alberta et la Saskatchewan deviennent des provinces"], [1910, "Canada creates its own navy", "Le Canada crée sa propre marine"], [1914, "The Komagata Maru is turned away; Canada enters the war", "Le Komagata Maru est refoulé ; le Canada entre en guerre"]], "think": [["Give two reasons the colonies joined together in 1867.", "Donne deux raisons pour lesquelles les colonies se sont unies en 1867.", "Any two: political deadlock in the Province of Canada; fear of the United States (Fenian raids); a railway connecting the colonies; trade between the colonies; Britain wanted them to defend themselves.", "Deux parmi : l'impasse politique dans la Province du Canada ; la crainte des États-Unis (raids des Féniens) ; un chemin de fer reliant les colonies ; le commerce entre colonies ; la Grande-Bretagne voulait qu'elles se défendent elles-mêmes."], ["Why did First Nations and the government understand the Numbered Treaties differently?", "Pourquoi les Premières Nations et le gouvernement comprenaient-ils les traités numérotés différemment ?", "Many First Nations saw them as agreements to share the land and live side by side; the government treated them as giving up the land; oral promises were not all written down; many promises were not kept.", "Beaucoup de Premières Nations les voyaient comme des ententes pour partager la terre et vivre côte à côte ; le gouvernement les traitait comme une cession ; les promesses orales n'ont pas toutes été écrites ; bien des promesses n'ont pas été tenues."], ["The CPR joined Canada from sea to sea. Who paid a high price to build it, and how?", "Le CP a relié le Canada d'un océan à l'autre. Qui a payé cher sa construction, et comment ?", "Chinese workers (lower pay, most dangerous work, hundreds died, then the head tax); First Nations and Métis whose lands it crossed; it also carried troops west in 1885.", "Les ouvriers chinois (moins payés, travaux les plus dangereux, des centaines de morts, puis la taxe d'entrée) ; les Premières Nations et les Métis dont il traversait les terres ; il a aussi transporté les troupes vers l'ouest en 1885."], ["Between 1890 and 1914 Canada welcomed some newcomers and kept others out. Give one example of each.", "Entre 1890 et 1914, le Canada a accueilli certains nouveaux arrivants et en a écarté d'autres. Donne un exemple de chaque.", "Welcomed: European settlers given 160 acres (Ukrainians, Germans, Doukhobors). Kept out: Chinese head tax ($500), the continuous journey rule and the Komagata Maru, campaigns against Black settlers.", "Accueillis : des colons européens recevant 160 acres (Ukrainiens, Allemands, Doukhobors). Écartés : la taxe d'entrée imposée aux Chinois (500 $), la règle du voyage sans escale et le Komagata Maru, les campagnes contre les colons noirs."]], "sheet": ["Canada, 1850 to 1914", "Le Canada, de 1850 à 1914"], "grade": ["Grade 8", "8e année"]};
+
+  function rnd(n) { return Math.floor(Math.random() * n); }
+  function shuffle(a, r) {
+    r = r || rnd;
+    for (var i = a.length - 1; i > 0; i--) { var j = r(i + 1); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  // mulberry32: Worksheet A is always the same sheet, and Answer Sheet A matches it.
+  function seeded(seed) {
+    var s = seed >>> 0;
+    return function (n) {
+      s += 0x6D2B79F5;
+      var t = s;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return Math.floor((((t ^ (t >>> 14)) >>> 0) / 4294967296) * n);
+    };
+  }
+  function pick(arr, n, r) { return shuffle(arr.slice(), r).slice(0, n); }
+
+  /* A question on screen is {q, opts:[{t, ok}], x}. Bank entries list the
+     right answer first; it is tracked by flag, never by position. */
+  function fromBank(b, r) {
+    var opts = (FR ? b.ofr : b.o).map(function (t, i) { return { t: t, ok: i === 0 }; });
+    return { q: FR ? b.qfr : b.q, opts: shuffle(opts, r), x: FR ? b.xfr : b.x };
+  }
+  function ev(e) { return FR ? e[2] : e[1]; }
+  // "Which happened first?" from four timeline events at least two years apart.
+  function firstQ(r) {
+    var pool = shuffle(P.tl.slice(), r), got = [];
+    for (var i = 0; i < pool.length && got.length < 4; i++) {
+      var ok = true;
+      for (var j = 0; j < got.length; j++) if (Math.abs(got[j][0] - pool[i][0]) < 2) ok = false;
+      if (ok) got.push(pool[i]);
+    }
+    var first = got.slice().sort(function (a, b) { return a[0] - b[0]; });
+    var opts = got.map(function (e) { return { t: ev(e), ok: e === first[0] }; });
+    return { q: T("Which of these happened first?", "Lequel de ces événements est arrivé en premier ?"),
+             opts: shuffle(opts, r),
+             x: first.map(function (e) { return e[0] + " — " + ev(e); }).join(" · ") };
+  }
+  // "In which year?" with three other years from the same timeline.
+  function yearQ(r, e) {
+    e = e || P.tl[r(P.tl.length)];
+    var others = pick(P.tl.filter(function (x) { return x[0] !== e[0]; }), 3, r).map(function (x) { return x[0]; });
+    var opts = [{ t: String(e[0]), ok: true }].concat(others.map(function (y) { return { t: String(y), ok: false }; }));
+    return { q: T("In which year? ", "En quelle année ? ") + ev(e),
+             opts: shuffle(opts, r), x: e[0] + " — " + ev(e) + "." };
+  }
+
+  // n questions: bank questions alternating between the units, plus timeline ones.
+  function pickSet(n, r, nTime) {
+    r = r || rnd;
+    nTime = nTime === undefined ? Math.round(n / 5) : nTime;
+    var byUnit = P.units.map(function (u, i) { return shuffle(P.qs.filter(function (q) { return q.u === i; }), r); });
+    var out = [], k = 0;
+    while (out.length < n - nTime) {
+      var list = byUnit[k % byUnit.length]; k++;
+      if (list.length) out.push(fromBank(list.shift(), r));
+      if (k > 400) break;
+    }
+    for (var t = 0; t < nTime; t++) out.push(t % 2 ? yearQ(r) : firstQ(r));
+    return shuffle(out, r);
+  }
+  function chalSet() {
+    var base = shuffle(P.chal.slice()).slice(0, 9).map(function (c) { return fromBank(c); });
+    var yrs = pick(P.tl, 3).map(function (e) { return yearQ(rnd, e); });
+    return shuffle(base.concat(yrs));
+  }
+
+  /* ---------- tabs ---------- */
+  var TABS = [
+    ["learn", "📖 " + T("Learn", "Apprendre")],
+    ["quiz", "🎮 " + T("Quiz", "Quiz")],
+    ["practice", "🔁 " + T("Practice", "Pratique")],
+    ["chal", "🧠 " + T("Challenge", "Défi")],
+    ["ws", "🖨️ " + T("Worksheet", "Feuille")],
+    ["ak", "✅ " + T("Answers", "Corrigé")]
+  ];
+  var PANE = { quiz: "szPaneQuiz", practice: "szPanePractice", chal: "szPaneChal", ws: "szPaneWs", ak: "szPaneAk" };
+  var booted = false;
+  function show(key) {
+    TABS.forEach(function (t) { $("szTab-" + t[0]).setAttribute("aria-selected", t[0] === key ? "true" : "false"); });
+    Object.keys(PANE).forEach(function (k) { $(PANE[k]).classList.toggle("on", k === key); });
+    var learn = $("szLearn");
+    if (learn) learn.style.display = key === "learn" ? "" : "none";
+    if (booted) $("szTabs").scrollIntoView({ behavior: "smooth", block: "start" });
+    booted = true;
+    if (key === "practice" && !pracQ) pracNext();
+    try { history.replaceState(null, "", "#" + key); } catch (e) {}
+  }
+  TABS.forEach(function (t) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "sz-tab"; b.id = "szTab-" + t[0];
+    b.setAttribute("role", "tab"); b.textContent = t[1];
+    b.addEventListener("click", function () { show(t[0]); });
+    $("szTabs").appendChild(b);
+  });
+
+  function render(q, ids, onAnswer) {
+    $(ids.q).textContent = q.q;
+    var host = $(ids.opts); host.innerHTML = "";
+    $(ids.exp).className = "sz-exp";
+    q.opts.forEach(function (o) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "sz-opt"; b.textContent = o.t;
+      b.addEventListener("click", function () {
+        var all = host.querySelectorAll(".sz-opt");
+        for (var i = 0; i < all.length; i++) all[i].disabled = true;
+        b.classList.add(o.ok ? "right" : "wrong");
+        if (!o.ok) for (var j = 0; j < all.length; j++) if (q.opts[j].ok) all[j].classList.add("right");
+        $(ids.exp).textContent = (o.ok ? T("Right. ", "Bravo. ") : T("Not quite. ", "Pas tout à fait. ")) + q.x;
+        $(ids.exp).className = "sz-exp on";
+        onAnswer(o.ok);
+      });
+      host.appendChild(b);
+    });
+  }
+
+  function runner(prefix, makeSet, icons, titles, intro, go) {
+    var set = null, i = 0, score = 0;
+    $("sz" + prefix + "Intro").textContent = intro;
+    $("sz" + prefix + "Go").textContent = go;
+    $("sz" + prefix + "Again").textContent = T("Try again", "Recommencer");
+    function start() {
+      set = makeSet(); i = 0; score = 0;
+      $("sz" + prefix + "Start").style.display = "none"; $("sz" + prefix + "End").style.display = "none";
+      $("sz" + prefix + "Play").style.display = "";
+      one();
+    }
+    function one() {
+      $("sz" + prefix + "No").textContent = T("Question " + (i + 1) + " of " + set.length, "Question " + (i + 1) + " sur " + set.length);
+      $("sz" + prefix + "Score").textContent = T("Score: ", "Score : ") + score;
+      $("sz" + prefix + "Bar").style.width = (i / set.length * 100) + "%";
+      $("sz" + prefix + "Next").style.display = "none";
+      render(set[i], { q: "sz" + prefix + "Q", opts: "sz" + prefix + "Opts", exp: "sz" + prefix + "Exp" }, function (ok) {
+        if (ok) score++;
+        $("sz" + prefix + "Score").textContent = T("Score: ", "Score : ") + score;
+        $("sz" + prefix + "Next").textContent = i + 1 < set.length ? T("Next →", "Suivant →") : T("See my result →", "Voir mon résultat →");
+        $("sz" + prefix + "Next").style.display = "";
+      });
+    }
+    function end() {
+      $("sz" + prefix + "Play").style.display = "none"; $("sz" + prefix + "End").style.display = "";
+      var n = set.length, p = score / n, k = p >= 0.9 ? 0 : p >= 0.7 ? 1 : p >= 0.5 ? 2 : 3;
+      $("sz" + prefix + "Icon").textContent = icons[k];
+      $("sz" + prefix + "Title").textContent = titles[k];
+      $("sz" + prefix + "Line").textContent = T("You got " + score + " out of " + n + ".", "Vous avez " + score + " sur " + n + ".") +
+        (prefix === "Quiz" && p < 0.7 ? T(" Read the lesson again, then try once more.", " Relisez la leçon, puis réessayez.") : "");
+    }
+    $("sz" + prefix + "Go").addEventListener("click", start);
+    $("sz" + prefix + "Again").addEventListener("click", start);
+    $("sz" + prefix + "Next").addEventListener("click", function () { i++; if (i < set.length) one(); else end(); });
+  }
+  runner("Quiz", function () { return pickSet(10); },
+    ["🌟", "🍁", "👍", "📚"],
+    [T("Excellent!", "Excellent !"), T("Well done", "Bien joué"), T("Good start", "Bon début"), T("Keep going", "Continuez")],
+    T("Ten questions from both units, with a line that explains each answer.", "Dix questions sur les deux unités, avec une ligne qui explique chaque réponse."),
+    T("Start the quiz", "Commencer le quiz"));
+  $("szQuizToChal").textContent = T("Try the Challenge →", "Essayer le Défi →");
+  $("szQuizToChal").addEventListener("click", function () { show("chal"); });
+  runner("Chal", chalSet,
+    ["🥇", "🥈", "🥉", "💪"],
+    [T("Gold", "Or"), T("Silver", "Argent"), T("Bronze", "Bronze"), T("Good try", "Bel effort")],
+    T("Twelve harder questions, including dates. For when the quiz felt easy.", "Douze questions plus difficiles, dont des dates. Pour quand le quiz a semblé facile."),
+    T("Start the challenge", "Commencer le défi"));
+
+  /* ---------- practice ---------- */
+  var pracQ = null, pracN = 0, pracOk = 0;
+  $("szPracReset").textContent = T("Reset", "Remettre à zéro");
+  $("szPracNext").textContent = T("Another one →", "Une autre →");
+  function pracTally() {
+    $("szPracTally").textContent = pracN ? T(pracOk + " right out of " + pracN, pracOk + " bonnes sur " + pracN) : T("No score here — just practise.", "Pas de score ici — on s'exerce.");
+  }
+  function pracNext() {
+    var r = Math.random();
+    pracQ = r < 0.15 ? firstQ(rnd) : r < 0.25 ? yearQ(rnd) : fromBank(P.qs[rnd(P.qs.length)]);
+    render(pracQ, { q: "szPracQ", opts: "szPracOpts", exp: "szPracExp" }, function (ok) { pracN++; if (ok) pracOk++; pracTally(); });
+    pracTally();
+  }
+  $("szPracNext").addEventListener("click", pracNext);
+  $("szPracReset").addEventListener("click", function () { pracN = 0; pracOk = 0; pracNext(); });
+
+  /* ---------- worksheet + answer sheet ---------- */
+  var SHEETS = ["A", "B", "C"];
+  var SEED = { A: 20261016 + 8, B: 1867 * 8, C: 31415 + 8 };
+  var sheet = "A";
+  var LET = ["a", "b", "c", "d"];
+  function sheetData(letter) {
+    var r = seeded(SEED[letter]);
+    var mc = pickSet(6, r, 0);
+    var ord = pick(P.tl, 5, r);
+    var think = P.think[r(P.think.length)];
+    return { mc: mc, ord: ord, think: think };
+  }
+  var URLTXT = "canada-quiz.com/" + (FR ? "fr/" : "") + "history-grade-8.html";
+  function head(letter, which) {
+    return '<div class="hd"><div><h2>' + esc(T(P.sheet[0], P.sheet[1])) + "</h2><div>" + esc(T(P.grade[0], P.grade[1])) +
+      " · " + esc(which) + " " + letter + "</div></div>" +
+      '<div class="nm">' + esc(T("Name:", "Nom :")) + ' <span class="bl"></span><br>' + esc(T("Date:", "Date :")) + ' <span class="bl"></span></div></div>';
+  }
+  function foot() {
+    return '<p class="ft">' + esc(T("Free to print and copy for your class.", "Libre d'impression et de copie pour votre classe.")) + " " + URLTXT + "</p>";
+  }
+  function wsHtml(letter) {
+    var s = sheetData(letter), h = head(letter, T("Worksheet", "Feuille"));
+    h += "<h3>" + esc(T("Part 1 — Circle the right answer", "Partie 1 — Encercle la bonne réponse")) + "</h3><ol>";
+    s.mc.forEach(function (q) {
+      h += '<li><span class="qt">' + esc(q.q) + "</span>";
+      q.opts.forEach(function (o, i) { h += '<span class="o">' + LET[i] + ") " + esc(o.t) + "</span>"; });
+      h += "</li>";
+    });
+    h += "</ol><h3>" + esc(T("Part 2 — Number these events in order, 1 for the earliest", "Partie 2 — Numérote ces événements dans l'ordre, 1 pour le plus ancien")) + "</h3>";
+    s.ord.forEach(function (e) { h += '<span class="ord"><span class="box"></span>' + esc(ev(e)) + "</span>"; });
+    h += "<h3>" + esc(T("Part 3 — Answer in two or three sentences", "Partie 3 — Réponds en deux ou trois phrases")) + "</h3>";
+    h += "<p>" + esc(FR ? s.think[1] : s.think[0]) + '</p><div class="lines"><span></span><span></span><span></span></div>';
+    return h + foot();
+  }
+  function akHtml(letter) {
+    var s = sheetData(letter), h = head(letter, T("Answer Sheet", "Corrigé"));
+    h += "<h3>" + esc(T("Part 1", "Partie 1")) + "</h3><ol>";
+    s.mc.forEach(function (q) {
+      var k = 0; for (var i = 0; i < q.opts.length; i++) if (q.opts[i].ok) k = i;
+      h += '<li><span class="ans">' + LET[k] + ") " + esc(q.opts[k].t) + "</span> — " + esc(q.q) + "</li>";
+    });
+    h += "</ol><h3>" + esc(T("Part 2", "Partie 2")) + "</h3>";
+    var sorted = s.ord.slice().sort(function (a, b) { return a[0] - b[0]; });
+    s.ord.forEach(function (e) {
+      h += '<span class="ord"><span class="ans">' + (sorted.indexOf(e) + 1) + "</span> — " + esc(ev(e)) + " (" + e[0] + ")</span>";
+    });
+    h += "<h3>" + esc(T("Part 3", "Partie 3")) + "</h3><p>" + esc(FR ? s.think[1] : s.think[0]) + "</p>";
+    h += '<p><span class="ans">' + esc(T("A good answer mentions: ", "Une bonne réponse mentionne : ")) + "</span>" + esc(FR ? s.think[3] : s.think[2]) + "</p>";
+    return h + foot();
+  }
+  function picker(hostId) {
+    var host = $(hostId); host.innerHTML = "";
+    var lab = document.createElement("span"); lab.style.fontWeight = "800";
+    lab.textContent = T("Sheet:", "Feuille :"); host.appendChild(lab);
+    SHEETS.forEach(function (L) {
+      var b = document.createElement("button"); b.type = "button";
+      b.className = "btn btn-ghost" + (L === sheet ? " on" : ""); b.textContent = L;
+      b.addEventListener("click", function () { sheet = L; paintSheets(); });
+      host.appendChild(b);
+    });
+  }
+  function pdfHref(kind) {
+    return (FR ? "../" : "") + "printables/" + "history-grade-8" + "-" + kind + "-" + sheet + (FR ? "-fr" : "-en") + ".pdf";
+  }
+  function paintSheets() {
+    picker("szWsPick"); picker("szAkPick");
+    $("szWsSheet").innerHTML = wsHtml(sheet);
+    $("szAkSheet").innerHTML = akHtml(sheet);
+    $("szWsPdf").href = pdfHref("worksheet"); $("szWsPdf").textContent = "⬇️ " + T("Download PDF", "Télécharger le PDF");
+    $("szAkPdf").href = pdfHref("answers"); $("szAkPdf").textContent = "⬇️ " + T("Download PDF", "Télécharger le PDF");
+  }
+  $("szWsNote").textContent = T("Three different worksheets. The answer sheet with the same letter matches it exactly. Prints on one page, black and white.",
+                                "Trois feuilles différentes. Le corrigé portant la même lettre lui correspond exactement. S'imprime sur une page, en noir et blanc.");
+  $("szAkNote").textContent = T("The answers for the worksheet with the same letter. Print this one separately.",
+                                "Les réponses de la feuille portant la même lettre. Imprimez celui-ci séparément.");
+  $("szWsPrint").textContent = "🖨️ " + T("Print worksheet", "Imprimer la feuille");
+  $("szAkPrint").textContent = "🖨️ " + T("Print answer sheet", "Imprimer le corrigé");
+  $("szWsPrint").addEventListener("click", function () { window.print(); });
+  $("szAkPrint").addEventListener("click", function () { window.print(); });
+  paintSheets();
+
+  var want = (location.hash || "").replace("#", "");
+  show(PANE[want] || want === "learn" ? want : "learn");
+})();
+</script>
+  <script src="js/site.js?v=85ed05d5"></script>
+  <script src="js/analytics.js?v=065edc09"></script>
+  <script src="js/ads.js?v=00e703ff" defer></script>
+  <script src="js/pwa.js?v=cb9b3ff7" defer></script>
+  <script src="js/tv-mode.js?v=556065b8" defer></script>
+</body>
+</html>
