@@ -1942,12 +1942,12 @@ window.CQ_DRIVE_Q = [];
   c:1 },
 
 { id:"rc27", sec:"rules", topic:"safe",
-  en:{ q:"At what speed over the limit does a charge move from ordinary speeding into stunt driving territory in an 80 km/h or lower zone?",
+  en:{ q:"At what speed over the limit does a charge move from ordinary speeding into stunt driving on a road posted under 80 km/h?",
        a:["20 km/h over","60 km/h over","40 km/h or more over","10 km/h over"],
-       e:"On roads posted under 80 km/h it is 40 km/h or more over. On faster roads the threshold is 50 km/h over, and both bring six demerit points." },
-  fr:{ q:"À partir de quel excès la conduite passe-t-elle de simple excès de vitesse à cascade dans une zone de 80 km/h ou moins ?",
+       e:"On roads posted under 80 km/h it is 40 km/h or more over. On roads posted 80 km/h or more it is 50 km/h or more over, and driving 150 km/h or more is stunt driving anywhere. Stunt driving brings an immediate 30-day licence suspension and a 14-day vehicle impoundment." },
+  fr:{ q:"À partir de quel excès la conduite passe-t-elle de simple excès de vitesse à cascade sur une route dont la limite est inférieure à 80 km/h ?",
        a:["20 km/h au-dessus","60 km/h au-dessus","40 km/h ou plus au-dessus","10 km/h au-dessus"],
-       e:"Sur les routes affichées à moins de 80 km/h, c'est 40 km/h ou plus au-dessus. Sur les routes plus rapides, le seuil est de 50 km/h, et les deux valent six points d'inaptitude." },
+       e:"Sur les routes affichées à moins de 80 km/h, c'est 40 km/h ou plus au-dessus. Sur les routes affichées à 80 km/h ou plus, c'est 50 km/h ou plus au-dessus, et rouler à 150 km/h ou plus est une cascade partout. Une cascade entraîne une suspension immédiate du permis de 30 jours et une mise en fourrière du véhicule de 14 jours." },
   c:2 },
 
 { id:"rc28", sec:"rules", topic:"safe",

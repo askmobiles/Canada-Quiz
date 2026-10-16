@@ -1557,3 +1557,4 @@ p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
 .nav .nav-ico{flex:none;margin-right:2px}
 /* the games page search bar sticks under the header, and below its menus */
 .game-nav{top:var(--hdr-h,0px)!important;z-index:40!important}
+.sz-res .sz-rt{font-size:1.6rem;font-weight:800;margin:.2em 0;line-height:1.2}
