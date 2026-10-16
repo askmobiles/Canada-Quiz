@@ -33,24 +33,10 @@
   /* ---------------------------------------------------------------
      1. THE MENU — change a link here and it changes on all pages
      --------------------------------------------------------------- */
-  var NAV = [
-    { href: "./",               label: "Home" },
-    { href: "quizzes.html",     label: "Quizzes" },
-    { href: "games.html",       label: "Family Games" },
-    /* For Kids sits beside Family Games because that is what a parent is
-       looking for when they land on either one. It was missing from the menu
-       when the section shipped, and a section nobody can reach from the menu
-       may as well not exist. */
-    { href: "for-kids.html",    label: "For Kids" },
-    { href: "citizenship.html", label: "Citizenship" },
-    { href: "driving-test.html", label: "Driving Test" },
-    { href: "daily.html",       label: "Daily" },
-    { href: "blog.html",        label: "Blog" },
-    /* the menu visitors actually see — this list and the one in
-       tools/rewrite_pages.py must stay in step, or the HTML menu and the
-       painted menu disagree and one of them is wrong */
-    { href: "search.html",      label: "Search" }
-  ];
+  /* The menu, with its sub-menus. Written from tools/menu.json by
+     tools/newq/reg_menu.py, which also writes the same menu into the HTML of
+     every page. Change tools/menu.json, never these lines. */
+  /*MENU*/var MENU = [{"href":"quizzes.html","en":"Quizzes","fr":"Quiz","items":[["quizzes.html","All quizzes","Tous les quiz"],["citizenship.html","Citizenship test practice","Pratique de l'examen de citoyenneté"],["canada-quiz.html","Canada quiz","Quiz sur le Canada"],["gk-quiz.html","General knowledge","Culture générale"],["canada-map.html","Map of Canada quiz","Quiz de la carte du Canada"],["province-quiz.html","Province quiz","Quiz des provinces"],["world-quiz.html","World quiz","Quiz sur le monde"],["daily.html","Daily quiz","Quiz du jour"],["which-came-first.html","Which came first?","Lequel est arrivé en premier ?"]]},{"href":"teachers.html","en":"School","fr":"École","items":[["teachers.html","For teachers","Pour les enseignants"],["history-grade-3.html","Grade 3 · Early Canada","3e année · Le Canada d'autrefois"],["provinces-and-territories-grade-4.html","Grade 4 · Provinces and territories","4e année · Provinces et territoires"],["history-grade-5.html","Grade 5 · First Peoples and Europeans","5e année · Premiers Peuples et Européens"],["history-grade-6.html","Grade 6 · Communities, past and present","6e année · Les communautés, hier et aujourd'hui"],["history-grade-7.html","Grade 7 · New France to 1850","7e année · De la Nouvelle-France à 1850"],["history-grade-8.html","Grade 8 · Creating Canada","8e année · La création du Canada"],["printable-quizzes.html","Printable worksheets","Feuilles à imprimer"],["printable-canada-maps.html","Printable maps","Cartes à imprimer"]]},{"href":"games.html","en":"Games","fr":"Jeux","items":[["games.html","All family games","Tous les jeux en famille"],["trivia-showdown.html","Trivia Showdown","Duel de quiz"],["canada-road-trip.html","Road Trip Across Canada","Traversée du Canada en voiture"],["charades.html","Charades","Mime"],["would-you-rather.html","Would you rather?","Préférerais-tu ?"],["crossword.html","Crosswords","Mots croisés"],["word-search.html","Word search","Mots cachés"],["chess.html","Chess","Échecs"],["printable-puzzles.html","Printable puzzles","Casse-têtes à imprimer"]]},{"href":"for-kids.html","en":"Kids","fr":"Enfants","items":[["for-kids.html","True stories for kids","Histoires vraies pour enfants"],["20-fun-facts-about-canada-for-kids.html","20 fun facts about Canada","20 faits amusants sur le Canada"],["rights-and-respect.html","Rights and Respect","Droits et respect"],["times-tables.html","Times tables","Tables de multiplication"],["math-race.html","Math Race","Course de calcul"],["which-canadian-animal-quiz.html","Which Canadian animal are you?","Quel animal canadien es-tu ?"]]},{"href":"driving-test.html","en":"Driving","fr":"Conduite","items":[["driving-test.html","Driving test practice","Pratique de l'examen de conduite"],["canada-driving-test-by-province.html","Tests by province","Examens par province"],["ontario-g1-practice-test.html","Ontario G1 practice","Pratique G1 de l'Ontario"],["ontario-g1-mock-test.html","Ontario G1 mock test","Examen simulé G1 de l'Ontario"],["read-the-road.html","Read the Road (signs game)","Lire la route (jeu des panneaux)"],["ontario-driving-scenarios.html","What would you do?","Que feriez-vous ?"],["how-to-get-a-drivers-licence-in-canada.html","How to get a licence","Comment obtenir un permis"]]},{"href":"blog.html","en":"Blog","fr":"Blogue","items":[["blog.html","All articles","Tous les articles"],["blog.html#sec-cit","Citizenship and your first years","Citoyenneté et premières années"],["blog.html#sec-money","Money and everyday life","L'argent et la vie de tous les jours"],["blog.html#sec-driving","Driving in Canada","Conduire au Canada"],["blog.html#sec-gov","Government, work and the economy","Gouvernement, travail et économie"],["blog.html#sec-history","History and symbols","Histoire et symboles"],["blog.html#sec-family","Canada for families","Le Canada en famille"],["blog.html#sec-more","More about Canada","Encore sur le Canada"]]},{"href":"search.html","en":"Search","fr":"Rechercher","icon":"🔍","items":[]}];/*/MENU*/
 
   var FOOTER_LINKS = [
     { href: "./",           label: "Home" },
@@ -252,7 +238,7 @@
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
-  var FRVER = {core:"f82e33b6",gk:"8bd122f8",cit:"f134c8d4",fun:"b971d20f",drive:"9ea6f05c",kids:"71e99c45"};
+  var FRVER = {core:"8609a2e7",gk:"3402b7e0",cit:"b64fd446",fun:"b971d20f",drive:"9ea6f05c",kids:"71e99c45"};
   function loadFrench(done) {
     /* The dictionary is split into chunks by tools/split_fr.py. Every French
        page needs "core" (the header, footer and UI strings site.js injects);
@@ -287,13 +273,25 @@
   }
 
   function headerHTML() {
-    var links = NAV.map(function (n) {
-      /* the home link is "./" (see FOOTER_LINKS in tools/rewrite_pages.py), so
-         it is "on" when the page is the home page, whatever the URL says */
-      var here = n.href === "./" ? file === "index.html" : n.href === file;
-      var on = here ? ' class="on" aria-current="page"' : "";
-      return '<a href="' + n.href + '"' + on + ">" + esc(T(n.label)) + "</a>";
-    }).join("");
+    /* One item per section. The section is "on" when this page is the
+       section's own page or any page in its list. */
+    function lab(o) { return lang === "fr" ? o.fr : o.en; }
+    var links = '<ul class="nav-list">' + MENU.map(function (m, k) {
+      var mine = m.href === file || m.items.some(function (it) { return it[0].split("#")[0] === file; });
+      var top = '<a class="nav-top' + (mine ? ' on"' : '"') + ' href="' + m.href + '"' +
+                (m.href === file ? ' aria-current="page"' : "") + ">" +
+                (m.icon ? '<span aria-hidden="true">' + m.icon + "</span> " : "") + esc(lab(m)) + "</a>";
+      if (!m.items.length) return '<li class="nav-item">' + top + "</li>";
+      var sub = m.items.map(function (it) {
+        var here = it[0] === file;
+        return '<li><a href="' + it[0] + '"' + (here ? ' class="on" aria-current="page"' : "") + ">" +
+               esc(lang === "fr" ? it[2] : it[1]) + "</a></li>";
+      }).join("");
+      return '<li class="nav-item has-sub">' + top +
+        '<button type="button" class="sub-btn" aria-expanded="false" aria-controls="cq-sub-' + k + '"' +
+        ' aria-label="' + esc(lab(m)) + '">▾</button>' +
+        '<ul class="sub" id="cq-sub-' + k + '">' + sub + "</ul></li>";
+    }).join("") + "</ul>";
 
     var other = lang === "fr" ? "en" : "fr";
     var tip = lang === "fr" ? "Switch to English" : "Passer en français";
@@ -316,7 +314,10 @@
         '<img src="' + BASE + 'brand/logo-horizontal-white.svg?v=bb66f331" alt="' + esc(BRAND) +
         '" class="brand-logo" width="230" height="55">' +
       "</a>" +
-      '<nav class="nav" aria-label="' + esc(T("Main navigation")) + '">' + links + btn + "</nav>" +
+      '<nav class="nav" id="cq-menu" aria-label="' + esc(T("Main navigation")) + '">' + links + "</nav>" +
+      '<div class="hdr-tools">' + btn +
+        '<button type="button" class="menu-btn" aria-expanded="false" aria-controls="cq-menu">' +
+        '<span aria-hidden="true">☰</span> ' + (lang === "fr" ? "Menu" : "Menu") + "</button></div>" +
       "</div>";
   }
 
@@ -384,7 +385,55 @@
     }
     f.setAttribute("data-no-i18n", "");
 
+    /* the menu: Menu button, section arrows, and closing on a click outside
+       or on Escape */
+    function closeSubs(except) {
+      var open = h.querySelectorAll(".nav-item.open");
+      for (var i = 0; i < open.length; i++) {
+        if (open[i] === except) continue;
+        open[i].classList.remove("open");
+        var sb = open[i].querySelector(".sub-btn");
+        if (sb) sb.setAttribute("aria-expanded", "false");
+      }
+    }
+    function toggleSub(item) {
+      var on = !item.classList.contains("open");
+      closeSubs(item);
+      item.classList.toggle("open", on);
+      var sb = item.querySelector(".sub-btn");
+      if (sb) sb.setAttribute("aria-expanded", on ? "true" : "false");
+    }
+    var narrow = window.matchMedia ? window.matchMedia("(max-width: 899px)") : { matches: false };
+    document.addEventListener("click", function (e) {
+      if (!h.contains(e.target)) { closeSubs(); }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeSubs();
+        if (h.classList.contains("menu-open")) {
+          h.classList.remove("menu-open");
+          var mb = h.querySelector(".menu-btn");
+          if (mb) { mb.setAttribute("aria-expanded", "false"); mb.focus(); }
+        }
+      }
+    });
     h.addEventListener("click", function (e) {
+      var mb = e.target && e.target.closest ? e.target.closest(".menu-btn") : null;
+      if (mb) {
+        var openNow = !h.classList.contains("menu-open");
+        h.classList.toggle("menu-open", openNow);
+        mb.setAttribute("aria-expanded", openNow ? "true" : "false");
+        if (!openNow) closeSubs();
+        return;
+      }
+      var sbtn = e.target && e.target.closest ? e.target.closest(".sub-btn") : null;
+      if (sbtn) { e.preventDefault(); toggleSub(sbtn.parentNode); return; }
+      /* On a phone, tapping a section name opens its list instead of leaving
+         the page; the section's own page is the first line of that list. */
+      var top = e.target && e.target.closest ? e.target.closest(".has-sub > .nav-top") : null;
+      if (top && narrow.matches && !top.parentNode.classList.contains("open")) {
+        e.preventDefault(); toggleSub(top.parentNode); return;
+      }
       var b = e.target && e.target.closest ? e.target.closest("[data-set-lang]") : null;
       if (b) { e.preventDefault(); setLang(b.getAttribute("data-set-lang")); return; }
       var t = e.target && e.target.closest ? e.target.closest("[data-cq-theme]") : null;

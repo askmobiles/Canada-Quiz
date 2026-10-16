@@ -1507,3 +1507,50 @@ p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
 #cm-pins{pointer-events:none}
 
 .kid-quiz [hidden]{display:none}
+
+/* ---- Main menu with sub-menus (16 Oct 2026) ------------------------------
+   Seven sections, each opening a short list. Wide screens: the list drops
+   down on hover, on keyboard focus, or on a tap of the small arrow. Narrow
+   screens (under 900px): one Menu button opens the whole menu as a column,
+   and tapping a section opens its list underneath it. Markup comes from
+   tools/menu.json through js/site.js and tools/rewrite_pages.py. */
+.nav-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px;align-items:center}
+.nav-item{position:relative;display:flex;align-items:center}
+.nav .nav-top{display:inline-flex;align-items:center;gap:4px}
+.nav .sub-btn{background:none;border:0;color:#fff;font-size:12px;line-height:1;padding:10px 6px 10px 2px;margin-left:-8px;cursor:pointer;border-radius:8px}
+.nav .sub-btn:hover{background:rgba(255,255,255,.20)}
+.nav .sub-btn:focus-visible{outline:3px solid #ffb703;outline-offset:1px}
+.nav .sub{list-style:none;margin:0;padding:8px;display:none;position:absolute;top:100%;left:0;z-index:60;
+  min-width:250px;background:var(--card);border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.18);border:1px solid var(--line)}
+.nav .sub::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
+.nav .sub li{margin:0}
+.nav .sub a{display:block;color:var(--ink);font-weight:600;font-size:14.5px;padding:9px 12px;border-radius:9px;white-space:nowrap}
+.nav .sub a:hover,.nav .sub a:focus-visible{background:var(--line);text-decoration:none}
+.nav .sub a.on{color:var(--red-dark);font-weight:800}
+.nav .nav-item.open > .sub{display:block}
+@media (hover:hover) and (min-width:900px){
+  .nav .nav-item:hover > .sub,.nav .nav-item:focus-within > .sub{display:block}
+}
+.nav .nav-item:last-child .sub,.nav .nav-item:nth-last-child(2) .sub{left:auto;right:0}
+.nav .nav-top.on{background:rgba(255,255,255,.22)}
+.hdr-tools{display:flex;align-items:center;gap:6px}
+.menu-btn{display:none;background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.55);color:#fff;font-weight:800;
+  font-size:15px;padding:7px 12px;border-radius:12px;cursor:pointer;min-height:42px}
+.menu-btn:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+@media (max-width:899px){
+  .site-header .container{flex-wrap:wrap}
+  .menu-btn{display:inline-flex;align-items:center;gap:6px}
+  .site-header .nav{display:none;flex-basis:100%;order:3;padding:6px 0 10px}
+  .site-header.menu-open .nav{display:block}
+  .nav-list{flex-direction:column;align-items:stretch;gap:0}
+  .nav-item{flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.22)}
+  .nav .nav-top{flex:1;font-size:16px;padding:12px 10px}
+  .nav .sub-btn{margin-left:0;font-size:16px;padding:12px 16px;min-width:48px}
+  .nav .sub{position:static;flex-basis:100%;min-width:0;box-shadow:none;border:0;border-radius:12px;margin:0 0 10px;padding:4px}
+  .nav .sub::before{display:none}
+  .nav .sub a{white-space:normal;font-size:15.5px;padding:11px 12px}
+}
+@media print{.menu-btn,.nav .sub{display:none!important}}
+.blog-sec{scroll-margin-top:84px}
+.nav .sub-btn{transition:transform .15s}
+.nav .nav-item.open > .sub-btn{transform:rotate(180deg)}
