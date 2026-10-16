@@ -36,7 +36,7 @@
   /* The menu, with its sub-menus. Written from tools/menu.json by
      tools/newq/reg_menu.py, which also writes the same menu into the HTML of
      every page. Change tools/menu.json, never these lines. */
-  /*MENU*/var MENU = [{"href":"quizzes.html","en":"Quizzes","fr":"Quiz","items":[["quizzes.html","All quizzes","Tous les quiz"],["citizenship.html","Citizenship test practice","Pratique de l'examen de citoyenneté"],["canada-quiz.html","Canada quiz","Quiz sur le Canada"],["gk-quiz.html","General knowledge","Culture générale"],["canada-map.html","Map of Canada quiz","Quiz de la carte du Canada"],["province-quiz.html","Province quiz","Quiz des provinces"],["world-quiz.html","World quiz","Quiz sur le monde"],["daily.html","Daily quiz","Quiz du jour"],["which-came-first.html","Which came first?","Lequel est arrivé en premier ?"]]},{"href":"teachers.html","en":"School","fr":"École","items":[["teachers.html","For teachers","Pour les enseignants"],["history-grade-3.html","Grade 3 · Early Canada","3e année · Le Canada d'autrefois"],["provinces-and-territories-grade-4.html","Grade 4 · Provinces and territories","4e année · Provinces et territoires"],["history-grade-5.html","Grade 5 · First Peoples and Europeans","5e année · Premiers Peuples et Européens"],["history-grade-6.html","Grade 6 · Communities, past and present","6e année · Les communautés, hier et aujourd'hui"],["history-grade-7.html","Grade 7 · New France to 1850","7e année · De la Nouvelle-France à 1850"],["history-grade-8.html","Grade 8 · Creating Canada","8e année · La création du Canada"],["printable-quizzes.html","Printable worksheets","Feuilles à imprimer"],["printable-canada-maps.html","Printable maps","Cartes à imprimer"]]},{"href":"games.html","en":"Games","fr":"Jeux","items":[["games.html","All family games","Tous les jeux en famille"],["trivia-showdown.html","Trivia Showdown","Duel de quiz"],["canada-road-trip.html","Road Trip Across Canada","Traversée du Canada en voiture"],["charades.html","Charades","Mime"],["would-you-rather.html","Would you rather?","Préférerais-tu ?"],["crossword.html","Crosswords","Mots croisés"],["word-search.html","Word search","Mots cachés"],["chess.html","Chess","Échecs"],["printable-puzzles.html","Printable puzzles","Casse-têtes à imprimer"]]},{"href":"for-kids.html","en":"Kids","fr":"Enfants","items":[["for-kids.html","True stories for kids","Histoires vraies pour enfants"],["20-fun-facts-about-canada-for-kids.html","20 fun facts about Canada","20 faits amusants sur le Canada"],["rights-and-respect.html","Rights and Respect","Droits et respect"],["times-tables.html","Times tables","Tables de multiplication"],["math-race.html","Math Race","Course de calcul"],["which-canadian-animal-quiz.html","Which Canadian animal are you?","Quel animal canadien es-tu ?"]]},{"href":"driving-test.html","en":"Driving","fr":"Conduite","items":[["driving-test.html","Driving test practice","Pratique de l'examen de conduite"],["canada-driving-test-by-province.html","Tests by province","Examens par province"],["ontario-g1-practice-test.html","Ontario G1 practice","Pratique G1 de l'Ontario"],["ontario-g1-mock-test.html","Ontario G1 mock test","Examen simulé G1 de l'Ontario"],["read-the-road.html","Read the Road (signs game)","Lire la route (jeu des panneaux)"],["ontario-driving-scenarios.html","What would you do?","Que feriez-vous ?"],["how-to-get-a-drivers-licence-in-canada.html","How to get a licence","Comment obtenir un permis"]]},{"href":"blog.html","en":"Blog","fr":"Blogue","items":[["blog.html","All articles","Tous les articles"],["blog.html#sec-cit","Citizenship and your first years","Citoyenneté et premières années"],["blog.html#sec-money","Money and everyday life","L'argent et la vie de tous les jours"],["blog.html#sec-driving","Driving in Canada","Conduire au Canada"],["blog.html#sec-gov","Government, work and the economy","Gouvernement, travail et économie"],["blog.html#sec-history","History and symbols","Histoire et symboles"],["blog.html#sec-family","Canada for families","Le Canada en famille"],["blog.html#sec-more","More about Canada","Encore sur le Canada"]]},{"href":"search.html","en":"Search","fr":"Rechercher","icon":"🔍","items":[]}];/*/MENU*/
+  /*MENU*/var MENU = [{"href":"quizzes.html","en":"Quizzes","fr":"Quiz","items":[["quizzes.html","All quizzes","Tous les quiz"],["citizenship.html","Citizenship test practice","Pratique de l'examen de citoyenneté"],["canada-quiz.html","Canada quiz","Quiz sur le Canada"],["gk-quiz.html","General knowledge","Culture générale"],["canada-map.html","Map of Canada quiz","Quiz de la carte du Canada"],["province-quiz.html","Province quiz","Quiz des provinces"],["world-quiz.html","World quiz","Quiz sur le monde"],["daily.html","Daily quiz","Quiz du jour"],["which-came-first.html","Which came first?","Lequel est arrivé en premier ?"]]},{"href":"teachers.html","en":"School","fr":"École","items":[["teachers.html","For teachers","Pour les enseignants"],["canada-map.html","Map of Canada quiz","Quiz de la carte du Canada"],["history-grade-3.html","Grade 3 · Early Canada","3e année · Le Canada d'autrefois"],["provinces-and-territories-grade-4.html","Grade 4 · Provinces and territories","4e année · Provinces et territoires"],["history-grade-5.html","Grade 5 · First Peoples and Europeans","5e année · Premiers Peuples et Européens"],["history-grade-6.html","Grade 6 · Communities, past and present","6e année · Les communautés, hier et aujourd'hui"],["history-grade-7.html","Grade 7 · New France to 1850","7e année · De la Nouvelle-France à 1850"],["history-grade-8.html","Grade 8 · Creating Canada","8e année · La création du Canada"],["printable-quizzes.html","Printable worksheets","Feuilles à imprimer"],["printable-canada-maps.html","Printable maps","Cartes à imprimer"]]},{"href":"games.html","en":"Games","fr":"Jeux","items":[["games.html","All family games","Tous les jeux en famille"],["trivia-showdown.html","Trivia Showdown","Duel de quiz"],["canada-road-trip.html","Road Trip Across Canada","Traversée du Canada en voiture"],["charades.html","Charades","Mime"],["would-you-rather.html","Would you rather?","Préférerais-tu ?"],["crossword.html","Crosswords","Mots croisés"],["word-search.html","Word search","Mots cachés"],["chess.html","Chess","Échecs"],["printable-puzzles.html","Printable puzzles","Casse-têtes à imprimer"]]},{"href":"for-kids.html","en":"Kids","fr":"Enfants","items":[["for-kids.html","True stories for kids","Histoires vraies pour enfants"],["20-fun-facts-about-canada-for-kids.html","20 fun facts about Canada","20 faits amusants sur le Canada"],["rights-and-respect.html","Rights and Respect","Droits et respect"],["times-tables.html","Times tables","Tables de multiplication"],["math-race.html","Math Race","Course de calcul"],["which-canadian-animal-quiz.html","Which Canadian animal are you?","Quel animal canadien es-tu ?"]]},{"href":"driving-test.html","en":"Driving","fr":"Conduite","items":[["driving-test.html","Driving test practice","Pratique de l'examen de conduite"],["canada-driving-test-by-province.html","Tests by province","Examens par province"],["ontario-g1-practice-test.html","Ontario G1 practice","Pratique G1 de l'Ontario"],["ontario-g1-mock-test.html","Ontario G1 mock test","Examen simulé G1 de l'Ontario"],["read-the-road.html","Read the Road (signs game)","Lire la route (jeu des panneaux)"],["ontario-driving-scenarios.html","What would you do?","Que feriez-vous ?"],["how-to-get-a-drivers-licence-in-canada.html","How to get a licence","Comment obtenir un permis"]]},{"href":"blog.html","en":"Blog","fr":"Blogue","items":[["blog.html","All articles","Tous les articles"],["blog.html#sec-cit","Citizenship and your first years","Citoyenneté et premières années"],["blog.html#sec-money","Money and everyday life","L'argent et la vie de tous les jours"],["blog.html#sec-driving","Driving in Canada","Conduire au Canada"],["blog.html#sec-gov","Government, work and the economy","Gouvernement, travail et économie"],["blog.html#sec-history","History and symbols","Histoire et symboles"],["blog.html#sec-family","Canada for families","Le Canada en famille"],["blog.html#sec-more","More about Canada","Encore sur le Canada"]]},{"href":"search.html","en":"Search","fr":"Rechercher","icon":"search","items":[]}];/*/MENU*/
 
   var FOOTER_LINKS = [
     { href: "./",           label: "Home" },
@@ -238,7 +238,7 @@
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
   }
 
-  var FRVER = {core:"8609a2e7",gk:"3402b7e0",cit:"b64fd446",fun:"b971d20f",drive:"9ea6f05c",kids:"71e99c45"};
+  var FRVER = {core:"9eccfc2e",gk:"c2ba581c",cit:"9e0e367f",fun:"b971d20f",drive:"9ea6f05c",kids:"71e99c45"};
   function loadFrench(done) {
     /* The dictionary is split into chunks by tools/split_fr.py. Every French
        page needs "core" (the header, footer and UI strings site.js injects);
@@ -272,6 +272,10 @@
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  var ICON = {
+    search: '<svg class="nav-ico" aria-hidden="true" viewBox="0 0 24 24" width="17" height="17"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg>'
+  };
+
   function headerHTML() {
     /* One item per section. The section is "on" when this page is the
        section's own page or any page in its list. */
@@ -280,7 +284,7 @@
       var mine = m.href === file || m.items.some(function (it) { return it[0].split("#")[0] === file; });
       var top = '<a class="nav-top' + (mine ? ' on"' : '"') + ' href="' + m.href + '"' +
                 (m.href === file ? ' aria-current="page"' : "") + ">" +
-                (m.icon ? '<span aria-hidden="true">' + m.icon + "</span> " : "") + esc(lab(m)) + "</a>";
+                (m.icon ? ICON[m.icon] : "") + esc(lab(m)) + "</a>";
       if (!m.items.length) return '<li class="nav-item">' + top + "</li>";
       var sub = m.items.map(function (it) {
         var here = it[0] === file;
@@ -385,6 +389,18 @@
     }
     f.setAttribute("data-no-i18n", "");
 
+    /* A page with its own sticky bar (the games search) parks it just under
+       the sticky header, not underneath it. Measured after the paint, and
+       only on such a page, so no other page pays for the layout read. */
+    if (document.querySelector(".game-nav")) {
+      var setH = function () {
+        var sticky = window.getComputedStyle(h).position === "sticky";
+        document.documentElement.style.setProperty("--hdr-h", (sticky ? h.offsetHeight : 0) + "px");
+      };
+      window.requestAnimationFrame(setH);
+      window.addEventListener("resize", setH);
+    }
+
     /* the menu: Menu button, section arrows, and closing on a click outside
        or on Escape */
     function closeSubs(except) {
@@ -454,9 +470,45 @@
   }
 
   /* ---------------------------------------------------------------
+     FLAGS ON WINDOWS
+     Windows draws no flag emoji: a Canadian flag shows as the two letters
+     "CA", and a flag question in the world quiz cannot be answered. Where the
+     browser can draw other emoji but not flags, this adds a small font that
+     holds only the flags (fonts/TwemojiCountryFlags.woff2, Twemoji graphics,
+     CC BY 4.0; credited on sources.html). Its unicode-range covers flags
+     only, so the browser downloads it only on a page that actually shows a
+     flag, and every other character keeps the site's own font.
+     --------------------------------------------------------------- */
+  function fixFlags() {
+    try {
+      var c = document.createElement("canvas");
+      c.width = c.height = 1;
+      var x = c.getContext("2d", { willReadFrequently: true });
+      x.textBaseline = "top";
+      x.font = '100px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+      x.scale(0.01, 0.01);
+      var px = function (t, f) {
+        x.clearRect(0, 0, 100, 100); x.fillStyle = f; x.fillText(t, 0, 0);
+        return x.getImageData(0, 0, 1, 1).data.join(",");
+      };
+      /* drawn in colour = the same pixel whatever the fill colour */
+      var colour = function (t) { var a = px(t, "#fff"), b = px(t, "#000"); return a === b && b.indexOf("0,0,0,") !== 0; };
+      if (!window.CQ_FORCE_FLAGS && (!colour("\ud83d\ude0a") || colour("\ud83c\udde8\ud83c\udde6"))) return;
+      var st = document.createElement("style");
+      st.textContent = '@font-face{font-family:"Twemoji Country Flags";unicode-range:U+1F1E6-1F1FF,U+1F3F4,' +
+        'U+E0062-E0063,U+E0065,U+E0067,U+E006C,U+E006E,U+E0073-E0074,U+E0077,U+E007F;' +
+        'src:url("' + BASE + 'fonts/TwemojiCountryFlags.woff2") format("woff2");font-display:swap}' +
+        'body,button,input,select,textarea{font-family:"Twemoji Country Flags",-apple-system,BlinkMacSystemFont,' +
+        '"Segoe UI",Roboto,"Nunito",Helvetica,Arial,sans-serif}';
+      document.head.appendChild(st);
+    } catch (e) {}
+  }
+
+  /* ---------------------------------------------------------------
      5. GO
      --------------------------------------------------------------- */
   function start() {
+    fixFlags();
     if (lang === "fr") {
       document.documentElement.classList.add("lang-fr");
       loadFrench(function () { paint(); translatePage(); watch(); });

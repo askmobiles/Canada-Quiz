@@ -1554,3 +1554,6 @@ p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
 .blog-sec{scroll-margin-top:84px}
 .nav .sub-btn{transition:transform .15s}
 .nav .nav-item.open > .sub-btn{transform:rotate(180deg)}
+.nav .nav-ico{flex:none;margin-right:2px}
+/* the games page search bar sticks under the header, and below its menus */
+.game-nav{top:var(--hdr-h,0px)!important;z-index:40!important}
