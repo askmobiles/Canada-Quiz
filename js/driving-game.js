@@ -324,7 +324,9 @@
       dashes(C.vL - 1 + 45, C.hBot + 10, V.h - C.hBot - 10, true, COL.line) +
       dashes(0, (C.hTop + C.hBot) / 2, C.vL - 10, false, COL.line) +
       dashes(C.vR + 10, (C.hTop + C.hBot) / 2, V.w - C.vR - 10, false, COL.line) +
-      rect(C.vL, C.stopLine, C.vR - C.vL - 45, 5, "#ffffff", ' opacity=".9"');
+      // the stop line goes across YOUR lane (right of the centre line), in
+      // front of your car; it used to sit across the oncoming lane by mistake
+      rect(C.vL + 47, C.stopLine, C.vR - C.vL - 47, 5, "#ffffff", ' opacity=".9"');
   }
   function straightRoad(twoLane, centre) {
     /* WHY "centre" EXISTS
