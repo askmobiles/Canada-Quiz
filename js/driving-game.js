@@ -158,7 +158,10 @@
     return '<g transform="translate(' + x + ',' + y + ')">' +
       '<ellipse cx="0" cy="0" rx="23" ry="33" fill="#2b6cb0" opacity=".16"/>' +
       '<g transform="rotate(' + (spin || 0) + ')">' + carShape(COL.you) + "</g>" +
-      '<text x="0" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"' +
+      // the label goes under the car, or beside it when the car sits so low in
+      // the picture that a label underneath would be cut off (amber-far)
+      (y + 48 > V.h ? '<text x="-26" y="5" text-anchor="end" font-family="Arial, Helvetica, sans-serif"'
+                    : '<text x="0" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"') +
       ' font-size="13" font-weight="bold" fill="#1a3a5c" stroke="#ffffff"' +
       ' stroke-width="3.5" paint-order="stroke">' + W.you + "</text></g>";
   }
@@ -453,7 +456,15 @@
       if (sc.cars) {
         for (i = 0; i < sc.cars.length; i++) {
           var at = sc.cars[i].at, cy = sc.cars[i].y;
-          if (at === "ahead") {
+          if (at === "ahead" && sc.cars[i].smv) {
+            /* SLOW-MOVING VEHICLE — the orange-and-red triangle is carried on the
+               BACK of the vehicle, not posted at the roadside, so it is drawn on
+               the rear of a farm-green vehicle. */
+            var sx = R.mine, sy = cy || 140;
+            o += car(sx, sy, "n", "#3f7d3a") +
+              '<polygon points="' + (sx - 11) + ',' + (sy + 34) + ' ' + (sx + 11) + ',' + (sy + 34) + ' ' +
+              sx + ',' + (sy + 15) + '" fill="#f47a1f" stroke="#d0202a" stroke-width="3" stroke-linejoin="round"/>';
+          } else if (at === "ahead") {
             o += car(sc.twoLane ? 262 : R.mine, cy || (sc.fog ? 150 : 140), "n", COL.other);
           } else if (at === "aheadLeft") {       // the left lane of a two-lane road
             o += car(172, cy || 120, "n", COL.other2);

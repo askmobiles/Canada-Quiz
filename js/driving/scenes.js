@@ -809,7 +809,7 @@
   },
   {
     id: "slow-moving-vehicle",
-    sc: { kind: "road", sign: "slow-vehicle", centre: "broken", cars: [{ at: "ahead" }], you: { y: 268 } },
+    sc: { kind: "road", centre: "broken", cars: [{ at: "ahead", smv: true }], you: { y: 268 } },
     q: {
       en: "A vehicle ahead carries the orange and red triangle, and you are coming up to the crest of a hill. What do you do?",
       fr: "Le véhicule devant vous porte le triangle orange et rouge, et vous approchez du sommet d'une côte. Que faites-vous ?"
