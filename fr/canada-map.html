@@ -555,7 +555,29 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
     if (sEl) sEl.textContent = '';
   }
 
+  /* THE BROWSER'S BACK BUTTON. A game used to be one page as far as the
+     browser knew, so pressing Back in the middle of a game left the site and
+     went to whatever page came before. Starting a mode now adds one step to
+     the browser history, so Back returns to the list of modes instead, the same
+     as the "Back to Modes" button. Same address, nothing added to the URL. */
+  function markHistory(){
+    try {
+      var st = window.history.state;
+      if (!(st && st.cqMap)) window.history.pushState({ cqMap: 1 }, '');
+    } catch(e){}
+  }
+  window.addEventListener('popstate', function(){ if (mode) goMenu(); });
+  function backToModes(){
+    var st = null;
+    try { st = window.history.state; } catch(e){}
+    /* undo our own history step, so a later Back still leaves the page in one
+       press; popstate then shows the modes */
+    if (st && st.cqMap){ try { window.history.back(); return; } catch(e){} }
+    goMenu();
+  }
+
   function start(m){
+    markHistory();
     clearTimers(); clearFx(); clearYears(); clearTurn();
     show($('cm-res-teams'), false);
     mode = m; idx = 0; score = 0; missed = []; locked = false;
@@ -1241,9 +1263,9 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
     idx++;
     if (whereLike()) wRound(); else nextRound();
   });
-  if (backBt)  backBt.addEventListener('click', goMenu);
+  if (backBt)  backBt.addEventListener('click', backToModes);
   if (againBt) againBt.addEventListener('click', function(){ if (mode) start(mode); });
-  if (newBt)   newBt.addEventListener('click', goMenu);
+  if (newBt)   newBt.addEventListener('click', backToModes);
 
   goMenu();
 })();
