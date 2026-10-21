@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!--cq-theme--><script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('cq-theme')}catch(e){}var dark=t?t==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);d.setAttribute('data-theme-ok','1');window.CQ_DARK='css/dark.css?v=e4c3c260';if(dark){d.setAttribute('data-theme','dark');document.write('<link rel="stylesheet" id="cq-dark" href="css/dark.css?v=e4c3c260">')}var s=null,q=/[?&]season=([a-z]+)/.exec(location.search);if(q){s=q[1]}else{try{var p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()),y=0,m=0,n=0;p.forEach(function(x){if(x.type==='year')y=+x.value;if(x.type==='month')m=+x.value;if(x.type==='day')n=+x.value});var k=m*100+n,t=Date.UTC(y,m-1,n)/864e5,a=y%19,b=Math.floor(y/100),c=y%100,h=(19*a+b-Math.floor(b/4)-Math.floor((b-Math.floor((b+8)/25)+1)/3)+15)%30,l=(32+2*(b%4)+2*Math.floor(c/4)-h-c%4)%7,r=Math.floor((a+11*h+22*l)/451),e=Date.UTC(y,Math.floor((h+l-7*r+114)/31)-1,(h+l-7*r+114)%31+1)/864e5,g=Date.UTC(y,9,1+(8-new Date(Date.UTC(y,9,1)).getUTCDay())%7+7)/864e5;s=k===1111?null:(k>=1231||k<=102)?'newyear':(k>=1218&&k<=1226)?'christmas':(t>=e-2&&t<=e+1)?'easter':(t>=g-2&&t<=g)?'thanksgiving':(k>=1020&&k<=1031)?'halloween':(k>=624&&k<=702)?'canadaday':(k>=212&&k<=214)?'valentine':k===215?'flagday':(k>=315&&k<=317)?'stpatrick':(k>=1201||k<=319)?'winter':k<=620?'spring':k<=921?'summer':'autumn';}catch(e){}}if(s&&s!=='none'){d.setAttribute('data-season',s);document.write('<link rel="stylesheet" href="css/seasons.css?v=43fb7435">')}})();</script><!--/cq-theme-->
+<!--cq-theme--><script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('cq-theme')}catch(e){}var dark=t?t==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);d.setAttribute('data-theme-ok','1');window.CQ_DARK='css/dark.css?v=421f4318';if(dark){d.setAttribute('data-theme','dark');document.write('<link rel="stylesheet" id="cq-dark" href="css/dark.css?v=421f4318">')}var s=null,q=/[?&]season=([a-z]+)/.exec(location.search);if(q){s=q[1]}else{try{var p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()),y=0,m=0,n=0;p.forEach(function(x){if(x.type==='year')y=+x.value;if(x.type==='month')m=+x.value;if(x.type==='day')n=+x.value});var k=m*100+n,t=Date.UTC(y,m-1,n)/864e5,a=y%19,b=Math.floor(y/100),c=y%100,h=(19*a+b-Math.floor(b/4)-Math.floor((b-Math.floor((b+8)/25)+1)/3)+15)%30,l=(32+2*(b%4)+2*Math.floor(c/4)-h-c%4)%7,r=Math.floor((a+11*h+22*l)/451),e=Date.UTC(y,Math.floor((h+l-7*r+114)/31)-1,(h+l-7*r+114)%31+1)/864e5,g=Date.UTC(y,9,1+(8-new Date(Date.UTC(y,9,1)).getUTCDay())%7+7)/864e5;s=k===1111?null:(k>=1231||k<=102)?'newyear':(k>=1218&&k<=1226)?'christmas':(t>=e-2&&t<=e+1)?'easter':(t>=g-2&&t<=g)?'thanksgiving':(k>=1020&&k<=1031)?'halloween':(k>=624&&k<=702)?'canadaday':(k>=212&&k<=214)?'valentine':k===215?'flagday':(k>=315&&k<=317)?'stpatrick':(k>=1201||k<=319)?'winter':k<=620?'spring':k<=921?'summer':'autumn';}catch(e){}}if(s&&s!=='none'){d.setAttribute('data-season',s);document.write('<link rel="stylesheet" href="css/seasons.css?v=43fb7435">')}})();</script><!--/cq-theme-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Map of Canada Quiz — Provinces, Territories and Capitals</title>
 <meta name="description" content="Free map of Canada quiz with no signup. Find all 13 provinces and territories, name them, learn every capital city and explore fun facts. Works on any phone.">
@@ -78,6 +78,20 @@
 .cm-miss li:last-child{border-bottom:0}
 .cm-hide{display:none!important}
 .cm-foot{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+/* four modes added 21 Oct 2026: team play, nature, joining order, symbols */
+.btn-navy{background:#22577a}
+.btn-teal{background:#0b7a75}
+.btn-pink{background:#b5179e}
+.btn-brown{background:#7a4f24}
+.cm-greyed .cm-p:not(.cm-joined):not(.cm-good):not(.cm-bad){fill:#d5dae1}
+.cm-yr{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:900;font-size:19px;fill:#1f2a36;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:#ffffff;stroke-width:4;stroke-linejoin:round}
+.cm-q.cm-turn-a{background:#fde3e5;border-radius:12px;padding:4px 10px}
+.cm-q.cm-turn-b{background:#dceafd;border-radius:12px;padding:4px 10px}
+.cm-teams{display:flex;gap:10px;justify-content:center;margin:10px 0 0;flex-wrap:wrap}
+.cm-team{border-radius:14px;padding:10px 18px;font-weight:900;font-size:1.25rem;color:#fff;min-width:150px;text-align:center}
+.cm-team-a{background:#d62839}
+.cm-team-b{background:#1d64c8}
+.cm-team.cm-win{outline:4px solid #ffb703;outline-offset:2px}
 </style>
 <link rel="icon" href="brand/favicon.svg?v=2e301691" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png?v=e5ca0b50">
@@ -122,7 +136,7 @@
   <section class="hero" style="padding:26px 20px 6px">
     <h1>🍁 Map of Canada Quiz</h1>
     <p>Find all 13 provinces and territories, name them, learn every capital, and tap the exact spot of 44 Canadian places.</p>
-  <details class="howto"><summary>📖 How to play</summary><p>Pick a mode, then play 13 rounds. In Find It you tap the province or territory we name; in Name It and Capital Cities you choose the right answer out of four. Explore the Map lets you tap any place for its capital, its two-letter code and two facts. In Where Is It? we name a city, a lake, a river or a national park and you tap the exact spot on the map — you are told how many kilometres you were out.</p></details>
+  <details class="howto"><summary>📖 How to play</summary><p>Pick a mode, then play 13 rounds. In Find It you tap the province or territory we name; in Name It and Capital Cities you choose the right answer out of four. Explore the Map lets you tap any place for its capital, its two-letter code and two facts. In Where Is It? we name a city, a lake, a river or a national park and you tap the exact spot on the map — you are told how many kilometres you were out. Lakes, Rivers &amp; Mountains works the same way with ten lakes, rivers, bays, oceans and mountain ranges. In Joined Canada we give a year and you tap a place that joined Canada that year, from 1867 to 1999. In Flowers &amp; Birds we name an official flower or bird and you tap its province or territory. Class vs Class is for a classroom screen: the red team and the blue team take turns finding places and naming capitals, sixteen turns in all.</p></details>
 
   </section>
 
@@ -137,6 +151,10 @@
           <button class="btn btn-purple" id="cm-m-cap" type="button">Capital Cities<small>Pick the right capital</small></button>
           <button class="btn btn-orange" id="cm-m-exp" type="button">Explore the Map<small>Facts about every place</small></button>
           <button class="btn btn-yellow" id="cm-m-where" type="button">Where Is It?<small>Tap the exact spot</small></button>
+          <button class="btn btn-navy" id="cm-m-team" type="button">Class vs Class<small>Two teams take turns</small></button>
+          <button class="btn btn-teal" id="cm-m-nat" type="button">Lakes, Rivers &amp; Mountains<small>Oceans, bays and peaks too</small></button>
+          <button class="btn btn-brown" id="cm-m-join" type="button">Joined Canada<small>From 1867 to 1999</small></button>
+          <button class="btn btn-pink" id="cm-m-sym" type="button">Flowers &amp; Birds<small>Whose symbol is it?</small></button>
         </div>
       </div>
 
@@ -154,7 +172,7 @@
      page, because it is the one word here the French build translates. -->
 </svg>
 <script src="js/canada-map-svg.js?v=18fc8bd3"></script>
-<script src="js/canada-map-places.js?v=6ab7a89f"></script>
+<script src="js/canada-map-places.js?v=ff42db25"></script>
 <script src="js/canada-map-draw.js?v=76730dd2"></script>
 <script>CQMap.draw(document.getElementById("cm-svg"), {idPrefix:"cm-s-"});
 /* CQMap.draw sets the shared 0 0 960 700 box. Canada only occupies x 82-877,
@@ -179,6 +197,7 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
         <p class="muted" id="cm-res-best" style="margin:0;font-weight:700" data-no-i18n></p>
         <p id="cm-res-head" style="margin:12px 0 0;font-weight:800;color:var(--ink)" data-no-i18n></p>
         <ul class="cm-miss" id="cm-res-list" data-no-i18n></ul>
+        <div class="cm-teams cm-hide" id="cm-res-teams" data-no-i18n></div>
       </div>
 
       <div class="cm-foot">
@@ -364,6 +383,60 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
       f2f:'Il a été créé en 1999 à partir de l’est des Territoires du Nord-Ouest.' }
   ];
 
+  /* FLOWERS & BIRDS. Each official flower and bird, as on the province fact
+     pages (tools/newq/province_data_*.py, from Canadian Heritage). French
+     names carry their article because they sit inside a sentence. */
+  var SYM = {
+    BC:['Pacific dogwood','le cornouiller de Nuttall','Steller\u2019s jay','le geai de Steller'],
+    AB:['wild rose','la rose aciculaire','great horned owl','le grand-duc d\u2019Am\u00e9rique'],
+    SK:['western red lily','le lis rouge orang\u00e9','sharp-tailed grouse','le t\u00e9tras \u00e0 queue fine'],
+    MB:['prairie crocus','le crocus des prairies','great grey owl','la chouette lapone'],
+    ON:['white trillium','le trillium blanc','common loon','le plongeon huard'],
+    QC:['blue flag iris','l\u2019iris versicolore','snowy owl','le harfang des neiges'],
+    NB:['purple violet','la violette cucull\u00e9e','black-capped chickadee','la m\u00e9sange \u00e0 t\u00eate noire'],
+    NS:['mayflower','la fleur de mai','osprey','le balbuzard p\u00eacheur'],
+    PE:['lady\u2019s slipper','le sabot de la Vierge','blue jay','le geai bleu'],
+    NL:['pitcher plant','la sarrac\u00e9nie pourpre','Atlantic puffin','le macareux moine'],
+    YT:['fireweed','l\u2019\u00e9pilobe \u00e0 feuilles \u00e9troites','raven','le grand corbeau'],
+    NT:['mountain avens','la dryade \u00e0 feuilles enti\u00e8res','gyrfalcon','le faucon gerfaut'],
+    NU:['purple saxifrage','la saxifrage \u00e0 feuilles oppos\u00e9es','rock ptarmigan','le lagop\u00e8de alpin']
+  };
+  function symWhy(p){
+    var s = SYM[p.id];
+    return T(nameOf(p) + ': flower, the ' + s[0] + ' \u00b7 bird, the ' + s[2] + '.',
+             nameOf(p) + ' : fleur, ' + s[1] + ' \u00b7 oiseau, ' + s[3] + '.');
+  }
+
+  /* JOINED CANADA. The order the thirteen became part of Canada. Places that
+     joined on the same day form one step, and any of them is a right answer. */
+  var JOIN = [
+    { y:1867, ids:['ON','QC','NS','NB'],
+      en:'On July 1, 1867, Ontario, Quebec, Nova Scotia and New Brunswick joined to form Canada.',
+      fr:'Le 1er juillet 1867, l\u2019Ontario, le Qu\u00e9bec, la Nouvelle-\u00c9cosse et le Nouveau-Brunswick se sont unis pour former le Canada.' },
+    { y:1870, ids:['MB','NT'],
+      en:'On July 15, 1870, Manitoba became a province, and Canada took over Rupert\u2019s Land and the North-Western Territory. They became the Northwest Territories, far bigger then than today.',
+      fr:'Le 15 juillet 1870, le Manitoba est devenu une province, et le Canada a pris possession de la Terre de Rupert et du Territoire du Nord-Ouest. Ils sont devenus les Territoires du Nord-Ouest, bien plus grands qu\u2019aujourd\u2019hui.' },
+    { y:1871, ids:['BC'],
+      en:'British Columbia joined on July 20, 1871, on the promise of a railway to the Pacific.',
+      fr:'La Colombie-Britannique s\u2019est jointe le 20 juillet 1871, avec la promesse d\u2019un chemin de fer jusqu\u2019au Pacifique.' },
+    { y:1873, ids:['PE'],
+      en:'Prince Edward Island joined on July 1, 1873, six years after Confederation.',
+      fr:'L\u2019\u00cele-du-Prince-\u00c9douard s\u2019est jointe le 1er juillet 1873, six ans apr\u00e8s la Conf\u00e9d\u00e9ration.' },
+    { y:1898, ids:['YT'],
+      en:'Yukon became its own territory on June 13, 1898, during the Klondike Gold Rush.',
+      fr:'Le Yukon est devenu un territoire distinct le 13 juin 1898, pendant la ru\u00e9e vers l\u2019or du Klondike.' },
+    { y:1905, ids:['AB','SK'],
+      en:'Alberta and Saskatchewan became provinces on September 1, 1905, made from part of the Northwest Territories.',
+      fr:'L\u2019Alberta et la Saskatchewan sont devenues des provinces le 1er septembre 1905, \u00e0 partir d\u2019une partie des Territoires du Nord-Ouest.' },
+    { y:1949, ids:['NL'],
+      en:'Newfoundland joined on March 31, 1949, after two votes in 1948. Its name became Newfoundland and Labrador in 2001.',
+      fr:'Terre-Neuve s\u2019est jointe le 31 mars 1949, apr\u00e8s deux votes en 1948. Son nom est devenu Terre-Neuve-et-Labrador en 2001.' },
+    { y:1999, ids:['NU'],
+      en:'Nunavut was created on April 1, 1999, from the eastern part of the Northwest Territories.',
+      fr:'Le Nunavut a \u00e9t\u00e9 cr\u00e9\u00e9 le 1er avril 1999 \u00e0 partir de la partie est des Territoires du Nord-Ouest.' }
+  ];
+  function joinOf(id){ for (var i=0;i<JOIN.length;i++){ if (JOIN[i].ids.indexOf(id) >= 0) return JOIN[i]; } return null; }
+
   function nameOf(p){ return FR ? p.fr : p.en; }
   function capOf(p){ return FR ? p.capFr : p.cap; }
   function factsOf(p){ return FR ? [p.f1f, p.f2f] : [p.f1, p.f2]; }
@@ -433,6 +506,24 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
   }
 
   var mode = null, order = [], idx = 0, score = 0, missed = [], locked = false, timers = [];
+  /* Class vs Class: tItems is the list of turns, tScore the two team scores */
+  var tItems = [], tScore = [0, 0], symKind = [], jLeft = {}, gYears = null;
+  function whereLike(){ return mode === 'where' || mode === 'nat'; }
+  function teamName(i){ return i ? T('\ud83d\udd35 Blue team', '\ud83d\udd35 \u00c9quipe bleue') : T('\ud83d\udd34 Red team', '\ud83d\udd34 \u00c9quipe rouge'); }
+  function total(){ return whereLike() ? wOrder.length : (mode === 'team' ? tItems.length : P.length); }
+  function yearLayer(){
+    if (gYears && gYears.parentNode) return gYears;
+    gYears = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    gYears.setAttribute('id', 'cm-years');
+    svg.appendChild(gYears);
+    return gYears;
+  }
+  function clearYears(){
+    var g = yearLayer(); while (g.firstChild) g.removeChild(g.firstChild);
+    for (var k in shapes){ if (Object.prototype.hasOwnProperty.call(shapes,k)) shapes[k].classList.remove('cm-joined'); }
+    svg.classList.remove('cm-greyed');
+  }
+  function clearTurn(){ if (qEl) qEl.classList.remove('cm-turn-a', 'cm-turn-b'); }
   function clearTimers(){ for (var i=0;i<timers.length;i++) clearTimeout(timers[i]); timers = []; }
   function later(fn, ms){ timers.push(setTimeout(fn, ms)); }
 
@@ -441,11 +532,16 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
     if (m === 'name') return T('Name It', 'Nomme-le');
     if (m === 'cap')  return T('Capital Cities', 'Villes capitales');
     if (m === 'where') return T('Where Is It?', 'O\u00f9 est-ce ?');
+    if (m === 'nat')  return T('Lakes, Rivers & Mountains', 'Lacs, rivi\u00e8res et montagnes');
+    if (m === 'join') return T('Joined Canada', 'L\u2019entr\u00e9e dans le Canada');
+    if (m === 'sym')  return T('Flowers & Birds', 'Fleurs et oiseaux');
+    if (m === 'team') return T('Class vs Class', 'Classe contre classe');
     return T('Explore the Map', 'Explorer la carte');
   }
 
   function goMenu(){
-    clearTimers(); clearFx(); clearPins(); mode = null; locked = false;
+    clearTimers(); clearFx(); clearPins(); clearYears(); clearTurn(); mode = null; locked = false;
+    show($('cm-res-teams'), false);
     document.body.classList.remove('cq-aiming');
     svg.classList.remove('cm-dim','cm-lock');
     show(menu, true); show(res, false);
@@ -460,7 +556,8 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
   }
 
   function start(m){
-    clearTimers(); clearFx();
+    clearTimers(); clearFx(); clearYears(); clearTurn();
+    show($('cm-res-teams'), false);
     mode = m; idx = 0; score = 0; missed = []; locked = false;
     svg.classList.remove('cm-dim','cm-lock');
     show(menu, false); show(res, false); show(play, true);
@@ -475,7 +572,7 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
       return;
     }
     show(gLab, false); show(hintEl, false);
-    if (m === 'where'){
+    if (m === 'where' || m === 'nat'){
       /* 13 of the 44, fresh every game, and spread out: take a shuffled place
          only if it is SEP units clear of every place already taken. If the
          shuffle ever runs dry before 13 - it has not in 400 trials - top up
@@ -484,10 +581,14 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
          100. Rather than weaken the rule on the hundredth, shuffle again - 20
          tries makes a short list effectively impossible. The old top-up stays
          as a last resort so the game can never hand back fewer than 13. */
-      var pool, pick, i, j, far, tries;
+      var pool, pick, i, j, far, tries, want = (m === 'nat') ? NAT_ROUNDS : ROUNDS;
       for (tries = 0; tries < 20; tries++){
-        pool = shuffle(WP.slice()); pick = [];
-        for (i = 0; i < pool.length && pick.length < ROUNDS; i++){
+        /* Where Is It? keeps its own 44 places; the nature mode takes every
+           lake, river, bay, ocean and mountain, including the m:"nat" ones */
+        pool = shuffle(WP.filter(function(q){
+          return (m === 'nat') ? (q.kind === 'water' || q.kind === 'land') : q.m !== 'nat';
+        })); pick = [];
+        for (i = 0; i < pool.length && pick.length < want; i++){
           far = true;
           for (j = 0; j < pick.length; j++){
             var ddx = pool[i].x - pick[j].x, ddy = pool[i].y - pick[j].y;
@@ -500,9 +601,9 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
           }
           if (far) pick.push(pool[i]);
         }
-        if (pick.length === ROUNDS) break;
+        if (pick.length === want) break;
       }
-      for (i = 0; i < pool.length && pick.length < ROUNDS; i++){
+      for (i = 0; i < pool.length && pick.length < want; i++){
         if (pick.indexOf(pool[i]) < 0) pick.push(pool[i]);
       }
       wOrder = pick;
@@ -513,14 +614,44 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
     }
     clearPins();
     order = shuffle(P.slice());
-    show(optsEl, m !== 'find');
+    if (m === 'sym'){
+      /* half flowers, half birds, in a random mix */
+      symKind = [];
+      for (var s = 0; s < order.length; s++) symKind.push(s % 2 ? 'bird' : 'flower');
+      shuffle(symKind);
+    }
+    if (m === 'join'){
+      /* one step per joining day, the places inside a step in any order */
+      order = [];
+      for (var g = 0; g < JOIN.length; g++){
+        var grp = shuffle(JOIN[g].ids.slice());
+        for (var h = 0; h < grp.length; h++) order.push(byId(grp[h]));
+      }
+      jLeft = {};
+      svg.classList.add('cm-greyed');
+    }
+    if (m === 'team'){
+      /* 16 turns, red then blue. Each team gets four places to find on the
+         map and four capitals, taking turns at both. */
+      tScore = [0, 0]; tItems = [];
+      var fp = shuffle(P.slice()), cp = shuffle(P.slice()), kinds = ['find', 'find', 'cap', 'cap'];
+      for (var n = 0; n < 16; n++){
+        var kd = kinds[n % 4];
+        tItems.push({ kind: kd, p: (kd === 'find') ? fp.shift() : cp.shift() });
+      }
+    }
+    show(optsEl, m === 'name' || m === 'cap' || m === 'team');
     if (m === 'name') svg.classList.add('cm-dim');
     nextRound();
   }
 
   function paintBar(){
-    if (rEl) rEl.textContent = T('Question ', 'Question ') + (idx + 1) + ' / ' + P.length;
-    if (sEl) sEl.textContent = T('Score ', 'Score ') + score + ' / ' + P.length;
+    if (rEl) rEl.textContent = T('Question ', 'Question ') + (idx + 1) + ' / ' + total();
+    if (mode === 'team'){
+      if (sEl) sEl.textContent = '\ud83d\udd34 ' + tScore[0] + ' \u2013 ' + tScore[1] + ' \ud83d\udd35';
+      return;
+    }
+    if (sEl) sEl.textContent = T('Score ', 'Score ') + score + ' / ' + total();
   }
 
   function nextRound(){
@@ -529,9 +660,47 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
     hideEnd();
     locked = false;
     svg.classList.remove('cm-lock');
-    if (idx >= order.length){ finish(); return; }
+    clearTurn();
+    if (idx >= total()){ finish(); return; }
     var p = order[idx];
+    if (mode === 'team'){
+      var it = tItems[idx], who = idx % 2;
+      paintBar();
+      if (qEl) qEl.classList.add(who ? 'cm-turn-b' : 'cm-turn-a');
+      if (it.kind === 'find'){
+        document.body.classList.add('cq-aiming');
+        show(optsEl, false);
+        if (qEl) qEl.textContent = teamName(who) + T(': where is ' + nameOf(it.p) + '?', ' : trouve ' + nameOf(it.p));
+      } else {
+        show(optsEl, true);
+        if (qEl) qEl.textContent = teamName(who) + T(': what is the capital of ' + nameOf(it.p) + '?',
+                                                     ' : quelle est la capitale ' + it.p.de + ' ?');
+        buildOptions(it.p, function(o){ return capOf(o); });
+      }
+      return;
+    }
     paintBar();
+    if (mode === 'join'){
+      var st = joinOf(p.id), left = 0;
+      for (var q = 0; q < st.ids.length; q++){ if (!jLeft[st.ids[q]]) left++; }
+      document.body.classList.add('cq-aiming');
+      if (qEl) qEl.textContent = (left > 1)
+        ? T(st.y + ': tap a place that joined Canada that year (' + left + ' to find).',
+            st.y + ' : touche un endroit entr\u00e9 dans le Canada cette ann\u00e9e-l\u00e0 (' + left + ' \u00e0 trouver).')
+        : T(st.y + ': tap the place that joined Canada that year.',
+            st.y + ' : touche l\u2019endroit entr\u00e9 dans le Canada cette ann\u00e9e-l\u00e0.');
+      return;
+    }
+    if (mode === 'sym'){
+      var sy = SYM[p.id], fl = (symKind[idx] === 'flower');
+      document.body.classList.add('cq-aiming');
+      if (qEl) qEl.textContent = fl
+        ? T('\ud83c\udf38 Which province or territory has the ' + sy[0] + ' as its flower?',
+            '\ud83c\udf38 Quelle province ou quel territoire a ' + sy[1] + ' comme fleur ?')
+        : T('\ud83d\udc26 Which province or territory has the ' + sy[2] + ' as its bird?',
+            '\ud83d\udc26 Quelle province ou quel territoire a ' + sy[3] + ' comme oiseau ?');
+      return;
+    }
     if (mode === 'find'){
       document.body.classList.add('cq-aiming');
       if (qEl) qEl.textContent = T('Where is ' + nameOf(p) + '?', 'Trouve : ' + nameOf(p));
@@ -589,9 +758,10 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
     locked = true;
     lockOptions();
     var right = (chosen.id === correct.id);
-    var answer = (mode === 'cap') ? capOf(correct) : nameOf(correct);
+    var answer = (mode === 'cap' || mode === 'team') ? capOf(correct) : nameOf(correct);
     if (right){
-      score++; btn.classList.add('cm-ok');
+      if (mode === 'team') tScore[idx % 2]++; else score++;
+      btn.classList.add('cm-ok');
       say(T('Right \u2014 ' + answer + '.', 'Bonne r\u00e9ponse \u2014 ' + answer + '.'), true);
       lightAnswer(correct);
     } else {
@@ -619,7 +789,7 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
      explanation and the Next button, and the player decides when to move on. */
   function endRound(why){
     document.body.classList.remove('cq-aiming');
-    if (hintEl && mode === 'where') show(hintEl, false);
+    if (hintEl && whereLike()) show(hintEl, false);
     if (whyEl){ whyEl.textContent = why || ''; show(whyEl, !!why); }
     show(nextWrap, true);
   }
@@ -645,20 +815,25 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
     /* NOT before the guards above: in Where Is It? the tap also lands on a
        province path and arrives here, and taking the class off there brought
        the floating buttons back while the player was still moving the pin. */
-    if (mode !== 'find' || locked) return;
+    if (locked) return;
+    if (mode === 'join'){ joinTap(p); return; }
+    var it = (mode === 'team') ? tItems[idx] : null;
+    if (!(mode === 'find' || mode === 'sym' || (it && it.kind === 'find'))) return;
     document.body.classList.remove('cq-aiming');
-    var target = order[idx];
+    var target = it ? it.p : order[idx];
     if (!target) return;
     locked = true;
     svg.classList.add('cm-lock');
+    clearTurn();
+    var why = (mode === 'sym') ? symWhy(target) : factsOf(target)[0];
     if (id === target.id){
-      score++;
+      if (it) tScore[idx % 2]++; else score++;
       var g = shapes[id];
       if (g) g.classList.add('cm-good');
       say(T('Yes \u2014 that is ' + nameOf(p) + '.',
             'Oui \u2014 c\u2019est ' + nameOf(p) + '.'), true);
       paintBar();
-      endRound(factsOf(p)[0]);
+      endRound(why);
     } else {
       missed.push(target);
       var bad = shapes[id];
@@ -669,8 +844,55 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
             'Non \u2014 vous avez touch\u00e9 ' + nameOf(p) + '. ' + nameOf(target) +
             ', c\u2019est celle en vert.'), false);
       paintBar();
-      endRound(factsOf(target)[0]);
+      endRound(why);
     }
+  }
+
+  /* JOINED CANADA: a tap is right if the place joined on the step being asked
+     about and has not been found yet. A place already found is simply ignored,
+     so a stray tap on the coloured part of the map costs nothing. */
+  function yearLabel(p, y){
+    var t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    t.setAttribute('class', 'cm-yr');
+    t.setAttribute('x', p.lx); t.setAttribute('y', p.ly);
+    t.textContent = y;
+    yearLayer().appendChild(t);
+  }
+  function joinTap(p){
+    if (jLeft[p.id]) return;
+    var st = joinOf(order[idx].id);
+    var ok = st.ids.indexOf(p.id) >= 0;
+    var got = ok ? p : null;
+    if (!got){
+      for (var i = 0; i < st.ids.length; i++){ if (!jLeft[st.ids[i]]){ got = byId(st.ids[i]); break; } }
+    }
+    document.body.classList.remove('cq-aiming');
+    locked = true;
+    svg.classList.add('cm-lock');
+    /* the step's places stay in their own order: swap the one just found into
+       this round's slot, so the rounds still ask about each place once */
+    var at = order.indexOf(got);
+    if (at > idx){ order[at] = order[idx]; order[idx] = got; }
+    jLeft[got.id] = true;
+    var sh = shapes[got.id];
+    if (sh) sh.classList.add('cm-joined');
+    yearLabel(got, st.y);
+    if (ok){
+      score++;
+      if (sh) sh.classList.add('cm-good');
+      say(T('Yes \u2014 ' + nameOf(p) + ' joined in ' + st.y + '.',
+            'Oui \u2014 ' + nameOf(p) + ' : ' + st.y + '.'), true);
+    } else {
+      missed.push(got);
+      var bad = shapes[p.id];
+      if (bad) bad.classList.add('cm-bad');
+      if (sh) sh.classList.add('cm-good');
+      var pj = joinOf(p.id);
+      say(T('No \u2014 ' + nameOf(p) + ' joined in ' + pj.y + '. ' + nameOf(got) + ', in green, joined in ' + st.y + '.',
+            'Non \u2014 ' + nameOf(p) + ' : ' + pj.y + '. ' + nameOf(got) + ', en vert : ' + st.y + '.'), false);
+    }
+    paintBar();
+    endRound(FR ? st.fr : st.en);
   }
 
   function showCard(p){
@@ -707,7 +929,30 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
     clearTimers(); clearFx();
     svg.classList.remove('cm-dim');
     show(play, false); show(res, true); show(againBt, true); show(backBt, true);
-    var TOT = (mode === 'where') ? wOrder.length : P.length;
+    var TOT = total();
+    var tm = $('cm-res-teams');
+    if (mode === 'team'){
+      var sc0 = $('cm-res-score'), be0 = $('cm-res-best'), hd0 = $('cm-res-head'), ls0 = $('cm-res-list');
+      var a = tScore[0], bb = tScore[1];
+      if (sc0) sc0.textContent = (a === bb)
+        ? T('It\u2019s a tie, ' + a + ' to ' + bb + '!', '\u00c9galit\u00e9, ' + a + ' \u00e0 ' + bb + ' !')
+        : teamName(a > bb ? 0 : 1) + T(' wins, ', ' gagne, ') + Math.max(a, bb) + T(' to ', ' \u00e0 ') + Math.min(a, bb) + '!';
+      if (be0) be0.textContent = T('Well played, both teams.', 'Bravo aux deux \u00e9quipes.');
+      if (hd0) hd0.textContent = '';
+      if (ls0) ls0.innerHTML = '';
+      if (tm){
+        tm.innerHTML = '';
+        for (var k = 0; k < 2; k++){
+          var d = document.createElement('div');
+          d.className = 'cm-team ' + (k ? 'cm-team-b' : 'cm-team-a') + ((tScore[k] > tScore[1 - k]) ? ' cm-win' : '');
+          d.textContent = teamName(k) + ': ' + tScore[k];
+          tm.appendChild(d);
+        }
+        show(tm, true);
+      }
+      return;
+    }
+    show(tm, false);
     var b = readBest();
     var prev = (typeof b[mode] === 'number') ? b[mode] : 0;
     if (score > prev){ b[mode] = score; writeBest(b); prev = score; }
@@ -721,8 +966,12 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
       ls.innerHTML = '';
       for (var i=0;i<missed.length;i++){
         var li = document.createElement('li');
-        li.textContent = (mode === 'where')
+        li.textContent = whereLike()
           ? wName(missed[i])
+          : (mode === 'join')
+            ? nameOf(missed[i]) + ' \u2192 ' + joinOf(missed[i].id).y
+          : (mode === 'sym')
+            ? symWhy(missed[i])
           : (mode === 'cap')
             ? nameOf(missed[i]) + ' → ' + capOf(missed[i])
             : nameOf(missed[i]) + ' (' + missed[i].ab + ')';
@@ -770,6 +1019,7 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
   var BANG = 18;       /* and within this, it is called out as spot on */
   var SEP = 86;        /* least distance between two places in one game */
   var ROUNDS = 13;     /* same length as the other four modes */
+  var NAT_ROUNDS = 10; /* Lakes, Rivers & Mountains: fewer, bigger places */
 
   /* A BAY IS NOT A DOT. One tolerance for every place works for cities and
      insults the big ones: Hudson Bay is 1,100 km across, so a tap on its west
@@ -906,7 +1156,7 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
   }
 
   function wTap(ev){
-    if (mode !== 'where' || locked) return;
+    if (!whereLike() || locked) return;
     if (!wOrder[idx]) return;
     var m = toMap(ev);
     if (!m) return;
@@ -918,7 +1168,7 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
   }
 
   function wCommit(){
-    if (mode !== 'where' || locked || !pending) return;
+    if (!whereLike() || locked || !pending) return;
     document.body.classList.remove('cq-aiming');
     var p = wOrder[idx];
     if (!p) return;
@@ -979,7 +1229,8 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
   svg.addEventListener('click', wTap);
 
   var mb = { 'cm-m-find':'find', 'cm-m-name':'name', 'cm-m-cap':'cap', 'cm-m-exp':'exp',
-             'cm-m-where':'where' };
+             'cm-m-where':'where', 'cm-m-team':'team', 'cm-m-nat':'nat', 'cm-m-join':'join',
+             'cm-m-sym':'sym' };
   Object.keys(mb).forEach(function(k){
     var el = $(k);
     if (el) el.addEventListener('click', function(){ start(mb[k]); });
@@ -988,7 +1239,7 @@ document.getElementById("cm-svg").setAttribute("viewBox", "70 0 819 700");</scri
   if (zoomBt)  zoomBt.addEventListener('click', zoomOut);
   if (nextBt) nextBt.addEventListener('click', function(){
     idx++;
-    if (mode === 'where') wRound(); else nextRound();
+    if (whereLike()) wRound(); else nextRound();
   });
   if (backBt)  backBt.addEventListener('click', goMenu);
   if (againBt) againBt.addEventListener('click', function(){ if (mode) start(mode); });
