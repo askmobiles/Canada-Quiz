@@ -419,7 +419,9 @@
       var sb = item.querySelector(".sub-btn");
       if (sb) sb.setAttribute("aria-expanded", on ? "true" : "false");
     }
-    var narrow = window.matchMedia ? window.matchMedia("(max-width: 899px)") : { matches: false };
+    /* a phone, or any touch screen such as an iPad: tap a section name to
+       open its list (a finger cannot hover) */
+    var narrow = window.matchMedia ? window.matchMedia("(max-width: 899px), (hover: none), (pointer: coarse)") : { matches: false };
     document.addEventListener("click", function (e) {
       if (!h.contains(e.target)) { closeSubs(); }
     });

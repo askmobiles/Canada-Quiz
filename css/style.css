@@ -1528,8 +1528,18 @@ p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
 .nav .sub a:hover,.nav .sub a:focus-visible{background:var(--line);text-decoration:none}
 .nav .sub a.on{color:var(--red-dark);font-weight:800}
 .nav .nav-item.open > .sub{display:block}
-@media (hover:hover) and (min-width:900px){
+/* Opening on hover is for a mouse only. On an iPad (a finger, no mouse) Safari
+   fakes a hover on the first tap and keeps it, and focus stays on a tapped
+   arrow, so a list opened and would not close, or the wrong one opened. A
+   finger now opens a list by tapping the section name or its arrow (site.js),
+   and gets bigger rows to tap. */
+@media (hover:hover) and (pointer:fine) and (min-width:900px){
   .nav .nav-item:hover > .sub,.nav .nav-item:focus-within > .sub{display:block}
+}
+@media (pointer:coarse) and (min-width:900px){
+  .nav .sub-btn{font-size:15px;padding:12px 9px 12px 5px;margin-left:-6px}
+  .nav .sub{min-width:290px;padding:10px}
+  .nav .sub a{font-size:16.5px;padding:13px 16px}
 }
 .nav .nav-item:last-child .sub,.nav .nav-item:nth-last-child(2) .sub{left:auto;right:0}
 .nav .nav-top.on{background:rgba(255,255,255,.22)}
