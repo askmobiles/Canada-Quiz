@@ -1568,3 +1568,9 @@ p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
 /* the games page search bar sticks under the header, and below its menus */
 .game-nav{top:var(--hdr-h,0px)!important;z-index:40!important}
 .sz-res .sz-rt{font-size:1.6rem;font-weight:800;margin:.2em 0;line-height:1.2}
+
+/* the featured link in a menu section (tools/menu.json, 4th part) */
+.nav .sub li.sub-hot a{display:flex;align-items:center;gap:9px;background:#fdecee;color:var(--red-dark);font-weight:800;box-shadow:inset 3px 0 0 var(--red-dark)}
+.nav .sub li.sub-hot a:hover,.nav .sub li.sub-hot a:focus-visible{background:#f9d6db}
+.nav .sub li.sub-hot.ico-poppy a::before{content:"";flex:none;width:15px;height:15px;border-radius:50%;background:radial-gradient(circle,#1b1b1b 0 27%,#d62828 31%)}
+.nav .sub .sub-tag{margin-left:auto;flex:none;background:var(--red-dark);color:#fff;font-size:11.5px;font-weight:800;line-height:1;padding:4px 8px;border-radius:999px;white-space:nowrap}
