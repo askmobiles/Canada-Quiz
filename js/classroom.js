@@ -14,12 +14,19 @@
    (classroom.google.com/share?url=...). No Google script is loaded, nothing is
    sent anywhere until the teacher clicks, and then only the page address and
    its title. The words are picked by the same URL test the rest of the site
-   uses, so the French pages need no dictionary entry. */
+   uses, so the French pages need no dictionary entry.
+
+   5 November 2026: a "Copy link" button beside it. Classes also arrive from
+   Microsoft Teams, and Teams has no plain share address (Microsoft's own
+   button needs their script on the page). A copied link pastes into Teams,
+   email or any class site, and nothing is loaded from anyone. */
 (function () {
   "use strict";
 
   var FR = /(^|\/)fr\//.test(location.pathname);
   var LABEL = FR ? "Partager dans Google Classroom" : "Share to Google Classroom";
+  var COPY = FR ? "Copier le lien (Teams, courriel)" : "Copy link (Teams, email)";
+  var COPIED = FR ? "Lien copié \u2713" : "Link copied \u2713";
   var HINT = FR ? "Pour les enseignants : donnez cette page à votre classe."
                 : "For teachers: give this page to your class.";
 
@@ -42,6 +49,10 @@
     + ".cq-classroom a:hover,.cq-classroom a:focus{background:#176328;color:#fff;text-decoration:none}"
     + ".cq-classroom a:focus-visible{outline:3px solid #ffbf47;outline-offset:2px}"
     + ".cq-classroom svg{flex:none}"
+    + ".cq-classroom button.cq-copy{display:inline-flex;align-items:center;gap:8px;background:transparent;color:inherit;"
+    + "border:2px solid currentColor;border-radius:999px;padding:8px 16px;font:inherit;font-weight:700;font-size:15px;"
+    + "line-height:1.2;cursor:pointer}"
+    + ".cq-classroom button.cq-copy:focus-visible{outline:3px solid #ffbf47;outline-offset:2px}"
     + ".cq-classroom small{color:inherit;opacity:.75;font-size:13px}"
     + "@media print{.cq-classroom{display:none}}";
 
@@ -60,6 +71,38 @@
         window.gtag("event", "classroom_share", { page_location: location.href });
       }
     } catch (e) { /* analytics must never break a link */ }
+  }
+
+  function copied(btn) {
+    btn.textContent = COPIED;
+    setTimeout(function () { btn.textContent = COPY; }, 2500);
+    try {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "copy_link", { page_location: location.href });
+      }
+    } catch (e) { /* analytics must never break the button */ }
+  }
+
+  function copyLink(btn) {
+    var u = pageUrl();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(u).then(function () { copied(btn); }, function () { oldCopy(u, btn); });
+    } else {
+      oldCopy(u, btn);
+    }
+  }
+
+  function oldCopy(u, btn) {
+    /* older browsers: copy from a hidden text box */
+    var t = document.createElement("textarea");
+    t.value = u;
+    t.setAttribute("readonly", "");
+    t.style.position = "fixed";
+    t.style.top = "-1000px";
+    document.body.appendChild(t);
+    t.select();
+    try { if (document.execCommand("copy")) copied(btn); } catch (e) { /* nothing to do */ }
+    document.body.removeChild(t);
   }
 
   function add() {
@@ -81,9 +124,15 @@
     a.innerHTML = icon() + "<span></span>";
     a.lastChild.textContent = LABEL;
     a.addEventListener("click", track);
+    var c = document.createElement("button");
+    c.type = "button";
+    c.className = "cq-copy";
+    c.textContent = COPY;
+    c.addEventListener("click", function () { copyLink(c); });
     var s = document.createElement("small");
     s.textContent = HINT;
     row.appendChild(a);
+    row.appendChild(c);
     row.appendChild(s);
     box.appendChild(row);
   }
