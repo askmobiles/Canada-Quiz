@@ -1574,3 +1574,5 @@ p > a:only-child:not([class]){padding-top:5px;padding-bottom:5px}
 .nav .sub li.sub-hot a:hover,.nav .sub li.sub-hot a:focus-visible{background:#f9d6db}
 .nav .sub li.sub-hot.ico-poppy a::before{content:"";flex:none;width:15px;height:15px;border-radius:50%;background:radial-gradient(circle,#1b1b1b 0 27%,#d62828 31%)}
 .nav .sub .sub-tag{margin-left:auto;flex:none;background:var(--red-dark);color:#fff;font-size:11.5px;font-weight:800;line-height:1;padding:4px 8px;border-radius:999px;white-space:nowrap}
+/* headings reached by a #link sit below the sticky header, not behind it (6 Nov 2026) */
+h2[id],h3[id]{scroll-margin-top:84px}
