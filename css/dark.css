@@ -647,6 +647,7 @@ html[data-theme="dark"] .card-word{background:#193833}
 html[data-theme="dark"] .card-imp{background:#35161a}
 html[data-theme="dark"] .big-word{color:var(--ink)}
 html[data-theme="dark"] .cat-tag{background:#1d2029;color:var(--muted)}
+html[data-theme="dark"] .home-pick a{background:var(--card);color:var(--ink)}
 html[data-theme="dark"] canvas{background:#0b1030}
 html[data-theme="dark"] .lo-h{color:var(--muted)}
 html[data-theme="dark"] .lo-opt{background:var(--card);color:var(--ink)}
