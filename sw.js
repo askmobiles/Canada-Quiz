@@ -25,7 +25,7 @@
      * The runtime cache is capped, so a tablet never fills up with 250 pages
        and a 2.4 MB French dictionary it will not read again.
 */
-var VERSION = "b61677564e3b";
+var VERSION = "8a83d0f55519";
 var SHELL = "cq-shell-" + VERSION;
 var RUNTIME = "cq-run-" + VERSION;
 var MAX_RUNTIME = 220;
