@@ -371,6 +371,7 @@ html[data-theme="dark"] .sz-prog{background:var(--line)}
 html[data-theme="dark"] .sz-prog>span{background:var(--red)}
 html[data-theme="dark"] .sz-note{color:var(--muted)}
 html[data-theme="dark"] .sz-sheet{background:#1d2029;color:#e6e6e6}
+html[data-theme="dark"] .sz-sheet .br span{color:#cecece}
 html[data-theme="dark"] .sz-sheet .hd{border-bottom:2px solid #000}
 html[data-theme="dark"] .sz-sheet .bl{border-bottom:1.5px solid #000}
 html[data-theme="dark"] .sz-sheet .ft{border-top:1px solid #999}

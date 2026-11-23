@@ -129,7 +129,7 @@
 
     var head = el("div", "pw-head");
     head.appendChild(el("h2", null, t.label));
-    head.appendChild(el("p", "muted", "Printable quiz sheet from canada-quiz.com"));
+    head.appendChild(el("p", "muted", "Printable quiz sheet from Canada Quiz (canada-quiz.com)"));
     sheet.appendChild(head);
 
     var meta = el("div", "pw-meta");
@@ -155,7 +155,7 @@
     });
 
     var note = el("p", "pw-note",
-      "canada-quiz.com — free to use and photocopy. "
+      "Canada Quiz · canada-quiz.com — free to use and photocopy. "
       + "Unofficial practice. Not affiliated with the Government of Canada.");
     sheet.appendChild(note);
 

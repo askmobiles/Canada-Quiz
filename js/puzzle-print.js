@@ -290,7 +290,7 @@
     o.push('<h1 class="cqp-title"><span>' + esc(spec.title) + "</span>" +
            (isKey ? ' &mdash; <span class="cqp-keyword">Answer key</span>' : "") +
            "</h1>");
-    o.push('<p class="cqp-src" data-no-i18n>canada-quiz.com</p>');
+    o.push('<p class="cqp-src" data-no-i18n><b>Canada Quiz</b> · canada-quiz.com</p>');
     o.push("</header>");
     /* A sheet that gets cut into thirty cards has nobody's name on it. */
     if (!isKey && !spec.noname) {
