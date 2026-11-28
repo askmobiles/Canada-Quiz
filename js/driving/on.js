@@ -1179,11 +1179,11 @@ window.CQ_DRIVE_Q = [];
 
 { id:"sc5", sec:"signs", sign:"stop-school-bus",
   en:{ q:"What is the penalty in Ontario for a first conviction of failing to stop for a school bus?",
-       a:["A fine of $2,000 to $4,000 and six demerit points","A $100 fine and no points","Two demerit points","A warning letter only"],
-       e:"This is one of the most serious offences on the road: $2,000 to $4,000 and six demerit points. For a novice driver, six points alone triggers a second warning letter." },
+       a:["A fine of $400 to $2,000 and six demerit points","A $100 fine and no points","Two demerit points","A warning letter only"],
+       e:"A first offence brings $400 to $2,000 and six demerit points. Each following offence brings $1,000 to $4,000, six points and possibly six months in jail. For a novice driver, six points alone triggers a second warning letter." },
   fr:{ q:"Quelle est la peine en Ontario pour une première condamnation pour avoir omis de s'arrêter pour un autobus scolaire ?",
-       a:["Une amende de 2 000 $ à 4 000 $ et six points d'inaptitude","Une amende de 100 $ sans points","Deux points d'inaptitude","Une lettre d'avertissement seulement"],
-       e:"C'est l'une des infractions les plus graves de la route : de 2 000 $ à 4 000 $ et six points d'inaptitude. Pour un conducteur débutant, six points entraînent déjà une deuxième lettre d'avertissement." },
+       a:["Une amende de 400 $ à 2 000 $ et six points d'inaptitude","Une amende de 100 $ sans points","Deux points d'inaptitude","Une lettre d'avertissement seulement"],
+       e:"Une première infraction coûte de 400 $ à 2 000 $ et six points d'inaptitude. Chaque infraction suivante coûte de 1 000 $ à 4 000 $, six points et jusqu'à six mois de prison. Pour un conducteur débutant, six points entraînent déjà une deuxième lettre d'avertissement." },
   c:0 },
 
 { id:"sc6", sec:"signs", sign:"community-safety-zone",
@@ -1842,11 +1842,11 @@ window.CQ_DRIVE_Q = [];
 
 { id:"rc16", sec:"rules", topic:"impaired",
   en:{ q:"A driver aged 21 or under is stopped with any alcohol in their blood. What happens immediately?",
-       a:["A warning","Nothing until a court date","Their vehicle is sold","A 24-hour roadside suspension"],
-       e:"The licence is suspended at the roadside for 24 hours. On conviction there is also a fine and a licence suspension of at least 30 days." },
+       a:["A warning","Nothing until a court date","Their vehicle is sold","A three-day roadside licence suspension and a $250 penalty"],
+       e:"The first time it is three days and $250, the second time seven days and $350, and the third time thirty days, $450 and six months with an ignition interlock. A conviction adds a fine of $60 to $1,000 on top." },
   fr:{ q:"Un conducteur de 21 ans ou moins est intercepté avec de l'alcool dans le sang. Que se passe-t-il immédiatement ?",
-       a:["Un avertissement","Rien avant la date d'audience","Son véhicule est vendu","Une suspension de 24 heures sur-le-champ"],
-       e:"Le permis est suspendu sur place pour 24 heures. En cas de condamnation, s'ajoutent une amende et une suspension d'au moins 30 jours." },
+       a:["Un avertissement","Rien avant la date d'audience","Son véhicule est vendu","Une suspension de permis de trois jours et une pénalité de 250 $"],
+       e:"La première fois, c'est trois jours et 250 $ ; la deuxième, sept jours et 350 $ ; la troisième, trente jours, 450 $ et six mois avec antidémarreur. Une condamnation ajoute une amende de 60 $ à 1 000 $." },
   c:3 },
 
 { id:"rc17", sec:"rules", topic:"impaired",
@@ -2175,12 +2175,12 @@ window.CQ_DRIVE_Q = [];
 /* ---------- Emergencies and collisions ---------- */
 
 { id:"rd21", sec:"rules", topic:"collisions",
-  en:{ q:"A collision causes damage that looks like more than $2,000 in total. What must you do?",
-       a:["Nothing, if nobody is hurt","Wait a week and call your insurer","Exchange information and report it to police","Only exchange phone numbers"],
-       e:"Report it to police, either at the scene or at a collision reporting centre. Also exchange names, licence, plate and insurance details with everyone involved." },
-  fr:{ q:"Une collision cause des dommages qui semblent dépasser 2 000 $ au total. Que devez-vous faire ?",
-       a:["Rien, si personne n'est blessé","Attendre une semaine et appeler votre assureur","Échanger les renseignements et signaler l'accident à la police","Échanger seulement les numéros de téléphone"],
-       e:"Signalez l'accident à la police, sur place ou dans un centre de déclaration de collisions. Échangez aussi les noms, permis, plaques et renseignements d'assurance avec toutes les personnes en cause." },
+  en:{ q:"Someone is hurt in a collision you are part of. What must you do?",
+       a:["Move the cars and carry on","Wait a week and call your insurer","Exchange information and report it to police","Only exchange phone numbers"],
+       e:"Any injury means the police must be told. Every driver involved has to stay at the scene, or go straight back to it, and give whatever help they can. Even where nobody is hurt, you still exchange names, licence, plate and insurance details with everyone involved." },
+  fr:{ q:"Quelqu'un est blessé dans une collision où vous êtes impliqué. Que devez-vous faire ?",
+       a:["Déplacer les voitures et repartir","Attendre une semaine et appeler votre assureur","Échanger les renseignements et signaler l'accident à la police","Échanger seulement les numéros de téléphone"],
+       e:"Toute blessure oblige à prévenir la police. Chaque conducteur impliqué doit rester sur les lieux, ou y revenir aussitôt, et porter toute l'aide possible. Même sans blessé, vous échangez les noms, permis, plaques et renseignements d'assurance avec toutes les personnes en cause." },
   c:2 },
 
 { id:"rd22", sec:"rules", topic:"collisions",
